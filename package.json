@@ -1,0 +1,60 @@
+{
+  "name": "@talenta/magneto365.ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/W170/talenta.magneto365.ui.git"
+  },
+  "version": "0.1.0",
+  "description": "Magneto365 UI common components",
+  "scripts": {
+    "lint": "eslint ./src --ext .js,.ts,.jsx,.tsx",
+    "prettier": "prettier --write ./**/*.{js,ts,jsx,tsx}  --list-different",
+    "rollup": "rollup -c",
+    "test": "jest"
+  },
+  "author": "Wilmer H Muñoz Gomez",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.3",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.2",
+    "@types/react": "^17.0.34",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "autoprefixer": "^10.4.0",
+    "babel-jest": "^27.3.1",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "eslint": "^8.4.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "html-webpack-plugin": "^5.5.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.3.1",
+    "prettier": "^2.5.1",
+    "pretty-quick": "^3.1.2",
+    "react": "^17.0.2",
+    "rollup": "^2.60.0",
+    "rollup-plugin-dts": "^4.0.1",
+    "rollup-plugin-postcss": "^4.0.1",
+    "sass": "^1.43.5",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1",
+    "typescript": "^4.4.4"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
+}
