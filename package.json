@@ -8,6 +8,7 @@
   "description": "Magneto365 UI common components",
   "scripts": {
     "lint": "eslint ./src --ext .js,.ts,.jsx,.tsx",
+    "prepare": "husky install && chmod +x .husky/pre-commit .husky/pre-push .husky/commit-msg",
     "prettier": "prettier --write ./**/*.{js,ts,jsx,tsx}  --list-different",
     "rollup": "rollup -c",
     "test": "jest"
@@ -38,6 +39,7 @@
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.3.1",
     "prettier": "^2.5.1",
