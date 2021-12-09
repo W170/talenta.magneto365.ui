@@ -10,11 +10,14 @@
     "lint": "eslint ./src --ext .js,.ts,.jsx,.tsx",
     "prepare": "husky install && chmod +x .husky/pre-commit .husky/pre-push .husky/commit-msg",
     "prettier": "prettier --write ./**/*.{js,ts,jsx,tsx}  --list-different",
-    "rollup": "rollup -c",
+    "rollup": "rollup -c rollup.config.js",
     "test": "jest"
   },
   "author": "Wilmer H Muñoz Gomez",
   "license": "UNLICENSED",
+  "dependencies": {
+    "antd": "^4.17.3"
+  },
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/eslint-parser": "^7.16.3",
@@ -34,6 +37,7 @@
     "autoprefixer": "^10.4.0",
     "babel-jest": "^27.3.1",
     "babel-loader": "^8.2.3",
+    "babel-plugin-import": "^1.13.3",
     "css-loader": "^6.5.1",
     "eslint": "^8.4.1",
     "eslint-plugin-react": "^7.27.1",
@@ -46,6 +50,7 @@
     "pretty-quick": "^3.1.2",
     "react": "^17.0.2",
     "rollup": "^2.60.0",
+    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-dts": "^4.0.1",
     "rollup-plugin-postcss": "^4.0.1",
     "sass": "^1.43.5",
