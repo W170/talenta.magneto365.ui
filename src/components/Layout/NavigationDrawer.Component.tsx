@@ -4,7 +4,7 @@ import { Badge, Drawer } from 'antd'
 import './NavigationDrawer.Style.scss'
 import { INavigationDrawer } from './NavigationDrawer.Interface'
 
-export const NavigationDrawer = ({ navigationItems, ...drawer }: INavigationDrawer) => {
+const NavigationDrawer = ({ navigationItems, ...drawer }: INavigationDrawer) => {
   const displayMenu = useMemo(() => {
     return navigationItems.map((item, index) => (
       <div key={`menu-item-${index}`}>
@@ -37,3 +37,5 @@ export const NavigationDrawer = ({ navigationItems, ...drawer }: INavigationDraw
     </Drawer>
   )
 }
+
+export default NavigationDrawer

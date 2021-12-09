@@ -1,2 +1,2 @@
 export * from './NavigationDrawer.Interface'
-export * from './NavigationDrawer.Component'
+export { default as NavigationDrawer } from './NavigationDrawer.Component'
