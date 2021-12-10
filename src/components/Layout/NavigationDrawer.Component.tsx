@@ -30,9 +30,9 @@ const NavigationDrawer = ({ lang, queryString = {}, ...drawer }: INavigationDraw
           return (
             <div key={`menu-item-${index}-children-${key}`} className="main-nav__aside__item">
               {badge ? (
-                <Badge.Ribbon className="main-nav__aside__item--new" text={badge.text}>
+                <Badge className="main-nav__aside__item--new" count={badge.text} style={{ backgroundColor: '#00d461' }}>
                   {displayLink}
-                </Badge.Ribbon>
+                </Badge>
               ) : (
                 displayLink
               )}
