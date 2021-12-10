@@ -20,7 +20,7 @@ export default [
         sourcemap: true
       }
     ],
-    external: ['antd', 'react'],
+    external: ['antd', 'react', 'axios'],
     plugins: [resolve(), commonjs(), typescript({ tsconfig: './tsconfig.json' }), postcss()]
   },
   {
