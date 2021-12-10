@@ -22,3 +22,7 @@ export interface INavigationLink {
     text: string
   }
 }
+
+export interface IHttpClient {
+  lang: string
+}
