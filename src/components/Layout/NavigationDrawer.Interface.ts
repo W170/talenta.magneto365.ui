@@ -1,9 +1,14 @@
-export interface INavigationDrawer {
+import * as React from 'react'
+import { DrawerProps } from 'antd/lib/drawer'
+
+export interface INavigationDrawer extends React.FC<DrawerProps> {
   lang: string
-  navigationItems: INavigationItem[]
   placement: 'top' | 'right' | 'bottom' | 'left'
   visible: boolean
   width: number
+  queryString?: {
+    [key: string]: string
+  }
   onClose: () => void
 }
 
@@ -17,6 +22,7 @@ export interface INavigationLink {
   icon: string
   target: '_self' | '_blank' | '_parent' | '_top'
   rel: 'noreferrer' | 'noopener' | string
+  useQueryString: boolean
   href: string
   badge?: {
     text: string
