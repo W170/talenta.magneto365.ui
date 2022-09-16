@@ -6,6 +6,7 @@ import { INavigationDrawer, INavigationItem } from './NavigationDrawer.Interface
 import { NavigationDrawerService } from './NavigationDrawer.Service'
 
 const NavigationDrawer = ({ lang, queryString = {}, ...drawer }: INavigationDrawer) => {
+  const [intent, setIntent] = useState<number>(1)
   const [menuItems, setMenuItems] = useState<INavigationItem[]>([])
 
   const httpClient = useMemo(() => {
@@ -44,11 +45,16 @@ const NavigationDrawer = ({ lang, queryString = {}, ...drawer }: INavigationDraw
   }, [menuItems, queryString])
 
   useEffect(() => {
-    if (menuItems && menuItems.length) return
-    httpClient.get<INavigationItem[]>('v1/menu').then((response) => {
-      setMenuItems(response.data)
-    })
-  }, [httpClient, menuItems])
+    if ((menuItems && menuItems.length) || intent > 3) return
+    httpClient
+      .get<INavigationItem[]>('v1/menu')
+      .then((response) => {
+        setMenuItems(response.data)
+      })
+      .catch(() => {
+        setIntent((value) => value + 1)
+      })
+  }, [httpClient, menuItems, intent])
 
   return (
     <Drawer className="main-nav__aside" {...drawer}>
