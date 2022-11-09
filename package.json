@@ -25,6 +25,7 @@
     "@babel/preset-typescript": "^7.16.0",
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
+    "@mdx-js/react": "^2.1.5",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@rollup/plugin-typescript": "^8.3.0",
@@ -34,6 +35,8 @@
     "@storybook/addon-links": "^6.5.13",
     "@storybook/builder-webpack5": "^6.5.13",
     "@storybook/manager-webpack5": "^6.5.13",
+    "@storybook/mdx2-csf": "^0.0.3",
+    "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
     "@testing-library/react": "^12.1.2",
@@ -59,7 +62,7 @@
     "prettier": "^2.5.1",
     "pretty-quick": "^3.1.2",
     "react": "^17.0.2",
-    "react-dom": "^18.2.0",
+    "react-dom": "^17.0.2",
     "rollup": "^2.60.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-dts": "^4.0.1",
@@ -75,5 +78,8 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "dependencies": {}
+  "dependencies": {},
+  "peerDependencies": {
+    "react-dom": "17.0.2"
+  }
 }
