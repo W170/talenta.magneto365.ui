@@ -4,8 +4,16 @@ import { Badge, Drawer } from 'antd'
 import './NavigationDrawer.Style.scss'
 import { INavigationDrawer, INavigationItem } from './NavigationDrawer.Interface'
 import { NavigationDrawerService } from './NavigationDrawer.Service'
+import Region from '../Region/Region.Component'
+import { DEFAULT_LOCALES } from '../Region/Region.constant'
 
-const NavigationDrawer = ({ lang, queryString = {}, ...drawer }: INavigationDrawer) => {
+const NavigationDrawer = ({
+  lang,
+  queryString = {},
+  onRegionChange,
+  locales = DEFAULT_LOCALES,
+  ...drawer
+}: INavigationDrawer) => {
   const [intent, setIntent] = useState<number>(1)
   const [menuItems, setMenuItems] = useState<INavigationItem[]>([])
 
@@ -59,6 +67,12 @@ const NavigationDrawer = ({ lang, queryString = {}, ...drawer }: INavigationDraw
   return (
     <Drawer className="main-nav__aside" {...drawer}>
       {displayMenu}
+      <div>
+        <div className="main-nav__aside__title">{locales?.mainTitle}</div>
+        <div className="main-nav__aside__item">
+          <Region lang={lang} onRegionChange={onRegionChange} locales={locales} />
+        </div>
+      </div>
     </Drawer>
   )
 }

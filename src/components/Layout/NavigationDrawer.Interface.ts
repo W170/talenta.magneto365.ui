@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { DrawerProps } from 'antd/lib/drawer'
+import { IRegionLocales } from '../Region'
 
 export interface INavigationDrawer extends React.FC<DrawerProps> {
   lang: string
@@ -10,6 +11,8 @@ export interface INavigationDrawer extends React.FC<DrawerProps> {
     [key: string]: string
   }
   onClose: () => void
+  onRegionChange: (lng: string) => void
+  locales?: IRegionLocales
 }
 
 export interface INavigationItem {
