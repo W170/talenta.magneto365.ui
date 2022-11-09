@@ -49,7 +49,7 @@ const Region: React.FC<IRegionProps> = ({ onRegionChange, lang, locales }) => {
 
   return (
     <React.Fragment>
-      <Button type="link" href="javascript:void()" onClick={toggleSelector} className="region">
+      <Button type="link" href="#" onClick={toggleSelector} className="region">
         <img src={current?.flag} alt={current?.lang} style={{ width: 16, marginRight: 5 }} /> {current?.name}
       </Button>
       <Modal
