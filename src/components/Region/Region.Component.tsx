@@ -53,6 +53,7 @@ const Region: React.FC<IRegionProps> = ({ onRegionChange, lang, locales }) => {
         <img src={current?.flag} alt={current?.lang} style={{ width: 16, marginRight: 5 }} /> {current?.name}
       </Button>
       <Modal
+        getContainer={false}
         visible={showSelector}
         onCancel={toggleSelector}
         onOk={commitTransaction}
