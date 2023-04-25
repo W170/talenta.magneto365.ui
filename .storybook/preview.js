@@ -1,3 +1,5 @@
+import { withTheme } from './withTheme.decorator'
+
 export const parameters = {
   actions: { argTypesRegex: '^on.*' },
   controls: {
@@ -7,3 +9,5 @@ export const parameters = {
     }
   }
 }
+
+export const decorators = [withTheme]

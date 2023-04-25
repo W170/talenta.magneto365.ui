@@ -42,9 +42,9 @@
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^27.0.2",
     "@types/react": "^17.0.34",
+    "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "@typescript-eslint/parser": "^5.6.0",
-    "antd": "^4.17.3",
     "autoprefixer": "10.4.0",
     "axios": "^0.24.0",
     "babel-jest": "^27.3.1",
@@ -71,6 +71,7 @@
     "sass": "^1.43.5",
     "sass-loader": "^12.3.0",
     "style-loader": "^3.3.1",
+    "styled-components": "^5.3.10",
     "typescript": "^4.4.4"
   },
   "main": "dist/cjs/index.js",
