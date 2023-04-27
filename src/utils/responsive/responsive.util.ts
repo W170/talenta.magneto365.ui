@@ -3,7 +3,8 @@ import { Dimension, DimType, EventDispatcher } from '../eventDispatcher'
 
 export class ResponsiveManagement {
   private dim: Dimension
-
+  // callback to execute the update with a specific event dispatcher
+  private callback?: () => void
   constructor() {
     const type = this.getType(window.innerWidth)
     this.dim = {
@@ -13,8 +14,12 @@ export class ResponsiveManagement {
   }
 
   public run(eventDispatcher: EventDispatcher) {
+    if (this.callback) {
+      removeEventListener('resize', this.callback)
+    }
+    this.callback = () => this.update(eventDispatcher)
     eventDispatcher.dipatch('UPDATE_DIMENSION', { dim: this.dim })
-    window.addEventListener('resize', () => this.update(eventDispatcher))
+    addEventListener('resize', this.callback)
   }
 
   private update(eventDispatcher: EventDispatcher): void {
