@@ -5,7 +5,4 @@ export const ListIconContainer = styled.div.attrs((props: { direction: string; s
   display: flex;
   flex-direction: ${(props) => props.direction};
   gap: ${(props) => props.spacing}px;
-
-  &:hover {
-  }
 `
