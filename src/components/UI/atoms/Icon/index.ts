@@ -1,2 +1,2 @@
-export { default as Icon } from './Icon.component'
+export { default as IconItem } from './Icon.component'
 export * from './Icon.interface'
