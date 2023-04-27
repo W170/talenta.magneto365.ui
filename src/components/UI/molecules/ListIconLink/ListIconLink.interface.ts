@@ -6,11 +6,15 @@ type Variant = 'Linear' | 'Outline' | 'Broken' | 'Bold' | 'Bulk' | 'TwoTone'
 export interface IListIconLink {
   direction: Direction
   spacing: number
-  url: string
-  Icon: Icon
-  listIcon: any
+  listIcon: IListIcon[]
   variant: Variant
   size: string | number
   color: string
-  className: string
+  className?: string
+  hover?: boolean
+}
+
+export interface IListIcon {
+  url: string
+  Icon: Icon
 }

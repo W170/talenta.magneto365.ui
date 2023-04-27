@@ -1,15 +1,15 @@
 import React from 'react'
-import { IListIconLink } from './'
+import { IListIconLink, IListIcon } from './'
 import { IconItem } from '../../atoms/Icon'
 
 import { withStyles } from './ListIconLink.styles'
 
-const ListIconLink: React.FC<IListIconLink> = ({ listIcon, variant, size, color, className }) => {
+const ListIconLink: React.FC<IListIconLink> = ({ listIcon, variant, size, color, className, hover = true }) => {
   return (
     <div className={className}>
-      {listIcon?.map(({ Icon, url }: IListIconLink, index: number) => (
+      {listIcon?.map(({ Icon, url }: IListIcon, index: number) => (
         <a key={index} href={url} target="_blank" rel="noopener noreferrer">
-          <IconItem variant={variant} size={size} color={color} Icon={Icon} />
+          <IconItem hover={hover} variant={variant} size={size} color={color} Icon={Icon} />
         </a>
       ))}
     </div>
