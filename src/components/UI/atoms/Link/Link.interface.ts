@@ -7,4 +7,5 @@ export interface ILinkProps {
   type: LinkType
   href: string
   label: string
+  className?: string
 }
