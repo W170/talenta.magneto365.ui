@@ -1,22 +1,20 @@
-export enum EventType {
-  UPDATE_DIMENSION = 'UPDATE_DIMENSION'
+export const EEventType = {
+  UPDATE_DIMENSION: 'UPDATE_DIMENSION'
 }
 
-export interface IEventBase {
-  type: EventType
-}
+export type EventType = keyof typeof EEventType
 
-type DimType = 'xs' | 'sm' | 'md' | 'hd' | 'lg' | 'xl' | 'xxl'
+export type DimType = 'xs' | 'sm' | 'md' | 'hd' | 'lg' | 'xl' | 'xxl'
 
 export interface Dimension {
   type: DimType
   size: number
 }
 
-export interface UpdateDimensionEvent extends IEventBase {
+export interface UpdateDimensionEvent {
   dim: Dimension
 }
 
 export interface Events {
-  [EventType.UPDATE_DIMENSION]: UpdateDimensionEvent
+  ['UPDATE_DIMENSION']: UpdateDimensionEvent
 }

@@ -5,6 +5,6 @@ export interface ILinkProps {
   colorHover?: string
   colorVisited?: string
   type: LinkType
-  href: string
-  label: string
+  href?: string
+  label?: string
 }
