@@ -19,8 +19,35 @@ export default {
     variant: 'Linear',
     size: 20
   },
+
   argTypes: {
-    color: { control: 'color' }
+    spacing: {
+      name: 'spacing',
+      description: 'Add spacing between icon',
+      type: { name: 'number', required: false }
+    },
+    variant: {
+      name: 'variant',
+      description: 'Change icon style',
+      control: 'select',
+      options: ['Linear', 'Outline', 'Broken', 'Bold', 'Bulk', 'TwoTone']
+    },
+    size: {
+      name: 'size',
+      description: 'Change icon style',
+      type: { name: 'number', required: false }
+    },
+    color: {
+      name: 'color',
+      description: 'Change icon color',
+      control: 'color'
+    },
+    direction: {
+      name: 'direction',
+      description: 'Change icon direction',
+      control: 'select',
+      options: ['row', 'column']
+    }
   }
 } as ComponentMeta<typeof ListIconLink>
 

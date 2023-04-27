@@ -13,7 +13,21 @@ export default {
     variant: 'Linear'
   },
   argTypes: {
-    color: { control: 'color' }
+    variant: {
+      name: 'variant',
+      description: 'Change icon style',
+      control: 'select',
+      options: ['Linear', 'Outline', 'Broken', 'Bold', 'Bulk', 'TwoTone']
+    },
+    size: {
+      name: 'size',
+      description: 'Change icon style',
+      type: { name: 'number', required: false }
+    },
+    color: {
+      description: 'Change icon color',
+      control: 'color'
+    }
   }
 } as ComponentMeta<typeof Icon>
 
