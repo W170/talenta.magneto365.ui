@@ -10,7 +10,8 @@ export default {
     Icon: Facebook,
     size: 20,
     color: '#2c2c2c',
-    variant: 'Linear'
+    variant: 'Linear',
+    hover: true
   },
   argTypes: {
     variant: {
@@ -27,6 +28,9 @@ export default {
     color: {
       description: 'Change icon color',
       control: 'color'
+    },
+    hover: {
+      description: 'You can disable the hover animation'
     }
   }
 } as ComponentMeta<typeof Icon>
@@ -34,6 +38,11 @@ export default {
 const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />
 
 export const Default = Template.bind({})
+
+export const DisabledHover = Template.bind({})
+DisabledHover.args = {
+  hover: false
+}
 
 export const IconBold = Template.bind({})
 IconBold.args = {
