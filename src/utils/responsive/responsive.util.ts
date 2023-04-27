@@ -5,7 +5,7 @@ export class ResponsiveManagement {
   private dim: Dimension
 
   constructor() {
-    const type = this.getType(window.innerHeight)
+    const type = this.getType(window.innerWidth)
     this.dim = {
       size: screenSize[type],
       type
