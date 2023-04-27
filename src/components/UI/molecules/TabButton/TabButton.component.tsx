@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyledTabButton } from './TapButton.styles'
 import { ITabButton } from './TabButton.interface'
-import Link from '../../atoms/Link/Link.component'
+import { Link } from '../../atoms/Link'
 
 const TabButton: React.FC<ITabButton> = ({ buttonText, textSize, buttonLink }) => {
   return (
