@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { IListIconLink } from './ListIconLink.interface'
 
-export const ListIconContainer = styled.div.attrs((props: { direction: string; spacing: number }) => props)`
+export const withStyles = (c: React.FC<IListIconLink>): React.FC<IListIconLink> => styled(c)`
   background-color: 'black';
   display: flex;
   flex-direction: ${(props) => props.direction};

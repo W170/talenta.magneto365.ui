@@ -12,4 +12,5 @@ export interface IListIconLink {
   variant: Variant
   size: string | number
   color: string
+  className: string
 }
