@@ -3,7 +3,7 @@ import { StyledTabButton } from './TapButton.styles'
 import { ITabButton } from './TabButton.interface'
 import { Link } from '../../atoms/Link'
 
-const TabButton: React.FC<ITabButton> = ({ buttonText, textSize, buttonLink }) => {
+const Component: React.FC<ITabButton> = ({ buttonText, textSize, buttonLink }) => {
   return (
     <StyledTabButton fontSize={textSize}>
       <Link href={buttonLink} label={buttonText} type="link" color="#14141C" />
@@ -11,4 +11,4 @@ const TabButton: React.FC<ITabButton> = ({ buttonText, textSize, buttonLink }) =
   )
 }
 
-export default TabButton
+export const TabButton = Component

@@ -1,6 +1,5 @@
-import React from 'react'
-import ListIconLink from './ListIconLink.component'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { ListIconLink } from './ListIconLink.component'
+import { StoryObj, Meta } from '@storybook/react'
 import { Facebook, Instagram, Link21 } from 'iconsax-react'
 
 const ListIcon = [
@@ -9,7 +8,7 @@ const ListIcon = [
   { Icon: Link21, url: '' }
 ]
 
-export default {
+const meta: Meta<typeof ListIconLink> = {
   title: 'Molecules/ListIconLink',
   component: ListIconLink,
   args: {
@@ -47,30 +46,39 @@ export default {
       description: 'Change icon direction',
       control: 'select',
       options: ['row', 'column']
+    },
+    listIcon: {
+      control: false
     }
   }
-} as ComponentMeta<typeof ListIconLink>
-
-const Template: ComponentStory<typeof ListIconLink> = (args) => <ListIconLink {...args} />
-
-export const Default = Template.bind({})
-
-export const Vertical = Template.bind({})
-Vertical.args = {
-  direction: 'column'
 }
 
-export const Spacing = Template.bind({})
-Spacing.args = {
-  spacing: 20
+export default meta
+
+type Story = StoryObj<typeof ListIconLink>
+
+export const Default: Story = {}
+
+export const Vertical: Story = {
+  args: {
+    direction: 'column'
+  }
 }
 
-export const SetColors = Template.bind({})
-SetColors.args = {
-  color: 'red'
+export const Spacing: Story = {
+  args: {
+    spacing: 20
+  }
 }
 
-export const ChangeStyle = Template.bind({})
-ChangeStyle.args = {
-  variant: 'TwoTone'
+export const SetColors: Story = {
+  args: {
+    color: 'red'
+  }
+}
+
+export const ChangeStyle: Story = {
+  args: {
+    variant: 'TwoTone'
+  }
 }

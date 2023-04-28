@@ -1,8 +1,7 @@
-import React from 'react'
-import TabButton from './TabButton.component'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { TabButton } from './TabButton.component'
+import { StoryObj, Meta } from '@storybook/react'
 
-export default {
+const meta: Meta<typeof TabButton> = {
   title: 'Molecules/Tab Button',
   component: TabButton,
   args: {
@@ -10,8 +9,10 @@ export default {
     buttonText: 'Hello World',
     textSize: '11px'
   }
-} as ComponentMeta<typeof TabButton>
+}
 
-const Template: ComponentStory<typeof TabButton> = (args) => <TabButton {...args} />
+export default meta
 
-export const Default = Template.bind({})
+type Story = StoryObj<typeof TabButton>
+
+export const Default: Story = {}

@@ -1,2 +1,2 @@
 export * from './TabButton.interface'
-export { default as TabButton } from './TabButton.component'
+export { TabButton } from './TabButton.component'

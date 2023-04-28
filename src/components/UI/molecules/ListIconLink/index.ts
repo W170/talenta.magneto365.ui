@@ -1,2 +1,2 @@
 export * from './ListIconLink.interface'
-export { default as ListIconLink } from './ListIconLink.component'
+export { ListIconLink } from './ListIconLink.component'
