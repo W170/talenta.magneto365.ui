@@ -10,7 +10,7 @@ const ListIcon = [
 ]
 
 export default {
-  title: 'Molecules/ListIconLink',
+  title: 'Molecules/List Icon Link',
   component: ListIconLink,
   args: {
     listIcon: ListIcon,
