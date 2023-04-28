@@ -1,6 +1,6 @@
 import { IMenuItem } from '../../atoms/MenuItem/MenuItem.interface'
 
-export interface MenuItemInfo extends IMenuItem {
+export interface MenuItemInfo extends Omit<IMenuItem, 'isActive'> {
   slug: string
 }
 

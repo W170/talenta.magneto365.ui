@@ -2,7 +2,7 @@ import React from 'react'
 import { MenuItem } from '../../atoms/MenuItem'
 import { IListMenuItems } from './ListMenuItems.interface'
 
-const ListMenuItems: React.FC<IListMenuItems> = ({ menuList = [], urlParam = '' }) => {
+const Component: React.FC<IListMenuItems> = ({ menuList = [], urlParam = '' }) => {
   return (
     <ul>
       {menuList.map(({ text, url, slug }, index: number) => (
@@ -12,4 +12,4 @@ const ListMenuItems: React.FC<IListMenuItems> = ({ menuList = [], urlParam = '' 
   )
 }
 
-export default ListMenuItems
+export const ListMenuItems = Component

@@ -1,10 +1,10 @@
-import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import ListMenuItems from './ListMenuItems.component'
+import { Meta, StoryObj } from '@storybook/react'
+import { ListMenuItems } from './ListMenuItems.component'
+import { MenuItemInfo } from './ListMenuItems.interface'
 
 const urlParams = 'empleos-por-empresa'
 
-const MenuList = [
+const MenuList: MenuItemInfo[] = [
   { text: 'Todos los empleos', url: '#', slug: 'todos-los-empleos' },
   { text: 'Empleos por ciudad', url: '#', slug: 'empleos-por-ciudad' },
   { text: 'Empleos por empresa', url: '#', slug: 'empleos-por-empresa' },
@@ -15,7 +15,7 @@ const MenuList = [
   { text: 'Articulos de interes', url: '#', slug: 'articulos-de-interes' }
 ]
 
-export default {
+const meta: Meta<typeof ListMenuItems> = {
   title: 'Molecules/List Menu Items',
   component: ListMenuItems,
   args: { menuList: MenuList, urlParam: urlParams },
@@ -29,8 +29,10 @@ export default {
       description: 'You must set the url parameter to validate the active status of the menu item.'
     }
   }
-} as ComponentMeta<typeof ListMenuItems>
+}
 
-const Template: ComponentStory<typeof ListMenuItems> = (args) => <ListMenuItems {...args} />
+export default meta
 
-export const Default = Template.bind({})
+type Story = StoryObj<typeof ListMenuItems>
+
+export const Default: Story = {}

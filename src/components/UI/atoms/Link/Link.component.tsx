@@ -2,10 +2,13 @@ import React from 'react'
 import { ILinkProps } from './Link.interface'
 import { withStyles } from './Link.styles'
 
-const Link: React.FC<ILinkProps> = ({ href, label, className }) => (
+const Component: React.FC<ILinkProps> = ({ href, label, className }) => (
   <a className={className} href={href}>
     {label}
   </a>
 )
 
-export default withStyles(Link)
+/**
+ * Atomic UI component for Link
+ */
+export const Link = withStyles(Component)

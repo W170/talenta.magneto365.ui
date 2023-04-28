@@ -1,10 +1,10 @@
-import React from 'react'
-import Link from './Link.component'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Link } from './Link.component'
+import { Meta, StoryObj } from '@storybook/react'
 
-export default {
+const meta: Meta<typeof Link> = {
   title: 'Atoms/Link',
   component: Link,
+  tags: ['autodocs'],
   args: {
     type: 'link',
     label: 'Hello world'
@@ -12,13 +12,16 @@ export default {
   argTypes: {
     color: { control: 'color' }
   }
-} as ComponentMeta<typeof Link>
+}
 
-const Template: ComponentStory<typeof Link> = (args) => <Link {...args} />
+export default meta
 
-export const Anchor = Template.bind({})
+type Story = StoryObj<typeof Link>
 
-export const Button = Template.bind({})
-Button.args = {
-  type: 'button'
+export const Anchor: Story = {}
+
+export const Button: Story = {
+  args: {
+    type: 'button'
+  }
 }

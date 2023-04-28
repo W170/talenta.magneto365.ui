@@ -1,1 +1,1 @@
-export { default as ListMenuItems } from './ListMenuItems.component'
+export { ListMenuItems } from './ListMenuItems.component'

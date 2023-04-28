@@ -3,7 +3,7 @@ import { Link21 } from 'iconsax-react'
 import { IconProps } from './Icon.interface'
 import { withStyles } from './Icon.styles'
 
-const IconItem: React.FC<IconProps> = ({
+const Component: React.FC<IconProps> = ({
   Icon = Link21,
   size = 20,
   color = '#2c2c2c',
@@ -13,4 +13,4 @@ const IconItem: React.FC<IconProps> = ({
   return <Icon className={className} variant={variant} size={size} color={color} />
 }
 
-export default withStyles(IconItem)
+export const IconItem = withStyles(Component)

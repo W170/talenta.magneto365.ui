@@ -4,13 +4,23 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@storybook/preset-scss'
+    '@storybook/preset-scss',
+    '@storybook/addon-mdx-gfm'
   ],
-  framework: '@storybook/react',
-  core: {
-    builder: '@storybook/builder-webpack5'
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {}
   },
+  babel: async (options) => ({
+    ...options,
+    plugins: []
+  }),
   features: {
-    previewMdx2: true
+    previewMdx2: true,
+    babelModeV7: true
+  },
+  docs: {
+    autodocs: true,
+    defaultName: 'Documentation'
   }
 }
