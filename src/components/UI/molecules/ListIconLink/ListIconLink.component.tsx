@@ -4,7 +4,7 @@ import { IconItem } from '../../atoms/Icon'
 
 import { withStyles } from './ListIconLink.styles'
 
-const ListIconLink: React.FC<IListIconLink> = ({ listIcon, variant, size, color, className, hover = true }) => {
+const Component: React.FC<IListIconLink> = ({ listIcon, variant, size, color, className, hover = true }) => {
   return (
     <div className={className}>
       {listIcon?.map(({ Icon, url }: IListIcon, index: number) => (
@@ -16,4 +16,4 @@ const ListIconLink: React.FC<IListIconLink> = ({ listIcon, variant, size, color,
   )
 }
 
-export default withStyles(ListIconLink)
+export const ListIconLink = withStyles(Component)

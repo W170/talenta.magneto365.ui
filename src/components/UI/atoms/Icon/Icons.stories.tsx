@@ -1,11 +1,10 @@
-import React from 'react'
-import Icon from './Icon.component'
+import { IconItem } from './Icon.component'
 import { Facebook } from 'iconsax-react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 
-export default {
+const meta: Meta<typeof IconItem> = {
   title: 'Atoms/Icon',
-  component: Icon,
+  component: IconItem,
   args: {
     Icon: Facebook,
     size: 20,
@@ -31,35 +30,45 @@ export default {
     },
     hover: {
       description: 'You can disable the hover animation'
+    },
+    Icon: {
+      control: false
     }
   }
-} as ComponentMeta<typeof Icon>
-
-const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />
-
-export const Default = Template.bind({})
-
-export const DisabledHover = Template.bind({})
-DisabledHover.args = {
-  hover: false
 }
 
-export const IconBold = Template.bind({})
-IconBold.args = {
-  variant: 'Bold'
+export default meta
+
+type Story = StoryObj<typeof IconItem>
+
+export const Default: Story = {}
+
+export const DisabledHover: Story = {
+  args: {
+    hover: false
+  }
 }
 
-export const IconBulk = Template.bind({})
-IconBulk.args = {
-  variant: 'Bulk'
+export const IconBold: Story = {
+  args: {
+    variant: 'Bold'
+  }
 }
 
-export const IconBroken = Template.bind({})
-IconBroken.args = {
-  variant: 'Broken'
+export const IconBulk: Story = {
+  args: {
+    variant: 'Bulk'
+  }
 }
 
-export const IconTwoTone = Template.bind({})
-IconTwoTone.args = {
-  variant: 'TwoTone'
+export const IconBroken: Story = {
+  args: {
+    variant: 'Broken'
+  }
+}
+
+export const IconTwoTone: Story = {
+  args: {
+    variant: 'TwoTone'
+  }
 }
