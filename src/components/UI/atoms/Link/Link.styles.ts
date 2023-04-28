@@ -1,4 +1,5 @@
-import styled, { css, StyledProps } from 'styled-components'
+import React from 'react'
+import styled, { css } from 'styled-components'
 import { ILinkProps, LinkType } from './Link.interface'
 
 export const getTypeStyles = ({ type = 'link' }: { type: LinkType }) => {
@@ -18,7 +19,7 @@ export const getTypeStyles = ({ type = 'link' }: { type: LinkType }) => {
   }
 }
 
-export const Styledlink = styled.a<StyledProps<ILinkProps>>`
+export const withStyles = (c: React.FC<ILinkProps>): React.FC<ILinkProps> => styled(c)`
   color: ${(props) => (props.color ? props.color : props.theme.colors.gray1)};
   text-decoration: none;
   &:hover {
