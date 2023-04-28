@@ -1,5 +1,41 @@
 export const lightTheme = {
   colors: {
+    primaryColors: {
+      white: '#FFFFFF',
+      green: '#70ECD4',
+      greenHover: '#22D3B7',
+      greenBorder: '#A3E9DB',
+      purple: '#4618D2',
+      purpleHover: '#33038D',
+      purpleBorder: '#B49FFF',
+      blue: '#090467',
+      blueHover: '#04004D',
+      blueBorder: '#B7B4FF'
+    },
+
+    disabledColors: {
+      gray: '#F4F4FA',
+      gray2: '#E9E9F6'
+    },
+
+    alertColors: {
+      red: '#E10000',
+      redHover: '#BE0000',
+      redBorder: '#FFC5C5',
+      yellow: '#FAAD14',
+      yellowHover: '#D99000',
+      yellowBorder: '#FFE6B5',
+      blue: '#0085DE',
+      blueHover: '#006FBA',
+      blueBorder: '#C3E7FF'
+    },
+
+    textColors: {
+      black: '#14141C',
+      disable: '#A3A3B5',
+      blue: '#090467'
+    },
+
     primary: '#00d461',
     contrastColor: '#13223a',
     primaryLight1: '#02bc4d',
@@ -12,7 +48,6 @@ export const lightTheme = {
     primary4: '#e3fce9',
     primary5: '#00d461',
     primary7: '#737373',
-
     positive: '#00b51e',
     warning: '#fcce32',
     information: '#0085de',
