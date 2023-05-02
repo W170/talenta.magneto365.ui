@@ -1,16 +1,9 @@
 import { ITabButton } from '../TabButton'
 
-export interface ITab {
+export interface ITab extends Pick<ITabButton, 'link' | 'text' | 'size'> {
   /**
-   * Href for the secondary section in tab
+   * Data type for the buttons
    */
-  href: string
-  /**
-   * Text for the secondary section in tab
-   */
-  label: string
-  /**
-   * Props for the children button
-   */
-  childrenProps: ITabButton
+  listButton?: ITabButton[]
+  className?: string
 }
