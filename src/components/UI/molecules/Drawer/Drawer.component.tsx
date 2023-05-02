@@ -16,7 +16,7 @@ const Component: React.FC<IDrawer> = ({ className, isOpen = false, children, onC
             </button>
             {children}
           </div>
-          {isOpen && <span onClick={onClose} />}
+          <span onClick={onClose} />
         </div>
       )}
     </DrawerPortal>
