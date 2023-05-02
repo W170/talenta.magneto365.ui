@@ -22,10 +22,12 @@ export const lightTheme = {
     $gray2: '#d1d1d1',
     $gray3: '#e4e4e4',
     $gray4: '#f7f7f7',
-    $gray5: '#f5f5f5',
+    $gray5: '#F4F4FA',
+    $gray6: '#f5f5f5',
     $grayText: '#808080',
     $grayTitle: '#363b3f',
-    $graySubtitle: '#717171'
+    $graySubtitle: '#717171',
+    $grayDark: '#A3A3B5'
   },
 
   weight: {
