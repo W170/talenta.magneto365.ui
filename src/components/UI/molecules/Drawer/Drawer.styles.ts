@@ -1,5 +1,14 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { IDrawer } from './Drawer.interface'
+import { screenSize } from '../../../../constants/responsive.constants'
+
+const toggleDrawer = ({ isOpen = false }) => {
+  if (isOpen) {
+    return css`
+      ${(props) => props.direction}: 0;
+    `
+  }
+}
 
 export const withStyles = (c: React.FC<IDrawer>): React.FC<IDrawer> => styled(c)`
   & > div {
@@ -8,13 +17,14 @@ export const withStyles = (c: React.FC<IDrawer>): React.FC<IDrawer> => styled(c)
     ${(props) => props.direction}: -100%;
     top: 0;
     position: fixed;
-    width: 370px;
+    width: 100vw;
+    @media (min-width: ${screenSize.md}px) {
+      width: 370px;
+    }
     height: 100vh;
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
     z-index: 99;
-    animation-duration: 0.5s;
-    animation-fill-mode: both;
-    animation-name: translate;
+    transition: all 0.6s ease-in-out;
     button {
       position: absolute;
       /* ${(props) => (props.direction === 'left' ? 'right' : 'left')}: 5%; */
@@ -23,8 +33,8 @@ export const withStyles = (c: React.FC<IDrawer>): React.FC<IDrawer> => styled(c)
       border: none;
       cursor: pointer;
     }
+    ${(props) => toggleDrawer(props)}
   }
-
   & > span {
     position: fixed;
     background-color: black;
@@ -34,14 +44,13 @@ export const withStyles = (c: React.FC<IDrawer>): React.FC<IDrawer> => styled(c)
     left: 0;
     z-index: 90;
     cursor: pointer;
-
+    -webkit-animation-duration: 0.5s;
     animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
   }
-
-  //ANIMATIONS
-
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -50,13 +59,12 @@ export const withStyles = (c: React.FC<IDrawer>): React.FC<IDrawer> => styled(c)
       opacity: 0.7;
     }
   }
-
-  @keyframes translate {
+  @-webkit-keyframes fadeIn {
     0% {
-      ${(props) => props.direction}: -100%;
+      opacity: 0;
     }
     100% {
-      ${(props) => props.direction}: 0;
+      opacity: 0.7;
     }
   }
 `

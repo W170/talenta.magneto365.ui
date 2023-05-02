@@ -5,20 +5,18 @@ import { IDrawer } from './Drawer.interface'
 import { withStyles } from './Drawer.styles'
 import { DrawerPortal } from './DrawerPortal'
 
-const Component: React.FC<IDrawer> = ({ className, isOpen = false, children, onClose }) => {
+const Component: React.FC<IDrawer> = ({ className, children, onClose, isOpen }) => {
   return (
     <DrawerPortal>
-      {isOpen && (
-        <div className={className}>
-          <div>
-            <button onClick={onClose}>
-              <IconItem Icon={CloseCircle} hover={false} />
-            </button>
-            {children}
-          </div>
-          <span onClick={onClose} />
+      <div className={className}>
+        <div>
+          <button onClick={onClose}>
+            <IconItem Icon={CloseCircle} hover={false} />
+          </button>
+          {children}
         </div>
-      )}
+        {isOpen && <span onClick={onClose} />}
+      </div>
     </DrawerPortal>
   )
 }
