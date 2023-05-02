@@ -4,7 +4,7 @@ import { screenSize } from '../../../../constants/responsive.constants'
 
 const toggleDrawer = ({ isOpen = false }) => {
   if (isOpen) {
-    return css`
+    return css<IDrawer>`
       ${(props) => props.direction}: 0;
     `
   }
