@@ -1,15 +1,27 @@
 export interface ITabButton {
   /**
-   * Href link for button redirection
+   * Href content
    */
   link: string
   /**
-   * Inside text for the button
+   * Text content
    */
   text: string
   /**
-   * Size of the inside text
+   * Text size
    */
   size: string
+  /**
+   * Button Color
+   */
+  color?: string
+  /**
+   * Text Color
+   */
+  textColor?: string
+  /**
+   * Font weight
+   */
+  textWeight?: string
   className?: string
 }
