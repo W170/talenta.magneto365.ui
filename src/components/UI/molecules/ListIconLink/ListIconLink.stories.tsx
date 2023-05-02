@@ -9,7 +9,7 @@ const ListIcon = [
 ]
 
 const meta: Meta<typeof ListIconLink> = {
-  title: 'Molecules/ListIconLink',
+  title: 'Molecules/List Icon Link',
   component: ListIconLink,
   args: {
     listIcon: ListIcon,
