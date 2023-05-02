@@ -23,5 +23,9 @@ export interface ITabButton {
    * Font weight
    */
   textWeight?: string
+  /**
+   * Shadow for the button box
+   */
+  boxShadow?: boolean
   className?: string
 }
