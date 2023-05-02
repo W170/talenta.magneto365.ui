@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { ITabButton } from './TabButton.interface'
 
 export const withStyles = (c: React.FC<ITabButton>): React.FC<ITabButton> => styled(c)`
@@ -10,7 +10,11 @@ export const withStyles = (c: React.FC<ITabButton>): React.FC<ITabButton> => sty
   padding: 2px 8px;
   background: ${(props) => props.color};
   border-radius: 6px;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+  ${(props) =>
+    props.boxShadow &&
+    css`
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+    `}
 
   a {
     color: ${(props) => props.textColor};
