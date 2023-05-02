@@ -1,17 +1,23 @@
 import React from 'react'
-import { Link } from '../../atoms/Link'
-import { TabButton } from '../TabButton'
+import { TabButton, ITabButton } from '../TabButton'
 import { ITab } from './Tab.interface'
-import { StyledInsideTab, StyledTabContainer } from './Tab.styles'
+import { withStyles } from './Tab.styles'
 
-const Component: React.FC<ITab> = ({ href, label, childrenProps }) => {
+const Component: React.FC<ITab> = ({ listButton, className }) => {
   return (
-    <StyledTabContainer>
-      <TabButton link={childrenProps.link} text={childrenProps.text} size={childrenProps.size} />
-      <StyledInsideTab>
-        <Link type="link" href={href} label={label} />
-      </StyledInsideTab>
-    </StyledTabContainer>
+    <div className={className}>
+      {listButton?.map(({ link, text, size, color, textColor, textWeight }: ITabButton, index: number) => (
+        <TabButton
+          link={link}
+          text={text}
+          size={size}
+          color={color}
+          textColor={textColor}
+          textWeight={textWeight}
+          key={index}
+        />
+      ))}
+    </div>
   )
 }
 
@@ -19,4 +25,4 @@ const Component: React.FC<ITab> = ({ href, label, childrenProps }) => {
  * Molecule UI for Tab
  */
 
-export const Tab = Component
+export const Tab = withStyles(Component)
