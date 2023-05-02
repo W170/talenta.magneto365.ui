@@ -19,3 +19,7 @@ export interface IDrawer {
    */
   direction: Direction
 }
+
+export interface IDrawerPortal {
+  children: false | JSX.Element | JSX.Element[]
+}
