@@ -1,17 +1,16 @@
-import { Tab } from './Tab.component'
 import { Meta, StoryObj } from '@storybook/react'
+import { Tab } from './Tab.component'
+
+const ListButton = [
+  { link: '#', text: 'Busco empleo', size: '11px', color: '#FFF', textColor: '#000' },
+  { link: '#', text: 'Soy empresa', size: '11px', color: '#F4F4FA', textColor: '#A3A3B5' }
+]
 
 const meta: Meta<typeof Tab> = {
   title: 'Molecules/Tab',
   component: Tab,
   args: {
-    href: '#',
-    label: 'Soy Empresa',
-    childrenProps: {
-      link: '#',
-      size: '11px',
-      text: 'Busco Empleo'
-    }
+    listButton: ListButton
   }
 }
 
