@@ -5,9 +5,9 @@ const meta: Meta<typeof TabButton> = {
   title: 'Molecules/Tab Button',
   component: TabButton,
   args: {
-    buttonLink: '#',
-    buttonText: 'Hello World',
-    textSize: '11px'
+    link: '#',
+    text: 'Busco Empleo',
+    size: '11px'
   }
 }
 
