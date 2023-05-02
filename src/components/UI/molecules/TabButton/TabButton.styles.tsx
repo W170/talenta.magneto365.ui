@@ -8,13 +8,13 @@ export const withStyles = (c: React.FC<ITabButton>): React.FC<ITabButton> => sty
   width: 96px;
   height: 18px;
   padding: 2px 8px;
-  background: ${(props) => props.theme.colors.white};
+  background: ${(props) => props.color};
   border-radius: 6px;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
 
   a {
-    color: ${(props) => props.theme.colors.black};
-    font-weight: 800;
+    color: ${(props) => props.textColor};
+    font-weight: ${(props) => props.textWeight};
     font-size: ${(props) => props.size};
     line-height: 14px;
 
