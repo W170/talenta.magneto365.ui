@@ -33,13 +33,13 @@ export class ResponsiveManagement {
   }
 
   private getType(width: number): DimType {
-    if (screenSize.xxl <= width) return 'xxl'
-    if (screenSize.hd <= width) return 'hd'
-    if (screenSize.xl <= width) return 'xl'
-    if (screenSize.lg <= width) return 'lg'
-    if (screenSize.md <= width) return 'md'
-    if (screenSize.sm <= width) return 'sm'
-    return 'xs'
+    if (width < screenSize.sm) return 'xs'
+    if (width < screenSize.md) return 'sm'
+    if (width < screenSize.lg) return 'md'
+    if (width < screenSize.xl) return 'lg'
+    if (width < screenSize.hd) return 'xl'
+    if (width < screenSize.xxl) return 'hd'
+    return 'xxl'
   }
 
   public getDim() {

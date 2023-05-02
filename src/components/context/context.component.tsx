@@ -9,3 +9,12 @@ export const ContextAppProvider: React.FC = ({ children }) => {
     </EventDispatcherContextProvider>
   )
 }
+
+export const withContextAppProvider = <T,>(Component: React.FC<T>): React.FC<T> => {
+  const WithContextAppProvider: React.FC<T> = (props) => (
+    <ContextAppProvider>
+      <Component {...props} />
+    </ContextAppProvider>
+  )
+  return WithContextAppProvider
+}
