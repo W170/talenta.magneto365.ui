@@ -1,14 +1,18 @@
 import React from 'react'
-import { StyledTabButton } from './TapButton.styles'
 import { ITabButton } from './TabButton.interface'
+import { withStyles } from './TabButton.styles'
 import { Link } from '../../atoms/Link'
 
-const Component: React.FC<ITabButton> = ({ buttonText, textSize, buttonLink }) => {
+const Component: React.FC<ITabButton> = ({ link, text, className }) => {
   return (
-    <StyledTabButton fontSize={textSize}>
-      <Link href={buttonLink} label={buttonText} type="link" color="#14141C" />
-    </StyledTabButton>
+    <div className={className}>
+      <Link href={link} label={text} type="link" />
+    </div>
   )
 }
 
-export const TabButton = Component
+/**
+ * Molecule UI component for Tab Button
+ */
+
+export const TabButton = withStyles(Component)
