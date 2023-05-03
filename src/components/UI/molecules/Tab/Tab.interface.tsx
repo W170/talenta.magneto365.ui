@@ -1,6 +1,6 @@
 import { ITabButton } from '../TabButton'
 
-export interface ITab extends Pick<ITabButton, 'link' | 'text' | 'size'> {
+export interface ITab {
   /**
    * Data type for the buttons
    */
