@@ -3,9 +3,9 @@ import { IconItem } from '../Icon'
 import { IMainButton } from './MainButton.interface'
 import { withStyles } from './MainButton.styles'
 
-const Component: React.FC<IMainButton> = ({ className, btnSize, childrenProps, buttonText }) => {
+const Component: React.FC<IMainButton> = ({ className, btnSize = 'medium', childrenProps, buttonText, onClick }) => {
   return (
-    <button type={'submit'} className={`${className} ${btnSize}`}>
+    <button type={'submit'} className={`${className} ${btnSize}`} onClick={onClick}>
       <IconItem {...childrenProps} />
       <p>{buttonText}</p>
     </button>

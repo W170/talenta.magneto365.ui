@@ -1,5 +1,7 @@
 import { IconProps } from '../Icon'
 
+type ButtonSizes = 'small' | 'medium' | 'large'
+
 export interface IMainButton {
   /**
    * Children Props
@@ -20,7 +22,7 @@ export interface IMainButton {
   /**
    * How large should the button be?
    */
-  btnSize?: 'small' | 'medium' | 'large'
+  btnSize?: ButtonSizes
   /**
    * Optional click handler
    */
