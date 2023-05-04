@@ -19,7 +19,7 @@ export const withStyles = (c: React.FC<IDrawer>): React.FC<IDrawer> => styled(c)
     position: fixed;
     width: 100vw;
     @media (min-width: ${screenSize.md}px) {
-      width: 370px;
+      width: ${(props) => (props.width ? props.width : 370)}px;
     }
     height: 100vh;
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
