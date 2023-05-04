@@ -4,13 +4,14 @@ import { Meta, StoryObj } from '@storybook/react'
 const meta: Meta<typeof Link> = {
   title: 'Atoms/Link',
   component: Link,
-  tags: ['autodocs'],
   args: {
     type: 'link',
-    label: 'Hello world'
+    label: 'Hello world',
+    colorHover: '#14141C',
+    color: '#14141C'
   },
   argTypes: {
-    color: { control: 'color' }
+    colorHover: { control: 'color' }
   }
 }
 
