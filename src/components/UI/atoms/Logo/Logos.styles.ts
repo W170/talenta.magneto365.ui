@@ -14,7 +14,5 @@ const logoSize = ({ isoView }: ILogoComponent) => {
 }
 
 export const withStyles = (c: React.FC<ILogoComponent>): React.FC<ILogoComponent> => styled(c)`
-  img {
-    width: ${(props) => logoSize(props)};
-  }
+  width: ${(props) => logoSize(props)};
 `
