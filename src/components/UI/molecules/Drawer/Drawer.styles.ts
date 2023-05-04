@@ -28,7 +28,7 @@ export const withStyles = (c: React.FC<IDrawer>): React.FC<IDrawer> => styled(c)
     button {
       position: absolute;
       /* ${(props) => (props.direction === 'left' ? 'right' : 'left')}: 5%; */
-      right: 5%;
+      right: 2%;
       background: none;
       border: none;
       cursor: pointer;
