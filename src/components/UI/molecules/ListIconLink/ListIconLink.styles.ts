@@ -5,5 +5,5 @@ export const withStyles = (c: React.FC<IListIconLink>): React.FC<IListIconLink> 
   background-color: 'black';
   display: flex;
   flex-direction: ${(props) => props.direction};
-  gap: ${(props) => props.spacing}px;
+  gap: ${(props) => (props.spacing ? props.spacing : 7)}px;
 `

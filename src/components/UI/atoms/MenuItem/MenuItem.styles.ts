@@ -50,6 +50,7 @@ export const withStyles = (c: React.FC<IMenuItem>): React.FC<IMenuItem> => style
     position: absolute;
     color: ${(props) => props.theme.colors.textColors.black};
     transition: all 0.3s ease-in-out;
+    font-size: 14px;
   }
 
   ${(props) => isActiveLink(props)}
