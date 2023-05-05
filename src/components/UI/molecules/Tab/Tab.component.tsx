@@ -6,7 +6,7 @@ import { withStyles } from './Tab.styles'
 const Component: React.FC<ITab> = ({ listButton, className }) => {
   return (
     <div className={className}>
-      {listButton?.map(({ link, text, size, color, textColor, textWeight }: ITabButton, index: number) => (
+      {listButton?.map(({ link, text, size, color, textColor, textWeight, boxShadow }: ITabButton, index: number) => (
         <TabButton
           link={link}
           text={text}
@@ -15,6 +15,7 @@ const Component: React.FC<ITab> = ({ listButton, className }) => {
           textColor={textColor}
           textWeight={textWeight}
           key={index}
+          boxShadow={boxShadow}
         />
       ))}
     </div>
