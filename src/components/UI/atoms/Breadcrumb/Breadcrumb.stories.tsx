@@ -18,6 +18,6 @@ export const Default: Story = {}
 
 export const ActiveBreadcrum: Story = {
   args: {
-    IsActive: true
+    isActive: true
   }
 }
