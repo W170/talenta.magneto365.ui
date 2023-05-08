@@ -1,5 +1,5 @@
 import React from 'react'
-import { CloseCircle } from 'iconsax-react'
+import { Add } from 'iconsax-react'
 import { IconItem } from '../../atoms/Icon'
 import { IDrawer } from './Drawer.interface'
 import { withStyles } from './Drawer.styles'
@@ -9,12 +9,12 @@ const Component: React.FC<IDrawer> = ({ className, children, onClose, isOpen }) 
   return (
     <DrawerPortal>
       <div className={className}>
-        <div>
-          <button onClick={onClose}>
-            <IconItem Icon={CloseCircle} hover={false} />
+        <aside>
+          <button className="btnClose-MG-UI" onClick={onClose}>
+            <IconItem Icon={Add} hover={false} />
           </button>
           {children}
-        </div>
+        </aside>
         {isOpen && <span onClick={onClose} />}
       </div>
     </DrawerPortal>

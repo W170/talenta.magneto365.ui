@@ -1,21 +1,32 @@
 import React from 'react'
 import { Drawer } from '../../molecules/Drawer'
-import { Tab } from '../../molecules/Tab/Tab.component'
 import { IDrawerOrganism } from './DrawerOrganism.interface'
-import { withStyles } from './DrawerOrganism.styles'
+import { ActiosContainer, MenuContainer, withStyles } from './DrawerOrganism.styles'
 import { ListMenuItems } from '../../molecules/ListMenuItems'
 import { ListIconLink } from '../../molecules/ListIconLink'
+import { HeaderDrawerTabs } from '../../molecules/HeaderDrawerTabs/HeaderDrawerTabs.components'
+import { MainButton } from '../../atoms/MainButton'
 
-const Component: React.FC<IDrawerOrganism> = ({ className, tabButton, menuList, urlParam, listIcon }) => {
+const Component: React.FC<IDrawerOrganism> = ({
+  className,
+  listIcon,
+  headerProps,
+  buttonsProps,
+  buttonsProps2,
+  listMenuProps
+}) => {
   return (
     <div className={className}>
       <Drawer direction="left" isOpen={true} onClose={() => ({})}>
-        <Tab listButton={tabButton} />
-        <ListMenuItems menuList={menuList} urlParam={urlParam} />
-        <hr />
-        <p>Botones Aqui</p>
-        <hr />
-        <ListIconLink listIcon={listIcon} />
+        <HeaderDrawerTabs {...headerProps} />
+        <MenuContainer>
+          <ListMenuItems {...listMenuProps} />
+        </MenuContainer>
+        <ActiosContainer>
+          <MainButton btnSize="full" {...buttonsProps} />
+          <MainButton btnSize="full" {...buttonsProps2} />
+          <ListIconLink listIcon={listIcon} />
+        </ActiosContainer>
       </Drawer>
     </div>
   )
