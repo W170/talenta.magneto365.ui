@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { IMenuItem } from './MenuItem.interface'
+import { screenSize } from '../../../../constants/responsive.constants'
 
 const isActiveLink = ({ isActive = false }: IMenuItem) => {
   if (isActive) {
@@ -24,10 +25,15 @@ export const withStyles = (c: React.FC<IMenuItem>): React.FC<IMenuItem> => style
   align-items: center;
   position: relative;
   border-radius: 12px;
-  height: 40px;
-  padding: 2px;
   transition: all 0.3s ease-in-out;
-  margin-bottom: 10px;
+  height: 30px;
+  padding: 2px;
+  margin-bottom: 5px;
+  @media (min-width: ${screenSize.xs}px) {
+    height: 40px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
 
   &:hover {
     cursor: pointer;
