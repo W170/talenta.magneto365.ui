@@ -1,6 +1,6 @@
 import { IconProps } from '../Icon'
 
-type ButtonSizes = 'small' | 'medium' | 'large'
+type ButtonSizes = 'small' | 'medium' | 'large' | 'full'
 
 export interface IMainButton {
   /**
