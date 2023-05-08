@@ -1,8 +1,8 @@
 import React from 'react'
-import { IBreadcrum } from './Breadcrum.interface'
-import { withStyles } from './Breadcrum.styles'
+import { IBreadcrumb } from './Breadcrumb.interface'
+import { withStyles } from './Breadcrumb.styles'
 
-const Component: React.FC<IBreadcrum> = ({ className, url = '#', label }) => {
+const Component: React.FC<IBreadcrumb> = ({ className, url = '#', label }) => {
   return (
     <div className={className}>
       <a href={url}>
@@ -15,4 +15,4 @@ const Component: React.FC<IBreadcrum> = ({ className, url = '#', label }) => {
 /**
  * Atom UI of breadcrum
  */
-export const Breadcrum = withStyles(Component)
+export const Breadcrumb = withStyles(Component)
