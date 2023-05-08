@@ -10,11 +10,11 @@ export interface ILogoComponent {
   /**
    * Put here the image of the isologo to be rendered (IS NOT REQUIRED)
    */
-  isoLogo?: string
+  isoType?: string
   /**
    * Put here text alt  to seo
    */
-  alt: string
+  alt?: string
   className?: string
   /**
    * Put here number size to logo

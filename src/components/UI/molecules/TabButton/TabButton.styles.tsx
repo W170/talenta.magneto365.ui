@@ -10,13 +10,14 @@ export const withStyles = (c: React.FC<ITabButton>): React.FC<ITabButton> => sty
   padding: 2px 8px;
   background: ${(props) => props.color};
   border-radius: 6px;
-  ${(props) =>
-    props.boxShadow &&
+  ${({ boxShadow }) =>
+    boxShadow &&
     css`
       box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
     `}
 
-  a {
+  p {
+    margin: 0%;
     color: ${(props) => props.textColor};
     font-weight: ${(props) => props.textWeight};
     font-size: ${(props) => props.size};
