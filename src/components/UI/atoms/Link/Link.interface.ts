@@ -1,12 +1,19 @@
+import { Icon } from 'iconsax-react'
+
 export type LinkType = 'button' | 'link'
 
 export interface ILinkProps {
+  Icon?: Icon
   /**
    * set the font color in the link.
    */
   color?: string
   /**
-   * color when hover event is dispatched in the component.
+   * Button color
+   */
+  btnColor?: string
+  /**
+   * Hover Color
    */
   colorHover?: string
   /**
