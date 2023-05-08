@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 import { IBreadcrumb } from './Breadcrumb.interface'
 
-const isActiveBreadcrumb = ({ IsActive = false }: IBreadcrumb) => {
-  if (IsActive) {
+const isActiveBreadcrumb = ({ isActive = false }: IBreadcrumb) => {
+  if (isActive) {
     return css`
       p {
         font-weight: ${(props) => props.theme.weight.bold};

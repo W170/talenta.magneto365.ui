@@ -1,8 +1,8 @@
-import { Breadcrumb } from './Breadcrum.component'
+import { Breadcrumb } from './Breadcrumb.component'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Breadcrumb> = {
-  title: 'Atoms/Breadcrum',
+  title: 'Atoms/Breadcrumb',
   component: Breadcrumb,
   args: {
     url: 'jobs/vacants',

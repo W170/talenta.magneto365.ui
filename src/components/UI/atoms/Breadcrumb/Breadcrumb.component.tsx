@@ -13,6 +13,6 @@ const Component: React.FC<IBreadcrumb> = ({ className, url = '#', label }) => {
 }
 
 /**
- * Atom UI of breadcrum
+ * Atom UI of breadcrumb
  */
 export const Breadcrumb = withStyles(Component)
