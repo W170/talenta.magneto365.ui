@@ -7,7 +7,7 @@ const Component: React.FC<IMainButton> = ({ className, btnSize = 'medium', child
   return (
     <button type={'submit'} className={`${className} ${btnSize}`} onClick={onClick}>
       <IconItem {...childrenProps} />
-      <p>{buttonText}</p>
+      {buttonText && <p>{buttonText}</p>}
     </button>
   )
 }

@@ -10,7 +10,7 @@ export interface IMainButton {
   /**
    * Text content of the button
    */
-  buttonText: string
+  buttonText?: string
   /**
    * Button color
    */
