@@ -3,12 +3,21 @@ import { IconItem } from '../../atoms/Icon'
 import { IMenuIcon } from './MenuIcon.interface'
 import { withStyles } from './MenuIcon.styles'
 
-const Component: React.FC<IMenuIcon> = ({ text, Icon, className, url }) => {
+const Component: React.FC<IMenuIcon> = ({ text, Icon, className, url, type = 'link', onClick }) => {
   return (
-    <a href={url} className={className}>
-      <IconItem size={20} hover={false} Icon={Icon} />
-      <p>{text}</p>
-    </a>
+    <>
+      {type === 'link' ? (
+        <a href={url} className={className}>
+          <IconItem size={20} hover={false} Icon={Icon} />
+          <p>{text}</p>
+        </a>
+      ) : (
+        <button onClick={onClick} className={className}>
+          <IconItem size={20} hover={false} Icon={Icon} />
+          <p>{text}</p>
+        </button>
+      )}
+    </>
   )
 }
 

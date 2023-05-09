@@ -14,6 +14,9 @@ const isActiveLink = ({ isActive = false }: IMenuIcon) => {
 }
 
 export const withStyles = (c: React.FC<IMenuIcon>): React.FC<IMenuIcon> => styled(c)`
+  background: none;
+  border: none;
+  width: 100%;
   display: flex;
   align-items: center;
   gap: ${(props) => (props.spacing ? props.spacing : 15)}px;
@@ -29,5 +32,6 @@ export const withStyles = (c: React.FC<IMenuIcon>): React.FC<IMenuIcon> => style
   &:hover {
     background-color: ${(props) => props.theme.colors.disabledColors.gray};
   }
+
   ${(props) => isActiveLink(props)}
 `
