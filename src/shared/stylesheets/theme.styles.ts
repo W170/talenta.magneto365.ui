@@ -15,7 +15,8 @@ export const lightTheme = {
 
     disabledColors: {
       gray: '#F4F4FA',
-      gray2: '#E9E9F6'
+      gray2: '#E9E9F6',
+      gray3: '#9e9e9e'
     },
 
     alertColors: {
