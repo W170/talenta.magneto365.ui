@@ -14,4 +14,7 @@ const hover = ({ hover = true }) => {
 
 export const withStyles = (c: React.FC<IconProps>): React.FC<IconProps> => styled(c)`
   ${(props) => hover(props)}
+  width: ${(props) => (props.size ? props.size : 25)}px;
+  height: auto;
+  color: ${(props) => (props.color ? props.color : 'black')};
 `
