@@ -1,33 +1,39 @@
-import { Icon } from 'iconsax-react'
+import { IconProps } from '../Icon'
 
 export type LinkType = 'button' | 'link'
 
 export interface ILinkProps {
-  Icon?: Icon
   /**
-   * set the font color in the link.
+   * Props for the Icon
    */
-  color?: string
+  iconProps?: IconProps
   /**
-   * Button color
+   * Sets text color
    */
-  btnColor?: string
+  textColor?: string
   /**
-   * Hover Color
+   * Sets button color
    */
-  colorHover?: string
+  buttonColor?: string
   /**
-   * color when :visited pseudo-class is applied.
+   * Sets hover color
    */
-  colorVisited?: string
+  hoverColor?: string
   /**
-   * change the base component style.
+   * Sets visited color
+   */
+  visitedColor?: string
+  /**
+   * Sets link type
    */
   type: LinkType
+  /**
+   *  Sets href for link
+   */
   href: string
   /**
-   * text displayed in the component
+   * Sets inside text for link
    */
-  label: string
+  text: string
   className?: string
 }

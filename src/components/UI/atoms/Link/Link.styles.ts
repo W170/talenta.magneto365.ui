@@ -7,7 +7,7 @@ export const getTypeStyles = ({ type = 'link' }: { type: LinkType }) => {
     case 'link':
       return css<ILinkProps>`
         :visited {
-          color: ${(props) => props.colorVisited};
+          color: ${(props) => props.visitedColor};
         }
       `
     case 'button':
@@ -20,8 +20,8 @@ export const getTypeStyles = ({ type = 'link' }: { type: LinkType }) => {
         padding: 10px 20px;
         border: none;
         border-radius: 50px;
-        background-color: ${(props) => props.btnColor};
-        color: ${(props) => props.color};
+        background-color: ${(props) => props.buttonColor};
+        color: ${(props) => props.textColor};
 
         p {
           font-style: normal;
@@ -36,7 +36,7 @@ export const getTypeStyles = ({ type = 'link' }: { type: LinkType }) => {
         }
 
         :visited {
-          color: ${(props) => props.color};
+          color: ${(props) => props.textColor};
         }
       `
 
@@ -46,11 +46,11 @@ export const getTypeStyles = ({ type = 'link' }: { type: LinkType }) => {
 }
 
 export const withStyles = (c: React.FC<ILinkProps>): React.FC<ILinkProps> => styled(c)`
-  color: ${(props) => (props.color ? props.color : props.theme.colors.gray1)};
+  color: ${(props) => (props.textColor ? props.textColor : props.theme.colors.gray1)};
   text-decoration: none;
   &:hover {
     cursor: pointer;
-    color: ${(props) => (props.colorHover ? props.colorHover : props.theme.colors.primary)};
+    color: ${(props) => (props.hoverColor ? props.hoverColor : props.theme.colors.primary)};
   }
 
   ${(props) => getTypeStyles(props)}
