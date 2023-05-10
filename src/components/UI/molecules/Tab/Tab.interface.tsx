@@ -2,8 +2,12 @@ import { ITabButton } from '../TabButton'
 
 export interface ITab {
   /**
-   * Data type for the buttons
+   * Sets the array that contains the Tab Buttons
    */
-  listButton?: ITabButton[]
+  tabButtonList?: ITabButton[]
+  /**
+   * Props for the Tab Button
+   */
+  tabButtonProps: ITabButton
   className?: string
 }
