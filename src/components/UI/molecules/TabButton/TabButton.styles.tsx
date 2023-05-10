@@ -8,8 +8,9 @@ export const withStyles = (c: React.FC<ITabButton>): React.FC<ITabButton> => sty
   width: 96px;
   height: 18px;
   padding: 2px 8px;
-  background: ${(props) => props.color};
   border-radius: 6px;
+  background: ${(props) => props.tabButtonColor};
+
   ${({ boxShadow }) =>
     boxShadow &&
     css`
@@ -18,9 +19,8 @@ export const withStyles = (c: React.FC<ITabButton>): React.FC<ITabButton> => sty
 
   p {
     margin: 0%;
-    color: ${(props) => props.textColor};
-    font-weight: ${(props) => props.textWeight};
-    font-size: ${(props) => props.size};
+    font-weight: ${(props) => props.tabButtonTextWeight};
+    font-size: ${(props) => props.tabButtonTextSize};
     line-height: 14px;
 
     :hover {
