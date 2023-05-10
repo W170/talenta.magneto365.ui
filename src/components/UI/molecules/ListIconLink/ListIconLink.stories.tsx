@@ -15,7 +15,6 @@ const meta: Meta<typeof ListIconLink> = {
     listIcon: ListIcon,
     direction: 'row',
     spacing: 5,
-    variant: 'Linear',
     size: 20
   },
 
@@ -25,12 +24,7 @@ const meta: Meta<typeof ListIconLink> = {
       description: 'Add spacing between icon',
       type: { name: 'number', required: false }
     },
-    variant: {
-      name: 'variant',
-      description: 'Change icon style',
-      control: 'select',
-      options: ['Linear', 'Outline', 'Broken', 'Bold', 'Bulk', 'TwoTone']
-    },
+
     size: {
       name: 'size',
       description: 'Change icon style',
@@ -74,11 +68,5 @@ export const Spacing: Story = {
 export const SetColors: Story = {
   args: {
     color: 'red'
-  }
-}
-
-export const ChangeStyle: Story = {
-  args: {
-    variant: 'TwoTone'
   }
 }
