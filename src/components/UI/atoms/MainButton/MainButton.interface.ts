@@ -1,31 +1,36 @@
 import { IconProps } from '../Icon'
 
 type ButtonSizes = 'small' | 'medium' | 'large' | 'full'
+type ButtonType = 'submit' | 'reset' | 'button'
 
 export interface IMainButton {
   /**
-   * Children Props
+   * Sets button type
    */
-  childrenProps: IconProps
+  buttonType: ButtonType
   /**
-   * Text content of the button
+   * Sets the button size
    */
-  buttonText?: string
-  /**
-   * Button color
-   */
-  btnColor?: string
-  /**
-   * Text Color
-   */
-  textColor?: string
-  /**
-   * How large should the button be?
-   */
-  btnSize?: ButtonSizes
+  buttonSize?: ButtonSizes
   /**
    * Optional click handler
    */
   onClick?: () => void
+  /**
+   * Props for the Icon Atom
+   */
+  iconProps: IconProps
+  /**
+   * Sets the text inside button
+   */
+  buttonText?: string
+  /**
+   * Setx the button color
+   */
+  buttonColor?: string
+  /**
+   * Sets the text color
+   */
+  textColor?: string
   className?: string
 }
