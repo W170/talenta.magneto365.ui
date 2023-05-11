@@ -9,7 +9,7 @@ const Component: React.FC<IPopover> = ({ children, className, content, show }) =
 
   useEffect(() => {
     const children = containerChildren.current?.firstChild as HTMLElement
-    const widthChildren = children?.clientWidth + 4
+    const widthChildren: number = children?.clientWidth + 4
     const heightChildren: number = children?.clientHeight + 4
     setChildrenHeight(heightChildren)
     setChildrenWidth(widthChildren)
