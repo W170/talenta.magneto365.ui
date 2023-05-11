@@ -3,7 +3,7 @@ import { ISearchbar } from './Searchbar.interface'
 
 export const withStyles = (c: React.FC<ISearchbar>): React.FC<ISearchbar> => styled(c)`
   display: flex;
-  width: 31.5rem;
+  width: 24.25rem;
   height: 2.25rem;
   border-radius: 8px;
   background-color: ${(props) => props.theme.colors.$gray5};
