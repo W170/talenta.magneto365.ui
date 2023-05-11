@@ -8,8 +8,9 @@ const meta: Meta<typeof Searchbar> = {
   args: {
     placeholder: 'Busca empleos por cargo o profesion',
     searchProps: {
+      buttonType: 'submit',
       buttonText: '',
-      childrenProps: {
+      iconProps: {
         Icon: SearchNormal1,
         hover: false,
         color: '#000096',
@@ -18,7 +19,8 @@ const meta: Meta<typeof Searchbar> = {
     },
     removeProps: {
       buttonText: '',
-      childrenProps: {
+      buttonType: 'button',
+      iconProps: {
         Icon: CloseCircle,
         hover: false,
         color: '#14141C',

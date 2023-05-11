@@ -1,31 +1,25 @@
+import { ILinkProps } from '../../atoms/Link'
+
 export interface ITabButton {
   /**
-   * Href content
-   */
-  link: string
-  /**
-   * Text content
-   */
-  text: string
-  /**
-   * Text size
-   */
-  size: string
-  /**
-   * Button Color
-   */
-  color?: string
-  /**
-   * Text Color
-   */
-  textColor?: string
-  /**
-   * Font weight
-   */
-  textWeight?: string
-  /**
-   * Shadow for the button box
+   * Sets a box shadow property for the Tab Button
    */
   boxShadow?: boolean
+  /**
+   * Props for the link Atom
+   */
+  linkProps: ILinkProps
+  /**
+   * Sets the tab button color
+   */
+  tabButtonColor?: string
+  /**
+   * Sets the font size for the text
+   */
+  tabButtonTextSize: string
+  /**
+   * Sets the font weigth for the text
+   */
+  tabButtonTextWeight?: string
   className?: string
 }

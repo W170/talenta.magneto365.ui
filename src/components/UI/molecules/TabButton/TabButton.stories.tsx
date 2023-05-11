@@ -5,12 +5,16 @@ const meta: Meta<typeof TabButton> = {
   title: 'Molecules/Tab Button',
   component: TabButton,
   args: {
-    link: '#',
-    text: 'Busco Empleo',
-    size: '11px',
-    color: '#FFF',
-    textColor: '#000',
-    boxShadow: true
+    linkProps: {
+      href: '#',
+      text: 'Busco Empleo',
+      type: 'link',
+      buttonColor: '#FFF',
+      textColor: '#000'
+    },
+    boxShadow: true,
+    tabButtonTextSize: '11px',
+    tabButtonTextWeight: '400'
   }
 }
 
@@ -21,5 +25,16 @@ type Story = StoryObj<typeof TabButton>
 export const Default: Story = {}
 
 export const Untoggle: Story = {
-  args: { ...Default.args, text: 'Soy empresa', color: '#F4F4FA', textColor: '#A3A3B5', boxShadow: false }
+  args: {
+    linkProps: {
+      href: '#',
+      text: 'Soy empresa',
+      type: 'link',
+      textColor: '#A3A3B5'
+    },
+    tabButtonColor: '#F4F4FA',
+    tabButtonTextSize: '11px',
+    tabButtonTextWeight: '400',
+    boxShadow: false
+  }
 }

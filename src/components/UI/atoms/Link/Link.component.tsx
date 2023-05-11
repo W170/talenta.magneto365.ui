@@ -3,10 +3,10 @@ import { ILinkProps } from './Link.interface'
 import { withStyles } from './Link.styles'
 import { IconItem } from '../Icon'
 
-const Component: React.FC<ILinkProps> = ({ href, label, className, Icon }) => (
+const Component: React.FC<ILinkProps> = ({ href, text, iconProps, className }) => (
   <a className={className} href={href}>
-    {Icon && <IconItem Icon={Icon} hover={true} />}
-    <p>{label}</p>
+    {iconProps && <IconItem {...iconProps} />}
+    <p>{text}</p>
   </a>
 )
 

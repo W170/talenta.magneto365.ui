@@ -7,12 +7,14 @@ export const withStyles = (c: React.FC<IMainButton>): React.FC<IMainButton> => s
   align-items: center;
   justify-content: center;
   gap: 10px;
+
   border: none;
   border-radius: 50px;
-  background-color: ${(props) => props.btnColor};
+  background-color: ${(props) => props.buttonColor};
   color: ${(props) => props.textColor};
   cursor: pointer;
   transition: all ease-in-out 0.2s;
+
   &:hover {
     filter: brightness(0.9);
   }
@@ -59,7 +61,7 @@ export const withStyles = (c: React.FC<IMainButton>): React.FC<IMainButton> => s
   }
 
   ${(props) => {
-    switch (props.btnSize) {
+    switch (props.buttonSize) {
       case 'small':
         return `
           &.small;

@@ -6,7 +6,7 @@ const meta: Meta<typeof Breadcrumb> = {
   component: Breadcrumb,
   args: {
     url: 'jobs/vacants',
-    label: 'Todos los empleos'
+    breadcrumbText: 'Todos los empleos'
   }
 }
 

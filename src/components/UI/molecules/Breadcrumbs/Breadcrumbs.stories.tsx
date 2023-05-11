@@ -2,23 +2,32 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Breadcrumbs } from './Breadcrumbs.component'
 import { Home2 } from 'iconsax-react'
 import { BreadcrumbItem } from './Breadcrumbs.interface'
+import { IconProps } from '../../atoms/Icon'
 
 const urlParams = 'magneto-home'
 
-const BreadcrumbList: BreadcrumbItem[] = [{ label: '', url: '#', slug: 'landing' }]
+const breadcrumbsProps: BreadcrumbItem[] = [
+  {
+    breadcrumbText: '',
+    url: '#',
+    slug: 'magneto-home'
+  }
+]
+
+const iconProps: IconProps = {
+  Icon: Home2,
+  hover: true,
+  size: 16,
+  color: '#a3a3b5'
+}
 
 const meta: Meta<typeof Breadcrumbs> = {
   title: 'Molecules/Breadcrums',
   component: Breadcrumbs,
   args: {
+    iconProps: iconProps,
     urlParam: urlParams,
-    IconProps: {
-      Icon: Home2,
-      hover: true,
-      size: 16,
-      color: '#a3a3b5'
-    },
-    breadcrumbItems: BreadcrumbList
+    breadcrumbsList: breadcrumbsProps
   }
 }
 
@@ -31,17 +40,17 @@ export const Default: Story = {}
 export const NormalBreadcrumb: Story = {
   args: {
     urlParam: 'busqueda-de-empleo',
-    breadcrumbItems: [{ label: 'Busqueda de empleo', url: '#', slug: 'busqueda-de-empleo' }]
+    breadcrumbsList: [{ breadcrumbText: 'Busqueda de empleo', url: '#', slug: 'busqueda-de-empleo' }]
   }
 }
 
 export const ActiveBreadcrumb: Story = {
   args: {
     urlParam: 'hoja-de-vida',
-    breadcrumbItems: [
-      { label: 'Perfil', url: '#', slug: 'perfil' },
+    breadcrumbsList: [
+      { breadcrumbText: 'Perfil', url: '#', slug: 'perfil' },
       {
-        label: 'Hoja de Vida',
+        breadcrumbText: 'Hoja de Vida',
         url: '#',
         slug: 'hoja-de-vida'
       }
