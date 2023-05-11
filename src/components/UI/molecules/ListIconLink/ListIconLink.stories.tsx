@@ -1,12 +1,6 @@
 import { ListIconLink } from './ListIconLink.component'
 import { StoryObj, Meta } from '@storybook/react'
-import { Facebook, Instagram, Link21 } from 'iconsax-react'
-
-const ListIcon = [
-  { Icon: Facebook, url: '' },
-  { Icon: Instagram, url: '' },
-  { Icon: Link21, url: '' }
-]
+import { ListIcon } from '../../../../constants/stories.constants'
 
 const meta: Meta<typeof ListIconLink> = {
   title: 'Molecules/List Icon Link',

@@ -7,5 +7,6 @@ export const withStyles = (c: React.FC<IListMenuIcons>): React.FC<IListMenuIcons
     font-size: 13px;
     color: ${lightTheme.colors.disabledColors.gray3};
     padding-left: 10px;
+    text-align: left;
   }
 `

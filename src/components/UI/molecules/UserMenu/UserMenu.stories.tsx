@@ -1,5 +1,5 @@
 import { StoryObj, Meta } from '@storybook/react'
-import { MenuItems } from '../../../../constants/stories.constans'
+import { MenuItems } from '../../../../constants/stories.constants'
 import { UserMenu } from './UserMenu.component'
 
 const listProps = {
