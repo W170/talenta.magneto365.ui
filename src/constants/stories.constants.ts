@@ -2,21 +2,151 @@ import {
   ArchiveTick,
   BrifecaseTick,
   ClipboardClose,
+  CloseCircle,
   DocumentText,
   Facebook,
+  HambergerMenu,
+  Home2,
   Instagram,
   Link21,
   LoginCurve,
   MessageQuestion,
   ProfileAdd,
+  SearchNormal1,
   Setting2,
   TaskSquare
 } from 'iconsax-react'
-import { ITabButton } from '../components/UI/molecules/TabButton'
-import { IListIcon } from '../components/UI/molecules/ListIconLink'
-import { MenuItemInfo } from '../components/UI/molecules/ListMenuItems/ListMenuItems.interface'
+import { IconProps } from '../components/UI/atoms/Icon'
+import { ILinkProps } from '../components/UI/atoms/Link'
+import { ILogoComponent } from '../components/UI/atoms/Logo/'
 import { IMainButton } from '../components/UI/atoms/MainButton'
-import { IMenuItems } from '../components/UI/molecules/ListMenuIcons/ListMenuIcons.interface'
+import { IBreadcrumbs } from '../components/UI/molecules/Breadcrumbs'
+import { IListIcon } from '../components/UI/molecules/ListIconLink'
+import { IMenuItems } from '../components/UI/molecules/ListMenuIcons'
+import { MenuItemInfo } from '../components/UI/molecules/ListMenuItems'
+import { ISearchbar } from '../components/UI/molecules/Searchbar'
+import { ITab } from '../components/UI/molecules/Tab'
+
+/**
+ * UI Atoms properties/args
+ */
+
+//Breadcrumb Atom
+
+//Divider Atom
+
+//Icon Atom
+export const iconProps: IconProps = {
+  Icon: HambergerMenu,
+  hover: false
+}
+
+//Link Atom
+export const LinkProps: ILinkProps = {
+  type: 'button',
+  text: 'Iniciar Sesion',
+  href: '#',
+  iconProps: { Icon: LoginCurve, hover: true },
+  textColor: '#14141C',
+  hoverColor: '#14141C'
+}
+
+//Logo Atom
+export const LogoProps: ILogoComponent = {
+  logo: 'https://www.magneto365.com/wp-content/uploads/2022/09/Logo-magneto-v3.png',
+  isoType:
+    'https://www.magneto365.com/co/_next/image?url=https%3A%2F%2Fstatic.magneto365.com%2Fco%2F_next%2Fstatic%2Fmedia%2Ffavicon-magneto.b463e35d.png&w=32&q=75',
+  alt: 'Logo Magneto',
+  logoSize: 95
+}
+
+//Main Button Atom
+export const MainButtonProps: IMainButton = {
+  buttonType: 'button',
+  buttonText: 'Crear hoja de vida',
+  textColor: '#090467',
+  buttonColor: '#70ECD4',
+  iconProps: {
+    Icon: ProfileAdd,
+    hover: true,
+    color: '#090467 '
+  }
+}
+
+/**
+ * UI Molecules properties/args
+ */
+
+//Breadcrumbs Molecule
+export const BreadcrumbProps: IBreadcrumbs = {
+  urlParam: 'todos-los-empleos',
+  iconProps: {
+    Icon: Home2,
+    hover: true,
+    size: 16,
+    color: '#a3a3b5'
+  },
+  breadcrumbsList: [{ breadcrumbText: 'Todos los empleos', url: '#', slug: 'todos-los-empleos' }]
+}
+
+//Searchbar Molecule
+export const SearchbarProps: ISearchbar = {
+  placeholder: 'Busca empleos por cargo o profesion',
+  onSearch: () => {
+    // Add your search logic here
+  },
+  searchProps: {
+    buttonType: 'submit',
+    buttonText: '',
+    iconProps: {
+      Icon: SearchNormal1,
+      hover: false,
+      color: '#000096',
+      size: 18
+    }
+  },
+  removeProps: {
+    buttonType: 'reset',
+    buttonText: '',
+    iconProps: {
+      Icon: CloseCircle,
+      hover: false,
+      color: '#14141C',
+      size: 18,
+      variant: 'Linear'
+    }
+  }
+}
+
+//Tab Molecule
+export const TabProps: ITab = {
+  tabButtonList: [
+    {
+      linkProps: {
+        href: '#',
+        text: 'Busco Empleo',
+        type: 'link',
+        textColor: '#000'
+      },
+      tabButtonColor: '#FFF',
+      tabButtonTextSize: '11px',
+      tabButtonTextWeight: '700',
+      boxShadow: true
+    },
+    {
+      linkProps: {
+        href: '#',
+        text: 'Soy empresa',
+        type: 'link',
+        textColor: '#A3A3B5'
+      },
+      tabButtonColor: '#F4F4FA',
+      tabButtonTextSize: '11px',
+      tabButtonTextWeight: '400',
+      boxShadow: false
+    }
+  ]
+}
 
 export const LogoMagneto = 'https://www.magneto365.com/wp-content/uploads/2022/09/Logo-magneto-v3.png'
 export const IsoLogoMagneto =
@@ -24,11 +154,6 @@ export const IsoLogoMagneto =
 export const LogoCompany = 'https://www.magneto365.com/wp-content/uploads/2022/08/img-grupo-sura.png'
 export const flag =
   'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/2560px-Flag_of_Colombia.svg.png'
-
-export const ListButton: ITabButton[] = [
-  { link: '#', text: 'Busco empleo', size: '11px', color: '#FFF', textColor: '#000' },
-  { link: '#', text: 'Soy empresa', size: '11px', color: '#F4F4FA', textColor: '#A3A3B5' }
-]
 
 export const ListIcon: IListIcon[] = [
   { Icon: Facebook, url: '' },
@@ -48,24 +173,27 @@ export const MenuList: MenuItemInfo[] = [
 ]
 
 export const ButtonsProps: IMainButton = {
-  buttonText: 'Crear hoja de vida',
-  textColor: '#090467',
-  btnColor: '#70ECD4',
-  childrenProps: {
+  buttonType: 'button',
+  iconProps: {
     Icon: ProfileAdd,
     hover: true,
     color: '#090467 '
-  }
+  },
+  buttonText: 'Crear hoja de vida',
+  buttonColor: '#70ECD4',
+  textColor: '#090467'
 }
+
 export const ButtonsProps2: IMainButton = {
-  buttonText: 'Iniciar Sesión',
-  textColor: '#090467',
-  btnColor: 'white',
-  childrenProps: {
+  buttonType: 'button',
+  iconProps: {
     Icon: LoginCurve,
     hover: true,
     color: '#090467 '
-  }
+  },
+  buttonText: 'Iniciar Sesión',
+  buttonColor: 'white',
+  textColor: '#090467'
 }
 
 export const MenuItems: IMenuItems[] = [
