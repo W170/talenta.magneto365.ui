@@ -1,13 +1,13 @@
 import React from 'react'
+import { IconItem } from '../../atoms/Icon'
+import { Link } from '../../atoms/Link'
+import { LogoComponent } from '../../atoms/Logo'
+import { MainButton } from '../../atoms/MainButton'
+import { Breadcrumbs } from '../../molecules/Breadcrumbs'
+import { Searchbar } from '../../molecules/Searchbar'
+import { Tab } from '../../molecules/Tab'
 import { ILogoutHeader } from './LogoutHeader.interface'
 import { withStyles } from './LogoutHeader.styles'
-import { Breadcrumbs } from '../../molecules/Breadcrumbs'
-import { Tab } from '../../molecules/Tab'
-import { Searchbar } from '../../molecules/Searchbar'
-import { Link } from '../../atoms/Link'
-import { MainButton } from '../../atoms/MainButton'
-import { LogoComponent } from '../../atoms/Logo'
-import { IconItem } from '../../atoms/Icon'
 
 const Component: React.FC<ILogoutHeader> = ({
   className,
