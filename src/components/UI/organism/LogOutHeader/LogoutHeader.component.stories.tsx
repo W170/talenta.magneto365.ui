@@ -12,31 +12,32 @@ import { IconProps } from '../../atoms/Icon'
 // Breadcrums Props
 const BreadcrumbProps: IBreadcrumbs = {
   urlParam: 'todos-los-empleos',
-  IconProps: {
+  iconProps: {
     Icon: Home2,
     hover: true,
     size: 16,
     color: '#a3a3b5'
   },
-  breadcrumbItems: [{ label: 'Todos los empleos', url: '#', slug: 'todos-los-empleos' }]
+  breadcrumbsList: [{ breadcrumbText: 'Todos los empleos', url: '#', slug: 'todos-los-empleos' }]
 }
 
 //Link Props
 const LinkProps: ILinkProps = {
   type: 'button',
-  label: 'Iniciar Sesion',
+  text: 'Iniciar Sesion',
   href: '#',
-  Icon: LoginCurve,
-  colorHover: '#14141C',
-  color: '#14141C'
+  iconProps: { Icon: LoginCurve, hover: true },
+  textColor: '#14141C',
+  hoverColor: '#14141C'
 }
 
 //Main button props
 const MainButtonProps: IMainButton = {
+  buttonType: 'button',
   buttonText: 'Crear hoja de vida',
   textColor: '#090467',
-  btnColor: '#70ECD4',
-  childrenProps: {
+  buttonColor: '#70ECD4',
+  iconProps: {
     Icon: ProfileAdd,
     hover: true,
     color: '#090467 '
@@ -50,8 +51,9 @@ const SearchbarProps: ISearchbar = {
     // Add your search logic here
   },
   searchProps: {
+    buttonType: 'submit',
     buttonText: '',
-    childrenProps: {
+    iconProps: {
       Icon: SearchNormal1,
       hover: false,
       color: '#000096',
@@ -59,8 +61,9 @@ const SearchbarProps: ISearchbar = {
     }
   },
   removeProps: {
+    buttonType: 'reset',
     buttonText: '',
-    childrenProps: {
+    iconProps: {
       Icon: CloseCircle,
       hover: false,
       color: '#14141C',
@@ -87,17 +90,31 @@ const iconProps: IconProps = {
 
 //Tab Props
 const TabProps: ITab = {
-  listButton: [
+  tabButtonList: [
     {
-      link: '#',
-      text: 'Busco empleo',
-      size: '11px',
-      color: '#FFF',
-      textColor: '#000',
-      textWeight: '900',
+      linkProps: {
+        href: '#',
+        text: 'Busco empleo',
+        type: 'link',
+        textColor: '#000'
+      },
+      tabButtonColor: '#FFF',
+      tabButtonTextSize: '11px',
+      tabButtonTextWeight: '900',
       boxShadow: true
     },
-    { link: '#', text: 'Soy empresa', size: '11px', color: '#F4F4FA', textColor: '#A3A3B5' }
+    {
+      linkProps: {
+        href: '#',
+        text: 'Soy empresa',
+        type: 'link',
+        textColor: '#A3A3B5'
+      },
+      tabButtonColor: '#F4F4FA',
+      tabButtonTextSize: '11px',
+      tabButtonTextWeight: '400',
+      boxShadow: false
+    }
   ]
 }
 
