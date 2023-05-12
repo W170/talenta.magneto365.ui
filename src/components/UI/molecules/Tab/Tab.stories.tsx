@@ -12,7 +12,7 @@ const TabProps: ITabButton[] = [
     },
     tabButtonColor: '#FFF',
     tabButtonTextSize: '11px',
-    tabButtonTextWeight: '7 00',
+    tabButtonTextWeight: '700',
     boxShadow: true
   },
   {
