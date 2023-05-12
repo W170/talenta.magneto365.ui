@@ -3,10 +3,10 @@ import { IMenuIcon } from '../MenuIcon/MenuIcon.interface'
 export interface IListMenuIcons {
   urlParam: string
   menuItems: IMenuItems[]
-  className: string
+  className?: string
 }
 
-interface IMenuItems {
+export interface IMenuItems {
   title: string
   items: IMenuIcon[]
 }
