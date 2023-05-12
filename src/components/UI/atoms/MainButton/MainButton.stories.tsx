@@ -6,17 +6,18 @@ const meta: Meta<typeof MainButton> = {
   title: 'Atoms/MainButton',
   component: MainButton,
   args: {
-    buttonText: 'Crear hoja de vida',
-    textColor: '#090467',
-    btnColor: '#70ECD4',
-    childrenProps: {
+    buttonType: 'button',
+    buttonSize: 'medium',
+    iconProps: {
       Icon: ProfileAdd,
       hover: true,
       color: '#090467 '
-    }
+    },
+    buttonText: 'Crear hoja de vida',
+    buttonColor: '#70ECD4',
+    textColor: '#090467'
   }
 }
-
 export default meta
 
 type Story = StoryObj<typeof MainButton>

@@ -5,7 +5,7 @@ import { withStyles } from './MainButton.styles'
 
 const Component: React.FC<IMainButton> = ({
   buttonType = 'submit',
-  buttonSize,
+  buttonSize = 'medium',
   onClick,
   iconProps,
   buttonText,
