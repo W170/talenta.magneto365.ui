@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { IDrawerOrganism } from './DrawerOrganism.interface'
+import { IDrawerOrganism } from './DrawerMenu.interface'
 import { screenSize } from '../../../../constants/responsive.constants'
 
 export const withStyles = (c: React.FC<IDrawerOrganism>): React.FC<IDrawerOrganism> => styled(c)`

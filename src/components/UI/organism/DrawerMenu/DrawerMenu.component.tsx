@@ -1,7 +1,7 @@
 import React from 'react'
 import { Drawer } from '../../molecules/Drawer'
-import { IDrawerOrganism } from './DrawerOrganism.interface'
-import { ActiosContainer, MenuContainer, withStyles } from './DrawerOrganism.styles'
+import { IDrawerOrganism } from './DrawerMenu.interface'
+import { ActiosContainer, MenuContainer, withStyles } from './DrawerMenu.styles'
 import { ListMenuItems } from '../../molecules/ListMenuItems'
 import { ListIconLink } from '../../molecules/ListIconLink'
 import { HeaderDrawerTabs } from '../../molecules/HeaderDrawerTabs/HeaderDrawerTabs.components'
@@ -32,4 +32,4 @@ const Component: React.FC<IDrawerOrganism> = ({
   )
 }
 
-export const DrawerOrganims = withStyles(Component)
+export const DrawerMenu = withStyles(Component)

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { DrawerOrganims } from './DrawerOrganism.component'
+import { DrawerMenu } from './DrawerMenu.component'
 import {
   ButtonsProps,
   ButtonsProps2,
@@ -25,9 +25,9 @@ const headerProps = {
   tabProps: TabProps
 }
 
-const meta: Meta<typeof DrawerOrganims> = {
-  title: 'Organism/Drawer',
-  component: DrawerOrganims,
+const meta: Meta<typeof DrawerMenu> = {
+  title: 'Organism/Drawer Menu',
+  component: DrawerMenu,
   tags: ['autodocs'],
   args: {
     listIcon: ListIcon,
@@ -41,6 +41,6 @@ const meta: Meta<typeof DrawerOrganims> = {
 
 export default meta
 
-type Story = StoryObj<typeof DrawerOrganims>
+type Story = StoryObj<typeof DrawerMenu>
 
 export const Default: Story = {}
