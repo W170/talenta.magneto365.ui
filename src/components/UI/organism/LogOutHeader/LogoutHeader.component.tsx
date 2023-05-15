@@ -21,21 +21,21 @@ const Component: React.FC<ILogoutHeader> = ({
 }) => {
   return (
     <header className={className}>
-      <section className="row1">
+      <section className="magneto-ui-row1">
         <Tab {...tabProps} />
       </section>
-      <section className="row2">
+      <section className="magneto-ui-row2">
         <div className="logo-wrapper">
           <IconItem {...iconProps} />
           <LogoComponent {...logoProps} />
         </div>
         <Searchbar {...searchbarProps} />
-        <div className="button-wrapper">
+        <div className="magneto-ui-button-wrapper">
           <Link {...linkProps} />
           <MainButton {...mainButtonProps} />
         </div>
       </section>
-      <section className="row3">
+      <section className="magneto-ui-row3">
         <Breadcrumbs {...breadcrumbsProps} />
       </section>
     </header>

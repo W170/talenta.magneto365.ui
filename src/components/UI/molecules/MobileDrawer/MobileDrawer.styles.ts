@@ -23,7 +23,7 @@ export const withStyles = (c: React.FC<IMoblieDrawer>): React.FC<IMoblieDrawer> 
     z-index: 99;
     transition: all 0.6s ease-in-out;
     border-radius: 20px 20px 0 0;
-    .magneto-ui-btn-close {
+    .magneto-ui-close-button {
       width: 40px;
       height: 40px;
       border-radius: 25px;

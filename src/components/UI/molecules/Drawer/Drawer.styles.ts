@@ -25,7 +25,7 @@ export const withStyles = (c: React.FC<IDrawer>): React.FC<IDrawer> => styled(c)
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
     z-index: 99;
     transition: all 0.6s ease-in-out;
-    .btnClose-MG-UI {
+    .magneto-ui-close-button {
       position: absolute;
       right: 2px;
       top: 20px;

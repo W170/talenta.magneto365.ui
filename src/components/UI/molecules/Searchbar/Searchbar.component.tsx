@@ -24,7 +24,7 @@ const Component: React.FC<ISearchbar> = ({ placeholder, searchProps, removeProps
         <input type="text" value={searchValue} onChange={handleInputChange} placeholder={placeholder} />
         {searchValue && (
           <>
-            <MainButton className="remove-button" onClick={handleClearSearch} {...removeProps} />
+            <MainButton className="magneto-ui-remove-button" onClick={handleClearSearch} {...removeProps} />
             <span>|</span>
           </>
         )}

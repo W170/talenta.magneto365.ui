@@ -10,7 +10,7 @@ const Component: React.FC<IDrawer> = ({ className, children, onClose, isOpen }) 
     <DrawerPortal>
       <div className={className}>
         <aside>
-          <button className="btnClose-MG-UI" onClick={onClose}>
+          <button className="magneto-ui-close-button" onClick={onClose}>
             <IconItem Icon={Add} hover={false} />
           </button>
           {children}
