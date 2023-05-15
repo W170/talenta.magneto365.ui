@@ -23,15 +23,17 @@ export const withStyles = (c: React.FC<IMenuIcon>): React.FC<IMenuIcon> => style
   cursor: pointer;
   border-radius: 7px;
   transition: all 0.3s ease-in-out;
-  height: 30px;
-  padding: 25px 10px;
+  height: 25px;
+  padding: 23px 10px;
   @media (min-width: ${screenSize.xs}px) {
+    padding: 25px 10px;
     height: 40px;
-    font-size: 14px;
   }
   &:hover {
     background-color: ${(props) => props.theme.colors.disabledColors.gray};
   }
-
   ${(props) => isActiveLink(props)}
+  .magneto-ui-menu-text {
+    font-size: 14px;
+  }
 `

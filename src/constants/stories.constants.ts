@@ -18,14 +18,14 @@ import {
 } from 'iconsax-react'
 import { IconProps } from '../components/UI/atoms/Icon'
 import { ILinkProps } from '../components/UI/atoms/Link'
-import { ILogoComponent } from '../components/UI/atoms/Logo/'
 import { IMainButton } from '../components/UI/atoms/MainButton'
 import { IBreadcrumbs } from '../components/UI/molecules/Breadcrumbs'
 import { IListIcon } from '../components/UI/molecules/ListIconLink'
-import { IMenuItems } from '../components/UI/molecules/ListMenuIcons'
-import { MenuItemInfo } from '../components/UI/molecules/ListMenuItems'
 import { ISearchbar } from '../components/UI/molecules/Searchbar'
 import { ITab } from '../components/UI/molecules/Tab'
+import { ILogoComponent } from '../components/UI/atoms/Logo/Logo.interface'
+import { MenuItemInfo } from '../components/UI/molecules/ListMenuItems/ListMenuItems.interface'
+import { IMenuItems } from '../components/UI/molecules/ListMenuIcons/ListMenuIcons.interface'
 
 /**
  * UI Atoms properties/args

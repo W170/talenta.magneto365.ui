@@ -1,11 +1,19 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useContext, useMemo } from 'react'
 import { LogoutCurve } from 'iconsax-react'
 import { Divider } from '../../atoms/Divider'
 import { MenuIcon } from '../MenuIcon'
 import { IListMenuIcons } from './ListMenuIcons.interface'
 import { withStyles } from './ListMenuIcons.styles'
+import { screenSize } from '../../../../constants/responsive.constants'
+import { ResponsiveContext } from '../../../context/ResponsiveContext.component'
 
 const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, className }) => {
+  const { dim } = useContext(ResponsiveContext)
+
+  const isMobile = useMemo(() => {
+    return dim.size <= screenSize.md
+  }, [dim.size])
+
   return (
     <div className={className}>
       {menuItems.map(({ title, items }, i: number) => (
@@ -16,7 +24,7 @@ const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, className })
               <MenuIcon isActive={urlParam === slug ? true : false} {...props} />
             </Fragment>
           ))}
-          <Divider spacing={30} opacity={1} />
+          <Divider spacing={isMobile ? 0 : 30} opacity={1} />
         </div>
       ))}
       <MenuIcon type="button" onClick={() => ({})} Icon={LogoutCurve} text="Cerrar sesión" />
