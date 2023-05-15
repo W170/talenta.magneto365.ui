@@ -1,4 +1,4 @@
-import { ITabButton } from '../TabButton'
+import { ITab } from '../Tab'
 
 export interface IHeaderDrawerTabs {
   className?: string
@@ -7,6 +7,6 @@ export interface IHeaderDrawerTabs {
   alt: string
   isoType: string
   isoTypeSize?: number
-  listButton?: ITabButton[]
+  tabProps?: ITab
   spacing?: number
 }

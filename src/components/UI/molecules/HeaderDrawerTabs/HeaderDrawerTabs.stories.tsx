@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { HeaderDrawerTabs } from './HeaderDrawerTabs.components'
-import { IsoLogoMagneto, ListButton, LogoMagneto } from '../../../../constants/stories.constants'
+import { IsoLogoMagneto, TabProps, LogoMagneto } from '../../../../constants/stories.constants'
 
 const meta: Meta<typeof HeaderDrawerTabs> = {
   title: 'Molecules/Header Drawer Tabs',
   component: HeaderDrawerTabs,
   args: {
-    listButton: ListButton,
+    tabProps: TabProps,
     isoType: IsoLogoMagneto,
     logo: LogoMagneto,
     alt: 'Logo Magneto',

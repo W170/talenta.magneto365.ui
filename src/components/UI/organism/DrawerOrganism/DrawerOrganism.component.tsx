@@ -23,8 +23,8 @@ const Component: React.FC<IDrawerOrganism> = ({
           <ListMenuItems {...listMenuProps} />
         </MenuContainer>
         <ActiosContainer>
-          <MainButton btnSize="full" {...buttonsProps} />
-          <MainButton btnSize="full" {...buttonsProps2} />
+          <MainButton buttonSize="full" {...buttonsProps} />
+          <MainButton buttonSize="full" {...buttonsProps2} />
           <ListIconLink listIcon={listIcon} />
         </ActiosContainer>
       </Drawer>

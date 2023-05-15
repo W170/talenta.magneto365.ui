@@ -15,10 +15,6 @@ export interface IBreadcrumbs {
    */
   breadcrumbsList: BreadcrumbItem[]
   /**
-   * Props for the breadcrumb
-   */
-  breadcrumbProps: IBreadcrumb
-  /**
    * URL Param
    */
   urlParam: string

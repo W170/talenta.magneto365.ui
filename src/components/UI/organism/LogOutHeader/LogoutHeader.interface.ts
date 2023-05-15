@@ -1,8 +1,8 @@
 import { IconProps } from '../../atoms/Icon'
 import { ILinkProps } from '../../atoms/Link'
-import { ILogoComponent } from '../../atoms/Logo/Logo.interface'
+import { ILogoComponent } from '../../atoms/Logo'
 import { IMainButton } from '../../atoms/MainButton'
-import { IBreadcrumbs } from '../../molecules/Breadcrumbs/Breadcrumbs.interface'
+import { IBreadcrumbs } from '../../molecules/Breadcrumbs'
 import { ISearchbar } from '../../molecules/Searchbar'
 import { ITab } from '../../molecules/Tab'
 

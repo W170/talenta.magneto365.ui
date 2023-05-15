@@ -4,7 +4,7 @@ import {
   ButtonsProps,
   ButtonsProps2,
   IsoLogoMagneto,
-  ListButton,
+  TabProps,
   ListIcon,
   LogoMagneto,
   MenuList
@@ -22,7 +22,7 @@ const headerProps = {
   isoTypeSize: 30,
   logo: LogoMagneto,
   isoType: IsoLogoMagneto,
-  listButton: ListButton
+  tabProps: TabProps
 }
 
 const meta: Meta<typeof DrawerOrganims> = {
