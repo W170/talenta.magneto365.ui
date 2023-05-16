@@ -15,7 +15,8 @@ const Component: React.FC<IMainButton> = ({
 }) => {
   const responsiveButtonText = useMediaQuery(buttonText, {
     xs: null,
-    sm: null
+    sm: null,
+    md: null
   })
   return (
     <button type={buttonType} className={`${className} ${buttonSize}`} onClick={onClick}>
