@@ -2,9 +2,9 @@ import { IMainButton } from '../../atoms/MainButton'
 
 export interface IMobileSearchbar {
   /**
-   * Props for the search button
+   *
    */
-  openProps: IMainButton
+  toggle: boolean
   /**
    * Props for the search button
    */
@@ -17,5 +17,6 @@ export interface IMobileSearchbar {
    * Handler for the input value
    */
   onSearch?: (searchValue: string) => void
+  onClick: () => void
   className?: string
 }

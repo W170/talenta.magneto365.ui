@@ -6,17 +6,6 @@ const meta: Meta<typeof MobileSearchbar> = {
   title: 'Molecules/MobileSearchbar',
   component: MobileSearchbar,
   args: {
-    openProps: {
-      buttonText: '',
-      buttonType: 'button',
-      iconProps: {
-        Icon: SearchNormal1,
-        hover: false,
-        color: '#000096',
-        size: 20
-      },
-      buttonColor: 'transparent'
-    },
     infoProps: {
       buttonType: 'button',
       buttonText: '',

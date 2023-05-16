@@ -1,19 +1,33 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { IMobileSearchbar } from './MobileSearchbar.interface'
+
+const toggleMobile = ({ toggle = false }) => {
+  if (toggle) {
+    return css<IMobileSearchbar>`
+      top: 0;
+    `
+  }
+  return css<IMobileSearchbar>`
+    top: -100%;
+  `
+}
 
 export const withStyles = (c: React.FC<IMobileSearchbar>): React.FC<IMobileSearchbar> => styled(c)`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  position: relative;
-  width: 100%;
+  position: fixed;
+  left: 0;
+  width: 100vw;
   height: 3.75rem;
   z-index: 1;
   margin: 0;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
   form {
-    position: absolute;
     display: inherit;
     justify-content: space-between;
     align-items: center;
@@ -60,4 +74,6 @@ export const withStyles = (c: React.FC<IMobileSearchbar>): React.FC<IMobileSearc
       transform: rotate(45deg);
     }
   }
+
+  ${(props) => toggleMobile(props)}
 `
