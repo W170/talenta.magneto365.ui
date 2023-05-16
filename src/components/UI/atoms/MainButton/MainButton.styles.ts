@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { IMainButton } from './MainButton.interface'
+import { screenSize } from '../../../../constants/responsive.constants'
 
 export const withStyles = (c: React.FC<IMainButton>): React.FC<IMainButton> => styled(c)`
   display: flex;
@@ -85,4 +86,13 @@ export const withStyles = (c: React.FC<IMainButton>): React.FC<IMainButton> => s
         `
     }
   }}
+
+  @media screen and (max-width: ${screenSize.md - 1}px) {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    &.medium {
+      padding: 0;
+    }
+  }
 `

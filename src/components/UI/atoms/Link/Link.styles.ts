@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { ILinkProps, LinkType } from './Link.interface'
+import { screenSize } from '../../../../constants/responsive.constants'
 
 export const getTypeStyles = ({ type = 'link' }: { type: LinkType }) => {
   switch (type) {
@@ -37,6 +38,13 @@ export const getTypeStyles = ({ type = 'link' }: { type: LinkType }) => {
 
         :visited {
           color: ${(props) => props.textColor};
+        }
+
+        @media screen and (max-width: ${screenSize.md - 1}px) {
+          justify-content: center;
+          width: 2.5rem;
+          height: 2.5rem;
+          padding: 0;
         }
       `
 

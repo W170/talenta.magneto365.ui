@@ -3,8 +3,7 @@ import { ISearchbar } from './Searchbar.interface'
 
 export const withStyles = (c: React.FC<ISearchbar>): React.FC<ISearchbar> => styled(c)`
   display: flex;
-  width: 24.25rem;
-  height: 2.25rem;
+  width: 100%;
   border-radius: 8px;
   background-color: ${(props) => props.theme.colors.$gray5};
 
@@ -28,7 +27,7 @@ export const withStyles = (c: React.FC<ISearchbar>): React.FC<ISearchbar> => sty
       color: ${(props) => props.theme.colors.$grayDark};
 
       &:not(:placeholder-shown) {
-        color: #14141c;
+        color: #020202;
       }
 
       :focus-visible {
@@ -38,7 +37,7 @@ export const withStyles = (c: React.FC<ISearchbar>): React.FC<ISearchbar> => sty
 
     button {
       margin-right: 20px;
-      width: 5%;
+      width: 7%;
       padding: 0px !important;
       border-radius: 8px;
       background-color: transparent;
@@ -56,8 +55,12 @@ export const withStyles = (c: React.FC<ISearchbar>): React.FC<ISearchbar> => sty
 
   .magneto-ui-remove-button {
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-right: 0px;
+
+    svg {
+      transform: rotate(45deg);
+    }
   }
 `

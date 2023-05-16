@@ -36,3 +36,17 @@ export const IconButton: Story = {
     }
   }
 }
+
+export const ResponsiveIconButton: Story = {
+  args: {
+    type: 'button',
+    iconProps: {
+      Icon: Login,
+      hover: true
+    },
+    text: 'Iniciar sesión',
+    textColor: '#14141C',
+    buttonColor: 'transparent',
+    hoverColor: '#14141C'
+  }
+}
