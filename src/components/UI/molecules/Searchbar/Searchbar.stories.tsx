@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Searchbar } from './Searchbar.component'
-import { SearchNormal1, CloseCircle } from 'iconsax-react'
+import { SearchNormal1, Add } from 'iconsax-react'
 
 const meta: Meta<typeof Searchbar> = {
   title: 'Molecules/Searchbar',
@@ -21,10 +21,10 @@ const meta: Meta<typeof Searchbar> = {
       buttonText: '',
       buttonType: 'button',
       iconProps: {
-        Icon: CloseCircle,
+        Icon: Add,
         hover: false,
         color: '#14141C',
-        size: 18,
+        size: 20,
         variant: 'Linear'
       }
     }
