@@ -3,26 +3,30 @@ import { IMobileSearchbar } from './MobileSearchbar.interface'
 
 export const withStyles = (c: React.FC<IMobileSearchbar>): React.FC<IMobileSearchbar> => styled(c)`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  width: 22.5rem;
+  align-items: center;
+  position: relative;
+  width: 100%;
   height: 3.75rem;
-
-  .toggle-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
+  z-index: 1;
+  margin: 0;
 
   form {
+    position: absolute;
     display: inherit;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     height: 1.5rem;
+    margin: 19px 20px;
+    background-color: #fff;
+    z-index: 1;
   }
 
   input {
-    width: 87%;
+    width: 100%;
+    height: 100%;
     background-color: transparent;
     border: none;
 
@@ -42,5 +46,14 @@ export const withStyles = (c: React.FC<IMobileSearchbar>): React.FC<IMobileSearc
     height: 20px;
     padding: 0px !important;
     border-radius: 0px;
+  }
+
+  .close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      transform: rotate(45deg);
+    }
   }
 `

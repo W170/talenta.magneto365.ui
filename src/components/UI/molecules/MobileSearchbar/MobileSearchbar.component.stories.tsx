@@ -1,4 +1,4 @@
-import { CloseCircle, SearchNormal1 } from 'iconsax-react'
+import { Add, SearchNormal1 } from 'iconsax-react'
 import { MobileSearchbar } from './MobileSearchbar.component'
 import { Meta, StoryObj } from '@storybook/react'
 
@@ -6,33 +6,33 @@ const meta: Meta<typeof MobileSearchbar> = {
   title: 'Molecules/MobileSearchbar',
   component: MobileSearchbar,
   args: {
-    toggleProps: {
+    openProps: {
       buttonText: '',
       buttonType: 'button',
       iconProps: {
         Icon: SearchNormal1,
         hover: false,
         color: '#000096',
-        size: 16
+        size: 20
       },
       buttonColor: 'transparent'
     },
-    searchProps: {
-      buttonType: 'submit',
+    infoProps: {
+      buttonType: 'button',
       buttonText: '',
       iconProps: {
         Icon: SearchNormal1,
         hover: false,
-        color: '#000096',
+        color: '#A3A3B5',
         size: 16
       },
       buttonColor: 'transparent'
     },
-    removeProps: {
+    closeProps: {
       buttonText: '',
       buttonType: 'button',
       iconProps: {
-        Icon: CloseCircle,
+        Icon: Add,
         hover: false,
         color: '#14141C',
         size: 16,
