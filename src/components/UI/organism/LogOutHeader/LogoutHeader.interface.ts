@@ -1,16 +1,28 @@
-import { IconProps } from '../../atoms/Icon'
 import { ILinkProps } from '../../atoms/Link'
 import { ILogoComponent } from '../../atoms/Logo'
 import { IMainButton } from '../../atoms/MainButton'
 import { IBreadcrumbs } from '../../molecules/Breadcrumbs'
+import { IMobileSearchbar } from '../../molecules/MobileSearchbar'
 import { ISearchbar } from '../../molecules/Searchbar'
 import { ITab } from '../../molecules/Tab'
 
 export interface ILogoutHeader {
   /**
+   *
+   */
+  menuProps: IMainButton
+  /**
+   * Props for the search button
+   */
+  openProps: IMainButton
+  /**
    * Props for the Searchbar
    */
   searchbarProps: ISearchbar
+  /**
+   * Props for the Mobile Searchbar
+   */
+  mobileProps: IMobileSearchbar
   /**
    * Props for the Main Button
    */
@@ -31,9 +43,6 @@ export interface ILogoutHeader {
    * Props for the logo
    */
   logoProps: ILogoComponent
-  /**
-   * Props for the icon
-   */
-  iconProps: IconProps
+  onClick?: () => void
   className?: string
 }

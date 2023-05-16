@@ -5,18 +5,22 @@ import {
   LinkProps,
   LogoProps,
   MainButtonProps,
+  OpenButtonProps,
+  MobileSearchbarProps,
   SearchbarProps,
-  TabProps,
-  iconProps
+  MenuButtonProps,
+  TabProps
 } from '../../../../constants/stories.constants'
 
 const meta: Meta<typeof LogoutHeader> = {
   title: 'Organism/LogoutHeader',
   component: LogoutHeader,
   args: {
+    openProps: OpenButtonProps,
     tabProps: TabProps,
-    iconProps: iconProps,
+    menuProps: MenuButtonProps,
     logoProps: LogoProps,
+    mobileProps: MobileSearchbarProps,
     searchbarProps: SearchbarProps,
     mainButtonProps: MainButtonProps,
     linkProps: LinkProps,
