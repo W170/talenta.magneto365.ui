@@ -23,3 +23,11 @@ export default meta
 type Story = StoryObj<typeof MainButton>
 
 export const Default: Story = {}
+
+export const Responsive: Story = {
+  args: {
+    buttonText: 'Crear hoja de vida',
+    buttonColor: '#70ECD4',
+    textColor: '#090467'
+  }
+}
