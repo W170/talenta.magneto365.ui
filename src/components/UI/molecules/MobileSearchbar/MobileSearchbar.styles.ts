@@ -36,6 +36,10 @@ export const withStyles = (c: React.FC<IMobileSearchbar>): React.FC<IMobileSearc
     line-height: 17px;
     color: ${(props) => props.theme.colors.$grayDark};
 
+    &:not(:placeholder-shown) {
+      color: #020202;
+    }
+
     :focus-visible {
       outline: none;
     }
