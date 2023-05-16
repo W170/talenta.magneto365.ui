@@ -1,39 +1,45 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { IMobileSearchbar } from './MobileSearchbar.interface'
 import { withStyles } from './MobileSearchbar.styles'
 import { MainButton } from '../../atoms/MainButton'
 
-const Component: React.FC<IMobileSearchbar> = ({ toggleProps, searchProps, removeProps, onSearch, className }) => {
+const Component: React.FC<IMobileSearchbar> = ({ openProps, infoProps, closeProps, className }) => {
   const [searchValue, setSearchValue] = useState('')
   const [showForm, setShowForm] = useState(false)
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault()
-    onSearch(searchValue)
   }
 
   const handleInputChange = (event: { target: { value: React.SetStateAction<string> } }) => {
     setSearchValue(event.target.value)
   }
 
-  const handleClearSearch = () => {
-    setSearchValue('')
-  }
-
-  const toggleForm = () => {
+  const openForm = () => {
     setShowForm(!showForm)
   }
+
+  const closeForm = () => {
+    setShowForm(!showForm)
+  }
+
+  useEffect(() => {
+    if (showForm && inputRef.current) {
+      inputRef.current.focus()
+    }
+  }, [showForm])
 
   return (
     <div className={className}>
       <div className="toggle-button">
-        <MainButton onClick={toggleForm} {...toggleProps} />
+        <MainButton onClick={openForm} {...openProps} />
       </div>
       {showForm && (
         <form onSubmit={handleSubmit}>
-          <MainButton {...searchProps} />
-          <input type="text" value={searchValue} onChange={handleInputChange} />
-          <MainButton onClick={handleClearSearch} {...removeProps} />
+          <MainButton {...infoProps} />
+          <input type="text" value={searchValue} onChange={handleInputChange} ref={inputRef} />
+          <MainButton onClick={closeForm} {...closeProps} className="close-button" />
         </form>
       )}
     </div>
