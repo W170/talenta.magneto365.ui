@@ -5,5 +5,5 @@ export interface IMobileDrawerMenu extends IMoblieDrawer {
   /**
    * menu items props
    */
-  listProps: IListMenuIcons
+  listMenuUserProps: IListMenuIcons
 }

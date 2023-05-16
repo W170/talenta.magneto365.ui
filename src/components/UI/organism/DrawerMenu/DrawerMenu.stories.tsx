@@ -3,27 +3,10 @@ import { DrawerMenu } from './DrawerMenu.component'
 import {
   ButtonsProps,
   ButtonsProps2,
-  IsoLogoMagneto,
-  TabProps,
   ListIcon,
-  LogoMagneto,
-  MenuList
+  listMenuProps,
+  headerProps
 } from '../../../../constants/stories.constants'
-
-const listMenuProps = {
-  menuList: MenuList,
-  urlParam: 'empleos-por-empresa'
-}
-
-const headerProps = {
-  alt: 'Logo Magneto',
-  logoSize: 100,
-  spacing: 20,
-  isoTypeSize: 30,
-  logo: LogoMagneto,
-  isoType: IsoLogoMagneto,
-  tabProps: TabProps
-}
 
 const meta: Meta<typeof DrawerMenu> = {
   title: 'Organism/Drawer Menu',
