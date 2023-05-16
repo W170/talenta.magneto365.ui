@@ -4,18 +4,18 @@ export interface IMobileSearchbar {
   /**
    * Props for the search button
    */
-  toggleProps: IMainButton
+  openProps: IMainButton
   /**
    * Props for the search button
    */
-  searchProps: IMainButton
+  infoProps: IMainButton
   /**
    * Props for the remove/delete button
    */
-  removeProps: IMainButton
+  closeProps: IMainButton
   /**
    * Handler for the input value
    */
-  onSearch: (searchValue: string) => void
+  onSearch?: (searchValue: string) => void
   className?: string
 }
