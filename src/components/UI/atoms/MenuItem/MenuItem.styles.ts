@@ -26,7 +26,7 @@ export const withStyles = (c: React.FC<IMenuItem>): React.FC<IMenuItem> => style
   position: relative;
   border-radius: 12px;
   transition: all 0.3s ease-in-out;
-  height: 30px;
+  height: 32px;
   padding: 2px;
   margin-bottom: 5px;
   @media (min-width: ${screenSize.xs}px) {

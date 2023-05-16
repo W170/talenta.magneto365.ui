@@ -1,12 +1,9 @@
+import { ILogoComponent } from '../../atoms/Logo/Logo.interface'
 import { ITab } from '../Tab'
 
 export interface IHeaderDrawerTabs {
   className?: string
-  logo: string
-  logoSize: number
-  alt: string
-  isoType: string
-  isoTypeSize?: number
+  logoProps: ILogoComponent
   tabProps?: ITab
   spacing?: number
 }

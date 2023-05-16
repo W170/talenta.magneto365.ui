@@ -3,10 +3,10 @@ import { MobileDrawer } from '../../molecules/MobileDrawer'
 import { ListMenuIcons } from '../../molecules/ListMenuIcons'
 import { IMobileDrawerMenu } from './MobileDrawerMenu.interface'
 
-const Component: React.FC<IMobileDrawerMenu> = ({ listProps, isOpen, onClose }) => {
+const Component: React.FC<IMobileDrawerMenu> = ({ listMenuUserProps, isOpen, onClose }) => {
   return (
     <MobileDrawer isOpen={isOpen} onClose={onClose}>
-      <ListMenuIcons {...listProps} />
+      <ListMenuIcons {...listMenuUserProps} />
     </MobileDrawer>
   )
 }

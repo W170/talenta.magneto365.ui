@@ -1,18 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { HeaderDrawerTabs } from './HeaderDrawerTabs.components'
-import { IsoLogoMagneto, TabProps, LogoMagneto } from '../../../../constants/stories.constants'
+import { TabProps, logoProps } from '../../../../constants/stories.constants'
 
 const meta: Meta<typeof HeaderDrawerTabs> = {
   title: 'Molecules/Header Drawer Tabs',
   component: HeaderDrawerTabs,
   args: {
     tabProps: TabProps,
-    isoType: IsoLogoMagneto,
-    logo: LogoMagneto,
-    alt: 'Logo Magneto',
-    logoSize: 100,
-    spacing: 20,
-    isoTypeSize: 50
+
+    logoProps: logoProps
   }
 }
 

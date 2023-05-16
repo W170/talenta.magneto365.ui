@@ -6,7 +6,7 @@ import { screenSize } from '../../../../constants/responsive.constants'
 import { IHeaderDrawerTabs } from './HeaderDrawerTabs.interface'
 import { withStyles } from './HeaderDrawerTabs.styles'
 
-const Component: React.FC<IHeaderDrawerTabs> = ({ className, logo, isoType, isoTypeSize, tabProps, alt, logoSize }) => {
+const Component: React.FC<IHeaderDrawerTabs> = ({ className, tabProps, logoProps }) => {
   const { dim } = useContext(ResponsiveContext)
 
   const isMobile = useMemo(() => {
@@ -15,14 +15,7 @@ const Component: React.FC<IHeaderDrawerTabs> = ({ className, logo, isoType, isoT
 
   return (
     <div className={className}>
-      <LogoComponent
-        logo={logo}
-        isoType={isoType}
-        alt={alt}
-        isoSize={isoTypeSize}
-        isoView={isMobile}
-        logoSize={logoSize}
-      />
+      <LogoComponent isoView={isMobile} {...logoProps} />
       <Tab {...tabProps} />
     </div>
   )
