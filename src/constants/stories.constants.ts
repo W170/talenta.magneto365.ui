@@ -23,12 +23,13 @@ import { ILogoComponent } from '../components/UI/atoms/Logo/Logo.interface'
 import { IMainButton } from '../components/UI/atoms/MainButton'
 import { IBreadcrumbs } from '../components/UI/molecules/Breadcrumbs'
 import { IListIcon } from '../components/UI/molecules/ListIconLink'
-import { IMenuItems } from '../components/UI/molecules/ListMenuIcons'
-import { MenuItemInfo } from '../components/UI/molecules/ListMenuItems'
 import { ISearchbar } from '../components/UI/molecules/Searchbar'
 import { ITab } from '../components/UI/molecules/Tab'
-import { IResponsiveSearchbar } from '../components/UI/organism/ResponsiveSearchbar'
 import { IMobileSearchbar } from '../components/UI/molecules/MobileSearchbar'
+import { IListMenuItems, MenuItemInfo } from '../components/UI/molecules/ListMenuItems/ListMenuItems.interface'
+import { IMenuItems } from '../components/UI/molecules/ListMenuIcons/ListMenuIcons.interface'
+import { IHeaderDrawerTabs } from '../components/UI/molecules/HeaderDrawerTabs/HeaderDrawerTabs.interface'
+
 
 /**
  * UI Atoms properties/args
@@ -203,7 +204,7 @@ export const TabProps: ITab = {
     {
       linkProps: {
         href: '#',
-        text: 'Soy empresa',
+        text: 'Soy reclutador',
         type: 'link',
         textColor: '#A3A3B5'
       },
@@ -240,6 +241,7 @@ export const ListIcon: IListIcon[] = [
 ]
 
 export const MenuList: MenuItemInfo[] = [
+  { text: 'inicio', url: '#', slug: 'inicio' },
   { text: 'Todos los empleos', url: '#', slug: 'todos-los-empleos' },
   { text: 'Empleos por ciudad', url: '#', slug: 'empleos-por-ciudad' },
   { text: 'Empleos por empresa', url: '#', slug: 'empleos-por-empresa' },
@@ -249,6 +251,24 @@ export const MenuList: MenuItemInfo[] = [
   { text: 'Preguntas Frecuentes', url: '#', slug: 'preguntas-frecuentes' },
   { text: 'Articulos de interes', url: '#', slug: 'articulos-de-interes' }
 ]
+
+export const listMenuProps: IListMenuItems = {
+  menuList: MenuList,
+  urlParam: 'empleos-por-empresa'
+}
+
+export const logoProps: ILogoComponent = {
+  alt: 'Logo Magneto',
+  logoSize: 100,
+  isoSize: 30,
+  logo: LogoMagneto,
+  isoType: IsoLogoMagneto
+}
+
+export const headerProps: IHeaderDrawerTabs = {
+  logoProps: logoProps,
+  tabProps: TabProps
+}
 
 export const ButtonsProps: IMainButton = {
   buttonType: 'button',
@@ -333,3 +353,8 @@ export const MenuItems: IMenuItems[] = [
     ]
   }
 ]
+
+export const listMenuUserProps = {
+  urlParam: 'guardados',
+  menuItems: MenuItems
+}

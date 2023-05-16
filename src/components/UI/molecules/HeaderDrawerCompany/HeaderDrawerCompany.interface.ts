@@ -1,8 +1,8 @@
+import { ILogoComponent } from '../../atoms/Logo/Logo.interface'
+
 export interface IHeaderDrawerCompany {
   className?: string
-  logo: string
-  logoSize: number
-  alt: string
+  logoProps: ILogoComponent
   logoCompany: string
   logoCompanySize: number
   logoCompanyAlt?: string

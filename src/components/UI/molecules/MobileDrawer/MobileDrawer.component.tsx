@@ -1,11 +1,11 @@
 import React from 'react'
+import { DrawerPortal } from '../Drawer/DrawerPortal'
+import { IMoblieDrawer } from './MobileDrawer.interface'
 import { Add } from 'iconsax-react'
 import { IconItem } from '../../atoms/Icon'
-import { IDrawer } from './Drawer.interface'
-import { withStyles } from './Drawer.styles'
-import { DrawerPortal } from './DrawerPortal'
+import { withStyles } from './MobileDrawer.styles'
 
-const Component: React.FC<IDrawer> = ({ className, children, onClose, isOpen }) => {
+const Component: React.FC<IMoblieDrawer> = ({ className, onClose, isOpen, children }) => {
   return (
     <DrawerPortal>
       <div className={className}>
@@ -20,9 +20,7 @@ const Component: React.FC<IDrawer> = ({ className, children, onClose, isOpen }) 
     </DrawerPortal>
   )
 }
-
 /**
- * Molecule UI component for Drawer
+ * Molecule UI component for Mobile Drawer
  */
-
-export const Drawer = withStyles(Component)
+export const MobileDrawer = withStyles(Component)

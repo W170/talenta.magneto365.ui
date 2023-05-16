@@ -1,41 +1,46 @@
 import styled, { css } from 'styled-components'
-import { IDrawer } from './Drawer.interface'
-import { screenSize } from '../../../../constants/responsive.constants'
+
+import { IMoblieDrawer } from './MobileDrawer.interface'
 
 const toggleDrawer = ({ isOpen = false }) => {
   if (isOpen) {
-    return css<IDrawer>`
-      ${(props) => props.direction}: 0;
+    return css<IMoblieDrawer>`
+      bottom: 0;
     `
   }
 }
 
-export const withStyles = (c: React.FC<IDrawer>): React.FC<IDrawer> => styled(c)`
+export const withStyles = (c: React.FC<IMoblieDrawer>): React.FC<IMoblieDrawer> => styled(c)`
   & > aside {
     background-color: white;
     padding: 20px;
-    ${(props) => props.direction}: -100%;
-    top: 0;
+    bottom: -160%;
+    left: 0;
     position: fixed;
     width: 100vw;
-    height: 100vh;
-    @media (min-width: ${screenSize.md}px) {
-      width: ${(props) => (props.width ? props.width : 370)}px;
-    }
+    height: auto;
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
     z-index: 99;
     transition: all 0.6s ease-in-out;
+    border-radius: 20px 20px 0 0;
     .magneto-ui-close-button {
+      width: 40px;
+      height: 40px;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: absolute;
-      right: 2px;
-      top: 20px;
-      background: none;
+      right: 10px;
+      top: -50px;
+      background-color: black;
       border: none;
       cursor: pointer;
       & > svg {
+        color: white;
         transform: rotate(45deg);
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
       }
     }
     ${(props) => toggleDrawer(props)}

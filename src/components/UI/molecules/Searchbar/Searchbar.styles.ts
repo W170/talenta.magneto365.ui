@@ -53,7 +53,7 @@ export const withStyles = (c: React.FC<ISearchbar>): React.FC<ISearchbar> => sty
     }
   }
 
-  .remove-button {
+  .magneto-ui-remove-button {
     display: flex;
     justify-content: center;
     align-items: center;
