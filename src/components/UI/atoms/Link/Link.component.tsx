@@ -8,7 +8,8 @@ import { useMediaQuery } from '../../../hooks'
 const Component: React.FC<ILinkProps> = ({ href, text, iconProps, className }) => {
   const linkText = useMediaQuery(text, {
     xs: null,
-    sm: null
+    sm: null,
+    md: null
   })
 
   return (
