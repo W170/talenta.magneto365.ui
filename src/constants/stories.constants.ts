@@ -3,7 +3,6 @@ import {
   ArchiveTick,
   BrifecaseTick,
   ClipboardClose,
-  CloseCircle,
   DocumentText,
   Facebook,
   HambergerMenu,
@@ -29,7 +28,7 @@ import { IMobileSearchbar } from '../components/UI/molecules/MobileSearchbar'
 import { IListMenuItems, MenuItemInfo } from '../components/UI/molecules/ListMenuItems/ListMenuItems.interface'
 import { IMenuItems } from '../components/UI/molecules/ListMenuIcons/ListMenuIcons.interface'
 import { IHeaderDrawerTabs } from '../components/UI/molecules/HeaderDrawerTabs/HeaderDrawerTabs.interface'
-
+import { ILogoutHeader } from '../components/UI/organism/LogOutHeader'
 
 /**
  * UI Atoms properties/args
@@ -62,7 +61,7 @@ export const LogoProps: ILogoComponent = {
     'https://www.magneto365.com/co/_next/image?url=https%3A%2F%2Fstatic.magneto365.com%2Fco%2F_next%2Fstatic%2Fmedia%2Ffavicon-magneto.b463e35d.png&w=32&q=75',
   alt: 'Logo Magneto',
   logoSize: 120,
-  isoSize: 40
+  isoSize: 38
 }
 
 //Main Button Atom
@@ -139,7 +138,7 @@ export const SearchbarProps: ISearchbar = {
     buttonType: 'reset',
     buttonText: '',
     iconProps: {
-      Icon: CloseCircle,
+      Icon: Add,
       hover: false,
       color: '#14141C',
       size: 18,
@@ -150,24 +149,13 @@ export const SearchbarProps: ISearchbar = {
 
 //Mobile Searchbar Molecule
 export const MobileSearchbarProps: IMobileSearchbar = {
-  openProps: {
-    buttonText: '',
-    buttonType: 'button',
-    iconProps: {
-      Icon: SearchNormal1,
-      hover: false,
-      color: '#000096',
-      size: 16
-    },
-    buttonColor: 'transparent'
-  },
   infoProps: {
     buttonType: 'submit',
     buttonText: '',
     iconProps: {
       Icon: SearchNormal1,
       hover: false,
-      color: '#000096',
+      color: '#A3A3B5',
       size: 16
     },
     buttonColor: 'transparent'
@@ -179,7 +167,7 @@ export const MobileSearchbarProps: IMobileSearchbar = {
       Icon: Add,
       hover: false,
       color: '#14141C',
-      size: 16,
+      size: 25,
       variant: 'Linear'
     },
     buttonColor: 'transparent'
@@ -220,11 +208,20 @@ export const TabProps: ITab = {
  * UI Organism properties/args
  */
 
-//ResponsiveSearchbar Organism
+/**
+ * UI Templates properties/args
+ */
 
-export const ResponsiveSearchbarProps: IResponsiveSearchbar = {
+export const logoutProps: ILogoutHeader = {
+  openProps: OpenButtonProps,
+  tabProps: TabProps,
+  menuProps: MenuButtonProps,
+  logoProps: LogoProps,
+  mobileProps: MobileSearchbarProps,
   searchbarProps: SearchbarProps,
-  mobileSearchbarProps: MobileSearchbarProps
+  mainButtonProps: MainButtonProps,
+  linkProps: LinkProps,
+  breadcrumbsProps: BreadcrumbProps
 }
 
 export const LogoMagneto = 'https://www.magneto365.com/wp-content/uploads/2022/09/Logo-magneto-v3.png'
@@ -279,7 +276,8 @@ export const ButtonsProps: IMainButton = {
   },
   buttonText: 'Crear hoja de vida',
   buttonColor: '#70ECD4',
-  textColor: '#090467'
+  textColor: '#090467',
+  spacing: 10
 }
 
 export const ButtonsProps2: IMainButton = {
@@ -291,7 +289,8 @@ export const ButtonsProps2: IMainButton = {
   },
   buttonText: 'Iniciar Sesión',
   buttonColor: 'white',
-  textColor: '#090467'
+  textColor: '#090467',
+  spacing: 10
 }
 
 export const MenuItems: IMenuItems[] = [
