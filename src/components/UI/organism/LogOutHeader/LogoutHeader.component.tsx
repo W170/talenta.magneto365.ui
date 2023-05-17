@@ -66,6 +66,10 @@ const Component: React.FC<ILogoutHeader> = ({
     sm: <LogoComponent {...logoProps} isoView={true} />
   })
 
+  const isMobileButton = useMediaQuery(false, {
+    md: true
+  })
+
   return (
     <div className={className}>
       {responsiveTab}
@@ -78,8 +82,8 @@ const Component: React.FC<ILogoutHeader> = ({
         </div>
         {searchbar}
         <div className="magneto-ui-button-wrapper">
-          <Link {...linkProps} />
-          <MainButton {...mainButtonProps} />
+          <Link {...linkProps} isMobile={isMobileButton} />
+          <MainButton {...mainButtonProps} isMobile={isMobileButton} spacing={10} />
         </div>
       </section>
       {responsiveBreadcrumbs}
