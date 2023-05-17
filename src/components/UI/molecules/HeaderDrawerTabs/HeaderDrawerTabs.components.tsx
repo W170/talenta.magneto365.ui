@@ -1,24 +1,22 @@
-import React, { useContext, useMemo } from 'react'
+import React from 'react'
 import { LogoComponent } from '../../atoms/Logo'
 import { Tab } from '../Tab'
-import { ResponsiveContext } from '../../../context/ResponsiveContext.component'
-import { screenSize } from '../../../../constants/responsive.constants'
 import { IHeaderDrawerTabs } from './HeaderDrawerTabs.interface'
 import { withStyles } from './HeaderDrawerTabs.styles'
+import { useMediaQuery } from '../../../hooks'
+import { withContextAppProvider } from '../../../context/context.component'
 
 const Component: React.FC<IHeaderDrawerTabs> = ({ className, tabProps, logoProps }) => {
-  const { dim } = useContext(ResponsiveContext)
-
-  const isMobile = useMemo(() => {
-    return dim.size <= screenSize.md
-  }, [dim.size])
+  const isMobileLogo = useMediaQuery(false, {
+    md: true
+  })
 
   return (
     <div className={className}>
-      <LogoComponent isoView={isMobile} {...logoProps} />
+      <LogoComponent isoView={isMobileLogo} {...logoProps} />
       <Tab {...tabProps} />
     </div>
   )
 }
 
-export const HeaderDrawerTabs = withStyles(Component)
+export const HeaderDrawerTabs = withContextAppProvider(withStyles(Component))
