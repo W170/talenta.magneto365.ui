@@ -13,5 +13,9 @@ export interface IHeaderTab {
    * Sets the text of tab
    */
   tabText: string
+  /**
+   *
+   */
+  isActive: boolean
   className?: string
 }

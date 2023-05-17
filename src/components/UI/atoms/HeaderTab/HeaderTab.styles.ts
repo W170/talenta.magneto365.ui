@@ -1,6 +1,17 @@
 import styled, { css } from 'styled-components'
 import { IHeaderTab } from './HeaderTab.interface'
 
+const isActiveTab = ({ isActive = false }: IHeaderTab) => {
+  if (isActive) {
+    return css`
+      background-color: #e9e9f6;
+      &:hover {
+        cursor: pointer;
+      }
+    `
+  }
+}
+
 export const withStyles = (Component: React.FC<IHeaderTab>): React.FC<IHeaderTab> => {
   return styled(Component)`
     display: inline-flex;
@@ -35,5 +46,7 @@ export const withStyles = (Component: React.FC<IHeaderTab>): React.FC<IHeaderTab
           color: #14141c;
         }
       `}
+
+      ${(props) => isActiveTab(props)}
   `
 }
