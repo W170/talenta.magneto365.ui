@@ -8,7 +8,7 @@ export interface IHeaderTab {
   /**
    * Sets the url of tab
    */
-  url: string
+  url?: string
   /**
    * Sets the text of tab
    */
