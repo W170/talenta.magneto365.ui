@@ -24,7 +24,7 @@ const meta: Meta<typeof MobileSearchbar> = {
         Icon: Add,
         hover: false,
         color: '#14141C',
-        size: 16,
+        size: 25,
         variant: 'Linear'
       },
       buttonColor: 'transparent'
