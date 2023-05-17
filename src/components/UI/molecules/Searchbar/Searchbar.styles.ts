@@ -13,7 +13,7 @@ export const withStyles = (c: React.FC<ISearchbar>): React.FC<ISearchbar> => sty
     width: 100%;
 
     input {
-      width: 90%;
+      flex: 1;
       padding: 10px;
 
       background-color: transparent;
@@ -35,10 +35,17 @@ export const withStyles = (c: React.FC<ISearchbar>): React.FC<ISearchbar> => sty
       }
     }
 
+    .magneto-ui-searchbar-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: auto;
+    }
+
     button {
-      margin-right: 20px;
-      width: 7%;
-      padding: 0px !important;
+      margin: 0px 10px;
+      width: 18px;
+      padding: 0px;
       border-radius: 8px;
       background-color: transparent;
     }
@@ -58,6 +65,7 @@ export const withStyles = (c: React.FC<ISearchbar>): React.FC<ISearchbar> => sty
     justify-content: center;
     align-items: center;
     margin-right: 0px;
+    margin: 0px 10px;
 
     svg {
       transform: rotate(45deg);
