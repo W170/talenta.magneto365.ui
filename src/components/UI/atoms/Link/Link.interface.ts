@@ -4,6 +4,10 @@ export type LinkType = 'button' | 'link'
 
 export interface ILinkProps {
   /**
+   *
+   */
+  isMobile?: boolean
+  /**
    * Props for the Icon
    */
   iconProps?: IconProps

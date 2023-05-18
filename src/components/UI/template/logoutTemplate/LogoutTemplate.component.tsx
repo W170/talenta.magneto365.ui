@@ -11,16 +11,18 @@ import {
   ButtonsProps2,
   ListIcon,
   headerProps,
-  listMenuProps
+  listMenuProps,
+  logoutProps
 } from '../../../../constants/stories.constants'
 import { ActiosContainer } from '../../organism/DrawerMenu/DrawerMenu.styles'
+import { LogoutHeader } from '../../organism/LogOutHeader'
 
 const Component: React.FC<ILogoutTemplate> = ({ className }) => {
   const [toggleModal, setToggleModal] = useState(false)
 
   return (
     <div className={className}>
-      <button onClick={() => setToggleModal(true)}>Open Modal</button>
+      <LogoutHeader {...logoutProps} onClick={() => setToggleModal(true)} />
       <Drawer direction="left" isOpen={toggleModal} onClose={() => setToggleModal(false)}>
         <HeaderDrawerTabs {...headerProps} />
         <MenuContainer>
