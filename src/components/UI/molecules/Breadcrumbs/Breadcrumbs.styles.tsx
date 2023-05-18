@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { IBreadcrumbs } from './Breadcrumbs.interface'
+import { lightTheme } from '../../../../shared/stylesheets/theme.styles'
 
 export const withStyles = (c: React.FC<IBreadcrumbs>): React.FC<IBreadcrumbs> => styled(c)`
   display: flex;
@@ -15,6 +16,6 @@ export const withStyles = (c: React.FC<IBreadcrumbs>): React.FC<IBreadcrumbs> =>
     height: 16px;
     font-size: 1.2rem;
     font-weight: 400;
-    color: ${(props) => props.theme.colors.$grayDark};
+    color: ${lightTheme.colors.$grayDark};
   }
 `

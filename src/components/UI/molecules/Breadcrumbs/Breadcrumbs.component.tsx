@@ -4,7 +4,7 @@ import { Breadcrumb } from '../../atoms/Breadcrumb'
 import { withStyles } from './Breadcrumbs.styles'
 import { IBreadcrumbs } from './Breadcrumbs.interface'
 
-const Component: React.FC<IBreadcrumbs> = ({ iconProps, breadcrumbsList = [], urlParam, className }) => {
+const Component: React.FC<IBreadcrumbs> = ({ urlParam, breadcrumbsList = [], iconProps, className }) => {
   return (
     <div className={className}>
       <IconItem {...iconProps} />
