@@ -11,18 +11,18 @@ export default class EventDispatcher {
 
   /**
    *
-   * @param eventType Event Type to suscribe
+   * @param eventType Event Type to subscribe
    * @param listener Callback that execute each time that dispatch function
    * is called with event type subscribed
-   * @returns unsuscribe function
+   * @returns unsubscribe function
    */
-  suscribe<TEventType extends EventType>(eventType: TEventType, listener: Listener<TEventType>): () => void {
-    const listeners = this.listenersMap[eventType] || []
+  subscribe<TEventType extends EventType>(eventType: TEventType, listener: Listener<TEventType>): () => void {
+    const listeners: Listener<TEventType>[] = this.listenersMap[eventType] || []
     this.listenersMap = {
       ...this.listenersMap,
       [eventType]: [...listeners, listener]
     }
-    // unsuscribe function
+    // unsubscribe function
     return () => {
       this.listenersMap = {
         ...this.listenersMap,
@@ -33,11 +33,11 @@ export default class EventDispatcher {
 
   /**
    *
-   * @param eventType Event Type to dipatch data
+   * @param eventType Event Type to dispatch data
    * @param payload Data
    */
-  dipatch<TEventType extends EventType>(eventType: TEventType, payload: Events[TEventType]): void {
-    const listeners = this.listenersMap[eventType] || []
+  dispatch<TEventType extends EventType>(eventType: TEventType, payload: Events[TEventType]): void {
+    const listeners: Listener<TEventType>[] = this.listenersMap[eventType] || []
     listeners.forEach((cb) => cb(payload))
   }
 }

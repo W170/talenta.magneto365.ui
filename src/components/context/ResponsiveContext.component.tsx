@@ -1,27 +1,32 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { createContext } from 'react'
 import { Dimension } from '../../utils/eventDispatcher'
 import { ResponsiveManagement } from '../../utils/responsive/responsive.util'
 import { EventDispatcherContext } from './EventDispatcherContext.component'
 
-const responsiveManagement = new ResponsiveManagement()
-
-export const ResponsiveContext = createContext<{ dim: Dimension }>({ dim: responsiveManagement.getDim() })
+export const ResponsiveContext = createContext<{ dim: Dimension }>({ dim: { size: 1366, type: 'md' } })
 
 export const ResponsiveContextProvider: React.FC = ({ children }) => {
   const eventDispatcher = useContext(EventDispatcherContext)
 
-  const [dim, setDim] = useState(responsiveManagement.getDim())
+  const responsiveManagementRef = useRef<ResponsiveManagement>()
+  const [dim, setDim] = useState<Dimension>({ size: 1366, type: 'md' })
 
   useEffect(() => {
-    const unsuscribe = eventDispatcher.suscribe('UPDATE_DIMENSION', ({ dim }) => {
+    if (!responsiveManagementRef.current) return
+    const unsubscribe = eventDispatcher.subscribe('UPDATE_DIMENSION', ({ dim }) => {
       setDim(dim)
     })
-    responsiveManagement.run(eventDispatcher)
+    responsiveManagementRef.current.run(eventDispatcher)
     return () => {
-      unsuscribe()
+      unsubscribe()
     }
   }, [eventDispatcher])
+
+  useLayoutEffect(() => {
+    if (!responsiveManagementRef.current) return
+    responsiveManagementRef.current = new ResponsiveManagement()
+  }, [])
 
   return <ResponsiveContext.Provider value={{ dim }}>{children}</ResponsiveContext.Provider>
 }

@@ -6,9 +6,9 @@ import { withStyles } from './HeaderDrawerCompany.styles'
 const Component: React.FC<IHeaderDrawerCompany> = ({
   className,
   logo,
-  logoCompany,
   logoSize,
   alt,
+  logoCompany,
   logoCompanyAlt,
   logoCompanySize,
   flag,

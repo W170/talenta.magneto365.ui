@@ -1,2 +1,2 @@
-// export * from './components'
-// export the final components
+export * from './components/UI/template/logoutTemplate'
+export * from './components/UI/organism/LogOutHeader'

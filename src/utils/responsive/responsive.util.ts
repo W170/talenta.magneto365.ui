@@ -18,7 +18,7 @@ export class ResponsiveManagement {
       removeEventListener('resize', this.callback)
     }
     this.callback = () => this.update(eventDispatcher)
-    eventDispatcher.dipatch('UPDATE_DIMENSION', { dim: this.dim })
+    eventDispatcher.dispatch('UPDATE_DIMENSION', { dim: this.dim })
     addEventListener('resize', this.callback)
   }
 
@@ -29,7 +29,7 @@ export class ResponsiveManagement {
       size: screenSize[newType],
       type: newType
     }
-    eventDispatcher.dipatch('UPDATE_DIMENSION', { dim: this.dim })
+    eventDispatcher.dispatch('UPDATE_DIMENSION', { dim: this.dim })
   }
 
   private getType(width: number): DimType {
