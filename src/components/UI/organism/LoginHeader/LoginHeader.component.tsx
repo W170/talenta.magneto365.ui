@@ -90,8 +90,6 @@ const Component: React.FC<ILoginHeader> = ({ onClick, className }) => {
     }
   )
 
-  console.log()
-
   return (
     <header className={className}>
       <MobileSearchbar {...MobileSearchbarProps} onClick={() => setShowForm(false)} toggle={showForm} />
