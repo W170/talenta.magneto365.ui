@@ -22,13 +22,15 @@ const Component: React.FC<ISearchbar> = ({ placeholder, searchProps, removeProps
     <div className={className}>
       <form onSubmit={handleSubmit}>
         <input type="text" value={searchValue} onChange={handleInputChange} placeholder={placeholder} />
-        {searchValue && (
-          <>
-            <MainButton className="magneto-ui-remove-button" onClick={handleClearSearch} {...removeProps} />
-            <span>|</span>
-          </>
-        )}
-        <MainButton {...searchProps} />
+        <div className="magneto-ui-searchbar-buttons">
+          {searchValue && (
+            <>
+              <MainButton className="magneto-ui-remove-button" onClick={handleClearSearch} {...removeProps} />
+              <span>|</span>
+            </>
+          )}
+          <MainButton {...searchProps} />
+        </div>
       </form>
     </div>
   )

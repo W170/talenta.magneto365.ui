@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { ILogoutHeader } from './LogoutHeader.interface'
+import { ILoginHeader } from './LoginHeader.interface'
 
-export const withStyles = (c: React.FC<ILogoutHeader>): React.FC<ILogoutHeader> => styled(c)`
+export const withStyles = (c: React.FC<ILoginHeader>): React.FC<ILoginHeader> => styled(c)`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -40,6 +40,14 @@ export const withStyles = (c: React.FC<ILogoutHeader>): React.FC<ILogoutHeader> 
 
     .magneto-ui-searchbar-wrapper {
       width: 40%;
+    }
+
+    .magneto-ui-tabs-wrapper {
+      display: inherit;
+      width: auto;
+      gap: 8px;
+      margin-left: 3rem;
+      margin-right: 1.75rem;
     }
   }
 

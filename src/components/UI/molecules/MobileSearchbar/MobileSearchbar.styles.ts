@@ -19,8 +19,8 @@ export const withStyles = (c: React.FC<IMobileSearchbar>): React.FC<IMobileSearc
   align-items: center;
   position: fixed;
   left: 0;
-  width: 100vw;
-  height: 3.75rem;
+  width: 100%;
+  height: 4.5rem;
   z-index: 1;
   margin: 0;
   transition: all 0.3s ease-in-out;

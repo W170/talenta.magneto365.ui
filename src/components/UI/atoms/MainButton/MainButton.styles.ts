@@ -1,13 +1,26 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { IMainButton } from './MainButton.interface'
-import { screenSize } from '../../../../constants/responsive.constants'
+
+const isMobile = ({ isMobile = false }: IMainButton) => {
+  if (isMobile) {
+    return css`
+      width: 2.5rem;
+      height: 2.5rem;
+
+      &.medium {
+        padding: 0;
+      }
+    `
+  }
+}
 
 export const withStyles = (c: React.FC<IMainButton>): React.FC<IMainButton> => styled(c)`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: ${(props) => (props.spacing ? props.spacing : 0)}px;
+  padding: 10px 20px;
 
   border: none;
   border-radius: 50px;
@@ -37,7 +50,6 @@ export const withStyles = (c: React.FC<IMainButton>): React.FC<IMainButton> => s
   }
 
   &.medium {
-    padding: 10px 20px;
     p {
       font-size: 14px;
       line-height: 17px;
@@ -87,12 +99,5 @@ export const withStyles = (c: React.FC<IMainButton>): React.FC<IMainButton> => s
     }
   }}
 
-  @media screen and (max-width: ${screenSize.md - 1}px) {
-    width: 2.5rem;
-    height: 2.5rem;
-
-    &.medium {
-      padding: 0;
-    }
-  }
+  ${(props) => isMobile(props)}
 `

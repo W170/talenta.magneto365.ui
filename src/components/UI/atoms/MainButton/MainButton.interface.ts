@@ -5,6 +5,14 @@ type ButtonType = 'submit' | 'reset' | 'button'
 
 export interface IMainButton {
   /**
+   *
+   */
+  spacing?: number
+  /**
+   *
+   */
+  isMobile?: boolean
+  /**
    * Sets button type
    */
   buttonType: ButtonType

@@ -15,7 +15,8 @@ const meta: Meta<typeof MainButton> = {
     },
     buttonText: 'Crear hoja de vida',
     buttonColor: '#70ECD4',
-    textColor: '#090467'
+    textColor: '#090467',
+    spacing: 10
   }
 }
 export default meta
@@ -28,6 +29,7 @@ export const Responsive: Story = {
   args: {
     buttonText: 'Crear hoja de vida',
     buttonColor: '#70ECD4',
-    textColor: '#090467'
+    textColor: '#090467',
+    isMobile: true
   }
 }
