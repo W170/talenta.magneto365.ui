@@ -50,6 +50,7 @@ export interface AlertColors {
 export interface DisabledColors {
   gray: string
   gray2: string
+  gray3: string
 }
 
 export interface PrimaryColors {
