@@ -6,18 +6,18 @@ import { ILogoutTemplate } from './LogoutTemplate.interface'
 import { ListMenuItems } from '../../molecules/ListMenuItems'
 import { MainButton } from '../../atoms/MainButton'
 import { ListIconLink } from '../../molecules/ListIconLink'
-import {
-  ButtonsProps,
-  ButtonsProps2,
-  ListIcon,
-  headerProps,
-  listMenuProps,
-  logoutProps
-} from '../../../../constants/stories.constants'
+import { logoutProps } from '../../../../constants/stories.constants'
 import { ActiosContainer } from '../../organism/DrawerMenu/DrawerMenu.styles'
 import { LogoutHeader } from '../../organism/LogOutHeader'
 
-const Component: React.FC<ILogoutTemplate> = ({ className }) => {
+const Component: React.FC<ILogoutTemplate> = ({
+  className,
+  headerProps,
+  listMenuProps,
+  login,
+  createAccount,
+  listIcon
+}) => {
   const [toggleModal, setToggleModal] = useState(false)
 
   return (
@@ -29,9 +29,9 @@ const Component: React.FC<ILogoutTemplate> = ({ className }) => {
           <ListMenuItems {...listMenuProps} />
         </MenuContainer>
         <ActiosContainer>
-          <MainButton buttonSize="full" {...ButtonsProps} />
-          <MainButton buttonSize="full" {...ButtonsProps2} />
-          <ListIconLink spacing={30} listIcon={ListIcon} />
+          <MainButton buttonSize="full" {...createAccount} />
+          <MainButton buttonSize="full" {...login} />
+          <ListIconLink spacing={30} listIcon={listIcon} />
         </ActiosContainer>
       </Drawer>
     </div>

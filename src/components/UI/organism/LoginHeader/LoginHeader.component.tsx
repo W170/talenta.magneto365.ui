@@ -90,8 +90,6 @@ const Component: React.FC<ILoginHeader> = ({ onClick, className }) => {
     }
   )
 
-  console.log()
-
   return (
     <header className={className}>
       <MobileSearchbar {...MobileSearchbarProps} onClick={() => setShowForm(false)} toggle={showForm} />
@@ -103,10 +101,7 @@ const Component: React.FC<ILoginHeader> = ({ onClick, className }) => {
         </div>
         {searchbar}
         {responsiveHeaderTabs}
-        <div className="magneto-ui-user-wrapper">
-          {/* <Avatar {...AvatarProps} onClick={() => setShowPopover(!showPopover)} /> */}
-          {responsivePopover}
-        </div>
+        <div className="magneto-ui-user-wrapper">{responsivePopover}</div>
       </section>
       {responsiveBreadcrumbs}
       <MobileDrawer isOpen={toggleMobileDrawer} onClose={() => setToggleMobileDrawer(false)}>

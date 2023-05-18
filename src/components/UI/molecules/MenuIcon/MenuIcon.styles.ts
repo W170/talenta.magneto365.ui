@@ -1,13 +1,15 @@
 import styled, { css } from 'styled-components'
 import { IMenuIcon } from './MenuIcon.interface'
 import { screenSize } from '../../../../constants/responsive.constants'
+import { lightTheme } from '../../../../shared/stylesheets/theme.styles'
 
 const isActiveLink = ({ isActive = false }: IMenuIcon) => {
   if (isActive) {
     return css`
-      background-color: ${(props) => props.theme.colors.disabledColors.gray2};
+      background-color: ${lightTheme.colors.disabledColors.gray2};
+
       &:hover {
-        background-color: ${(props) => props.theme.colors.disabledColors.gray2};
+        background-color: ${lightTheme.colors.disabledColors.gray2};
       }
     `
   }
@@ -30,7 +32,7 @@ export const withStyles = (c: React.FC<IMenuIcon>): React.FC<IMenuIcon> => style
     height: 40px;
   }
   &:hover {
-    background-color: ${(props) => props.theme.colors.disabledColors.gray};
+    background-color: ${lightTheme.colors.disabledColors.gray};
   }
   ${(props) => isActiveLink(props)}
   .magneto-ui-menu-text {

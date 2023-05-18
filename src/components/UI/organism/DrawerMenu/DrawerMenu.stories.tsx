@@ -1,12 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { DrawerMenu } from './DrawerMenu.component'
-import {
-  ButtonsProps,
-  ButtonsProps2,
-  ListIcon,
-  listMenuProps,
-  headerProps
-} from '../../../../constants/stories.constants'
+import { login, createAccount, ListIcon, listMenuProps, headerProps } from '../../../../constants/stories.constants'
 
 const meta: Meta<typeof DrawerMenu> = {
   title: 'Organism/Drawer Menu',
@@ -14,8 +8,8 @@ const meta: Meta<typeof DrawerMenu> = {
   tags: ['autodocs'],
   args: {
     listIcon: ListIcon,
-    buttonsProps: ButtonsProps,
-    buttonsProps2: ButtonsProps2,
+    login,
+    createAccount,
     headerProps: headerProps,
     listMenuProps: listMenuProps
   },

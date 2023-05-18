@@ -25,3 +25,4 @@ export const withStyles = (Component: React.FC<IAvatar>): React.FC<IAvatar> => {
     }
   `
 }
+
