@@ -1,11 +1,12 @@
 import styled, { css } from 'styled-components'
 import { IBreadcrumb } from './Breadcrumb.interface'
+import { lightTheme } from '../../../../shared/stylesheets/theme.styles'
 
 const isActiveBreadcrumb = ({ isActive = false }: IBreadcrumb) => {
   if (isActive) {
     return css`
       p {
-        font-weight: ${(props) => props.theme.weight.bold};
+        font-weight: ${lightTheme.weight.bold};
       }
     `
   }

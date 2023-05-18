@@ -4,30 +4,6 @@ export type LinkType = 'button' | 'link'
 
 export interface ILinkProps {
   /**
-   *
-   */
-  isMobile?: boolean
-  /**
-   * Props for the Icon
-   */
-  iconProps?: IconProps
-  /**
-   * Sets text color
-   */
-  textColor?: string
-  /**
-   * Sets button color
-   */
-  buttonColor?: string
-  /**
-   * Sets hover color
-   */
-  hoverColor?: string
-  /**
-   * Sets visited color
-   */
-  visitedColor?: string
-  /**
    * Sets link type
    */
   type: LinkType
@@ -39,5 +15,29 @@ export interface ILinkProps {
    * Sets inside text for link
    */
   text: string
+  /**
+   * Props for the Icon
+   */
+  iconProps?: IconProps
+  /**
+   * Sets button color
+   */
+  buttonColor?: string
+  /**
+   * Sets text color
+   */
+  textColor?: string
+  /**
+   * Sets hover color
+   */
+  hoverColor?: string
+  /**
+   * Sets visited color
+   */
+  visitedColor?: string
+  /**
+   * Sets if link is mobile
+   */
+  isMobile?: boolean
   className?: string
 }

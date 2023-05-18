@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { ILinkProps, LinkType } from './Link.interface'
+import { lightTheme } from '../../../../shared/stylesheets/theme.styles'
 
 export const getTypeStyles = ({ type = 'link' }: { type: LinkType }) => {
   switch (type) {
@@ -32,7 +33,7 @@ export const getTypeStyles = ({ type = 'link' }: { type: LinkType }) => {
         }
 
         :hover {
-          background-color: ${(props) => props.theme.colors.$gray5};
+          background-color: ${lightTheme.colors.$gray5};
         }
 
         :visited {
@@ -57,11 +58,11 @@ const isMobile = ({ isMobile = false, type }: ILinkProps) => {
 }
 
 export const withStyles = (c: React.FC<ILinkProps>): React.FC<ILinkProps> => styled(c)`
-  color: ${(props) => (props.textColor ? props.textColor : props.theme.colors.gray1)};
+  color: ${(props) => (props.textColor ? props.textColor : lightTheme.colors.$gray1)};
   text-decoration: none;
   &:hover {
     cursor: pointer;
-    color: ${(props) => (props.hoverColor ? props.hoverColor : props.theme.colors.primary)};
+    color: ${(props) => (props.hoverColor ? props.hoverColor : lightTheme.colors.primary)};
   }
 
   ${(props) => getTypeStyles(props)}

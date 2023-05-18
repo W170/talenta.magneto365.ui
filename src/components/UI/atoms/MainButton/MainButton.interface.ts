@@ -5,40 +5,40 @@ type ButtonType = 'submit' | 'reset' | 'button'
 
 export interface IMainButton {
   /**
-   *
-   */
-  spacing?: number
-  /**
-   *
-   */
-  isMobile?: boolean
-  /**
    * Sets button type
    */
   buttonType: ButtonType
-  /**
-   * Sets the button size
-   */
-  buttonSize?: ButtonSizes
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void
   /**
    * Props for the Icon Atom
    */
   iconProps: IconProps
   /**
-   * Sets the text inside button
-   */
-  buttonText?: string
-  /**
    * Setx the button color
    */
   buttonColor?: string
   /**
+   * Sets the button size
+   */
+  buttonSize?: ButtonSizes
+  /**
+   * Sets the text inside button
+   */
+  buttonText?: string
+  /**
    * Sets the text color
    */
   textColor?: string
+  /**
+   * Sets a spacing between icon and text
+   */
+  spacing?: number
+  /**
+   * Sets if button is mobile
+   */
+  isMobile?: boolean
+  /**
+   * Optional click handler
+   */
+  onClick?: () => void
   className?: string
 }

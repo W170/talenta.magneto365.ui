@@ -16,3 +16,9 @@ export default meta
 type Story = StoryObj<typeof Avatar>
 
 export const Default: Story = {}
+
+export const NoImage: Story = {
+  args: {
+    userImage: ''
+  }
+}

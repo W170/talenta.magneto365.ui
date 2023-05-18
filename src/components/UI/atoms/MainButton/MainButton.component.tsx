@@ -4,12 +4,12 @@ import { IMainButton } from './MainButton.interface'
 import { withStyles } from './MainButton.styles'
 
 const Component: React.FC<IMainButton> = ({
-  isMobile = false,
   buttonType = 'submit',
-  buttonSize = 'medium',
-  onClick,
   iconProps,
+  buttonSize = 'medium',
   buttonText,
+  isMobile = false,
+  onClick,
   className
 }) => {
   return (

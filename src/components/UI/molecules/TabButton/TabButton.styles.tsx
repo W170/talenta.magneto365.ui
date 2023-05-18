@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { ITabButton } from './TabButton.interface'
+import { lightTheme } from '../../../../shared/stylesheets/theme.styles'
 
 export const withStyles = (c: React.FC<ITabButton>): React.FC<ITabButton> => styled(c)`
   display: flex;
@@ -24,7 +25,7 @@ export const withStyles = (c: React.FC<ITabButton>): React.FC<ITabButton> => sty
     line-height: 14px;
 
     :hover {
-      color: ${(props) => props.theme.colors.black};
+      color: ${lightTheme.colors.black};
     }
   }
 `
