@@ -1,14 +1,15 @@
 import styled, { css } from 'styled-components'
 import { IMenuItem } from './MenuItem.interface'
 import { screenSize } from '../../../../constants/responsive.constants'
+import { lightTheme } from '../../../../shared/stylesheets/theme.styles'
 
 const isActiveLink = ({ isActive = false }: IMenuItem) => {
   if (isActive) {
     return css`
-      background-color: ${(props) => props.theme.colors.disabledColors.gray2};
+      background-color: ${lightTheme.colors.disabledColors.gray2};
       &:hover {
         cursor: pointer;
-        background-color: ${(props) => props.theme.colors.disabledColors.gray2};
+        background-color: ${lightTheme.colors.disabledColors.gray2};
       }
       svg {
         opacity: 1;
@@ -37,7 +38,7 @@ export const withStyles = (c: React.FC<IMenuItem>): React.FC<IMenuItem> => style
 
   &:hover {
     cursor: pointer;
-    background-color: ${(props) => props.theme.colors.disabledColors.gray};
+    background-color: ${lightTheme.colors.disabledColors.gray};
     svg {
       opacity: 1;
     }
@@ -54,7 +55,7 @@ export const withStyles = (c: React.FC<IMenuItem>): React.FC<IMenuItem> => style
 
   p {
     position: absolute;
-    color: ${(props) => props.theme.colors.textColors.black};
+    color: ${lightTheme.colors.textColors.black};
     transition: all 0.3s ease-in-out;
     font-size: 14px;
   }
