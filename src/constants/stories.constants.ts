@@ -29,10 +29,19 @@ import { IListMenuItems, MenuItemInfo } from '../components/UI/molecules/ListMen
 import { IMenuItems } from '../components/UI/molecules/ListMenuIcons/ListMenuIcons.interface'
 import { IHeaderDrawerTabs } from '../components/UI/molecules/HeaderDrawerTabs/HeaderDrawerTabs.interface'
 import { ILogoutHeader } from '../components/UI/organism/LogOutHeader'
+import { IAvatar } from '../components/UI/atoms/Avatar'
+import { IHeaderTabs } from '../components/UI/molecules/HeaderTabs/HeaderTabs.interface'
+import { IHeaderTab } from '../components/UI/atoms/HeaderTab'
 
 /**
  * UI Atoms properties/args
  */
+
+//Avatar Atom
+export const AvatarProps: IAvatar = {
+  userImage:
+    'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
+}
 
 //Breadcrumb Atom
 
@@ -100,6 +109,14 @@ export const MenuButtonProps: IMainButton = {
     size: 20
   },
   buttonColor: 'transparent'
+}
+
+//HeaderTab Atom
+export const CurriculumTabProps: IHeaderTab = {
+  tabType: 'tabOption',
+  url: '#',
+  tabText: 'Hoja de vida',
+  isActive: false
 }
 
 /**
@@ -200,6 +217,51 @@ export const TabProps: ITab = {
       tabButtonTextSize: '11px',
       tabButtonTextWeight: '400',
       boxShadow: false
+    }
+  ]
+}
+
+//HeaderTabs Molecule
+export const JobsTabsProps: IHeaderTabs = {
+  urlParam: 'sugeridos',
+  headerTabList: [
+    {
+      tabType: 'tabTitle',
+      url: '#',
+      tabText: 'Empleos:'
+    },
+    {
+      tabType: 'tabOption',
+      url: '#',
+      tabText: 'Sugeridos',
+      slug: 'sugeridos'
+    },
+    {
+      tabType: 'tabOption',
+      url: '#',
+      tabText: 'Guardados'
+    }
+  ]
+}
+
+export const ProcessTabsProps: IHeaderTabs = {
+  urlParam: 'sugeridos',
+  headerTabList: [
+    {
+      tabType: 'tabTitle',
+      url: '#',
+      tabText: 'Procesos:'
+    },
+    {
+      tabType: 'tabOption',
+      url: '#',
+      tabText: 'Activos',
+      slug: 'procesos-activos'
+    },
+    {
+      tabType: 'tabOption',
+      url: '#',
+      tabText: 'Inactivos'
     }
   ]
 }
