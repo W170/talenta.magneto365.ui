@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 import { ISearchbar } from './Searchbar.interface'
+import { lightTheme } from '../../../../shared/stylesheets/theme.styles'
 
 export const withStyles = (c: React.FC<ISearchbar>): React.FC<ISearchbar> => styled(c)`
   display: flex;
   width: 100%;
   border-radius: 8px;
-  background-color: ${(props) => props.theme.colors.$gray5};
+  background-color: ${lightTheme.colors.$gray5};
 
   form {
     display: inherit;
@@ -21,10 +22,10 @@ export const withStyles = (c: React.FC<ISearchbar>): React.FC<ISearchbar> => sty
       border-radius: 8px;
 
       font-style: normal;
-      font-weight: ${(props) => props.theme.weight.regular};
-      font-size: ${(props) => props.theme.size.s2}px;
+      font-weight: ${lightTheme.weight.regular};
+      font-size: ${lightTheme.size.s2}px;
       line-height: 17px;
-      color: ${(props) => props.theme.colors.$grayDark};
+      color: ${lightTheme.colors.$grayDark};
 
       &:not(:placeholder-shown) {
         color: #020202;

@@ -18,6 +18,7 @@ const Component: React.FC<ISearchbar> = ({ placeholder, searchProps, removeProps
   const handleClearSearch = () => {
     setSearchValue('')
   }
+
   return (
     <div className={className}>
       <form onSubmit={handleSubmit}>
