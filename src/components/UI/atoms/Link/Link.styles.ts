@@ -57,7 +57,7 @@ const isMobile = ({ isMobile = false, type }: ILinkProps) => {
 }
 
 export const withStyles = (c: React.FC<ILinkProps>): React.FC<ILinkProps> => styled(c)`
-  color: ${(props) => (props.textColor ? props.textColor : props.theme.colors.gray1)};
+  color: ${(props) => (props.textColor ? props.textColor : props.theme.colors.$gray1)};
   text-decoration: none;
   &:hover {
     cursor: pointer;
