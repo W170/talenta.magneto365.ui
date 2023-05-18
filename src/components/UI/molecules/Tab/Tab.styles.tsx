@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { ITab } from './Tab.interface'
+import { lightTheme } from '../../../../shared/stylesheets/theme.styles'
 
 export const withStyles = (c: React.FC<ITab>): React.FC<ITab> => styled(c)`
   display: flex;
@@ -10,5 +11,5 @@ export const withStyles = (c: React.FC<ITab>): React.FC<ITab> => styled(c)`
   height: 24px;
   padding: 2px;
   border-radius: 8px;
-  background-color: ${(props) => props.theme.colors.$gray5};
+  background-color: ${lightTheme.colors.$gray5};
 `
