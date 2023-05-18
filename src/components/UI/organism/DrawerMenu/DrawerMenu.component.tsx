@@ -11,8 +11,8 @@ const Component: React.FC<IDrawerOrganism> = ({
   className,
   listIcon,
   headerProps,
-  buttonsProps,
-  buttonsProps2,
+  login,
+  createAccount,
   listMenuProps
 }) => {
   return (
@@ -23,8 +23,8 @@ const Component: React.FC<IDrawerOrganism> = ({
           <ListMenuItems {...listMenuProps} />
         </MenuContainer>
         <ActiosContainer>
-          <MainButton buttonSize="full" {...buttonsProps} />
-          <MainButton buttonSize="full" {...buttonsProps2} />
+          <MainButton buttonSize="full" {...createAccount} />
+          <MainButton buttonSize="full" {...login} />
           <ListIconLink listIcon={listIcon} />
         </ActiosContainer>
       </Drawer>

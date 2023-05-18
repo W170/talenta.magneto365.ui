@@ -302,7 +302,7 @@ export const ListIcon: IListIcon[] = [
 ]
 
 export const MenuList: MenuItemInfo[] = [
-  { text: 'inicio', url: '#', slug: 'inicio' },
+  { text: 'Inicio', url: '#', slug: 'inicio' },
   { text: 'Todos los empleos', url: '#', slug: 'todos-los-empleos' },
   { text: 'Empleos por ciudad', url: '#', slug: 'empleos-por-ciudad' },
   { text: 'Empleos por empresa', url: '#', slug: 'empleos-por-empresa' },
@@ -331,7 +331,7 @@ export const headerProps: IHeaderDrawerTabs = {
   tabProps: TabProps
 }
 
-export const ButtonsProps: IMainButton = {
+export const createAccount: IMainButton = {
   buttonType: 'button',
   iconProps: {
     Icon: ProfileAdd,
@@ -341,10 +341,11 @@ export const ButtonsProps: IMainButton = {
   buttonText: 'Crear hoja de vida',
   buttonColor: '#70ECD4',
   textColor: '#090467',
-  spacing: 10
+  spacing: 10,
+  onClick: () => ({})
 }
 
-export const ButtonsProps2: IMainButton = {
+export const login: IMainButton = {
   buttonType: 'button',
   iconProps: {
     Icon: LoginCurve,
@@ -354,7 +355,8 @@ export const ButtonsProps2: IMainButton = {
   buttonText: 'Iniciar Sesión',
   buttonColor: 'white',
   textColor: '#090467',
-  spacing: 10
+  spacing: 10,
+  onClick: () => ({})
 }
 
 export const MenuItems: IMenuItems[] = [

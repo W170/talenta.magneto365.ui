@@ -20,9 +20,9 @@ export interface IDrawerOrganism {
   /**
    * Here is main button component
    */
-  buttonsProps: IMainButton
+  createAccount: IMainButton
   /**
    * Here is main button component
    */
-  buttonsProps2: IMainButton
+  login: IMainButton
 }
