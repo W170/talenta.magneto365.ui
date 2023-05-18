@@ -45,12 +45,11 @@ export const withStyles = (c: React.FC<IPopover>): React.FC<IPopover> => styled(
     ${(props) => positionYValue(props)}
     ${(props) => positionXValue(props)}
     animation-duration: 0.3s;
-    animation-fill-mode: both;
     animation-name: fadeIn;
 
     @keyframes fadeIn {
       0% {
-        opacity: 0;
+        opacity: 0.5;
       }
       100% {
         opacity: 1;
@@ -58,7 +57,7 @@ export const withStyles = (c: React.FC<IPopover>): React.FC<IPopover> => styled(
     }
     @-webkit-keyframes fadeIn {
       0% {
-        opacity: 0;
+        opacity: 0.5;
       }
       100% {
         opacity: 1;
