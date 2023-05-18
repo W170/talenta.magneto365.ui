@@ -7,6 +7,8 @@ export const withStyles = (Component: React.FC<IAvatar>): React.FC<IAvatar> => {
   return styled(Component)`
     display: flex;
     flex-direction: column;
+    width: 2.25rem;
+    height: 2.25rem;
 
     img {
       width: 2.25rem;
@@ -25,4 +27,3 @@ export const withStyles = (Component: React.FC<IAvatar>): React.FC<IAvatar> => {
     }
   `
 }
-
