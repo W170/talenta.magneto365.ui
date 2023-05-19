@@ -3,8 +3,9 @@ import { EventDispatcherContextProvider } from './EventDispatcherContext.compone
 import { ResponsiveContextProvider } from './ResponsiveContext.component'
 import { ThemeProvider } from 'styled-components'
 import { lightTheme } from '../../shared/stylesheets/theme.styles'
+import { IContextAppProvider } from './context.interface'
 
-export const ContextAppProvider: React.FC = ({ children }) => {
+export const ContextAppProvider: React.FC<IContextAppProvider> = ({ children }) => {
   return (
     <EventDispatcherContextProvider>
       <ResponsiveContextProvider>{children}</ResponsiveContextProvider>
