@@ -8,7 +8,6 @@ import { ILogoutHeader } from './LogoutHeader.interface'
 import { withStyles } from './LogoutHeader.styles'
 
 import { MobileSearchbar } from '../../molecules/MobileSearchbar'
-import { withContextAppProvider } from '../../../context/context.component'
 import { useMediaQuery } from '../../../hooks'
 import { Searchbar } from '../../molecules/Searchbar'
 
@@ -95,4 +94,4 @@ const Component: React.FC<ILogoutHeader> = ({
  * UI Header Organisim for 1024 resolution/size
  */
 
-export const LogoutHeader = withContextAppProvider(withStyles(Component))
+export const LogoutHeader = withStyles(Component)
