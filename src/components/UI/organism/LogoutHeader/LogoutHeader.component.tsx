@@ -26,34 +26,13 @@ import {
 
 const Component: React.FC<ILogoutHeader> = ({ className, onClick }) => {
   const [showSearchBar, setShowSearchBar] = useState(false)
+
   const toggleSearchBar = () => {
     setShowSearchBar(!showSearchBar)
   }
 
-  const logoutHeaderTab = useMediaQuery(<Tab {...TabProps} />, {
-    md: null
-  })
-
-  const logoutHeaderLogo = useMediaQuery(<LogoComponent {...LogoProps} />, {
-    sm: <LogoComponent {...LogoProps} isoView={true} />
-  })
-
-  const logoutHeaderMobileSearchbarButton = useMediaQuery(null, {
-    md: <MainButton onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
-  })
-
   const isMobileButton = useMediaQuery(false, {
     md: true
-  })
-
-  const logoutHeaderSignInLink = useMediaQuery(<Link {...SignInLinkProps} isMobile={isMobileButton} />)
-
-  const logoutHeaderButtonSignUp = useMediaQuery(
-    <MainButton {...SignUpButtonProps} isMobile={isMobileButton} spacing={10} />
-  )
-
-  const logoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs {...BreadcrumbsProps} />, {
-    md: null
   })
 
   const logoutHeaderMobileSearchbar = useMediaQuery(null, {
@@ -67,7 +46,31 @@ const Component: React.FC<ILogoutHeader> = ({ className, onClick }) => {
     )
   })
 
+  const logoutHeaderTab = useMediaQuery(<Tab {...TabProps} />, {
+    md: null
+  })
+
+  const logoutHeaderMenuButton = useMediaQuery(<MainButton {...MenuButtonProps} onClick={onClick} />)
+
+  const logoutHeaderLogo = useMediaQuery(<LogoComponent {...LogoProps} />, {
+    sm: <LogoComponent {...LogoProps} isoView={true} />
+  })
+
+  const logoutHeaderMobileSearchbarButton = useMediaQuery(null, {
+    md: <MainButton onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
+  })
+
   const logoutHeaderSearchbar = useMediaQuery(<Searchbar {...SearchbarProps} />, {
+    md: null
+  })
+
+  const logoutHeaderSignInLink = useMediaQuery(<Link {...SignInLinkProps} isMobile={isMobileButton} />)
+
+  const logoutHeaderButtonSignUp = useMediaQuery(
+    <MainButton {...SignUpButtonProps} isMobile={isMobileButton} spacing={10} />
+  )
+
+  const logoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs {...BreadcrumbsProps} />, {
     md: null
   })
 
@@ -77,11 +80,11 @@ const Component: React.FC<ILogoutHeader> = ({ className, onClick }) => {
       <div className="magneto-ui-first-row">{logoutHeaderTab}</div>
       <div className="magneto-ui-second-row">
         <div className="magneto-ui-left-section">
-          <MainButton {...MenuButtonProps} onClick={onClick} />
+          {logoutHeaderMenuButton}
           {logoutHeaderLogo}
           {logoutHeaderMobileSearchbarButton}
         </div>
-        <div className="magneto-ui-searchbar-section">{logoutHeaderSearchbar}</div>
+        <div className="magneto-ui-middle-section">{logoutHeaderSearchbar}</div>
         <div className="magneto-ui-right-section">
           {logoutHeaderSignInLink}
           {logoutHeaderButtonSignUp}

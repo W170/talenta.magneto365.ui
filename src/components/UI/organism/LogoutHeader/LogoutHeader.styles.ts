@@ -35,7 +35,7 @@ export const withStyles = (c: React.FC<ILogoutHeader>): React.FC<ILogoutHeader> 
       }
     }
 
-    .magneto-ui-searchbar-section {
+    .magneto-ui-middle-section {
       display: inherit;
       width: 40%;
     }
@@ -44,10 +44,6 @@ export const withStyles = (c: React.FC<ILogoutHeader>): React.FC<ILogoutHeader> 
       display: inherit;
       gap: 18px;
     }
-
-    /* .magneto-ui-searchbar-wrapper {
-      width: 40%;
-    } */
   }
 
   .magneto-ui-third-row {
