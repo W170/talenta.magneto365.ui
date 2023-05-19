@@ -11,7 +11,8 @@ import {
   JobsTabsProps,
   ProcessTabsProps,
   CurriculumTabProps,
-  listMenuUserProps
+  listMenuUserProps,
+  MobileSearchbarButtonProps
 } from '../../../../constants/stories.constants'
 import { MobileSearchbar } from '../../molecules/MobileSearchbar'
 import { MainButton } from '../../atoms/MainButton'
@@ -21,58 +22,56 @@ import { LogoComponent } from '../../atoms/Logo'
 import { withStyles } from './LoginHeader.styles'
 import { Avatar } from '../../atoms/Avatar'
 import { HeaderTabs } from '../../molecules/HeaderTabs/HeaderTabs.component'
-import { HeaderTab } from '../../atoms/HeaderTab'
 import { Popover } from '../../atoms/Popover'
 import { ListMenuIcons } from '../../molecules/ListMenuIcons'
 import { MobileDrawer } from '../../molecules/MobileDrawer'
 
 const Component: React.FC<ILoginHeader> = ({ onClick, className }) => {
-  const [showForm, setShowForm] = useState(false)
+  const [showSearchBar, setShowSearchBar] = useState(false)
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
   const [showPopover, setShowPopover] = useState(false)
 
-  const openForm = () => {
-    setShowForm(!showForm)
+  const toggleSearchBar = () => {
+    setShowSearchBar(!showSearchBar)
   }
 
-  const responsiveBreadcrumbs = useMediaQuery(
-    <section className="magneto-ui-row3">
-      <Breadcrumbs {...BreadcrumbsProps} />
-    </section>,
-    {
-      md: null
-    }
-  )
+  const loginHeaderMobileSearchbar = useMediaQuery(null, {
+    md: (
+      <MobileSearchbar
+        {...MobileSearchbarProps}
+        onClick={() => setShowSearchBar(false)}
+        showMobileSearchbar={showSearchBar}
+        focusSearchInput={showSearchBar}
+      />
+    )
+  })
 
-  const responsiveHeaderTabs = useMediaQuery(
-    <div className="magneto-ui-tabs-wrapper">
+  const loginHeaderMenuButton = useMediaQuery(<MainButton {...MenuButtonProps} onClick={onClick} />)
+
+  const loginHeaderLogo = useMediaQuery(<LogoComponent {...LogoProps} />, {
+    sm: <LogoComponent {...LogoProps} isoView={true} />
+  })
+
+  const loginHeaderMobileSearchbarButton = useMediaQuery(null, {
+    md: <MainButton onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
+  })
+
+  const loginHeaderSearchbar = useMediaQuery(<Searchbar {...SearchbarProps} />, {
+    md: null
+  })
+
+  const loginHeaderOptionTabs = useMediaQuery(
+    <>
       <HeaderTabs {...JobsTabsProps} />
       <HeaderTabs {...ProcessTabsProps} />
-      <HeaderTab {...CurriculumTabProps} />
-    </div>,
+      <HeaderTabs {...CurriculumTabProps} />
+    </>,
     {
       xl: null
     }
   )
 
-  const responsiveOpenButton = useMediaQuery(null, {
-    md: <MainButton onClick={openForm} {...MenuButtonProps} />
-  })
-
-  const searchbar = useMediaQuery(
-    <div className="magneto-ui-searchbar-wrapper">
-      <Searchbar {...SearchbarProps} />
-    </div>,
-    {
-      md: null
-    }
-  )
-
-  const responsiveLogo = useMediaQuery(<LogoComponent {...LogoProps} />, {
-    sm: <LogoComponent {...LogoProps} isoView={true} />
-  })
-
-  const responsivePopover = useMediaQuery(
+  const loginHeaderPopover = useMediaQuery(
     <Popover
       show={showPopover}
       content={<ListMenuIcons {...listMenuUserProps} />}
@@ -88,20 +87,25 @@ const Component: React.FC<ILoginHeader> = ({ onClick, className }) => {
     }
   )
 
+  const loginHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs {...BreadcrumbsProps} />, {
+    md: null
+  })
+
   return (
     <header className={className}>
-      <MobileSearchbar {...MobileSearchbarProps} onClick={() => setShowForm(false)} showMobileSearchbar={showForm} />
-      <section className="magneto-ui-row2">
-        <div className="magneto-ui-logo-wrapper">
-          <MainButton {...MenuButtonProps} onClick={onClick} />
-          {responsiveLogo}
-          {responsiveOpenButton}
+      {loginHeaderMobileSearchbar}
+      <div className="magneto-ui-first-row"></div>
+      <div className="magneto-ui-second-row">
+        <div className="magneto-ui-left-section">
+          {loginHeaderMenuButton}
+          {loginHeaderLogo}
+          {loginHeaderMobileSearchbarButton}
         </div>
-        {searchbar}
-        {responsiveHeaderTabs}
-        <div className="magneto-ui-user-wrapper">{responsivePopover}</div>
-      </section>
-      {responsiveBreadcrumbs}
+        <div className="magneto-ui-searchbar-section">{loginHeaderSearchbar}</div>
+        <div className="magneto-ui-tabs-section">{loginHeaderOptionTabs}</div>
+        <div className="magneto-ui-right-section">{loginHeaderPopover}</div>
+      </div>
+      <div className="magneto-ui-third-row">{loginHeaderBreadcrumbs}</div>
       <MobileDrawer isOpen={toggleMobileDrawer} onClose={() => setToggleMobileDrawer(false)}>
         <ListMenuIcons {...listMenuUserProps} />
       </MobileDrawer>

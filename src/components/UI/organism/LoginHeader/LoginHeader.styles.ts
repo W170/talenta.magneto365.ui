@@ -13,11 +13,11 @@ export const withStyles = (c: React.FC<ILoginHeader>): React.FC<ILoginHeader> =>
   background-color: ${(props) => props.theme.colors.primaryColors.white};
   border-bottom: 1px solid #e9e9f6;
 
-  .magneto-ui-row1 {
-    grid-row: 1;
+  .magneto-ui-first-row {
+    display: inherit;
   }
 
-  .magneto-ui-row2 {
+  .magneto-ui-second-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -25,35 +25,46 @@ export const withStyles = (c: React.FC<ILoginHeader>): React.FC<ILoginHeader> =>
     width: 100%;
     margin: 5px 0px;
 
-    .magneto-ui-logo-wrapper {
-      display: flex;
+    .magneto-ui-left-section {
+      display: inherit;
       gap: 20px;
+      margin-right: 3rem;
       button {
         padding: 0px;
       }
     }
 
-    .magneto-ui-button-wrapper {
+    .magneto-ui-searchbar-section {
       display: inherit;
-      gap: 18px;
+      width: 25%;
     }
 
-    .magneto-ui-searchbar-wrapper {
-      width: 40%;
-    }
-
-    .magneto-ui-tabs-wrapper {
+    .magneto-ui-tabs-section {
       display: inherit;
       width: auto;
-      gap: 8px;
       margin-left: 3rem;
       margin-right: 1.75rem;
     }
   }
 
-  .magneto-ui-row3 {
-    display: flex;
+  .magneto-ui-third-row {
+    display: inherit;
     flex-direction: row;
     margin: 5px 0px;
+  }
+
+  @media screen and (max-width: 1365px) {
+    .magneto-ui-second-row {
+      .magneto-ui-searchbar-section {
+        display: inherit;
+        width: 50%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    .magneto-ui-third-row {
+      margin: 0px;
+    }
   }
 `
