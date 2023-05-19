@@ -2,12 +2,11 @@ import React, { useState } from 'react'
 import { ILoginHeader } from './LoginHeader.interface'
 import { useMediaQuery } from '../../../hooks'
 import {
-  BreadcrumbProps,
+  BreadcrumbsProps,
   SearchbarProps,
   LogoProps,
   MobileSearchbarProps,
   MenuButtonProps,
-  OpenButtonProps,
   AvatarProps,
   JobsTabsProps,
   ProcessTabsProps,
@@ -23,7 +22,6 @@ import { withStyles } from './LoginHeader.styles'
 import { Avatar } from '../../atoms/Avatar'
 import { HeaderTabs } from '../../molecules/HeaderTabs/HeaderTabs.component'
 import { HeaderTab } from '../../atoms/HeaderTab'
-import { withContextAppProvider } from '../../../context/context.component'
 import { Popover } from '../../atoms/Popover'
 import { ListMenuIcons } from '../../molecules/ListMenuIcons'
 import { MobileDrawer } from '../../molecules/MobileDrawer'
@@ -39,7 +37,7 @@ const Component: React.FC<ILoginHeader> = ({ onClick, className }) => {
 
   const responsiveBreadcrumbs = useMediaQuery(
     <section className="magneto-ui-row3">
-      <Breadcrumbs {...BreadcrumbProps} />
+      <Breadcrumbs {...BreadcrumbsProps} />
     </section>,
     {
       md: null
@@ -58,7 +56,7 @@ const Component: React.FC<ILoginHeader> = ({ onClick, className }) => {
   )
 
   const responsiveOpenButton = useMediaQuery(null, {
-    md: <MainButton onClick={openForm} {...OpenButtonProps} />
+    md: <MainButton onClick={openForm} {...MenuButtonProps} />
   })
 
   const searchbar = useMediaQuery(
@@ -92,7 +90,7 @@ const Component: React.FC<ILoginHeader> = ({ onClick, className }) => {
 
   return (
     <header className={className}>
-      <MobileSearchbar {...MobileSearchbarProps} onClick={() => setShowForm(false)} toggle={showForm} />
+      <MobileSearchbar {...MobileSearchbarProps} onClick={() => setShowForm(false)} showMobileSearchbar={showForm} />
       <section className="magneto-ui-row2">
         <div className="magneto-ui-logo-wrapper">
           <MainButton {...MenuButtonProps} onClick={onClick} />
@@ -115,4 +113,4 @@ const Component: React.FC<ILoginHeader> = ({ onClick, className }) => {
  * UI Organism Component for LoginHeader
  */
 
-export const LoginHeader = withContextAppProvider(withStyles(Component))
+export const LoginHeader = withStyles(Component)
