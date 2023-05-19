@@ -6,6 +6,10 @@ export interface IMobileSearchbar {
    */
   showMobileSearchbar: boolean
   /**
+   * Sets the input ref for the searchbar input
+   */
+  focusSearchInput: boolean
+  /**
    * Props for the search button
    */
   searchProps: IMainButton
