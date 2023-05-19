@@ -1,92 +1,94 @@
 import React, { useState } from 'react'
+import { MainButton } from '../../atoms/MainButton'
 import { Link } from '../../atoms/Link'
 import { LogoComponent } from '../../atoms/Logo'
-import { MainButton } from '../../atoms/MainButton'
 import { Breadcrumbs } from '../../molecules/Breadcrumbs'
+import { MobileSearchbar } from '../../molecules/MobileSearchbar'
+import { Searchbar } from '../../molecules/Searchbar'
 import { Tab } from '../../molecules/Tab'
+
 import { ILogoutHeader } from './LogoutHeader.interface'
 import { withStyles } from './LogoutHeader.styles'
 
-import { MobileSearchbar } from '../../molecules/MobileSearchbar'
 import { useMediaQuery } from '../../../hooks'
-import { Searchbar } from '../../molecules/Searchbar'
 
-const Component: React.FC<ILogoutHeader> = ({
-  menuProps,
-  openProps,
-  tabProps,
-  logoProps,
-  mobileProps,
-  searchbarProps,
-  mainButtonProps,
-  linkProps,
-  breadcrumbsProps,
-  className,
-  onClick
-}) => {
-  const [showForm, setShowForm] = useState(false)
+import {
+  TabProps,
+  LogoProps,
+  SignInLinkProps,
+  SignUpButtonProps,
+  MenuButtonProps,
+  MobileSearchbarButtonProps,
+  MobileSearchbarProps,
+  SearchbarProps,
+  BreadcrumbsProps
+} from '../../../../constants/stories.constants'
 
-  const openForm = () => {
-    setShowForm(!showForm)
+const Component: React.FC<ILogoutHeader> = ({ className, onClick }) => {
+  const [showSearchBar, setShowSearchBar] = useState(false)
+  const toggleSearchBar = () => {
+    setShowSearchBar(!showSearchBar)
   }
 
-  const responsiveTab = useMediaQuery(
-    <section className="magneto-ui-row1">
-      <Tab {...tabProps} />
-    </section>,
-    {
-      md: null
-    }
-  )
-
-  const responsiveBreadcrumbs = useMediaQuery(
-    <section className="magneto-ui-row3">
-      <Breadcrumbs {...breadcrumbsProps} />
-    </section>,
-    {
-      md: null
-    }
-  )
-
-  const responsiveOpenButton = useMediaQuery(null, {
-    md: <MainButton onClick={openForm} {...openProps} />
+  const logoutHeaderTab = useMediaQuery(<Tab {...TabProps} />, {
+    md: null
   })
 
-  const searchbar = useMediaQuery(
-    <div className="magneto-ui-searchbar-wrapper">
-      <Searchbar {...searchbarProps} />
-    </div>,
-    {
-      md: null
-    }
-  )
+  const logoutHeaderLogo = useMediaQuery(<LogoComponent {...LogoProps} />, {
+    sm: <LogoComponent {...LogoProps} isoView={true} />
+  })
 
-  const responsiveLogo = useMediaQuery(<LogoComponent {...logoProps} />, {
-    sm: <LogoComponent {...logoProps} isoView={true} />
+  const logoutHeaderMobileSearchbarButton = useMediaQuery(null, {
+    md: <MainButton onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
   })
 
   const isMobileButton = useMediaQuery(false, {
     md: true
   })
 
+  const logoutHeaderSignInLink = useMediaQuery(<Link {...SignInLinkProps} isMobile={isMobileButton} />)
+
+  const logoutHeaderButtonSignUp = useMediaQuery(
+    <MainButton {...SignUpButtonProps} isMobile={isMobileButton} spacing={10} />
+  )
+
+  const logoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs {...BreadcrumbsProps} />, {
+    md: null
+  })
+
+  const logoutHeaderMobileSearchbar = useMediaQuery(null, {
+    md: (
+      <MobileSearchbar
+        {...MobileSearchbarProps}
+        onClick={() => setShowSearchBar(false)}
+        showMobileSearchbar={showSearchBar}
+        focusSearchInput={showSearchBar}
+      />
+    )
+  })
+
+  const logoutHeaderSearchbar = useMediaQuery(<Searchbar {...SearchbarProps} />, {
+    md: null
+  })
+
   return (
-    <div className={className}>
-      {responsiveTab}
-      <MobileSearchbar {...mobileProps} onClick={() => setShowForm(false)} toggle={showForm} />
-      <section className="magneto-ui-row2">
-        <div className="magneto-ui-logo-wrapper">
-          <MainButton {...menuProps} onClick={onClick} />
-          {responsiveLogo}
-          {responsiveOpenButton}
+    <header className={className}>
+      {logoutHeaderMobileSearchbar}
+      <div className="magneto-ui-first-row">{logoutHeaderTab}</div>
+      <div className="magneto-ui-second-row">
+        <div className="magneto-ui-left-section">
+          <MainButton {...MenuButtonProps} onClick={onClick} />
+          {logoutHeaderLogo}
+          {logoutHeaderMobileSearchbarButton}
         </div>
-        {searchbar}
-        <div className="magneto-ui-button-wrapper">
-          <Link {...linkProps} isMobile={isMobileButton} />
-          <MainButton {...mainButtonProps} isMobile={isMobileButton} spacing={10} />
+        <div className="magneto-ui-searchbar-section">{logoutHeaderSearchbar}</div>
+        <div className="magneto-ui-right-section">
+          {logoutHeaderSignInLink}
+          {logoutHeaderButtonSignUp}
         </div>
-      </section>
-      {responsiveBreadcrumbs}
-    </div>
+      </div>
+      <div className="magneto-ui-third-row">{logoutHeaderBreadcrumbs}</div>
+    </header>
   )
 }
 

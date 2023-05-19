@@ -13,11 +13,12 @@ export const withStyles = (c: React.FC<ILogoutHeader>): React.FC<ILogoutHeader> 
   background-color: ${(props) => props.theme.colors.primaryColors.white};
   border-bottom: 1px solid #e9e9f6;
 
-  .magneto-ui-row1 {
-    grid-row: 1;
+  .magneto-ui-first-row {
+    display: inherit;
+    margin: 5px 0px;
   }
 
-  .magneto-ui-row2 {
+  .magneto-ui-second-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -25,26 +26,32 @@ export const withStyles = (c: React.FC<ILogoutHeader>): React.FC<ILogoutHeader> 
     width: 100%;
     margin: 5px 0px;
 
-    .magneto-ui-logo-wrapper {
-      display: flex;
+    .magneto-ui-left-section {
+      display: inherit;
       gap: 20px;
+
       button {
         padding: 0px;
       }
     }
 
-    .magneto-ui-button-wrapper {
+    .magneto-ui-searchbar-section {
+      display: inherit;
+      width: 40%;
+    }
+
+    .magneto-ui-right-section {
       display: inherit;
       gap: 18px;
     }
 
-    .magneto-ui-searchbar-wrapper {
+    /* .magneto-ui-searchbar-wrapper {
       width: 40%;
-    }
+    } */
   }
 
-  .magneto-ui-row3 {
-    display: flex;
+  .magneto-ui-third-row {
+    display: inherit;
     flex-direction: row;
     margin: 5px 0px;
   }
