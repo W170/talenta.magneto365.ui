@@ -8,7 +8,7 @@ import { MainButton } from '../../atoms/MainButton'
 import { ListIconLink } from '../../molecules/ListIconLink'
 import { logoutProps } from '../../../../constants/stories.constants'
 import { ActiosContainer } from '../../organism/DrawerMenu/DrawerMenu.styles'
-import { LogoutHeader } from '../../organism/LogOutHeader'
+import { LogoutHeader } from '../../organism/LogoutHeader'
 
 const Component: React.FC<ILogoutTemplate> = ({
   className,
