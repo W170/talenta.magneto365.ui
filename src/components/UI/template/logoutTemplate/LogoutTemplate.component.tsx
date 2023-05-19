@@ -9,7 +9,6 @@ import { ListIconLink } from '../../molecules/ListIconLink'
 import { logoutProps } from '../../../../constants/stories.constants'
 import { ActiosContainer } from '../../organism/DrawerMenu/DrawerMenu.styles'
 import { LogoutHeader } from '../../organism/LogOutHeader'
-import { withContextAppProvider } from '../../../context/context.component'
 
 const Component: React.FC<ILogoutTemplate> = ({
   className,
@@ -39,4 +38,4 @@ const Component: React.FC<ILogoutTemplate> = ({
   )
 }
 
-export const LogoutTemplate = withContextAppProvider(withStyles(Component))
+export const LogoutTemplate = withStyles(Component)
