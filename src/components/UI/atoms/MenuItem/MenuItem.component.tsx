@@ -4,12 +4,12 @@ import { IMenuItem } from './MenuItem.interface'
 import { withStyles } from './MenuItem.styles'
 
 const MenuItem: React.FC<IMenuItem> = ({ className, url = '#', text = '' }) => (
-  <li>
+  <div>
     <a href={url} className={className}>
       <ArrowRight2 color="black" />
       <p>{text}</p>
     </a>
-  </li>
+  </div>
 )
 
 export default withStyles(MenuItem)
