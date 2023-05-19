@@ -31,7 +31,6 @@ import { IMenuItems } from '../components/UI/molecules/ListMenuIcons/ListMenuIco
 import { IHeaderDrawerTabs } from '../components/UI/molecules/HeaderDrawerTabs/HeaderDrawerTabs.interface'
 import { IAvatar } from '../components/UI/atoms/Avatar'
 import { IHeaderTabs } from '../components/UI/molecules/HeaderTabs/HeaderTabs.interface'
-import { IHeaderTab } from '../components/UI/atoms/HeaderTab'
 
 /**
  * UI Atoms properties/args
@@ -108,13 +107,7 @@ export const MenuButtonProps: IMainButton = {
   buttonColor: 'transparent'
 }
 
-//HeaderTab Atom
-export const CurriculumTabProps: IHeaderTab = {
-  tabType: 'tabOption',
-  url: '#',
-  tabText: 'Hoja de vida',
-  isActive: false
-}
+// HeaderTab Atom
 
 /**
  * UI Molecules properties/args
@@ -244,7 +237,8 @@ export const JobsTabsProps: IHeaderTabs = {
       url: '#',
       tabText: 'Guardados'
     }
-  ]
+  ],
+  addDivider: true
 }
 
 export const ProcessTabsProps: IHeaderTabs = {
@@ -266,7 +260,20 @@ export const ProcessTabsProps: IHeaderTabs = {
       url: '#',
       tabText: 'Inactivos'
     }
-  ]
+  ],
+  addDivider: true
+}
+
+export const CurriculumTabProps: IHeaderTabs = {
+  urlParam: 'hoja-de-vida',
+  headerTabList: [
+    {
+      tabType: 'tabOption',
+      url: '#',
+      tabText: 'Hoja de vida'
+    }
+  ],
+  addDivider: true
 }
 
 /**
