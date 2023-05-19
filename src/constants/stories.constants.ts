@@ -164,8 +164,12 @@ export const SearchbarProps: ISearchbar = {
 //Mobile Searchbar Molecule
 export const MobileSearchbarProps: IMobileSearchbar = {
   onClick: console.info,
-  toggle: false,
-  infoProps: {
+  onSearch: () => {
+    // Add your search logic here
+  },
+  focusSearchInput: false,
+  showMobileSearchbar: false,
+  searchProps: {
     buttonType: 'submit',
     buttonText: '',
     iconProps: {
