@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { HeaderTab } from './HeaderTab.component'
 
 const meta: Meta<typeof HeaderTab> = {
-  title: 'Atoms/HeaderTab',
+  title: 'Atoms/Header Tab',
   component: HeaderTab,
   args: {
     tabType: 'tabTitle',
