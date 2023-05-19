@@ -16,6 +16,7 @@ import {
   Setting2,
   TaskSquare
 } from 'iconsax-react'
+
 import { IconProps } from '../components/UI/atoms/Icon'
 import { ILinkProps } from '../components/UI/atoms/Link'
 import { ILogoComponent } from '../components/UI/atoms/Logo/Logo.interface'
@@ -28,7 +29,6 @@ import { IMobileSearchbar } from '../components/UI/molecules/MobileSearchbar'
 import { IListMenuItems, MenuItemInfo } from '../components/UI/molecules/ListMenuItems/ListMenuItems.interface'
 import { IMenuItems } from '../components/UI/molecules/ListMenuIcons/ListMenuIcons.interface'
 import { IHeaderDrawerTabs } from '../components/UI/molecules/HeaderDrawerTabs/HeaderDrawerTabs.interface'
-import { ILogoutHeader } from '../components/UI/organism/LogoutHeader'
 import { IAvatar } from '../components/UI/atoms/Avatar'
 import { IHeaderTabs } from '../components/UI/molecules/HeaderTabs/HeaderTabs.interface'
 import { IHeaderTab } from '../components/UI/atoms/HeaderTab'
@@ -43,18 +43,14 @@ export const AvatarProps: IAvatar = {
     'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
 }
 
-//Breadcrumb Atom
-
-//Divider Atom
-
-//Icon Atom
-export const iconProps: IconProps = {
+//Hambuger Menu Icon Atom
+export const HamburgerIcon: IconProps = {
   Icon: HambergerMenu,
   hover: false
 }
 
-//Link Atom
-export const LinkProps: ILinkProps = {
+//SignIn Link Atom
+export const SignInLinkProps: ILinkProps = {
   type: 'button',
   text: 'Iniciar Sesion',
   href: '#',
@@ -73,8 +69,8 @@ export const LogoProps: ILogoComponent = {
   isoSize: 38
 }
 
-//Main Button Atom
-export const MainButtonProps: IMainButton = {
+//Sign up Atom
+export const SignUpButtonProps: IMainButton = {
   buttonType: 'button',
   buttonText: 'Crear hoja de vida',
   textColor: '#090467',
@@ -86,8 +82,8 @@ export const MainButtonProps: IMainButton = {
   }
 }
 
-// Open Button
-export const OpenButtonProps: IMainButton = {
+// Mobile Searchbar Button
+export const MobileSearchbarButtonProps: IMainButton = {
   buttonText: '',
   buttonType: 'button',
   iconProps: {
@@ -99,6 +95,7 @@ export const OpenButtonProps: IMainButton = {
   buttonColor: 'transparent'
 }
 
+// Menu Button Atom
 export const MenuButtonProps: IMainButton = {
   buttonText: '',
   buttonType: 'button',
@@ -124,7 +121,7 @@ export const CurriculumTabProps: IHeaderTab = {
  */
 
 //Breadcrumbs Molecule
-export const BreadcrumbProps: IBreadcrumbs = {
+export const BreadcrumbsProps: IBreadcrumbs = {
   urlParam: 'todos-los-empleos',
   iconProps: {
     Icon: Home2,
@@ -275,18 +272,6 @@ export const ProcessTabsProps: IHeaderTabs = {
 /**
  * UI Templates properties/args
  */
-
-export const logoutProps: ILogoutHeader = {
-  openProps: OpenButtonProps,
-  tabProps: TabProps,
-  menuProps: MenuButtonProps,
-  logoProps: LogoProps,
-  mobileProps: MobileSearchbarProps,
-  searchbarProps: SearchbarProps,
-  mainButtonProps: MainButtonProps,
-  linkProps: LinkProps,
-  breadcrumbsProps: BreadcrumbProps
-}
 
 export const LogoMagneto = 'https://www.magneto365.com/wp-content/uploads/2022/09/Logo-magneto-v3.png'
 export const IsoLogoMagneto =
