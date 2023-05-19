@@ -2,7 +2,7 @@ import React from 'react'
 import { IBreadcrumb } from './Breadcrumb.interface'
 import { withStyles } from './Breadcrumb.styles'
 
-const Component: React.FC<IBreadcrumb> = ({ url = '#', breadcrumbText, className }) => {
+const Component: React.FC<IBreadcrumb> = ({ breadcrumbText, url = '#', className }) => {
   return (
     <div className={className}>
       <a href={url}>

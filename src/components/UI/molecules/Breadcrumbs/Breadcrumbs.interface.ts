@@ -7,16 +7,16 @@ export interface BreadcrumbItem extends Omit<IBreadcrumb, 'isActive'> {
 
 export interface IBreadcrumbs {
   /**
-   * Props for the Icon
+   * Sets the url param for the current page
    */
-  iconProps: IconProps
+  urlParam: string
   /**
    * Sets the array that contains the breadcrumbs
    */
   breadcrumbsList: BreadcrumbItem[]
   /**
-   * URL Param
+   * Props for the Icon
    */
-  urlParam: string
+  iconProps: IconProps
   className?: string
 }

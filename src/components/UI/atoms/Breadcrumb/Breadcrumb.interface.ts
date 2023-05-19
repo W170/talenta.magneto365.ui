@@ -1,9 +1,5 @@
 export interface IBreadcrumb {
   /**
-   * Possible Breadcrumb navigation URL
-   */
-  url?: string
-  /**
    * Sets breadcrumb text
    */
   breadcrumbText: string
@@ -11,5 +7,9 @@ export interface IBreadcrumb {
    * Sets breadcrumb modifier for active label
    */
   isActive: boolean
+  /**
+   * Sets possible breadcrumb URL
+   */
+  url?: string
   className?: string
 }

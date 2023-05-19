@@ -47,6 +47,7 @@ export const ResponsiveIconButton: Story = {
     text: 'Iniciar sesión',
     textColor: '#14141C',
     buttonColor: 'transparent',
-    hoverColor: '#14141C'
+    hoverColor: '#14141C',
+    isMobile: true
   }
 }
