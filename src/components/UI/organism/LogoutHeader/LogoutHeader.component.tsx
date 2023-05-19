@@ -96,4 +96,4 @@ const Component: React.FC<ILogoutHeader> = ({ className, onClick }) => {
  * UI Header Organisim for 1024 resolution/size
  */
 
-export const LogoutHeader = withStyles(Component)
+export const logoutHeader = withStyles(Component)
