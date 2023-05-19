@@ -2,13 +2,17 @@ import { IMainButton } from '../../atoms/MainButton'
 
 export interface IMobileSearchbar {
   /**
-   *
+   * Sets the toggle state for the mobile searchbar
    */
-  toggle: boolean
+  showMobileSearchbar: boolean
+  /**
+   * Sets the input ref for the searchbar input
+   */
+  focusSearchInput: boolean
   /**
    * Props for the search button
    */
-  infoProps: IMainButton
+  searchProps: IMainButton
   /**
    * Props for the remove/delete button
    */
@@ -16,7 +20,10 @@ export interface IMobileSearchbar {
   /**
    * Handler for the input value
    */
-  onSearch?: (searchValue: string) => void
+  onSearch: (searchValue: string) => void
+  /**
+   * Handler for the show mobile searchbar
+   */
   onClick: () => void
   className?: string
 }

@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 import { IMobileSearchbar } from './MobileSearchbar.interface'
 
-const toggleMobile = ({ toggle = false }) => {
-  if (toggle) {
+const toggleMobileSearchbar = ({ showMobileSearchbar = false }) => {
+  if (showMobileSearchbar) {
     return css<IMobileSearchbar>`
       top: 0;
     `
@@ -75,5 +75,5 @@ export const withStyles = (c: React.FC<IMobileSearchbar>): React.FC<IMobileSearc
     }
   }
 
-  ${(props) => toggleMobile(props)}
+  ${(props) => toggleMobileSearchbar(props)}
 `
