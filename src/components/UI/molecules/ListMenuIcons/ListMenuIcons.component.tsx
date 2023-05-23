@@ -24,7 +24,7 @@ const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, className })
               <MenuIcon isActive={urlParam === slug ? true : false} {...props} />
             </Fragment>
           ))}
-          <Divider spacing={isMobile ? 0 : 30} opacity={1} />
+          <Divider spacing={isMobile ? 0 : 17} opacity={1} />
         </div>
       ))}
       <MenuIcon type="button" onClick={() => ({})} Icon={LogoutCurve} text="Cerrar sesión" />
