@@ -1,0 +1,34 @@
+{
+  "userMenu": {
+    "suggested": "Suggested",
+    "saved": "Saved",
+    "active": "Active",
+    "inactive": "Inactive",
+    "resume": "Resume",
+    "configuration": "Configuration",
+    "help": "Help",
+    "logOut": "Log out"
+  },
+  "drawerMenu": {
+    "home": "Home",
+    "allJobs": "All jobs",
+    "jobsCity": "Jobs by city",
+    "jobsCompany": "Jobs by company",
+    "jobsIndustry": "Jobs by industry",
+    "jobsProfessionalPosition": "Jobs by professional position",
+    "jobsMostWanted": "Most Wanted Jobs",
+    "frequentQuestions": "Frequent questions",
+    "articles": "Articles of interest"
+  },
+  "tabs": {
+    "lookingForAJob": "I am looking for a job",
+    "recruiter": "I am a recruiter"
+  },
+  "buttonsActions": {
+    "login": "Login",
+    "createResume": "Create Resume"
+  },
+  "placeholder": {
+    "searchbar": "Search for jobs by position or profession"
+  }
+}

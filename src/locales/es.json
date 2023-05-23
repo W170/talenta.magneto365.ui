@@ -1,0 +1,34 @@
+{
+  "userMenu": {
+    "suggested": "Sugeridos",
+    "saved": "Guardados",
+    "active": "Activos",
+    "inactive": "Inactivos",
+    "resume": "Hoja de vida",
+    "configuration": "Configuración",
+    "help": "ayuda",
+    "logOut": "Cerrar sesión"
+  },
+  "drawerMenu": {
+    "home": "Inicio",
+    "allJobs": "Todos los empleos",
+    "jobsCity": "Empleos por ciudad",
+    "jobsCompany": "Empleos por empresa",
+    "jobsIndustry": "Empleos por sector laboral",
+    "jobsProfessionalPosition": "Empleos por cargo profesional",
+    "jobsMostWanted": "Empleos más buscados",
+    "frequentQuestions": "Preguntas frecuentes",
+    "articles": "Artículos de interés"
+  },
+  "tabs": {
+    "lookingForAJob": "Busco empleo",
+    "recruiter": "Soy reclutador"
+  },
+  "actionsButtons": {
+    "login": "Login Iniciar Sesión",
+    "createResume": " Crear hoja de vida"
+  },
+  "placeholder": {
+    "searchbar": "Busca empleo por cargo o profesión"
+  }
+}
