@@ -41,11 +41,12 @@ const headerTabsPropsWithActiveTab: HeaderTabItem[] = [
 ]
 
 const meta: Meta<typeof HeaderTabs> = {
-  title: 'Molecules/HeaderTabs',
+  title: 'Molecules/Header Tabs',
   component: HeaderTabs,
   args: {
     urlParam: 'empleos-sugeridos',
-    headerTabList: headerTabsProps
+    headerTabList: headerTabsProps,
+    addDivider: true
   }
 }
 

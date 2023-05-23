@@ -4,7 +4,6 @@ import { Tab } from '../Tab'
 import { IHeaderDrawerTabs } from './HeaderDrawerTabs.interface'
 import { withStyles } from './HeaderDrawerTabs.styles'
 import { useMediaQuery } from '../../../hooks'
-import { withContextAppProvider } from '../../../context/context.component'
 
 const Component: React.FC<IHeaderDrawerTabs> = ({ className, tabProps, logoProps }) => {
   const isMobileLogo = useMediaQuery(false, {
@@ -19,4 +18,4 @@ const Component: React.FC<IHeaderDrawerTabs> = ({ className, tabProps, logoProps
   )
 }
 
-export const HeaderDrawerTabs = withContextAppProvider(withStyles(Component))
+export const HeaderDrawerTabs = withStyles(Component)

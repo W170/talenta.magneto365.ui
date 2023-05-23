@@ -6,7 +6,7 @@ export class ResponsiveManagement {
   // callback to execute the update with a specific event dispatcher
   private callback?: () => void
   constructor() {
-    const type: Dimension = { size: screenSize.xs, type: 'xs' }
+    const type: Dimension = { size: screenSize.lg, type: 'lg' }
     this.dim = type
   }
 

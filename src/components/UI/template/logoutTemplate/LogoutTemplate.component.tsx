@@ -6,9 +6,8 @@ import { ILogoutTemplate } from './LogoutTemplate.interface'
 import { ListMenuItems } from '../../molecules/ListMenuItems'
 import { MainButton } from '../../atoms/MainButton'
 import { ListIconLink } from '../../molecules/ListIconLink'
-import { logoutProps } from '../../../../constants/stories.constants'
 import { ActiosContainer } from '../../organism/DrawerMenu/DrawerMenu.styles'
-import { LogoutHeader } from '../../organism/LogOutHeader'
+import { LogoutHeader } from '../../organism/LogoutHeader'
 
 const Component: React.FC<ILogoutTemplate> = ({
   className,
@@ -22,7 +21,7 @@ const Component: React.FC<ILogoutTemplate> = ({
 
   return (
     <div className={className}>
-      <LogoutHeader {...logoutProps} onClick={() => setToggleModal(true)} />
+      <LogoutHeader onClick={() => setToggleModal(true)} />
       <Drawer direction="left" isOpen={toggleModal} onClose={() => setToggleModal(false)}>
         <HeaderDrawerTabs {...headerProps} />
         <MenuContainer>
