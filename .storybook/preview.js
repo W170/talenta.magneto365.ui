@@ -1,5 +1,5 @@
 import { withTheme } from './withTheme.decorator'
-
+import { withContext } from './withContext.decorator'
 export const parameters = {
   actions: { argTypesRegex: '^on.*' },
   controls: {
@@ -10,4 +10,4 @@ export const parameters = {
   }
 }
 
-export const decorators = [withTheme]
+export const decorators = [withTheme, withContext]
