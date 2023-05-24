@@ -7,6 +7,6 @@ export interface IListMenuIcons {
 }
 
 export interface IMenuItems {
-  title: string
+  title?: string
   items: IMenuIcon[]
 }

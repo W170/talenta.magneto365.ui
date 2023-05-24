@@ -6,9 +6,13 @@ import { IListMenuIcons } from './ListMenuIcons.interface'
 import { withStyles } from './ListMenuIcons.styles'
 import { screenSize } from '../../../../constants/responsive.constants'
 import { ResponsiveContext } from '../../../context/ResponsiveContext.component'
+import { menuItems1440 } from '../../../../constants/stories.constants'
+import { useMediaQuery } from '../../../hooks'
 
 const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, className }) => {
   const { dim } = useContext(ResponsiveContext)
+
+  const menuResponsive = useMediaQuery(menuItems1440, { lg: menuItems })
 
   const isMobile = useMemo(() => {
     return dim.size <= screenSize.md
@@ -16,7 +20,7 @@ const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, className })
 
   return (
     <div className={className}>
-      {menuItems.map(({ title, items }, i: number) => (
+      {menuResponsive.map(({ title, items }, i: number) => (
         <div key={i}>
           <p>{title ? title : null}</p>
           {items.map(({ slug, ...props }, i: number) => (

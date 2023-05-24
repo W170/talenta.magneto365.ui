@@ -322,6 +322,14 @@ export const logoProps: ILogoComponent = {
   isoType: IsoLogoMagneto
 }
 
+export const logoPropsLogin: ILogoComponent = {
+  alt: 'Logo Magneto',
+  logoSize: 120,
+  isoSize: 30,
+  logo: LogoMagneto,
+  isoType: IsoLogoMagneto
+}
+
 export const headerProps: IHeaderDrawerTabs = {
   logoProps: logoProps,
   tabProps: TabProps
@@ -354,6 +362,25 @@ export const login: IMainButton = {
   spacing: 10,
   onClick: () => ({})
 }
+
+export const menuItems1440: IMenuItems[] = [
+  {
+    items: [
+      {
+        Icon: Setting2,
+        text: 'Configuración',
+        slug: '',
+        url: ''
+      },
+      {
+        Icon: MessageQuestion,
+        text: 'Ayuda',
+        slug: '',
+        url: ''
+      }
+    ]
+  }
+]
 
 export const MenuItems: IMenuItems[] = [
   {
@@ -415,7 +442,7 @@ export const MenuItems: IMenuItems[] = [
   }
 ]
 
-export const listMenuUserProps = {
+export const listMenuUserProps: { urlParam: string; menuItems: IMenuItems[] } = {
   urlParam: 'guardados',
   menuItems: MenuItems
 }
