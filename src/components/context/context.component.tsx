@@ -5,11 +5,11 @@ import { ThemeProvider } from 'styled-components'
 import { lightTheme } from '../../shared/stylesheets/theme.styles'
 import { IContextAppProvider } from './context.interface'
 
-export const ContextAppProvider: React.FC<IContextAppProvider> = ({ children }) => {
+export const ContextAppProvider: React.FC<IContextAppProvider> = ({ children, device }) => {
   return (
     <ThemeProvider theme={lightTheme}>
       <EventDispatcherContextProvider>
-        <ResponsiveContextProvider>{children}</ResponsiveContextProvider>
+        <ResponsiveContextProvider device={device}>{children}</ResponsiveContextProvider>
       </EventDispatcherContextProvider>
     </ThemeProvider>
   )
