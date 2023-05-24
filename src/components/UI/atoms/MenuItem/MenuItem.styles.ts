@@ -15,7 +15,7 @@ const isActiveLink = ({ isActive = false }: IMenuItem) => {
         opacity: 1;
       }
       p {
-        margin-left: 25px;
+        margin: 0 0 0 25px;
       }
     `
   }
@@ -43,7 +43,7 @@ export const withStyles = (c: React.FC<IMenuItem>): React.FC<IMenuItem> => style
       opacity: 1;
     }
     p {
-      margin-left: 25px;
+      margin: 0 0 0 25px;
     }
   }
 
@@ -58,6 +58,7 @@ export const withStyles = (c: React.FC<IMenuItem>): React.FC<IMenuItem> => style
     color: ${lightTheme.colors.textColors.black};
     transition: all 0.3s ease-in-out;
     font-size: 14px;
+    margin: 0;
   }
 
   ${(props) => isActiveLink(props)}

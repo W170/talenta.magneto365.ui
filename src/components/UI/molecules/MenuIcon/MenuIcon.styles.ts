@@ -37,5 +37,7 @@ export const withStyles = (c: React.FC<IMenuIcon>): React.FC<IMenuIcon> => style
   ${(props) => isActiveLink(props)}
   .magneto-ui-menu-text {
     font-size: 14px;
+    margin: 0;
+    color: ${lightTheme.colors.textColors.black};
   }
 `
