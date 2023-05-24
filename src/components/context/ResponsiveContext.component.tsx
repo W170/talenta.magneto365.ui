@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useLayoutEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { createContext } from 'react'
 import { screenSize } from '../../constants/responsive.constants'
 import { Dimension } from '../../utils/eventDispatcher'
@@ -27,7 +27,7 @@ export const ResponsiveContextProvider: React.FC<IResponsiveContext> = ({ childr
     }
   }, [eventDispatcher, responsiveManagement])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setResponsiveManagement(() => new ResponsiveManagement())
   }, [])
 

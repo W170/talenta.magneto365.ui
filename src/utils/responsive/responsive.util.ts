@@ -6,11 +6,13 @@ export class ResponsiveManagement {
   // callback to execute the update with a specific event dispatcher
   private callback?: () => void
   constructor() {
-    const type = this.getType(window.innerWidth)
-    this.dim = { size: screenSize[type], type }
+    this.dim = { size: screenSize.hd, type: 'hd' }
   }
 
   public run(eventDispatcher: EventDispatcher) {
+    const type = this.getType(window.innerWidth)
+    this.dim = { size: screenSize[type], type }
+
     if (this.callback) {
       removeEventListener('resize', this.callback)
     }
