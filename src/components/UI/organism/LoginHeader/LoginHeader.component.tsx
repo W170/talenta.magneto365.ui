@@ -11,7 +11,6 @@ import {
   JobsTabsProps,
   ProcessTabsProps,
   CurriculumTabProps,
-  listMenuUserProps,
   MobileSearchbarButtonProps
 } from '../../../../constants/stories.constants'
 import { MobileSearchbar } from '../../molecules/MobileSearchbar'
@@ -26,7 +25,7 @@ import { Popover } from '../../atoms/Popover'
 import { ListMenuIcons } from '../../molecules/ListMenuIcons'
 import { MobileDrawer } from '../../molecules/MobileDrawer'
 
-const Component: React.FC<ILoginHeader> = ({ onClick, className }) => {
+const Component: React.FC<ILoginHeader> = ({ onClick, className, listMenuUserProps }) => {
   const [showSearchBar, setShowSearchBar] = useState(false)
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
   const [showPopover, setShowPopover] = useState(false)

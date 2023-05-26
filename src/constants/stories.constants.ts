@@ -299,14 +299,23 @@ export const ListIcon: IListIcon[] = [
 
 export const MenuList: MenuItemInfo[] = [
   { text: 'Inicio', url: '#', slug: 'inicio' },
-  { text: 'Todos los empleos', url: '#', slug: 'todos-los-empleos' },
-  { text: 'Empleos por ciudad', url: '#', slug: 'empleos-por-ciudad' },
-  { text: 'Empleos por empresa', url: '#', slug: 'empleos-por-empresa' },
-  { text: 'Empleos por sector laboral', url: '#', slug: 'empleos-por-sector-laboral' },
-  { text: 'Empleos por cargo profesional', url: '#', slug: 'empleos-por-cargo-profesional' },
-  { text: 'Empleos mas buscandos', url: '#', slug: 'empleos-mas-buscandos' },
-  { text: 'Preguntas Frecuentes', url: '#', slug: 'preguntas-frecuentes' },
-  { text: 'Articulos de interes', url: '#', slug: 'articulos-de-interes' }
+  { text: 'Todos los empleos', url: '/co/empleos', slug: 'empleos' },
+  { text: 'Empleos por ciudad', url: '/co/trabajos/empleos-por-ciudades', slug: 'empleos-por-ciudades' },
+  { text: 'Empleos por empresa', url: '/home/empleos-por-empresas/', slug: 'empleos-por-empresas' },
+  {
+    text: 'Empleos por sector laboral',
+    url: '/co/trabajos/empleos-por-sector-laboral',
+    slug: 'empleos-por-sector-laboral'
+  },
+  {
+    text: 'Empleos por cargo profesional',
+    url: '/co/trabajos/empleos-por-cargo-profesional',
+    slug: 'empleos-por-cargo-profesional'
+  },
+  { text: 'Empleos mas buscandos', url: '/co/trabajos/empleos-mas-buscados', slug: 'empleos-mas-buscandos' },
+  { text: 'Preguntas frecuentes', url: '/home/preguntas-frecuentes/', slug: 'preguntas-frecuentes' },
+  { text: 'Soluciones empresariales', url: '/home/soy-empresa/', slug: 'preguntas-frecuentes' },
+  { text: 'Articulos de interes', url: '/home/blog/', slug: 'blog' }
 ]
 
 export const listMenuProps: IListMenuItems = {
