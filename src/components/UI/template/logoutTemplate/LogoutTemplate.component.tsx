@@ -8,9 +8,9 @@ import { MainButton } from '../../atoms/MainButton'
 import { ListIconLink } from '../../molecules/ListIconLink'
 import { ActiosContainer } from '../../organism/DrawerMenu/DrawerMenu.styles'
 import { LogoutHeader } from '../../organism/LogoutHeader'
-import { ListIcon, createAccount, headerProps, listMenuProps, login } from '../../../../constants/stories.constants'
+import { ListIcon, createAccount, headerProps, login } from '../../../../constants/stories.constants'
 
-const Component: React.FC<ILogoutTemplate> = ({ className }) => {
+const Component: React.FC<ILogoutTemplate> = ({ className, listMenuProps }) => {
   const [toggleModal, setToggleModal] = useState(false)
 
   return (
