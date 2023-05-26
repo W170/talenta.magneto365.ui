@@ -3,7 +3,7 @@ import { IHeaderTab } from './HeaderTab.interface'
 import { withStyles } from './HeaderTab.styles'
 
 const Component: React.FC<IHeaderTab> = ({ tabType, url, tabText, className }) => {
-  const TabLink = tabType === 'tabOption' ? url : '#'
+  const TabLink = tabType === 'tabOption' ? url : ''
 
   return (
     <a className={className} href={TabLink}>

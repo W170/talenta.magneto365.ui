@@ -7,14 +7,26 @@ const isMobile = ({ isMobile = false }: IMainButton) => {
       width: 2.5rem;
       height: 2.5rem;
 
+      &.small {
+        width: 2.3rem;
+        height: 2.3rem;
+        padding: 0;
+      }
+
       &.medium {
         padding: 0;
+      }
+
+      &.large {
+        padding: 0;
+        width: 2.7rem;
+        height: 2.7rem;
       }
     `
   }
 }
 
-export const withStyles = (c: React.FC<IMainButton>): React.FC<IMainButton> => styled(c)`
+export const withStyles = (Component: React.FC<IMainButton>): React.FC<IMainButton> => styled(Component)`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -36,6 +48,7 @@ export const withStyles = (c: React.FC<IMainButton>): React.FC<IMainButton> => s
   p {
     font-style: normal;
     font-weight: 700;
+    font-weight: ${(props) => props.theme.weight.bold};
     font-size: 14px;
     line-height: 17px;
     margin: 0px;

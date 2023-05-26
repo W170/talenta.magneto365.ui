@@ -4,7 +4,7 @@ import { IHeaderTab } from './HeaderTab.interface'
 const isActiveTab = ({ isActive = false }: IHeaderTab) => {
   if (isActive) {
     return css`
-      background-color: #e9e9f6;
+      background-color: ${(props) => props.theme.colors.disabledColors.gray2};
       &:hover {
         cursor: pointer;
       }
@@ -23,6 +23,7 @@ export const withStyles = (Component: React.FC<IHeaderTab>): React.FC<IHeaderTab
     p {
       font-style: normal;
       font-weight: 400;
+      font-weight: ${(props) => props.theme.weight.regular};
       font-size: 13px;
       line-height: 16px;
       margin: 0;
@@ -32,7 +33,7 @@ export const withStyles = (Component: React.FC<IHeaderTab>): React.FC<IHeaderTab
       tabType === 'tabTitle' &&
       css`
         p {
-          color: #a3a3b5;
+          color: ${(props) => props.theme.colors.textColors.disable};
         }
       `}
 
@@ -40,10 +41,10 @@ export const withStyles = (Component: React.FC<IHeaderTab>): React.FC<IHeaderTab
       tabType === 'tabOption' &&
       css`
         :hover {
-          background-color: #e9e9f6;
+          background-color: ${(props) => props.theme.colors.disabledColors.gray2};
         }
         p {
-          color: #14141c;
+          color: ${(props) => props.theme.colors.textColors.black};
         }
       `}
 
