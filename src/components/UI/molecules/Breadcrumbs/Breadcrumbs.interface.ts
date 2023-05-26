@@ -1,5 +1,5 @@
-import { IBreadcrumb } from '../../atoms/Breadcrumb/Breadcrumb.interface'
-import { IconProps } from '../../atoms/Icon'
+import { IBreadcrumb } from '../../atoms'
+import { IconProps } from '../../atoms'
 
 export interface BreadcrumbItem extends Omit<IBreadcrumb, 'isActive'> {
   slug: string

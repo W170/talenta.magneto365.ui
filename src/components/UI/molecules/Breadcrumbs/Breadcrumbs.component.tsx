@@ -1,8 +1,8 @@
 import React from 'react'
-import { IconItem } from '../../atoms/Icon'
-import { Breadcrumb } from '../../atoms/Breadcrumb'
-import { withStyles } from './Breadcrumbs.styles'
+import { IconItem } from '../../atoms'
+import { Breadcrumb } from '../../atoms'
 import { IBreadcrumbs } from './Breadcrumbs.interface'
+import { withStyles } from './Breadcrumbs.styles'
 
 const Component: React.FC<IBreadcrumbs> = ({ urlParam, breadcrumbsList = [], iconProps, className }) => {
   return (

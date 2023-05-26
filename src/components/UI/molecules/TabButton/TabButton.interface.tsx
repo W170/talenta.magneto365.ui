@@ -1,4 +1,4 @@
-import { ILinkProps } from '../../atoms/Link'
+import { ILinkProps } from '../../atoms'
 
 export interface ITabButton {
   /**

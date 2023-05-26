@@ -1,6 +1,6 @@
 import React from 'react'
+import { HeaderTab } from '../../atoms'
 import { IHeaderTabs } from './HeaderTabs.interface'
-import { HeaderTab } from '../../atoms/HeaderTab'
 import { withStyles } from './HeaderTabs.styles'
 
 const Component: React.FC<IHeaderTabs> = ({ headerTabList = [], urlParam = '', className }) => {

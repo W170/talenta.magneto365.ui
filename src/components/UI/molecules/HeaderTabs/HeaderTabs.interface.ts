@@ -1,4 +1,4 @@
-import { IHeaderTab } from '../../atoms/HeaderTab'
+import { IHeaderTab } from '../../atoms/'
 
 export interface HeaderTabItem extends Omit<IHeaderTab, 'isActive'> {
   slug?: string
