@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
-import { MainButton } from '../../atoms/MainButton'
-import { Link } from '../../atoms/Link'
-import { LogoComponent } from '../../atoms/Logo'
-import { Breadcrumbs } from '../../molecules/Breadcrumbs'
-import { MobileSearchbar } from '../../molecules/MobileSearchbar'
-import { Searchbar } from '../../molecules/Searchbar'
-import { Tab } from '../../molecules/Tab'
+import { Link } from '../../atoms'
+import { LogoComponent } from '../../atoms'
+import { MainButton } from '../../atoms'
+import { Breadcrumbs } from '../../molecules'
+import { MobileSearchbar } from '../../molecules'
+import { Searchbar } from '../../molecules'
+import { Tab } from '../../molecules'
 
 import { ILogoutHeader } from './LogoutHeader.interface'
 import { withStyles } from './LogoutHeader.styles'
-
 import { useMediaQuery } from '../../../hooks'
 
 import {
