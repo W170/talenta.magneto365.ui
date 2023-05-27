@@ -2,7 +2,7 @@ import { LoginHeader } from './LoginHeader.component'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof LoginHeader> = {
-  title: 'Organism/LoginHeader',
+  title: 'Organism/Login Header',
   component: LoginHeader,
   args: {}
 }

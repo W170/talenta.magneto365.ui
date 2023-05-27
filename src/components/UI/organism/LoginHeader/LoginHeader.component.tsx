@@ -1,6 +1,18 @@
 import React, { useState } from 'react'
+import { Avatar } from '../../atoms'
+import { LogoComponent } from '../../atoms'
+import { MainButton } from '../../atoms'
+import { Popover } from '../../atoms'
+import { Breadcrumbs } from '../../molecules'
+import { HeaderTabs } from '../../molecules'
+import { ListMenuIcons } from '../../molecules'
+import { MobileDrawer } from '../../molecules'
+import { MobileSearchbar } from '../../molecules'
+import { Searchbar } from '../../molecules'
 import { ILoginHeader } from './LoginHeader.interface'
+import { withStyles } from './LoginHeader.styles'
 import { useMediaQuery } from '../../../hooks'
+
 import {
   BreadcrumbsProps,
   SearchbarProps,
@@ -14,22 +26,11 @@ import {
   listMenuUserProps,
   MobileSearchbarButtonProps
 } from '../../../../constants/stories.constants'
-import { MobileSearchbar } from '../../molecules/MobileSearchbar'
-import { MainButton } from '../../atoms/MainButton'
-import { Breadcrumbs } from '../../molecules/Breadcrumbs'
-import { Searchbar } from '../../molecules/Searchbar'
-import { LogoComponent } from '../../atoms/Logo'
-import { withStyles } from './LoginHeader.styles'
-import { Avatar } from '../../atoms/Avatar'
-import { HeaderTabs } from '../../molecules/HeaderTabs/HeaderTabs.component'
-import { Popover } from '../../atoms/Popover'
-import { ListMenuIcons } from '../../molecules/ListMenuIcons'
-import { MobileDrawer } from '../../molecules/MobileDrawer'
 
 const Component: React.FC<ILoginHeader> = ({ onClick, className }) => {
   const [showSearchBar, setShowSearchBar] = useState(false)
-  const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
   const [showPopover, setShowPopover] = useState(false)
+  const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
 
   const toggleSearchBar = () => {
     setShowSearchBar(!showSearchBar)
