@@ -1,16 +1,26 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { LogoutTemplate } from './LogoutTemplate.component'
-import { createAccount, login, ListIcon, headerProps, listMenuProps } from '../../../../constants/stories.constants'
+import {
+  listMenuProps,
+  TabProps,
+  SearchbarProps,
+  SignInLinkProps,
+  SignUpButtonProps,
+  BreadcrumbsProps
+} from '../../../../constants/stories.constants'
 
 const meta: Meta<typeof LogoutTemplate> = {
   title: 'Template/Logout',
   component: LogoutTemplate,
   tags: ['autodocs'],
   args: {
-    login,
-    createAccount,
-    listIcon: ListIcon,
-    headerProps: headerProps,
+    logoutHeaderProps: {
+      tabProps: TabProps,
+      searchbarProps: SearchbarProps,
+      signInLinkProps: SignInLinkProps,
+      signUpButtonProps: SignUpButtonProps,
+      breadcrumbsProps: BreadcrumbsProps
+    },
     listMenuProps: listMenuProps
   }
 }
