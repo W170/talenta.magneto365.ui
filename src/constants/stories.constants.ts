@@ -78,7 +78,8 @@ export const SignUpButtonProps: IMainButton = {
     Icon: ProfileAdd,
     hover: true,
     color: '#090467 '
-  }
+  },
+  spacing: 10
 }
 
 // Mobile Searchbar Button
