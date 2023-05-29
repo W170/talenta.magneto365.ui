@@ -1,9 +1,8 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { ILinkProps, LinkType } from './Link.interface'
-import { lightTheme } from '../../../../shared/stylesheets/theme.styles'
 
-export const getTypeStyles = ({ type = 'link' }: { type: LinkType }) => {
+export const linkTypeStyles = ({ type = 'link' }: { type: LinkType }) => {
   switch (type) {
     case 'link':
       return css<ILinkProps>`
@@ -26,6 +25,7 @@ export const getTypeStyles = ({ type = 'link' }: { type: LinkType }) => {
 
         p {
           font-style: normal;
+          font-weight: ${(props) => props.theme.weight.bold};
           font-weight: 700;
           font-size: 14px;
           line-height: 17px;
@@ -33,7 +33,7 @@ export const getTypeStyles = ({ type = 'link' }: { type: LinkType }) => {
         }
 
         :hover {
-          background-color: ${lightTheme.colors.$gray5};
+          background-color: ${(props) => props.theme.colors.$gray5};
         }
 
         :visited {
@@ -57,16 +57,18 @@ const isMobile = ({ isMobile = false, type }: ILinkProps) => {
   }
 }
 
-export const withStyles = (c: React.FC<ILinkProps>): React.FC<ILinkProps> => styled(c)`
-  color: ${(props) => (props.textColor ? props.textColor : props.theme.colors.$gray1)};
+export const withStyles = (Component: React.FC<ILinkProps>): React.FC<ILinkProps> => {
+  return styled(Component)`
+    color: ${(props) => (props.textColor ? props.textColor : props.theme.colors.$gray1)};
 
-  text-decoration: none;
-  &:hover {
-    cursor: pointer;
-    color: ${(props) => (props.hoverColor ? props.hoverColor : lightTheme.colors.primary)};
-  }
+    text-decoration: none;
+    &:hover {
+      cursor: pointer;
+      color: ${(props) => (props.hoverColor ? props.hoverColor : props.theme.colors.primary)};
+    }
 
-  ${(props) => getTypeStyles(props)}
+    ${(props) => linkTypeStyles(props)}
 
-  ${(props) => isMobile(props)}
-`
+    ${(props) => isMobile(props)}
+  `
+}

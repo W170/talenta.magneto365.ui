@@ -3,7 +3,7 @@ import { MainButton } from './MainButton.component'
 import { ProfileAdd } from 'iconsax-react'
 
 const meta: Meta<typeof MainButton> = {
-  title: 'Atoms/MainButton',
+  title: 'Atoms/Main Button',
   component: MainButton,
   args: {
     buttonType: 'button',

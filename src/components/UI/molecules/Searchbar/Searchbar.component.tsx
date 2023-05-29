@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
+import { MainButton } from '../../atoms'
 import { ISearchbar } from './Searchbar.interface'
 import { withStyles } from './Searchbar.styles'
-import { MainButton } from '../../atoms/MainButton'
 
 const Component: React.FC<ISearchbar> = ({ placeholder, searchProps, removeProps, onSearch, className }) => {
   const [searchValue, setSearchValue] = useState('')

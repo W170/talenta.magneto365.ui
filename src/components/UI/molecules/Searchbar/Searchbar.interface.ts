@@ -1,4 +1,4 @@
-import { IMainButton } from '../../atoms/MainButton'
+import { IMainButton } from '../../atoms'
 
 export interface ISearchbar {
   /**
