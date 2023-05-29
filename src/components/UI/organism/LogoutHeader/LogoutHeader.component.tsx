@@ -1,11 +1,6 @@
 import React, { useState } from 'react'
-import { Link } from '../../atoms'
-import { LogoComponent } from '../../atoms'
-import { MainButton } from '../../atoms'
-import { Breadcrumbs } from '../../molecules'
-import { MobileSearchbar } from '../../molecules'
-import { Searchbar } from '../../molecules'
-import { Tab } from '../../molecules'
+import { Link, LogoComponent, MainButton } from '../../atoms'
+import { Breadcrumbs, MobileSearchbar, Searchbar, Tab } from '../../molecules'
 
 import { ILogoutHeader } from './LogoutHeader.interface'
 import { withStyles } from './LogoutHeader.styles'
@@ -68,9 +63,7 @@ const Component: React.FC<ILogoutHeader> = ({
 
   const logoutHeaderSignInLink = useMediaQuery(<Link {...signInLinkProps} isMobile={isMobileButton} />)
 
-  const logoutHeaderButtonSignUp = useMediaQuery(
-    <MainButton {...signUpButtonProps} isMobile={isMobileButton} spacing={10} />
-  )
+  const logoutHeaderButtonSignUp = useMediaQuery(<MainButton {...signUpButtonProps} isMobile={isMobileButton} />)
 
   const logoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs {...breadcrumbsProps} />, {
     md: null
