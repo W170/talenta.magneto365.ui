@@ -12,18 +12,21 @@ import { withStyles } from './LogoutHeader.styles'
 import { useMediaQuery } from '../../../hooks'
 
 import {
-  TabProps,
   LogoProps,
-  SignInLinkProps,
-  SignUpButtonProps,
   MenuButtonProps,
   MobileSearchbarButtonProps,
-  MobileSearchbarProps,
-  SearchbarProps,
-  BreadcrumbsProps
+  MobileSearchbarProps
 } from '../../../../constants/stories.constants'
 
-const Component: React.FC<ILogoutHeader> = ({ className, onClick }) => {
+const Component: React.FC<ILogoutHeader> = ({
+  className,
+  onClick,
+  tabProps,
+  searchbarProps,
+  signInLinkProps,
+  signUpButtonProps,
+  breadcrumbsProps
+}) => {
   const [showSearchBar, setShowSearchBar] = useState(false)
 
   const toggleSearchBar = () => {
@@ -45,7 +48,7 @@ const Component: React.FC<ILogoutHeader> = ({ className, onClick }) => {
     )
   })
 
-  const logoutHeaderTab = useMediaQuery(<Tab {...TabProps} />, {
+  const logoutHeaderTab = useMediaQuery(<Tab {...tabProps} />, {
     md: null
   })
 
@@ -59,17 +62,17 @@ const Component: React.FC<ILogoutHeader> = ({ className, onClick }) => {
     md: <MainButton onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
   })
 
-  const logoutHeaderSearchbar = useMediaQuery(<Searchbar {...SearchbarProps} />, {
+  const logoutHeaderSearchbar = useMediaQuery(<Searchbar {...searchbarProps} />, {
     md: null
   })
 
-  const logoutHeaderSignInLink = useMediaQuery(<Link {...SignInLinkProps} isMobile={isMobileButton} />)
+  const logoutHeaderSignInLink = useMediaQuery(<Link {...signInLinkProps} isMobile={isMobileButton} />)
 
   const logoutHeaderButtonSignUp = useMediaQuery(
-    <MainButton {...SignUpButtonProps} isMobile={isMobileButton} spacing={10} />
+    <MainButton {...signUpButtonProps} isMobile={isMobileButton} spacing={10} />
   )
 
-  const logoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs {...BreadcrumbsProps} />, {
+  const logoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs {...breadcrumbsProps} />, {
     md: null
   })
 
