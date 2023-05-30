@@ -3,6 +3,9 @@ import { LoginTemplate } from './LoginTemplate.component'
 import {
   AvatarProps,
   BreadcrumbsProps,
+  CurriculumTabProps,
+  JobsTabsProps,
+  ProcessTabsProps,
   listMenuProps,
   listMenuUserProps
 } from '../../../../constants/stories.constants'
@@ -15,7 +18,10 @@ const meta: Meta<typeof LoginTemplate> = {
     listMenuProps,
     listMenuUserProps,
     breadcrumbsProps: BreadcrumbsProps,
-    profileImage: AvatarProps
+    profileImage: AvatarProps,
+    jobsTabsProps: JobsTabsProps,
+    processTabsProps: ProcessTabsProps,
+    curriculumTabProps: CurriculumTabProps
   }
 }
 

@@ -14,13 +14,19 @@ const Component: React.FC<ILoginTemplate> = ({
   listMenuProps,
   listMenuUserProps,
   breadcrumbsProps,
-  profileImage
+  profileImage,
+  jobsTabsProps,
+  processTabsProps,
+  curriculumTabProps
 }) => {
   const [toggleDrawer, setToggleDrawer] = useState(false)
 
   return (
     <div className={className}>
       <LoginHeader
+        curriculumTabProps={curriculumTabProps}
+        jobsTabsProps={jobsTabsProps}
+        processTabsProps={processTabsProps}
         profileImage={profileImage}
         breadcrumbsProps={breadcrumbsProps}
         listMenuUserProps={listMenuUserProps}

@@ -1,6 +1,13 @@
 import { LoginHeader } from './LoginHeader.component'
 import { Meta, StoryObj } from '@storybook/react'
-import { AvatarProps, BreadcrumbsProps, listMenuUserProps } from '../../../../constants/stories.constants'
+import {
+  AvatarProps,
+  BreadcrumbsProps,
+  CurriculumTabProps,
+  JobsTabsProps,
+  ProcessTabsProps,
+  listMenuUserProps
+} from '../../../../constants/stories.constants'
 
 const meta: Meta<typeof LoginHeader> = {
   title: 'Organism/Login Header',
@@ -8,7 +15,10 @@ const meta: Meta<typeof LoginHeader> = {
   args: {
     listMenuUserProps,
     breadcrumbsProps: BreadcrumbsProps,
-    profileImage: AvatarProps
+    profileImage: AvatarProps,
+    jobsTabsProps: JobsTabsProps,
+    processTabsProps: ProcessTabsProps,
+    curriculumTabProps: CurriculumTabProps
   }
 }
 

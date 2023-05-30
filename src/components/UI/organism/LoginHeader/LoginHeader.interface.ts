@@ -1,5 +1,5 @@
 import { IAvatar } from '../../atoms'
-import { IBreadcrumbs } from '../../molecules'
+import { IBreadcrumbs, IHeaderTabs } from '../../molecules'
 import { ILogout, IMenuItems, ISettings } from '../../molecules/ListMenuIcons/ListMenuIcons.interface'
 
 export interface ILoginHeader {
@@ -8,6 +8,9 @@ export interface ILoginHeader {
   className?: string
   listMenuUserProps: IlistMenuUserProps
   onClick?: () => void
+  jobsTabsProps: IHeaderTabs
+  processTabsProps: IHeaderTabs
+  curriculumTabProps: IHeaderTabs
 }
 
 export interface IlistMenuUserProps {

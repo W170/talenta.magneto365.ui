@@ -18,9 +18,6 @@ import {
   LogoProps,
   MobileSearchbarProps,
   MenuButtonProps,
-  JobsTabsProps,
-  ProcessTabsProps,
-  CurriculumTabProps,
   MobileSearchbarButtonProps
 } from '../../../../constants/stories.constants'
 
@@ -29,7 +26,10 @@ const Component: React.FC<ILoginHeader> = ({
   className,
   listMenuUserProps,
   breadcrumbsProps,
-  profileImage
+  profileImage,
+  jobsTabsProps,
+  processTabsProps,
+  curriculumTabProps
 }) => {
   const [showSearchBar, setShowSearchBar] = useState(false)
   const [showPopover, setShowPopover] = useState(false)
@@ -66,9 +66,9 @@ const Component: React.FC<ILoginHeader> = ({
 
   const loginHeaderOptionTabs = useMediaQuery(
     <>
-      <HeaderTabs {...JobsTabsProps} />
-      <HeaderTabs {...ProcessTabsProps} />
-      <HeaderTabs {...CurriculumTabProps} />
+      <HeaderTabs {...jobsTabsProps} />
+      <HeaderTabs {...processTabsProps} />
+      <HeaderTabs {...curriculumTabProps} />
     </>,
     {
       xl: null
