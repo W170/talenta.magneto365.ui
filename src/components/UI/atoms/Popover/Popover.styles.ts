@@ -44,25 +44,6 @@ export const withStyles = (c: React.FC<IPopover>): React.FC<IPopover> => styled(
     padding: 15px;
     ${(props) => positionYValue(props)}
     ${(props) => positionXValue(props)}
-    animation-duration: 0.3s;
-    animation-name: fadeIn;
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0.5;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-    @-webkit-keyframes fadeIn {
-      0% {
-        opacity: 0.5;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
   }
   .magneto-ui-popover-children {
     display: inline;
