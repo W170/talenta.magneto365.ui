@@ -13,8 +13,8 @@ import {
   MessageQuestion,
   ProfileAdd,
   SearchNormal1,
-  Setting2,
-  TaskSquare
+  TaskSquare,
+  Youtube
 } from 'iconsax-react'
 
 import { IconProps } from '../components/UI/atoms/Icon'
@@ -31,6 +31,7 @@ import { IMenuItems } from '../components/UI/molecules/ListMenuIcons/ListMenuIco
 import { IHeaderDrawerTabs } from '../components/UI/molecules/HeaderDrawerTabs/HeaderDrawerTabs.interface'
 import { IAvatar } from '../components/UI/atoms/Avatar'
 import { IHeaderTabs } from '../components/UI/molecules/HeaderTabs/HeaderTabs.interface'
+import { IlistMenuUserProps } from '../components/UI/organism/LoginHeader'
 
 /**
  * UI Atoms properties/args
@@ -116,13 +117,14 @@ export const MenuButtonProps: IMainButton = {
 //Breadcrumbs Molecule
 export const BreadcrumbsProps: IBreadcrumbs = {
   urlParam: 'todos-los-empleos',
-  iconProps: {
-    Icon: Home2,
-    hover: true,
-    size: 16,
-    color: '#a3a3b5'
-  },
-  breadcrumbsList: [{ breadcrumbText: 'Todos los empleos', url: '#', slug: 'todos-los-empleos' }]
+  breadcrumbsList: [{ breadcrumbText: 'Todos los empleos', slug: 'todos-los-empleos' }]
+}
+
+export const iconPropsBreadCrumb: IconProps = {
+  Icon: Home2,
+  hover: false,
+  size: 16,
+  color: '#a3a3b5'
 }
 
 //Searchbar Molecule
@@ -292,9 +294,12 @@ export const flag =
   'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/2560px-Flag_of_Colombia.svg.png'
 
 export const ListIcon: IListIcon[] = [
-  { Icon: Facebook, url: '' },
-  { Icon: Instagram, url: '' },
-  { Icon: Link21, url: '' }
+  { Icon: Facebook, url: 'https://www.facebook.com/MagnetoEmpleos?_rdc=4&_rdr' },
+  { Icon: Instagram, url: 'https://www.instagram.com/magnetoempleos/' },
+  { Icon: Instagram, url: 'https://www.linkedin.com/company/magnetoempleos/' },
+  { Icon: Youtube, url: 'https://www.youtube.com/c/Magnetoempleos' },
+  { Icon: Instagram, url: 'https://www.tiktok.com/@magnetoempleos' },
+  { Icon: Link21, url: 'https://www.magneto365.com/home/#comparte-magneto' }
 ]
 
 export const MenuList: MenuItemInfo[] = [
@@ -376,12 +381,6 @@ export const menuItems1440: IMenuItems[] = [
   {
     items: [
       {
-        Icon: Setting2,
-        text: 'Configuración',
-        slug: '',
-        url: ''
-      },
-      {
         Icon: MessageQuestion,
         text: 'Ayuda',
         slug: '',
@@ -390,6 +389,16 @@ export const menuItems1440: IMenuItems[] = [
     ]
   }
 ]
+
+export const Logout = {
+  logoutText: 'Cerrar Sesión',
+  onClick: () => ({})
+}
+
+export const Settings = {
+  settingsText: 'Configuración',
+  onClick: () => ({})
+}
 
 export const MenuItems: IMenuItems[] = [
   {
@@ -436,12 +445,6 @@ export const MenuItems: IMenuItems[] = [
         url: ''
       },
       {
-        Icon: Setting2,
-        text: 'Configuración',
-        slug: '',
-        url: ''
-      },
-      {
         Icon: MessageQuestion,
         text: 'Ayuda',
         slug: '',
@@ -451,7 +454,10 @@ export const MenuItems: IMenuItems[] = [
   }
 ]
 
-export const listMenuUserProps: { urlParam: string; menuItems: IMenuItems[] } = {
+export const listMenuUserProps: IlistMenuUserProps = {
   urlParam: 'guardados',
-  menuItems: MenuItems
+  menuItems: MenuItems,
+  menuItems1440,
+  logout: Logout,
+  settings: Settings
 }
