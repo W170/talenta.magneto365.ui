@@ -1,5 +1,4 @@
 import { IBreadcrumb } from '../../atoms'
-import { IconProps } from '../../atoms'
 
 export interface BreadcrumbItem extends Omit<IBreadcrumb, 'isActive'> {
   slug: string
@@ -17,6 +16,6 @@ export interface IBreadcrumbs {
   /**
    * Props for the Icon
    */
-  iconProps: IconProps
+
   className?: string
 }
