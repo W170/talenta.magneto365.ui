@@ -29,6 +29,7 @@ import { IMenuItems } from '../components/UI/molecules/ListMenuIcons/ListMenuIco
 import { IHeaderDrawerTabs } from '../components/UI/molecules/HeaderDrawerTabs/HeaderDrawerTabs.interface'
 import { IAvatar } from '../components/UI/atoms/Avatar'
 import { IHeaderTabs } from '../components/UI/molecules/HeaderTabs/HeaderTabs.interface'
+import { ILinkProps } from '../components/UI/atoms'
 
 /**
  * UI Atoms properties/args
@@ -47,8 +48,11 @@ export const HamburgerIcon: IconProps = {
 }
 
 //SignIn Link Atom
-export const SignInLinkProps = {
-  iconProps: { Icon: LoginCurve, hover: false },
+export const SignInLinkProps: ILinkProps = {
+  type: 'button',
+  text: 'Iniciar Sesion',
+  href: '#',
+  iconProps: { Icon: LoginCurve, hover: true },
   textColor: '#14141C',
   hoverColor: '#14141C'
 }

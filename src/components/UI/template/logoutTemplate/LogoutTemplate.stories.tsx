@@ -2,11 +2,12 @@ import { Meta, StoryObj } from '@storybook/react'
 import { LogoutTemplate } from './LogoutTemplate.component'
 import {
   listMenuProps,
-  TabProps,
   SearchbarProps,
-  SignInLinkProps,
   SignUpButtonProps,
-  BreadcrumbsProps
+  BreadcrumbsProps,
+  TabButtonJobs,
+  TabButtonRecruiter,
+  SignInLinkProps
 } from '../../../../constants/stories.constants'
 
 const meta: Meta<typeof LogoutTemplate> = {
@@ -15,7 +16,8 @@ const meta: Meta<typeof LogoutTemplate> = {
   tags: ['autodocs'],
   args: {
     logoutHeaderProps: {
-      tabProps: TabProps,
+      tabButtonJobs: TabButtonJobs,
+      tabButtonRecruiter: TabButtonRecruiter,
       searchbarProps: SearchbarProps,
       signInLinkProps: SignInLinkProps,
       signUpButtonProps: SignUpButtonProps,

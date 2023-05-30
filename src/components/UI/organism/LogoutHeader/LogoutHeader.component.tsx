@@ -16,7 +16,8 @@ import {
 const Component: React.FC<ILogoutHeader> = ({
   className,
   onClick,
-  tabProps,
+  tabButtonJobs,
+  tabButtonRecruiter,
   searchbarProps,
   signInLinkProps,
   signUpButtonProps,
@@ -43,7 +44,7 @@ const Component: React.FC<ILogoutHeader> = ({
     )
   })
 
-  const logoutHeaderTab = useMediaQuery(<Tab {...tabProps} />, {
+  const logoutHeaderTab = useMediaQuery(<Tab tabButtonJobs={tabButtonJobs} tabButtonRecruiter={tabButtonRecruiter} />, {
     md: null
   })
 
