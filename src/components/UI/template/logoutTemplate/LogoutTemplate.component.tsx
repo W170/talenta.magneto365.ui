@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Drawer } from '../../molecules/Drawer'
 import { HeaderDrawerTabs } from '../../molecules/HeaderDrawerTabs'
-import { MenuContainer, withStyles } from './LogoutTemplate.styles'
+import { MenuContainer } from './LogoutTemplate.styles'
 import { ILogoutTemplate } from './LogoutTemplate.interface'
 import { ListMenuItems } from '../../molecules/ListMenuItems'
 import { MainButton } from '../../atoms/MainButton'
