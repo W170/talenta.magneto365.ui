@@ -4,6 +4,6 @@ import { ITab } from '../Tab'
 export interface IHeaderDrawerTabs {
   className?: string
   logoProps: ILogoComponent
-  tabProps?: ITab
+  tabProps: ITab
   spacing?: number
 }

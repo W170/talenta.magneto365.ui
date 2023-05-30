@@ -323,7 +323,11 @@ export const logoPropsLogin: ILogoComponent = {
 }
 
 export const headerProps: IHeaderDrawerTabs = {
-  logoProps: logoProps
+  logoProps: logoProps,
+  tabProps: {
+    tabButtonJobs: TabButtonJobs,
+    tabButtonRecruiter: TabButtonRecruiter
+  }
 }
 
 export const createAccount: IMainButton = {

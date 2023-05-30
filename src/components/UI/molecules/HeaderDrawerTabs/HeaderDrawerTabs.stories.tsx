@@ -1,13 +1,15 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { HeaderDrawerTabs } from './HeaderDrawerTabs.components'
-import { TabProps, logoProps } from '../../../../constants/stories.constants'
+import { TabButtonJobs, TabButtonRecruiter, logoProps } from '../../../../constants/stories.constants'
 
 const meta: Meta<typeof HeaderDrawerTabs> = {
   title: 'Molecules/Header Drawer Tabs',
   component: HeaderDrawerTabs,
   args: {
-    tabProps: TabProps,
-
+    tabProps: {
+      tabButtonJobs: TabButtonJobs,
+      tabButtonRecruiter: TabButtonRecruiter
+    },
     logoProps: logoProps
   }
 }
