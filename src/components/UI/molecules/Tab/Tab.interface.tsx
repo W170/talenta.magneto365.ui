@@ -1,9 +1,7 @@
-import { ITabButton } from '../TabButton'
+import { ILinkProps } from '../../atoms'
 
 export interface ITab {
-  /**
-   * Sets the array that contains the Tab Buttons
-   */
-  tabButtonList?: ITabButton[]
+  tabButtonJobs: ILinkProps
+  tabButtonRecruiter: ILinkProps
   className?: string
 }

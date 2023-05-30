@@ -18,13 +18,11 @@ import {
 } from 'iconsax-react'
 
 import { IconProps } from '../components/UI/atoms/Icon'
-import { ILinkProps } from '../components/UI/atoms/Link'
 import { ILogoComponent } from '../components/UI/atoms/Logo/Logo.interface'
 import { IMainButton } from '../components/UI/atoms/MainButton'
 import { IBreadcrumbs } from '../components/UI/molecules/Breadcrumbs'
 import { IListIcon } from '../components/UI/molecules/ListIconLink'
 import { ISearchbar } from '../components/UI/molecules/Searchbar'
-import { ITab } from '../components/UI/molecules/Tab'
 import { IMobileSearchbar } from '../components/UI/molecules/MobileSearchbar'
 import { IListMenuItems, MenuItemInfo } from '../components/UI/molecules/ListMenuItems/ListMenuItems.interface'
 import { IMenuItems } from '../components/UI/molecules/ListMenuIcons/ListMenuIcons.interface'
@@ -49,11 +47,8 @@ export const HamburgerIcon: IconProps = {
 }
 
 //SignIn Link Atom
-export const SignInLinkProps: ILinkProps = {
-  type: 'button',
-  text: 'Iniciar Sesion',
-  href: '#',
-  iconProps: { Icon: LoginCurve, hover: true },
+export const SignInLinkProps = {
+  iconProps: { Icon: LoginCurve, hover: false },
   textColor: '#14141C',
   hoverColor: '#14141C'
 }
@@ -189,33 +184,16 @@ export const MobileSearchbarProps: IMobileSearchbar = {
 }
 
 //Tab Molecule
-export const TabProps: ITab = {
-  tabButtonList: [
-    {
-      linkProps: {
-        href: '#',
-        text: 'Busco Empleo',
-        type: 'link',
-        textColor: '#000'
-      },
-      tabButtonColor: '#FFF',
-      tabButtonTextSize: '11px',
-      tabButtonTextWeight: '700',
-      boxShadow: true
-    },
-    {
-      linkProps: {
-        href: '#',
-        text: 'Soy reclutador',
-        type: 'link',
-        textColor: '#A3A3B5'
-      },
-      tabButtonColor: '#F4F4FA',
-      tabButtonTextSize: '11px',
-      tabButtonTextWeight: '400',
-      boxShadow: false
-    }
-  ]
+export const TabButtonJobs = {
+  type: 'link' as const,
+  href: '#',
+  text: 'Busco Empleo'
+}
+
+export const TabButtonRecruiter = {
+  type: 'link' as const,
+  href: '#',
+  text: 'Soy reclutador'
 }
 
 //HeaderTabs Molecule
@@ -341,8 +319,7 @@ export const logoPropsLogin: ILogoComponent = {
 }
 
 export const headerProps: IHeaderDrawerTabs = {
-  logoProps: logoProps,
-  tabProps: TabProps
+  logoProps: logoProps
 }
 
 export const createAccount: IMainButton = {
