@@ -10,11 +10,11 @@ import { ActiosContainer } from '../../organism/DrawerMenu/DrawerMenu.styles'
 import { LogoutHeader } from '../../organism/LogoutHeader'
 import { ListIcon, createAccount, headerProps, login } from '../../../../constants/stories.constants'
 
-const Component: React.FC<ILogoutTemplate> = ({ className, listMenuProps, logoutHeaderProps }) => {
+const Component: React.FC<ILogoutTemplate> = ({ listMenuProps, logoutHeaderProps }) => {
   const [toggleModal, setToggleModal] = useState(false)
 
   return (
-    <div className={className}>
+    <React.Fragment>
       <LogoutHeader {...logoutHeaderProps} onClick={() => setToggleModal(true)} />
       <Drawer direction="left" isOpen={toggleModal} onClose={() => setToggleModal(false)}>
         <HeaderDrawerTabs {...headerProps} />
@@ -27,7 +27,7 @@ const Component: React.FC<ILogoutTemplate> = ({ className, listMenuProps, logout
           <ListIconLink spacing={30} listIcon={ListIcon} />
         </ActiosContainer>
       </Drawer>
-    </div>
+    </React.Fragment>
   )
 }
 
