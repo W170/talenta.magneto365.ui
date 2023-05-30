@@ -1,7 +1,11 @@
-import { IMenuItems } from '../../molecules/ListMenuIcons/ListMenuIcons.interface'
+import { IAvatar } from '../../atoms'
+import { IBreadcrumbs } from '../../molecules'
 import { IListMenuItems } from '../../molecules/ListMenuItems/ListMenuItems.interface'
+import { IlistMenuUserProps } from '../../organism/LoginHeader'
 export interface ILoginTemplate {
   className?: string
   listMenuProps: IListMenuItems
-  listMenuUserProps: { urlParam: string; menuItems: IMenuItems[] }
+  listMenuUserProps: IlistMenuUserProps
+  breadcrumbsProps: IBreadcrumbs
+  profileImage: IAvatar
 }
