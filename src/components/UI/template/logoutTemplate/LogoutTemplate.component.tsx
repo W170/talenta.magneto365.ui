@@ -31,4 +31,4 @@ const Component: React.FC<ILogoutTemplate> = ({ listMenuProps, logoutHeaderProps
   )
 }
 
-export const LogoutTemplate = withStyles(Component)
+export const LogoutTemplate = Component
