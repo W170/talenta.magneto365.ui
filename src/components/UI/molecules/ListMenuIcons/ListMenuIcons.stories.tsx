@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { ListMenuIcons } from './ListMenuIcons.component'
-import { MenuItems } from '../../../../constants/stories.constants'
+import { Logout, MenuItems, Settings } from '../../../../constants/stories.constants'
 
 const urlParams = 'guardados'
 
@@ -10,7 +10,9 @@ const meta: Meta<typeof ListMenuIcons> = {
   tags: ['autodocs'],
   args: {
     urlParam: urlParams,
-    menuItems: MenuItems
+    menuItems: MenuItems,
+    logout: Logout,
+    settings: Settings
   }
 }
 
