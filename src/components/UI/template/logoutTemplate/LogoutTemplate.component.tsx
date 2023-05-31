@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Drawer } from '../../molecules/Drawer'
 import { HeaderDrawerTabs } from '../../molecules/HeaderDrawerTabs'
-import { MenuContainer, withStyles } from './LogoutTemplate.styles'
+import { MenuContainer, ActiosContainer, withStyles } from './LogoutTemplate.styles'
 import { ILogoutTemplate } from './LogoutTemplate.interface'
 import { ListMenuItems } from '../../molecules/ListMenuItems'
 import { MainButton } from '../../atoms/MainButton'
 import { ListIconLink } from '../../molecules/ListIconLink'
-import { ActiosContainer } from '../../organism/DrawerMenu/DrawerMenu.styles'
+
 import { LogoutHeader } from '../../organism/LogoutHeader'
 import { ListIcon, createAccount, headerProps, login } from '../../../../constants/stories.constants'
 

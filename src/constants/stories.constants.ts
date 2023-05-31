@@ -8,7 +8,7 @@ import {
   HambergerMenu,
   Home2,
   Instagram,
-  Link21,
+  Link,
   LoginCurve,
   MessageQuestion,
   ProfileAdd,
@@ -17,8 +17,10 @@ import {
   Youtube
 } from 'iconsax-react'
 
-import Tiktok from '../assets/icons/tiktok.png'
-import Linkedin from '../assets/icons/linkedin.png'
+import Tiktok from '../assets/tiktok.png'
+import Linkedin from '../assets/linkedin.png'
+import IsoLogoMagneto from '../assets/isoMagneto.png'
+import LogoMagneto from '../assets/logoMagneto.png'
 
 import { IconProps } from '../components/UI/atoms/Icon'
 import { ILinkProps } from '../components/UI/atoms/Link'
@@ -64,11 +66,10 @@ export const SignInLinkProps: ILinkProps = {
 
 //Logo Atom
 export const LogoProps: ILogoComponent = {
-  logo: 'https://www.magneto365.com/wp-content/uploads/2022/09/Logo-magneto-v3.png',
-  isoType:
-    'https://www.magneto365.com/co/_next/image?url=https%3A%2F%2Fstatic.magneto365.com%2Fco%2F_next%2Fstatic%2Fmedia%2Ffavicon-magneto.b463e35d.png&w=32&q=75',
+  logo: LogoMagneto,
+  isoType: IsoLogoMagneto,
   alt: 'Logo Magneto',
-  logoSize: 120,
+  logoSize: 110,
   isoSize: 38
 }
 
@@ -289,9 +290,6 @@ export const CurriculumTabProps: IHeaderTabs = {
  * UI Templates properties/args
  */
 
-export const LogoMagneto = 'https://www.magneto365.com/wp-content/uploads/2022/09/Logo-magneto-v3.png'
-export const IsoLogoMagneto =
-  'https://www.magneto365.com/co/_next/image?url=https%3A%2F%2Fstatic.magneto365.com%2Fco%2F_next%2Fstatic%2Fmedia%2Ffavicon-magneto.b463e35d.png&w=32&q=75'
 export const LogoCompany = 'https://www.magneto365.com/wp-content/uploads/2022/08/img-grupo-sura.png'
 export const flag =
   'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/2560px-Flag_of_Colombia.svg.png'
@@ -302,7 +300,7 @@ export const ListIcon: IListIcon[] = [
   { assetsIcon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
   { Icon: Youtube, url: 'https://www.youtube.com/c/Magnetoempleos' },
   { assetsIcon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
-  { Icon: Link21, url: 'https://www.magneto365.com/home/#comparte-magneto' }
+  { Icon: Link, url: 'https://www.magneto365.com/home/#comparte-magneto' }
 ]
 
 export const MenuList: MenuItemInfo[] = [

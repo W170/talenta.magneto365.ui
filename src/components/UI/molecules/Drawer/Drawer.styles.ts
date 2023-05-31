@@ -32,7 +32,7 @@ export const withStyles = (c: React.FC<IDrawer>): React.FC<IDrawer> => styled(c)
       background: none;
       border: none;
       cursor: pointer;
-      & > svg {
+      & > :nth-child(1) {
         transform: rotate(45deg);
         width: 25px;
         height: 25px;

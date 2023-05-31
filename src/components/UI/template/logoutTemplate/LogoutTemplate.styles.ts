@@ -6,7 +6,7 @@ export const withStyles = (c: React.FC<ILogoutTemplate>): React.FC<ILogoutTempla
 
 export const MenuContainer = styled.div`
   @media (min-width: ${screenSize.md}px) {
-    margin-top: 40px;
+    margin-top: 15px;
   }
 `
 
@@ -15,7 +15,7 @@ export const ActiosContainer = styled.div`
   flex-direction: column;
   gap: 10px;
   @media (min-width: ${screenSize.md}px) {
-    gap: 25px;
-    margin-top: 40px;
+    gap: 10px;
+    margin-top: 15px;
   }
 `
