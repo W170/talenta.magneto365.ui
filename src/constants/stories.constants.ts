@@ -136,27 +136,29 @@ export const SearchbarProps: ISearchbar = {
   placeholder: 'Busca empleos por cargo o profesion',
   onSearch: () => {
     // Add your search logic here
-  },
-  searchProps: {
-    buttonType: 'submit',
-    buttonText: '',
-    iconProps: {
-      Icon: SearchNormal1,
-      hover: false,
-      color: '#000096',
-      size: 18
-    }
-  },
-  removeProps: {
-    buttonType: 'reset',
-    buttonText: '',
-    iconProps: {
-      Icon: Add,
-      hover: false,
-      color: '#14141C',
-      size: 18,
-      variant: 'Linear'
-    }
+  }
+}
+
+export const searchPropsButton: IMainButton = {
+  buttonType: 'submit' as const,
+  buttonText: '',
+  iconProps: {
+    Icon: SearchNormal1,
+    hover: false,
+    color: '#000096',
+    size: 18
+  }
+}
+
+export const removePropsButton: IMainButton = {
+  buttonType: 'reset' as const,
+  buttonText: '',
+  iconProps: {
+    Icon: Add,
+    hover: false,
+    color: '#14141C',
+    size: 18,
+    variant: 'Linear'
   }
 }
 
@@ -167,30 +169,32 @@ export const MobileSearchbarProps: IMobileSearchbar = {
     // Add your search logic here
   },
   focusSearchInput: false,
-  showMobileSearchbar: false,
-  searchProps: {
-    buttonType: 'submit',
-    buttonText: '',
-    iconProps: {
-      Icon: SearchNormal1,
-      hover: false,
-      color: '#A3A3B5',
-      size: 16
-    },
-    buttonColor: 'transparent'
+  showMobileSearchbar: false
+}
+
+export const searchMobileProps: IMainButton = {
+  buttonType: 'submit',
+  buttonText: '',
+  iconProps: {
+    Icon: SearchNormal1,
+    hover: false,
+    color: '#A3A3B5',
+    size: 16
   },
-  closeProps: {
-    buttonText: '',
-    buttonType: 'button',
-    iconProps: {
-      Icon: Add,
-      hover: false,
-      color: '#14141C',
-      size: 25,
-      variant: 'Linear'
-    },
-    buttonColor: 'transparent'
-  }
+  buttonColor: 'transparent'
+}
+
+export const closeSearchMobileProps: IMainButton = {
+  buttonText: '',
+  buttonType: 'button',
+  iconProps: {
+    Icon: Add,
+    hover: false,
+    color: '#14141C',
+    size: 25,
+    variant: 'Linear'
+  },
+  buttonColor: 'transparent'
 }
 
 //Tab Molecule
