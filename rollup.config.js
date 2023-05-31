@@ -5,6 +5,7 @@ import url from '@rollup/plugin-url'
 import postcss from 'rollup-plugin-postcss'
 import dts from 'rollup-plugin-dts'
 import packageJson from './package.json'
+import * as path from 'path'
 
 export default [
   {
@@ -22,12 +23,28 @@ export default [
       }
     ],
     external: ['antd', 'react', 'axios', 'react-dom'],
-    plugins: [resolve(), commonjs(), url(), typescript({ tsconfig: './tsconfig.json' }), postcss()]
+    plugins: [
+      resolve(),
+      commonjs(),
+      url({
+        fileName: '[dirname][hash][extname]',
+        sourceDir: path.join(__dirname, 'src/assets'),
+        emitFiles: true
+      }),
+      typescript({ tsconfig: './tsconfig.json' }),
+      postcss()
+    ]
   },
   {
     input: 'dist/esm/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-    plugins: [dts(), url()],
+    plugins: [
+      dts(),
+      url({
+        fileName: '[dirname][hash][extname]',
+        sourceDir: path.join(__dirname, 'src/assets')
+      })
+    ],
     external: [/\.(css|less|scss)$/]
   }
 ]
