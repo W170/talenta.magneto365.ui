@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { MainButton } from '../../atoms'
 import { ISearchbar } from './Searchbar.interface'
 import { withStyles } from './Searchbar.styles'
+import { removePropsButton, searchPropsButton } from '../../../../constants/stories.constants'
 
-const Component: React.FC<ISearchbar> = ({ placeholder, searchProps, removeProps, onSearch, className }) => {
+const Component: React.FC<ISearchbar> = ({ placeholder, onSearch, className }) => {
   const [searchValue, setSearchValue] = useState('')
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
@@ -29,11 +30,11 @@ const Component: React.FC<ISearchbar> = ({ placeholder, searchProps, removeProps
         <div className="magneto-ui-searchbar-buttons">
           {searchValue && (
             <>
-              <MainButton className="magneto-ui-remove-button" onClick={handleClearSearch} {...removeProps} />
+              <MainButton className="magneto-ui-remove-button" onClick={handleClearSearch} {...removePropsButton} />
               <span>|</span>
             </>
           )}
-          <MainButton {...searchProps} />
+          <MainButton {...searchPropsButton} />
         </div>
       </form>
     </div>
