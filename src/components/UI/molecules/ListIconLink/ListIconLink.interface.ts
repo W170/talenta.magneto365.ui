@@ -14,5 +14,6 @@ export interface IListIconLink {
 
 export interface IListIcon {
   url: string
-  Icon: Icon
+  Icon?: Icon
+  assetsIcon?: string
 }

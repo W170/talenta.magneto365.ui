@@ -17,6 +17,9 @@ import {
   Youtube
 } from 'iconsax-react'
 
+import Tiktok from '../assets/icons/tiktok.png'
+import Linkedin from '../assets/icons/linkedin.png'
+
 import { IconProps } from '../components/UI/atoms/Icon'
 import { ILinkProps } from '../components/UI/atoms/Link'
 import { ILogoComponent } from '../components/UI/atoms/Logo/Logo.interface'
@@ -123,7 +126,7 @@ export const BreadcrumbsProps: IBreadcrumbs = {
 export const iconPropsBreadCrumb: IconProps = {
   Icon: Home2,
   hover: false,
-  size: 16,
+  size: 13,
   color: '#a3a3b5'
 }
 
@@ -296,9 +299,9 @@ export const flag =
 export const ListIcon: IListIcon[] = [
   { Icon: Facebook, url: 'https://www.facebook.com/MagnetoEmpleos?_rdc=4&_rdr' },
   { Icon: Instagram, url: 'https://www.instagram.com/magnetoempleos/' },
-  { Icon: Instagram, url: 'https://www.linkedin.com/company/magnetoempleos/' },
+  { assetsIcon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
   { Icon: Youtube, url: 'https://www.youtube.com/c/Magnetoempleos' },
-  { Icon: Instagram, url: 'https://www.tiktok.com/@magnetoempleos' },
+  { assetsIcon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
   { Icon: Link21, url: 'https://www.magneto365.com/home/#comparte-magneto' }
 ]
 

@@ -17,4 +17,9 @@ export const withStyles = (c: React.FC<IconProps>): React.FC<IconProps> => style
   width: ${(props) => (props.size ? props.size : 25)}px;
   height: auto;
   color: ${(props) => (props.color ? props.color : 'black')};
+  .magneto-ui-icon {
+    width: 23px;
+    height: auto;
+    filter: brightness(0%);
+  }
 `

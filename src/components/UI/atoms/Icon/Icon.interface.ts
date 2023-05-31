@@ -1,10 +1,11 @@
 import { IconProps as IconPropsIconsSax, Icon } from 'iconsax-react'
 
 export interface IconProps extends IconPropsIconsSax {
+  assetsIcon?: string
   /**
    * Here is the icon component
    */
-  Icon: Icon
+  Icon?: Icon
   /**
    * You can set the hover animation or disable
    */
