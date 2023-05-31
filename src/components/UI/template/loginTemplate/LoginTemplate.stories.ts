@@ -1,6 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { LoginTemplate } from './LoginTemplate.component'
-import { listMenuProps, listMenuUserProps } from '../../../../constants/stories.constants'
+import {
+  AvatarProps,
+  BreadcrumbsProps,
+  CurriculumTabProps,
+  JobsTabsProps,
+  ProcessTabsProps,
+  listMenuProps,
+  listMenuUserProps
+} from '../../../../constants/stories.constants'
 
 const meta: Meta<typeof LoginTemplate> = {
   title: 'Template/Login',
@@ -8,7 +16,12 @@ const meta: Meta<typeof LoginTemplate> = {
   tags: ['autodocs'],
   args: {
     listMenuProps,
-    listMenuUserProps
+    listMenuUserProps,
+    breadcrumbsProps: BreadcrumbsProps,
+    profileImage: AvatarProps,
+    jobsTabsProps: JobsTabsProps,
+    processTabsProps: ProcessTabsProps,
+    curriculumTabProps: CurriculumTabProps
   }
 }
 

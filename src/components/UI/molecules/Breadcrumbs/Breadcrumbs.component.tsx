@@ -3,14 +3,14 @@ import { IconItem } from '../../atoms'
 import { Breadcrumb } from '../../atoms'
 import { IBreadcrumbs } from './Breadcrumbs.interface'
 import { withStyles } from './Breadcrumbs.styles'
+import { iconPropsBreadCrumb } from '../../../../constants/stories.constants'
 
-const Component: React.FC<IBreadcrumbs> = ({ urlParam, breadcrumbsList = [], iconProps, className }) => {
+const Component: React.FC<IBreadcrumbs> = ({ urlParam, breadcrumbsList = [], className }) => {
   return (
     <div className={className}>
-      <IconItem {...iconProps} />
+      <IconItem {...iconPropsBreadCrumb} />
       {breadcrumbsList.map(({ ...breadcrumbProps }, index: number) => (
         <React.Fragment key={index}>
-          <span>/</span>
           <Breadcrumb isActive={urlParam === breadcrumbProps.slug ? true : false} {...breadcrumbProps} />
         </React.Fragment>
       ))}

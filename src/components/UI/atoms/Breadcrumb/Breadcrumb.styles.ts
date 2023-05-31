@@ -13,19 +13,13 @@ const isActiveBreadcrumb = ({ isActive = false }: IBreadcrumb) => {
 
 export const withStyles = (Component: React.FC<IBreadcrumb>): React.FC<IBreadcrumb> => {
   return styled(Component)`
-    a {
-      text-decoration: none;
-    }
     p {
       color: #a3a3b5;
       font-style: normal;
       font-weight: 400;
-      font-size: 11px;
+      font-size: 12px;
       line-height: 13px;
       margin: 0;
-      &:hover {
-        color: #14141c;
-      }
     }
     ${(props) => isActiveBreadcrumb(props)}
   `

@@ -5,7 +5,6 @@ const meta: Meta<typeof Breadcrumb> = {
   title: 'Atoms/Breadcrumb',
   component: Breadcrumb,
   args: {
-    url: 'jobs/vacants',
     breadcrumbText: 'Todos los empleos'
   }
 }

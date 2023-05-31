@@ -14,19 +14,23 @@ import { withStyles } from './LoginHeader.styles'
 import { useMediaQuery } from '../../../hooks'
 
 import {
-  BreadcrumbsProps,
   SearchbarProps,
   LogoProps,
   MobileSearchbarProps,
   MenuButtonProps,
-  AvatarProps,
-  JobsTabsProps,
-  ProcessTabsProps,
-  CurriculumTabProps,
   MobileSearchbarButtonProps
 } from '../../../../constants/stories.constants'
 
-const Component: React.FC<ILoginHeader> = ({ onClick, className, listMenuUserProps }) => {
+const Component: React.FC<ILoginHeader> = ({
+  onClick,
+  className,
+  listMenuUserProps,
+  breadcrumbsProps,
+  profileImage,
+  jobsTabsProps,
+  processTabsProps,
+  curriculumTabProps
+}) => {
   const [showSearchBar, setShowSearchBar] = useState(false)
   const [showPopover, setShowPopover] = useState(false)
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
@@ -62,9 +66,9 @@ const Component: React.FC<ILoginHeader> = ({ onClick, className, listMenuUserPro
 
   const loginHeaderOptionTabs = useMediaQuery(
     <>
-      <HeaderTabs {...JobsTabsProps} />
-      <HeaderTabs {...ProcessTabsProps} />
-      <HeaderTabs {...CurriculumTabProps} />
+      <HeaderTabs {...jobsTabsProps} />
+      <HeaderTabs {...processTabsProps} />
+      <HeaderTabs {...curriculumTabProps} />
     </>,
     {
       xl: null
@@ -79,15 +83,15 @@ const Component: React.FC<ILoginHeader> = ({ onClick, className, listMenuUserPro
       positionX="left"
       positionY="bottom"
     >
-      <Avatar {...AvatarProps} onClick={() => setShowPopover(!showPopover)} />
+      <Avatar {...profileImage} onClick={() => setShowPopover(!showPopover)} />
     </Popover>,
 
     {
-      md: <Avatar {...AvatarProps} onClick={() => setToggleMobileDrawer(true)} />
+      md: <Avatar {...profileImage} onClick={() => setToggleMobileDrawer(true)} />
     }
   )
 
-  const loginHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs {...BreadcrumbsProps} />, {
+  const loginHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs {...breadcrumbsProps} />, {
     md: null
   })
 
