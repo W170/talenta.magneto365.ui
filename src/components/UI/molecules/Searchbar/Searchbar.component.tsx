@@ -16,7 +16,10 @@ const Component: React.FC<ISearchbar> = ({ placeholder, searchProps, removeProps
   }
 
   const handleClearSearch = () => {
+    // Add a logic that clears the searchbar and calls the onSearch function with an empty string
     setSearchValue('')
+    console.log(searchValue)
+    onSearch('')
   }
 
   return (
