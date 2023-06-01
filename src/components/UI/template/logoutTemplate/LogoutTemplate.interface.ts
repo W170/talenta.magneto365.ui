@@ -1,28 +1,14 @@
-import { IMainButton } from '../../atoms/MainButton'
-import { IListIcon } from '../../molecules/ListIconLink'
-import { IHeaderDrawerTabs } from '../../molecules/HeaderDrawerTabs/HeaderDrawerTabs.interface'
 import { IListMenuItems } from '../../molecules/ListMenuItems/ListMenuItems.interface'
+import { ILogoutHeader } from '../../organism/LogoutHeader'
 
 export interface ILogoutTemplate {
-  className?: string
+  // SignUpProps: IMainButton
+  // SignInProps: IMainButton
+  // listIcon: IListIcon[]
+  // headerProps: IHeaderDrawerTabs
+  logoutHeaderProps: ILogoutHeader
   /**
-   * Button props to create account
-   */
-  createAccount: IMainButton
-  /**
-   * Button props to login
-   */
-  login: IMainButton
-  /**
-   * List icon props
-   */
-  listIcon: IListIcon[]
-  /**
-   * Headers props
-   */
-  headerProps: IHeaderDrawerTabs
-  /**
-   * Menu props
+   * Sets the menu items props for the list menu items
    */
   listMenuProps: IListMenuItems
 }
