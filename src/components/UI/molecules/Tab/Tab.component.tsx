@@ -3,12 +3,13 @@ import { TabButton } from '../TabButton'
 import { ITab } from './Tab.interface'
 import { withStyles } from './Tab.styles'
 
-const Component: React.FC<ITab> = ({ tabButtonList = [], className }) => {
+const Component: React.FC<ITab> = ({ leftButton, rightButton, className }) => {
+  const { linkProps: leftLink } = leftButton
+  const { linkProps: rightLink } = rightButton
   return (
     <div className={className}>
-      {tabButtonList?.map(({ ...tabButtonProps }, index: number) => (
-        <TabButton key={index} {...tabButtonProps} />
-      ))}
+      <TabButton {...leftButton} linkProps={leftLink} />
+      <TabButton {...rightButton} linkProps={rightLink} />
     </div>
   )
 }

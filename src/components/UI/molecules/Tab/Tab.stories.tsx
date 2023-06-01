@@ -1,39 +1,42 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Tab } from './Tab.component'
-import { ITabButton } from '../TabButton'
 
-const TabProps: ITabButton[] = [
-  {
-    linkProps: {
-      href: '#',
-      text: 'Busco Empleo',
-      type: 'link',
-      textColor: '#000'
-    },
+const leftButton = {
+  linkProps: {
+    type: 'link' as const,
+    href: '#',
+    text: 'Busco Empleo',
+    textColor: '#000'
+  },
+  tabButtonProps: {
     tabButtonColor: '#FFF',
     tabButtonTextSize: '11px',
     tabButtonTextWeight: '700',
     boxShadow: true
+  }
+}
+
+const rightButton = {
+  linkProps: {
+    type: 'link' as const,
+    href: '#',
+    text: 'Soy empresa',
+    textColor: '#A3A3B5'
   },
-  {
-    linkProps: {
-      href: '#',
-      text: 'Soy empresa',
-      type: 'link',
-      textColor: '#A3A3B5'
-    },
+  tabButtonProps: {
     tabButtonColor: '#F4F4FA',
     tabButtonTextSize: '11px',
     tabButtonTextWeight: '400',
     boxShadow: false
   }
-]
+}
 
 const meta: Meta<typeof Tab> = {
   title: 'Molecules/Tab',
   component: Tab,
   args: {
-    tabButtonList: TabProps
+    leftButton: leftButton,
+    rightButton: rightButton
   }
 }
 
