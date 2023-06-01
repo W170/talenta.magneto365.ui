@@ -36,11 +36,13 @@ export const withStyles = (c: React.FC<IMoblieDrawer>): React.FC<IMoblieDrawer> 
       background-color: black;
       border: none;
       cursor: pointer;
-      & > svg {
-        color: white;
-        transform: rotate(45deg);
-        width: 30px;
-        height: 30px;
+      &:nth-child(1) {
+        svg {
+          color: white;
+          transform: rotate(45deg);
+          width: 30px;
+          height: 30px;
+        }
       }
     }
     ${(props) => toggleDrawer(props)}
