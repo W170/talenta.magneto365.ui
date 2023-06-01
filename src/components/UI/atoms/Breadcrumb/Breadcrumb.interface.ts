@@ -6,6 +6,5 @@ export interface IBreadcrumb {
   /**
    * Sets breadcrumb modifier for active label
    */
-  isActive: boolean
   className?: string
 }

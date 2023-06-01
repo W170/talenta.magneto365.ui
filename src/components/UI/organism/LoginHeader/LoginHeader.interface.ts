@@ -1,10 +1,10 @@
 import { IAvatar } from '../../atoms'
-import { IBreadcrumbs, IHeaderTabs } from '../../molecules'
+import { IHeaderTabs } from '../../molecules'
 import { ILogout, IMenuItems, ISettings } from '../../molecules/ListMenuIcons/ListMenuIcons.interface'
 
 export interface ILoginHeader {
   profileImage: IAvatar
-  breadcrumbsProps: IBreadcrumbs
+  breadcrumbText: string
   className?: string
   listMenuUserProps: IlistMenuUserProps
   onClick?: () => void

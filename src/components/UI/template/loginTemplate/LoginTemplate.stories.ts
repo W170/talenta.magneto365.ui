@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { LoginTemplate } from './LoginTemplate.component'
 import {
   AvatarProps,
-  BreadcrumbsProps,
+  breadcrumbText,
   CurriculumTabProps,
   JobsTabsProps,
   ProcessTabsProps,
@@ -17,7 +17,7 @@ const meta: Meta<typeof LoginTemplate> = {
   args: {
     listMenuProps,
     listMenuUserProps,
-    breadcrumbsProps: BreadcrumbsProps,
+    breadcrumbText,
     profileImage: AvatarProps,
     jobsTabsProps: JobsTabsProps,
     processTabsProps: ProcessTabsProps,

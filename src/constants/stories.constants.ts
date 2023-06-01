@@ -26,7 +26,6 @@ import { IconProps } from '../components/UI/atoms/Icon'
 import { ILinkProps } from '../components/UI/atoms/Link'
 import { ILogoComponent } from '../components/UI/atoms/Logo/Logo.interface'
 import { IMainButton } from '../components/UI/atoms/MainButton'
-import { IBreadcrumbs } from '../components/UI/molecules/Breadcrumbs'
 import { IListIcon } from '../components/UI/molecules/ListIconLink'
 import { ISearchbar } from '../components/UI/molecules/Searchbar'
 import { ITab } from '../components/UI/molecules/Tab'
@@ -119,10 +118,7 @@ export const MenuButtonProps: IMainButton = {
  */
 
 //Breadcrumbs Molecule
-export const BreadcrumbsProps: IBreadcrumbs = {
-  urlParam: 'todos-los-empleos',
-  breadcrumbsList: [{ breadcrumbText: 'Todos los empleos', slug: 'todos-los-empleos' }]
-}
+export const breadcrumbText = '/perfil/empleos/sugeridos'
 
 export const iconPropsBreadCrumb: IconProps = {
   Icon: Home2,
