@@ -1,14 +1,16 @@
 import { TabButton } from './TabButton.component'
 import { StoryObj, Meta } from '@storybook/react'
 
-const linkProps = {
+const link = {
   type: 'link' as const,
   href: '#',
   text: 'Busco Empleo',
-  buttonColor: '#FFF',
-  textColor: '#000'
+  linkProps: {
+    buttonColor: '#FFF',
+    textColor: '#000'
+  }
 }
-const tabButtonProps = {
+const tabButton = {
   boxShadow: true,
   tabButtonTextSize: '11px',
   tabButtonTextWeight: '400'
@@ -18,8 +20,8 @@ const meta: Meta<typeof TabButton> = {
   title: 'Molecules/Tab Button',
   component: TabButton,
   args: {
-    linkProps: linkProps,
-    tabButtonProps: tabButtonProps
+    linkProps: link,
+    tabButtonProps: tabButton
   }
 }
 
@@ -34,8 +36,7 @@ export const Untoggle: Story = {
     linkProps: {
       type: 'link' as const,
       href: '#',
-      text: 'Soy empresa',
-      textColor: '#A3A3B5'
+      text: 'Soy empresa'
     },
     tabButtonProps: {
       tabButtonColor: '#F4F4FA',
