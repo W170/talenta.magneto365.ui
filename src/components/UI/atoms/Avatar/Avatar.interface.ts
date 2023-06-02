@@ -2,7 +2,7 @@ export interface IAvatar {
   /**
    * Sets the user image
    */
-  userImage: string
+  userImage?: string | null
   /**
    * Optional click handler
    */
