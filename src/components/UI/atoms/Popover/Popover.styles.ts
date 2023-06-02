@@ -32,7 +32,8 @@ const positionXValue = ({ positionX }: IPopover) => {
 
 export const withStyles = (c: React.FC<IPopover>): React.FC<IPopover> => styled(c)`
   position: relative;
-
+  width: 40px;
+  height: 40px;
   .magneto-ui-popover {
     width: ${(props) => (props.width ? props.width : 300)}px;
     background-color: white;

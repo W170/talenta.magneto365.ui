@@ -13,11 +13,20 @@ const hover = ({ hover = true }) => {
 }
 
 export const withStyles = (c: React.FC<IconProps>): React.FC<IconProps> => styled(c)`
-  ${(props) => hover(props)}
-  width: ${(props) => (props.size ? props.size : 25)}px;
-  height: auto;
-  color: ${(props) => (props.color ? props.color : 'black')};
   .magneto-ui-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ${(props) => hover(props)}
+    width: ${(props) => (props.size ? props.size : 25)}px;
+    height: auto;
+    color: ${(props) => (props.color ? props.color : 'black')};
+  }
+
+  .magneto-ui-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 23px;
     height: auto;
     filter: brightness(0%);

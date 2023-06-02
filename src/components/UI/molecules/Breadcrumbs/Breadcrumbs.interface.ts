@@ -1,18 +1,8 @@
-import { IBreadcrumb } from '../../atoms'
-
-export interface BreadcrumbItem extends Omit<IBreadcrumb, 'isActive'> {
-  slug: string
-}
-
 export interface IBreadcrumbs {
   /**
-   * Sets the url param for the current page
+   * Set string that contains the breadcrumbs
    */
-  urlParam: string
-  /**
-   * Sets the array that contains the breadcrumbs
-   */
-  breadcrumbsList: BreadcrumbItem[]
+  breadcrumbText: string
   /**
    * Props for the Icon
    */

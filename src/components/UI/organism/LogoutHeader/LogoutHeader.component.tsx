@@ -20,7 +20,7 @@ import {
   MobileSearchbarButtonProps,
   SignUpButtonProps,
   SignInLinkProps,
-  BreadcrumbsProps
+  breadcrumbText
 } from '../../../../constants/stories.constants'
 
 const Component: React.FC<ILogoutHeader> = ({ tabButtons, searchbarConfig, signInLink, onClick, className }) => {
@@ -83,7 +83,7 @@ const Component: React.FC<ILogoutHeader> = ({ tabButtons, searchbarConfig, signI
     <MainButton {...SignUpButtonProps} isMobile={isMobileButton} spacing={10} />
   )
 
-  const logoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs {...BreadcrumbsProps} />, {
+  const logoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbText={breadcrumbText} />, {
     md: null
   })
 
