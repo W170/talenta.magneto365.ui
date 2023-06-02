@@ -6,12 +6,14 @@ const meta: Meta<typeof Link> = {
   title: 'Atoms/Link',
   component: Link,
   args: {
-    href: '#',
     type: 'link',
+    href: '#',
     text: 'Hello world',
-    textColor: '#14141C',
-    buttonColor: 'transparent',
-    hoverColor: '#14141C'
+    linkProps: {
+      textColor: '#14141C',
+      buttonColor: 'transparent',
+      hoverColor: '#14141C'
+    }
   }
 }
 
@@ -30,9 +32,11 @@ export const Button: Story = {
 export const IconButton: Story = {
   args: {
     type: 'button',
-    iconProps: {
-      Icon: Login,
-      hover: true
+    linkProps: {
+      iconProps: {
+        Icon: Login,
+        hover: true
+      }
     }
   }
 }
@@ -40,14 +44,17 @@ export const IconButton: Story = {
 export const ResponsiveIconButton: Story = {
   args: {
     type: 'button',
-    iconProps: {
-      Icon: Login,
-      hover: true
-    },
     text: 'Iniciar sesión',
-    textColor: '#14141C',
-    buttonColor: 'transparent',
-    hoverColor: '#14141C',
+    linkProps: {
+      iconProps: {
+        Icon: Login,
+        hover: true
+      },
+
+      textColor: '#14141C',
+      buttonColor: 'transparent',
+      hoverColor: '#14141C'
+    },
     isMobile: true
   }
 }

@@ -7,7 +7,6 @@ const meta: Meta<typeof HeaderDrawerTabs> = {
   component: HeaderDrawerTabs,
   args: {
     tabProps: TabProps,
-
     logoProps: logoProps
   }
 }

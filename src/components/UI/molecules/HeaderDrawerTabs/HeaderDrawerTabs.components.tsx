@@ -13,7 +13,7 @@ const Component: React.FC<IHeaderDrawerTabs> = ({ className, tabProps, logoProps
   return (
     <div className={className}>
       <LogoComponent isoView={isMobileLogo} {...logoProps} />
-      <Tab {...tabProps} />
+      {tabProps && <Tab leftButton={tabProps.leftButton} rightButton={tabProps.rightButton} />}
     </div>
   )
 }
