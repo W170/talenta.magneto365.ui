@@ -3,7 +3,8 @@ import { ILinkProps } from './Link.interface'
 import { withStyles } from './Link.styles'
 import { IconItem } from '../Icon'
 
-const Component: React.FC<ILinkProps> = ({ href, text, iconProps, isMobile = false, className }) => {
+const Component: React.FC<ILinkProps> = ({ href, text, linkProps, isMobile = false, className }) => {
+  const { iconProps } = linkProps || {}
   return (
     <a className={className} href={href}>
       {iconProps && <IconItem {...iconProps} />}

@@ -2,19 +2,7 @@ import { IconProps } from '../Icon'
 
 export type LinkType = 'button' | 'link'
 
-export interface ILinkProps {
-  /**
-   * Sets link type
-   */
-  type: LinkType
-  /**
-   *  Sets href for link
-   */
-  href: string
-  /**
-   * Sets inside text for link
-   */
-  text: string
+export interface LinkElement {
   /**
    * Props for the Icon
    */
@@ -35,9 +23,28 @@ export interface ILinkProps {
    * Sets visited color
    */
   visitedColor?: string
+}
+
+export interface ILinkProps {
+  /**
+   * Sets link type
+   */
+  type: LinkType
+  /**
+   *  Sets href for link
+   */
+  href: string
+  /**
+   * Sets inside text for link
+   */
+  text: string
   /**
    * Sets if link is mobile
    */
   isMobile?: boolean
+  /**
+   *
+   */
+  linkProps?: LinkElement
   className?: string
 }
