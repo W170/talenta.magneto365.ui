@@ -54,10 +54,13 @@ export const HamburgerIcon: IconProps = {
 }
 
 //SignIn Link Atom
-export const SignInLinkProps: ILinkProps = {
+export const SignInProps: ILinkProps = {
   type: 'button',
   text: 'Iniciar Sesion',
-  href: '#',
+  href: '#'
+}
+
+export const SignInLinkProps = {
   iconProps: { Icon: LoginCurve, hover: true },
   textColor: '#14141C',
   hoverColor: '#14141C'
@@ -192,35 +195,42 @@ export const closeSearchMobileProps: IMainButton = {
   },
   buttonColor: 'transparent'
 }
+//TabButton Molecule
+export const LeftTabStyles = {
+  tabButtonProps: {
+    tabButtonColor: '#FFF',
+    tabButtonTextSize: '11px',
+    tabButtonTextWeight: '700',
+    boxShadow: true
+  }
+}
+export const RightTabStyles = {
+  tabButtonProps: {
+    tabButtonColor: '#F4F4FA',
+    tabButtonTextSize: '11px',
+    tabButtonTextWeight: '400',
+    boxShadow: false
+  }
+}
 
 //Tab Molecule
 export const TabProps: ITab = {
-  tabButtonList: [
-    {
-      linkProps: {
-        href: '#',
-        text: 'Busco Empleo',
-        type: 'link',
-        textColor: '#000'
-      },
-      tabButtonColor: '#FFF',
-      tabButtonTextSize: '11px',
-      tabButtonTextWeight: '700',
-      boxShadow: true
+  leftButton: {
+    linkProps: {
+      href: '#',
+      text: 'Ver todos',
+      type: 'link' as const
     },
-    {
-      linkProps: {
-        href: '#',
-        text: 'Soy reclutador',
-        type: 'link',
-        textColor: '#A3A3B5'
-      },
-      tabButtonColor: '#F4F4FA',
-      tabButtonTextSize: '11px',
-      tabButtonTextWeight: '400',
-      boxShadow: false
-    }
-  ]
+    ...LeftTabStyles
+  },
+  rightButton: {
+    linkProps: {
+      href: '#',
+      text: 'Ver todos',
+      type: 'link' as const
+    },
+    ...RightTabStyles
+  }
 }
 
 //HeaderTabs Molecule
