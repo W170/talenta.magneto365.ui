@@ -1,10 +1,12 @@
-import { ILinkProps } from '../../atoms'
-import { ISearchbar, ITab } from '../../molecules'
+import { ILinkProps, IMainButton } from '../../atoms'
+import { ISearchbar } from '../../molecules'
 
 export interface ILogoutHeader {
-  tabButtons: ITab
+  leftTabButton: ILinkProps
+  rightTabButton: ILinkProps
   searchbarConfig: ISearchbar
   signInLink: ILinkProps
+  signUpButton: IMainButton
   onClick?: () => void
   className?: string
 }

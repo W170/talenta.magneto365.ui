@@ -1,12 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { LogoutHeader } from './LogoutHeader.component'
-import { LeftTabStyles, RightTabStyles } from '../../../../constants/stories.constants'
 
 const leftLink = {
   type: 'link' as const,
   href: '#',
   text: 'Busco Empleo',
-  linkProps: {
+  linkStyles: {
     textColor: '#000'
   }
 }
@@ -14,23 +13,16 @@ const rightLink = {
   type: 'link' as const,
   href: '#',
   text: 'Soy empresa',
-  linkProps: {
+  linkStyles: {
     textColor: '#A3A3B5'
   }
 }
 
-const LeftTabButton = {
-  linkProps: leftLink,
-  ...LeftTabStyles
-}
-const RightTabButton = {
-  linkProps: rightLink,
-  ...RightTabStyles
-}
-
 const Searchbar = {
   placeholder: 'Buscar',
-  onSearch: (value: string) => console.log(value)
+  onSearch: () => {
+    // Logic
+  }
 }
 
 const SignInProps = {
@@ -39,16 +31,21 @@ const SignInProps = {
   href: '#'
 }
 
+const SignUpProps = {
+  buttonType: 'button' as const,
+  buttonText: 'Crear Cuenta',
+  buttonSize: 'medium' as const
+}
+
 const meta: Meta<typeof LogoutHeader> = {
   title: 'Organism/Logout Header',
   component: LogoutHeader,
   args: {
-    tabButtons: {
-      leftButton: LeftTabButton,
-      rightButton: RightTabButton
-    },
+    leftTabButton: leftLink,
+    rightTabButton: rightLink,
     searchbarConfig: Searchbar,
-    signInLink: SignInProps
+    signInLink: SignInProps,
+    signUpButton: SignUpProps
   }
 }
 
