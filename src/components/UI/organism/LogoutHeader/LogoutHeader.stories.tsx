@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { LogoutHeader } from './LogoutHeader.component'
 
-const leftLink = {
+const leftLinkProps = {
   type: 'link' as const,
   href: '#',
   text: 'Busco Empleo',
@@ -9,7 +9,7 @@ const leftLink = {
     textColor: '#000'
   }
 }
-const rightLink = {
+const rightLinkProps = {
   type: 'link' as const,
   href: '#',
   text: 'Soy empresa',
@@ -18,7 +18,7 @@ const rightLink = {
   }
 }
 
-const Searchbar = {
+const SearchbarProps = {
   placeholder: 'Buscar',
   onSearch: () => {
     // Logic
@@ -37,15 +37,20 @@ const SignUpProps = {
   buttonSize: 'medium' as const
 }
 
+const BreadcrumbsProps = {
+  breadcrumbText: '/perfil/empleos/sugeridos'
+}
+
 const meta: Meta<typeof LogoutHeader> = {
   title: 'Organism/Logout Header',
   component: LogoutHeader,
   args: {
-    leftTabButton: leftLink,
-    rightTabButton: rightLink,
-    searchbarConfig: Searchbar,
+    leftTabButton: leftLinkProps,
+    rightTabButton: rightLinkProps,
+    searchbarConfig: SearchbarProps,
     signInLink: SignInProps,
-    signUpButton: SignUpProps
+    signUpButton: SignUpProps,
+    breadcrumbsItem: BreadcrumbsProps
   }
 }
 

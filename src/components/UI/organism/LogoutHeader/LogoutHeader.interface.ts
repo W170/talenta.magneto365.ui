@@ -1,4 +1,4 @@
-import { ILinkProps, IMainButton } from '../../atoms'
+import { IBreadcrumb, ILinkProps, IMainButton } from '../../atoms'
 import { ISearchbar } from '../../molecules'
 
 export interface ILogoutHeader {
@@ -7,6 +7,7 @@ export interface ILogoutHeader {
   searchbarConfig: ISearchbar
   signInLink: ILinkProps
   signUpButton: IMainButton
+  breadcrumbsItem: IBreadcrumb
   onClick?: () => void
   className?: string
 }

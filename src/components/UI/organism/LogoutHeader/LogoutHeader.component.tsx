@@ -15,9 +15,9 @@ import {
   removePropsButton,
   MobileSearchbarProps,
   MobileSearchbarButtonProps,
-  SignInLinkStyle,
-  SignUpButtonStyle,
-  breadcrumbText
+  SignInIcon,
+  SignInStyles,
+  SignUpButtonStyle
 } from '../../../../constants/stories.constants'
 
 const Component: React.FC<ILogoutHeader> = ({
@@ -26,20 +26,21 @@ const Component: React.FC<ILogoutHeader> = ({
   searchbarConfig,
   signInLink,
   signUpButton,
+  breadcrumbsItem,
   onClick,
   className
 }) => {
+  const { type, href, text } = signInLink
   const { buttonText } = signUpButton
-
+  const { breadcrumbText } = breadcrumbsItem
   const [showSearchBar, setShowSearchBar] = useState(false)
+  const isMobileButton = useMediaQuery(false, {
+    md: true
+  })
 
   const toggleSearchBar = () => {
     setShowSearchBar(!showSearchBar)
   }
-
-  const isMobileButton = useMediaQuery(false, {
-    md: true
-  })
 
   // Mobile Searchbar Component
   const LogoutHeaderMobileSearchbar = useMediaQuery(null, {
@@ -87,7 +88,14 @@ const Component: React.FC<ILogoutHeader> = ({
 
   // SignIn Link Component
   const LogoutHeaderLinkSignIn = useMediaQuery(
-    <Link {...signInLink} linkStyles={SignInLinkStyle} isMobile={isMobileButton} />
+    <Link
+      type={type}
+      href={href}
+      text={text}
+      iconProps={SignInIcon}
+      linkStyles={SignInStyles}
+      isMobile={isMobileButton}
+    />
   )
 
   // SignUp Button Component
