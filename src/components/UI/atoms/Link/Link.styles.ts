@@ -7,7 +7,7 @@ export const linkTypeStyles = ({ type = 'link' }: { type: LinkType }) => {
     case 'link':
       return css<ILinkProps>`
         :visited {
-          color: ${(props) => props.linkProps?.visitedColor};
+          color: ${(props) => props.linkStyles?.visitedColor};
         }
       `
     case 'button':
@@ -20,8 +20,8 @@ export const linkTypeStyles = ({ type = 'link' }: { type: LinkType }) => {
         padding: 10px 20px;
         border: none;
         border-radius: 50px;
-        background-color: ${(props) => props.linkProps?.buttonColor};
-        color: ${(props) => props.linkProps?.textColor};
+        background-color: ${(props) => props.linkStyles?.buttonColor};
+        color: ${(props) => props.linkStyles?.textColor};
 
         p {
           font-style: normal;
@@ -37,7 +37,7 @@ export const linkTypeStyles = ({ type = 'link' }: { type: LinkType }) => {
         }
 
         :visited {
-          color: ${(props) => props.linkProps?.textColor};
+          color: ${(props) => props.linkStyles?.textColor};
         }
       `
 
@@ -59,12 +59,12 @@ const isMobile = ({ isMobile = false, type }: ILinkProps) => {
 
 export const withStyles = (Component: React.FC<ILinkProps>): React.FC<ILinkProps> => {
   return styled(Component)`
-    color: ${(props) => (props.linkProps?.textColor ? props.linkProps?.textColor : props.theme.colors.$gray1)};
+    color: ${(props) => (props.linkStyles?.textColor ? props.linkStyles?.textColor : props.theme.colors.$gray1)};
 
     text-decoration: none;
     &:hover {
       cursor: pointer;
-      color: ${(props) => (props.linkProps?.hoverColor ? props.linkProps?.hoverColor : props.theme.colors.primary)};
+      color: ${(props) => (props.linkStyles?.hoverColor ? props.linkStyles?.hoverColor : props.theme.colors.primary)};
     }
 
     ${(props) => linkTypeStyles(props)}

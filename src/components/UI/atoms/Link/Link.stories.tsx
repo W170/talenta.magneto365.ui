@@ -9,7 +9,7 @@ const meta: Meta<typeof Link> = {
     type: 'link',
     href: '#',
     text: 'Hello world',
-    linkProps: {
+    linkStyles: {
       textColor: '#14141C',
       buttonColor: 'transparent',
       hoverColor: '#14141C'
@@ -32,11 +32,14 @@ export const Button: Story = {
 export const IconButton: Story = {
   args: {
     type: 'button',
-    linkProps: {
-      iconProps: {
-        Icon: Login,
-        hover: true
-      }
+    iconProps: {
+      Icon: Login,
+      hover: true
+    },
+    linkStyles: {
+      textColor: '#14141C',
+      buttonColor: 'transparent',
+      hoverColor: '#14141C'
     }
   }
 }
@@ -45,15 +48,10 @@ export const ResponsiveIconButton: Story = {
   args: {
     type: 'button',
     text: 'Iniciar sesión',
-    linkProps: {
-      iconProps: {
-        Icon: Login,
-        hover: true
-      },
-
-      textColor: '#14141C',
-      buttonColor: 'transparent',
-      hoverColor: '#14141C'
+    iconProps: {
+      Icon: Login,
+      hover: true,
+      color: '#14141C'
     },
     isMobile: true
   }

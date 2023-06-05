@@ -4,10 +4,6 @@ export type LinkType = 'button' | 'link'
 
 export interface LinkElement {
   /**
-   * Props for the Icon
-   */
-  iconProps?: IconProps
-  /**
    * Sets button color
    */
   buttonColor?: string
@@ -39,12 +35,16 @@ export interface ILinkProps {
    */
   text: string
   /**
+   * Props for the Icon
+   */
+  iconProps?: IconProps
+  /**
    * Sets if link is mobile
    */
   isMobile?: boolean
   /**
-   *
+   * Sets the link styles including icon
    */
-  linkProps?: LinkElement
+  linkStyles?: LinkElement
   className?: string
 }
