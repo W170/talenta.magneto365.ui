@@ -2,10 +2,6 @@ import { ILinkProps } from '../../atoms'
 
 export interface TabButtonElement {
   /**
-   * Sets the tab button color
-   */
-  tabButtonColor?: string
-  /**
    * Sets the font size for the text
    */
   tabButtonTextSize?: string
@@ -14,18 +10,20 @@ export interface TabButtonElement {
    */
   tabButtonTextWeight?: string
   /**
+   * Sets the tab button color
+   */
+  tabButtonColor?: string
+  /**
    * Sets a box shadow property for the Tab Button
    */
   boxShadow?: boolean
 }
 export interface ITabButton {
-  /**
-   * Props for the link Atom
-   */
-  linkProps: ILinkProps
+  /** */
+  tabButtonLink?: ILinkProps
   /**
    * Sets the style props for the Tab Button
    */
-  tabButtonProps?: TabButtonElement
+  tabButtonStyle?: TabButtonElement
   className?: string
 }

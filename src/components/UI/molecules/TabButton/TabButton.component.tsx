@@ -3,12 +3,12 @@ import { ITabButton } from './TabButton.interface'
 import { withStyles } from './TabButton.styles'
 import { Link } from '../../atoms'
 
-const Component: React.FC<ITabButton> = ({ linkProps, tabButtonProps, className }) => {
-  const { boxShadow } = tabButtonProps || {}
+const Component: React.FC<ITabButton> = ({ tabButtonLink, tabButtonStyle, className }) => {
+  const { boxShadow } = tabButtonStyle || {}
 
   return (
     <div className={`${className} ${boxShadow ? 'box-shadow' : ''}`}>
-      <Link {...linkProps} />
+      {tabButtonLink && <Link {...tabButtonLink} />}
     </div>
   )
 }

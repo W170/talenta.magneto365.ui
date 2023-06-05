@@ -10,18 +10,18 @@ export const withStyles = (Component: React.FC<ITabButton>): React.FC<ITabButton
     height: 18px;
     padding: 2px 8px;
     border-radius: 6px;
-    background: ${(props) => props.tabButtonProps?.tabButtonColor};
+    background: ${(props) => props.tabButtonStyle?.tabButtonColor};
 
-    ${({ tabButtonProps }) =>
-      tabButtonProps?.boxShadow &&
+    ${({ tabButtonStyle }) =>
+      tabButtonStyle?.boxShadow &&
       css`
         box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
       `}
 
     p {
       margin: 0%;
-      font-weight: ${(props) => props.tabButtonProps?.tabButtonTextWeight};
-      font-size: ${(props) => props.tabButtonProps?.tabButtonTextSize};
+      font-weight: ${(props) => props.tabButtonStyle?.tabButtonTextWeight};
+      font-size: ${(props) => props.tabButtonStyle?.tabButtonTextSize};
       line-height: 14px;
 
       :hover {

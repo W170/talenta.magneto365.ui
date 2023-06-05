@@ -5,9 +5,9 @@ const link = {
   type: 'link' as const,
   href: '#',
   text: 'Busco Empleo',
-  linkProps: {
-    buttonColor: '#FFF',
-    textColor: '#000'
+  linkStyles: {
+    textColor: '#000',
+    buttonColor: '#FFF'
   }
 }
 const tabButton = {
@@ -20,8 +20,8 @@ const meta: Meta<typeof TabButton> = {
   title: 'Molecules/Tab Button',
   component: TabButton,
   args: {
-    linkProps: link,
-    tabButtonProps: tabButton
+    tabButtonLink: link,
+    tabButtonStyle: tabButton
   }
 }
 
@@ -33,12 +33,12 @@ export const Default: Story = {}
 
 export const Untoggle: Story = {
   args: {
-    linkProps: {
+    tabButtonLink: {
       type: 'link' as const,
       href: '#',
       text: 'Soy empresa'
     },
-    tabButtonProps: {
+    tabButtonStyle: {
       tabButtonColor: '#F4F4FA',
       tabButtonTextSize: '11px',
       tabButtonTextWeight: '400',
