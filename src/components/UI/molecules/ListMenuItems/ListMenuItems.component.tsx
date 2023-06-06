@@ -1,5 +1,5 @@
 import React from 'react'
-import { MenuItem } from '../../atoms/MenuItem'
+import { MenuItem } from '../../atoms'
 import { IListMenuItems } from './ListMenuItems.interface'
 
 const Component: React.FC<IListMenuItems> = ({ menuList = [], urlParam = '' }) => {
