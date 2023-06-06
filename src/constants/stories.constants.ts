@@ -22,23 +22,35 @@ import Linkedin from '../assets/linkedin.png'
 import IsoLogoMagneto from '../assets/isoMagneto.png'
 import LogoMagneto from '../assets/logoMagneto.png'
 
-import { IconProps } from '../components/UI/atoms/Icon'
-import { ILinkProps } from '../components/UI/atoms/Link'
-import { ILogoComponent } from '../components/UI/atoms/Logo/Logo.interface'
-import { IMainButton } from '../components/UI/atoms/MainButton'
-import { IListIcon } from '../components/UI/molecules/ListIconLink'
-import { ISearchbar } from '../components/UI/molecules/Searchbar'
-import { ITab } from '../components/UI/molecules/Tab'
-import { IMobileSearchbar } from '../components/UI/molecules/MobileSearchbar'
-import { IListMenuItems, MenuItemInfo } from '../components/UI/molecules/ListMenuItems/ListMenuItems.interface'
-import { IMenuItems } from '../components/UI/molecules/ListMenuIcons/ListMenuIcons.interface'
-import { IHeaderDrawerTabs } from '../components/UI/molecules/HeaderDrawerTabs/HeaderDrawerTabs.interface'
-import { IAvatar } from '../components/UI/atoms/Avatar'
-import { IHeaderTabs } from '../components/UI/molecules/HeaderTabs/HeaderTabs.interface'
+import { IAvatar, ILogoComponent, IMainButton, IconProps } from '../components/UI/atoms'
+import {
+  IHeaderTabs,
+  IListIcon,
+  IMenuItems,
+  IListMenuItems,
+  MenuItemInfo,
+  ITabButton,
+  IMobileSearchbar,
+  ISearchbar
+} from '../components/UI/molecules'
 import { IlistMenuUserProps } from '../components/UI/organism/LoginHeader'
 
 /**
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  * UI Atoms properties/args
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  */
 
 //Avatar Atom
@@ -47,22 +59,23 @@ export const AvatarProps: IAvatar = {
     'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
 }
 
-//Hambuger Menu Icon Atom
-export const HamburgerIcon: IconProps = {
-  Icon: HambergerMenu,
-  hover: false
+// Icon Atom
+export const SignInIcon: IconProps = {
+  Icon: LoginCurve,
+  hover: false,
+  color: '#14141C'
+}
+export const iconPropsBreadCrumb: IconProps = {
+  Icon: Home2,
+  hover: false,
+  size: 13,
+  color: '#a3a3b5'
 }
 
-//SignIn Link Atom
-export const SignInProps: ILinkProps = {
-  type: 'button',
-  text: 'Iniciar Sesion',
-  href: '#'
-}
-
-export const SignInLinkProps = {
-  iconProps: { Icon: LoginCurve, hover: true },
+//Link Atom
+export const SignInStyles = {
   textColor: '#14141C',
+  buttonColor: 'transparent',
   hoverColor: '#14141C'
 }
 
@@ -75,20 +88,24 @@ export const LogoProps: ILogoComponent = {
   isoSize: 38
 }
 
-//Sign up Atom
-export const SignUpButtonProps: IMainButton = {
+export const LogoCompany = 'https://www.magneto365.com/wp-content/uploads/2022/08/img-grupo-sura.png'
+export const flag =
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/2560px-Flag_of_Colombia.svg.png'
+
+//Button Atom
+export const SignUpButtonStyle: IMainButton = {
   buttonType: 'button',
-  buttonText: 'Crear hoja de vida',
+  buttonSize: 'medium',
   textColor: '#090467',
   buttonColor: '#70ECD4',
   iconProps: {
     Icon: ProfileAdd,
     hover: true,
     color: '#090467 '
-  }
+  },
+  spacing: 10
 }
 
-// Mobile Searchbar Button
 export const MobileSearchbarButtonProps: IMainButton = {
   buttonText: '',
   buttonType: 'button',
@@ -101,7 +118,6 @@ export const MobileSearchbarButtonProps: IMainButton = {
   buttonColor: 'transparent'
 }
 
-// Menu Button Atom
 export const MenuButtonProps: IMainButton = {
   buttonText: '',
   buttonType: 'button',
@@ -112,30 +128,6 @@ export const MenuButtonProps: IMainButton = {
     size: 20
   },
   buttonColor: 'transparent'
-}
-
-// HeaderTab Atom
-
-/**
- * UI Molecules properties/args
- */
-
-//Breadcrumbs Molecule
-export const breadcrumbText = '/perfil/empleos/sugeridos'
-
-export const iconPropsBreadCrumb: IconProps = {
-  Icon: Home2,
-  hover: false,
-  size: 13,
-  color: '#a3a3b5'
-}
-
-//Searchbar Molecule
-export const SearchbarProps: ISearchbar = {
-  placeholder: 'Busca empleos por cargo o profesion',
-  onSearch: () => {
-    // Add your search logic here
-  }
 }
 
 export const searchPropsButton: IMainButton = {
@@ -159,16 +151,6 @@ export const removePropsButton: IMainButton = {
     size: 18,
     variant: 'Linear'
   }
-}
-
-//Mobile Searchbar Molecule
-export const MobileSearchbarProps: IMobileSearchbar = {
-  onClick: console.info,
-  onSearch: () => {
-    // Add your search logic here
-  },
-  focusSearchInput: false,
-  showMobileSearchbar: false
 }
 
 export const searchMobileProps: IMainButton = {
@@ -195,17 +177,102 @@ export const closeSearchMobileProps: IMainButton = {
   },
   buttonColor: 'transparent'
 }
+
+export const CreateAccountButton: IMainButton = {
+  buttonType: 'button',
+  iconProps: {
+    Icon: ProfileAdd,
+    hover: true,
+    color: '#090467 '
+  },
+  buttonColor: '#70ECD4',
+  textColor: '#090467',
+  spacing: 10
+}
+
+export const LoginButton: IMainButton = {
+  buttonType: 'button',
+  iconProps: {
+    Icon: LoginCurve,
+    hover: true,
+    color: '#090467 '
+  },
+  buttonColor: 'white',
+  textColor: '#090467',
+  spacing: 10
+}
+
+/**
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * UI Molecules properties/args
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
+//Breadcrumbs Molecule
+export const breadcrumbText = '/perfil/empleos/sugeridos'
+
+//Searchbar Molecule
+export const SearchbarProps: ISearchbar = {
+  placeholder: 'Busca empleos por cargo o profesion',
+  onSearch: () => {
+    // Add your search logic here
+  }
+}
+
+//Mobile Searchbar Molecule
+export const MobileSearchbarProps: IMobileSearchbar = {
+  onClick: console.info,
+  onSearch: () => {
+    // Add your search logic here
+  },
+  focusSearchInput: false,
+  showMobileSearchbar: false
+}
+
 //TabButton Molecule
 export const LeftTabStyles = {
-  tabButtonProps: {
+  tabButtonColor: '#FFF',
+  tabButtonTextSize: '11px',
+  tabButtonTextWeight: '700',
+  boxShadow: true
+}
+
+export const RightTabStyles = {
+  tabButtonColor: '#F4F4FA',
+  tabButtonTextSize: '11px',
+  tabButtonTextWeight: '400',
+  boxShadow: false
+}
+
+export const HeaderLeftTabStyle = {
+  linkStyles: {
+    textColor: '#000'
+  },
+  tabButtonStyle: {
     tabButtonColor: '#FFF',
     tabButtonTextSize: '11px',
     tabButtonTextWeight: '700',
     boxShadow: true
   }
 }
-export const RightTabStyles = {
-  tabButtonProps: {
+
+export const HeaderRightTabStyle = {
+  linkStyles: {
+    textColor: '#A3A3B5'
+  },
+  tabButtonStyle: {
     tabButtonColor: '#F4F4FA',
     tabButtonTextSize: '11px',
     tabButtonTextWeight: '400',
@@ -213,23 +280,20 @@ export const RightTabStyles = {
   }
 }
 
-//Tab Molecule
-export const TabProps: ITab = {
-  leftButton: {
-    linkProps: {
-      href: '#',
-      text: 'Ver todos',
-      type: 'link' as const
-    },
-    ...LeftTabStyles
-  },
-  rightButton: {
-    linkProps: {
-      href: '#',
-      text: 'Ver todos',
-      type: 'link' as const
-    },
-    ...RightTabStyles
+export const DrawerLeftTabStyles: ITabButton = {
+  tabButtonStyle: {
+    tabButtonColor: '#FFF',
+    tabButtonTextSize: '11px',
+    tabButtonTextWeight: '700',
+    boxShadow: true
+  }
+}
+export const DrawerRightTabStyles: ITabButton = {
+  tabButtonStyle: {
+    tabButtonColor: '#F4F4FA',
+    tabButtonTextSize: '11px',
+    tabButtonTextWeight: '400',
+    boxShadow: false
   }
 }
 
@@ -292,26 +356,7 @@ export const CurriculumTabProps: IHeaderTabs = {
   addDivider: true
 }
 
-/**
- * UI Organism properties/args
- */
-
-/**
- * UI Templates properties/args
- */
-
-export const LogoCompany = 'https://www.magneto365.com/wp-content/uploads/2022/08/img-grupo-sura.png'
-export const flag =
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/2560px-Flag_of_Colombia.svg.png'
-
-export const ListIcon: IListIcon[] = [
-  { Icon: Facebook, url: 'https://www.facebook.com/MagnetoEmpleos?_rdc=4&_rdr' },
-  { Icon: Instagram, url: 'https://www.instagram.com/magnetoempleos/' },
-  { assetsIcon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
-  { Icon: Youtube, url: 'https://www.youtube.com/c/Magnetoempleos' },
-  { assetsIcon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
-  { Icon: Link, url: 'https://www.magneto365.com/home/#comparte-magneto' }
-]
+//Menu Item Molecule
 
 export const MenuList: MenuItemInfo[] = [
   { text: 'Inicio', url: '#', slug: 'inicio' },
@@ -334,10 +379,55 @@ export const MenuList: MenuItemInfo[] = [
   { text: 'Articulos de interes', url: '/home/blog/', slug: 'blog' }
 ]
 
+/**
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * UI Organism properties/args
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
+export const ListIcon: IListIcon[] = [
+  { Icon: Facebook, url: 'https://www.facebook.com/MagnetoEmpleos?_rdc=4&_rdr' },
+  { Icon: Instagram, url: 'https://www.instagram.com/magnetoempleos/' },
+  { assetsIcon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
+  { Icon: Youtube, url: 'https://www.youtube.com/c/Magnetoempleos' },
+  { assetsIcon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
+  { Icon: Link, url: 'https://www.magneto365.com/home/#comparte-magneto' }
+]
+
 export const listMenuProps: IListMenuItems = {
   menuList: MenuList,
   urlParam: 'empleos-por-empresa'
 }
+
+/**
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * UI Templates properties/args
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
 
 export const logoProps: ILogoComponent = {
   alt: 'Logo Magneto',
@@ -353,39 +443,6 @@ export const logoPropsLogin: ILogoComponent = {
   isoSize: 30,
   logo: LogoMagneto,
   isoType: IsoLogoMagneto
-}
-
-export const headerProps: IHeaderDrawerTabs = {
-  logoProps: logoProps,
-  tabProps: TabProps
-}
-
-export const createAccount: IMainButton = {
-  buttonType: 'button',
-  iconProps: {
-    Icon: ProfileAdd,
-    hover: true,
-    color: '#090467 '
-  },
-  buttonText: 'Crear hoja de vida',
-  buttonColor: '#70ECD4',
-  textColor: '#090467',
-  spacing: 10,
-  onClick: () => ({})
-}
-
-export const login: IMainButton = {
-  buttonType: 'button',
-  iconProps: {
-    Icon: LoginCurve,
-    hover: true,
-    color: '#090467 '
-  },
-  buttonText: 'Iniciar Sesión',
-  buttonColor: 'white',
-  textColor: '#090467',
-  spacing: 10,
-  onClick: () => ({})
 }
 
 export const menuItems1440: IMenuItems[] = [
