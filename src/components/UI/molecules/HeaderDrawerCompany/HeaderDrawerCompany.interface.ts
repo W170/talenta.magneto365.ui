@@ -1,4 +1,4 @@
-import { ILogoComponent } from '../../atoms/Logo/Logo.interface'
+import { ILogoComponent } from '../../atoms'
 
 export interface IHeaderDrawerCompany {
   className?: string

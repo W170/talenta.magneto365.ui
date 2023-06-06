@@ -1,5 +1,5 @@
 import React from 'react'
-import { LogoComponent } from '../../atoms/Logo'
+import { LogoComponent } from '../../atoms'
 import { IHeaderDrawerCompany } from './HeaderDrawerCompany.interface'
 import { withStyles } from './HeaderDrawerCompany.styles'
 
