@@ -1,20 +1,16 @@
 import { IMainButton } from '../../atoms'
-import { IHeaderDrawerTabs, IListIcon, IListMenuItems } from '../../molecules'
+import { IHeaderDrawerTabs, IListMenuItems } from '../../molecules'
 
 export interface IDrawerOrganism {
   className?: string
   /**
-   * Here is the icon list component
+   * Here is drawer header tabs component
    */
-  listIcon: IListIcon[]
+  headerDrawerProps: IHeaderDrawerTabs
   /**
    * Here is the menu list component
    */
   listMenuProps: IListMenuItems
-  /**
-   * Here is drawer header tabs component
-   */
-  headerProps: IHeaderDrawerTabs
   /**
    * Here is main button component
    */

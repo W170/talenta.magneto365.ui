@@ -14,7 +14,7 @@ import {
 } from '../../../../constants/stories.constants'
 
 const Component: React.FC<IDrawerOrganism> = ({
-  headerProps,
+  headerDrawerProps,
   listMenuProps,
   createAccountButton,
   loginButton,
@@ -29,7 +29,7 @@ const Component: React.FC<IDrawerOrganism> = ({
     <div className={className}>
       <Drawer direction="left" isOpen={isOpen} onClose={onClose}>
         <HeaderDrawerTabs
-          {...headerProps}
+          {...headerDrawerProps}
           logoProps={LogoProps}
           leftTabStyle={DrawerLeftTabStyles}
           rightTabStyle={DrawerRightTabStyles}
