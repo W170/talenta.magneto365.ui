@@ -1,1 +1,2 @@
-export * from './Popover.component'
+export * from './Popover.interface'
+export { Popover } from './Popover.component'
