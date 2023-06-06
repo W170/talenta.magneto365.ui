@@ -1,9 +1,9 @@
 import React from 'react'
-import { Add } from 'iconsax-react'
-import { IconItem } from '../../atoms/Icon'
+import { IconItem } from '../../atoms'
+import { DrawerPortal } from './DrawerPortal'
 import { IDrawer } from './Drawer.interface'
 import { withStyles } from './Drawer.styles'
-import { DrawerPortal } from './DrawerPortal'
+import { Add } from 'iconsax-react'
 
 const Component: React.FC<IDrawer> = ({ className, children, onClose, isOpen }) => {
   return (
