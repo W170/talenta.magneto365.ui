@@ -1,1 +1,2 @@
-export * from './UserMenu.component'
+export * from './UserMenu.interface'
+export { UserMenu } from './UserMenu.component'
