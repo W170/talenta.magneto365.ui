@@ -1,6 +1,5 @@
 import React from 'react'
-import { IconItem } from '../../atoms'
-import { Breadcrumb } from '../../atoms'
+import { Breadcrumb, IconItem } from '../../atoms'
 import { IBreadcrumbs } from './Breadcrumbs.interface'
 import { withStyles } from './Breadcrumbs.styles'
 import { iconPropsBreadCrumb } from '../../../../constants/stories.constants'
