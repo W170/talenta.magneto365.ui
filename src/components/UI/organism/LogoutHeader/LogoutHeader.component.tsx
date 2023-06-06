@@ -1,40 +1,48 @@
 import React, { useState } from 'react'
-import { Link } from '../../atoms'
-import { LogoComponent } from '../../atoms'
-import { MainButton } from '../../atoms'
-import { Breadcrumbs } from '../../molecules'
-import { MobileSearchbar } from '../../molecules'
-import { Searchbar } from '../../molecules'
-import { Tab } from '../../molecules'
+import { Link, LogoComponent, MainButton } from '../../atoms'
+import { Breadcrumbs, MobileSearchbar, Tab, TabButton, Searchbar } from '../../molecules'
 
 import { ILogoutHeader } from './LogoutHeader.interface'
 import { withStyles } from './LogoutHeader.styles'
 import { useMediaQuery } from '../../../hooks'
 
 import {
-  TabProps,
-  LogoProps,
-  SignInLinkProps,
-  SignUpButtonProps,
+  LeftTabStyles,
+  RightTabStyles,
   MenuButtonProps,
-  MobileSearchbarButtonProps,
+  LogoProps,
+  searchPropsButton,
+  removePropsButton,
   MobileSearchbarProps,
-  SearchbarProps,
-  breadcrumbText
+  MobileSearchbarButtonProps,
+  SignInIcon,
+  SignInStyles,
+  SignUpButtonStyle
 } from '../../../../constants/stories.constants'
 
-const Component: React.FC<ILogoutHeader> = ({ className, onClick }) => {
+const Component: React.FC<ILogoutHeader> = ({
+  leftTabButton,
+  rightTabButton,
+  searchbar,
+  signInLink,
+  signUpButton,
+  breadcrumbsText,
+  onClick,
+  className
+}) => {
+  const { type, href, text } = signInLink
+  const { buttonText } = signUpButton
   const [showSearchBar, setShowSearchBar] = useState(false)
+  const isMobileButton = useMediaQuery(false, {
+    md: true
+  })
 
   const toggleSearchBar = () => {
     setShowSearchBar(!showSearchBar)
   }
 
-  const isMobileButton = useMediaQuery(false, {
-    md: true
-  })
-
-  const logoutHeaderMobileSearchbar = useMediaQuery(null, {
+  // Mobile Searchbar Component
+  const LogoutHeaderMobileSearchbar = useMediaQuery(null, {
     md: (
       <MobileSearchbar
         {...MobileSearchbarProps}
@@ -45,51 +53,77 @@ const Component: React.FC<ILogoutHeader> = ({ className, onClick }) => {
     )
   })
 
-  const logoutHeaderTab = useMediaQuery(<Tab {...TabProps} />, {
-    md: null
-  })
+  // Tab Component
+  const LogoutHeaderTab = useMediaQuery(
+    <Tab>
+      <TabButton tabButtonLink={leftTabButton} tabButtonStyle={LeftTabStyles} />
+      <TabButton tabButtonLink={rightTabButton} tabButtonStyle={RightTabStyles} />
+    </Tab>,
+    {
+      md: null
+    }
+  )
 
-  const logoutHeaderMenuButton = useMediaQuery(<MainButton {...MenuButtonProps} onClick={onClick} />)
+  // Menu Button Component
+  const LogoutHeaderMenuButton = useMediaQuery(<MainButton {...MenuButtonProps} onClick={onClick} />)
 
-  const logoutHeaderLogo = useMediaQuery(<LogoComponent {...LogoProps} />, {
+  // Header Logo Component
+  const LogoutHeaderLogo = useMediaQuery(<LogoComponent {...LogoProps} />, {
     sm: <LogoComponent {...LogoProps} isoView={true} />
   })
 
-  const logoutHeaderMobileSearchbarButton = useMediaQuery(null, {
+  // Mobile Searchbar Button Component
+  const LogoutHeaderMobileSearchbarButton = useMediaQuery(null, {
     md: <MainButton onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
   })
 
-  const logoutHeaderSearchbar = useMediaQuery(<Searchbar {...SearchbarProps} />, {
-    md: null
-  })
-
-  const logoutHeaderSignInLink = useMediaQuery(<Link {...SignInLinkProps} isMobile={isMobileButton} />)
-
-  const logoutHeaderButtonSignUp = useMediaQuery(
-    <MainButton {...SignUpButtonProps} isMobile={isMobileButton} spacing={10} />
+  // Searchbar Component
+  const LogoutHeaderSearchbar = useMediaQuery(
+    <Searchbar {...searchbar} searchButtonProps={searchPropsButton} removeButtonProps={removePropsButton} />,
+    {
+      md: null
+    }
   )
 
-  const logoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbText={breadcrumbText} />, {
+  // SignIn Link Component
+  const LogoutHeaderLinkSignIn = useMediaQuery(
+    <Link
+      type={type}
+      href={href}
+      text={text}
+      iconProps={SignInIcon}
+      linkStyles={SignInStyles}
+      isMobile={isMobileButton}
+    />
+  )
+
+  // SignUp Button Component
+  const LogoutHeaderButtonSignUp = useMediaQuery(
+    <MainButton {...SignUpButtonStyle} buttonText={buttonText} isMobile={isMobileButton} />
+  )
+
+  // Breadcrumbs Component
+  const LogoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbText={breadcrumbsText} />, {
     md: null
   })
 
   return (
     <header className={className}>
-      {logoutHeaderMobileSearchbar}
-      <div className="magneto-ui-first-row">{logoutHeaderTab}</div>
+      {LogoutHeaderMobileSearchbar}
+      <div className="magneto-ui-first-row">{LogoutHeaderTab}</div>
       <div className="magneto-ui-second-row">
         <div className="magneto-ui-left-section">
-          {logoutHeaderMenuButton}
-          {logoutHeaderLogo}
-          {logoutHeaderMobileSearchbarButton}
+          {LogoutHeaderMenuButton}
+          {LogoutHeaderLogo}
+          {LogoutHeaderMobileSearchbarButton}
         </div>
-        <div className="magneto-ui-middle-section">{logoutHeaderSearchbar}</div>
+        <div className="magneto-ui-middle-section">{LogoutHeaderSearchbar}</div>
         <div className="magneto-ui-right-section">
-          {logoutHeaderSignInLink}
-          {logoutHeaderButtonSignUp}
+          {LogoutHeaderLinkSignIn}
+          {LogoutHeaderButtonSignUp}
         </div>
       </div>
-      <div className="magneto-ui-third-row">{logoutHeaderBreadcrumbs}</div>
+      <div className="magneto-ui-third-row">{LogoutHeaderBreadcrumbs}</div>
     </header>
   )
 }

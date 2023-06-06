@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconItem } from '../../atoms/Icon'
+import { IconItem } from '../../atoms'
 import { IMenuIcon } from './MenuIcon.interface'
 import { withStyles } from './MenuIcon.styles'
 

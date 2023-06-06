@@ -1,1 +1,2 @@
-export * from './MobileDrawerMenu.component'
+export * from './MobileDrawerMenu.interface'
+export { MobileDrawerMenu } from './MobileDrawerMenu.component'

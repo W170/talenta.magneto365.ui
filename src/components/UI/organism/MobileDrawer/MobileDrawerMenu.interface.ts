@@ -1,5 +1,4 @@
-import { IListMenuIcons } from '../../molecules/ListMenuIcons/ListMenuIcons.interface'
-import { IMoblieDrawer } from '../../molecules/MobileDrawer/MobileDrawer.interface'
+import { IListMenuIcons, IMoblieDrawer } from '../../molecules'
 
 export interface IMobileDrawerMenu extends IMoblieDrawer {
   /**

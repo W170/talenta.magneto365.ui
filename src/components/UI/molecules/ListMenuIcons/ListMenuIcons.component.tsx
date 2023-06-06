@@ -1,11 +1,11 @@
 import React, { Fragment, useContext, useMemo } from 'react'
-import { LogoutCurve, Setting2 } from 'iconsax-react'
-import { Divider } from '../../atoms/Divider'
+import { Divider } from '../../atoms'
 import { MenuIcon } from '../MenuIcon'
-import { IListMenuIcons } from './ListMenuIcons.interface'
-import { withStyles } from './ListMenuIcons.styles'
 import { screenSize } from '../../../../constants/responsive.constants'
 import { ResponsiveContext } from '../../../context/ResponsiveContext.component'
+import { LogoutCurve, Setting2 } from 'iconsax-react'
+import { withStyles } from './ListMenuIcons.styles'
+import { IListMenuIcons } from './ListMenuIcons.interface'
 import { useMediaQuery } from '../../../hooks'
 
 const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, className, menuItems1440, logout, settings }) => {

@@ -1,1 +1,2 @@
-export * from './DrawerMenu.component'
+export * from './DrawerMenu.interface'
+export { DrawerMenu } from './DrawerMenu.component'

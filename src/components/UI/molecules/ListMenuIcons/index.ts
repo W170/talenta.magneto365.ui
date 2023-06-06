@@ -1,1 +1,2 @@
-export * from './ListMenuIcons.component'
+export * from './ListMenuIcons.interface'
+export { ListMenuIcons } from './ListMenuIcons.component'
