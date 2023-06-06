@@ -1,10 +1,8 @@
-import { IMainButton } from '../../atoms/MainButton'
-import { IHeaderDrawerTabs } from '../../molecules/HeaderDrawerTabs/HeaderDrawerTabs.interface'
-import { IListIcon } from '../../molecules/ListIconLink'
-import { IListMenuItems } from '../../molecules/ListMenuItems/ListMenuItems.interface'
+import { IMainButton } from '../../atoms'
+import { IHeaderDrawerTabs, IListIcon, IListMenuItems } from '../../molecules'
 
 export interface IDrawerOrganism {
-  className: string
+  className?: string
   /**
    * Here is the icon list component
    */
@@ -20,9 +18,17 @@ export interface IDrawerOrganism {
   /**
    * Here is main button component
    */
-  createAccount: IMainButton
+  createAccountButton: IMainButton
   /**
    * Here is main button component
    */
-  login: IMainButton
+  loginButton: IMainButton
+  /**
+   *
+   */
+  onClose: () => void
+  /**
+   *
+   */
+  isOpen: boolean
 }

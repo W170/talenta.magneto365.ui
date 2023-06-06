@@ -1,31 +1,46 @@
 import React from 'react'
-import { Drawer } from '../../molecules/Drawer'
+import { MainButton } from '../../atoms'
+import { Drawer, HeaderDrawerTabs, ListIconLink, ListMenuItems } from '../../molecules'
 import { IDrawerOrganism } from './DrawerMenu.interface'
 import { ActiosContainer, MenuContainer, withStyles } from './DrawerMenu.styles'
-import { ListMenuItems } from '../../molecules/ListMenuItems'
-import { ListIconLink } from '../../molecules/ListIconLink'
-import { HeaderDrawerTabs } from '../../molecules/HeaderDrawerTabs/HeaderDrawerTabs.components'
-import { MainButton } from '../../atoms/MainButton'
+
+import {
+  LogoProps,
+  DrawerLeftTabStyles,
+  DrawerRightTabStyles,
+  CreateAccountButton,
+  LoginButton,
+  ListIcon
+} from '../../../../constants/stories.constants'
 
 const Component: React.FC<IDrawerOrganism> = ({
-  className,
-  listIcon,
   headerProps,
-  login,
-  createAccount,
-  listMenuProps
+  listMenuProps,
+  createAccountButton,
+  loginButton,
+  isOpen,
+  onClose,
+  className
 }) => {
+  const { buttonText } = createAccountButton
+  const { buttonText: buttonTextLogin } = loginButton
+
   return (
     <div className={className}>
-      <Drawer direction="left" isOpen={true} onClose={() => ({})}>
-        <HeaderDrawerTabs {...headerProps} />
+      <Drawer direction="left" isOpen={isOpen} onClose={onClose}>
+        <HeaderDrawerTabs
+          {...headerProps}
+          logoProps={LogoProps}
+          leftTabStyle={DrawerLeftTabStyles}
+          rightTabStyle={DrawerRightTabStyles}
+        />
         <MenuContainer>
           <ListMenuItems {...listMenuProps} />
         </MenuContainer>
         <ActiosContainer>
-          <MainButton buttonSize="full" {...createAccount} />
-          <MainButton buttonSize="full" {...login} />
-          <ListIconLink listIcon={listIcon} />
+          <MainButton buttonSize="full" {...CreateAccountButton} buttonText={buttonText} />
+          <MainButton buttonSize="full" {...LoginButton} buttonText={buttonTextLogin} />
+          <ListIconLink listIcon={ListIcon} spacing={30} />
         </ActiosContainer>
       </Drawer>
     </div>
