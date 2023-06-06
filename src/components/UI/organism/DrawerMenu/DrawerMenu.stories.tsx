@@ -25,7 +25,7 @@ const meta: Meta<typeof DrawerMenu> = {
   component: DrawerMenu,
   tags: ['autodocs'],
   args: {
-    headerProps: { leftTabLink: leftLink, rightTabLink: rightLink },
+    headerDrawerProps: { leftTabLink: leftLink, rightTabLink: rightLink },
     listMenuProps: listMenuProps,
     createAccountButton: {
       buttonText: 'Crear Cuenta'
