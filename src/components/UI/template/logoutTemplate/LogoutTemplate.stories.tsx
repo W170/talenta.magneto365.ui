@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { IDrawerOrganism, ILogoutHeader } from '../../organism'
 import { LogoutTemplate } from './LogoutTemplate.component'
-import { logoProps, listMenuProps, ListIcon } from '../../../../constants/stories.constants'
+import { logoProps, listMenuProps } from '../../../../constants/stories.constants'
 
 const logoutHeaderProps: ILogoutHeader = {
   leftTabButton: {
@@ -37,7 +37,7 @@ const logoutHeaderProps: ILogoutHeader = {
 }
 
 const headerDrawerMenuProps: IDrawerOrganism = {
-  headerProps: {
+  headerDrawerProps: {
     logoProps: logoProps,
     leftTabLink: {
       type: 'link' as const,
@@ -63,7 +63,6 @@ const headerDrawerMenuProps: IDrawerOrganism = {
   loginButton: {
     buttonText: 'Iniciar Sesión'
   },
-  listIcon: ListIcon,
   onClose: () => ({}),
   isOpen: false
 }
