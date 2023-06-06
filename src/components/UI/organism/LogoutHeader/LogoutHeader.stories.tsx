@@ -21,7 +21,7 @@ const rightLinkProps = {
 const SearchbarProps = {
   placeholder: 'Buscar',
   onSearch: () => {
-    // Logic
+    //
   }
 }
 
@@ -37,20 +37,16 @@ const SignUpProps = {
   buttonSize: 'medium' as const
 }
 
-const BreadcrumbsProps = {
-  breadcrumbText: '/perfil/empleos/sugeridos'
-}
-
 const meta: Meta<typeof LogoutHeader> = {
   title: 'Organism/Logout Header',
   component: LogoutHeader,
   args: {
     leftTabButton: leftLinkProps,
     rightTabButton: rightLinkProps,
-    searchbarConfig: SearchbarProps,
+    searchbar: SearchbarProps,
     signInLink: SignInProps,
     signUpButton: SignUpProps,
-    breadcrumbsItem: BreadcrumbsProps
+    breadcrumbsText: '/perfil/empleos/sugeridos'
   }
 }
 

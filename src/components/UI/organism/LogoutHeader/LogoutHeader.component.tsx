@@ -23,16 +23,15 @@ import {
 const Component: React.FC<ILogoutHeader> = ({
   leftTabButton,
   rightTabButton,
-  searchbarConfig,
+  searchbar,
   signInLink,
   signUpButton,
-  breadcrumbsItem,
+  breadcrumbsText,
   onClick,
   className
 }) => {
   const { type, href, text } = signInLink
   const { buttonText } = signUpButton
-  const { breadcrumbText } = breadcrumbsItem
   const [showSearchBar, setShowSearchBar] = useState(false)
   const isMobileButton = useMediaQuery(false, {
     md: true
@@ -80,7 +79,7 @@ const Component: React.FC<ILogoutHeader> = ({
 
   // Searchbar Component
   const LogoutHeaderSearchbar = useMediaQuery(
-    <Searchbar {...searchbarConfig} searchButtonProps={searchPropsButton} removeButtonProps={removePropsButton} />,
+    <Searchbar {...searchbar} searchButtonProps={searchPropsButton} removeButtonProps={removePropsButton} />,
     {
       md: null
     }
@@ -104,7 +103,7 @@ const Component: React.FC<ILogoutHeader> = ({
   )
 
   // Breadcrumbs Component
-  const LogoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbText={breadcrumbText} />, {
+  const LogoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbText={breadcrumbsText} />, {
     md: null
   })
 
