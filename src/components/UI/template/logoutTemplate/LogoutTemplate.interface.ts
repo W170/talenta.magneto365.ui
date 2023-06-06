@@ -1,14 +1,11 @@
-import { IListMenuItems } from '../../molecules/ListMenuItems/ListMenuItems.interface'
-import { ILogoutHeader } from '../../organism/LogoutHeader'
-
+import { IDrawerOrganism, ILogoutHeader } from '../../organism'
 export interface ILogoutTemplate {
-  // SignUpProps: IMainButton
-  // SignInProps: IMainButton
-  // listIcon: IListIcon[]
-  // headerProps: IHeaderDrawerTabs
+  /**
+   * Sets the props of the logout header component
+   */
   logoutHeaderProps: ILogoutHeader
   /**
-   * Sets the menu items props for the list menu items
+   * Sets the props of the drawer menu component
    */
-  listMenuProps: IListMenuItems
+  headerDrawerMenuProps: IDrawerOrganism
 }
