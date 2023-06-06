@@ -1,12 +1,51 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { HeaderDrawerTabs } from './HeaderDrawerTabs.components'
-import { TabProps, logoProps } from '../../../../constants/stories.constants'
+import { logoProps } from '../../../../constants/stories.constants'
+
+const leftTabLink = {
+  type: 'link' as const,
+  href: '#',
+  text: 'Busco Empleo',
+  linkStyles: {
+    textColor: '#000',
+    buttonColor: '#FFF'
+  }
+}
+const leftTabStyle = {
+  tabButtonStyle: {
+    tabButtonColor: '#FFF',
+    tabButtonTextSize: '11px',
+    tabButtonTextWeight: '700',
+    boxShadow: true
+  }
+}
+
+const rightTabLink = {
+  type: 'link' as const,
+  href: '#',
+  text: 'Soy empresa',
+  linkStyles: {
+    textColor: '#A3A3B5'
+  }
+}
+
+const rightTabStyle = {
+  tabButtonStyle: {
+    tabButtonColor: '#F4F4FA',
+    tabButtonTextSize: '11px',
+    tabButtonTextWeight: '400',
+    boxShadow: false
+  }
+}
 
 const meta: Meta<typeof HeaderDrawerTabs> = {
   title: 'Molecules/Header Drawer Tabs',
   component: HeaderDrawerTabs,
   args: {
-    tabProps: TabProps,
+    leftTabLink: leftTabLink,
+    leftTabStyle: leftTabStyle,
+    rightTabLink: rightTabLink,
+    rightTabStyle: rightTabStyle,
     logoProps: logoProps
   }
 }
