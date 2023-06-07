@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { LogoutHeader } from './LogoutHeader.component'
+import { IMobileSearchbar } from '../../molecules'
 
 const leftLinkProps = {
   type: 'link' as const,
@@ -31,7 +32,7 @@ const SignInProps = {
   href: '#'
 }
 
-const MobileSearchbarProps = {
+const MobileSearchbarProps: IMobileSearchbar = {
   onSearch: () => {
     //
   }
