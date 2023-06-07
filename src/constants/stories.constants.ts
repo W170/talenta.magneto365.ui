@@ -194,11 +194,9 @@ export const LoginButton: IMainButton = {
   buttonType: 'button',
   iconProps: {
     Icon: LoginCurve,
-    hover: true,
-    color: '#090467 '
+    hover: true
   },
   buttonColor: 'white',
-  textColor: '#090467',
   spacing: 10
 }
 
