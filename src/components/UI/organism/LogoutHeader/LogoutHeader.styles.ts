@@ -11,7 +11,7 @@ export const withStyles = (Component: React.FC<ILogoutHeader>): React.FC<ILogout
     align-items: flex-start;
     width: 100%;
     height: auto;
-    padding: 10px 20px;
+    padding: 5px 20px;
     background-color: ${(props) => props.theme.colors.primaryColors.white};
     border-bottom: 1px solid ${(props) => props.theme.colors.disabledColors.gray2};
 
@@ -26,7 +26,6 @@ export const withStyles = (Component: React.FC<ILogoutHeader>): React.FC<ILogout
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      margin: 5px 0px;
 
       .magneto-ui-left-section {
         display: inherit;
@@ -40,6 +39,9 @@ export const withStyles = (Component: React.FC<ILogoutHeader>): React.FC<ILogout
       .magneto-ui-middle-section {
         display: inherit;
         width: 40%;
+        @media (min-width: ${screenSize.xl}px) {
+          width: 50%;
+        }
       }
 
       .magneto-ui-right-section {

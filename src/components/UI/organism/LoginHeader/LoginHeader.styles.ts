@@ -11,7 +11,7 @@ export const withStyles = (Component: React.FC<ILoginHeader>): React.FC<ILoginHe
     align-items: flex-start;
     width: 100%;
     height: auto;
-    padding: 10px 20px;
+    padding: 5px 20px;
     background-color: ${(props) => props.theme.colors.primaryColors.white};
     border-bottom: 1px solid ${(props) => props.theme.colors.disabledColors.gray2};
 
@@ -38,14 +38,17 @@ export const withStyles = (Component: React.FC<ILoginHeader>): React.FC<ILoginHe
 
       .magneto-ui-searchbar-section {
         display: inherit;
-        width: 25%;
+        width: 35%;
+
+        @media (min-width: ${screenSize.xxl}px) {
+          width: 46%;
+        }
       }
 
       .magneto-ui-tabs-section {
         display: inherit;
         width: auto;
-        margin-left: 3rem;
-        margin-right: 1.75rem;
+        margin-left: 20px;
       }
     }
 

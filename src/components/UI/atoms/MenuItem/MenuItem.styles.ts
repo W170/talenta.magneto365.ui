@@ -27,12 +27,17 @@ export const withStyles = (c: React.FC<IMenuItem>): React.FC<IMenuItem> => style
   position: relative;
   border-radius: 12px;
   transition: all 0.3s ease-in-out;
-  height: 40px;
+  height: 22px;
   padding: 2px;
   margin: 5px 0;
-  @media (min-width: ${screenSize.xs}px) {
+  font-size: 12px;
+  @media (min-width: ${screenSize.xxs}px) {
     margin-bottom: 10px;
     font-size: 16px;
+    height: 32px;
+  }
+  @media (min-width: ${screenSize.sm}px) {
+    height: 40px;
   }
 
   &:hover {
