@@ -4,9 +4,9 @@ import typescript from '@rollup/plugin-typescript'
 import url from '@rollup/plugin-url'
 import postcss from 'rollup-plugin-postcss'
 import dts from 'rollup-plugin-dts'
+import dotEnv from 'dotenv'
 import packageJson from './package.json'
 import * as path from 'path'
-
 export default [
   {
     input: 'src/index.ts',
@@ -29,10 +29,13 @@ export default [
       url({
         fileName: '[dirname][hash][extname]',
         sourceDir: path.join(__dirname, 'src/assets'),
+        destDir: 'dist/assets',
+        publicPath: dotEnv.config().parsed.ASSETS_CDN_URL,
+        limit: 0,
         emitFiles: true
       }),
       typescript({ tsconfig: './tsconfig.json' }),
-      postcss()
+      postcss({ modules: true })
     ]
   },
   {
