@@ -21,18 +21,21 @@ const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, className, m
 
   return (
     <div className={className}>
-      {menuResponsive?.map(({ title = '', items }, i: number) => (
-        <div key={i}>
-          <p>{title ? title : null}</p>
-          {items.map(({ slug, ...props }, i: number) => (
-            <Fragment key={i}>
-              <MenuIcon isActive={urlParam === slug ? true : false} {...props} />
-            </Fragment>
-          ))}
-          {menuResponsive.length > i + 1 ? <Divider spacing={isMobile ? 0 : 17} opacity={1} /> : null}
-        </div>
-      ))}
-      <MenuIcon type="button" onClick={onClickSettings} Icon={Setting2} text={settingsText} />
+      <div>
+        {menuResponsive?.map(({ title = '', items }, i: number) => (
+          <div key={i}>
+            <p>{title ? title : null}</p>
+            {items.map(({ slug, ...props }, i: number) => (
+              <Fragment key={i}>
+                <MenuIcon isActive={urlParam === slug ? true : false} {...props} />
+              </Fragment>
+            ))}
+            {menuResponsive.length > i + 1 ? <Divider spacing={isMobile ? 0 : 17} opacity={1} /> : null}
+          </div>
+        ))}
+        <MenuIcon type="button" onClick={onClickSettings} Icon={Setting2} text={settingsText} />
+      </div>
+
       <Divider spacing={isMobile ? 0 : 17} opacity={1} />
       <MenuIcon type="button" onClick={onClick} Icon={LogoutCurve} text={logoutText} />
     </div>
