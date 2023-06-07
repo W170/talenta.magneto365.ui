@@ -13,7 +13,6 @@ import {
   LogoProps,
   searchPropsButton,
   removePropsButton,
-  MobileSearchbarProps,
   MobileSearchbarButtonProps,
   SignInIcon,
   SignInStyles,
@@ -24,6 +23,7 @@ const Component: React.FC<ILogoutHeader> = ({
   leftTabButton,
   rightTabButton,
   searchbar,
+  mobileSearchbar,
   signInLink,
   signUpButton,
   breadcrumbsText,
@@ -45,7 +45,7 @@ const Component: React.FC<ILogoutHeader> = ({
   const LogoutHeaderMobileSearchbar = useMediaQuery(null, {
     md: (
       <MobileSearchbar
-        {...MobileSearchbarProps}
+        {...mobileSearchbar}
         onClick={() => setShowSearchBar(false)}
         showMobileSearchbar={showSearchBar}
         focusSearchInput={showSearchBar}

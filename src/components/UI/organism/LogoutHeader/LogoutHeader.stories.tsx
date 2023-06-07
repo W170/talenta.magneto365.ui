@@ -31,6 +31,12 @@ const SignInProps = {
   href: '#'
 }
 
+const MobileSearchbarProps = {
+  onSearch: () => {
+    //
+  }
+}
+
 const SignUpProps = {
   buttonType: 'button' as const,
   buttonText: 'Crear Cuenta',
@@ -44,6 +50,7 @@ const meta: Meta<typeof LogoutHeader> = {
     leftTabButton: leftLinkProps,
     rightTabButton: rightLinkProps,
     searchbar: SearchbarProps,
+    mobileSearchbar: MobileSearchbarProps,
     signInLink: SignInProps,
     signUpButton: SignUpProps,
     breadcrumbsText: '/perfil/empleos/sugeridos'
