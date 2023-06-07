@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { MenuIcon } from './MenuIcon.component'
-import { ArchiveTick } from 'iconsax-react'
+import { ArchiveTick, Facebook } from 'iconsax-react'
 
 const meta: Meta<typeof MenuIcon> = {
   title: 'Molecules/Menu Icon',
@@ -8,7 +8,8 @@ const meta: Meta<typeof MenuIcon> = {
   tags: ['autodocs'],
   args: {
     text: 'Text Here',
-    isActive: false
+    isActive: false,
+    Icon: Facebook
   }
 }
 

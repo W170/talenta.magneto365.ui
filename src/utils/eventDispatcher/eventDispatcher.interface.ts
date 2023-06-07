@@ -4,7 +4,7 @@ export const EEventType = {
 
 export type EventType = keyof typeof EEventType
 
-export type DimType = 'xs' | 'sm' | 'md' | 'hd' | 'lg' | 'xl' | 'xxl'
+export type DimType = 'xxs' | 'xs' | 'sm' | 'md' | 'hd' | 'lg' | 'xl' | 'xxl'
 
 export interface Dimension {
   type: DimType

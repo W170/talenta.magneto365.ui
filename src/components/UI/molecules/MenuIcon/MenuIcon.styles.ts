@@ -26,8 +26,8 @@ export const withStyles = (c: React.FC<IMenuIcon>): React.FC<IMenuIcon> => style
   border-radius: 7px;
   transition: all 0.3s ease-in-out;
   height: 25px;
-  padding: 23px 10px;
-  @media (min-width: ${screenSize.xs}px) {
+  padding: 20px 5px;
+  @media (min-width: ${screenSize.xxs}px) {
     padding: 25px 10px;
     height: 40px;
   }

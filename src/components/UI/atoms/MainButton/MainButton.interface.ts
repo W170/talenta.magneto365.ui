@@ -7,11 +7,11 @@ export interface IMainButton {
   /**
    * Sets button type
    */
-  buttonType: ButtonType
+  buttonType?: ButtonType
   /**
    * Props for the Icon Atom
    */
-  iconProps: IconProps
+  iconProps?: IconProps
   /**
    * Setx the button color
    */

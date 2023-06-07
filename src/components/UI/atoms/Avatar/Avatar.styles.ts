@@ -17,7 +17,8 @@ export const withStyles = (Component: React.FC<IAvatar>): React.FC<IAvatar> => {
     }
 
     .magneto-ui-default-avatar {
-      display: inherit;
+      display: flex;
+      align-items: center;
       width: 2.5rem;
       height: 2.5rem;
       justify-content: center;

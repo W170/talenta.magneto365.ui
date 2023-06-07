@@ -1,6 +1,7 @@
 import { DimType } from '../utils/eventDispatcher'
 
 export const screenSize: Record<DimType, number> = {
+  xxs: 375,
   xs: 480,
   sm: 576,
   md: 768,

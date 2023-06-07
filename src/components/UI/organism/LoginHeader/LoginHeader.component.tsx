@@ -14,22 +14,24 @@ import { withStyles } from './LoginHeader.styles'
 import { useMediaQuery } from '../../../hooks'
 
 import {
-  SearchbarProps,
   LogoProps,
   MobileSearchbarProps,
   MenuButtonProps,
-  MobileSearchbarButtonProps
+  MobileSearchbarButtonProps,
+  searchPropsButton,
+  removePropsButton
 } from '../../../../constants/stories.constants'
 
 const Component: React.FC<ILoginHeader> = ({
   onClick,
   className,
   listMenuUserProps,
-  breadcrumbsProps,
+  breadcrumbText,
   profileImage,
   jobsTabsProps,
   processTabsProps,
-  curriculumTabProps
+  curriculumTabProps,
+  searchbar
 }) => {
   const [showSearchBar, setShowSearchBar] = useState(false)
   const [showPopover, setShowPopover] = useState(false)
@@ -60,9 +62,12 @@ const Component: React.FC<ILoginHeader> = ({
     md: <MainButton onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
   })
 
-  const loginHeaderSearchbar = useMediaQuery(<Searchbar {...SearchbarProps} />, {
-    md: null
-  })
+  const loginHeaderSearchbar = useMediaQuery(
+    <Searchbar searchButtonProps={searchPropsButton} removeButtonProps={removePropsButton} {...searchbar} />,
+    {
+      md: null
+    }
+  )
 
   const loginHeaderOptionTabs = useMediaQuery(
     <>
@@ -91,7 +96,7 @@ const Component: React.FC<ILoginHeader> = ({
     }
   )
 
-  const loginHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs {...breadcrumbsProps} />, {
+  const loginHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbText={breadcrumbText} />, {
     md: null
   })
 

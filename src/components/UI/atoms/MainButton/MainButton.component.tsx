@@ -4,9 +4,9 @@ import { IMainButton } from './MainButton.interface'
 import { withStyles } from './MainButton.styles'
 
 const Component: React.FC<IMainButton> = ({
-  buttonType = 'submit',
+  buttonType,
   iconProps,
-  buttonSize = 'medium',
+  buttonSize,
   buttonText,
   isMobile = false,
   onClick,
@@ -14,7 +14,7 @@ const Component: React.FC<IMainButton> = ({
 }) => {
   return (
     <button type={buttonType} className={`${className} ${buttonSize}`} onClick={onClick}>
-      <IconItem {...iconProps} />
+      {iconProps && <IconItem {...iconProps} />}
       {!isMobile && <p>{buttonText}</p>}
     </button>
   )

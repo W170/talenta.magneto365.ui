@@ -1,6 +1,5 @@
 import React from 'react'
-import { MobileDrawer } from '../../molecules/MobileDrawer'
-import { ListMenuIcons } from '../../molecules/ListMenuIcons'
+import { ListMenuIcons, MobileDrawer } from '../../molecules'
 import { IMobileDrawerMenu } from './MobileDrawerMenu.interface'
 
 const Component: React.FC<IMobileDrawerMenu> = ({ listMenuUserProps, isOpen, onClose }) => {

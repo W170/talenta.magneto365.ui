@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Popover } from '../../atoms/Popover'
+import { Popover } from '../../atoms'
 import { ListMenuIcons } from '../ListMenuIcons'
 import { IMenuUser } from './UserMenu.interface'
 

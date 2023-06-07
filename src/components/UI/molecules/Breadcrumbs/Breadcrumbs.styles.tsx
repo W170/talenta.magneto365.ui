@@ -7,7 +7,7 @@ export const withStyles = (Component: React.FC<IBreadcrumbs>): React.FC<IBreadcr
     flex-direction: row;
     align-items: center;
     height: 1.5rem;
-    gap: 15px;
+    gap: 2px;
 
     span {
       display: inherit;

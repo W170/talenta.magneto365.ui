@@ -2,11 +2,12 @@ import { LoginHeader } from './LoginHeader.component'
 import { Meta, StoryObj } from '@storybook/react'
 import {
   AvatarProps,
-  BreadcrumbsProps,
+  breadcrumbText,
   CurriculumTabProps,
   JobsTabsProps,
   ProcessTabsProps,
-  listMenuUserProps
+  listMenuUserProps,
+  SearchbarProps
 } from '../../../../constants/stories.constants'
 
 const meta: Meta<typeof LoginHeader> = {
@@ -14,11 +15,12 @@ const meta: Meta<typeof LoginHeader> = {
   component: LoginHeader,
   args: {
     listMenuUserProps,
-    breadcrumbsProps: BreadcrumbsProps,
+    breadcrumbText,
     profileImage: AvatarProps,
     jobsTabsProps: JobsTabsProps,
     processTabsProps: ProcessTabsProps,
-    curriculumTabProps: CurriculumTabProps
+    curriculumTabProps: CurriculumTabProps,
+    searchbar: SearchbarProps
   }
 }
 

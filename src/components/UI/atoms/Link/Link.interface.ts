@@ -2,6 +2,25 @@ import { IconProps } from '../Icon'
 
 export type LinkType = 'button' | 'link'
 
+export interface LinkElement {
+  /**
+   * Sets button color
+   */
+  buttonColor?: string
+  /**
+   * Sets text color
+   */
+  textColor?: string
+  /**
+   * Sets hover color
+   */
+  hoverColor?: string
+  /**
+   * Sets visited color
+   */
+  visitedColor?: string
+}
+
 export interface ILinkProps {
   /**
    * Sets link type
@@ -20,24 +39,12 @@ export interface ILinkProps {
    */
   iconProps?: IconProps
   /**
-   * Sets button color
-   */
-  buttonColor?: string
-  /**
-   * Sets text color
-   */
-  textColor?: string
-  /**
-   * Sets hover color
-   */
-  hoverColor?: string
-  /**
-   * Sets visited color
-   */
-  visitedColor?: string
-  /**
    * Sets if link is mobile
    */
   isMobile?: boolean
+  /**
+   * Sets the link styles including icon
+   */
+  linkStyles?: LinkElement
   className?: string
 }

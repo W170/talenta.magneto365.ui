@@ -1,8 +1,5 @@
 import styled from 'styled-components'
 import { screenSize } from '../../../../constants/responsive.constants'
-import { ILogoutTemplate } from './LogoutTemplate.interface'
-
-export const withStyles = (c: React.FC<ILogoutTemplate>): React.FC<ILogoutTemplate> => styled(c)``
 
 export const MenuContainer = styled.div`
   @media (min-width: ${screenSize.md}px) {
