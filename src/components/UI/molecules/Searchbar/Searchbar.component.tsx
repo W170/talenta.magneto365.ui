@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { MainButton } from '../../atoms'
 import { ISearchbar } from './Searchbar.interface'
 import { withStyles } from './Searchbar.styles'
@@ -10,14 +10,8 @@ const Component: React.FC<ISearchbar> = ({
   removeButtonProps,
   className
 }) => {
+  const [initialInput, setInitialInput] = useState('')
   const [searchValue, setSearchValue] = useState('')
-
-  useEffect(() => {
-    const storedValue = localStorage.getItem('searchValue')
-    if (storedValue) {
-      setSearchValue(storedValue)
-    }
-  }, [])
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
@@ -25,6 +19,9 @@ const Component: React.FC<ISearchbar> = ({
   }
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (!initialInput) {
+      setInitialInput(event.target.value)
+    }
     setSearchValue(event.target.value)
   }
 
@@ -32,10 +29,6 @@ const Component: React.FC<ISearchbar> = ({
     setSearchValue('')
     onSearch('')
   }
-
-  useEffect(() => {
-    localStorage.setItem('searchValue', searchValue)
-  }, [searchValue])
 
   return (
     <div className={className}>
@@ -54,6 +47,7 @@ const Component: React.FC<ISearchbar> = ({
     </div>
   )
 }
+
 /**
  * UI Molecule of a searchbar
  */
