@@ -34,6 +34,10 @@ export const withStyles = (Component: React.FC<IHeaderTab>): React.FC<IHeaderTab
       css`
         p {
           color: ${(props) => props.theme.colors.textColors.disable};
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
         }
       `}
 
