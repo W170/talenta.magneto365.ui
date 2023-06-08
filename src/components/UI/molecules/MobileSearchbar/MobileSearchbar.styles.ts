@@ -21,12 +21,12 @@ export const withStyles = (Component: React.FC<IMobileSearchbar>): React.FC<IMob
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 4.3rem;
+    height: 3.7rem;
     margin: 0;
     background-color: ${(props) => props.theme.colors.white};
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
-    z-index: 1;
+    z-index: 10;
 
     form {
       display: inherit;
@@ -43,7 +43,7 @@ export const withStyles = (Component: React.FC<IMobileSearchbar>): React.FC<IMob
       height: 100%;
       background-color: transparent;
       border: none;
-
+      padding: 0 10px;
       font-style: normal;
       font-weight: ${(props) => props.theme.weight.regular};
       font-size: ${(props) => props.theme.size.s2}px;
