@@ -8,6 +8,7 @@ export const withStyles = (Component: React.FC<IAvatar>): React.FC<IAvatar> => {
     flex-direction: column;
     width: 2.5rem;
     height: 2.5rem;
+    cursor: pointer;
 
     img {
       width: 2.5rem;

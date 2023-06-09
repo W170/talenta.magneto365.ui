@@ -7,8 +7,8 @@ export const withStyles = (Component: React.FC<ITabButton>): React.FC<ITabButton
     flex-direction: row;
     justify-content: center;
     width: 96px;
-    height: 18px;
-    padding: 2px 8px;
+    height: 20px;
+    padding: 3px 8px;
     border-radius: 6px;
     background: ${(props) => props.tabButtonStyle?.tabButtonColor};
 
@@ -20,7 +20,6 @@ export const withStyles = (Component: React.FC<ITabButton>): React.FC<ITabButton
 
     p {
       margin: 0%;
-      font-weight: ${(props) => props.tabButtonStyle?.tabButtonTextWeight};
       font-size: ${(props) => props.tabButtonStyle?.tabButtonTextSize};
       line-height: 14px;
 

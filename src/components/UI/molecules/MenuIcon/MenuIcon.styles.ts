@@ -25,8 +25,8 @@ export const withStyles = (c: React.FC<IMenuIcon>): React.FC<IMenuIcon> => style
   cursor: pointer;
   border-radius: 7px;
   transition: all 0.3s ease-in-out;
-  height: 25px;
-  padding: 20px 5px;
+  height: 15px;
+  padding: 18px 5px;
   @media (min-width: ${screenSize.xxs}px) {
     padding: 25px 10px;
     height: 40px;
@@ -36,7 +36,10 @@ export const withStyles = (c: React.FC<IMenuIcon>): React.FC<IMenuIcon> => style
   }
   ${(props) => isActiveLink(props)}
   .magneto-ui-menu-text {
-    font-size: 14px;
+    font-size: 10px;
+    @media (min-width: ${screenSize.xxs}px) {
+      font-size: 14px;
+    }
     margin: 0;
     color: ${lightTheme.colors.textColors.black};
   }
