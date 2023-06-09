@@ -2,11 +2,11 @@ export interface IMobileSearchbar {
   /**
    * Sets the toggle state for the mobile searchbar
    */
-  showMobileSearchbar: boolean
+  showMobileSearchbar?: boolean
   /**
    * Sets the input ref for the searchbar input
    */
-  focusSearchInput: boolean
+  focusSearchInput?: boolean
   /**
    * Handler for the input value
    */
@@ -14,6 +14,7 @@ export interface IMobileSearchbar {
   /**
    * Handler for the show mobile searchbar
    */
-  onClick: () => void
+  termValue?: string
+  onClick?: () => void
   className?: string
 }
