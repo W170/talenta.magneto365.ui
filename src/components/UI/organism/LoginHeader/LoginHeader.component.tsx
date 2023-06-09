@@ -15,7 +15,6 @@ import { useMediaQuery } from '../../../hooks'
 
 import {
   LogoProps,
-  MobileSearchbarProps,
   MenuButtonProps,
   MobileSearchbarButtonProps,
   searchPropsButton,
@@ -31,7 +30,8 @@ const Component: React.FC<ILoginHeader> = ({
   jobsTabsProps,
   processTabsProps,
   curriculumTabProps,
-  searchbar
+  searchbar,
+  MobileSearchbarProps
 }) => {
   const [showSearchBar, setShowSearchBar] = useState(false)
   const [showPopover, setShowPopover] = useState(false)
