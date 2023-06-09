@@ -224,6 +224,7 @@ export const breadcrumbText = '/perfil/empleos/sugeridos'
 //Searchbar Molecule
 export const SearchbarProps: ISearchbar = {
   placeholder: 'Busca empleos por cargo o profesion',
+  termValue: 'Mi Busqueda',
   onSearch: () => {
     // Add your search logic here
   }
@@ -231,12 +232,9 @@ export const SearchbarProps: ISearchbar = {
 
 //Mobile Searchbar Molecule
 export const MobileSearchbarProps: IMobileSearchbar = {
-  onClick: console.info,
   onSearch: () => {
     // Add your search logic here
-  },
-  focusSearchInput: false,
-  showMobileSearchbar: false
+  }
 }
 
 //TabButton Molecule
