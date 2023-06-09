@@ -12,4 +12,5 @@ export interface ISearchbar {
   searchButtonProps?: IMainButton
   removeButtonProps?: IMainButton
   className?: string
+  termValue: string
 }

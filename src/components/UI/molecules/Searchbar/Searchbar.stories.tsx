@@ -8,7 +8,8 @@ const meta: Meta<typeof Searchbar> = {
   args: {
     placeholder: 'Busca empleos por cargo o profesion',
     searchButtonProps: searchPropsButton,
-    removeButtonProps: removePropsButton
+    removeButtonProps: removePropsButton,
+    termValue: 'Testing'
   }
 }
 
