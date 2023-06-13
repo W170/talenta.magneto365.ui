@@ -30,13 +30,12 @@ const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, className, m
                 <MenuIcon isActive={urlParam === slug ? true : false} {...props} />
               </Fragment>
             ))}
-            {menuResponsive.length > i + 1 ? <Divider spacing={isMobile ? 0 : 17} opacity={1} /> : null}
           </div>
         ))}
         <MenuIcon type="button" onClick={onClickSettings} Icon={Setting2} text={settingsText} />
       </div>
 
-      <Divider spacing={isMobile ? 0 : 17} opacity={1} />
+      <Divider spacing={isMobile ? 0 : 8} opacity={1} />
       <MenuIcon type="button" onClick={onClick} Icon={LogoutCurve} text={logoutText} />
     </div>
   )

@@ -24,10 +24,11 @@ export const withStyles = (c: React.FC<IconProps>): React.FC<IconProps> => style
   }
 
   .magneto-ui-image {
+    ${(props) => hover(props)}
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 23px;
+    width: ${(props) => (props.size ? props.size : 23)}px;
     height: auto;
     filter: brightness(0%);
   }

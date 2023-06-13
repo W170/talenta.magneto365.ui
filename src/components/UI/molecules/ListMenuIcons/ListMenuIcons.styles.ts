@@ -9,18 +9,18 @@ export const withStyles = (c: React.FC<IListMenuIcons>): React.FC<IListMenuIcons
     flex-direction: column;
   }
   p:nth-child(1) {
-    font-size: 13px;
+    font-size: 10px;
     color: ${(props) => props.theme.colors.disabledColors.gray3};
     padding-left: 10px;
     text-align: left;
     margin-bottom: 5px;
-    display: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     @media (min-width: ${screenSize.xxs}px) {
       display: block;
+      font-size: 13px;
     }
   }
 `

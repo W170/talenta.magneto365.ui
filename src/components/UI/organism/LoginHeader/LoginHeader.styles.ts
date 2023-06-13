@@ -30,7 +30,7 @@ export const withStyles = (Component: React.FC<ILoginHeader>): React.FC<ILoginHe
       .magneto-ui-left-section {
         display: inherit;
         gap: 20px;
-        margin-right: 3rem;
+
         button {
           padding: 0px;
         }
@@ -38,17 +38,18 @@ export const withStyles = (Component: React.FC<ILoginHeader>): React.FC<ILoginHe
 
       .magneto-ui-searchbar-section {
         display: inherit;
-        width: 35%;
+        width: 30%;
 
         @media (min-width: ${screenSize.xxl}px) {
-          width: 46%;
+          width: 40%;
         }
       }
 
-      .magneto-ui-tabs-section {
-        display: inherit;
+      .magneto-ui-user-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: auto;
-        margin-left: 20px;
       }
     }
 
