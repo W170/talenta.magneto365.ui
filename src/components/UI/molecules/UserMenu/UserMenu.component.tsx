@@ -1,22 +1,26 @@
 import React, { useState } from 'react'
-import { Popover } from '../../atoms'
+import { Avatar, Popover } from '../../atoms'
 import { ListMenuIcons } from '../ListMenuIcons'
 import { IMenuUser } from './UserMenu.interface'
+import { withStyles } from './UserMenu.styles'
 
-export const Component: React.FC<IMenuUser> = ({ listProps }) => {
+export const Component: React.FC<IMenuUser> = ({ listMenuUserProps, className, profileImage }) => {
   const [showPopover, setShowPopover] = useState(false)
 
   return (
-    <Popover
-      show={showPopover}
-      content={<ListMenuIcons {...listProps} />}
-      width={300}
-      positionX="right"
-      positionY="bottom"
-    >
-      <button onClick={() => setShowPopover(!showPopover)}>User Menu</button>
-    </Popover>
+    <div className={className}>
+      <Popover
+        show={showPopover}
+        content={<ListMenuIcons {...listMenuUserProps} />}
+        width={300}
+        positionX="left"
+        positionY="bottom"
+      >
+        <Avatar {...profileImage} onClick={() => setShowPopover(!showPopover)} />
+      </Popover>
+      {showPopover && <span onMouseEnter={() => setShowPopover(false)} className="magneto-ui-bghover" />}
+    </div>
   )
 }
 
-export const UserMenu = Component
+export const UserMenu = withStyles(Component)

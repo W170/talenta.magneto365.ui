@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { Avatar } from '../../atoms'
 import { LogoComponent } from '../../atoms'
 import { MainButton } from '../../atoms'
-import { Popover } from '../../atoms'
-import { Breadcrumbs } from '../../molecules'
+import { Breadcrumbs, UserMenu } from '../../molecules'
 import { HeaderTabs } from '../../molecules'
 import { ListMenuIcons } from '../../molecules'
 import { MobileDrawer } from '../../molecules'
@@ -34,7 +33,6 @@ const Component: React.FC<ILoginHeader> = ({
   MobileSearchbarProps
 }) => {
   const [showSearchBar, setShowSearchBar] = useState(false)
-  const [showPopover, setShowPopover] = useState(false)
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
 
   const toggleSearchBar = () => {
@@ -81,15 +79,7 @@ const Component: React.FC<ILoginHeader> = ({
   )
 
   const loginHeaderPopover = useMediaQuery(
-    <Popover
-      show={showPopover}
-      content={<ListMenuIcons {...listMenuUserProps} />}
-      width={300}
-      positionX="left"
-      positionY="bottom"
-    >
-      <Avatar {...profileImage} onClick={() => setShowPopover(!showPopover)} />
-    </Popover>,
+    <UserMenu listMenuUserProps={listMenuUserProps} profileImage={profileImage} />,
 
     {
       md: <Avatar {...profileImage} onClick={() => setToggleMobileDrawer(true)} />
@@ -111,8 +101,10 @@ const Component: React.FC<ILoginHeader> = ({
           {loginHeaderMobileSearchbarButton}
         </div>
         <div className="magneto-ui-searchbar-section">{loginHeaderSearchbar}</div>
-        <div className="magneto-ui-tabs-section">{loginHeaderOptionTabs}</div>
-        <div className="magneto-ui-right-section">{loginHeaderPopover}</div>
+        <div className="magneto-ui-user-section">
+          {loginHeaderOptionTabs}
+          {loginHeaderPopover}
+        </div>
       </div>
       <div className="magneto-ui-third-row">{loginHeaderBreadcrumbs}</div>
       <MobileDrawer isOpen={toggleMobileDrawer} onClose={() => setToggleMobileDrawer(false)}>
