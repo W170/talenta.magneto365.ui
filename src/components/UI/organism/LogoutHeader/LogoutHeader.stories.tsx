@@ -20,6 +20,7 @@ const rightLinkProps = {
 }
 
 const SearchbarProps = {
+  termValue: 'Value ',
   placeholder: 'Buscar',
   onSearch: () => {
     //

@@ -8,32 +8,32 @@ const Component: React.FC<ISearchbar> = ({
   onSearch,
   searchButtonProps,
   removeButtonProps,
-  className
+  className,
+  termValue
 }) => {
-  const [initialInput, setInitialInput] = useState('')
-  const [searchValue, setSearchValue] = useState('')
+  const [searchValue, setSearchValue] = useState(termValue)
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
     onSearch(searchValue)
-  }
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (!initialInput) {
-      setInitialInput(event.target.value)
-    }
-    setSearchValue(event.target.value)
+    localStorage.setItem('searchValue', searchValue)
   }
 
   const handleClearSearch = () => {
     setSearchValue('')
     onSearch('')
+    localStorage.removeItem('searchValue')
   }
 
   return (
     <div className={className}>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={searchValue} onChange={handleInputChange} placeholder={placeholder} />
+        <input
+          type="text"
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+          placeholder={placeholder}
+        />
         <div className="magneto-ui-searchbar-buttons">
           {searchValue && (
             <>

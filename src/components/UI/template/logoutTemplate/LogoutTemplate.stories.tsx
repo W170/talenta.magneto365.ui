@@ -22,7 +22,8 @@ const logoutHeaderProps: ILogoutHeader = {
   },
   searchbar: {
     placeholder: 'Buscar empleo',
-    onSearch: () => ({})
+    onSearch: () => ({}),
+    termValue: 'Magneto Empleos'
   },
   mobileSearchbar: {
     onSearch: () => ({})

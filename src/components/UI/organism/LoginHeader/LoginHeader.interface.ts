@@ -1,6 +1,7 @@
 import { IAvatar } from '../../atoms'
 import { IHeaderTabs, ISearchbar } from '../../molecules'
 import { ILogout, IMenuItems, ISettings } from '../../molecules/ListMenuIcons/ListMenuIcons.interface'
+import { IMobileSearchbar } from '../../molecules/MobileSearchbar/MobileSearchbar.interface'
 
 export interface ILoginHeader {
   profileImage: IAvatar
@@ -12,6 +13,7 @@ export interface ILoginHeader {
   processTabsProps: IHeaderTabs
   curriculumTabProps: IHeaderTabs
   searchbar: ISearchbar
+  MobileSearchbarProps: IMobileSearchbar
 }
 
 export interface IlistMenuUserProps {

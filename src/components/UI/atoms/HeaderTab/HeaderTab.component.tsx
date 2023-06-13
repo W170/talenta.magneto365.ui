@@ -6,9 +6,17 @@ const Component: React.FC<IHeaderTab> = ({ tabType, url, tabText, className }) =
   const TabLink = tabType === 'tabOption' ? url : ''
 
   return (
-    <a className={className} href={TabLink}>
-      <p>{tabText}</p>
-    </a>
+    <>
+      {tabType === 'tabTitle' ? (
+        <div className={className}>
+          <p>{tabText}</p>
+        </div>
+      ) : (
+        <a className={className} href={TabLink}>
+          <p>{tabText}</p>
+        </a>
+      )}
+    </>
   )
 }
 

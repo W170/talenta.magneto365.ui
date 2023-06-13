@@ -15,6 +15,10 @@ export const withStyles = (c: React.FC<IListMenuIcons>): React.FC<IListMenuIcons
     text-align: left;
     margin-bottom: 5px;
     display: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     @media (min-width: ${screenSize.xxs}px) {
       display: block;
     }

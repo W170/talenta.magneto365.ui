@@ -7,7 +7,8 @@ import {
   JobsTabsProps,
   ProcessTabsProps,
   listMenuUserProps,
-  SearchbarProps
+  SearchbarProps,
+  MobileSearchbarProps
 } from '../../../../constants/stories.constants'
 
 const meta: Meta<typeof LoginHeader> = {
@@ -20,7 +21,8 @@ const meta: Meta<typeof LoginHeader> = {
     jobsTabsProps: JobsTabsProps,
     processTabsProps: ProcessTabsProps,
     curriculumTabProps: CurriculumTabProps,
-    searchbar: SearchbarProps
+    searchbar: SearchbarProps,
+    MobileSearchbarProps
   }
 }
 
