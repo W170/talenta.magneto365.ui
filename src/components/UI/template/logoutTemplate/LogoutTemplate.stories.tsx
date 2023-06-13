@@ -24,6 +24,9 @@ const logoutHeaderProps: ILogoutHeader = {
     placeholder: 'Buscar empleo',
     onSearch: () => ({})
   },
+  mobileSearchbar: {
+    onSearch: () => ({})
+  },
   signInLink: {
     href: '/login',
     type: 'button' as const,
