@@ -4,7 +4,7 @@ import React from 'react'
 
 export const withStyles = (Component: React.FC<IAvatar>): React.FC<IAvatar> => {
   return styled(Component)`
-    z-index: 1;
+    z-index: 12;
     display: flex;
     flex-direction: column;
     width: 2.5rem;
