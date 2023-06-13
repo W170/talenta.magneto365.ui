@@ -25,6 +25,9 @@ const logoutHeaderProps: ILogoutHeader = {
     onSearch: () => ({}),
     termValue: 'Magneto Empleos'
   },
+  mobileSearchbar: {
+    onSearch: () => ({})
+  },
   signInLink: {
     href: '/login',
     type: 'button' as const,

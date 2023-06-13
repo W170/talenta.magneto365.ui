@@ -1,10 +1,11 @@
 import { ILinkProps, IMainButton } from '../../atoms'
-import { ISearchbar } from '../../molecules'
+import { IMobileSearchbar, ISearchbar } from '../../molecules'
 
 export interface ILogoutHeader {
   leftTabButton: ILinkProps
   rightTabButton: ILinkProps
   searchbar: ISearchbar
+  mobileSearchbar: IMobileSearchbar
   signInLink: ILinkProps
   signUpButton: IMainButton
   breadcrumbsText: string

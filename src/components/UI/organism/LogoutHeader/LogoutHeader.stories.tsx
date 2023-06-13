@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { LogoutHeader } from './LogoutHeader.component'
+import { IMobileSearchbar } from '../../molecules'
 
 const leftLinkProps = {
   type: 'link' as const,
@@ -32,6 +33,12 @@ const SignInProps = {
   href: '#'
 }
 
+const MobileSearchbarProps: IMobileSearchbar = {
+  onSearch: () => {
+    //
+  }
+}
+
 const SignUpProps = {
   buttonType: 'button' as const,
   buttonText: 'Crear Cuenta',
@@ -45,6 +52,7 @@ const meta: Meta<typeof LogoutHeader> = {
     leftTabButton: leftLinkProps,
     rightTabButton: rightLinkProps,
     searchbar: SearchbarProps,
+    mobileSearchbar: MobileSearchbarProps,
     signInLink: SignInProps,
     signUpButton: SignUpProps,
     breadcrumbsText: '/perfil/empleos/sugeridos'

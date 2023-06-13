@@ -13,7 +13,7 @@ const Component: React.FC<ISearchbar> = ({
 }) => {
   const [searchValue, setSearchValue] = useState(termValue)
 
-  const handleSubmit = (event: { preventDefault: () => void }) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
     onSearch(searchValue)
     localStorage.setItem('searchValue', searchValue)
@@ -47,6 +47,7 @@ const Component: React.FC<ISearchbar> = ({
     </div>
   )
 }
+
 /**
  * UI Molecule of a searchbar
  */

@@ -1,16 +1,16 @@
 export interface IMobileSearchbar {
   /**
-   * Sets the toggle state for the mobile searchbar
+   * Handler for the input value
    */
-  showMobileSearchbar?: boolean
+  onSearch: (searchValue: string) => void
   /**
    * Sets the input ref for the searchbar input
    */
   focusSearchInput?: boolean
   /**
-   * Handler for the input value
+   * Sets the toggle state for the mobile searchbar
    */
-  onSearch: (searchValue: string) => void
+  showMobileSearchbar?: boolean
   /**
    * Handler for the show mobile searchbar
    */
