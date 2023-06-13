@@ -26,7 +26,7 @@ export const withStyles = (Component: React.FC<IMobileSearchbar>): React.FC<IMob
     background-color: ${(props) => props.theme.colors.white};
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
-    z-index: 10;
+    z-index: 13;
 
     form {
       display: inherit;
