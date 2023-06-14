@@ -9,7 +9,7 @@ const Component: React.FC<ILogoutTemplate> = ({ logoutHeaderProps, headerDrawerM
 
   return (
     <React.Fragment>
-      <LogoutHeader {...logoutHeaderProps} onClick={() => setToggleModal(true)} />
+      <LogoutHeader {...logoutHeaderProps} onMenuClick={() => setToggleModal(true)} />
       <DrawerMenu {...headerDrawerMenuProps} isOpen={toggleModal} onClose={() => setToggleModal(false)} />
     </React.Fragment>
   )
