@@ -18,16 +18,22 @@ const Component: React.FC<IDrawerOrganism> = ({
   listMenuProps,
   createAccountButton,
   loginButton,
-  isOpen,
+  isOpen = false,
   onClose,
   className
 }) => {
   const { buttonText } = createAccountButton
   const { buttonText: buttonTextLogin } = loginButton
 
+  const handleClose = () => {
+    if (onClose) {
+      onClose()
+    }
+  }
+
   return (
     <div className={className}>
-      <Drawer direction="left" isOpen={isOpen} onClose={onClose}>
+      <Drawer direction="left" isOpen={isOpen} onClose={handleClose}>
         <HeaderDrawerTabs
           {...headerDrawerProps}
           logoProps={LogoProps}
