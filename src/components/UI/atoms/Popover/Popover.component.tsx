@@ -1,16 +1,12 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { IPopover } from './Popover.interface'
 import { withStyles } from './Popover.styles'
 
-const Component: React.FC<IPopover> = ({ children, className, content, show }) => {
-  const containerChildren = useRef<HTMLDivElement>(null)
-
+const Component: React.FC<IPopover> = ({ children, className, content }) => {
   return (
     <div className={className}>
-      {show && <div className="magneto-ui-popover">{content}</div>}
-      <div ref={containerChildren} className="magneto-ui-popover-children">
-        {children}
-      </div>
+      <div className="magneto-ui-popover">{content}</div>
+      <div className="magneto-ui-popover-children">{children}</div>
     </div>
   )
 }
