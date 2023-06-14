@@ -22,9 +22,9 @@ export interface IDrawerOrganism {
   /**
    *
    */
-  onClose?: () => void | undefined
+  onClose?: () => void
   /**
    *
    */
-  isOpen?: boolean | undefined
+  isOpen?: boolean
 }
