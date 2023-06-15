@@ -191,13 +191,13 @@ export const CreateAccountButton: IMainButton = {
 }
 
 export const LoginButton: IMainButton = {
-  buttonType: 'button',
+  buttonColor: 'white',
+  textColor: '#14141C',
+  spacing: 10,
   iconProps: {
     Icon: LoginCurve,
     hover: true
-  },
-  buttonColor: 'white',
-  spacing: 10
+  }
 }
 
 /**
