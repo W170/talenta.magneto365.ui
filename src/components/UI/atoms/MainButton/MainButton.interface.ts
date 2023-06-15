@@ -39,6 +39,6 @@ export interface IMainButton {
   /**
    * Optional click handler
    */
-  onClick?: (event: Event) => void
+  onClick?: (event: any) => void
   className?: string
 }
