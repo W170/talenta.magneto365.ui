@@ -22,9 +22,14 @@ export interface IDrawerOrganism {
   /**
    *
    */
+  isOpen?: boolean
+  /**
+   *
+   */
   onClose?: () => void
   /**
    *
    */
-  isOpen?: boolean
+  onSignUpClick: (event: any) => void
+  onLogInClick: () => void
 }

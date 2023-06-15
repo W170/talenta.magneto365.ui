@@ -20,9 +20,11 @@ const Component: React.FC<IDrawerOrganism> = ({
   loginButton,
   isOpen = false,
   onClose,
+  onSignUpClick,
+  onLogInClick,
   className
 }) => {
-  const { buttonText } = createAccountButton
+  const { buttonText: buttonTextSignUp } = createAccountButton
   const { buttonText: buttonTextLogin } = loginButton
 
   const handleClose = () => {
@@ -44,8 +46,13 @@ const Component: React.FC<IDrawerOrganism> = ({
           <ListMenuItems {...listMenuProps} />
         </MenuContainer>
         <ActiosContainer>
-          <MainButton buttonSize="full" {...CreateAccountButton} buttonText={buttonText} />
-          <MainButton buttonSize="full" {...LoginButton} buttonText={buttonTextLogin} />
+          <MainButton
+            buttonSize="full"
+            {...CreateAccountButton}
+            buttonText={buttonTextSignUp}
+            onClick={onSignUpClick}
+          />
+          <MainButton buttonSize="full" {...LoginButton} buttonText={buttonTextLogin} onClick={onLogInClick} />
           <ListIconLink listIcon={ListIcon} spacing={30} />
         </ActiosContainer>
       </Drawer>

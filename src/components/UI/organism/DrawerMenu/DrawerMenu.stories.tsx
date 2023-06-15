@@ -20,6 +20,14 @@ const rightLink = {
   }
 }
 
+const SignUp = () => {
+  //
+}
+
+const LogIn = () => {
+  //
+}
+
 const meta: Meta<typeof DrawerMenu> = {
   title: 'Organism/Drawer Menu',
   component: DrawerMenu,
@@ -32,7 +40,9 @@ const meta: Meta<typeof DrawerMenu> = {
     },
     loginButton: {
       buttonText: 'Iniciar Sesión'
-    }
+    },
+    onSignUpClick: SignUp,
+    onLogInClick: LogIn
   }
 }
 
