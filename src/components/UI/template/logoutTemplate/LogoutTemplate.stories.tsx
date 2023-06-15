@@ -69,13 +69,13 @@ const headerDrawerMenuProps: IDrawerOrganism = {
   },
   listMenuProps: listMenuProps,
   createAccountButton: {
-    buttonText: 'Crear Cuenta'
+    buttonText: 'Crear Cuenta',
+    onClick: SignUp
   },
   loginButton: {
-    buttonText: 'Iniciar Sesión'
-  },
-  onSignUpClick: SignUp,
-  onLogInClick: LogIn
+    buttonText: 'Iniciar Sesión',
+    onClick: LogIn
+  }
 }
 
 const meta: Meta<typeof LogoutTemplate> = {
