@@ -12,6 +12,7 @@ export const withStyles = (Component: React.FC<ISearchbar>): React.FC<ISearchbar
       display: inherit;
       justify-content: space-between;
       width: 100%;
+      height: 45px;
 
       input {
         flex: 1;

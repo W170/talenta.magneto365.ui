@@ -13,4 +13,5 @@ export interface ILoginTemplate {
   curriculumTabProps: IHeaderTabs
   searchbar: ISearchbar
   MobileSearchbarProps: IMobileSearchbar
+  showMenu?: boolean
 }

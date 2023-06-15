@@ -1,8 +1,11 @@
-import { IListMenuIcons } from '../../molecules/ListMenuIcons/ListMenuIcons.interface'
+import { IAvatar } from '../../atoms'
+import { IlistMenuUserProps } from '../../organism'
 
 export interface IMenuUser {
   /**
    * menu items props
    */
-  listProps: IListMenuIcons
+  profileImage: IAvatar
+  className?: string
+  listMenuUserProps: IlistMenuUserProps
 }

@@ -13,6 +13,15 @@ const positionYValue = ({ positionY }: IPopover) => {
   }
 }
 
+const showMenu = ({ show }: IPopover) => {
+  if (show) {
+    return css`
+      opacity: 1;
+      margin-top: 10px;
+    `
+  }
+}
+
 const positionXValue = ({ positionX }: IPopover) => {
   if (positionX === 'right') {
     return css`
@@ -43,8 +52,11 @@ export const withStyles = (c: React.FC<IPopover>): React.FC<IPopover> => styled(
     position: absolute;
     z-index: 12;
     padding: 15px;
+    opacity: 0;
     ${(props) => positionYValue(props)}
     ${(props) => positionXValue(props)}
+    ${(props) => showMenu(props)}
+    transition: all .2s ease-in-out;
   }
   .magneto-ui-popover-children {
     display: inline;
