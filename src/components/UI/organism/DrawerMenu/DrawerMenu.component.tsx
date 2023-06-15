@@ -20,12 +20,10 @@ const Component: React.FC<IDrawerOrganism> = ({
   loginButton,
   isOpen = false,
   onClose,
-  onSignUpClick,
-  onLogInClick,
   className
 }) => {
-  const { buttonText: buttonTextSignUp } = createAccountButton
-  const { buttonText: buttonTextLogin } = loginButton
+  const { buttonText: buttonTextSignUp, onClick: onSignUpClick } = createAccountButton
+  const { buttonText: buttonTextLogin, onClick: onLogInClick } = loginButton
 
   const handleClose = () => {
     if (onClose) {

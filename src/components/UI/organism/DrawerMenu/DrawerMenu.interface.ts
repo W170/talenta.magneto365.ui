@@ -27,9 +27,4 @@ export interface IDrawerOrganism {
    *
    */
   onClose?: () => void
-  /**
-   *
-   */
-  onSignUpClick: (event: any) => void
-  onLogInClick: () => void
 }

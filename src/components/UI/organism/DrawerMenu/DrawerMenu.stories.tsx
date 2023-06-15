@@ -36,13 +36,13 @@ const meta: Meta<typeof DrawerMenu> = {
     headerDrawerProps: { leftTabLink: leftLink, rightTabLink: rightLink },
     listMenuProps: listMenuProps,
     createAccountButton: {
-      buttonText: 'Crear Cuenta'
+      buttonText: 'Crear Cuenta',
+      onClick: SignUp
     },
     loginButton: {
-      buttonText: 'Iniciar Sesión'
-    },
-    onSignUpClick: SignUp,
-    onLogInClick: LogIn
+      buttonText: 'Iniciar Sesión',
+      onClick: LogIn
+    }
   }
 }
 
