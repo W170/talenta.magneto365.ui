@@ -9,6 +9,6 @@ export interface ILogoutHeader {
   signInLink: ILinkProps
   signUpButton: IMainButton
   breadcrumbsText: string
-  onClick?: () => void
+  onMenuClick?: () => void
   className?: string
 }

@@ -6,7 +6,7 @@ export interface ILogoComponent {
   /**
    * Put here the image of the logo to be rendered
    */
-  logo: string
+  logo?: string
   /**
    * Put here the image of the isologo to be rendered (IS NOT REQUIRED)
    */

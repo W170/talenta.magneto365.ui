@@ -66,9 +66,7 @@ const headerDrawerMenuProps: IDrawerOrganism = {
   },
   loginButton: {
     buttonText: 'Iniciar Sesión'
-  },
-  onClose: () => ({}),
-  isOpen: false
+  }
 }
 
 const meta: Meta<typeof LogoutTemplate> = {
