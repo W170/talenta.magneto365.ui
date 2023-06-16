@@ -12,6 +12,7 @@ import {
   LoginCurve,
   MessageQuestion,
   ProfileAdd,
+  Refresh,
   SearchNormal1,
   TaskSquare,
   Youtube
@@ -34,6 +35,7 @@ import {
   ISearchbar
 } from '../components/UI/molecules'
 import { IlistMenuUserProps } from '../components/UI/organism/LoginHeader'
+import { ILoading } from '../components/UI/atoms/Loading'
 
 /**
  *
@@ -77,6 +79,15 @@ export const SignInStyles = {
   textColor: '#14141C',
   buttonColor: 'transparent',
   hoverColor: '#14141C'
+}
+
+// Loading Atom
+
+export const LoadingProps: ILoading = {
+  loadingIcon: {
+    Icon: Refresh,
+    hover: false
+  }
 }
 
 //Logo Atom
