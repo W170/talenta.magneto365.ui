@@ -34,7 +34,7 @@ const Component: React.FC<IMainButton> = ({
   }
 
   return (
-    <button type={buttonType} className={`${className} ${buttonSize}`} onClick={onClick} disabled={loadingState}>
+    <button type={buttonType} className={`${className} ${buttonSize}`} onClick={onClick}>
       {renderContent()}
     </button>
   )
