@@ -37,6 +37,10 @@ export interface IMainButton {
    */
   isMobile?: boolean
   /**
+   *
+   */
+  loadingState?: boolean
+  /**
    * Optional click handler
    */
   onClick?: (event: any) => void
