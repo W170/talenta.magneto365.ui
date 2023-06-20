@@ -31,7 +31,7 @@ const Component: React.FC<ILogoutHeader> = ({
   className
 }) => {
   const { type, href, text } = signInLink
-  const { buttonText, onClick } = signUpButton
+  const { buttonText, loadingState, onClick } = signUpButton
   const [showSearchBar, setShowSearchBar] = useState(false)
   const isMobileButton = useMediaQuery(false, {
     md: true
@@ -99,7 +99,13 @@ const Component: React.FC<ILogoutHeader> = ({
 
   // SignUp Button Component
   const LogoutHeaderButtonSignUp = useMediaQuery(
-    <MainButton {...SignUpButtonStyle} buttonText={buttonText} onClick={onClick} isMobile={isMobileButton} />
+    <MainButton
+      {...SignUpButtonStyle}
+      buttonText={buttonText}
+      onClick={onClick}
+      loadingState={loadingState}
+      isMobile={isMobileButton}
+    />
   )
 
   // Breadcrumbs Component

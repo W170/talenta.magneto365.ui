@@ -20,6 +20,14 @@ const rightLink = {
   }
 }
 
+const SignUp = () => {
+  //
+}
+
+const LogIn = () => {
+  //
+}
+
 const meta: Meta<typeof DrawerMenu> = {
   title: 'Organism/Drawer Menu',
   component: DrawerMenu,
@@ -28,10 +36,12 @@ const meta: Meta<typeof DrawerMenu> = {
     headerDrawerProps: { leftTabLink: leftLink, rightTabLink: rightLink },
     listMenuProps: listMenuProps,
     createAccountButton: {
-      buttonText: 'Crear Cuenta'
+      buttonText: 'Crear Cuenta',
+      onClick: SignUp
     },
     loginButton: {
-      buttonText: 'Iniciar Sesión'
+      buttonText: 'Iniciar Sesión',
+      onClick: LogIn
     }
   }
 }

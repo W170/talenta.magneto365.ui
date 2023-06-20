@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { IDrawerOrganism, ILogoutHeader } from '../../organism'
 import { LogoutTemplate } from './LogoutTemplate.component'
-import { logoProps, listMenuProps } from '../../../../constants/stories.constants'
+import { listMenuProps } from '../../../../constants/stories.constants'
 
 const logoutHeaderProps: ILogoutHeader = {
   leftTabButton: {
@@ -40,9 +40,16 @@ const logoutHeaderProps: ILogoutHeader = {
   breadcrumbsText: '/perfil/empleos/sugeridos'
 }
 
+const SignUp = () => {
+  //
+}
+
+const LogIn = () => {
+  //
+}
+
 const headerDrawerMenuProps: IDrawerOrganism = {
   headerDrawerProps: {
-    logoProps: logoProps,
     leftTabLink: {
       type: 'link' as const,
       href: '#',
@@ -62,10 +69,12 @@ const headerDrawerMenuProps: IDrawerOrganism = {
   },
   listMenuProps: listMenuProps,
   createAccountButton: {
-    buttonText: 'Crear Cuenta'
+    buttonText: 'Crear Cuenta',
+    onClick: SignUp
   },
   loginButton: {
-    buttonText: 'Iniciar Sesión'
+    buttonText: 'Iniciar Sesión',
+    onClick: LogIn
   }
 }
 
