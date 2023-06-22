@@ -15,7 +15,7 @@ const Component: React.FC<ILoginTemplate> = ({ className, listMenuProps, ...prop
   return (
     <div className={className}>
       <LoginHeader {...props} onClick={() => setToggleDrawer(true)} />
-      <Drawer direction="left" isOpen={toggleDrawer} onClose={() => setToggleDrawer(false)}>
+      <Drawer isOpen={toggleDrawer} onClose={() => setToggleDrawer(false)}>
         <LogoComponent {...logoPropsLogin} />
         <MenuContainer>
           <ListMenuItems {...listMenuProps} />

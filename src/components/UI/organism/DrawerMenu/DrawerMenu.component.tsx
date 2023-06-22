@@ -33,7 +33,7 @@ const Component: React.FC<IDrawerOrganism> = ({
 
   return (
     <div className={className}>
-      <Drawer direction="left" isOpen={isOpen} onClose={handleClose}>
+      <Drawer isOpen={isOpen} onClose={handleClose}>
         <HeaderDrawerTabs
           {...headerDrawerProps}
           logoProps={LogoProps}

@@ -6,7 +6,6 @@ const meta: Meta<typeof Drawer> = {
   component: Drawer,
   tags: ['autodocs'],
   args: {
-    direction: 'left',
     isOpen: false
   },
   argTypes: {}

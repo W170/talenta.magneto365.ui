@@ -1,5 +1,3 @@
-type Direction = 'left' | 'right'
-
 export interface IDrawer {
   className?: string
   /**
@@ -17,11 +15,6 @@ export interface IDrawer {
   /**
    * you can change drawer direction
    */
-  direction: Direction
-  /**
-   * you can change width
-   */
-  width?: number
 }
 
 export interface IDrawerPortal {
