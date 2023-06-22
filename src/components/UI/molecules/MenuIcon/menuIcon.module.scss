@@ -1,0 +1,38 @@
+.magneto-ui-menu-icon {
+  background: none;
+  border: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: all 0.3s ease-in-out;
+  height: 15px;
+  padding: 18px 5px;
+  @media (min-width: 375px) {
+    //TODO: ADD THEME
+    padding: 25px 10px;
+    height: 40px;
+  }
+  &:hover {
+    background-color: rgb(221, 221, 221); //TODO: ADD THEME AND disabledColors.gray;
+  }
+  .magneto-ui-menu-text {
+    font-size: 10px;
+    @media (min-width: 375px) {
+      //TODO: ADD THEME
+      font-size: 14px;
+    }
+    margin: 0;
+    color: black;
+  }
+}
+
+.isActive {
+  background-color: rgb(228, 227, 227); //TODO: ADD THEME AND disabledColors.gray2;
+
+  &:hover {
+    background-color: rgb(228, 227, 227); //TODO: ADD THEME AND disabledColors.gray2;
+  }
+}
