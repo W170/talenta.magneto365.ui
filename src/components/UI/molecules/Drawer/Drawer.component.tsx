@@ -9,7 +9,7 @@ const Component: React.FC<IDrawer> = ({ children, onClose, isOpen }) => {
   const showDrawer = isOpen ? 'show' : 'hidden'
   return (
     <DrawerPortal>
-      <div className={`${style['magneto-ui-drawer']} ${style[showDrawer]}`}>
+      <div className={`${style['magneto-ui-drawer']}`}>
         <aside className={`${style[showDrawer]}`}>
           <button className={style['magneto-ui-close-button']} onClick={onClose}>
             <IconItem Icon={Add} hover={false} />
