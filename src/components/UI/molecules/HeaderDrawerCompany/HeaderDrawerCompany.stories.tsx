@@ -9,7 +9,6 @@ const meta: Meta<typeof HeaderDrawerCompany> = {
     logoProps: LogoProps,
     logoCompany: LogoCompany,
     logoCompanyAlt: 'Logo Sura',
-    spacing: 20,
     flag,
     flagAlt: 'Colombia'
   }

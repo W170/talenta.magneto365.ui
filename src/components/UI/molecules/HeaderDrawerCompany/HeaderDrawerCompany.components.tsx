@@ -1,19 +1,11 @@
 import React from 'react'
 import { LogoComponent } from '../../atoms'
 import { IHeaderDrawerCompany } from './HeaderDrawerCompany.interface'
-import { withStyles } from './HeaderDrawerCompany.styles'
+import style from './headerDrawerCompany.module.scss'
 
-const Component: React.FC<IHeaderDrawerCompany> = ({
-  className,
-  logo,
-  alt,
-  logoCompany,
-  logoCompanyAlt,
-  flag,
-  flagAlt
-}) => {
+const Component: React.FC<IHeaderDrawerCompany> = ({ logo, alt, logoCompany, logoCompanyAlt, flag, flagAlt }) => {
   return (
-    <div className={className}>
+    <div className={style['header-drawer-company']}>
       <LogoComponent logo={logo} alt={alt} />
       <LogoComponent logo={logoCompany} alt={logoCompanyAlt} />
       <img src={flag} alt={flagAlt} />
@@ -21,4 +13,4 @@ const Component: React.FC<IHeaderDrawerCompany> = ({
   )
 }
 
-export const HeaderDrawerCompany = withStyles(Component)
+export const HeaderDrawerCompany = Component

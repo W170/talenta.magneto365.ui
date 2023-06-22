@@ -7,7 +7,6 @@ export interface IHeaderDrawerCompany {
   logoCompanyAlt?: string
   logo: string
   alt: string
-  spacing?: number
   flag?: string
   flagAlt?: string
 }
