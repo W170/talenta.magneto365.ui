@@ -1,0 +1,21 @@
+.magneto-ui-drawer-menu {
+  display: flex;
+}
+
+.menu-container {
+  @media (min-width: 768px) {
+    //TODO: ADD THEME
+    margin-top: 40px;
+  }
+}
+
+.actionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  @media (min-width: 768px) {
+    //TODO: ADD THEME
+    gap: 25px;
+    margin-top: 40px;
+  }
+}
