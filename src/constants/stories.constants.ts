@@ -413,7 +413,7 @@ export const ListIcon: IListIcon[] = [
 
 export const listMenuProps: IListMenuItems = {
   menuList: MenuList,
-  urlParam: 'empleos-por-empresa'
+  urlParam: 'empleos-por-empresas'
 }
 
 /**

@@ -26,5 +26,4 @@ export interface IPopover {
    * This property is the rendering condition for showing and hiding the popover
    */
   show: boolean
-  className?: string
 }
