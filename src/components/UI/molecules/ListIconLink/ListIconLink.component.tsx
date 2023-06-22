@@ -1,19 +1,18 @@
 import React from 'react'
 import { IListIconLink, IListIcon } from './'
 import { IconItem } from '../../atoms/Icon'
+import style from './listIconLink.module.scss'
 
-import { withStyles } from './ListIconLink.styles'
-
-const Component: React.FC<IListIconLink> = ({ listIcon, size, color, className, hover = true }) => {
+const Component: React.FC<IListIconLink> = ({ listIcon, size, hover = true, spacing }) => {
   return (
-    <div className={className}>
+    <div style={{ gap: `${spacing}px` }} className={style['magneto-ui-list-icon']}>
       {listIcon?.map(({ Icon, url, assetsIcon }: IListIcon, index: number) => (
         <a key={index} href={url} target="_blank" rel="noopener noreferrer">
-          <IconItem hover={hover} size={size} color={color} Icon={Icon} assetsIcon={assetsIcon} />
+          <IconItem hover={hover} size={size} Icon={Icon} assetsIcon={assetsIcon} />
         </a>
       ))}
     </div>
   )
 }
 
-export const ListIconLink = withStyles(Component)
+export const ListIconLink = Component
