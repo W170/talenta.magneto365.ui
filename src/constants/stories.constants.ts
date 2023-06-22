@@ -94,9 +94,7 @@ export const LoadingProps: ILoading = {
 export const LogoProps: ILogoComponent = {
   logo: LogoMagneto,
   isoType: IsoLogoMagneto,
-  alt: 'Logo Magneto',
-  logoSize: 110,
-  isoSize: 38
+  alt: 'Logo Magneto'
 }
 
 export const LogoCompany = 'https://www.magneto365.com/wp-content/uploads/2022/08/img-grupo-sura.png'
@@ -438,16 +436,12 @@ export const listMenuProps: IListMenuItems = {
 
 export const logoProps: ILogoComponent = {
   alt: 'Logo Magneto',
-  logoSize: 100,
-  isoSize: 30,
   logo: LogoMagneto,
   isoType: IsoLogoMagneto
 }
 
 export const logoPropsLogin: ILogoComponent = {
   alt: 'Logo Magneto',
-  logoSize: 120,
-  isoSize: 30,
   logo: LogoMagneto,
   isoType: IsoLogoMagneto
 }

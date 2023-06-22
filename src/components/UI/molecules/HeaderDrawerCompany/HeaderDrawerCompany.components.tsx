@@ -6,18 +6,16 @@ import { withStyles } from './HeaderDrawerCompany.styles'
 const Component: React.FC<IHeaderDrawerCompany> = ({
   className,
   logo,
-  logoSize,
   alt,
   logoCompany,
   logoCompanyAlt,
-  logoCompanySize,
   flag,
   flagAlt
 }) => {
   return (
     <div className={className}>
-      <LogoComponent logoSize={logoSize} logo={logo} alt={alt} />
-      <LogoComponent logo={logoCompany} alt={logoCompanyAlt} logoSize={logoCompanySize} />
+      <LogoComponent logo={logo} alt={alt} />
+      <LogoComponent logo={logoCompany} alt={logoCompanyAlt} />
       <img src={flag} alt={flagAlt} />
     </div>
   )

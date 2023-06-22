@@ -15,13 +15,4 @@ export interface ILogoComponent {
    * Put here text alt  to seo
    */
   alt?: string
-  className?: string
-  /**
-   * Put here number size to logo
-   */
-  logoSize?: number
-  /**
-   * Put here number size to islogo
-   */
-  isoSize?: number
 }
