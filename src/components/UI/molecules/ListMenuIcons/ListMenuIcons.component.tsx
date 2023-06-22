@@ -2,18 +2,18 @@ import React, { Fragment } from 'react'
 import { Divider } from '../../atoms'
 import { MenuIcon } from '../MenuIcon'
 import { LogoutCurve, Setting2 } from 'iconsax-react'
-import { withStyles } from './ListMenuIcons.styles'
 import { IListMenuIcons } from './ListMenuIcons.interface'
 import { useMediaQuery } from '../../../hooks'
+import style from './listMenuIcons.module.scss'
 
-const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, className, menuItems1440, logout, settings }) => {
+const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, menuItems1440, logout, settings }) => {
   const { logoutText, onClick } = logout
   const { settingsText, onClick: onClickSettings } = settings
 
   const menuResponsive = useMediaQuery(menuItems1440, { lg: menuItems })
 
   return (
-    <div className={className}>
+    <div className={style['mangeto-ui-list-menu-icons']}>
       <div>
         {menuResponsive?.map(({ title = '', items }, i: number) => (
           <div key={i}>
@@ -27,11 +27,10 @@ const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, className, m
         ))}
         <MenuIcon type="button" onClick={onClickSettings} Icon={Setting2} text={settingsText} />
       </div>
-
       <Divider />
       <MenuIcon type="button" onClick={onClick} Icon={LogoutCurve} text={logoutText} />
     </div>
   )
 }
 
-export const ListMenuIcons = withStyles(Component)
+export const ListMenuIcons = Component
