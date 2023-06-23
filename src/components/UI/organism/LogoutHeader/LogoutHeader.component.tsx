@@ -28,6 +28,7 @@ const Component: React.FC<ILogoutHeader> = ({
   signUpButton,
   breadcrumbsText,
   onMenuClick,
+  homeUrl,
   className
 }) => {
   const { type, href, text } = signInLink
@@ -120,7 +121,7 @@ const Component: React.FC<ILogoutHeader> = ({
       <div className="magneto-ui-second-row">
         <div className="magneto-ui-left-section">
           {LogoutHeaderMenuButton}
-          {LogoutHeaderLogo}
+          <a href={homeUrl}>{LogoutHeaderLogo}</a>
           {LogoutHeaderMobileSearchbarButton}
         </div>
         <div className="magneto-ui-middle-section">{LogoutHeaderSearchbar}</div>

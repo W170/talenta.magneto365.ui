@@ -12,7 +12,8 @@ const Component: React.FC<IHeaderDrawerTabs> = ({
   rightTabLink,
   leftTabStyle,
   rightTabStyle,
-  className
+  className,
+  homeUrl
 }) => {
   const isMobileLogo = useMediaQuery(false, {
     md: true
@@ -20,7 +21,9 @@ const Component: React.FC<IHeaderDrawerTabs> = ({
 
   return (
     <div className={className}>
-      {logoProps && <LogoComponent isoView={isMobileLogo} {...logoProps} />}
+      <a href={homeUrl}>
+        <LogoComponent isoView={isMobileLogo} {...logoProps} />
+      </a>
       <Tab>
         <TabButton tabButtonLink={leftTabLink} tabButtonStyle={leftTabStyle?.tabButtonStyle} />
         <TabButton tabButtonLink={rightTabLink} tabButtonStyle={rightTabStyle?.tabButtonStyle} />

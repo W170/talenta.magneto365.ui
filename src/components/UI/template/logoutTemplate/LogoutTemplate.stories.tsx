@@ -37,7 +37,8 @@ const logoutHeaderProps: ILogoutHeader = {
     buttonType: 'button' as const,
     buttonText: 'Crear cuenta'
   },
-  breadcrumbsText: '/perfil/empleos/sugeridos'
+  breadcrumbsText: '/perfil/empleos/sugeridos',
+  homeUrl: '/home'
 }
 
 const SignUp = () => {
@@ -50,6 +51,7 @@ const LogIn = () => {
 
 const headerDrawerMenuProps: IDrawerOrganism = {
   headerDrawerProps: {
+    homeUrl: '/home',
     leftTabLink: {
       type: 'link' as const,
       href: '#',

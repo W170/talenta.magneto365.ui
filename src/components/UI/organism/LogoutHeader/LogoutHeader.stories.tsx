@@ -55,7 +55,8 @@ const meta: Meta<typeof LogoutHeader> = {
     mobileSearchbar: MobileSearchbarProps,
     signInLink: SignInProps,
     signUpButton: SignUpProps,
-    breadcrumbsText: '/perfil/empleos/sugeridos'
+    breadcrumbsText: '/perfil/empleos/sugeridos',
+    homeUrl: '/home'
   }
 }
 

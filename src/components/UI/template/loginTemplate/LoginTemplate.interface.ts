@@ -14,4 +14,5 @@ export interface ILoginTemplate {
   searchbar: ISearchbar
   MobileSearchbarProps: IMobileSearchbar
   showMenu?: boolean
+  homeUrl: string
 }
