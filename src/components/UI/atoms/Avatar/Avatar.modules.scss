@@ -1,6 +1,6 @@
 @import '../../../../shared/stylesheets/variables.scss';
 
-.avatar {
+.avatarComponent {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -8,13 +8,13 @@
   height: 2.5rem;
   cursor: pointer;
   z-index: 12;
-}
 
-.avatar img {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  object-fit: cover;
+  img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 }
 
 .magneto-ui-default-avatar {
