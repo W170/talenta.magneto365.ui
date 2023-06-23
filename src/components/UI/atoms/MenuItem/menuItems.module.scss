@@ -1,3 +1,5 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
 .magneto-ui-menu-item {
   display: flex;
   align-items: center;
@@ -8,20 +10,18 @@
   padding: 2px;
   margin: 5px 0;
   font-size: 12px;
-  @media (min-width: 480px) {
-    //TODO: ADD THEME PX
+  @media (min-width: v.$screen-xs) {
     margin-bottom: 10px;
     font-size: 16px;
     height: 32px;
   }
-  @media (min-width: 576px) {
-    //TODO: ADD THEME PX
+  @media (min-width: v.$screen-sm) {
     height: 40px;
   }
 
   &:hover {
     cursor: pointer;
-    background-color: rgb(241, 241, 241); //TODO: ADD THEME GRAY disabledColors.gray
+    background-color: v.$disabled-color-gray;
     svg {
       opacity: 1;
     }
@@ -38,17 +38,17 @@
 
   p {
     position: absolute;
-    color: 'black';
+    color: black;
     transition: all 0.3s ease-in-out;
     margin: 0;
   }
 }
 
 .is-active {
-  background-color: rgb(223, 223, 223); //TODO: ADD THEME GRAY disabledColors.gray2;
+  background-color: v.$disabled-color-gray2;
   &:hover {
     cursor: pointer;
-    background-color: rgb(223, 223, 223); //TODO: ADD THEME GRAY disabledColors.gray2;
+    background-color: v.$disabled-color-gray2;
   }
   svg {
     opacity: 1;
