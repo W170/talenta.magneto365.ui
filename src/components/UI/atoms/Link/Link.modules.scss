@@ -1,0 +1,96 @@
+@import '../../../../shared/stylesheets/variables.scss';
+
+@mixin link($visitedColor, $hoverColor) {
+  color: var($visitedColor, var($lightSilver));
+  text-decoration: none;
+
+  :hover {
+    cursor: pointer;
+    color: var($hoverColor, var($vibrantGreen));
+  }
+
+  :visited {
+    color: $visitedColor;
+  }
+}
+
+@mixin link-button($bgColor, $color) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: max-content;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  background-color: $bgColor;
+  color: $color;
+
+  p {
+    font-style: normal;
+    font-weight: var($bold);
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
+  }
+
+  :hover {
+    background-color: var($lavenderGray);
+  }
+
+  :visited {
+    color: var($color);
+  }
+}
+
+@mixin link-mobile-button {
+  display: flex;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+}
+
+.linkComponent {
+  &[data-link-type='link'] {
+    $HColor: null;
+    $VColor: null;
+
+    &[data-hover-color] {
+      $HColor: attr(data-hover-color);
+    }
+    &[data-visited-color] {
+      $VColor: attr(data-visited-color);
+    }
+    @include link($VColor, $HColor);
+  }
+
+  &[data-link-type='button'] {
+    $BgColor: null;
+    $TColor: null;
+    &[data-button-color] {
+      $BgColor: attr(data-button-color);
+    }
+    &[data-text-color] {
+      $TColor: attr(data-text-color);
+    }
+    @include link-button($BgColor, $TColor);
+  }
+
+  &[data-is-mobile='true'] {
+    @include link-mobile-button();
+  }
+}
+
+// &[data-link-type='link']:visited {
+//   @include link();
+// }
+
+// &[data-link-type='button'] {
+//   $buttonColor: attr(data-button-color);
+//   @include link-button($buttonColor);
+// }
+
+// &[data-is-mobile='true'] {
+//   @include link-mobile-button();
+// }

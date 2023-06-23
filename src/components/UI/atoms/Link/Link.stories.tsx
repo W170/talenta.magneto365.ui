@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Link } from './Link.component'
+import Link from './Link.component'
 import { Login } from 'iconsax-react'
 
 const meta: Meta<typeof Link> = {
@@ -13,7 +13,8 @@ const meta: Meta<typeof Link> = {
       textColor: '#14141C',
       buttonColor: 'transparent',
       hoverColor: '#14141C'
-    }
+    },
+    isMobile: false
   }
 }
 
@@ -25,7 +26,14 @@ export const Anchor: Story = {}
 
 export const Button: Story = {
   args: {
-    type: 'button'
+    type: 'button',
+    href: '#',
+    text: 'Iniciar Sesion',
+    linkStyles: {
+      textColor: '#14141C',
+      buttonColor: 'red',
+      hoverColor: '#14141C'
+    }
   }
 }
 
