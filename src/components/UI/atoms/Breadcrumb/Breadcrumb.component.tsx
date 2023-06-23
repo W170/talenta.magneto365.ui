@@ -1,17 +1,17 @@
 import React from 'react'
 import { IBreadcrumb } from './Breadcrumb.interface'
-import { withStyles } from './Breadcrumb.styles'
+import styles from './Breadcrumb.modules.scss'
 
-const Component: React.FC<IBreadcrumb> = ({ breadcrumbText, className }) => {
+const Breadcrumb: React.FC<IBreadcrumb> = ({ breadcrumbText }) => {
   const breadcrumbSplit = breadcrumbText.split('/')
   return (
-    <div className={className}>
+    <div className={styles.breadcrumb}>
       {breadcrumbSplit.map((bc, i) => (
         <p key={i}>
           {i > 0 && '/'} {breadcrumbSplit.length > i + 1 && bc}
         </p>
       ))}
-      <p className="magneto-ui-bc-active">{breadcrumbSplit[breadcrumbSplit.length - 1]}</p>
+      <p className={styles['magneto-ui-bc-active']}>{breadcrumbSplit[breadcrumbSplit.length - 1]}</p>
     </div>
   )
 }
@@ -19,4 +19,5 @@ const Component: React.FC<IBreadcrumb> = ({ breadcrumbText, className }) => {
 /**
  * Atom UI of breadcrumb
  */
-export const Breadcrumb = withStyles(Component)
+
+export default Breadcrumb

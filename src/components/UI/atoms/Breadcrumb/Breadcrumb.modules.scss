@@ -1,0 +1,21 @@
+@import '../../../../shared/stylesheets/variables.scss';
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+}
+
+p {
+  align-items: center;
+  color: $dustyLilac;
+  font-style: normal;
+  font-weight: $regular;
+  font-size: $fontSizeSmall;
+  line-height: 13px;
+  margin: 0 5px 0 0;
+  text-transform: capitalize;
+}
+
+.magneto-ui-bc-active {
+  font-weight: $bold;
+}
