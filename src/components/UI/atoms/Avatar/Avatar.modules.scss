@@ -1,0 +1,28 @@
+@import '../../../../shared/stylesheets/variables.scss';
+
+.avatar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  z-index: 12;
+}
+
+.avatar img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.magneto-ui-default-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: $turquoiseBlue;
+}
