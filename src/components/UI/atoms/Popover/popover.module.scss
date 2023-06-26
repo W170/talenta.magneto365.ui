@@ -1,6 +1,10 @@
 .magneto-ui-popover-container {
+  //TODO: @JMonsalveTL review this changes
+  display: flex;
+  align-items: center;
+  // width: 40px;
+  //end TODO
   position: relative;
-  width: 40px;
   height: 40px;
   .magneto-ui-popover {
     background-color: white;

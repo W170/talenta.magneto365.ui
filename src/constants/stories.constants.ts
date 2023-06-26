@@ -1,6 +1,8 @@
 import {
   Add,
   ArchiveTick,
+  ArrowDown2,
+  ArrowSwapVertical,
   BrifecaseTick,
   ClipboardClose,
   DocumentText,
@@ -36,6 +38,7 @@ import {
 } from '../components/UI/molecules'
 import { IlistMenuUserProps } from '../components/UI/organism/LoginHeader'
 import { ILoading } from '../components/UI/atoms/Loading'
+import { IMenuFilterItem } from '../components/UI/molecules/MenuFilter/MenuFilter.interface'
 
 /**
  *
@@ -530,3 +533,36 @@ export const listMenuUserProps: IlistMenuUserProps = {
   logout: Logout,
   settings: Settings
 }
+
+//FilterBottomHeader props
+
+export const menuFilterButton = {
+  Icon: ArrowDown2,
+  hover: false,
+  size: 17
+}
+
+export const iconFilterOrder = {
+  Icon: ArrowSwapVertical,
+  hover: false,
+  size: 17
+}
+
+export const optionsMenuFilter: IMenuFilterItem[] = [
+  {
+    field: 'salary_show',
+    label: 'Salario'
+  },
+  {
+    field: 'publish_date',
+    label: 'Fecha de publicación'
+  },
+  {
+    field: 'experience_months_number',
+    label: 'Experiencia requerida'
+  },
+  {
+    field: 'education_level_id',
+    label: 'Nivel de estudios'
+  }
+]

@@ -1,0 +1,41 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  max-width: 98vw;
+  object-fit: contain;
+}
+
+.magneto-ui-section-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.magneto-ui-btn-text {
+  font-size: 14px;
+  color: v.$text-color-black;
+  width: 100%;
+  margin: 0;
+}
+
+.magneto-ui-section-menu {
+  display: flex;
+  align-items: center;
+}
+
+.magneto-ui-btn-order {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hidden {
+  @media screen and (max-width: v.$screen-md) {
+    display: none;
+  }
+}
