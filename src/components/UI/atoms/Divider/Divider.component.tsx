@@ -1,10 +1,9 @@
 import React from 'react'
-import { IDivider } from './Divider.interface'
-import { withStyles } from './Divider.styles'
+import style from './divider.module.scss'
 
-const Component: React.FC<IDivider> = ({ className }) => <div className={className} />
+const Component: React.FC = () => <div className={style.divider} />
 
 /**
  * Atom UI Divider Component
  */
-export const Divider = withStyles(Component)
+export const Divider = Component

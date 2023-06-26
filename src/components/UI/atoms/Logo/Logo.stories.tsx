@@ -7,7 +7,7 @@ const meta: Meta<typeof LogoComponent> = {
   title: 'Atoms/Logo',
   component: LogoComponent,
   tags: ['autodocs'],
-  args: { alt: 'Logo Magneto', isoType: IsoLogoMagneto, logo: LogoMagneto, isoView: false, isoSize: 50, logoSize: 100 },
+  args: { alt: 'Logo Magneto', isoType: IsoLogoMagneto, logo: LogoMagneto, isoView: false },
   argTypes: {}
 }
 

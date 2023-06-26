@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { ListMenuItems } from './ListMenuItems.component'
 import { MenuList } from '../../../../constants/stories.constants'
 
-const urlParams = 'empleos-por-empresa'
+const urlParams = 'empleos-por-empresas'
 
 const meta: Meta<typeof ListMenuItems> = {
   title: 'Molecules/List Menu Items',

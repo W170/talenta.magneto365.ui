@@ -1,0 +1,24 @@
+.magneto-ui-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: auto;
+  color: 'black';
+}
+
+.magneto-ui-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 23px;
+  height: auto;
+  filter: brightness(0%);
+}
+
+.magneto-ui-hover {
+  transition: all ease-in 0.2s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}

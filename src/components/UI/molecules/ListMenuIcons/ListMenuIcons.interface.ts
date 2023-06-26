@@ -4,7 +4,6 @@ export interface IListMenuIcons {
   urlParam: string
   menuItems: IMenuItems[]
   menuItems1440?: IMenuItems[]
-  className?: string
   logout: ILogout
   settings: ISettings
 }

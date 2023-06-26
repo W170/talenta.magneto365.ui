@@ -7,8 +7,6 @@ export interface IListIconLink {
   spacing?: number
   listIcon: IListIcon[]
   size?: number
-  color?: string
-  className?: string
   hover?: boolean
 }
 
