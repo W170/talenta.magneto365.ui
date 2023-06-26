@@ -33,7 +33,7 @@ const meta: Meta<typeof DrawerMenu> = {
   component: DrawerMenu,
   tags: ['autodocs'],
   args: {
-    headerDrawerProps: { leftTabLink: leftLink, rightTabLink: rightLink },
+    headerDrawerProps: { leftTabLink: leftLink, rightTabLink: rightLink, homeUrl: '/home' },
     listMenuProps: listMenuProps,
     createAccountButton: {
       buttonText: 'Crear Cuenta',

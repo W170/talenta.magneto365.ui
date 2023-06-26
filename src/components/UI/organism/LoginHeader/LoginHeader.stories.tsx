@@ -22,7 +22,8 @@ const meta: Meta<typeof LoginHeader> = {
     processTabsProps: ProcessTabsProps,
     curriculumTabProps: CurriculumTabProps,
     searchbar: SearchbarProps,
-    MobileSearchbarProps
+    MobileSearchbarProps,
+    homeUrl: '/home'
   }
 }
 

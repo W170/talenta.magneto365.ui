@@ -11,4 +11,5 @@ export interface ILogoutHeader {
   breadcrumbsText: string
   onMenuClick?: () => void
   className?: string
+  homeUrl: string
 }
