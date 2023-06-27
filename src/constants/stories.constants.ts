@@ -545,7 +545,7 @@ export const menuFilterButton = {
 export const iconFilterOrder = {
   Icon: ArrowSwapVertical,
   hover: false,
-  size: 17
+  size: 20
 }
 
 export const optionsMenuFilter: IMenuFilterItem[] = [
