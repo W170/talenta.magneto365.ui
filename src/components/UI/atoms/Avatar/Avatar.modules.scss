@@ -1,4 +1,4 @@
-@import '../../../../shared/stylesheets/variables.scss';
+@use '../../../../shared/stylesheets/variables.scss' as v;
 
 .avatarComponent {
   position: relative;
@@ -24,5 +24,5 @@
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background-color: $turquoiseBlue;
+  background-color: v.$color-green;
 }
