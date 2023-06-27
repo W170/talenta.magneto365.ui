@@ -105,43 +105,47 @@ export const flag =
 export const SignUpButtonStyle: IMainButton = {
   buttonType: 'button',
   buttonSize: 'medium',
-  textColor: '#090467',
-  buttonColor: '#70ECD4',
+  buttonStyles: {
+    buttonColor: '#70ECD4',
+    textColor: '#090467',
+    spacing: 10
+  },
   iconProps: {
     Icon: ProfileAdd,
     hover: true,
     color: '#090467 '
-  },
-  spacing: 10
+  }
 }
 
 export const MobileSearchbarButtonProps: IMainButton = {
-  buttonText: '',
   buttonType: 'button',
+  buttonStyles: {
+    buttonColor: 'transparent'
+  },
+  buttonText: '',
   iconProps: {
     Icon: SearchNormal1,
     hover: false,
     color: '#000096',
     size: 20
-  },
-  buttonColor: 'transparent'
+  }
 }
 
 export const MenuButtonProps: IMainButton = {
-  buttonText: '',
   buttonType: 'button',
+  buttonStyles: {
+    buttonColor: 'transparent'
+  },
   iconProps: {
     Icon: HambergerMenu,
     hover: false,
     color: '#14141C',
     size: 20
-  },
-  buttonColor: 'transparent'
+  }
 }
 
 export const searchPropsButton: IMainButton = {
   buttonType: 'submit' as const,
-  buttonText: '',
   iconProps: {
     Icon: SearchNormal1,
     hover: false,
@@ -152,7 +156,7 @@ export const searchPropsButton: IMainButton = {
 
 export const removePropsButton: IMainButton = {
   buttonType: 'reset' as const,
-  buttonText: '',
+  buttonSize: 'medium',
   iconProps: {
     Icon: Add,
     hover: false,
@@ -164,45 +168,52 @@ export const removePropsButton: IMainButton = {
 
 export const searchMobileProps: IMainButton = {
   buttonType: 'submit',
-  buttonText: '',
+  buttonStyles: {
+    buttonColor: 'transparent'
+  },
   iconProps: {
     Icon: SearchNormal1,
     hover: false,
     color: '#A3A3B5',
     size: 16
-  },
-  buttonColor: 'transparent'
+  }
 }
 
 export const closeSearchMobileProps: IMainButton = {
-  buttonText: '',
   buttonType: 'button',
+  buttonStyles: {
+    buttonColor: 'transparent'
+  },
   iconProps: {
     Icon: Add,
     hover: false,
     color: '#14141C',
     size: 25,
     variant: 'Linear'
-  },
-  buttonColor: 'transparent'
+  }
 }
 
 export const CreateAccountButton: IMainButton = {
   buttonType: 'button',
+  buttonStyles: {
+    buttonColor: '#70ECD4',
+    textColor: '#090467',
+    spacing: 10
+  },
   iconProps: {
     Icon: ProfileAdd,
     hover: true,
     color: '#090467 '
-  },
-  buttonColor: '#70ECD4',
-  textColor: '#090467',
-  spacing: 10
+  }
 }
 
 export const LoginButton: IMainButton = {
-  buttonColor: 'white',
-  textColor: '#14141C',
-  spacing: 10,
+  buttonType: 'button',
+  buttonStyles: {
+    buttonColor: 'white',
+    textColor: '#14141C',
+    spacing: 10
+  },
   iconProps: {
     Icon: LoginCurve,
     hover: true
