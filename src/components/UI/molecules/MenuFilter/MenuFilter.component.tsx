@@ -30,6 +30,7 @@ const MenuFilter: React.FC<IMenuFilter> = ({ filterItems, textOrderFilter, setFi
   return (
     <div ref={ref}>
       <Popover
+        widthBase={180}
         show={showPopover}
         content={<ListMenuFilter filterItems={filterItems} setFilter={setFilter} />}
         width={250}
