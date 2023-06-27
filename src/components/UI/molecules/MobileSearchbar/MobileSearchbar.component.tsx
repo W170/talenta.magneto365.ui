@@ -1,10 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { MainButton } from '../../atoms'
 import { IMobileSearchbar } from './MobileSearchbar.interface'
-import { withStyles } from './MobileSearchbar.styles'
+import styles from './MobileSearchbar.modules.scss'
+
 import { closeSearchMobileProps, searchMobileProps } from '../../../../constants/stories.constants'
 
-const Component: React.FC<IMobileSearchbar> = ({ onSearch, onClick, focusSearchInput, className, termValue = '' }) => {
+const Component: React.FC<IMobileSearchbar> = ({
+  termValue = '',
+  onSearch,
+  onClick,
+  focusSearchInput,
+  showMobileSearchbar
+}) => {
   const [searchValue, setSearchValue] = useState(termValue)
   const searchInputRef = useRef<HTMLInputElement>(null)
 
@@ -28,11 +35,11 @@ const Component: React.FC<IMobileSearchbar> = ({ onSearch, onClick, focusSearchI
   }, [focusSearchInput])
 
   return (
-    <div className={className}>
+    <div className={styles.MobileSearchbarComponent} data-show-mobile-searchbar={showMobileSearchbar}>
       <form onSubmit={handleSubmit}>
-        <MainButton {...searchMobileProps} />
+        <MainButton className={styles.buttonOpen} {...searchMobileProps} />
         <input type="text" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} ref={searchInputRef} />
-        <MainButton onClick={handleClearSearch} {...closeSearchMobileProps} className="close-button" />
+        <MainButton className={styles.buttonClose} onClick={handleClearSearch} {...closeSearchMobileProps} />
       </form>
     </div>
   )
@@ -42,4 +49,4 @@ const Component: React.FC<IMobileSearchbar> = ({ onSearch, onClick, focusSearchI
  * Molecule UI component for MobileSearchbar
  */
 
-export const MobileSearchbar = withStyles(Component)
+export const MobileSearchbar = Component
