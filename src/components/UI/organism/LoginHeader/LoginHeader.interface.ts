@@ -14,6 +14,7 @@ export interface ILoginHeader {
   curriculumTabProps: IHeaderTabs
   searchbar: ISearchbar
   MobileSearchbarProps: IMobileSearchbar
+  homeUrl: string
 }
 
 export interface IlistMenuUserProps {

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { DrawerMenu } from '../../organism/DrawerMenu'
 import { LogoutHeader } from '../../organism/LogoutHeader'
-
 import { ILogoutTemplate } from './LogoutTemplate.interface'
 
 const Component: React.FC<ILogoutTemplate> = ({ logoutHeaderProps, headerDrawerMenuProps }) => {

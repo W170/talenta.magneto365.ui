@@ -1,0 +1,38 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-menu-icon {
+  background: none;
+  border: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: all 0.3s ease-in-out;
+  height: 15px;
+  padding: 18px 5px;
+  @media (min-width: v.$screen-xxs) {
+    padding: 25px 10px;
+    height: 40px;
+  }
+  &:hover {
+    background-color: v.$disabled-color-gray;
+  }
+  .magneto-ui-menu-text {
+    font-size: 10px;
+    @media (min-width: v.$screen-xxs) {
+      font-size: 14px;
+    }
+    margin: 0;
+    color: black;
+  }
+}
+
+.isActive {
+  background-color: v.$disabled-color-gray2;
+
+  &:hover {
+    background-color: v.$disabled-color-gray2;
+  }
+}

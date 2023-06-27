@@ -1,20 +1,7 @@
-import styled, { css } from 'styled-components'
-
-import { IMoblieDrawer } from './MobileDrawer.interface'
-
-const toggleDrawer = ({ isOpen = false }) => {
-  if (isOpen) {
-    return css<IMoblieDrawer>`
-      bottom: 0;
-    `
-  }
-}
-
-export const withStyles = (c: React.FC<IMoblieDrawer>): React.FC<IMoblieDrawer> => styled(c)`
+.magneto-ui-mobile-drawer {
   & > aside {
     background-color: white;
     padding: 20px;
-    bottom: -160%;
     left: 0;
     position: fixed;
     width: 100vw;
@@ -45,24 +32,23 @@ export const withStyles = (c: React.FC<IMoblieDrawer>): React.FC<IMoblieDrawer> 
         }
       }
     }
-    ${(props) => toggleDrawer(props)}
   }
-  & > span {
-    position: fixed;
-    background-color: black;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    z-index: 90;
-    cursor: pointer;
-    -webkit-animation-duration: 0.5s;
-    animation-duration: 0.5s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn;
-  }
+}
+
+.background-drawer {
+  position: fixed;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -79,4 +65,12 @@ export const withStyles = (c: React.FC<IMoblieDrawer>): React.FC<IMoblieDrawer> 
       opacity: 0.7;
     }
   }
-`
+}
+
+.show {
+  bottom: 0;
+}
+
+.hidden {
+  bottom: -160%;
+}

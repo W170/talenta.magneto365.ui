@@ -2,7 +2,7 @@ import React from 'react'
 import { MainButton } from '../../atoms'
 import { Drawer, HeaderDrawerTabs, ListIconLink, ListMenuItems } from '../../molecules'
 import { IDrawerOrganism } from './DrawerMenu.interface'
-import { ActiosContainer, MenuContainer, withStyles } from './DrawerMenu.styles'
+import style from './drawerMenu.module.scss'
 
 import {
   LogoProps,
@@ -19,8 +19,7 @@ const Component: React.FC<IDrawerOrganism> = ({
   createAccountButton,
   loginButton,
   isOpen = false,
-  onClose,
-  className
+  onClose
 }) => {
   const { buttonText: buttonTextSignUp, onClick: onSignUpClick, loadingState } = createAccountButton
   const { buttonText: buttonTextLogin, onClick: onLogInClick } = loginButton
@@ -32,18 +31,18 @@ const Component: React.FC<IDrawerOrganism> = ({
   }
 
   return (
-    <div className={className}>
-      <Drawer direction="left" isOpen={isOpen} onClose={handleClose}>
+    <div className={style['magneto-ui-drawer-menu']}>
+      <Drawer isOpen={isOpen} onClose={handleClose}>
         <HeaderDrawerTabs
           {...headerDrawerProps}
           logoProps={LogoProps}
           leftTabStyle={DrawerLeftTabStyles}
           rightTabStyle={DrawerRightTabStyles}
         />
-        <MenuContainer>
+        <div className={style['menu-container']}>
           <ListMenuItems {...listMenuProps} />
-        </MenuContainer>
-        <ActiosContainer>
+        </div>
+        <div className={style.actionsContainer}>
           <MainButton
             buttonSize="full"
             {...CreateAccountButton}
@@ -53,10 +52,10 @@ const Component: React.FC<IDrawerOrganism> = ({
           />
           <MainButton buttonSize="full" {...LoginButton} buttonText={buttonTextLogin} onClick={onLogInClick} />
           <ListIconLink listIcon={ListIcon} spacing={30} />
-        </ActiosContainer>
+        </div>
       </Drawer>
     </div>
   )
 }
 
-export const DrawerMenu = withStyles(Component)
+export const DrawerMenu = Component

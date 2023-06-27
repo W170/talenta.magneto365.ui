@@ -30,7 +30,8 @@ const Component: React.FC<ILoginHeader> = ({
   processTabsProps,
   curriculumTabProps,
   searchbar,
-  MobileSearchbarProps
+  MobileSearchbarProps,
+  homeUrl
 }) => {
   const [showSearchBar, setShowSearchBar] = useState(false)
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
@@ -97,7 +98,7 @@ const Component: React.FC<ILoginHeader> = ({
       <div className="magneto-ui-second-row">
         <div className="magneto-ui-left-section">
           {loginHeaderMenuButton}
-          {loginHeaderLogo}
+          <a href={homeUrl}>{loginHeaderLogo}</a>
           {loginHeaderMobileSearchbarButton}
         </div>
         <div className="magneto-ui-searchbar-section">{loginHeaderSearchbar}</div>

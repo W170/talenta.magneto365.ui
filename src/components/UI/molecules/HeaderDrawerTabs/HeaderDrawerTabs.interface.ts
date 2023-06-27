@@ -9,4 +9,5 @@ export interface IHeaderDrawerTabs {
   rightTabStyle?: ITabButton
   spacing?: number
   className?: string
+  homeUrl: string
 }
