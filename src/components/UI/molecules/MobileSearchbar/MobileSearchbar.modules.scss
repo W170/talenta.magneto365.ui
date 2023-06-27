@@ -10,19 +10,9 @@
 }
 
 @mixin buttonOpen {
-  width: 20px;
-  height: 20px;
-  padding: 0px;
-  border-radius: 0px;
 }
 
 @mixin buttonClose {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  svg {
-    transform: rotate(45deg);
-  }
 }
 
 .MobileSearchbarComponent {
@@ -68,6 +58,22 @@
 
     &:focus-visible {
       outline: none;
+    }
+  }
+
+  .magneto-ui-search-button {
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    border-radius: 0px;
+  }
+
+  .magneto-ui-remove-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      transform: rotate(45deg);
     }
   }
 
