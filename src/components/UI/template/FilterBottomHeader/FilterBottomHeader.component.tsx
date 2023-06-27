@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Setting4 } from 'iconsax-react'
-import { iconFilterOrder } from '../../../../constants/stories.constants'
+import { iconFilterOrder, menuFilterButton } from '../../../../constants/stories.constants'
 import { MenuIcon } from '../../molecules'
 import { MenuFilter } from '../../molecules/MenuFilter'
 import { IconItem } from '../../atoms'
 import { IFilterBottomHeader } from './FilterBottomHeader.interface'
 import style from './FilterBottomHeader.module.scss'
+import { useMediaQuery } from '../../../hooks'
+import MobileMenuFilter from '../../organism/MobileMenuFilter/MobileMenuFilter.component'
 
 const FilterBottomHeader: React.FC<IFilterBottomHeader> = ({
   textButtonFilter,
@@ -14,29 +16,53 @@ const FilterBottomHeader: React.FC<IFilterBottomHeader> = ({
   openFilterDrawer,
   orderFilter,
   filterItems,
-  setFilter
+  setFilter,
+  orderByText
 }) => {
-  return (
-    <div className={style['magneto-ui-filter']}>
-      <div className={style['magneto-ui-section-filter']}>
-        <MenuIcon
-          type="button"
-          text={textButtonFilter}
-          Icon={Setting4}
-          onClick={openFilterDrawer}
-          size={17}
-          isActive={true}
-        />
-        <p className={`${style['magneto-ui-btn-text']} ${style.hidden}`}>{filterSummary}</p>
-      </div>
-      <div className={style['magneto-ui-section-menu']}>
-        <MenuFilter filterItems={filterItems} textOrderFilter={textOrderFilter} setFilter={setFilter} />
+  const [showMenu, setShowMenu] = useState(false)
+  const filterMenu = useMediaQuery(
+    <MenuFilter filterItems={filterItems} textOrderFilter={textOrderFilter} setFilter={setFilter} />,
 
-        <button className={`${style['magneto-ui-btn-order']} ${style.hidden}`} onClick={orderFilter}>
-          <IconItem {...iconFilterOrder} />
+    {
+      md: (
+        <button className={style['magneto-ui-btn-menu']} onClick={() => setShowMenu(true)}>
+          <p className={style['magneto-ui-btn-text']}>{textOrderFilter}</p>
+          <IconItem {...menuFilterButton} />
         </button>
+      )
+    }
+  )
+
+  return (
+    <>
+      <div className={style['magneto-ui-filter']}>
+        <div className={style['magneto-ui-section-filter']}>
+          <MenuIcon
+            type="button"
+            text={textButtonFilter}
+            Icon={Setting4}
+            onClick={openFilterDrawer}
+            size={17}
+            isActive={true}
+          />
+          <p className={`${style['magneto-ui-btn-text']} ${style.hidden}`}>{filterSummary}</p>
+        </div>
+        <div className={style['magneto-ui-section-menu']}>
+          {filterMenu}
+          <button className={`${style['magneto-ui-btn-order']} ${style.hidden}`} onClick={orderFilter}>
+            <IconItem {...iconFilterOrder} />
+          </button>
+        </div>
       </div>
-    </div>
+      <MobileMenuFilter
+        orderByText={orderByText}
+        isOpen={showMenu}
+        onClose={() => setShowMenu(!showMenu)}
+        filterItems={filterItems}
+        setFilter={setFilter}
+        orderFilter={orderFilter}
+      />
+    </>
   )
 }
 

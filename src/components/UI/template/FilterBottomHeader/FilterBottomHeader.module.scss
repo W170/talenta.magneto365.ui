@@ -5,8 +5,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 20px;
-  max-width: 98vw;
+  width: 100%;
   object-fit: contain;
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(64, 64, 64, 0.206);
 }
 
 .magneto-ui-section-filter {
@@ -14,6 +16,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  width: auto;
 }
 
 .magneto-ui-btn-text {
@@ -21,6 +24,16 @@
   color: v.$text-color-black;
   width: 100%;
   margin: 0;
+}
+
+.magneto-ui-btn-menu {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .magneto-ui-section-menu {

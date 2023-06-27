@@ -29,4 +29,8 @@ export interface IFilterBottomHeader {
    *This function change the filter with the selected option
    */
   setFilter: (menuItem: { key: string }) => void
+  /**
+   * this is the mobile text to alphabetical order
+   */
+  orderByText: string
 }

@@ -13,7 +13,8 @@ const meta: Meta<typeof FilterBottomHeader> = {
     orderFilter: () => console.log('orderFilter'),
     filterItems: optionsMenuFilter,
     textOrderFilter: 'Fecha de publicación',
-    setFilter: (menuItem: { key: string }) => console.log(menuItem.key)
+    setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
+    orderByText: 'Organizar por'
   }
 }
 
