@@ -1,12 +1,12 @@
-@import '../../../../shared/stylesheets/variables.scss';
+@use '../../../../shared/stylesheets/variables.scss' as v;
 
 @mixin link {
-  color: var(--visited-color, $lightSilver);
+  color: var(--visited-color, v.$dis-color-gray4);
   text-decoration: none;
 
   :hover {
     cursor: pointer;
-    color: var(--hover-color, $vibrantGreen);
+    color: var(--hover-color, v.$color-primary-green);
   }
 
   :visited {
@@ -28,14 +28,14 @@
 
   p {
     font-style: normal;
-    font-weight: $bold;
+    font-weight: 700;
     font-size: 14px;
     line-height: 17px;
     margin: 0;
   }
 
   &:hover {
-    background-color: $lavenderGray;
+    background-color: v.$disabled-color-gray;
   }
 
   &:visited {
