@@ -23,7 +23,7 @@ export interface LinkElement {
 
 export interface ILinkProps {
   /**
-   * Sets link type
+   * Sets the link type for style purpose
    */
   type: LinkType
   /**
@@ -31,7 +31,7 @@ export interface ILinkProps {
    */
   href: string
   /**
-   * Sets inside text for link
+   * Sets text for link
    */
   text: string
   /**
@@ -43,8 +43,7 @@ export interface ILinkProps {
    */
   isMobile?: boolean
   /**
-   * Sets the link styles including icon
+   * Sets the link styles
    */
   linkStyles?: LinkElement
-  className?: string
 }

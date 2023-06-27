@@ -1,20 +1,14 @@
-import React from 'react'
+import React, { useMemo, CSSProperties } from 'react'
 import { ILinkProps } from './Link.interface'
-import styles from './Link.modules.scss' // Import the CSS file
+import styles from './Link.modules.scss'
 import { IconItem } from '../Icon'
+import { toCSSVariables } from '../../../../shared/utils/Function'
 
-const Link: React.FC<ILinkProps> = ({ type, href, text, linkStyles, iconProps, isMobile }) => {
+const Component: React.FC<ILinkProps> = ({ type, href, text, iconProps, linkStyles, isMobile }) => {
+  const stylesValue: CSSProperties = useMemo(() => toCSSVariables(linkStyles), [linkStyles])
+
   return (
-    <a
-      className={styles.linkComponent}
-      href={href}
-      data-link-type={type}
-      data-is-mobile={isMobile}
-      data-button-color={linkStyles?.buttonColor}
-      data-text-color={linkStyles?.textColor}
-      data-hover-color={linkStyles?.hoverColor}
-      data-visited-color={linkStyles?.visitedColor}
-    >
+    <a className={styles.linkComponent} style={stylesValue} href={href} data-link-type={type} data-is-mobile={isMobile}>
       {iconProps && <IconItem {...iconProps} />}
       {!isMobile && <p>{text}</p>}
     </a>
@@ -25,4 +19,4 @@ const Link: React.FC<ILinkProps> = ({ type, href, text, linkStyles, iconProps, i
  * Atomic UI component for Link
  */
 
-export default Link
+export const Link = Component
