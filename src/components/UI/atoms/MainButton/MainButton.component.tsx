@@ -12,18 +12,21 @@ const Component: React.FC<IMainButton> = ({
   buttonText,
   buttonStyles,
   loadingState,
-  isMobile,
   iconProps,
+  isMobile,
+  className,
   onClick
 }) => {
   const stylesValue: CSSProperties = useMemo(() => toCSSVariables(buttonStyles), [buttonStyles])
+
+  const buttonClass = `${styles.MainButtonComponent} ${className}`.trim()
 
   const renderContent = () => {
     if (loadingState) {
       return (
         <>
           <Loading {...LoadingProps} />
-          {!isMobile && <p>{}</p>}
+          {!isMobile && <p>{buttonText}</p>}
         </>
       )
     }
@@ -38,7 +41,7 @@ const Component: React.FC<IMainButton> = ({
 
   return (
     <button
-      className={styles.MainButtonComponent}
+      className={buttonClass}
       type={buttonType}
       style={stylesValue}
       onClick={onClick}
