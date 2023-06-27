@@ -9,6 +9,7 @@ import { toCSSVariables } from '../../../../shared/utils/Function'
 const Component: React.FC<IMainButton> = ({
   buttonType,
   buttonSize,
+  buttonText,
   buttonStyles,
   loadingState,
   isMobile,
@@ -30,7 +31,7 @@ const Component: React.FC<IMainButton> = ({
     return (
       <>
         {iconProps && <IconItem {...iconProps} />}
-        {!isMobile && <p>{buttonStyles?.buttonText}</p>}
+        {!isMobile && <p>{buttonText}</p>}
       </>
     )
   }

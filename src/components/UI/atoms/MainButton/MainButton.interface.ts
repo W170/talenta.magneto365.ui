@@ -9,10 +9,6 @@ export interface ButtonElement {
    */
   buttonColor?: string
   /**
-   * Sets the text inside button
-   */
-  buttonText?: string
-  /**
    * Sets the text color
    */
   textColor?: string
@@ -31,6 +27,10 @@ export interface IMainButton {
    * Sets the button size
    */
   buttonSize?: ButtonSizes
+  /**
+   * Sets the text inside button
+   */
+  buttonText?: string
   /**
    * Props for the Icon Atom
    */

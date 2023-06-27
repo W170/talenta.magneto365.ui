@@ -1,4 +1,4 @@
-@import '../../../../shared/stylesheets/variables.scss';
+@use '../../../../shared/stylesheets/variables.scss' as v;
 
 @mixin smallButton {
   padding: 8px 16px;
@@ -71,7 +71,6 @@
   p {
     font-style: normal;
     font-weight: 700;
-    font-weight: $bold;
     font-size: 14px;
     line-height: 17px;
     margin: 0px;
