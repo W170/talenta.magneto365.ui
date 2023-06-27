@@ -1,12 +1,12 @@
 import React from 'react'
 import { Breadcrumb, IconItem } from '../../atoms'
 import { IBreadcrumbs } from './Breadcrumbs.interface'
-import { withStyles } from './Breadcrumbs.styles'
+import styles from './Breadcrumbs.modules.scss'
 import { iconPropsBreadCrumb } from '../../../../constants/stories.constants'
 
-const Component: React.FC<IBreadcrumbs> = ({ breadcrumbText, className }) => {
+const Component: React.FC<IBreadcrumbs> = ({ breadcrumbText }) => {
   return (
-    <div className={className}>
+    <div className={styles.BreadcrumbsComponent}>
       <IconItem {...iconPropsBreadCrumb} />
       <Breadcrumb breadcrumbText={breadcrumbText} />
     </div>
@@ -17,4 +17,4 @@ const Component: React.FC<IBreadcrumbs> = ({ breadcrumbText, className }) => {
  * Molecule UI component for breadcrums information
  */
 
-export const Breadcrumbs = withStyles(Component)
+export const Breadcrumbs = Component
