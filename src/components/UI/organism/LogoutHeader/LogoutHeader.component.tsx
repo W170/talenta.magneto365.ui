@@ -3,7 +3,7 @@ import { Link, LogoComponent, MainButton } from '../../atoms'
 import { Breadcrumbs, MobileSearchbar, Tab, TabButton, Searchbar } from '../../molecules'
 
 import { ILogoutHeader } from './LogoutHeader.interface'
-import { withStyles } from './LogoutHeader.styles'
+import styles from './LogoutHeader.modules.scss'
 import { useMediaQuery } from '../../../hooks'
 
 import {
@@ -28,8 +28,7 @@ const Component: React.FC<ILogoutHeader> = ({
   signUpButton,
   breadcrumbsText,
   onMenuClick,
-  homeUrl,
-  className
+  homeUrl
 }) => {
   const { type, href, text } = signInLink
   const { buttonText, loadingState, onClick } = signUpButton
@@ -115,22 +114,22 @@ const Component: React.FC<ILogoutHeader> = ({
   })
 
   return (
-    <header className={className}>
+    <header className={styles.LogoutHeaderComponent}>
       {LogoutHeaderMobileSearchbar}
-      <div className="magneto-ui-first-row">{LogoutHeaderTab}</div>
-      <div className="magneto-ui-second-row">
-        <div className="magneto-ui-left-section">
+      <div className={styles['magneto-ui-first-row']}>{LogoutHeaderTab}</div>
+      <div className={styles['magneto-ui-second-row']}>
+        <div className={styles['magneto-ui-left-section']}>
           {LogoutHeaderMenuButton}
           <a href={homeUrl}>{LogoutHeaderLogo}</a>
           {LogoutHeaderMobileSearchbarButton}
         </div>
-        <div className="magneto-ui-middle-section">{LogoutHeaderSearchbar}</div>
-        <div className="magneto-ui-right-section">
+        <div className={styles['magneto-ui-middle-section']}>{LogoutHeaderSearchbar}</div>
+        <div className={styles['magneto-ui-right-section']}>
           {LogoutHeaderLinkSignIn}
           {LogoutHeaderButtonSignUp}
         </div>
       </div>
-      <div className="magneto-ui-third-row">{LogoutHeaderBreadcrumbs}</div>
+      <div className={styles['magneto-ui-third-row']}>{LogoutHeaderBreadcrumbs}</div>
     </header>
   )
 }
@@ -139,4 +138,4 @@ const Component: React.FC<ILogoutHeader> = ({
  * UI Header Organisim for 1024 resolution/size
  */
 
-export const LogoutHeader = withStyles(Component)
+export const LogoutHeader = Component
