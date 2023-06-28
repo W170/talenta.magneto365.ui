@@ -7,7 +7,5 @@ export interface IHeaderDrawerTabs {
   rightTabLink?: ILinkProps
   leftTabStyle?: ITabButton
   rightTabStyle?: ITabButton
-  spacing?: number
-  className?: string
   homeUrl: string
 }

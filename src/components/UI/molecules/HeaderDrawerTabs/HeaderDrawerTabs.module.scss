@@ -1,0 +1,9 @@
+@use '../../../../shared/stylesheets/variables' as v;
+.magneto-ui-header-drawer {
+  display: flex;
+  gap: 20px;
+  @media (min-width: v.$screen-md) {
+    gap: 5px;
+  }
+  align-items: center;
+}

@@ -46,13 +46,13 @@ export default [
             }
             const hash = stringHash(css).toString(36).substring(0, 5)
             const { base } = path.parse(
-              filename.replace(/\.module\.scss/g, '').replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`)
+              filename.replace(/\.modules?\.scss/g, '').replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`)
             )
             return `mg_${base}_${name}_${hash}`.replace(/_{2,}/g, '_')
           }
         },
         extract: 'css/magneto.ui.lib.min.css',
-        extensions: ['.module.scss'],
+        extensions: ['.module.scss', '.modules.scss'],
         use: ['sass'],
         minimize: true,
         sourceMap: false

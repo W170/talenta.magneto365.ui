@@ -3,8 +3,8 @@ import { LogoComponent } from '../../atoms'
 import { Tab } from '../Tab'
 import { TabButton } from '../TabButton'
 import { IHeaderDrawerTabs } from './HeaderDrawerTabs.interface'
-import { withStyles } from './HeaderDrawerTabs.styles'
 import { useMediaQuery } from '../../../hooks'
+import styles from './HeaderDrawerTabs.module.scss'
 
 const Component: React.FC<IHeaderDrawerTabs> = ({
   logoProps,
@@ -12,7 +12,6 @@ const Component: React.FC<IHeaderDrawerTabs> = ({
   rightTabLink,
   leftTabStyle,
   rightTabStyle,
-  className,
   homeUrl
 }) => {
   const isMobileLogo = useMediaQuery(false, {
@@ -20,7 +19,7 @@ const Component: React.FC<IHeaderDrawerTabs> = ({
   })
 
   return (
-    <div className={className}>
+    <div className={styles.magnetoUiHeaderDrawer}>
       <a href={homeUrl}>
         <LogoComponent isoView={isMobileLogo} {...logoProps} />
       </a>
@@ -32,4 +31,4 @@ const Component: React.FC<IHeaderDrawerTabs> = ({
   )
 }
 
-export const HeaderDrawerTabs = withStyles(Component)
+export const HeaderDrawerTabs = Component
