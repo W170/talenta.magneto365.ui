@@ -14,7 +14,9 @@ export interface IMobileSearchbar {
   /**
    * Handler for the show mobile searchbar
    */
-  termValue?: any
   onClick?: () => void
-  className?: string
+  /**
+   * Sets the value for the input in the searchbar
+   */
+  termValue?: any
 }
