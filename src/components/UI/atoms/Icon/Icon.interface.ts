@@ -1,6 +1,9 @@
 import { IconProps as IconPropsIconsSax, Icon } from 'iconsax-react'
 
 export interface IconProps extends IconPropsIconsSax {
+  /**
+   * Here is the assetsIcon component
+   */
   assetsIcon?: string
   /**
    * Here is the icon component

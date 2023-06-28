@@ -28,6 +28,7 @@ export const Component: React.FC<IMenuUser> = ({ listMenuUserProps, className, p
   return (
     <div ref={ref} className={className}>
       <Popover
+        widthBase={40}
         show={showPopover}
         content={<ListMenuIcons {...listMenuUserProps} />}
         width={300}

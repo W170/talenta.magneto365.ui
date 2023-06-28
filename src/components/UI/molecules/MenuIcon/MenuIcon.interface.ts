@@ -4,9 +4,9 @@ type itemType = 'button' | 'link'
 
 export interface IMenuIcon {
   /**
-   * You must set the icon here
+   * You can set the icon here
    */
-  Icon: Icon
+  Icon?: Icon
   /**
    * Here is the menu text
    */
@@ -31,4 +31,12 @@ export interface IMenuIcon {
    *You can add a function if the type is button
    */
   onClick?: () => void
+  /**
+   * This is the size for icon
+   */
+  size?: number
+  /**
+   * You can set the iconUrl here
+   */
+  assetsIcon?: string
 }
