@@ -7,7 +7,10 @@ const leftLinkProps = {
   href: '#',
   text: 'Busco Empleo',
   linkStyles: {
-    textColor: '#000'
+    textColor: '#000',
+    buttonColor: '#FFF',
+    hoverColor: '#000',
+    visitedColor: '#282828'
   }
 }
 const rightLinkProps = {
@@ -15,7 +18,9 @@ const rightLinkProps = {
   href: '#',
   text: 'Soy empresa',
   linkStyles: {
-    textColor: '#A3A3B5'
+    textColor: '#A3A3B5',
+    buttonColor: 'transparent',
+    hoverColor: '#A3A3B5'
   }
 }
 

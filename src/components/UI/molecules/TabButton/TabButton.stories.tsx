@@ -1,35 +1,40 @@
+import { ILinkProps } from '../../atoms'
 import { TabButton } from './TabButton.component'
 import { StoryObj, Meta } from '@storybook/react'
 
-const link = {
+const link: ILinkProps = {
   type: 'link' as const,
   href: '#',
   text: 'Busco Empleo',
   linkStyles: {
+    buttonColor: '#FFF',
     textColor: '#000',
-    buttonColor: '#FFF'
+    hoverColor: '#000',
+    visitedColor: '#000'
   }
 }
 const tabButton = {
   boxShadow: true,
   tabButtonTextSize: '11px',
-  tabButtonTextWeight: '400'
+  tabButtonTextWeight: '700'
 }
 
 const meta: Meta<typeof TabButton> = {
   title: 'Molecules/Tab Button',
   component: TabButton,
-  args: {
-    tabButtonLink: link,
-    tabButtonStyle: tabButton
-  }
+  args: {}
 }
 
 export default meta
 
 type Story = StoryObj<typeof TabButton>
 
-export const Default: Story = {}
+export const Default: Story = {
+  args: {
+    tabButtonLink: link,
+    tabButtonStyle: tabButton
+  }
+}
 
 export const Untoggle: Story = {
   args: {

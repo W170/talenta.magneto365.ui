@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useMemo, CSSProperties } from 'react'
 import { ILinkProps } from './Link.interface'
-import { withStyles } from './Link.styles'
+import styles from './Link.modules.scss'
 import { IconItem } from '../Icon'
+import { toCSSVariables } from '../../../../shared/utils/Function'
 
-const Component: React.FC<ILinkProps> = ({ href, text, iconProps, isMobile = false, className }) => {
+const Component: React.FC<ILinkProps> = ({ type, href, text, iconProps, linkStyles, isMobile }) => {
+  const stylesValue: CSSProperties = useMemo(() => toCSSVariables(linkStyles), [linkStyles])
+
   return (
-    <a className={className} href={href}>
+    <a className={styles.linkComponent} style={stylesValue} href={href} data-link-type={type} data-is-mobile={isMobile}>
       {iconProps && <IconItem {...iconProps} />}
       {!isMobile && <p>{text}</p>}
     </a>
@@ -15,4 +18,5 @@ const Component: React.FC<ILinkProps> = ({ href, text, iconProps, isMobile = fal
 /**
  * Atomic UI component for Link
  */
-export const Link = withStyles(Component)
+
+export const Link = Component

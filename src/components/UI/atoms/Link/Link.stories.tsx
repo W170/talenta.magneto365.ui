@@ -5,6 +5,14 @@ import { Login } from 'iconsax-react'
 const meta: Meta<typeof Link> = {
   title: 'Atoms/Link',
   component: Link,
+  args: {}
+}
+
+export default meta
+
+type Story = StoryObj<typeof Link>
+
+export const Anchor: Story = {
   args: {
     type: 'link',
     href: '#',
@@ -17,29 +25,34 @@ const meta: Meta<typeof Link> = {
   }
 }
 
-export default meta
-
-type Story = StoryObj<typeof Link>
-
-export const Anchor: Story = {}
-
 export const Button: Story = {
   args: {
-    type: 'button'
+    type: 'button',
+    href: '#',
+    text: 'Hello world',
+    linkStyles: {
+      textColor: '#14141C',
+      buttonColor: 'transparent',
+      hoverColor: '#14141C',
+      visitedColor: '#14141C'
+    }
   }
 }
 
 export const IconButton: Story = {
   args: {
     type: 'button',
+    href: '#',
+    text: 'Iniciar Sesion',
     iconProps: {
       Icon: Login,
-      hover: true
+      hover: false
     },
     linkStyles: {
       textColor: '#14141C',
       buttonColor: 'transparent',
-      hoverColor: '#14141C'
+      hoverColor: '#14141C',
+      visitedColor: '#14141C'
     }
   }
 }

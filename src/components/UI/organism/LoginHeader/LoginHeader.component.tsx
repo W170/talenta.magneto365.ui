@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
-import { Avatar } from '../../atoms'
-import { LogoComponent } from '../../atoms'
-import { MainButton } from '../../atoms'
-import { Breadcrumbs, UserMenu } from '../../molecules'
-import { HeaderTabs } from '../../molecules'
-import { ListMenuIcons } from '../../molecules'
-import { MobileDrawer } from '../../molecules'
-import { MobileSearchbar } from '../../molecules'
-import { Searchbar } from '../../molecules'
+import { Avatar, LogoComponent, MainButton } from '../../atoms'
+import {
+  Breadcrumbs,
+  HeaderTabs,
+  MobileDrawer,
+  MobileSearchbar,
+  Searchbar,
+  ListMenuIcons,
+  UserMenu
+} from '../../molecules'
 import { ILoginHeader } from './LoginHeader.interface'
-import { withStyles } from './LoginHeader.styles'
 import { useMediaQuery } from '../../../hooks'
+
+import styles from './LoginHeader.modules.scss'
 
 import {
   LogoProps,
@@ -22,7 +24,6 @@ import {
 
 const Component: React.FC<ILoginHeader> = ({
   onClick,
-  className,
   listMenuUserProps,
   breadcrumbText,
   profileImage,
@@ -92,22 +93,22 @@ const Component: React.FC<ILoginHeader> = ({
   })
 
   return (
-    <header className={className}>
+    <header className={styles.LoginHeaderComponent}>
       {loginHeaderMobileSearchbar}
-      <div className="magneto-ui-first-row"></div>
-      <div className="magneto-ui-second-row">
-        <div className="magneto-ui-left-section">
+      <div className={styles['magneto-ui-first-row']}></div>
+      <div className={styles['magneto-ui-second-row']}>
+        <div className={styles['magneto-ui-left-section']}>
           {loginHeaderMenuButton}
           <a href={homeUrl}>{loginHeaderLogo}</a>
           {loginHeaderMobileSearchbarButton}
         </div>
-        <div className="magneto-ui-searchbar-section">{loginHeaderSearchbar}</div>
-        <div className="magneto-ui-user-section">
+        <div className={styles['magneto-ui-searchbar-section']}>{loginHeaderSearchbar}</div>
+        <div className={styles['magneto-ui-user-section']}>
           {loginHeaderOptionTabs}
           {loginHeaderPopover}
         </div>
       </div>
-      <div className="magneto-ui-third-row">{loginHeaderBreadcrumbs}</div>
+      <div className={styles['magneto-ui-third-row']}>{loginHeaderBreadcrumbs}</div>
       <MobileDrawer isOpen={toggleMobileDrawer} onClose={() => setToggleMobileDrawer(false)}>
         <ListMenuIcons {...listMenuUserProps} />
       </MobileDrawer>
@@ -119,4 +120,4 @@ const Component: React.FC<ILoginHeader> = ({
  * UI Organism Component for LoginHeader
  */
 
-export const LoginHeader = withStyles(Component)
+export const LoginHeader = Component

@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 import { MainButton } from '../../atoms'
 import { ISearchbar } from './Searchbar.interface'
-import { withStyles } from './Searchbar.styles'
+import styles from './Searchbar.modules.scss'
 
 const Component: React.FC<ISearchbar> = ({
   placeholder,
   onSearch,
   searchButtonProps,
   removeButtonProps,
-  className,
   termValue
 }) => {
   const [searchValue, setSearchValue] = useState(termValue)
@@ -26,7 +25,7 @@ const Component: React.FC<ISearchbar> = ({
   }
 
   return (
-    <div className={className}>
+    <div className={styles.SearchbarComponent}>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -34,10 +33,14 @@ const Component: React.FC<ISearchbar> = ({
           onChange={(e) => setSearchValue(e.target.value)}
           placeholder={placeholder}
         />
-        <div className="magneto-ui-searchbar-buttons">
+        <div className={styles['magneto-ui-searchbar-buttons']}>
           {searchValue && (
             <>
-              <MainButton className="magneto-ui-remove-button" onClick={handleClearSearch} {...removeButtonProps} />
+              <MainButton
+                className={styles['magneto-ui-remove-button']}
+                onClick={handleClearSearch}
+                {...removeButtonProps}
+              />
               <span>|</span>
             </>
           )}
@@ -51,4 +54,4 @@ const Component: React.FC<ISearchbar> = ({
 /**
  * UI Molecule of a searchbar
  */
-export const Searchbar = withStyles(Component)
+export const Searchbar = Component

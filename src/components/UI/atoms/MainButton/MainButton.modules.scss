@@ -1,0 +1,94 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+@mixin smallButton {
+  padding: 8px 16px;
+  p {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &[data-is-mobile='true'] {
+    width: 2.3rem;
+    height: 2.3rem;
+    padding: 0;
+  }
+}
+
+@mixin mediumButton {
+  p {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &[data-is-mobile='true'] {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+  }
+}
+
+@mixin largeButton {
+  padding: 12px 24px;
+  p {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  &[data-is-mobile='true'] {
+    width: 2.7rem;
+    height: 2.7rem;
+    padding: 0;
+  }
+}
+
+@mixin fullButton {
+  width: 100%;
+  padding: 12px 24px;
+  p {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+.MainButtonComponent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing, 0px);
+  padding: 10px 20px;
+
+  border: none;
+  border-radius: 50px;
+  background-color: var(--button-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0px;
+  }
+
+  &[data-button-size='small'] {
+    @include smallButton;
+  }
+
+  &[data-button-size='medium'] {
+    @include mediumButton;
+  }
+
+  &[data-button-size='large'] {
+    @include largeButton;
+  }
+
+  &[data-button-size='full'] {
+    @include fullButton;
+  }
+}

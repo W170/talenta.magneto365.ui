@@ -1,11 +1,11 @@
 import React from 'react'
 import { HeaderTab } from '../../atoms'
 import { IHeaderTabs } from './HeaderTabs.interface'
-import { withStyles } from './HeaderTabs.styles'
+import styles from './HeaderTabs.modules.scss'
 
-const Component: React.FC<IHeaderTabs> = ({ headerTabList = [], urlParam = '', className }) => {
+const Component: React.FC<IHeaderTabs> = ({ headerTabList = [], urlParam = '', addDivider }) => {
   return (
-    <div className={className}>
+    <div className={styles.HeaderTabsComponent} data-add-divider={addDivider}>
       {headerTabList.map(({ ...headerTabProps }, index: number) => (
         <React.Fragment key={index}>
           <HeaderTab {...headerTabProps} isActive={urlParam === headerTabProps.slug ? true : false} />
@@ -19,4 +19,4 @@ const Component: React.FC<IHeaderTabs> = ({ headerTabList = [], urlParam = '', c
  * Molecule UI component for header tabs information`
  */
 
-export const HeaderTabs = withStyles(Component)
+export const HeaderTabs = Component

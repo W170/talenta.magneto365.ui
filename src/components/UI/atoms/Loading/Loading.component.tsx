@@ -1,11 +1,12 @@
 import React from 'react'
 import { IconItem } from '../Icon'
 import { ILoading } from './Loading.interface'
-import { withStyles } from './Loading.styles'
 
-const Component: React.FC<ILoading> = ({ loadingIcon, className }) => {
+import styles from './Loading.modules.scss'
+
+const Component: React.FC<ILoading> = ({ loadingIcon }) => {
   return (
-    <div className={className}>
+    <div className={styles.loadingComponent}>
       <IconItem {...loadingIcon} />
     </div>
   )
@@ -15,4 +16,4 @@ const Component: React.FC<ILoading> = ({ loadingIcon, className }) => {
  * Atom UI component of loading icon for general purpose
  */
 
-export const Loading = withStyles(Component)
+export const Loading = Component

@@ -43,18 +43,20 @@ const headerTabsPropsWithActiveTab: HeaderTabItem[] = [
 const meta: Meta<typeof HeaderTabs> = {
   title: 'Molecules/Header Tabs',
   component: HeaderTabs,
-  args: {
-    urlParam: 'empleos-sugeridos',
-    headerTabList: headerTabsProps,
-    addDivider: true
-  }
+  args: {}
 }
 
 export default meta
 
 type Story = StoryObj<typeof HeaderTabs>
 
-export const Default: Story = {}
+export const Default: Story = {
+  args: {
+    urlParam: 'empleos-sugeridos',
+    headerTabList: headerTabsProps,
+    addDivider: true
+  }
+}
 
 export const WithActiveTab: Story = {
   args: {

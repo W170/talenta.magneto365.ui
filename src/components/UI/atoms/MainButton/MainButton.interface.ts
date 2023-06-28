@@ -3,19 +3,26 @@ import { IconProps } from '../Icon'
 type ButtonSizes = 'small' | 'medium' | 'large' | 'full'
 type ButtonType = 'submit' | 'reset' | 'button'
 
+export interface ButtonElement {
+  /**
+   * Sets the button color
+   */
+  buttonColor?: string
+  /**
+   * Sets the text color
+   */
+  textColor?: string
+  /**
+   * Sets a spacing between icon and text
+   */
+  spacing?: number | string
+}
+
 export interface IMainButton {
   /**
    * Sets button type
    */
   buttonType?: ButtonType
-  /**
-   * Props for the Icon Atom
-   */
-  iconProps?: IconProps
-  /**
-   * Setx the button color
-   */
-  buttonColor?: string
   /**
    * Sets the button size
    */
@@ -25,19 +32,19 @@ export interface IMainButton {
    */
   buttonText?: string
   /**
-   * Sets the text color
+   * Props for the Icon Atom
    */
-  textColor?: string
+  iconProps?: IconProps
   /**
-   * Sets a spacing between icon and text
+   * Props for the Button Element
    */
-  spacing?: number
+  buttonStyles?: ButtonElement
   /**
    * Sets if button is mobile
    */
   isMobile?: boolean
   /**
-   *
+   * Sets loading animation for button
    */
   loadingState?: boolean
   /**

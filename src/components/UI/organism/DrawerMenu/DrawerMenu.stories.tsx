@@ -7,7 +7,10 @@ const leftLink = {
   href: '#',
   text: 'Busco Empleo',
   linkStyles: {
-    textColor: '#000'
+    textColor: '#000',
+    buttonColor: '#FFF',
+    hoverColor: '#000',
+    visitedColor: '#282828'
   }
 }
 
@@ -16,7 +19,9 @@ const rightLink = {
   href: '#',
   text: 'Soy Reclutador',
   linkStyles: {
-    textColor: '#A3A3B5'
+    textColor: '#A3A3B5',
+    buttonColor: 'transparent',
+    hoverColor: '#A3A3B5'
   }
 }
 

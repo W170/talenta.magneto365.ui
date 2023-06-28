@@ -9,7 +9,10 @@ const logoutHeaderProps: ILogoutHeader = {
     href: '#',
     text: 'Busco Empleo',
     linkStyles: {
-      textColor: '#000'
+      textColor: '#000',
+      buttonColor: '#FFF',
+      hoverColor: '#000',
+      visitedColor: '#282828'
     }
   },
   rightTabButton: {
@@ -17,7 +20,9 @@ const logoutHeaderProps: ILogoutHeader = {
     href: '#',
     text: 'Soy empresa',
     linkStyles: {
-      textColor: '#A3A3B5'
+      textColor: '#A3A3B5',
+      buttonColor: 'transparent',
+      hoverColor: '#A3A3B5'
     }
   },
   searchbar: {
@@ -57,7 +62,10 @@ const headerDrawerMenuProps: IDrawerOrganism = {
       href: '#',
       text: 'Busco Empleo',
       linkStyles: {
-        textColor: '#000'
+        textColor: '#000',
+        buttonColor: '#FFF',
+        hoverColor: '#000',
+        visitedColor: '#282828'
       }
     },
     rightTabLink: {
@@ -65,7 +73,9 @@ const headerDrawerMenuProps: IDrawerOrganism = {
       href: '#',
       text: 'Soy reclutador',
       linkStyles: {
-        textColor: '#A3A3B5'
+        textColor: '#A3A3B5',
+        buttonColor: 'transparent',
+        hoverColor: '#A3A3B5'
       }
     }
   },

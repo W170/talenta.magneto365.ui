@@ -1,0 +1,21 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.breadcrumbComponent {
+  display: flex;
+  align-items: center;
+
+  p {
+    align-items: center;
+    color: v.$text-color-disable;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 13px;
+    margin: 0 5px 0 0;
+    text-transform: capitalize;
+  }
+}
+
+.breadcrumbComponent .magneto-ui-bc-active {
+  font-weight: 700;
+}

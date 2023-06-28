@@ -5,31 +5,44 @@ import { ProfileAdd } from 'iconsax-react'
 const meta: Meta<typeof MainButton> = {
   title: 'Atoms/Main Button',
   component: MainButton,
-  args: {
-    buttonType: 'button',
-    buttonSize: 'medium',
-    iconProps: {
-      Icon: ProfileAdd,
-      hover: true,
-      color: '#090467 '
-    },
-    buttonText: 'Crear hoja de vida',
-    buttonColor: '#70ECD4',
-    textColor: '#090467',
-    spacing: 10
-  }
+  args: {}
 }
 export default meta
 
 type Story = StoryObj<typeof MainButton>
 
-export const Default: Story = {}
+export const Default: Story = {
+  args: {
+    buttonType: 'submit',
+    buttonSize: 'medium',
+    buttonText: 'Crear hoja de vida',
+    iconProps: {
+      Icon: ProfileAdd,
+      hover: true,
+      color: '#090467 '
+    },
+    buttonStyles: {
+      buttonColor: '#70ECD4',
+      textColor: '#090467',
+      spacing: '10px'
+    }
+  }
+}
 
 export const Responsive: Story = {
   args: {
+    buttonType: 'button',
+    buttonSize: 'medium',
     buttonText: 'Crear hoja de vida',
-    buttonColor: '#70ECD4',
-    textColor: '#090467',
+    iconProps: {
+      Icon: ProfileAdd,
+      hover: true,
+      color: '#090467 '
+    },
+    buttonStyles: {
+      buttonColor: '#70ECD4',
+      textColor: '#090467'
+    },
     isMobile: true
   }
 }

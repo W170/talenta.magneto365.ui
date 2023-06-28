@@ -1,20 +1,26 @@
-import React from 'react'
+import React, { CSSProperties, useMemo } from 'react'
 import { IconItem } from '../Icon'
 import { Loading } from '../Loading'
 import { IMainButton } from './MainButton.interface'
-import { withStyles } from './MainButton.styles'
+import styles from './MainButton.modules.scss'
 import { LoadingProps } from '../../../../constants/stories.constants'
+import { toCSSVariables } from '../../../../shared/utils/Function'
 
 const Component: React.FC<IMainButton> = ({
   buttonType,
-  iconProps,
   buttonSize,
   buttonText,
-  isMobile = false,
+  buttonStyles,
   loadingState,
-  onClick,
-  className
+  iconProps,
+  isMobile,
+  className,
+  onClick
 }) => {
+  const stylesValue: CSSProperties = useMemo(() => toCSSVariables(buttonStyles), [buttonStyles])
+
+  const buttonClass = `${styles.MainButtonComponent} ${className}`.trim()
+
   const renderContent = () => {
     if (loadingState) {
       return (
@@ -34,7 +40,14 @@ const Component: React.FC<IMainButton> = ({
   }
 
   return (
-    <button type={buttonType} className={`${className} ${buttonSize}`} onClick={onClick}>
+    <button
+      className={buttonClass}
+      type={buttonType}
+      style={stylesValue}
+      onClick={onClick}
+      data-button-size={buttonSize}
+      data-is-mobile={isMobile}
+    >
       {renderContent()}
     </button>
   )
@@ -42,4 +55,4 @@ const Component: React.FC<IMainButton> = ({
 /**
  * Atom UI component of button for general purpose
  */
-export const MainButton = withStyles(Component)
+export const MainButton = Component

@@ -10,6 +10,5 @@ export interface ILogoutHeader {
   signUpButton: IMainButton
   breadcrumbsText: string
   onMenuClick?: () => void
-  className?: string
   homeUrl: string
 }

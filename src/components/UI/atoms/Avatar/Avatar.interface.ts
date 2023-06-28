@@ -7,5 +7,4 @@ export interface IAvatar {
    * Optional click handler
    */
   onClick?: () => void
-  className?: string
 }

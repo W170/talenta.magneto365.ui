@@ -10,12 +10,11 @@ export interface IHeaderTabs {
    */
   headerTabList: HeaderTabItem[]
   /**
-   * URL Param
+   * Sets the URL Param for active tabs styling
    */
   urlParam: string
   /**
    * Sets a divider between HeaderTab items
    */
   addDivider?: boolean
-  className?: string
 }
