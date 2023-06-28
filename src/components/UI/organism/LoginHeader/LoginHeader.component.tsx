@@ -10,7 +10,6 @@ import {
   UserMenu
 } from '../../molecules'
 import { ILoginHeader } from './LoginHeader.interface'
-import { withStyles } from './LoginHeader.styles'
 import { useMediaQuery } from '../../../hooks'
 
 import styles from './LoginHeader.modules.scss'
@@ -121,4 +120,4 @@ const Component: React.FC<ILoginHeader> = ({
  * UI Organism Component for LoginHeader
  */
 
-export const LoginHeader = withStyles(Component)
+export const LoginHeader = Component
