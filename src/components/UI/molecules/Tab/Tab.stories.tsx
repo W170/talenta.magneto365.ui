@@ -10,7 +10,9 @@ const TabButtonProps: ITabButton = {
     text: 'Busco Empleo',
     linkStyles: {
       textColor: '#000',
-      buttonColor: '#FFF'
+      buttonColor: '#FFF',
+      hoverColor: '#000',
+      visitedColor: '#000'
     }
   },
   tabButtonStyle: {
@@ -27,7 +29,9 @@ const TabButtonProps2: ITabButton = {
     href: '#',
     text: 'Soy empresa',
     linkStyles: {
-      textColor: '#A3A3B5'
+      textColor: '#A3A3B5',
+      buttonColor: 'transparent',
+      hoverColor: '#A3A3B5'
     }
   },
   tabButtonStyle: {
@@ -41,6 +45,14 @@ const TabButtonProps2: ITabButton = {
 const meta: Meta<typeof Tab> = {
   title: 'Molecules/Tab',
   component: Tab,
+  args: {}
+}
+
+export default meta
+
+type Story = StoryObj<typeof Tab>
+
+export const Default: Story = {
   args: {
     children: (
       <>
@@ -50,9 +62,3 @@ const meta: Meta<typeof Tab> = {
     )
   }
 }
-
-export default meta
-
-type Story = StoryObj<typeof Tab>
-
-export const Default: Story = {}
