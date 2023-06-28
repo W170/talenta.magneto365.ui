@@ -32,7 +32,8 @@ import {
   MenuItemInfo,
   ITabButton,
   IMobileSearchbar,
-  ISearchbar
+  ISearchbar,
+  TabButtonElement
 } from '../components/UI/molecules'
 import { IlistMenuUserProps } from '../components/UI/organism/LoginHeader'
 import { ILoading } from '../components/UI/atoms/Loading'
@@ -108,7 +109,7 @@ export const SignUpButtonStyle: IMainButton = {
   buttonStyles: {
     buttonColor: '#70ECD4',
     textColor: '#090467',
-    spacing: 10
+    spacing: '10px'
   },
   iconProps: {
     Icon: ProfileAdd,
@@ -198,7 +199,7 @@ export const CreateAccountButton: IMainButton = {
   buttonStyles: {
     buttonColor: '#70ECD4',
     textColor: '#090467',
-    spacing: 10
+    spacing: '10px'
   },
   iconProps: {
     Icon: ProfileAdd,
@@ -212,7 +213,7 @@ export const LoginButton: IMainButton = {
   buttonStyles: {
     buttonColor: 'white',
     textColor: '#14141C',
-    spacing: 10
+    spacing: '10px'
   },
   iconProps: {
     Icon: LoginCurve,
@@ -258,14 +259,14 @@ export const MobileSearchbarProps: IMobileSearchbar = {
 }
 
 //TabButton Molecule
-export const LeftTabStyles = {
+export const LeftTabStyles: TabButtonElement = {
   tabButtonColor: '#FFF',
   tabButtonTextSize: '11px',
   tabButtonTextWeight: '700',
   boxShadow: true
 }
 
-export const RightTabStyles = {
+export const RightTabStyles: TabButtonElement = {
   tabButtonColor: '#F4F4FA',
   tabButtonTextSize: '11px',
   tabButtonTextWeight: '400',
