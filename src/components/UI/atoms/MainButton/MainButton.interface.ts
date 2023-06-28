@@ -15,7 +15,7 @@ export interface ButtonElement {
   /**
    * Sets a spacing between icon and text
    */
-  spacing?: number
+  spacing?: number | string
 }
 
 export interface IMainButton {

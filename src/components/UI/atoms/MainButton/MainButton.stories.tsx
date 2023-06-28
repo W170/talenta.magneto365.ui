@@ -24,7 +24,7 @@ export const Default: Story = {
     buttonStyles: {
       buttonColor: '#70ECD4',
       textColor: '#090467',
-      spacing: 10
+      spacing: '10px'
     }
   }
 }
