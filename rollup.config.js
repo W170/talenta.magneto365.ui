@@ -2,6 +2,7 @@ import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
 import url from '@rollup/plugin-url'
+import autoprefixer from 'autoprefixer'
 import postcss from 'rollup-plugin-postcss'
 import dts from 'rollup-plugin-dts'
 import stringHash from 'string-hash'
@@ -39,6 +40,7 @@ export default [
       postcss({
         autoModules: false,
         onlyModules: false,
+        plugins: [autoprefixer],
         modules: {
           generateScopedName: (name, filename, css) => {
             if (filename.includes('global')) {

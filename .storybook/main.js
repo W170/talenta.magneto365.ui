@@ -6,7 +6,15 @@ module.exports = {
     '@storybook/addon-interactions',
     '@storybook/preset-scss',
     '@storybook/addon-mdx-gfm',
-    'storybook-css-modules'
+    'storybook-css-modules',
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss')
+        }
+      }
+    }
   ],
   framework: {
     name: '@storybook/react-webpack5',
