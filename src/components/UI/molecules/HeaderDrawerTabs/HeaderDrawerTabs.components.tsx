@@ -19,13 +19,21 @@ const Component: React.FC<IHeaderDrawerTabs> = ({
   })
 
   return (
-    <div className={styles.magnetoUiHeaderDrawer}>
+    <div className={styles.HeaderDrawerTabsComponent}>
       <a href={homeUrl}>
         <LogoComponent isoView={isMobileLogo} {...logoProps} />
       </a>
       <Tab>
-        <TabButton tabButtonLink={leftTabLink} tabButtonStyle={leftTabStyle?.tabButtonStyle} />
-        <TabButton tabButtonLink={rightTabLink} tabButtonStyle={rightTabStyle?.tabButtonStyle} />
+        <TabButton
+          tabButtonLink={leftTabLink}
+          tabButtonLinkStyles={leftTabStyle?.tabButtonLinkStyles}
+          tabButtonStyles={leftTabStyle?.tabButtonStyles}
+        />
+        <TabButton
+          tabButtonLink={rightTabLink}
+          tabButtonLinkStyles={rightTabStyle?.tabButtonLinkStyles}
+          tabButtonStyles={rightTabStyle?.tabButtonStyles}
+        />
       </Tab>
     </div>
   )
