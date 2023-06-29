@@ -33,7 +33,7 @@ const fixGlobalStyles = () => {
       text-decoration: none !important;
       color: black;
     }`
-  window.document.head.insertBefore(style, window.document.head.lastChild)
+  window.document.head.insertBefore(style, window.document.head.firstChild)
 }
 export const withContext = (Story: React.FC) => {
   useEffect(loadGoogleFonts, [])
