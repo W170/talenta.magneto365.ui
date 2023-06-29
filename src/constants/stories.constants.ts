@@ -32,10 +32,8 @@ import {
   IMenuItems,
   IListMenuItems,
   MenuItemInfo,
-  ITabButton,
   IMobileSearchbar,
-  ISearchbar,
-  TabButtonElement
+  ISearchbar
 } from '../components/UI/molecules'
 import { IlistMenuUserProps } from '../components/UI/organism/LoginHeader'
 import { ILoading } from '../components/UI/atoms/Loading'
@@ -262,25 +260,40 @@ export const MobileSearchbarProps: IMobileSearchbar = {
 }
 
 //TabButton Molecule
-export const LeftTabStyles: TabButtonElement = {
+export const LeftLinkStyles = {
+  buttonColor: '#FFF',
+  textColor: '#000',
+  hoverColor: '#000',
+  visitedColor: '#000'
+}
+export const LeftTabStyles = {
   tabButtonColor: '#FFF',
   tabButtonTextSize: '11px',
   tabButtonTextWeight: '700',
   boxShadow: true
 }
 
-export const RightTabStyles: TabButtonElement = {
+export const RightLinkStyles = {
+  buttonColor: 'transparent',
+  textColor: '#A3A3B5',
+  hoverColor: '#A3A3B5',
+  visitedColor: '#A3A3B5'
+}
+export const RightTabStyles = {
   tabButtonColor: '#F4F4FA',
   tabButtonTextSize: '11px',
   tabButtonTextWeight: '400',
   boxShadow: false
 }
 
-export const HeaderLeftTabStyle = {
-  linkStyles: {
-    textColor: '#000'
+export const DrawerLeftTabStyles = {
+  tabButtonLinkStyles: {
+    textColor: '#000',
+    buttonColor: '#FFF',
+    hoverColor: '#000',
+    visitedColor: '#000'
   },
-  tabButtonStyle: {
+  tabButtonStyles: {
     tabButtonColor: '#FFF',
     tabButtonTextSize: '11px',
     tabButtonTextWeight: '700',
@@ -288,28 +301,13 @@ export const HeaderLeftTabStyle = {
   }
 }
 
-export const HeaderRightTabStyle = {
-  linkStyles: {
-    textColor: '#A3A3B5'
+export const DrawerRightTabStyles = {
+  tabButtonLinkStyles: {
+    textColor: '#A3A3B5',
+    buttonColor: 'transparent',
+    hoverColor: '#A3A3B5'
   },
-  tabButtonStyle: {
-    tabButtonColor: '#F4F4FA',
-    tabButtonTextSize: '11px',
-    tabButtonTextWeight: '400',
-    boxShadow: false
-  }
-}
-
-export const DrawerLeftTabStyles: ITabButton = {
-  tabButtonStyle: {
-    tabButtonColor: '#FFF',
-    tabButtonTextSize: '11px',
-    tabButtonTextWeight: '700',
-    boxShadow: true
-  }
-}
-export const DrawerRightTabStyles: ITabButton = {
-  tabButtonStyle: {
+  tabButtonStyles: {
     tabButtonColor: '#F4F4FA',
     tabButtonTextSize: '11px',
     tabButtonTextWeight: '400',
