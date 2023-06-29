@@ -25,15 +25,19 @@ export interface ILinkProps {
   /**
    * Sets the link type for style purpose
    */
-  type: LinkType
+  type?: LinkType
   /**
    *  Sets href for link
    */
-  href: string
+  href?: string
   /**
    * Sets text for link
    */
-  text: string
+  text?: string
+  /**
+   * Sets the link styles
+   */
+  linkStyles?: LinkElement
   /**
    * Props for the Icon
    */
@@ -42,8 +46,4 @@ export interface ILinkProps {
    * Sets if link is mobile
    */
   isMobile?: boolean
-  /**
-   * Sets the link styles
-   */
-  linkStyles?: LinkElement
 }
