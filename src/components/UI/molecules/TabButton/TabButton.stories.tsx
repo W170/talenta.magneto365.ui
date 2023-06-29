@@ -31,23 +31,44 @@ type Story = StoryObj<typeof TabButton>
 
 export const Default: Story = {
   args: {
-    tabButtonLink: link,
-    tabButtonStyle: tabButton
+    tabButtonLinkProps: link,
+    tabButtonStyles: tabButton
   }
 }
 
 export const Untoggle: Story = {
   args: {
-    tabButtonLink: {
+    tabButtonLinkProps: {
       type: 'link' as const,
       href: '#',
       text: 'Soy empresa'
     },
-    tabButtonStyle: {
+    tabButtonStyles: {
       tabButtonColor: '#F4F4FA',
       tabButtonTextSize: '11px',
       tabButtonTextWeight: '400',
       boxShadow: false
+    }
+  }
+}
+
+export const WithTranslation: Story = {
+  args: {
+    tabButtonLinkProps: {
+      type: 'link' as const,
+      href: '#',
+      text: 'I am looking for job',
+      linkStyles: {
+        buttonColor: '#FFF',
+        textColor: '#000',
+        hoverColor: '#000',
+        visitedColor: '#000'
+      }
+    },
+    tabButtonStyles: {
+      tabButtonTextSize: '11px',
+      tabButtonTextWeight: '700',
+      boxShadow: true
     }
   }
 }

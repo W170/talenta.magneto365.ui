@@ -19,11 +19,13 @@ export interface TabButtonElement {
   boxShadow?: boolean
 }
 export interface ITabButton {
-  /** */
-  tabButtonLink?: ILinkProps
+  /**
+   * Props to set the Link component
+   */
+  tabButtonLinkProps?: ILinkProps
   /**
    * Sets the style props for the Tab Button
    */
-  tabButtonStyle?: TabButtonElement
+  tabButtonStyles?: TabButtonElement
   className?: string
 }
