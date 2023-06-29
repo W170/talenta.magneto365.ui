@@ -7,7 +7,9 @@ import styles from './LogoutHeader.modules.scss'
 import { useMediaQuery } from '../../../hooks'
 
 import {
+  LeftLinkStyles,
   LeftTabStyles,
+  RightLinkStyles,
   RightTabStyles,
   MenuButtonProps,
   LogoProps,
@@ -56,8 +58,12 @@ const Component: React.FC<ILogoutHeader> = ({
   // Tab Component
   const LogoutHeaderTab = useMediaQuery(
     <Tab>
-      <TabButton tabButtonLink={leftTabButton} tabButtonStyle={LeftTabStyles} />
-      <TabButton tabButtonLink={rightTabButton} tabButtonStyle={RightTabStyles} />
+      <TabButton tabButtonLink={leftTabButton} tabButtonLinkStyles={LeftLinkStyles} tabButtonStyles={LeftTabStyles} />
+      <TabButton
+        tabButtonLink={rightTabButton}
+        tabButtonLinkStyles={RightLinkStyles}
+        tabButtonStyles={RightTabStyles}
+      />
     </Tab>,
     {
       md: null
