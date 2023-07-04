@@ -7,7 +7,9 @@ const meta: Meta<typeof ListMenuFilter> = {
   component: ListMenuFilter,
   args: {
     filterItems: optionsMenuFilter,
-    setFilter: (menuItem: { key: string }) => console.log(menuItem.key)
+    setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
+    setShowPopover: () => console.log('setShowPopover'),
+    textOrderFilter: optionsMenuFilter[1].label
   }
 }
 

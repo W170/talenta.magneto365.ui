@@ -26,4 +26,8 @@ export interface IMenuFilter {
    * This function change the filter with the selected option
    */
   setFilter: (menuItem: { key: string }) => void
+  /**
+   * With this property you can disabled the button
+   */
+  loading: boolean
 }

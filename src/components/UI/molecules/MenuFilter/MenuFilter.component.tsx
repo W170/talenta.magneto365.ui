@@ -1,11 +1,11 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { menuFilterButton } from '../../../../constants/stories.constants'
 import { ListMenuFilter } from '../ListMenuFilter'
 import { IconItem, Popover } from '../../atoms'
 import { IMenuFilter } from './MenuFilter.interface'
 import style from './MenuFilter.module.scss'
 
-const MenuFilter: React.FC<IMenuFilter> = ({ filterItems, textOrderFilter, setFilter }) => {
+const MenuFilter: React.FC<IMenuFilter> = ({ filterItems, textOrderFilter, setFilter, loading }) => {
   const [showPopover, setShowPopover] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
@@ -27,17 +27,30 @@ const MenuFilter: React.FC<IMenuFilter> = ({ filterItems, textOrderFilter, setFi
     }
   }, [handleClick])
 
+  const listMenuProps = useMemo(() => {
+    return {
+      filterItems,
+      setFilter,
+      setShowPopover,
+      textOrderFilter
+    }
+  }, [filterItems, textOrderFilter, setFilter])
+
   return (
     <div ref={ref}>
       <Popover
         widthBase={180}
         show={showPopover}
-        content={<ListMenuFilter filterItems={filterItems} setFilter={setFilter} />}
+        content={<ListMenuFilter {...listMenuProps} />}
         width={250}
         positionX="left"
         positionY="bottom"
       >
-        <button className={style['magneto-ui-btn-menu']} onClick={() => setShowPopover(!showPopover)}>
+        <button
+          className={`${style['magneto-ui-btn-menu']} ${loading && style.disabled}`}
+          onClick={() => setShowPopover(!showPopover)}
+          disabled={loading}
+        >
           <p className={style['magneto-ui-btn-text']}>{textOrderFilter}</p>
           <IconItem {...menuFilterButton} />
         </button>
