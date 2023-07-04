@@ -5,24 +5,13 @@ import { listMenuProps } from '../../../../constants/stories.constants'
 const leftLink = {
   type: 'link' as const,
   href: '#',
-  text: 'Busco Empleo',
-  linkStyles: {
-    textColor: '#000',
-    buttonColor: '#FFF',
-    hoverColor: '#000',
-    visitedColor: '#282828'
-  }
+  text: 'Busco Empleo'
 }
 
 const rightLink = {
   type: 'link' as const,
   href: '#',
-  text: 'Soy Reclutador',
-  linkStyles: {
-    textColor: '#A3A3B5',
-    buttonColor: 'transparent',
-    hoverColor: '#A3A3B5'
-  }
+  text: 'Soy Reclutador'
 }
 
 const SignUp = () => {

@@ -4,14 +4,14 @@ import styles from './TabButton.modules.scss'
 import { Link } from '../../atoms'
 import { toCSSVariables } from '../../../../shared/utils/Function'
 
-const Component: React.FC<ITabButton> = ({ tabButtonLink, tabButtonStyle }) => {
-  const stylesValue: CSSProperties = useMemo(() => toCSSVariables(tabButtonStyle), [tabButtonStyle])
+const Component: React.FC<ITabButton> = ({ tabButtonLink, tabButtonLinkStyles, tabButtonStyles }) => {
+  const stylesValue: CSSProperties = useMemo(() => toCSSVariables(tabButtonStyles), [tabButtonStyles])
 
-  const { boxShadow } = tabButtonStyle || {}
+  const { boxShadow } = tabButtonStyles || {}
 
   return (
     <div className={styles.TabButtonComponent} style={stylesValue} data-box-shadow={boxShadow}>
-      {tabButtonLink && <Link {...tabButtonLink} />}
+      {tabButtonLink && <Link {...tabButtonLink} linkStyles={tabButtonLinkStyles} />}
     </div>
   )
 }

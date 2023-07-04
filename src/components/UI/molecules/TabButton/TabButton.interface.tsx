@@ -1,4 +1,4 @@
-import { ILinkProps } from '../../atoms'
+import { ILinkProps, LinkElement } from '../../atoms'
 
 export interface TabButtonElement {
   /**
@@ -19,11 +19,16 @@ export interface TabButtonElement {
   boxShadow?: boolean
 }
 export interface ITabButton {
-  /** */
+  /**
+   * Props to set the Link component
+   */
   tabButtonLink?: ILinkProps
+  /**
+   *
+   */
+  tabButtonLinkStyles?: LinkElement
   /**
    * Sets the style props for the Tab Button
    */
-  tabButtonStyle?: TabButtonElement
-  className?: string
+  tabButtonStyles?: TabButtonElement
 }
