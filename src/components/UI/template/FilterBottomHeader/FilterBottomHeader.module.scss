@@ -11,10 +11,6 @@
   box-sizing: border-box;
   background-color: white;
   border-bottom: solid 1px v.$color-border-jobs;
-  //TODO: review this important
-  button {
-    padding: 22px 10px !important;
-  }
 
   @media screen and (max-width: v.$screen-md) {
     height: 56px;
@@ -26,6 +22,9 @@
   align-items: center;
   justify-content: space-between;
   width: auto;
+  button {
+    padding: 20px 10px;
+  }
 }
 
 .magneto-ui-btn-text {
