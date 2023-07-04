@@ -1,0 +1,52 @@
+.magneto-ui-job-offers {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  //width: 100%;
+  padding: 10px;
+  gap: 15px;
+  border-radius: 12px;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e9e9f6;
+  }
+
+  &:hover &--arrow {
+    opacity: 1;
+    right: 15px;
+  }
+  &--logo {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  &--text {
+    font-size: 14px;
+  }
+
+  &--tags {
+    display: flex;
+    flex-wrap: wrap;
+    p {
+      text-align: center;
+      background-color: rgb(246, 246, 246);
+      font-size: 12px;
+      padding: 5px 10px;
+      margin: 2px;
+      width: auto;
+      border-radius: 25px;
+    }
+  }
+  &--arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    opacity: 0;
+    transition: all ease-in-out 0.3s;
+  }
+}
