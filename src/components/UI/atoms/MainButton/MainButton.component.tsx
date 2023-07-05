@@ -19,8 +19,6 @@ const Component: React.FC<IMainButton> = ({
 }) => {
   const stylesValue: CSSProperties = useMemo(() => toCSSVariables(buttonStyles), [buttonStyles])
 
-  const buttonClass = `${styles.MainButtonComponent} ${className}`.trim()
-
   const renderContent = () => {
     if (loadingState) {
       return (
@@ -41,7 +39,7 @@ const Component: React.FC<IMainButton> = ({
 
   return (
     <button
-      className={buttonClass}
+      className={`${styles.MainButtonComponent} ${className}`}
       type={buttonType}
       style={stylesValue}
       onClick={onClick}
