@@ -1,3 +1,4 @@
+import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import FilterBottomHeader from './FilterBottomHeader.component'
 import { optionsMenuFilter } from '../../../../constants/stories.constants'
@@ -12,10 +13,19 @@ const meta: Meta<typeof FilterBottomHeader> = {
     openFilterDrawer: () => console.log('openFilterDrawer'),
     orderFilter: () => console.log('orderFilter'),
     filterItems: optionsMenuFilter,
-    textOrderFilter: 'Fecha de publicación',
+    textOrderFilter: optionsMenuFilter[1].label,
     setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
-    orderByText: 'Organizar por'
-  }
+    orderByText: 'Organizar por',
+    isOpen: false,
+    loading: false
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ margin: '-16px' }}>
+        <Story />
+      </div>
+    )
+  ]
 }
 
 export default meta

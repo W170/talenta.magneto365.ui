@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { MenuIcon } from '../MenuIcon'
 import { IListMenuFilter } from './ListMenuFilter.interface'
 import style from './ListMenuFilter.module.scss'
 
-const ListMenuFilter: React.FC<IListMenuFilter> = ({ filterItems, setFilter }) => {
+const ListMenuFilter: React.FC<IListMenuFilter> = ({ filterItems, setFilter, textOrderFilter, setShowPopover }) => {
+  const handleClick = useCallback(
+    (key: string) => {
+      setFilter({ key })
+      setShowPopover(false)
+    },
+    [setFilter, setShowPopover]
+  )
+
   return (
     <div className={style['magneto-ui-menu-filter']}>
       {filterItems.map(({ field, label, iconUrl }, i) => (
@@ -12,7 +20,8 @@ const ListMenuFilter: React.FC<IListMenuFilter> = ({ filterItems, setFilter }) =
           text={label}
           assetsIcon={iconUrl}
           type="button"
-          onClick={() => setFilter({ key: field })}
+          onClick={() => handleClick(field)}
+          isActive={label === textOrderFilter}
         />
       ))}
     </div>

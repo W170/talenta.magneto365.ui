@@ -33,4 +33,12 @@ export interface IFilterBottomHeader {
    * this is the mobile text to alphabetical order
    */
   orderByText: string
+  /**
+   * If this flag is true the buttonFilter isn't visible
+   */
+  isOpen: boolean
+  /**
+   * With this property you can disabled the button in menu filter molecule
+   */
+  loading: boolean
 }

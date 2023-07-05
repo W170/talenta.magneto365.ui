@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { ListMenuFilter } from '../../molecules/ListMenuFilter'
 import { IMobileMenuFilter } from './MobileMenuFilter.interface'
 import { MobileDrawer } from '../../molecules'
@@ -12,8 +12,18 @@ const MobileMenuFilter: React.FC<IMobileMenuFilter> = ({
   filterItems,
   setFilter,
   orderFilter,
-  orderByText
+  orderByText,
+  textOrderFilter,
+  setShowPopover
 }) => {
+  const listMenuProps = useMemo(() => {
+    return {
+      filterItems,
+      setFilter,
+      setShowPopover,
+      textOrderFilter
+    }
+  }, [filterItems, textOrderFilter, setFilter, setShowPopover])
   return (
     <MobileDrawer isOpen={isOpen} onClose={onClose}>
       <div className={style['magneto-ui-order-container']}>
@@ -22,7 +32,7 @@ const MobileMenuFilter: React.FC<IMobileMenuFilter> = ({
           <IconItem {...iconFilterOrder} />
         </button>
       </div>
-      <ListMenuFilter filterItems={filterItems} setFilter={setFilter} />
+      <ListMenuFilter {...listMenuProps} />
     </MobileDrawer>
   )
 }

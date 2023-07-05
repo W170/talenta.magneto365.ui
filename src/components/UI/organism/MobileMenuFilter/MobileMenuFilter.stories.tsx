@@ -11,7 +11,9 @@ const meta: Meta<typeof MobileMenuFilter> = {
     setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
     isOpen: true,
     onClose: () => ({}),
-    orderByText: 'Organizar por'
+    orderByText: 'Organizar por',
+    setShowPopover: () => console.log('setShowPopover'),
+    textOrderFilter: optionsMenuFilter[1].label
   }
 }
 
