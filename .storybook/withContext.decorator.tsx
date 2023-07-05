@@ -17,8 +17,14 @@ const fixGlobalStyles = () => {
   const style = document.createElement('style')
   style.id = 'storybook-overwrites'
   style.innerHTML = `
-    body {
+    html {
       box-sizing: border-box;
+
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }  
+    body {
       font-family: "Mulish", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Lato", "Oxygen", "Ubuntu",
       "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
     }
