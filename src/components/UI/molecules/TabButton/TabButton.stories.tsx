@@ -5,13 +5,7 @@ import { StoryObj, Meta } from '@storybook/react'
 const link: ILinkProps = {
   type: 'link' as const,
   href: '#',
-  text: 'Busco Empleo',
-  linkStyles: {
-    buttonColor: '#FFF',
-    textColor: '#000',
-    hoverColor: '#000',
-    visitedColor: '#000'
-  }
+  text: 'Busco Empleo'
 }
 const tabButton = {
   boxShadow: true,
@@ -31,17 +25,27 @@ type Story = StoryObj<typeof TabButton>
 
 export const Default: Story = {
   args: {
-    tabButtonLinkProps: link,
+    tabButtonLink: link,
+    tabButtonLinkStyles: {
+      buttonColor: '#FFF',
+      textColor: '#000',
+      hoverColor: '#000',
+      visitedColor: '#000'
+    },
     tabButtonStyles: tabButton
   }
 }
 
 export const Untoggle: Story = {
   args: {
-    tabButtonLinkProps: {
+    tabButtonLink: {
       type: 'link' as const,
       href: '#',
       text: 'Soy empresa'
+    },
+    tabButtonLinkStyles: {
+      hoverColor: '#A3A3B5',
+      visitedColor: '#A3A3B5'
     },
     tabButtonStyles: {
       tabButtonColor: '#F4F4FA',
@@ -54,16 +58,16 @@ export const Untoggle: Story = {
 
 export const WithTranslation: Story = {
   args: {
-    tabButtonLinkProps: {
+    tabButtonLink: {
       type: 'link' as const,
       href: '#',
-      text: 'I am looking for job',
-      linkStyles: {
-        buttonColor: '#FFF',
-        textColor: '#000',
-        hoverColor: '#000',
-        visitedColor: '#000'
-      }
+      text: 'I am looking for job'
+    },
+    tabButtonLinkStyles: {
+      buttonColor: '#FFF',
+      textColor: '#000',
+      hoverColor: '#000',
+      visitedColor: '#000'
     },
     tabButtonStyles: {
       tabButtonTextSize: '11px',

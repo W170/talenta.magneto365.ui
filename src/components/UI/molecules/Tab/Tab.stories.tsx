@@ -4,16 +4,16 @@ import { Tab } from './Tab.component'
 import { ITabButton, TabButton } from '../TabButton'
 
 const TabButtonProps: ITabButton = {
-  tabButtonLinkProps: {
+  tabButtonLink: {
     type: 'link' as const,
     href: '#',
-    text: 'Busco Empleo',
-    linkStyles: {
-      textColor: '#000',
-      buttonColor: '#FFF',
-      hoverColor: '#000',
-      visitedColor: '#000'
-    }
+    text: 'Busco Empleo'
+  },
+  tabButtonLinkStyles: {
+    textColor: '#000',
+    buttonColor: '#FFF',
+    hoverColor: '#000',
+    visitedColor: '#000'
   },
   tabButtonStyles: {
     tabButtonColor: '#FFF',
@@ -24,15 +24,15 @@ const TabButtonProps: ITabButton = {
 }
 
 const TabButtonProps2: ITabButton = {
-  tabButtonLinkProps: {
+  tabButtonLink: {
     type: 'link' as const,
     href: '#',
-    text: 'Soy empresa',
-    linkStyles: {
-      textColor: '#A3A3B5',
-      buttonColor: 'transparent',
-      hoverColor: '#A3A3B5'
-    }
+    text: 'Soy empresa'
+  },
+  tabButtonLinkStyles: {
+    textColor: '#A3A3B5',
+    buttonColor: 'transparent',
+    hoverColor: '#A3A3B5'
   },
   tabButtonStyles: {
     tabButtonColor: '#F4F4FA',
@@ -43,16 +43,16 @@ const TabButtonProps2: ITabButton = {
 }
 
 const TabButton2Props: ITabButton = {
-  tabButtonLinkProps: {
+  tabButtonLink: {
     type: 'link' as const,
     href: '#',
-    text: 'I am looking for a job',
-    linkStyles: {
-      textColor: '#000',
-      buttonColor: '#FFF',
-      hoverColor: '#000',
-      visitedColor: '#000'
-    }
+    text: 'I am looking for a job'
+  },
+  tabButtonLinkStyles: {
+    textColor: '#000',
+    buttonColor: '#FFF',
+    hoverColor: '#000',
+    visitedColor: '#000'
   },
   tabButtonStyles: {
     tabButtonColor: '#FFF',
@@ -63,15 +63,15 @@ const TabButton2Props: ITabButton = {
 }
 
 const TabButton2Props2: ITabButton = {
-  tabButtonLinkProps: {
+  tabButtonLink: {
     type: 'link' as const,
     href: '#',
-    text: 'I am a recruiter',
-    linkStyles: {
-      textColor: '#A3A3B5',
-      buttonColor: 'transparent',
-      hoverColor: '#A3A3B5'
-    }
+    text: 'I am a recruiter'
+  },
+  tabButtonLinkStyles: {
+    textColor: '#A3A3B5',
+    buttonColor: 'transparent',
+    hoverColor: '#A3A3B5'
   },
   tabButtonStyles: {
     tabButtonColor: '#F4F4FA',
@@ -96,11 +96,13 @@ export const Default: Story = {
     children: (
       <>
         <TabButton
-          tabButtonLinkProps={TabButtonProps.tabButtonLinkProps}
+          tabButtonLink={TabButtonProps.tabButtonLink}
+          tabButtonLinkStyles={TabButtonProps.tabButtonLinkStyles}
           tabButtonStyles={TabButtonProps.tabButtonStyles}
         />
         <TabButton
-          tabButtonLinkProps={TabButtonProps2.tabButtonLinkProps}
+          tabButtonLink={TabButtonProps2.tabButtonLink}
+          tabButtonLinkStyles={TabButtonProps2.tabButtonLinkStyles}
           tabButtonStyles={TabButtonProps2.tabButtonStyles}
         />
       </>
@@ -113,11 +115,13 @@ export const WithTranslations: Story = {
     children: (
       <>
         <TabButton
-          tabButtonLinkProps={TabButton2Props.tabButtonLinkProps}
+          tabButtonLink={TabButton2Props.tabButtonLink}
+          tabButtonLinkStyles={TabButton2Props.tabButtonLinkStyles}
           tabButtonStyles={TabButton2Props.tabButtonStyles}
         />
         <TabButton
-          tabButtonLinkProps={TabButton2Props2.tabButtonLinkProps}
+          tabButtonLink={TabButton2Props2.tabButtonLink}
+          tabButtonLinkStyles={TabButton2Props2.tabButtonLinkStyles}
           tabButtonStyles={TabButton2Props2.tabButtonStyles}
         />
       </>
