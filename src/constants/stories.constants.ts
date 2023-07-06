@@ -261,11 +261,12 @@ export const MobileSearchbarProps: IMobileSearchbar = {
 
 //TabButton Molecule
 export const LeftLinkStyles = {
+  textColor: '#14141C',
   buttonColor: '#FFF',
-  textColor: '#000',
-  hoverColor: '#000',
+  hoverColor: '#04004d',
   visitedColor: '#000'
 }
+
 export const LeftTabStyles = {
   tabButtonColor: '#FFF',
   tabButtonTextSize: '11px',
@@ -274,9 +275,9 @@ export const LeftTabStyles = {
 }
 
 export const RightLinkStyles = {
-  buttonColor: 'transparent',
   textColor: '#A3A3B5',
-  hoverColor: '#A3A3B5',
+  buttonColor: 'transparent',
+  hoverColor: '#04004d',
   visitedColor: '#A3A3B5'
 }
 export const RightTabStyles = {
@@ -288,9 +289,9 @@ export const RightTabStyles = {
 
 export const DrawerLeftTabStyles = {
   tabButtonLinkStyles: {
-    textColor: '#000',
+    textColor: '#14141C',
     buttonColor: '#FFF',
-    hoverColor: '#000',
+    hoverColor: '#04004d',
     visitedColor: '#000'
   },
   tabButtonStyles: {
@@ -305,7 +306,8 @@ export const DrawerRightTabStyles = {
   tabButtonLinkStyles: {
     textColor: '#A3A3B5',
     buttonColor: 'transparent',
-    hoverColor: '#A3A3B5'
+    hoverColor: '#04004d',
+    visitedColor: '#A3A3B5'
   },
   tabButtonStyles: {
     tabButtonColor: '#F4F4FA',
