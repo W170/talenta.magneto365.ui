@@ -1,0 +1,40 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.JobsActionsComponent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 30px;
+
+  .ActionsIconWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .IconWrapper {
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    width: 37px;
+    height: 37px;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    padding: 10px 30px;
+    border-radius: 50px;
+    border: none;
+    background-color: v.$color-blue;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: v.$color-white;
+  }
+}
