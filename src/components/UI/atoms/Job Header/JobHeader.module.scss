@@ -1,0 +1,26 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.JobHeaderComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  h1 {
+    margin: 0;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    color: v.$text-color-blue;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: v.$colors-magneto-neutral;
+  }
+}
