@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { LogoComponent } from './Logo.component'
-import IsoLogoMagneto from '../../../../assets/isoMagneto.png'
-import LogoMagneto from '../../../../assets/logoMagneto.png'
+import { LogoMagneto, IsoLogoMagneto } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof LogoComponent> = {
   title: 'Atoms/Logo',

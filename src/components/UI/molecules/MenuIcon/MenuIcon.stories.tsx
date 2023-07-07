@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { MenuIcon } from './MenuIcon.component'
-import { ArchiveTick, Facebook } from 'iconsax-react'
+import { ArchiveTick, Youtube } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof MenuIcon> = {
   title: 'Molecules/Menu Icon',
@@ -9,7 +9,7 @@ const meta: Meta<typeof MenuIcon> = {
   args: {
     text: 'Text Here',
     isActive: false,
-    Icon: Facebook
+    Icon: Youtube
   }
 }
 

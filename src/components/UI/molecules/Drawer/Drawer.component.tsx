@@ -2,8 +2,8 @@ import React from 'react'
 import { IconItem } from '../../atoms'
 import { DrawerPortal } from './DrawerPortal'
 import { IDrawer } from './Drawer.interface'
-import { Add } from 'iconsax-react'
 import style from './drawer.module.scss'
+import { Add } from '../../../../constants/icons.constants'
 
 const Component: React.FC<IDrawer> = ({ children, onClose, isOpen }) => {
   const showDrawer = isOpen ? 'show' : 'hidden'
