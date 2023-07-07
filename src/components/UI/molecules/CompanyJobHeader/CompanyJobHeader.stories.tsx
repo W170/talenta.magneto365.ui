@@ -1,10 +1,10 @@
 import { StoryObj, Meta } from '@storybook/react'
-import Logo from '../../../../assets/grupo-exito-1.png'
-
 import { CompanyJobHeader } from './CompanyJobHeader.component'
 
+import Logo from '../../../../assets/grupo-exito-1.png'
+
 const meta: Meta<typeof CompanyJobHeader> = {
-  title: 'Atoms/Company Job Header',
+  title: 'Molecules/Company Job Header',
   component: CompanyJobHeader,
   args: {}
 }
@@ -22,6 +22,16 @@ export const Default: Story = {
     jobHeaderProps: {
       jobTitle: 'Comunicador Audiovisual',
       jobSubtitle: 'Grupo Exito'
+    }
+  }
+}
+
+export const Responsive: Story = {
+  args: {
+    ...Default.args,
+    jobHeaderProps: {
+      ...Default.args?.jobHeaderProps,
+      isMobile: true
     }
   }
 }
