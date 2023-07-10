@@ -22,10 +22,6 @@
       font-weight: var(--tab-button-text-weight);
       font-size: var(--tab-button-text-size);
       line-height: 14px;
-
-      &:hover {
-        color: v.$text-color-black;
-      }
     }
   }
 }

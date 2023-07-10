@@ -10,9 +10,9 @@ const TabButtonProps: ITabButton = {
     text: 'Busco Empleo'
   },
   tabButtonLinkStyles: {
-    textColor: '#000',
+    textColor: '#14141C',
     buttonColor: '#FFF',
-    hoverColor: '#000',
+    hoverColor: '#04004d',
     visitedColor: '#000'
   },
   tabButtonStyles: {
@@ -32,7 +32,8 @@ const TabButtonProps2: ITabButton = {
   tabButtonLinkStyles: {
     textColor: '#A3A3B5',
     buttonColor: 'transparent',
-    hoverColor: '#A3A3B5'
+    hoverColor: '#04004d',
+    visitedColor: '#A3A3B5'
   },
   tabButtonStyles: {
     tabButtonColor: '#F4F4FA',
@@ -49,9 +50,9 @@ const TabButton2Props: ITabButton = {
     text: 'I am looking for a job'
   },
   tabButtonLinkStyles: {
-    textColor: '#000',
+    textColor: '#14141C',
     buttonColor: '#FFF',
-    hoverColor: '#000',
+    hoverColor: '#04004d',
     visitedColor: '#000'
   },
   tabButtonStyles: {
@@ -71,7 +72,8 @@ const TabButton2Props2: ITabButton = {
   tabButtonLinkStyles: {
     textColor: '#A3A3B5',
     buttonColor: 'transparent',
-    hoverColor: '#A3A3B5'
+    hoverColor: '#04004d',
+    visitedColor: '#A3A3B5'
   },
   tabButtonStyles: {
     tabButtonColor: '#F4F4FA',
