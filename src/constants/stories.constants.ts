@@ -56,6 +56,8 @@ import { IMenuFilterItem } from '../components/UI/molecules/MenuFilter/MenuFilte
  *
  */
 
+export const classMUI = 'magneto-ui'
+
 //Avatar Atom
 export const AvatarProps: IAvatar = {
   userImage:
