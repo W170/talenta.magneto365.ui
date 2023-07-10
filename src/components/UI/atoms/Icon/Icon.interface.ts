@@ -6,7 +6,7 @@ export interface IconProps {
   /**
    * You can set the hover animation or disable
    */
-  hover: boolean
+  hover?: boolean
   /**
    * You can change the size of the icon by adding a numeric value here
    */

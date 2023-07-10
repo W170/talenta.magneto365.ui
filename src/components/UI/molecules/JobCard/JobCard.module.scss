@@ -1,0 +1,116 @@
+.magneto-ui-card-jobs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px, 20px;
+  min-height: 127px;
+  width: 100%;
+  gap: 30px;
+  border-radius: 12px;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+  container-type: inline-size;
+
+  &:hover {
+    background-color: #f4f4fa;
+    cursor: pointer;
+  }
+
+  &--data {
+    display: grid;
+    padding-right: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  &--row1,
+  &--row2,
+  &--row3,
+  &--row4 {
+    display: flex;
+  }
+
+  &--row1 {
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+  }
+  &--row2 {
+    flex-direction: column;
+    justify-content: center;
+
+    @container (min-width: 900px) {
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    p:nth-child(2) {
+      display: block;
+      @container (min-width: 1000px) {
+        display: none;
+      }
+    }
+
+    p:nth-child(3) {
+      display: none;
+      @container (min-width: 1000px) {
+        display: block;
+      }
+    }
+
+    &__variant {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  &--row3 {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    &__info1 {
+      display: flex;
+      align-items: center;
+    }
+
+    &__info2 {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+  &--row4 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    p {
+      margin: 0;
+    }
+  }
+  &--brand {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__img {
+      max-width: 90px;
+      max-height: 70px;
+      object-fit: contain;
+    }
+  }
+
+  &--arrow {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    position: absolute;
+    right: 7px;
+  }
+}
