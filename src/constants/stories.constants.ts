@@ -6,7 +6,6 @@ import {
   BrifecaseTick,
   ClipboardClose,
   DocumentText,
-  Facebook,
   HambergerMenu,
   Home2,
   Instagram,
@@ -17,13 +16,13 @@ import {
   Refresh,
   SearchNormal1,
   TaskSquare,
-  Youtube
-} from 'iconsax-react'
-
-import Tiktok from '../assets/tiktok.png'
-import Linkedin from '../assets/linkedin.png'
-import IsoLogoMagneto from '../assets/isoMagneto.png'
-import LogoMagneto from '../assets/logoMagneto.png'
+  Youtube,
+  IsoLogoMagneto,
+  LogoMagneto,
+  Tiktok,
+  Linkedin,
+  Facebook
+} from './icons.constants'
 
 import { IAvatar, ILogoComponent, IMainButton, IconProps } from '../components/UI/atoms'
 import {
@@ -163,8 +162,7 @@ export const removePropsButton: IMainButton = {
     Icon: Add,
     hover: false,
     color: '#14141C',
-    size: 18,
-    variant: 'Linear'
+    size: 18
   }
 }
 
@@ -190,8 +188,7 @@ export const closeSearchMobileProps: IMainButton = {
     Icon: Add,
     hover: false,
     color: '#14141C',
-    size: 25,
-    variant: 'Linear'
+    size: 25
   }
 }
 
@@ -420,9 +417,9 @@ export const MenuList: MenuItemInfo[] = [
 export const ListIcon: IListIcon[] = [
   { Icon: Facebook, url: 'https://www.facebook.com/MagnetoEmpleos?_rdc=4&_rdr' },
   { Icon: Instagram, url: 'https://www.instagram.com/magnetoempleos/' },
-  { assetsIcon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
+  { Icon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
   { Icon: Youtube, url: 'https://www.youtube.com/c/Magnetoempleos' },
-  { assetsIcon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
+  { Icon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
   { Icon: Link, url: 'https://www.magneto365.com/home/#comparte-magneto' }
 ]
 

@@ -1,19 +1,12 @@
-import { IconProps as IconPropsIconsSax, Icon } from 'iconsax-react'
-
-export interface IconProps extends IconPropsIconsSax {
-  /**
-   * Here is the assetsIcon component
-   */
-  assetsIcon?: string
+export interface IconProps {
   /**
    * Here is the icon component
    */
-  Icon?: Icon
+  Icon?: string
   /**
    * You can set the hover animation or disable
    */
   hover: boolean
-  className?: string
   /**
    * You can change the size of the icon by adding a numeric value here
    */

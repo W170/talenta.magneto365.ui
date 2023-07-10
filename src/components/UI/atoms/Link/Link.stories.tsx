@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Link } from './Link.component'
-import { Login } from 'iconsax-react'
+import { Login } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof Link> = {
   title: 'Atoms/Link',

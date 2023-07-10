@@ -1,12 +1,10 @@
-import { Icon } from 'iconsax-react'
-
 type itemType = 'button' | 'link'
 
 export interface IMenuIcon {
   /**
    * You can set the icon here
    */
-  Icon?: Icon
+  Icon?: string | undefined
   /**
    * Here is the menu text
    */
@@ -38,5 +36,4 @@ export interface IMenuIcon {
   /**
    * You can set the iconUrl here
    */
-  assetsIcon?: string
 }

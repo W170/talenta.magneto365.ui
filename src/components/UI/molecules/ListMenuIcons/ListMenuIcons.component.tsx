@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react'
 import { Divider } from '../../atoms'
 import { MenuIcon } from '../MenuIcon'
-import { LogoutCurve, Setting2 } from 'iconsax-react'
+
 import { IListMenuIcons } from './ListMenuIcons.interface'
 import { useMediaQuery } from '../../../hooks'
 import style from './listMenuIcons.module.scss'
+import { LoginCurve, Setting2 } from '../../../../constants/icons.constants'
 
 const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, menuItems1440, logout, settings }) => {
   const { logoutText, onClick } = logout
@@ -18,9 +19,9 @@ const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, menuItems144
         {menuResponsive?.map(({ title = '', items }, i: number) => (
           <div key={i}>
             <p>{title ? title : null}</p>
-            {items.map(({ slug, ...props }, i: number) => (
+            {items.map(({ slug, Icon, ...props }, i: number) => (
               <Fragment key={i}>
-                <MenuIcon isActive={urlParam === slug ? true : false} {...props} />
+                <MenuIcon Icon={Icon} isActive={urlParam === slug ? true : false} {...props} />
               </Fragment>
             ))}
           </div>
@@ -28,7 +29,7 @@ const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, menuItems144
         <MenuIcon type="button" onClick={onClickSettings} Icon={Setting2} text={settingsText} />
       </div>
       <Divider />
-      <MenuIcon type="button" onClick={onClick} Icon={LogoutCurve} text={logoutText} />
+      <MenuIcon type="button" onClick={onClick} Icon={LoginCurve} text={logoutText} />
     </div>
   )
 }

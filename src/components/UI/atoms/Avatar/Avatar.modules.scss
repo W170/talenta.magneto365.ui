@@ -4,8 +4,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 2.5rem;
-  height: 2.5rem;
   cursor: pointer;
   z-index: 12;
 
@@ -25,4 +23,9 @@
   height: 2.5rem;
   border-radius: 50%;
   background-color: v.$color-green;
+  img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+  }
 }

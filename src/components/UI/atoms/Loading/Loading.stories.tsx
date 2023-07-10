@@ -1,7 +1,7 @@
 import { StoryObj, Meta } from '@storybook/react'
 import { Loading } from './Loading.component'
 import { IconProps } from '../Icon'
-import { Refresh } from 'iconsax-react'
+import { Refresh } from '../../../../constants/icons.constants'
 
 const Icon: IconProps = {
   Icon: Refresh,

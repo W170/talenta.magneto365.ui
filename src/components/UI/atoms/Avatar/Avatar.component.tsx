@@ -1,8 +1,8 @@
 import React from 'react'
 import { IconItem } from '../Icon'
-import { User } from 'iconsax-react'
 import { IAvatar } from './Avatar.interface'
 import styles from './Avatar.modules.scss'
+import { User } from '../../../../constants/icons.constants'
 
 const Component: React.FC<IAvatar> = ({ userImage, onClick }) => {
   return (

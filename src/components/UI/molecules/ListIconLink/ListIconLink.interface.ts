@@ -1,5 +1,3 @@
-import { Icon } from 'iconsax-react'
-
 type Direction = 'row' | 'column'
 
 export interface IListIconLink {
@@ -12,6 +10,5 @@ export interface IListIconLink {
 
 export interface IListIcon {
   url: string
-  Icon?: Icon
-  assetsIcon?: string
+  Icon: string
 }
