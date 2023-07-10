@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { JobHeaderCard } from './JobHeaderCard.component'
 
 import Logo from '../../../../assets/grupo-exito-1.png'
-import { ArchiveAdd, Share, ExportSquare, Buildings2 } from 'iconsax-react'
+import { ArchiveAdd, Buildings2, Export3, Share } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof JobHeaderCard> = {
   title: 'Molecules/Job Header Card',
@@ -31,7 +31,7 @@ export const Default: Story = {
       actionsListIcon: [
         { Icon: ArchiveAdd, url: '' },
         { Icon: Share, url: '' },
-        { Icon: ExportSquare, url: '' },
+        { Icon: Export3, url: '' },
         { Icon: Buildings2, url: ' ' }
       ]
     }
