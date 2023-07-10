@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Setting4 } from 'iconsax-react'
 import { iconFilterOrder, menuFilterButton } from '../../../../constants/stories.constants'
 import { MenuIcon } from '../../molecules'
 import { MenuFilter } from '../../molecules/MenuFilter'
@@ -8,6 +7,7 @@ import { IFilterBottomHeader } from './FilterBottomHeader.interface'
 import style from './FilterBottomHeader.module.scss'
 import { useMediaQuery } from '../../../hooks'
 import MobileMenuFilter from '../../organism/MobileMenuFilter/MobileMenuFilter.component'
+import { Setting4 } from '../../../../constants/icons.constants'
 
 const FilterBottomHeader: React.FC<IFilterBottomHeader> = ({
   textButtonFilter,

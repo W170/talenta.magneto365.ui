@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { MainButton } from './MainButton.component'
-import { ProfileAdd } from 'iconsax-react'
+import { ProfileAdd } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof MainButton> = {
   title: 'Atoms/Main Button',

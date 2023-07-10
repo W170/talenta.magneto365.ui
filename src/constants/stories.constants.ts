@@ -6,7 +6,6 @@ import {
   BrifecaseTick,
   ClipboardClose,
   DocumentText,
-  Facebook,
   HambergerMenu,
   Home2,
   Instagram,
@@ -17,13 +16,13 @@ import {
   Refresh,
   SearchNormal1,
   TaskSquare,
-  Youtube
-} from 'iconsax-react'
-
-import Tiktok from '../assets/tiktok.png'
-import Linkedin from '../assets/linkedin.png'
-import IsoLogoMagneto from '../assets/isoMagneto.png'
-import LogoMagneto from '../assets/logoMagneto.png'
+  Youtube,
+  IsoLogoMagneto,
+  LogoMagneto,
+  Tiktok,
+  Linkedin,
+  Facebook
+} from './icons.constants'
 
 import { IAvatar, ILogoComponent, IMainButton, IconProps } from '../components/UI/atoms'
 import {
@@ -163,8 +162,7 @@ export const removePropsButton: IMainButton = {
     Icon: Add,
     hover: false,
     color: '#14141C',
-    size: 18,
-    variant: 'Linear'
+    size: 18
   }
 }
 
@@ -190,8 +188,7 @@ export const closeSearchMobileProps: IMainButton = {
     Icon: Add,
     hover: false,
     color: '#14141C',
-    size: 25,
-    variant: 'Linear'
+    size: 25
   }
 }
 
@@ -261,11 +258,12 @@ export const MobileSearchbarProps: IMobileSearchbar = {
 
 //TabButton Molecule
 export const LeftLinkStyles = {
+  textColor: '#14141C',
   buttonColor: '#FFF',
-  textColor: '#000',
-  hoverColor: '#000',
+  hoverColor: '#04004d',
   visitedColor: '#000'
 }
+
 export const LeftTabStyles = {
   tabButtonColor: '#FFF',
   tabButtonTextSize: '11px',
@@ -274,9 +272,9 @@ export const LeftTabStyles = {
 }
 
 export const RightLinkStyles = {
-  buttonColor: 'transparent',
   textColor: '#A3A3B5',
-  hoverColor: '#A3A3B5',
+  buttonColor: 'transparent',
+  hoverColor: '#04004d',
   visitedColor: '#A3A3B5'
 }
 export const RightTabStyles = {
@@ -288,9 +286,9 @@ export const RightTabStyles = {
 
 export const DrawerLeftTabStyles = {
   tabButtonLinkStyles: {
-    textColor: '#000',
+    textColor: '#14141C',
     buttonColor: '#FFF',
-    hoverColor: '#000',
+    hoverColor: '#04004d',
     visitedColor: '#000'
   },
   tabButtonStyles: {
@@ -305,7 +303,8 @@ export const DrawerRightTabStyles = {
   tabButtonLinkStyles: {
     textColor: '#A3A3B5',
     buttonColor: 'transparent',
-    hoverColor: '#A3A3B5'
+    hoverColor: '#04004d',
+    visitedColor: '#A3A3B5'
   },
   tabButtonStyles: {
     tabButtonColor: '#F4F4FA',
@@ -418,9 +417,9 @@ export const MenuList: MenuItemInfo[] = [
 export const ListIcon: IListIcon[] = [
   { Icon: Facebook, url: 'https://www.facebook.com/MagnetoEmpleos?_rdc=4&_rdr' },
   { Icon: Instagram, url: 'https://www.instagram.com/magnetoempleos/' },
-  { assetsIcon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
+  { Icon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
   { Icon: Youtube, url: 'https://www.youtube.com/c/Magnetoempleos' },
-  { assetsIcon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
+  { Icon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
   { Icon: Link, url: 'https://www.magneto365.com/home/#comparte-magneto' }
 ]
 

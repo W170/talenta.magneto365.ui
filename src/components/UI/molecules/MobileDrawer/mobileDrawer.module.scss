@@ -24,11 +24,11 @@
       border: none;
       cursor: pointer;
       &:nth-child(1) {
-        svg {
-          color: white;
+        img {
           transform: rotate(45deg);
           width: 30px;
           height: 30px;
+          filter: brightness(300%);
         }
       }
     }
