@@ -1,0 +1,30 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.JobDetailsComponent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 10px;
+  border-radius: 6px;
+  background-color: v.$disabled-color-gray;
+
+  .DetailWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    div {
+      display: flex;
+    }
+  }
+
+  .DetailText {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: v.$colors-magneto-neutral;
+  }
+}
