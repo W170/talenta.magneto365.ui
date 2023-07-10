@@ -1,6 +1,6 @@
 import { StoryObj, Meta } from '@storybook/react'
 import { JobActions } from './JobActions.component'
-import { ArchiveAdd, Buildings2, ExportSquare, Share } from 'iconsax-react'
+import { ArchiveAdd, Buildings2, Export3, Share } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof JobActions> = {
   title: 'Molecules/Jobs Actions',
@@ -18,7 +18,7 @@ export const Default: Story = {
     actionsListIcon: [
       { Icon: ArchiveAdd, url: '' },
       { Icon: Share, url: '' },
-      { Icon: ExportSquare, url: '' },
+      { Icon: Export3, url: '' },
       { Icon: Buildings2, url: ' ' }
     ]
   }
