@@ -1,0 +1,27 @@
+.magneto-ui-job-detail-container {
+  overflow: hidden;
+  width: 0;
+  height: 100vh;
+  position: relative;
+  border-left: 1px solid #e7e7f4;
+  background: #fff;
+  transition: all ease-in-out 0.3s;
+  &--btn {
+    cursor: pointer;
+    border: none;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 13.5px;
+    width: 26px;
+    height: 35px;
+    border-radius: 0px 6px 6px 0px;
+    background: #f4f4fa;
+  }
+}
+
+.is-open {
+  width: 643px;
+}
