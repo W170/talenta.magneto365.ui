@@ -1,0 +1,18 @@
+.magneto-ui-jobs-page {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+
+  &--center-row {
+    width: 100%;
+
+    &__jobs-result {
+      display: flex;
+      padding: 20px 10px 20px 10px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+    }
+  }
+}
