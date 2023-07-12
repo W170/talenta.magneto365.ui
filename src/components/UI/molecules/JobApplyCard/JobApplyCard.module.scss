@@ -1,0 +1,69 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.JobApplyCardComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 35px;
+
+  .JobApplyCardWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    padding: 20px;
+    gap: 14px;
+    border-radius: 16px;
+    background: v.$disabled-color-gray;
+  }
+
+  .JobApplyHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h1 {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: v.$text-color-black;
+    margin: 0px 0px 14px 0px;
+  }
+
+  .JobRequirements {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+
+    > h2,
+    p {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+      color: v.$text-color-black;
+      margin: 0px;
+    }
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 164px;
+    height: 44px;
+    padding: 10px 30px;
+    gap: 10px;
+
+    border-radius: 50px;
+    background: v.$color-blue;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: v.$color-white;
+  }
+}
