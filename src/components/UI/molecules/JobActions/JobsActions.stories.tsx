@@ -3,7 +3,7 @@ import { JobActions } from './JobActions.component'
 import { ArchiveAdd, Buildings2, Export3, Share } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof JobActions> = {
-  title: 'Molecules/Jobs Actions',
+  title: 'Molecules/Job Actions',
   component: JobActions,
   args: {}
 }
