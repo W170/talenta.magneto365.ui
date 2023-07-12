@@ -1,0 +1,29 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.JobSkillsCardComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 623px;
+  padding: 20px 35px;
+  gap: 12px;
+
+  h1 {
+    color: v.$text-color-black;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.308px;
+  }
+
+  .JobSkillsWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 12px;
+  }
+}
