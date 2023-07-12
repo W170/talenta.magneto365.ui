@@ -1,2 +1,2 @@
 export * from './JobDetailCard.interface'
-export { JobDetailCardHeader } from './JobDetailCard.component'
+export { JobDetailCard } from './JobDetailCard.component'
