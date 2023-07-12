@@ -4,7 +4,7 @@ import { Briefcase, Calendar1, DollarCircle, Location, People } from '../../../.
 import { JobDetails } from './JobDetails.component'
 
 const meta: Meta<typeof JobDetails> = {
-  title: 'Molecules/ Job Details',
+  title: 'Molecules/Job Details',
   component: JobDetails,
   args: {}
 }
