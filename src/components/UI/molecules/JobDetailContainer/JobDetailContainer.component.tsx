@@ -6,9 +6,8 @@ import style from './JobDetailContainer.module.scss'
 import { IJobDetailContainer } from './JobDetailContainer.interface'
 
 const JobDetailContainer: React.FC<IJobDetailContainer> = ({ children, isOpen = false, onClose }) => {
-  console.log('🚀 ', isOpen)
   const toggleMenu = useMemo(() => {
-    return isOpen ? style['is-open'] : ' '
+    return isOpen ? style['is-open'] : ''
   }, [isOpen])
 
   return (
