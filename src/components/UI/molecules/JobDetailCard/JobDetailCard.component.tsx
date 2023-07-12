@@ -15,4 +15,4 @@ const Component: React.FC<IJobDetailCard> = ({ jobDetailCardHeader, jobDetailCar
  * UI Molecule Component for Job Detail Card Header
  */
 
-export const JobDetailCardHeader = Component
+export const JobDetailCard = Component
