@@ -1,0 +1,111 @@
+.magneto-ui-card-mobile-jobs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 20px;
+  min-height: 127px;
+  width: 100%;
+  gap: 20px;
+  border-radius: 14px;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+
+  &:hover {
+    background-color: #f4f4fa;
+    cursor: pointer;
+    p {
+      color: #14141c;
+    }
+  }
+
+  &:hover &--arrow {
+    opacity: 1;
+    right: 4px;
+  }
+
+  &--data {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  p {
+    font-size: 12px;
+    color: #14141c;
+  }
+
+  &--row1 {
+    width: 70px;
+  }
+  &--row2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    p {
+      margin: 0;
+    }
+    &__position {
+      font-weight: bold;
+      display: block;
+    }
+    &__info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+    }
+  }
+  &--brand {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__img {
+      max-width: 70px;
+      max-height: 70px;
+      object-fit: contain;
+    }
+  }
+
+  &--arrow {
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    position: absolute;
+    right: 15px;
+  }
+}
+
+.was-seen {
+  p {
+    color: #63637e;
+    font-weight: normal;
+  }
+}
+
+.is-active {
+  background-color: #e9e9f6;
+  &:hover {
+    background-color: #e9e9f6;
+  }
+  p {
+    color: #14141c;
+  }
+
+  .magneto-ui-card-mobile-jobs {
+    &--arrow {
+      opacity: 1;
+      right: 4px;
+    }
+    &--row2__position {
+      font-weight: bold;
+      color: #000096;
+    }
+  }
+}
