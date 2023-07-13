@@ -14,7 +14,7 @@ const Component: React.FC<IJobFooterCard> = ({
     <div className={styles.JobFooterCardComponent}>
       <img src={jobFooterCompanyImg} alt={companyImgAlt} />
       <div className={styles['JobFooterIcons']}>
-        <h1>{jobFooterHeader}</h1>
+        <h2>{jobFooterHeader}</h2>
         <div className={styles['JobIconsWrapper']}>
           {jobFooterLinks.map(({ url, Icon }: IListIcon, index: number) => (
             <a key={index} href={url} target="" rel="">
