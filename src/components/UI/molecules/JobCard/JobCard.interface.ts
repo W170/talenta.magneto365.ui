@@ -62,5 +62,5 @@ export interface IJobCard {
   /**
    * this function show job detail
    */
-  showDetail: () => void
+  showDetail?: () => void
 }
