@@ -1,0 +1,37 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.JobDetailsComponent {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  gap: 10px;
+
+  .JobDetailsWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px 10px;
+    gap: 10px;
+    border-radius: 6px;
+    background-color: v.$disabled-color-gray;
+  }
+
+  .DetailWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    div {
+      display: flex;
+    }
+  }
+
+  .DetailText {
+    margin: 0px;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: v.$colors-magneto-neutral;
+  }
+}

@@ -1,0 +1,35 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.JobFooterCardComponent {
+  display: flex;
+  padding: 20px 20px 120px 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+
+  h2 {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: v.$text-color-black;
+    margin: 0px;
+  }
+
+  .JobFooterIcons {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-self: stretch;
+    gap: 21px;
+  }
+
+  .JobIconsWrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
