@@ -21,7 +21,12 @@ import {
   LogoMagneto,
   Tiktok,
   Linkedin,
-  Facebook
+  Facebook,
+  Calendar1,
+  People,
+  Briefcase,
+  DollarCircle,
+  Location
 } from './icons.constants'
 
 import { IAvatar, ILogoComponent, IMainButton, IconProps } from '../components/UI/atoms'
@@ -374,6 +379,9 @@ export const CurriculumTabProps: IHeaderTabs = {
   ],
   addDivider: true
 }
+
+//Jobs Details Molecule
+export const iconDetailList = [Calendar1, People, Briefcase, DollarCircle, Location]
 
 //Menu Item Molecule
 
