@@ -7,4 +7,8 @@ export interface ICompanyLogo {
    * Sets the company logo alt text
    */
   alt?: string
+  /**
+   *
+   */
+  isHidden?: boolean
 }
