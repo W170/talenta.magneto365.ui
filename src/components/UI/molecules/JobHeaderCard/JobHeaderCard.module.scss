@@ -1,4 +1,10 @@
 .JobHeaderCardComponent {
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid #e9e9f6;
+  background: #ffffff;
+  z-index: 1;
 }
