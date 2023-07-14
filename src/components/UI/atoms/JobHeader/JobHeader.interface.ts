@@ -10,5 +10,5 @@ export interface IJobHeader {
   /**
    * Sets if the header is mobile to remove the subtitle
    */
-  isMobile?: boolean
+  isHidden?: boolean
 }
