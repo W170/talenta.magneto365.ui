@@ -3,17 +3,12 @@ import { Meta, StoryObj } from '@storybook/react'
 import { JobDetailsDrawer } from './JobDetailsDrawer.component'
 import {
   ArchiveAdd,
-  Briefcase,
   Buildings2,
-  Calendar1,
-  DollarCircle,
   Export3,
   FacebookDark,
   LinkDark,
   LinkedInDark,
-  Location,
   MailDark,
-  People,
   Share,
   TwitterDark,
   WhatsAppDark
@@ -44,15 +39,13 @@ const jobHeaderCard = {
   }
 }
 
-const jobDetails = {
-  jobDetailsList: [
-    { Icon: Calendar1, detailText: 'Hace 10 días' },
-    { Icon: People, detailText: '4 cupos, 256 aplicaron' },
-    { Icon: Briefcase, detailText: '2 años de experiencia, profesional' },
-    { Icon: DollarCircle, detailText: '$ 2.000.000 a $ 3.000.000' },
-    { Icon: Location, detailText: 'Bello - Copacabana - Itagui - La Estrella' }
-  ]
-}
+const jobDetails = [
+  'Hace 10 días',
+  '4 cupos, 256 aplicaron',
+  '2 años de experiencia, profesional',
+  '$ 2.000.000 a $ 3.000.000',
+  'Bello - Copacabana - Itagui - La Estrella'
+]
 
 const jobDetailCard = [
   {

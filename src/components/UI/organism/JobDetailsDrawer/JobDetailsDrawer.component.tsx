@@ -8,6 +8,7 @@ import { JobFooterCard } from '../../molecules/JobFooterCard'
 
 import { IJobDetailsDrawer } from './JobDetailsDrawer.interface'
 import styles from './JobDetailsDrawer.module.scss'
+import { iconDetailList } from '@constants/stories.constants'
 
 const Component: React.FC<IJobDetailsDrawer> = ({
   jobHeaderCardProps,
@@ -20,7 +21,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   return (
     <section className={styles.JobDetailsDrawerComponent}>
       <JobHeaderCard {...jobHeaderCardProps} />
-      <JobDetails {...jobDetailsProps} />
+      <JobDetails iconList={iconDetailList} detailsTextList={jobDetailsProps} />
       {jobDetailCard.map(({ jobDetailCardHeader, jobDetailCardText }: IJobDetailCard, index: number) => (
         <React.Fragment key={index}>
           <JobDetailCard jobDetailCardHeader={jobDetailCardHeader} jobDetailCardText={jobDetailCardText} />

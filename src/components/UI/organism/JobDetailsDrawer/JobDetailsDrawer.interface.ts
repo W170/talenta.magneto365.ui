@@ -1,5 +1,4 @@
 import { IJobHeaderCard } from '../../molecules/JobHeaderCard'
-import { IJobDetail } from '../../molecules/JobDetails'
 import { IJobSkillsCard } from '../../molecules/JobSkillsCard'
 import { IJobApplyCard } from '../../molecules/JobApplyCard'
 import { IJobFooterCard } from '../../molecules/JobFooterCard'
@@ -13,7 +12,7 @@ export interface IJobDetailsDrawer {
   /**
    *
    */
-  jobDetailsProps: IJobDetail
+  jobDetailsProps: string[]
   /**
    *
    */
