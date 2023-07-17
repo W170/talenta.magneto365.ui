@@ -1,16 +1,16 @@
 import { StoryObj, Meta } from '@storybook/react'
-import { CompanyLogo } from './CompanyLogo.component'
+import { JobCompanyLogo } from './JobCompanyLogo.component'
 import Logo from '../../../../assets/grupo-exito-1.png'
 
-const meta: Meta<typeof CompanyLogo> = {
+const meta: Meta<typeof JobCompanyLogo> = {
   title: 'Atoms/Company Logo',
-  component: CompanyLogo,
+  component: JobCompanyLogo,
   args: {}
 }
 
 export default meta
 
-type Story = StoryObj<typeof CompanyLogo>
+type Story = StoryObj<typeof JobCompanyLogo>
 
 export const Default: Story = {
   args: {

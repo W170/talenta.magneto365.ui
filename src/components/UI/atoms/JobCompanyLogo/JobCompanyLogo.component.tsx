@@ -1,12 +1,12 @@
 import React from 'react'
-import { ICompanyLogo } from './CompanyLogo.interface'
+import { IJobCompanyLogo } from './JobCompanyLogo.interface'
 import styles from './CompanyLogo.module.scss'
 
-const Component: React.FC<ICompanyLogo> = ({ companyLogoImg, alt, isHidden }) => {
+const Component: React.FC<IJobCompanyLogo> = ({ companyLogoImg, alt, isHidden }) => {
   return (
     <React.Fragment>
       {!isHidden && (
-        <div className={styles.CompanyLogoComponent}>
+        <div className={styles.JobCompanyLogoComponent}>
           <img src={companyLogoImg} alt={alt} />
         </div>
       )}
@@ -18,4 +18,4 @@ const Component: React.FC<ICompanyLogo> = ({ companyLogoImg, alt, isHidden }) =>
  * UI Atom component of Company Logo
  */
 
-export const CompanyLogo = Component
+export const JobCompanyLogo = Component

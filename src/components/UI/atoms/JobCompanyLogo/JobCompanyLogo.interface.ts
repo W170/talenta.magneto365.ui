@@ -1,4 +1,4 @@
-export interface ICompanyLogo {
+export interface IJobCompanyLogo {
   /**
    * Sets the company logo for job detail
    */
