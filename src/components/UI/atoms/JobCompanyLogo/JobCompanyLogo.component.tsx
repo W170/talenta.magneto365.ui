@@ -1,6 +1,6 @@
 import React from 'react'
 import { IJobCompanyLogo } from './JobCompanyLogo.interface'
-import styles from './CompanyLogo.module.scss'
+import styles from './JobCompanyLogo.module.scss'
 
 const Component: React.FC<IJobCompanyLogo> = ({ companyLogoImg, alt, isHidden }) => {
   return (

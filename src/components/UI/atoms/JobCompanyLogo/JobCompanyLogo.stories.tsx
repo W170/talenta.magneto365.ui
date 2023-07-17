@@ -3,7 +3,7 @@ import { JobCompanyLogo } from './JobCompanyLogo.component'
 import Logo from '../../../../assets/grupo-exito-1.png'
 
 const meta: Meta<typeof JobCompanyLogo> = {
-  title: 'Atoms/Company Logo',
+  title: 'Atoms/Job Company Logo',
   component: JobCompanyLogo,
   args: {}
 }
