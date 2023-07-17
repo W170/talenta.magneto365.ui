@@ -15,11 +15,9 @@ type Story = StoryObj<typeof JobActions>
 export const Default: Story = {
   args: {
     actionButtonText: 'Aplicar',
-    actionsListIcon: [
-      { Icon: ArchiveAdd, url: '' },
-      { Icon: Share, url: '' },
-      { Icon: Export3, url: '' },
-      { Icon: Buildings2, url: ' ' }
-    ]
+    actionsButtonIcons: [ArchiveAdd, Share],
+    actionsButtonEvents: [],
+    actionsAnchorIcons: [Export3, Buildings2],
+    actionsAnchorLinks: ['link1', 'link2']
   }
 }
