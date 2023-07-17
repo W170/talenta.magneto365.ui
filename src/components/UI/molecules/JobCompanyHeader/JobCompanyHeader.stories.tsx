@@ -4,7 +4,7 @@ import { JobCompanyHeader } from './JobCompanyHeader.component'
 import Logo from '../../../../assets/grupo-exito-1.png'
 
 const meta: Meta<typeof JobCompanyHeader> = {
-  title: 'Molecules/Company Job Header',
+  title: 'Molecules/Job Company Header',
   component: JobCompanyHeader,
   args: {}
 }
@@ -15,7 +15,7 @@ type Story = StoryObj<typeof JobCompanyHeader>
 
 export const Default: Story = {
   args: {
-    companyLogoProps: {
+    jobCompanyLogoProps: {
       companyLogoImg: Logo,
       alt: 'Grupo Exito Logo'
     },

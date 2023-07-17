@@ -4,7 +4,7 @@ export interface IJobCompanyHeader {
   /**
    * Props for the company logo
    */
-  companyLogoProps: IJobCompanyLogo
+  jobCompanyLogoProps: IJobCompanyLogo
   /**
    * Props for the job header
    */
