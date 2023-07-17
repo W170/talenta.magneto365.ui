@@ -1,9 +1,9 @@
 import React, { useLayoutEffect, useState } from 'react'
-import { CompanyLogo, JobHeader } from '../../atoms'
-import { ICompanyJobHeader } from './CompanyJobHeader.interface'
+import { JobCompanyLogo, JobHeader } from '../../atoms'
+import { IJobCompanyHeader } from './JobCompanyHeader.interface'
 import styles from './CompanyJobHeader.module.scss'
 
-const Component: React.FC<ICompanyJobHeader> = ({ companyLogoProps, jobHeaderProps }) => {
+const Component: React.FC<IJobCompanyHeader> = ({ companyLogoProps, jobHeaderProps }) => {
   const [isHidden, setIsHidden] = useState(false)
 
   useLayoutEffect(() => {
@@ -29,8 +29,8 @@ const Component: React.FC<ICompanyJobHeader> = ({ companyLogoProps, jobHeaderPro
   }, [isHidden])
 
   return (
-    <div className={styles.CompanyJobHeaderComponent}>
-      <CompanyLogo {...companyLogoProps} isHidden={isHidden} />
+    <div className={styles.JobCompanyHeaderComponent}>
+      <JobCompanyLogo {...companyLogoProps} isHidden={isHidden} />
       <JobHeader {...jobHeaderProps} isHidden={isHidden} />
     </div>
   )
@@ -40,4 +40,4 @@ const Component: React.FC<ICompanyJobHeader> = ({ companyLogoProps, jobHeaderPro
  * UI Molecule component for Company Job Header
  */
 
-export const CompanyJobHeader = Component
+export const JobCompanyHeader = Component
