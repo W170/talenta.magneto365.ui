@@ -26,7 +26,11 @@ import {
   People,
   Briefcase,
   DollarCircle,
-  Location
+  Location,
+  ArchiveAdd,
+  Share,
+  Export3,
+  Buildings2
 } from './icons.constants'
 
 import { IAvatar, ILogoComponent, IMainButton, IconProps } from '../components/UI/atoms'
@@ -382,6 +386,11 @@ export const CurriculumTabProps: IHeaderTabs = {
 
 //Jobs Details Molecule
 export const iconDetailList = [Calendar1, People, Briefcase, DollarCircle, Location]
+
+//Jobs Actions Molecule
+export const buttonIconsList = [ArchiveAdd, Share]
+
+export const anchorIconList = [Export3, Buildings2]
 
 //Menu Item Molecule
 
