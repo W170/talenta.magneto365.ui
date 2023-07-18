@@ -22,7 +22,10 @@
     &__left-section {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 10px;
+      @media (min-width: v.$screen-xs) {
+        gap: 25px;
+      }
 
       button {
         padding: 0px;
@@ -31,6 +34,9 @@
         max-width: 80px;
         max-height: 40px;
         object-fit: contain;
+        @media (min-width: v.$screen-md) {
+          max-width: 115px;
+        }
       }
       &--gif {
         display: none;
@@ -40,36 +46,31 @@
           height: auto;
           object-fit: contain;
         }
+        @media (min-width: v.$screen-hd) {
+          width: 200px;
+        }
       }
     }
 
-    .magneto-ui-middle-section {
+    &__middle-section {
       display: inherit;
-      width: 40%;
-      @media (min-width: v.$screen-xl) {
-        width: 50%;
+      width: 30%;
+      @media (min-width: v.$screen-hd) {
+        width: 40%;
       }
     }
 
-    .magneto-ui-right-section {
+    &__right-section {
       display: inherit;
-      gap: 18px;
+      gap: 5px;
+      @media (min-width: v.$screen-xs) {
+        gap: 18px;
+      }
     }
   }
 
-  .magneto-ui-third-row {
+  &--third-row {
     display: inherit;
     flex-direction: row;
-    //margin: 5px 0px;
-  }
-
-  @media screen and (max-width: (v.$screen-lg - 1)) {
-    .magneto-ui-first-row {
-      margin: 0px;
-    }
-
-    .magneto-ui-third-row {
-      margin: 0px;
-    }
   }
 }
