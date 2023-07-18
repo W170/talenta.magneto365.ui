@@ -1,17 +1,22 @@
 import React from 'react'
-import { JobHeaderCard } from '../../molecules/JobHeaderCard'
-import { JobDetails } from '../../molecules/JobDetails'
-import { IJobDetailCard, JobDetailCard } from '../../molecules/JobDetailCard'
-import { JobSkillsCard } from '../../molecules/JobSkillsCard'
-import { JobApplyCard } from '../../molecules/JobApplyCard'
-import { JobFooterCard } from '../../molecules/JobFooterCard'
+import {
+  JobCompanyHeader,
+  JobActions,
+  JobDetails,
+  JobDetailCard,
+  JobSkillsCard,
+  JobApplyCard,
+  JobFooterCard
+} from '@components/UI/molecules'
 
 import { IJobDetailsDrawer } from './JobDetailsDrawer.interface'
 import styles from './JobDetailsDrawer.module.scss'
-import { iconDetailList } from '@constants/stories.constants'
+
+import { anchorIconList, buttonIconsList, iconDetailList } from '@constants/stories.constants'
 
 const Component: React.FC<IJobDetailsDrawer> = ({
-  jobHeaderCardProps,
+  jobCompanyLogoProps,
+  jobActionsProps,
   jobDetailsProps,
   jobDetailCard,
   jobSkillsCardProps,
@@ -20,9 +25,12 @@ const Component: React.FC<IJobDetailsDrawer> = ({
 }) => {
   return (
     <section className={styles.JobDetailsDrawerComponent}>
-      <JobHeaderCard {...jobHeaderCardProps} />
+      <div className={styles['JobHeaderCardWrapper']}>
+        <JobCompanyHeader {...jobCompanyLogoProps} />
+        <JobActions actionsButtonIcons={buttonIconsList} actionsAnchorIcons={anchorIconList} {...jobActionsProps} />
+      </div>
       <JobDetails iconList={iconDetailList} detailsTextList={jobDetailsProps} />
-      {jobDetailCard.map(({ jobDetailCardHeader, jobDetailCardText }: IJobDetailCard, index: number) => (
+      {jobDetailCard.map(({ jobDetailCardHeader, jobDetailCardText }, index: number) => (
         <React.Fragment key={index}>
           <JobDetailCard jobDetailCardHeader={jobDetailCardHeader} jobDetailCardText={jobDetailCardText} />
         </React.Fragment>

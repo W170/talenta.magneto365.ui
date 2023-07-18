@@ -2,14 +2,10 @@ import { Meta, StoryObj } from '@storybook/react'
 
 import { JobDetailsDrawer } from './JobDetailsDrawer.component'
 import {
-  ArchiveAdd,
-  Buildings2,
-  Export3,
   FacebookDark,
   LinkDark,
   LinkedInDark,
   MailDark,
-  Share,
   TwitterDark,
   WhatsAppDark
 } from '../../../../constants/icons.constants'
@@ -17,25 +13,31 @@ import Logo from '../../../../assets/grupo-exito-1.png'
 
 import { IJobSkillsCard } from '../../molecules/JobSkillsCard'
 
-const jobHeaderCard = {
-  companyJobHeader: {
-    companyLogoProps: {
-      companyLogoImg: Logo,
-      alt: 'Grupo Exito Logo'
-    },
-    jobHeaderProps: {
-      jobTitle: 'Comunicador Audiovisual',
-      jobSubtitle: 'Grupo Exito'
-    }
+const jobCompanyLogo = {
+  jobCompanyLogoProps: {
+    companyLogoImg: Logo,
+    alt: 'Grupo Exito Logo'
   },
-  jobActions: {
-    actionButtonText: 'Aplicar',
-    actionsListIcon: [
-      { Icon: ArchiveAdd, url: '' },
-      { Icon: Share, url: '' },
-      { Icon: Export3, url: '' },
-      { Icon: Buildings2, url: ' ' }
-    ]
+  jobHeaderProps: {
+    jobTitle: 'Comunicador Audiovisual',
+    jobSubtitle: 'Grupo Exito'
+  }
+}
+
+const onClickOne = () => {
+  console.log('1')
+}
+
+const onClickTwo = () => {
+  console.log(2)
+}
+
+const jobActions = {
+  actionButtonText: 'Aplicar',
+  actionsButtonEvents: [onClickOne, onClickTwo],
+  actionsAnchorLinks: ['link1', 'link2'],
+  onHandleClick: () => {
+    //
   }
 }
 
@@ -114,7 +116,8 @@ type Story = StoryObj<typeof JobDetailsDrawer>
 
 export const Default: Story = {
   args: {
-    jobHeaderCardProps: jobHeaderCard,
+    jobCompanyLogoProps: jobCompanyLogo,
+    jobActionsProps: jobActions,
     jobDetailsProps: jobDetails,
     jobDetailCard: jobDetailCard,
     jobSkillsCardProps: jobSkillsCard,
