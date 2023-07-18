@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import JobsPage from './JobsPage.component'
-import { optionsMenuFilter } from '../../../../constants/stories.constants'
+import { optionsMenuFilter, vacants } from '../../../../constants/stories.constants'
 
 const meta: Meta<typeof JobsPage> = {
   title: 'Pages/Jobs Page',
@@ -16,7 +16,8 @@ const meta: Meta<typeof JobsPage> = {
       textOrderFilter: 'Fecha de publicación',
       setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
       orderByText: 'Organizar por'
-    }
+    },
+    vacantProps: vacants
   }
 }
 
