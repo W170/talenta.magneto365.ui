@@ -1,0 +1,75 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-logout-jobs-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  padding: 10px 20px;
+  background-color: v.$color-white;
+  border-bottom: 1px solid v.$color-tertiary-gray;
+
+  &--second-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    &__left-section {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      button {
+        padding: 0px;
+      }
+      &--company-logo {
+        max-width: 80px;
+        max-height: 40px;
+        object-fit: contain;
+      }
+      &--gif {
+        display: none;
+        @media (min-width: v.$screen-lg) {
+          display: block;
+          width: 130px;
+          height: auto;
+          object-fit: contain;
+        }
+      }
+    }
+
+    .magneto-ui-middle-section {
+      display: inherit;
+      width: 40%;
+      @media (min-width: v.$screen-xl) {
+        width: 50%;
+      }
+    }
+
+    .magneto-ui-right-section {
+      display: inherit;
+      gap: 18px;
+    }
+  }
+
+  .magneto-ui-third-row {
+    display: inherit;
+    flex-direction: row;
+    //margin: 5px 0px;
+  }
+
+  @media screen and (max-width: (v.$screen-lg - 1)) {
+    .magneto-ui-first-row {
+      margin: 0px;
+    }
+
+    .magneto-ui-third-row {
+      margin: 0px;
+    }
+  }
+}
