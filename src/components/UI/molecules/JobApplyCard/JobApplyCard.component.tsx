@@ -1,8 +1,14 @@
 import React from 'react'
 import styles from './JobApplyCard.module.scss'
 import { IJobApplyCard, JobRequirementsElement } from './JobApplyCard.interface'
+import { MainButton } from '@components/UI/atoms'
 
-const Component: React.FC<IJobApplyCard> = ({ jobApplyCardHeader, jobApplyCardReqs, jobApplyButtonText }) => {
+const Component: React.FC<IJobApplyCard> = ({
+  jobApplyCardHeader,
+  jobApplyCardReqs,
+  jobApplyButtonText,
+  onHandlerClick
+}) => {
   return (
     <div className={styles.JobApplyCardComponent}>
       <div className={styles['JobApplyCardWrapper']}>
@@ -17,7 +23,7 @@ const Component: React.FC<IJobApplyCard> = ({ jobApplyCardHeader, jobApplyCardRe
             )
           )}
         </div>
-        <button>{jobApplyButtonText}</button>
+        <MainButton buttonType="button" buttonText={jobApplyButtonText} onClick={onHandlerClick} />
       </div>
     </div>
   )
@@ -27,5 +33,3 @@ const Component: React.FC<IJobApplyCard> = ({ jobApplyCardHeader, jobApplyCardRe
  */
 
 export const JobApplyCard = Component
-
-//

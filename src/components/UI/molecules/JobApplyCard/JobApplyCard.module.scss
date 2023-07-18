@@ -37,8 +37,7 @@
     flex-direction: row;
     gap: 4px;
 
-    > h2,
-    p {
+    h2 {
       font-size: 14px;
       font-style: normal;
       font-weight: 600;
@@ -46,18 +45,20 @@
       color: v.$text-color-black;
       margin: 0px;
     }
+    p {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      color: v.$text-color-black;
+      margin: 0px;
+    }
   }
 
   button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 164px;
     height: 44px;
     padding: 10px 30px;
-    gap: 10px;
-    border: none;
-    border-radius: 50px;
     background: v.$color-blue;
 
     font-size: 16px;
@@ -65,5 +66,18 @@
     font-weight: 700;
     line-height: normal;
     color: v.$color-white;
+  }
+
+  @media screen and (max-width: v.$screen-sm) {
+    h1 {
+      font-size: 12px;
+    }
+
+    .JobRequirements {
+      > h2,
+      p {
+        font-size: 12px;
+      }
+    }
   }
 }
