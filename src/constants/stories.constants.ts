@@ -192,6 +192,18 @@ export const closeSearchMobileProps: IMainButton = {
   }
 }
 
+export const SignInProps = {
+  type: 'button' as const,
+  text: 'Iniciar Sesion',
+  href: '#'
+}
+
+export const SignUpProps = {
+  buttonType: 'button' as const,
+  buttonText: 'Crear Cuenta',
+  buttonSize: 'medium' as const
+}
+
 export const CreateAccountButton: IMainButton = {
   buttonType: 'button',
   buttonStyles: {
