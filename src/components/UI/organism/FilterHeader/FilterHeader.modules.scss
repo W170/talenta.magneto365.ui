@@ -1,0 +1,71 @@
+@use '@shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-filter-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4px;
+  background-color: v.$disabled-color-gray;
+  width: 260px;
+  max-width: 260px;
+  height: 90px;
+  max-height: 90px;
+  padding: 10px 10px 18px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.magneto-ui-filter-header_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  max-height: 50%;
+  overflow: hidden;
+
+  & > p {
+    font-size: 0.9375 rem;
+    font-weight: 700;
+    color: v.$text-color-black;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.magneto-ui-filter-header_clean {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 5px;
+
+  & > span {
+    font-size: 13px;
+    color: #282835;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.magneto-ui-filter-header_btn {
+  padding: 8px 2px 8px 2px !important;
+
+  p {
+    font-weight: unset !important;
+    margin-left: 4px !important;
+  }
+}
+
+.magneto-ui-filter-header_switch {
+  p {
+    font-size: 12px;
+    letter-spacing: -0.3px;
+  }
+}

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import FilterBottomHeader from './FilterBottomHeader.component'
-import { optionsMenuFilter } from '../../../../constants/stories.constants'
+import { optionsFilterOrderBy } from '../../../../constants/stories.constants'
 
 const meta: Meta<typeof FilterBottomHeader> = {
   title: 'Template/Filter Bottom Header',
@@ -11,7 +11,7 @@ const meta: Meta<typeof FilterBottomHeader> = {
     filterSummary: '280 empleos',
     openFilterDrawer: () => console.log('openFilterDrawer'),
     orderFilter: () => console.log('orderFilter'),
-    filterItems: optionsMenuFilter,
+    filterItems: optionsFilterOrderBy,
     textOrderFilter: 'Fecha de publicación',
     setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
     orderByText: 'Organizar por'
