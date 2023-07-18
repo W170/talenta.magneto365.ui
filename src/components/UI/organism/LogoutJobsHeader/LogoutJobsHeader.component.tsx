@@ -29,6 +29,7 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
   homeUrl,
   companyLogo,
   companySlug,
+  companyUrl,
   gif
 }) => {
   const { type, href, text } = signInLink
@@ -87,6 +88,7 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
   // SignUp Button Component
   const LogoutHeaderButtonSignUp = useMediaQuery(
     <MainButton
+      buttonSize="full"
       {...SignUpButtonStyle}
       buttonText={buttonText}
       onClick={onClick}
@@ -109,11 +111,14 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
           <a href={homeUrl}>
             <LogoComponent {...LogoProps} isoView={true} />
           </a>
-          <img
-            className={styles[`${Muiclass}-logout-jobs-header--second-row__left-section--company-logo`]}
-            src={companyLogo}
-            alt={companySlug}
-          />
+          <a href={companyUrl}>
+            <img
+              className={styles[`${Muiclass}-logout-jobs-header--second-row__left-section--company-logo`]}
+              src={companyLogo}
+              alt={companySlug}
+            />
+          </a>
+
           <img
             className={styles[`${Muiclass}-logout-jobs-header--second-row__left-section--gif`]}
             alt={companySlug}
@@ -121,13 +126,15 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
           />
           {LogoutHeaderMobileSearchbarButton}
         </div>
-        <div className={styles[`${Muiclass}-middle-section`]}>{LogoutHeaderSearchbar}</div>
-        <div className={styles[`${Muiclass}-right-section`]}>
+        <div className={styles[`${Muiclass}-logout-jobs-header--second-row__middle-section`]}>
+          {LogoutHeaderSearchbar}
+        </div>
+        <div className={styles[`${Muiclass}-logout-jobs-header--second-row__right-section`]}>
           {LogoutHeaderLinkSignIn}
           {LogoutHeaderButtonSignUp}
         </div>
       </div>
-      <div className={styles[`${Muiclass}-third-row`]}>{LogoutHeaderBreadcrumbs}</div>
+      <div className={styles[`${Muiclass}-logout-jobs-header--third-row`]}>{LogoutHeaderBreadcrumbs}</div>
     </header>
   )
 }

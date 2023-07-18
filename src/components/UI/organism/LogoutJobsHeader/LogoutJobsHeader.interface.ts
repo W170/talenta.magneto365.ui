@@ -11,5 +11,6 @@ export interface ILogoutJobsHeader {
   homeUrl: string
   companyLogo: string
   companySlug: string
+  companyUrl: string
   gif: string
 }
