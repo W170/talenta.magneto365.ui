@@ -1,0 +1,35 @@
+@use '@shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-filter-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: v.$disabled-color-gray;
+  width: 230px;
+  max-width: 230px;
+  height: 26px;
+  max-height: 26px;
+  padding: 4px 6px 4px 10px;
+  border-radius: 50px;
+  box-sizing: border-box;
+  margin: 0;
+  cursor: pointer;
+  & > span,
+  & > output {
+    font-size: 0.875rem;
+    color: v.$filter-item-font-color;
+  }
+  & > span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  & > output {
+    background-color: v.$color-white;
+    padding: 1px 5px;
+    border-radius: 50px;
+  }
+}
+.selected {
+  background-color: v.$selected-color-item;
+}

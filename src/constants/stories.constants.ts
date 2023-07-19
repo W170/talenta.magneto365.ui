@@ -38,6 +38,7 @@ import { IlistMenuUserProps } from '../components/UI/organism/LoginHeader'
 import { ILoading } from '../components/UI/atoms/Loading'
 import { IMenuFilterItem } from '../components/UI/molecules/MenuFilter/MenuFilter.interface'
 import { IJobCard } from '../components/UI/molecules/JobCard/JobCard.interface'
+import { TOptionFilterSearch } from '@components/UI/molecules/FilterSearchItem'
 
 /**
  *
@@ -560,7 +561,7 @@ export const iconFilterOrder = {
   size: 20
 }
 
-export const optionsMenuFilter: IMenuFilterItem[] = [
+export const optionsFilterOrderBy: IMenuFilterItem[] = [
   {
     field: 'salary_show',
     label: 'Salario'
@@ -651,5 +652,39 @@ export const vacants: IJobCard[] = [
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
+  }
+]
+
+//TODO: temporal side menu filter
+export const optionsFilterMenu: TOptionFilterSearch[] = [
+  {
+    id: 1,
+    operator: 1,
+    label: 'Administración y oficina',
+    amount: 200
+  },
+  {
+    id: 14,
+    operator: 1,
+    label: 'Ingenierías',
+    amount: 200
+  },
+  {
+    id: 18,
+    operator: 1,
+    label: 'Medicina, sector de la salud y Ciencias',
+    amount: 200
+  },
+  {
+    id: 2,
+    operator: 1,
+    label: 'Recursos Humanos',
+    amount: 200
+  },
+  {
+    id: 25,
+    operator: 1,
+    label: 'Ventas',
+    amount: 200
   }
 ]

@@ -1,0 +1,44 @@
+@use '@shared/stylesheets/variables.scss' as v;
+@use '@shared/stylesheets/mixins.scss' as m;
+
+.magneto-ui-filter-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background-color: v.$disabled-color-gray;
+
+  width: 260px;
+  max-width: 260px;
+  // height: 250px;
+  height: auto;
+  max-height: 250px;
+  padding: 10px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  //TODO: review this import
+  @include m.scroll-filter;
+  // @include m.scroll-height(true);
+}
+
+.magneto-ui-filter-card_header {
+  display: flex;
+  width: 230px;
+  max-width: 230px;
+  & > p {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: v.$text-color-black;
+    width: 50%;
+    max-width: 50%;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+}
