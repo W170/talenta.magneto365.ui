@@ -2,11 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 32px, 20px;
+  padding: 32px 20px;
   min-height: 127px;
   width: 100%;
   gap: 30px;
-  border-radius: 12px;
+  border-radius: 14px;
   position: relative;
   transition: all ease-in-out 0.3s;
   container-type: inline-size;
@@ -14,6 +14,14 @@
   &:hover {
     background-color: #f4f4fa;
     cursor: pointer;
+    p {
+      color: #14141c;
+    }
+  }
+
+  &:hover &--arrow {
+    opacity: 1;
+    right: 4px;
   }
 
   &--data {
@@ -21,6 +29,11 @@
     padding-right: 30px;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+  }
+
+  p {
+    font-size: 14px;
+    color: #14141c;
   }
 
   &--row1,
@@ -31,36 +44,28 @@
   }
 
   &--row1 {
-    padding-left: 30px;
-    display: flex;
     align-items: center;
+    width: 50px;
+    height: 50px;
   }
   &--row2 {
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
 
-    @container (min-width: 900px) {
-      flex-direction: row;
-      justify-content: space-around;
+    @container (min-width: 1000px) {
+      gap: 10px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: left;
       align-items: center;
     }
 
     p {
       margin: 0;
     }
-
-    p:nth-child(2) {
-      display: block;
-      @container (min-width: 1000px) {
-        display: none;
-      }
-    }
-
-    p:nth-child(3) {
-      display: none;
-      @container (min-width: 1000px) {
-        display: block;
-      }
+    &__position {
+      font-weight: bold;
     }
 
     &__variant {
@@ -70,11 +75,15 @@
     }
   }
   &--row3 {
-    display: flex;
-    justify-content: center;
+    justify-content: left;
     gap: 50px;
     &__info1 {
       display: flex;
+      align-items: center;
+    }
+    p {
+      display: flex;
+      flex-wrap: wrap;
       align-items: center;
     }
 
@@ -85,32 +94,65 @@
     }
   }
   &--row4 {
-    display: flex;
     align-items: center;
     flex-wrap: wrap;
+    padding-right: 30px;
     p {
       margin: 0;
     }
   }
   &--brand {
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
     background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     justify-content: center;
     &__img {
-      max-width: 90px;
-      max-height: 70px;
+      max-width: 50px;
+      max-height: 50px;
       object-fit: contain;
     }
   }
 
   &--arrow {
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
     top: 50%;
     transform: translateY(-50%);
     width: 34px;
     position: absolute;
-    right: 7px;
+    right: 15px;
+  }
+}
+
+.was-seen {
+  p {
+    color: #63637e;
+    font-weight: normal;
+  }
+}
+
+.is-active {
+  background-color: #e9e9f6;
+  &:hover .magneto-ui-card-jobs--row2__position {
+    color: #000096;
+  }
+  &:hover {
+    background-color: #e9e9f6;
+  }
+  p {
+    color: #14141c;
+  }
+
+  .magneto-ui-card-jobs {
+    &--arrow {
+      opacity: 1;
+      right: 4px;
+    }
+    &--row2__position {
+      font-weight: bold;
+      color: #000096;
+    }
   }
 }

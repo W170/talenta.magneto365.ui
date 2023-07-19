@@ -1,13 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react'
 import MobileMenuFilter from './MobileMenuFilter.component'
-import { optionsMenuFilter } from '../../../../constants/stories.constants'
+import { optionsFilterOrderBy } from '../../../../constants/stories.constants'
 
 const meta: Meta<typeof MobileMenuFilter> = {
   title: 'Organism/Mobile Menu Filter',
   component: MobileMenuFilter,
   tags: ['autodocs'],
   args: {
-    filterItems: optionsMenuFilter,
+    filterItems: optionsFilterOrderBy,
     setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
     isOpen: true,
     onClose: () => ({}),
