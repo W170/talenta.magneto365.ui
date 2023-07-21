@@ -37,10 +37,9 @@
       width: 36px;
       height: 36px;
       border-radius: 50%;
+      transition: all ease-in-out 0.3s;
       &:hover {
         background-color: v.$colors-magneto-neutral-gray-5;
-        animation-timing-function: ease-out;
-        animation-duration: 300ms;
       }
 
       > img {
