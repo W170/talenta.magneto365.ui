@@ -23,7 +23,7 @@
     align-items: flex-start;
   }
 
-  h1 {
+  h2 {
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
@@ -37,7 +37,7 @@
     flex-direction: row;
     gap: 4px;
 
-    h2 {
+    h3 {
       font-size: 14px;
       font-style: normal;
       font-weight: 600;
@@ -69,12 +69,12 @@
   }
 
   @media screen and (max-width: v.$screen-sm) {
-    h1 {
+    h2 {
       font-size: 12px;
     }
 
     .JobRequirements {
-      > h2,
+      > h3,
       p {
         font-size: 12px;
       }

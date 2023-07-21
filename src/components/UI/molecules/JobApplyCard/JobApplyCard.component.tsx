@@ -13,11 +13,11 @@ const Component: React.FC<IJobApplyCard> = ({
     <div className={styles.JobApplyCardComponent}>
       <div className={styles['JobApplyCardWrapper']}>
         <div className={styles['JobApplyHeader']}>
-          <h1>{jobApplyCardHeader}</h1>
+          <h2>{jobApplyCardHeader}</h2>
           {jobApplyCardReqs.map(
             ({ jobRequirementTitle, jobRequirementInfo }: JobRequirementsElement, index: number) => (
               <div className={styles['JobRequirements']} key={index}>
-                <h2>{jobRequirementTitle}</h2>
+                <h3>{jobRequirementTitle}</h3>
                 <p>{jobRequirementInfo}</p>
               </div>
             )
