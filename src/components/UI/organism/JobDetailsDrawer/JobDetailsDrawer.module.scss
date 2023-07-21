@@ -1,7 +1,12 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
 .JobDetailsDrawerComponent {
+  position: sticky;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 623px;
+
   .JobHeaderCardWrapper {
     position: sticky;
     top: 0;
@@ -11,5 +16,13 @@
     border-bottom: 1px solid #e9e9f6;
     background: #ffffff;
     z-index: 1;
+  }
+
+  @media screen and (max-width: (v.$screen-xl + 80px)) {
+    width: 315px;
+  }
+
+  @media screen and (max-width: (v.$screen-hd + 74px)) {
+    width: 482px;
   }
 }
