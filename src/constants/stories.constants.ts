@@ -37,6 +37,7 @@ import {
 import { IlistMenuUserProps } from '../components/UI/organism/LoginHeader'
 import { ILoading } from '../components/UI/atoms/Loading'
 import { IMenuFilterItem } from '../components/UI/molecules/MenuFilter/MenuFilter.interface'
+import { IlistMenuUserPropsNot1440 } from '../components/UI/organism'
 
 /**
  *
@@ -551,6 +552,13 @@ export const listMenuUserProps: IlistMenuUserProps = {
   urlParam: 'guardados',
   menuItems: MenuItems,
   menuItems1440,
+  logout: Logout,
+  settings: Settings
+}
+
+export const listMenuUserPropsNot1440: IlistMenuUserPropsNot1440 = {
+  urlParam: 'guardados',
+  menuItems: MenuItems,
   logout: Logout,
   settings: Settings
 }
