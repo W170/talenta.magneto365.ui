@@ -13,6 +13,7 @@
     font-weight: 700;
     line-height: 150%;
     letter-spacing: -0.308px;
+    margin: 0;
   }
 
   .JobSkillsWrapper {
@@ -23,5 +24,16 @@
     align-items: flex-start;
     align-self: stretch;
     gap: 12px;
+  }
+
+  @media screen and (max-width: (v.$screen-lg)) {
+    h2 {
+      font-size: 12px;
+    }
+
+    .JobSkillsWrapper {
+      display: inherit;
+      flex-direction: column;
+    }
   }
 }

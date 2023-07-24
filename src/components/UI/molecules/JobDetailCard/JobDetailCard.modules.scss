@@ -26,4 +26,11 @@
     color: v.$text-color-black;
     margin: 0px;
   }
+
+  @media screen and (max-width: (v.$screen-lg)) {
+    h1,
+    p {
+      font-size: 12px;
+    }
+  }
 }

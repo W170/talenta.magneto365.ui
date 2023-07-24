@@ -68,7 +68,7 @@
     color: v.$color-white;
   }
 
-  @media screen and (max-width: v.$screen-sm) {
+  @media screen and (max-width: (v.$screen-lg)) {
     h2 {
       font-size: 12px;
     }
