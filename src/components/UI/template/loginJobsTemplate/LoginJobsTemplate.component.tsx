@@ -15,7 +15,9 @@ const LoginJobsTemplate: React.FC<ILoginJobsTemplate> = ({
   listMenuProps,
   ListIcon
 }) => {
-  const { companyLogo, companySlug, companyUrl } = LoginJobsHeaderProps
+  const {
+    brandMenuProps: { companyLogo, companySlug, companyUrl }
+  } = LoginJobsHeaderProps
   const [toggleDrawer, setToggleDrawer] = useState(false)
 
   return (

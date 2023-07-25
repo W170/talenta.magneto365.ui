@@ -15,7 +15,11 @@ const LogoutJobsTemplate: React.FC<ILogoutJobsTemplate> = ({
   listMenuProps,
   ListIcon
 }) => {
-  const { companyLogo, companySlug, signInLink, signUpButton, companyUrl } = logoutJobsHeaderProps
+  const {
+    brandMenuProps: { companyLogo, companySlug, companyUrl },
+    signInLink,
+    signUpButton
+  } = logoutJobsHeaderProps
   const { type, href, text } = signInLink
   const { buttonText, loadingState, onClick } = signUpButton
   const [toggleDrawer, setToggleDrawer] = useState(false)
