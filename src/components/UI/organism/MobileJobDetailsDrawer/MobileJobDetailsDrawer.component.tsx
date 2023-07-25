@@ -6,13 +6,12 @@ import {
   JobDetailCard,
   JobSkillsCard,
   JobApplyCard,
-  JobFooterCard
+  JobFooterCard,
+  MobileJobDetailsHeader
 } from '@components/UI/molecules'
 
 import { IMobileJobDetailsDrawer } from './MobileJobDetailsDrawer.interface'
 import styles from './MobileJobDetailsDrawer.module.scss'
-
-import { MobileJobDetailsHeader } from '@components/UI/molecules/MobileJobDetailsHeader/MobileJobDetailsHeader.component'
 
 import { iconDetailList } from '@constants/stories.constants'
 
