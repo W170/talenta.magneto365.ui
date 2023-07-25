@@ -1,14 +1,42 @@
 import React, { useState } from 'react'
-import { FilterBottomHeader } from '../../template'
-import { IJobsPage } from './JobsPage.interface'
-import { JobCard } from '../../molecules/JobCard'
-import FilterContainerMenu from '../../molecules/FilterContainerMenu/FilterContainerMenu.component'
-import { classMUI } from '../../../../constants/stories.constants'
-import style from './JobsPage.module.scss'
-import { JobDetailContainer } from '../../molecules/JobDetailContainer'
+import { useMediaQuery } from '@components/hooks'
+import { JobCard } from '@components/UI/molecules/JobCard'
+import FilterContainerMenu from '@components/UI/molecules/FilterContainerMenu/FilterContainerMenu.component'
+import { JobDetailContainer } from '@components/UI/molecules'
+import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
+import { FilterBottomHeader } from '@components/UI/template'
 
-const JobsPage: React.FC<IJobsPage> = ({ filterBottomHeaderProps, vacantProps }) => {
+import { IJobsPage } from './JobsPage.interface'
+import style from './JobsPage.module.scss'
+import { classMUI } from '../../../../constants/stories.constants'
+
+const JobsPage: React.FC<IJobsPage> = ({
+  jobDetailsDrawerProps,
+  MobileJobDetailsDrawerProps,
+  filterBottomHeaderProps,
+  vacantProps
+}) => {
   const [showDetail, setShowDetail] = useState(false)
+  const [showDrawer, setShowDrawer] = useState(false)
+
+  const JobDetailsDrawerComponent = useMediaQuery(
+    <JobDetailContainer onClose={() => setShowDetail(false)} isOpen={showDetail}>
+      <JobDetailsDrawer {...jobDetailsDrawerProps} />
+    </JobDetailContainer>,
+    {
+      lg: (
+        <MobileJobDetailsDrawer
+          {...MobileJobDetailsDrawerProps}
+          onClose={() => setShowDrawer(false)}
+          isOpen={showDrawer}
+        />
+      )
+    }
+  )
+
+  const handleDrawers = useMediaQuery(() => setShowDetail(!showDetail), {
+    lg: () => setShowDrawer(!showDrawer)
+  })
 
   return (
     <div className={style[`${classMUI}-jobs-page`]}>
@@ -21,15 +49,12 @@ const JobsPage: React.FC<IJobsPage> = ({ filterBottomHeaderProps, vacantProps })
       <div className={style[`${classMUI}-jobs-page--center-row`]}>
         <FilterBottomHeader {...filterBottomHeaderProps} />
         <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>
-          {vacantProps.map(({ showDetail, ...props }, index) => (
-            <JobCard showDetail={() => setShowDetail(!showDetail)} key={index} {...props} />
+          {vacantProps.map(({ ...props }, index) => (
+            <JobCard showDetail={handleDrawers} key={index} {...props} />
           ))}
         </div>
       </div>
-      <JobDetailContainer onClose={() => setShowDetail(false)} isOpen={showDetail}>
-        <p>Detail Vacant</p>
-        <p>Here should be detail organism</p>
-      </JobDetailContainer>
+      {JobDetailsDrawerComponent}
     </div>
   )
 }
