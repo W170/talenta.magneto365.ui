@@ -3,11 +3,11 @@
 .magneto-ui-drawer {
   & > aside {
     background-color: white;
-    padding: 20px;
     top: 0;
     position: fixed;
     width: 100vw;
     height: 100vh;
+    overflow: auto;
     @media (min-width: v.$screen-md) {
       width: 400px;
     }
@@ -63,10 +63,18 @@
   }
 }
 
-.show {
+.show-left {
   left: 0;
 }
 
-.hidden {
+.hidden-left {
   left: -100%;
+}
+
+.show-right {
+  right: 0;
+}
+
+.hidden-right {
+  right: -100%;
 }
