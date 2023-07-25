@@ -14,6 +14,7 @@ import {
   removePropsButton,
   MobileSearchbarButtonProps
 } from '../../../../constants/stories.constants'
+import { BrandMenu } from '../BrandMenu'
 
 const Muiclass = 'magneto-ui'
 
@@ -23,13 +24,12 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
   breadcrumbsText,
   onMenuClick,
   homeUrl,
-  companyLogo,
-  companySlug,
-  companyUrl,
   profileImage,
   listMenuUserProps,
+  brandMenuProps,
   gif
 }) => {
+  const { companySlug, companyLogo, companyUrl, brandsProps } = brandMenuProps
   const [showSearchBar, setShowSearchBar] = useState(false)
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
 
@@ -83,13 +83,18 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
           <a href={homeUrl}>
             <LogoComponent {...LogoProps} isoView={true} />
           </a>
-          <a href={companyUrl}>
-            <img
-              className={styles[`${Muiclass}-login-jobs-header--second-row__left-section--company-logo`]}
-              src={companyLogo}
-              alt={companySlug}
-            />
-          </a>
+
+          {brandsProps.brands ? (
+            <BrandMenu {...brandMenuProps} />
+          ) : (
+            <a href={companyUrl}>
+              <img
+                className={styles[`${Muiclass}-login-jobs-header--second-row__left-section--company-logo`]}
+                src={companyLogo}
+                alt={companySlug}
+              />
+            </a>
+          )}
 
           <img
             className={styles[`${Muiclass}-login-jobs-header--second-row__left-section--gif`]}

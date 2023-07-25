@@ -1,5 +1,6 @@
 import { IAvatar } from '../../atoms'
 import { ILogout, IMenuItems, IMobileSearchbar, ISearchbar, ISettings } from '../../molecules'
+import { IBrandMenu } from '../BrandMenu/BrandMenu.interface'
 
 export interface ILoginJobsHeader {
   profileImage: IAvatar
@@ -9,10 +10,8 @@ export interface ILoginJobsHeader {
   breadcrumbsText: string
   onMenuClick?: () => void
   homeUrl: string
-  companyLogo: string
-  companySlug: string
-  companyUrl: string
   gif: string
+  brandMenuProps: IBrandMenu
 }
 
 export interface IlistMenuUserPropsNot1440 {

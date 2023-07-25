@@ -16,6 +16,7 @@ import {
   SignInStyles,
   SignUpButtonStyle
 } from '../../../../constants/stories.constants'
+import { BrandMenu } from '../BrandMenu'
 
 const Muiclass = 'magneto-ui'
 
@@ -27,13 +28,12 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
   breadcrumbsText,
   onMenuClick,
   homeUrl,
-  companyLogo,
-  companySlug,
-  companyUrl,
+  brandMenuProps,
   gif
 }) => {
   const { type, href, text } = signInLink
   const { buttonText, loadingState, onClick } = signUpButton
+  const { companySlug, companyLogo, companyUrl, brandsProps } = brandMenuProps
   const [showSearchBar, setShowSearchBar] = useState(false)
   const isMobileButton = useMediaQuery(false, {
     md: true
@@ -43,7 +43,6 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
     setShowSearchBar(!showSearchBar)
   }
 
-  // Mobile Searchbar Component
   const LogoutHeaderMobileSearchbar = useMediaQuery(null, {
     md: (
       <MobileSearchbar
@@ -55,17 +54,12 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
     )
   })
 
-  // Menu Button Component
   const LogoutHeaderMenuButton = useMediaQuery(<MainButton {...MenuButtonProps} onClick={onMenuClick} />)
 
-  // Header Logo Component
-
-  // Mobile Searchbar Button Component
   const LogoutHeaderMobileSearchbarButton = useMediaQuery(null, {
     md: <MainButton onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
   })
 
-  // Searchbar Component
   const LogoutHeaderSearchbar = useMediaQuery(
     <Searchbar {...searchbar} searchButtonProps={searchPropsButton} removeButtonProps={removePropsButton} />,
     {
@@ -73,7 +67,6 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
     }
   )
 
-  // SignIn Link Component
   const LogoutHeaderLinkSignIn = useMediaQuery(
     <Link
       type={type}
@@ -85,7 +78,6 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
     />
   )
 
-  // SignUp Button Component
   const LogoutHeaderButtonSignUp = useMediaQuery(
     <MainButton
       buttonSize="full"
@@ -97,7 +89,6 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
     />
   )
 
-  // Breadcrumbs Component
   const LogoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbText={breadcrumbsText} />, {
     md: null
   })
@@ -111,13 +102,17 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
           <a href={homeUrl}>
             <LogoComponent {...LogoProps} isoView={true} />
           </a>
-          <a href={companyUrl}>
-            <img
-              className={styles[`${Muiclass}-logout-jobs-header--second-row__left-section--company-logo`]}
-              src={companyLogo}
-              alt={companySlug}
-            />
-          </a>
+          {brandsProps.brands ? (
+            <BrandMenu {...brandMenuProps} />
+          ) : (
+            <a href={companyUrl}>
+              <img
+                className={styles[`${Muiclass}-logout-jobs-header--second-row__left-section--company-logo`]}
+                src={companyLogo}
+                alt={companySlug}
+              />
+            </a>
+          )}
 
           <img
             className={styles[`${Muiclass}-logout-jobs-header--second-row__left-section--gif`]}

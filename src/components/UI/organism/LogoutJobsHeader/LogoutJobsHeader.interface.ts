@@ -1,5 +1,6 @@
 import { ILinkProps, IMainButton } from '../../atoms'
 import { IMobileSearchbar, ISearchbar } from '../../molecules'
+import { IBrandMenu } from '../BrandMenu/BrandMenu.interface'
 
 export interface ILogoutJobsHeader {
   searchbar: ISearchbar
@@ -9,8 +10,6 @@ export interface ILogoutJobsHeader {
   breadcrumbsText: string
   onMenuClick?: () => void
   homeUrl: string
-  companyLogo: string
-  companySlug: string
-  companyUrl: string
   gif: string
+  brandMenuProps: IBrandMenu
 }
