@@ -5,6 +5,11 @@ import { MobileJobDetailsDrawer } from './MobileJobDetailsDrawer.component'
 import Logo from '../../../../assets/grupo-exito-1.png'
 import { IJobSkillsCard } from '@components/UI/molecules'
 import { FacebookBlue, LinkedInBlue, SMSBlue, ShareBlue, TwitterBlue, WhatsAppColor } from '@constants/icons.constants'
+import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
+
+const onClick = () => {
+  //
+}
 
 const jobCompanyLogo = {
   jobCompanyLogoProps: {
@@ -80,6 +85,20 @@ const jobFooterCard = {
   ]
 }
 
+const MobileJobDetailsActionsBar: IMobileJobDetailsActionsBar = {
+  mobileActionButtonText: 'Aplicar',
+  onApplyClick: onClick,
+  actionsProps: {
+    ActionsButtonEvents: [],
+    ActionButtonText: ['Guardar vacante', 'Compartir'],
+    ActionsAnchorLinks: ['link1', 'link2'],
+    ActionAnchorText: ['Abrir en nueva pestana', 'Ver empresa'],
+    ActionsHeader: 'Comunicador audiovisual',
+    ButtonText: 'Aplicar',
+    onHandleClick: onClick
+  }
+}
+
 const meta: Meta<typeof MobileJobDetailsDrawer> = {
   title: 'Organism/Mobile Job Details Drawer',
   component: MobileJobDetailsDrawer,
@@ -99,6 +118,7 @@ export const Default: Story = {
     jobSkillsCardProps: jobSkillsCard,
     jobApplyCardProps: jobApplyCard,
     jobFooterCardProps: jobFooterCard,
+    mobileJobDetailsBarProps: MobileJobDetailsActionsBar,
     isOpen: true
   }
 }

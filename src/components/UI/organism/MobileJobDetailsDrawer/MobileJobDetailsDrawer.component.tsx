@@ -9,10 +9,9 @@ import {
   JobFooterCard,
   MobileJobDetailsHeader
 } from '@components/UI/molecules'
+import { MobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 
 import { IMobileJobDetailsDrawer } from './MobileJobDetailsDrawer.interface'
-import styles from './MobileJobDetailsDrawer.module.scss'
-
 import { iconDetailList } from '@constants/stories.constants'
 
 const Component: React.FC<IMobileJobDetailsDrawer> = ({
@@ -23,6 +22,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   jobSkillsCardProps,
   jobApplyCardProps,
   jobFooterCardProps,
+  mobileJobDetailsBarProps,
   isOpen = true,
   onClose
 }) => {
@@ -33,21 +33,20 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   }
 
   return (
-    <section className={styles.MobileJobDetailsDrawer}>
-      <Drawer isOpen={isOpen} onClose={handleClose} direction="right" customPadding={0} hideButton>
-        <MobileJobDetailsHeader returnText={jobDetailsHeaderText} onClick={handleClose} />
-        <JobCompanyHeader {...jobCompanyLogoProps} />
-        <JobDetails iconList={iconDetailList} detailsTextList={jobDetailsProps} />
-        {jobDetailCard.map(({ jobDetailCardText }, index: number) => (
-          <React.Fragment key={index}>
-            <JobDetailCard jobDetailCardText={jobDetailCardText} />
-          </React.Fragment>
-        ))}
-        <JobSkillsCard {...jobSkillsCardProps} />
-        <JobApplyCard {...jobApplyCardProps} />
-        <JobFooterCard {...jobFooterCardProps} />
-      </Drawer>
-    </section>
+    <Drawer isOpen={isOpen} onClose={handleClose} direction="right" customPadding={0} hideButton isMobile>
+      <MobileJobDetailsHeader returnText={jobDetailsHeaderText} onClick={handleClose} />
+      <JobCompanyHeader {...jobCompanyLogoProps} />
+      <JobDetails iconList={iconDetailList} detailsTextList={jobDetailsProps} />
+      {jobDetailCard.map(({ jobDetailCardText }, index: number) => (
+        <React.Fragment key={index}>
+          <JobDetailCard jobDetailCardText={jobDetailCardText} />
+        </React.Fragment>
+      ))}
+      <JobSkillsCard {...jobSkillsCardProps} />
+      <JobApplyCard {...jobApplyCardProps} />
+      <JobFooterCard {...jobFooterCardProps} />
+      <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} />
+    </Drawer>
   )
 }
 

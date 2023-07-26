@@ -5,10 +5,8 @@ import {
   IJobFooterCard,
   IJobSkillsCard
 } from '@components/UI/molecules'
+import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 
-/**
- * This interface represents the props required for a mobile job details drawer component.
- */
 export interface IMobileJobDetailsDrawer {
   /**
    * Props for the job company logo and header section.
@@ -38,6 +36,10 @@ export interface IMobileJobDetailsDrawer {
    * Props for the job footer card section.
    */
   jobFooterCardProps: IJobFooterCard
+  /**
+   * Props for the actions bar in the mobile job details drawer.
+   */
+  mobileJobDetailsBarProps: IMobileJobDetailsActionsBar
   /**
    * Represents whether the job details drawer is open or closed.
    * (Optional property)
