@@ -7,9 +7,18 @@ import { Add } from '../../../../constants/icons.constants'
 
 const DEFAULT_PADDING = 20
 
-const Component: React.FC<IDrawer> = ({ children, onClose, isOpen, direction = 'left', customPadding, hideButton }) => {
+const Component: React.FC<IDrawer> = ({
+  children,
+  onClose,
+  isOpen,
+  direction = 'left',
+  customPadding,
+  hideButton,
+  isMobile
+}) => {
   const showDrawer = isOpen ? `show-${direction}` : `hidden-${direction}`
   const paddingValue = customPadding !== undefined ? `${customPadding}px` : `${DEFAULT_PADDING}px`
+  const backgroundEffect = isMobile ? 'no-background' : 'background-drawer'
 
   return (
     <DrawerPortal>
@@ -22,7 +31,7 @@ const Component: React.FC<IDrawer> = ({ children, onClose, isOpen, direction = '
           )}
           {children}
         </aside>
-        {isOpen && <span className={style['background-drawer']} onClick={onClose} />}
+        {isOpen && <span className={`${style[backgroundEffect]}`} onClick={onClose} />}
       </div>
     </DrawerPortal>
   )
