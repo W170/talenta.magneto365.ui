@@ -1,79 +1,119 @@
-.magneto-ui-brands-container {
-  background-color: #fff;
+@use '../../../../shared/stylesheets/variables.scss' as v;
 
-  white-space: nowrap;
-  height: auto;
-  display: inline-block;
-  position: relative;
-  width: min-content;
-
-  // overflow-x: auto;
-  // & > * {
-  //   display: inline-block;
-  //   width: 900px;
-  // }
-
-  // &::-webkit-scrollbar {
-  //   height: 7px;
-  //   border-radius: 15px;
-
-  //   &-track {
-  //     background-color: rgb(241, 241, 241);
-  //     border-radius: 15px;
-  //   }
-
-  //   &-thumb {
-  //     border-radius: 15px;
-  //     background-color: rgb(163, 163, 163);
-  //     &:hover {
-  //       background-color: rgb(126, 126, 126);
-  //     }
-  //   }
-  // }
-
+.magneto-ui-brands {
   &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    p {
-      font-size: 16px;
-      color: #14141c;
-      right: 6px;
-      font-weight: bold;
-    }
-    button {
-      background: none;
-      border: none;
-      cursor: pointer;
+    &--row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      p {
+        font-size: 16px;
+        color: #14141c;
+        right: 6px;
+        font-weight: bold;
+      }
+      button {
+        right: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: none;
+        @media (min-width: v.$screen-lg) {
+          display: block;
+        }
+      }
     }
   }
 
-  &__brands {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    &--brand {
-      transition: all ease-in-out 0.3s;
-      padding: 10px;
+  &-container {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    @media (min-width: v.$screen-lg) {
+      overflow-x: auto;
+      width: min-content;
+      max-width: 800px;
+    }
+
+    @media (min-width: v.$screen-xl) {
+      max-width: 1100px;
+    }
+    @media (min-width: v.$screen-hd) {
+      max-width: 1250px;
+    }
+
+    &__brands {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5px;
+
+      @media (min-width: v.$screen-md) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      @media (min-width: v.$screen-lg) {
+        flex-wrap: nowrap;
+      }
+      &--brand {
+        transition: all ease-in-out 0.3s;
+        padding: 10px;
+        border-radius: 15px;
+        border: 1px solid rgb(234, 234, 234);
+        margin-bottom: 10px;
+
+        @media (min-width: v.$screen-md) {
+          border: none;
+        }
+
+        &:hover {
+          background-color: v.$disabled-color-gray;
+          transform: scale(0.96);
+        }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 100px;
+          height: 26px;
+          object-fit: contain;
+          @media (min-width: v.$screen-xxs) {
+            width: 110px;
+            height: 36px;
+          }
+        }
+
+        p {
+          display: none;
+          @media (min-width: v.$screen-xxs) {
+            display: block;
+            font-size: 14px;
+            color: #656565;
+          }
+        }
+      }
+    }
+
+    &::-webkit-scrollbar {
+      height: 7px;
       border-radius: 15px;
-      &:hover {
-        background-color: rgb(250, 250, 250);
-        transform: scale(1.02);
-      }
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
 
-      img {
-        width: 115px;
-        height: 41px;
-        object-fit: contain;
+      &-track {
+        background-color: rgba(241, 241, 241, 0.353);
+        border-radius: 15px;
       }
 
-      p {
-        font-size: 14px;
-        color: #14141c;
+      &-thumb {
+        border-radius: 15px;
+        background-color: v.$disabled-color-gray2;
+        &:hover {
+          background-color: v.$disabled-color-gray3;
+        }
       }
     }
   }
