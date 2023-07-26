@@ -5,4 +5,6 @@ export interface IBrandMenu {
   companyUrl?: string
   companyLogo: string
   companySlug: string
+  clickOut?: boolean
+  setClickOut?: React.Dispatch<React.SetStateAction<boolean>>
 }

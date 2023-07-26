@@ -26,4 +26,12 @@ export interface IMenuFilter {
    * This function change the filter with the selected option
    */
   setFilter: (menuItem: { key: string }) => void
+  /**
+   * This property show and hide the content
+   */
+  clickOut?: boolean
+  /**
+   * This function change clickout value between true and false
+   */
+  setClickOut?: React.Dispatch<React.SetStateAction<boolean>>
 }
