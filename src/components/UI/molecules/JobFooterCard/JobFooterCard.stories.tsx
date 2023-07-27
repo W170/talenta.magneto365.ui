@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 
 import { JobFooterCard } from './JobFooterCard.component'
-import Logo from '../../../../assets/grupo-exito-1.png'
+
 import {
   FacebookBlue,
   LinkedInBlue,
@@ -10,6 +10,7 @@ import {
   TwitterBlue,
   WhatsAppColor
 } from '../../../../constants/icons.constants'
+import { CompanyLogo } from '@constants/stories.constants'
 
 const meta: Meta<typeof JobFooterCard> = {
   title: 'Molecules/Job Footer Card',
@@ -23,7 +24,7 @@ type Story = StoryObj<typeof JobFooterCard>
 
 export const Default: Story = {
   args: {
-    jobFooterCompanyImg: Logo,
+    jobFooterCompanyImg: CompanyLogo,
     jobFooterHeader: 'Compartir vacante en:',
     jobFooterLinks: [
       { Icon: FacebookBlue, url: '' },

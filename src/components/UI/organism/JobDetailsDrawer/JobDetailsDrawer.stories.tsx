@@ -9,13 +9,13 @@ import {
   TwitterBlue,
   WhatsAppColor
 } from '../../../../constants/icons.constants'
-import Logo from '../../../../assets/grupo-exito-1.png'
+import { CompanyLogo } from '@constants/stories.constants'
 
 import { IJobSkillsCard } from '../../molecules/JobSkillsCard'
 
 const jobCompanyLogo = {
   jobCompanyLogoProps: {
-    companyLogoImg: Logo,
+    companyLogoImg: CompanyLogo,
     alt: 'Grupo Exito Logo'
   },
   jobHeaderProps: {
@@ -91,7 +91,7 @@ const jobApplyCard = {
 }
 
 const jobFooterCard = {
-  jobFooterCompanyImg: Logo,
+  jobFooterCompanyImg: CompanyLogo,
   jobFooterHeader: 'Compartir vacante en:',
   jobFooterLinks: [
     { Icon: FacebookBlue, url: '' },
