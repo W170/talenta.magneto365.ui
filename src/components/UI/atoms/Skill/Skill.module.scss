@@ -1,8 +1,7 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 
-.SkillComponent {
+.magneto-ui-skill {
   display: flex;
-
   justify-content: center;
   align-items: center;
   height: 33px;
@@ -12,8 +11,9 @@
   border-radius: 50px;
   background: v.$disabled-color-gray;
 
-  .SkillWrapper {
+  &__wrapper {
     position: relative;
+
     &::before {
       content: '';
       position: absolute;
@@ -36,7 +36,7 @@
     margin: 0px;
   }
 
-  .SkillBar {
+  &__bar {
     position: relative;
     width: 0%;
     height: 4px;

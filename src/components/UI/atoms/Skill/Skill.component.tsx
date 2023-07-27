@@ -38,10 +38,12 @@ const Component: React.FC<ISkill> = ({ skillText, skillLevel }) => {
   const fillAnimation = animationApplied && skillLevel ? styles[skillLevel.toLowerCase()] : ''
 
   return (
-    <div ref={skillRef} className={styles.SkillComponent}>
-      <div className={styles['SkillWrapper']}>
+    <div ref={skillRef} className={styles['magneto-ui-skill']}>
+      <div className={styles['magneto-ui-skill__wrapper']}>
         <h3>{skillText}</h3>
-        <div className={`${styles.SkillBar} ${fillAnimation || styles['NoAnimation']}`}></div>
+        <div
+          className={`${styles['magneto-ui-skill__bar']} ${fillAnimation || styles['magneto-ui-skill--no-animation']}`}
+        ></div>
       </div>
     </div>
   )
