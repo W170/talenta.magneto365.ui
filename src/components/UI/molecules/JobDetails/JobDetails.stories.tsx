@@ -15,12 +15,13 @@ type Story = StoryObj<typeof JobDetails>
 
 export const Default: Story = {
   args: {
-    jobDetailsList: [
-      { Icon: Calendar1, detailText: 'Hace 10 días' },
-      { Icon: People, detailText: '4 cupos, 256 aplicaron' },
-      { Icon: Briefcase, detailText: '2 años de experiencia, profesional' },
-      { Icon: DollarCircle, detailText: '$ 2.000.000 a $ 3.000.000' },
-      { Icon: Location, detailText: 'Bello - Copacabana - Itagui - La Estrella' }
-    ]
+    detailsTextList: [
+      'Hace 10 días',
+      '4 cupos, 256 aplicaron',
+      '2 años de experiencia, profesional',
+      '$ 2.000.000 a $ 3.000.000',
+      'Bello - Copacabana - Itagui - La Estrella'
+    ],
+    iconList: [Calendar1, People, Briefcase, DollarCircle, Location]
   }
 }

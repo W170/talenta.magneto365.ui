@@ -1,4 +1,4 @@
-export interface ICompanyLogo {
+export interface IJobCompanyLogo {
   /**
    * Sets the company logo for job detail
    */
@@ -7,4 +7,8 @@ export interface ICompanyLogo {
    * Sets the company logo alt text
    */
   alt?: string
+  /**
+   *
+   */
+  isHidden?: boolean
 }

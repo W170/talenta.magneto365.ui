@@ -1,19 +1,23 @@
-import { IJobHeaderCard } from '../../molecules/JobHeaderCard'
-import { IJobDetail } from '../../molecules/JobDetails'
 import { IJobSkillsCard } from '../../molecules/JobSkillsCard'
 import { IJobApplyCard } from '../../molecules/JobApplyCard'
 import { IJobFooterCard } from '../../molecules/JobFooterCard'
 import { IJobDetailCard } from '../../molecules/JobDetailCard'
+import { IJobCompanyHeader } from '@components/UI/molecules/JobCompanyHeader'
+import { IJobsActions } from '@components/UI/molecules/JobActions'
 
 export interface IJobDetailsDrawer {
   /**
    *
    */
-  jobHeaderCardProps: IJobHeaderCard
+  jobCompanyLogoProps: IJobCompanyHeader
   /**
    *
    */
-  jobDetailsProps: IJobDetail
+  jobActionsProps: IJobsActions
+  /**
+   *
+   */
+  jobDetailsProps: string[]
   /**
    *
    */

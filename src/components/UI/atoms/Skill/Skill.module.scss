@@ -38,11 +38,12 @@
 
   .SkillBar {
     position: relative;
-    width: 100%;
+    width: 0%;
     height: 4px;
     background: v.$color-green;
     border-radius: 4px;
     margin: 2px 0px;
+    transition: all ease-in-out 0.5s;
   }
 
   .basic {
@@ -59,5 +60,11 @@
 
   .professional {
     width: 100%;
+  }
+
+  @media screen and (max-width: (v.$screen-lg)) {
+    h3 {
+      font-size: 12px;
+    }
   }
 }

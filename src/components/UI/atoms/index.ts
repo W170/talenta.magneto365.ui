@@ -1,6 +1,6 @@
 export * from './Avatar'
 export * from './Breadcrumb'
-export * from './CompanyLogo'
+export * from './JobCompanyLogo'
 export * from './Divider'
 export * from './HeaderTab'
 export * from './Icon'

@@ -9,9 +9,13 @@ export interface IDetailList {
   Icon?: string
 }
 
-export interface IJobDetail {
+export interface IJobDetails {
   /**
    * Props for the job detail list
    */
-  jobDetailsList: IDetailList[]
+  detailsTextList: string[]
+  /**
+   * Props for the icons for the detail list
+   */
+  iconList?: string[]
 }

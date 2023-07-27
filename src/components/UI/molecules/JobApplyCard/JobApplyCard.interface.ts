@@ -16,4 +16,8 @@ export interface IJobApplyCard {
    *
    */
   jobApplyButtonText: string
+  /**
+   *
+   */
+  onHandlerClick: () => void
 }

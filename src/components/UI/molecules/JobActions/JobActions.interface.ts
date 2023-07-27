@@ -1,12 +1,26 @@
-import { IListIcon } from '../ListIconLink'
-
 export interface IJobsActions {
   /**
    * Sets the inside text of the button
    */
   actionButtonText: string
   /**
-   * Sets the different icon actions
+   * Sets the icons for the button actions
    */
-  actionsListIcon: IListIcon[]
+  actionsButtonIcons?: string[]
+  /**
+   * Sets the event handlers for the button actions
+   */
+  actionsButtonEvents: (() => void)[]
+  /**
+   * Sets the icons for the link actions
+   */
+  actionsAnchorIcons?: string[]
+  /**
+   * Sets the links for the anchor actions
+   */
+  actionsAnchorLinks: string[]
+  /**
+   * Event handler for the apply click event
+   */
+  onHandleClick: () => void
 }
