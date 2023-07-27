@@ -23,7 +23,7 @@ const Component: React.FC<ILoginTemplate> = ({ listMenuProps, homeUrl, ...props 
           <ListMenuItems {...listMenuProps} />
         </div>
         <div className={style.actionsContainer}>
-          <ListIconLink spacing={25} listIcon={ListIcon} />
+          <ListIconLink size={34} spacing={20} listIcon={ListIcon} />
         </div>
       </Drawer>
     </div>

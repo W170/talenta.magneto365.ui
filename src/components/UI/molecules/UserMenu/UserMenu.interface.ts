@@ -6,6 +6,7 @@ export interface IMenuUser {
    * menu items props
    */
   profileImage: IAvatar
-  className?: string
   listMenuUserProps: IlistMenuUserProps
+  clickOut?: boolean
+  setClickOut?: React.Dispatch<React.SetStateAction<boolean>>
 }
