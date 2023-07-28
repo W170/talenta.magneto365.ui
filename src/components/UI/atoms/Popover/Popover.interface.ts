@@ -21,10 +21,6 @@ export interface IPopover {
   /**
    * You can set a numeric width value for the popover
    */
-  width?: number
-  /**
-   * This property is the rendering condition for showing and hiding the popover
-   */
   show: boolean
   /**
    * You must set a numeric value for width container

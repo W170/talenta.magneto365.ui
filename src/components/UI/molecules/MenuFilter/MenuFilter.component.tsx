@@ -18,7 +18,6 @@ const MenuFilter: React.FC<IMenuFilter> = ({
       widthBase={180}
       show={clickOut}
       content={<ListMenuFilter filterItems={filterItems} setFilter={setFilter} />}
-      width={250}
       positionX="left"
       positionY="bottom"
     >

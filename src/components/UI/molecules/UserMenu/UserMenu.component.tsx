@@ -15,7 +15,6 @@ export const Component: React.FC<IMenuUser> = ({
       widthBase={40}
       show={clickOut}
       content={<ListMenuIcons {...listMenuUserProps} />}
-      width={300}
       positionX="left"
       positionY="bottom"
     >

@@ -1,6 +1,7 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 
 .mangeto-ui-list-menu-icons {
+  width: 300px;
   display: flex;
   flex-direction: column-reverse;
   @media (min-width: v.$screen-lg) {
