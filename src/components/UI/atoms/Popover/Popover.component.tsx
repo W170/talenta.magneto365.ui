@@ -18,12 +18,15 @@ const Component: React.FC<IPopover> = ({ children, content, width, positionX, po
 
   return (
     <div style={{ width: widthBase }} className={style['magneto-ui-popover-container']}>
-      <div
-        style={{ width: width ? width : 'auto' }}
-        className={`${style['magneto-ui-popover']} ${style[positionX]} ${style[positionY]} ${style[showMenu]}`}
-      >
-        {hideComponent && content}
-      </div>
+      {hideComponent && (
+        <div
+          style={{ width: width ? width : 'auto' }}
+          className={`${style['magneto-ui-popover']} ${style[positionX]} ${style[positionY]} ${style[showMenu]}`}
+        >
+          {content}
+        </div>
+      )}
+
       <div className={style['magneto-ui-popover-children']}>{children}</div>
     </div>
   )
