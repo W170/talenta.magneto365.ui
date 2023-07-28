@@ -18,7 +18,7 @@ const Component: React.FC<IJobFooterCard> = ({
         <div className={styles['JobIconsWrapper']}>
           {jobFooterLinks.map(({ url, icon }: IListIcon, index: number) => (
             <a key={index} href={url} target="" rel="">
-              <IconItem hover={true} size={21} icon={icon} />
+              <IconItem hover={false} icon={icon} />
             </a>
           ))}
         </div>

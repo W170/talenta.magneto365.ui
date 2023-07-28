@@ -1,15 +1,15 @@
 import { Meta, StoryObj } from '@storybook/react'
 
 import { JobFooterCard } from './JobFooterCard.component'
-import Logo from '../../../../assets/Linkedin.svg'
 import {
-  FacebookDark,
-  LinkDark,
-  LinkedInDark,
-  MailDark,
-  TwitterDark,
-  WhatsAppDark
+  FacebookBlue,
+  LinkedInBlue,
+  SMSBlue,
+  ShareBlue,
+  TwitterBlue,
+  WhatsAppColor
 } from '../../../../constants/icons.constants'
+import { CompanyLogo } from '@constants/stories.constants'
 
 const meta: Meta<typeof JobFooterCard> = {
   title: 'Molecules/Job Footer Card',
@@ -23,15 +23,15 @@ type Story = StoryObj<typeof JobFooterCard>
 
 export const Default: Story = {
   args: {
-    jobFooterCompanyImg: Logo,
+    jobFooterCompanyImg: CompanyLogo,
     jobFooterHeader: 'Compartir vacante en:',
     jobFooterLinks: [
-      { icon: FacebookDark, url: '' },
-      { icon: WhatsAppDark, url: '' },
-      { icon: LinkedInDark, url: '' },
-      { icon: TwitterDark, url: '' },
-      { icon: MailDark, url: '' },
-      { icon: LinkDark, url: '' }
+      { icon: FacebookBlue, url: '' },
+      { icon: WhatsAppColor, url: '' },
+      { icon: LinkedInBlue, url: '' },
+      { icon: TwitterBlue, url: '' },
+      { icon: SMSBlue, url: '' },
+      { icon: ShareBlue, url: '' }
     ]
   }
 }

@@ -34,4 +34,10 @@
     line-height: normal;
     color: v.$colors-magneto-neutral;
   }
+
+  @media screen and (max-width: (v.$screen-lg)) {
+    .DetailText {
+      font-size: 12px;
+    }
+  }
 }
