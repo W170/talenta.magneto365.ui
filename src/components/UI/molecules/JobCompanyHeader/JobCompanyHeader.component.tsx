@@ -5,7 +5,7 @@ import styles from './JobCompanyHeader.module.scss'
 
 const Component: React.FC<IJobCompanyHeader> = ({ jobCompanyLogoProps, jobHeaderProps }) => {
   return (
-    <div className={styles['.magneto-ui-job-company-header']}>
+    <div className={styles['magneto-ui-job-company-header']}>
       <JobCompanyLogo {...jobCompanyLogoProps} />
       <JobHeader {...jobHeaderProps} />
     </div>

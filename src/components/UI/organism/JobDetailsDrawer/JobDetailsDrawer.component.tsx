@@ -18,7 +18,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   jobCompanyLogoProps,
   jobActionsProps,
   jobDetailsProps,
-  jobDetailCard,
+  jobDetailCardProps,
   jobSkillsCardProps,
   jobApplyCardProps,
   jobFooterCardProps
@@ -30,11 +30,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
         <JobActions actionsButtonIcons={buttonIconsList} actionsAnchorIcons={anchorIconList} {...jobActionsProps} />
       </div>
       <JobDetails iconList={iconDetailList} detailsTextList={jobDetailsProps} />
-      {jobDetailCard.map(({ jobDetailCardText }, index: number) => (
-        <React.Fragment key={index}>
-          <JobDetailCard jobDetailCardText={jobDetailCardText} />
-        </React.Fragment>
-      ))}
+      <JobDetailCard {...jobDetailCardProps} />
       <JobSkillsCard {...jobSkillsCardProps} />
       <JobApplyCard {...jobApplyCardProps} />
       <JobFooterCard {...jobFooterCardProps} />

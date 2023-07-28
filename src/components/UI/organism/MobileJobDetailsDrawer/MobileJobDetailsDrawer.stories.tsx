@@ -1,8 +1,7 @@
 import { StoryObj, Meta } from '@storybook/react'
 
 import { MobileJobDetailsDrawer } from './MobileJobDetailsDrawer.component'
-
-import Logo from '../../../../assets/grupo-exito-1.png'
+import { CompanyLogo } from '@constants/stories.constants'
 import { IJobSkillsCard } from '@components/UI/molecules'
 import { FacebookBlue, LinkedInBlue, SMSBlue, ShareBlue, TwitterBlue, WhatsAppColor } from '@constants/icons.constants'
 import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
@@ -13,7 +12,7 @@ const onClick = () => {
 
 const jobCompanyLogo = {
   jobCompanyLogoProps: {
-    companyLogoImg: Logo,
+    companyLogoImg: CompanyLogo,
     alt: 'Grupo Exito Logo'
   },
   jobHeaderProps: {
@@ -73,7 +72,7 @@ const jobApplyCard = {
 }
 
 const jobFooterCard = {
-  jobFooterCompanyImg: Logo,
+  jobFooterCompanyImg: CompanyLogo,
   jobFooterHeader: 'Compartir vacante en:',
   jobFooterLinks: [
     { Icon: FacebookBlue, url: '' },
