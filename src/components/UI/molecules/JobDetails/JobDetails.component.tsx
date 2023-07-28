@@ -10,12 +10,12 @@ const Component: React.FC<IJobDetails> = ({ detailsTextList, iconList }) => {
   }))
 
   return (
-    <div className={styles.JobDetailsComponent}>
-      <div className={styles['JobDetailsWrapper']}>
+    <div className={styles['magneto-ui-job-details']}>
+      <div className={styles['magneto-ui-job-details__wrapper']}>
         {jobDetailsList.map(({ detailText, Icon }: IDetailList, index: number) => (
-          <div key={index} className={styles['DetailWrapper']}>
+          <div key={index} className={styles['magneto-ui-job-details__item-detail']}>
             <IconItem Icon={Icon} hover={false} size={16} />
-            <p className={styles['DetailText']}>{detailText}</p>
+            <p className={styles['magneto-ui-job-details__item-detail-text']}>{detailText}</p>
           </div>
         ))}
       </div>

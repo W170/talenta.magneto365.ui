@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from './JobApplyCard.module.scss'
-import { IJobApplyCard, JobRequirementsElement } from './JobApplyCard.interface'
 import { MainButton } from '@components/UI/atoms'
+import { IJobApplyCard, JobRequirementsElement } from './JobApplyCard.interface'
+import styles from './JobApplyCard.module.scss'
 
 const Component: React.FC<IJobApplyCard> = ({
   jobApplyCardHeader,
@@ -10,13 +10,13 @@ const Component: React.FC<IJobApplyCard> = ({
   onHandlerClick
 }) => {
   return (
-    <div className={styles.JobApplyCardComponent}>
-      <div className={styles['JobApplyCardWrapper']}>
-        <div className={styles['JobApplyHeader']}>
+    <div className={styles['magneto-ui-job-apply-card']}>
+      <div className={styles['magneto-ui-job-apply-card__wrapper']}>
+        <div className={styles['magneto-ui-job-apply-card__header']}>
           <h2>{jobApplyCardHeader}</h2>
           {jobApplyCardReqs.map(
             ({ jobRequirementTitle, jobRequirementInfo }: JobRequirementsElement, index: number) => (
-              <div className={styles['JobRequirements']} key={index}>
+              <div className={styles['magneto-ui-job-apply-card__requirements']} key={index}>
                 <h3>{jobRequirementTitle}</h3>
                 <p>{jobRequirementInfo}</p>
               </div>

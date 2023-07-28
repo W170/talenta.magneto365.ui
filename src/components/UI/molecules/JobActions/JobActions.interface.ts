@@ -1,26 +1,28 @@
 export interface IJobsActions {
   /**
-   * Sets the inside text of the button
+   * The text to be displayed on the main action button.
    */
   actionButtonText: string
   /**
-   * Sets the icons for the button actions
+   * An array of string icons to be displayed for each button in the actions section.
+   * (Optional property)
    */
   actionsButtonIcons?: string[]
   /**
-   * Sets the event handlers for the button actions
+   * An array of callback functions to be executed when each button in the actions section is clicked.
    */
   actionsButtonEvents: (() => void)[]
   /**
-   * Sets the icons for the link actions
+   * An array of string icons to be displayed for each anchor link in the actions section.
+   * (Optional property)
    */
   actionsAnchorIcons?: string[]
   /**
-   * Sets the links for the anchor actions
+   * An array of string URLs representing anchor links for each item in the actions section.
    */
   actionsAnchorLinks: string[]
   /**
-   * Event handler for the apply click event
+   * Callback function to be executed when the main action button is clicked.
    */
   onHandleClick: () => void
 }

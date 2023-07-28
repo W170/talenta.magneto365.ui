@@ -5,7 +5,7 @@ import styles from './JobDetailCard.modules.scss'
 
 const Component: React.FC<IJobDetailCard> = ({ jobDetailCardText }) => {
   return (
-    <div className={styles.JobDetailCardComponent}>
+    <div className={styles['magneto-ui-job-detail-card']}>
       <div dangerouslySetInnerHTML={{ __html: jobDetailCardText }} />
     </div>
   )

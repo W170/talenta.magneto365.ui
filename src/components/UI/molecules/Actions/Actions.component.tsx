@@ -28,27 +28,27 @@ const Component: React.FC<IActions> = ({
   }))
 
   return (
-    <div className={styles.ActionsComponent}>
+    <div className={styles['magneto-ui-actions']}>
       <MainButton
-        className={styles['ApplyButton']}
+        className={styles['magneto-ui-actions__apply-button']}
         buttonType="button"
         buttonSize="full"
         buttonText={ButtonText}
         onClick={onHandleClick}
       />
       {actionsButtonList?.map(({ Icon, text, onClick }, index: number) => (
-        <button key={index} type="button" onClick={onClick}>
+        <button className={styles['magneto-ui-actions__button']} key={index} type="button" onClick={onClick}>
           <IconItem hover={true} size={20} Icon={Icon} />
           <p key={index}>{text}</p>
         </button>
       ))}
       {actionsLinkList?.map(({ url, text, target, Icon }, index: number) => (
-        <a className={styles['IconWrapper']} key={index} href={url} target={target} rel="">
+        <a className={styles['magneto-ui-actions__link']} key={index} href={url} target={target} rel="">
           <IconItem hover={true} size={20} Icon={Icon} />
           <p key={index}>{text}</p>
         </a>
       ))}
-      <h2>{ActionsHeader}</h2>
+      <h2 className={styles['magneto-ui-actions__header']}>{ActionsHeader}</h2>
     </div>
   )
 }
