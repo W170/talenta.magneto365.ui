@@ -36,21 +36,21 @@ const jobHeaderCard = {
   jobActions: {
     actionButtonText: 'Aplicar',
     actionsListIcon: [
-      { Icon: ArchiveAdd, url: '' },
-      { Icon: Share, url: '' },
-      { Icon: Export3, url: '' },
-      { Icon: Buildings2, url: ' ' }
+      { icon: ArchiveAdd, url: '' },
+      { icon: Share, url: '' },
+      { icon: Export3, url: '' },
+      { icon: Buildings2, url: ' ' }
     ]
   }
 }
 
 const jobDetails = {
   jobDetailsList: [
-    { Icon: Calendar1, detailText: 'Hace 10 días' },
-    { Icon: People, detailText: '4 cupos, 256 aplicaron' },
-    { Icon: Briefcase, detailText: '2 años de experiencia, profesional' },
-    { Icon: DollarCircle, detailText: '$ 2.000.000 a $ 3.000.000' },
-    { Icon: Location, detailText: 'Bello - Copacabana - Itagui - La Estrella' }
+    { icon: Calendar1, detailText: 'Hace 10 días' },
+    { icon: People, detailText: '4 cupos, 256 aplicaron' },
+    { icon: Briefcase, detailText: '2 años de experiencia, profesional' },
+    { icon: DollarCircle, detailText: '$ 2.000.000 a $ 3.000.000' },
+    { icon: Location, detailText: 'Bello - Copacabana - Itagui - La Estrella' }
   ]
 }
 
@@ -100,12 +100,12 @@ const jobFooterCard = {
   jobFooterCompanyImg: Logo,
   jobFooterHeader: 'Compartir vacante en:',
   jobFooterLinks: [
-    { Icon: FacebookDark, url: '' },
-    { Icon: WhatsAppDark, url: '' },
-    { Icon: LinkedInDark, url: '' },
-    { Icon: TwitterDark, url: '' },
-    { Icon: MailDark, url: '' },
-    { Icon: LinkDark, url: '' }
+    { icon: FacebookDark, url: '' },
+    { icon: WhatsAppDark, url: '' },
+    { icon: LinkedInDark, url: '' },
+    { icon: TwitterDark, url: '' },
+    { icon: MailDark, url: '' },
+    { icon: LinkDark, url: '' }
   ]
 }
 

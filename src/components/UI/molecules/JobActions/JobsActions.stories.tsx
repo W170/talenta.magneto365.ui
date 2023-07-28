@@ -16,10 +16,10 @@ export const Default: Story = {
   args: {
     actionButtonText: 'Aplicar',
     actionsListIcon: [
-      { Icon: ArchiveAdd, url: '' },
-      { Icon: Share, url: '' },
-      { Icon: Export3, url: '' },
-      { Icon: Buildings2, url: ' ' }
+      { icon: ArchiveAdd, url: '' },
+      { icon: Share, url: '' },
+      { icon: Export3, url: '' },
+      { icon: Buildings2, url: ' ' }
     ]
   }
 }

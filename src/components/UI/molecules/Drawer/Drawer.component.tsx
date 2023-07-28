@@ -12,7 +12,7 @@ const Component: React.FC<IDrawer> = ({ children, onClose, isOpen }) => {
       <div className={`${style['magneto-ui-drawer']}`}>
         <aside className={`${style[showDrawer]}`}>
           <button className={style['magneto-ui-close-button']} onClick={onClose}>
-            <IconItem Icon={Add} hover={false} />
+            <IconItem icon={Add} hover={false} />
           </button>
           {children}
         </aside>

@@ -45,7 +45,7 @@ export const IconButton: Story = {
     href: '#',
     text: 'Iniciar Sesion',
     iconProps: {
-      Icon: Login,
+      icon: Login,
       hover: false
     },
     linkStyles: {
@@ -62,7 +62,7 @@ export const ResponsiveIconButton: Story = {
     type: 'button',
     text: 'Iniciar sesión',
     iconProps: {
-      Icon: Login,
+      icon: Login,
       hover: true,
       color: '#14141C'
     },

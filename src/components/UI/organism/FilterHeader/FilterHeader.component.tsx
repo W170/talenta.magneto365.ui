@@ -9,7 +9,7 @@ export const FilterHeader: FC<IFilterHeader> = ({ title, buttonText, switchText,
   const mainBtnProps = useMemo(() => {
     return {
       buttonText,
-      iconProps: { Icon: Broom, size: 18 },
+      iconProps: { icon: Broom, size: 18 },
       className: styles['magneto-ui-filter-header_btn']
     }
   }, [buttonText])

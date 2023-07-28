@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { JobHeaderCard } from './JobHeaderCard.component'
 
-import Logo from '../../../../assets/grupo-exito-1.png'
+import Logo from '../../../../assets/Linkedin.svg'
 import { ArchiveAdd, Buildings2, Export3, Share } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof JobHeaderCard> = {
@@ -29,10 +29,10 @@ export const Default: Story = {
     jobActions: {
       actionButtonText: 'Aplicar',
       actionsListIcon: [
-        { Icon: ArchiveAdd, url: '' },
-        { Icon: Share, url: '' },
-        { Icon: Export3, url: '' },
-        { Icon: Buildings2, url: ' ' }
+        { icon: ArchiveAdd, url: '' },
+        { icon: Share, url: '' },
+        { icon: Export3, url: '' },
+        { icon: Buildings2, url: ' ' }
       ]
     }
   }

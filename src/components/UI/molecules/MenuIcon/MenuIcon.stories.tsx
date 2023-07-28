@@ -9,7 +9,7 @@ const meta: Meta<typeof MenuIcon> = {
   args: {
     text: 'Text Here',
     isActive: false,
-    Icon: Youtube
+    icon: Youtube
   }
 }
 
@@ -21,7 +21,7 @@ export const Default: Story = {}
 export const IsActive: Story = {
   args: {
     isActive: true,
-    Icon: ArchiveTick,
+    icon: ArchiveTick,
     text: 'Is Menu Active'
   }
 }

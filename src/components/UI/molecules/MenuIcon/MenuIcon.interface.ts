@@ -4,7 +4,7 @@ export interface IMenuIcon {
   /**
    * You can set the icon here
    */
-  Icon?: string | undefined
+  icon?: string | undefined
   /**
    * Here is the menu text
    */

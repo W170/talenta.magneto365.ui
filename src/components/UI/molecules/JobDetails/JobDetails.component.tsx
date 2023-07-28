@@ -7,9 +7,9 @@ const Component: React.FC<IJobDetail> = ({ jobDetailsList }) => {
   return (
     <div className={styles.JobDetailsComponent}>
       <div className={styles['JobDetailsWrapper']}>
-        {jobDetailsList.map(({ detailText, Icon }: IDetailList, index: number) => (
+        {jobDetailsList.map(({ detailText, icon }: IDetailList, index: number) => (
           <div key={index} className={styles['DetailWrapper']}>
-            <IconItem Icon={Icon} hover={false} size={16} />
+            <IconItem icon={icon} hover={false} size={16} />
             <p className={styles['DetailText']}>{detailText}</p>
           </div>
         ))}

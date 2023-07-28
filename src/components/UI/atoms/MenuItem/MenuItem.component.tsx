@@ -9,7 +9,7 @@ const MenuItem: React.FC<IMenuItem> = ({ url = '#', text = '', isActive }) => {
   return (
     <div>
       <a href={url} className={`${style['magneto-ui-menu-item']} ${menuActive}`}>
-        <IconItem Icon={ArrowRight2} hover={false} />
+        <IconItem icon={ArrowRight2} hover={false} />
         <p>{text}</p>
       </a>
     </div>

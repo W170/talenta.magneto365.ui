@@ -9,9 +9,9 @@ const Component: React.FC<IJobsActions> = ({ actionButtonText, actionsListIcon }
     <div className={styles.JobsActionsComponent}>
       <button>{actionButtonText}</button>
       <div className={styles['ActionsIconWrapper']}>
-        {actionsListIcon?.map(({ url, Icon }: IListIcon, index: number) => (
+        {actionsListIcon?.map(({ url, icon }: IListIcon, index: number) => (
           <a className={styles['IconWrapper']} key={index} href={url} target="" rel="">
-            <IconItem hover={true} size={20} Icon={Icon} />
+            <IconItem hover={true} size={20} icon={icon} />
           </a>
         ))}
       </div>

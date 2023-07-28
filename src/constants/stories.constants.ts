@@ -66,14 +66,14 @@ export const AvatarProps: IAvatar = {
     'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
 }
 
-// Icon Atom
+// icon Atom
 export const SignInIcon: IconProps = {
-  Icon: LoginCurve,
+  icon: LoginCurve,
   hover: false,
   color: '#14141C'
 }
 export const iconPropsBreadCrumb: IconProps = {
-  Icon: Home2,
+  icon: Home2,
   hover: false,
   size: 13,
   color: '#a3a3b5'
@@ -90,7 +90,7 @@ export const SignInStyles = {
 
 export const LoadingProps: ILoading = {
   loadingIcon: {
-    Icon: Refresh,
+    icon: Refresh,
     hover: false
   }
 }
@@ -116,7 +116,7 @@ export const SignUpButtonStyle: IMainButton = {
     spacing: '10px'
   },
   iconProps: {
-    Icon: ProfileAdd,
+    icon: ProfileAdd,
     hover: true,
     color: '#090467 '
   }
@@ -129,7 +129,7 @@ export const MobileSearchbarButtonProps: IMainButton = {
   },
   buttonText: '',
   iconProps: {
-    Icon: SearchNormal1,
+    icon: SearchNormal1,
     hover: false,
     color: '#000096',
     size: 20
@@ -142,7 +142,7 @@ export const MenuButtonProps: IMainButton = {
     buttonColor: 'transparent'
   },
   iconProps: {
-    Icon: HambergerMenu,
+    icon: HambergerMenu,
     hover: false,
     color: '#14141C',
     size: 20
@@ -152,7 +152,7 @@ export const MenuButtonProps: IMainButton = {
 export const searchPropsButton: IMainButton = {
   buttonType: 'submit' as const,
   iconProps: {
-    Icon: SearchNormal1,
+    icon: SearchNormal1,
     hover: false,
     color: '#000096',
     size: 18
@@ -163,7 +163,7 @@ export const removePropsButton: IMainButton = {
   buttonType: 'reset' as const,
   buttonSize: 'medium',
   iconProps: {
-    Icon: Add,
+    icon: Add,
     hover: false,
     color: '#14141C',
     size: 18
@@ -176,7 +176,7 @@ export const searchMobileProps: IMainButton = {
     buttonColor: 'transparent'
   },
   iconProps: {
-    Icon: SearchNormal1,
+    icon: SearchNormal1,
     hover: false,
     color: '#A3A3B5',
     size: 16
@@ -189,7 +189,7 @@ export const closeSearchMobileProps: IMainButton = {
     buttonColor: 'transparent'
   },
   iconProps: {
-    Icon: Add,
+    icon: Add,
     hover: false,
     color: '#14141C',
     size: 25
@@ -204,7 +204,7 @@ export const CreateAccountButton: IMainButton = {
     spacing: '10px'
   },
   iconProps: {
-    Icon: ProfileAdd,
+    icon: ProfileAdd,
     hover: true,
     color: '#090467 '
   }
@@ -218,7 +218,7 @@ export const LoginButton: IMainButton = {
     spacing: '10px'
   },
   iconProps: {
-    Icon: LoginCurve,
+    icon: LoginCurve,
     hover: true
   }
 }
@@ -419,12 +419,12 @@ export const MenuList: MenuItemInfo[] = [
  */
 
 export const ListIcon: IListIcon[] = [
-  { Icon: Facebook, url: 'https://www.facebook.com/MagnetoEmpleos?_rdc=4&_rdr' },
-  { Icon: Instagram, url: 'https://www.instagram.com/magnetoempleos/' },
-  { Icon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
-  { Icon: Youtube, url: 'https://www.youtube.com/c/Magnetoempleos' },
-  { Icon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
-  { Icon: Link, url: 'https://www.magneto365.com/home/#comparte-magneto' }
+  { icon: Facebook, url: 'https://www.facebook.com/MagnetoEmpleos?_rdc=4&_rdr' },
+  { icon: Instagram, url: 'https://www.instagram.com/magnetoempleos/' },
+  { icon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
+  { icon: Youtube, url: 'https://www.youtube.com/c/Magnetoempleos' },
+  { icon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
+  { icon: Link, url: 'https://www.magneto365.com/home/#comparte-magneto' }
 ]
 
 export const listMenuProps: IListMenuItems = {
@@ -466,7 +466,7 @@ export const menuItems1440: IMenuItems[] = [
   {
     items: [
       {
-        Icon: MessageQuestion,
+        icon: MessageQuestion,
         text: 'Ayuda',
         slug: '',
         url: ''
@@ -490,13 +490,13 @@ export const MenuItems: IMenuItems[] = [
     title: 'Empleos',
     items: [
       {
-        Icon: BrifecaseTick,
+        icon: BrifecaseTick,
         text: 'Sugeridos',
         slug: 'sugeridos',
         url: '/sugeridos'
       },
       {
-        Icon: ArchiveTick,
+        icon: ArchiveTick,
         text: 'Guardados',
         slug: 'guardados',
         url: ''
@@ -507,13 +507,13 @@ export const MenuItems: IMenuItems[] = [
     title: 'Procesos',
     items: [
       {
-        Icon: TaskSquare,
+        icon: TaskSquare,
         text: 'Activos',
         slug: '',
         url: ''
       },
       {
-        Icon: ClipboardClose,
+        icon: ClipboardClose,
         text: 'Inactivos',
         slug: '',
         url: ''
@@ -524,13 +524,13 @@ export const MenuItems: IMenuItems[] = [
     title: 'Mi cuenta',
     items: [
       {
-        Icon: DocumentText,
+        icon: DocumentText,
         text: 'Hoja de vida',
         slug: '',
         url: ''
       },
       {
-        Icon: MessageQuestion,
+        icon: MessageQuestion,
         text: 'Ayuda',
         slug: '',
         url: ''
@@ -550,13 +550,13 @@ export const listMenuUserProps: IlistMenuUserProps = {
 //FilterBottomHeader props
 
 export const menuFilterButton = {
-  Icon: ArrowDown2,
+  icon: ArrowDown2,
   hover: false,
   size: 17
 }
 
 export const iconFilterOrder = {
-  Icon: ArrowSwapVertical,
+  icon: ArrowSwapVertical,
   hover: false,
   size: 20
 }

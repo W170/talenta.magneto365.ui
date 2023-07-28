@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 
 import { JobFooterCard } from './JobFooterCard.component'
-import Logo from '../../../../assets/grupo-exito-1.png'
+import Logo from '../../../../assets/Linkedin.svg'
 import {
   FacebookDark,
   LinkDark,
@@ -26,12 +26,12 @@ export const Default: Story = {
     jobFooterCompanyImg: Logo,
     jobFooterHeader: 'Compartir vacante en:',
     jobFooterLinks: [
-      { Icon: FacebookDark, url: '' },
-      { Icon: WhatsAppDark, url: '' },
-      { Icon: LinkedInDark, url: '' },
-      { Icon: TwitterDark, url: '' },
-      { Icon: MailDark, url: '' },
-      { Icon: LinkDark, url: '' }
+      { icon: FacebookDark, url: '' },
+      { icon: WhatsAppDark, url: '' },
+      { icon: LinkedInDark, url: '' },
+      { icon: TwitterDark, url: '' },
+      { icon: MailDark, url: '' },
+      { icon: LinkDark, url: '' }
     ]
   }
 }
