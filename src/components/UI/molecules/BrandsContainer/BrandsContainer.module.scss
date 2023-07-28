@@ -1,6 +1,9 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 
 .magneto-ui-brands {
+  @media (min-width: v.$screen-lg) {
+    padding: 15px;
+  }
   &__header {
     &--row {
       display: flex;

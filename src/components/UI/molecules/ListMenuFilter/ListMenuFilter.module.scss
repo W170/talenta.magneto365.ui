@@ -1,5 +1,11 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
 .magneto-ui-menu-filter {
-  width: 250px;
+  padding: 15px;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  @media (min-width: v.$screen-lg) {
+    width: 250px;
+  }
 }
