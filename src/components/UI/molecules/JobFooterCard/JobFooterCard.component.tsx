@@ -11,11 +11,11 @@ const Component: React.FC<IJobFooterCard> = ({
   jobFooterLinks
 }) => {
   return (
-    <div className={styles.JobFooterCardComponent}>
+    <div className={styles['magneto-ui-job-footer-card']}>
       <img src={jobFooterCompanyImg} alt={companyImgAlt} />
-      <div className={styles['JobFooterIcons']}>
+      <div className={styles['magneto-ui-job-footer-card__icons']}>
         <h2>{jobFooterHeader}</h2>
-        <div className={styles['JobIconsWrapper']}>
+        <div className={styles['magneto-ui-job-footer-card__wrapper']}>
           {jobFooterLinks.map(({ url, Icon }: IListIcon, index: number) => (
             <a key={index} href={url} target="" rel="">
               <IconItem hover={false} Icon={Icon} />

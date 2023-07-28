@@ -1,6 +1,3 @@
-/**
- * This interface represents the header of a mobile job details component.
- */
 export interface IMobileJobDetailsHeader {
   /**
    * The text to display for the return button.

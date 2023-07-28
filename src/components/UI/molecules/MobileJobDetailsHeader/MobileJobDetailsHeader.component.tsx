@@ -8,7 +8,7 @@ import { ArrowLeft2 } from '@constants/icons.constants'
 
 const Component: React.FC<IMobileJobDetailsHeader> = ({ returnText, onClick }) => {
   return (
-    <div className={styles.MobileJobDetailHeaderComponent}>
+    <div className={styles['magneto-ui-mobile-job-details-header']}>
       <button onClick={onClick}>
         <IconItem Icon={ArrowLeft2} />
       </button>

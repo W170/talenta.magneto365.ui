@@ -1,12 +1,11 @@
 import { ISkill } from '../../atoms/Skill'
-
 export interface IJobSkillsCard {
   /**
-   * Sets the job skill heading
+   * The header or title for the job skills card section.
    */
   jobSkillCardHeader: string
   /**
-   * Props for the job skills of the job detail
+   * An array of skills representing the skills required or preferred for the job.
    */
   jobSkills: ISkill[]
 }

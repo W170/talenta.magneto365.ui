@@ -1,4 +1,6 @@
-.MobileJobDetailHeaderComponent {
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-mobile-job-details-header {
   display: flex;
   flex-direction: row;
   align-items: center;
