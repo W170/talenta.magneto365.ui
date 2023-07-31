@@ -10,5 +10,5 @@ export interface IListIconLink {
 
 export interface IListIcon {
   url: string
-  Icon: string
+  icon: string
 }

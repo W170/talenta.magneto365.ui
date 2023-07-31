@@ -17,7 +17,7 @@ export const Default: Story = {
     buttonSize: 'medium',
     buttonText: 'Crear hoja de vida',
     iconProps: {
-      Icon: ProfileAdd,
+      icon: ProfileAdd,
       hover: true,
       color: '#090467 '
     },
@@ -35,7 +35,7 @@ export const Responsive: Story = {
     buttonSize: 'medium',
     buttonText: 'Crear hoja de vida',
     iconProps: {
-      Icon: ProfileAdd,
+      icon: ProfileAdd,
       hover: true,
       color: '#090467 '
     },

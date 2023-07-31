@@ -14,13 +14,13 @@ const Component: React.FC<IJobsActions> = ({
   const actionsAnchorTarget = ['_blank', '_self']
 
   const actionsLinkList = actionsAnchorIcons?.map((_, index: number) => ({
-    Icon: actionsAnchorIcons?.[index],
+    icon: actionsAnchorIcons?.[index],
     url: actionsAnchorLinks?.[index],
     target: actionsAnchorTarget?.[index]
   }))
 
   const actionsButtonList = actionsButtonIcons?.map((_, index: number) => ({
-    Icon: actionsButtonIcons?.[index],
+    icon: actionsButtonIcons?.[index],
     onClick: actionsButtonEvents?.[index]
   }))
 
@@ -28,14 +28,14 @@ const Component: React.FC<IJobsActions> = ({
     <div className={styles.JobsActionsComponent}>
       <MainButton buttonType="button" buttonText={actionButtonText} onClick={onHandleClick} />
       <div className={styles['ActionsIconWrapper']}>
-        {actionsButtonList?.map(({ Icon, onClick }, index: number) => (
+        {actionsButtonList?.map(({ icon, onClick }, index: number) => (
           <button key={index} type="button" onClick={onClick}>
-            <IconItem hover={true} size={20} Icon={Icon} />
+            <IconItem hover={true} size={20} icon={icon} />
           </button>
         ))}
-        {actionsLinkList?.map(({ url, target, Icon }, index: number) => (
+        {actionsLinkList?.map(({ url, target, icon }, index: number) => (
           <a className={styles['IconWrapper']} key={index} href={url} target={target} rel="">
-            <IconItem hover={true} size={20} Icon={Icon} />
+            <IconItem hover={true} size={20} icon={icon} />
           </a>
         ))}
       </div>

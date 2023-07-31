@@ -16,7 +16,7 @@ export const FilterSearchItem: FC<IFilterSearchItem> = ({ options, setOptions, p
 
   return (
     <div className={styles['magneto-ui-filter-search']}>
-      <IconItem Icon={searchIcon} size={17} />
+      <IconItem icon={searchIcon} size={17} />
       <input type="search" placeholder={placeholder} onChange={handleSearch} />
     </div>
   )

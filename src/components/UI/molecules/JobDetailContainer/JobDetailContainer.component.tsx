@@ -13,7 +13,7 @@ const JobDetailContainer: React.FC<IJobDetailContainer> = ({ children, isOpen = 
   return (
     <div className={`${style[`${classMUI}-job-detail-container`]} ${toggleMenu}`}>
       <button type="button" onClick={onClose} className={style[`${classMUI}-job-detail-container--btn`]}>
-        <IconItem Icon={ArrowRight2} />
+        <IconItem icon={ArrowRight2} />
       </button>
       {children}
     </div>

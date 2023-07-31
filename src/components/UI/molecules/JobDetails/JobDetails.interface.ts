@@ -6,7 +6,7 @@ export interface IDetailList {
   /**
    * Sets the relevant icon for the job info
    */
-  Icon?: string
+  icon?: string
 }
 
 export interface IJobDetails {

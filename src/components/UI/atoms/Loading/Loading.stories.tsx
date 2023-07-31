@@ -3,8 +3,8 @@ import { Loading } from './Loading.component'
 import { IconProps } from '../Icon'
 import { Refresh } from '../../../../constants/icons.constants'
 
-const Icon: IconProps = {
-  Icon: Refresh,
+const icon: IconProps = {
+  icon: Refresh,
   hover: false
 }
 
@@ -12,7 +12,7 @@ const meta: Meta<typeof Loading> = {
   title: 'Atoms/Loading',
   component: Loading,
   args: {
-    loadingIcon: Icon
+    loadingIcon: icon
   }
 }
 
