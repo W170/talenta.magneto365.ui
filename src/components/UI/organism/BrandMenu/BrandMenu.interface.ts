@@ -4,7 +4,7 @@ export interface IBrandMenu {
   brandsProps: IBrandsContainer
   companyUrl?: string
   companyLogo: string
-  companySlug: string
+  companySlug?: string | null
   clickOut?: boolean
   setClickOut?: React.Dispatch<React.SetStateAction<boolean>>
 }

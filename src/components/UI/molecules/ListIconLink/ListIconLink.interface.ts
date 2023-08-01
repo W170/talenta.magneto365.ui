@@ -9,6 +9,6 @@ export interface IListIconLink {
 }
 
 export interface IListIcon {
-  url: string
-  Icon: string
+  url?: string | null
+  icon?: string | null
 }

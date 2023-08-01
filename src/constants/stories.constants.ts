@@ -428,12 +428,12 @@ export const MenuList: MenuItemInfo[] = [
  */
 
 export const ListIcon: IListIcon[] = [
-  { Icon: Facebook, url: 'https://www.facebook.com/MagnetoEmpleos?_rdc=4&_rdr' },
-  { Icon: Instagram, url: 'https://www.instagram.com/magnetoempleos/' },
-  { Icon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
-  { Icon: Youtube, url: 'https://www.youtube.com/c/Magnetoempleos' },
-  { Icon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
-  { Icon: Link, url: 'https://www.magneto365.com/home/#comparte-magneto' }
+  { icon: Facebook, url: 'https://www.facebook.com/MagnetoEmpleos?_rdc=4&_rdr' },
+  { icon: Instagram, url: 'https://www.instagram.com/magnetoempleos/' },
+  { icon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
+  { icon: Youtube, url: 'https://www.youtube.com/c/Magnetoempleos' },
+  { icon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
+  { icon: Link, url: 'https://www.magneto365.com/home/#comparte-magneto' }
 ]
 
 export const listMenuProps: IListMenuItems = {
@@ -599,6 +599,44 @@ export const optionsMenuFilter: IMenuFilterItem[] = [
 export const ourBrandsText = 'Nuestras Marcas'
 
 export const brands = [
+  {
+    brandImg: 'https://tiendasaka.co/img/m/25.jpg',
+    brandAlt: 'tannino',
+    brandTitle: 'Tannino',
+    brandUrl: '#'
+  },
+  {
+    brandImg: 'https://tiendasaka.co/img/m/24.jpg',
+    brandAlt: 'Nappa',
+    brandTitle: 'Nappa',
+    brandUrl: '#'
+  },
+  {
+    brandImg:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/LOGO_MARCA_V%C3%89LEZ.png/1200px-LOGO_MARCA_V%C3%89LEZ.png',
+    brandAlt: 'Cueros Velez',
+    brandTitle: 'Cueros Velez',
+    brandUrl: '#'
+  },
+  {
+    brandImg: 'https://tiendasaka.co/img/m/25.jpg',
+    brandAlt: 'tannino',
+    brandTitle: 'Tannino',
+    brandUrl: '#'
+  },
+  {
+    brandImg: 'https://tiendasaka.co/img/m/24.jpg',
+    brandAlt: 'Nappa',
+    brandTitle: 'Nappa',
+    brandUrl: '#'
+  },
+  {
+    brandImg:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/LOGO_MARCA_V%C3%89LEZ.png/1200px-LOGO_MARCA_V%C3%89LEZ.png',
+    brandAlt: 'Cueros Velez',
+    brandTitle: 'Cueros Velez',
+    brandUrl: '#'
+  },
   {
     brandImg: 'https://tiendasaka.co/img/m/25.jpg',
     brandAlt: 'tannino',

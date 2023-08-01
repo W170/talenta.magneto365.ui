@@ -23,7 +23,7 @@ const BrandsMenuPopover: React.FC<IBrandMenu> = ({
       <BrandButton
         rotate={clickOut}
         companyLogo={companyLogo}
-        companySlug={companySlug}
+        companySlug={companySlug ? companySlug : ''}
         onClick={() => setClickOut(!clickOut)}
       />
     </Popover>

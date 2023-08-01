@@ -10,7 +10,7 @@ export interface ILoginJobsHeader {
   breadcrumbsText: string
   onMenuClick?: () => void
   homeUrl: string
-  gif: string
+  gif?: string | null
   brandMenuProps: IBrandMenu
 }
 

@@ -4,7 +4,7 @@ import { BrandsContainer } from '../BrandsContainer'
 import { IBrandMenu } from '../../organism/BrandMenu/BrandMenu.interface'
 import { BrandButton } from '../../organism/BrandMenu/children'
 
-const BrandsMenuMobile: React.FC<IBrandMenu> = ({ brandsProps, companyLogo, companySlug }) => {
+const BrandsMenuMobile: React.FC<IBrandMenu> = ({ brandsProps, companyLogo, companySlug = '' }) => {
   const [openDrawer, setOpenDrawer] = useState(false)
 
   return (
@@ -13,7 +13,7 @@ const BrandsMenuMobile: React.FC<IBrandMenu> = ({ brandsProps, companyLogo, comp
         rotate={openDrawer}
         onClick={() => setOpenDrawer(!openDrawer)}
         companyLogo={companyLogo}
-        companySlug={companySlug}
+        companySlug={companySlug ? companySlug : ''}
       />
       <MobileDrawer isOpen={openDrawer} onClose={() => setOpenDrawer(false)}>
         <BrandsContainer {...brandsProps} />
