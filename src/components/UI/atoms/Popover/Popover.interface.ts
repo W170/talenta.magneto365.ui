@@ -26,4 +26,8 @@ export interface IPopover {
    * You must set a numeric value for width container
    */
   widthBase: number
+  /**
+   * This property can change position between aboslute or static to content container
+   */
+  staticContent?: boolean
 }

@@ -2,13 +2,14 @@
 
 .magneto-ui-brands {
   @media (min-width: v.$screen-lg) {
-    padding: 15px;
+    // padding: 15px;
   }
   &__header {
     &--row {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0 15px;
       p {
         font-size: 16px;
         color: #14141c;
@@ -29,38 +30,24 @@
   }
 
   &-container {
-    width: 100%;
+    min-width: max-content;
     height: auto;
     background-color: #fff;
     white-space: nowrap;
     display: inline-block;
     position: relative;
-    @media (min-width: v.$screen-lg) {
-      overflow-x: auto;
-      width: min-content;
-      max-width: 800px;
-    }
-
-    @media (min-width: v.$screen-xl) {
-      max-width: 1100px;
-    }
-    @media (min-width: v.$screen-hd) {
-      max-width: 1250px;
-    }
 
     &__brands {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      flex-wrap: wrap;
       gap: 5px;
+      max-width: 99.9vw;
+      padding: 0 15px;
 
       @media (min-width: v.$screen-md) {
-        display: flex;
-        flex-wrap: wrap;
         gap: 10px;
       }
-      @media (min-width: v.$screen-lg) {
-        flex-wrap: nowrap;
-      }
+
       &--brand {
         transition: all ease-in-out 0.3s;
         padding: 10px;
@@ -98,24 +85,6 @@
             font-size: 14px;
             color: #656565;
           }
-        }
-      }
-    }
-
-    &::-webkit-scrollbar {
-      height: 7px;
-      border-radius: 15px;
-
-      &-track {
-        background-color: rgba(241, 241, 241, 0.353);
-        border-radius: 15px;
-      }
-
-      &-thumb {
-        border-radius: 15px;
-        background-color: v.$disabled-color-gray2;
-        &:hover {
-          background-color: v.$disabled-color-gray3;
         }
       }
     }
