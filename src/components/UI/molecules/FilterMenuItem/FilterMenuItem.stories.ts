@@ -6,9 +6,10 @@ const meta: Meta<typeof FilterMenuItem> = {
   component: FilterMenuItem,
   args: {
     label: 'Filter menu item',
-    amount: 200,
-    isSelected: false,
-    setIsSelected: (value) => console.log('Change isSelected', value)
+    total: 200,
+    isApplied: false,
+    setIsApplied: ({ id, field, isApplied }: { field: string; id: string | number; isApplied: boolean }) =>
+      new Promise((resolve) => resolve(console.log({ id, field, isApplied })))
   }
 }
 

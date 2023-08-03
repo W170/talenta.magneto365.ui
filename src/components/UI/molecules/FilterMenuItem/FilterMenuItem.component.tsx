@@ -1,23 +1,39 @@
-import React, { FC, useCallback, useMemo } from 'react'
+import React, { FC, Fragment, useCallback, useMemo } from 'react'
 import { IconItem } from '@components/UI/atoms'
-import close from '@assets/Close.svg'
+import { close } from '@constants/icons.constants'
 import { IFilterMenuItem } from './FilterMenuItem.interface'
 import styles from './FilterMenuItem.module.scss'
 
-export const FilterMenuItem: FC<IFilterMenuItem> = ({ label, amount, isSelected, setIsSelected }) => {
+export const FilterMenuItem: FC<IFilterMenuItem> = ({
+  id,
+  label,
+  total,
+  isApplied,
+  setIsApplied,
+  field,
+  loading,
+  hasTotal
+}) => {
   const displayOutput = useMemo(() => {
-    if (isSelected) return <IconItem icon={close} size={17} />
-    return <output>{amount}</output>
-  }, [isSelected, amount])
+    if (isApplied) return <IconItem icon={close} size={17} />
+    if (!hasTotal) return <Fragment />
+    return <output>{total}</output>
+  }, [isApplied, total, hasTotal])
 
   const handleClick = useCallback(() => {
-    setIsSelected(!isSelected)
-  }, [setIsSelected, isSelected])
+    setIsApplied({ id, field, isApplied })
+  }, [setIsApplied, id, field, isApplied])
+
+  if (loading) return <div className={styles.skeleton} />
 
   return (
-    <p className={`${styles['magneto-ui-filter-item']} ${isSelected && styles.selected}`} onClick={handleClick}>
+    <button
+      className={`${styles['magneto-ui-filter-item']} ${isApplied && styles.selected}  ${!total && styles.disabled}`}
+      onClick={handleClick}
+      disabled={!total}
+    >
       <span>{label}</span>
       {displayOutput}
-    </p>
+    </button>
   )
 }

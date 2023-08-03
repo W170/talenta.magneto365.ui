@@ -1,0 +1,780 @@
+[
+  {
+    "label": "Sector laboral",
+    "placeholder": "Selecciona tus sector(es) laboral(es)",
+    "field": "sectors_ids",
+    "type": "EQUAL",
+    "renderType": "MULTI_SELECT",
+    "dataType": "number",
+    "multiple": true,
+    "repository": {
+      "type": "storage",
+      "defaultFilter": {
+        "active": true
+      },
+      "defaultOrder": {
+        "name": "ASC"
+      },
+      "defaultOperator": 1,
+      "source": "sectors",
+      "fieldsAlias": {
+        "id": "id",
+        "label": "name"
+      }
+    },
+    "values": [
+      {
+        "id": 1,
+        "operator": 1,
+        "label": "Administración y oficina",
+        "total": 16,
+        "isApplied": false
+      },
+      {
+        "id": 16,
+        "operator": 1,
+        "label": "Bodega, logística y transporte",
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": 26,
+        "operator": 1,
+        "label": "Call center, tele mercadeo, BPO y afines",
+        "total": 15,
+        "isApplied": false
+      },
+      {
+        "id": 27,
+        "operator": 1,
+        "label": "Compras y comercio exterior",
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": 31,
+        "operator": 1,
+        "label": "Comunicación y Periodismo",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 21,
+        "operator": 1,
+        "label": "Construcción e infraestructura",
+        "total": 5,
+        "isApplied": false
+      },
+      {
+        "id": 4,
+        "operator": 1,
+        "label": "Contabilidad, finanzas, impuestos y afines",
+        "total": 7,
+        "isApplied": false
+      },
+      {
+        "id": 5,
+        "operator": 1,
+        "label": "Deporte y recreación",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 6,
+        "operator": 1,
+        "label": "Derecho, Asesoría y afines",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 28,
+        "operator": 1,
+        "label": "Dirección y Gerencia",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 7,
+        "operator": 1,
+        "label": "Diseño, arquitectura, artes gráficas y afines",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 22,
+        "operator": 1,
+        "label": "Docencia, educación, licenciaturas y afines",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 8,
+        "operator": 1,
+        "label": "Economía, estadística, matemáticas y afines",
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": 9,
+        "operator": 1,
+        "label": "Gastronomía, bebidas/alimentos y restaurantes",
+        "total": 7,
+        "isApplied": false
+      },
+      {
+        "id": 10,
+        "operator": 1,
+        "label": "Hotelería y turismo",
+        "total": 5,
+        "isApplied": false
+      },
+      {
+        "id": 11,
+        "operator": 1,
+        "label": "Idiomas y traducción",
+        "total": 4,
+        "isApplied": false
+      },
+      {
+        "id": 12,
+        "operator": 1,
+        "label": "Industria de la aviación y afines",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 14,
+        "operator": 1,
+        "label": "Ingenierías",
+        "total": 6,
+        "isApplied": false
+      },
+      {
+        "id": 15,
+        "operator": 1,
+        "label": "Inversiones y mercado bursátil",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 29,
+        "operator": 1,
+        "label": "Investigación y Calidad",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 30,
+        "operator": 1,
+        "label": "Mantenimiento y Reparaciones",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 17,
+        "operator": 1,
+        "label": "Mecánica y sector automotriz",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 18,
+        "operator": 1,
+        "label": "Medicina, sector de la salud y Ciencias",
+        "total": 7,
+        "isApplied": false
+      },
+      {
+        "id": 3,
+        "operator": 1,
+        "label": "Mercadeo y Publicidad",
+        "total": 7,
+        "isApplied": false
+      },
+      {
+        "id": 19,
+        "operator": 1,
+        "label": "Otras",
+        "total": 4,
+        "isApplied": false
+      },
+      {
+        "id": 20,
+        "operator": 1,
+        "label": "Política, ONG, sector Gobierno y fundaciones",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 13,
+        "operator": 1,
+        "label": "Producción, Operarios y Manufactura",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 2,
+        "operator": 1,
+        "label": "Recursos Humanos",
+        "total": 5,
+        "isApplied": false
+      },
+      {
+        "id": 24,
+        "operator": 1,
+        "label": "Servicio al cliente y afines",
+        "total": 7,
+        "isApplied": false
+      },
+      {
+        "id": 32,
+        "operator": 1,
+        "label": "Servicios generales, Aseo y Seguridad",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 23,
+        "operator": 1,
+        "label": "Software, informática y telecomunicaciones",
+        "total": 19,
+        "isApplied": false
+      },
+      {
+        "id": 34,
+        "operator": 1,
+        "label": "Transportador de Energía",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 25,
+        "operator": 1,
+        "label": "Ventas",
+        "total": 8,
+        "isApplied": false
+      },
+      {
+        "id": 33,
+        "operator": 1,
+        "label": "Zoología, Veterinario y sector Agroindustrial",
+        "total": 0,
+        "isApplied": false
+      }
+    ],
+    "searchPlaceholder": "Buscar sector laboral"
+  },
+  {
+    "label": "País",
+    "field": "country_id",
+    "type": "EQUAL",
+    "renderType": "SEARCH",
+    "renderChild": "DISABLED",
+    "dataType": "number",
+    "multiple": false,
+    "repository": {
+      "type": "endPoint",
+      "defaultFilter": {},
+      "defaultOrder": {},
+      "defaultOperator": 1,
+      "source": "v1/public/filters/search/countries_*",
+      "fieldFullSearch": "name.analyzed",
+      "sourceName": "countries_*",
+      "fieldsAlias": {
+        "id": "id",
+        "label": "name",
+        "parentId": null
+      }
+    },
+    "child": {
+      "label": "Departamento",
+      "field": "department_id",
+      "type": "EQUAL",
+      "renderType": "SEARCH",
+      "renderChild": "DISABLED",
+      "dataType": "number",
+      "multiple": true,
+      "repository": {
+        "type": "endPoint",
+        "defaultFilter": {},
+        "defaultOrder": {},
+        "defaultOperator": 1,
+        "source": "v1/public/filters/search/departments_*",
+        "fieldFullSearch": "name.analyzed",
+        "sourceName": "departments_*",
+        "fieldsAlias": {
+          "id": "id",
+          "label": "full_name",
+          "parentId": "country_id"
+        }
+      },
+      "child": {
+        "label": "Ciudad",
+        "field": "city_id",
+        "type": "EQUAL",
+        "renderType": "SEARCH",
+        "dataType": "number",
+        "multiple": true,
+        "repository": {
+          "type": "endPoint",
+          "defaultFilter": {},
+          "defaultOrder": {},
+          "defaultOperator": 1,
+          "source": "v1/public/filters/search/cities_*",
+          "fieldFullSearch": "name.analyzed",
+          "sourceName": "cities_*",
+          "fieldsAlias": {
+            "id": "id",
+            "label": "full_name",
+            "parentId": "department_id"
+          }
+        },
+        "values": [],
+        "searchPlaceholder": "Buscar ciudad"
+      },
+      "values": [],
+      "searchPlaceholder": "Buscar departamento"
+    },
+    "values": [],
+    "searchPlaceholder": "Buscar país"
+  },
+  {
+    "label": "Trabajo remoto",
+    "field": "is_remote",
+    "type": "EQUAL",
+    "renderType": "SELECTION_LIST",
+    "dataType": "boolean",
+    "multiple": false,
+    "repository": {
+      "type": "valueList",
+      "defaultFilter": {},
+      "defaultOrder": {},
+      "defaultOperator": 1,
+      "source": null,
+      "fieldsAlias": null
+    },
+    "values": [
+      {
+        "operator": 1,
+        "id": "true",
+        "label": "Si",
+        "total": 63,
+        "isApplied": true
+      },
+      {
+        "operator": 1,
+        "id": "false",
+        "label": "No",
+        "total": 0,
+        "isApplied": false
+      }
+    ],
+    "searchPlaceholder": "Buscar trabajo remoto"
+  },
+  {
+    "label": "Salario",
+    "field": "salary_show",
+    "type": "RANGE",
+    "renderType": "SELECTION_LIST",
+    "dataType": "number",
+    "multiple": false,
+    "repository": {
+      "type": "customFactory",
+      "defaultFilter": {},
+      "defaultOrder": {},
+      "defaultOperator": 1,
+      "source": "8fa295f4-111d-45b2-b5bc-cc7c09f63511",
+      "fieldsAlias": {}
+    },
+    "values": [
+      {
+        "operator": 1,
+        "type": null,
+        "from": -1,
+        "to": -1,
+        "id": "BK-agree",
+        "label": "A convenir",
+        "total": 30,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "type": null,
+        "from": 781242,
+        "to": null,
+        "id": "BK-01",
+        "label": "Desde $781.242",
+        "total": 33,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "type": null,
+        "from": 1000001,
+        "to": 1500000,
+        "id": "BK-02",
+        "label": "$1.000.000 a $1.500.000",
+        "total": 12,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "type": null,
+        "from": 1500001,
+        "to": 2000000,
+        "id": "BK-03",
+        "label": "$1.500.000 a $2.000.000",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "type": null,
+        "from": 2000001,
+        "to": 2500000,
+        "id": "BK-04",
+        "label": "$2.000.000 a $2.500.000",
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "type": null,
+        "from": 2500001,
+        "to": 3000000,
+        "id": "BK-05",
+        "label": "$2.500.000 a $3.000.000",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "type": null,
+        "from": 3000001,
+        "to": 4000000,
+        "id": "BK-06",
+        "label": "$3.000.000 a $4.000.000",
+        "total": 10,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "type": null,
+        "from": 4000001,
+        "to": 7000000,
+        "id": "BK-07",
+        "label": "$4.000.000 a $7.000.000",
+        "total": 6,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "type": null,
+        "from": 7000001,
+        "to": null,
+        "id": "BK-08",
+        "label": "Más de $7.000.000",
+        "total": 1,
+        "isApplied": false
+      }
+    ],
+    "searchPlaceholder": "Buscar salario"
+  },
+  {
+    "label": "Experiencia requerida",
+    "field": "experience_months_number",
+    "type": "RANGE",
+    "renderType": "SELECTION_LIST",
+    "dataType": "number",
+    "multiple": false,
+    "repository": {
+      "type": "valueList",
+      "defaultFilter": {},
+      "defaultOrder": {},
+      "defaultOperator": 1,
+      "source": null,
+      "fieldsAlias": null
+    },
+    "values": [
+      {
+        "operator": 1,
+        "type": null,
+        "from": null,
+        "to": 0,
+        "id": "BK-01",
+        "label": "Sin experiencia",
+        "total": 11,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "type": null,
+        "from": 0,
+        "to": 11,
+        "id": "BK-02",
+        "label": "Menos de un año",
+        "total": 32,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "type": null,
+        "from": 12,
+        "to": 24,
+        "id": "BK-03",
+        "label": "1 a 2 años",
+        "total": 21,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "type": null,
+        "from": 24,
+        "to": 36,
+        "id": "BK-04",
+        "label": "2 a 3 años",
+        "total": 20,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "type": null,
+        "from": 36,
+        "to": 60,
+        "id": "BK-05",
+        "label": "3 a 5 años",
+        "total": 19,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "type": null,
+        "from": 60,
+        "to": 96,
+        "id": "BK-06",
+        "label": "5 a 8 años",
+        "total": 9,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "from": 96,
+        "type": null,
+        "to": 120,
+        "id": "BK-07",
+        "label": "8 a 10 años",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "from": 120,
+        "type": null,
+        "to": null,
+        "id": "BK-08",
+        "label": "más de 10 años",
+        "total": 1,
+        "isApplied": false
+      }
+    ],
+    "searchPlaceholder": "Buscar experiencia requerida"
+  },
+  {
+    "label": "Fecha de publicación",
+    "field": "publish_date",
+    "type": "RANGE",
+    "renderType": "SELECTION_LIST",
+    "dataType": "date",
+    "multiple": false,
+    "repository": {
+      "type": "customFactory",
+      "defaultFilter": {},
+      "defaultOrder": {},
+      "defaultOperator": 1,
+      "source": "3ce57a04-c815-4944-909a-4e3990df832c",
+      "fieldsAlias": null
+    },
+    "values": [
+      {
+        "id": "BK-01",
+        "label": "Hoy",
+        "operator": 1,
+        "from": "2023-08-01",
+        "to": "2023-08-01T23:59:59",
+        "total": 4,
+        "isApplied": false
+      },
+      {
+        "id": "BK-02",
+        "label": "Últimos 3 días",
+        "operator": 1,
+        "from": "2023-07-29",
+        "to": "2023-08-01T23:59:59",
+        "total": 6,
+        "isApplied": false
+      },
+      {
+        "id": "BK-03",
+        "label": "Última semana",
+        "operator": 1,
+        "from": "2023-07-25",
+        "to": "2023-08-01T23:59:59",
+        "total": 19,
+        "isApplied": false
+      },
+      {
+        "id": "BK-04",
+        "label": "Últimos 15 días",
+        "operator": 1,
+        "from": "2023-07-17",
+        "to": "2023-08-01T23:59:59",
+        "total": 24,
+        "isApplied": false
+      },
+      {
+        "id": "BK-05",
+        "label": "Último mes",
+        "operator": 1,
+        "from": "2023-07-01",
+        "to": "2023-08-01T23:59:59",
+        "total": 39,
+        "isApplied": false
+      }
+    ],
+    "searchPlaceholder": "Buscar fecha de publicación"
+  },
+  {
+    "label": "Tipo de contrato",
+    "field": "contract_type_id",
+    "type": "EQUAL",
+    "renderType": "SELECTION_LIST",
+    "dataType": "number",
+    "multiple": false,
+    "repository": {
+      "type": "customFactory",
+      "defaultFilter": {},
+      "defaultOrder": {},
+      "defaultOperator": 1,
+      "source": "57c0c637-0504-476f-95a4-b607bac4f26a",
+      "fieldsAlias": null
+    },
+    "values": [
+      {
+        "id": 6,
+        "label": "Contrato de aprendizaje",
+        "operator": 1,
+        "total": 8,
+        "isApplied": false
+      },
+      {
+        "id": 4,
+        "label": "Por obra o labor",
+        "operator": 1,
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 5,
+        "label": "Prestación de servicios",
+        "operator": 1,
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 3,
+        "label": "Temporal",
+        "operator": 1,
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 1,
+        "label": "Término fijo",
+        "operator": 1,
+        "total": 9,
+        "isApplied": false
+      },
+      {
+        "id": 2,
+        "label": "Término indefinido",
+        "operator": 1,
+        "total": 43,
+        "isApplied": false
+      }
+    ],
+    "searchPlaceholder": "Buscar tipo de contrato"
+  },
+  {
+    "label": "Tipo de pasantía",
+    "field": "internship_types_id",
+    "type": "EQUAL",
+    "renderType": "SELECTION_LIST",
+    "dataType": "number",
+    "multiple": false,
+    "repository": {
+      "type": "valueList",
+      "defaultFilter": {},
+      "defaultOrder": {},
+      "defaultOperator": 1,
+      "source": null,
+      "fieldsAlias": null
+    },
+    "values": [
+      {
+        "operator": 1,
+        "id": 1,
+        "label": "Etapa productiva (aprendiz)",
+        "total": 5,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "id": 2,
+        "label": "Práctica profesional",
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "id": 3,
+        "label": "Patrocinio estudios técnicos/tecnológicos",
+        "total": 0,
+        "isApplied": false
+      }
+    ],
+    "searchPlaceholder": "Buscar tipo de pasantía"
+  },
+  {
+    "label": "Persona discapacitada",
+    "field": "disabled_people",
+    "type": "EQUAL",
+    "renderType": "SELECTION_LIST",
+    "dataType": "boolean",
+    "multiple": false,
+    "repository": {
+      "type": "valueList",
+      "defaultFilter": {},
+      "defaultOrder": {},
+      "defaultOperator": 1,
+      "source": null,
+      "fieldsAlias": null
+    },
+    "values": [
+      {
+        "operator": 1,
+        "id": "true",
+        "label": "Si",
+        "total": 8,
+        "isApplied": false
+      },
+      {
+        "operator": 1,
+        "id": "false",
+        "label": "No",
+        "total": 55,
+        "isApplied": false
+      }
+    ],
+    "searchPlaceholder": "Buscar persona discapacitada"
+  }
+]

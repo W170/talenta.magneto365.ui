@@ -1,28 +1,24 @@
-import { TOptionFilterSearch } from '@components/UI/molecules/FilterSearchItem'
+import { IFilter } from '@components/UI/template/SideFilter'
 
-export interface IFilterCard {
+export interface IFilterCard extends IFilter {
   /**
-   * This is a vector whit the options to shows
+   * This function change if this filter is applied in the options
    */
-  totalOptions: TOptionFilterSearch[]
+  setIsApplied: ({ id, field, isApplied }: { field: string; id: string | number; isApplied: boolean }) => Promise<void>
   /**
-   * This function modify the options
+   * This is the flag when the filters promise is pending
    */
-  //   setOptions: (filteredOptions: TOptionFilterSearch[]) => void
-  /**
-   * This is the title card
-   */
-  title: string
+  loading: boolean
   /**
    * This flag indicate if has switch
    */
   hasSwitch?: boolean
   /**
-   * This is the title switch
+   * This is the switch title
    */
   switchText?: string
   /**
-   *
+   *This is the placeholder in the input search
    */
   searchPlaceholder?: string
 }

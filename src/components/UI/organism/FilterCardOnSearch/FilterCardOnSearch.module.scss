@@ -1,7 +1,7 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 @use '../../../../shared/stylesheets/mixins.scss' as m;
 
-.magneto-ui-filter-card {
+.magneto-ui-filter-onSearch {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,14 +10,14 @@
   width: 260px;
   max-width: 260px;
   height: auto;
-  padding: 10px 0;
+  padding: 10px 0 5px 0;
   border-radius: 12px;
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
 }
 
-.magneto-ui-filter-card_header {
+.magneto-ui-filter-onSearch_header {
   display: flex;
   width: 230px;
   max-width: 230px;
@@ -27,25 +27,21 @@
     font-size: 0.875rem;
     font-weight: 700;
     color: v.$text-color-black;
-    width: 100%;
-    max-width: 100%;
+    width: 80%;
+    max-width: 80%;
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
     &::first-letter {
       text-transform: capitalize;
     }
   }
 }
 
-.magneto-ui-filter-card_options {
+.magneto-ui-filter-onSearch_options {
   margin-top: 1rem;
   overflow-y: scroll;
   @include m.scroll-filter;
-}
-
-.hasSearch {
-  height: 270px;
-  min-height: 270px;
 }

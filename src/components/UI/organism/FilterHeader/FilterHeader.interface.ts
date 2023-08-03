@@ -8,16 +8,15 @@ export interface IFilterHeader {
    */
   buttonText: string
   /**
-   * Tis si the text that shows next to de switch
-   */
-  switchText: string
-
-  /**
    * This is the function to clean all the filters
    */
-  cleanFilters: () => void
+  clearFilters: () => Promise<void>
   /**
    * This is the total filters applied
    */
   filtersApplied: number
+  /**
+   * Tis si the text that shows next to de switch
+   */
+  switchText?: string
 }

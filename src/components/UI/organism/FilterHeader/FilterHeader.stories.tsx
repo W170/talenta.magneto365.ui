@@ -9,10 +9,9 @@ const meta: Meta<typeof FilterHeader> = {
     buttonText: 'Limpiar',
     switchText: 'Apto para personas con discapacidad',
     filtersApplied: 5,
-    cleanFilters: () => console.log('This function clean all filters')
+    clearFilters: () => new Promise((resolve) => resolve(console.log('clearFilters')))
   }
 }
-
 export default meta
 
 type Story = StoryObj<typeof FilterHeader>

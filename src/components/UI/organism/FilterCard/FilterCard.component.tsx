@@ -1,18 +1,37 @@
-import React, { FC, useMemo, useState } from 'react'
+import React, { FC, Fragment, useEffect, useMemo, useState } from 'react'
 import { IFilterCard } from './FilterCard.interface'
 import styles from './FilterCard.module.scss'
 import { Switch } from '@components/UI/atoms/Switch'
 import { FilterSearchItem } from '@components/UI/molecules/FilterSearchItem'
 import { FilterMenuItem } from '@components/UI/molecules/FilterMenuItem'
+import { IFilterValue } from '@components/UI/template'
+import { ERenderType } from '@components/UI/template/SideFilter/SideFilter.component'
 
-export const FilterCard: FC<IFilterCard> = ({ title, totalOptions, hasSwitch, switchText, searchPlaceholder }) => {
-  const [options, setOptions] = useState(totalOptions)
+export const FilterCard: FC<IFilterCard> = ({
+  label,
+  values,
+  hasSwitch,
+  switchText,
+  searchPlaceholder,
+  setIsApplied,
+  renderType,
+  ...props
+}) => {
+  const [options, setOptions] = useState<IFilterValue[]>([])
 
-  const hasSearch = useMemo(() => totalOptions.length > 7, [totalOptions])
+  useEffect(() => {
+    setOptions(values)
+  }, [values])
+
+  const hasSearch = useMemo(() => renderType === ERenderType.multiSelect, [renderType])
+  const hasTotal = useMemo(() => !values.find((value) => value.isApplied), [values])
+
+  if (!values.length) return <Fragment />
+
   return (
-    <article className={styles['magneto-ui-filter-card']}>
+    <article className={`${styles['magneto-ui-filter-card']} ${hasSearch && styles.hasSearch}`}>
       <div className={styles['magneto-ui-filter-card_header']}>
-        <p>{title}</p>
+        <p>{label}</p>
         {hasSwitch && (
           <Switch
             //TODO: review isActive, setIsActive
@@ -23,21 +42,20 @@ export const FilterCard: FC<IFilterCard> = ({ title, totalOptions, hasSwitch, sw
         )}
       </div>
       {hasSearch && (
-        <FilterSearchItem options={totalOptions} setOptions={setOptions} placeholder={searchPlaceholder as string} />
+        <FilterSearchItem options={values} setOptions={setOptions} placeholder={searchPlaceholder as string} />
       )}
-      {options.map((opt, key) => (
-        <FilterMenuItem
-          //TODO: review isSelected, setIsSelected and amount
-          key={`${key}`}
-          {...opt}
-          isSelected={false}
-          setIsSelected={(value) => console.log('Change isSelected', value)}
-        />
-      ))}
+      <div className={styles['magneto-ui-filter-card_options']}>
+        {options.map((opt, key) => {
+          const optProps = { ...props, ...opt, hasTotal }
+          return <FilterMenuItem key={`${key}`} {...optProps} setIsApplied={setIsApplied} />
+        })}
+      </div>
     </article>
   )
 }
 
 FilterCard.defaultProps = {
-  searchPlaceholder: ''
+  searchPlaceholder: '',
+  hasSwitch: false,
+  switchText: ''
 }

@@ -47,7 +47,7 @@ import { IlistMenuUserProps } from '../components/UI/organism/LoginHeader'
 import { ILoading } from '../components/UI/atoms/Loading'
 import { IMenuFilterItem } from '../components/UI/molecules/MenuFilter/MenuFilter.interface'
 import { IJobCard } from '../components/UI/molecules/JobCard/JobCard.interface'
-import { TOptionFilterSearch } from '@components/UI/molecules/FilterSearchItem'
+import { IFilterValue } from '@components/UI/template/SideFilter'
 
 /**
  *
@@ -675,35 +675,40 @@ export const vacants: IJobCard[] = [
 ]
 
 //TODO: temporal side menu filter
-export const optionsFilterMenu: TOptionFilterSearch[] = [
+export const optionsFilterMenu: IFilterValue[] = [
   {
     id: 1,
     operator: 1,
     label: 'Administración y oficina',
-    amount: 200
+    total: 200,
+    isApplied: false
   },
   {
     id: 14,
     operator: 1,
     label: 'Ingenierías',
-    amount: 200
+    total: 9999,
+    isApplied: false
   },
   {
     id: 18,
     operator: 1,
     label: 'Medicina, sector de la salud y Ciencias',
-    amount: 200
+    total: 200,
+    isApplied: true
   },
   {
     id: 2,
     operator: 1,
     label: 'Recursos Humanos',
-    amount: 200
+    total: 0,
+    isApplied: false
   },
   {
     id: 25,
     operator: 1,
     label: 'Ventas',
-    amount: 200
+    total: 10,
+    isApplied: false
   }
 ]

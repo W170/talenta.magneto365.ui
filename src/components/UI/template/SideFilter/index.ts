@@ -1,2 +1,2 @@
 export * from './SideFilter.interface'
-export { SideFilter } from './SideFilter.component'
+export { default as SideFilter } from './SideFilter.component'
