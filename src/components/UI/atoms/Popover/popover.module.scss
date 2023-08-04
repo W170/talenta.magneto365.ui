@@ -8,6 +8,7 @@
     background-color: white;
     height: auto;
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.106);
+    overflow: hidden;
     border-radius: 12px;
     position: absolute;
     z-index: 12;
@@ -41,7 +42,14 @@
 
 .show {
   opacity: 1;
-  margin-top: 10px;
+  margin-top: 0px;
+}
+
+.static-content {
+  position: static;
+  .magneto-ui-popover {
+    border-radius: 0 0 15px 15px;
+  }
 }
 
 .hidden {

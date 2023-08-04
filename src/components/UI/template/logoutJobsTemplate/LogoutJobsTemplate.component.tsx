@@ -36,7 +36,7 @@ const LogoutJobsTemplate: React.FC<ILogoutJobsTemplate> = ({
             <img
               className={style[`${Muiclass}-logout-jobs-template--company-logo`]}
               src={companyLogo}
-              alt={companySlug}
+              alt={companySlug ? companySlug : ''}
             />
           </a>
         </div>
@@ -57,7 +57,7 @@ const LogoutJobsTemplate: React.FC<ILogoutJobsTemplate> = ({
         </div>
 
         <div className={style[`${Muiclass}-logout-jobs-template--social-media`]}>
-          <ListIconLink size={34} spacing={20} listIcon={ListIcon} />
+          {ListIcon && <ListIconLink size={34} spacing={20} listIcon={ListIcon} />}
         </div>
       </Drawer>
     </div>

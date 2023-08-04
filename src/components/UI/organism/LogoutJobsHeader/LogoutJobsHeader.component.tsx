@@ -102,23 +102,26 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
           <a href={homeUrl}>
             <LogoComponent {...LogoProps} isoView={true} />
           </a>
-          {brandsProps.brands ? (
+          {brandsProps.brands && brandsProps.brands?.length > 0 ? (
             <BrandMenu {...brandMenuProps} />
           ) : (
             <a href={companyUrl}>
               <img
                 className={styles[`${Muiclass}-logout-jobs-header--second-row__left-section--company-logo`]}
                 src={companyLogo}
-                alt={companySlug}
+                alt={companySlug ? companySlug : ''}
               />
             </a>
           )}
 
-          <img
-            className={styles[`${Muiclass}-logout-jobs-header--second-row__left-section--gif`]}
-            alt={companySlug}
-            src={gif}
-          />
+          {gif && (
+            <img
+              className={styles[`${Muiclass}-logout-jobs-header--second-row__left-section--gif`]}
+              alt={companySlug ? companySlug : ''}
+              src={gif}
+            />
+          )}
+
           {LogoutHeaderMobileSearchbarButton}
         </div>
         <div className={styles[`${Muiclass}-logout-jobs-header--second-row__middle-section`]}>

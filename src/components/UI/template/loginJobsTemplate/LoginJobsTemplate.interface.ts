@@ -1,5 +1,5 @@
 import { IListMenuItems } from '../../molecules'
-import { IDrawerOrganism, ILoginJobsHeader } from '../../organism'
+import { ILoginJobsHeader } from '../../organism'
 import { IListIcon } from '../../molecules/ListIconLink/ListIconLink.interface'
 
 export interface ILoginJobsTemplate {
@@ -10,8 +10,7 @@ export interface ILoginJobsTemplate {
   /**
    * Sets the props of the drawer menu component
    */
-  headerDrawerMenuProps: IDrawerOrganism
   homeUrl: string
   listMenuProps: IListMenuItems
-  ListIcon: IListIcon[]
+  ListIcon?: IListIcon[]
 }

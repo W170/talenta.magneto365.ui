@@ -18,12 +18,13 @@ const BrandsMenuPopover: React.FC<IBrandMenu> = ({
       widthBase={120}
       positionX="right"
       positionY="bottom"
+      staticContent
       content={<BrandsContainer closeBrands={() => setClickOut(!clickOut)} {...brandsProps} />}
     >
       <BrandButton
         rotate={clickOut}
         companyLogo={companyLogo}
-        companySlug={companySlug}
+        companySlug={companySlug ? companySlug : ''}
         onClick={() => setClickOut(!clickOut)}
       />
     </Popover>
