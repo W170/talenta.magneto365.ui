@@ -3,7 +3,6 @@ import { LogoComponent } from '../../atoms'
 import { Tab } from '../Tab'
 import { TabButton } from '../TabButton'
 import { IHeaderDrawerTabs } from './HeaderDrawerTabs.interface'
-import { useMediaQuery } from '../../../hooks'
 import styles from './HeaderDrawerTabs.module.scss'
 
 const Component: React.FC<IHeaderDrawerTabs> = ({
@@ -14,14 +13,10 @@ const Component: React.FC<IHeaderDrawerTabs> = ({
   rightTabStyle,
   homeUrl
 }) => {
-  const isMobileLogo = useMediaQuery(false, {
-    md: true
-  })
-
   return (
     <div className={styles.HeaderDrawerTabsComponent}>
       <a href={homeUrl}>
-        <LogoComponent isoView={isMobileLogo} {...logoProps} />
+        <LogoComponent {...logoProps} isoView />
       </a>
       <Tab>
         <TabButton
