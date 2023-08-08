@@ -11,7 +11,6 @@ const meta: Meta<typeof Popover> = {
     content: <p>Im the content</p>,
     positionX: 'right',
     positionY: 'bottom',
-    width: 200,
     show: false,
     children: <button style={{ display: 'block', width: '100px', height: '60px' }}>Hi</button>
   }
