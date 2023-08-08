@@ -46,6 +46,9 @@ import {
 import { IlistMenuUserProps } from '../components/UI/organism/LoginHeader'
 import { ILoading } from '../components/UI/atoms/Loading'
 import { IMenuFilterItem } from '../components/UI/molecules/MenuFilter/MenuFilter.interface'
+import { TOptionFilterSearch } from '@components/UI/molecules/FilterSearchItem'
+import { IJobCard } from '@components/UI/molecules/JobCard/JobCard.interface'
+import { IlistMenuUserPropsNot1440 } from '@components/UI/organism'
 
 /**
  *
@@ -453,7 +456,7 @@ export const ListIcon: IListIcon[] = [
   { icon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
   { icon: Youtube, url: 'https://www.youtube.com/c/Magnetoempleos' },
   { icon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
-  { icon: Link, url: 'https://www.magneto365.com/home/#comparte-magneto' }
+  { icon: Link, url: 'https://www.magneto365.com/home/#comparte-magneto' },
   { icon: Facebook, url: 'https://www.facebook.com/MagnetoEmpleos?_rdc=4&_rdr' },
   { icon: Instagram, url: 'https://www.instagram.com/magnetoempleos/' },
   { icon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
