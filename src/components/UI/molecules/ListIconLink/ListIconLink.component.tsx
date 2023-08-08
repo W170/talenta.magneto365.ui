@@ -10,7 +10,7 @@ const Component: React.FC<IListIconLink> = ({ listIcon, size, hover = true, spac
         ({ icon, url }: IListIcon, index: number) =>
           url && (
             <a key={index} href={url} target="_blank" rel="noopener noreferrer">
-              <IconItem hover={hover} size={size} Icon={icon} />
+              <IconItem hover={hover} size={size} icon={icon} />
             </a>
           )
       )}
