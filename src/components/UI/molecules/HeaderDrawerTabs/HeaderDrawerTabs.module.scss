@@ -4,7 +4,7 @@
   align-items: center;
   gap: 20px;
 
-  @media (min-width: v.$screen-md) {
+  @media (max-width: v.$screen-md) {
     gap: 10px;
   }
 }
