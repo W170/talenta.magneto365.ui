@@ -456,12 +456,6 @@ export const ListIcon: IListIcon[] = [
   { icon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
   { icon: Youtube, url: 'https://www.youtube.com/c/Magnetoempleos' },
   { icon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
-  { icon: Link, url: 'https://www.magneto365.com/home/#comparte-magneto' },
-  { icon: Facebook, url: 'https://www.facebook.com/MagnetoEmpleos?_rdc=4&_rdr' },
-  { icon: Instagram, url: 'https://www.instagram.com/magnetoempleos/' },
-  { icon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
-  { icon: Youtube, url: 'https://www.youtube.com/c/Magnetoempleos' },
-  { icon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
   { icon: Link, url: 'https://www.magneto365.com/home/#comparte-magneto' }
 ]
 
