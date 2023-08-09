@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import { useMediaQuery } from '@components/hooks'
-import { JobCard } from '@components/UI/molecules/JobCard'
 import FilterContainerMenu from '@components/UI/molecules/FilterContainerMenu/FilterContainerMenu.component'
-import { JobDetailContainer } from '@components/UI/molecules'
+import { JobDetailContainer, JobCard } from '@components/UI/molecules'
 import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
 import { FilterBottomHeader } from '@components/UI/template'
+import { useMediaQuery } from '@components/hooks'
 
 import { IJobsPage } from './JobsPage.interface'
 import style from './JobsPage.module.scss'
+
 import { classMUI } from '../../../../constants/stories.constants'
 
 const JobsPage: React.FC<IJobsPage> = ({
@@ -24,7 +24,7 @@ const JobsPage: React.FC<IJobsPage> = ({
       <JobDetailsDrawer {...jobDetailsDrawerProps} />
     </JobDetailContainer>,
     {
-      lg: (
+      sm: (
         <MobileJobDetailsDrawer
           {...MobileJobDetailsDrawerProps}
           onClose={() => setShowDrawer(false)}
