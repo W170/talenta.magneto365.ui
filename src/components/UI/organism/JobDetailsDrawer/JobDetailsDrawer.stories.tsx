@@ -1,13 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import {
-  FacebookBlue,
-  LinkedInBlue,
-  SMSBlue,
-  ShareBlue,
-  TwitterBlue,
-  WhatsAppColor
-} from '../../../../constants/icons.constants'
+import { FacebookBlue, LinkedInBlue, SMSBlue, ShareBlue, TwitterBlue, WhatsAppColor } from '@constants/icons.constants'
 import { CompanyLogo } from '@constants/stories.constants'
 
 import { JobDetailsDrawer } from './JobDetailsDrawer.component'
