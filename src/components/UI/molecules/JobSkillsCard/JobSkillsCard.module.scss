@@ -1,6 +1,6 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 
-.JobSkillsCardComponent {
+.magneto-ui-job-skills-card {
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -16,7 +16,7 @@
     margin: 0;
   }
 
-  .JobSkillsWrapper {
+  &__skills-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -31,7 +31,7 @@
       font-size: 12px;
     }
 
-    .JobSkillsWrapper {
+    &__skills-wrapper {
       display: inherit;
       flex-direction: column;
     }

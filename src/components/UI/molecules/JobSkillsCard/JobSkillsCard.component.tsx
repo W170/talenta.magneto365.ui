@@ -5,9 +5,9 @@ import styles from './JobSkillsCard.module.scss'
 
 const Component: React.FC<IJobSkillsCard> = ({ jobSkillCardHeader, jobSkills }) => {
   return (
-    <div className={styles.JobSkillsCardComponent}>
+    <div className={styles['magneto-ui-job-skills-card']}>
       <h2>{jobSkillCardHeader}</h2>
-      <div className={styles['JobSkillsWrapper']}>
+      <div className={styles['magneto-ui-job-skills-card__skills-wrapper']}>
         {jobSkills.map(({ skillText, skillLevel }: ISkill, index: number) => (
           <React.Fragment key={index}>
             <Skill skillText={skillText} skillLevel={skillLevel} />

@@ -1,21 +1,24 @@
 export interface IDetailList {
   /**
-   * Sets the information of the job details
+   * The text content of the detail item.
+   * (Optional property)
    */
   detailText?: string
   /**
-   * Sets the relevant icon for the job info
+   * The icon associated with the detail item.
+   * (Optional property)
    */
   icon?: string
 }
 
 export interface IJobDetails {
   /**
-   * Props for the job detail list
+   * An array of strings representing the list of job details.
    */
   detailsTextList: string[]
   /**
-   * Props for the icons for the detail list
+   * An array of strings representing the icons associated with each job detail.
+   * (Optional property)
    */
   iconList?: string[]
 }

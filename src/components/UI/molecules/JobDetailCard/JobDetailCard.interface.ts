@@ -1,6 +1,6 @@
 export interface IJobDetailCard {
   /**
-   * Sets the job detail card body text
+   * The text content to be displayed in the job detail card.
    */
   jobDetailCardText: string
 }

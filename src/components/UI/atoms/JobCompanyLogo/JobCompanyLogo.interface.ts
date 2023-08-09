@@ -1,14 +1,13 @@
 export interface IJobCompanyLogo {
   /**
-   * Sets the company logo for job detail
+   * Sets the URL of the company logo image for the job detail.
+   * (Optional property)
    */
   companyLogoImg?: string
   /**
-   * Sets the company logo alt text
+   * Sets the alternative text for the company logo image.
+   * This text is displayed when the image cannot be loaded.
+   * (Optional property)
    */
   alt?: string
-  /**
-   *
-   */
-  isHidden?: boolean
 }

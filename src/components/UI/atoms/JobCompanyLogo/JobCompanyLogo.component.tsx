@@ -2,15 +2,11 @@ import React from 'react'
 import { IJobCompanyLogo } from './JobCompanyLogo.interface'
 import styles from './JobCompanyLogo.module.scss'
 
-const Component: React.FC<IJobCompanyLogo> = ({ companyLogoImg, alt, isHidden }) => {
+const Component: React.FC<IJobCompanyLogo> = ({ companyLogoImg, alt }) => {
   return (
-    <React.Fragment>
-      {!isHidden && (
-        <div className={styles.JobCompanyLogoComponent}>
-          <img src={companyLogoImg} alt={alt} />
-        </div>
-      )}
-    </React.Fragment>
+    <div className={styles['magneto-ui-job-company-logo']}>
+      <img src={companyLogoImg} alt={alt} />
+    </div>
   )
 }
 

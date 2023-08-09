@@ -4,9 +4,9 @@ import styles from './JobHeader.module.scss'
 
 const Component: React.FC<IJobHeader> = ({ jobTitle, jobSubtitle, isHidden }) => {
   return (
-    <div className={styles.JobHeaderComponent}>
-      <h2>{jobTitle}</h2>
-      {!isHidden && <h3>{jobSubtitle}</h3>}
+    <div className={styles['magneto-ui-job-header']}>
+      <h2 className={styles['magneto-ui-job-header__title']}>{jobTitle}</h2>
+      {!isHidden && <h3 className={styles['magneto-ui-job-header__subtitle']}>{jobSubtitle}</h3>}
     </div>
   )
 }

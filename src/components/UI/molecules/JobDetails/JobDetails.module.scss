@@ -1,12 +1,12 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 
-.JobDetailsComponent {
+.magneto-ui-job-details {
   display: flex;
   padding: 20px;
   flex-direction: column;
   gap: 10px;
 
-  .JobDetailsWrapper {
+  &__wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,17 +16,13 @@
     background-color: v.$disabled-color-gray;
   }
 
-  .DetailWrapper {
+  &__item-detail {
     display: flex;
     flex-direction: row;
     gap: 10px;
-
-    div {
-      display: flex;
-    }
   }
 
-  .DetailText {
+  &__item-detail-text {
     margin: 0px;
     font-size: 13px;
     font-style: normal;
@@ -36,7 +32,7 @@
   }
 
   @media screen and (max-width: (v.$screen-lg)) {
-    .DetailText {
+    &__item-detail-text {
       font-size: 12px;
     }
   }
