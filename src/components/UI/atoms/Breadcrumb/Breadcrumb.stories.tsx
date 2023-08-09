@@ -5,7 +5,9 @@ const meta: Meta<typeof Breadcrumb> = {
   title: 'Atoms/Breadcrumb',
   component: Breadcrumb,
   args: {
-    breadcrumbText: '/perfil/hoja de vida'
+    breadcrumbText: '/perfil/empleos/sugeridos',
+    baseUrl: 'http://localhost:8008',
+    breadcrumbCustomText: '/profile/employs/sugessted'
   }
 }
 
