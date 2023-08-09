@@ -1,11 +1,10 @@
-import { IAvatar } from '../../atoms'
+import { IAvatar, IBreadcrumb } from '../../atoms'
 import { IHeaderTabs, ISearchbar } from '../../molecules'
 import { ILogout, IMenuItems, ISettings } from '../../molecules/ListMenuIcons/ListMenuIcons.interface'
 import { IMobileSearchbar } from '../../molecules/MobileSearchbar/MobileSearchbar.interface'
 
 export interface ILoginHeader {
   profileImage: IAvatar
-  breadcrumbText: string
   className?: string
   listMenuUserProps: IlistMenuUserProps
   onClick?: () => void
@@ -15,6 +14,7 @@ export interface ILoginHeader {
   searchbar: ISearchbar
   MobileSearchbarProps: IMobileSearchbar
   homeUrl: string
+  breadcrumbProps: IBreadcrumb
 }
 
 export interface IlistMenuUserProps {

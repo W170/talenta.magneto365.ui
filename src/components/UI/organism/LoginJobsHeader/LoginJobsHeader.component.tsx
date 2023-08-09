@@ -21,7 +21,7 @@ const Muiclass = 'magneto-ui'
 const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
   searchbar,
   mobileSearchbar,
-  breadcrumbsText,
+  breadcrumbProps,
   onMenuClick,
   homeUrl,
   profileImage,
@@ -70,7 +70,7 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
   )
 
   // Breadcrumbs Component
-  const LogoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbText={breadcrumbsText} />, {
+  const LogoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbProps={breadcrumbProps} homeUrl={homeUrl} />, {
     md: null
   })
 

@@ -1,9 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { LoginTemplate } from './LoginTemplate.component'
-import { MobileSearchbarProps } from '../../../../constants/stories.constants'
+import { MobileSearchbarProps, breadcrumbProps } from '../../../../constants/stories.constants'
 import {
   AvatarProps,
-  breadcrumbText,
   CurriculumTabProps,
   JobsTabsProps,
   ProcessTabsProps,
@@ -19,13 +18,13 @@ const meta: Meta<typeof LoginTemplate> = {
   args: {
     listMenuProps,
     listMenuUserProps,
-    breadcrumbText,
     profileImage: AvatarProps,
     jobsTabsProps: JobsTabsProps,
     processTabsProps: ProcessTabsProps,
     curriculumTabProps: CurriculumTabProps,
     searchbar: SearchbarProps,
     MobileSearchbarProps,
+    breadcrumbProps: breadcrumbProps,
     homeUrl: '/home'
   }
 }

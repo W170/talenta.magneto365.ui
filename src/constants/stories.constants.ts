@@ -24,7 +24,7 @@ import {
   Facebook
 } from './icons.constants'
 
-import { IAvatar, ILogoComponent, IMainButton, IconProps } from '../components/UI/atoms'
+import { IAvatar, IBreadcrumb, ILogoComponent, IMainButton, IconProps } from '../components/UI/atoms'
 import {
   IHeaderTabs,
   IListIcon,
@@ -71,7 +71,6 @@ export const SignInIcon: IconProps = {
 }
 export const iconPropsBreadCrumb: IconProps = {
   Icon: Home2,
-  hover: false,
   size: 13,
   color: '#a3a3b5'
 }
@@ -249,9 +248,6 @@ export const LoginButton: IMainButton = {
  *
  *
  */
-
-//Breadcrumbs Molecule
-export const breadcrumbText = '/perfil/empleos/sugeridos'
 
 //Searchbar Molecule
 export const SearchbarProps: ISearchbar = {
@@ -676,3 +672,10 @@ export const brands = [
     brandUrl: '#'
   }
 ]
+
+export const breadcrumbProps: IBreadcrumb = {
+  breadcrumbText: '/empleos/busqueda/sugeridos',
+  baseUrl: 'http://localhost:8080',
+  breadcrumbCustomText: '/profile/search/suggested',
+  queryParams: '?utm=google&utm_source=facebook&utm_medium=cueros'
+}
