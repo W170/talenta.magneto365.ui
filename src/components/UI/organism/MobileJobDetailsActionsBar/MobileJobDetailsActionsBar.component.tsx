@@ -6,7 +6,7 @@ import { IMobileJobDetailsActionsBar } from './MobileJobDetailsActionsBar.interf
 import styles from './MobileJobDetailsActionsBar.module.scss'
 
 import { anchorIconList, buttonIconsList } from '@constants/stories.constants'
-import { More } from '@constants/icons.constants'
+import { More } from '../../../../constants/icons.constants'
 
 const Component: React.FC<IMobileJobDetailsActionsBar> = ({ mobileActionButtonText, actionsProps, onApplyClick }) => {
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
@@ -20,7 +20,7 @@ const Component: React.FC<IMobileJobDetailsActionsBar> = ({ mobileActionButtonTe
       <MainButton buttonType="button" buttonText={mobileActionButtonText} onClick={onApplyClick} buttonSize="full" />
       <div className={styles['DrawerButtonWrapper']}>
         <button type="button" onClick={onOpenClick}>
-          <IconItem Icon={More} hover={false} />
+          <IconItem icon={More} hover={false} />
         </button>
       </div>
       <MobileDrawer isOpen={toggleMobileDrawer} onClose={() => setToggleMobileDrawer(!toggleMobileDrawer)}>

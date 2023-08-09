@@ -38,13 +38,13 @@ const Component: React.FC<IActions> = ({
       />
       {actionsButtonList?.map(({ Icon, text, onClick }, index: number) => (
         <button className={styles['magneto-ui-actions__button']} key={index} type="button" onClick={onClick}>
-          <IconItem hover={true} size={20} Icon={Icon} />
+          <IconItem hover={true} size={20} icon={Icon} />
           <p key={index}>{text}</p>
         </button>
       ))}
       {actionsLinkList?.map(({ url, text, target, Icon }, index: number) => (
         <a className={styles['magneto-ui-actions__link']} key={index} href={url} target={target} rel="">
-          <IconItem hover={true} size={20} Icon={Icon} />
+          <IconItem hover={true} size={20} icon={Icon} />
           <p key={index}>{text}</p>
         </a>
       ))}

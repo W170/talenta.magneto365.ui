@@ -3,7 +3,14 @@ import { StoryObj, Meta } from '@storybook/react'
 import { MobileJobDetailsDrawer } from './MobileJobDetailsDrawer.component'
 import { CompanyLogo } from '@constants/stories.constants'
 import { IJobSkillsCard } from '@components/UI/molecules'
-import { FacebookBlue, LinkedInBlue, SMSBlue, ShareBlue, TwitterBlue, WhatsAppColor } from '@constants/icons.constants'
+import {
+  FacebookBlue,
+  LinkedInBlue,
+  SMSBlue,
+  ShareBlue,
+  TwitterBlue,
+  WhatsAppColor
+} from '../../../../constants/icons.constants'
 import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 
 const onClick = () => {
@@ -75,12 +82,12 @@ const jobFooterCard = {
   jobFooterCompanyImg: CompanyLogo,
   jobFooterHeader: 'Compartir vacante en:',
   jobFooterLinks: [
-    { Icon: FacebookBlue, url: '' },
-    { Icon: WhatsAppColor, url: '' },
-    { Icon: LinkedInBlue, url: '' },
-    { Icon: TwitterBlue, url: '' },
-    { Icon: SMSBlue, url: '' },
-    { Icon: ShareBlue, url: '' }
+    { icon: FacebookBlue, url: '' },
+    { icon: WhatsAppColor, url: '' },
+    { icon: LinkedInBlue, url: '' },
+    { icon: TwitterBlue, url: '' },
+    { icon: SMSBlue, url: '' },
+    { icon: ShareBlue, url: '' }
   ]
 }
 
