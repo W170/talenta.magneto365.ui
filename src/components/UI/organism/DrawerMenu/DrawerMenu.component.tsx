@@ -51,7 +51,7 @@ const Component: React.FC<IDrawerOrganism> = ({
             loadingState={loadingState}
           />
           <MainButton buttonSize="full" {...LoginButton} buttonText={buttonTextLogin} onClick={onLogInClick} />
-          <ListIconLink listIcon={ListIcon} spacing={30} />
+          <ListIconLink listIcon={ListIcon} size={34} spacing={20} />
         </div>
       </Drawer>
     </div>

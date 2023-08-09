@@ -4,14 +4,14 @@
   position: relative;
   height: 40px;
   .magneto-ui-popover {
+    width: auto;
     background-color: white;
     height: auto;
-    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.106);
+    overflow: hidden;
     border-radius: 12px;
     position: absolute;
-
     z-index: 12;
-    padding: 15px;
     transition: all 0.2s ease-in-out;
   }
   .magneto-ui-popover-children {
@@ -41,10 +41,18 @@
 }
 
 .show {
-  display: block;
-  margin-top: 10px;
+  opacity: 1;
+  margin-top: 0px;
 }
+
+.static-content {
+  position: static;
+  .magneto-ui-popover {
+    border-radius: 0 0 15px 15px;
+  }
+}
+
 .hidden {
-  display: none;
-  margin-top: 0;
+  opacity: 0;
+  margin-top: -10px;
 }
