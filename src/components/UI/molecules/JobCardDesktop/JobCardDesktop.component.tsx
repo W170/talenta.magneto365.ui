@@ -67,7 +67,7 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
         </div>
       </div>
       <div className={style[`${classMUI}-card-jobs--arrow`]}>
-        <IconItem Icon={ArrowRight2} />
+        <IconItem icon={ArrowRight2} />
       </div>
     </article>
   )

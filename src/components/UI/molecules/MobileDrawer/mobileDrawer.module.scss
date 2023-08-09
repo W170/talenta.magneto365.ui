@@ -1,3 +1,5 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
 .magneto-ui-mobile-drawer {
   & > aside {
     background-color: white;
@@ -29,6 +31,34 @@
           width: 30px;
           height: 30px;
           filter: brightness(300%);
+        }
+      }
+    }
+    .magneto-ui-container {
+      overflow-y: auto;
+      height: min-content;
+      max-height: 300px;
+      @media (min-width: v.$screen-xxs) {
+        max-height: 500px;
+      }
+      @media (min-width: v.$screen-md) {
+        max-height: 650px;
+      }
+      &::-webkit-scrollbar {
+        width: 5px;
+        border-radius: 15px;
+
+        &-track {
+          background-color: rgba(241, 241, 241, 0.353);
+          border-radius: 15px;
+        }
+
+        &-thumb {
+          border-radius: 15px;
+          background-color: v.$disabled-color-gray2;
+          &:hover {
+            background-color: v.$disabled-color-gray3;
+          }
         }
       }
     }

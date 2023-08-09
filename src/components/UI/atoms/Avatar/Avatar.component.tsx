@@ -10,7 +10,7 @@ const Component: React.FC<IAvatar> = ({ userImage, onClick }) => {
       {userImage && <img src={userImage} alt="User Avatar" />}
       {!userImage && (
         <div className={styles['magneto-ui-default-avatar']}>
-          <IconItem Icon={User} hover={false} />
+          <IconItem icon={User} hover={false} />
         </div>
       )}
     </div>

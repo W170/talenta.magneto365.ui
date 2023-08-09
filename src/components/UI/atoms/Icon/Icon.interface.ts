@@ -2,7 +2,7 @@ export interface IconProps {
   /**
    * Here is the icon component
    */
-  Icon?: string
+  icon?: string | null
   /**
    * You can set the hover animation or disable
    */

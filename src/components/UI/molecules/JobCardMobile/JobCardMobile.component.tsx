@@ -57,7 +57,7 @@ const JobCardMobile: React.FC<ICardJobMobile> = ({
         </div>
       </div>
       <div className={style[`${classMUI}-card-mobile-jobs--arrow`]}>
-        <IconItem Icon={ArrowRight2} />
+        <IconItem icon={ArrowRight2} />
       </div>
     </article>
   )

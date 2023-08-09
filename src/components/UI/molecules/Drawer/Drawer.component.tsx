@@ -26,7 +26,7 @@ const Component: React.FC<IDrawer> = ({
         <aside className={`${style[showDrawer]}`} style={{ padding: paddingValue }}>
           {!hideButton && (
             <button className={style['magneto-ui-close-button']} onClick={onClose}>
-              <IconItem Icon={Add} hover={false} />
+              <IconItem icon={Add} hover={false} />
             </button>
           )}
           {children}

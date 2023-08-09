@@ -7,7 +7,7 @@ const meta: Meta<typeof IconItem> = {
   component: IconItem,
   tags: ['autodocs'],
   args: {
-    Icon: Youtube,
+    icon: Youtube,
     size: 20,
     color: '#094bcf',
     hover: true

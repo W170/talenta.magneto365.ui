@@ -8,7 +8,7 @@ export interface IDetailList {
    * The icon associated with the detail item.
    * (Optional property)
    */
-  Icon?: string
+  icon?: string
 }
 
 export interface IJobDetails {

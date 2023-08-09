@@ -20,7 +20,7 @@ export interface ILoginHeader {
 export interface IlistMenuUserProps {
   urlParam: string
   menuItems: IMenuItems[]
-  menuItems1440: IMenuItems[]
+  menuItems1440?: IMenuItems[]
   logout: ILogout
   settings: ISettings
 }

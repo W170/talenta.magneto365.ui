@@ -10,7 +10,7 @@ const ListMenuFilter: React.FC<IListMenuFilter> = ({ filterItems, setFilter }) =
         <MenuIcon
           key={`${field}-${i}`}
           text={label}
-          Icon={iconUrl}
+          icon={iconUrl}
           type="button"
           onClick={() => setFilter({ key: field })}
         />

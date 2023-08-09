@@ -40,7 +40,7 @@ const FilterBottomHeader: React.FC<IFilterBottomHeader> = ({
           <MenuIcon
             type="button"
             text={textButtonFilter}
-            Icon={Setting4}
+            icon={Setting4}
             onClick={openFilterDrawer}
             size={17}
             isActive={true}
