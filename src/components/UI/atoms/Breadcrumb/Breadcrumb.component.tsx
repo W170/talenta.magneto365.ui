@@ -1,11 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { IBreadcrumb } from './Breadcrumb.interface'
 import styles from './Breadcrumb.modules.scss'
 
-const Component: React.FC<IBreadcrumb> = ({ breadcrumbText, breadcrumbCustomText, baseUrl, queryParams }) => {
+const Component: React.FC<IBreadcrumb> = ({
+  breadcrumbText,
+  breadcrumbCustomText,
+  baseUrl,
+  queryParams,
+  haveRedirect = true
+}) => {
   const [urls, setUrls] = useState<string[]>([])
   const breadcrumbs = breadcrumbCustomText ? breadcrumbCustomText : breadcrumbText
   const breadcrumbSplitText = breadcrumbs.split('/')
+  const lastIndexBC = breadcrumbSplitText.length - 1
 
   useEffect(() => {
     const url = new URL(breadcrumbText, baseUrl)
@@ -22,15 +29,31 @@ const Component: React.FC<IBreadcrumb> = ({ breadcrumbText, breadcrumbCustomText
     setUrls(newUrls)
   }, [breadcrumbText, baseUrl])
 
-  return (
-    <div className={styles.breadcrumbComponent}>
-      {urls.map((href, i) => (
-        <a href={`${href}${queryParams ? queryParams : ''}`} key={i}>
-          <p className={urls.length - 1 === i ? styles['magneto-ui-bc-active'] : ''}> / {breadcrumbSplitText[i + 1]}</p>
-        </a>
-      ))}
-    </div>
-  )
+  const isDinamyc = useMemo(() => {
+    return haveRedirect ? (
+      <>
+        {urls.map(
+          (href, i) =>
+            urls.length - 1 !== i && (
+              <a href={`${href}${queryParams ? queryParams : ''}`} key={i}>
+                <p>/ {breadcrumbSplitText[i + 1]}</p>
+              </a>
+            )
+        )}
+        <p className={styles['magneto-ui-bc-active']}>/ {breadcrumbSplitText[lastIndexBC]}</p>
+      </>
+    ) : (
+      <>
+        {breadcrumbSplitText.map((bc, i) => (
+          <p className={`${lastIndexBC == i ? styles['magneto-ui-bc-active'] : ''} ${styles['magneto-ui-bc']}`} key={i}>
+            {i > 0 && '/'} {bc}
+          </p>
+        ))}
+      </>
+    )
+  }, [breadcrumbSplitText, haveRedirect, lastIndexBC, urls, queryParams])
+
+  return <div className={styles.breadcrumbComponent}>{isDinamyc}</div>
 }
 
 /**

@@ -20,6 +20,15 @@
   }
 }
 
+.magneto-ui-bc {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
 .magneto-ui-bc-active {
   font-weight: bold;
+  pointer-events: none;
 }

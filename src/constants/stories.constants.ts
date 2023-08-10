@@ -677,5 +677,6 @@ export const breadcrumbProps: IBreadcrumb = {
   breadcrumbText: '/empleos/busqueda/sugeridos',
   baseUrl: 'http://localhost:8080',
   breadcrumbCustomText: '/profile/search/suggested',
-  queryParams: '?utm=google&utm_source=facebook&utm_medium=cueros'
+  queryParams: '?utm=google&utm_source=facebook&utm_medium=cueros',
+  haveRedirect: true
 }

@@ -15,4 +15,8 @@ export interface IBreadcrumb {
    * add query in the url
    */
   queryParams?: string
+  /**
+   * you can set urls with haveRedirect in true
+   */
+  haveRedirect?: boolean
 }
