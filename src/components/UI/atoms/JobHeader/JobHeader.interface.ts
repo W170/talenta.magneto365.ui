@@ -1,14 +1,17 @@
 export interface IJobHeader {
   /**
-   * Sets the title of the job
+   * The title of the job.
+   * (Optional property)
    */
   jobTitle?: string
   /**
-   * Sets the subtitle of the job
+   * The subtitle or additional information about the job.
+   * (Optional property)
    */
   jobSubtitle?: string
   /**
-   * Sets if the header is mobile to remove the subtitle
+   * Specifies whether the job header is hidden or visible.
+   * (Optional property)
    */
   isHidden?: boolean
 }

@@ -3,16 +3,16 @@
 .magneto-ui-drawer {
   & > aside {
     background-color: white;
-    padding: 20px;
     top: 0;
     position: fixed;
     width: 100vw;
     height: 100vh;
+    overflow: auto;
     @media (min-width: v.$screen-md) {
       width: 400px;
     }
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
-    z-index: 99;
+    z-index: 50;
     transition: all 0.6s ease-in-out;
     overflow-x: hidden;
     overflow-y: auto;
@@ -61,7 +61,7 @@
   height: 100vh;
   top: 0;
   left: 0;
-  z-index: 90;
+  z-index: 49;
   cursor: pointer;
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
@@ -87,10 +87,18 @@
   }
 }
 
-.show {
+.show-left {
   left: 0;
 }
 
-.hidden {
+.hidden-left {
   left: -100%;
+}
+
+.show-right {
+  right: 0;
+}
+
+.hidden-right {
+  right: -100%;
 }

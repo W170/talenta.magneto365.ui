@@ -2,11 +2,12 @@ type SkillLevel = 'Basic' | 'Intermediate' | 'Advanced' | 'Professional'
 
 export interface ISkill {
   /**
-   * Sets the skill text
+   * The text representing the skill's name or description.
    */
   skillText: string
   /**
-   * Sets the skill level into 4 different options
+   * The level of proficiency for the skill, which can be one of the predefined types:
+   * 'Basic', 'Intermediate', 'Advanced', or 'Professional'.
    */
   skillLevel: SkillLevel
 }

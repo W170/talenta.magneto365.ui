@@ -21,7 +21,7 @@ export interface IJobDetailsDrawer {
   /**
    *
    */
-  jobDetailCard: IJobDetailCard[]
+  jobDetailCardProps: IJobDetailCard
   /**
    *
    */

@@ -1,17 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { JobDetailsDrawer } from './JobDetailsDrawer.component'
-import {
-  FacebookBlue,
-  LinkedInBlue,
-  SMSBlue,
-  ShareBlue,
-  TwitterBlue,
-  WhatsAppColor
-} from '../../../../constants/icons.constants'
+import { FacebookBlue, LinkedInBlue, SMSBlue, ShareBlue, TwitterBlue, WhatsAppColor } from '@constants/icons.constants'
 import { CompanyLogo } from '@constants/stories.constants'
 
-import { IJobSkillsCard } from '../../molecules/JobSkillsCard'
+import { JobDetailsDrawer } from './JobDetailsDrawer.component'
 
 const jobCompanyLogo = {
   jobCompanyLogoProps: {
@@ -25,11 +17,11 @@ const jobCompanyLogo = {
 }
 
 const onClickOne = () => {
-  console.log('1')
+  //
 }
 
 const onClickTwo = () => {
-  console.log(2)
+  //
 }
 
 const jobActions = {
@@ -49,30 +41,17 @@ const jobDetails = [
   'Bello - Copacabana - Itagui - La Estrella'
 ]
 
-const jobDetailCard = [
-  {
-    jobDetailCardText:
-      '<h1>¡Trabaja con el Grupo Éxito!</h1><br /><p>Importante no estar en ningun otro proceso con el Grupo Éxito. Buscamos personas como tú,  que deseen trabajar en el cargo auxiliar polivalente.</p>'
-  },
-  {
-    jobDetailCardText:
-      '<h1>¿Qué necesitas?</h1><br /><p>Mínimo 2 años de experiencia, ser profesional.<br /><br />Disponibilidad de tiempo para laborar del  21 de Enero 2022  al 17 de Julio de 2023 turnos de 6  horas diarias, con posibilidad  de continuar en otras temporadas o seguir en cargos fijos.<br /><br />Estar cursando los últimos grados de la carrera o haberla finalizado.</p>'
-  },
-  {
-    jobDetailCardText: '<h1>¿Qué te ofrecemos?</h1><br /><p>Salario entre $2’000.000 a $3’000.000 aproximadamente.</p>'
-  },
-  {
-    jobDetailCardText:
-      '<h1>¡Aplica y no te pierdas esta oportunidad!</h1><br /><p>Si está interesado(a) y cumple con los requisitos debe estar pendiente de su correo electrónico y número de celular personal para envío de pruebas psicotécnicas y citación a video entrevista. FAVOR actualice esta información en la plataforma si cambió de número o el correo no es suyo o no puede ingresar.</p>'
-  }
-]
+const jobDetailCard = {
+  jobDetailCardText:
+    '<h1>¡Trabaja con el Grupo Éxito!</h1><br /><p>Importante no estar en ningun otro proceso con el Grupo Éxito. Buscamos personas como tú,  que deseen trabajar en el cargo auxiliar polivalente.</p> <h1>¿Qué necesitas?</h1><br /><p>Mínimo 2 años de experiencia, ser profesional.<br /><br />Disponibilidad de tiempo para laborar del  21 de Enero 2022  al 17 de Julio de 2023 turnos de 6  horas diarias, con posibilidad  de continuar en otras temporadas o seguir en cargos fijos.<br /><br />Estar cursando los últimos grados de la carrera o haberla finalizado.</p><h1>¿Qué te ofrecemos?</h1><br /><p>Salario entre $2’000.000 a $3’000.000 aproximadamente.</p> <h1>¡Aplica y no te pierdas esta oportunidad!</h1><br /><p>Si está interesado(a) y cumple con los requisitos debe estar pendiente de su correo electrónico y número de celular personal para envío de pruebas psicotécnicas y citación a video entrevista. FAVOR actualice esta información en la plataforma si cambió de número o el correo no es suyo o no puede ingresar.</p>'
+}
 
-const jobSkillsCard: IJobSkillsCard = {
+const jobSkillsCard = {
   jobSkillCardHeader: 'Habilidades',
   jobSkills: [
-    { skillText: 'Habilidades comerciales', skillLevel: 'Intermediate' },
-    { skillText: 'Capacidad de negociación', skillLevel: 'Advanced' },
-    { skillText: 'Conocimiento de microfinanzas', skillLevel: 'Basic' }
+    { skillText: 'Habilidades comerciales', skillLevel: 'Intermediate' as const },
+    { skillText: 'Capacidad de negociación', skillLevel: 'Advanced' as const },
+    { skillText: 'Conocimiento de microfinanzas', skillLevel: 'Basic' as const }
   ]
 }
 
@@ -118,7 +97,7 @@ export const Default: Story = {
     jobCompanyLogoProps: jobCompanyLogo,
     jobActionsProps: jobActions,
     jobDetailsProps: jobDetails,
-    jobDetailCard: jobDetailCard,
+    jobDetailCardProps: jobDetailCard,
     jobSkillsCardProps: jobSkillsCard,
     jobApplyCardProps: jobApplyCard,
     jobFooterCardProps: jobFooterCard

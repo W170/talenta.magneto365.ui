@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import { StoryObj, Meta } from '@storybook/react'
 import { JobActions } from './JobActions.component'
 import { ArchiveAdd, Buildings2, Export3, Share } from '../../../../constants/icons.constants'
