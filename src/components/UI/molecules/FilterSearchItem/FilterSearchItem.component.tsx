@@ -1,23 +1,26 @@
-import React, { ChangeEvent, FC, useCallback } from 'react'
+import React, { FC, useRef } from 'react'
+import { SearchIcon } from '@constants/icons.constants'
+import { IconItem } from '@components/UI/atoms'
 import { IFilterSearchItem } from './FilterSearchItem.interface'
 import styles from './FilterSearchItem.module.scss'
-import { IconItem } from '@components/UI/atoms'
-import searchIcon from '@assets/SearchNormal1Gray.svg' //TODO: change this import for constant import
 
-export const FilterSearchItem: FC<IFilterSearchItem> = ({ options, setOptions, placeholder }) => {
-  const handleSearch = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      event.preventDefault()
-      setOptions(options.filter((opt) => opt.label.toLowerCase().includes(event.target.value.toLowerCase())))
-      //   setOptions(options.filter((opt) => new RegExp(event.target.value, 'i').test(opt.label)))
-    },
-    [options, setOptions]
-  )
+export const FilterSearchItem: FC<IFilterSearchItem> = ({ handleSearch, placeholder, disabled }) => {
+  const inputRef = useRef(null)
 
   return (
     <div className={styles['magneto-ui-filter-search']}>
-      <IconItem icon={searchIcon} size={17} />
-      <input type="search" placeholder={placeholder} onChange={handleSearch} />
+      <IconItem icon={SearchIcon} size={17} />
+      <input
+        ref={inputRef}
+        type="search"
+        placeholder={placeholder}
+        onChange={(event) => handleSearch(event, inputRef)}
+        disabled={disabled}
+      />
     </div>
   )
+}
+
+FilterSearchItem.defaultProps = {
+  disabled: false
 }

@@ -1,6 +1,6 @@
 export interface IFilterHeader {
   /**
-   * This is the title of the filters
+   * This is the title of the all side filters
    */
   title: string
   /**
@@ -8,16 +8,15 @@ export interface IFilterHeader {
    */
   buttonText: string
   /**
-   * Tis si the text that shows next to de switch
+   * This is the total filters applied
    */
-  switchText: string
-
+  totalApplied: number
   /**
    * This is the function to clean all the filters
    */
-  cleanFilters: () => void
+  clearFilters: () => Promise<void>
   /**
-   * This is the total filters applied
+   * This is the switch title and indicate if has switch
    */
-  filtersApplied: number
+  switchText?: string
 }

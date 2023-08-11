@@ -1,9 +1,9 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 
 $switch-width: 30px;
-$switch-height: 16px;
-$slider-size: 14px;
-$translateX: 10px;
+$switch-height: 17px;
+$slider-size: 13px;
+$translateX: 11px;
 
 .magneto-ui-switch_container {
   display: flex;
@@ -15,6 +15,7 @@ $translateX: 10px;
   height: 20px;
   box-sizing: border-box;
   overflow: hidden;
+
   > p {
     font-weight: 400;
     font-size: 0.8125rem;
@@ -51,7 +52,7 @@ $translateX: 10px;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: v.$selected-color-item;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -61,19 +62,15 @@ $translateX: 10px;
   content: '';
   height: $slider-size;
   width: $slider-size;
-  left: 4px;
-  bottom: 1px;
-  background-color: white;
+  left: 3px;
+  bottom: 2px;
+  background-color: v.$color-white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + .magneto-ui-slider {
   background-color: v.$color-primary-green;
-}
-
-input:focus + .magneto-ui-slider {
-  box-shadow: 0 0 1px v.$color-primary-green;
 }
 
 input:checked + .magneto-ui-slider:before {
@@ -83,7 +80,7 @@ input:checked + .magneto-ui-slider:before {
 }
 
 .magneto-ui-slider.magneto-ui-round {
-  border-radius: 34px;
+  border-radius: 40px;
 }
 
 .magneto-ui-slider.magneto-ui-round:before {

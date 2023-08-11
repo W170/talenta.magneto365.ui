@@ -1,14 +1,21 @@
 import { Meta, StoryObj } from '@storybook/react'
+import { ISetIsApplied } from '@components/UI/template'
 import { FilterMenuItem } from './FilterMenuItem.component'
 
 const meta: Meta<typeof FilterMenuItem> = {
   title: 'Molecules/Filters Menu Item',
   component: FilterMenuItem,
   args: {
+    id: 1,
     label: 'Filter menu item',
-    amount: 200,
-    isSelected: false,
-    setIsSelected: (value) => console.log('Change isSelected', value)
+    total: 200,
+    field: '',
+    multiple: false,
+    loading: false,
+    isApplied: false,
+    hasTotal: true,
+    isSearched: false,
+    setIsApplied: (filter: ISetIsApplied) => new Promise((resolve) => resolve(console.log({ filter })))
   }
 }
 
