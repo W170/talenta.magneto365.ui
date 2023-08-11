@@ -1,8 +1,8 @@
-import React, { FC, Fragment } from 'react'
-import { IFilter, ISideFilter } from './SideFilter.interface'
+import React, { FC, Fragment, useMemo } from 'react'
 import { FilterHeader } from '@components/UI/organism/FilterHeader'
 import { FilterCard, IFilterCard } from '@components/UI/organism/FilterCard'
 import { FilterCardOnSearch } from '@components/UI/organism/FilterCardOnSearch'
+import { IFilter, ISideFilter } from './SideFilter.interface'
 import styles from './SideFilter.module.scss'
 
 //TODO: will define where put those enum, function and factory component
@@ -34,31 +34,42 @@ const CardByRenderType: FC<IFilterCard> = ({ renderType, ...props }) => {
 }
 
 const SideFilter: FC<ISideFilter> = ({
-  filters,
-  setIsApplied,
-  totalAppliedFilters,
-  clearFilters,
   title,
+  filters,
+  totalAppliedFilters,
   buttonText,
-  loading
+  loading,
+  setIsApplied,
+  clearFilters,
+  unApplyWithChild,
+  getOptionsOnLoad,
+  getOptionsOnSearch
 }) => {
+  //
+  const cardProps = useMemo(() => {
+    return {
+      setIsApplied,
+      unApplyWithChild,
+      getOptionsOnLoad,
+      getOptionsOnSearch,
+      loading
+    }
+  }, [setIsApplied, unApplyWithChild, getOptionsOnLoad, getOptionsOnSearch, loading])
+
+  const headerProps = useMemo(() => {
+    return {
+      title,
+      buttonText,
+      totalApplied: totalAppliedFilters,
+      clearFilters
+    }
+  }, [title, buttonText, totalAppliedFilters, clearFilters])
+
   return (
     <aside className={styles['magneto-iu-side-filter']}>
-      <FilterHeader
-        filtersApplied={totalAppliedFilters}
-        clearFilters={clearFilters}
-        buttonText={buttonText}
-        title={title}
-      />
+      <FilterHeader {...headerProps} />
       {filters.map((item, i) => {
-        return (
-          <CardByRenderType
-            key={`${i}-${item.field}`}
-            setIsApplied={setIsApplied}
-            loading={loading}
-            {...(item as unknown as IFilter)}
-          />
-        )
+        return <CardByRenderType key={`${i}-${item.field}`} {...(item as unknown as IFilter)} {...cardProps} />
       })}
     </aside>
   )

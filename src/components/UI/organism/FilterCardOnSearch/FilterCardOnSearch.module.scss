@@ -42,6 +42,7 @@
 
 .magneto-ui-filter-onSearch_options {
   margin-top: 1rem;
+  max-height: 160px;
   overflow-y: scroll;
   @include m.scroll-filter;
 }

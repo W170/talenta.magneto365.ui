@@ -1,4 +1,4 @@
-import { IFilterValue } from '@components/UI/template/SideFilter'
+import { IFilterValue, ISetIsApplied } from '@components/UI/template/SideFilter'
 
 export interface IFilterMenuItem extends IFilterValue {
   /**
@@ -6,15 +6,23 @@ export interface IFilterMenuItem extends IFilterValue {
    */
   field: string
   /**
+   * This is the flag whit the same filter can has multiple options applied
+   */
+  multiple: boolean
+  /**
    * This is the flag when the filters promise is pending
    */
   loading: boolean
   /**
    * This flag indicate if the item render the total of vacancies
    */
-  hasTotal: boolean
+  hasTotal?: boolean
+  /**
+   * This flag indicate if the parent if renderType = search
+   */
+  isSearched?: boolean
   /**
    * This function change if the item is isSelected
    */
-  setIsApplied: ({ id, field, isApplied }: { field: string; id: string | number; isApplied: boolean }) => Promise<void>
+  setIsApplied: (filter: ISetIsApplied) => Promise<void> | void
 }

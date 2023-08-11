@@ -1,11 +1,11 @@
 import React, { FC, Fragment, useMemo } from 'react'
+import { Broom } from '@constants/icons.constants'
+import { MainButton } from '@components/UI/atoms'
+import { Switch } from '@components/UI/atoms/Switch'
 import { IFilterHeader } from './FilterHeader.interface'
 import styles from './FilterHeader.modules.scss'
-import { MainButton } from '@components/UI/atoms'
-import { Broom } from '@constants/icons.constants'
-import { Switch } from '@components/UI/atoms/Switch'
 
-export const FilterHeader: FC<IFilterHeader> = ({ title, buttonText, switchText, filtersApplied, clearFilters }) => {
+export const FilterHeader: FC<IFilterHeader> = ({ title, buttonText, totalApplied, clearFilters, switchText }) => {
   const mainBtnProps = useMemo(() => {
     return {
       buttonText,
@@ -16,14 +16,14 @@ export const FilterHeader: FC<IFilterHeader> = ({ title, buttonText, switchText,
   }, [buttonText, clearFilters])
 
   const displayBtnClear = useMemo(() => {
-    if (!filtersApplied) return <Fragment />
+    if (!totalApplied) return <Fragment />
     return (
       <div className={styles['magneto-ui-filter-header_clean']}>
         <MainButton {...mainBtnProps} />
-        {filtersApplied && <span>{`(${filtersApplied})`}</span>}
+        {totalApplied && <span>{`(${totalApplied})`}</span>}
       </div>
     )
-  }, [filtersApplied, mainBtnProps])
+  }, [totalApplied, mainBtnProps])
 
   return (
     <article className={styles['magneto-ui-filter-header']}>

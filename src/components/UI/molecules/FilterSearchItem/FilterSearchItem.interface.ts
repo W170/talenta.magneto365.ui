@@ -1,17 +1,16 @@
-import { IFilterValue } from '@components/UI/template/SideFilter'
-import { Dispatch, SetStateAction } from 'react'
+import { ChangeEvent } from 'react'
 
 export interface IFilterSearchItem {
   /**
-   * This is a vector whit the search options
+   * This is the function that execute in the search of the input
    */
-  options: IFilterValue[]
-  /**
-   * This function modify the options
-   */
-  setOptions: Dispatch<SetStateAction<IFilterValue[]>>
+  handleSearch: (event: ChangeEvent<HTMLInputElement>, inputRef: React.MutableRefObject<null>) => void
   /**
    * This is the text that display in the placeholder
    */
   placeholder: string
+  /**
+   * This flag indicates if the input can search
+   */
+  disabled?: boolean
 }

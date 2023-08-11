@@ -464,6 +464,21 @@ export const listMenuProps: IListMenuItems = {
   urlParam: 'empleos-por-empresas'
 }
 
+export const appliedOptionsBySearchRenderType = [
+  {
+    id: '776@47',
+    label: 'Antioquia, Colombia',
+    parentId: 47,
+    isApplied: true
+  },
+  {
+    id: '789@47',
+    label: 'Cundinamarca, Colombia',
+    parentId: 47,
+    isApplied: true
+  }
+]
+
 /**
  *
  *

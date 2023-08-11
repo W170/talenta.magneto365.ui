@@ -27,112 +27,112 @@
         "id": 1,
         "operator": 1,
         "label": "Administración y oficina",
-        "total": 16,
+        "total": 235,
         "isApplied": false
       },
       {
         "id": 16,
         "operator": 1,
         "label": "Bodega, logística y transporte",
-        "total": 3,
+        "total": 64,
         "isApplied": false
       },
       {
         "id": 26,
         "operator": 1,
         "label": "Call center, tele mercadeo, BPO y afines",
-        "total": 15,
+        "total": 195,
         "isApplied": false
       },
       {
         "id": 27,
         "operator": 1,
         "label": "Compras y comercio exterior",
-        "total": 3,
+        "total": 29,
         "isApplied": false
       },
       {
         "id": 31,
         "operator": 1,
         "label": "Comunicación y Periodismo",
-        "total": 1,
+        "total": 14,
         "isApplied": false
       },
       {
         "id": 21,
         "operator": 1,
         "label": "Construcción e infraestructura",
-        "total": 5,
+        "total": 3,
         "isApplied": false
       },
       {
         "id": 4,
         "operator": 1,
         "label": "Contabilidad, finanzas, impuestos y afines",
-        "total": 7,
+        "total": 78,
         "isApplied": false
       },
       {
         "id": 5,
         "operator": 1,
         "label": "Deporte y recreación",
-        "total": 0,
+        "total": 4,
         "isApplied": false
       },
       {
         "id": 6,
         "operator": 1,
         "label": "Derecho, Asesoría y afines",
-        "total": 1,
+        "total": 14,
         "isApplied": false
       },
       {
         "id": 28,
         "operator": 1,
         "label": "Dirección y Gerencia",
-        "total": 1,
+        "total": 8,
         "isApplied": false
       },
       {
         "id": 7,
         "operator": 1,
         "label": "Diseño, arquitectura, artes gráficas y afines",
-        "total": 0,
+        "total": 46,
         "isApplied": false
       },
       {
         "id": 22,
         "operator": 1,
         "label": "Docencia, educación, licenciaturas y afines",
-        "total": 0,
+        "total": 16,
         "isApplied": false
       },
       {
         "id": 8,
         "operator": 1,
         "label": "Economía, estadística, matemáticas y afines",
-        "total": 2,
+        "total": 25,
         "isApplied": false
       },
       {
         "id": 9,
         "operator": 1,
         "label": "Gastronomía, bebidas/alimentos y restaurantes",
-        "total": 7,
+        "total": 37,
         "isApplied": false
       },
       {
         "id": 10,
         "operator": 1,
         "label": "Hotelería y turismo",
-        "total": 5,
+        "total": 22,
         "isApplied": false
       },
       {
         "id": 11,
         "operator": 1,
         "label": "Idiomas y traducción",
-        "total": 4,
+        "total": 71,
         "isApplied": false
       },
       {
@@ -146,123 +146,4556 @@
         "id": 14,
         "operator": 1,
         "label": "Ingenierías",
-        "total": 6,
+        "total": 51,
         "isApplied": false
       },
       {
         "id": 15,
         "operator": 1,
         "label": "Inversiones y mercado bursátil",
-        "total": 0,
+        "total": 5,
         "isApplied": false
       },
       {
         "id": 29,
         "operator": 1,
         "label": "Investigación y Calidad",
-        "total": 0,
+        "total": 7,
         "isApplied": false
       },
       {
         "id": 30,
         "operator": 1,
         "label": "Mantenimiento y Reparaciones",
-        "total": 0,
+        "total": 9,
         "isApplied": false
       },
       {
         "id": 17,
         "operator": 1,
         "label": "Mecánica y sector automotriz",
-        "total": 0,
+        "total": 16,
         "isApplied": false
       },
       {
         "id": 18,
         "operator": 1,
         "label": "Medicina, sector de la salud y Ciencias",
-        "total": 7,
+        "total": 47,
         "isApplied": false
       },
       {
         "id": 3,
         "operator": 1,
         "label": "Mercadeo y Publicidad",
-        "total": 7,
+        "total": 56,
         "isApplied": false
       },
       {
         "id": 19,
         "operator": 1,
         "label": "Otras",
-        "total": 4,
+        "total": 237,
         "isApplied": false
       },
       {
         "id": 20,
         "operator": 1,
         "label": "Política, ONG, sector Gobierno y fundaciones",
-        "total": 0,
+        "total": 2,
         "isApplied": false
       },
       {
         "id": 13,
         "operator": 1,
         "label": "Producción, Operarios y Manufactura",
-        "total": 0,
+        "total": 116,
         "isApplied": false
       },
       {
         "id": 2,
         "operator": 1,
         "label": "Recursos Humanos",
-        "total": 5,
+        "total": 132,
         "isApplied": false
       },
       {
         "id": 24,
         "operator": 1,
         "label": "Servicio al cliente y afines",
-        "total": 7,
+        "total": 179,
         "isApplied": false
       },
       {
         "id": 32,
         "operator": 1,
         "label": "Servicios generales, Aseo y Seguridad",
-        "total": 0,
+        "total": 6,
         "isApplied": false
       },
       {
         "id": 23,
         "operator": 1,
         "label": "Software, informática y telecomunicaciones",
-        "total": 19,
+        "total": 88,
         "isApplied": false
       },
       {
         "id": 34,
         "operator": 1,
         "label": "Transportador de Energía",
-        "total": 0,
+        "total": 1,
         "isApplied": false
       },
       {
         "id": 25,
         "operator": 1,
         "label": "Ventas",
-        "total": 8,
+        "total": 181,
         "isApplied": false
       },
       {
         "id": 33,
         "operator": 1,
         "label": "Zoología, Veterinario y sector Agroindustrial",
-        "total": 0,
+        "total": 1,
         "isApplied": false
       }
     ],
     "searchPlaceholder": "Buscar sector laboral"
+  },
+  {
+    "label": "Compañia",
+    "placeholder": "Selecciona una compañia",
+    "field": "company_show_slug",
+    "type": "EQUAL",
+    "renderType": "CUSTOM:BY_COMPANY",
+    "dataType": "string",
+    "multiple": true,
+    "repository": {
+      "type": "customFactory",
+      "defaultFilter": {},
+      "defaultOrder": {},
+      "defaultOperator": 1,
+      "source": "08c93c98-f936-4b0f-9c32-c1aed08166f1",
+      "fieldsAlias": null
+    },
+    "values": [
+      {
+        "id": "aco",
+        "label": "ACO",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 12,
+        "isApplied": false
+      },
+      {
+        "id": "magneto-pymes",
+        "label": "ADVANCE ESTRATEGIA",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 4,
+        "isApplied": false
+      },
+      {
+        "id": "comfandi-empleo",
+        "label": "Agencia de empleo Comfandi",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "akt-motos",
+        "label": "AKT",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 16,
+        "isApplied": false
+      },
+      {
+        "id": "team",
+        "label": "Alianza Team",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "alimentos-polar",
+        "label": "Alimentos Polar",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": "alkomprar",
+        "label": "Alkomprar",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 15,
+        "isApplied": false
+      },
+      {
+        "id": "alkosto-narino",
+        "label": "Alkosto-Corbeta",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": "alkosto-ktronix",
+        "label": "Alkosto - Ktronix",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 4,
+        "isApplied": false
+      },
+      {
+        "id": "alsea",
+        "label": "Alsea",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 5,
+        "isApplied": false
+      },
+      {
+        "id": "amarilo",
+        "label": "AMARILO",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": "american-eagle",
+        "label": "American Eagle",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": "american-eagle-guatemala",
+        "label": "American Eagle Guatemala",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "american-eagle-peru",
+        "label": "American Eagle Perú",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "americanino",
+        "label": "Americanino",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "americas-bps",
+        "label": "Américas BPS",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": "jeronimo-martins",
+        "label": "Ara",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": "arena-del-rio",
+        "label": "Arena del Rio",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "arus",
+        "label": "ARUS",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 16,
+        "isApplied": false
+      },
+      {
+        "id": "atraccion",
+        "label": "Atraccion",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "auteco",
+        "label": "AUTECO",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 6,
+        "isApplied": false
+      },
+      {
+        "id": "axces",
+        "label": "AXCES",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 5,
+        "isApplied": false
+      },
+      {
+        "id": "banco-agrario",
+        "label": "Banco Agrario",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": "davivienda",
+        "label": "Banco Davivienda SA",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "banrep",
+        "label": "Banco de la República",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "banco-de-occidente",
+        "label": "Banco de Occidente",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "banco-union",
+        "label": "Banco Unión",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 6,
+        "isApplied": false
+      },
+      {
+        "id": "bayport",
+        "label": "Bayport Colombia",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "bayport-mexico",
+        "label": "Bayport Mexico",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "bike2web",
+        "label": "Bike 2 Web",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": "brandstore",
+        "label": "Brandstore",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "cadena",
+        "label": "Cadena",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 6,
+        "isApplied": false
+      },
+      {
+        "id": "caliche-ceviche",
+        "label": "Caliche Ceviche",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": "camara-comercio-medellin",
+        "label": "Cámara de Comercio de Medellín",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "carbomax",
+        "label": "Carbomax",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": "carga-y-paquetes",
+        "label": "CARGUESA",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "carrera",
+        "label": "Carrera",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "carvajal-region-norte",
+        "label": "Carvajal Región Norte",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "casa-principal",
+        "label": "Casa Principal",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 7,
+        "isApplied": false
+      },
+      {
+        "id": "celerix",
+        "label": "CELERIX",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": "central-cervecera",
+        "label": "Central Cervecera",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 4,
+        "isApplied": false
+      },
+      {
+        "id": "chevignon",
+        "label": "Chevignon",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": "choucair",
+        "label": "Choucair",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 9,
+        "isApplied": false
+      },
+      {
+        "id": "claro-colombia",
+        "label": "Claro Colombia",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": "coca-cola-femsa",
+        "label": "coca-cola FEMSA",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "colfondos",
+        "label": "Colfondos S.A",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": "colsubsidio",
+        "label": "Colsubsidio",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "colsubsidio-empleo",
+        "label": "Colsubsidio Empleo",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "colsubsidio-talento-humano",
+        "label": "Colsubsidio Talento Humano",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 8,
+        "isApplied": false
+      },
+      {
+        "id": "comdata",
+        "label": "Comdata",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "comfama",
+        "label": "Comfama",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 52,
+        "isApplied": false
+      },
+      {
+        "id": "comfandi-holding",
+        "label": "Comfandi",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "comfenalco",
+        "label": "Comfenalco",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 8,
+        "isApplied": false
+      },
+      {
+        "id": "compensar",
+        "label": "Compensar",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "complementos-humanos",
+        "label": "Complementos Humanos",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 95,
+        "isApplied": false
+      },
+      {
+        "id": "coomeva",
+        "label": "Coomeva",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "corautos",
+        "label": "Corautos",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 8,
+        "isApplied": false
+      },
+      {
+        "id": "corbeta",
+        "label": "Corbeta",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "corficolombiana",
+        "label": "Corficolombiana, Fiduciaria y Casa de Bolsa",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": "cruce-talentos",
+        "label": "Corficolombiana y sus filiales",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "creditos-orbe",
+        "label": "CREDITOS ORBE",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 6,
+        "isApplied": false
+      },
+      {
+        "id": "crepes-waffles",
+        "label": "Crepes and waffles",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 9,
+        "isApplied": false
+      },
+      {
+        "id": "crystal",
+        "label": "Crystal",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 33,
+        "isApplied": false
+      },
+      {
+        "id": "cueros-velez",
+        "label": "Cueros Vélez",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 33,
+        "isApplied": false
+      },
+      {
+        "id": "dismerca",
+        "label": "DISMERCA",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "corbeta-distribuciones",
+        "label": "Distribuciones",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 7,
+        "isApplied": false
+      },
+      {
+        "id": "empleate",
+        "label": "Empléate Barranquilla",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "empleaton-santander",
+        "label": "Empleatón Santander",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "empleo-tiendas",
+        "label": "Empleo Tiendas",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "escuela-de-empleabilidad",
+        "label": "Escuela de Empleabilidad",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "esprit",
+        "label": "Esprit",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "eticos",
+        "label": "Eticos LTDA",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": "euro",
+        "label": "Euro Supermercados",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 5,
+        "isApplied": false
+      },
+      {
+        "id": "almacenes-flamingo",
+        "label": "Flamingo",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": "gco",
+        "label": "GCO",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 8,
+        "isApplied": false
+      },
+      {
+        "id": "groupe-seb",
+        "label": "Groupe Seb Andean",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "summa",
+        "label": "Grupo Argos",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 6,
+        "isApplied": false
+      },
+      {
+        "id": "grupo-exito",
+        "label": "Grupo Éxito",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 18,
+        "isApplied": false
+      },
+      {
+        "id": "grupo-exito-corporativos",
+        "label": "Grupo-Éxito Corporativos",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": "reditos-empresariales",
+        "label": "Grupo Réditos",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 21,
+        "isApplied": false
+      },
+      {
+        "id": "grupo-sancho",
+        "label": "Grupo Sancho",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "grupo-sura",
+        "label": "Grupo SURA",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "g-star-raw",
+        "label": "G-Star RAW",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "haceb",
+        "label": "Haceb",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": "harinera-del-valle",
+        "label": "Harinera del Valle",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "comfenalco-headhunter",
+        "label": "Headhunter Comfenalco",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": "helados-bon",
+        "label": "Helados Bon",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "holcim",
+        "label": "HOLCIM",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "iluma",
+        "label": "Iluma",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": "indra",
+        "label": "Indra",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": "inducascos",
+        "label": "Inducascos",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": "isa",
+        "label": "ISA",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": "isimo",
+        "label": "Isimo",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": "itau",
+        "label": "Itaú",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "jaramillo-mora",
+        "label": "JARAMILLO MORA CONSTRUCTORA S.A",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "john-uribe",
+        "label": "John Uribe",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "joven-lider",
+        "label": " Jóvenes líderes",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "juan-valdez",
+        "label": "Juan Valdez",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "kalley",
+        "label": "Kalley",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 9,
+        "isApplied": false
+      },
+      {
+        "id": "kpmg",
+        "label": "KPMG",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": "leonisa",
+        "label": "Leonisa",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 4,
+        "isApplied": false
+      },
+      {
+        "id": "liberty-seguros",
+        "label": "Liberty Seguros S.A.",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "londono-gomez",
+        "label": "LONDOÑO GOMEZ",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": "magneto",
+        "label": "Magneto",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 134,
+        "isApplied": false
+      },
+      {
+        "id": "magneto-global",
+        "label": "Magneto Global",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 8,
+        "isApplied": false
+      },
+      {
+        "id": "piloto-magneto",
+        "label": "Magneto Piloto",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "mango",
+        "label": "MANGO",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "marble",
+        "label": "Marble Headhunter",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 6,
+        "isApplied": false
+      },
+      {
+        "id": "metrodemedellin",
+        "label": "Metro de Medellín",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "mibanco",
+        "label": "Mibanco",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 7,
+        "isApplied": false
+      },
+      {
+        "id": "microplast-coldeplast",
+        "label": "Microplast Coldeplast",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 5,
+        "isApplied": false
+      },
+      {
+        "id": "mineros",
+        "label": "Mineros",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "jamar",
+        "label": "Muebles Jamar",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 9,
+        "isApplied": false
+      },
+      {
+        "id": "mujeres-lideres",
+        "label": "Mujeres Lideres",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "mundimotos",
+        "label": "Mundimotos",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": "naf-naf",
+        "label": "NAF NAF",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": "colgas",
+        "label": "Nortesantandereana de gas S.A",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "nueva-eps",
+        "label": "NUEVA EPS",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "nutrium",
+        "label": "Nutrium",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 4,
+        "isApplied": false
+      },
+      {
+        "id": "olimpica",
+        "label": "Olímpica",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "organizaciones-carvajal",
+        "label": "Organización Carvajal",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "outlet-todo-al-50",
+        "label": "Outlet todo al 50",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": "pactia",
+        "label": "Pactia",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": "pamolsa",
+        "label": "Pamolsa",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "model-platform",
+        "label": "Plataforma Modelo",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "poder-humano",
+        "label": "Poder humano",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": "postobon",
+        "label": "Postobon",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 12,
+        "isApplied": false
+      },
+      {
+        "id": "prodesa",
+        "label": "Prodesa",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "proin",
+        "label": "PROIN",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "proteccion",
+        "label": "Protección",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 25,
+        "isApplied": false
+      },
+      {
+        "id": "prueba-natalia",
+        "label": "prueba-natalia",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "puntos-colombia",
+        "label": "Puntos Colombia",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "redcol",
+        "label": "Redcol Holding",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 4,
+        "isApplied": false
+      },
+      {
+        "id": "redeban",
+        "label": "Redeban",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "rifle",
+        "label": "RIFLE",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "si3",
+        "label": "S.I3",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "soluciones-inmediatas",
+        "label": "Soluciones Inmediatas",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 6,
+        "isApplied": false
+      },
+      {
+        "id": "solvo",
+        "label": "Solvo Global",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 166,
+        "isApplied": false
+      },
+      {
+        "id": "somos-internet",
+        "label": "Somos Internet",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": "sophos",
+        "label": "Sophos Solutions S.A.S",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "su+",
+        "label": "SU+",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "seguros-sura",
+        "label": "Sura Colombia",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 34,
+        "isApplied": false
+      },
+      {
+        "id": "su-servicio",
+        "label": "Su Servicio",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": "talenta365",
+        "label": "Talenta",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "jobs-nutresa",
+        "label": "Talento Nutresa",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 11,
+        "isApplied": false
+      },
+      {
+        "id": "talento-puerto-cartagena",
+        "label": "Talento Puerto Cartagena",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "corbeta-textiles",
+        "label": "Textiles",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 5,
+        "isApplied": false
+      },
+      {
+        "id": "tiendas-d1",
+        "label": "Tiendas D1",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "empleo-tiendas-y-supermercados",
+        "label": "Tiendas y supermercados",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": "tigo",
+        "label": "Tigo",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 7,
+        "isApplied": false
+      },
+      {
+        "id": "top-llantas",
+        "label": "TOP LLANTAS",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": "tostao",
+        "label": "Tostao",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "tu-boleta",
+        "label": "Tuboleta",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "universidad-ces",
+        "label": "Universidad Ces",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "EAFIT",
+        "label": "Universidad EAFIT",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 9,
+        "isApplied": false
+      },
+      {
+        "id": "vanti",
+        "label": "Vanti",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "viva1a",
+        "label": "VIVA1A",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": "wom",
+        "label": "WOM",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 5,
+        "isApplied": false
+      },
+      {
+        "id": "zentria",
+        "label": "Zentria",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 8,
+        "isApplied": false
+      },
+      {
+        "id": "zuana",
+        "label": "Zuana",
+        "operator": 1,
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      }
+    ],
+    "searchPlaceholder": "Buscar compañia"
+  },
+  {
+    "label": "Profesión",
+    "placeholder": "Selecciona tu profesión",
+    "field": "vacant_position_id",
+    "type": "EQUAL",
+    "renderType": "MULTI_SELECT",
+    "dataType": "number",
+    "multiple": true,
+    "repository": {
+      "type": "storage",
+      "defaultFilter": {},
+      "defaultOrder": {
+        "name": "ASC"
+      },
+      "defaultOperator": 1,
+      "source": "vacant_positions",
+      "fieldsAlias": {
+        "id": "id",
+        "label": "name"
+      }
+    },
+    "values": [
+      {
+        "id": 1,
+        "operator": 1,
+        "label": "Abogado",
+        "total": 12,
+        "isApplied": false
+      },
+      {
+        "id": 2,
+        "operator": 1,
+        "label": "Acondicionador fisico",
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": 3,
+        "operator": 1,
+        "label": "Acordeonista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 4,
+        "operator": 1,
+        "label": "Acróbata",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 5,
+        "operator": 1,
+        "label": "Actor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 6,
+        "operator": 1,
+        "label": "Actriz",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 7,
+        "operator": 1,
+        "label": "Administrador",
+        "total": 51,
+        "isApplied": false
+      },
+      {
+        "id": 8,
+        "operator": 1,
+        "label": "Aduanero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 9,
+        "operator": 1,
+        "label": "Aerotécnico",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 10,
+        "operator": 1,
+        "label": "Agente",
+        "total": 70,
+        "isApplied": false
+      },
+      {
+        "id": 11,
+        "operator": 1,
+        "label": "Agricultor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 12,
+        "operator": 1,
+        "label": "Agrólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 13,
+        "operator": 1,
+        "label": "Agrónomo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 14,
+        "operator": 1,
+        "label": "Albañil",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 15,
+        "operator": 1,
+        "label": "Alfarero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 16,
+        "operator": 1,
+        "label": "Almacenista",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 17,
+        "operator": 1,
+        "label": "Analista",
+        "total": 108,
+        "isApplied": false
+      },
+      {
+        "id": 18,
+        "operator": 1,
+        "label": "Anatomista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 19,
+        "operator": 1,
+        "label": "Anestesiólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 20,
+        "operator": 1,
+        "label": "Antropólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 21,
+        "operator": 1,
+        "label": "Anunciador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 22,
+        "operator": 1,
+        "label": "Apicultor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 23,
+        "operator": 1,
+        "label": "Árbitro",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 24,
+        "operator": 1,
+        "label": "Archivista",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 25,
+        "operator": 1,
+        "label": "Armador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 26,
+        "operator": 1,
+        "label": "Arqueólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 27,
+        "operator": 1,
+        "label": "Arquitecto",
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": 28,
+        "operator": 1,
+        "label": "Artesano",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 29,
+        "operator": 1,
+        "label": "Artista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 30,
+        "operator": 1,
+        "label": "Asesor",
+        "total": 63,
+        "isApplied": false
+      },
+      {
+        "id": 31,
+        "operator": 1,
+        "label": "Asistente",
+        "total": 44,
+        "isApplied": false
+      },
+      {
+        "id": 32,
+        "operator": 1,
+        "label": "Astrólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 33,
+        "operator": 1,
+        "label": "Astrónomo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 34,
+        "operator": 1,
+        "label": "Atleta",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 35,
+        "operator": 1,
+        "label": "Audiólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 36,
+        "operator": 1,
+        "label": "Auditor",
+        "total": 5,
+        "isApplied": false
+      },
+      {
+        "id": 37,
+        "operator": 1,
+        "label": "Auxiliar",
+        "total": 89,
+        "isApplied": false
+      },
+      {
+        "id": 38,
+        "operator": 1,
+        "label": "Avaluador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 39,
+        "operator": 1,
+        "label": "Ayudante",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 40,
+        "operator": 1,
+        "label": "Azafata",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 41,
+        "operator": 1,
+        "label": "Bacteriólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 42,
+        "operator": 1,
+        "label": "Banquero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 43,
+        "operator": 1,
+        "label": "Barman",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 44,
+        "operator": 1,
+        "label": "Barrendero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 45,
+        "operator": 1,
+        "label": "Bibliotecario",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 46,
+        "operator": 1,
+        "label": "Bibliotecólogo",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 47,
+        "operator": 1,
+        "label": "Bioestadístico",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 48,
+        "operator": 1,
+        "label": "Biofísico",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 49,
+        "operator": 1,
+        "label": "Biógrafo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 50,
+        "operator": 1,
+        "label": "Biólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 51,
+        "operator": 1,
+        "label": "Biometrista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 52,
+        "operator": 1,
+        "label": "Bioquímico",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 53,
+        "operator": 1,
+        "label": "Biotecnólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 54,
+        "operator": 1,
+        "label": "Bodeguero",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 55,
+        "operator": 1,
+        "label": "Bombero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 56,
+        "operator": 1,
+        "label": "Brillador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 57,
+        "operator": 1,
+        "label": "Caficultor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 58,
+        "operator": 1,
+        "label": "Cajero",
+        "total": 5,
+        "isApplied": false
+      },
+      {
+        "id": 59,
+        "operator": 1,
+        "label": "Camarero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 60,
+        "operator": 1,
+        "label": "Camarógrafo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 61,
+        "operator": 1,
+        "label": "Camillero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 62,
+        "operator": 1,
+        "label": "Camionero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 63,
+        "operator": 1,
+        "label": "Cantante",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 64,
+        "operator": 1,
+        "label": "Cantautor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 65,
+        "operator": 1,
+        "label": "Cantinero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 66,
+        "operator": 1,
+        "label": "Capataz",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 67,
+        "operator": 1,
+        "label": "Capitán",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 68,
+        "operator": 1,
+        "label": "Cardiólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 69,
+        "operator": 1,
+        "label": "Cargador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 70,
+        "operator": 1,
+        "label": "Caricaturista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 71,
+        "operator": 1,
+        "label": "Carnicero",
+        "total": 5,
+        "isApplied": false
+      },
+      {
+        "id": 72,
+        "operator": 1,
+        "label": "Carpintero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 73,
+        "operator": 1,
+        "label": "Cartero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 74,
+        "operator": 1,
+        "label": "Cartógrafo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 75,
+        "operator": 1,
+        "label": "Cartomántico",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 76,
+        "operator": 1,
+        "label": "Celador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 77,
+        "operator": 1,
+        "label": "Ceramista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 78,
+        "operator": 1,
+        "label": "Cerrajero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 79,
+        "operator": 1,
+        "label": "Cervecero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 80,
+        "operator": 1,
+        "label": "Chef",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 81,
+        "operator": 1,
+        "label": "Chofer",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 82,
+        "operator": 1,
+        "label": "Ciclista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 83,
+        "operator": 1,
+        "label": "Científico",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 84,
+        "operator": 1,
+        "label": "Cinematógrafo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 85,
+        "operator": 1,
+        "label": "Cirujano",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 86,
+        "operator": 1,
+        "label": "Clasificador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 87,
+        "operator": 1,
+        "label": "Climatólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 88,
+        "operator": 1,
+        "label": "Cobrador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 89,
+        "operator": 1,
+        "label": "Cocinero",
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": 90,
+        "operator": 1,
+        "label": "Coctelero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 91,
+        "operator": 1,
+        "label": "Columnista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 92,
+        "operator": 1,
+        "label": "Comandante",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 93,
+        "operator": 1,
+        "label": "Comediante",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 94,
+        "operator": 1,
+        "label": "Comentarista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 95,
+        "operator": 1,
+        "label": "Comerciante",
+        "total": 5,
+        "isApplied": false
+      },
+      {
+        "id": 96,
+        "operator": 1,
+        "label": "Comisario",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 97,
+        "operator": 1,
+        "label": "Community Manager",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 98,
+        "operator": 1,
+        "label": "Compilador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 99,
+        "operator": 1,
+        "label": "Compositor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 100,
+        "operator": 1,
+        "label": "Comprador",
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": 101,
+        "operator": 1,
+        "label": "Comunicador",
+        "total": 6,
+        "isApplied": false
+      },
+      {
+        "id": 102,
+        "operator": 1,
+        "label": "Conductor",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 103,
+        "operator": 1,
+        "label": "Confitero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 104,
+        "operator": 1,
+        "label": "Consejero",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 105,
+        "operator": 1,
+        "label": "Conserje",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 106,
+        "operator": 1,
+        "label": "Conservador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 107,
+        "operator": 1,
+        "label": "Constructor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 108,
+        "operator": 1,
+        "label": "Consultor",
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": 109,
+        "operator": 1,
+        "label": "Contador",
+        "total": 14,
+        "isApplied": false
+      },
+      {
+        "id": 110,
+        "operator": 1,
+        "label": "Contralor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 111,
+        "operator": 1,
+        "label": "Contratista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 112,
+        "operator": 1,
+        "label": "Controlador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 113,
+        "operator": 1,
+        "label": "Coordinador",
+        "total": 32,
+        "isApplied": false
+      },
+      {
+        "id": 114,
+        "operator": 1,
+        "label": "Copiloto",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 115,
+        "operator": 1,
+        "label": "Coreógrafo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 116,
+        "operator": 1,
+        "label": "Coronel",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 117,
+        "operator": 1,
+        "label": "Corrector",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 118,
+        "operator": 1,
+        "label": "Corredor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 119,
+        "operator": 1,
+        "label": "Corresponsal",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 120,
+        "operator": 1,
+        "label": "Cortador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 121,
+        "operator": 1,
+        "label": "Cosechero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 122,
+        "operator": 1,
+        "label": "Cosmetólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 123,
+        "operator": 1,
+        "label": "Costurero(a)",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 124,
+        "operator": 1,
+        "label": "Cotero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 125,
+        "operator": 1,
+        "label": "Courier",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 126,
+        "operator": 1,
+        "label": "Creador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 127,
+        "operator": 1,
+        "label": "Creativo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 128,
+        "operator": 1,
+        "label": "Criador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 129,
+        "operator": 1,
+        "label": "Cristalero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 130,
+        "operator": 1,
+        "label": "Cristalógrafo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 131,
+        "operator": 1,
+        "label": "Crítico",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 132,
+        "operator": 1,
+        "label": "Cuentista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 133,
+        "operator": 1,
+        "label": "Cuidador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 134,
+        "operator": 1,
+        "label": "Cultivador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 135,
+        "operator": 1,
+        "label": "Decano",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 136,
+        "operator": 1,
+        "label": "Decorador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 137,
+        "operator": 1,
+        "label": "Degustador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 138,
+        "operator": 1,
+        "label": "Delegado",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 139,
+        "operator": 1,
+        "label": "Delineante",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 140,
+        "operator": 1,
+        "label": "Demógrafo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 141,
+        "operator": 1,
+        "label": "Demostrador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 142,
+        "operator": 1,
+        "label": "Dependiente",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 143,
+        "operator": 1,
+        "label": "Depilador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 144,
+        "operator": 1,
+        "label": "Deportista",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 145,
+        "operator": 1,
+        "label": "Dermatólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 146,
+        "operator": 1,
+        "label": "Desarrollador",
+        "total": 5,
+        "isApplied": false
+      },
+      {
+        "id": 147,
+        "operator": 1,
+        "label": "Diagramador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 148,
+        "operator": 1,
+        "label": "Dibujante",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 149,
+        "operator": 1,
+        "label": "Dietista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 150,
+        "operator": 1,
+        "label": "Digitador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 151,
+        "operator": 1,
+        "label": "Director",
+        "total": 9,
+        "isApplied": false
+      },
+      {
+        "id": 152,
+        "operator": 1,
+        "label": "Dirigente",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 153,
+        "operator": 1,
+        "label": "Diseñador",
+        "total": 22,
+        "isApplied": false
+      },
+      {
+        "id": 154,
+        "operator": 1,
+        "label": "DJ",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 155,
+        "operator": 1,
+        "label": "Doblador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 157,
+        "operator": 1,
+        "label": "Documentador",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 158,
+        "operator": 1,
+        "label": "Documentalista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 160,
+        "operator": 1,
+        "label": "Dramaturgo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 161,
+        "operator": 1,
+        "label": "Ebanista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 162,
+        "operator": 1,
+        "label": "Ecologista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 163,
+        "operator": 1,
+        "label": "Ecólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 164,
+        "operator": 1,
+        "label": "Econometrista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 165,
+        "operator": 1,
+        "label": "Economista",
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": 166,
+        "operator": 1,
+        "label": "Ecónomo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 167,
+        "operator": 1,
+        "label": "Editor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 168,
+        "operator": 1,
+        "label": "Educador",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 169,
+        "operator": 1,
+        "label": "Ejecutivo",
+        "total": 6,
+        "isApplied": false
+      },
+      {
+        "id": 170,
+        "operator": 1,
+        "label": "Electricista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 171,
+        "operator": 1,
+        "label": "Electromecánico",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 172,
+        "operator": 1,
+        "label": "Electroquímico",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 173,
+        "operator": 1,
+        "label": "Embalador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 174,
+        "operator": 1,
+        "label": "Embolador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 175,
+        "operator": 1,
+        "label": "Embutidor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 176,
+        "operator": 1,
+        "label": "Empacador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 159,
+        "operator": 1,
+        "label": "Empleada Doméstica",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 177,
+        "operator": 1,
+        "label": "Empresario",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 178,
+        "operator": 1,
+        "label": "Encargado",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 179,
+        "operator": 1,
+        "label": "Enchapador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 180,
+        "operator": 1,
+        "label": "Encuestador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 181,
+        "operator": 1,
+        "label": "Enfermero(a)",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 182,
+        "operator": 1,
+        "label": "Enfriador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 183,
+        "operator": 1,
+        "label": "Enganchador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 184,
+        "operator": 1,
+        "label": "Enólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 185,
+        "operator": 1,
+        "label": "Entrenador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 186,
+        "operator": 1,
+        "label": "Epidemiólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 187,
+        "operator": 1,
+        "label": "Ergonomista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 188,
+        "operator": 1,
+        "label": "Ergoterapeuta",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 189,
+        "operator": 1,
+        "label": "Escalador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 190,
+        "operator": 1,
+        "label": "Escaneador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 191,
+        "operator": 1,
+        "label": "Escenógrafo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 192,
+        "operator": 1,
+        "label": "Escobero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 194,
+        "operator": 1,
+        "label": "Escolta",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 195,
+        "operator": 1,
+        "label": "Escritor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 196,
+        "operator": 1,
+        "label": "Escrutador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 197,
+        "operator": 1,
+        "label": "Escultor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 198,
+        "operator": 1,
+        "label": "Esmaltador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 199,
+        "operator": 1,
+        "label": "Especialista",
+        "total": 8,
+        "isApplied": false
+      },
+      {
+        "id": 200,
+        "operator": 1,
+        "label": "Estadístico",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 201,
+        "operator": 1,
+        "label": "Estampador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 202,
+        "operator": 1,
+        "label": "Esteticista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 203,
+        "operator": 1,
+        "label": "Estratega",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 204,
+        "operator": 1,
+        "label": "Etiqueteador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 205,
+        "operator": 1,
+        "label": "Evaluador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 206,
+        "operator": 1,
+        "label": "Evangelizador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 207,
+        "operator": 1,
+        "label": "Experto",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 208,
+        "operator": 1,
+        "label": "Fabricante",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 209,
+        "operator": 1,
+        "label": "Facilitador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 210,
+        "operator": 1,
+        "label": "Farmaceuta",
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": 211,
+        "operator": 1,
+        "label": "Filólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 212,
+        "operator": 1,
+        "label": "Filósofos",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 213,
+        "operator": 1,
+        "label": "Finalizador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 214,
+        "operator": 1,
+        "label": "Fiscal",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 215,
+        "operator": 1,
+        "label": "Fisiatra",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 216,
+        "operator": 1,
+        "label": "Físico",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 217,
+        "operator": 1,
+        "label": "Fisiólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 218,
+        "operator": 1,
+        "label": "Fisioterapeuta",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 219,
+        "operator": 1,
+        "label": "Fisioterapista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 220,
+        "operator": 1,
+        "label": "Floricultor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 221,
+        "operator": 1,
+        "label": "Fonoaudiólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 222,
+        "operator": 1,
+        "label": "Fontanero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 223,
+        "operator": 1,
+        "label": "Forjador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 224,
+        "operator": 1,
+        "label": "Fotógrafo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 225,
+        "operator": 1,
+        "label": "Fumigador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 226,
+        "operator": 1,
+        "label": "Funcionario",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 227,
+        "operator": 1,
+        "label": "Fundidor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 228,
+        "operator": 1,
+        "label": "Fusionador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 229,
+        "operator": 1,
+        "label": "Futbolista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 230,
+        "operator": 1,
+        "label": "Galponero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 231,
+        "operator": 1,
+        "label": "Galvanizador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 232,
+        "operator": 1,
+        "label": "Gastroenterólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 233,
+        "operator": 1,
+        "label": "Genealogista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 234,
+        "operator": 1,
+        "label": "General",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 235,
+        "operator": 1,
+        "label": "Genetista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 236,
+        "operator": 1,
+        "label": "Geofísico",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 237,
+        "operator": 1,
+        "label": "Geógrafo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 238,
+        "operator": 1,
+        "label": "Geólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 239,
+        "operator": 1,
+        "label": "Geoquímico",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 240,
+        "operator": 1,
+        "label": "Geotecnista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 241,
+        "operator": 1,
+        "label": "Gerente",
+        "total": 7,
+        "isApplied": false
+      },
+      {
+        "id": 242,
+        "operator": 1,
+        "label": "Geriatra",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 243,
+        "operator": 1,
+        "label": "Gerontólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 245,
+        "operator": 1,
+        "label": "Ginecólogo",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 246,
+        "operator": 1,
+        "label": "Grabador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 247,
+        "operator": 1,
+        "label": "Graficador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 248,
+        "operator": 1,
+        "label": "Grafólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 249,
+        "operator": 1,
+        "label": "Guardabosques",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 250,
+        "operator": 1,
+        "label": "Guardacostas",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 251,
+        "operator": 1,
+        "label": "Guardaespaldas",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 252,
+        "operator": 1,
+        "label": "Guardia",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 253,
+        "operator": 1,
+        "label": "Guía",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 254,
+        "operator": 1,
+        "label": "Guía-Intérprete",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 255,
+        "operator": 1,
+        "label": "Guionista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 256,
+        "operator": 1,
+        "label": "Guitarrista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 257,
+        "operator": 1,
+        "label": "Hematólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 258,
+        "operator": 1,
+        "label": "Herbolario",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 259,
+        "operator": 1,
+        "label": "Herrador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 260,
+        "operator": 1,
+        "label": "Herramentista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 261,
+        "operator": 1,
+        "label": "Herrero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 262,
+        "operator": 1,
+        "label": "Hidrobiólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 263,
+        "operator": 1,
+        "label": "Hidrogenador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 264,
+        "operator": 1,
+        "label": "Hidrólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 265,
+        "operator": 1,
+        "label": "Higienista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 266,
+        "operator": 1,
+        "label": "Histólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 267,
+        "operator": 1,
+        "label": "Historiador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 268,
+        "operator": 1,
+        "label": "Homeópata",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 269,
+        "operator": 1,
+        "label": "Horticultor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 271,
+        "operator": 1,
+        "label": "Humorista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 272,
+        "operator": 1,
+        "label": "Iluminador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 273,
+        "operator": 1,
+        "label": "Ilusionista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 274,
+        "operator": 1,
+        "label": "Ilustrador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 275,
+        "operator": 1,
+        "label": "Imitador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 276,
+        "operator": 1,
+        "label": "Impermeabilizador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 277,
+        "operator": 1,
+        "label": "Implantólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 278,
+        "operator": 1,
+        "label": "Impregnador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 279,
+        "operator": 1,
+        "label": "Impresor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 280,
+        "operator": 1,
+        "label": "Impulsador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 281,
+        "operator": 1,
+        "label": "Infante",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 282,
+        "operator": 1,
+        "label": "Informador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 283,
+        "operator": 1,
+        "label": "Ingeniero (a)",
+        "total": 40,
+        "isApplied": false
+      },
+      {
+        "id": 284,
+        "operator": 1,
+        "label": "Inmunólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 285,
+        "operator": 1,
+        "label": "Inseminador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 286,
+        "operator": 1,
+        "label": "Inspector",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 287,
+        "operator": 1,
+        "label": "Instalador",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 288,
+        "operator": 1,
+        "label": "Institutriz",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 289,
+        "operator": 1,
+        "label": "Instructor",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 290,
+        "operator": 1,
+        "label": "Instrumentador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 291,
+        "operator": 1,
+        "label": "Instrumentalista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 292,
+        "operator": 1,
+        "label": "Intermediario",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 293,
+        "operator": 1,
+        "label": "Internista",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 294,
+        "operator": 1,
+        "label": "Intérprete",
+        "total": 9,
+        "isApplied": false
+      },
+      {
+        "id": 295,
+        "operator": 1,
+        "label": "Interventor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 296,
+        "operator": 1,
+        "label": "Investigador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 297,
+        "operator": 1,
+        "label": "Islero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 298,
+        "operator": 1,
+        "label": "Jardinero (a)",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 299,
+        "operator": 1,
+        "label": "Jefe",
+        "total": 12,
+        "isApplied": false
+      },
+      {
+        "id": 301,
+        "operator": 1,
+        "label": "Jornalero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 302,
+        "operator": 1,
+        "label": "Joyero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 303,
+        "operator": 1,
+        "label": "Laboratorista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 304,
+        "operator": 1,
+        "label": "Laminador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 305,
+        "operator": 1,
+        "label": "Latonero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 306,
+        "operator": 1,
+        "label": "Lavador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 307,
+        "operator": 1,
+        "label": "Lector",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 308,
+        "operator": 1,
+        "label": "Leñador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 309,
+        "operator": 1,
+        "label": "Libretista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 310,
+        "operator": 1,
+        "label": "Líder",
+        "total": 6,
+        "isApplied": false
+      },
+      {
+        "id": 311,
+        "operator": 1,
+        "label": "Limpiador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 312,
+        "operator": 1,
+        "label": "Lingüista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 313,
+        "operator": 1,
+        "label": "Litógrafo",
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": 314,
+        "operator": 1,
+        "label": "Locutor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 315,
+        "operator": 1,
+        "label": "Lubricador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 316,
+        "operator": 1,
+        "label": "Luchador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 319,
+        "operator": 1,
+        "label": "Manicurista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 320,
+        "operator": 1,
+        "label": "Maquinista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 321,
+        "operator": 1,
+        "label": "Marcador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 322,
+        "operator": 1,
+        "label": "Marquetero",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 324,
+        "operator": 1,
+        "label": "Matemático",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 325,
+        "operator": 1,
+        "label": "Mayordomo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 326,
+        "operator": 1,
+        "label": "Mecánico",
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": 327,
+        "operator": 1,
+        "label": "Mediador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 328,
+        "operator": 1,
+        "label": "Médico(a)",
+        "total": 6,
+        "isApplied": false
+      },
+      {
+        "id": 329,
+        "operator": 1,
+        "label": "Mensajero",
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": 330,
+        "operator": 1,
+        "label": "Mercaderista",
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": 331,
+        "operator": 1,
+        "label": "Mercadotecnista",
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": 332,
+        "operator": 1,
+        "label": "Mesero",
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": 333,
+        "operator": 1,
+        "label": "Meteorólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 334,
+        "operator": 1,
+        "label": "Microbiólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 335,
+        "operator": 1,
+        "label": "Minero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 336,
+        "operator": 1,
+        "label": "Modelista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 337,
+        "operator": 1,
+        "label": "Modelo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 338,
+        "operator": 1,
+        "label": "Montador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 339,
+        "operator": 1,
+        "label": "Músico",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 340,
+        "operator": 1,
+        "label": "Naturista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 341,
+        "operator": 1,
+        "label": "Neurocirujano",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 342,
+        "operator": 1,
+        "label": "Neurólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 343,
+        "operator": 1,
+        "label": "Neuropatólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 344,
+        "operator": 1,
+        "label": "Niñera",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 345,
+        "operator": 1,
+        "label": "Numerólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 346,
+        "operator": 1,
+        "label": "Nutricionista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 347,
+        "operator": 1,
+        "label": "Obrero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 348,
+        "operator": 1,
+        "label": "Obstetra",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 349,
+        "operator": 1,
+        "label": "Oceanógrafo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 350,
+        "operator": 1,
+        "label": "Ocularista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 351,
+        "operator": 1,
+        "label": "Odontólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 352,
+        "operator": 1,
+        "label": "Oficinista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 353,
+        "operator": 1,
+        "label": "Oftalmólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 354,
+        "operator": 1,
+        "label": "Oncólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 355,
+        "operator": 1,
+        "label": "Operador",
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": 356,
+        "operator": 1,
+        "label": "Operario (a)",
+        "total": 18,
+        "isApplied": false
+      },
+      {
+        "id": 357,
+        "operator": 1,
+        "label": "Optómetra",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 358,
+        "operator": 1,
+        "label": "Oreador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 359,
+        "operator": 1,
+        "label": "Organista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 360,
+        "operator": 1,
+        "label": "Organizador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 361,
+        "operator": 1,
+        "label": "Orientador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 362,
+        "operator": 1,
+        "label": "Ortodoncista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 363,
+        "operator": 1,
+        "label": "Ortopedista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 364,
+        "operator": 1,
+        "label": "Osteópata",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 365,
+        "operator": 1,
+        "label": "Otorrinolaringólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 366,
+        "operator": 1,
+        "label": "Panadero",
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": 367,
+        "operator": 1,
+        "label": "Paramédico",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 368,
+        "operator": 1,
+        "label": "Parasitólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 369,
+        "operator": 1,
+        "label": "Parrillero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 370,
+        "operator": 1,
+        "label": "Patronista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 371,
+        "operator": 1,
+        "label": "Pedagogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 372,
+        "operator": 1,
+        "label": "Pediatra",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 373,
+        "operator": 1,
+        "label": "Pedicurista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 374,
+        "operator": 1,
+        "label": "Peluquero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 375,
+        "operator": 1,
+        "label": "Perforador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 376,
+        "operator": 1,
+        "label": "Periodista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 377,
+        "operator": 1,
+        "label": "Piloto",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 378,
+        "operator": 1,
+        "label": "Pintor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 379,
+        "operator": 1,
+        "label": "Piscinero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 380,
+        "operator": 1,
+        "label": "Pizzero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 381,
+        "operator": 1,
+        "label": "Planchador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 383,
+        "operator": 1,
+        "label": "Planificador",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 384,
+        "operator": 1,
+        "label": "Plomero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 385,
+        "operator": 1,
+        "label": "Portero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 386,
+        "operator": 1,
+        "label": "Practicante",
+        "total": 27,
+        "isApplied": false
+      },
+      {
+        "id": 387,
+        "operator": 1,
+        "label": "Presentador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 388,
+        "operator": 1,
+        "label": "Productor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 389,
+        "operator": 1,
+        "label": "Profesional",
+        "total": 10,
+        "isApplied": false
+      },
+      {
+        "id": 390,
+        "operator": 1,
+        "label": "Profesor",
+        "total": 7,
+        "isApplied": false
+      },
+      {
+        "id": 391,
+        "operator": 1,
+        "label": "Programador",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 392,
+        "operator": 1,
+        "label": "Promotor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 393,
+        "operator": 1,
+        "label": "Psicólogo",
+        "total": 5,
+        "isApplied": false
+      },
+      {
+        "id": 394,
+        "operator": 1,
+        "label": "Psiquiatra",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 395,
+        "operator": 1,
+        "label": "Publicista",
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": 396,
+        "operator": 1,
+        "label": "Químico",
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": 397,
+        "operator": 1,
+        "label": "Quiropráctico",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 398,
+        "operator": 1,
+        "label": "Radiógrafo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 399,
+        "operator": 1,
+        "label": "Radiólogo",
+        "total": 2,
+        "isApplied": false
+      },
+      {
+        "id": 400,
+        "operator": 1,
+        "label": "Recaudador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 401,
+        "operator": 1,
+        "label": "Recepcionista",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 402,
+        "operator": 1,
+        "label": "Reciclador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 403,
+        "operator": 1,
+        "label": "Recocedor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 404,
+        "operator": 1,
+        "label": "Recolector",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 405,
+        "operator": 1,
+        "label": "Recreacionista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 406,
+        "operator": 1,
+        "label": "Regente",
+        "total": 3,
+        "isApplied": false
+      },
+      {
+        "id": 407,
+        "operator": 1,
+        "label": "Regulador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 408,
+        "operator": 1,
+        "label": "Relacionista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 409,
+        "operator": 1,
+        "label": "Relator",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 410,
+        "operator": 1,
+        "label": "Relojero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 411,
+        "operator": 1,
+        "label": "Reportero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 412,
+        "operator": 1,
+        "label": "Representante",
+        "total": 4,
+        "isApplied": false
+      },
+      {
+        "id": 413,
+        "operator": 1,
+        "label": "Residente",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 414,
+        "operator": 1,
+        "label": "Restaurador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 415,
+        "operator": 1,
+        "label": "Retocador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 416,
+        "operator": 1,
+        "label": "Retratista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 417,
+        "operator": 1,
+        "label": "Reumatólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 418,
+        "operator": 1,
+        "label": "Salvavidas",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 419,
+        "operator": 1,
+        "label": "Sastre",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 420,
+        "operator": 1,
+        "label": "Secretaria (o)",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 421,
+        "operator": 1,
+        "label": "Socorrista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 422,
+        "operator": 1,
+        "label": "Soldador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 424,
+        "operator": 1,
+        "label": "Subdirector",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 425,
+        "operator": 1,
+        "label": "Subgerente",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 426,
+        "operator": 1,
+        "label": "Supervisor",
+        "total": 7,
+        "isApplied": false
+      },
+      {
+        "id": 427,
+        "operator": 1,
+        "label": "Surtidor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 428,
+        "operator": 1,
+        "label": "Tallador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 429,
+        "operator": 1,
+        "label": "Tapicero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 430,
+        "operator": 1,
+        "label": "Taquillero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 431,
+        "operator": 1,
+        "label": "Técnico",
+        "total": 17,
+        "isApplied": false
+      },
+      {
+        "id": 432,
+        "operator": 1,
+        "label": "Tecnólogo",
+        "total": 4,
+        "isApplied": false
+      },
+      {
+        "id": 433,
+        "operator": 1,
+        "label": "Telemercaderista",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 434,
+        "operator": 1,
+        "label": "Teñidor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 435,
+        "operator": 1,
+        "label": "Terapeuta",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 436,
+        "operator": 1,
+        "label": "Tipógrafo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 437,
+        "operator": 1,
+        "label": "Topógrafo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 438,
+        "operator": 1,
+        "label": "Traductor",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 439,
+        "operator": 1,
+        "label": "Tramitador",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 440,
+        "operator": 1,
+        "label": "Traumatólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 441,
+        "operator": 1,
+        "label": "Urólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 442,
+        "operator": 1,
+        "label": "Utilero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 443,
+        "operator": 1,
+        "label": "Vendedor",
+        "total": 38,
+        "isApplied": false
+      },
+      {
+        "id": 444,
+        "operator": 1,
+        "label": "Veterinario",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 445,
+        "operator": 1,
+        "label": "Vicepresidente",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 446,
+        "operator": 1,
+        "label": "Vigilante",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 447,
+        "operator": 1,
+        "label": "Violinista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 448,
+        "operator": 1,
+        "label": "Vocalista",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 449,
+        "operator": 1,
+        "label": "Vocero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 450,
+        "operator": 1,
+        "label": "Volquetero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 451,
+        "operator": 1,
+        "label": "Webmaster",
+        "total": 1,
+        "isApplied": false
+      },
+      {
+        "id": 452,
+        "operator": 1,
+        "label": "Zapatero",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 453,
+        "operator": 1,
+        "label": "Zoólogo",
+        "total": 0,
+        "isApplied": false
+      },
+      {
+        "id": 454,
+        "operator": 1,
+        "label": "Zootecnista",
+        "total": 0,
+        "isApplied": false
+      }
+    ],
+    "searchPlaceholder": "Buscar profesión"
   },
   {
     "label": "País",
@@ -330,12 +4763,15 @@
           }
         },
         "values": [],
+        "filtersApplied": ["17453@789", "17414@789", "16963@776"],
         "searchPlaceholder": "Buscar ciudad"
       },
       "values": [],
+      "filtersApplied": ["789@47", "776@47"],
       "searchPlaceholder": "Buscar departamento"
     },
     "values": [],
+    "filtersApplied": [47],
     "searchPlaceholder": "Buscar país"
   },
   {
@@ -358,14 +4794,14 @@
         "operator": 1,
         "id": "true",
         "label": "Si",
-        "total": 63,
-        "isApplied": true
+        "total": 46,
+        "isApplied": false
       },
       {
         "operator": 1,
         "id": "false",
         "label": "No",
-        "total": 0,
+        "total": 808,
         "isApplied": false
       }
     ],
@@ -394,7 +4830,7 @@
         "to": -1,
         "id": "BK-agree",
         "label": "A convenir",
-        "total": 30,
+        "total": 475,
         "isApplied": false
       },
       {
@@ -404,7 +4840,7 @@
         "to": null,
         "id": "BK-01",
         "label": "Desde $781.242",
-        "total": 33,
+        "total": 466,
         "isApplied": false
       },
       {
@@ -414,7 +4850,7 @@
         "to": 1500000,
         "id": "BK-02",
         "label": "$1.000.000 a $1.500.000",
-        "total": 12,
+        "total": 243,
         "isApplied": false
       },
       {
@@ -424,7 +4860,7 @@
         "to": 2000000,
         "id": "BK-03",
         "label": "$1.500.000 a $2.000.000",
-        "total": 0,
+        "total": 71,
         "isApplied": false
       },
       {
@@ -434,7 +4870,7 @@
         "to": 2500000,
         "id": "BK-04",
         "label": "$2.000.000 a $2.500.000",
-        "total": 2,
+        "total": 40,
         "isApplied": false
       },
       {
@@ -444,7 +4880,7 @@
         "to": 3000000,
         "id": "BK-05",
         "label": "$2.500.000 a $3.000.000",
-        "total": 1,
+        "total": 24,
         "isApplied": false
       },
       {
@@ -454,7 +4890,7 @@
         "to": 4000000,
         "id": "BK-06",
         "label": "$3.000.000 a $4.000.000",
-        "total": 10,
+        "total": 28,
         "isApplied": false
       },
       {
@@ -464,7 +4900,7 @@
         "to": 7000000,
         "id": "BK-07",
         "label": "$4.000.000 a $7.000.000",
-        "total": 6,
+        "total": 44,
         "isApplied": false
       },
       {
@@ -474,7 +4910,7 @@
         "to": null,
         "id": "BK-08",
         "label": "Más de $7.000.000",
-        "total": 1,
+        "total": 10,
         "isApplied": false
       }
     ],
@@ -503,7 +4939,7 @@
         "to": 0,
         "id": "BK-01",
         "label": "Sin experiencia",
-        "total": 11,
+        "total": 203,
         "isApplied": false
       },
       {
@@ -513,7 +4949,7 @@
         "to": 11,
         "id": "BK-02",
         "label": "Menos de un año",
-        "total": 32,
+        "total": 577,
         "isApplied": false
       },
       {
@@ -523,7 +4959,7 @@
         "to": 24,
         "id": "BK-03",
         "label": "1 a 2 años",
-        "total": 21,
+        "total": 340,
         "isApplied": false
       },
       {
@@ -533,7 +4969,7 @@
         "to": 36,
         "id": "BK-04",
         "label": "2 a 3 años",
-        "total": 20,
+        "total": 225,
         "isApplied": false
       },
       {
@@ -543,7 +4979,7 @@
         "to": 60,
         "id": "BK-05",
         "label": "3 a 5 años",
-        "total": 19,
+        "total": 129,
         "isApplied": false
       },
       {
@@ -553,7 +4989,7 @@
         "to": 96,
         "id": "BK-06",
         "label": "5 a 8 años",
-        "total": 9,
+        "total": 31,
         "isApplied": false
       },
       {
@@ -563,7 +4999,7 @@
         "to": 120,
         "id": "BK-07",
         "label": "8 a 10 años",
-        "total": 1,
+        "total": 4,
         "isApplied": false
       },
       {
@@ -573,7 +5009,7 @@
         "to": null,
         "id": "BK-08",
         "label": "más de 10 años",
-        "total": 1,
+        "total": 5,
         "isApplied": false
       }
     ],
@@ -599,45 +5035,45 @@
         "id": "BK-01",
         "label": "Hoy",
         "operator": 1,
-        "from": "2023-08-01",
-        "to": "2023-08-01T23:59:59",
-        "total": 4,
+        "from": "2023-08-08",
+        "to": "2023-08-08T23:59:59",
+        "total": 10,
         "isApplied": false
       },
       {
         "id": "BK-02",
         "label": "Últimos 3 días",
         "operator": 1,
-        "from": "2023-07-29",
-        "to": "2023-08-01T23:59:59",
-        "total": 6,
+        "from": "2023-08-05",
+        "to": "2023-08-08T23:59:59",
+        "total": 51,
         "isApplied": false
       },
       {
         "id": "BK-03",
         "label": "Última semana",
         "operator": 1,
-        "from": "2023-07-25",
-        "to": "2023-08-01T23:59:59",
-        "total": 19,
+        "from": "2023-08-01",
+        "to": "2023-08-08T23:59:59",
+        "total": 176,
         "isApplied": false
       },
       {
         "id": "BK-04",
         "label": "Últimos 15 días",
         "operator": 1,
-        "from": "2023-07-17",
-        "to": "2023-08-01T23:59:59",
-        "total": 24,
+        "from": "2023-07-24",
+        "to": "2023-08-08T23:59:59",
+        "total": 390,
         "isApplied": false
       },
       {
         "id": "BK-05",
         "label": "Último mes",
         "operator": 1,
-        "from": "2023-07-01",
-        "to": "2023-08-01T23:59:59",
-        "total": 39,
+        "from": "2023-07-08",
+        "to": "2023-08-08T23:59:59",
+        "total": 592,
         "isApplied": false
       }
     ],
@@ -663,42 +5099,42 @@
         "id": 6,
         "label": "Contrato de aprendizaje",
         "operator": 1,
-        "total": 8,
+        "total": 122,
         "isApplied": false
       },
       {
         "id": 4,
         "label": "Por obra o labor",
         "operator": 1,
-        "total": 1,
+        "total": 53,
         "isApplied": false
       },
       {
         "id": 5,
         "label": "Prestación de servicios",
         "operator": 1,
-        "total": 1,
+        "total": 2,
         "isApplied": false
       },
       {
         "id": 3,
         "label": "Temporal",
         "operator": 1,
-        "total": 1,
+        "total": 7,
         "isApplied": false
       },
       {
         "id": 1,
         "label": "Término fijo",
         "operator": 1,
-        "total": 9,
+        "total": 108,
         "isApplied": false
       },
       {
         "id": 2,
         "label": "Término indefinido",
         "operator": 1,
-        "total": 43,
+        "total": 562,
         "isApplied": false
       }
     ],
@@ -724,21 +5160,21 @@
         "operator": 1,
         "id": 1,
         "label": "Etapa productiva (aprendiz)",
-        "total": 5,
+        "total": 61,
         "isApplied": false
       },
       {
         "operator": 1,
         "id": 2,
         "label": "Práctica profesional",
-        "total": 2,
+        "total": 37,
         "isApplied": false
       },
       {
         "operator": 1,
         "id": 3,
         "label": "Patrocinio estudios técnicos/tecnológicos",
-        "total": 0,
+        "total": 2,
         "isApplied": false
       }
     ],
@@ -764,17 +5200,44 @@
         "operator": 1,
         "id": "true",
         "label": "Si",
-        "total": 8,
+        "total": 50,
         "isApplied": false
       },
       {
         "operator": 1,
         "id": "false",
         "label": "No",
-        "total": 55,
+        "total": 895,
         "isApplied": false
       }
     ],
     "searchPlaceholder": "Buscar persona discapacitada"
+  },
+  {
+    "label": "Tipo de vacante",
+    "field": "is_internal",
+    "type": "EQUAL",
+    "renderType": "WITH_REACT_FRAGMENT",
+    "dataType": "boolean",
+    "multiple": false,
+    "repository": {
+      "type": "valueList",
+      "defaultFilter": {},
+      "defaultOrder": {},
+      "defaultOperator": 1,
+      "source": null,
+      "fieldsAlias": null
+    },
+    "values": [
+      {
+        "operator": 1,
+        "id": "true",
+        "label": "Vacantes internas",
+        "hiddenCount": true,
+        "total": 0,
+        "isApplied": false
+      }
+    ],
+    "searchPlaceholder": "Buscar tipo de vacante"
   }
 ]

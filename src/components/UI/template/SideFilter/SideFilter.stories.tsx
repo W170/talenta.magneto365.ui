@@ -1,21 +1,38 @@
 import { Meta, StoryObj } from '@storybook/react'
+import { appliedOptionsBySearchRenderType } from '@constants/stories.constants'
 import SideFilter from './SideFilter.component'
 import data from './filtersNormalized.json'
-import { IFilter } from './SideFilter.interface'
+import {
+  IFilter,
+  IGetOptionsOnSearchProps,
+  ISearchRenderTypeOption,
+  ISetIsApplied,
+  IUnApplyWithChild
+} from './SideFilter.interface'
 
 const meta: Meta<typeof SideFilter> = {
   title: 'Template/Side Filter',
   component: SideFilter,
   args: {
-    filters: data as unknown as IFilter[],
-    setIsApplied: ({ id, field, isApplied }: { field: string; id: string | number; isApplied: boolean }) =>
-      new Promise((resolve) => resolve(console.log({ id, field, isApplied }))),
-    totalAppliedFilters: 1,
-    clearFilters: () => new Promise((resolve) => resolve(console.log('clearFilters'))),
     title: 'Filtrar empleos',
+    filters: data as unknown as IFilter[],
+    totalAppliedFilters: 1,
     buttonText: 'Limpiar',
+    loading: false,
     switchText: 'Apto para personas con discapacidad',
-    loading: false
+
+    setIsApplied: (filter: ISetIsApplied) => new Promise((resolve) => resolve(console.log({ filter }))),
+    clearFilters: () => new Promise((resolve) => resolve(console.log('clearFilters'))),
+    unApplyWithChild: (withChild: IUnApplyWithChild) => new Promise((resolve) => resolve(console.log({ withChild }))),
+    getOptionsOnLoad: (field: string, values: (string | number)[]) => {
+      console.log('getOptionsOnLoad: ', { field, values })
+      return new Promise<ISearchRenderTypeOption[]>(() => appliedOptionsBySearchRenderType)
+    },
+    getOptionsOnSearch: (term: IGetOptionsOnSearchProps) =>
+      new Promise((resolve) => {
+        console.log('getOptionsOnSearch: ', { term })
+        return resolve([])
+      })
   }
 }
 

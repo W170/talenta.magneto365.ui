@@ -2,18 +2,17 @@ import { Meta, StoryObj } from '@storybook/react'
 import { optionsFilterMenu } from '@constants/stories.constants'
 import { FilterCard } from './FilterCard.component'
 import { ERenderType } from '@components/UI/template/SideFilter/SideFilter.component'
+import { ISetIsApplied } from '@components/UI/template'
 
 const meta: Meta<typeof FilterCard> = {
   title: 'Organism/Filter Card',
   component: FilterCard,
   args: {
-    values: [optionsFilterMenu[1], optionsFilterMenu[2]],
-    setIsApplied: ({ id, field, isApplied }: { field: string; id: string | number; isApplied: boolean }) =>
-      new Promise((resolve) => resolve(console.log({ id, field, isApplied }))),
     label: 'Sector Laboral',
-    hasSwitch: false,
+    values: [optionsFilterMenu[1], optionsFilterMenu[2]],
+    searchPlaceholder: 'Buscar por un sector laboral',
     switchText: 'remoto',
-    searchPlaceholder: 'Buscar por un sector laboral'
+    setIsApplied: (filter: ISetIsApplied) => new Promise((resolve) => resolve(console.log({ filter })))
   }
 }
 
@@ -23,37 +22,31 @@ type Story = StoryObj<typeof FilterCard>
 
 export const Default: Story = {
   args: {
-    values: [optionsFilterMenu[1]],
-    setIsApplied: ({ id, field, isApplied }: { field: string; id: string | number; isApplied: boolean }) =>
-      new Promise((resolve) => resolve(console.log({ id, field, isApplied }))),
     label: 'Sector Laboral',
-    hasSwitch: false,
+    values: [optionsFilterMenu[1]],
+    searchPlaceholder: 'Buscar por un sector laboral',
     switchText: 'remoto',
-    searchPlaceholder: 'Buscar por un sector laboral'
+    setIsApplied: (filter: ISetIsApplied) => new Promise((resolve) => resolve(console.log({ filter })))
   }
 }
 
 export const FullItems: Story = {
   args: {
-    values: [...optionsFilterMenu, ...optionsFilterMenu],
-    setIsApplied: ({ id, field, isApplied }: { field: string; id: string | number; isApplied: boolean }) =>
-      new Promise((resolve) => resolve(console.log({ id, field, isApplied }))),
     label: 'Sector Laboral',
-    hasSwitch: true,
+    values: [...optionsFilterMenu, ...optionsFilterMenu],
+    searchPlaceholder: 'Buscar por un sector laboral',
     switchText: 'remoto',
-    searchPlaceholder: 'Buscar por un sector laboral'
+    setIsApplied: (filter: ISetIsApplied) => new Promise((resolve) => resolve(console.log({ filter })))
   }
 }
 
 export const WithSearch: Story = {
   args: {
-    values: [...optionsFilterMenu, ...optionsFilterMenu],
-    setIsApplied: ({ id, field, isApplied }: { field: string; id: string | number; isApplied: boolean }) =>
-      new Promise((resolve) => resolve(console.log({ id, field, isApplied }))),
     label: 'Sector Laboral',
-    hasSwitch: false,
-    switchText: 'remoto',
+    values: [...optionsFilterMenu, ...optionsFilterMenu],
+    renderType: ERenderType.multiSelect,
     searchPlaceholder: 'Buscar por un sector laboral',
-    renderType: ERenderType.multiSelect
+    switchText: 'remoto',
+    setIsApplied: (filter: ISetIsApplied) => new Promise((resolve) => resolve(console.log({ filter })))
   }
 }
