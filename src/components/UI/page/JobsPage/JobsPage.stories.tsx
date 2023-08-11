@@ -1,8 +1,23 @@
 import { Meta, StoryObj } from '@storybook/react'
 import JobsPage from './JobsPage.component'
 
-import { CompanyLogo, optionsFilterOrderBy, vacants } from '@constants/stories.constants'
+import {
+  CompanyLogo,
+  appliedOptionsBySearchRenderType,
+  optionsFilterOrderBy,
+  vacants
+} from '@constants/stories.constants'
 import { FacebookBlue, LinkedInBlue, SMSBlue, ShareBlue, TwitterBlue, WhatsAppColor } from '@constants/icons.constants'
+
+import data from '@components/UI/template/SideFilter/filtersNormalized.json'
+import {
+  IFilter,
+  IGetOptionsOnSearchProps,
+  ISearchRenderTypeOption,
+  ISetIsApplied,
+  ISideFilter,
+  IUnApplyWithChild
+} from '@components/UI/template'
 
 const onClickOne = () => {
   console.log('1')
@@ -165,7 +180,27 @@ const mobileJobDetailsDrawer = {
     }
   }
 }
+const sideFilter = {
+  title: 'Filtrar empleos',
+  filters: data as unknown as IFilter[],
+  totalAppliedFilters: 1,
+  buttonText: 'Limpiar',
+  loading: false,
+  switchText: 'Apto para personas con discapacidad',
 
+  setIsApplied: (filter: ISetIsApplied) => new Promise((resolve) => resolve(console.log({ filter }))),
+  clearFilters: () => new Promise((resolve) => resolve(console.log('clearFilters'))),
+  unApplyWithChild: (withChild: IUnApplyWithChild) => new Promise((resolve) => resolve(console.log({ withChild }))),
+  getOptionsOnLoad: (field: string, values: (string | number)[]) => {
+    console.log('getOptionsOnLoad: ', { field, values })
+    return new Promise<ISearchRenderTypeOption[]>((resolve) => resolve(appliedOptionsBySearchRenderType))
+  },
+  getOptionsOnSearch: (term: IGetOptionsOnSearchProps) =>
+    new Promise((resolve) => {
+      console.log('getOptionsOnSearch: ', { term })
+      return resolve([])
+    })
+}
 const meta: Meta<typeof JobsPage> = {
   title: 'Pages/Jobs Page',
   component: JobsPage,
@@ -183,7 +218,8 @@ const meta: Meta<typeof JobsPage> = {
     },
     vacantProps: vacants,
     jobDetailsDrawerProps: jobDetailsDrawer,
-    MobileJobDetailsDrawerProps: mobileJobDetailsDrawer
+    MobileJobDetailsDrawerProps: mobileJobDetailsDrawer,
+    sideFilterProps: sideFilter as ISideFilter
   }
 }
 

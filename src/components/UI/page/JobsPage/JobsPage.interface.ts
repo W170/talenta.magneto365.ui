@@ -1,5 +1,6 @@
 import { IJobCard } from '@components/UI/molecules/JobCard/JobCard.interface'
 import { IJobDetailsDrawer, IMobileJobDetailsDrawer } from '@components/UI/organism'
+import { ISideFilter } from '@components/UI/template'
 import { IFilterBottomHeader } from '@components/UI/template/FilterBottomHeader/FilterBottomHeader.interface'
 
 export interface IJobsPage {
@@ -23,4 +24,9 @@ export interface IJobsPage {
    * This version is displayed on mobile devices and provides job details for selected listings.
    */
   MobileJobDetailsDrawerProps: IMobileJobDetailsDrawer
+  /**
+   * Props for the filters.
+   *
+   */
+  sideFilterProps: ISideFilter
 }
