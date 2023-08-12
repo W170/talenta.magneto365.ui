@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import FilterContainerMenu from '@components/UI/molecules/FilterContainerMenu/FilterContainerMenu.component'
 import { JobDetailContainer, JobCard } from '@components/UI/molecules'
 import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
-import { FilterBottomHeader } from '@components/UI/template'
+import { FilterBottomHeader, SideFilter } from '@components/UI/template'
 import { useMediaQuery } from '@components/hooks'
 
 import { IJobsPage } from './JobsPage.interface'
@@ -14,6 +14,7 @@ const JobsPage: React.FC<IJobsPage> = ({
   jobDetailsDrawerProps,
   MobileJobDetailsDrawerProps,
   filterBottomHeaderProps,
+  sideFilterProps,
   vacantProps
 }) => {
   const [showDetail, setShowDetail] = useState(false)
@@ -42,7 +43,7 @@ const JobsPage: React.FC<IJobsPage> = ({
     <div className={style[`${classMUI}-jobs-page`]}>
       <div className={style[`${classMUI}-jobs-page--filter-row`]}>
         <FilterContainerMenu>
-          <p>Here should be all filters</p>
+          <SideFilter {...sideFilterProps} />
         </FilterContainerMenu>
       </div>
 
