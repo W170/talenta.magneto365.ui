@@ -55,7 +55,7 @@ const JobsPage: React.FC<IJobsPage> = ({
           ))}
         </div>
       </div>
-      {JobDetailsDrawerComponent}
+      <div className={style[`${classMUI}-jobs-page__job-detail`]}>{JobDetailsDrawerComponent}</div>
     </div>
   )
 }
