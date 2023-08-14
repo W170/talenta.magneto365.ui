@@ -4,7 +4,7 @@
   width: 100vw;
 
   &--filter-row {
-    width: 380px;
+    width: 320px;
   }
 
   &--center-row {
@@ -18,5 +18,9 @@
       justify-content: center;
       gap: 2px;
     }
+  }
+
+  &__jobs-detail {
+    width: calc(100% - 320px);
   }
 }
