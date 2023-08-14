@@ -1,3 +1,5 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
 .magneto-ui-job-detail-container {
   overflow-y: auto;
   width: 0;
@@ -7,18 +9,37 @@
   background: #fff;
   transition: all ease-in-out 0.3s;
   &--btn {
+    position: sticky;
     cursor: pointer;
     border: none;
     justify-content: center;
     display: flex;
     align-items: center;
-    position: absolute;
     left: 0;
     top: 13.5px;
     width: 26px;
     height: 35px;
     border-radius: 0px 6px 6px 0px;
     background: #f4f4fa;
+    z-index: 1;
+  }
+
+  &::-webkit-scrollbar {
+    width: 7px;
+    border-radius: 15px;
+
+    &-track {
+      background-color: rgba(241, 241, 241, 0.353);
+      border-radius: 15px;
+    }
+
+    &-thumb {
+      border-radius: 15px;
+      background-color: v.$disabled-color-gray2;
+      &:hover {
+        background-color: v.$disabled-color-gray3;
+      }
+    }
   }
 }
 
