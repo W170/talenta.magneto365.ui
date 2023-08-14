@@ -1,6 +1,6 @@
+import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import JobsPage from './JobsPage.component'
-
 import {
   CompanyLogo,
   appliedOptionsBySearchRenderType,
@@ -220,7 +220,14 @@ const meta: Meta<typeof JobsPage> = {
     jobDetailsDrawerProps: jobDetailsDrawer,
     MobileJobDetailsDrawerProps: mobileJobDetailsDrawer,
     sideFilterProps: sideFilter as ISideFilter
-  }
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ margin: '-16px' }}>
+        <Story />
+      </div>
+    )
+  ]
 }
 
 export default meta
