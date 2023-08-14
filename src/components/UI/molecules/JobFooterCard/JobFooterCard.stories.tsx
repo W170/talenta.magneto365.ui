@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 
 import { JobFooterCard } from './JobFooterCard.component'
+
 import {
   FacebookBlue,
   LinkedInBlue,
@@ -9,6 +10,7 @@ import {
   TwitterBlue,
   WhatsAppColor
 } from '../../../../constants/icons.constants'
+
 import { CompanyLogo } from '@constants/stories.constants'
 
 const meta: Meta<typeof JobFooterCard> = {

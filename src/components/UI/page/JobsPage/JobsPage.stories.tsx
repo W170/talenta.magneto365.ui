@@ -1,15 +1,23 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import JobsPage from './JobsPage.component'
+
 import {
   CompanyLogo,
   appliedOptionsBySearchRenderType,
   optionsFilterOrderBy,
   vacants
 } from '@constants/stories.constants'
-import { FacebookBlue, LinkedInBlue, SMSBlue, ShareBlue, TwitterBlue, WhatsAppColor } from '@constants/icons.constants'
 
-import data from '@components/UI/template/SideFilter/filtersNormalized.json'
+import {
+  FacebookBlue,
+  LinkedInBlue,
+  SMSBlue,
+  ShareBlue,
+  TwitterBlue,
+  WhatsAppColor
+} from '../../../../constants/icons.constants'
+
 import {
   IFilter,
   IGetOptionsOnSearchProps,
@@ -18,6 +26,8 @@ import {
   ISideFilter,
   IUnApplyWithChild
 } from '@components/UI/template'
+
+import data from '@components/UI/template/SideFilter/filtersNormalized.json'
 
 const onClickOne = () => {
   console.log('1')
@@ -86,12 +96,12 @@ const jobDetailsDrawer = {
     jobFooterCompanyImg: CompanyLogo,
     jobFooterHeader: 'Compartir vacante en:',
     jobFooterLinks: [
-      { Icon: FacebookBlue, url: '' },
-      { Icon: WhatsAppColor, url: '' },
-      { Icon: LinkedInBlue, url: '' },
-      { Icon: TwitterBlue, url: '' },
-      { Icon: SMSBlue, url: '' },
-      { Icon: ShareBlue, url: '' }
+      { icon: FacebookBlue, url: '' },
+      { icon: WhatsAppColor, url: '' },
+      { icon: LinkedInBlue, url: '' },
+      { icon: TwitterBlue, url: '' },
+      { icon: SMSBlue, url: '' },
+      { icon: ShareBlue, url: '' }
     ]
   }
 }
@@ -180,6 +190,7 @@ const mobileJobDetailsDrawer = {
     }
   }
 }
+
 const sideFilter = {
   title: 'Filtrar empleos',
   filters: data as unknown as IFilter[],
@@ -201,6 +212,7 @@ const sideFilter = {
       return resolve([])
     })
 }
+
 const meta: Meta<typeof JobsPage> = {
   title: 'Pages/Jobs Page',
   component: JobsPage,
