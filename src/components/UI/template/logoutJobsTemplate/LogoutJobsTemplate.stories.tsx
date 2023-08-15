@@ -5,7 +5,8 @@ import {
   SearchbarProps,
   SignInProps,
   SignUpProps,
-  ListIcon
+  ListIcon,
+  breadcrumbProps
 } from '../../../../constants/stories.constants'
 import { IListMenuItems, MenuItemInfo } from '../../molecules'
 import { brands, ourBrandsText } from '../../../../constants/stories.constants'
@@ -16,7 +17,7 @@ const LogoutJobsHeaderProps = {
   mobileSearchbar: MobileSearchbarProps,
   signInLink: SignInProps,
   signUpButton: SignUpProps,
-  breadcrumbsText: '/empleos',
+  breadcrumbProps: breadcrumbProps,
   homeUrl: '/home',
   companyLogo:
     'https://www.magneto365.com/co/_next/image?url=https%3A%2F%2Fmedia.magneto365.com%2Fimage_assets%2Ffiles%2F16757%2Foriginal-Logo-cueros-velez-.png%3FExpires%3D1689811199%26Key-Pair-Id%3DK3F66W3VXZUW7N%26Signature%3DV44PescBCWesSBP6mbKQnR-etQJ6dNV~MABjGEybuywOZA9j~eH84IYdIpTPeJVek7sI1zqFoDYbUm8fuMqoFWlOBv3DplZHNQitvDKmsujOQiPYriTnw3842nvhd~CGd2XizcRqcISTWHEnrQwY37eq5sTWrg7uVSUibb3GhS1QHVAcTS3DIW3ux6n5JZ75YiS3FVcOGl8qh7sdq0kbflyLIPBeUNr9c0c01ncAP-XLJ1ggOv-0hMKE0tDetqiEATUcfMJX3eXZZXJ85FylD5bzTsilIRB~cuXLo8JZQjLDxKIwNWYVyWMsVgO6RKujfJoTKAxwQM6RKNb-h~OjpA__&w=128&q=75',

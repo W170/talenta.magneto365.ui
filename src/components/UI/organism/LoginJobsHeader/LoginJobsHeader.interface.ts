@@ -1,4 +1,4 @@
-import { IAvatar } from '../../atoms'
+import { IAvatar, IBreadcrumb } from '../../atoms'
 import { ILogout, IMenuItems, IMobileSearchbar, ISearchbar, ISettings } from '../../molecules'
 import { IBrandMenu } from '../BrandMenu/BrandMenu.interface'
 
@@ -7,8 +7,9 @@ export interface ILoginJobsHeader {
   listMenuUserProps: IlistMenuUserPropsNot1440
   searchbar: ISearchbar
   mobileSearchbar: IMobileSearchbar
-  breadcrumbsText: string
+
   onMenuClick?: () => void
+  breadcrumbProps: IBreadcrumb
   homeUrl: string
   gif?: string | null
   brandMenuProps: IBrandMenu

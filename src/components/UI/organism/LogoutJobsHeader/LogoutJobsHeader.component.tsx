@@ -25,7 +25,7 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
   mobileSearchbar,
   signInLink,
   signUpButton,
-  breadcrumbsText,
+  breadcrumbProps,
   onMenuClick,
   homeUrl,
   brandMenuProps,
@@ -89,7 +89,7 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
     />
   )
 
-  const LogoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbText={breadcrumbsText} />, {
+  const LogoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbProps={breadcrumbProps} homeUrl={homeUrl} />, {
     md: null
   })
 

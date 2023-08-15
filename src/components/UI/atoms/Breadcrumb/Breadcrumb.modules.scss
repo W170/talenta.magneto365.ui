@@ -8,14 +8,27 @@
     align-items: center;
     color: v.$text-color-disable;
     font-style: normal;
-    font-weight: 400;
     font-size: 12px;
     line-height: 13px;
     margin: 0 5px 0 0;
     text-transform: capitalize;
+    transition: all ease-in-out 0.3s;
+    &:hover {
+      color: v.$color-blue-hover;
+      opacity: 0.7;
+    }
   }
 }
 
-.breadcrumbComponent .magneto-ui-bc-active {
-  font-weight: 700;
+.magneto-ui-bc {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.magneto-ui-bc-active {
+  font-weight: bold;
+  pointer-events: none;
 }

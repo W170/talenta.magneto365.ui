@@ -9,14 +9,14 @@ import {
   listMenuUserPropsNot1440
 } from '../../../../constants/stories.constants'
 import { IListMenuItems, MenuItemInfo } from '../../molecules'
-import { brands, ourBrandsText } from '../../../../constants/stories.constants'
+import { brands, ourBrandsText, breadcrumbProps } from '../../../../constants/stories.constants'
 
 const LoginJobsHeaderProps = {
   profileImage: AvatarProps,
   listMenuUserProps: listMenuUserPropsNot1440,
   searchbar: SearchbarProps,
   mobileSearchbar: MobileSearchbarProps,
-  breadcrumbsText: '/empleos',
+  breadcrumbProps: breadcrumbProps,
   companyUrl: '/empleos/company',
   homeUrl: '/home',
   companyLogo: 'https://www.magneto365.com/wp-content/uploads/2022/07/grupo-exito.png',
