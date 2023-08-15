@@ -1,13 +1,15 @@
 import React from 'react'
 import { classMUI } from '@constants/stories.constants'
 import style from './RightsReservedText.module.scss'
+import { IRightsReservedText } from './RightsReservedText.interface'
 
-const RightsReservedText = () => {
+const RightsReservedText: React.FC<IRightsReservedText> = ({ magnetoRightsText, mapSiteHref, mapSiteText }) => {
   return (
     <div className={`${style[`${classMUI}-rights-reserved`]}`}>
-      <p>Magneto Global S.A.S, todos los derechos reservados |</p>
-      <a className={`${style[`${classMUI}-rights-reserved__link`]}`} href="#">
-        Mapa del sitio
+      <p>{magnetoRightsText}</p>
+      <span>|</span>
+      <a className={`${style[`${classMUI}-rights-reserved__link`]}`} href={mapSiteHref}>
+        {mapSiteText}
       </a>
     </div>
   )

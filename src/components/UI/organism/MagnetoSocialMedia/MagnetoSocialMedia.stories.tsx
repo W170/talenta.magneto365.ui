@@ -4,7 +4,9 @@ import { MagnetoSocialMedia } from './'
 const meta: Meta<typeof MagnetoSocialMedia> = {
   title: 'Organism/Magneto Social Media',
   component: MagnetoSocialMedia,
-  args: {}
+  args: {
+    followText: 'Siguenos'
+  }
 }
 
 export default meta

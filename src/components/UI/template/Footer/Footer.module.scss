@@ -13,7 +13,7 @@
     gap: 20px;
     @media (min-width: v.$screen-lg) {
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: start;
     }
 
     &--column1 {
@@ -28,39 +28,11 @@
     }
     &--column2 {
       width: 100%;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      @media (min-width: v.$screen-lg) {
-        width: 70%;
+      @media (min-width: v.$screen-md) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: auto;
       }
-    }
-  }
-  &__row2 {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    @media (min-width: v.$screen-md) {
-      gap: 20px;
-      padding: 0;
-      align-items: center;
-      justify-content: flex-start;
-      flex-direction: row;
-    }
-    &--img {
-      width: 380px;
-      height: auto;
-    }
-    &--text {
-      font-size: 13px;
-      width: 100%;
-      @media (min-width: v.$screen-lg) {
-        width: 500px;
-      }
-      text-align: justify;
-      color: v.$colors-magneto-neutral;
     }
   }
 }
