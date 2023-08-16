@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { Avatar, LogoComponent, MainButton } from '../../atoms'
-import { Breadcrumbs, ListMenuIcons, MobileSearchbar, Searchbar, UserMenu } from '../../molecules'
+import { Breadcrumbs, HeaderTabs, ListMenuIcons, MobileSearchbar, Searchbar, UserMenu } from '../../molecules'
 
 import { ILoginJobsHeader } from './LoginJobsHeader.interface'
-import styles from './LoginJobsHeader.module.scss'
 import { useMediaQuery } from '../../../hooks'
 import { MobileDrawer } from '../../molecules/MobileDrawer/MobileDrawer.component'
 
@@ -16,6 +15,8 @@ import {
 } from '../../../../constants/stories.constants'
 import { BrandMenu } from '../BrandMenu'
 
+import styles from './LoginJobsHeader.module.scss'
+
 const Muiclass = 'magneto-ui'
 
 const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
@@ -27,8 +28,12 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
   profileImage,
   listMenuUserProps,
   brandMenuProps,
-  gif
+  gif,
+  jobsTabsProps,
+  processTabsProps,
+  curriculumTabProps
 }) => {
+  console.log('🚀', gif ? true : false)
   const { companySlug, companyLogo, companyUrl, brandsProps } = brandMenuProps
   const [showSearchBar, setShowSearchBar] = useState(false)
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
@@ -55,6 +60,17 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
       />
     )
   })
+
+  const loginHeaderOptionTabs = useMediaQuery(
+    <>
+      <HeaderTabs {...jobsTabsProps} />
+      <HeaderTabs {...processTabsProps} />
+      <HeaderTabs {...curriculumTabProps} />
+    </>,
+    {
+      lg: null
+    }
+  )
 
   const LoginHeaderMenuButton = useMediaQuery(<MainButton {...MenuButtonProps} onClick={onMenuClick} />)
 
@@ -106,14 +122,19 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
 
           {LogoutHeaderMobileSearchbarButton}
         </div>
-        <div className={styles[`${Muiclass}-login-jobs-header--second-row__middle-section`]}>
+        <div
+          style={{ width: gif ? '50%' : '30%' }}
+          className={styles[`${Muiclass}-login-jobs-header--second-row__middle-section`]}
+        >
           {LogoutHeaderSearchbar}
         </div>
-        <div className={styles[`${Muiclass}-login-jobs-header--second-row__right-section`]}>{loginHeaderPopover}</div>
+        <div className={styles[`${Muiclass}-login-jobs-header--second-row__right-section`]}>
+          {!gif && loginHeaderOptionTabs} {loginHeaderPopover}
+        </div>
       </div>
       <div className={styles[`${Muiclass}-login-jobs-header--third-row`]}>{LogoutHeaderBreadcrumbs}</div>
       <MobileDrawer isOpen={toggleMobileDrawer} onClose={() => setToggleMobileDrawer(false)}>
-        <ListMenuIcons {...listMenuUserProps} />
+        <ListMenuIcons haveGif={gif ? true : false} {...listMenuUserProps} />
       </MobileDrawer>
     </header>
   )

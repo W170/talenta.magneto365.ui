@@ -1,23 +1,19 @@
 import { IAvatar, IBreadcrumb } from '../../atoms'
-import { ILogout, IMenuItems, IMobileSearchbar, ISearchbar, ISettings } from '../../molecules'
+import { IHeaderTabs, IMobileSearchbar, ISearchbar } from '../../molecules'
 import { IBrandMenu } from '../BrandMenu/BrandMenu.interface'
+import { IlistMenuUserProps } from '../LoginHeader'
 
 export interface ILoginJobsHeader {
   profileImage: IAvatar
-  listMenuUserProps: IlistMenuUserPropsNot1440
+  listMenuUserProps: IlistMenuUserProps
   searchbar: ISearchbar
   mobileSearchbar: IMobileSearchbar
-
+  jobsTabsProps: IHeaderTabs
+  processTabsProps: IHeaderTabs
+  curriculumTabProps: IHeaderTabs
   onMenuClick?: () => void
   breadcrumbProps: IBreadcrumb
   homeUrl: string
   gif?: string | null
   brandMenuProps: IBrandMenu
-}
-
-export interface IlistMenuUserPropsNot1440 {
-  urlParam: string
-  menuItems: IMenuItems[]
-  logout: ILogout
-  settings: ISettings
 }

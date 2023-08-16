@@ -6,17 +6,23 @@ import {
   SearchbarProps,
   ListIcon,
   AvatarProps,
-  listMenuUserPropsNot1440
+  listMenuUserProps,
+  CurriculumTabProps,
+  ProcessTabsProps,
+  JobsTabsProps
 } from '../../../../constants/stories.constants'
 import { IListMenuItems, MenuItemInfo } from '../../molecules'
 import { brands, ourBrandsText, breadcrumbProps } from '../../../../constants/stories.constants'
 
 const LoginJobsHeaderProps = {
   profileImage: AvatarProps,
-  listMenuUserProps: listMenuUserPropsNot1440,
+  listMenuUserProps,
   searchbar: SearchbarProps,
   mobileSearchbar: MobileSearchbarProps,
   breadcrumbProps: breadcrumbProps,
+  jobsTabsProps: JobsTabsProps,
+  processTabsProps: ProcessTabsProps,
+  curriculumTabProps: CurriculumTabProps,
   companyUrl: '/empleos/company',
   homeUrl: '/home',
   companyLogo: 'https://www.magneto365.com/wp-content/uploads/2022/07/grupo-exito.png',

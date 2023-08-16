@@ -55,17 +55,14 @@
     &__middle-section {
       display: inherit;
       width: 50%;
-      @media (min-width: v.$screen-hd) {
-        width: 60%;
-      }
     }
 
     &__right-section {
-      display: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
       gap: 5px;
-      @media (min-width: v.$screen-xs) {
-        gap: 18px;
-      }
     }
   }
 

@@ -1,10 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react'
 import {
   AvatarProps,
+  CurriculumTabProps,
+  JobsTabsProps,
   MobileSearchbarProps,
+  ProcessTabsProps,
   SearchbarProps,
   breadcrumbProps,
-  listMenuUserPropsNot1440
+  listMenuUserProps
 } from '../../../../constants/stories.constants'
 import LoginJobsHeader from './LoginJobsHeader.component'
 import { ourBrandsText, brands } from '../../../../constants/stories.constants'
@@ -13,8 +16,11 @@ const meta: Meta<typeof LoginJobsHeader> = {
   title: 'Organism/Login Jobs Header',
   component: LoginJobsHeader,
   args: {
+    jobsTabsProps: JobsTabsProps,
+    processTabsProps: ProcessTabsProps,
+    curriculumTabProps: CurriculumTabProps,
     profileImage: AvatarProps,
-    listMenuUserProps: listMenuUserPropsNot1440,
+    listMenuUserProps,
     searchbar: SearchbarProps,
     mobileSearchbar: MobileSearchbarProps,
     breadcrumbProps: breadcrumbProps,
