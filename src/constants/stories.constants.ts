@@ -37,7 +37,7 @@ import {
 import { IlistMenuUserProps } from '../components/UI/organism/LoginHeader'
 import { ILoading } from '../components/UI/atoms/Loading'
 import { IMenuFilterItem } from '../components/UI/molecules/MenuFilter/MenuFilter.interface'
-import { IlistMenuUserPropsNot1440 } from '../components/UI/organism'
+import { IBrands } from '../components/UI/molecules/BrandsContainer/BrandsContainer.interface'
 
 /**
  *
@@ -552,13 +552,6 @@ export const listMenuUserProps: IlistMenuUserProps = {
   settings: Settings
 }
 
-export const listMenuUserPropsNot1440: IlistMenuUserPropsNot1440 = {
-  urlParam: 'guardados',
-  menuItems: MenuItems,
-  logout: Logout,
-  settings: Settings
-}
-
 //FilterBottomHeader props
 
 export const menuFilterButton = {
@@ -594,7 +587,7 @@ export const optionsMenuFilter: IMenuFilterItem[] = [
 
 export const ourBrandsText = 'Nuestras Marcas'
 
-export const brands = [
+export const brands: IBrands[] = [
   {
     brandImg: 'https://tiendasaka.co/img/m/25.jpg',
     brandAlt: 'tannino',
@@ -618,57 +611,6 @@ export const brands = [
     brandImg: 'https://tiendasaka.co/img/m/25.jpg',
     brandAlt: 'tannino',
     brandTitle: 'Tannino',
-    brandUrl: '#'
-  },
-  {
-    brandImg: 'https://tiendasaka.co/img/m/24.jpg',
-    brandAlt: 'Nappa',
-    brandTitle: 'Nappa',
-    brandUrl: '#'
-  },
-  {
-    brandImg:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/LOGO_MARCA_V%C3%89LEZ.png/1200px-LOGO_MARCA_V%C3%89LEZ.png',
-    brandAlt: 'Cueros Velez',
-    brandTitle: 'Cueros Velez',
-    brandUrl: '#'
-  },
-  {
-    brandImg: 'https://tiendasaka.co/img/m/25.jpg',
-    brandAlt: 'tannino',
-    brandTitle: 'Tannino',
-    brandUrl: '#'
-  },
-  {
-    brandImg: 'https://tiendasaka.co/img/m/24.jpg',
-    brandAlt: 'Nappa',
-    brandTitle: 'Nappa',
-    brandUrl: '#'
-  },
-  {
-    brandImg:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/LOGO_MARCA_V%C3%89LEZ.png/1200px-LOGO_MARCA_V%C3%89LEZ.png',
-    brandAlt: 'Cueros Velez',
-    brandTitle: 'Cueros Velez',
-    brandUrl: '#'
-  },
-  {
-    brandImg: 'https://tiendasaka.co/img/m/25.jpg',
-    brandAlt: 'tannino',
-    brandTitle: 'Tannino',
-    brandUrl: '#'
-  },
-  {
-    brandImg: 'https://tiendasaka.co/img/m/24.jpg',
-    brandAlt: 'Nappa',
-    brandTitle: 'Nappa',
-    brandUrl: '#'
-  },
-  {
-    brandImg:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/LOGO_MARCA_V%C3%89LEZ.png/1200px-LOGO_MARCA_V%C3%89LEZ.png',
-    brandAlt: 'Cueros Velez',
-    brandTitle: 'Cueros Velez',
     brandUrl: '#'
   }
 ]
