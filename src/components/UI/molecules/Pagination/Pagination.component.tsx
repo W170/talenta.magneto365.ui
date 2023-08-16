@@ -1,5 +1,5 @@
 import React, { FC, useCallback } from 'react'
-import { ArrowLeftAW, ArrowRightAw, Ellipsis } from '@constants/icons.constants'
+import { ArrowLeft2, ArrowRight2, Ellipsis } from '@constants/icons.constants'
 import { IconItem } from '@components/UI/atoms'
 import { BtnPagination } from './children'
 import { createPagination } from './utils'
@@ -34,7 +34,7 @@ export const Pagination: FC<IPaginationProps> = ({
   return (
     <div className={styles['magneto-ui-pagination']}>
       {first !== current && (
-        <BtnPagination loading={loading} text={prevTitle} icon={ArrowLeftAW} onClick={() => handleClick(current - 1)} />
+        <BtnPagination loading={loading} text={prevTitle} icon={ArrowLeft2} onClick={() => handleClick(current - 1)} />
       )}
       <ul>
         {!buttons.includes(first) && (
@@ -56,12 +56,7 @@ export const Pagination: FC<IPaginationProps> = ({
         )}
       </ul>
       {last !== current && (
-        <BtnPagination
-          loading={loading}
-          text={nextTitle}
-          icon={ArrowRightAw}
-          onClick={() => handleClick(current + 1)}
-        />
+        <BtnPagination loading={loading} text={nextTitle} icon={ArrowRight2} onClick={() => handleClick(current + 1)} />
       )}
     </div>
   )

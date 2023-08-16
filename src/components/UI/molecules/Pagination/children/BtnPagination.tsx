@@ -11,7 +11,7 @@ export const BtnPagination: FC<IBtnPaginationProps> = ({ loading, value, current
     return value
   }, [loading, current, value])
 
-  const displayLogo = useMemo(() => (icon ? <IconItem icon={icon} /> : <Fragment />), [icon])
+  const displayIcon = useMemo(() => (icon ? <IconItem icon={icon} /> : <Fragment />), [icon])
 
   const title = useMemo(() => (text ? text : `${value}`), [text, value])
 
@@ -28,7 +28,7 @@ export const BtnPagination: FC<IBtnPaginationProps> = ({ loading, value, current
       onClick={onClick}
     >
       {displayContent}
-      {displayLogo}
+      {displayIcon}
     </button>
   )
 }
