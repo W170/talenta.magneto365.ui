@@ -29,11 +29,13 @@ const Component: React.FC<IJobDetailsDrawer> = ({
         <JobCompanyHeader {...jobCompanyLogoProps} />
         <JobActions actionsButtonIcons={buttonIconsList} actionsAnchorIcons={anchorIconList} {...jobActionsProps} />
       </div>
-      <JobDetails iconList={iconDetailList} detailsTextList={jobDetailsProps} />
-      <JobDetailCard {...jobDetailCardProps} />
-      <JobSkillsCard {...jobSkillsCardProps} />
-      <JobApplyCard {...jobApplyCardProps} />
-      <JobFooterCard {...jobFooterCardProps} />
+      <div className={styles['JobBodyCardWrapper']}>
+        <JobDetails iconList={iconDetailList} detailsTextList={jobDetailsProps} />
+        <JobDetailCard {...jobDetailCardProps} />
+        <JobSkillsCard {...jobSkillsCardProps} />
+        <JobApplyCard {...jobApplyCardProps} />
+        <JobFooterCard {...jobFooterCardProps} />
+      </div>
     </section>
   )
 }

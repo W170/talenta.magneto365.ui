@@ -1,7 +1,6 @@
 .magneto-ui-jobs-page {
   display: flex;
   justify-content: center;
-  width: 100vw;
 
   &--filter-row {
     width: 320px;
@@ -18,9 +17,5 @@
       justify-content: center;
       gap: 2px;
     }
-  }
-
-  &__jobs-detail {
-    width: calc(100% - 320px);
   }
 }
