@@ -1,51 +1,15 @@
 import React from 'react'
 import { classMUI } from '@constants/stories.constants'
 import style from './ListMenuText.module.scss'
+import { IListMenuText } from './ListMenuText.interface'
 
-const listMenuText = {
-  title: 'Personas',
-  list: [
-    {
-      text: 'Conoce Magneto',
-      href: '#'
-    },
-    {
-      text: 'Ver todos los empleos',
-      href: '#'
-    },
-    {
-      text: 'Crear cuenta',
-      href: '#'
-    },
-    {
-      text: 'Articulos de interes',
-      href: '#'
-    },
-    {
-      text: 'Preguntas frecuentes',
-      href: '#'
-    },
-    {
-      text: 'Empleos por ciudad',
-      href: '#'
-    },
-    {
-      text: 'Empleos por sector',
-      href: '#'
-    },
-    {
-      text: 'Empleos por empresas',
-      href: '#'
-    }
-  ]
-}
-const ListMenuText = () => {
+const ListMenuText: React.FC<IListMenuText> = ({ title, links }) => {
   return (
     <div className={`${style[`${classMUI}-list-menu`]}`}>
-      <p className={`${style[`${classMUI}-list-menu__title`]}`}>{listMenuText.title}</p>
-      {listMenuText.list.map(({ href, text }, i) => (
-        <a className={`${style[`${classMUI}-list-menu__link`]}`} key={i} href={href}>
-          {text}
+      <p className={`${style[`${classMUI}-list-menu__title`]}`}>{title}</p>
+      {links.map(({ tag, routePath }, i) => (
+        <a className={`${style[`${classMUI}-list-menu__link`]}`} key={i} href={routePath}>
+          {tag}
         </a>
       ))}
     </div>

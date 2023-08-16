@@ -86,12 +86,12 @@ const jobDetailsDrawer = {
     jobFooterCompanyImg: CompanyLogo,
     jobFooterHeader: 'Compartir vacante en:',
     jobFooterLinks: [
-      { Icon: FacebookBlue, url: '' },
-      { Icon: WhatsAppColor, url: '' },
-      { Icon: LinkedInBlue, url: '' },
-      { Icon: TwitterBlue, url: '' },
-      { Icon: SMSBlue, url: '' },
-      { Icon: ShareBlue, url: '' }
+      { icon: FacebookBlue, url: '' },
+      { icon: WhatsAppColor, url: '' },
+      { icon: LinkedInBlue, url: '' },
+      { icon: TwitterBlue, url: '' },
+      { icon: SMSBlue, url: '' },
+      { icon: ShareBlue, url: '' }
     ]
   }
 }
@@ -158,12 +158,12 @@ const mobileJobDetailsDrawer = {
     jobFooterCompanyImg: CompanyLogo,
     jobFooterHeader: 'Compartir vacante en:',
     jobFooterLinks: [
-      { Icon: FacebookBlue, url: '' },
-      { Icon: WhatsAppColor, url: '' },
-      { Icon: LinkedInBlue, url: '' },
-      { Icon: TwitterBlue, url: '' },
-      { Icon: SMSBlue, url: '' },
-      { Icon: ShareBlue, url: '' }
+      { icon: FacebookBlue, url: '' },
+      { icon: WhatsAppColor, url: '' },
+      { icon: LinkedInBlue, url: '' },
+      { icon: TwitterBlue, url: '' },
+      { icon: SMSBlue, url: '' },
+      { icon: ShareBlue, url: '' }
     ]
   },
   mobileJobDetailsBarProps: {
