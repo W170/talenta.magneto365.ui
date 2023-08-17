@@ -34,10 +34,10 @@ import {
   IMobileSearchbar,
   ISearchbar
 } from '../components/UI/molecules'
-import { IlistMenuUserProps } from '../components/UI/organism/LoginHeader'
 import { ILoading } from '../components/UI/atoms/Loading'
 import { IMenuFilterItem } from '../components/UI/molecules/MenuFilter/MenuFilter.interface'
 import { IBrands } from '../components/UI/molecules/BrandsContainer/BrandsContainer.interface'
+import { IListMenuIcons } from '../components/UI/molecules/ListMenuIcons/ListMenuIcons.interface'
 
 /**
  *
@@ -544,7 +544,7 @@ export const MenuItems: IMenuItems[] = [
   }
 ]
 
-export const listMenuUserProps: IlistMenuUserProps = {
+export const listMenuUserProps: IListMenuIcons = {
   urlParam: 'guardados',
   menuItems: MenuItems,
   menuItems1440,

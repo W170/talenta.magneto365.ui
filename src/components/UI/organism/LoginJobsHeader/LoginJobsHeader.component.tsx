@@ -134,7 +134,7 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
       </div>
       <div className={styles[`${Muiclass}-login-jobs-header--third-row`]}>{LogoutHeaderBreadcrumbs}</div>
       <MobileDrawer isOpen={toggleMobileDrawer} onClose={() => setToggleMobileDrawer(false)}>
-        <ListMenuIcons haveGif={gif ? true : false} {...listMenuUserProps} />
+        <ListMenuIcons {...listMenuUserProps} />
       </MobileDrawer>
     </header>
   )

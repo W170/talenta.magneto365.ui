@@ -1,11 +1,10 @@
 import { IAvatar, IBreadcrumb } from '../../atoms'
-import { IHeaderTabs, IMobileSearchbar, ISearchbar } from '../../molecules'
+import { IHeaderTabs, IListMenuIcons, IMobileSearchbar, ISearchbar } from '../../molecules'
 import { IBrandMenu } from '../BrandMenu/BrandMenu.interface'
-import { IlistMenuUserProps } from '../LoginHeader'
 
 export interface ILoginJobsHeader {
   profileImage: IAvatar
-  listMenuUserProps: IlistMenuUserProps
+  listMenuUserProps: IListMenuIcons
   searchbar: ISearchbar
   mobileSearchbar: IMobileSearchbar
   jobsTabsProps: IHeaderTabs

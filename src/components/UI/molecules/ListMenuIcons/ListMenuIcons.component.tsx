@@ -1,4 +1,4 @@
-import React, { Fragment, useMemo } from 'react'
+import React, { Fragment } from 'react'
 import { Divider } from '../../atoms'
 import { MenuIcon } from '../MenuIcon'
 
@@ -11,16 +11,12 @@ const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, menuItems144
   const { logoutText, onClick } = logout
   const { settingsText, onClick: onClickSettings } = settings
 
-  const show1440Menu = useMemo(() => {
-    return menuItems1440 && !haveGif
-  }, [menuItems1440, haveGif])
-
-  const menuResponsive = useMediaQuery(show1440Menu ? menuItems1440 : menuItems, { lg: menuItems })
+  const userMenu = useMediaQuery(menuItems1440 && !haveGif ? menuItems1440 : menuItems, { lg: menuItems })
 
   return (
     <div className={style['mangeto-ui-list-menu-icons']}>
       <div>
-        {menuResponsive?.map(({ title = '', items }, i: number) => (
+        {userMenu?.map(({ title = '', items }, i: number) => (
           <div key={i}>
             <p>{title ? title : null}</p>
             {items.map(({ slug, Icon, ...props }, i: number) => (
