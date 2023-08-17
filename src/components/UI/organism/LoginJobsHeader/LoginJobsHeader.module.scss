@@ -54,23 +54,36 @@
 
     &__middle-section {
       display: inherit;
-      width: 50%;
+      width: 60%;
+      @media (min-width: v.$screen-xl) {
+        width: 24%;
+      }
       @media (min-width: v.$screen-hd) {
-        width: 60%;
+        width: 30%;
+      }
+      @media (min-width: v.$screen-xxl) {
+        width: 40%;
       }
     }
 
     &__right-section {
-      display: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
       gap: 5px;
-      @media (min-width: v.$screen-xs) {
-        gap: 18px;
-      }
     }
   }
 
   &--third-row {
     display: inherit;
     flex-direction: row;
+  }
+}
+
+.have-gif {
+  width: 50%;
+  @media (min-width: v.$screen-hd) {
+    width: 60%;
   }
 }

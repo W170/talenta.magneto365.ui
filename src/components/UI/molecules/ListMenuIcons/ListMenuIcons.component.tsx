@@ -7,16 +7,16 @@ import { useMediaQuery } from '../../../hooks'
 import style from './listMenuIcons.module.scss'
 import { LoginCurve, Setting2 } from '../../../../constants/icons.constants'
 
-const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, menuItems1440, logout, settings }) => {
+const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, menuItems1440, logout, settings, haveGif }) => {
   const { logoutText, onClick } = logout
   const { settingsText, onClick: onClickSettings } = settings
 
-  const menuResponsive = useMediaQuery(menuItems1440 ? menuItems1440 : menuItems, { lg: menuItems })
+  const userMenu = useMediaQuery(menuItems1440 && !haveGif ? menuItems1440 : menuItems, { lg: menuItems })
 
   return (
     <div className={style['mangeto-ui-list-menu-icons']}>
       <div>
-        {menuResponsive?.map(({ title = '', items }, i: number) => (
+        {userMenu?.map(({ title = '', items }, i: number) => (
           <div key={i}>
             <p>{title ? title : null}</p>
             {items.map(({ slug, Icon, ...props }, i: number) => (

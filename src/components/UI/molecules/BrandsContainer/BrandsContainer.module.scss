@@ -1,9 +1,6 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 
 .magneto-ui-brands {
-  @media (min-width: v.$screen-lg) {
-    // padding: 15px;
-  }
   &__header {
     &--row {
       display: flex;
@@ -15,6 +12,7 @@
         color: #14141c;
         right: 6px;
         font-weight: bold;
+        margin: 15px 0;
       }
       button {
         right: 0;
@@ -40,6 +38,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 5px;
+      min-width: 200px;
       max-width: 100vw;
       padding: 0 15px;
 
