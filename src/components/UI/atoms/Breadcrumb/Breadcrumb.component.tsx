@@ -9,10 +9,10 @@ const Component: React.FC<IBreadcrumb> = ({
   queryParams,
   haveRedirect = true
 }) => {
-  const [urls, setUrls] = useState<string[]>([])
   const breadcrumbs = breadcrumbCustomText ? breadcrumbCustomText : breadcrumbText
   const breadcrumbSplitText = breadcrumbs.split('/')
   const lastIndexBC = breadcrumbSplitText.length - 1
+  const [urls, setUrls] = useState<string[]>([])
 
   useEffect(() => {
     const url = new URL(breadcrumbText, baseUrl)
@@ -21,7 +21,10 @@ const Component: React.FC<IBreadcrumb> = ({
     const newUrls = []
 
     for (let i = 0; i < pathArray.length; i++) {
-      const urlPath = pathArray.slice(0, i + 1).join('/')
+      const urlPath = pathArray
+        .slice(0, i + 1)
+        .join('/')
+        .replace(/%20|\s+/g, '-')
       const newUrl = new URL(urlPath, baseUrl)
       newUrls.push(newUrl.href)
     }
@@ -29,7 +32,7 @@ const Component: React.FC<IBreadcrumb> = ({
     setUrls(newUrls)
   }, [breadcrumbText, baseUrl])
 
-  const isDinamyc = useMemo(() => {
+  const breadCrumbsRender = useMemo(() => {
     return haveRedirect ? (
       <>
         {urls.map(
@@ -53,7 +56,7 @@ const Component: React.FC<IBreadcrumb> = ({
     )
   }, [breadcrumbSplitText, haveRedirect, lastIndexBC, urls, queryParams])
 
-  return <div className={styles.breadcrumbComponent}>{isDinamyc}</div>
+  return <div className={styles.breadcrumbComponent}>{breadCrumbsRender}</div>
 }
 
 /**
