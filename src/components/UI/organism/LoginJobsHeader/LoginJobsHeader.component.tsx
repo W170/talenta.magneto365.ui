@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { Avatar, LogoComponent, MainButton } from '../../atoms'
 import { Breadcrumbs, HeaderTabs, ListMenuIcons, MobileSearchbar, Searchbar, UserMenu } from '../../molecules'
 
@@ -33,10 +33,13 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
   processTabsProps,
   curriculumTabProps
 }) => {
-  console.log('🚀', gif ? true : false)
   const { companySlug, companyLogo, companyUrl, brandsProps } = brandMenuProps
   const [showSearchBar, setShowSearchBar] = useState(false)
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
+
+  const haveGif = useMemo(() => {
+    return gif ? styles['have-gif'] : ''
+  }, [gif])
 
   const toggleSearchBar = () => {
     setShowSearchBar(!showSearchBar)
@@ -122,10 +125,7 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
 
           {LogoutHeaderMobileSearchbarButton}
         </div>
-        <div
-          style={{ width: gif ? '50%' : '30%' }}
-          className={styles[`${Muiclass}-login-jobs-header--second-row__middle-section`]}
-        >
+        <div className={`${styles[`${Muiclass}-login-jobs-header--second-row__middle-section`]} ${haveGif}`}>
           {LogoutHeaderSearchbar}
         </div>
         <div className={styles[`${Muiclass}-login-jobs-header--second-row__right-section`]}>

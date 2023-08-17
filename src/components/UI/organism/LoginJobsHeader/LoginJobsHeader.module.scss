@@ -54,7 +54,16 @@
 
     &__middle-section {
       display: inherit;
-      width: 50%;
+      width: 60%;
+      @media (min-width: v.$screen-xl) {
+        width: 24%;
+      }
+      @media (min-width: v.$screen-hd) {
+        width: 30%;
+      }
+      @media (min-width: v.$screen-xxl) {
+        width: 40%;
+      }
     }
 
     &__right-section {
@@ -69,5 +78,12 @@
   &--third-row {
     display: inherit;
     flex-direction: row;
+  }
+}
+
+.have-gif {
+  width: 50%;
+  @media (min-width: v.$screen-hd) {
+    width: 60%;
   }
 }
