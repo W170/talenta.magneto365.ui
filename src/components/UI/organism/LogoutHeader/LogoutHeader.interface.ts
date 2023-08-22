@@ -1,4 +1,4 @@
-import { ILinkProps, IMainButton } from '../../atoms'
+import { IBreadcrumb, ILinkProps, IMainButton } from '../../atoms'
 import { IMobileSearchbar, ISearchbar } from '../../molecules'
 
 export interface ILogoutHeader {
@@ -8,7 +8,7 @@ export interface ILogoutHeader {
   mobileSearchbar: IMobileSearchbar
   signInLink: ILinkProps
   signUpButton: IMainButton
-  breadcrumbsText: string
   onMenuClick?: () => void
+  breadcrumbProps: IBreadcrumb
   homeUrl: string
 }

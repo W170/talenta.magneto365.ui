@@ -33,7 +33,7 @@ import {
   Buildings2
 } from './icons.constants'
 
-import { IAvatar, ILogoComponent, IMainButton, IconProps } from '../components/UI/atoms'
+import { IAvatar, IBreadcrumb, ILogoComponent, IMainButton, IconProps } from '../components/UI/atoms'
 import {
   IHeaderTabs,
   IListIcon,
@@ -43,12 +43,12 @@ import {
   IMobileSearchbar,
   ISearchbar
 } from '../components/UI/molecules'
-import { IlistMenuUserProps } from '../components/UI/organism/LoginHeader'
 import { ILoading } from '../components/UI/atoms/Loading'
 import { IMenuFilterItem } from '../components/UI/molecules/MenuFilter/MenuFilter.interface'
 import { IFilterValue } from '@components/UI/template/SideFilter'
 import { IJobCard } from '@components/UI/molecules/JobCard/JobCard.interface'
-import { IlistMenuUserPropsNot1440 } from '@components/UI/organism'
+import { IBrands } from '../components/UI/molecules/BrandsContainer/BrandsContainer.interface'
+import { IListMenuIcons } from '../components/UI/molecules/ListMenuIcons/ListMenuIcons.interface'
 
 /**
  *
@@ -264,9 +264,6 @@ export const LoginButton: IMainButton = {
  *
  *
  */
-
-//Breadcrumbs Molecule
-export const breadcrumbText = '/perfil/empleos/sugeridos'
 
 //Searchbar Molecule
 export const SearchbarProps: ISearchbar = {
@@ -586,17 +583,10 @@ export const MenuItems: IMenuItems[] = [
   }
 ]
 
-export const listMenuUserProps: IlistMenuUserProps = {
+export const listMenuUserProps: IListMenuIcons = {
   urlParam: 'guardados',
   menuItems: MenuItems,
   menuItems1440,
-  logout: Logout,
-  settings: Settings
-}
-
-export const listMenuUserPropsNot1440: IlistMenuUserPropsNot1440 = {
-  urlParam: 'guardados',
-  menuItems: MenuItems,
   logout: Logout,
   settings: Settings
 }
@@ -750,7 +740,7 @@ export const optionsFilterMenu: IFilterValue[] = [
 
 export const ourBrandsText = 'Nuestras Marcas'
 
-export const brands = [
+export const brands: IBrands[] = [
   {
     brandImg: 'https://tiendasaka.co/img/m/25.jpg',
     brandAlt: 'tannino',
@@ -774,57 +764,14 @@ export const brands = [
     brandImg: 'https://tiendasaka.co/img/m/25.jpg',
     brandAlt: 'tannino',
     brandTitle: 'Tannino',
-    brandUrl: '#'
-  },
-  {
-    brandImg: 'https://tiendasaka.co/img/m/24.jpg',
-    brandAlt: 'Nappa',
-    brandTitle: 'Nappa',
-    brandUrl: '#'
-  },
-  {
-    brandImg:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/LOGO_MARCA_V%C3%89LEZ.png/1200px-LOGO_MARCA_V%C3%89LEZ.png',
-    brandAlt: 'Cueros Velez',
-    brandTitle: 'Cueros Velez',
-    brandUrl: '#'
-  },
-  {
-    brandImg: 'https://tiendasaka.co/img/m/25.jpg',
-    brandAlt: 'tannino',
-    brandTitle: 'Tannino',
-    brandUrl: '#'
-  },
-  {
-    brandImg: 'https://tiendasaka.co/img/m/24.jpg',
-    brandAlt: 'Nappa',
-    brandTitle: 'Nappa',
-    brandUrl: '#'
-  },
-  {
-    brandImg:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/LOGO_MARCA_V%C3%89LEZ.png/1200px-LOGO_MARCA_V%C3%89LEZ.png',
-    brandAlt: 'Cueros Velez',
-    brandTitle: 'Cueros Velez',
-    brandUrl: '#'
-  },
-  {
-    brandImg: 'https://tiendasaka.co/img/m/25.jpg',
-    brandAlt: 'tannino',
-    brandTitle: 'Tannino',
-    brandUrl: '#'
-  },
-  {
-    brandImg: 'https://tiendasaka.co/img/m/24.jpg',
-    brandAlt: 'Nappa',
-    brandTitle: 'Nappa',
-    brandUrl: '#'
-  },
-  {
-    brandImg:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/LOGO_MARCA_V%C3%89LEZ.png/1200px-LOGO_MARCA_V%C3%89LEZ.png',
-    brandAlt: 'Cueros Velez',
-    brandTitle: 'Cueros Velez',
     brandUrl: '#'
   }
 ]
+
+export const breadcrumbProps: IBreadcrumb = {
+  breadcrumbText: '/empleos/busqueda/sugeridos',
+  baseUrl: 'http://localhost:8080',
+  breadcrumbCustomText: '/profile/search/suggested',
+  queryParams: '?utm=google&utm_source=facebook&utm_medium=cueros',
+  haveRedirect: true
+}

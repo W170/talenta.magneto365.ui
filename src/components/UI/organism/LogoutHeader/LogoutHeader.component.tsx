@@ -28,7 +28,7 @@ const Component: React.FC<ILogoutHeader> = ({
   mobileSearchbar,
   signInLink,
   signUpButton,
-  breadcrumbsText,
+  breadcrumbProps,
   onMenuClick,
   homeUrl
 }) => {
@@ -115,7 +115,7 @@ const Component: React.FC<ILogoutHeader> = ({
   )
 
   // Breadcrumbs Component
-  const LogoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbText={breadcrumbsText} />, {
+  const LogoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbProps={breadcrumbProps} homeUrl={homeUrl} />, {
     md: null
   })
 

@@ -34,4 +34,8 @@ export interface IMenuFilter {
    * This function change clickout value between true and false
    */
   setClickOut?: React.Dispatch<React.SetStateAction<boolean>>
+  /**
+   * With this property you can disabled the button
+   */
+  loading: boolean
 }

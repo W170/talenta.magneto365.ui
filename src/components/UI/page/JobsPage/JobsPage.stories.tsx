@@ -226,7 +226,9 @@ const meta: Meta<typeof JobsPage> = {
       filterItems: optionsFilterOrderBy,
       textOrderFilter: 'Fecha de publicación',
       setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
-      orderByText: 'Organizar por'
+      orderByText: 'Organizar por',
+      isOpen: false,
+      loading: false
     },
     vacantProps: vacants,
     jobDetailsDrawerProps: jobDetailsDrawer,

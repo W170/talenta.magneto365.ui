@@ -9,4 +9,12 @@ export interface IListMenuFilter {
    * This function change the filter with the selected option
    */
   setFilter: (menuItem: { key: string }) => void
+  /**
+   * This is the current text
+   */
+  textOrderFilter: string
+  /**
+   * This function can close the popover
+   */
+  setShowPopover: React.Dispatch<React.SetStateAction<boolean>>
 }

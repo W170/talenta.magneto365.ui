@@ -6,6 +6,7 @@ export interface IListMenuIcons {
   menuItems1440?: IMenuItems[]
   logout: ILogout
   settings: ISettings
+  haveGif?: boolean
 }
 
 export interface IMenuItems {

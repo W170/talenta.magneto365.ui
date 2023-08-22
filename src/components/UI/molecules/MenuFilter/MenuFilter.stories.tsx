@@ -8,7 +8,8 @@ const meta: Meta<typeof MenuFilter> = {
   args: {
     filterItems: optionsFilterOrderBy,
     textOrderFilter: 'Fecha de publicación',
-    setFilter: (menuItem: { key: string }) => console.log(menuItem.key)
+    setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
+    loading: false
   }
 }
 
