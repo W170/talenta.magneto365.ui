@@ -13,7 +13,7 @@ const FilterBottomHeader: React.FC<IFilterBottomHeader> = ({
   textButtonFilter,
   filterSummary,
   textOrderFilter,
-  openFilterDrawer,
+  setFilterIsOpen,
   orderFilter,
   filterItems,
   setFilter,
@@ -44,7 +44,7 @@ const FilterBottomHeader: React.FC<IFilterBottomHeader> = ({
               type="button"
               text={textButtonFilter}
               icon={Setting4}
-              onClick={openFilterDrawer}
+              onClick={setFilterIsOpen}
               size={17}
               isActive={true}
             />

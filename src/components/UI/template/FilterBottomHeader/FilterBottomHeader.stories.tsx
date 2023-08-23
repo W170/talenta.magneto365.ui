@@ -10,14 +10,14 @@ const meta: Meta<typeof FilterBottomHeader> = {
   args: {
     textButtonFilter: 'FILTROS',
     filterSummary: '280 empleos',
-    openFilterDrawer: () => console.log('openFilterDrawer'),
-    orderFilter: () => console.log('orderFilter'),
     filterItems: optionsFilterOrderBy,
     textOrderFilter: 'Fecha de publicación',
-    setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
     orderByText: 'Organizar por',
     isOpen: false,
-    loading: false
+    loading: false,
+    setFilterIsOpen: () => console.log('setFilterIsOpen'),
+    orderFilter: () => console.log('orderFilter'),
+    setFilter: (menuItem: { key: string }) => console.log(menuItem.key)
   },
   decorators: [
     (Story) => (
