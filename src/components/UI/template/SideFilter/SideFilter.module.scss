@@ -1,6 +1,71 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../shared/stylesheets/mixins.scss' as m;
+
 .magneto-iu-side-filter {
+  background-color: v.$color-white;
+  @media (max-width: v.$screen-md) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 5px 20px 100px 20px;
+    margin-left: -110vw;
+    transition: all 0.3s ease-in-out;
+    overflow-y: scroll;
+    @include m.scroll-filter;
+    z-index: 60;
+    position: fixed;
+  }
+}
+
+.open {
+  @media (max-width: v.$screen-md) {
+    margin-left: unset;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.magneto-ui-side-filter_btn__close {
+  display: none;
+  @media (max-width: v.$screen-md) {
+    display: flex;
+    background-color: v.$disabled-color-gray;
+    width: 26px;
+    height: 45px;
+    top: 20px;
+    right: 0;
+    padding: unset;
+    border-radius: 10px 0 0 10px;
+    position: fixed;
+  }
+}
+
+.magneto-ui-side-filter_btn__main {
+  display: none;
+  @media (max-width: v.$screen-md) {
+    display: unset;
+    background-color: v.$color-green;
+    height: 42px;
+    width: 90%;
+    bottom: 30px;
+    position: fixed;
+  }
+}
+
+.magneto-iu-side-filter_content {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 15px 5px 15px 15px;
+  padding: 15px 15px 15px 15px;
+  @media (max-width: v.$screen-md) {
+    width: 100%;
+  }
+}
+
+.close {
+  display: none;
 }
