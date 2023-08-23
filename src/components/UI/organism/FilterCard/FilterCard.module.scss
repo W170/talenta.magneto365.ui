@@ -15,6 +15,13 @@
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
+
+  @media (max-width: v.$screen-md) {
+    align-items: start;
+    width: inherit;
+    max-width: 100%;
+    padding: 10px 20px;
+  }
 }
 
 .magneto-ui-filter-card_header {
@@ -22,6 +29,11 @@
   width: 230px;
   max-width: 230px;
   padding-left: 4px;
+
+  @media (max-width: v.$screen-md) {
+    width: inherit;
+    max-width: 100%;
+  }
 
   & > p {
     font-size: 0.875rem;
@@ -43,6 +55,12 @@
   margin-top: 1rem;
   overflow-y: scroll;
   @include m.scroll-filter;
+
+  @media (max-width: v.$screen-md) {
+    align-items: start;
+    width: inherit;
+    max-width: 100%;
+  }
 }
 
 .hasSearch {
