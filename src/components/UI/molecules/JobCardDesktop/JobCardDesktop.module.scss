@@ -25,10 +25,14 @@
   }
 
   &--data {
-    display: grid;
-    padding-right: 30px;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(1, 1fr);
+
+    @container (min-width: 600px) {
+      display: grid;
+      padding-right: 30px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
   }
 
   p {
@@ -85,6 +89,7 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      margin: 0;
     }
 
     &__info2 {
