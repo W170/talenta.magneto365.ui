@@ -6,6 +6,7 @@ import { FilterCardOnSearch } from '@components/UI/organism/FilterCardOnSearch'
 import { MainButton } from '@components/UI/atoms'
 import { IFilter, ISideFilter } from './SideFilter.interface'
 import styles from './SideFilter.module.scss'
+import { screenSize } from '@constants/responsive.constants'
 
 //TODO: will define where put those enum, function and factory component
 export enum ERenderType {
@@ -54,11 +55,11 @@ const SideFilter: FC<ISideFilter> = ({
     return (
       <MainButton
         iconProps={{ icon: ArrowLeft2, size: 20 }}
-        className={`${styles['magneto-ui-side-filter_btn__close']} ${!isOpen && styles.close}`}
+        className={styles['magneto-ui-side-filter_btn__close']}
         onClick={() => setFilterIsOpen((isOpen) => !isOpen)}
       />
     )
-  }, [isOpen, setFilterIsOpen])
+  }, [setFilterIsOpen])
 
   const displayBtnMain = useMemo(() => {
     if (!totalAppliedFilters) return <Fragment />
@@ -70,6 +71,13 @@ const SideFilter: FC<ISideFilter> = ({
       />
     )
   }, [totalAppliedFilters, setFilterIsOpen])
+
+  const displayBackground = useMemo(() => {
+    if (isOpen && window.innerWidth <= screenSize.md) {
+      return <span className={styles['magneto-iu-side-filter_background']} onClick={() => setFilterIsOpen(false)} />
+    }
+    return <Fragment />
+  }, [isOpen, setFilterIsOpen])
 
   const cardProps = useMemo(() => {
     return {
@@ -92,16 +100,19 @@ const SideFilter: FC<ISideFilter> = ({
   }, [title, buttonText, filterSummary, totalAppliedFilters, clearFilters])
 
   return (
-    <aside className={`${styles['magneto-iu-side-filter']} ${isOpen && styles.open}`}>
-      {displayBtnClose}
-      <div className={styles['magneto-iu-side-filter_content']}>
-        <FilterHeader {...headerProps} />
-        {filters.map((item, i) => {
-          return <CardByRenderType key={`${i}-${item.field}`} {...(item as unknown as IFilter)} {...cardProps} />
-        })}
-      </div>
-      {displayBtnMain}
-    </aside>
+    <Fragment>
+      <aside className={`${styles['magneto-iu-side-filter']} ${isOpen && styles.open}`}>
+        {displayBtnClose}
+        <div className={styles['magneto-iu-side-filter_content']}>
+          <FilterHeader {...headerProps} />
+          {filters.map((item, i) => {
+            return <CardByRenderType key={`${i}-${item.field}`} {...(item as unknown as IFilter)} {...cardProps} />
+          })}
+        </div>
+        {displayBtnMain}
+      </aside>
+      {displayBackground}
+    </Fragment>
   )
 }
 
