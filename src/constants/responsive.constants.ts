@@ -10,3 +10,5 @@ export const screenSize: Record<DimType, number> = {
   hd: 1366,
   xxl: 1600
 }
+
+export const isLessMD = window?.innerWidth <= screenSize.md

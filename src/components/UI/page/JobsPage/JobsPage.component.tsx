@@ -9,6 +9,7 @@ import { IJobsPage } from './JobsPage.interface'
 import style from './JobsPage.module.scss'
 
 import { classMUI } from '../../../../constants/stories.constants'
+import { isLessMD } from '@constants/responsive.constants'
 
 const JobsPage: React.FC<IJobsPage> = ({
   jobDetailsDrawerProps,
@@ -19,6 +20,7 @@ const JobsPage: React.FC<IJobsPage> = ({
 }) => {
   const [showDetail, setShowDetail] = useState(false)
   const [showDrawer, setShowDrawer] = useState(false)
+  const [isFiltersOpen, setIsFiltersOpen] = useState(isLessMD)
 
   const JobDetailsDrawerComponent = useMediaQuery(
     <JobDetailContainer onClose={() => setShowDetail(false)} isOpen={showDetail}>
@@ -43,12 +45,16 @@ const JobsPage: React.FC<IJobsPage> = ({
     <div className={style[`${classMUI}-jobs-page`]}>
       <div className={style[`${classMUI}-jobs-page--filter-row`]}>
         <FilterContainerMenu>
-          <SideFilter {...sideFilterProps} />
+          <SideFilter {...sideFilterProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
         </FilterContainerMenu>
       </div>
 
       <div className={style[`${classMUI}-jobs-page--center-row`]}>
-        <FilterBottomHeader {...filterBottomHeaderProps} />
+        <FilterBottomHeader
+          {...filterBottomHeaderProps}
+          isFiltersOpen={isFiltersOpen}
+          setIsFiltersOpen={setIsFiltersOpen}
+        />
         <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>
           {vacantProps.map(({ ...props }, index) => (
             <JobCard showDetail={handleDrawers} key={index} {...props} />

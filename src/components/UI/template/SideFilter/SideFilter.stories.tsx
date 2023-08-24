@@ -21,10 +21,10 @@ const meta: Meta<typeof SideFilter> = {
     filterSummary: '3169 empleos',
     buttonText: 'Limpiar',
     loading: false,
-    isOpen: false,
+    isFiltersOpen: false,
     switchText: 'Apto para personas con discapacidad',
 
-    setFilterIsOpen: () => console.log('setFilterIsOpen'),
+    setIsFiltersOpen: () => console.log('setIsFiltersOpen'),
     setIsApplied: (filter: ISetIsApplied) => new Promise((resolve) => resolve(console.log({ filter }))),
     clearFilters: () => new Promise((resolve) => resolve(console.log('clearFilters'))),
     unApplyWithChild: (withChild: IUnApplyWithChild) => new Promise((resolve) => resolve(console.log({ withChild }))),

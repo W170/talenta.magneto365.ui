@@ -24,7 +24,7 @@ export interface IFilterBottomHeader {
   /**
    * If this flag is true the buttonFilter isn't visible
    */
-  isOpen: boolean
+  isFiltersOpen: boolean
   /**
    * With this property you can disabled the button in menu filter molecule
    */
@@ -32,7 +32,7 @@ export interface IFilterBottomHeader {
   /**
    * With this function you open the drawer
    */
-  setFilterIsOpen: () => void
+  setIsFiltersOpen: React.Dispatch<React.SetStateAction<boolean>>
   /**
    * With this function you can change the alphabetical order
    */

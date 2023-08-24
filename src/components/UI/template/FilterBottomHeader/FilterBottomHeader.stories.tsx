@@ -13,9 +13,9 @@ const meta: Meta<typeof FilterBottomHeader> = {
     filterItems: optionsFilterOrderBy,
     textOrderFilter: 'Fecha de publicación',
     orderByText: 'Organizar por',
-    isOpen: false,
+    isFiltersOpen: false,
     loading: false,
-    setFilterIsOpen: () => console.log('setFilterIsOpen'),
+    setIsFiltersOpen: () => console.log('setIsFiltersOpen'),
     orderFilter: () => console.log('orderFilter'),
     setFilter: (menuItem: { key: string }) => console.log(menuItem.key)
   },

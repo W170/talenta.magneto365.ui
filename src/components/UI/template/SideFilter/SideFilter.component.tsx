@@ -6,7 +6,7 @@ import { FilterCardOnSearch } from '@components/UI/organism/FilterCardOnSearch'
 import { MainButton } from '@components/UI/atoms'
 import { IFilter, ISideFilter } from './SideFilter.interface'
 import styles from './SideFilter.module.scss'
-import { screenSize } from '@constants/responsive.constants'
+import { isLessMD } from '@constants/responsive.constants'
 
 //TODO: will define where put those enum, function and factory component
 export enum ERenderType {
@@ -43,8 +43,8 @@ const SideFilter: FC<ISideFilter> = ({
   filterSummary,
   buttonText,
   loading,
-  isOpen,
-  setFilterIsOpen,
+  isFiltersOpen,
+  setIsFiltersOpen,
   setIsApplied,
   clearFilters,
   unApplyWithChild,
@@ -56,10 +56,10 @@ const SideFilter: FC<ISideFilter> = ({
       <MainButton
         iconProps={{ icon: ArrowLeft2, size: 20 }}
         className={styles['magneto-ui-side-filter_btn__close']}
-        onClick={() => setFilterIsOpen((isOpen) => !isOpen)}
+        onClick={() => setIsFiltersOpen((isOpen) => !isOpen)}
       />
     )
-  }, [setFilterIsOpen])
+  }, [setIsFiltersOpen])
 
   const displayBtnMain = useMemo(() => {
     if (!totalAppliedFilters) return <Fragment />
@@ -67,17 +67,17 @@ const SideFilter: FC<ISideFilter> = ({
       <MainButton
         buttonText={'Ver empleos'}
         className={styles['magneto-ui-side-filter_btn__main']}
-        onClick={() => setFilterIsOpen((isOpen) => !isOpen)}
+        onClick={() => setIsFiltersOpen((isOpen) => !isOpen)}
       />
     )
-  }, [totalAppliedFilters, setFilterIsOpen])
+  }, [totalAppliedFilters, setIsFiltersOpen])
 
   const displayBackground = useMemo(() => {
-    if (isOpen && window.innerWidth <= screenSize.md) {
-      return <span className={styles['magneto-iu-side-filter_background']} onClick={() => setFilterIsOpen(false)} />
+    if (isFiltersOpen && isLessMD) {
+      return <span className={styles['magneto-iu-side-filter_background']} onClick={() => setIsFiltersOpen(false)} />
     }
     return <Fragment />
-  }, [isOpen, setFilterIsOpen])
+  }, [isFiltersOpen, setIsFiltersOpen])
 
   const cardProps = useMemo(() => {
     return {
@@ -101,7 +101,7 @@ const SideFilter: FC<ISideFilter> = ({
 
   return (
     <Fragment>
-      <aside className={`${styles['magneto-iu-side-filter']} ${isOpen && styles.open}`}>
+      <aside className={`${styles['magneto-iu-side-filter']} ${isFiltersOpen ? styles.open : ''}`}>
         {displayBtnClose}
         <div className={styles['magneto-iu-side-filter_content']}>
           <FilterHeader {...headerProps} />

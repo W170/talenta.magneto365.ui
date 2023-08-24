@@ -29,11 +29,11 @@ export interface ISideFilter extends ISearchRenderTypeProps {
   /**
    * If this flag is true the buttonFilter isn't visible
    */
-  isOpen: boolean
+  isFiltersOpen: boolean
   /**
    * With this function you open the drawer
    */
-  setFilterIsOpen: (value: SetStateAction<boolean>) => void
+  setIsFiltersOpen: (value: SetStateAction<boolean>) => void
   /**
    * This function selected or un-applied the option
    */

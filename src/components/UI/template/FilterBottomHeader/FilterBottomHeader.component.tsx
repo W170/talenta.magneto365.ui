@@ -13,12 +13,12 @@ const FilterBottomHeader: React.FC<IFilterBottomHeader> = ({
   textButtonFilter,
   filterSummary,
   textOrderFilter,
-  setFilterIsOpen,
+  setIsFiltersOpen,
   orderFilter,
   filterItems,
   setFilter,
   orderByText,
-  isOpen,
+  isFiltersOpen,
   loading
 }) => {
   const [showMenu, setShowMenu] = useState(false)
@@ -39,12 +39,12 @@ const FilterBottomHeader: React.FC<IFilterBottomHeader> = ({
     <>
       <div className={style['magneto-ui-filter']}>
         <div className={style['magneto-ui-section-filter']}>
-          {!isOpen && (
+          {!isFiltersOpen && (
             <MenuIcon
               type="button"
               text={textButtonFilter}
               icon={Setting4}
-              onClick={setFilterIsOpen}
+              onClick={setIsFiltersOpen as () => void}
               size={17}
               isActive={true}
             />
