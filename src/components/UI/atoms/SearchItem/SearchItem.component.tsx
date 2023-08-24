@@ -6,10 +6,10 @@ import styles from './SearchItem.module.scss'
 
 const Component: React.FC<ISearchItem> = ({ tag }) => {
   return (
-    <div className={styles['magneto-ui--search-item']}>
-      <a className={styles['magneto-ui--search-item__text']}>{tag}</a>
+    <a className={styles['magneto-ui--search-item']}>
+      <p className={styles['magneto-ui--search-item__text']}>{tag}</p>
       <IconItem hover={false} icon={ArrowRight2} size={14} />
-    </div>
+    </a>
   )
 }
 
