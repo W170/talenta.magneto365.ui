@@ -9,7 +9,6 @@ import { IJobsPage } from './JobsPage.interface'
 import style from './JobsPage.module.scss'
 
 import { classMUI } from '../../../../constants/stories.constants'
-import { isLessMD } from '@constants/responsive.constants'
 
 const JobsPage: React.FC<IJobsPage> = ({
   jobDetailsDrawerProps,
@@ -22,7 +21,7 @@ const JobsPage: React.FC<IJobsPage> = ({
 }) => {
   const [showDetail, setShowDetail] = useState(false)
   const [showDrawer, setShowDrawer] = useState(false)
-  const [isFiltersOpen, setIsFiltersOpen] = useState(isLessMD)
+  const [isFiltersOpen, setIsFiltersOpen] = useState(false)
 
   const JobDetailsDrawerComponent = useMediaQuery(
     <JobDetailContainer onClose={() => setShowDetail(false)} isOpen={showDetail}>
