@@ -1,0 +1,42 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-list-menu {
+  display: flex;
+  flex-direction: column;
+  &__title {
+    font-weight: bold;
+    font-size: 15px;
+    margin: 0 0 15px 0;
+  }
+
+  &__link {
+    color: v.$colors-magneto-neutral;
+    font-size: 13px;
+    margin: 6px 0;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__create-account {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    img {
+      width: 15px;
+      height: 15px;
+    }
+    &--btn {
+      background: none;
+      border: none;
+      color: v.$colors-magneto-neutral;
+      font-size: 13px;
+      margin: 6px 0;
+      padding: 0;
+      text-align: left;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
