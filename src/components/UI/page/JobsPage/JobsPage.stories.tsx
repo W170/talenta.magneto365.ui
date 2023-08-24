@@ -1,6 +1,11 @@
-import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
+import React from 'react'
+
+import { SearchItem } from '@components/UI/atoms'
 import JobsPage from './JobsPage.component'
+
+import { FacebookBlue, LinkedInBlue, SMSBlue, ShareBlue, TwitterBlue, WhatsAppColor } from '@constants/icons.constants'
+
 import {
   CompanyLogo,
   MagnetoResolutionProps,
@@ -8,11 +13,12 @@ import {
   appliedOptionsBySearchRenderType,
   listMenuText,
   optionsFilterOrderBy,
+  searchList,
   vacants
 } from '@constants/stories.constants'
-import { FacebookBlue, LinkedInBlue, SMSBlue, ShareBlue, TwitterBlue, WhatsAppColor } from '@constants/icons.constants'
 
 import data from '@components/UI/template/SideFilter/filtersNormalized.json'
+
 import {
   IFilter,
   IGetOptionsOnSearchProps,
@@ -183,6 +189,7 @@ const mobileJobDetailsDrawer = {
     }
   }
 }
+
 const sideFilter = {
   title: 'Filtrar empleos',
   filters: data as unknown as IFilter[],
@@ -203,6 +210,11 @@ const sideFilter = {
       console.log('getOptionsOnSearch: ', { term })
       return resolve([])
     })
+}
+
+const frequentSearch = {
+  searchHeading: 'Búsquedas de empleo más frecuentes',
+  children: searchList.map(({ tag }, index: number) => <SearchItem key={index} tag={tag} />)
 }
 
 const footerProps = {
@@ -230,6 +242,7 @@ const meta: Meta<typeof JobsPage> = {
     vacantProps: vacants,
     jobDetailsDrawerProps: jobDetailsDrawer,
     MobileJobDetailsDrawerProps: mobileJobDetailsDrawer,
+    frequentSearchProps: frequentSearch,
     sideFilterProps: sideFilter as ISideFilter,
     footerProps
   },

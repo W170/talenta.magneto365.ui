@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import FilterContainerMenu from '@components/UI/molecules/FilterContainerMenu/FilterContainerMenu.component'
-import { JobDetailContainer, JobCard } from '@components/UI/molecules'
+import { JobDetailContainer, JobCard, FrequentSearch } from '@components/UI/molecules'
 import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
 import { FilterBottomHeader, Footer, SideFilter } from '@components/UI/template'
 import { useMediaQuery } from '@components/hooks'
@@ -15,6 +15,7 @@ const JobsPage: React.FC<IJobsPage> = ({
   MobileJobDetailsDrawerProps,
   filterBottomHeaderProps,
   sideFilterProps,
+  frequentSearchProps,
   vacantProps,
   footerProps
 }) => {
@@ -56,6 +57,7 @@ const JobsPage: React.FC<IJobsPage> = ({
               <JobCard showDetail={handleDrawers} key={index} {...props} />
             ))}
           </div>
+          <FrequentSearch {...frequentSearchProps} />
         </div>
         <div className={style[`${classMUI}-jobs-page__jobs-detail`]}>{JobDetailsDrawerComponent}</div>
       </div>
