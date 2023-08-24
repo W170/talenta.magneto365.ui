@@ -1,3 +1,4 @@
+import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { appliedOptionsBySearchRenderType } from '@constants/stories.constants'
 import SideFilter from './SideFilter.component'
@@ -17,10 +18,13 @@ const meta: Meta<typeof SideFilter> = {
     title: 'Filtrar empleos',
     filters: data as unknown as IFilter[],
     totalAppliedFilters: 1,
+    filterSummary: '3169 empleos',
     buttonText: 'Limpiar',
     loading: false,
+    isFiltersOpen: false,
     switchText: 'Apto para personas con discapacidad',
 
+    setIsFiltersOpen: () => console.log('setIsFiltersOpen'),
     setIsApplied: (filter: ISetIsApplied) => new Promise((resolve) => resolve(console.log({ filter }))),
     clearFilters: () => new Promise((resolve) => resolve(console.log('clearFilters'))),
     unApplyWithChild: (withChild: IUnApplyWithChild) => new Promise((resolve) => resolve(console.log({ withChild }))),
@@ -33,7 +37,14 @@ const meta: Meta<typeof SideFilter> = {
         console.log('getOptionsOnSearch: ', { term })
         return resolve([])
       })
-  }
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ margin: '-16px' }}>
+        <Story />
+      </div>
+    )
+  ]
 }
 
 export default meta

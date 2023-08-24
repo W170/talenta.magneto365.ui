@@ -1,6 +1,6 @@
+import { IBreadcrumb } from '../../atoms'
+
 export interface IBreadcrumbs {
-  /**
-   * Set string that contains the breadcrumbs
-   */
-  breadcrumbText: string
+  homeUrl: string
+  breadcrumbProps: IBreadcrumb
 }

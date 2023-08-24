@@ -1,9 +1,15 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
 .magneto-ui-jobs-page {
   display: flex;
   justify-content: center;
 
   &--filter-row {
     width: 320px;
+
+    @media (max-width: v.$screen-md) {
+      width: auto;
+    }
   }
 
   &--center-row {

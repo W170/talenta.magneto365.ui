@@ -1,3 +1,4 @@
+import { SetStateAction } from 'react'
 import { ERenderType } from './SideFilter.component'
 
 export interface ISideFilter extends ISearchRenderTypeProps {
@@ -14,6 +15,10 @@ export interface ISideFilter extends ISearchRenderTypeProps {
    */
   totalAppliedFilters: number
   /**
+   * this is the text for the value filtered
+   */
+  filterSummary: string
+  /**
    * This is the text that shows the clean button
    */
   buttonText: string
@@ -21,6 +26,14 @@ export interface ISideFilter extends ISearchRenderTypeProps {
    * This is the flag when the filters promise is pending
    */
   loading: boolean
+  /**
+   * If this flag is true the buttonFilter isn't visible
+   */
+  isFiltersOpen: boolean
+  /**
+   * With this function you open the drawer
+   */
+  setIsFiltersOpen: (value: SetStateAction<boolean>) => void
   /**
    * This function selected or un-applied the option
    */
@@ -115,6 +128,7 @@ export interface IUnApplyWithChild {
   child: IFilter
   parentId: string | number
   parentField: string
+  newParentId?: string | number
 }
 export interface ISearchRenderTypeOption {
   id: string | number

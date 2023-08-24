@@ -8,6 +8,7 @@
   height: 65px;
   padding: 20px 20px 0 20px;
   object-fit: contain;
+  box-sizing: border-box;
   background-color: white;
 }
 
@@ -15,11 +16,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
   width: auto;
-  //TODO temporal change
   button {
-    display: none;
+    padding: 20px 10px;
   }
 }
 
@@ -27,7 +26,8 @@
   font-size: 14px;
   color: v.$text-color-black;
   width: 100%;
-  margin: 0;
+  margin: auto;
+  margin-left: 20px;
 }
 
 .magneto-ui-btn-menu {

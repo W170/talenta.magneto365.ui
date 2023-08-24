@@ -1,6 +1,104 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../shared/stylesheets/mixins.scss' as m;
+
 .magneto-iu-side-filter {
+  background-color: v.$color-white;
+  @media (max-width: v.$screen-md) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: -110vw;
+    padding: 5px 20px 100px 20px;
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 0.6s ease-in-out;
+    @include m.scroll-filter;
+    z-index: 50;
+    position: fixed;
+  }
+}
+
+.open {
+  @media (max-width: v.$screen-md) {
+    transform: translateX(110vw);
+  }
+}
+
+.magneto-ui-side-filter_btn__close {
+  display: none;
+  @media (max-width: v.$screen-md) {
+    display: flex;
+    background-color: v.$disabled-color-gray;
+    width: 26px;
+    height: 45px;
+    top: 20px;
+    right: 0;
+    padding: unset;
+    border-radius: 10px 0 0 10px;
+    position: absolute;
+  }
+}
+
+.magneto-ui-side-filter_btn__main {
+  display: none;
+  @media (max-width: v.$screen-md) {
+    display: unset;
+    background-color: v.$color-green;
+    height: 42px;
+    width: 90%;
+    bottom: 30px;
+    position: fixed;
+  }
+}
+
+.magneto-iu-side-filter_content {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 15px 5px 15px 15px;
+  padding: 15px 15px 15px 15px;
+  @media (max-width: v.$screen-md) {
+    width: 100%;
+  }
+}
+
+.magneto-iu-side-filter_background {
+  display: none;
+  @media (max-width: v.$screen-md) {
+    display: unset;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 49;
+    position: fixed;
+    cursor: pointer;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.7;
+    }
+  }
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.7;
+    }
+  }
 }

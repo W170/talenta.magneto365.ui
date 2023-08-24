@@ -14,23 +14,32 @@ export interface IFilterBottomHeader {
    */
   textOrderFilter: string
   /**
-   * With this function you open the drawer
-   */
-  openFilterDrawer: () => void
-  /**
-   * With this function you can change the alphabetical order
-   */
-  orderFilter: () => void
-  /**
    * This is an array with the menu options
    */
   filterItems: IMenuFilterItem[]
   /**
-   *This function change the filter with the selected option
-   */
-  setFilter: (menuItem: { key: string }) => void
-  /**
    * this is the mobile text to alphabetical order
    */
   orderByText: string
+  /**
+   * If this flag is true the buttonFilter isn't visible
+   */
+  isFiltersOpen: boolean
+  /**
+   * With this property you can disabled the button in menu filter molecule
+   */
+  loading: boolean
+  /**
+   * With this function you open the drawer
+   */
+  setIsFiltersOpen: React.Dispatch<React.SetStateAction<boolean>>
+  /**
+   * With this function you can change the alphabetical order
+   */
+  orderFilter: () => void
+
+  /**
+   *This function change the filter with the selected option
+   */
+  setFilter: (menuItem: { key: string }) => void
 }

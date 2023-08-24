@@ -25,4 +25,12 @@ export interface IMobileMenuFilter {
    * this is the mobile text to alphabetical order
    */
   orderByText: string
+  /**
+   * This is the current text
+   */
+  textOrderFilter: string
+  /**
+   * This function can close the popover
+   */
+  setShowPopover: React.Dispatch<React.SetStateAction<boolean>>
 }

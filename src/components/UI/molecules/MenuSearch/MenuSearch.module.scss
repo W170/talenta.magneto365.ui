@@ -1,0 +1,53 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-menu-search {
+  height: 30px;
+  @media (max-width: v.$screen-md) {
+    width: inherit;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.magneto-ui-menu-search_container {
+  @media (max-width: v.$screen-md) {
+    width: inherit;
+    max-width: 100%;
+  }
+}
+
+.magneto-ui-menu-search_content {
+  background-color: white;
+  width: 240px;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  z-index: 60;
+  position: absolute;
+
+  @media (max-width: v.$screen-md) {
+    width: inherit;
+    max-width: 100%;
+  }
+}
+
+.open {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  max-height: auto;
+  min-height: 100%;
+  border-radius: 0 0 12px 12px;
+  border: solid 1px #dbd3d3;
+  border-top: none;
+  margin-top: -7px;
+  overflow: unset;
+  z-index: 12;
+  position: relative;
+
+  @media (max-width: v.$screen-md) {
+    height: auto;
+    max-height: auto;
+    min-height: auto;
+    padding: 10px 20px;
+  }
+}

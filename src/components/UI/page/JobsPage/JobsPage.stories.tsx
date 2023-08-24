@@ -194,10 +194,13 @@ const sideFilter = {
   title: 'Filtrar empleos',
   filters: data as unknown as IFilter[],
   totalAppliedFilters: 1,
+  filterSummary: '3169 empleos',
   buttonText: 'Limpiar',
   loading: false,
+  isFiltersOpen: true,
   switchText: 'Apto para personas con discapacidad',
 
+  setIsFiltersOpen: () => console.log('setIsFiltersOpen'),
   setIsApplied: (filter: ISetIsApplied) => new Promise((resolve) => resolve(console.log({ filter }))),
   clearFilters: () => new Promise((resolve) => resolve(console.log('clearFilters'))),
   unApplyWithChild: (withChild: IUnApplyWithChild) => new Promise((resolve) => resolve(console.log({ withChild }))),
@@ -232,12 +235,14 @@ const meta: Meta<typeof JobsPage> = {
     filterBottomHeaderProps: {
       textButtonFilter: 'FILTROS',
       filterSummary: '280 empleos',
-      openFilterDrawer: () => console.log('openFilterDrawer'),
+      setIsFiltersOpen: () => console.log('setIsFiltersOpen'),
       orderFilter: () => console.log('orderFilter'),
       filterItems: optionsFilterOrderBy,
       textOrderFilter: 'Fecha de publicación',
       setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
-      orderByText: 'Organizar por'
+      orderByText: 'Organizar por',
+      isFiltersOpen: true,
+      loading: false
     },
     vacantProps: vacants,
     jobDetailsDrawerProps: jobDetailsDrawer,

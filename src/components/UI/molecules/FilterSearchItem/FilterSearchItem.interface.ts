@@ -10,6 +10,10 @@ export interface IFilterSearchItem {
    */
   placeholder: string
   /**
+   *This is the flag when the filters promise is pending
+   */
+  loading: boolean
+  /**
    * This flag indicates if the input can search
    */
   disabled?: boolean

@@ -13,15 +13,17 @@ const FilterBottomHeader: React.FC<IFilterBottomHeader> = ({
   textButtonFilter,
   filterSummary,
   textOrderFilter,
-  openFilterDrawer,
+  setIsFiltersOpen,
   orderFilter,
   filterItems,
   setFilter,
-  orderByText
+  orderByText,
+  isFiltersOpen,
+  loading
 }) => {
   const [showMenu, setShowMenu] = useState(false)
   const filterMenu = useMediaQuery(
-    <MenuFilter filterItems={filterItems} textOrderFilter={textOrderFilter} setFilter={setFilter} />,
+    <MenuFilter filterItems={filterItems} textOrderFilter={textOrderFilter} setFilter={setFilter} loading={loading} />,
 
     {
       md: (
@@ -37,14 +39,16 @@ const FilterBottomHeader: React.FC<IFilterBottomHeader> = ({
     <>
       <div className={style['magneto-ui-filter']}>
         <div className={style['magneto-ui-section-filter']}>
-          <MenuIcon
-            type="button"
-            text={textButtonFilter}
-            icon={Setting4}
-            onClick={openFilterDrawer}
-            size={17}
-            isActive={true}
-          />
+          {!isFiltersOpen && (
+            <MenuIcon
+              type="button"
+              text={textButtonFilter}
+              icon={Setting4}
+              onClick={setIsFiltersOpen as () => void}
+              size={17}
+              isActive={true}
+            />
+          )}
           <p className={`${style['magneto-ui-btn-text']} ${style.hidden}`}>{filterSummary}</p>
         </div>
         <div className={style['magneto-ui-section-menu']}>
@@ -61,6 +65,8 @@ const FilterBottomHeader: React.FC<IFilterBottomHeader> = ({
         filterItems={filterItems}
         setFilter={setFilter}
         orderFilter={orderFilter}
+        textOrderFilter={textOrderFilter}
+        setShowPopover={setShowMenu}
       />
     </>
   )

@@ -8,6 +8,10 @@ export interface IFilterHeader {
    */
   buttonText: string
   /**
+   * this is the text for the value filtered
+   */
+  filterSummary: string
+  /**
    * This is the total filters applied
    */
   totalApplied: number

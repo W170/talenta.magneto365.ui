@@ -10,3 +10,6 @@ export const screenSize: Record<DimType, number> = {
   hd: 1366,
   xxl: 1600
 }
+
+export const isClientSide: boolean = typeof window !== 'undefined'
+export const isLessMD = isClientSide ? window.innerWidth <= screenSize.md : true

@@ -19,7 +19,9 @@ export const FilterCard: FC<IFilterCard> = ({
   const [options, setOptions] = useState<IFilterValue[]>([])
 
   useEffect(() => {
-    setOptions(values)
+    const appliedOptions = values.filter((opt) => opt.isApplied)
+    const unAppliedOptions = values.filter((opt) => !opt.isApplied)
+    setOptions([...appliedOptions, ...unAppliedOptions])
   }, [values])
 
   const hasSearch = useMemo(() => renderType === ERenderType.multiSelect, [renderType])
@@ -30,7 +32,7 @@ export const FilterCard: FC<IFilterCard> = ({
       event.preventDefault()
       const appliedOptions = values.filter((opt) => opt.isApplied)
       const searchedOptions = values.filter((opt) => opt.label.toLowerCase().includes(event.target.value.toLowerCase()))
-      setOptions([...searchedOptions, ...appliedOptions])
+      setOptions([...appliedOptions, ...searchedOptions])
     },
     [values, setOptions]
   )
@@ -51,7 +53,13 @@ export const FilterCard: FC<IFilterCard> = ({
         )}
       </div>
 
-      {hasSearch && <FilterSearchItem handleSearch={handleSearch} placeholder={searchPlaceholder as string} />}
+      {hasSearch && (
+        <FilterSearchItem
+          loading={props.loading}
+          placeholder={searchPlaceholder as string}
+          handleSearch={handleSearch}
+        />
+      )}
       <div className={styles['magneto-ui-filter-card_options']}>
         {options.map((opt, key) => {
           const optProps = { ...props, ...opt, hasTotal, setIsApplied }
