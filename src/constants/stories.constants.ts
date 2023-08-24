@@ -839,6 +839,8 @@ export const listMenuText: IListMenuText[] = [
   {
     heightContent: 310,
     title: 'Personas',
+    createAccount: () => console.log('holi'),
+    isLoading: false,
     links: [
       {
         tag: 'Conoce Magneto',
@@ -862,7 +864,8 @@ export const listMenuText: IListMenuText[] = [
         tag: 'Crear Cuenta',
         routePath: '',
         baseUrl: '',
-        isExternal: true
+        isExternal: true,
+        isCreateAccount: true
       },
       {
         tag: 'Articulos de interes',

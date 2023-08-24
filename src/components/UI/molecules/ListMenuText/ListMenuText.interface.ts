@@ -11,6 +11,14 @@ export interface IListMenuText {
    * imenu list props
    */
   links: IMenuList[]
+  /**
+   * this function open the widget
+   */
+  createAccount?: () => void
+  /**
+   * this function show a loading
+   */
+  isLoading?: boolean
 }
 
 interface IMenuList {
@@ -18,4 +26,5 @@ interface IMenuList {
   routePath: string
   baseUrl: string
   isExternal: boolean
+  isCreateAccount?: boolean
 }
