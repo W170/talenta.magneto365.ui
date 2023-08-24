@@ -35,9 +35,12 @@
     }
   }
 
-  p {
+  p,
+  h2,
+  h3 {
     font-size: 14px;
     color: #14141c;
+    margin: 0;
   }
 
   &--row1,

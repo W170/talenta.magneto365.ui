@@ -40,10 +40,10 @@ const JobCardMobile: React.FC<ICardJobMobile> = ({
       <div className={style[`${classMUI}-card-mobile-jobs--data`]}>
         <div className={style[`${classMUI}-card-mobile-jobs--row2`]}>
           <div>
-            <p className={`${style[`${classMUI}-card-mobile-jobs--row2__position`]} ${workSeen}`}>{title}</p>
+            <h2 className={`${style[`${classMUI}-card-mobile-jobs--row2__position`]} ${workSeen}`}>{title}</h2>
           </div>
           <div className={style[`${classMUI}-card-mobile-jobs--row2__info`]}>
-            <p>{companyName},</p>
+            <h3>{companyName},</h3>
             <p>{publishDate},</p>
             <p>
               {cities[0]}, {cities.length > 1 && <span>{others},</span>}{' '}
