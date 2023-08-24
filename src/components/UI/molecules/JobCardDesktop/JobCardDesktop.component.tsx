@@ -58,12 +58,9 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
           </p>
         </div>
         <div className={style[`${classMUI}-card-jobs--row4`]}>
-          <p>{contractType}, </p>
           <p>
-            {minSalary} - {maxSalary},
+            {`${contractType},`} {`${minSalary} - ${maxSalary},`} {`${experience},`} {educationLevel}.
           </p>
-          <p>{experience}, </p>
-          <p>{educationLevel},</p>
         </div>
       </div>
       <div className={style[`${classMUI}-card-jobs--arrow`]}>

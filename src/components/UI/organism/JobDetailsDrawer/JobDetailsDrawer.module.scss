@@ -4,8 +4,9 @@
   position: sticky;
   display: flex;
   flex-direction: column;
+  width: auto;
+  height: 935px;
   gap: 10px;
-  width: 623px;
 
   .JobHeaderCardWrapper {
     position: sticky;
@@ -16,6 +17,28 @@
     border-bottom: 1px solid #e9e9f6;
     background: #ffffff;
     z-index: 1;
+  }
+
+  .JobBodyCardWrapper {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 7px;
+      border-radius: 15px;
+
+      &-track {
+        background-color: rgba(241, 241, 241, 0.353);
+        border-radius: 15px;
+      }
+
+      &-thumb {
+        border-radius: 15px;
+        background-color: v.$disabled-color-gray2;
+        &:hover {
+          background-color: v.$disabled-color-gray3;
+        }
+      }
+    }
   }
 
   @media screen and (max-width: (v.$screen-xl + 80px)) {

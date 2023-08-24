@@ -1,0 +1,77 @@
+@use '../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-btn-pagination_with__icon,
+.magneto-ui-btn-pagination_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // TODO: review this font-family
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: transparent;
+  height: v.$pagination-size-btn;
+  width: v.$pagination-size-btn;
+  margin: 0 2px;
+  border: none;
+  border-radius: 50%;
+  user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+
+  &:hover {
+    background: v.$pagination-hover-btn;
+  }
+}
+
+.magneto-ui-btn-pagination_with__icon {
+  background-color: v.$pagination-background-btn;
+  margin: 3px 0;
+
+  img {
+    width: 20px;
+    min-width: 20px;
+  }
+
+  &:hover {
+    background-color: rgba(19, 34, 58, 0.1);
+  }
+}
+
+.magneto-ui-btn-pagination_active {
+  background-color: v.$pagination-btn-active;
+  color: v.$color-white;
+  &:hover {
+    background-color: v.$pagination-btn-active;
+  }
+}
+
+.magneto-ui-btn-pagination_disabled {
+  cursor: not-allowed;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.magneto-ui-btn-pagination_spinner {
+  font-size: 24px;
+  -webkit-animation: spin 1.3s linear infinite;
+  -moz-animation: spin 1.3s linear infinite;
+  animation: spin 1.3s linear infinite;
+}
