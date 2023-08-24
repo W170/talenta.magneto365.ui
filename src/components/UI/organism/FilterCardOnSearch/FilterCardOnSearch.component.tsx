@@ -5,6 +5,7 @@ import { Switch } from '@components/UI/atoms/Switch'
 import { MenuSearch } from '@components/UI/molecules/MenuSearch'
 import { ISearchRenderTypeOption } from '@components/UI/template'
 import { IFilterCardOnSearch, ISetIsAppliedProps } from './FilterCardOnSearch.interface'
+import { cleanSearch, getValues, refreshChildren, refreshParents } from './utils'
 import styles from './FilterCardOnSearch.module.scss'
 
 export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
@@ -26,12 +27,7 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
   const [appliedOptions, setAppliedOptions] = useState<ISearchRenderTypeOption[]>([])
   const [refInput, setRefInput] = useState<React.RefObject<HTMLInputElement> | null>(null)
 
-  const values = useMemo(() => {
-    return filtersApplied?.map((item) => {
-      if (typeof item === 'string' || typeof item === 'number') return item
-      return ''
-    })
-  }, [filtersApplied])
+  const values = useMemo(() => getValues(filtersApplied), [filtersApplied])
 
   // this effect load labels when page is reloaded
   useEffect(() => {
@@ -41,27 +37,9 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  //this effect remove parent selection when clear all filters
-  useEffect(() => {
-    if (props.multiple || !values) return
-    setAppliedOptions((current) => (current.length > values?.length ? [] : current))
-  }, [values, props.multiple, setAppliedOptions])
+  useEffect(() => refreshChildren(params, setAppliedOptions), [params])
 
-  // this effect remove child selections
-  useEffect(() => {
-    if (!params) return
-    const parents: string[] = []
-    for (const parent of params) {
-      if (typeof parent !== 'string') return
-      const [parentId] = parent.split('@')
-      parents.push(parentId)
-    }
-    setAppliedOptions((current) => {
-      return current.filter((option) => {
-        return parents.find((parent) => String(parent) === String(option.parentId))
-      })
-    })
-  }, [params])
+  useEffect(() => refreshParents(filtersApplied, setAppliedOptions), [filtersApplied])
 
   const handleSearch = useCallback(
     async (event: ChangeEvent<HTMLInputElement>, inputRef: React.MutableRefObject<null>) => {
@@ -80,18 +58,6 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
     [getOptionsOnSearch, setOptions, appliedOptions, repository, field, params, refInput]
   )
 
-  const cleanSearch = useCallback(
-    (time?: number) => {
-      setTimeout(() => {
-        setOptions([])
-        if (refInput?.current) {
-          refInput.current.value = ''
-        }
-      }, time || 0)
-    },
-    [refInput]
-  )
-
   const callSetIsApplied = useCallback(
     (filter: ISetIsAppliedProps) => {
       setIsApplied(filter)?.then(() => {
@@ -102,9 +68,9 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
           : [{ ...options.filter((opt) => opt.id === filter.id)[0], isApplied: true }]
         setAppliedOptions(totalApplied)
       })
-      cleanSearch()
+      cleanSearch(refInput, setOptions)
     },
-    [appliedOptions, options, setIsApplied, cleanSearch]
+    [appliedOptions, options, setIsApplied, refInput]
   )
 
   const handleApply = useCallback(
@@ -123,20 +89,20 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
         }).then(() => {
           const newParent = options.find((opt) => opt.id === filter.id)
           newParent && setAppliedOptions([{ ...newParent, isApplied: true }])
-          cleanSearch()
+          cleanSearch(refInput, setOptions)
         })
       } else {
         callSetIsApplied(filter)
       }
     },
-    [unApplyWithChild, callSetIsApplied, cleanSearch, child, appliedOptions, options]
+    [unApplyWithChild, callSetIsApplied, refInput, child, appliedOptions, options]
   )
 
   const displayMenuSearch = useMemo(() => {
     return (
       <MenuSearch
         show={!!options.length}
-        handleOnBlur={() => cleanSearch(300)}
+        handleOnBlur={() => cleanSearch(refInput, setOptions, 300)}
         content={options.map((opt, key) => {
           const optProps = { ...props, ...opt, field, setIsApplied: handleApply, isSearched: true }
           return <FilterMenuItem key={`${key}-${opt.label}`} {...optProps} />
@@ -150,7 +116,7 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
         />
       </MenuSearch>
     )
-  }, [options, field, params, searchPlaceholder, props, cleanSearch, handleApply, handleSearch])
+  }, [options, field, params, searchPlaceholder, props, refInput, handleApply, handleSearch])
 
   const displayAppliedOptions = useMemo(() => {
     return (
