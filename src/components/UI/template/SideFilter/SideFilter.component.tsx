@@ -6,7 +6,6 @@ import { FilterCardOnSearch } from '@components/UI/organism/FilterCardOnSearch'
 import { MainButton } from '@components/UI/atoms'
 import { IFilter, ISideFilter } from './SideFilter.interface'
 import styles from './SideFilter.module.scss'
-import { isLessMD } from '@constants/responsive.constants'
 
 //TODO: will define where put those enum, function and factory component
 export enum ERenderType {
@@ -66,17 +65,15 @@ const SideFilter: FC<ISideFilter> = ({
     return (
       <MainButton
         buttonText={'Ver empleos'}
-        className={styles['magneto-ui-side-filter_btn__main']}
+        className={`${styles['magneto-ui-side-filter_btn__main']} ${isFiltersOpen ? styles['btn_main-open'] : ''}`}
         onClick={() => setIsFiltersOpen((isOpen) => !isOpen)}
       />
     )
-  }, [totalAppliedFilters, setIsFiltersOpen])
+  }, [totalAppliedFilters, isFiltersOpen, setIsFiltersOpen])
 
   const displayBackground = useMemo(() => {
-    if (isFiltersOpen && isLessMD) {
-      return <span className={styles['magneto-iu-side-filter_background']} onClick={() => setIsFiltersOpen(false)} />
-    }
-    return <Fragment />
+    if (!isFiltersOpen) return <Fragment />
+    return <span className={styles['magneto-iu-side-filter_background']} onClick={() => setIsFiltersOpen(false)} />
   }, [isFiltersOpen, setIsFiltersOpen])
 
   const cardProps = useMemo(() => {
@@ -109,8 +106,8 @@ const SideFilter: FC<ISideFilter> = ({
             return <CardByRenderType key={`${i}-${item.field}`} {...(item as unknown as IFilter)} {...cardProps} />
           })}
         </div>
-        {displayBtnMain}
       </aside>
+      {displayBtnMain}
       {displayBackground}
     </Fragment>
   )
