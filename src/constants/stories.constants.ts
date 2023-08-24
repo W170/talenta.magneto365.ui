@@ -253,6 +253,30 @@ export const LoginButton: IMainButton = {
   }
 }
 
+// Search Item
+export const searchList = [
+  { tag: 'Bolsa de empleo México' },
+  { tag: 'Bolsa de empleo Argentina' },
+  { tag: 'Bolsa de empleo Nicaragua' },
+  { tag: 'Bolsa de empleo Costa Rica' },
+  { tag: 'Servicio de empleo Colombia' },
+  { tag: 'Bolsa de empleo Colombia' },
+  { tag: 'Empleo en Barranquilla' },
+  { tag: 'Empleo en Cartagena' },
+  { tag: 'Empleo en Medellín' },
+  { tag: 'Empleo en Bogotá' },
+  { tag: 'Empleo en Cali' },
+  { tag: 'Empleo en Pereira' },
+  { tag: 'Empleo como agente' },
+  { tag: 'Trabajos como ingeniero' },
+  { tag: 'Servicio de empleo' },
+  { tag: 'Empleos como abogado' },
+  { tag: 'Empleo como desarrollador' },
+  { tag: 'Empleos SENA' },
+  { tag: 'Empleos en bodega' },
+  { tag: 'Empleo como regente de farmacia' }
+]
+
 /**
  *
  *
@@ -633,6 +657,146 @@ export const optionsFilterOrderBy: IMenuFilterItem[] = [
 //Vacants
 
 export const vacants: IJobCard[] = [
+  {
+    title: 'Desarrollador Web',
+    cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
+    companyName: 'Adidas',
+    companySlug: 'adidas',
+    educationLevel: 'Profesional',
+    experience: '6 meses de experiencia',
+    minSalary: '1.200.000',
+    maxSalary: '2.000.000',
+    publishDate: 'hace 10 dias',
+    others: 'otras',
+    contractType: 'Termino fijo'
+  },
+  {
+    title: 'Analista',
+    cities: ['Medellin', 'Barranquila', 'Bogota'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMoo9RUN_NnD4aWgDuHUeEGTUfJXpimlWA&usqp=CAU',
+    companyName: 'Coca-cola',
+    companySlug: 'coca-cola',
+    educationLevel: 'Arquitecto',
+    experience: '12 meses de experiencia',
+    minSalary: '3.200.000',
+    maxSalary: '6.000.000',
+    publishDate: 'hace 20 dias',
+    others: 'otras',
+    contractType: 'Prestacion de servicios'
+  },
+  {
+    title: 'UX | UI designer',
+    cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
+    companyName: 'Lego',
+    companySlug: 'legos',
+    educationLevel: 'Tecnologo',
+    experience: '6 meses de experiencia',
+    minSalary: '3.000.000',
+    maxSalary: '5.000.000',
+    publishDate: 'hace 2 meses',
+    others: 'otras',
+    contractType: 'Termino indefinido'
+  },
+  {
+    title: 'Desarrollador Web',
+    cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
+    companyName: 'Adidas',
+    companySlug: 'adidas',
+    educationLevel: 'Profesional',
+    experience: '6 meses de experiencia',
+    minSalary: '1.200.000',
+    maxSalary: '2.000.000',
+    publishDate: 'hace 10 dias',
+    others: 'otras',
+    contractType: 'Termino fijo'
+  },
+  {
+    title: 'UX | UI designer',
+    cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
+    companyName: 'Lego',
+    companySlug: 'legos',
+    educationLevel: 'Tecnologo',
+    experience: '6 meses de experiencia',
+    minSalary: '3.000.000',
+    maxSalary: '5.000.000',
+    publishDate: 'hace 2 meses',
+    others: 'otras',
+    contractType: 'Termino indefinido'
+  },
+  {
+    title: 'Desarrollador Web',
+    cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
+    companyName: 'Adidas',
+    companySlug: 'adidas',
+    educationLevel: 'Profesional',
+    experience: '6 meses de experiencia',
+    minSalary: '1.200.000',
+    maxSalary: '2.000.000',
+    publishDate: 'hace 10 dias',
+    others: 'otras',
+    contractType: 'Termino fijo'
+  },
+  {
+    title: 'Analista',
+    cities: ['Medellin', 'Barranquila', 'Bogota'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMoo9RUN_NnD4aWgDuHUeEGTUfJXpimlWA&usqp=CAU',
+    companyName: 'Coca-cola',
+    companySlug: 'coca-cola',
+    educationLevel: 'Arquitecto',
+    experience: '12 meses de experiencia',
+    minSalary: '3.200.000',
+    maxSalary: '6.000.000',
+    publishDate: 'hace 20 dias',
+    others: 'otras',
+    contractType: 'Prestacion de servicios'
+  },
+  {
+    title: 'UX | UI designer',
+    cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
+    companyName: 'Lego',
+    companySlug: 'legos',
+    educationLevel: 'Tecnologo',
+    experience: '6 meses de experiencia',
+    minSalary: '3.000.000',
+    maxSalary: '5.000.000',
+    publishDate: 'hace 2 meses',
+    others: 'otras',
+    contractType: 'Termino indefinido'
+  },
+  {
+    title: 'Desarrollador Web',
+    cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
+    companyName: 'Adidas',
+    companySlug: 'adidas',
+    educationLevel: 'Profesional',
+    experience: '6 meses de experiencia',
+    minSalary: '1.200.000',
+    maxSalary: '2.000.000',
+    publishDate: 'hace 10 dias',
+    others: 'otras',
+    contractType: 'Termino fijo'
+  },
+  {
+    title: 'UX | UI designer',
+    cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
+    companyName: 'Lego',
+    companySlug: 'legos',
+    educationLevel: 'Tecnologo',
+    experience: '6 meses de experiencia',
+    minSalary: '3.000.000',
+    maxSalary: '5.000.000',
+    publishDate: 'hace 2 meses',
+    others: 'otras',
+    contractType: 'Termino indefinido'
+  },
   {
     title: 'Desarrollador Web',
     cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],

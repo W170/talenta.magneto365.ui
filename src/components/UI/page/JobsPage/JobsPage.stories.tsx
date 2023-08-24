@@ -1,15 +1,24 @@
-import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
+import React from 'react'
+
+import { SearchItem } from '@components/UI/atoms'
 import JobsPage from './JobsPage.component'
-import {
-  CompanyLogo,
-  appliedOptionsBySearchRenderType,
-  optionsFilterOrderBy,
-  vacants
-} from '@constants/stories.constants'
+
 import { FacebookBlue, LinkedInBlue, SMSBlue, ShareBlue, TwitterBlue, WhatsAppColor } from '@constants/icons.constants'
 
+import {
+  CompanyLogo,
+  MagnetoResolutionProps,
+  RightsReservedProps,
+  appliedOptionsBySearchRenderType,
+  listMenuText,
+  optionsFilterOrderBy,
+  searchList,
+  vacants
+} from '@constants/stories.constants'
+
 import data from '@components/UI/template/SideFilter/filtersNormalized.json'
+
 import {
   IFilter,
   IGetOptionsOnSearchProps,
@@ -180,6 +189,7 @@ const mobileJobDetailsDrawer = {
     }
   }
 }
+
 const sideFilter = {
   title: 'Filtrar empleos',
   filters: data as unknown as IFilter[],
@@ -204,6 +214,19 @@ const sideFilter = {
       return resolve([])
     })
 }
+
+const frequentSearch = {
+  searchHeading: 'Búsquedas de empleo más frecuentes',
+  children: searchList.map(({ tag }, index: number) => <SearchItem key={index} tag={tag} />)
+}
+
+const footerProps = {
+  followText: 'Siguenos',
+  magnetoResolutionProps: MagnetoResolutionProps,
+  rightsReservedProps: RightsReservedProps,
+  menuFooterLink: listMenuText
+}
+
 const meta: Meta<typeof JobsPage> = {
   title: 'Pages/Jobs Page',
   component: JobsPage,
@@ -224,7 +247,9 @@ const meta: Meta<typeof JobsPage> = {
     vacantProps: vacants,
     jobDetailsDrawerProps: jobDetailsDrawer,
     MobileJobDetailsDrawerProps: mobileJobDetailsDrawer,
-    sideFilterProps: sideFilter as ISideFilter
+    frequentSearchProps: frequentSearch,
+    sideFilterProps: sideFilter as ISideFilter,
+    footerProps
   },
   decorators: [
     (Story) => (

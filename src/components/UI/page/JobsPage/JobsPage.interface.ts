@@ -1,7 +1,9 @@
 import { IJobCard } from '@components/UI/molecules/JobCard/JobCard.interface'
+import { IFrequentSearch } from '@components/UI/molecules'
 import { IJobDetailsDrawer, IMobileJobDetailsDrawer } from '@components/UI/organism'
-import { ISideFilter } from '@components/UI/template'
 import { IFilterBottomHeader } from '@components/UI/template/FilterBottomHeader/FilterBottomHeader.interface'
+import { ISideFilter } from '@components/UI/template'
+import { IFooter } from '@components/UI/template/Footer/Footer.interface'
 
 export interface IJobsPage {
   /**
@@ -25,8 +27,16 @@ export interface IJobsPage {
    */
   MobileJobDetailsDrawerProps: IMobileJobDetailsDrawer
   /**
+   *
+   */
+  frequentSearchProps: IFrequentSearch
+  /**
    * Props for the filters.
    *
    */
   sideFilterProps: ISideFilter
+  /**
+   * Props for the footer
+   */
+  footerProps: IFooter
 }
