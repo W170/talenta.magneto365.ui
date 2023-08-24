@@ -253,6 +253,30 @@ export const LoginButton: IMainButton = {
   }
 }
 
+// Search Item
+export const searchList = [
+  { tag: 'Bolsa de empleo México' },
+  { tag: 'Bolsa de empleo Argentina' },
+  { tag: 'Bolsa de empleo Nicaragua' },
+  { tag: 'Bolsa de empleo Costa Rica' },
+  { tag: 'Servicio de empleo Colombia' },
+  { tag: 'Bolsa de empleo Colombia' },
+  { tag: 'Empleo en Barranquilla' },
+  { tag: 'Empleo en Cartagena' },
+  { tag: 'Empleo en Medellín' },
+  { tag: 'Empleo en Bogotá' },
+  { tag: 'Empleo en Cali' },
+  { tag: 'Empleo en Pereira' },
+  { tag: 'Empleo como agente' },
+  { tag: 'Trabajos como ingeniero' },
+  { tag: 'Servicio de empleo' },
+  { tag: 'Empleos como abogado' },
+  { tag: 'Empleo como desarrollador' },
+  { tag: 'Empleos SENA' },
+  { tag: 'Empleos en bodega' },
+  { tag: 'Empleo como regente de farmacia' }
+]
+
 /**
  *
  *
