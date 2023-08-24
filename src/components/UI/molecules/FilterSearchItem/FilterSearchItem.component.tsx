@@ -15,7 +15,7 @@ export const FilterSearchItem: FC<IFilterSearchItem> = ({ placeholder, disabled,
     )
 
   return (
-    <div className={`${styles['magneto-ui-filter-search']} ${disabled && styles.disabled}`}>
+    <div className={`${styles['magneto-ui-filter-search']} ${disabled ? styles.disabled : ''}`}>
       <IconItem icon={SearchIcon} size={17} />
       <input
         ref={inputRef}
