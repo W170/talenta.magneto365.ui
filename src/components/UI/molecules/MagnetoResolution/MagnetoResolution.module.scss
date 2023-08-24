@@ -1,0 +1,38 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-magneto-resolution {
+  background-color: white;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  @media (min-width: v.$screen-md) {
+    gap: 20px;
+    padding: 0;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+  }
+  &__img {
+    width: 300px;
+    height: auto;
+    @media (min-width: v.$screen-xs) {
+      width: 380px;
+    }
+  }
+  &__text {
+    font-size: 13px;
+    width: 100%;
+    @media (min-width: v.$screen-lg) {
+      width: 500px;
+    }
+    text-align: justify;
+    color: v.$colors-magneto-neutral;
+    &--link {
+      margin-left: 5px;
+      color: v.$colors-magneto-neutral;
+      text-decoration: underline;
+    }
+  }
+}

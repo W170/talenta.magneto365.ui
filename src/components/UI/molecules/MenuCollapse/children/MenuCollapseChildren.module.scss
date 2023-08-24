@@ -1,0 +1,29 @@
+@use '../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-collapse-menu {
+  background-color: #e9e9f6;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+  height: 40px;
+  margin-bottom: 10px;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+  &__btn {
+    border: none;
+    background: none;
+    position: absolute;
+    right: 5px;
+
+    &--img {
+      width: 20px;
+      height: auto;
+      transition: all ease-in-out 0.3s;
+    }
+  }
+}
+
+.rotate {
+  transform: rotate(180deg);
+}

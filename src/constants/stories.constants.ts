@@ -30,7 +30,10 @@ import {
   ArchiveAdd,
   Share,
   Export3,
-  Buildings2
+  Buildings2,
+  GooglePlay,
+  AppGallery,
+  AppStore
 } from './icons.constants'
 
 import { IAvatar, ILogoComponent, IMainButton, IconProps } from '../components/UI/atoms'
@@ -49,6 +52,9 @@ import { IMenuFilterItem } from '../components/UI/molecules/MenuFilter/MenuFilte
 import { IFilterValue } from '@components/UI/template/SideFilter'
 import { IJobCard } from '@components/UI/molecules/JobCard/JobCard.interface'
 import { IlistMenuUserPropsNot1440 } from '@components/UI/organism'
+import { IListMenuText } from '@components/UI/molecules/ListMenuText/ListMenuText.interface'
+import { IRightsReservedText } from '@components/UI/molecules/RightsReservedText/RightsReservedText.interface'
+import { IMagnetoResolution } from '@components/UI/molecules/MagnetoResolution/MagnetoResolution.interface'
 
 /**
  *
@@ -826,5 +832,192 @@ export const brands = [
     brandAlt: 'Cueros Velez',
     brandTitle: 'Cueros Velez',
     brandUrl: '#'
+  }
+]
+
+export const listMenuText: IListMenuText[] = [
+  {
+    heightContent: 310,
+    title: 'Personas',
+    createAccount: () => console.log('holi'),
+    isLoading: false,
+    links: [
+      {
+        tag: 'Conoce Magneto',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Ver todo los empleos',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Ingresa a tu cuenta',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Crear Cuenta',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true,
+        isCreateAccount: true
+      },
+      {
+        tag: 'Articulos de interes',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Preguntas Frecuentes',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Emeplos por ciudad',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Empleos por sector',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Empleos por empresa',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      }
+    ]
+  },
+  {
+    heightContent: 140,
+    title: 'Empresas',
+    links: [
+      {
+        tag: 'Magneto para las empresas',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Marble Headhunter',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Talenta',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      }
+    ]
+  },
+  {
+    heightContent: 355,
+    title: 'Legal',
+    links: [
+      {
+        tag: 'Politica tratamiento de Datos Personales Psyconometrics',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Politica tratamiento de Datos Magneto Global',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Aviso de privacidad Psyconometrics',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Aviso de privacidad Magneto Global',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Termino y condiciones',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Reglamento Autorizacion SPE',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Consentimiento de referidos',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Ver Reglamento de autorizacion',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Politica de Cookies Psyconometrics',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Politica de Cookies Magneto Global',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      }
+    ]
+  }
+]
+
+export const RightsReservedProps: IRightsReservedText = {
+  magnetoRightsText: 'Magneto Global S.A.S, todos los derechos reservados',
+  mapSiteHref: '#',
+  mapSiteText: 'Mapa del sitio'
+}
+
+export const MagnetoResolutionProps: IMagnetoResolution = {
+  resolutionText:
+    ' Vinculado a la red de prestadores del Servicio Público de Empleo. Autorizado por la Unidad Administrativa Especial del Servicio Público de Empleo según resolución',
+  resolutionHref: '#',
+  resolutionHrefText: 'No. 0333/2022'
+}
+
+export const SocialMediaProps = [
+  {
+    href: 'https://play.google.com/store/apps/details?id=com.magneto365.app',
+    img: GooglePlay,
+    alt: 'google-play-image'
+  },
+  {
+    href: 'https://appgallery.huawei.com/app/C108120693',
+    img: AppGallery,
+    alt: 'app-gallery-image'
+  },
+  {
+    href: 'https://apps.apple.com/co/app/magneto-empleo-para-todos/id6444812096',
+    img: AppStore,
+    alt: 'app-store-image'
   }
 ]

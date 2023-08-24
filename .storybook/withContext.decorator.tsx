@@ -36,7 +36,7 @@ const fixGlobalStyles = () => {
       list-style-type: none;
     } 
     a {
-      text-decoration: none !important;
+      text-decoration: none;
       color: black;
     }`
   window.document.head.insertBefore(style, window.document.head.firstChild)
