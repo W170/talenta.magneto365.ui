@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  margin-top: 30px;
   &__row1 {
     display: flex;
     flex-direction: column;
@@ -34,5 +34,9 @@
         width: auto;
       }
     }
+  }
+  &__resolution {
+    padding-bottom: 30px;
+    background-color: white;
   }
 }

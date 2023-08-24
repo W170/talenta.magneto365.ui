@@ -22,7 +22,9 @@ const Footer: React.FC<IFooter> = ({ followText, magnetoResolutionProps, rightsR
           <FooterMenuLinks menuList={menuFooterLink} />
         </div>
       </div>
-      <MagnetoResolution {...magnetoResolutionProps} />
+      <div className={`${style[`${classMUI}-footer__resolution`]}`}>
+        <MagnetoResolution {...magnetoResolutionProps} />
+      </div>
     </footer>
   )
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import FilterContainerMenu from '@components/UI/molecules/FilterContainerMenu/FilterContainerMenu.component'
 import { JobDetailContainer, JobCard } from '@components/UI/molecules'
 import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
-import { FilterBottomHeader, SideFilter } from '@components/UI/template'
+import { FilterBottomHeader, Footer, SideFilter } from '@components/UI/template'
 import { useMediaQuery } from '@components/hooks'
 
 import { IJobsPage } from './JobsPage.interface'
@@ -15,7 +15,8 @@ const JobsPage: React.FC<IJobsPage> = ({
   MobileJobDetailsDrawerProps,
   filterBottomHeaderProps,
   sideFilterProps,
-  vacantProps
+  vacantProps,
+  footerProps
 }) => {
   const [showDetail, setShowDetail] = useState(false)
   const [showDrawer, setShowDrawer] = useState(false)
@@ -40,23 +41,27 @@ const JobsPage: React.FC<IJobsPage> = ({
   })
 
   return (
-    <div className={style[`${classMUI}-jobs-page`]}>
-      <div className={style[`${classMUI}-jobs-page--filter-row`]}>
-        <FilterContainerMenu>
-          <SideFilter {...sideFilterProps} />
-        </FilterContainerMenu>
+    <>
+      <div className={style[`${classMUI}-jobs-page`]}>
+        <div className={style[`${classMUI}-jobs-page--filter-row`]}>
+          <FilterContainerMenu>
+            <SideFilter {...sideFilterProps} />
+          </FilterContainerMenu>
+        </div>
+
+        <div className={style[`${classMUI}-jobs-page--center-row`]}>
+          <FilterBottomHeader {...filterBottomHeaderProps} />
+          <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>
+            {vacantProps.map(({ ...props }, index) => (
+              <JobCard showDetail={handleDrawers} key={index} {...props} />
+            ))}
+          </div>
+        </div>
+        <div className={style[`${classMUI}-jobs-page__jobs-detail`]}>{JobDetailsDrawerComponent}</div>
       </div>
 
-      <div className={style[`${classMUI}-jobs-page--center-row`]}>
-        <FilterBottomHeader {...filterBottomHeaderProps} />
-        <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>
-          {vacantProps.map(({ ...props }, index) => (
-            <JobCard showDetail={handleDrawers} key={index} {...props} />
-          ))}
-        </div>
-      </div>
-      <div className={style[`${classMUI}-jobs-page__jobs-detail`]}>{JobDetailsDrawerComponent}</div>
-    </div>
+      <Footer {...footerProps} />
+    </>
   )
 }
 

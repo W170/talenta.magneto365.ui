@@ -3,7 +3,10 @@ import { Meta, StoryObj } from '@storybook/react'
 import JobsPage from './JobsPage.component'
 import {
   CompanyLogo,
+  MagnetoResolutionProps,
+  RightsReservedProps,
   appliedOptionsBySearchRenderType,
+  listMenuText,
   optionsFilterOrderBy,
   vacants
 } from '@constants/stories.constants'
@@ -201,6 +204,14 @@ const sideFilter = {
       return resolve([])
     })
 }
+
+const footerProps = {
+  followText: 'Siguenos',
+  magnetoResolutionProps: MagnetoResolutionProps,
+  rightsReservedProps: RightsReservedProps,
+  menuFooterLink: listMenuText
+}
+
 const meta: Meta<typeof JobsPage> = {
   title: 'Pages/Jobs Page',
   component: JobsPage,
@@ -219,7 +230,8 @@ const meta: Meta<typeof JobsPage> = {
     vacantProps: vacants,
     jobDetailsDrawerProps: jobDetailsDrawer,
     MobileJobDetailsDrawerProps: mobileJobDetailsDrawer,
-    sideFilterProps: sideFilter as ISideFilter
+    sideFilterProps: sideFilter as ISideFilter,
+    footerProps
   },
   decorators: [
     (Story) => (
