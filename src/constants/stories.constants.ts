@@ -47,7 +47,7 @@ import {
   ISearchbar
 } from '../components/UI/molecules'
 import { ILoading } from '../components/UI/atoms/Loading'
-import { IMenuFilterItem } from '../components/UI/molecules/MenuFilter/MenuFilter.interface'
+import { ISortMenuItem } from '../components/UI/molecules/SortMenu/SortMenu.interface'
 import { IFilterValue } from '@components/UI/template/SideFilter'
 import { IJobCard } from '@components/UI/molecules/JobCard/JobCard.interface'
 import { IBrands } from '../components/UI/molecules/BrandsContainer/BrandsContainer.interface'
@@ -621,9 +621,9 @@ export const listMenuUserProps: IListMenuIcons = {
   settings: Settings
 }
 
-//FilterBottomHeader props
+//SortBar props
 
-export const menuFilterButton = {
+export const menuSortButton = {
   icon: ArrowDown2,
   hover: false,
   size: 17
@@ -635,7 +635,7 @@ export const iconFilterOrder = {
   size: 20
 }
 
-export const optionsFilterOrderBy: IMenuFilterItem[] = [
+export const optionsFilterOrderBy: ISortMenuItem[] = [
   {
     field: 'salary_show',
     label: 'Salario'

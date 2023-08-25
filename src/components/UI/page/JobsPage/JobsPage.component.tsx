@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react'
 import FilterContainerMenu from '@components/UI/molecules/FilterContainerMenu/FilterContainerMenu.component'
 import { JobDetailContainer, JobCard, FrequentSearch, Pagination } from '@components/UI/molecules'
 import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
-import { FilterBottomHeader, Footer, SideFilter } from '@components/UI/template'
+import { SortBar, Footer, SideFilter } from '@components/UI/template'
 import { useMediaQuery } from '@components/hooks'
 
 import { IJobsPage } from './JobsPage.interface'
@@ -13,7 +13,7 @@ import { classMUI } from '../../../../constants/stories.constants'
 const JobsPage: React.FC<IJobsPage> = ({
   jobDetailsDrawerProps,
   MobileJobDetailsDrawerProps,
-  filterBottomHeaderProps,
+  sortBarProps,
   sideFilterProps,
   frequentSearchProps,
   vacantProps,
@@ -53,11 +53,7 @@ const JobsPage: React.FC<IJobsPage> = ({
         </div>
 
         <div className={style[`${classMUI}-jobs-page--center-row`]}>
-          <FilterBottomHeader
-            {...filterBottomHeaderProps}
-            isFiltersOpen={isFiltersOpen}
-            setIsFiltersOpen={setIsFiltersOpen}
-          />
+          <SortBar {...sortBarProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
           <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>
             {vacantProps.map(({ ...props }, index) => (
               <JobCard showDetail={handleDrawers} key={index} {...props} />

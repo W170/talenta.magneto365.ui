@@ -1,6 +1,6 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 
-.magneto-ui-filter {
+.magneto-ui-sort-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,12 +26,21 @@
   }
 }
 
+.magneto-ui-main-title {
+  font-size: 14px;
+  font-weight: 900;
+  color: v.$text-color-black;
+  padding: 0 10px;
+  border-right: 2px solid v.$text-color-black;
+  @media screen and(max-width: v.$screen-lg) {
+    display: none;
+  }
+}
+
 .magneto-ui-btn-text {
   font-size: 14px;
   color: v.$text-color-black;
-  width: 100%;
-  margin: auto;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .magneto-ui-btn-menu {

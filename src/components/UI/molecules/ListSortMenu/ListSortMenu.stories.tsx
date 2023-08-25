@@ -1,12 +1,12 @@
 import { StoryObj, Meta } from '@storybook/react'
-import ListMenuFilter from './ListMenuFilter.component'
+import ListSortMenu from './ListSortMenu.component'
 import { optionsFilterOrderBy } from '../../../../constants/stories.constants'
 
-const meta: Meta<typeof ListMenuFilter> = {
-  title: 'Molecules/List Menu Filter',
-  component: ListMenuFilter,
+const meta: Meta<typeof ListSortMenu> = {
+  title: 'Molecules/List Sort Menu',
+  component: ListSortMenu,
   args: {
-    filterItems: optionsFilterOrderBy,
+    orderFields: optionsFilterOrderBy,
     setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
     textOrderFilter: optionsFilterOrderBy[1].label,
     setShowPopover: () => console.log('setShowPopover')
@@ -15,6 +15,6 @@ const meta: Meta<typeof ListMenuFilter> = {
 
 export default meta
 
-type Story = StoryObj<typeof ListMenuFilter>
+type Story = StoryObj<typeof ListSortMenu>
 
 export const Default: Story = {}

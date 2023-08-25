@@ -1,10 +1,10 @@
-import { IMenuFilterItem } from '../MenuFilter/MenuFilter.interface'
+import { ISortMenuItem } from '../'
 
-export interface IListMenuFilter {
+export interface IListSortMenu {
   /**
    * This is an array with the menu options
    */
-  filterItems: IMenuFilterItem[]
+  orderFields: ISortMenuItem[]
   /**
    * This function change the filter with the selected option
    */

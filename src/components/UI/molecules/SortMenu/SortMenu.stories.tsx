@@ -1,12 +1,12 @@
 import { StoryObj, Meta } from '@storybook/react'
-import { MenuFilter } from './'
+import { SortMenu } from './index'
 import { optionsFilterOrderBy } from '../../../../constants/stories.constants'
 
-const meta: Meta<typeof MenuFilter> = {
-  title: 'Molecules/Menu Filter',
-  component: MenuFilter,
+const meta: Meta<typeof SortMenu> = {
+  title: 'Molecules/ Sort Menu',
+  component: SortMenu,
   args: {
-    filterItems: optionsFilterOrderBy,
+    orderFields: optionsFilterOrderBy,
     textOrderFilter: 'Fecha de publicación',
     setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
     loading: false
@@ -15,6 +15,6 @@ const meta: Meta<typeof MenuFilter> = {
 
 export default meta
 
-type Story = StoryObj<typeof MenuFilter>
+type Story = StoryObj<typeof SortMenu>
 
 export const Default: Story = {}

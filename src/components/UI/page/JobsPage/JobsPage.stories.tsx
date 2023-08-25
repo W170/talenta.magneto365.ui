@@ -190,7 +190,21 @@ const mobileJobDetailsDrawer = {
   }
 }
 
-const sideFilter = {
+const sortBarProps = {
+  textSortButton: 'FILTROS',
+  mainTitle: 'Ofertas de empleo en colombia',
+  filterSummary: '280 empleos',
+  setIsFiltersOpen: () => console.log('setIsFiltersOpen'),
+  orderFilter: () => console.log('orderFilter'),
+  orderFields: optionsFilterOrderBy,
+  textOrderFilter: 'Fecha de publicación',
+  setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
+  orderByText: 'Organizar por',
+  isFiltersOpen: true,
+  loading: false
+}
+
+const sideFilterProps = {
   title: 'Filtrar empleos',
   filters: data as unknown as IFilter[],
   totalAppliedFilters: 1,
@@ -243,23 +257,12 @@ const meta: Meta<typeof JobsPage> = {
   component: JobsPage,
   tags: ['autodocs'],
   args: {
-    filterBottomHeaderProps: {
-      textButtonFilter: 'FILTROS',
-      filterSummary: '280 empleos',
-      setIsFiltersOpen: () => console.log('setIsFiltersOpen'),
-      orderFilter: () => console.log('orderFilter'),
-      filterItems: optionsFilterOrderBy,
-      textOrderFilter: 'Fecha de publicación',
-      setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
-      orderByText: 'Organizar por',
-      isFiltersOpen: true,
-      loading: false
-    },
+    sortBarProps,
     vacantProps: vacants,
     jobDetailsDrawerProps: jobDetailsDrawer,
     MobileJobDetailsDrawerProps: mobileJobDetailsDrawer,
     frequentSearchProps: frequentSearch,
-    sideFilterProps: sideFilter as ISideFilter,
+    sideFilterProps: sideFilterProps as ISideFilter,
     footerProps,
     paginationProps
   },

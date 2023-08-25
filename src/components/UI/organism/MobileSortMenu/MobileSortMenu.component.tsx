@@ -1,40 +1,42 @@
 import React, { useMemo } from 'react'
-import { ListMenuFilter } from '../../molecules/ListMenuFilter'
-import { IMobileMenuFilter } from './MobileMenuFilter.interface'
+import { ListSortMenu } from '../../molecules/ListSortMenu'
+import { IMobileSortMenu } from './MobileSortMenu.interface'
 import { MobileDrawer } from '../../molecules'
 import { IconItem } from '../../atoms'
-import style from './MobileMenuFilter.module.scss'
 import { iconFilterOrder } from '../../../../constants/stories.constants'
+import style from './MobileSortMenu.module.scss'
 
-const MobileMenuFilter: React.FC<IMobileMenuFilter> = ({
+const MobileSortMenu: React.FC<IMobileSortMenu> = ({
   isOpen,
-  onClose,
-  filterItems,
-  setFilter,
-  orderFilter,
+  mainTitle,
+  orderFields,
   orderByText,
   textOrderFilter,
+  onClose,
+  setFilter,
+  orderFilter,
   setShowPopover
 }) => {
   const listMenuProps = useMemo(() => {
     return {
-      filterItems,
+      orderFields,
       setFilter,
       setShowPopover,
       textOrderFilter
     }
-  }, [filterItems, textOrderFilter, setFilter, setShowPopover])
+  }, [orderFields, textOrderFilter, setFilter, setShowPopover])
   return (
     <MobileDrawer isOpen={isOpen} onClose={onClose}>
+      <h1 className={style['magneto-ui-order-text']}>{mainTitle}</h1>
       <div className={style['magneto-ui-order-container']}>
         <p className={style['magneto-ui-order-text']}>{orderByText}</p>
         <button className={`${style['magneto-ui-btn-order']}`} onClick={orderFilter}>
           <IconItem {...iconFilterOrder} />
         </button>
       </div>
-      <ListMenuFilter {...listMenuProps} />
+      <ListSortMenu {...listMenuProps} />
     </MobileDrawer>
   )
 }
 
-export default MobileMenuFilter
+export default MobileSortMenu
