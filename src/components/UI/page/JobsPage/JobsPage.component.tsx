@@ -54,6 +54,7 @@ const JobsPage: React.FC<IJobsPage> = ({
 
         <div className={style[`${classMUI}-jobs-page--center-row`]}>
           <SortBar {...sortBarProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
+          <h1 className={style[`${classMUI}-jobs-page--title`]}>{sortBarProps?.mainTitle}</h1>
           <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>
             {vacantProps.map(({ ...props }, index) => (
               <JobCard showDetail={handleDrawers} key={index} {...props} />
