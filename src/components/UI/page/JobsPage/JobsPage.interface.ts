@@ -1,5 +1,5 @@
 import { IJobCard } from '@components/UI/molecules/JobCard/JobCard.interface'
-import { IFrequentSearch } from '@components/UI/molecules'
+import { IFrequentSearch, IPaginationProps } from '@components/UI/molecules'
 import { IJobDetailsDrawer, IMobileJobDetailsDrawer } from '@components/UI/organism'
 import { IFilterBottomHeader } from '@components/UI/template/FilterBottomHeader/FilterBottomHeader.interface'
 import { ISideFilter } from '@components/UI/template'
@@ -39,4 +39,8 @@ export interface IJobsPage {
    * Props for the footer
    */
   footerProps: IFooter
+  /**
+   * Props for the paginator
+   */
+  paginationProps: IPaginationProps
 }

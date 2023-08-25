@@ -227,6 +227,17 @@ const footerProps = {
   menuFooterLink: listMenuText
 }
 
+const paginationProps = {
+  total: 826,
+  current: 4,
+  pageSize: 20,
+  loading: false,
+  numberOfButtons: 5,
+  prevTitle: 'Anterior',
+  nextTitle: 'Siguiente',
+  onChange: (page: number, pageSize: number) => console.log('Pagination: ', { page, pageSize })
+}
+
 const meta: Meta<typeof JobsPage> = {
   title: 'Pages/Jobs Page',
   component: JobsPage,
@@ -249,7 +260,8 @@ const meta: Meta<typeof JobsPage> = {
     MobileJobDetailsDrawerProps: mobileJobDetailsDrawer,
     frequentSearchProps: frequentSearch,
     sideFilterProps: sideFilter as ISideFilter,
-    footerProps
+    footerProps,
+    paginationProps
   },
   decorators: [
     (Story) => (
