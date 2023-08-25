@@ -7,13 +7,14 @@ const meta: Meta<typeof MobileSortMenu> = {
   component: MobileSortMenu,
   tags: ['autodocs'],
   args: {
-    orderFields: optionsFilterOrderBy,
-    setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
     isOpen: true,
-    onClose: () => ({}),
+    mainTitle: 'Ofertas de empleo en colombia',
+    orderFields: optionsFilterOrderBy,
     orderByText: 'Organizar por',
-    setShowPopover: () => console.log('setShowPopover'),
-    textOrderFilter: optionsFilterOrderBy[1].label
+    textOrderFilter: optionsFilterOrderBy[1].label,
+    onClose: () => ({}),
+    setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
+    setShowPopover: () => console.log('setShowPopover')
   }
 }
 

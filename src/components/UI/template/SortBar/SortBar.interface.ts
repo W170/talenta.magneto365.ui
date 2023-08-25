@@ -6,6 +6,10 @@ export interface ISortBar {
    */
   textSortButton: string
   /**
+   * This is the content of the h1 tag of the page
+   */
+  mainTitle: string
+  /**
    * this is the text for the value filtered
    */
   filterSummary: string

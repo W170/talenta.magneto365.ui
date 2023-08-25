@@ -9,6 +9,7 @@ const meta: Meta<typeof SortBar> = {
   tags: ['autodocs'],
   args: {
     textSortButton: 'FILTROS',
+    mainTitle: 'Ofertas de empleo en colombia',
     filterSummary: '280 empleos',
     orderFields: optionsFilterOrderBy,
     textOrderFilter: 'Fecha de publicación',

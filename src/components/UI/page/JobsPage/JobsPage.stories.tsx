@@ -192,6 +192,7 @@ const mobileJobDetailsDrawer = {
 
 const sortBarProps = {
   textSortButton: 'FILTROS',
+  mainTitle: 'Ofertas de empleo en colombia',
   filterSummary: '280 empleos',
   setIsFiltersOpen: () => console.log('setIsFiltersOpen'),
   orderFilter: () => console.log('orderFilter'),

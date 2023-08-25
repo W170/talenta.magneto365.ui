@@ -7,10 +7,11 @@ import { SortMenu } from '@components/UI/molecules/SortMenu'
 import { IconItem } from '@components/UI/atoms'
 import MobileSortMenu from '@components/UI/organism/MobileSortMenu/MobileSortMenu.component'
 import { ISortBar } from './SortBar.interface'
-import style from './SortBar.module.scss'
+import styles from './SortBar.module.scss'
 
 const SortBar: React.FC<ISortBar> = ({
   textSortButton,
+  mainTitle,
   filterSummary,
   textOrderFilter,
   orderFields,
@@ -27,8 +28,8 @@ const SortBar: React.FC<ISortBar> = ({
 
     {
       md: (
-        <button className={style['magneto-ui-btn-menu']} onClick={() => setShowMenu(true)}>
-          <p className={style['magneto-ui-btn-text']}>{textOrderFilter}</p>
+        <button className={styles['magneto-ui-btn-menu']} onClick={() => setShowMenu(true)}>
+          <p className={styles['magneto-ui-btn-text']}>{textOrderFilter}</p>
           <IconItem {...menuSortButton} />
         </button>
       )
@@ -37,8 +38,8 @@ const SortBar: React.FC<ISortBar> = ({
 
   return (
     <Fragment>
-      <div className={style['magneto-ui-sort-menu']}>
-        <div className={style['magneto-ui-section-filter']}>
+      <div className={styles['magneto-ui-sort-menu']}>
+        <div className={styles['magneto-ui-section-filter']}>
           <MenuIcon
             type="button"
             text={textSortButton}
@@ -47,24 +48,25 @@ const SortBar: React.FC<ISortBar> = ({
             size={17}
             isActive={true}
           />
-
-          <p className={`${style['magneto-ui-btn-text']} ${style.hidden}`}>{filterSummary}</p>
+          <h1 className={styles['magneto-ui-main-title']}>{mainTitle}</h1>
+          <p className={`${styles['magneto-ui-btn-text']} ${styles.hidden}`}>{filterSummary}</p>
         </div>
-        <div className={style['magneto-ui-section-menu']}>
+        <div className={styles['magneto-ui-section-menu']}>
           {sortMenu}
-          <button className={`${style['magneto-ui-btn-order']} ${style.hidden}`} onClick={orderFilter}>
+          <button className={`${styles['magneto-ui-btn-order']} ${styles.hidden}`} onClick={orderFilter}>
             <IconItem {...iconFilterOrder} />
           </button>
         </div>
       </div>
       <MobileSortMenu
-        orderByText={orderByText}
         isOpen={showMenu}
-        onClose={() => setShowMenu(!showMenu)}
+        mainTitle={mainTitle}
         orderFields={orderFields}
+        orderByText={orderByText}
+        textOrderFilter={textOrderFilter}
+        onClose={() => setShowMenu(!showMenu)}
         setFilter={setFilter}
         orderFilter={orderFilter}
-        textOrderFilter={textOrderFilter}
         setShowPopover={setShowMenu}
       />
     </Fragment>

@@ -6,21 +6,13 @@ export interface IMobileSortMenu {
    */
   isOpen: boolean
   /**
-   * this property close drawer
+   * This is the content of the h1 tag of the page
    */
-  onClose: () => void
+  mainTitle: string
   /**
    * This is an array with the menu options
    */
   orderFields: ISortMenuItem[]
-  /**
-   * This function change the filter with the selected option
-   */
-  setFilter: (menuItem: { key: string }) => void
-  /**
-   * With this function you can change the alphabetical order
-   */
-  orderFilter: () => void
   /**
    * this is the mobile text to alphabetical order
    */
@@ -29,6 +21,19 @@ export interface IMobileSortMenu {
    * This is the current text
    */
   textOrderFilter: string
+  /**
+   * this property close drawer
+   */
+  onClose: () => void
+  /**
+   * This function change the filter with the selected option
+   */
+
+  setFilter: (menuItem: { key: string }) => void
+  /**
+   * With this function you can change the alphabetical order
+   */
+  orderFilter: () => void
   /**
    * This function can close the popover
    */
