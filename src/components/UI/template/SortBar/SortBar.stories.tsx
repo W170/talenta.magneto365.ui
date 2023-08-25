@@ -1,16 +1,16 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-import FilterBottomHeader from './FilterBottomHeader.component'
+import SortBar from './SortBar.component'
 import { optionsFilterOrderBy } from '../../../../constants/stories.constants'
 
-const meta: Meta<typeof FilterBottomHeader> = {
-  title: 'Template/Filter Bottom Header',
-  component: FilterBottomHeader,
+const meta: Meta<typeof SortBar> = {
+  title: 'Template/Sort Bar',
+  component: SortBar,
   tags: ['autodocs'],
   args: {
-    textButtonFilter: 'FILTROS',
+    textSortButton: 'FILTROS',
     filterSummary: '280 empleos',
-    filterItems: optionsFilterOrderBy,
+    orderFields: optionsFilterOrderBy,
     textOrderFilter: 'Fecha de publicación',
     orderByText: 'Organizar por',
     isFiltersOpen: false,
@@ -30,6 +30,6 @@ const meta: Meta<typeof FilterBottomHeader> = {
 
 export default meta
 
-type Story = StoryObj<typeof FilterBottomHeader>
+type Story = StoryObj<typeof SortBar>
 
 export const Default: Story = {}

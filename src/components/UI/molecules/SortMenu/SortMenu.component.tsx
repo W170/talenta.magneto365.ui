@@ -1,13 +1,13 @@
 import React, { useMemo } from 'react'
-import { menuFilterButton } from '../../../../constants/stories.constants'
-import { ListMenuFilter } from '../ListMenuFilter'
+import { menuSortButton } from '../../../../constants/stories.constants'
+import { ListSortMenu } from '../ListSortMenu'
 import { IconItem, Popover } from '../../atoms'
-import { IMenuFilter } from './MenuFilter.interface'
-import style from './MenuFilter.module.scss'
+import { ISortMenu } from './SortMenu.interface'
+import style from './SortMenu.module.scss'
 import withClickOut from '../../../hoc/withClickOut'
 
-const MenuFilter: React.FC<IMenuFilter> = ({
-  filterItems,
+const SortMenu: React.FC<ISortMenu> = ({
+  orderFields,
   textOrderFilter,
   setFilter,
   clickOut = false,
@@ -16,18 +16,18 @@ const MenuFilter: React.FC<IMenuFilter> = ({
 }) => {
   const listMenuProps = useMemo(() => {
     return {
-      filterItems,
+      orderFields,
       setFilter,
       setShowPopover: setClickOut,
       textOrderFilter
     }
-  }, [filterItems, textOrderFilter, setFilter, setClickOut])
+  }, [orderFields, textOrderFilter, setFilter, setClickOut])
 
   return (
     <Popover
       widthBase={180}
       show={clickOut}
-      content={<ListMenuFilter {...listMenuProps} />}
+      content={<ListSortMenu {...listMenuProps} />}
       positionX="left"
       positionY="bottom"
     >
@@ -37,9 +37,9 @@ const MenuFilter: React.FC<IMenuFilter> = ({
         disabled={loading}
       >
         <p className={style['magneto-ui-btn-text']}>{textOrderFilter}</p>
-        <IconItem {...menuFilterButton} />
+        <IconItem {...menuSortButton} />
       </button>
     </Popover>
   )
 }
-export default withClickOut(MenuFilter)
+export default withClickOut(SortMenu)

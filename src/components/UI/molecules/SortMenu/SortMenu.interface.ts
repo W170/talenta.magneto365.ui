@@ -1,4 +1,4 @@
-export interface IMenuFilterItem {
+export interface ISortMenuItem {
   /**
    * this is the key for set the filter
    */
@@ -13,11 +13,11 @@ export interface IMenuFilterItem {
   iconUrl?: string
 }
 
-export interface IMenuFilter {
+export interface ISortMenu {
   /**
    * This is an array with the menu options
    */
-  filterItems: IMenuFilterItem[]
+  orderFields: ISortMenuItem[]
   /**
    * This is the text that the button shows
    */

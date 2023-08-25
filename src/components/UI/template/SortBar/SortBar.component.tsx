@@ -1,46 +1,47 @@
-import React, { useState } from 'react'
-import { iconFilterOrder, menuFilterButton } from '../../../../constants/stories.constants'
-import { MenuIcon } from '../../molecules'
-import { MenuFilter } from '../../molecules/MenuFilter'
-import { IconItem } from '../../atoms'
-import { IFilterBottomHeader } from './FilterBottomHeader.interface'
-import style from './FilterBottomHeader.module.scss'
-import { useMediaQuery } from '../../../hooks'
-import MobileMenuFilter from '../../organism/MobileMenuFilter/MobileMenuFilter.component'
-import { Setting4 } from '../../../../constants/icons.constants'
+import React, { Fragment, useState } from 'react'
+import { iconFilterOrder, menuSortButton } from '@constants/stories.constants'
+import { Setting4 } from '@constants/icons.constants'
+import { useMediaQuery } from '@components/hooks'
+import { MenuIcon } from '@components/UI/molecules'
+import { SortMenu } from '@components/UI/molecules/SortMenu'
+import { IconItem } from '@components/UI/atoms'
+import MobileSortMenu from '@components/UI/organism/MobileSortMenu/MobileSortMenu.component'
+import { ISortBar } from './SortBar.interface'
+import style from './SortBar.module.scss'
 
-const FilterBottomHeader: React.FC<IFilterBottomHeader> = ({
-  textButtonFilter,
+const SortBar: React.FC<ISortBar> = ({
+  textSortButton,
   filterSummary,
   textOrderFilter,
+  orderFields,
+  orderByText,
+  loading,
   setIsFiltersOpen,
   orderFilter,
-  filterItems,
-  setFilter,
-  orderByText,
-  loading
+  setFilter
 }) => {
   const [showMenu, setShowMenu] = useState(false)
-  const filterMenu = useMediaQuery(
-    <MenuFilter filterItems={filterItems} textOrderFilter={textOrderFilter} setFilter={setFilter} loading={loading} />,
+
+  const sortMenu = useMediaQuery(
+    <SortMenu orderFields={orderFields} textOrderFilter={textOrderFilter} setFilter={setFilter} loading={loading} />,
 
     {
       md: (
         <button className={style['magneto-ui-btn-menu']} onClick={() => setShowMenu(true)}>
           <p className={style['magneto-ui-btn-text']}>{textOrderFilter}</p>
-          <IconItem {...menuFilterButton} />
+          <IconItem {...menuSortButton} />
         </button>
       )
     }
   )
 
   return (
-    <>
-      <div className={style['magneto-ui-filter']}>
+    <Fragment>
+      <div className={style['magneto-ui-sort-menu']}>
         <div className={style['magneto-ui-section-filter']}>
           <MenuIcon
             type="button"
-            text={textButtonFilter}
+            text={textSortButton}
             icon={Setting4}
             onClick={setIsFiltersOpen as () => void}
             size={17}
@@ -50,24 +51,24 @@ const FilterBottomHeader: React.FC<IFilterBottomHeader> = ({
           <p className={`${style['magneto-ui-btn-text']} ${style.hidden}`}>{filterSummary}</p>
         </div>
         <div className={style['magneto-ui-section-menu']}>
-          {filterMenu}
+          {sortMenu}
           <button className={`${style['magneto-ui-btn-order']} ${style.hidden}`} onClick={orderFilter}>
             <IconItem {...iconFilterOrder} />
           </button>
         </div>
       </div>
-      <MobileMenuFilter
+      <MobileSortMenu
         orderByText={orderByText}
         isOpen={showMenu}
         onClose={() => setShowMenu(!showMenu)}
-        filterItems={filterItems}
+        orderFields={orderFields}
         setFilter={setFilter}
         orderFilter={orderFilter}
         textOrderFilter={textOrderFilter}
         setShowPopover={setShowMenu}
       />
-    </>
+    </Fragment>
   )
 }
 
-export default FilterBottomHeader
+export default SortBar

@@ -1,6 +1,6 @@
-import { IMenuFilterItem } from '../../molecules/MenuFilter/MenuFilter.interface'
+import { ISortMenuItem } from '../../molecules/SortMenu/SortMenu.interface'
 
-export interface IMobileMenuFilter {
+export interface IMobileSortMenu {
   /**
    * this property open drawer
    */
@@ -12,7 +12,7 @@ export interface IMobileMenuFilter {
   /**
    * This is an array with the menu options
    */
-  filterItems: IMenuFilterItem[]
+  orderFields: ISortMenuItem[]
   /**
    * This function change the filter with the selected option
    */

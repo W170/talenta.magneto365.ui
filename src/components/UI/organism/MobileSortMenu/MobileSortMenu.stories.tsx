@@ -1,13 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react'
-import MobileMenuFilter from './MobileMenuFilter.component'
+import MobileSortMenu from './MobileSortMenu.component'
 import { optionsFilterOrderBy } from '../../../../constants/stories.constants'
 
-const meta: Meta<typeof MobileMenuFilter> = {
-  title: 'Organism/Mobile Menu Filter',
-  component: MobileMenuFilter,
+const meta: Meta<typeof MobileSortMenu> = {
+  title: 'Organism/Mobile Sort Menu',
+  component: MobileSortMenu,
   tags: ['autodocs'],
   args: {
-    filterItems: optionsFilterOrderBy,
+    orderFields: optionsFilterOrderBy,
     setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
     isOpen: true,
     onClose: () => ({}),
@@ -19,6 +19,6 @@ const meta: Meta<typeof MobileMenuFilter> = {
 
 export default meta
 
-type Story = StoryObj<typeof MobileMenuFilter>
+type Story = StoryObj<typeof MobileSortMenu>
 
 export const Default: Story = {}

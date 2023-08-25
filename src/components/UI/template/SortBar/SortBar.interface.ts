@@ -1,10 +1,10 @@
-import { IMenuFilterItem } from '../../molecules/MenuFilter/MenuFilter.interface'
+import { ISortMenuItem } from '../../molecules/SortMenu/SortMenu.interface'
 
-export interface IFilterBottomHeader {
+export interface ISortBar {
   /**
    * This is the text for the bottom filter
    */
-  textButtonFilter: string
+  textSortButton: string
   /**
    * this is the text for the value filtered
    */
@@ -16,7 +16,7 @@ export interface IFilterBottomHeader {
   /**
    * This is an array with the menu options
    */
-  filterItems: IMenuFilterItem[]
+  orderFields: ISortMenuItem[]
   /**
    * this is the mobile text to alphabetical order
    */

@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react'
 import { MenuIcon } from '../MenuIcon'
-import { IListMenuFilter } from './ListMenuFilter.interface'
-import style from './ListMenuFilter.module.scss'
+import { IListSortMenu } from './ListSortMenu.interface'
+import style from './ListSortMenu.module.scss'
 
-const ListMenuFilter: React.FC<IListMenuFilter> = ({ filterItems, setFilter, textOrderFilter, setShowPopover }) => {
+const ListSortMenu: React.FC<IListSortMenu> = ({ orderFields, setFilter, textOrderFilter, setShowPopover }) => {
   const handleClick = useCallback(
     (key: string) => {
       setFilter({ key })
@@ -14,7 +14,7 @@ const ListMenuFilter: React.FC<IListMenuFilter> = ({ filterItems, setFilter, tex
 
   return (
     <div className={style['magneto-ui-menu-filter']}>
-      {filterItems.map(({ field, label, iconUrl }, i) => (
+      {orderFields.map(({ field, label, iconUrl }, i) => (
         <MenuIcon
           key={`${field}-${i}`}
           text={label}
@@ -28,4 +28,4 @@ const ListMenuFilter: React.FC<IListMenuFilter> = ({ filterItems, setFilter, tex
   )
 }
 
-export default ListMenuFilter
+export default ListSortMenu
