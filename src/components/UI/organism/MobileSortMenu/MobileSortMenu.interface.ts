@@ -6,10 +6,6 @@ export interface IMobileSortMenu {
    */
   isOpen: boolean
   /**
-   * This is the content of the h1 tag of the page
-   */
-  mainTitle: string
-  /**
    * This is an array with the menu options
    */
   orderFields: ISortMenuItem[]

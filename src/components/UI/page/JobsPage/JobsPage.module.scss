@@ -25,3 +25,17 @@
     }
   }
 }
+
+.magneto-ui-jobs-page--title {
+  display: none;
+  font-size: 22px;
+  font-weight: 500;
+  color: v.$text-color-black;
+  padding-left: 20px;
+  margin-top: 40px;
+  word-break: break-word;
+  box-sizing: border-box;
+  @media (max-width: v.$screen-md) {
+    display: block;
+  }
+}

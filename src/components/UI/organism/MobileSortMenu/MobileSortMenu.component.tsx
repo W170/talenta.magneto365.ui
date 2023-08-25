@@ -8,7 +8,6 @@ import style from './MobileSortMenu.module.scss'
 
 const MobileSortMenu: React.FC<IMobileSortMenu> = ({
   isOpen,
-  mainTitle,
   orderFields,
   orderByText,
   textOrderFilter,
@@ -27,7 +26,6 @@ const MobileSortMenu: React.FC<IMobileSortMenu> = ({
   }, [orderFields, textOrderFilter, setFilter, setShowPopover])
   return (
     <MobileDrawer isOpen={isOpen} onClose={onClose}>
-      <h1 className={style['magneto-ui-order-text']}>{mainTitle}</h1>
       <div className={style['magneto-ui-order-container']}>
         <p className={style['magneto-ui-order-text']}>{orderByText}</p>
         <button className={`${style['magneto-ui-btn-order']}`} onClick={orderFilter}>
