@@ -32,6 +32,7 @@
   color: v.$text-color-black;
   padding: 0 10px;
   border-right: 2px solid v.$text-color-black;
+  margin: 0 0 0 10px;
   @media screen and(max-width: v.$screen-lg) {
     display: none;
   }
@@ -40,7 +41,7 @@
 .magneto-ui-btn-text {
   font-size: 14px;
   color: v.$text-color-black;
-  margin-left: 10px;
+  margin: 0 0 0 10px;
 }
 
 .magneto-ui-btn-menu {
