@@ -60,7 +60,6 @@ const SortBar: React.FC<ISortBar> = ({
       </div>
       <MobileSortMenu
         isOpen={showMenu}
-        mainTitle={mainTitle}
         orderFields={orderFields}
         orderByText={orderByText}
         textOrderFilter={textOrderFilter}
