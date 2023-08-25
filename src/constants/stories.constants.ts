@@ -866,6 +866,62 @@ export const vacants: IJobCard[] = [
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
+  },
+  {
+    title: 'Analista',
+    cities: ['Medellin', 'Barranquila', 'Bogota'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMoo9RUN_NnD4aWgDuHUeEGTUfJXpimlWA&usqp=CAU',
+    companyName: 'Coca-cola',
+    companySlug: 'coca-cola',
+    educationLevel: 'Arquitecto',
+    experience: '12 meses de experiencia',
+    minSalary: '3.200.000',
+    maxSalary: '6.000.000',
+    publishDate: 'hace 20 dias',
+    others: 'otras',
+    contractType: 'Prestacion de servicios'
+  },
+  {
+    title: 'UX | UI designer',
+    cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
+    companyName: 'Lego',
+    companySlug: 'legos',
+    educationLevel: 'Tecnologo',
+    experience: '6 meses de experiencia',
+    minSalary: '3.000.000',
+    maxSalary: '5.000.000',
+    publishDate: 'hace 2 meses',
+    others: 'otras',
+    contractType: 'Termino indefinido'
+  },
+  {
+    title: 'Desarrollador Web',
+    cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
+    companyName: 'Adidas',
+    companySlug: 'adidas',
+    educationLevel: 'Profesional',
+    experience: '6 meses de experiencia',
+    minSalary: '1.200.000',
+    maxSalary: '2.000.000',
+    publishDate: 'hace 10 dias',
+    others: 'otras',
+    contractType: 'Termino fijo'
+  },
+  {
+    title: 'UX | UI designer',
+    cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
+    companyName: 'Lego',
+    companySlug: 'legos',
+    educationLevel: 'Tecnologo',
+    experience: '6 meses de experiencia',
+    minSalary: '3.000.000',
+    maxSalary: '5.000.000',
+    publishDate: 'hace 2 meses',
+    others: 'otras',
+    contractType: 'Termino indefinido'
   }
 ]
 
@@ -946,9 +1002,40 @@ export const breadcrumbProps: IBreadcrumb = {
   haveRedirect: true
 }
 
+export const RightsReservedProps: IRightsReservedText = {
+  magnetoRightsText: 'Magneto Global S.A.S, todos los derechos reservados',
+  mapSiteHref: '#',
+  mapSiteText: 'Mapa del sitio'
+}
+
+export const MagnetoResolutionProps: IMagnetoResolution = {
+  resolutionText:
+    ' Vinculado a la red de prestadores del Servicio Público de Empleo. Autorizado por la Unidad Administrativa Especial del Servicio Público de Empleo según resolución',
+  resolutionHref: '#',
+  resolutionHrefText: 'No. 0333/2022'
+}
+
+export const SocialMediaProps = [
+  {
+    href: 'https://play.google.com/store/apps/details?id=com.magneto365.app',
+    img: GooglePlay,
+    alt: 'google-play-image'
+  },
+  {
+    href: 'https://appgallery.huawei.com/app/C108120693',
+    img: AppGallery,
+    alt: 'app-gallery-image'
+  },
+  {
+    href: 'https://apps.apple.com/co/app/magneto-empleo-para-todos/id6444812096',
+    img: AppStore,
+    alt: 'app-store-image'
+  }
+]
+
 export const listMenuText: IListMenuText[] = [
   {
-    heightContent: 310,
+    heightContent: 330,
     title: 'Personas',
     createAccount: () => console.log('holi'),
     isLoading: false,
@@ -991,7 +1078,7 @@ export const listMenuText: IListMenuText[] = [
         isExternal: true
       },
       {
-        tag: 'Emeplos por ciudad',
+        tag: 'Empleos por ciudad',
         routePath: '',
         baseUrl: '',
         isExternal: true
@@ -1007,19 +1094,61 @@ export const listMenuText: IListMenuText[] = [
         routePath: '',
         baseUrl: '',
         isExternal: true
+      },
+      {
+        tag: 'Empleos mas buscados',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
       }
     ]
   },
   {
     heightContent: 140,
-    title: 'Empresas',
+    title: 'Magneto',
     links: [
       {
-        tag: 'Magneto para las empresas',
+        tag: 'Selección digital',
         routePath: '',
         baseUrl: '',
         isExternal: true
       },
+      {
+        tag: 'Evaluación integral del talento',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Recibe una asesoria',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      }
+    ]
+  },
+  {
+    heightContent: 115,
+    title: 'Magneto Lite',
+    links: [
+      {
+        tag: 'Publicar ofertas de empleo',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Planes para PYMES',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      }
+    ]
+  },
+  {
+    heightContent: 115,
+    title: 'Otras soluciones',
+    links: [
       {
         tag: 'Marble Headhunter',
         routePath: '',
@@ -1027,7 +1156,7 @@ export const listMenuText: IListMenuText[] = [
         isExternal: true
       },
       {
-        tag: 'Talenta',
+        tag: 'Bibliotecas Digitales',
         routePath: '',
         baseUrl: '',
         isExternal: true
@@ -1035,7 +1164,7 @@ export const listMenuText: IListMenuText[] = [
     ]
   },
   {
-    heightContent: 355,
+    heightContent: 335,
     title: 'Legal',
     links: [
       {
@@ -1099,36 +1228,5 @@ export const listMenuText: IListMenuText[] = [
         isExternal: true
       }
     ]
-  }
-]
-
-export const RightsReservedProps: IRightsReservedText = {
-  magnetoRightsText: 'Magneto Global S.A.S, todos los derechos reservados',
-  mapSiteHref: '#',
-  mapSiteText: 'Mapa del sitio'
-}
-
-export const MagnetoResolutionProps: IMagnetoResolution = {
-  resolutionText:
-    ' Vinculado a la red de prestadores del Servicio Público de Empleo. Autorizado por la Unidad Administrativa Especial del Servicio Público de Empleo según resolución',
-  resolutionHref: '#',
-  resolutionHrefText: 'No. 0333/2022'
-}
-
-export const SocialMediaProps = [
-  {
-    href: 'https://play.google.com/store/apps/details?id=com.magneto365.app',
-    img: GooglePlay,
-    alt: 'google-play-image'
-  },
-  {
-    href: 'https://appgallery.huawei.com/app/C108120693',
-    img: AppGallery,
-    alt: 'app-gallery-image'
-  },
-  {
-    href: 'https://apps.apple.com/co/app/magneto-empleo-para-todos/id6444812096',
-    img: AppStore,
-    alt: 'app-store-image'
   }
 ]
