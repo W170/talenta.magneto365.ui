@@ -1,0 +1,7 @@
+.magneto-ui-menu-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  &__columns {
+    margin-bottom: 5px;
+  }
+}
