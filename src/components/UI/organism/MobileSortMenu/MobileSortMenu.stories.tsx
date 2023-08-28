@@ -8,7 +8,6 @@ const meta: Meta<typeof MobileSortMenu> = {
   tags: ['autodocs'],
   args: {
     isOpen: true,
-    mainTitle: 'Ofertas de empleo en colombia',
     orderFields: optionsFilterOrderBy,
     orderByText: 'Organizar por',
     textOrderFilter: optionsFilterOrderBy[1].label,
