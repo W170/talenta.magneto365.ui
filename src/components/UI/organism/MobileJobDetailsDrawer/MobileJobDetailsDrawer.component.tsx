@@ -33,7 +33,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   }
 
   return (
-    <Drawer isOpen={isOpen} onClose={handleClose} direction="right" customPadding={0} hideButton isMobile>
+    <Drawer isOpen={isOpen} isFull={true} onClose={handleClose} direction="right" customPadding={0} hideButton isMobile>
       <MobileJobDetailsHeader returnText={jobDetailsHeaderText} onClick={handleClose} />
       <JobCompanyHeader {...jobCompanyLogoProps} />
       <JobDetails iconList={iconDetailList} detailsTextList={jobDetailsProps} />
