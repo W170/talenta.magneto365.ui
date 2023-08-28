@@ -29,7 +29,7 @@ const JobsPage: React.FC<IJobsPage> = ({
       <JobDetailsDrawer {...jobDetailsDrawerProps} />
     </JobDetailContainer>,
     {
-      sm: (
+      lg: (
         <MobileJobDetailsDrawer
           {...MobileJobDetailsDrawerProps}
           onClose={() => setShowDrawer(false)}
@@ -39,8 +39,8 @@ const JobsPage: React.FC<IJobsPage> = ({
     }
   )
 
-  const handleDrawers = useMediaQuery(() => setShowDetail(!showDetail), {
-    lg: () => setShowDrawer(!showDrawer)
+  const handleDrawers = useMediaQuery(() => setShowDetail(true), {
+    lg: () => setShowDrawer(true)
   })
 
   return (
