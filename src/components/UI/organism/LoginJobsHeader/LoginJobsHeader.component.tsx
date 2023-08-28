@@ -71,7 +71,7 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
       <HeaderTabs {...curriculumTabProps} />
     </>,
     {
-      lg: null
+      xl: null
     }
   )
 

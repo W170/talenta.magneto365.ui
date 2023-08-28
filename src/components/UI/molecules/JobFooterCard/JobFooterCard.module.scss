@@ -5,7 +5,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  align-self: stretch;
   padding: 20px 20px 120px 20px;
   gap: 10px;
 
@@ -21,7 +20,6 @@
   &__icons {
     display: flex;
     flex-direction: row;
-    align-content: flex-start;
     align-items: center;
     align-self: stretch;
     gap: 21px;
@@ -48,13 +46,12 @@
     }
   }
 
-  @media screen and (max-width: v.$screen-lg) {
+  @media screen and (max-width: (v.$screen-xl + 80px)) {
     h2 {
       font-size: 12px;
     }
 
     &__icons {
-      display: inherit;
       flex-direction: column;
       flex-wrap: wrap;
       align-items: flex-start;

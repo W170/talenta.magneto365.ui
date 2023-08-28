@@ -68,9 +68,11 @@
     color: v.$color-white;
   }
 
-  @media screen and (max-width: (v.$screen-lg)) {
-    h2 {
-      font-size: 12px;
+  @media screen and (max-width: (v.$screen-xl + 80px)) {
+    &__header {
+      h2 {
+        font-size: 13px;
+      }
     }
 
     &__requirements {

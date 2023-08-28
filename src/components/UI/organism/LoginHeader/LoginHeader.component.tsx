@@ -76,7 +76,7 @@ const Component: React.FC<ILoginHeader> = ({
       <HeaderTabs {...curriculumTabProps} />
     </>,
     {
-      lg: null
+      xl: null
     }
   )
 

@@ -9,6 +9,12 @@
   max-width: max-content;
   border-radius: 30px;
   background-color: v.$disabled-color-gray;
+  cursor: pointer;
+
+  transition: all ease-in-out 0.3s;
+  &:hover {
+    background-color: v.$colors-magneto-neutral-gray-5;
+  }
 
   &__text {
     font-size: 14px;
