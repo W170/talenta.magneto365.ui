@@ -1,21 +1,22 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 
 .magneto-ui-drawer {
-  & > aside {
+  aside {
     background-color: white;
     top: 0;
     position: fixed;
     width: 100vw;
     height: 100vh;
     overflow: auto;
-    @media (min-width: v.$screen-md) {
-      width: 400px;
-    }
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
     z-index: 50;
     transition: all 0.6s ease-in-out;
     overflow-x: hidden;
     overflow-y: auto;
+
+    @media (min-width: v.$screen-md) {
+      width: 400px;
+    }
 
     &::-webkit-scrollbar {
       width: 7px;
@@ -101,4 +102,12 @@
 
 .hidden-right {
   right: -100%;
+}
+
+.full-drawer {
+  aside {
+    @media screen and (max-width: (v.$screen-lg + 32px)) {
+      width: 100%;
+    }
+  }
 }

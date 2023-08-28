@@ -40,6 +40,10 @@ export interface IDrawer {
    * (Optional property)
    */
   isMobile?: boolean
+  /**
+   *
+   */
+  isFull?: boolean
 }
 
 /**
