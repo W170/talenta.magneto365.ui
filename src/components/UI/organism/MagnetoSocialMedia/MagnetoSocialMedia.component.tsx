@@ -7,7 +7,7 @@ import style from './MagnetoSocialMedia.module.scss'
 const MagnetoSocialMedia: React.FC<IMagnetoSocialMedia> = ({ followText }) => {
   return (
     <div className={`${style[`${classMUI}-magneto-social-media`]}`}>
-      <p className={`${style[`${classMUI}-magneto-social-media__follow-text`]}`}>{followText}:</p>
+      <p className={`${style[`${classMUI}-magneto-social-media__follow-text`]}`}>{followText}</p>
       <ListIconLink spacing={10} size={36} listIcon={ListIcon} />
       <div className={`${style[`${classMUI}-magneto-social-media__app-links-container`]}`}>
         {SocialMediaProps.map(({ alt, href, img }, i) => (
