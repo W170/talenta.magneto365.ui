@@ -9,7 +9,8 @@ const meta: Meta<typeof FilterSearchItem> = {
     handleSearch: (event: ChangeEvent<HTMLInputElement>, inputRef: React.MutableRefObject<null>) =>
       console.log('filteredOptions: ', { value: event.target.value, inputRef }),
     placeholder: 'Search one option',
-    disabled: false
+    disabled: false,
+    loading: false
   }
 }
 

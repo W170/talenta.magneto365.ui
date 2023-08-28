@@ -1,7 +1,5 @@
 import React from 'react'
 import { classMUI } from '../../../../constants/stories.constants'
-import { IconItem } from '../../atoms'
-import { ArrowRight2 } from '../../../../constants/icons.constants'
 import style from './JobCardMobile.module.scss'
 import { ICardJobMobile } from './JobCardMobile.interface'
 
@@ -55,9 +53,6 @@ const JobCardMobile: React.FC<ICardJobMobile> = ({
             <p>{educationLevel}</p>
           </div>
         </div>
-      </div>
-      <div className={style[`${classMUI}-card-mobile-jobs--arrow`]}>
-        <IconItem icon={ArrowRight2} />
       </div>
     </article>
   )

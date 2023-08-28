@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { LogoutHeader } from './LogoutHeader.component'
 import { IMobileSearchbar } from '../../molecules'
+import { breadcrumbProps } from '../../../../constants/stories.constants'
 
 const leftLinkProps = {
   type: 'link' as const,
@@ -49,7 +50,7 @@ const meta: Meta<typeof LogoutHeader> = {
     mobileSearchbar: MobileSearchbarProps,
     signInLink: SignInProps,
     signUpButton: SignUpProps,
-    breadcrumbsText: '/perfil/empleos/sugeridos',
+    breadcrumbProps: breadcrumbProps,
     homeUrl: '/home'
   }
 }

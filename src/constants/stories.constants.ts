@@ -36,7 +36,7 @@ import {
   AppStore
 } from './icons.constants'
 
-import { IAvatar, ILogoComponent, IMainButton, IconProps } from '../components/UI/atoms'
+import { IAvatar, IBreadcrumb, ILogoComponent, IMainButton, IconProps } from '../components/UI/atoms'
 import {
   IHeaderTabs,
   IListIcon,
@@ -46,12 +46,12 @@ import {
   IMobileSearchbar,
   ISearchbar
 } from '../components/UI/molecules'
-import { IlistMenuUserProps } from '../components/UI/organism/LoginHeader'
 import { ILoading } from '../components/UI/atoms/Loading'
-import { IMenuFilterItem } from '../components/UI/molecules/MenuFilter/MenuFilter.interface'
+import { ISortMenuItem } from '../components/UI/molecules/SortMenu/SortMenu.interface'
 import { IFilterValue } from '@components/UI/template/SideFilter'
 import { IJobCard } from '@components/UI/molecules/JobCard/JobCard.interface'
-import { IlistMenuUserPropsNot1440 } from '@components/UI/organism'
+import { IBrands } from '../components/UI/molecules/BrandsContainer/BrandsContainer.interface'
+import { IListMenuIcons } from '../components/UI/molecules/ListMenuIcons/ListMenuIcons.interface'
 import { IListMenuText } from '@components/UI/molecules/ListMenuText/ListMenuText.interface'
 import { IRightsReservedText } from '@components/UI/molecules/RightsReservedText/RightsReservedText.interface'
 import { IMagnetoResolution } from '@components/UI/molecules/MagnetoResolution/MagnetoResolution.interface'
@@ -294,9 +294,6 @@ export const searchList = [
  *
  *
  */
-
-//Breadcrumbs Molecule
-export const breadcrumbText = '/perfil/empleos/sugeridos'
 
 //Searchbar Molecule
 export const SearchbarProps: ISearchbar = {
@@ -616,7 +613,7 @@ export const MenuItems: IMenuItems[] = [
   }
 ]
 
-export const listMenuUserProps: IlistMenuUserProps = {
+export const listMenuUserProps: IListMenuIcons = {
   urlParam: 'guardados',
   menuItems: MenuItems,
   menuItems1440,
@@ -624,16 +621,9 @@ export const listMenuUserProps: IlistMenuUserProps = {
   settings: Settings
 }
 
-export const listMenuUserPropsNot1440: IlistMenuUserPropsNot1440 = {
-  urlParam: 'guardados',
-  menuItems: MenuItems,
-  logout: Logout,
-  settings: Settings
-}
+//SortBar props
 
-//FilterBottomHeader props
-
-export const menuFilterButton = {
+export const menuSortButton = {
   icon: ArrowDown2,
   hover: false,
   size: 17
@@ -645,7 +635,7 @@ export const iconFilterOrder = {
   size: 20
 }
 
-export const optionsFilterOrderBy: IMenuFilterItem[] = [
+export const optionsFilterOrderBy: ISortMenuItem[] = [
   {
     field: 'salary_show',
     label: 'Salario'
@@ -876,6 +866,62 @@ export const vacants: IJobCard[] = [
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
+  },
+  {
+    title: 'Analista',
+    cities: ['Medellin', 'Barranquila', 'Bogota'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMoo9RUN_NnD4aWgDuHUeEGTUfJXpimlWA&usqp=CAU',
+    companyName: 'Coca-cola',
+    companySlug: 'coca-cola',
+    educationLevel: 'Arquitecto',
+    experience: '12 meses de experiencia',
+    minSalary: '3.200.000',
+    maxSalary: '6.000.000',
+    publishDate: 'hace 20 dias',
+    others: 'otras',
+    contractType: 'Prestacion de servicios'
+  },
+  {
+    title: 'UX | UI designer',
+    cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
+    companyName: 'Lego',
+    companySlug: 'legos',
+    educationLevel: 'Tecnologo',
+    experience: '6 meses de experiencia',
+    minSalary: '3.000.000',
+    maxSalary: '5.000.000',
+    publishDate: 'hace 2 meses',
+    others: 'otras',
+    contractType: 'Termino indefinido'
+  },
+  {
+    title: 'Desarrollador Web',
+    cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
+    companyName: 'Adidas',
+    companySlug: 'adidas',
+    educationLevel: 'Profesional',
+    experience: '6 meses de experiencia',
+    minSalary: '1.200.000',
+    maxSalary: '2.000.000',
+    publishDate: 'hace 10 dias',
+    others: 'otras',
+    contractType: 'Termino fijo'
+  },
+  {
+    title: 'UX | UI designer',
+    cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
+    companyName: 'Lego',
+    companySlug: 'legos',
+    educationLevel: 'Tecnologo',
+    experience: '6 meses de experiencia',
+    minSalary: '3.000.000',
+    maxSalary: '5.000.000',
+    publishDate: 'hace 2 meses',
+    others: 'otras',
+    contractType: 'Termino indefinido'
   }
 ]
 
@@ -920,7 +966,7 @@ export const optionsFilterMenu: IFilterValue[] = [
 
 export const ourBrandsText = 'Nuestras Marcas'
 
-export const brands = [
+export const brands: IBrands[] = [
   {
     brandImg: 'https://tiendasaka.co/img/m/25.jpg',
     brandAlt: 'tannino',
@@ -945,63 +991,51 @@ export const brands = [
     brandAlt: 'tannino',
     brandTitle: 'Tannino',
     brandUrl: '#'
+  }
+]
+
+export const breadcrumbProps: IBreadcrumb = {
+  breadcrumbText: '/empleos/busqueda/sugeridos',
+  baseUrl: 'http://localhost:8080',
+  breadcrumbCustomText: '/profile/search/suggested',
+  queryParams: '?utm=google&utm_source=facebook&utm_medium=cueros',
+  haveRedirect: true
+}
+
+export const RightsReservedProps: IRightsReservedText = {
+  magnetoRightsText: 'Magneto Global S.A.S, todos los derechos reservados',
+  mapSiteHref: '#',
+  mapSiteText: 'Mapa del sitio'
+}
+
+export const MagnetoResolutionProps: IMagnetoResolution = {
+  resolutionText:
+    ' Vinculado a la red de prestadores del Servicio Público de Empleo. Autorizado por la Unidad Administrativa Especial del Servicio Público de Empleo según resolución',
+  resolutionHref: '#',
+  resolutionHrefText: 'No. 0333/2022'
+}
+
+export const SocialMediaProps = [
+  {
+    href: 'https://play.google.com/store/apps/details?id=com.magneto365.app',
+    img: GooglePlay,
+    alt: 'google-play-image'
   },
   {
-    brandImg: 'https://tiendasaka.co/img/m/24.jpg',
-    brandAlt: 'Nappa',
-    brandTitle: 'Nappa',
-    brandUrl: '#'
+    href: 'https://appgallery.huawei.com/app/C108120693',
+    img: AppGallery,
+    alt: 'app-gallery-image'
   },
   {
-    brandImg:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/LOGO_MARCA_V%C3%89LEZ.png/1200px-LOGO_MARCA_V%C3%89LEZ.png',
-    brandAlt: 'Cueros Velez',
-    brandTitle: 'Cueros Velez',
-    brandUrl: '#'
-  },
-  {
-    brandImg: 'https://tiendasaka.co/img/m/25.jpg',
-    brandAlt: 'tannino',
-    brandTitle: 'Tannino',
-    brandUrl: '#'
-  },
-  {
-    brandImg: 'https://tiendasaka.co/img/m/24.jpg',
-    brandAlt: 'Nappa',
-    brandTitle: 'Nappa',
-    brandUrl: '#'
-  },
-  {
-    brandImg:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/LOGO_MARCA_V%C3%89LEZ.png/1200px-LOGO_MARCA_V%C3%89LEZ.png',
-    brandAlt: 'Cueros Velez',
-    brandTitle: 'Cueros Velez',
-    brandUrl: '#'
-  },
-  {
-    brandImg: 'https://tiendasaka.co/img/m/25.jpg',
-    brandAlt: 'tannino',
-    brandTitle: 'Tannino',
-    brandUrl: '#'
-  },
-  {
-    brandImg: 'https://tiendasaka.co/img/m/24.jpg',
-    brandAlt: 'Nappa',
-    brandTitle: 'Nappa',
-    brandUrl: '#'
-  },
-  {
-    brandImg:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/LOGO_MARCA_V%C3%89LEZ.png/1200px-LOGO_MARCA_V%C3%89LEZ.png',
-    brandAlt: 'Cueros Velez',
-    brandTitle: 'Cueros Velez',
-    brandUrl: '#'
+    href: 'https://apps.apple.com/co/app/magneto-empleo-para-todos/id6444812096',
+    img: AppStore,
+    alt: 'app-store-image'
   }
 ]
 
 export const listMenuText: IListMenuText[] = [
   {
-    heightContent: 310,
+    heightContent: 330,
     title: 'Personas',
     createAccount: () => console.log('holi'),
     isLoading: false,
@@ -1044,7 +1078,7 @@ export const listMenuText: IListMenuText[] = [
         isExternal: true
       },
       {
-        tag: 'Emeplos por ciudad',
+        tag: 'Empleos por ciudad',
         routePath: '',
         baseUrl: '',
         isExternal: true
@@ -1060,19 +1094,61 @@ export const listMenuText: IListMenuText[] = [
         routePath: '',
         baseUrl: '',
         isExternal: true
+      },
+      {
+        tag: 'Empleos mas buscados',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
       }
     ]
   },
   {
     heightContent: 140,
-    title: 'Empresas',
+    title: 'Magneto',
     links: [
       {
-        tag: 'Magneto para las empresas',
+        tag: 'Selección digital',
         routePath: '',
         baseUrl: '',
         isExternal: true
       },
+      {
+        tag: 'Evaluación integral del talento',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Recibe una asesoria',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      }
+    ]
+  },
+  {
+    heightContent: 115,
+    title: 'Magneto Lite',
+    links: [
+      {
+        tag: 'Publicar ofertas de empleo',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Planes para PYMES',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      }
+    ]
+  },
+  {
+    heightContent: 115,
+    title: 'Otras soluciones',
+    links: [
       {
         tag: 'Marble Headhunter',
         routePath: '',
@@ -1080,7 +1156,7 @@ export const listMenuText: IListMenuText[] = [
         isExternal: true
       },
       {
-        tag: 'Talenta',
+        tag: 'Bibliotecas Digitales',
         routePath: '',
         baseUrl: '',
         isExternal: true
@@ -1088,7 +1164,7 @@ export const listMenuText: IListMenuText[] = [
     ]
   },
   {
-    heightContent: 355,
+    heightContent: 335,
     title: 'Legal',
     links: [
       {
@@ -1152,36 +1228,5 @@ export const listMenuText: IListMenuText[] = [
         isExternal: true
       }
     ]
-  }
-]
-
-export const RightsReservedProps: IRightsReservedText = {
-  magnetoRightsText: 'Magneto Global S.A.S, todos los derechos reservados',
-  mapSiteHref: '#',
-  mapSiteText: 'Mapa del sitio'
-}
-
-export const MagnetoResolutionProps: IMagnetoResolution = {
-  resolutionText:
-    ' Vinculado a la red de prestadores del Servicio Público de Empleo. Autorizado por la Unidad Administrativa Especial del Servicio Público de Empleo según resolución',
-  resolutionHref: '#',
-  resolutionHrefText: 'No. 0333/2022'
-}
-
-export const SocialMediaProps = [
-  {
-    href: 'https://play.google.com/store/apps/details?id=com.magneto365.app',
-    img: GooglePlay,
-    alt: 'google-play-image'
-  },
-  {
-    href: 'https://appgallery.huawei.com/app/C108120693',
-    img: AppGallery,
-    alt: 'app-gallery-image'
-  },
-  {
-    href: 'https://apps.apple.com/co/app/magneto-empleo-para-todos/id6444812096',
-    img: AppStore,
-    alt: 'app-store-image'
   }
 ]

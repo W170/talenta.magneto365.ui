@@ -1,6 +1,6 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 
-.magneto-ui-filter {
+.magneto-ui-sort-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,6 +8,7 @@
   height: 65px;
   padding: 20px 20px 0 20px;
   object-fit: contain;
+  box-sizing: border-box;
   background-color: white;
 }
 
@@ -15,10 +16,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
   width: auto;
-  //TODO temporal change
   button {
+    display: none;
+    padding: 20px 10px;
+    @media screen and(max-width: v.$screen-md) {
+      display: flex;
+    }
+  }
+}
+
+.magneto-ui-main-title {
+  font-size: 14px;
+  font-weight: 900;
+  color: v.$text-color-black;
+  padding: 0 10px;
+  border-right: 1px solid v.$text-color-black;
+  margin: 0 0 0 10px;
+  word-break: break-word;
+  box-sizing: border-box;
+  @media screen and(max-width: v.$screen-lg) {
     display: none;
   }
 }
@@ -26,8 +43,7 @@
 .magneto-ui-btn-text {
   font-size: 14px;
   color: v.$text-color-black;
-  width: 100%;
-  margin: 0;
+  margin: 0 0 0 10px;
 }
 
 .magneto-ui-btn-menu {

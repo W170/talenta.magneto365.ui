@@ -1,7 +1,7 @@
 import { IJobCard } from '@components/UI/molecules/JobCard/JobCard.interface'
-import { IFrequentSearch } from '@components/UI/molecules'
+import { IFrequentSearch, IPaginationProps } from '@components/UI/molecules'
 import { IJobDetailsDrawer, IMobileJobDetailsDrawer } from '@components/UI/organism'
-import { IFilterBottomHeader } from '@components/UI/template/FilterBottomHeader/FilterBottomHeader.interface'
+import { ISortBar } from '@components/UI/template/SortBar/SortBar.interface'
 import { ISideFilter } from '@components/UI/template'
 import { IFooter } from '@components/UI/template/Footer/Footer.interface'
 
@@ -10,7 +10,7 @@ export interface IJobsPage {
    * Props for the filter bottom header section.
    * This section typically contains filter options for job listings.
    */
-  filterBottomHeaderProps: IFilterBottomHeader
+  sortBarProps: ISortBar
   /**
    * An array of job card props to display multiple job listings.
    * Each job card contains information about a single job listing.
@@ -39,4 +39,8 @@ export interface IJobsPage {
    * Props for the footer
    */
   footerProps: IFooter
+  /**
+   * Props for the paginator
+   */
+  paginationProps: IPaginationProps
 }

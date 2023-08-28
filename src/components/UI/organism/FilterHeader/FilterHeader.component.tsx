@@ -5,7 +5,14 @@ import { Switch } from '@components/UI/atoms/Switch'
 import { IFilterHeader } from './FilterHeader.interface'
 import styles from './FilterHeader.modules.scss'
 
-export const FilterHeader: FC<IFilterHeader> = ({ title, buttonText, totalApplied, clearFilters, switchText }) => {
+export const FilterHeader: FC<IFilterHeader> = ({
+  title,
+  buttonText,
+  filterSummary,
+  totalApplied,
+  clearFilters,
+  switchText
+}) => {
   const mainBtnProps = useMemo(() => {
     return {
       buttonText,
@@ -25,6 +32,10 @@ export const FilterHeader: FC<IFilterHeader> = ({ title, buttonText, totalApplie
     )
   }, [totalApplied, mainBtnProps])
 
+  const displayFilterSummary = useMemo(() => {
+    return <span className={styles['magneto-ui-filter-header_summary']}>{filterSummary}</span>
+  }, [filterSummary])
+
   return (
     <article className={styles['magneto-ui-filter-header']}>
       <div className={styles['magneto-ui-filter-header_title']}>
@@ -40,6 +51,7 @@ export const FilterHeader: FC<IFilterHeader> = ({ title, buttonText, totalApplie
           isActive
         />
       )}
+      {displayFilterSummary}
     </article>
   )
 }

@@ -25,7 +25,7 @@ import {
 const Component: React.FC<ILoginHeader> = ({
   onClick,
   listMenuUserProps,
-  breadcrumbText,
+  breadcrumbProps,
   profileImage,
   jobsTabsProps,
   processTabsProps,
@@ -88,7 +88,7 @@ const Component: React.FC<ILoginHeader> = ({
     }
   )
 
-  const loginHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbText={breadcrumbText} />, {
+  const loginHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbProps={breadcrumbProps} homeUrl={homeUrl} />, {
     md: null
   })
 

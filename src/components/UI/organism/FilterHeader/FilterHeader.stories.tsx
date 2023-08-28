@@ -7,6 +7,7 @@ const meta: Meta<typeof FilterHeader> = {
   args: {
     title: 'Filtrar empleos',
     buttonText: 'Limpiar',
+    filterSummary: '3169 empleos',
     totalApplied: 5,
     clearFilters: () => new Promise((resolve) => resolve(console.log('clearFilters'))),
     switchText: 'Apto para personas con discapacidad'

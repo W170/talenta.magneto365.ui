@@ -27,7 +27,7 @@ export const FilterMenuItem: FC<IFilterMenuItem> = ({
   }, [isApplied, isSearched, total])
 
   const className = useMemo(() => {
-    return isApplied ? styles.selected : isSearched ? '' : !total && styles.disabled
+    return isApplied ? styles.selected : isSearched ? styles.isSearched : !total && styles.disabled
   }, [isApplied, isSearched, total])
 
   const handleClick = useCallback(() => {

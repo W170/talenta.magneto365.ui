@@ -16,6 +16,11 @@
   margin: 5px 0;
   cursor: pointer;
 
+  @media (max-width: v.$screen-md) {
+    width: inherit;
+    max-width: 100%;
+  }
+
   & > span,
   & > output {
     font-size: 0.875rem;
@@ -48,6 +53,13 @@
   }
 }
 
+.isSearched {
+  background-color: transparent;
+  &:hover {
+    background-color: v.$disabled-color-gray;
+  }
+}
+
 .skeleton {
   display: inline-block;
   width: 230px;
@@ -58,6 +70,11 @@
   margin: 5px 0 0 10px;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: v.$screen-md) {
+    width: inherit;
+    max-width: 90%;
+  }
 
   &::after {
     content: '';

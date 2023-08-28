@@ -190,14 +190,31 @@ const mobileJobDetailsDrawer = {
   }
 }
 
-const sideFilter = {
+const sortBarProps = {
+  textSortButton: 'FILTROS',
+  mainTitle: 'Ofertas de empleo en colombia',
+  filterSummary: '280 empleos',
+  setIsFiltersOpen: () => console.log('setIsFiltersOpen'),
+  orderFilter: () => console.log('orderFilter'),
+  orderFields: optionsFilterOrderBy,
+  textOrderFilter: 'Fecha de publicación',
+  setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
+  orderByText: 'Organizar por',
+  isFiltersOpen: true,
+  loading: false
+}
+
+const sideFilterProps = {
   title: 'Filtrar empleos',
   filters: data as unknown as IFilter[],
   totalAppliedFilters: 1,
+  filterSummary: '3169 empleos',
   buttonText: 'Limpiar',
   loading: false,
+  isFiltersOpen: true,
   switchText: 'Apto para personas con discapacidad',
 
+  setIsFiltersOpen: () => console.log('setIsFiltersOpen'),
   setIsApplied: (filter: ISetIsApplied) => new Promise((resolve) => resolve(console.log({ filter }))),
   clearFilters: () => new Promise((resolve) => resolve(console.log('clearFilters'))),
   unApplyWithChild: (withChild: IUnApplyWithChild) => new Promise((resolve) => resolve(console.log({ withChild }))),
@@ -224,27 +241,30 @@ const footerProps = {
   menuFooterLink: listMenuText
 }
 
+const paginationProps = {
+  total: 826,
+  current: 4,
+  pageSize: 20,
+  loading: false,
+  numberOfButtons: 5,
+  prevTitle: 'Anterior',
+  nextTitle: 'Siguiente',
+  onChange: (page: number, pageSize: number) => console.log('Pagination: ', { page, pageSize })
+}
+
 const meta: Meta<typeof JobsPage> = {
   title: 'Pages/Jobs Page',
   component: JobsPage,
   tags: ['autodocs'],
   args: {
-    filterBottomHeaderProps: {
-      textButtonFilter: 'FILTROS',
-      filterSummary: '280 empleos',
-      openFilterDrawer: () => console.log('openFilterDrawer'),
-      orderFilter: () => console.log('orderFilter'),
-      filterItems: optionsFilterOrderBy,
-      textOrderFilter: 'Fecha de publicación',
-      setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
-      orderByText: 'Organizar por'
-    },
+    sortBarProps,
     vacantProps: vacants,
     jobDetailsDrawerProps: jobDetailsDrawer,
     MobileJobDetailsDrawerProps: mobileJobDetailsDrawer,
     frequentSearchProps: frequentSearch,
-    sideFilterProps: sideFilter as ISideFilter,
-    footerProps
+    sideFilterProps: sideFilterProps as ISideFilter,
+    footerProps,
+    paginationProps
   },
   decorators: [
     (Story) => (

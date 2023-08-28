@@ -1,6 +1,128 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../shared/stylesheets/mixins.scss' as m;
+
 .magneto-iu-side-filter {
+  background-color: v.$color-white;
+  @media (max-width: v.$screen-md) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: -110vw;
+    padding: 5px 20px 60px 20px;
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 0.6s ease-in-out;
+    @include m.scroll-filter;
+    z-index: 50;
+    position: fixed;
+  }
+
+  @media (max-width: v.$screen-xs) {
+    padding: 5px 14px 60px 2px;
+  }
+}
+
+.open {
+  @media (max-width: v.$screen-md) {
+    transform: translateX(110vw);
+  }
+}
+
+.magneto-ui-side-filter_btn__close {
+  display: none;
+  @media (max-width: v.$screen-md) {
+    display: flex;
+    background-color: v.$colors-magneto-neutral-gray-5;
+    width: 26px;
+    height: 45px;
+    top: 20px;
+    right: 105vw;
+    padding: unset;
+    border-radius: 10px 0 0 10px;
+    transition: all 0.5s ease-in-out;
+    z-index: 55;
+    position: fixed;
+  }
+}
+
+.btn_close {
+  @media (max-width: v.$screen-md) {
+    transition: all 0.6s ease-in-out;
+    right: 0;
+  }
+}
+
+.magneto-ui-side-filter_btn__main {
+  display: none;
+  @media (max-width: v.$screen-md) {
+    display: unset;
+    background-color: v.$color-green;
+    color: v.$text-color-blue;
+    height: 42px;
+    width: 90%;
+    left: -105vw;
+    bottom: 10px;
+    transition: all 0.5s ease-in-out;
+    z-index: 55;
+    position: fixed;
+  }
+}
+
+.btn_main-open {
+  @media (max-width: v.$screen-md) {
+    transition: all 0.6s ease-in-out;
+    left: 5%;
+  }
+}
+
+.magneto-iu-side-filter_content {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 15px 5px 15px 15px;
+  padding: 15px 15px 15px 15px;
+  @media (max-width: v.$screen-md) {
+    width: 100%;
+  }
+}
+
+.magneto-iu-side-filter_background {
+  display: none;
+  @media (max-width: v.$screen-md) {
+    display: unset;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 49;
+    position: fixed;
+    cursor: pointer;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.7;
+    }
+  }
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.7;
+    }
+  }
 }

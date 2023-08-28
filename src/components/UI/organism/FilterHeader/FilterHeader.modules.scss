@@ -1,4 +1,5 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
+$filter-font-color: #282835;
 
 .magneto-ui-filter-header {
   display: flex;
@@ -14,6 +15,11 @@
   border-radius: 12px;
   box-sizing: border-box;
   overflow: hidden;
+
+  @media (max-width: v.$screen-md) {
+    width: inherit;
+    max-width: 100%;
+  }
 }
 
 .magneto-ui-filter-header_title {
@@ -25,7 +31,7 @@
   overflow: hidden;
 
   & > p {
-    font-size: 0.9375 rem;
+    font-size: 16px;
     font-weight: 700;
     color: v.$text-color-black;
     margin: 0;
@@ -46,7 +52,7 @@
 
   & > span {
     font-size: 13px;
-    color: #282835;
+    color: $filter-font-color;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -66,5 +72,15 @@
   p {
     font-size: 12px;
     letter-spacing: -0.3px;
+  }
+}
+
+.magneto-ui-filter-header_summary {
+  display: none;
+
+  @media (max-width: v.$screen-md) {
+    display: block;
+    font-size: 13px;
+    color: $filter-font-color;
   }
 }

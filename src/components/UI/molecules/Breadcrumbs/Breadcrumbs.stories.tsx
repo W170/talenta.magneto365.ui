@@ -1,11 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Breadcrumbs } from './Breadcrumbs.component'
+import { breadcrumbProps } from '../../../../constants/stories.constants'
 
 const meta: Meta<typeof Breadcrumbs> = {
   title: 'Molecules/Breadcrums',
   component: Breadcrumbs,
   args: {
-    breadcrumbText: '/empleos/busqueda/sugeridos'
+    breadcrumbProps: breadcrumbProps,
+    homeUrl: '/home'
   }
 }
 

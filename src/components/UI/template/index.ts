@@ -1,4 +1,4 @@
-export * from './FilterBottomHeader'
+export * from './SortBar'
 export * from './Footer'
 export * from './loginJobsTemplate'
 export * from './loginTemplate'

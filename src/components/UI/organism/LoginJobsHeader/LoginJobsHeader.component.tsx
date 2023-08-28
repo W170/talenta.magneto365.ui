@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { Avatar, LogoComponent, MainButton } from '../../atoms'
-import { Breadcrumbs, ListMenuIcons, MobileSearchbar, Searchbar, UserMenu } from '../../molecules'
+import { Breadcrumbs, HeaderTabs, ListMenuIcons, MobileSearchbar, Searchbar, UserMenu } from '../../molecules'
 
 import { ILoginJobsHeader } from './LoginJobsHeader.interface'
-import styles from './LoginJobsHeader.module.scss'
 import { useMediaQuery } from '../../../hooks'
 import { MobileDrawer } from '../../molecules/MobileDrawer/MobileDrawer.component'
 
@@ -16,22 +15,31 @@ import {
 } from '../../../../constants/stories.constants'
 import { BrandMenu } from '../BrandMenu'
 
+import styles from './LoginJobsHeader.module.scss'
+
 const Muiclass = 'magneto-ui'
 
 const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
   searchbar,
   mobileSearchbar,
-  breadcrumbsText,
+  breadcrumbProps,
   onMenuClick,
   homeUrl,
   profileImage,
   listMenuUserProps,
   brandMenuProps,
-  gif
+  gif,
+  jobsTabsProps,
+  processTabsProps,
+  curriculumTabProps
 }) => {
   const { companySlug, companyLogo, companyUrl, brandsProps } = brandMenuProps
   const [showSearchBar, setShowSearchBar] = useState(false)
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
+
+  const haveGif = useMemo(() => {
+    return gif ? styles['have-gif'] : ''
+  }, [gif])
 
   const toggleSearchBar = () => {
     setShowSearchBar(!showSearchBar)
@@ -56,6 +64,17 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
     )
   })
 
+  const loginHeaderOptionTabs = useMediaQuery(
+    <>
+      <HeaderTabs {...jobsTabsProps} />
+      <HeaderTabs {...processTabsProps} />
+      <HeaderTabs {...curriculumTabProps} />
+    </>,
+    {
+      lg: null
+    }
+  )
+
   const LoginHeaderMenuButton = useMediaQuery(<MainButton {...MenuButtonProps} onClick={onMenuClick} />)
 
   const LogoutHeaderMobileSearchbarButton = useMediaQuery(null, {
@@ -70,7 +89,7 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
   )
 
   // Breadcrumbs Component
-  const LogoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbText={breadcrumbsText} />, {
+  const LogoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbProps={breadcrumbProps} homeUrl={homeUrl} />, {
     md: null
   })
 
@@ -106,10 +125,12 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
 
           {LogoutHeaderMobileSearchbarButton}
         </div>
-        <div className={styles[`${Muiclass}-login-jobs-header--second-row__middle-section`]}>
+        <div className={`${styles[`${Muiclass}-login-jobs-header--second-row__middle-section`]} ${haveGif}`}>
           {LogoutHeaderSearchbar}
         </div>
-        <div className={styles[`${Muiclass}-login-jobs-header--second-row__right-section`]}>{loginHeaderPopover}</div>
+        <div className={styles[`${Muiclass}-login-jobs-header--second-row__right-section`]}>
+          {!gif && loginHeaderOptionTabs} {loginHeaderPopover}
+        </div>
       </div>
       <div className={styles[`${Muiclass}-login-jobs-header--third-row`]}>{LogoutHeaderBreadcrumbs}</div>
       <MobileDrawer isOpen={toggleMobileDrawer} onClose={() => setToggleMobileDrawer(false)}>

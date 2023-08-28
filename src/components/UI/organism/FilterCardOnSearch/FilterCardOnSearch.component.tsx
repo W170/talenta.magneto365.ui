@@ -2,8 +2,10 @@ import React, { ChangeEvent, FC, Fragment, useCallback, useEffect, useMemo, useS
 import { FilterSearchItem } from '@components/UI/molecules/FilterSearchItem'
 import { FilterMenuItem } from '@components/UI/molecules/FilterMenuItem'
 import { Switch } from '@components/UI/atoms/Switch'
+import { MenuSearch } from '@components/UI/molecules/MenuSearch'
 import { ISearchRenderTypeOption } from '@components/UI/template'
 import { IFilterCardOnSearch, ISetIsAppliedProps } from './FilterCardOnSearch.interface'
+import { cleanSearch, getValues, refreshChildren, refreshParents } from './utils'
 import styles from './FilterCardOnSearch.module.scss'
 
 export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
@@ -25,12 +27,7 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
   const [appliedOptions, setAppliedOptions] = useState<ISearchRenderTypeOption[]>([])
   const [refInput, setRefInput] = useState<React.RefObject<HTMLInputElement> | null>(null)
 
-  const values = useMemo(() => {
-    return filtersApplied?.map((item) => {
-      if (typeof item === 'string' || typeof item === 'number') return item
-      return ''
-    })
-  }, [filtersApplied])
+  const values = useMemo(() => getValues(filtersApplied), [filtersApplied])
 
   // this effect load labels when page is reloaded
   useEffect(() => {
@@ -40,27 +37,9 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  //this effect remove parent selection when clear all filters
-  useEffect(() => {
-    if (props.multiple || !values) return
-    setAppliedOptions((current) => (current.length > values?.length ? [] : current))
-  }, [values, props.multiple, setAppliedOptions])
+  useEffect(() => refreshChildren(params, setAppliedOptions), [params])
 
-  // this effect remove child selections
-  useEffect(() => {
-    if (!params) return
-    const parents: string[] = []
-    for (const parent of params) {
-      if (typeof parent !== 'string') return
-      const [parentId] = parent.split('@')
-      parents.push(parentId)
-    }
-    setAppliedOptions((current) => {
-      return current.filter((option) => {
-        return parents.find((parent) => String(parent) === String(option.parentId))
-      })
-    })
-  }, [params])
+  useEffect(() => refreshParents(filtersApplied, setAppliedOptions), [filtersApplied])
 
   const handleSearch = useCallback(
     async (event: ChangeEvent<HTMLInputElement>, inputRef: React.MutableRefObject<null>) => {
@@ -73,47 +52,93 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
         params
       })
       // setSearching(false);
-      // setOptions(foundOptions);
-      setOptions(searchedOptions)
+      setOptions(searchedOptions.filter((opt) => !appliedOptions.find((optApplied) => optApplied.id === opt.id)))
       !refInput && setRefInput(inputRef)
     },
-    [getOptionsOnSearch, setOptions, repository, field, params, refInput]
+    [getOptionsOnSearch, setOptions, appliedOptions, repository, field, params, refInput]
+  )
+
+  const callSetIsApplied = useCallback(
+    (filter: ISetIsAppliedProps) => {
+      setIsApplied(filter)?.then(() => {
+        const totalApplied = filter.isApplied
+          ? appliedOptions.filter((opt) => opt.id !== filter.id)
+          : filter.multiple
+          ? [...appliedOptions, { ...options.filter((opt) => opt.id === filter.id)[0], isApplied: true }]
+          : [{ ...options.filter((opt) => opt.id === filter.id)[0], isApplied: true }]
+        setAppliedOptions(totalApplied)
+      })
+      cleanSearch(refInput, setOptions)
+    },
+    [appliedOptions, options, setIsApplied, refInput]
   )
 
   const handleApply = useCallback(
     (filter: ISetIsAppliedProps) => {
       if (child && filter.isApplied) {
-        unApplyWithChild({ child, parentId: filter.id, parentField: filter.field }).then(() => {
+        return unApplyWithChild({ child, parentId: filter.id, parentField: filter.field }).then(() => {
           setAppliedOptions((current) => current.filter((opt) => opt.id !== filter.id))
         })
-      } else {
-        setIsApplied(filter)?.then(() => {
-          const totalApplied = filter.isApplied
-            ? appliedOptions.filter((opt) => opt.id !== filter.id)
-            : filter.multiple
-            ? [...appliedOptions, { ...options.filter((opt) => opt.id === filter.id)[0], isApplied: true }]
-            : [{ ...options.filter((opt) => opt.id === filter.id)[0], isApplied: true }]
-          setAppliedOptions(totalApplied)
-        })
       }
-      setOptions([])
-      if (refInput?.current) {
-        refInput.current.value = ''
+      if (child && !filter.multiple && appliedOptions.length) {
+        unApplyWithChild({
+          child,
+          parentId: appliedOptions[0].id,
+          parentField: filter.field,
+          newParentId: filter.id
+        }).then(() => {
+          const newParent = options.find((opt) => opt.id === filter.id)
+          newParent && setAppliedOptions([{ ...newParent, isApplied: true }])
+          cleanSearch(refInput, setOptions)
+        })
+      } else {
+        callSetIsApplied(filter)
       }
     },
-    [unApplyWithChild, setIsApplied, child, appliedOptions, options, refInput]
+    [unApplyWithChild, callSetIsApplied, refInput, child, appliedOptions, options]
   )
+
+  const displayMenuSearch = useMemo(() => {
+    return (
+      <MenuSearch
+        show={!!options.length}
+        handleOnBlur={() => cleanSearch(refInput, setOptions, 300)}
+        content={options.map((opt, key) => {
+          const optProps = { ...props, ...opt, field, setIsApplied: handleApply, isSearched: true }
+          return <FilterMenuItem key={`${key}-${opt.label}`} {...optProps} />
+        })}
+      >
+        <FilterSearchItem
+          placeholder={searchPlaceholder as string}
+          disabled={params ? !params.length : false}
+          loading={props.loading}
+          handleSearch={handleSearch}
+        />
+      </MenuSearch>
+    )
+  }, [options, field, params, searchPlaceholder, props, refInput, handleApply, handleSearch])
+
+  const displayAppliedOptions = useMemo(() => {
+    return (
+      <div className={styles['magneto-ui-filter-onSearch_options']}>
+        {appliedOptions.map((opt, key) => {
+          const optProps = { ...props, ...opt, field, setIsApplied: handleApply, isSearched: true }
+          return <FilterMenuItem key={`${key}-${opt.label}`} {...optProps} />
+        })}
+      </div>
+    )
+  }, [appliedOptions, field, props, handleApply])
 
   const displayChild = useMemo(() => {
     if (!child) return <Fragment />
     const childProps = {
+      ...props,
+      ...child,
       params: values as number[] | string[],
       setIsApplied,
       unApplyWithChild,
       getOptionsOnLoad,
-      getOptionsOnSearch,
-      ...props,
-      ...child
+      getOptionsOnSearch
     }
     return <FilterCardOnSearch {...childProps} />
   }, [setIsApplied, unApplyWithChild, getOptionsOnLoad, getOptionsOnSearch, values, props, child])
@@ -131,19 +156,8 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
           />
         )}
       </div>
-
-      <FilterSearchItem
-        handleSearch={handleSearch}
-        placeholder={searchPlaceholder as string}
-        disabled={params ? !params.length : false}
-      />
-
-      <div className={styles['magneto-ui-filter-onSearch_options']}>
-        {[...options, ...appliedOptions].map((opt, key) => {
-          const optProps = { ...props, ...opt, field, setIsApplied: handleApply, isSearched: true }
-          return <FilterMenuItem key={`${key}-${opt.label}`} {...optProps} />
-        })}
-      </div>
+      {displayMenuSearch}
+      {displayAppliedOptions}
       {displayChild}
     </article>
   )
