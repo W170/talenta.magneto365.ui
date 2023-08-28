@@ -11,7 +11,7 @@ const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, menuItems144
   const { logoutText, onClick } = logout
   const { settingsText, onClick: onClickSettings } = settings
 
-  const userMenu = useMediaQuery(menuItems1440 && !haveGif ? menuItems1440 : menuItems, { lg: menuItems })
+  const userMenu = useMediaQuery(menuItems1440 && !haveGif ? menuItems1440 : menuItems, { xl: menuItems })
 
   return (
     <div className={style['mangeto-ui-list-menu-icons']}>
