@@ -54,11 +54,11 @@ const SideFilter: FC<ISideFilter> = ({
     return (
       <MainButton
         iconProps={{ icon: ArrowLeft2, size: 20 }}
-        className={styles['magneto-ui-side-filter_btn__close']}
+        className={`${styles['magneto-ui-side-filter_btn__close']} ${isFiltersOpen ? styles.btn_close : ''}`}
         onClick={() => setIsFiltersOpen((isOpen) => !isOpen)}
       />
     )
-  }, [setIsFiltersOpen])
+  }, [isFiltersOpen, setIsFiltersOpen])
 
   const displayBtnMain = useMemo(() => {
     if (!totalAppliedFilters) return <Fragment />
@@ -98,8 +98,8 @@ const SideFilter: FC<ISideFilter> = ({
 
   return (
     <Fragment>
+      {displayBtnClose}
       <aside className={`${styles['magneto-iu-side-filter']} ${isFiltersOpen ? styles.open : ''}`}>
-        {displayBtnClose}
         <div className={styles['magneto-iu-side-filter_content']}>
           <FilterHeader {...headerProps} />
           {filters.map((item, i) => {
