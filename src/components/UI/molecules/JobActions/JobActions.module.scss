@@ -1,0 +1,55 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-job-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 20px;
+
+  > button {
+    height: 44px;
+    padding: 12px 40px;
+    background-color: v.$color-blue-primary;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: v.$color-white;
+  }
+
+  &__buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    > button {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 37px;
+      height: 37px;
+      padding: 0px;
+      border: none;
+      background-color: transparent;
+    }
+  }
+
+  &__icon-wrapper {
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    width: 37px;
+    height: 37px;
+  }
+
+  @media screen and (max-width: (v.$screen-xl + 80px)) {
+    gap: 20px;
+  }
+
+  @media screen and (max-width: (v.$screen-hd + 74px)) {
+    gap: 8px;
+  }
+}

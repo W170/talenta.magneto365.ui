@@ -1,0 +1,18 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-rights-reserved {
+  display: inline;
+  line-height: 1.2;
+  p,
+  a,
+  span {
+    font-size: 14px;
+    color: v.$colors-magneto-neutral;
+    margin: 0 5px 0 0;
+    display: inline;
+  }
+
+  &__link {
+    text-decoration: underline;
+  }
+}

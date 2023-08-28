@@ -1,0 +1,39 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-job-details {
+  display: flex;
+  padding: 20px 20px 0px 20px;
+  flex-direction: column;
+  gap: 10px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px 10px;
+    gap: 10px;
+    border-radius: 6px;
+    background-color: v.$disabled-color-gray;
+  }
+
+  &__item-detail {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  &__item-detail-text {
+    margin: 0px;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: v.$colors-magneto-neutral;
+  }
+
+  @media screen and (max-width: (v.$screen-lg)) {
+    &__item-detail-text {
+      font-size: 12px;
+    }
+  }
+}

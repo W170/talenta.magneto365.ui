@@ -1,3 +1,5 @@
+@use '../../shared/stylesheets/variables.scss' as v;
+
 @mixin scroll-height($visible) {
   $size: 4px;
   &::-webkit-scrollbar {
@@ -14,6 +16,20 @@
       &:hover {
         background: #d3d3d3;
       }
+    }
+  }
+}
+
+@mixin scroll-filter {
+  $size: 14px;
+  $background: #cfcfde;
+  &::-webkit-scrollbar {
+    width: $size;
+    position: relative;
+    &-thumb {
+      background: $background;
+      border: solid v.$disabled-color-gray 3px;
+      border-radius: 20px;
     }
   }
 }

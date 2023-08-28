@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -31,5 +33,16 @@ module.exports = {
   docs: {
     autodocs: true,
     defaultName: 'Documentation'
+  },
+  webpackFinal: async (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@assets': path.resolve(__dirname, '/src/assets'),
+      '@components': path.resolve(__dirname, '/src/components'),
+      '@constants': path.resolve(__dirname, '/src/constants'),
+      '@shared': path.resolve(__dirname, '/src/shared'),
+      '@utils': path.resolve(__dirname, '/src/utils')
+    }
+    return config
   }
 }

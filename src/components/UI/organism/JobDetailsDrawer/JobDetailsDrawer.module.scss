@@ -1,0 +1,55 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.JobDetailsDrawerComponent {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: 100vh;
+  gap: 10px;
+
+  .JobHeaderCardWrapper {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid #e9e9f6;
+    background: #ffffff;
+    z-index: 1;
+  }
+
+  .JobBodyCardWrapper {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 7px;
+      border-radius: 15px;
+
+      &-track {
+        background-color: rgba(241, 241, 241, 0.353);
+        border-radius: 15px;
+      }
+
+      &-thumb {
+        border-radius: 15px;
+        background-color: v.$disabled-color-gray2;
+        &:hover {
+          background-color: v.$disabled-color-gray3;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 570px) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1280px) {
+    width: 335px;
+  }
+
+  @media screen and (min-width: 1280px) and (max-width: 1440px) {
+    width: 480px;
+  }
+}

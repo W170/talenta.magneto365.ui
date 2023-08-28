@@ -2,7 +2,7 @@ export interface IconProps {
   /**
    * Here is the icon component
    */
-  Icon?: string | null
+  icon?: string | null
   /**
    * You can set the hover animation or disable
    */
@@ -15,4 +15,8 @@ export interface IconProps {
    * You can change the color of the icon by adding a hexadecimal value here
    */
   color?: string
+  /**
+   * Ypu can add you custom className here
+   */
+  className?: string
 }

@@ -1,0 +1,168 @@
+.magneto-ui-card-jobs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 20px;
+  min-height: 127px;
+  width: 100%;
+  gap: 30px;
+  border-radius: 14px;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+  container-type: inline-size;
+
+  &:hover {
+    background-color: #f4f4fa;
+    cursor: pointer;
+    p {
+      color: #14141c;
+    }
+  }
+
+  &:hover &--arrow {
+    opacity: 1;
+    right: 4px;
+  }
+
+  &--data {
+    grid-template-columns: repeat(1, 1fr);
+
+    @container (min-width: 600px) {
+      display: grid;
+      padding-right: 30px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  }
+
+  p,
+  h2,
+  h3 {
+    font-size: 14px;
+    color: #14141c;
+    margin: 0;
+  }
+
+  &--row1,
+  &--row2,
+  &--row3,
+  &--row4 {
+    display: flex;
+  }
+
+  &--row1 {
+    align-items: center;
+    width: 50px;
+    height: 50px;
+  }
+  &--row2 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    @container (min-width: 1000px) {
+      gap: 10px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: left;
+      align-items: center;
+    }
+
+    p {
+      margin: 0;
+    }
+    &__position {
+      font-weight: bold;
+    }
+
+    &__variant {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  &--row3 {
+    justify-content: left;
+    gap: 50px;
+    &__info1 {
+      display: flex;
+      align-items: center;
+    }
+    p {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 0;
+    }
+
+    &__info2 {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+  &--row4 {
+    align-items: center;
+    flex-wrap: wrap;
+    padding-right: 30px;
+    p {
+      margin: 0;
+    }
+  }
+  &--brand {
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    &__img {
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      object-fit: contain;
+      padding: 5px;
+    }
+  }
+
+  &--arrow {
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    position: absolute;
+    right: 15px;
+  }
+}
+
+.was-seen {
+  p {
+    color: #63637e;
+    font-weight: normal;
+  }
+}
+
+.is-active {
+  background-color: #e9e9f6;
+  &:hover .magneto-ui-card-jobs--row2__position {
+    color: #000096;
+  }
+  &:hover {
+    background-color: #e9e9f6;
+  }
+  p {
+    color: #14141c;
+  }
+
+  .magneto-ui-card-jobs {
+    &--arrow {
+      opacity: 1;
+      right: 4px;
+    }
+    &--row2__position {
+      font-weight: bold;
+      color: #000096;
+    }
+  }
+}

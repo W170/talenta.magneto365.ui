@@ -6,7 +6,7 @@ export const screenSize: Record<DimType, number> = {
   sm: 576,
   md: 768,
   lg: 992,
-  xl: 1200,
-  hd: 1366,
-  xxl: 1600
+  xl: 1024,
+  hd: 1280,
+  xxl: 1440
 }

@@ -1,0 +1,85 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-job-apply-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    padding: 20px;
+    gap: 14px;
+    border-radius: 16px;
+    background: v.$disabled-color-gray;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    h2 {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      color: v.$text-color-black;
+      margin: 0px 0px 14px 0px;
+    }
+  }
+
+  &__requirements {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+
+    h3 {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+      color: v.$text-color-black;
+      margin: 0px;
+    }
+    p {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      color: v.$text-color-black;
+      margin: 0px;
+    }
+  }
+
+  button {
+    width: 164px;
+    height: 44px;
+    padding: 10px 30px;
+    background: v.$color-blue-primary;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: v.$color-white;
+  }
+
+  @media screen and (max-width: (v.$screen-xl + 80px)) {
+    &__header {
+      h2 {
+        font-size: 13px;
+      }
+    }
+
+    &__requirements {
+      > h3,
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}

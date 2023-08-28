@@ -1,0 +1,17 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-job-company-header {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  align-items: center;
+  gap: 7px;
+
+  @media screen and (max-width: (v.$screen-xl + 80px)) {
+    padding: 20px 10px;
+  }
+
+  @media screen and (max-width: (v.$screen-hd + 74px)) {
+    padding: 20px 20px 0px 20px;
+  }
+}

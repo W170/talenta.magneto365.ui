@@ -21,7 +21,19 @@ import {
   LogoMagneto,
   Tiktok,
   Linkedin,
-  Facebook
+  Facebook,
+  Calendar1,
+  People,
+  Briefcase,
+  DollarCircle,
+  Location,
+  ArchiveAdd,
+  Share,
+  Export3,
+  Buildings2,
+  GooglePlay,
+  AppGallery,
+  AppStore
 } from './icons.constants'
 
 import { IAvatar, IBreadcrumb, ILogoComponent, IMainButton, IconProps } from '../components/UI/atoms'
@@ -35,9 +47,14 @@ import {
   ISearchbar
 } from '../components/UI/molecules'
 import { ILoading } from '../components/UI/atoms/Loading'
-import { IMenuFilterItem } from '../components/UI/molecules/MenuFilter/MenuFilter.interface'
+import { ISortMenuItem } from '../components/UI/molecules/SortMenu/SortMenu.interface'
+import { IFilterValue } from '@components/UI/template/SideFilter'
+import { IJobCard } from '@components/UI/molecules/JobCard/JobCard.interface'
 import { IBrands } from '../components/UI/molecules/BrandsContainer/BrandsContainer.interface'
 import { IListMenuIcons } from '../components/UI/molecules/ListMenuIcons/ListMenuIcons.interface'
+import { IListMenuText } from '@components/UI/molecules/ListMenuText/ListMenuText.interface'
+import { IRightsReservedText } from '@components/UI/molecules/RightsReservedText/RightsReservedText.interface'
+import { IMagnetoResolution } from '@components/UI/molecules/MagnetoResolution/MagnetoResolution.interface'
 
 /**
  *
@@ -57,20 +74,23 @@ import { IListMenuIcons } from '../components/UI/molecules/ListMenuIcons/ListMen
  *
  */
 
+export const classMUI = 'magneto-ui'
+
 //Avatar Atom
 export const AvatarProps: IAvatar = {
   userImage:
     'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
 }
 
-// Icon Atom
+// icon Atom
 export const SignInIcon: IconProps = {
-  Icon: LoginCurve,
+  icon: LoginCurve,
   hover: false,
   color: '#14141C'
 }
 export const iconPropsBreadCrumb: IconProps = {
-  Icon: Home2,
+  icon: Home2,
+  hover: false,
   size: 13,
   color: '#a3a3b5'
 }
@@ -86,7 +106,7 @@ export const SignInStyles = {
 
 export const LoadingProps: ILoading = {
   loadingIcon: {
-    Icon: Refresh,
+    icon: Refresh,
     hover: false
   }
 }
@@ -98,6 +118,8 @@ export const LogoProps: ILogoComponent = {
   alt: 'Logo Magneto'
 }
 
+export const CompanyLogo =
+  'https://www.magneto365.com/co/_next/image?url=https%3A%2F%2Fmedia.magneto365.com%2Fimage_assets%2Ffiles%2F14510%2Foriginal-LOGO-EXITO-.png%3FExpires%3D1690588799%26Key-Pair-Id%3DK3F66W3VXZUW7N%26Signature%3Di1pLbYQfi4VSnjTcCQmqHH8DMzSPsqYAJ76Zev~MLRWrfkO~1ySQnbduk0fJNTIotUFG1-e9gLvZHzNmrczyf4eYx8NDnKdHgaU2PzcMG1E7Ca3WXxhGQufiqQd0vSGd6h2cN~DiZ~QQMp53G6o-ybE9FInCNAl1MZIbg5pPIJUEwimVBoi7e~cRxa9MUV7gxvTvk2lwmLtHWwitmbPlcNGl6trxhlN0yLpJER8QODej1UzMJN3cFMAboX98A-Z~~sQLbDq1yNVKjCBqZsn85xcCfcGMLpeyPWvsTAEy9E82WvIM1jhlyQ6Bb3GMLySmNEbgSNgyxTrpGMhyUTwXrg__&w=128&q=75'
 export const LogoCompany = 'https://www.magneto365.com/wp-content/uploads/2022/08/img-grupo-sura.png'
 export const flag =
   'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/2560px-Flag_of_Colombia.svg.png'
@@ -112,7 +134,7 @@ export const SignUpButtonStyle: IMainButton = {
     spacing: '10px'
   },
   iconProps: {
-    Icon: ProfileAdd,
+    icon: ProfileAdd,
     hover: true,
     color: '#090467 '
   }
@@ -125,7 +147,7 @@ export const MobileSearchbarButtonProps: IMainButton = {
   },
   buttonText: '',
   iconProps: {
-    Icon: SearchNormal1,
+    icon: SearchNormal1,
     hover: false,
     color: '#000096',
     size: 20
@@ -138,7 +160,7 @@ export const MenuButtonProps: IMainButton = {
     buttonColor: 'transparent'
   },
   iconProps: {
-    Icon: HambergerMenu,
+    icon: HambergerMenu,
     hover: false,
     color: '#14141C',
     size: 20
@@ -148,7 +170,7 @@ export const MenuButtonProps: IMainButton = {
 export const searchPropsButton: IMainButton = {
   buttonType: 'submit' as const,
   iconProps: {
-    Icon: SearchNormal1,
+    icon: SearchNormal1,
     hover: false,
     color: '#000096',
     size: 18
@@ -159,7 +181,7 @@ export const removePropsButton: IMainButton = {
   buttonType: 'reset' as const,
   buttonSize: 'medium',
   iconProps: {
-    Icon: Add,
+    icon: Add,
     hover: false,
     color: '#14141C',
     size: 18
@@ -172,7 +194,7 @@ export const searchMobileProps: IMainButton = {
     buttonColor: 'transparent'
   },
   iconProps: {
-    Icon: SearchNormal1,
+    icon: SearchNormal1,
     hover: false,
     color: '#A3A3B5',
     size: 16
@@ -185,7 +207,7 @@ export const closeSearchMobileProps: IMainButton = {
     buttonColor: 'transparent'
   },
   iconProps: {
-    Icon: Add,
+    icon: Add,
     hover: false,
     color: '#14141C',
     size: 25
@@ -212,7 +234,7 @@ export const CreateAccountButton: IMainButton = {
     spacing: '10px'
   },
   iconProps: {
-    Icon: ProfileAdd,
+    icon: ProfileAdd,
     hover: true,
     color: '#090467 '
   }
@@ -226,10 +248,34 @@ export const LoginButton: IMainButton = {
     spacing: '10px'
   },
   iconProps: {
-    Icon: LoginCurve,
+    icon: LoginCurve,
     hover: true
   }
 }
+
+// Search Item
+export const searchList = [
+  { tag: 'Bolsa de empleo México' },
+  { tag: 'Bolsa de empleo Argentina' },
+  { tag: 'Bolsa de empleo Nicaragua' },
+  { tag: 'Bolsa de empleo Costa Rica' },
+  { tag: 'Servicio de empleo Colombia' },
+  { tag: 'Bolsa de empleo Colombia' },
+  { tag: 'Empleo en Barranquilla' },
+  { tag: 'Empleo en Cartagena' },
+  { tag: 'Empleo en Medellín' },
+  { tag: 'Empleo en Bogotá' },
+  { tag: 'Empleo en Cali' },
+  { tag: 'Empleo en Pereira' },
+  { tag: 'Empleo como agente' },
+  { tag: 'Trabajos como ingeniero' },
+  { tag: 'Servicio de empleo' },
+  { tag: 'Empleos como abogado' },
+  { tag: 'Empleo como desarrollador' },
+  { tag: 'Empleos SENA' },
+  { tag: 'Empleos en bodega' },
+  { tag: 'Empleo como regente de farmacia' }
+]
 
 /**
  *
@@ -382,6 +428,14 @@ export const CurriculumTabProps: IHeaderTabs = {
   addDivider: true
 }
 
+//Jobs Details Molecule
+export const iconDetailList = [Calendar1, People, Briefcase, DollarCircle, Location]
+
+//Jobs Actions Molecule
+export const buttonIconsList = [ArchiveAdd, Share]
+
+export const anchorIconList = [Export3, Buildings2]
+
 //Menu Item Molecule
 
 export const MenuList: MenuItemInfo[] = [
@@ -437,6 +491,21 @@ export const listMenuProps: IListMenuItems = {
   urlParam: 'empleos-por-empresas'
 }
 
+export const appliedOptionsBySearchRenderType = [
+  {
+    id: '776@47',
+    label: 'Antioquia, Colombia',
+    parentId: 47,
+    isApplied: true
+  },
+  {
+    id: '789@47',
+    label: 'Cundinamarca, Colombia',
+    parentId: 47,
+    isApplied: true
+  }
+]
+
 /**
  *
  *
@@ -471,7 +540,7 @@ export const menuItems1440: IMenuItems[] = [
   {
     items: [
       {
-        Icon: MessageQuestion,
+        icon: MessageQuestion,
         text: 'Ayuda',
         slug: '',
         url: ''
@@ -495,13 +564,13 @@ export const MenuItems: IMenuItems[] = [
     title: 'Empleos',
     items: [
       {
-        Icon: BrifecaseTick,
+        icon: BrifecaseTick,
         text: 'Sugeridos',
         slug: 'sugeridos',
         url: '/sugeridos'
       },
       {
-        Icon: ArchiveTick,
+        icon: ArchiveTick,
         text: 'Guardados',
         slug: 'guardados',
         url: ''
@@ -512,13 +581,13 @@ export const MenuItems: IMenuItems[] = [
     title: 'Procesos',
     items: [
       {
-        Icon: TaskSquare,
+        icon: TaskSquare,
         text: 'Activos',
         slug: '',
         url: ''
       },
       {
-        Icon: ClipboardClose,
+        icon: ClipboardClose,
         text: 'Inactivos',
         slug: '',
         url: ''
@@ -529,13 +598,13 @@ export const MenuItems: IMenuItems[] = [
     title: 'Mi cuenta',
     items: [
       {
-        Icon: DocumentText,
+        icon: DocumentText,
         text: 'Hoja de vida',
         slug: '',
         url: ''
       },
       {
-        Icon: MessageQuestion,
+        icon: MessageQuestion,
         text: 'Ayuda',
         slug: '',
         url: ''
@@ -552,21 +621,21 @@ export const listMenuUserProps: IListMenuIcons = {
   settings: Settings
 }
 
-//FilterBottomHeader props
+//SortBar props
 
-export const menuFilterButton = {
-  Icon: ArrowDown2,
+export const menuSortButton = {
+  icon: ArrowDown2,
   hover: false,
   size: 17
 }
 
 export const iconFilterOrder = {
-  Icon: ArrowSwapVertical,
+  icon: ArrowSwapVertical,
   hover: false,
   size: 20
 }
 
-export const optionsMenuFilter: IMenuFilterItem[] = [
+export const optionsFilterOrderBy: ISortMenuItem[] = [
   {
     field: 'salary_show',
     label: 'Salario'
@@ -582,6 +651,316 @@ export const optionsMenuFilter: IMenuFilterItem[] = [
   {
     field: 'education_level_id',
     label: 'Nivel de estudios'
+  }
+]
+
+//Vacants
+
+export const vacants: IJobCard[] = [
+  {
+    title: 'Desarrollador Web',
+    cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
+    companyName: 'Adidas',
+    companySlug: 'adidas',
+    educationLevel: 'Profesional',
+    experience: '6 meses de experiencia',
+    minSalary: '1.200.000',
+    maxSalary: '2.000.000',
+    publishDate: 'hace 10 dias',
+    others: 'otras',
+    contractType: 'Termino fijo'
+  },
+  {
+    title: 'Analista',
+    cities: ['Medellin', 'Barranquila', 'Bogota'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMoo9RUN_NnD4aWgDuHUeEGTUfJXpimlWA&usqp=CAU',
+    companyName: 'Coca-cola',
+    companySlug: 'coca-cola',
+    educationLevel: 'Arquitecto',
+    experience: '12 meses de experiencia',
+    minSalary: '3.200.000',
+    maxSalary: '6.000.000',
+    publishDate: 'hace 20 dias',
+    others: 'otras',
+    contractType: 'Prestacion de servicios'
+  },
+  {
+    title: 'UX | UI designer',
+    cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
+    companyName: 'Lego',
+    companySlug: 'legos',
+    educationLevel: 'Tecnologo',
+    experience: '6 meses de experiencia',
+    minSalary: '3.000.000',
+    maxSalary: '5.000.000',
+    publishDate: 'hace 2 meses',
+    others: 'otras',
+    contractType: 'Termino indefinido'
+  },
+  {
+    title: 'Desarrollador Web',
+    cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
+    companyName: 'Adidas',
+    companySlug: 'adidas',
+    educationLevel: 'Profesional',
+    experience: '6 meses de experiencia',
+    minSalary: '1.200.000',
+    maxSalary: '2.000.000',
+    publishDate: 'hace 10 dias',
+    others: 'otras',
+    contractType: 'Termino fijo'
+  },
+  {
+    title: 'UX | UI designer',
+    cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
+    companyName: 'Lego',
+    companySlug: 'legos',
+    educationLevel: 'Tecnologo',
+    experience: '6 meses de experiencia',
+    minSalary: '3.000.000',
+    maxSalary: '5.000.000',
+    publishDate: 'hace 2 meses',
+    others: 'otras',
+    contractType: 'Termino indefinido'
+  },
+  {
+    title: 'Desarrollador Web',
+    cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
+    companyName: 'Adidas',
+    companySlug: 'adidas',
+    educationLevel: 'Profesional',
+    experience: '6 meses de experiencia',
+    minSalary: '1.200.000',
+    maxSalary: '2.000.000',
+    publishDate: 'hace 10 dias',
+    others: 'otras',
+    contractType: 'Termino fijo'
+  },
+  {
+    title: 'Analista',
+    cities: ['Medellin', 'Barranquila', 'Bogota'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMoo9RUN_NnD4aWgDuHUeEGTUfJXpimlWA&usqp=CAU',
+    companyName: 'Coca-cola',
+    companySlug: 'coca-cola',
+    educationLevel: 'Arquitecto',
+    experience: '12 meses de experiencia',
+    minSalary: '3.200.000',
+    maxSalary: '6.000.000',
+    publishDate: 'hace 20 dias',
+    others: 'otras',
+    contractType: 'Prestacion de servicios'
+  },
+  {
+    title: 'UX | UI designer',
+    cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
+    companyName: 'Lego',
+    companySlug: 'legos',
+    educationLevel: 'Tecnologo',
+    experience: '6 meses de experiencia',
+    minSalary: '3.000.000',
+    maxSalary: '5.000.000',
+    publishDate: 'hace 2 meses',
+    others: 'otras',
+    contractType: 'Termino indefinido'
+  },
+  {
+    title: 'Desarrollador Web',
+    cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
+    companyName: 'Adidas',
+    companySlug: 'adidas',
+    educationLevel: 'Profesional',
+    experience: '6 meses de experiencia',
+    minSalary: '1.200.000',
+    maxSalary: '2.000.000',
+    publishDate: 'hace 10 dias',
+    others: 'otras',
+    contractType: 'Termino fijo'
+  },
+  {
+    title: 'UX | UI designer',
+    cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
+    companyName: 'Lego',
+    companySlug: 'legos',
+    educationLevel: 'Tecnologo',
+    experience: '6 meses de experiencia',
+    minSalary: '3.000.000',
+    maxSalary: '5.000.000',
+    publishDate: 'hace 2 meses',
+    others: 'otras',
+    contractType: 'Termino indefinido'
+  },
+  {
+    title: 'Desarrollador Web',
+    cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
+    companyName: 'Adidas',
+    companySlug: 'adidas',
+    educationLevel: 'Profesional',
+    experience: '6 meses de experiencia',
+    minSalary: '1.200.000',
+    maxSalary: '2.000.000',
+    publishDate: 'hace 10 dias',
+    others: 'otras',
+    contractType: 'Termino fijo'
+  },
+  {
+    title: 'Analista',
+    cities: ['Medellin', 'Barranquila', 'Bogota'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMoo9RUN_NnD4aWgDuHUeEGTUfJXpimlWA&usqp=CAU',
+    companyName: 'Coca-cola',
+    companySlug: 'coca-cola',
+    educationLevel: 'Arquitecto',
+    experience: '12 meses de experiencia',
+    minSalary: '3.200.000',
+    maxSalary: '6.000.000',
+    publishDate: 'hace 20 dias',
+    others: 'otras',
+    contractType: 'Prestacion de servicios'
+  },
+  {
+    title: 'UX | UI designer',
+    cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
+    companyName: 'Lego',
+    companySlug: 'legos',
+    educationLevel: 'Tecnologo',
+    experience: '6 meses de experiencia',
+    minSalary: '3.000.000',
+    maxSalary: '5.000.000',
+    publishDate: 'hace 2 meses',
+    others: 'otras',
+    contractType: 'Termino indefinido'
+  },
+  {
+    title: 'Desarrollador Web',
+    cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
+    companyName: 'Adidas',
+    companySlug: 'adidas',
+    educationLevel: 'Profesional',
+    experience: '6 meses de experiencia',
+    minSalary: '1.200.000',
+    maxSalary: '2.000.000',
+    publishDate: 'hace 10 dias',
+    others: 'otras',
+    contractType: 'Termino fijo'
+  },
+  {
+    title: 'UX | UI designer',
+    cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
+    companyName: 'Lego',
+    companySlug: 'legos',
+    educationLevel: 'Tecnologo',
+    experience: '6 meses de experiencia',
+    minSalary: '3.000.000',
+    maxSalary: '5.000.000',
+    publishDate: 'hace 2 meses',
+    others: 'otras',
+    contractType: 'Termino indefinido'
+  },
+  {
+    title: 'Analista',
+    cities: ['Medellin', 'Barranquila', 'Bogota'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMoo9RUN_NnD4aWgDuHUeEGTUfJXpimlWA&usqp=CAU',
+    companyName: 'Coca-cola',
+    companySlug: 'coca-cola',
+    educationLevel: 'Arquitecto',
+    experience: '12 meses de experiencia',
+    minSalary: '3.200.000',
+    maxSalary: '6.000.000',
+    publishDate: 'hace 20 dias',
+    others: 'otras',
+    contractType: 'Prestacion de servicios'
+  },
+  {
+    title: 'UX | UI designer',
+    cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
+    companyName: 'Lego',
+    companySlug: 'legos',
+    educationLevel: 'Tecnologo',
+    experience: '6 meses de experiencia',
+    minSalary: '3.000.000',
+    maxSalary: '5.000.000',
+    publishDate: 'hace 2 meses',
+    others: 'otras',
+    contractType: 'Termino indefinido'
+  },
+  {
+    title: 'Desarrollador Web',
+    cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
+    companyName: 'Adidas',
+    companySlug: 'adidas',
+    educationLevel: 'Profesional',
+    experience: '6 meses de experiencia',
+    minSalary: '1.200.000',
+    maxSalary: '2.000.000',
+    publishDate: 'hace 10 dias',
+    others: 'otras',
+    contractType: 'Termino fijo'
+  },
+  {
+    title: 'UX | UI designer',
+    cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
+    companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
+    companyName: 'Lego',
+    companySlug: 'legos',
+    educationLevel: 'Tecnologo',
+    experience: '6 meses de experiencia',
+    minSalary: '3.000.000',
+    maxSalary: '5.000.000',
+    publishDate: 'hace 2 meses',
+    others: 'otras',
+    contractType: 'Termino indefinido'
+  }
+]
+
+//TODO: temporal side menu filter
+export const optionsFilterMenu: IFilterValue[] = [
+  {
+    id: 1,
+    operator: 1,
+    label: 'Administración y oficina',
+    total: 200,
+    isApplied: false
+  },
+  {
+    id: 14,
+    operator: 1,
+    label: 'Ingenierías',
+    total: 9999,
+    isApplied: false
+  },
+  {
+    id: 18,
+    operator: 1,
+    label: 'Medicina, sector de la salud y Ciencias',
+    total: 200,
+    isApplied: true
+  },
+  {
+    id: 2,
+    operator: 1,
+    label: 'Recursos Humanos',
+    total: 0,
+    isApplied: false
+  },
+  {
+    id: 25,
+    operator: 1,
+    label: 'Ventas',
+    total: 10,
+    isApplied: false
   }
 ]
 
@@ -622,3 +1001,232 @@ export const breadcrumbProps: IBreadcrumb = {
   queryParams: '?utm=google&utm_source=facebook&utm_medium=cueros',
   haveRedirect: true
 }
+
+export const RightsReservedProps: IRightsReservedText = {
+  magnetoRightsText: 'Magneto Global S.A.S, todos los derechos reservados',
+  mapSiteHref: '#',
+  mapSiteText: 'Mapa del sitio'
+}
+
+export const MagnetoResolutionProps: IMagnetoResolution = {
+  resolutionText:
+    ' Vinculado a la red de prestadores del Servicio Público de Empleo. Autorizado por la Unidad Administrativa Especial del Servicio Público de Empleo según resolución',
+  resolutionHref: '#',
+  resolutionHrefText: 'No. 0333/2022'
+}
+
+export const SocialMediaProps = [
+  {
+    href: 'https://play.google.com/store/apps/details?id=com.magneto365.app',
+    img: GooglePlay,
+    alt: 'google-play-image'
+  },
+  {
+    href: 'https://appgallery.huawei.com/app/C108120693',
+    img: AppGallery,
+    alt: 'app-gallery-image'
+  },
+  {
+    href: 'https://apps.apple.com/co/app/magneto-empleo-para-todos/id6444812096',
+    img: AppStore,
+    alt: 'app-store-image'
+  }
+]
+
+export const listMenuText: IListMenuText[] = [
+  {
+    heightContent: 330,
+    title: 'Personas',
+    createAccount: () => console.log('holi'),
+    isLoading: false,
+    links: [
+      {
+        tag: 'Conoce Magneto',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Ver todo los empleos',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Ingresa a tu cuenta',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Crear Cuenta',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true,
+        isCreateAccount: true
+      },
+      {
+        tag: 'Articulos de interes',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Preguntas Frecuentes',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Empleos por ciudad',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Empleos por sector',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Empleos por empresa',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Empleos mas buscados',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      }
+    ]
+  },
+  {
+    heightContent: 140,
+    title: 'Magneto',
+    links: [
+      {
+        tag: 'Selección digital',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Evaluación integral del talento',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Recibe una asesoria',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      }
+    ]
+  },
+  {
+    heightContent: 115,
+    title: 'Magneto Lite',
+    links: [
+      {
+        tag: 'Publicar ofertas de empleo',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Planes para PYMES',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      }
+    ]
+  },
+  {
+    heightContent: 115,
+    title: 'Otras soluciones',
+    links: [
+      {
+        tag: 'Marble Headhunter',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Bibliotecas Digitales',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      }
+    ]
+  },
+  {
+    heightContent: 335,
+    title: 'Legal',
+    links: [
+      {
+        tag: 'Politica tratamiento de Datos Personales Psyconometrics',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Politica tratamiento de Datos Magneto Global',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Aviso de privacidad Psyconometrics',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Aviso de privacidad Magneto Global',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Termino y condiciones',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Reglamento Autorizacion SPE',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Consentimiento de referidos',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Ver Reglamento de autorizacion',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Politica de Cookies Psyconometrics',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      },
+      {
+        tag: 'Politica de Cookies Magneto Global',
+        routePath: '',
+        baseUrl: '',
+        isExternal: true
+      }
+    ]
+  }
+]

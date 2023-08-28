@@ -15,7 +15,7 @@ const BrandButton: React.FC<IBrandButton> = ({ rotate, companyLogo, companySlug,
       <button className={style[`${Muiclass}-brand-button__company-logo`]} onClick={onClick}>
         <img className={style[`${Muiclass}-brand-button__company-logo--img`]} src={companyLogo} alt={companySlug} />
         <span className={`${style[`${Muiclass}-brand-button__icon`]} ${rotateIcon}`}>
-          <IconItem Icon={ArrowDown2} />
+          <IconItem icon={ArrowDown2} />
         </span>
       </button>
     </div>

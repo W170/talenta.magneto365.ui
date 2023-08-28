@@ -1,0 +1,39 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.MobileJobDetailsActionsBarComponent {
+  position: sticky;
+  bottom: 0%;
+  display: flex;
+  align-items: center;
+  width: auto;
+  padding: 10px 20px;
+  gap: 20px;
+
+  border-radius: 16px 16px 0px 0px;
+  background: v.$color-white;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+
+  button {
+    height: 44px;
+    padding: 12px 40px;
+    background-color: v.$color-blue-primary;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: v.$color-white;
+  }
+
+  .DrawerButtonWrapper {
+    width: 25px;
+    height: 25px;
+
+    > button {
+      width: 25px;
+      height: 25px;
+      padding: 0px;
+      background-color: transparent;
+      border: none;
+    }
+  }
+}
