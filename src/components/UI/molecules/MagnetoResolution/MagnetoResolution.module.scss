@@ -34,7 +34,8 @@
       color: v.$colors-magneto-neutral;
       text-decoration: underline;
       &:hover {
-        color: v.$colors-magneto-neutral;
+        color: v.$colors-magneto-neutral !important;
+        text-decoration: underline;
       }
     }
   }
