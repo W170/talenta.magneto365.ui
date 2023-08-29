@@ -22,9 +22,16 @@ export interface IListMenuText {
 }
 
 interface IMenuList {
-  tag: string
-  routePath: string
-  baseUrl: string
-  isExternal: boolean
+  /**'
+   * this property containt rendering text
+   */
+  tag?: string | null
+  /**
+   * this property containt url redirection
+   */
+  href: ''
+  /**
+   * This property show create account button
+   */
   isCreateAccount?: boolean
 }

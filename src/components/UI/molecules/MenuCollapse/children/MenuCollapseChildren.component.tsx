@@ -5,7 +5,12 @@ import style from './MenuCollapseChildren.module.scss'
 import { classMUI } from '@constants/stories.constants'
 import { IMenuCollapseChildren } from './MenuCollapseChildren.interface'
 
-const MenuCollapseChildren: React.FC<IMenuCollapseChildren> = ({ links, title, isOpen, onClick, heightContent }) => {
+const MenuCollapseChildren: React.FC<IMenuCollapseChildren> = ({
+  isOpen,
+  onClick,
+  heightContent,
+  ...listMenuProps
+}) => {
   const { rotateArrow, customHeightContent } = useMemo(() => {
     const rotateArrow = isOpen ? style['rotate'] : ''
     const customHeightContent = heightContent ? `${heightContent}px` : 'auto'
@@ -21,7 +26,7 @@ const MenuCollapseChildren: React.FC<IMenuCollapseChildren> = ({ links, title, i
           alt="icon-arrow"
         />
       </button>
-      <ListMenuText links={links} title={title} />
+      <ListMenuText {...listMenuProps} />
     </div>
   )
 }

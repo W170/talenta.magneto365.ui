@@ -52,9 +52,9 @@ import { IFilterValue } from '@components/UI/template/SideFilter'
 import { IJobCard } from '@components/UI/molecules/JobCard/JobCard.interface'
 import { IBrands } from '../components/UI/molecules/BrandsContainer/BrandsContainer.interface'
 import { IListMenuIcons } from '../components/UI/molecules/ListMenuIcons/ListMenuIcons.interface'
-import { IListMenuText } from '@components/UI/molecules/ListMenuText/ListMenuText.interface'
 import { IRightsReservedText } from '@components/UI/molecules/RightsReservedText/RightsReservedText.interface'
 import { IMagnetoResolution } from '@components/UI/molecules/MagnetoResolution/MagnetoResolution.interface'
+import { IFooterMenuLinks } from '@components/UI/organism/FooterMenuLinks/FooterMenuLinks.interface'
 
 /**
  *
@@ -1033,200 +1033,151 @@ export const SocialMediaProps = [
   }
 ]
 
-export const listMenuText: IListMenuText[] = [
-  {
-    heightContent: 330,
+const authenticated = false
+
+const createAccount = () => console.log('widget open')
+
+export const listMenuText: IFooterMenuLinks = {
+  personsMenu: {
+    heightContent: authenticated ? 280 : 330,
     title: 'Personas',
-    createAccount: () => console.log('holi'),
+    createAccount: createAccount,
     isLoading: false,
     links: [
       {
         tag: 'Conoce Magneto',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Ver todo los empleos',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
-        tag: 'Ingresa a tu cuenta',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        tag: authenticated ? null : 'Ingresa a tu cuenta',
+        href: ''
       },
       {
-        tag: 'Crear Cuenta',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true,
+        tag: authenticated ? null : 'Crear Cuenta',
+        href: '',
         isCreateAccount: true
       },
       {
         tag: 'Articulos de interes',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Preguntas Frecuentes',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Empleos por ciudad',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Empleos por sector',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Empleos por empresa',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Empleos mas buscados',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       }
     ]
   },
-  {
+
+  magnetoMenu: {
     heightContent: 140,
     title: 'Magneto',
     links: [
       {
         tag: 'Selección digital',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Evaluación integral del talento',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Recibe una asesoria',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       }
     ]
   },
-  {
+  magnetoLiteMenu: {
     heightContent: 115,
     title: 'Magneto Lite',
     links: [
       {
         tag: 'Publicar ofertas de empleo',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Planes para PYMES',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       }
     ]
   },
-  {
+  otherSolutionsMenu: {
     heightContent: 115,
     title: 'Otras soluciones',
     links: [
       {
         tag: 'Marble Headhunter',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Bibliotecas Digitales',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       }
     ]
   },
-  {
+  legalMenu: {
     heightContent: 335,
     title: 'Legal',
     links: [
       {
         tag: 'Politica tratamiento de Datos Personales Psyconometrics',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Politica tratamiento de Datos Magneto Global',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Aviso de privacidad Psyconometrics',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Aviso de privacidad Magneto Global',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Termino y condiciones',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Reglamento Autorizacion SPE',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Consentimiento de referidos',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Ver Reglamento de autorizacion',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Politica de Cookies Psyconometrics',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Politica de Cookies Magneto Global',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       }
     ]
   }
-]
+}
