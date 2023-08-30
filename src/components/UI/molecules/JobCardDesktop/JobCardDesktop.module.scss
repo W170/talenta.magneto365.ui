@@ -1,7 +1,6 @@
 .magneto-ui-card-jobs {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 32px 20px;
   min-height: 127px;
   width: 100%;
@@ -26,7 +25,6 @@
 
   &--data {
     grid-template-columns: repeat(1, 1fr);
-
     @container (min-width: 600px) {
       display: grid;
       padding-right: 30px;

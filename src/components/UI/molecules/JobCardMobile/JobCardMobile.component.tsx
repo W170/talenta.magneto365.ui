@@ -7,9 +7,8 @@ const JobCardMobile: React.FC<ICardJobMobile> = ({
   isCompanyPage = false,
   workSeen,
   jobOpen,
-  cities,
-  minSalary,
-  maxSalary,
+  cities = [],
+  salary,
   companyName,
   title,
   educationLevel,
@@ -46,9 +45,7 @@ const JobCardMobile: React.FC<ICardJobMobile> = ({
             <p>
               {cities[0]}, {cities.length > 1 && <span>{others},</span>}{' '}
             </p>
-            <p>
-              {minSalary} - {maxSalary},
-            </p>
+            <p>{`${salary},`}</p>
             <p>{experience} </p>
             <p>{educationLevel}</p>
           </div>

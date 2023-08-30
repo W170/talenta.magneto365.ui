@@ -9,9 +9,8 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   isCompanyPage = false,
   workSeen,
   jobOpen,
-  cities,
-  minSalary,
-  maxSalary,
+  cities = [],
+  salary,
   companyName,
   title,
   educationLevel,
@@ -21,7 +20,7 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   experience,
   contractType,
   showDetail,
-  others
+  others = ''
 }) => {
   const citiesformatted = useMemo(() => {
     if (cities.length > 5) {
@@ -59,7 +58,7 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
         </div>
         <div className={style[`${classMUI}-card-jobs--row4`]}>
           <p>
-            {`${contractType},`} {`${minSalary} - ${maxSalary},`} {`${experience},`} {educationLevel}.
+            {`${contractType},`} {`${salary},`} {`${experience},`} {educationLevel}.
           </p>
         </div>
       </div>

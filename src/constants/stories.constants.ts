@@ -665,8 +665,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'adidas',
     educationLevel: 'Profesional',
     experience: '6 meses de experiencia',
-    minSalary: '1.200.000',
-    maxSalary: '2.000.000',
+    salary: '1.200.000 a 4.000.000',
     publishDate: 'hace 10 dias',
     others: 'otras',
     contractType: 'Termino fijo'
@@ -679,8 +678,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'coca-cola',
     educationLevel: 'Arquitecto',
     experience: '12 meses de experiencia',
-    minSalary: '3.200.000',
-    maxSalary: '6.000.000',
+    salary: '3.200.000',
     publishDate: 'hace 20 dias',
     others: 'otras',
     contractType: 'Prestacion de servicios'
@@ -693,8 +691,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'legos',
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
-    minSalary: '3.000.000',
-    maxSalary: '5.000.000',
+    salary: '3.000.000',
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
@@ -707,8 +704,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'adidas',
     educationLevel: 'Profesional',
     experience: '6 meses de experiencia',
-    minSalary: '1.200.000',
-    maxSalary: '2.000.000',
+    salary: '1.200.000 a 5.000.000',
     publishDate: 'hace 10 dias',
     others: 'otras',
     contractType: 'Termino fijo'
@@ -721,8 +717,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'legos',
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
-    minSalary: '3.000.000',
-    maxSalary: '5.000.000',
+    salary: '3.000.000',
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
@@ -735,8 +730,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'adidas',
     educationLevel: 'Profesional',
     experience: '6 meses de experiencia',
-    minSalary: '1.200.000',
-    maxSalary: '2.000.000',
+    salary: '1.200.000',
     publishDate: 'hace 10 dias',
     others: 'otras',
     contractType: 'Termino fijo'
@@ -749,8 +743,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'coca-cola',
     educationLevel: 'Arquitecto',
     experience: '12 meses de experiencia',
-    minSalary: '3.200.000',
-    maxSalary: '6.000.000',
+    salary: '3.200.000',
     publishDate: 'hace 20 dias',
     others: 'otras',
     contractType: 'Prestacion de servicios'
@@ -763,8 +756,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'legos',
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
-    minSalary: '3.000.000',
-    maxSalary: '5.000.000',
+    salary: '1.000.000 a 3.000.000',
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
@@ -777,8 +769,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'adidas',
     educationLevel: 'Profesional',
     experience: '6 meses de experiencia',
-    minSalary: '1.200.000',
-    maxSalary: '2.000.000',
+    salary: '1.200.000',
     publishDate: 'hace 10 dias',
     others: 'otras',
     contractType: 'Termino fijo'
@@ -791,8 +782,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'legos',
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
-    minSalary: '3.000.000',
-    maxSalary: '5.000.000',
+    salary: '3.000.000',
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
@@ -805,8 +795,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'adidas',
     educationLevel: 'Profesional',
     experience: '6 meses de experiencia',
-    minSalary: '1.200.000',
-    maxSalary: '2.000.000',
+    salary: '1.200.000',
     publishDate: 'hace 10 dias',
     others: 'otras',
     contractType: 'Termino fijo'
@@ -819,8 +808,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'coca-cola',
     educationLevel: 'Arquitecto',
     experience: '12 meses de experiencia',
-    minSalary: '3.200.000',
-    maxSalary: '6.000.000',
+    salary: '3.200.000',
     publishDate: 'hace 20 dias',
     others: 'otras',
     contractType: 'Prestacion de servicios'
@@ -833,8 +821,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'legos',
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
-    minSalary: '3.000.000',
-    maxSalary: '5.000.000',
+    salary: '3.000.000',
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
@@ -847,8 +834,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'adidas',
     educationLevel: 'Profesional',
     experience: '6 meses de experiencia',
-    minSalary: '1.200.000',
-    maxSalary: '2.000.000',
+    salary: '1.200.000',
     publishDate: 'hace 10 dias',
     others: 'otras',
     contractType: 'Termino fijo'
@@ -861,8 +847,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'legos',
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
-    minSalary: '3.000.000',
-    maxSalary: '5.000.000',
+    salary: '3.000.000',
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
@@ -875,8 +860,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'coca-cola',
     educationLevel: 'Arquitecto',
     experience: '12 meses de experiencia',
-    minSalary: '3.200.000',
-    maxSalary: '6.000.000',
+    salary: '3.200.000',
     publishDate: 'hace 20 dias',
     others: 'otras',
     contractType: 'Prestacion de servicios'
@@ -889,8 +873,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'legos',
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
-    minSalary: '3.000.000',
-    maxSalary: '5.000.000',
+    salary: '3.000.000',
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
@@ -903,8 +886,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'adidas',
     educationLevel: 'Profesional',
     experience: '6 meses de experiencia',
-    minSalary: '1.200.000',
-    maxSalary: '2.000.000',
+    salary: '1.200.000',
     publishDate: 'hace 10 dias',
     others: 'otras',
     contractType: 'Termino fijo'
@@ -917,8 +899,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'legos',
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
-    minSalary: '3.000.000',
-    maxSalary: '5.000.000',
+    salary: '3.000.000',
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'

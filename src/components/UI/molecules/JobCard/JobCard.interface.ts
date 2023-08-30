@@ -14,43 +14,40 @@ export interface IJobCard {
   /**
    * cities of vacant
    */
-  cities: string[]
+  cities?: string[]
   /**
-   * min salary value
+   * salary value
    */
-  minSalary: number | string
-  /**
-   *max salary value
-   */
-  maxSalary: number | string
+  salary?: number | string
+
   /**
    * company name
    */
-  companyName: string
+  companyName?: string
   /**
    * title
    */
-  title: string
+  title?: string
   /**
    * education level
    */
-  educationLevel: string
+  educationLevel?: string
   /**
    * date vacant creation
    */
-  publishDate: string
+  publishDate?: string
   /**
    * company image
    */
-  companyLogo: string
+  companyLogo?: string
   /**
    * company slug
    */
-  companySlug: string
+  companySlug?: string
   /**
    * number of months of experience
    */
-  experience: string
+  experience?: string
   /**
    * type of contract
    */
@@ -58,7 +55,7 @@ export interface IJobCard {
   /**
    * others cities text
    */
-  others: string
+  others?: string
   /**
    * this function show job detail
    */
