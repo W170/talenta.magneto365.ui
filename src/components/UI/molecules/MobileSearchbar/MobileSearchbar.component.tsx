@@ -6,13 +6,13 @@ import styles from './MobileSearchbar.modules.scss'
 import { closeSearchMobileProps, searchMobileProps } from '../../../../constants/stories.constants'
 
 const Component: React.FC<IMobileSearchbar> = ({
-  termValue = '',
+  termValue,
   onSearch,
   onClick,
   focusSearchInput,
   showMobileSearchbar
 }) => {
-  const [searchValue, setSearchValue] = useState(termValue)
+  const [searchValue, setSearchValue] = useState(termValue ? termValue : '')
   const searchInputRef = useRef<HTMLInputElement>(null)
 
   const handleSubmit = (event: { preventDefault: () => void }) => {

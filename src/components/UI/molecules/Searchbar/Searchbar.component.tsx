@@ -10,7 +10,7 @@ const Component: React.FC<ISearchbar> = ({
   removeButtonProps,
   termValue
 }) => {
-  const [searchValue, setSearchValue] = useState(termValue)
+  const [searchValue, setSearchValue] = useState(termValue ? termValue : '')
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
