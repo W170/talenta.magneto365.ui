@@ -658,6 +658,7 @@ export const optionsFilterOrderBy: ISortMenuItem[] = [
 
 export const vacants: IJobCard[] = [
   {
+    id: 1,
     title: 'Desarrollador Web',
     cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
@@ -671,6 +672,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Termino fijo'
   },
   {
+    id: 2,
     title: 'Analista',
     cities: ['Medellin', 'Barranquila', 'Bogota'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMoo9RUN_NnD4aWgDuHUeEGTUfJXpimlWA&usqp=CAU',
@@ -684,6 +686,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Prestacion de servicios'
   },
   {
+    id: 3,
     title: 'UX | UI designer',
     cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
@@ -697,6 +700,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Termino indefinido'
   },
   {
+    id: 4,
     title: 'Desarrollador Web',
     cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
@@ -710,6 +714,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Termino fijo'
   },
   {
+    id: 5,
     title: 'UX | UI designer',
     cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
@@ -723,6 +728,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Termino indefinido'
   },
   {
+    id: 6,
     title: 'Desarrollador Web',
     cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
@@ -736,6 +742,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Termino fijo'
   },
   {
+    id: 7,
     title: 'Analista',
     cities: ['Medellin', 'Barranquila', 'Bogota'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMoo9RUN_NnD4aWgDuHUeEGTUfJXpimlWA&usqp=CAU',
@@ -749,6 +756,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Prestacion de servicios'
   },
   {
+    id: 8,
     title: 'UX | UI designer',
     cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
@@ -762,6 +770,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Termino indefinido'
   },
   {
+    id: 9,
     title: 'Desarrollador Web',
     cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
@@ -775,6 +784,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Termino fijo'
   },
   {
+    id: 10,
     title: 'UX | UI designer',
     cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
@@ -788,6 +798,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Termino indefinido'
   },
   {
+    id: 11,
     title: 'Desarrollador Web',
     cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
@@ -801,6 +812,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Termino fijo'
   },
   {
+    id: 12,
     title: 'Analista',
     cities: ['Medellin', 'Barranquila', 'Bogota'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMoo9RUN_NnD4aWgDuHUeEGTUfJXpimlWA&usqp=CAU',
@@ -814,6 +826,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Prestacion de servicios'
   },
   {
+    id: 13,
     title: 'UX | UI designer',
     cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
@@ -827,6 +840,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Termino indefinido'
   },
   {
+    id: 14,
     title: 'Desarrollador Web',
     cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
@@ -840,6 +854,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Termino fijo'
   },
   {
+    id: 15,
     title: 'UX | UI designer',
     cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
@@ -853,6 +868,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Termino indefinido'
   },
   {
+    id: 16,
     title: 'Analista',
     cities: ['Medellin', 'Barranquila', 'Bogota'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMoo9RUN_NnD4aWgDuHUeEGTUfJXpimlWA&usqp=CAU',
@@ -866,6 +882,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Prestacion de servicios'
   },
   {
+    id: 17,
     title: 'UX | UI designer',
     cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
@@ -879,6 +896,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Termino indefinido'
   },
   {
+    id: 18,
     title: 'Desarrollador Web',
     cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
@@ -892,6 +910,7 @@ export const vacants: IJobCard[] = [
     contractType: 'Termino fijo'
   },
   {
+    id: 19,
     title: 'UX | UI designer',
     cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',

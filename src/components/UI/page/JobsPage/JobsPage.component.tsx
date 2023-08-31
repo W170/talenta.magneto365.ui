@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useCallback, useState } from 'react'
 import FilterContainerMenu from '@components/UI/molecules/FilterContainerMenu/FilterContainerMenu.component'
 import { JobDetailContainer, JobCard, FrequentSearch, Pagination } from '@components/UI/molecules'
 import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
@@ -20,28 +20,28 @@ const JobsPage: React.FC<IJobsPage> = ({
   footerProps,
   paginationProps
 }) => {
-  const [showDetail, setShowDetail] = useState(false)
-  const [showDrawer, setShowDrawer] = useState(false)
+  const [jobSelected, setJobSelected] = useState<string | number | null>(vacantProps[0].id)
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
+  const [showDetail, setShowDetail] = useState(true)
+
+  const onClose = useCallback(() => {
+    setShowDetail(false)
+    setJobSelected(null)
+  }, [])
 
   const JobDetailsDrawerComponent = useMediaQuery(
-    <JobDetailContainer onClose={() => setShowDetail(false)} isOpen={showDetail}>
+    <JobDetailContainer onClose={onClose} isOpen={showDetail}>
       <JobDetailsDrawer {...jobDetailsDrawerProps} />
     </JobDetailContainer>,
     {
-      lg: (
-        <MobileJobDetailsDrawer
-          {...MobileJobDetailsDrawerProps}
-          onClose={() => setShowDrawer(false)}
-          isOpen={showDrawer}
-        />
-      )
+      lg: <MobileJobDetailsDrawer {...MobileJobDetailsDrawerProps} onClose={onClose} isOpen={showDetail} />
     }
   )
 
-  const handleDrawers = useMediaQuery(() => setShowDetail(true), {
-    lg: () => setShowDrawer(true)
-  })
+  const handleVacant = useCallback((id: string | number) => {
+    setJobSelected(id)
+    setShowDetail(true)
+  }, [])
 
   return (
     <Fragment>
@@ -56,8 +56,8 @@ const JobsPage: React.FC<IJobsPage> = ({
           <SortBar {...sortBarProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
           <h1 className={style[`${classMUI}-jobs-page--title`]}>{sortBarProps?.mainTitle}</h1>
           <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>
-            {vacantProps.map(({ ...props }, index) => (
-              <JobCard showDetail={handleDrawers} key={index} {...props} />
+            {vacantProps.map(({ id, ...props }) => (
+              <JobCard isActive={id === jobSelected} id={id} showDetail={() => handleVacant(id)} key={id} {...props} />
             ))}
           </div>
           <Pagination {...paginationProps} />

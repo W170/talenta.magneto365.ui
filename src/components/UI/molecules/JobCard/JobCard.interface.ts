@@ -1,4 +1,5 @@
 export interface IJobCard {
+  id: string | number
   /**
    * this property can change style in the texts when the job was seen
    */
