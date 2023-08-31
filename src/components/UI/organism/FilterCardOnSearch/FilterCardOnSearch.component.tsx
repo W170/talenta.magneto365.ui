@@ -44,6 +44,7 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
   const handleSearch = useCallback(
     async (event: ChangeEvent<HTMLInputElement>, inputRef: React.MutableRefObject<null>) => {
       event.preventDefault()
+      !refInput && setRefInput(inputRef)
       // setSearching(true);
       const searchedOptions = await getOptionsOnSearch({
         repository,
@@ -52,8 +53,8 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
         params
       })
       // setSearching(false);
+      if (!searchedOptions) return
       setOptions(searchedOptions.filter((opt) => !appliedOptions.find((optApplied) => optApplied.id === opt.id)))
-      !refInput && setRefInput(inputRef)
     },
     [getOptionsOnSearch, setOptions, appliedOptions, repository, field, params, refInput]
   )

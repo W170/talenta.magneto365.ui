@@ -102,15 +102,20 @@ const SideFilter: FC<ISideFilter> = ({
       <aside className={`${styles['magneto-iu-side-filter']} ${isFiltersOpen ? styles.open : ''}`}>
         <div className={styles['magneto-iu-side-filter_content']}>
           <FilterHeader {...headerProps} />
-          {filters.map((item, i) => {
-            return <CardByRenderType key={`${i}-${item.field}`} {...(item as unknown as IFilter)} {...cardProps} />
-          })}
+          {filters?.length &&
+            filters?.map((item, i) => {
+              return <CardByRenderType key={`${i}-${item.field}`} {...(item as unknown as IFilter)} {...cardProps} />
+            })}
         </div>
       </aside>
       {displayBtnMain}
       {displayBackground}
     </Fragment>
   )
+}
+
+SideFilter.defaultProps = {
+  filters: []
 }
 
 export default SideFilter
