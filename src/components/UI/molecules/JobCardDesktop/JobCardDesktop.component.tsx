@@ -29,6 +29,8 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
     return cities.join(', ')
   }, [cities])
 
+  const infoRow4 = [contractType, salary, experience, educationLevel].join(' ')
+
   return (
     <article
       onClick={showDetail}
@@ -57,9 +59,7 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
           </p>
         </div>
         <div className={style[`${classMUI}-card-jobs--row4`]}>
-          <p>
-            {`${contractType},`} {`${salary},`} {`${experience},`} {educationLevel}.
-          </p>
+          <p>{infoRow4}</p>
         </div>
       </div>
       <div className={style[`${classMUI}-card-jobs--arrow`]}>
