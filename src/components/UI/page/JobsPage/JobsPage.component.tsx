@@ -20,7 +20,7 @@ const JobsPage: React.FC<IJobsPage> = ({
   footerProps,
   paginationProps
 }) => {
-  const [jobSelected, setJobSelected] = useState<string | number | null>(vacantProps[0].id)
+  const [jobSelected, setJobSelected] = useState<string | number | null | undefined>(vacantProps[0].id)
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [showDetail, setShowDetail] = useState(true)
 
@@ -38,9 +38,12 @@ const JobsPage: React.FC<IJobsPage> = ({
     }
   )
 
-  const handleVacant = useCallback((id: string | number) => {
-    setJobSelected(id)
-    setShowDetail(true)
+  const handleVacant = useCallback((id: string | number | null | undefined) => {
+    if (id) {
+      setJobSelected(id)
+      setShowDetail(true)
+      return
+    }
   }, [])
 
   return (

@@ -11,14 +11,14 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   jobOpen,
   cities = [],
   salary,
-  companyName = '',
-  title = '',
-  educationLevel = '',
-  publishDate = '',
-  companyLogo = '',
-  companySlug = '',
-  experience = '',
-  contractType = '',
+  companyName,
+  title,
+  educationLevel,
+  publishDate,
+  companyLogo,
+  companySlug,
+  experience,
+  contractType,
   showDetail,
   others = ''
 }) => {
@@ -38,10 +38,14 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
         jobOpen ? style[jobOpen] : ''
       }`}
     >
-      {!isCompanyPage && (
+      {!isCompanyPage && companyLogo && (
         <div className={style[`${classMUI}-card-jobs--row1`]}>
           <div className={style[`${classMUI}-card-jobs--brand`]}>
-            <img className={style[`${classMUI}-card-jobs--brand__img`]} alt={companySlug} src={companyLogo} />
+            <img
+              className={style[`${classMUI}-card-jobs--brand__img`]}
+              alt={companySlug ? companySlug : 'company-slug'}
+              src={companyLogo}
+            />
           </div>
         </div>
       )}

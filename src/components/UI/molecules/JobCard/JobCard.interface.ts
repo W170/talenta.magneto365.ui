@@ -20,39 +20,38 @@ export interface IJobCard {
    * salary value
    */
   salary?: number | string
-
   /**
    * company name
    */
-  companyName?: string
+  companyName?: string | null
   /**
    * title
    */
-  title?: string
+  title?: string | null
   /**
    * education level
    */
-  educationLevel?: string
+  educationLevel?: string | null
   /**
    * date vacant creation
    */
-  publishDate?: string
+  publishDate?: string | null
   /**
    * company image
    */
-  companyLogo?: string
+  companyLogo?: string | null
   /**
    * company slug
    */
-  companySlug?: string
+  companySlug?: string | null
   /**
    * number of months of experience
    */
-  experience?: string
+  experience?: string | null
   /**
    * type of contract
    */
-  contractType?: string
+  contractType?: string | null
   /**
    * others cities text
    */

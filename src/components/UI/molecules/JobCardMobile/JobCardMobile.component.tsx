@@ -26,10 +26,14 @@ const JobCardMobile: React.FC<ICardJobMobile> = ({
         jobOpen ? style[jobOpen] : ''
       }`}
     >
-      {!isCompanyPage && (
+      {!isCompanyPage && companyLogo && (
         <div className={style[`${classMUI}-card-mobile-jobs--row1`]}>
           <div className={style[`${classMUI}-card-mobile-jobs--brand`]}>
-            <img className={style[`${classMUI}-card-mobile-jobs--brand__img`]} alt={companySlug} src={companyLogo} />
+            <img
+              className={style[`${classMUI}-card-mobile-jobs--brand__img`]}
+              alt={companySlug ? companySlug : 'company-slug'}
+              src={companyLogo}
+            />
           </div>
         </div>
       )}
@@ -43,9 +47,9 @@ const JobCardMobile: React.FC<ICardJobMobile> = ({
             <h3>{companyName},</h3>
             <p>{publishDate},</p>
             <p>
-              {cities[0]}, {cities.length > 1 && <span>{others},</span>}{' '}
+              {cities[0]} {cities.length > 1 && <span>{others},</span>}{' '}
             </p>
-            <p>{`${salary},`}</p>
+            <p>{salary}</p>
             <p>{experience} </p>
             <p>{educationLevel}</p>
           </div>
