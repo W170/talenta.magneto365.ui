@@ -5,6 +5,10 @@ import { classMUI } from '@constants/stories.constants'
 import style from './MenuCollapse.module.scss'
 
 const MenuCollapse: React.FC<IMenuCollapse> = ({ listMenu }) => {
+  const { legalMenu, magnetoLiteMenu, magnetoMenu, otherSolutionsMenu, personsMenu } = listMenu
+
+  const linksList = [personsMenu, magnetoMenu, magnetoLiteMenu, otherSolutionsMenu, legalMenu]
+
   const [menuActivo, setMenuActivo] = useState<null | number>(null)
 
   const toggleMenu = useCallback(
@@ -20,7 +24,7 @@ const MenuCollapse: React.FC<IMenuCollapse> = ({ listMenu }) => {
 
   return (
     <div className={`${style[`${classMUI}-collapse-menu-container`]}`}>
-      {listMenu.map(({ ...props }, i) => (
+      {linksList.map(({ ...props }, i) => (
         <Fragment key={i}>
           <MenuCollapseChildren isOpen={menuActivo === i} onClick={() => toggleMenu(i)} {...props} />
         </Fragment>

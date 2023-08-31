@@ -6,33 +6,21 @@ import { IFooterMenuLinks } from './FooterMenuLinks.interface'
 import { classMUI } from '@constants/stories.constants'
 import style from './FooterMenuLinks.module.scss'
 
-const FooterMenuLinks: React.FC<IFooterMenuLinks> = ({ menuList }) => {
-  const menuListColumn1 = [menuList[0]]
-  const menuListColumn2 = [menuList[1], menuList[2], menuList[3]]
-  const menuListColumn3 = [menuList[4]]
+const FooterMenuLinks: React.FC<IFooterMenuLinks> = ({ ...menuList }) => {
+  const { legalMenu, magnetoLiteMenu, magnetoMenu, otherSolutionsMenu, personsMenu } = menuList
 
   const footerMenuResponsive = useMediaQuery(
     <div className={`${style[`${classMUI}-menu-list`]}`}>
       <div className={`${style[`${classMUI}-menu-list__columns`]}`}>
-        {menuListColumn1.map(({ ...props }, i) => (
-          <Fragment key={i}>
-            <ListMenuText {...props} />
-          </Fragment>
-        ))}
+        <ListMenuText {...personsMenu} />
       </div>
       <div className={`${style[`${classMUI}-menu-list__columns`]}`}>
-        {menuListColumn2.map(({ ...props }, i) => (
-          <Fragment key={i}>
-            <ListMenuText {...props} />
-          </Fragment>
-        ))}
+        <ListMenuText {...magnetoMenu} />
+        <ListMenuText {...magnetoLiteMenu} />
+        <ListMenuText {...otherSolutionsMenu} />
       </div>
       <div className={`${style[`${classMUI}-menu-list__columns`]}`}>
-        {menuListColumn3.map(({ ...props }, i) => (
-          <Fragment key={i}>
-            <ListMenuText {...props} />
-          </Fragment>
-        ))}
+        <ListMenuText {...legalMenu} />
       </div>
     </div>,
     {

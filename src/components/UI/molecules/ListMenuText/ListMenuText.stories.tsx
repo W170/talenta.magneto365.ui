@@ -6,8 +6,8 @@ const meta: Meta<typeof ListMenuText> = {
   title: 'Molecules/List Menu Text',
   component: ListMenuText,
   args: {
-    title: listMenuText[0].title,
-    links: listMenuText[0].links
+    title: listMenuText.legalMenu.title,
+    links: listMenuText.legalMenu.links
   }
 }
 

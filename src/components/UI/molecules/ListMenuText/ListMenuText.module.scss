@@ -16,6 +16,7 @@
     margin: 6px 0;
     &:hover {
       text-decoration: underline;
+      color: v.$colors-magneto-neutral !important;
     }
   }
   &__create-account {
