@@ -9,20 +9,20 @@ const Component: React.FC<IBreadcrumb> = ({
   queryParams,
   haveRedirect = true
 }) => {
-  const breadcrumbs = breadcrumbCustomText ? breadcrumbCustomText : breadcrumbText
-  const breadcrumbSplitText = breadcrumbs.split('/')
-  const lastIndexBC = breadcrumbSplitText.length - 1
+  const breadcrumbs = breadcrumbCustomText ? breadcrumbCustomText : breadcrumbText || ''
+  const breadcrumbSplitText = breadcrumbs?.split('/')
+  const lastIndexBC = breadcrumbSplitText?.length - 1
   const [urls, setUrls] = useState<string[]>([])
 
   useEffect(() => {
     const url = new URL(breadcrumbText, baseUrl)
-    const pathArray = url.pathname.split('/').filter((el) => el !== '')
+    const pathArray = url.pathname?.split('/').filter((el) => el !== '')
 
     const newUrls = []
 
-    for (let i = 0; i < pathArray.length; i++) {
+    for (let i = 0; i < pathArray?.length; i++) {
       const urlPath = pathArray
-        .slice(0, i + 1)
+        ?.slice(0, i + 1)
         .join('/')
         .replace(/%20|\s+/g, '-')
       const newUrl = new URL(urlPath, baseUrl)

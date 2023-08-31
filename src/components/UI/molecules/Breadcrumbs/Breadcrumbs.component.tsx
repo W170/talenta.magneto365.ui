@@ -10,7 +10,7 @@ const Component: React.FC<IBreadcrumbs> = ({ homeUrl, breadcrumbProps }) => {
       <a href={homeUrl}>
         <IconItem {...iconPropsBreadCrumb} />
       </a>
-      <Breadcrumb {...breadcrumbProps} />
+      {breadcrumbProps && <Breadcrumb {...breadcrumbProps} />}
     </div>
   )
 }

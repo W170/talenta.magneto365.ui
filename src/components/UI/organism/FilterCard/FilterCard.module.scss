@@ -1,6 +1,10 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 @use '../../../../shared/stylesheets/mixins.scss' as m;
 
+$font-size: 14px;
+$line-height: 1;
+$lines: 2;
+
 .magneto-ui-filter-card {
   display: flex;
   flex-direction: column;
@@ -36,13 +40,20 @@
   }
 
   & > p {
-    font-size: 0.875rem;
+    display: block;
+    display: -webkit-box;
+    font-size: $font-size;
+    line-height: $line-height;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
     font-weight: 700;
     color: v.$text-color-black;
     width: 100%;
+    height: auto;
+    max-height: $font-size * $line-height * $lines;
     max-width: 100%;
     margin: 0;
-    white-space: nowrap;
+
     overflow: hidden;
     text-overflow: ellipsis;
     &::first-letter {
@@ -52,7 +63,7 @@
 }
 
 .magneto-ui-filter-card_options {
-  margin-top: 1rem;
+  margin-top: 8px;
   overflow-y: scroll;
   @include m.scroll-filter;
 
