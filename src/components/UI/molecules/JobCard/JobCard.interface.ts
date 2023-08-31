@@ -1,4 +1,5 @@
 export interface IJobCard {
+  id?: string | number | null
   /**
    * this property can change style in the texts when the job was seen
    */
@@ -14,51 +15,47 @@ export interface IJobCard {
   /**
    * cities of vacant
    */
-  cities: string[]
+  cities?: string[]
   /**
-   * min salary value
+   * salary value
    */
-  minSalary: number | string
-  /**
-   *max salary value
-   */
-  maxSalary: number | string
+  salary?: number | string
   /**
    * company name
    */
-  companyName: string
+  companyName?: string | null
   /**
    * title
    */
-  title: string
+  title?: string | null
   /**
    * education level
    */
-  educationLevel: string
+  educationLevel?: string | null
   /**
    * date vacant creation
    */
-  publishDate: string
+  publishDate?: string | null
   /**
    * company image
    */
-  companyLogo: string
+  companyLogo?: string | null
   /**
    * company slug
    */
-  companySlug: string
+  companySlug?: string | null
   /**
    * number of months of experience
    */
-  experience: string
+  experience?: string | null
   /**
    * type of contract
    */
-  contractType?: string
+  contractType?: string | null
   /**
    * others cities text
    */
-  others: string
+  others?: string
   /**
    * this function show job detail
    */
