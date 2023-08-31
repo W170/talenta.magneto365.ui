@@ -68,7 +68,7 @@
   @include m.scroll-filter;
 
   @media (max-width: v.$screen-md) {
-    align-items: start;
+    align-items: flex-start;
     width: inherit;
     max-width: 100%;
     padding: 10px 20px;

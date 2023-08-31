@@ -9,7 +9,7 @@ export const toCSSVariables = (input?: any): CSSProperties => {
 
   for (const key in input) {
     const cssVar = `--${key.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)}`
-    output[cssVar] = input[key]
+    if (typeof input[key] !== 'boolean') output[cssVar] = input[key]
   }
 
   return output as CSSProperties
