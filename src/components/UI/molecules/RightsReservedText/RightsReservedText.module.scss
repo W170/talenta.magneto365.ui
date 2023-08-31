@@ -14,5 +14,9 @@
 
   &__link {
     text-decoration: underline;
+    &:hover {
+      color: v.$colors-magneto-neutral !important;
+      text-decoration: underline;
+    }
   }
 }

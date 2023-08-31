@@ -8,23 +8,25 @@ const ListMenuText: React.FC<IListMenuText> = ({ title, links, createAccount, is
   return (
     <div className={`${style[`${classMUI}-list-menu`]}`}>
       <p className={`${style[`${classMUI}-list-menu__title`]}`}>{title}</p>
-      {links.map(({ tag, routePath, isCreateAccount }, i) =>
-        isCreateAccount ? (
-          <div key={i} className={`${style[`${classMUI}-list-menu__create-account`]}`}>
-            <button
-              title={tag}
-              className={`${style[`${classMUI}-list-menu__create-account--btn`]}`}
-              onClick={createAccount}
-            >
-              {tag}
-            </button>
-            {isLoading && <Loading {...LoadingProps} />}
-          </div>
-        ) : (
-          <a className={`${style[`${classMUI}-list-menu__link`]}`} title={tag} key={i} href={routePath}>
-            {tag}
-          </a>
-        )
+      {links.map(({ tag, href, isCreateAccount }, i) =>
+        isCreateAccount
+          ? tag && (
+              <div key={i} className={`${style[`${classMUI}-list-menu__create-account`]}`}>
+                <button
+                  title={tag}
+                  className={`${style[`${classMUI}-list-menu__create-account--btn`]}`}
+                  onClick={createAccount}
+                >
+                  {tag}
+                </button>
+                {isLoading && <Loading {...LoadingProps} />}
+              </div>
+            )
+          : tag && (
+              <a className={`${style[`${classMUI}-list-menu__link`]}`} title={tag} key={i} href={href}>
+                {tag}
+              </a>
+            )
       )}
     </div>
   )

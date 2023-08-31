@@ -19,7 +19,7 @@ const Footer: React.FC<IFooter> = ({ followText, magnetoResolutionProps, rightsR
           <RightsReservedText {...rightsReservedProps} />
         </div>
         <div className={`${style[`${classMUI}-footer__row1--column2`]}`}>
-          <FooterMenuLinks menuList={menuFooterLink} />
+          <FooterMenuLinks {...menuFooterLink} />
         </div>
       </div>
       <div className={`${style[`${classMUI}-footer__resolution`]}`}>

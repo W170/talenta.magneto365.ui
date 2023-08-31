@@ -6,7 +6,7 @@ const meta: Meta<typeof FooterMenuLinks> = {
   title: 'Organism/Footer Menu Links',
   component: FooterMenuLinks,
   args: {
-    menuList: listMenuText
+    ...listMenuText
   }
 }
 export default meta

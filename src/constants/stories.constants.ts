@@ -52,9 +52,9 @@ import { IFilterValue } from '@components/UI/template/SideFilter'
 import { IJobCard } from '@components/UI/molecules/JobCard/JobCard.interface'
 import { IBrands } from '../components/UI/molecules/BrandsContainer/BrandsContainer.interface'
 import { IListMenuIcons } from '../components/UI/molecules/ListMenuIcons/ListMenuIcons.interface'
-import { IListMenuText } from '@components/UI/molecules/ListMenuText/ListMenuText.interface'
 import { IRightsReservedText } from '@components/UI/molecules/RightsReservedText/RightsReservedText.interface'
 import { IMagnetoResolution } from '@components/UI/molecules/MagnetoResolution/MagnetoResolution.interface'
+import { IFooterMenuLinks } from '@components/UI/organism/FooterMenuLinks/FooterMenuLinks.interface'
 
 /**
  *
@@ -658,6 +658,7 @@ export const optionsFilterOrderBy: ISortMenuItem[] = [
 
 export const vacants: IJobCard[] = [
   {
+    id: 1,
     title: 'Desarrollador Web',
     cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
@@ -665,13 +666,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'adidas',
     educationLevel: 'Profesional',
     experience: '6 meses de experiencia',
-    minSalary: '1.200.000',
-    maxSalary: '2.000.000',
+    salary: '1.200.000 a 4.000.000',
     publishDate: 'hace 10 dias',
     others: 'otras',
     contractType: 'Termino fijo'
   },
   {
+    id: 2,
     title: 'Analista',
     cities: ['Medellin', 'Barranquila', 'Bogota'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMoo9RUN_NnD4aWgDuHUeEGTUfJXpimlWA&usqp=CAU',
@@ -679,13 +680,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'coca-cola',
     educationLevel: 'Arquitecto',
     experience: '12 meses de experiencia',
-    minSalary: '3.200.000',
-    maxSalary: '6.000.000',
+    salary: '3.200.000',
     publishDate: 'hace 20 dias',
     others: 'otras',
     contractType: 'Prestacion de servicios'
   },
   {
+    id: 3,
     title: 'UX | UI designer',
     cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
@@ -693,13 +694,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'legos',
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
-    minSalary: '3.000.000',
-    maxSalary: '5.000.000',
+    salary: '3.000.000',
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
   },
   {
+    id: 4,
     title: 'Desarrollador Web',
     cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
@@ -707,13 +708,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'adidas',
     educationLevel: 'Profesional',
     experience: '6 meses de experiencia',
-    minSalary: '1.200.000',
-    maxSalary: '2.000.000',
+    salary: '1.200.000 a 5.000.000',
     publishDate: 'hace 10 dias',
     others: 'otras',
     contractType: 'Termino fijo'
   },
   {
+    id: 5,
     title: 'UX | UI designer',
     cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
@@ -721,13 +722,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'legos',
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
-    minSalary: '3.000.000',
-    maxSalary: '5.000.000',
+    salary: '3.000.000',
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
   },
   {
+    id: 6,
     title: 'Desarrollador Web',
     cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
@@ -735,13 +736,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'adidas',
     educationLevel: 'Profesional',
     experience: '6 meses de experiencia',
-    minSalary: '1.200.000',
-    maxSalary: '2.000.000',
+    salary: '1.200.000',
     publishDate: 'hace 10 dias',
     others: 'otras',
     contractType: 'Termino fijo'
   },
   {
+    id: 7,
     title: 'Analista',
     cities: ['Medellin', 'Barranquila', 'Bogota'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMoo9RUN_NnD4aWgDuHUeEGTUfJXpimlWA&usqp=CAU',
@@ -749,13 +750,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'coca-cola',
     educationLevel: 'Arquitecto',
     experience: '12 meses de experiencia',
-    minSalary: '3.200.000',
-    maxSalary: '6.000.000',
+    salary: '3.200.000',
     publishDate: 'hace 20 dias',
     others: 'otras',
     contractType: 'Prestacion de servicios'
   },
   {
+    id: 8,
     title: 'UX | UI designer',
     cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
@@ -763,13 +764,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'legos',
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
-    minSalary: '3.000.000',
-    maxSalary: '5.000.000',
+    salary: '1.000.000 a 3.000.000',
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
   },
   {
+    id: 9,
     title: 'Desarrollador Web',
     cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
@@ -777,13 +778,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'adidas',
     educationLevel: 'Profesional',
     experience: '6 meses de experiencia',
-    minSalary: '1.200.000',
-    maxSalary: '2.000.000',
+    salary: '1.200.000',
     publishDate: 'hace 10 dias',
     others: 'otras',
     contractType: 'Termino fijo'
   },
   {
+    id: 10,
     title: 'UX | UI designer',
     cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
@@ -791,13 +792,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'legos',
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
-    minSalary: '3.000.000',
-    maxSalary: '5.000.000',
+    salary: '3.000.000',
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
   },
   {
+    id: 11,
     title: 'Desarrollador Web',
     cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
@@ -805,13 +806,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'adidas',
     educationLevel: 'Profesional',
     experience: '6 meses de experiencia',
-    minSalary: '1.200.000',
-    maxSalary: '2.000.000',
+    salary: '1.200.000',
     publishDate: 'hace 10 dias',
     others: 'otras',
     contractType: 'Termino fijo'
   },
   {
+    id: 12,
     title: 'Analista',
     cities: ['Medellin', 'Barranquila', 'Bogota'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMoo9RUN_NnD4aWgDuHUeEGTUfJXpimlWA&usqp=CAU',
@@ -819,13 +820,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'coca-cola',
     educationLevel: 'Arquitecto',
     experience: '12 meses de experiencia',
-    minSalary: '3.200.000',
-    maxSalary: '6.000.000',
+    salary: '3.200.000',
     publishDate: 'hace 20 dias',
     others: 'otras',
     contractType: 'Prestacion de servicios'
   },
   {
+    id: 13,
     title: 'UX | UI designer',
     cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
@@ -833,13 +834,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'legos',
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
-    minSalary: '3.000.000',
-    maxSalary: '5.000.000',
+    salary: '3.000.000',
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
   },
   {
+    id: 14,
     title: 'Desarrollador Web',
     cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
@@ -847,13 +848,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'adidas',
     educationLevel: 'Profesional',
     experience: '6 meses de experiencia',
-    minSalary: '1.200.000',
-    maxSalary: '2.000.000',
+    salary: '1.200.000',
     publishDate: 'hace 10 dias',
     others: 'otras',
     contractType: 'Termino fijo'
   },
   {
+    id: 15,
     title: 'UX | UI designer',
     cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
@@ -861,13 +862,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'legos',
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
-    minSalary: '3.000.000',
-    maxSalary: '5.000.000',
+    salary: '3.000.000',
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
   },
   {
+    id: 16,
     title: 'Analista',
     cities: ['Medellin', 'Barranquila', 'Bogota'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMoo9RUN_NnD4aWgDuHUeEGTUfJXpimlWA&usqp=CAU',
@@ -875,13 +876,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'coca-cola',
     educationLevel: 'Arquitecto',
     experience: '12 meses de experiencia',
-    minSalary: '3.200.000',
-    maxSalary: '6.000.000',
+    salary: '3.200.000',
     publishDate: 'hace 20 dias',
     others: 'otras',
     contractType: 'Prestacion de servicios'
   },
   {
+    id: 17,
     title: 'UX | UI designer',
     cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
@@ -889,13 +890,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'legos',
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
-    minSalary: '3.000.000',
-    maxSalary: '5.000.000',
+    salary: '3.000.000',
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
   },
   {
+    id: 18,
     title: 'Desarrollador Web',
     cities: ['Medellin', 'Barranquila', 'Bogota', 'Cali', 'Pasto', 'Cartagena'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
@@ -903,13 +904,13 @@ export const vacants: IJobCard[] = [
     companySlug: 'adidas',
     educationLevel: 'Profesional',
     experience: '6 meses de experiencia',
-    minSalary: '1.200.000',
-    maxSalary: '2.000.000',
+    salary: '1.200.000',
     publishDate: 'hace 10 dias',
     others: 'otras',
     contractType: 'Termino fijo'
   },
   {
+    id: 19,
     title: 'UX | UI designer',
     cities: ['Medellin', 'Barranquila', 'Cali', 'Pasto'],
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
@@ -917,8 +918,7 @@ export const vacants: IJobCard[] = [
     companySlug: 'legos',
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
-    minSalary: '3.000.000',
-    maxSalary: '5.000.000',
+    salary: '3.000.000',
     publishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido'
@@ -1033,200 +1033,151 @@ export const SocialMediaProps = [
   }
 ]
 
-export const listMenuText: IListMenuText[] = [
-  {
-    heightContent: 330,
+const authenticated = false
+
+const createAccount = () => console.log('widget open')
+
+export const listMenuText: IFooterMenuLinks = {
+  personsMenu: {
+    heightContent: authenticated ? 280 : 330,
     title: 'Personas',
-    createAccount: () => console.log('holi'),
+    createAccount: createAccount,
     isLoading: false,
     links: [
       {
         tag: 'Conoce Magneto',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Ver todo los empleos',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
-        tag: 'Ingresa a tu cuenta',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        tag: authenticated ? null : 'Ingresa a tu cuenta',
+        href: ''
       },
       {
-        tag: 'Crear Cuenta',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true,
+        tag: authenticated ? null : 'Crear Cuenta',
+        href: '',
         isCreateAccount: true
       },
       {
         tag: 'Articulos de interes',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Preguntas Frecuentes',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Empleos por ciudad',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Empleos por sector',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Empleos por empresa',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Empleos mas buscados',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       }
     ]
   },
-  {
+
+  magnetoMenu: {
     heightContent: 140,
     title: 'Magneto',
     links: [
       {
         tag: 'Selección digital',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Evaluación integral del talento',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Recibe una asesoria',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       }
     ]
   },
-  {
+  magnetoLiteMenu: {
     heightContent: 115,
     title: 'Magneto Lite',
     links: [
       {
         tag: 'Publicar ofertas de empleo',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Planes para PYMES',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       }
     ]
   },
-  {
+  otherSolutionsMenu: {
     heightContent: 115,
     title: 'Otras soluciones',
     links: [
       {
         tag: 'Marble Headhunter',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Bibliotecas Digitales',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       }
     ]
   },
-  {
+  legalMenu: {
     heightContent: 335,
     title: 'Legal',
     links: [
       {
         tag: 'Politica tratamiento de Datos Personales Psyconometrics',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Politica tratamiento de Datos Magneto Global',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Aviso de privacidad Psyconometrics',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Aviso de privacidad Magneto Global',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Termino y condiciones',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Reglamento Autorizacion SPE',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Consentimiento de referidos',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Ver Reglamento de autorizacion',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Politica de Cookies Psyconometrics',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       },
       {
         tag: 'Politica de Cookies Magneto Global',
-        routePath: '',
-        baseUrl: '',
-        isExternal: true
+        href: ''
       }
     ]
   }
-]
+}

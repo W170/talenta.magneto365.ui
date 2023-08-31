@@ -9,9 +9,8 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   isCompanyPage = false,
   workSeen,
   jobOpen,
-  cities,
-  minSalary,
-  maxSalary,
+  cities = [],
+  salary,
   companyName,
   title,
   educationLevel,
@@ -21,7 +20,7 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   experience,
   contractType,
   showDetail,
-  others
+  others = ''
 }) => {
   const citiesformatted = useMemo(() => {
     if (cities.length > 5) {
@@ -30,6 +29,8 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
     return cities.join(', ')
   }, [cities])
 
+  const infoRow4 = [contractType, salary, experience, educationLevel].join(' ')
+
   return (
     <article
       onClick={showDetail}
@@ -37,10 +38,14 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
         jobOpen ? style[jobOpen] : ''
       }`}
     >
-      {!isCompanyPage && (
+      {!isCompanyPage && companyLogo && (
         <div className={style[`${classMUI}-card-jobs--row1`]}>
           <div className={style[`${classMUI}-card-jobs--brand`]}>
-            <img className={style[`${classMUI}-card-jobs--brand__img`]} alt={companySlug} src={companyLogo} />
+            <img
+              className={style[`${classMUI}-card-jobs--brand__img`]}
+              alt={companySlug ? companySlug : 'company-slug'}
+              src={companyLogo}
+            />
           </div>
         </div>
       )}
@@ -58,9 +63,7 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
           </p>
         </div>
         <div className={style[`${classMUI}-card-jobs--row4`]}>
-          <p>
-            {`${contractType},`} {`${minSalary} - ${maxSalary},`} {`${experience},`} {educationLevel}.
-          </p>
+          <p>{infoRow4}</p>
         </div>
       </div>
       <div className={style[`${classMUI}-card-jobs--arrow`]}>
