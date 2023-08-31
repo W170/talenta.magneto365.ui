@@ -46,6 +46,7 @@
   &--row3,
   &--row4 {
     display: flex;
+    min-height: 35px;
   }
 
   &--row1 {
@@ -59,6 +60,7 @@
     align-items: flex-start;
 
     @container (min-width: 1000px) {
+      width: 497px;
       gap: 10px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
