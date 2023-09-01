@@ -1,5 +1,5 @@
 import { SetStateAction } from 'react'
-import { ERenderType } from './SideFilter.component'
+import { ERenderType } from '@constants'
 
 export interface ISideFilter extends ISearchRenderTypeProps {
   /**
