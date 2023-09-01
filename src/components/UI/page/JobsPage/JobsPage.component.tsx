@@ -5,7 +5,7 @@ import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organis
 import { SortBar, Footer, SideFilter } from '@components/UI/template'
 import { useMediaQuery } from '@components/hooks'
 
-import { IJobsPage } from './JobsPage.interface'
+import { IJobsPage, IVacants } from './JobsPage.interface'
 import style from './JobsPage.module.scss'
 
 import { classMUI } from '../../../../constants/stories.constants'
@@ -20,7 +20,8 @@ const JobsPage: React.FC<IJobsPage> = ({
   footerProps,
   paginationProps
 }) => {
-  const [jobSelected, setJobSelected] = useState<string | number | null | undefined>(vacantProps[0].id)
+  // const responsiveOpen = useMediaQuery(true, { lg: false })
+  const [jobSelected, setJobSelected] = useState<IVacants | null>(vacantProps[0])
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [showDetail, setShowDetail] = useState(true)
 
@@ -38,9 +39,9 @@ const JobsPage: React.FC<IJobsPage> = ({
     }
   )
 
-  const handleVacant = useCallback((id: string | number | null | undefined) => {
-    if (id) {
-      setJobSelected(id)
+  const handleVacant = useCallback((vacant: IVacants) => {
+    if (vacant) {
+      setJobSelected(vacant)
       setShowDetail(true)
       return
     }
@@ -60,7 +61,13 @@ const JobsPage: React.FC<IJobsPage> = ({
           <h1 className={style[`${classMUI}-jobs-page--title`]}>{sortBarProps?.mainTitle}</h1>
           <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>
             {vacantProps.map(({ id, ...props }) => (
-              <JobCard isActive={id === jobSelected} id={id} showDetail={() => handleVacant(id)} key={id} {...props} />
+              <JobCard
+                isActive={id === jobSelected?.id}
+                id={id}
+                showDetail={() => handleVacant({ id, ...props })}
+                key={id}
+                {...props}
+              />
             ))}
           </div>
           <Pagination {...paginationProps} />
