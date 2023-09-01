@@ -22,32 +22,6 @@ const SideFilter: FC<ISideFilter> = ({
   getOptionsOnLoad,
   getOptionsOnSearch
 }) => {
-  const displayBtnClose = useMemo(() => {
-    return (
-      <MainButton
-        iconProps={{ icon: ArrowLeft2, size: 20 }}
-        className={`${styles['magneto-ui-side-filter_btn__close']} ${isFiltersOpen ? styles.btn_close : ''}`}
-        onClick={() => setIsFiltersOpen((isOpen) => !isOpen)}
-      />
-    )
-  }, [isFiltersOpen, setIsFiltersOpen])
-
-  const displayBtnMain = useMemo(() => {
-    if (!totalAppliedFilters) return <Fragment />
-    return (
-      <MainButton
-        buttonText={'Ver empleos'}
-        className={`${styles['magneto-ui-side-filter_btn__main']} ${isFiltersOpen ? styles['btn_main-open'] : ''}`}
-        onClick={() => setIsFiltersOpen((isOpen) => !isOpen)}
-      />
-    )
-  }, [totalAppliedFilters, isFiltersOpen, setIsFiltersOpen])
-
-  const displayBackground = useMemo(() => {
-    if (!isFiltersOpen) return <Fragment />
-    return <span className={styles['magneto-iu-side-filter_background']} onClick={() => setIsFiltersOpen(false)} />
-  }, [isFiltersOpen, setIsFiltersOpen])
-
   const cardProps = useMemo(() => {
     return {
       setIsApplied,
@@ -68,12 +42,38 @@ const SideFilter: FC<ISideFilter> = ({
     }
   }, [title, buttonText, filterSummary, totalAppliedFilters, clearFilters])
 
+  const displayBtnClose = useMemo(() => {
+    return (
+      <MainButton
+        iconProps={{ icon: ArrowLeft2, size: 20 }}
+        className={`${styles['magneto-ui-side-filter_btn__close']} ${isFiltersOpen ? styles.btn_close : ''}`}
+        onClick={() => setIsFiltersOpen((isOpen) => !isOpen)}
+      />
+    )
+  }, [isFiltersOpen, setIsFiltersOpen])
+
   const displayFilters = useMemo(() => {
     const renderFilters = filters.length ? filters : defaultFilters
     return renderFilters?.map((item, i) => {
       return <CardByRenderType key={`${i}-${item.field}`} {...(item as unknown as IFilter)} {...cardProps} />
     })
   }, [filters, cardProps])
+
+  const displayBtnMain = useMemo(() => {
+    if (!totalAppliedFilters) return <Fragment />
+    return (
+      <MainButton
+        buttonText={'Ver empleos'}
+        className={`${styles['magneto-ui-side-filter_btn__main']} ${isFiltersOpen ? styles['btn_main-open'] : ''}`}
+        onClick={() => setIsFiltersOpen((isOpen) => !isOpen)}
+      />
+    )
+  }, [totalAppliedFilters, isFiltersOpen, setIsFiltersOpen])
+
+  const displayBackground = useMemo(() => {
+    if (!isFiltersOpen) return <Fragment />
+    return <span className={styles['magneto-iu-side-filter_background']} onClick={() => setIsFiltersOpen(false)} />
+  }, [isFiltersOpen, setIsFiltersOpen])
 
   return (
     <Fragment>
