@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { ISkill } from './Skill.interface'
 import styles from './Skill.module.scss'
 
-const Component: React.FC<ISkill> = ({ skillText, skillLevel }) => {
+const Component: React.FC<ISkill> = ({ name, score }) => {
   const [animationApplied, setAnimationApplied] = useState(false)
   const skillRef = useRef<HTMLDivElement>(null)
 
@@ -35,12 +35,12 @@ const Component: React.FC<ISkill> = ({ skillText, skillLevel }) => {
     }
   }, [])
 
-  const fillAnimation = animationApplied && skillLevel ? styles[skillLevel.toLowerCase()] : ''
+  const fillAnimation = animationApplied && score ? styles[score] : ''
 
   return (
     <div ref={skillRef} className={styles['magneto-ui-skill']}>
       <div className={styles['magneto-ui-skill__wrapper']}>
-        <h3>{skillText}</h3>
+        <h3>{name}</h3>
         <div
           className={`${styles['magneto-ui-skill__bar']} ${fillAnimation || styles['magneto-ui-skill--no-animation']}`}
         ></div>

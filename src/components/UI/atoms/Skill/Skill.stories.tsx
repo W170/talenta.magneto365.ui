@@ -13,7 +13,7 @@ type Story = StoryObj<typeof Skill>
 
 export const Default: Story = {
   args: {
-    skillText: 'Habilidades comerciales',
-    skillLevel: 'Intermediate'
+    name: 'Habilidades comerciales',
+    score: 1
   }
 }

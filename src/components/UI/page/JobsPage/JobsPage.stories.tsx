@@ -73,9 +73,9 @@ const jobDetailsDrawer = {
   jobSkillsCardProps: {
     jobSkillCardHeader: 'Habilidades',
     jobSkills: [
-      { skillText: 'Habilidades comerciales', skillLevel: 'Intermediate' as const },
-      { skillText: 'Capacidad de negociación', skillLevel: 'Advanced' as const },
-      { skillText: 'Conocimiento de microfinanzas', skillLevel: 'Basic' as const }
+      { id: 1, name: 'Habilidades comerciales', score: 1 as const },
+      { id: 2, name: 'Capacidad de negociación', score: 2 as const },
+      { id: 3, name: 'Conocimiento de microfinanzas', score: 3 as const }
     ]
   },
   jobApplyCardProps: {
@@ -144,10 +144,11 @@ const mobileJobDetailsDrawer = {
   ],
   jobSkillsCardProps: {
     jobSkillCardHeader: 'Habilidades',
+
     jobSkills: [
-      { skillText: 'Habilidades comerciales', skillLevel: 'Intermediate' as const },
-      { skillText: 'Capacidad de negociación', skillLevel: 'Advanced' as const },
-      { skillText: 'Conocimiento de microfinanzas', skillLevel: 'Basic' as const }
+      { id: 1, name: 'Habilidades comerciales', score: 1 as const },
+      { id: 2, name: 'Capacidad de negociación', score: 2 as const },
+      { id: 3, name: 'Conocimiento de microfinanzas', score: 3 as const }
     ]
   },
   jobApplyCardProps: {

@@ -58,9 +58,9 @@ const jobDetailCard = [
 const jobSkillsCard: IJobSkillsCard = {
   jobSkillCardHeader: 'Habilidades',
   jobSkills: [
-    { skillText: 'Habilidades comerciales', skillLevel: 'Intermediate' },
-    { skillText: 'Capacidad de negociación', skillLevel: 'Advanced' },
-    { skillText: 'Conocimiento de microfinanzas', skillLevel: 'Basic' }
+    { name: 'Habilidades comerciales', score: 1, id: 1 },
+    { name: 'Capacidad de negociación', score: 1, id: 2 },
+    { name: 'Conocimiento de microfinanzas', score: 1, id: 3 }
   ]
 }
 
