@@ -49,7 +49,6 @@ import {
 import { ILoading } from '../components/UI/atoms/Loading'
 import { ISortMenuItem } from '../components/UI/molecules/SortMenu/SortMenu.interface'
 import { IFilterValue } from '@components/UI/template/SideFilter'
-import { IJobCard } from '@components/UI/molecules/JobCard/JobCard.interface'
 import { IBrands } from '../components/UI/molecules/BrandsContainer/BrandsContainer.interface'
 import { IListMenuIcons } from '../components/UI/molecules/ListMenuIcons/ListMenuIcons.interface'
 import { IRightsReservedText } from '@components/UI/molecules/RightsReservedText/RightsReservedText.interface'
@@ -656,7 +655,7 @@ export const optionsFilterOrderBy: ISortMenuItem[] = [
 
 //Vacants
 
-export const vacants: IJobCard[] = [
+export const vacants = [
   {
     id: 1,
     title: 'Desarrollador Web',
@@ -669,7 +668,19 @@ export const vacants: IJobCard[] = [
     salary: '1.200.000 a 4.000.000',
     publishDate: 'hace 10 dias',
     others: 'otras',
-    contractType: 'Termino fijo'
+    contractType: 'Termino fijo',
+    offerTitle: 'Desarrollador Web',
+    offerVacancyData: '30 cupos, 2 postulantes',
+    offerDescription:
+      '<h1>¡Trabaja con el Grupo Éxito!</h1><br /><p>Importante no estar en ningun otro proceso con el Grupo Éxito. Buscamos personas como tú,  que deseen trabajar en el cargo auxiliar polivalente.</p> <h1>¿Qué necesitas?</h1><br /><p>Mínimo 2 años de experiencia, ser profesional.<br /><br />Disponibilidad de tiempo para laborar del  21 de Enero 2022  al 17 de Julio de 2023 turnos de 6  horas diarias, con posibilidad  de continuar en otras temporadas o seguir en cargos fijos.<br /><br />Estar cursando los últimos grados de la carrera o haberla finalizado.</p><h1>¿Qué te ofrecemos?</h1><br /><p>Salario entre $2’000.000 a $3’000.000 aproximadamente.</p> <h1>¡Aplica y no te pierdas esta oportunidad!</h1><br /><p>Si está interesado(a) y cumple con los requisitos debe estar pendiente de su correo electrónico y número de celular personal para envío de pruebas psicotécnicas y citación a video entrevista. FAVOR actualice esta información en la plataforma si cambió de número o el correo no es suyo o no puede ingresar.</p>',
+    offerSkills: {
+      jobSkillCardHeader: 'Habilidades',
+      jobSkills: [
+        { id: 12, name: 'Habilidades comerciales', score: 2 },
+        { id: 12, name: 'Capacidad de negociación', score: 4 },
+        { id: 12, name: 'Conocimiento de microfinanzas', score: 1 }
+      ]
+    } //Pendiente refactoring de atomo,
   },
   {
     id: 2,
