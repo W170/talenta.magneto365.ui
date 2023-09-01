@@ -2,7 +2,7 @@ import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { appliedOptionsBySearchRenderType } from '@constants/stories.constants'
 import SideFilter from './SideFilter.component'
-import data from './filtersNormalized.json'
+import { storiesFilters } from '@constants'
 import {
   IFilter,
   IGetOptionsOnSearchProps,
@@ -16,7 +16,7 @@ const meta: Meta<typeof SideFilter> = {
   component: SideFilter,
   args: {
     title: 'Filtrar empleos',
-    filters: data as unknown as IFilter[],
+    filters: storiesFilters as IFilter[],
     totalAppliedFilters: 1,
     filterSummary: '3169 empleos',
     buttonText: 'Limpiar',

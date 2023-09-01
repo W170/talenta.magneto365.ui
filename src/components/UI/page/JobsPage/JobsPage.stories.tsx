@@ -17,7 +17,7 @@ import {
   vacants
 } from '@constants/stories.constants'
 
-import data from '@components/UI/template/SideFilter/filtersNormalized.json'
+import { storiesFilters } from '@constants'
 
 import {
   IFilter,
@@ -206,7 +206,7 @@ const sortBarProps = {
 
 const sideFilterProps = {
   title: 'Filtrar empleos',
-  filters: data as unknown as IFilter[],
+  filters: storiesFilters as IFilter[],
   totalAppliedFilters: 1,
   filterSummary: '3169 empleos',
   buttonText: 'Limpiar',

@@ -2,7 +2,7 @@ import React, { ChangeEvent, FC, Fragment, useCallback, useEffect, useMemo, useS
 import { FilterSearchItem } from '@components/UI/molecules/FilterSearchItem'
 import { FilterMenuItem } from '@components/UI/molecules/FilterMenuItem'
 import { Switch } from '@components/UI/atoms/Switch'
-import { ERenderType } from '@components/UI/template/SideFilter/SideFilter.component'
+import { ERenderType } from '@constants'
 import { IFilterValue } from '@components/UI/template'
 import { IFilterCard } from './FilterCard.interface'
 import styles from './FilterCard.module.scss'
