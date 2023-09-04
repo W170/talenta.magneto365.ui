@@ -35,7 +35,16 @@ const Component: React.FC<ISkill> = ({ name, score }) => {
     }
   }, [])
 
-  const fillAnimation = animationApplied && score ? styles[score] : ''
+  const scoreToLevel = {
+    1: 'one',
+    2: 'two',
+    3: 'three',
+    4: 'four'
+  }
+
+  const levelClass = scoreToLevel[score] || ''
+
+  const fillAnimation = animationApplied ? styles[levelClass] : ''
 
   return (
     <div ref={skillRef} className={styles['magneto-ui-skill']}>
