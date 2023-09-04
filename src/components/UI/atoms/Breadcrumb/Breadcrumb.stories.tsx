@@ -7,7 +7,7 @@ const meta: Meta<typeof Breadcrumb> = {
   args: {
     breadcrumbText: '/perfil/empleos/sugeridos',
     baseUrl: 'http://localhost:8008',
-    breadcrumbCustomText: '/profile/employs/sugessted'
+    breadcrumbCustomText: '/profile/all employs/sugessted'
   }
 }
 

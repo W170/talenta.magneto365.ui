@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { IBreadcrumb } from './Breadcrumb.interface'
 import styles from './Breadcrumb.modules.scss'
+import { capitalize } from '@utils/capitalize'
 
 const Component: React.FC<IBreadcrumb> = ({
   breadcrumbText,
@@ -39,17 +40,17 @@ const Component: React.FC<IBreadcrumb> = ({
           (href, i) =>
             urls.length - 1 !== i && (
               <a href={`${href}${queryParams ? queryParams : ''}`} key={i}>
-                <p>/ {breadcrumbSplitText[i + 1]}</p>
+                <p>/ {capitalize(breadcrumbSplitText[i + 1])}</p>
               </a>
             )
         )}
-        <p className={styles['magneto-ui-bc-active']}>/ {breadcrumbSplitText[lastIndexBC]}</p>
+        <p className={styles['magneto-ui-bc-active']}>/ {capitalize(breadcrumbSplitText[lastIndexBC])}</p>
       </>
     ) : (
       <>
         {breadcrumbSplitText.map((bc, i) => (
           <p className={`${lastIndexBC == i ? styles['magneto-ui-bc-active'] : ''} ${styles['magneto-ui-bc']}`} key={i}>
-            {i > 0 && '/'} {bc}
+            {i > 0 && '/'} {capitalize(bc)}
           </p>
         ))}
       </>
