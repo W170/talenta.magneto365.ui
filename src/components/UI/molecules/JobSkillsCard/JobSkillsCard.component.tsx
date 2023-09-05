@@ -8,7 +8,7 @@ const Component: React.FC<IJobSkillsCard> = ({ jobSkillCardHeader, jobSkills }) 
     <div className={styles['magneto-ui-job-skills-card']}>
       <h2>{jobSkillCardHeader}</h2>
       <div className={styles['magneto-ui-job-skills-card__skills-wrapper']}>
-        {jobSkills.map(({ name, score, id }: ISkill, index: number) => (
+        {jobSkills?.map(({ name, score, id }: ISkill, index: number) => (
           <React.Fragment key={index}>
             <Skill id={id} name={name} score={score} />
           </React.Fragment>

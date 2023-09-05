@@ -7,5 +7,5 @@ export interface IJobSkillsCard {
   /**
    * An array of skills representing the skills required or preferred for the job.
    */
-  jobSkills: ISkill[]
+  jobSkills: ISkill[] | null | undefined
 }
