@@ -14,7 +14,7 @@ type Story = StoryObj<typeof JobCompanyLogo>
 
 export const Default: Story = {
   args: {
-    companyLogoImg: CompanyLogo,
+    companyLogo: CompanyLogo,
     alt: 'Grupo Exito Logo'
   }
 }
