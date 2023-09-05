@@ -35,7 +35,7 @@ export interface IJobCard {
   /**
    * date vacant creation
    */
-  publishDate?: string | null
+  formatPublishDate?: string | null
   /**
    * company image
    */

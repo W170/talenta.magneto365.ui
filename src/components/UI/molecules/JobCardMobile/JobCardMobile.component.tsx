@@ -12,7 +12,7 @@ const JobCardMobile: React.FC<ICardJobMobile> = ({
   companyName,
   title,
   educationLevel,
-  publishDate,
+  formatPublishDate,
   companyLogo,
   companySlug,
   experience,
@@ -45,7 +45,7 @@ const JobCardMobile: React.FC<ICardJobMobile> = ({
           </div>
           <div className={style[`${classMUI}-card-mobile-jobs--row2__info`]}>
             <h3>{companyName},</h3>
-            <p>{publishDate},</p>
+            <p>{formatPublishDate},</p>
             <p>
               {cities[0]} {cities.length > 1 && <span>{others},</span>}{' '}
             </p>
