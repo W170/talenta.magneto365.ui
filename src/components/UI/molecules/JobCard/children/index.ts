@@ -1,1 +1,1 @@
-export { default as JobCardSkeleton } from './JobCardSkeleton'
+export { default as JobCardSkeleton } from './JobCardSkeleton.component'
