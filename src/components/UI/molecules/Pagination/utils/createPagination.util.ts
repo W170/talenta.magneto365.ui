@@ -2,13 +2,13 @@ import { ICreatePaginationResult, ICreatePaginationProps } from '../Pagination.i
 
 export const createPagination = ({
   total,
-  pageSize,
   current,
+  pageSize = 10,
   numberOfButtons = 3
 }: ICreatePaginationProps): ICreatePaginationResult => {
   const numberOfPages = Math.ceil(total / pageSize)
 
-  if (current > numberOfPages || current < 1)
+  if (current > numberOfPages || current < 1 || !total || !current)
     return {
       buttons: [],
       current,
