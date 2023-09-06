@@ -267,7 +267,8 @@ const meta: Meta<typeof JobsPage> = {
     frequentSearchProps: frequentSearch,
     sideFilterProps: sideFilterProps as ISideFilter,
     footerProps,
-    paginationProps
+    paginationProps,
+    isLoading: false
   },
   decorators: [
     (Story) => (

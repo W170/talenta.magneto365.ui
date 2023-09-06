@@ -1,0 +1,78 @@
+@use '../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-job-card-skeleton {
+  background-color: rgb(255, 255, 255);
+  padding: 32px 20px;
+  min-height: 127px;
+  width: 100%;
+  gap: 30px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  container-type: inline-size;
+
+  &__row1 {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: v.$background-skeleton;
+    border: none;
+    border-radius: 8px;
+    margin: 5px 0 0 10px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 30px;
+    &--row2 {
+      display: inline-block;
+      width: 100%;
+      height: 50px;
+      background-color: v.$background-skeleton;
+      border: none;
+      border-radius: 8px;
+      margin: 5px 0 0 10px;
+      position: relative;
+      overflow: hidden;
+      &:nth-child(1) {
+        display: none;
+        @container (min-width: 1000px) {
+          display: block;
+        }
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        display: none;
+        @media screen and (min-width: v.$screen-lg) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.skeleton {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    transform: translateX(-100%);
+    background-image: linear-gradient(90deg, rgba(#fff, 0) 0, rgba(#fff, 0.2) 20%, rgba(#fff, 0.5) 60%, rgba(#fff, 0));
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}

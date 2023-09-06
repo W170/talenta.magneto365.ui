@@ -60,4 +60,8 @@ export interface IJobCard {
    * this function show job detail
    */
   showDetail?: () => void
+  /**
+   * this property show or hidde skeleton
+   */
+  isLoading?: boolean
 }

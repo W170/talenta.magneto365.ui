@@ -3,8 +3,9 @@ import { IJobCard } from './JobCard.interface'
 import { JobCardDesktop } from '../JobCardDesktop'
 import { JobCardMobile } from '../JobCardMobile'
 import { useMediaQuery } from '../../../hooks'
+import { JobCardSkeleton } from './children'
 
-const JobCard: React.FC<IJobCard> = ({ wasSeen = false, isActive = false, ...props }) => {
+const JobCard: React.FC<IJobCard> = ({ wasSeen = false, isActive = false, isLoading, ...props }) => {
   const { workSeen, jobOpen } = useMemo(() => {
     const workSeen = wasSeen ? 'was-seen' : ''
     const jobOpen = isActive ? 'is-active' : ''
@@ -21,7 +22,7 @@ const JobCard: React.FC<IJobCard> = ({ wasSeen = false, isActive = false, ...pro
     md: <JobCardMobile {...cardProps} />
   })
 
-  return <>{cardResponsive}</>
+  return <>{isLoading ? <JobCardSkeleton /> : cardResponsive}</>
 }
 
 export default JobCard

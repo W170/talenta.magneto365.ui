@@ -5,7 +5,7 @@ import { JobDetailContainer, JobCard, FrequentSearch, Pagination } from '@compon
 import { SortBar, Footer, SideFilter } from '@components/UI/template'
 // import { useMediaQuery } from '@components/hooks'
 
-import { IJobsPage, IVacants } from './JobsPage.interface'
+import { IJobsPage, IVacancies } from './JobsPage.interface'
 import style from './JobsPage.module.scss'
 
 import { classMUI } from '../../../../constants/stories.constants'
@@ -21,7 +21,8 @@ const JobsPage: React.FC<IJobsPage> = ({
   paginationProps,
   ChildrenDetail,
   setJobSelected,
-  jobSelected
+  jobSelected,
+  isLoading
 }) => {
   // const responsiveOpen = useMediaQuery(true, { lg: false })
 
@@ -48,7 +49,7 @@ const JobsPage: React.FC<IJobsPage> = ({
   )
 
   const handleVacant = useCallback(
-    (vacant: IVacants) => {
+    (vacant: IVacancies) => {
       if (vacant) {
         setJobSelected(vacant)
         setShowDetail(true)
@@ -73,6 +74,7 @@ const JobsPage: React.FC<IJobsPage> = ({
           <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>
             {vacantProps.map(({ id, ...props }) => (
               <JobCard
+                isLoading={isLoading}
                 isActive={id === jobSelected?.id}
                 id={id}
                 showDetail={() => handleVacant({ id, ...props })}

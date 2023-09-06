@@ -54,7 +54,7 @@ import { IListMenuIcons } from '../components/UI/molecules/ListMenuIcons/ListMen
 import { IRightsReservedText } from '@components/UI/molecules/RightsReservedText/RightsReservedText.interface'
 import { IMagnetoResolution } from '@components/UI/molecules/MagnetoResolution/MagnetoResolution.interface'
 import { IFooterMenuLinks } from '@components/UI/organism/FooterMenuLinks/FooterMenuLinks.interface'
-import { IVacants } from '@components/UI/page/JobsPage/JobsPage.interface'
+import { IVacancies } from '@components/UI/page/JobsPage/JobsPage.interface'
 
 /**
  *
@@ -656,7 +656,7 @@ export const optionsFilterOrderBy: ISortMenuItem[] = [
 
 //Vacants
 
-export const vacants: IVacants[] = [
+export const vacants: IVacancies[] = [
   {
     id: 1,
     title: 'Desarrollador Web',

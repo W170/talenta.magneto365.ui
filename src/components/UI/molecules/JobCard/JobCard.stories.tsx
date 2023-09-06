@@ -7,6 +7,7 @@ const meta: Meta<typeof JobCard> = {
   component: JobCard,
   tags: ['autodocs'],
   args: {
+    isLoading: false,
     ...vacants[1]
   }
 }
