@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
-import { SearchItem } from '@components/UI/atoms'
 import JobsPage from './JobsPage.component'
 
 import { FacebookBlue, LinkedInBlue, SMSBlue, ShareBlue, TwitterBlue, WhatsAppColor } from '@constants/icons.constants'
@@ -27,6 +26,7 @@ import {
   ISideFilter,
   IUnApplyWithChild
 } from '@components/UI/template'
+import { IFrequentSearch } from '@components/UI/molecules'
 
 const onClickOne = () => {
   console.log('1')
@@ -230,9 +230,11 @@ const sideFilterProps = {
     })
 }
 
-const frequentSearch = {
+const frequentSearch: IFrequentSearch = {
   searchHeading: 'Búsquedas de empleo más frecuentes',
-  children: searchList.map(({ tag }, index: number) => <SearchItem key={index} tag={tag} />)
+  searchList,
+  showLess: 'Ver menos',
+  showMore: 'Ver mas'
 }
 
 const footerProps = {

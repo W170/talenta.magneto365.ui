@@ -36,7 +36,7 @@ import {
   AppStore
 } from './icons.constants'
 
-import { IAvatar, IBreadcrumb, ILogoComponent, IMainButton, IconProps } from '../components/UI/atoms'
+import { IAvatar, IBreadcrumb, ILogoComponent, IMainButton, ISearchItem, IconProps } from '../components/UI/atoms'
 import {
   IHeaderTabs,
   IListIcon,
@@ -254,27 +254,27 @@ export const LoginButton: IMainButton = {
 }
 
 // Search Item
-export const searchList = [
-  { tag: 'Bolsa de empleo México' },
-  { tag: 'Bolsa de empleo Argentina' },
-  { tag: 'Bolsa de empleo Nicaragua' },
-  { tag: 'Bolsa de empleo Costa Rica' },
-  { tag: 'Servicio de empleo Colombia' },
-  { tag: 'Bolsa de empleo Colombia' },
-  { tag: 'Empleo en Barranquilla' },
-  { tag: 'Empleo en Cartagena' },
-  { tag: 'Empleo en Medellín' },
-  { tag: 'Empleo en Bogotá' },
-  { tag: 'Empleo en Cali' },
-  { tag: 'Empleo en Pereira' },
-  { tag: 'Empleo como agente' },
-  { tag: 'Trabajos como ingeniero' },
-  { tag: 'Servicio de empleo' },
-  { tag: 'Empleos como abogado' },
-  { tag: 'Empleo como desarrollador' },
-  { tag: 'Empleos SENA' },
-  { tag: 'Empleos en bodega' },
-  { tag: 'Empleo como regente de farmacia' }
+export const searchList: ISearchItem[] = [
+  { href: '#', tag: 'Bolsa de empleo México' },
+  { href: '#', tag: 'Bolsa de empleo Argentina' },
+  { href: '#', tag: 'Bolsa de empleo Nicaragua' },
+  { href: '#', tag: 'Bolsa de empleo Costa Rica' },
+  { href: '#', tag: 'Servicio de empleo Colombia' },
+  { href: '#', tag: 'Bolsa de empleo Colombia' },
+  { href: '#', tag: 'Empleo en Barranquilla' },
+  { href: '#', tag: 'Empleo en Cartagena' },
+  { href: '#', tag: 'Empleo en Medellín' },
+  { href: '#', tag: 'Empleo en Bogotá' },
+  { href: '#', tag: 'Empleo en Cali' },
+  { href: '#', tag: 'Empleo en Pereira' },
+  { href: '#', tag: 'Empleo como agente' },
+  { href: '#', tag: 'Trabajos como ingeniero' },
+  { href: '#', tag: 'Servicio de empleo' },
+  { href: '#', tag: 'Empleos como abogado' },
+  { href: '#', tag: 'Empleo como desarrollador' },
+  { href: '#', tag: 'Empleos SENA' },
+  { href: '#', tag: 'Empleos en bodega' },
+  { href: '#', tag: 'Empleo como regente de farmacia' }
 ]
 
 /**
