@@ -85,59 +85,146 @@ export const storiesFilters = [
     searchPlaceholder: 'Buscar sector laboral'
   },
   {
-    label: 'Compañia',
-    placeholder: 'Selecciona una compañia',
-    field: 'company_show_slug',
+    label: 'País',
+    field: 'country_id',
     type: 'EQUAL',
-    renderType: 'CUSTOM:BY_COMPANY',
-    dataType: 'string',
-    multiple: true,
+    renderType: 'SEARCH',
+    renderChild: 'DISABLED',
+    dataType: 'number',
+    multiple: false,
+    repository: {
+      type: 'endPoint',
+      defaultFilter: {},
+      defaultOrder: {},
+      defaultOperator: 1,
+      source: 'v1/public/filters/search/countries_*',
+      fieldFullSearch: 'name.analyzed',
+      sourceName: 'countries_*',
+      fieldsAlias: {
+        id: 'id',
+        label: 'name',
+        parentId: null
+      }
+    },
+    child: {
+      label: 'Departamento',
+      field: 'department_id',
+      type: 'EQUAL',
+      renderType: 'SEARCH',
+      renderChild: 'DISABLED',
+      dataType: 'number',
+      multiple: true,
+      repository: {
+        type: 'endPoint',
+        defaultFilter: {},
+        defaultOrder: {},
+        defaultOperator: 1,
+        source: 'v1/public/filters/search/departments_*',
+        fieldFullSearch: 'name.analyzed',
+        sourceName: 'departments_*',
+        fieldsAlias: {
+          id: 'id',
+          label: 'full_name',
+          parentId: 'country_id'
+        }
+      },
+      child: {
+        label: 'Ciudad',
+        field: 'city_id',
+        type: 'EQUAL',
+        renderType: 'SEARCH',
+        dataType: 'number',
+        multiple: true,
+        repository: {
+          type: 'endPoint',
+          defaultFilter: {},
+          defaultOrder: {},
+          defaultOperator: 1,
+          source: 'v1/public/filters/search/cities_*',
+          fieldFullSearch: 'name.analyzed',
+          sourceName: 'cities_*',
+          fieldsAlias: {
+            id: 'id',
+            label: 'full_name',
+            parentId: 'department_id'
+          }
+        },
+        values: [],
+        filtersApplied: ['17453@789', '17414@789', '16963@776'],
+        searchPlaceholder: 'Buscar ciudad'
+      },
+      values: [],
+      filtersApplied: ['789@47', '776@47'],
+      searchPlaceholder: 'Buscar departamento'
+    },
+    values: [],
+    filtersApplied: [47],
+    searchPlaceholder: 'Buscar país'
+  },
+  {
+    label: 'Salario',
+    field: 'salary_show',
+    type: 'RANGE',
+    renderType: 'SELECTION_LIST',
+    dataType: 'number',
+    multiple: false,
     repository: {
       type: 'customFactory',
       defaultFilter: {},
       defaultOrder: {},
       defaultOperator: 1,
-      source: '08c93c98-f936-4b0f-9c32-c1aed08166f1',
-      fieldsAlias: null
+      source: '8fa295f4-111d-45b2-b5bc-cc7c09f63511',
+      fieldsAlias: {}
     },
     values: [
       {
-        id: 'aco',
-        label: 'ACO',
         operator: 1,
-        hiddenCount: true,
-        total: 12,
+        type: null,
+        from: -1,
+        to: -1,
+        id: 'BK-agree',
+        label: 'A convenir',
+        total: 475,
         isApplied: false
       },
       {
-        id: 'magneto-pymes',
-        label: 'ADVANCE ESTRATEGIA',
         operator: 1,
-        hiddenCount: true,
-        total: 4,
+        type: null,
+        from: 781242,
+        to: null,
+        id: 'BK-01',
+        label: 'Desde $781.242',
+        total: 466,
         isApplied: false
       },
       {
-        id: 'comfandi-empleo',
-        label: 'Agencia de empleo Comfandi',
         operator: 1,
-        hiddenCount: true,
-        total: 0,
+        type: null,
+        from: 1000001,
+        to: 1500000,
+        id: 'BK-02',
+        label: '$1.000.000 a $1.500.000',
+        total: 243,
         isApplied: false
       },
       {
-        id: 'akt-motos',
-        label: 'AKT',
         operator: 1,
-        hiddenCount: true,
-        total: 16,
+        type: null,
+        from: 1500001,
+        to: 2000000,
+        id: 'BK-03',
+        label: '$1.500.000 a $2.000.000',
+        total: 71,
         isApplied: false
       },
       {
-        id: 352,
         operator: 1,
-        label: 'Oficinista',
-        total: 0,
+        type: null,
+        from: 2000001,
+        to: 2500000,
+        id: 'BK-04',
+        label: '$2.000.000 a $2.500.000',
+        total: 40,
         isApplied: false
       },
       {
