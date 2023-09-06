@@ -255,26 +255,26 @@ export const LoginButton: IMainButton = {
 
 // Search Item
 export const searchList: ISearchItem[] = [
-  { href: '#', tag: 'Bolsa de empleo México' },
-  { href: '#', tag: 'Bolsa de empleo Argentina' },
-  { href: '#', tag: 'Bolsa de empleo Nicaragua' },
-  { href: '#', tag: 'Bolsa de empleo Costa Rica' },
-  { href: '#', tag: 'Servicio de empleo Colombia' },
-  { href: '#', tag: 'Bolsa de empleo Colombia' },
-  { href: '#', tag: 'Empleo en Barranquilla' },
-  { href: '#', tag: 'Empleo en Cartagena' },
-  { href: '#', tag: 'Empleo en Medellín' },
-  { href: '#', tag: 'Empleo en Bogotá' },
-  { href: '#', tag: 'Empleo en Cali' },
-  { href: '#', tag: 'Empleo en Pereira' },
-  { href: '#', tag: 'Empleo como agente' },
-  { href: '#', tag: 'Trabajos como ingeniero' },
-  { href: '#', tag: 'Servicio de empleo' },
-  { href: '#', tag: 'Empleos como abogado' },
-  { href: '#', tag: 'Empleo como desarrollador' },
-  { href: '#', tag: 'Empleos SENA' },
-  { href: '#', tag: 'Empleos en bodega' },
-  { href: '#', tag: 'Empleo como regente de farmacia' }
+  { url: '#', tag: 'Bolsa de empleo México' },
+  { url: '#', tag: 'Bolsa de empleo Argentina' },
+  { url: '#', tag: 'Bolsa de empleo Nicaragua' },
+  { url: '#', tag: 'Bolsa de empleo Costa Rica' },
+  { url: '#', tag: 'Servicio de empleo Colombia' },
+  { url: '#', tag: 'Bolsa de empleo Colombia' },
+  { url: '#', tag: 'Empleo en Barranquilla' },
+  { url: '#', tag: 'Empleo en Cartagena' },
+  { url: '#', tag: 'Empleo en Medellín' },
+  { url: '#', tag: 'Empleo en Bogotá' },
+  { url: '#', tag: 'Empleo en Cali' },
+  { url: '#', tag: 'Empleo en Pereira' },
+  { url: '#', tag: 'Empleo como agente' },
+  { url: '#', tag: 'Trabajos como ingeniero' },
+  { url: '#', tag: 'Servicio de empleo' },
+  { url: '#', tag: 'Empleos como abogado' },
+  { url: '#', tag: 'Empleo como desarrollador' },
+  { url: '#', tag: 'Empleos SENA' },
+  { url: '#', tag: 'Empleos en bodega' },
+  { url: '#', tag: 'Empleo como regente de farmacia' }
 ]
 
 /**

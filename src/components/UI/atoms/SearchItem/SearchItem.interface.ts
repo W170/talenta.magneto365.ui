@@ -6,5 +6,5 @@ export interface ISearchItem {
   /**
    * The custom href to the anchor tag
    */
-  href: string
+  url: string
 }
