@@ -13,6 +13,7 @@ import { IJobDetailsDrawer } from './JobDetailsDrawer.interface'
 import styles from './JobDetailsDrawer.module.scss'
 
 import { anchorIconList, buttonIconsList, iconDetailList } from '@constants/stories.constants'
+import { JobDetailsSkeleton } from './children'
 
 const Component: React.FC<IJobDetailsDrawer> = ({
   jobCompanyLogoProps,
@@ -25,6 +26,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   isLoading
 }) => {
   console.log(isLoading)
+  if (isLoading) return <JobDetailsSkeleton />
   return (
     <section className={styles.JobDetailsDrawerComponent}>
       <div className={styles['JobHeaderCardWrapper']}>
