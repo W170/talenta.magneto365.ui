@@ -14,8 +14,8 @@ type Story = StoryObj<typeof JobSkillsCard>
 
 export const Default: Story = {
   args: {
-    jobSkillCardHeader: 'Habilidades',
-    jobSkills: [
+    offerSkillsLabel: 'Habilidades',
+    offerSkills: [
       { id: 1, name: 'Habilidades comerciales', score: 1 },
       { id: 2, name: 'Capacidad de negociación', score: 2 },
       { id: 3, name: 'Conocimiento de microfinanzas', score: 4 }
