@@ -19,7 +19,7 @@ export const Default: Story = {
       'Hace 10 días',
       '4 cupos, 256 aplicaron',
       '2 años de experiencia, profesional',
-      '$ 2.000.000 a $ 3.000.000',
+      undefined,
       'Bello - Copacabana - Itagui - La Estrella'
     ],
     iconList: [Calendar1, People, Briefcase, DollarCircle, Location]
