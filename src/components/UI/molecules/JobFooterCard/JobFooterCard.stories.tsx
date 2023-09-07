@@ -23,9 +23,9 @@ type Story = StoryObj<typeof JobFooterCard>
 
 export const Default: Story = {
   args: {
-    jobFooterCompanyImg: CompanyLogo,
-    jobFooterHeader: 'Compartir vacante en:',
-    jobFooterLinks: [
+    offerCompanyLogo: CompanyLogo,
+    offerFooterHeader: 'Compartir vacante en:',
+    offerFooterLinks: [
       { icon: FacebookBlue, url: '' },
       { icon: WhatsAppColor, url: '' },
       { icon: LinkedInBlue, url: '' },

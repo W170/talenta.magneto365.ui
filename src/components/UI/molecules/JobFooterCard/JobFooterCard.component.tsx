@@ -4,18 +4,18 @@ import { IJobFooterCard } from './JobFooterCard.interface'
 import styles from './JobFooterCard.module.scss'
 
 const Component: React.FC<IJobFooterCard> = ({
-  jobFooterCompanyImg,
+  offerFooterHeader,
+  offerCompanyLogo,
   companyImgAlt,
-  jobFooterHeader,
-  jobFooterLinks
+  offerFooterLinks
 }) => {
   return (
     <div className={styles['magneto-ui-job-footer-card']}>
-      <img src={jobFooterCompanyImg} alt={companyImgAlt} />
+      <img src={offerCompanyLogo} alt={companyImgAlt} />
       <div className={styles['magneto-ui-job-footer-card__icons']}>
-        <h2>{jobFooterHeader}</h2>
+        <h2>{offerFooterHeader}</h2>
         <div className={styles['magneto-ui-job-footer-card__wrapper']}>
-          {jobFooterLinks.map(
+          {offerFooterLinks.map(
             ({ url, icon }, index: number) =>
               url !== null && (
                 <a key={index} href={url} target="" rel="">

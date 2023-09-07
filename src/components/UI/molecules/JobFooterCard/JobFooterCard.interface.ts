@@ -3,11 +3,11 @@ export interface IJobFooterCard {
   /**
    * The header or title for the job footer card section.
    */
-  jobFooterHeader: string
+  offerFooterHeader: string
   /**
    * The URL of the company image to display in the job footer.
    */
-  jobFooterCompanyImg: string
+  offerCompanyLogo: string
   /**
    * The alternative text for the company image in the job footer.
    * (Optional property)
@@ -16,5 +16,5 @@ export interface IJobFooterCard {
   /**
    * An array of list icons representing footer links for the job listing.
    */
-  jobFooterLinks: IListIcon[]
+  offerFooterLinks: IListIcon[]
 }
