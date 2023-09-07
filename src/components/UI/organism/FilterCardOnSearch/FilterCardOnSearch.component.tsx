@@ -6,6 +6,7 @@ import { MenuSearch } from '@components/UI/molecules/MenuSearch'
 import { ISearchRenderTypeOption } from '@components/UI/template'
 import { IFilterCardOnSearch, ISetIsAppliedProps } from './FilterCardOnSearch.interface'
 import { cleanSearch, getValues, refreshChildren, refreshParents } from './utils'
+import { useKeyboard } from './hooks'
 import styles from './FilterCardOnSearch.module.scss'
 
 export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
@@ -27,6 +28,7 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
   const [appliedOptions, setAppliedOptions] = useState<ISearchRenderTypeOption[]>([])
   const [refInput, setRefInput] = useState<React.RefObject<HTMLInputElement> | null>(null)
 
+  const [keyboardIndex] = useKeyboard(field, options.length, () => cleanSearch(refInput, setOptions))
   const values = useMemo(() => getValues(filtersApplied), [filtersApplied])
 
   // this effect load labels when page is reloaded
@@ -106,7 +108,14 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
         handleOnBlur={() => cleanSearch(refInput, setOptions, 300)}
         content={options.map((opt, key) => {
           const optProps = { ...props, ...opt, field, setIsApplied: handleApply, isSearched: true }
-          return <FilterMenuItem key={`${key}-${opt.label}`} {...optProps} />
+          return (
+            <FilterMenuItem
+              key={`${key}-${opt.label}`}
+              customId={`${field}-menu-item-${key}`}
+              customClass={`${key === keyboardIndex ? styles.selected : ''}`}
+              {...optProps}
+            />
+          )
         })}
       >
         <FilterSearchItem
@@ -117,7 +126,7 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
         />
       </MenuSearch>
     )
-  }, [options, field, params, searchPlaceholder, props, refInput, handleApply, handleSearch])
+  }, [options, field, params, searchPlaceholder, props, refInput, keyboardIndex, handleApply, handleSearch])
 
   const displayAppliedOptions = useMemo(() => {
     return (
