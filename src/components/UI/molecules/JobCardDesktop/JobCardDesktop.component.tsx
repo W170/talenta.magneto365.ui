@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { classMUI } from '../../../../constants/stories.constants'
 import { IconItem } from '../../atoms'
-import { ArrowRight2 } from '../../../../constants/icons.constants'
+import { ArrowRight2, NoLogo } from '../../../../constants/icons.constants'
 import style from './JobCardDesktop.module.scss'
 import { ICardJobDesktop } from './JobCardDesktop.interface'
 
@@ -38,13 +38,13 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
         jobOpen ? style[jobOpen] : ''
       }`}
     >
-      {!isCompanyPage && companyLogo && (
+      {!isCompanyPage && (
         <div className={style[`${classMUI}-card-jobs--row1`]}>
           <div className={style[`${classMUI}-card-jobs--brand`]}>
             <img
               className={style[`${classMUI}-card-jobs--brand__img`]}
               alt={companySlug ? companySlug : 'company-slug'}
-              src={companyLogo}
+              src={companyLogo ? companyLogo : NoLogo}
             />
           </div>
         </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import { classMUI } from '../../../../constants/stories.constants'
 import style from './JobCardMobile.module.scss'
 import { ICardJobMobile } from './JobCardMobile.interface'
+import { NoLogo } from '@constants/icons.constants'
 
 const JobCardMobile: React.FC<ICardJobMobile> = ({
   isCompanyPage = false,
@@ -26,13 +27,13 @@ const JobCardMobile: React.FC<ICardJobMobile> = ({
         jobOpen ? style[jobOpen] : ''
       }`}
     >
-      {!isCompanyPage && companyLogo && (
+      {!isCompanyPage && (
         <div className={style[`${classMUI}-card-mobile-jobs--row1`]}>
           <div className={style[`${classMUI}-card-mobile-jobs--brand`]}>
             <img
               className={style[`${classMUI}-card-mobile-jobs--brand__img`]}
               alt={companySlug ? companySlug : 'company-slug'}
-              src={companyLogo}
+              src={companyLogo ? companyLogo : NoLogo}
             />
           </div>
         </div>
