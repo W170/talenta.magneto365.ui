@@ -6,7 +6,7 @@ export interface JobRequirementsElement {
   /**
    * Additional information or details about the job requirement.
    */
-  offerApplyInfo: string
+  offerApplyInfo: string | null | undefined
 }
 
 export interface IJobApplyCard {
