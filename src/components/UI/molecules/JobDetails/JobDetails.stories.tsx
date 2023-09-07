@@ -15,7 +15,7 @@ type Story = StoryObj<typeof JobDetails>
 
 export const Default: Story = {
   args: {
-    detailsTextList: [
+    offerDetailsList: [
       'Hace 10 días',
       '4 cupos, 256 aplicaron',
       '2 años de experiencia, profesional',

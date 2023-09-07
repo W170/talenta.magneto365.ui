@@ -3,19 +3,21 @@ import { IconItem } from '../../atoms'
 import { IJobDetails, IDetailList } from './JobDetails.interface'
 import styles from './JobDetails.module.scss'
 
-const Component: React.FC<IJobDetails> = ({ detailsTextList, iconList }) => {
-  const jobDetailsList: IDetailList[] = detailsTextList.map((detailText, index) => ({
-    icon: iconList && iconList[index] ? iconList[index] : undefined,
-    detailText
-  }))
+const Component: React.FC<IJobDetails> = ({ offerDetailsList, iconList }) => {
+  const jobDetailsList: IDetailList[] = offerDetailsList
+    .map((offerDetailText, index) => ({
+      icon: iconList && iconList[index] ? iconList[index] : undefined,
+      offerDetailText
+    }))
+    .filter(({ offerDetailText }) => offerDetailText !== 'null')
 
   return (
     <div className={styles['magneto-ui-job-details']}>
       <div className={styles['magneto-ui-job-details__wrapper']}>
-        {jobDetailsList.map(({ detailText, icon }, index: number) => (
+        {jobDetailsList.map(({ offerDetailText, icon }, index: number) => (
           <div key={index} className={styles['magneto-ui-job-details__item-detail']}>
             <IconItem icon={icon} hover={false} size={16} />
-            <p className={styles['magneto-ui-job-details__item-detail-text']}>{detailText}</p>
+            <p className={styles['magneto-ui-job-details__item-detail-text']}>{offerDetailText}</p>
           </div>
         ))}
       </div>
