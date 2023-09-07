@@ -14,13 +14,13 @@ type Story = StoryObj<typeof JobApplyCard>
 
 export const Default: Story = {
   args: {
-    jobApplyCardHeader: 'Requisitos para aplicar a la vacante:',
-    jobApplyCardReqs: [
-      { jobRequirementTitle: 'Experiencia:', jobRequirementInfo: ' 1 año de experiencia' },
-      { jobRequirementTitle: 'Nivel de estudios:', jobRequirementInfo: ' Especialización / Maestría' },
-      { jobRequirementTitle: 'Ciudad de residencia:', jobRequirementInfo: ' Planadas' },
-      { jobRequirementTitle: 'Salario:', jobRequirementInfo: ` $2’100.000` }
+    offerApplyHeader: 'Requisitos para aplicar a la vacante:',
+    offerApplyElements: [
+      { offerApplyLabel: 'Experiencia:', offerApplyInfo: ' 1 año de experiencia' },
+      { offerApplyLabel: 'Nivel de estudios:', offerApplyInfo: ' Especialización / Maestría' },
+      { offerApplyLabel: 'Ciudad de residencia:', offerApplyInfo: ' Planadas' },
+      { offerApplyLabel: 'Salario:', offerApplyInfo: ` $2’100.000` }
     ],
-    jobApplyButtonText: 'Aplicar'
+    offerApplyButtonText: 'Aplicar'
   }
 }
