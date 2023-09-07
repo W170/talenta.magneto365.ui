@@ -35,14 +35,14 @@ const Component: React.FC<ISkill> = ({ name, score }) => {
     }
   }, [])
 
-  const scoreToLevel = {
+  const scoreToLevel: { [key: number]: string } = {
     1: 'one',
     2: 'two',
     3: 'three',
     4: 'four'
   }
 
-  const levelClass = scoreToLevel[score] || ''
+  const levelClass = scoreToLevel[score || 0] || ''
 
   const fillAnimation = animationApplied ? styles[levelClass] : ''
 
