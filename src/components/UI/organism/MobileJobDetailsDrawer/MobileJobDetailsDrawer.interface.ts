@@ -27,7 +27,7 @@ export interface IMobileJobDetailsDrawer {
   /**
    * Props for the job skills card section.
    */
-  jobSkillsCardProps: IJobSkillsCard
+  jobSkillsCardProps: IJobSkillsCard | null
   /**
    * Props for the job apply card section.
    */
