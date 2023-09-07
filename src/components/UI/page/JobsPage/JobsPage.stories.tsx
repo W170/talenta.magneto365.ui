@@ -268,6 +268,7 @@ const meta: Meta<typeof JobsPage> = {
     sideFilterProps: sideFilterProps as ISideFilter,
     footerProps,
     paginationProps,
+    jobSelected: vacants[0],
     isLoading: false
   },
   decorators: [
