@@ -21,8 +21,10 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   jobDetailCardProps,
   jobSkillsCardProps,
   jobApplyCardProps,
-  jobFooterCardProps
+  jobFooterCardProps,
+  isLoading
 }) => {
+  console.log(isLoading)
   return (
     <section className={styles.JobDetailsDrawerComponent}>
       <div className={styles['JobHeaderCardWrapper']}>
@@ -30,7 +32,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
         <JobActions actionsButtonIcons={buttonIconsList} actionsAnchorIcons={anchorIconList} {...jobActionsProps} />
       </div>
       <div className={styles['JobBodyCardWrapper']}>
-        <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />
+        {jobDetailsProps && <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />}
         <JobDetailCard {...jobDetailCardProps} />
         {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
         <JobApplyCard {...jobApplyCardProps} />

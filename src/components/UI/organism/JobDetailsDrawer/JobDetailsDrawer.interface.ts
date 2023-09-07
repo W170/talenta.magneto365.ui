@@ -16,7 +16,7 @@ export interface IJobDetailsDrawer {
   /**
    * Array of strings representing the job details to display.
    */
-  jobDetailsProps: string[]
+  jobDetailsProps: (string | null | undefined)[] | null
   /**
    * Props for the job detail card.
    */
@@ -33,4 +33,8 @@ export interface IJobDetailsDrawer {
    * Props for the job footer card section.
    */
   jobFooterCardProps: IJobFooterCard
+  /**
+   *
+   */
+  isLoading?: boolean
 }
