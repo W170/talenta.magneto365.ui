@@ -14,6 +14,8 @@ export const FilterMenuItem: FC<IFilterMenuItem> = ({
   isApplied,
   hasTotal,
   isSearched,
+  customClass,
+  customId,
   setIsApplied
 }) => {
   const displayOutput = useMemo(() => {
@@ -37,7 +39,12 @@ export const FilterMenuItem: FC<IFilterMenuItem> = ({
   if (loading) return <div className={styles.skeleton} />
 
   return (
-    <button className={`${styles['magneto-ui-filter-item']} ${className}`} onClick={handleClick} disabled={disabled}>
+    <button
+      id={customId}
+      className={`${styles['magneto-ui-filter-item']} ${className} ${customClass ? customClass : ''}`}
+      onClick={handleClick}
+      disabled={disabled}
+    >
       <span>{label}</span>
       {displayOutput}
     </button>
