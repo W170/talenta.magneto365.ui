@@ -3,12 +3,12 @@ export interface IDetailList {
    * The text content of the detail item.
    * (Optional property)
    */
-  offerDetailText?: string
+  offerDetailText: string
   /**
    * The icon associated with the detail item.
    * (Optional property)
    */
-  icon?: string
+  icon: string
 }
 
 export interface IJobDetails {
@@ -20,5 +20,5 @@ export interface IJobDetails {
    * An array of strings representing the icons associated with each job detail.
    * (Optional property)
    */
-  iconList?: string[]
+  iconList: string[]
 }

@@ -6,7 +6,7 @@ import styles from './JobDetails.module.scss'
 const Component: React.FC<IJobDetails> = ({ offerDetailsList, iconList }) => {
   const jobDetailsList: IDetailList[] = offerDetailsList
     .map((offerDetailText, index) => ({
-      icon: iconList && iconList[index] ? iconList[index] : undefined,
+      icon: iconList[index],
       offerDetailText
     }))
     .filter(({ offerDetailText }) => offerDetailText !== 'null')
