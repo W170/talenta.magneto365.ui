@@ -26,6 +26,8 @@ const meta: Meta<typeof MenuSearch> = {
         loading: false,
         isSearched: true,
         isApplied: false,
+        customClass: 'customClass',
+        customId: 'customId',
         setIsApplied: (filter: ISetIsApplied) => console.log({ filter }),
         handleApply: () => console.log('handleApply')
       }
