@@ -14,7 +14,6 @@ type Story = StoryObj<typeof JobCompanyLogo>
 
 export const Default: Story = {
   args: {
-    offerCompanyLogo: CompanyLogo,
-    alt: 'Grupo Exito Logo'
+    offerCompanyLogo: CompanyLogo as unknown as JSX.Element
   }
 }
