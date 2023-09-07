@@ -22,6 +22,14 @@ export interface IFilterMenuItem extends IFilterValue {
    */
   isSearched?: boolean
   /**
+   *  This is the custom className to add styles
+   */
+  customClass?: string
+  /**
+   * This is the custom id
+   */
+  customId?: string
+  /**
    * This function change if the item is isSelected
    */
   setIsApplied: (filter: ISetIsApplied) => Promise<void> | void
