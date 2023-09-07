@@ -36,7 +36,7 @@ import {
   AppStore
 } from './icons.constants'
 
-import { IAvatar, IBreadcrumb, ILogoComponent, IMainButton, IconProps } from '../components/UI/atoms'
+import { IAvatar, IBreadcrumb, ILogoComponent, IMainButton, ISearchItem, IconProps } from '../components/UI/atoms'
 import {
   IHeaderTabs,
   IListIcon,
@@ -54,7 +54,7 @@ import { IListMenuIcons } from '../components/UI/molecules/ListMenuIcons/ListMen
 import { IRightsReservedText } from '@components/UI/molecules/RightsReservedText/RightsReservedText.interface'
 import { IMagnetoResolution } from '@components/UI/molecules/MagnetoResolution/MagnetoResolution.interface'
 import { IFooterMenuLinks } from '@components/UI/organism/FooterMenuLinks/FooterMenuLinks.interface'
-import { IVacants } from '@components/UI/page/JobsPage/JobsPage.interface'
+import { IVacancies } from '@components/UI/page/JobsPage/JobsPage.interface'
 
 /**
  *
@@ -254,27 +254,27 @@ export const LoginButton: IMainButton = {
 }
 
 // Search Item
-export const searchList = [
-  { tag: 'Bolsa de empleo México' },
-  { tag: 'Bolsa de empleo Argentina' },
-  { tag: 'Bolsa de empleo Nicaragua' },
-  { tag: 'Bolsa de empleo Costa Rica' },
-  { tag: 'Servicio de empleo Colombia' },
-  { tag: 'Bolsa de empleo Colombia' },
-  { tag: 'Empleo en Barranquilla' },
-  { tag: 'Empleo en Cartagena' },
-  { tag: 'Empleo en Medellín' },
-  { tag: 'Empleo en Bogotá' },
-  { tag: 'Empleo en Cali' },
-  { tag: 'Empleo en Pereira' },
-  { tag: 'Empleo como agente' },
-  { tag: 'Trabajos como ingeniero' },
-  { tag: 'Servicio de empleo' },
-  { tag: 'Empleos como abogado' },
-  { tag: 'Empleo como desarrollador' },
-  { tag: 'Empleos SENA' },
-  { tag: 'Empleos en bodega' },
-  { tag: 'Empleo como regente de farmacia' }
+export const searchList: ISearchItem[] = [
+  { url: '#', tag: 'Bolsa de empleo México' },
+  { url: '#', tag: 'Bolsa de empleo Argentina' },
+  { url: '#', tag: 'Bolsa de empleo Nicaragua' },
+  { url: '#', tag: 'Bolsa de empleo Costa Rica' },
+  { url: '#', tag: 'Servicio de empleo Colombia' },
+  { url: '#', tag: 'Bolsa de empleo Colombia' },
+  { url: '#', tag: 'Empleo en Barranquilla' },
+  { url: '#', tag: 'Empleo en Cartagena' },
+  { url: '#', tag: 'Empleo en Medellín' },
+  { url: '#', tag: 'Empleo en Bogotá' },
+  { url: '#', tag: 'Empleo en Cali' },
+  { url: '#', tag: 'Empleo en Pereira' },
+  { url: '#', tag: 'Empleo como agente' },
+  { url: '#', tag: 'Trabajos como ingeniero' },
+  { url: '#', tag: 'Servicio de empleo' },
+  { url: '#', tag: 'Empleos como abogado' },
+  { url: '#', tag: 'Empleo como desarrollador' },
+  { url: '#', tag: 'Empleos SENA' },
+  { url: '#', tag: 'Empleos en bodega' },
+  { url: '#', tag: 'Empleo como regente de farmacia' }
 ]
 
 /**
@@ -656,7 +656,7 @@ export const optionsFilterOrderBy: ISortMenuItem[] = [
 
 //Vacants
 
-export const vacants: IVacants[] = [
+export const vacants: IVacancies[] = [
   {
     id: 1,
     title: 'Desarrollador Web',
@@ -667,7 +667,7 @@ export const vacants: IVacants[] = [
     educationLevel: 'Profesional',
     experience: '6 meses de experiencia',
     salary: '1.200.000 a 4.000.000',
-    publishDate: 'hace 10 dias',
+    formatPublishDate: 'hace 10 dias',
     others: 'otras',
     contractType: 'Termino fijo',
     offerVacancyData: '30 cupos, 2 postulantes',
@@ -692,7 +692,7 @@ export const vacants: IVacants[] = [
     educationLevel: 'Arquitecto',
     experience: '12 meses de experiencia',
     salary: '3.200.000',
-    publishDate: 'hace 20 dias',
+    formatPublishDate: 'hace 20 dias',
     others: 'otras',
     contractType: 'Prestacion de servicios',
     offerVacancyData: '30 cupos, 2 postulantes',
@@ -717,7 +717,7 @@ export const vacants: IVacants[] = [
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
     salary: '3.000.000',
-    publishDate: 'hace 2 meses',
+    formatPublishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido',
     offerVacancyData: '30 cupos, 2 postulantes',

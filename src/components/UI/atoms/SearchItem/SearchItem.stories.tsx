@@ -14,6 +14,7 @@ type Story = StoryObj<typeof SearchItem>
 
 export const Default: Story = {
   args: {
-    tag: 'Bolsa de empleo México'
+    tag: 'Bolsa de empleo México',
+    url: 'https://example.com'
   }
 }

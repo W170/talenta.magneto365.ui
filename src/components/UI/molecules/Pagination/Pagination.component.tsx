@@ -1,4 +1,4 @@
-import React, { FC, useCallback } from 'react'
+import React, { FC, Fragment, useCallback, useMemo } from 'react'
 import { ArrowLeft2, ArrowRight2, Ellipsis } from '@constants/icons.constants'
 import { IconItem } from '@components/UI/atoms'
 import { BtnPagination } from './children'
@@ -16,13 +16,6 @@ export const Pagination: FC<IPaginationProps> = ({
   nextTitle,
   numberOfButtons
 }) => {
-  const { buttons, first, last } = createPagination({
-    total,
-    current,
-    pageSize,
-    numberOfButtons
-  })
-
   const handleClick = useCallback(
     (page: number) => {
       if (page === current) return
@@ -30,6 +23,17 @@ export const Pagination: FC<IPaginationProps> = ({
     },
     [current, pageSize, onChange]
   )
+
+  const { buttons, first, last } = useMemo(() => {
+    return createPagination({
+      total,
+      current,
+      pageSize,
+      numberOfButtons
+    })
+  }, [total, current, pageSize, numberOfButtons])
+
+  if (total <= pageSize) return <Fragment />
 
   return (
     <div className={styles['magneto-ui-pagination']}>

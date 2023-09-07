@@ -35,7 +35,7 @@ export interface IJobCard {
   /**
    * date vacant creation
    */
-  publishDate?: string | null
+  formatPublishDate?: string | null
   /**
    * company image
    */
@@ -60,4 +60,8 @@ export interface IJobCard {
    * this function show job detail
    */
   showDetail?: () => void
+  /**
+   * this property show or hidde skeleton
+   */
+  isLoading?: boolean
 }

@@ -14,7 +14,7 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   companyName,
   title,
   educationLevel,
-  publishDate,
+  formatPublishDate,
   companyLogo,
   companySlug,
   experience,
@@ -54,7 +54,7 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
         <div className={style[`${classMUI}-card-jobs--row2`]}>
           <h2 className={`${style[`${classMUI}-card-jobs--row2__position`]} ${workSeen}`}>{title}</h2>
           <h3>{companyName}</h3>
-          <p>{publishDate}</p>
+          <p>{formatPublishDate}</p>
         </div>
         <div className={style[`${classMUI}-card-jobs--row3`]}>
           <p>

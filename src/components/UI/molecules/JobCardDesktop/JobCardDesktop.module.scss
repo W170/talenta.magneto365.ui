@@ -46,7 +46,9 @@
   &--row3,
   &--row4 {
     display: flex;
-    min-height: 35px;
+    @container (max-width: 1000px) {
+      min-height: 35px;
+    }
   }
 
   &--row1 {
