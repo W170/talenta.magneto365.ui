@@ -4,12 +4,11 @@ import { IJobDetails, IDetailList } from './JobDetails.interface'
 import styles from './JobDetails.module.scss'
 
 const Component: React.FC<IJobDetails> = ({ offerDetailsList, iconList }) => {
-  const jobDetailsList: IDetailList[] = offerDetailsList
-    .map((offerDetailText, index) => ({
-      icon: iconList[index],
-      offerDetailText
-    }))
-    .filter(({ offerDetailText }) => offerDetailText !== 'null')
+  const jobDetailsList: IDetailList[] = offerDetailsList.map((offerDetailText, index) => ({
+    icon: iconList && iconList[index],
+    offerDetailText
+  }))
+  // .filter(({ offerDetailText }) => offerDetailText !== 'null')
 
   return (
     <div className={styles['magneto-ui-job-details']}>
