@@ -13,7 +13,7 @@ type Story = StoryObj<typeof JobHeader>
 
 export const Default: Story = {
   args: {
-    jobTitle: 'Comunicador Audiovisual',
-    jobSubtitle: 'Grupo Exito'
+    offerTitle: 'Comunicador Audiovisual',
+    offerCompanyName: 'Grupo Exito'
   }
 }
