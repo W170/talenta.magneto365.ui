@@ -12,7 +12,7 @@ import {
 import { MobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 
 import { IMobileJobDetailsDrawer } from './MobileJobDetailsDrawer.interface'
-import { iconDetailList } from '@constants/stories.constants'
+import { iconDetailList, iconFooterList } from '@constants/stories.constants'
 
 const Component: React.FC<IMobileJobDetailsDrawer> = ({
   jobCompanyLogoProps,
@@ -44,7 +44,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
       ))}
       {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
       <JobApplyCard {...jobApplyCardProps} />
-      <JobFooterCard {...jobFooterCardProps} />
+      <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
       <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} />
     </Drawer>
   )
