@@ -6,7 +6,7 @@ import styles from './JobSkillsCard.module.scss'
 const Component: React.FC<IJobSkillsCard> = ({ offerSkillsLabel, offerSkills }) => {
   return (
     <Fragment>
-      {offerSkills && (
+      {offerSkills && offerSkills.length >= 1 && (
         <div className={styles['magneto-ui-job-skills-card']}>
           <h2>{offerSkillsLabel}</h2>
           <div className={styles['magneto-ui-job-skills-card__skills-wrapper']}>
