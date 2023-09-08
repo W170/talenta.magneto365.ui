@@ -1,14 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 
 import { JobFooterCard } from './JobFooterCard.component'
-import {
-  FacebookBlue,
-  LinkedInBlue,
-  SMSBlue,
-  ShareBlue,
-  TwitterBlue,
-  WhatsAppColor
-} from '../../../../constants/icons.constants'
+import { FacebookBlue, LinkedInBlue, SMSBlue, TwitterBlue, WhatsAppColor } from '../../../../constants/icons.constants'
 import { CompanyLogo } from '@constants/stories.constants'
 
 const meta: Meta<typeof JobFooterCard> = {
@@ -25,13 +18,13 @@ export const Default: Story = {
   args: {
     offerCompanyLogo: CompanyLogo,
     offerFooterHeader: 'Compartir vacante en:',
-    offerFooterLinks: [
-      { icon: FacebookBlue, url: '' },
-      { icon: WhatsAppColor, url: '' },
-      { icon: LinkedInBlue, url: '' },
-      { icon: TwitterBlue, url: '' },
-      { icon: SMSBlue, url: '' },
-      { icon: ShareBlue, url: '' }
-    ]
+    offerFooterList: [
+      { href: '#', ariaLabel: 'facebook' },
+      { href: '#', ariaLabel: 'whatsapp' },
+      { href: '#', ariaLabel: 'linkedin' },
+      { href: '#', ariaLabel: 'twitter' },
+      { href: '#', ariaLabel: 'sms' }
+    ],
+    iconList: [FacebookBlue, WhatsAppColor, LinkedInBlue, TwitterBlue, SMSBlue]
   }
 }
