@@ -3,8 +3,6 @@ import React from 'react'
 
 import JobsPage from './JobsPage.component'
 
-import { FacebookBlue, LinkedInBlue, SMSBlue, ShareBlue, TwitterBlue, WhatsAppColor } from '@constants/icons.constants'
-
 import {
   CompanyLogo,
   MagnetoResolutionProps,
@@ -93,13 +91,12 @@ const jobDetailsDrawer = {
   jobFooterCardProps: {
     offerCompanyLogo: CompanyLogo,
     offerFooterHeader: 'Compartir vacante en:',
-    offerFooterLinks: [
-      { icon: FacebookBlue, url: '' },
-      { icon: WhatsAppColor, url: '' },
-      { icon: LinkedInBlue, url: '' },
-      { icon: TwitterBlue, url: '' },
-      { icon: SMSBlue, url: '' },
-      { icon: ShareBlue, url: '' }
+    offerFooterList: [
+      { href: '#', ariaLabel: 'facebook' },
+      { href: '#', ariaLabel: 'whatsapp' },
+      { href: '#', ariaLabel: 'linkedin' },
+      { href: '#', ariaLabel: 'twitter' },
+      { href: '#', ariaLabel: 'sms' }
     ]
   }
 }
@@ -164,13 +161,12 @@ const mobileJobDetailsDrawer = {
   jobFooterCardProps: {
     offerCompanyLogo: CompanyLogo,
     offerFooterHeader: 'Compartir vacante en:',
-    offerFooterLinks: [
-      { icon: FacebookBlue, url: '' },
-      { icon: WhatsAppColor, url: '' },
-      { icon: LinkedInBlue, url: '' },
-      { icon: TwitterBlue, url: '' },
-      { icon: SMSBlue, url: '' },
-      { icon: ShareBlue, url: '' }
+    offerFooterList: [
+      { href: '#', ariaLabel: 'facebook' },
+      { href: '#', ariaLabel: 'whatsapp' },
+      { href: '#', ariaLabel: 'linkedin' },
+      { href: '#', ariaLabel: 'twitter' },
+      { href: '#', ariaLabel: 'sms' }
     ]
   },
   mobileJobDetailsBarProps: {
