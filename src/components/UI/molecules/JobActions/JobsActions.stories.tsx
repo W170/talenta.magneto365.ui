@@ -1,6 +1,6 @@
 import { StoryObj, Meta } from '@storybook/react'
 import { JobActions } from './JobActions.component'
-import { ArchiveAdd, Buildings2, Export3, Share } from '../../../../constants/icons.constants'
+import { ArchiveAdd, Buildings2, Export3 } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof JobActions> = {
   title: 'Molecules/Job Actions',
@@ -25,7 +25,7 @@ const onShareClick = () => {
 export const Default: Story = {
   args: {
     actionButtonText: 'Aplicar',
-    actionsButtonIcons: [ArchiveAdd, Share],
+    actionsButtonIcons: [ArchiveAdd],
     actionsButtonEvents: [onSaveClick, onShareClick],
     actionsAnchorIcons: [Export3, Buildings2],
     actionsAnchorLinks: ['link1', 'link2'],

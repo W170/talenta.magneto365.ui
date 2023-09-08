@@ -9,6 +9,7 @@ const Component: React.FC<IJobsActions> = ({
   actionsButtonEvents,
   actionsAnchorIcons,
   actionsAnchorLinks,
+  externalChild,
   onHandleClick
 }) => {
   const actionsAnchorTarget = ['_blank', '_self']
@@ -33,6 +34,7 @@ const Component: React.FC<IJobsActions> = ({
             <IconItem hover={true} size={20} icon={icon} />
           </button>
         ))}
+        {externalChild}
         {actionsLinkList?.map(({ url, target, icon }, index: number) => (
           <a className={styles['magneto-ui-job-actions__icon-wrapper']} key={index} href={url} target={target} rel="">
             <IconItem hover={true} size={20} icon={icon} />

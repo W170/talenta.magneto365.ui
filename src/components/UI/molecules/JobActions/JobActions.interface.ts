@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 export interface IJobsActions {
   /**
    * The text to be displayed on the main action button.
@@ -25,4 +27,8 @@ export interface IJobsActions {
    * Callback function to be executed when the main action button is clicked.
    */
   onHandleClick: () => void
+  /**
+   *
+   */
+  externalChild?: ReactNode
 }
