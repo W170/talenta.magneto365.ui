@@ -49,7 +49,7 @@ const JobsPage: React.FC<IJobsPage> = ({
   )
 
   const handleVacant = useCallback(
-    (id: number | string | null | undefined) => {
+    (id: number | null) => {
       if (id) {
         setJobSelected(id)
         setShowDetail(true)

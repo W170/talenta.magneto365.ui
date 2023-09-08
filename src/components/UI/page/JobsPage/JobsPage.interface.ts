@@ -50,7 +50,7 @@ export interface IJobsPage {
    */
   ChildrenDetail: FC
 
-  setJobSelected: (id: string | number | null) => void
+  setJobSelected: (id: number | null) => void
 
   jobSelected: IVacancies
   /**
