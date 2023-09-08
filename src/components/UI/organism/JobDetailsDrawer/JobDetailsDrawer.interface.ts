@@ -24,7 +24,7 @@ export interface IJobDetailsDrawer {
   /**
    * Props for the job skills card section. Can be null if no skills card is present.
    */
-  jobSkillsCardProps: IJobSkillsCard | null
+  jobSkillsCardProps: IJobSkillsCard
   /**
    * Props for the job apply card section.
    */

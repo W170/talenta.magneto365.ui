@@ -35,7 +35,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
       <div className={styles['JobBodyCardWrapper']}>
         {jobDetailsProps && <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />}
         <JobDetailCard {...jobDetailCardProps} />
-        {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
+        <JobSkillsCard {...jobSkillsCardProps} />
         <JobApplyCard {...jobApplyCardProps} />
         <JobFooterCard {...jobFooterCardProps} />
       </div>
