@@ -25,7 +25,6 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   jobFooterCardProps,
   isLoading
 }) => {
-  console.log(isLoading)
   if (isLoading) return <JobDetailsSkeleton />
   return (
     <section className={styles.JobDetailsDrawerComponent}>
