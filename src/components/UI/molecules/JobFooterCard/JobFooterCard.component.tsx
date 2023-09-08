@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconItem } from '../../atoms'
+// import { IconItem } from '../../atoms'
 import { IJobFooterCard } from './JobFooterCard.interface'
 import styles from './JobFooterCard.module.scss'
 
@@ -7,7 +7,9 @@ const Component: React.FC<IJobFooterCard> = ({
   offerFooterHeader,
   offerCompanyLogo,
   companyImgAlt,
-  offerFooterLinks
+  // offerFooterList,
+  // offerFooterIcons,
+  ParentWrapper
 }) => {
   return (
     <div className={styles['magneto-ui-job-footer-card']}>
@@ -15,14 +17,15 @@ const Component: React.FC<IJobFooterCard> = ({
       <div className={styles['magneto-ui-job-footer-card__icons']}>
         <h2>{offerFooterHeader}</h2>
         <div className={styles['magneto-ui-job-footer-card__wrapper']}>
-          {offerFooterLinks.map(
+          {/* {offerFooterLinks.map(
             ({ url, icon }, index: number) =>
               url !== null && (
                 <a key={index} href={url} target="" rel="">
                   <IconItem hover={false} icon={icon || undefined} />
                 </a>
               )
-          )}
+          )} */}
+          {ParentWrapper}
         </div>
       </div>
     </div>

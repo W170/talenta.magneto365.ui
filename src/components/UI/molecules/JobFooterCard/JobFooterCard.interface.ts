@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { IListIcon } from '../ListIconLink'
 export interface IJobFooterCard {
   /**
@@ -17,4 +18,8 @@ export interface IJobFooterCard {
    * An array of list icons representing footer links for the job listing.
    */
   offerFooterLinks: IListIcon[]
+  /**
+   *
+   */
+  ParentWrapper: ReactNode
 }
