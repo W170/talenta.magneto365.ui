@@ -33,7 +33,12 @@ import {
   Buildings2,
   GooglePlay,
   AppGallery,
-  AppStore
+  AppStore,
+  FacebookBlue,
+  WhatsAppColor,
+  LinkedInBlue,
+  TwitterBlue,
+  SMSBlue
 } from './icons.constants'
 
 import { IAvatar, IBreadcrumb, ILogoComponent, IMainButton, ISearchItem, IconProps } from '../components/UI/atoms'
@@ -430,6 +435,7 @@ export const CurriculumTabProps: IHeaderTabs = {
 
 //Jobs Details Molecule
 export const iconDetailList = [Calendar1, People, Briefcase, DollarCircle, Location]
+export const iconFooterList = [FacebookBlue, WhatsAppColor, LinkedInBlue, TwitterBlue, SMSBlue]
 
 //Jobs Actions Molecule
 export const buttonIconsList = [ArchiveAdd, Share]
