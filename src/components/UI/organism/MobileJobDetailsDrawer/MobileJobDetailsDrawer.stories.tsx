@@ -19,8 +19,7 @@ const onClick = () => {
 
 const jobCompanyLogo = {
   jobCompanyLogoProps: {
-    offerCompanyLogo: CompanyLogo,
-    alt: 'Grupo Exito Logo'
+    offerCompanyLogo: CompanyLogo as unknown as JSX.Element
   },
   jobHeaderProps: {
     offerTitle: 'Comunicador Audiovisual',

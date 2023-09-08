@@ -6,7 +6,7 @@ import { FacebookBlue, LinkedInBlue, SMSBlue, ShareBlue, TwitterBlue, WhatsAppCo
 
 const jobCompanyLogo = {
   jobCompanyLogoProps: {
-    offerCompanyLogo: CompanyLogo,
+    offerCompanyLogo: CompanyLogo as unknown as JSX.Element,
     alt: 'Grupo Exito Logo'
   },
   jobHeaderProps: {
@@ -45,14 +45,7 @@ const jobDetailCard = {
     '<h1>¡Trabaja con el Grupo Éxito!</h1><br /><p>Importante no estar en ningun otro proceso con el Grupo Éxito. Buscamos personas como tú,  que deseen trabajar en el cargo auxiliar polivalente.</p> <h1>¿Qué necesitas?</h1><br /><p>Mínimo 2 años de experiencia, ser profesional.<br /><br />Disponibilidad de tiempo para laborar del  21 de Enero 2022  al 17 de Julio de 2023 turnos de 6  horas diarias, con posibilidad  de continuar en otras temporadas o seguir en cargos fijos.<br /><br />Estar cursando los últimos grados de la carrera o haberla finalizado.</p><h1>¿Qué te ofrecemos?</h1><br /><p>Salario entre $2’000.000 a $3’000.000 aproximadamente.</p> <h1>¡Aplica y no te pierdas esta oportunidad!</h1><br /><p>Si está interesado(a) y cumple con los requisitos debe estar pendiente de su correo electrónico y número de celular personal para envío de pruebas psicotécnicas y citación a video entrevista. FAVOR actualice esta información en la plataforma si cambió de número o el correo no es suyo o no puede ingresar.</p>'
 }
 
-const jobSkillsCard = {
-  offerSkillsLabel: 'Habilidades',
-  offerSkills: [
-    { id: 1, name: 'Habilidades comerciales', score: 1 },
-    { id: 2, name: 'Capacidad de negociación', score: 2 },
-    { id: 3, name: 'Conocimiento de microfinanzas', score: 3 }
-  ]
-}
+const jobSkillsCard = null
 
 const jobApplyCard = {
   offerApplyHeader: 'Requisitos para aplicar a la vacante:',
