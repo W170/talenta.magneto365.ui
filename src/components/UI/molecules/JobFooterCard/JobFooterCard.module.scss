@@ -50,6 +50,23 @@
         width: auto;
       }
     }
+
+    > button {
+      width: 36px;
+      height: 36px;
+      background-color: v.$disabled-color-gray2;
+      padding: 0px;
+      border: none;
+      border-radius: 50%;
+      transition: all ease-in-out 0.3s;
+      &:hover {
+        background-color: v.$colors-magneto-neutral-gray-5;
+      }
+
+      > img {
+        width: auto;
+      }
+    }
   }
 
   @media screen and (max-width: (v.$screen-xl + 80px)) {
