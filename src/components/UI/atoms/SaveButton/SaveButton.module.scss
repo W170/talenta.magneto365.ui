@@ -1,0 +1,18 @@
+.magneto-ui-save-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+
+  > button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 37px;
+    height: 37px;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+  }
+}
