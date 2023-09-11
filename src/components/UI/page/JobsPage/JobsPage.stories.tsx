@@ -28,14 +28,6 @@ import { IFrequentSearch } from '@components/UI/molecules'
 import { IconItem, MainButton } from '@components/UI/atoms'
 import { Share } from '@constants/icons.constants'
 
-const onClickOne = () => {
-  console.log('1')
-}
-
-const onClickTwo = () => {
-  console.log(2)
-}
-
 const onClick = () => {
   //
 }
