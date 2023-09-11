@@ -25,6 +25,8 @@ import {
   IUnApplyWithChild
 } from '@components/UI/template'
 import { IFrequentSearch } from '@components/UI/molecules'
+import { IconItem, MainButton } from '@components/UI/atoms'
+import { Share } from '@constants/icons.constants'
 
 const onClickOne = () => {
   console.log('1')
@@ -49,11 +51,14 @@ const jobDetailsDrawer = {
     }
   },
   jobActionsProps: {
-    actionButtonText: 'Aplicar',
-    actionsButtonEvents: [onClickOne, onClickTwo],
+    externalButtonChild: <MainButton />,
+    externalChild: <IconItem icon={Share} />,
     actionsAnchorLinks: ['link1', 'link2'],
-    onHandleClick: () => {
-      //
+    saveButtonProps: {
+      isSaved: false,
+      onClick: () => {
+        //
+      }
     }
   },
   jobDetailsProps: [
@@ -83,10 +88,7 @@ const jobDetailsDrawer = {
       { offerApplyLabel: 'Ciudad de residencia:', offerApplyInfo: ' Planadas' },
       { offerApplyLabel: 'Salario:', offerApplyInfo: ` $2’100.000` }
     ],
-    offerApplyButtonText: 'Aplicar',
-    onHandlerClick: () => {
-      //
-    }
+    externalChild: <MainButton />
   },
   jobFooterCardProps: {
     offerCompanyLogo: CompanyLogo,
@@ -153,10 +155,7 @@ const mobileJobDetailsDrawer = {
       { offerApplyLabel: 'Ciudad de residencia:', offerApplyInfo: ' Planadas' },
       { offerApplyLabel: 'Salario:', offerApplyInfo: ` $2’100.000` }
     ],
-    offerApplyButtonText: 'Aplicar',
-    onHandlerClick: () => {
-      //
-    }
+    externalChild: <MainButton />
   },
   jobFooterCardProps: {
     offerCompanyLogo: CompanyLogo,

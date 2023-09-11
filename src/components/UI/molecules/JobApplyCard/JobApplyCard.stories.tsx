@@ -20,7 +20,6 @@ export const Default: Story = {
       { offerApplyLabel: 'Nivel de estudios:', offerApplyInfo: ' Especialización / Maestría' },
       { offerApplyLabel: 'Ciudad de residencia:', offerApplyInfo: ' Planadas' },
       { offerApplyLabel: 'Salario:', offerApplyInfo: ` $2’100.000` }
-    ],
-    offerApplyButtonText: 'Aplicar'
+    ]
   }
 }

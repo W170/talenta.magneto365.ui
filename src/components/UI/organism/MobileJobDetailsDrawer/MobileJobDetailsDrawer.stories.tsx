@@ -5,6 +5,8 @@ import { CompanyLogo } from '@constants/stories.constants'
 import { IJobSkillsCard } from '@components/UI/molecules'
 
 import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
+import { MainButton } from '@components/UI/atoms'
+import React from 'react'
 
 const onClick = () => {
   //
@@ -64,10 +66,7 @@ const jobApplyCard = {
     { offerApplyLabel: 'Ciudad de residencia:', offerApplyInfo: ' Planadas' },
     { offerApplyLabel: 'Salario:', offerApplyInfo: ` $2’100.000` }
   ],
-  offerApplyButtonText: 'Aplicar',
-  onHandlerClick: () => {
-    //
-  }
+  externalChild: <MainButton />
 }
 
 const jobFooterCard = {
