@@ -1,14 +1,8 @@
 import React from 'react'
-import { MainButton } from '@components/UI/atoms'
 import { IJobApplyCard, JobRequirementsElement } from './JobApplyCard.interface'
 import styles from './JobApplyCard.module.scss'
 
-const Component: React.FC<IJobApplyCard> = ({
-  offerApplyHeader,
-  offerApplyElements,
-  offerApplyButtonText,
-  onHandlerClick
-}) => {
+const Component: React.FC<IJobApplyCard> = ({ offerApplyHeader, offerApplyElements, externalChild }) => {
   return (
     <div className={styles['magneto-ui-job-apply-card']}>
       <div className={styles['magneto-ui-job-apply-card__wrapper']}>
@@ -23,7 +17,7 @@ const Component: React.FC<IJobApplyCard> = ({
               </div>
             ))}
         </div>
-        <MainButton buttonType="button" buttonText={offerApplyButtonText} onClick={onHandlerClick} />
+        {externalChild}
       </div>
     </div>
   )

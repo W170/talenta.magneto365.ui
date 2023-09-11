@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 export interface JobRequirementsElement {
   /**
    * The title or label for the job requirement.
@@ -19,11 +21,7 @@ export interface IJobApplyCard {
    */
   offerApplyElements: JobRequirementsElement[]
   /**
-   * The text to be displayed on the main apply button.
+   *
    */
-  offerApplyButtonText: string
-  /**
-   * Callback function to be executed when the main apply button is clicked.
-   */
-  onHandlerClick: () => void
+  externalChild: ReactNode
 }
