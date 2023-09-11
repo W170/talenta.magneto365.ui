@@ -12,7 +12,7 @@ import {
 import { IJobDetailsDrawer } from './JobDetailsDrawer.interface'
 import styles from './JobDetailsDrawer.module.scss'
 
-import { anchorIconList, buttonIconsList, iconDetailList, iconFooterList } from '@constants/stories.constants'
+import { anchorIconList, iconDetailList, iconFooterList } from '@constants/stories.constants'
 import { JobDetailsSkeleton } from './children'
 
 const Component: React.FC<IJobDetailsDrawer> = ({
@@ -30,7 +30,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
     <section className={styles.JobDetailsDrawerComponent}>
       <div className={styles['JobHeaderCardWrapper']}>
         <JobCompanyHeader {...jobCompanyLogoProps} />
-        <JobActions actionsButtonIcons={buttonIconsList} actionsAnchorIcons={anchorIconList} {...jobActionsProps} />
+        <JobActions actionsAnchorIcons={anchorIconList} {...jobActionsProps} />
       </div>
       <div className={styles['JobBodyCardWrapper']}>
         {jobDetailsProps && <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />}
