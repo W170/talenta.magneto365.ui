@@ -1,7 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react'
+import React from 'react'
 import { JobDetailsDrawer } from './JobDetailsDrawer.component'
 
 import { CompanyLogo } from '@constants/stories.constants'
+import { MainButton } from '../../atoms/MainButton/MainButton.component'
+import { IconItem } from '@components/UI/atoms'
+import { Share } from '@constants/icons.constants'
 
 const jobCompanyLogo = {
   jobCompanyLogoProps: {
@@ -13,21 +17,15 @@ const jobCompanyLogo = {
     offerCompanyName: 'Grupo Exito'
   }
 }
-
-const onClickOne = () => {
-  //
-}
-
-const onClickTwo = () => {
-  //
-}
-
 const jobActions = {
-  actionButtonText: 'Aplicar',
-  actionsButtonEvents: [onClickOne, onClickTwo],
+  externalButtonChild: <MainButton />,
+  externalChild: <IconItem icon={Share} />,
   actionsAnchorLinks: ['link1', 'link2'],
-  onHandleClick: () => {
-    //
+  saveButtonProps: {
+    isSaved: false,
+    onClick: () => {
+      //
+    }
   }
 }
 
@@ -61,10 +59,7 @@ const jobApplyCard = {
     { offerApplyLabel: 'Ciudad de residencia:', offerApplyInfo: ' Planadas' },
     { offerApplyLabel: 'Salario:', offerApplyInfo: ` $2’100.000` }
   ],
-  offerApplyButtonText: 'Aplicar',
-  onHandlerClick: () => {
-    //
-  }
+  externalChild: <MainButton />
 }
 
 const jobFooterCard = {
