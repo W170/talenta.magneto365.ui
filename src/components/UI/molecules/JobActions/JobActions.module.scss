@@ -7,15 +7,17 @@
   padding: 10px 20px;
   gap: 20px;
 
-  > button {
-    height: 44px;
-    padding: 12px 40px;
-    background-color: v.$color-blue-primary;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    color: v.$color-white;
+  &__button-wrapper {
+    button {
+      height: 44px;
+      padding: 12px 40px;
+      background-color: v.$color-blue-primary;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      color: v.$color-white;
+    }
   }
 
   &__buttons-wrapper {
@@ -23,26 +25,13 @@
     flex-direction: row;
     align-items: center;
     gap: 8px;
-
-    > button {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      width: 37px;
-      height: 37px;
-      padding: 0px;
-      border: none;
-      background-color: transparent;
-    }
   }
 
   &__icon-wrapper {
     display: inherit;
     justify-content: center;
     align-items: center;
-    width: 37px;
-    height: 37px;
+    padding: 12px 13px;
   }
 
   @media screen and (max-width: (v.$screen-xl + 80px)) {
@@ -51,5 +40,24 @@
 
   @media screen and (max-width: (v.$screen-hd + 74px)) {
     gap: 8px;
+  }
+}
+
+#magneto-ui__external-child {
+  button {
+    height: 44px;
+    padding: 12px 40px;
+    border-radius: 30px;
+    background-color: v.$color-blue-primary;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: v.$color-white;
+
+    :hover {
+      background-color: v.$color-blue-primary;
+      color: v.$color-white;
+    }
   }
 }

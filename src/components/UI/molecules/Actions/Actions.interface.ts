@@ -1,13 +1,7 @@
+import { ISaveButton } from '@components/UI/atoms/SaveButton'
+import { ReactNode } from 'react'
+
 export interface IActions {
-  /**
-   * An array of string icons to be displayed for each button in the actions section.
-   * (Optional property)
-   */
-  ActionsButtonIcons?: string[]
-  /**
-   * An array of callback functions to be executed when each button in the actions section is clicked.
-   */
-  ActionsButtonEvents: (() => void)[]
   /**
    * An array of string icons to be displayed for each anchor link in the actions section.
    * (Optional property)
@@ -18,17 +12,12 @@ export interface IActions {
    */
   ActionsAnchorLinks: string[]
   /**
-   * An array of string text to be displayed on each button in the actions section.
-   * (Optional property)
-   */
-  ActionButtonText?: string[]
-  /**
-   * An array of string text to be displayed on each anchor link in the actions section.
+   * An array of string text for each anchor link in the actions section.
    * (Optional property)
    */
   ActionAnchorText?: string[]
   /**
-   * Specifies whether the actions section is being displayed on a mobile device.
+   * Specifies whether the UI is in mobile mode or not.
    * (Optional property)
    */
   isMobile?: boolean
@@ -37,11 +26,15 @@ export interface IActions {
    */
   ActionsHeader: string
   /**
-   * The text to be displayed on the main button of the actions section.
+   * Content to be displayed as an external button.
    */
-  ButtonText: string
+  externalButtonChild: ReactNode
   /**
-   * Callback function to be executed when the main button in the actions section is clicked.
+   * Content to be displayed as an external child element.
    */
-  onHandleClick: () => void
+  externalChild: ReactNode
+  /**
+   * Props for the save button component.
+   */
+  saveButtonProps: ISaveButton
 }

@@ -1,10 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react'
+import React from 'react'
 
 import { MobileJobDetailsActionsBar } from './MobileJobDetailsActionsBar.component'
-
-const onClick = () => {
-  //
-}
+import { IconItem, MainButton } from '@components/UI/atoms'
+import { Share } from '@constants/icons.constants'
 
 const meta: Meta<typeof MobileJobDetailsActionsBar> = {
   title: 'Organism/Mobile Job Details Actions Bar',
@@ -18,16 +17,21 @@ type Story = StoryObj<typeof MobileJobDetailsActionsBar>
 
 export const Default: Story = {
   args: {
-    mobileActionButtonText: 'Aplicar',
-    onApplyClick: onClick,
+    externalButtonChild: <MainButton buttonText="Aplicar" />,
     actionsProps: {
-      ActionsButtonEvents: [],
-      ActionButtonText: ['Guardar vacante', 'Compartir'],
       ActionsAnchorLinks: ['link1', 'link2'],
       ActionAnchorText: ['Abrir en nueva pestana', 'Ver empresa'],
       ActionsHeader: 'Comunicador audiovisual',
-      ButtonText: 'Aplicar',
-      onHandleClick: onClick
+      externalChild: <IconItem icon={Share} />,
+      saveButtonProps: {
+        isAuthenticated: true,
+        buttonText: 'Guardar Vacante',
+        isSaved: true,
+        onClick: () => {
+          //
+        }
+      },
+      externalButtonChild: <MainButton buttonText="Aplicar" />
     }
   }
 }

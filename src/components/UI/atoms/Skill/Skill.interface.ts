@@ -1,14 +1,14 @@
-type SkillLevel = 1 | 2 | 3 | 4
-
 export interface ISkill {
-  id: number | string
   /**
-   * The text representing the skill's name or description.
+   * The unique identifier for the skill, can be a number or null.
    */
-  name: string
+  id: number | null
   /**
-   * The level of proficiency for the skill, which can be one of the predefined types:
-   * 'Basic: 1', 'Intermediate: 2', 'Advanced: 3', or 'Professional: 4'.
+   * The name or description of the skill, can be a string or null.
    */
-  score: SkillLevel
+  name: string | null
+  /**
+   * The score or proficiency level of the skill, can be a number or null.
+   */
+  score: number | null
 }

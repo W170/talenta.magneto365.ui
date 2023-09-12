@@ -12,7 +12,7 @@ import {
 import { MobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 
 import { IMobileJobDetailsDrawer } from './MobileJobDetailsDrawer.interface'
-import { iconDetailList } from '@constants/stories.constants'
+import { iconDetailList, iconFooterList } from '@constants/stories.constants'
 
 const Component: React.FC<IMobileJobDetailsDrawer> = ({
   jobCompanyLogoProps,
@@ -36,15 +36,15 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
     <Drawer isOpen={isOpen} isFull={true} onClose={handleClose} direction="right" customPadding={0} hideButton isMobile>
       <MobileJobDetailsHeader returnText={jobDetailsHeaderText} onClick={handleClose} />
       <JobCompanyHeader {...jobCompanyLogoProps} />
-      <JobDetails iconList={iconDetailList} detailsTextList={jobDetailsProps} />
-      {jobDetailCard.map(({ jobDetailCardText }, index: number) => (
+      <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />
+      {jobDetailCard.map(({ offerDescription }, index: number) => (
         <React.Fragment key={index}>
-          <JobDetailCard jobDetailCardText={jobDetailCardText} />
+          <JobDetailCard offerDescription={offerDescription} />
         </React.Fragment>
       ))}
-      <JobSkillsCard {...jobSkillsCardProps} />
+      {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
       <JobApplyCard {...jobApplyCardProps} />
-      <JobFooterCard {...jobFooterCardProps} />
+      <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
       <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} />
     </Drawer>
   )

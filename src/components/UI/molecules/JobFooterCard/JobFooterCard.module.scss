@@ -8,6 +8,12 @@
   padding: 20px 20px 120px 20px;
   gap: 10px;
 
+  > img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+
   h2 {
     font-size: 14px;
     font-style: normal;
@@ -44,6 +50,23 @@
         width: auto;
       }
     }
+
+    > button {
+      width: 36px;
+      height: 36px;
+      background-color: v.$disabled-color-gray2;
+      padding: 0px;
+      border: none;
+      border-radius: 50%;
+      transition: all ease-in-out 0.3s;
+      &:hover {
+        background-color: v.$colors-magneto-neutral-gray-5;
+      }
+
+      > img {
+        width: auto;
+      }
+    }
   }
 
   @media screen and (max-width: (v.$screen-xl + 80px)) {
@@ -56,5 +79,24 @@
       flex-wrap: wrap;
       align-items: flex-start;
     }
+  }
+}
+
+.magneto-ui__external-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: v.$disabled-color-gray2;
+  border-radius: 50%;
+  transition: all ease-in-out 0.3s;
+
+  &:hover {
+    background-color: v.$colors-magneto-neutral-gray-5;
+  }
+
+  button {
+    padding: 0;
   }
 }

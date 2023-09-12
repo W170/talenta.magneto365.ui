@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import { IconItem, MainButton } from '@components/UI/atoms'
+import { IconItem } from '@components/UI/atoms'
 import { Actions, MobileDrawer } from '@components/UI/molecules'
 
 import { IMobileJobDetailsActionsBar } from './MobileJobDetailsActionsBar.interface'
 import styles from './MobileJobDetailsActionsBar.module.scss'
 
-import { anchorIconList, buttonIconsList } from '@constants/stories.constants'
+import { anchorIconList } from '@constants/stories.constants'
 import { More } from '../../../../constants/icons.constants'
 
-const Component: React.FC<IMobileJobDetailsActionsBar> = ({ mobileActionButtonText, actionsProps, onApplyClick }) => {
+const Component: React.FC<IMobileJobDetailsActionsBar> = ({ externalButtonChild, actionsProps }) => {
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
 
   const onOpenClick = () => {
@@ -17,14 +17,14 @@ const Component: React.FC<IMobileJobDetailsActionsBar> = ({ mobileActionButtonTe
 
   return (
     <div className={styles.MobileJobDetailsActionsBarComponent}>
-      <MainButton buttonType="button" buttonText={mobileActionButtonText} onClick={onApplyClick} buttonSize="full" />
+      <div id={styles['magneto-ui__external-child']}>{externalButtonChild}</div>
       <div className={styles['DrawerButtonWrapper']}>
         <button type="button" onClick={onOpenClick}>
           <IconItem icon={More} hover={false} />
         </button>
       </div>
       <MobileDrawer isOpen={toggleMobileDrawer} onClose={() => setToggleMobileDrawer(!toggleMobileDrawer)}>
-        <Actions ActionsButtonIcons={buttonIconsList} ActionsAnchorIcons={anchorIconList} {...actionsProps} />
+        <Actions ActionsAnchorIcons={anchorIconList} {...actionsProps} />
       </MobileDrawer>
     </div>
   )
