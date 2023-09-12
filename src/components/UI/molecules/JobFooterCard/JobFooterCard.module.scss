@@ -81,3 +81,22 @@
     }
   }
 }
+
+.my-custom-button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: v.$disabled-color-gray2;
+  border-radius: 50%;
+  transition: all ease-in-out 0.3s;
+
+  > div {
+    padding: 0px;
+  }
+
+  &:hover {
+    background-color: v.$colors-magneto-neutral-gray-5;
+  }
+}

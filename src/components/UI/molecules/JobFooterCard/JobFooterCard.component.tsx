@@ -31,7 +31,7 @@ const Component: React.FC<IJobFooterCard> = ({
                 </a>
               )
           )}
-          {externalChild}
+          <div className={styles['my-custom-button-wrapper']}>{externalChild}</div>
         </div>
       </div>
     </div>
