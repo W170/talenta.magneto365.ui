@@ -22,12 +22,13 @@ const JobsPage: React.FC<IJobsPage> = ({
   ChildrenDetail,
   setJobSelected,
   jobSelected,
-  isLoading
+  isLoading,
+  device
 }) => {
   // const responsiveOpen = useMediaQuery(true, { lg: false })
 
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
-  const [showDetail, setShowDetail] = useState(true)
+  const [showDetail, setShowDetail] = useState(device === 'desktop')
 
   const onClose = useCallback(() => {
     setShowDetail(false)
