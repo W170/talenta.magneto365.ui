@@ -11,7 +11,7 @@ export interface IJobsPage {
    * Props for the filter bottom header section.
    * This section typically contains filter options for job listings.
    */
-  sortBarProps: ISortBar
+  sortBarProps: Omit<ISortBar, 'isFiltersOpen' | 'setIsFiltersOpen'>
   /**
    * An array of job card props to display multiple job listings.
    * Each job card contains information about a single job listing.
@@ -35,7 +35,7 @@ export interface IJobsPage {
    * Props for the filters.
    *
    */
-  sideFilterProps: ISideFilter
+  sideFilterProps: Omit<ISideFilter, 'isFiltersOpen' | 'setIsFiltersOpen'>
   /**
    * Props for the footer
    */
