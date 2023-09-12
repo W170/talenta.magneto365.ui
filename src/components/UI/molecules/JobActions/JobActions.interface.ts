@@ -12,15 +12,15 @@ export interface IJobsActions {
    */
   actionsAnchorLinks: string[]
   /**
-   *
+   * Content to be displayed as an external button.
    */
   externalButtonChild: ReactNode
   /**
-   *
+   * Content to be displayed as an external child element.
    */
   externalChild: ReactNode
   /**
-   *
+   * Props for the save button component.
    */
   saveButtonProps: ISaveButton
 }
