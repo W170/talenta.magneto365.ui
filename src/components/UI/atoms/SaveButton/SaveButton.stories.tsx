@@ -13,5 +13,7 @@ export default meta
 type Story = StoryObj<typeof SaveButton>
 
 export const Default: Story = {
-  args: {}
+  args: {
+    buttonText: 'Guardar vacante'
+  }
 }
