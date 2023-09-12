@@ -7,7 +7,8 @@ const Component: React.FC<IBreadcrumb> = ({
   breadcrumbCustomText,
   baseUrl,
   queryParams,
-  haveRedirect = true
+  haveRedirect = true,
+  detailTitle = ''
 }) => {
   const breadcrumbs = breadcrumbCustomText ? breadcrumbCustomText : breadcrumbText || ''
   const breadcrumbSplitText = breadcrumbs?.split('/')
@@ -43,7 +44,9 @@ const Component: React.FC<IBreadcrumb> = ({
               </a>
             )
         )}
-        <p className={styles['magneto-ui-bc-active']}>/ {breadcrumbSplitText[lastIndexBC]}</p>
+        <p className={styles['magneto-ui-bc-active']}>
+          / {detailTitle !== '' ? detailTitle : breadcrumbSplitText[lastIndexBC]}
+        </p>
       </>
     ) : (
       <>
@@ -54,7 +57,7 @@ const Component: React.FC<IBreadcrumb> = ({
         ))}
       </>
     )
-  }, [breadcrumbSplitText, haveRedirect, lastIndexBC, urls, queryParams])
+  }, [breadcrumbSplitText, haveRedirect, lastIndexBC, urls, queryParams, detailTitle])
 
   return <div className={styles.breadcrumbComponent}>{breadCrumbsRender}</div>
 }
