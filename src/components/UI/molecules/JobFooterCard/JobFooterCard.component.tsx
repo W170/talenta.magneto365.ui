@@ -31,7 +31,7 @@ const Component: React.FC<IJobFooterCard> = ({
                 </a>
               )
           )}
-          <div className={styles['my-custom-button-wrapper']}>{externalChild}</div>
+          <div className={styles['magneto-ui__external-child']}>{externalChild}</div>
         </div>
       </div>
     </div>

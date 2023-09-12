@@ -24,7 +24,7 @@ const Component: React.FC<IActions> = ({
 
   return (
     <div className={styles['magneto-ui-actions']}>
-      <div id={styles['my-custom-button-wrapper']}> {externalButtonChild}</div>
+      <div id={styles['magneto-ui__external-child']}> {externalButtonChild}</div>
       <SaveButton {...saveButtonProps} />
       {externalChild}
       {actionsLinkList?.map(({ url, text, target, Icon }, index: number) => (

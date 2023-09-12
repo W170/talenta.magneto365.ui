@@ -21,7 +21,7 @@ const Component: React.FC<IJobsActions> = ({
 
   return (
     <div className={styles['magneto-ui-job-actions']}>
-      <div id={styles['my-custom-button-wrapper']}>{externalButtonChild}</div>
+      <div id={styles['magneto-ui__external-child']}>{externalButtonChild}</div>
       <div className={styles['magneto-ui-job-actions__buttons-wrapper']}>
         <SaveButton {...saveButtonProps} />
         {externalChild}

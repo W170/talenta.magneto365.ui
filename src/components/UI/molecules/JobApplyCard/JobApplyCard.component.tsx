@@ -17,7 +17,7 @@ const Component: React.FC<IJobApplyCard> = ({ offerApplyHeader, offerApplyElemen
               </div>
             ))}
         </div>
-        <div id={styles['my-custom-button-wrapper']}>{externalChild}</div>
+        <div id={styles['magneto-ui__external-child']}>{externalChild}</div>
       </div>
     </div>
   )

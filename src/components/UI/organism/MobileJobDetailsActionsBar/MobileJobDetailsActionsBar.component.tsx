@@ -17,7 +17,7 @@ const Component: React.FC<IMobileJobDetailsActionsBar> = ({ externalButtonChild,
 
   return (
     <div className={styles.MobileJobDetailsActionsBarComponent}>
-      <div id={styles['my-custom-button-wrapper']}>{externalButtonChild}</div>
+      <div id={styles['magneto-ui__external-child']}>{externalButtonChild}</div>
       <div className={styles['DrawerButtonWrapper']}>
         <button type="button" onClick={onOpenClick}>
           <IconItem icon={More} hover={false} />
