@@ -83,3 +83,27 @@
     }
   }
 }
+
+#my-custom-button-wrapper {
+  button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 164px;
+    height: 44px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    background: v.$color-blue-primary;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: v.$color-white;
+
+    :hover {
+      background: v.$color-blue-primary;
+      color: v.$color-white;
+    }
+  }
+}

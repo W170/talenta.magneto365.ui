@@ -17,7 +17,7 @@ const Component: React.FC<IJobApplyCard> = ({ offerApplyHeader, offerApplyElemen
               </div>
             ))}
         </div>
-        {externalChild}
+        <div id={styles['my-custom-button-wrapper']}>{externalChild}</div>
       </div>
     </div>
   )
