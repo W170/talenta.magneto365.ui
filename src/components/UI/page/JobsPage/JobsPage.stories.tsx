@@ -25,12 +25,8 @@ import {
   IUnApplyWithChild
 } from '@components/UI/template'
 import { IFrequentSearch } from '@components/UI/molecules'
-import { IconItem, MainButton } from '@components/UI/atoms'
-import { Share } from '@constants/icons.constants'
-
-const onClick = () => {
-  //
-}
+import { IconItem, MainButton, ShareButton } from '@components/UI/atoms'
+import { Buildings2, Export3, Share } from '@constants/icons.constants'
 
 const jobDetailsDrawer = {
   jobCompanyLogoProps: {
@@ -43,15 +39,17 @@ const jobDetailsDrawer = {
     }
   },
   jobActionsProps: {
-    externalButtonChild: <MainButton />,
-    externalChild: <IconItem icon={Share} />,
-    actionsAnchorLinks: ['link1', 'link2'],
+    externalButtonChild: <MainButton buttonText="Aplicar" />,
     saveButtonProps: {
+      isAuthenticated: true,
       isSaved: false,
       onClick: () => {
         //
       }
-    }
+    },
+    externalChild: <ShareButton buttonTitle="shareButton" />,
+    actionsAnchorIcons: [Export3, Buildings2],
+    actionsAnchorLinks: ['link1', 'link2']
   },
   jobDetailsProps: [
     'Hace 10 días',
@@ -161,16 +159,21 @@ const mobileJobDetailsDrawer = {
     ]
   },
   mobileJobDetailsBarProps: {
-    mobileActionButtonText: 'Aplicar',
-    onApplyClick: onClick,
+    externalButtonChild: <MainButton buttonText="Aplicar" />,
     actionsProps: {
-      ActionsButtonEvents: [],
-      ActionButtonText: ['Guardar vacante', 'Compartir'],
       ActionsAnchorLinks: ['link1', 'link2'],
       ActionAnchorText: ['Abrir en nueva pestana', 'Ver empresa'],
       ActionsHeader: 'Comunicador audiovisual',
-      ButtonText: 'Aplicar',
-      onHandleClick: onClick
+      externalChild: <IconItem icon={Share} />,
+      saveButtonProps: {
+        isAuthenticated: true,
+        buttonText: 'Guardar Vacante',
+        isSaved: true,
+        onClick: () => {
+          //
+        }
+      },
+      externalButtonChild: <MainButton buttonText="Aplicar" />
     }
   }
 }

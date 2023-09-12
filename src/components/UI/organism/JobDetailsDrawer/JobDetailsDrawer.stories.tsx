@@ -4,8 +4,8 @@ import { JobDetailsDrawer } from './JobDetailsDrawer.component'
 
 import { CompanyLogo } from '@constants/stories.constants'
 import { MainButton } from '../../atoms/MainButton/MainButton.component'
-import { IconItem } from '@components/UI/atoms'
-import { Share } from '@constants/icons.constants'
+import { ShareButton } from '@components/UI/atoms'
+import { Buildings2, Export3 } from '@constants/icons.constants'
 
 const jobCompanyLogo = {
   jobCompanyLogoProps: {
@@ -18,15 +18,17 @@ const jobCompanyLogo = {
   }
 }
 const jobActions = {
-  externalButtonChild: <MainButton />,
-  externalChild: <IconItem icon={Share} />,
-  actionsAnchorLinks: ['link1', 'link2'],
+  externalButtonChild: <MainButton buttonText="Aplicar" />,
   saveButtonProps: {
+    isAuthenticated: true,
     isSaved: false,
     onClick: () => {
       //
     }
-  }
+  },
+  externalChild: <ShareButton buttonTitle="shareButton" />,
+  actionsAnchorIcons: [Export3, Buildings2],
+  actionsAnchorLinks: ['link1', 'link2']
 }
 
 const jobDetails = [
@@ -59,7 +61,7 @@ const jobApplyCard = {
     { offerApplyLabel: 'Ciudad de residencia:', offerApplyInfo: ' Planadas' },
     { offerApplyLabel: 'Salario:', offerApplyInfo: ` $2’100.000` }
   ],
-  externalChild: <MainButton />
+  externalChild: <MainButton buttonText="Aplicar" />
 }
 
 const jobFooterCard = {
@@ -71,7 +73,8 @@ const jobFooterCard = {
     { href: '#', ariaLabel: 'linkedin' },
     { href: '#', ariaLabel: 'twitter' },
     { href: '#', ariaLabel: 'sms' }
-  ]
+  ],
+  externalChild: <ShareButton buttonTitle="share" />
 }
 
 const meta: Meta<typeof JobDetailsDrawer> = {

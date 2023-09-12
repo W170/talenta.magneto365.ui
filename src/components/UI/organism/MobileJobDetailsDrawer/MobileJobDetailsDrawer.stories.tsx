@@ -3,14 +3,9 @@ import { StoryObj, Meta } from '@storybook/react'
 import { MobileJobDetailsDrawer } from './MobileJobDetailsDrawer.component'
 import { CompanyLogo } from '@constants/stories.constants'
 import { IJobSkillsCard } from '@components/UI/molecules'
-
-import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
-import { MainButton } from '@components/UI/atoms'
+import { IconItem, MainButton } from '@components/UI/atoms'
 import React from 'react'
-
-const onClick = () => {
-  //
-}
+import { Share } from '@constants/icons.constants'
 
 const jobCompanyLogo = {
   jobCompanyLogoProps: {
@@ -81,17 +76,22 @@ const jobFooterCard = {
   ]
 }
 
-const MobileJobDetailsActionsBar: IMobileJobDetailsActionsBar = {
-  mobileActionButtonText: 'Aplicar',
-  onApplyClick: onClick,
+const MobileJobDetailsActionsBar = {
+  externalButtonChild: <MainButton buttonText="Aplicar" />,
   actionsProps: {
-    ActionsButtonEvents: [],
-    ActionButtonText: ['Guardar vacante', 'Compartir'],
     ActionsAnchorLinks: ['link1', 'link2'],
     ActionAnchorText: ['Abrir en nueva pestana', 'Ver empresa'],
     ActionsHeader: 'Comunicador audiovisual',
-    ButtonText: 'Aplicar',
-    onHandleClick: onClick
+    externalChild: <IconItem icon={Share} />,
+    saveButtonProps: {
+      isAuthenticated: true,
+      buttonText: 'Guardar Vacante',
+      isSaved: true,
+      onClick: () => {
+        //
+      }
+    },
+    externalButtonChild: <MainButton buttonText="Aplicar" />
   }
 }
 
