@@ -28,7 +28,7 @@ export interface IJobFooterCard {
    */
   offerFooterList: IFooterList[]
   /**
-   *
+   * Content to be displayed as an external child element.
    */
   externalChild?: ReactNode
   /**

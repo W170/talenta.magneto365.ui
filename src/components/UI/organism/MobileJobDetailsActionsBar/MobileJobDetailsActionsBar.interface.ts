@@ -8,7 +8,7 @@ export interface IMobileJobDetailsActionsBar {
    */
   actionsProps: IActions
   /**
-   *
+   * Content to be displayed as an external button.
    */
   externalButtonChild: ReactNode
 }

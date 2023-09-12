@@ -34,7 +34,8 @@ export interface IJobDetailsDrawer {
    */
   jobFooterCardProps: IJobFooterCard
   /**
-   *
+   * Specifies whether the component is in a loading state.
+   * (Optional property)
    */
   isLoading?: boolean
 }

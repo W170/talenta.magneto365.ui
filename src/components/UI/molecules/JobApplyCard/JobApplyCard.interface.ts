@@ -1,5 +1,4 @@
 import { ReactNode } from 'react'
-
 export interface JobRequirementsElement {
   /**
    * The title or label for the job requirement.
@@ -7,6 +6,7 @@ export interface JobRequirementsElement {
   offerApplyLabel: string
   /**
    * Additional information or details about the job requirement.
+   * This can be a string, null, or undefined.
    */
   offerApplyInfo: string | null | undefined
 }
@@ -21,7 +21,7 @@ export interface IJobApplyCard {
    */
   offerApplyElements: JobRequirementsElement[]
   /**
-   *
+   * Content to be displayed as an external child element.
    */
   externalChild: ReactNode
 }
