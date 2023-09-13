@@ -4,8 +4,6 @@ import { IJobDetailsDrawer, IMobileJobDetailsDrawer } from '@components/UI/organ
 import { ISortBar } from '@components/UI/template/SortBar/SortBar.interface'
 import { ISideFilter } from '@components/UI/template'
 import { IFooter } from '@components/UI/template/Footer/Footer.interface'
-import { FC } from 'react'
-
 export interface IJobsPage {
   /**
    * Props for the filter bottom header section.
@@ -21,12 +19,12 @@ export interface IJobsPage {
    * Props for the job details drawer component.
    * The job details drawer shows detailed information about a selected job listing.
    */
-  jobDetailsDrawerProps?: IJobDetailsDrawer
+  jobDetailsDrawerProps: IJobDetailsDrawer
   /**
    * Props for the mobile version of the job details drawer component.
    * This version is displayed on mobile devices and provides job details for selected listings.
    */
-  MobileJobDetailsDrawerProps?: IMobileJobDetailsDrawer
+  MobileJobDetailsDrawerProps: IMobileJobDetailsDrawer
   /**
    *
    */
@@ -44,14 +42,7 @@ export interface IJobsPage {
    * Props for the paginator
    */
   paginationProps: IPaginationProps
-  // Temporal types
-  /**
-   * Temporal children whit the vacant selected details
-   */
-  ChildrenDetail: FC
-
   setJobSelected: (id: number | null) => void
-
   jobSelected: IVacancies
   /**
    * this property should active loading state in the components

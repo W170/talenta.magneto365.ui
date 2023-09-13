@@ -1,9 +1,9 @@
 import React, { Fragment, useCallback, useState } from 'react'
 import FilterContainerMenu from '@components/UI/molecules/FilterContainerMenu/FilterContainerMenu.component'
 import { JobDetailContainer, JobCard, FrequentSearch, Pagination } from '@components/UI/molecules'
-// import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
+import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
 import { SortBar, Footer, SideFilter } from '@components/UI/template'
-// import { useMediaQuery } from '@components/hooks'
+import { useMediaQuery } from '@components/hooks'
 
 import { IJobsPage } from './JobsPage.interface'
 import style from './JobsPage.module.scss'
@@ -11,21 +11,18 @@ import style from './JobsPage.module.scss'
 import { classMUI } from '../../../../constants/stories.constants'
 
 const JobsPage: React.FC<IJobsPage> = ({
-  // jobDetailsDrawerProps,
-  // MobileJobDetailsDrawerProps,
+  jobDetailsDrawerProps,
+  MobileJobDetailsDrawerProps,
   sortBarProps,
   sideFilterProps,
   frequentSearchProps,
   vacantProps,
   footerProps,
   paginationProps,
-  ChildrenDetail,
   setJobSelected,
   jobSelected,
   isLoading
 }) => {
-  // const responsiveOpen = useMediaQuery(true, { lg: false })
-
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [showDetail, setShowDetail] = useState(true)
 
@@ -34,18 +31,13 @@ const JobsPage: React.FC<IJobsPage> = ({
     setJobSelected(null)
   }, [setJobSelected])
 
-  // const JobDetailsDrawerComponent = useMediaQuery(
-  //   <JobDetailContainer onClose={onClose} isOpen={showDetail}>
-  //     <JobDetailsDrawer {...jobDetailsDrawerProps} />
-  //   </JobDetailContainer>,
-  //   {
-  //     lg: <MobileJobDetailsDrawer {...MobileJobDetailsDrawerProps} onClose={onClose} isOpen={showDetail} />
-  //   }
-  // )
-  const JobDetailsDrawerComponent = (
+  const JobDetailsDrawerComponent = useMediaQuery(
     <JobDetailContainer onClose={onClose} isOpen={showDetail}>
-      <ChildrenDetail />
-    </JobDetailContainer>
+      <JobDetailsDrawer {...jobDetailsDrawerProps} isLoading={isLoading} />
+    </JobDetailContainer>,
+    {
+      lg: <MobileJobDetailsDrawer {...MobileJobDetailsDrawerProps} onClose={onClose} isOpen={showDetail} />
+    }
   )
 
   const handleVacant = useCallback(
