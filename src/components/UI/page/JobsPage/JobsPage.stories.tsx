@@ -237,7 +237,7 @@ const meta: Meta<typeof JobsPage> = {
     sortBarProps,
     vacantProps: vacants,
     jobDetailsDrawerProps: jobDetailsDrawer,
-    MobileJobDetailsDrawerProps: mobileJobDetailsDrawer,
+    mobileJobDetailsDrawerProps: mobileJobDetailsDrawer,
     frequentSearchProps: frequentSearch,
     sideFilterProps: sideFilterProps as ISideFilter,
     footerProps,
