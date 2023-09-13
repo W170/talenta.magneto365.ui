@@ -7,13 +7,10 @@
   justify-content: center;
   align-items: flex-start;
   width: 100%;
+  height: 113px;
   padding: 5px 20px;
   background-color: v.$color-white;
   border-bottom: 1px solid v.$color-tertiary-gray;
-  height: 60px;
-  @media (min-width: v.$screen-lg) {
-    height: 113px;
-  }
 
   .magneto-ui-first-row {
     display: inherit;

@@ -7,14 +7,10 @@
   justify-content: center;
   align-items: flex-start;
   width: 100%;
+  height: 89px;
   padding: 10px 20px;
   background-color: v.$color-white;
   border-bottom: 1px solid v.$color-tertiary-gray;
-
-  height: 60px;
-  @media (min-width: v.$screen-lg) {
-    height: 89px;
-  }
 
   &--second-row {
     display: flex;
