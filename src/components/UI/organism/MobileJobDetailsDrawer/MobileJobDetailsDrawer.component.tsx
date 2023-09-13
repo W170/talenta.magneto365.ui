@@ -18,7 +18,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   jobCompanyLogoProps,
   jobDetailsHeaderText,
   jobDetailsProps,
-  jobDetailCard,
+  jobDetailCardProps,
   jobSkillsCardProps,
   jobApplyCardProps,
   jobFooterCardProps,
@@ -36,12 +36,8 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
     <Drawer isOpen={isOpen} isFull={true} onClose={handleClose} direction="right" customPadding={0} hideButton isMobile>
       <MobileJobDetailsHeader returnText={jobDetailsHeaderText} onClick={handleClose} />
       <JobCompanyHeader {...jobCompanyLogoProps} />
-      <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />
-      {jobDetailCard.map(({ offerDescription }, index: number) => (
-        <React.Fragment key={index}>
-          <JobDetailCard offerDescription={offerDescription} />
-        </React.Fragment>
-      ))}
+      {jobDetailsProps && <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />}
+      <JobDetailCard {...jobDetailCardProps} />
       {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
       <JobApplyCard {...jobApplyCardProps} />
       <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />

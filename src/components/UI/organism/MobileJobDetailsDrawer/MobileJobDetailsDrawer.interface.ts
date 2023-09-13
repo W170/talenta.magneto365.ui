@@ -23,7 +23,7 @@ export interface IMobileJobDetailsDrawer {
   /**
    * Array of job detail cards to display, each card can contain different information.
    */
-  jobDetailCard: IJobDetailCard
+  jobDetailCardProps: IJobDetailCard
   /**
    * Props for the job skills card section.
    */
