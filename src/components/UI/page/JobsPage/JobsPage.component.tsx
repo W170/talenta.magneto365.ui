@@ -12,7 +12,7 @@ import { classMUI } from '../../../../constants/stories.constants'
 
 const JobsPage: React.FC<IJobsPage> = ({
   jobDetailsDrawerProps,
-  MobileJobDetailsDrawerProps,
+  mobileJobDetailsDrawerProps,
   sortBarProps,
   sideFilterProps,
   frequentSearchProps,
@@ -36,7 +36,7 @@ const JobsPage: React.FC<IJobsPage> = ({
       <JobDetailsDrawer {...jobDetailsDrawerProps} isLoading={isLoading} />
     </JobDetailContainer>,
     {
-      lg: <MobileJobDetailsDrawer {...MobileJobDetailsDrawerProps} onClose={onClose} isOpen={showDetail} />
+      lg: <MobileJobDetailsDrawer {...mobileJobDetailsDrawerProps} onClose={onClose} isOpen={showDetail} />
     }
   )
 

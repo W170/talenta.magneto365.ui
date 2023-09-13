@@ -24,7 +24,7 @@ export interface IJobsPage {
    * Props for the mobile version of the job details drawer component.
    * This version is displayed on mobile devices and provides job details for selected listings.
    */
-  MobileJobDetailsDrawerProps: IMobileJobDetailsDrawer
+  mobileJobDetailsDrawerProps: IMobileJobDetailsDrawer
   /**
    *
    */
