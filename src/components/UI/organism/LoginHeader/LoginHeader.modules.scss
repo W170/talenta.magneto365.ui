@@ -11,7 +11,7 @@
   background-color: v.$color-white;
   border-bottom: 1px solid v.$color-tertiary-gray;
   height: 60px;
-  @media (min-width: v.$screen-md) {
+  @media (min-width: v.$screen-lg) {
     height: 89px;
   }
 
