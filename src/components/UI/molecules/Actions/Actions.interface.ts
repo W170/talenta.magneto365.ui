@@ -1,3 +1,4 @@
+import { IShareButton } from '@components/UI/atoms'
 import { ISaveButton } from '@components/UI/atoms/SaveButton'
 import { ReactNode } from 'react'
 
@@ -30,11 +31,11 @@ export interface IActions {
    */
   externalButtonChild: ReactNode
   /**
-   * Content to be displayed as an external child element.
-   */
-  externalChild: ReactNode
-  /**
    * Props for the save button component.
    */
   saveButtonProps: ISaveButton
+  /**
+   * Props for the share button component.
+   */
+  shareButtonProps: IShareButton
 }

@@ -1,10 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react'
-
+import React from 'react'
+import { MainButton } from '@components/UI/atoms'
 import { Actions } from './Actions.component'
 import { Buildings2, Export3 } from '@constants/icons.constants'
-import { MainButton } from '@components/UI/atoms'
-import React from 'react'
-import { ShareButton } from '@components/UI/atoms/ShareButton'
 
 const meta: Meta<typeof Actions> = {
   title: 'Molecules/Actions',
@@ -22,7 +20,6 @@ export const Default: Story = {
     ActionsAnchorIcons: [Export3, Buildings2],
     ActionsAnchorLinks: ['link1', 'link2'],
     ActionAnchorText: ['Abrir en nueva pestana', 'Ver empresa'],
-    externalChild: <ShareButton buttonTitle="share" buttonText="Compartir" />,
     saveButtonProps: {
       isAuthenticated: true,
       buttonText: 'Guardar Vacante',
@@ -30,6 +27,10 @@ export const Default: Story = {
       onClick: () => {
         //
       }
+    },
+    shareButtonProps: {
+      buttonTitle: 'share',
+      buttonText: 'Compartir'
     },
     externalButtonChild: <MainButton buttonText="Aplicar" />
   }

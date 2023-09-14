@@ -1,8 +1,7 @@
 import React from 'react'
-import { IconItem } from '@components/UI/atoms'
+import { IconItem, SaveButton, ShareButton } from '@components/UI/atoms'
 import { IActions } from './Actions.interface'
 import styles from './Actions.module.scss'
-import { SaveButton } from '@components/UI/atoms/SaveButton'
 
 const Component: React.FC<IActions> = ({
   ActionsAnchorIcons,
@@ -10,8 +9,8 @@ const Component: React.FC<IActions> = ({
   ActionAnchorText,
   ActionsHeader,
   externalButtonChild,
-  externalChild,
-  saveButtonProps
+  saveButtonProps,
+  shareButtonProps
 }) => {
   const actionsAnchorTarget = ['_blank', '_self']
 
@@ -24,12 +23,12 @@ const Component: React.FC<IActions> = ({
 
   return (
     <div className={styles['magneto-ui-actions']}>
-      <div id={styles['magneto-ui__external-child']}> {externalButtonChild}</div>
+      <div id={styles['magneto-ui__external-child']}> {externalButtonChild} </div>
       <SaveButton {...saveButtonProps} />
-      {externalChild}
+      <ShareButton {...shareButtonProps} />
       {actionsLinkList?.map(({ url, text, target, Icon }, index: number) => (
         <a className={styles['magneto-ui-actions__link']} key={index} href={url} target={target} rel="">
-          <IconItem hover={true} size={20} icon={Icon} />
+          <IconItem hover={false} size={20} icon={Icon} />
           <p key={index}>{text}</p>
         </a>
       ))}
