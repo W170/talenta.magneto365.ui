@@ -12,7 +12,8 @@ import {
 import { IJobDetailsDrawer } from './JobDetailsDrawer.interface'
 import styles from './JobDetailsDrawer.module.scss'
 
-import { anchorIconList, buttonIconsList, iconDetailList } from '@constants/stories.constants'
+import { anchorIconList, iconDetailList, iconFooterList } from '@constants/stories.constants'
+import { JobDetailsSkeleton } from './children'
 
 const Component: React.FC<IJobDetailsDrawer> = ({
   jobCompanyLogoProps,
@@ -21,20 +22,22 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   jobDetailCardProps,
   jobSkillsCardProps,
   jobApplyCardProps,
-  jobFooterCardProps
+  jobFooterCardProps,
+  isLoading
 }) => {
+  if (isLoading) return <JobDetailsSkeleton />
   return (
     <section className={styles.JobDetailsDrawerComponent}>
       <div className={styles['JobHeaderCardWrapper']}>
         <JobCompanyHeader {...jobCompanyLogoProps} />
-        <JobActions actionsButtonIcons={buttonIconsList} actionsAnchorIcons={anchorIconList} {...jobActionsProps} />
+        <JobActions actionsAnchorIcons={anchorIconList} {...jobActionsProps} />
       </div>
       <div className={styles['JobBodyCardWrapper']}>
-        <JobDetails iconList={iconDetailList} detailsTextList={jobDetailsProps} />
+        {jobDetailsProps && <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />}
         <JobDetailCard {...jobDetailCardProps} />
         <JobSkillsCard {...jobSkillsCardProps} />
         <JobApplyCard {...jobApplyCardProps} />
-        <JobFooterCard {...jobFooterCardProps} />
+        <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
       </div>
     </section>
   )

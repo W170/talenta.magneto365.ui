@@ -19,4 +19,8 @@ export interface IBreadcrumb {
    * you can set urls with haveRedirect in true
    */
   haveRedirect?: boolean
+  /**
+   * this text replace the last position in the bredcrumbs text if it exists
+   */
+  detailTitle?: string | null
 }

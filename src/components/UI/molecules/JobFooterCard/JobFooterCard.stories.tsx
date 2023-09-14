@@ -1,15 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react'
-
+import React from 'react'
 import { JobFooterCard } from './JobFooterCard.component'
-import {
-  FacebookBlue,
-  LinkedInBlue,
-  SMSBlue,
-  ShareBlue,
-  TwitterBlue,
-  WhatsAppColor
-} from '../../../../constants/icons.constants'
+import { FacebookBlue, LinkedInBlue, SMSBlue, TwitterBlue, WhatsAppColor } from '../../../../constants/icons.constants'
 import { CompanyLogo } from '@constants/stories.constants'
+import { ShareButton } from '@components/UI/atoms/ShareButton'
 
 const meta: Meta<typeof JobFooterCard> = {
   title: 'Molecules/Job Footer Card',
@@ -23,15 +17,16 @@ type Story = StoryObj<typeof JobFooterCard>
 
 export const Default: Story = {
   args: {
-    jobFooterCompanyImg: CompanyLogo,
-    jobFooterHeader: 'Compartir vacante en:',
-    jobFooterLinks: [
-      { icon: FacebookBlue, url: '' },
-      { icon: WhatsAppColor, url: '' },
-      { icon: LinkedInBlue, url: '' },
-      { icon: TwitterBlue, url: '' },
-      { icon: SMSBlue, url: '' },
-      { icon: ShareBlue, url: '' }
-    ]
+    offerCompanyLogo: CompanyLogo,
+    offerFooterHeader: 'Compartir vacante en:',
+    offerFooterList: [
+      { href: '#', ariaLabel: 'facebook' },
+      { href: '#', ariaLabel: 'whatsapp' },
+      { href: '#', ariaLabel: 'linkedin' },
+      { href: '#', ariaLabel: 'twitter' },
+      { href: '#', ariaLabel: 'sms' }
+    ],
+    iconList: [FacebookBlue, WhatsAppColor, LinkedInBlue, TwitterBlue, SMSBlue],
+    externalChild: <ShareButton buttonTitle="share" />
   }
 }

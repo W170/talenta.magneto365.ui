@@ -19,15 +19,15 @@ export interface IMobileJobDetailsDrawer {
   /**
    * Array of strings representing the job details to display.
    */
-  jobDetailsProps: string[]
+  jobDetailsProps: (string | null | undefined)[] | null
   /**
    * Array of job detail cards to display, each card can contain different information.
    */
-  jobDetailCard: IJobDetailCard[]
+  jobDetailCardProps: IJobDetailCard
   /**
    * Props for the job skills card section.
    */
-  jobSkillsCardProps: IJobSkillsCard
+  jobSkillsCardProps: IJobSkillsCard | null
   /**
    * Props for the job apply card section.
    */

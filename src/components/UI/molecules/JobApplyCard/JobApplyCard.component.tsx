@@ -1,29 +1,23 @@
 import React from 'react'
-import { MainButton } from '@components/UI/atoms'
 import { IJobApplyCard, JobRequirementsElement } from './JobApplyCard.interface'
 import styles from './JobApplyCard.module.scss'
 
-const Component: React.FC<IJobApplyCard> = ({
-  jobApplyCardHeader,
-  jobApplyCardReqs,
-  jobApplyButtonText,
-  onHandlerClick
-}) => {
+const Component: React.FC<IJobApplyCard> = ({ offerApplyHeader, offerApplyElements, externalChild }) => {
   return (
     <div className={styles['magneto-ui-job-apply-card']}>
       <div className={styles['magneto-ui-job-apply-card__wrapper']}>
         <div className={styles['magneto-ui-job-apply-card__header']}>
-          <h2>{jobApplyCardHeader}</h2>
-          {jobApplyCardReqs.map(
-            ({ jobRequirementTitle, jobRequirementInfo }: JobRequirementsElement, index: number) => (
+          <h2>{offerApplyHeader}</h2>
+          {offerApplyElements
+            .filter(({ offerApplyInfo }) => !!offerApplyInfo)
+            .map(({ offerApplyLabel, offerApplyInfo }: JobRequirementsElement, index: number) => (
               <div className={styles['magneto-ui-job-apply-card__requirements']} key={index}>
-                <h3>{jobRequirementTitle}</h3>
-                <p>{jobRequirementInfo}</p>
+                <h3>{offerApplyLabel}</h3>
+                <p>{offerApplyInfo}</p>
               </div>
-            )
-          )}
+            ))}
         </div>
-        <MainButton buttonType="button" buttonText={jobApplyButtonText} onClick={onHandlerClick} />
+        <div id={styles['magneto-ui__external-child']}>{externalChild}</div>
       </div>
     </div>
   )

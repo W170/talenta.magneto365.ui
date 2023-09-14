@@ -1,50 +1,34 @@
 import React from 'react'
-import { IconItem, MainButton } from '@components/UI/atoms'
+import { IconItem, SaveButton, ShareButton } from '@components/UI/atoms'
 import { IActions } from './Actions.interface'
 import styles from './Actions.module.scss'
 
 const Component: React.FC<IActions> = ({
-  ActionsButtonIcons,
-  ActionsButtonEvents,
-  ActionButtonText,
   ActionsAnchorIcons,
   ActionsAnchorLinks,
   ActionAnchorText,
   ActionsHeader,
-  ButtonText,
-  onHandleClick
+  externalButtonChild,
+  saveButtonProps,
+  shareButtonProps
 }) => {
-  const actionsButtonList = ActionsButtonIcons?.map((_, index: number) => ({
-    Icon: ActionsButtonIcons?.[index],
-    text: ActionButtonText?.[index],
-    onClick: ActionsButtonEvents?.[index]
-  }))
+  const actionsAnchorTarget = ['_blank', '_self']
 
   const actionsLinkList = ActionsAnchorIcons?.map((_, index: number) => ({
     Icon: ActionsAnchorIcons?.[index],
     text: ActionAnchorText?.[index],
     url: ActionsAnchorLinks?.[index],
-    target: ''
+    target: actionsAnchorTarget?.[index]
   }))
 
   return (
     <div className={styles['magneto-ui-actions']}>
-      <MainButton
-        className={styles['magneto-ui-actions__apply-button']}
-        buttonType="button"
-        buttonSize="full"
-        buttonText={ButtonText}
-        onClick={onHandleClick}
-      />
-      {actionsButtonList?.map(({ Icon, text, onClick }, index: number) => (
-        <button className={styles['magneto-ui-actions__button']} key={index} type="button" onClick={onClick}>
-          <IconItem hover={true} size={20} icon={Icon} />
-          <p key={index}>{text}</p>
-        </button>
-      ))}
+      <div id={styles['magneto-ui__external-child']}> {externalButtonChild} </div>
+      <SaveButton {...saveButtonProps} />
+      <ShareButton {...shareButtonProps} />
       {actionsLinkList?.map(({ url, text, target, Icon }, index: number) => (
         <a className={styles['magneto-ui-actions__link']} key={index} href={url} target={target} rel="">
-          <IconItem hover={true} size={20} icon={Icon} />
+          <IconItem hover={false} size={20} icon={Icon} />
           <p key={index}>{text}</p>
         </a>
       ))}
