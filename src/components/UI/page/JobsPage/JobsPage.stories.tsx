@@ -1,7 +1,15 @@
 import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-
+import { MainButton } from '@components/UI/atoms'
 import JobsPage from './JobsPage.component'
+import {
+  IFilter,
+  IGetOptionsOnSearchProps,
+  ISearchRenderTypeOption,
+  ISetIsApplied,
+  ISideFilter,
+  IUnApplyWithChild
+} from '@components/UI/template'
 
 import {
   CompanyLogo,
@@ -13,20 +21,8 @@ import {
   searchList,
   vacants
 } from '@constants/stories.constants'
-
 import { storiesFilters } from '@constants'
-
-import {
-  IFilter,
-  IGetOptionsOnSearchProps,
-  ISearchRenderTypeOption,
-  ISetIsApplied,
-  ISideFilter,
-  IUnApplyWithChild
-} from '@components/UI/template'
-import { IFrequentSearch } from '@components/UI/molecules'
-import { IconItem, MainButton, ShareButton } from '@components/UI/atoms'
-import { Buildings2, Export3, Share } from '@constants/icons.constants'
+import { Buildings2, Export3 } from '@constants/icons.constants'
 
 const jobDetailsDrawer = {
   jobCompanyLogoProps: {
@@ -47,7 +43,10 @@ const jobDetailsDrawer = {
         //
       }
     },
-    externalChild: <ShareButton buttonTitle="shareButton" />,
+    shareButtonProps: {
+      buttonTitle: 'shareButton',
+      addHover: true
+    },
     actionsAnchorIcons: [Export3, Buildings2],
     actionsAnchorLinks: ['link1', 'link2']
   },
@@ -148,10 +147,9 @@ const mobileJobDetailsDrawer = {
   mobileJobDetailsBarProps: {
     externalButtonChild: <MainButton buttonText="Aplicar" />,
     actionsProps: {
+      ActionsHeader: 'Comunicador audiovisual',
       ActionsAnchorLinks: ['link1', 'link2'],
       ActionAnchorText: ['Abrir en nueva pestana', 'Ver empresa'],
-      ActionsHeader: 'Comunicador audiovisual',
-      externalChild: <IconItem icon={Share} />,
       saveButtonProps: {
         isAuthenticated: true,
         buttonText: 'Guardar Vacante',
@@ -159,6 +157,10 @@ const mobileJobDetailsDrawer = {
         onClick: () => {
           //
         }
+      },
+      shareButtonProps: {
+        buttonTitle: 'share',
+        buttonText: 'Compartir'
       },
       externalButtonChild: <MainButton buttonText="Aplicar" />
     }
@@ -204,7 +206,7 @@ const sideFilterProps = {
     })
 }
 
-const frequentSearch: IFrequentSearch = {
+const frequentSearch = {
   searchHeading: 'Búsquedas de empleo más frecuentes',
   searchList,
   showLess: 'Ver menos',
