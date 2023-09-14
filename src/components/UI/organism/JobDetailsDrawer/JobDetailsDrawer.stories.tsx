@@ -26,7 +26,10 @@ const jobActions = {
       //
     }
   },
-  externalChild: <ShareButton buttonTitle="shareButton" />,
+  shareButtonProps: {
+    buttonTitle: 'shareButton',
+    addHover: true
+  },
   actionsAnchorIcons: [Export3, Buildings2],
   actionsAnchorLinks: ['link1', 'link2']
 }
