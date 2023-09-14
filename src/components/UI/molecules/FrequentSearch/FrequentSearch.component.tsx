@@ -5,17 +5,16 @@ import { SearchItem } from '@components/UI/atoms'
 import { useMediaQuery } from '../../../hooks/useMediaQuery/index'
 
 const Component: React.FC<IFrequentSearch> = ({ searchHeading, searchList, showLess, showMore }) => {
-  const hiddenListMobile = 10
   const [showFullList, setShowFullList] = useState(true)
 
   const searchListDinamyc = useMemo(() => {
     if (showFullList) {
-      return searchList.slice(0, hiddenListMobile)
+      return searchList.slice(0, 9)
     }
     return searchList
   }, [searchList, showFullList])
 
-  const searchListResponsive = useMediaQuery(searchList, { sm: searchListDinamyc })
+  const searchListResponsive = useMediaQuery(searchList, { md: searchListDinamyc })
 
   return (
     <div className={styles['magneto-ui-frequent-search']}>
@@ -31,7 +30,7 @@ const Component: React.FC<IFrequentSearch> = ({ searchHeading, searchList, showL
             className={styles['magneto-ui-frequent-search__buttons-container--btn']}
             onClick={() => setShowFullList(false)}
           >
-            {showMore} ({searchList.length - hiddenListMobile})
+            {showMore} ({searchList.length})
           </button>
         ) : (
           <button
