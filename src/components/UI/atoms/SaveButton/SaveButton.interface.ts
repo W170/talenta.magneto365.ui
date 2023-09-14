@@ -16,4 +16,9 @@ export interface ISaveButton {
    * Callback function to be executed when the save button is clicked.
    */
   onClick: () => void
+  /**
+   * Specifies whether a hover effect should be added to the button.
+   * (Optional property)
+   */
+  addHover?: boolean
 }
