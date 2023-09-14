@@ -1,15 +1,14 @@
 import React from 'react'
-import { IconItem } from '@components/UI/atoms'
+import { IconItem, SaveButton, ShareButton } from '@components/UI/atoms'
 import { IJobsActions } from './JobActions.interface'
 import styles from './JobActions.module.scss'
-import { SaveButton } from '@components/UI/atoms/SaveButton'
 
 const Component: React.FC<IJobsActions> = ({
   actionsAnchorIcons,
   actionsAnchorLinks,
   externalButtonChild,
-  externalChild,
-  saveButtonProps
+  saveButtonProps,
+  shareButtonProps
 }) => {
   const actionsAnchorTarget = ['_blank', '_self']
 
@@ -24,7 +23,7 @@ const Component: React.FC<IJobsActions> = ({
       <div id={styles['magneto-ui__external-child']}>{externalButtonChild}</div>
       <div className={styles['magneto-ui-job-actions__buttons-wrapper']}>
         <SaveButton {...saveButtonProps} />
-        {externalChild}
+        <ShareButton {...shareButtonProps} />
         {actionsLinkList?.map(({ url, target, icon }, index: number) => (
           <a className={styles['magneto-ui-job-actions__icon-wrapper']} key={index} href={url} target={target} rel="">
             <IconItem hover={true} size={20} icon={icon} />

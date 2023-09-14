@@ -1,9 +1,8 @@
 import { StoryObj, Meta } from '@storybook/react'
+import React from 'react'
+import { MainButton } from '@components/UI/atoms'
 import { JobActions } from './JobActions.component'
 import { Buildings2, Export3 } from '../../../../constants/icons.constants'
-import { MainButton } from '@components/UI/atoms'
-import React from 'react'
-import { ShareButton } from '@components/UI/atoms/ShareButton'
 
 const meta: Meta<typeof JobActions> = {
   title: 'Molecules/Job Actions',
@@ -25,7 +24,9 @@ export const Default: Story = {
         //
       }
     },
-    externalChild: <ShareButton buttonTitle="shareButton" />,
+    shareButtonProps: {
+      buttonTitle: 'shareButton'
+    },
     actionsAnchorIcons: [Export3, Buildings2],
     actionsAnchorLinks: ['link1', 'link2']
   }
