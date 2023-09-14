@@ -1,9 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-
+import { MainButton } from '@components/UI/atoms'
 import { MobileJobDetailsActionsBar } from './MobileJobDetailsActionsBar.component'
-import { IconItem, MainButton } from '@components/UI/atoms'
-import { Share } from '@constants/icons.constants'
 
 const meta: Meta<typeof MobileJobDetailsActionsBar> = {
   title: 'Organism/Mobile Job Details Actions Bar',
@@ -19,10 +17,9 @@ export const Default: Story = {
   args: {
     externalButtonChild: <MainButton buttonText="Aplicar" />,
     actionsProps: {
+      ActionsHeader: 'Comunicador audiovisual',
       ActionsAnchorLinks: ['link1', 'link2'],
       ActionAnchorText: ['Abrir en nueva pestana', 'Ver empresa'],
-      ActionsHeader: 'Comunicador audiovisual',
-      externalChild: <IconItem icon={Share} />,
       saveButtonProps: {
         isAuthenticated: true,
         buttonText: 'Guardar Vacante',
@@ -30,6 +27,10 @@ export const Default: Story = {
         onClick: () => {
           //
         }
+      },
+      shareButtonProps: {
+        buttonTitle: 'share',
+        buttonText: 'Compartir'
       },
       externalButtonChild: <MainButton buttonText="Aplicar" />
     }
