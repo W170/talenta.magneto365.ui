@@ -22,10 +22,12 @@ export const Default: Story = {
       isSaved: false,
       onClick: () => {
         //
-      }
+      },
+      addHover: true
     },
     shareButtonProps: {
-      buttonTitle: 'shareButton'
+      buttonTitle: 'shareButton',
+      addHover: true
     },
     actionsAnchorIcons: [Export3, Buildings2],
     actionsAnchorLinks: ['link1', 'link2']
