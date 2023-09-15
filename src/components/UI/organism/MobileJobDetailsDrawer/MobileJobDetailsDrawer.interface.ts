@@ -50,4 +50,8 @@ export interface IMobileJobDetailsDrawer {
    * (Optional property)
    */
   onClose?: () => void
+  /**
+   *
+   */
+  jobDetailAction?: JSX.Element | undefined
 }
