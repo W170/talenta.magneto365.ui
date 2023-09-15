@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import {
   Drawer,
   JobCompanyHeader,
@@ -23,6 +23,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   jobApplyCardProps,
   jobFooterCardProps,
   mobileJobDetailsBarProps,
+  jobDetailAction,
   isOpen = true,
   onClose
 }) => {
@@ -34,14 +35,20 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
 
   return (
     <Drawer isOpen={isOpen} isFull={true} onClose={handleClose} direction="right" customPadding={0} hideButton isMobile>
-      <MobileJobDetailsHeader returnText={jobDetailsHeaderText} onClick={handleClose} />
-      <JobCompanyHeader {...jobCompanyLogoProps} />
-      {jobDetailsProps && <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />}
-      <JobDetailCard {...jobDetailCardProps} />
-      {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
-      <JobApplyCard {...jobApplyCardProps} />
-      <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
-      <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} />
+      {jobDetailAction ? (
+        jobDetailAction
+      ) : (
+        <Fragment>
+          <MobileJobDetailsHeader returnText={jobDetailsHeaderText} onClick={handleClose} />
+          <JobCompanyHeader {...jobCompanyLogoProps} />
+          {jobDetailsProps && <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />}
+          <JobDetailCard {...jobDetailCardProps} />
+          {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
+          <JobApplyCard {...jobApplyCardProps} />
+          <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
+          <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} />
+        </Fragment>
+      )}
     </Drawer>
   )
 }

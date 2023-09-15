@@ -54,6 +54,10 @@ export interface IJobsPage {
    * This property indicates the type of device being rendered.
    */
   device: DeviceType
+  /* *
+   * This property show the action detail view
+   */
+  jobDetailAction?: JSX.Element | undefined
 }
 
 export interface IVacancies extends IJobCard {

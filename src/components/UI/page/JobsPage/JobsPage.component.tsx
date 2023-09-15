@@ -22,7 +22,8 @@ const JobsPage: React.FC<IJobsPage> = ({
   setJobSelected,
   jobSelected,
   isLoading,
-  device
+  device,
+  jobDetailAction
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [showDetail, setShowDetail] = useState(device === 'desktop')
@@ -34,10 +35,17 @@ const JobsPage: React.FC<IJobsPage> = ({
 
   const JobDetailsDrawerComponent = useMediaQuery(
     <JobDetailContainer onClose={onClose} isOpen={showDetail}>
-      <JobDetailsDrawer {...jobDetailsDrawerProps} isLoading={isLoading} />
+      {jobDetailAction ? jobDetailAction : <JobDetailsDrawer {...jobDetailsDrawerProps} isLoading={isLoading} />}
     </JobDetailContainer>,
     {
-      lg: <MobileJobDetailsDrawer {...mobileJobDetailsDrawerProps} onClose={onClose} isOpen={showDetail} />
+      lg: (
+        <MobileJobDetailsDrawer
+          {...mobileJobDetailsDrawerProps}
+          onClose={onClose}
+          isOpen={showDetail}
+          jobDetailAction={jobDetailAction}
+        />
+      )
     }
   )
 
@@ -81,7 +89,6 @@ const JobsPage: React.FC<IJobsPage> = ({
         </div>
         <div className={style[`${classMUI}-jobs-page__jobs-detail`]}>{JobDetailsDrawerComponent}</div>
       </div>
-
       <Footer {...footerProps} />
     </Fragment>
   )
