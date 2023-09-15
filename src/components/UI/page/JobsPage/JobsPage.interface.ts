@@ -48,6 +48,10 @@ export interface IJobsPage {
    * this property should active loading state in the components
    */
   isLoading: boolean
+  /**
+   *
+   */
+  jobDetailAction?: JSX.Element | undefined
 }
 
 export interface IVacancies extends IJobCard {
