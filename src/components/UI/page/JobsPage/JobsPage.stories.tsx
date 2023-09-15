@@ -245,7 +245,8 @@ const meta: Meta<typeof JobsPage> = {
     footerProps,
     paginationProps,
     jobSelected: vacants[0],
-    isLoading: false
+    isLoading: false,
+    device: 'desktop'
   },
   decorators: [
     (Story) => (

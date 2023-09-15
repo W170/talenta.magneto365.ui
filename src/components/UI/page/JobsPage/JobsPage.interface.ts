@@ -4,12 +4,14 @@ import { IJobDetailsDrawer, IMobileJobDetailsDrawer } from '@components/UI/organ
 import { ISortBar } from '@components/UI/template/SortBar/SortBar.interface'
 import { ISideFilter } from '@components/UI/template'
 import { IFooter } from '@components/UI/template/Footer/Footer.interface'
+import { DeviceType } from '@components/context/context.interface'
+
 export interface IJobsPage {
   /**
    * Props for the filter bottom header section.
    * This section typically contains filter options for job listings.
    */
-  sortBarProps: ISortBar
+  sortBarProps: Omit<ISortBar, 'isFiltersOpen' | 'setIsFiltersOpen'>
   /**
    * An array of job card props to display multiple job listings.
    * Each job card contains information about a single job listing.
@@ -33,7 +35,7 @@ export interface IJobsPage {
    * Props for the filters.
    *
    */
-  sideFilterProps: ISideFilter
+  sideFilterProps: Omit<ISideFilter, 'isFiltersOpen' | 'setIsFiltersOpen'>
   /**
    * Props for the footer
    */
@@ -49,7 +51,11 @@ export interface IJobsPage {
    */
   isLoading: boolean
   /**
-   *
+   * This property indicates the type of device being rendered.
+   */
+  device: DeviceType
+  /* *
+   * This property show the action detail view
    */
   jobDetailAction?: JSX.Element | undefined
 }

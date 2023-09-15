@@ -22,10 +22,11 @@ const JobsPage: React.FC<IJobsPage> = ({
   setJobSelected,
   jobSelected,
   isLoading,
+  device,
   jobDetailAction
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
-  const [showDetail, setShowDetail] = useState(true)
+  const [showDetail, setShowDetail] = useState(device === 'desktop')
 
   const onClose = useCallback(() => {
     setShowDetail(false)
