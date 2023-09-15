@@ -110,7 +110,7 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
           const optProps = { ...props, ...opt, field, setIsApplied: handleApply, isSearched: true }
           return (
             <FilterMenuItem
-              key={`${key}-${opt.label}`}
+              key={`${opt.id}-${opt.label}`}
               customId={`${field}-menu-item-${key}`}
               customClass={`${key === keyboardIndex ? styles.selected : ''}`}
               {...optProps}
