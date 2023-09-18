@@ -26,6 +26,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   isLoading
 }) => {
   if (isLoading) return <JobDetailsSkeleton />
+
   return (
     <section className={styles.JobDetailsDrawerComponent}>
       <div className={styles['JobHeaderCardWrapper']}>

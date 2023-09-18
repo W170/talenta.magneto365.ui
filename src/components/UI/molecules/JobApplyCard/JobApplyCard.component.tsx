@@ -8,14 +8,18 @@ const Component: React.FC<IJobApplyCard> = ({ offerApplyHeader, offerApplyElemen
       <div className={styles['magneto-ui-job-apply-card__wrapper']}>
         <div className={styles['magneto-ui-job-apply-card__header']}>
           <h2>{offerApplyHeader}</h2>
-          {offerApplyElements
-            .filter(({ offerApplyInfo }) => !!offerApplyInfo)
-            .map(({ offerApplyLabel, offerApplyInfo }: JobRequirementsElement, index: number) => (
-              <div className={styles['magneto-ui-job-apply-card__requirements']} key={index}>
-                <h3>{offerApplyLabel}</h3>
-                <p>{offerApplyInfo}</p>
-              </div>
-            ))}
+          {offerApplyElements?.length &&
+            offerApplyElements
+              .filter(({ offerApplyInfo }) => !!offerApplyInfo)
+              .map(({ offerApplyLabel, offerApplyInfo }: JobRequirementsElement) => (
+                <div
+                  className={styles['magneto-ui-job-apply-card__requirements']}
+                  key={`${offerApplyLabel}-JobApplyCard`}
+                >
+                  <h3>{offerApplyLabel}</h3>
+                  <p>{offerApplyInfo}</p>
+                </div>
+              ))}
         </div>
         <div id={styles['magneto-ui__external-child']}>{externalChild}</div>
       </div>
