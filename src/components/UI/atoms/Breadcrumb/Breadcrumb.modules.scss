@@ -12,7 +12,6 @@
     line-height: 13px;
     margin: 0 5px 0 0;
     transition: all ease-in-out 0.3s;
-    text-transform: lowercase;
 
     &::first-letter {
       text-transform: capitalize;
@@ -35,4 +34,8 @@
 .magneto-ui-bc-active {
   font-weight: bold;
   pointer-events: none;
+}
+
+.no-transform {
+  text-transform: none;
 }

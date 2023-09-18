@@ -14,6 +14,8 @@ const Component: React.FC<IBreadcrumb> = ({
   const breadcrumbSplitText = breadcrumbs?.split('/')
   const lastIndexBC = breadcrumbSplitText?.length - 1
   const [urls, setUrls] = useState<string[]>([])
+  const haveDetailTitle = detailTitle !== ''
+  const detailTileStyle = detailTitle ? styles['no-transform'] : ''
 
   useEffect(() => {
     const url = new URL(breadcrumbText, baseUrl)
@@ -44,8 +46,8 @@ const Component: React.FC<IBreadcrumb> = ({
               </a>
             )
         )}
-        <p className={styles['magneto-ui-bc-active']}>
-          / {detailTitle !== '' ? detailTitle : breadcrumbSplitText[lastIndexBC]}
+        <p className={`${styles['magneto-ui-bc-active']} ${detailTileStyle}`}>
+          / {haveDetailTitle ? detailTitle : breadcrumbSplitText[lastIndexBC]}
         </p>
       </>
     ) : (
@@ -57,7 +59,7 @@ const Component: React.FC<IBreadcrumb> = ({
         ))}
       </>
     )
-  }, [breadcrumbSplitText, haveRedirect, lastIndexBC, urls, queryParams, detailTitle])
+  }, [breadcrumbSplitText, haveRedirect, lastIndexBC, urls, queryParams, detailTitle, haveDetailTitle, detailTileStyle])
 
   return <div className={styles.breadcrumbComponent}>{breadCrumbsRender}</div>
 }
