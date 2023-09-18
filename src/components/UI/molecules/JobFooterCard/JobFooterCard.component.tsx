@@ -23,14 +23,15 @@ const Component: React.FC<IJobFooterCard> = ({
       <div className={styles['magneto-ui-job-footer-card__icons']}>
         <h2>{offerFooterHeader}</h2>
         <div className={styles['magneto-ui-job-footer-card__wrapper']}>
-          {jobFooterList?.map(
-            ({ href, ariaLabel, icon }, index: number) =>
-              href !== null && (
-                <a key={index} href={href} target="_blank" rel="noreferrer" aria-label={ariaLabel}>
-                  <IconItem hover={false} icon={icon || undefined} />
-                </a>
-              )
-          )}
+          {jobFooterList?.length &&
+            jobFooterList?.map(
+              ({ href, ariaLabel, icon }) =>
+                href !== null && (
+                  <a key={`${href}-jobFooterList`} href={href} target="_blank" rel="noreferrer" aria-label={ariaLabel}>
+                    <IconItem hover={false} icon={icon || undefined} />
+                  </a>
+                )
+            )}
           <div className={styles['magneto-ui__external-child']}>{externalChild}</div>
         </div>
       </div>

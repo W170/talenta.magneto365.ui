@@ -35,7 +35,11 @@ const JobsPage: React.FC<IJobsPage> = ({
 
   const JobDetailsDrawerComponent = useMediaQuery(
     <JobDetailContainer onClose={onClose} isOpen={showDetail}>
-      {jobDetailAction ? jobDetailAction : <JobDetailsDrawer {...jobDetailsDrawerProps} isLoading={isLoading} />}
+      {jobDetailAction ? (
+        jobDetailAction
+      ) : (
+        <JobDetailsDrawer {...jobDetailsDrawerProps} isLoading={isLoading || !jobSelected} />
+      )}
     </JobDetailContainer>,
     {
       lg: (
@@ -73,16 +77,17 @@ const JobsPage: React.FC<IJobsPage> = ({
           <SortBar {...sortBarProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
           <h1 className={style[`${classMUI}-jobs-page--title`]}>{sortBarProps?.mainTitle}</h1>
           <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>
-            {vacantProps.map(({ id, ...props }) => (
-              <JobCard
-                isLoading={isLoading}
-                isActive={id === jobSelected?.id}
-                id={id}
-                showDetail={() => handleVacant(id)}
-                key={id}
-                {...props}
-              />
-            ))}
+            {vacantProps?.length &&
+              vacantProps.map(({ id, ...props }) => (
+                <JobCard
+                  isLoading={isLoading}
+                  isActive={id === jobSelected?.id}
+                  id={id}
+                  showDetail={() => handleVacant(id)}
+                  key={`${id}-JobsPage`}
+                  {...props}
+                />
+              ))}
           </div>
           <Pagination {...paginationProps} />
           <FrequentSearch {...frequentSearchProps} />
