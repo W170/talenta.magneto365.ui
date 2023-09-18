@@ -12,8 +12,22 @@
   cursor: pointer;
 
   transition: all ease-in-out 0.3s;
-  &:hover {
-    background-color: v.$colors-magneto-neutral-gray-5;
+
+  @media (min-width: v.$screen-md) {
+    &:hover {
+      background-color: v.$colors-magneto-neutral-gray-5;
+    }
+  }
+
+  img {
+    margin-left: 0;
+    transition: all ease-in-out 0.3s;
+  }
+
+  &:hover img {
+    @media (min-width: v.$screen-md) {
+      margin-left: 7px;
+    }
   }
 
   &__text {
