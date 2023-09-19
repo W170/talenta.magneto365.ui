@@ -10,6 +10,7 @@ $line-height: 25px;
   height: 100vh;
   gap: 10px;
   padding: 32px 20px;
+  margin-top: 20px;
   overflow-x: hidden;
   overflow-y: scroll;
 
@@ -35,12 +36,12 @@ $line-height: 25px;
 .magneto-ui-job-detail-skeleton__section {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 95%;
   > span {
     width: inherit;
     height: $line-height;
     &:nth-child(even) {
-      width: 60%;
+      width: 70%;
     }
     &:nth-child(5) {
       width: 40%;
@@ -50,20 +51,11 @@ $line-height: 25px;
 
 .magneto-ui-job-detail-skeleton__header {
   width: 100%;
-  &::before {
-    content: '';
-    width: 28px;
-    height: 35px;
-    background: v.$background-skeleton;
-    border-radius: 0 6px 6px 0;
-    top: 0;
-    left: 8;
-    position: absolute;
-  }
 }
 
 .magneto-ui-job-detail-skeleton__header_title {
   height: $line-height * 2;
+  width: 95%;
 }
 
 .magneto-ui-job-detail-skeleton__header_btn {
@@ -87,7 +79,7 @@ $line-height: 25px;
 }
 
 .magneto-ui-job-detail-skeleton__header_card {
-  width: 80%;
+  width: 95%;
   height: 144px;
 }
 
