@@ -6,7 +6,7 @@ export interface ISaveButton {
   /**
    * Specifies whether the item is currently saved or not.
    */
-  isSaved: boolean
+  isSaved: boolean | null
   /**
    * Optional text to be displayed on the save button.
    * (Optional property)
