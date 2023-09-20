@@ -7,16 +7,15 @@ const Component: React.FC<IJobFooterCard> = ({
   offerFooterHeader,
   offerCompanyLogo,
   offerFooterList,
-  offerFooterTitle,
   iconList,
   shareButtonProps,
   companyImgAlt
 }) => {
-  const jobFooterList = offerFooterList?.map(({ href, ariaLabel }, index) => ({
+  const jobFooterList = offerFooterList?.map(({ href, title, ariaLabel }, index) => ({
     icon: iconList && iconList[index],
     href,
     ariaLabel,
-    title: offerFooterTitle?.[index]
+    title
   }))
 
   return (

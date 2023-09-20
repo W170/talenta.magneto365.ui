@@ -12,6 +12,10 @@ export interface IFooterList {
    * The icon associated with the list item. Can be null if there is no icon.
    */
   icon?: string | null
+  /**
+   * The title or label for the list item.
+   */
+  title: string
 }
 
 export interface IJobFooterCard {
@@ -27,10 +31,6 @@ export interface IJobFooterCard {
    * An array of footer list items, each representing a link or action in the footer.
    */
   offerFooterList: IFooterList[]
-  /**
-   * An array of string titles or labels associated with each item in the offer footer section.
-   */
-  offerFooterTitle: string[]
   /**
    * An array of string icons representing additional icons in the footer card. Can be null if there are no icons.
    */
