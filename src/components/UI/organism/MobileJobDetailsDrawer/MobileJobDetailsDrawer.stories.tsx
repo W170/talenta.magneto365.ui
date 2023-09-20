@@ -47,7 +47,7 @@ const jobApplyCard = {
     { offerApplyLabel: 'Ciudad de residencia:', offerApplyInfo: ' Planadas' },
     { offerApplyLabel: 'Salario:', offerApplyInfo: ` $2’100.000` }
   ],
-  externalChild: <MainButton />
+  externalChild: <MainButton buttonText="Aplicar" />
 }
 
 const jobFooterCard = {
@@ -59,7 +59,12 @@ const jobFooterCard = {
     { href: '#', ariaLabel: 'linkedin' },
     { href: '#', ariaLabel: 'twitter' },
     { href: '#', ariaLabel: 'sms' }
-  ]
+  ],
+  offerFooterTitle: ['Facebook', 'Whatsapp', 'Linkedin', 'Twitter', 'Correo'],
+  shareButtonProps: {
+    buttonTitle: 'Compartir vacante',
+    onCopySuccess: () => console.log('Success')
+  }
 }
 
 const MobileJobDetailsActionsBar = {
@@ -78,7 +83,9 @@ const MobileJobDetailsActionsBar = {
     },
     shareButtonProps: {
       buttonTitle: 'share',
-      buttonText: 'Compartir'
+      buttonText: 'Compartir',
+      onCopySuccess: () => console.log('Success'),
+      onCopyError: () => console.log('Error')
     },
     externalButtonChild: <MainButton buttonText="Aplicar" />
   }
