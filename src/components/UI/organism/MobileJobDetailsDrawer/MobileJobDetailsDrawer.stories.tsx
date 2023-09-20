@@ -62,7 +62,7 @@ const jobFooterCard = {
   ],
   offerFooterTitle: ['Facebook', 'Whatsapp', 'Linkedin', 'Twitter', 'Correo'],
   shareButtonProps: {
-    buttonTitle: 'Compartir vacante',
+    buttonTitle: 'Copiar',
     onCopySuccess: () => console.log('Success')
   }
 }
@@ -82,7 +82,7 @@ const MobileJobDetailsActionsBar = {
       }
     },
     shareButtonProps: {
-      buttonTitle: 'share',
+      buttonTitle: 'Compartir Vacante',
       buttonText: 'Compartir',
       onCopySuccess: () => console.log('Success'),
       onCopyError: () => console.log('Error')
