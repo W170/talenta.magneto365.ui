@@ -87,11 +87,11 @@ const jobDetailsDrawer = {
     offerCompanyLogo: CompanyLogo,
     offerFooterHeader: 'Compartir vacante en:',
     offerFooterList: [
-      { href: '#', ariaLabel: 'facebook' },
-      { href: '#', ariaLabel: 'whatsapp' },
-      { href: '#', ariaLabel: 'linkedin' },
-      { href: '#', ariaLabel: 'twitter' },
-      { href: '#', ariaLabel: 'sms' }
+      { href: '#', ariaLabel: 'facebook', title: 'Facebook' },
+      { href: '#', ariaLabel: 'whatsapp', title: 'Whatsapp' },
+      { href: '#', ariaLabel: 'linkedin', title: 'Linkedin' },
+      { href: '#', ariaLabel: 'twitter', title: 'Twitter' },
+      { href: '#', ariaLabel: 'sms', title: 'Correo' }
     ],
     offerFooterTitle: ['Facebook', 'Whatsapp', 'Linkedin', 'Twitter', 'Correo'],
     shareButtonProps: {
@@ -146,11 +146,11 @@ const mobileJobDetailsDrawer = {
     offerCompanyLogo: CompanyLogo,
     offerFooterHeader: 'Compartir vacante en:',
     offerFooterList: [
-      { href: '#', ariaLabel: 'facebook' },
-      { href: '#', ariaLabel: 'whatsapp' },
-      { href: '#', ariaLabel: 'linkedin' },
-      { href: '#', ariaLabel: 'twitter' },
-      { href: '#', ariaLabel: 'sms' }
+      { href: '#', ariaLabel: 'facebook', title: 'Facebook' },
+      { href: '#', ariaLabel: 'whatsapp', title: 'Whatsapp' },
+      { href: '#', ariaLabel: 'linkedin', title: 'Linkedin' },
+      { href: '#', ariaLabel: 'twitter', title: 'Twitter' },
+      { href: '#', ariaLabel: 'sms', title: 'Correo' }
     ],
     offerFooterTitle: ['Facebook', 'Whatsapp', 'Linkedin', 'Twitter', 'Correo'],
     shareButtonProps: {
