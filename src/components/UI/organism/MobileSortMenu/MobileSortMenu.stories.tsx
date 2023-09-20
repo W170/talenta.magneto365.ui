@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import MobileSortMenu from './MobileSortMenu.component'
-import { optionsFilterOrderBy } from '../../../../constants/stories.constants'
+import { optionsFilterOrderBy } from '@constants'
 
 const meta: Meta<typeof MobileSortMenu> = {
   title: 'Organism/Mobile Sort Menu',
@@ -11,6 +11,7 @@ const meta: Meta<typeof MobileSortMenu> = {
     orderFields: optionsFilterOrderBy,
     orderByText: 'Organizar por',
     textOrderFilter: optionsFilterOrderBy[1].label,
+    titleBtnOrder: 'Ordenar de forma ascendente',
     onClose: () => ({}),
     setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
     setShowPopover: () => console.log('setShowPopover')

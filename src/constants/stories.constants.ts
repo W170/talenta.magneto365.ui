@@ -1,8 +1,6 @@
 import {
   Add,
   ArchiveTick,
-  ArrowDown2,
-  ArrowSwapVertical,
   BrifecaseTick,
   ClipboardClose,
   DocumentText,
@@ -52,7 +50,6 @@ import {
   ISearchbar
 } from '../components/UI/molecules'
 import { ILoading } from '../components/UI/atoms/Loading'
-import { ISortMenuItem } from '../components/UI/molecules/SortMenu/SortMenu.interface'
 import { IFilterValue } from '@components/UI/template/SideFilter'
 import { IBrands } from '../components/UI/molecules/BrandsContainer/BrandsContainer.interface'
 import { IListMenuIcons } from '../components/UI/molecules/ListMenuIcons/ListMenuIcons.interface'
@@ -626,39 +623,6 @@ export const listMenuUserProps: IListMenuIcons = {
   logout: Logout,
   settings: Settings
 }
-
-//SortBar props
-
-export const menuSortButton = {
-  icon: ArrowDown2,
-  hover: false,
-  size: 17
-}
-
-export const iconFilterOrder = {
-  icon: ArrowSwapVertical,
-  hover: false,
-  size: 20
-}
-
-export const optionsFilterOrderBy: ISortMenuItem[] = [
-  {
-    field: 'salary_show',
-    label: 'Salario'
-  },
-  {
-    field: 'publish_date',
-    label: 'Fecha de publicación'
-  },
-  {
-    field: 'experience_months_number',
-    label: 'Experiencia requerida'
-  },
-  {
-    field: 'education_level_id',
-    label: 'Nivel de estudios'
-  }
-]
 
 //Vacants
 
