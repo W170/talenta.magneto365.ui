@@ -21,4 +21,8 @@ export interface ISaveButton {
    * (Optional property)
    */
   addHover?: boolean
+  /**
+   * The title or label associated with the button.
+   */
+  buttonTitle: string
 }
