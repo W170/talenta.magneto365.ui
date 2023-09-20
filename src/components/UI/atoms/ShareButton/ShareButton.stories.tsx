@@ -13,6 +13,8 @@ type Story = StoryObj<typeof ShareButton>
 
 export const Default: Story = {
   args: {
-    buttonText: 'Compartir'
+    buttonText: 'Compartir',
+    buttonTitle: 'Compartir Vacante',
+    onCopySuccess: () => console.log('Success')
   }
 }

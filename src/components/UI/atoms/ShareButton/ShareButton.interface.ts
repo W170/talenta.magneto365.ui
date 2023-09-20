@@ -19,4 +19,13 @@ export interface IShareButton {
    * (Optional property)
    */
   detailUrl?: string
+  /**
+   * Callback function to be executed when copying is successful.
+   */
+  onCopySuccess: () => void
+  /**
+   * Callback function to be executed when copying encounters an error.
+   * (Optional property)
+   */
+  onCopyError?: () => void
 }

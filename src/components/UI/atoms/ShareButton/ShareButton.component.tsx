@@ -4,17 +4,10 @@ import { Share } from '@constants/icons.constants'
 import { IShareButton } from './ShareButton.interface'
 import styles from './ShareButton.module.scss'
 
-const Component: React.FC<IShareButton> = ({ buttonTitle, buttonText, detailUrl, addHover }) => {
+const Component: React.FC<IShareButton> = ({ buttonTitle, buttonText, detailUrl, addHover, onCopySuccess }) => {
   const handleCopyClick = () => {
     if (detailUrl) {
-      navigator.clipboard
-        .writeText(detailUrl)
-        .then(() => {
-          console.log('Copied')
-        })
-        .catch((error) => {
-          console.error('Failed to copy: ', error)
-        })
+      navigator.clipboard.writeText(detailUrl).then(() => onCopySuccess())
     }
   }
 
