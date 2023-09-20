@@ -41,14 +41,18 @@ const jobDetailsDrawer = {
       isSaved: false,
       onClick: () => {
         //
-      }
+      },
+      addHover: true,
+      buttonTitle: 'Guardar'
     },
     shareButtonProps: {
-      buttonTitle: 'shareButton',
-      addHover: true
+      buttonTitle: 'Compartir vacante',
+      addHover: true,
+      onCopySuccess: () => console.log('Success')
     },
     actionsAnchorIcons: [Export3, Buildings2],
-    actionsAnchorLinks: ['link1', 'link2']
+    actionsAnchorLinks: ['link1', 'link2'],
+    actionsAnchorTitle: ['Abrir esta oferta en otra pestaña', 'Ver empresa']
   },
   jobDetailsProps: [
     'Hace 10 días',
@@ -77,7 +81,7 @@ const jobDetailsDrawer = {
       { offerApplyLabel: 'Ciudad de residencia:', offerApplyInfo: ' Planadas' },
       { offerApplyLabel: 'Salario:', offerApplyInfo: ` $2’100.000` }
     ],
-    externalChild: <MainButton />
+    externalChild: <MainButton buttonText="Aplicar" />
   },
   jobFooterCardProps: {
     offerCompanyLogo: CompanyLogo,
@@ -88,7 +92,12 @@ const jobDetailsDrawer = {
       { href: '#', ariaLabel: 'linkedin' },
       { href: '#', ariaLabel: 'twitter' },
       { href: '#', ariaLabel: 'sms' }
-    ]
+    ],
+    offerFooterTitle: ['Facebook', 'Whatsapp', 'Linkedin', 'Twitter', 'Correo'],
+    shareButtonProps: {
+      buttonTitle: 'Copiar',
+      onCopySuccess: () => console.log('Success')
+    }
   }
 }
 
@@ -142,7 +151,12 @@ const mobileJobDetailsDrawer = {
       { href: '#', ariaLabel: 'linkedin' },
       { href: '#', ariaLabel: 'twitter' },
       { href: '#', ariaLabel: 'sms' }
-    ]
+    ],
+    offerFooterTitle: ['Facebook', 'Whatsapp', 'Linkedin', 'Twitter', 'Correo'],
+    shareButtonProps: {
+      buttonTitle: 'Copiar',
+      onCopySuccess: () => console.log('Success')
+    }
   },
   mobileJobDetailsBarProps: {
     externalButtonChild: <MainButton buttonText="Aplicar" />,
@@ -159,8 +173,9 @@ const mobileJobDetailsDrawer = {
         }
       },
       shareButtonProps: {
-        buttonTitle: 'share',
-        buttonText: 'Compartir'
+        buttonTitle: 'Compartir vacante',
+        buttonText: 'Compartir',
+        onCopySuccess: () => console.log('Success')
       },
       externalButtonChild: <MainButton buttonText="Aplicar" />
     }
