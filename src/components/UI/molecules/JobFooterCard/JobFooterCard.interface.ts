@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { IShareButton } from '@components/UI/atoms'
 export interface IFooterList {
   /**
    * The URL to navigate to when the list item is clicked. Can be null if there is no URL.
@@ -28,9 +28,9 @@ export interface IJobFooterCard {
    */
   offerFooterList: IFooterList[]
   /**
-   * Content to be displayed as an external child element.
+   * An array of string titles or labels associated with each item in the offer footer section.
    */
-  externalChild?: ReactNode
+  offerFooterTitle: string[]
   /**
    * An array of string icons representing additional icons in the footer card. Can be null if there are no icons.
    */
@@ -39,4 +39,8 @@ export interface IJobFooterCard {
    * The alternative text for the company image in the footer card. Can be null if there is no image.
    */
   companyImgAlt?: string
+  /**
+   * Props for the share button component.
+   */
+  shareButtonProps: IShareButton
 }
