@@ -15,6 +15,7 @@ const Component: React.FC<IMainButton> = ({
   iconProps,
   isMobile,
   className,
+  title,
   onClick
 }) => {
   const stylesValue: CSSProperties = useMemo(() => toCSSVariables(buttonStyles), [buttonStyles])
@@ -45,10 +46,15 @@ const Component: React.FC<IMainButton> = ({
       onClick={onClick}
       data-button-size={buttonSize}
       data-is-mobile={isMobile}
+      title={title}
     >
       {renderContent()}
     </button>
   )
+}
+
+Component.defaultProps = {
+  title: ''
 }
 /**
  * Atom UI component of button for general purpose

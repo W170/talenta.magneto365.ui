@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react'
-import { iconFilterOrder, menuSortButton } from '@constants/stories.constants'
+import { iconFilterOrder, menuSortButton } from '@constants'
 import { Setting4 } from '@constants/icons.constants'
 import { useMediaQuery } from '@components/hooks'
 import { MenuIcon } from '@components/UI/molecules'
@@ -17,6 +17,7 @@ const SortBar: React.FC<ISortBar> = ({
   orderFields,
   orderByText,
   loading,
+  titleBtnOrder,
   setIsFiltersOpen,
   orderFilter,
   setFilter
@@ -28,7 +29,7 @@ const SortBar: React.FC<ISortBar> = ({
 
     {
       md: (
-        <button className={styles['magneto-ui-btn-menu']} onClick={() => setShowMenu(true)}>
+        <button className={styles['magneto-ui-btn-menu']} title={textOrderFilter} onClick={() => setShowMenu(true)}>
           <p className={styles['magneto-ui-btn-text']}>{textOrderFilter}</p>
           <IconItem {...menuSortButton} />
         </button>
@@ -53,7 +54,11 @@ const SortBar: React.FC<ISortBar> = ({
         </div>
         <div className={styles['magneto-ui-section-menu']}>
           {sortMenu}
-          <button className={`${styles['magneto-ui-btn-order']} ${styles.hidden}`} onClick={orderFilter}>
+          <button
+            className={`${styles['magneto-ui-btn-order']} ${styles.hidden}`}
+            title={titleBtnOrder}
+            onClick={orderFilter}
+          >
             <IconItem {...iconFilterOrder} />
           </button>
         </div>
@@ -63,6 +68,7 @@ const SortBar: React.FC<ISortBar> = ({
         orderFields={orderFields}
         orderByText={orderByText}
         textOrderFilter={textOrderFilter}
+        titleBtnOrder={titleBtnOrder}
         onClose={() => setShowMenu(!showMenu)}
         setFilter={setFilter}
         orderFilter={orderFilter}
@@ -70,6 +76,10 @@ const SortBar: React.FC<ISortBar> = ({
       />
     </Fragment>
   )
+}
+
+SortBar.defaultProps = {
+  titleBtnOrder: ''
 }
 
 export default SortBar

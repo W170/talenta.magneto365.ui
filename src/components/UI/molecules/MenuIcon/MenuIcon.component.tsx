@@ -9,12 +9,12 @@ const Component: React.FC<IMenuIcon> = ({ text, icon, url, type = 'link', onClic
   return (
     <>
       {type === 'link' ? (
-        <a href={url} className={`${style['magneto-ui-menu-icon']} ${menuActive}`}>
+        <a href={url} className={`${style['magneto-ui-menu-icon']} ${menuActive}`} title={text}>
           {icon && <IconItem size={20} hover={false} icon={icon} />}
           <p className={style['magneto-ui-menu-text']}>{text}</p>
         </a>
       ) : (
-        <button onClick={onClick} className={`${style['magneto-ui-menu-icon']} ${menuActive}`}>
+        <button onClick={onClick} className={`${style['magneto-ui-menu-icon']} ${menuActive}`} title={text}>
           {icon && <IconItem size={20} hover={false} icon={icon} />}
           <p className={style['magneto-ui-menu-text']}>{text}</p>
         </button>

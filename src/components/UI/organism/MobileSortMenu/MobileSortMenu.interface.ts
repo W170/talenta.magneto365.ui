@@ -18,6 +18,10 @@ export interface IMobileSortMenu {
    */
   textOrderFilter: string
   /**
+   * This te title attribute for the button to order the jobs
+   */
+  titleBtnOrder?: string
+  /**
    * this property close drawer
    */
   onClose: () => void

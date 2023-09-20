@@ -51,5 +51,12 @@ export interface IMainButton {
    * Optional click handler
    */
   onClick?: (event: any) => void
+  /**
+   * This is the custom className
+   */
   className?: string
+  /**
+   * This te title attribute for the button tag
+   */
+  title?: string
 }

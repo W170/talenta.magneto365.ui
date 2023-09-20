@@ -42,6 +42,7 @@ export const FilterMenuItem: FC<IFilterMenuItem> = ({
     <button
       id={customId}
       className={`${styles['magneto-ui-filter-item']} ${className} ${customClass ? customClass : ''}`}
+      title={label}
       onClick={handleClick}
       disabled={disabled}
     >

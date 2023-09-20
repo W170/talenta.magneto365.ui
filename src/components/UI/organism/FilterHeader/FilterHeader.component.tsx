@@ -16,6 +16,7 @@ export const FilterHeader: FC<IFilterHeader> = ({
   const mainBtnProps = useMemo(() => {
     return {
       buttonText,
+      title: buttonText,
       iconProps: { icon: Broom, size: 18 },
       className: styles['magneto-ui-filter-header_btn'],
       onClick: () => clearFilters()
