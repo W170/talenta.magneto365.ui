@@ -29,8 +29,8 @@ export const Default: Story = {
         }
       },
       shareButtonProps: {
-        buttonTitle: 'share',
-        buttonText: 'Compartir'
+        buttonText: 'Compartir',
+        onCopySuccess: () => console.log('Success')
       },
       externalButtonChild: <MainButton buttonText="Aplicar" />
     }
