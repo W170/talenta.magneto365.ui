@@ -24,5 +24,5 @@ export interface ISaveButton {
   /**
    * The title or label associated with the button.
    */
-  buttonTitle: string
+  buttonTitle?: string
 }
