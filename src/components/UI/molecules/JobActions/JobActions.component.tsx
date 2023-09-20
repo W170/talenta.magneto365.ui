@@ -6,6 +6,7 @@ import styles from './JobActions.module.scss'
 const Component: React.FC<IJobsActions> = ({
   actionsAnchorIcons,
   actionsAnchorLinks,
+  actionsAnchorTitle,
   externalButtonChild,
   saveButtonProps,
   shareButtonProps
@@ -15,7 +16,8 @@ const Component: React.FC<IJobsActions> = ({
   const actionsLinkList = actionsAnchorIcons?.map((_, index: number) => ({
     icon: actionsAnchorIcons?.[index],
     url: actionsAnchorLinks?.[index],
-    target: actionsAnchorTarget?.[index]
+    target: actionsAnchorTarget?.[index],
+    title: actionsAnchorTitle?.[index]
   }))
 
   return (
@@ -25,13 +27,13 @@ const Component: React.FC<IJobsActions> = ({
         <SaveButton {...saveButtonProps} />
         <ShareButton {...shareButtonProps} />
         {actionsLinkList?.length &&
-          actionsLinkList?.map(({ url, target, icon }) => (
+          actionsLinkList?.map(({ url, title, target, icon }) => (
             <a
               className={styles['magneto-ui-job-actions__icon-wrapper']}
               key={`${url}-JobActions`}
               href={url}
               target={target}
-              rel=""
+              title={title}
             >
               <IconItem hover={true} size={20} icon={icon} />
             </a>

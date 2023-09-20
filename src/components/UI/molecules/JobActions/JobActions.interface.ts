@@ -13,6 +13,11 @@ export interface IJobsActions {
    */
   actionsAnchorLinks: string[]
   /**
+   * An array of string titles or labels associated with each action anchor link.
+   */
+  actionsAnchorTitle: string[]
+
+  /**
    * Content to be displayed as an external button.
    */
   externalButtonChild: ReactNode
@@ -21,7 +26,7 @@ export interface IJobsActions {
    */
   saveButtonProps: ISaveButton
   /**
-   *
+   * Props for the share button component.
    */
   shareButtonProps: IShareButton
 }

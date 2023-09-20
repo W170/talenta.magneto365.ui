@@ -23,13 +23,17 @@ export const Default: Story = {
       onClick: () => {
         //
       },
-      addHover: true
+      addHover: true,
+      buttonTitle: 'Guardar'
     },
     shareButtonProps: {
-      buttonTitle: 'shareButton',
-      addHover: true
+      buttonTitle: 'Compartir vacante',
+      addHover: true,
+      onCopySuccess: () => console.log('Success'),
+      onCopyError: () => console.log('Error')
     },
     actionsAnchorIcons: [Export3, Buildings2],
-    actionsAnchorLinks: ['link1', 'link2']
+    actionsAnchorLinks: ['link1', 'link2'],
+    actionsAnchorTitle: ['Abrir esta oferta en otra pestaña', 'Ver empresa']
   }
 }
