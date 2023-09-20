@@ -4,7 +4,6 @@ import { JobDetailsDrawer } from './JobDetailsDrawer.component'
 
 import { CompanyLogo } from '@constants/stories.constants'
 import { MainButton } from '../../atoms/MainButton/MainButton.component'
-import { ShareButton } from '@components/UI/atoms'
 import { Buildings2, Export3 } from '@constants/icons.constants'
 
 const jobCompanyLogo = {
@@ -24,14 +23,19 @@ const jobActions = {
     isSaved: false,
     onClick: () => {
       //
-    }
+    },
+    addHover: true,
+    buttonTitle: 'Guardar'
   },
   shareButtonProps: {
-    buttonTitle: 'shareButton',
-    addHover: true
+    buttonTitle: 'Compartir vacante',
+    addHover: true,
+    onCopySuccess: () => console.log('Success')
   },
   actionsAnchorIcons: [Export3, Buildings2],
-  actionsAnchorLinks: ['link1', 'link2']
+  actionsAnchorLinks: ['link1', 'link2'],
+  ctionsAnchorLinks: ['link1', 'link2'],
+  actionsAnchorTitle: ['Abrir esta oferta en otra pestaña', 'Ver empresa']
 }
 
 const jobDetails = [
@@ -77,7 +81,11 @@ const jobFooterCard = {
     { href: '#', ariaLabel: 'twitter' },
     { href: '#', ariaLabel: 'sms' }
   ],
-  externalChild: <ShareButton buttonTitle="share" />
+  offerFooterTitle: ['Facebook', 'Whatsapp', 'Linkedin', 'Twitter', 'Correo'],
+  shareButtonProps: {
+    buttonTitle: 'Copiar',
+    onCopySuccess: () => console.log('Success')
+  }
 }
 
 const meta: Meta<typeof JobDetailsDrawer> = {

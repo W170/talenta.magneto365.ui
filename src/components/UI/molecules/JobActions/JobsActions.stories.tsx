@@ -29,8 +29,7 @@ export const Default: Story = {
     shareButtonProps: {
       buttonTitle: 'Compartir vacante',
       addHover: true,
-      onCopySuccess: () => console.log('Success'),
-      onCopyError: () => console.log('Error')
+      onCopySuccess: () => console.log('Success')
     },
     actionsAnchorIcons: [Export3, Buildings2],
     actionsAnchorLinks: ['link1', 'link2'],
