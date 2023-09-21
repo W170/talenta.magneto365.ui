@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react'
-import { menuSortButton } from '../../../../constants/stories.constants'
 import { ListSortMenu } from '../ListSortMenu'
 import { IconItem, Popover } from '../../atoms'
 import { ISortMenu } from './SortMenu.interface'
-import style from './SortMenu.module.scss'
 import withClickOut from '../../../hoc/withClickOut'
+import { menuSortButton } from '@constants'
+import style from './SortMenu.module.scss'
 
 const SortMenu: React.FC<ISortMenu> = ({
   orderFields,
@@ -33,6 +33,7 @@ const SortMenu: React.FC<ISortMenu> = ({
     >
       <button
         className={`${style['magneto-ui-btn-menu']} ${loading && style.disabled}`}
+        title={textOrderFilter}
         onClick={() => setClickOut(!clickOut)}
         disabled={loading}
       >

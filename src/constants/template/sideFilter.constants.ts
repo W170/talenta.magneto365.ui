@@ -1,3 +1,12 @@
+import {
+  IFilter,
+  IGetOptionsOnSearchProps,
+  ISearchRenderTypeOption,
+  ISetIsApplied,
+  IUnApplyWithChild
+} from '@components/UI/template'
+import { appliedOptionsBySearchRenderType } from '@constants/stories.constants'
+
 export enum ERenderType {
   selectionList = 'SELECTION_LIST',
   search = 'SEARCH',
@@ -595,3 +604,31 @@ export const storiesFilters = [
     searchPlaceholder: 'Buscar tipo de vacante'
   }
 ]
+
+export const sideFilterProps = {
+  title: 'Filtrar empleos',
+  filters: storiesFilters as IFilter[],
+  totalAppliedFilters: 1,
+  filterSummary: '3169 empleos',
+  buttonText: 'Limpiar',
+  loading: false,
+  isFiltersOpen: true,
+  textBtnMain: 'Ver empleos',
+  titleBtnClose: 'Cerrar',
+  switchText: 'Apto para personas con discapacidad',
+
+  setIsFiltersOpen: () => console.log('setIsFiltersOpen'),
+  setIsApplied: (filter: ISetIsApplied): Promise<void> => new Promise((resolve) => resolve(console.log({ filter }))),
+  clearFilters: (): Promise<void> => new Promise((resolve) => resolve(console.log('clearFilters'))),
+  unApplyWithChild: (withChild: IUnApplyWithChild): Promise<void> =>
+    new Promise((resolve) => resolve(console.log({ withChild }))),
+  getOptionsOnLoad: (field: string, values: (string | number)[]) => {
+    console.log('getOptionsOnLoad: ', { field, values })
+    return new Promise<ISearchRenderTypeOption[]>((resolve) => resolve(appliedOptionsBySearchRenderType))
+  },
+  getOptionsOnSearch: (term: IGetOptionsOnSearchProps): Promise<ISearchRenderTypeOption[]> =>
+    new Promise((resolve) => {
+      console.log('getOptionsOnSearch: ', { term })
+      return resolve([])
+    })
+}

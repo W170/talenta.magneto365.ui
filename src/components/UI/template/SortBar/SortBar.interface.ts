@@ -34,6 +34,10 @@ export interface ISortBar {
    */
   loading: boolean
   /**
+   * This te title attribute for the button to order the jobs
+   */
+  titleBtnOrder?: string
+  /**
    * With this function you open the drawer
    */
   setIsFiltersOpen: React.Dispatch<React.SetStateAction<boolean>>

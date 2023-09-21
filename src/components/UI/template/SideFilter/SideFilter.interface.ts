@@ -31,6 +31,14 @@ export interface ISideFilter extends ISearchRenderTypeProps {
    */
   isFiltersOpen: boolean
   /**
+   * This te title attribute for the button to close the drawer
+   */
+  textBtnMain: string
+  /**
+   * This te title attribute for the button to close the drawer
+   */
+  titleBtnClose?: string
+  /**
    * With this function you open the drawer
    */
   setIsFiltersOpen: (value: SetStateAction<boolean>) => void

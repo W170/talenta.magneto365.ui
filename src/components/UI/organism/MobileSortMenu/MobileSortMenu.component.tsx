@@ -3,7 +3,7 @@ import { ListSortMenu } from '../../molecules/ListSortMenu'
 import { IMobileSortMenu } from './MobileSortMenu.interface'
 import { MobileDrawer } from '../../molecules'
 import { IconItem } from '../../atoms'
-import { iconFilterOrder } from '../../../../constants/stories.constants'
+import { iconFilterOrder } from '@constants'
 import style from './MobileSortMenu.module.scss'
 
 const MobileSortMenu: React.FC<IMobileSortMenu> = ({
@@ -11,6 +11,7 @@ const MobileSortMenu: React.FC<IMobileSortMenu> = ({
   orderFields,
   orderByText,
   textOrderFilter,
+  titleBtnOrder,
   onClose,
   setFilter,
   orderFilter,
@@ -28,13 +29,17 @@ const MobileSortMenu: React.FC<IMobileSortMenu> = ({
     <MobileDrawer isOpen={isOpen} onClose={onClose}>
       <div className={style['magneto-ui-order-container']}>
         <p className={style['magneto-ui-order-text']}>{orderByText}</p>
-        <button className={`${style['magneto-ui-btn-order']}`} onClick={orderFilter}>
+        <button className={`${style['magneto-ui-btn-order']}`} title={titleBtnOrder} onClick={orderFilter}>
           <IconItem {...iconFilterOrder} />
         </button>
       </div>
       <ListSortMenu {...listMenuProps} />
     </MobileDrawer>
   )
+}
+
+MobileSortMenu.defaultProps = {
+  titleBtnOrder: ''
 }
 
 export default MobileSortMenu
