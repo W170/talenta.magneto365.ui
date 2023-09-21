@@ -1,3 +1,5 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
 .magneto-ui-card-mobile-jobs {
   display: flex;
   align-items: center;
@@ -25,6 +27,21 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @media screen and (min-width: v.$screen-xxs) {
+      max-width: 250px;
+    }
+    @media screen and (min-width: v.$screen-xs) {
+      max-width: 350px;
+    }
+    @media screen and (min-width: v.$screen-sm) {
+      max-width: 450px;
+    }
+    @media screen and (min-width: v.$screen-md) {
+      max-width: 580px;
+    }
   }
 
   &--row1 {
