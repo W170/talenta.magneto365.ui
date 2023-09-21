@@ -12,13 +12,10 @@ const Component: React.FC<IActions> = ({
   saveButtonProps,
   shareButtonProps
 }) => {
-  const actionsAnchorTarget = ['_blank', '_self']
-
   const actionsLinkList = ActionsAnchorIcons?.map((_, index: number) => ({
     Icon: ActionsAnchorIcons?.[index],
     text: ActionAnchorText?.[index],
-    url: ActionsAnchorLinks?.[index],
-    target: actionsAnchorTarget?.[index]
+    url: ActionsAnchorLinks?.[index]
   }))
 
   return (
@@ -26,8 +23,8 @@ const Component: React.FC<IActions> = ({
       <div id={styles['magneto-ui__external-child']}> {externalButtonChild} </div>
       <SaveButton {...saveButtonProps} />
       <ShareButton {...shareButtonProps} />
-      {actionsLinkList?.map(({ url, text, target, Icon }, index: number) => (
-        <a className={styles['magneto-ui-actions__link']} key={index} href={url} target={target} rel="">
+      {actionsLinkList?.map(({ url, text, Icon }, index: number) => (
+        <a className={styles['magneto-ui-actions__link']} key={index} href={url} target="_blank" rel="noreferrer">
           <IconItem hover={false} size={20} icon={Icon} />
           <p key={index}>{text}</p>
         </a>

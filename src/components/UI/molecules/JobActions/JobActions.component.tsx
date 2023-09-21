@@ -11,12 +11,9 @@ const Component: React.FC<IJobsActions> = ({
   saveButtonProps,
   shareButtonProps
 }) => {
-  const actionsAnchorTarget = ['_blank', '_self']
-
   const actionsLinkList = actionsAnchorIcons?.map((_, index: number) => ({
     icon: actionsAnchorIcons?.[index],
     url: actionsAnchorLinks?.[index],
-    target: actionsAnchorTarget?.[index],
     title: actionsAnchorTitle?.[index]
   }))
 
@@ -27,12 +24,13 @@ const Component: React.FC<IJobsActions> = ({
         <SaveButton {...saveButtonProps} />
         <ShareButton {...shareButtonProps} />
         {actionsLinkList?.length &&
-          actionsLinkList?.map(({ url, title, target, icon }) => (
+          actionsLinkList?.map(({ url, title, icon }) => (
             <a
               className={styles['magneto-ui-job-actions__icon-wrapper']}
               key={`${url}-JobActions`}
               href={url}
-              target={target}
+              target="_blank"
+              rel="noreferrer"
               title={title}
             >
               <IconItem hover={true} size={20} icon={icon} />
