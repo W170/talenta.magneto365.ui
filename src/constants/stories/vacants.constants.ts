@@ -12,7 +12,8 @@ import {
   SMSBlue,
   Share,
   TwitterBlue,
-  WhatsAppColor
+  WhatsAppColor,
+  Location
 } from '@constants/icons.constants'
 
 export const vacants: IVacancies[] = [
