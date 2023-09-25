@@ -5,7 +5,7 @@ import {
   ISetIsApplied,
   IUnApplyWithChild
 } from '@components/UI/template'
-import { appliedOptionsBySearchRenderType } from '@constants/stories.constants'
+import { appliedOptionsBySearchRenderType } from './'
 
 export enum ERenderType {
   selectionList = 'SELECTION_LIST',
