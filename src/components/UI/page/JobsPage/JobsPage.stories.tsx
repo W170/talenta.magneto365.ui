@@ -9,9 +9,11 @@ import {
   RightsReservedProps,
   listMenuText,
   searchList,
-  vacants
-} from '@constants/stories.constants'
-import { sideFilterProps, sortBarProps, paginationProps } from '@constants'
+  vacants,
+  sideFilterProps,
+  sortBarProps,
+  paginationProps
+} from '@constants/stories'
 
 import { Buildings2, Export3 } from '@constants/icons.constants'
 

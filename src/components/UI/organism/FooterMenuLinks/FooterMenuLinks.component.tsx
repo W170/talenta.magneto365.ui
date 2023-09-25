@@ -3,7 +3,7 @@ import { MenuCollapse } from '@components/UI/molecules/MenuCollapse'
 import { useMediaQuery } from '@components/hooks'
 import React, { Fragment } from 'react'
 import { IFooterMenuLinks } from './FooterMenuLinks.interface'
-import { classMUI } from '@constants/stories.constants'
+import { classMUI } from '@constants/stories'
 import style from './FooterMenuLinks.module.scss'
 
 const FooterMenuLinks: React.FC<IFooterMenuLinks> = ({ ...menuList }) => {

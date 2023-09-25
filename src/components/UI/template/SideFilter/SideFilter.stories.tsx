@@ -1,7 +1,7 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import SideFilter from './SideFilter.component'
-import { sideFilterProps } from '@constants'
+import { sideFilterProps } from '@constants/stories'
 
 const meta: Meta<typeof SideFilter> = {
   title: 'Template/Side Filter',

@@ -1,5 +1,5 @@
 import React from 'react'
-import { classMUI } from '../../../../constants/stories.constants'
+import { classMUI } from '@constants/stories'
 import style from './FilterContainerMenu.module.scss'
 import { IFilterContainerMenu } from './FilterContainerMenu.interface'
 

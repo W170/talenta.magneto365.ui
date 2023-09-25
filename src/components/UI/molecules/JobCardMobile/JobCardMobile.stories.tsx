@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { JobCardMobile } from '.'
-import { vacants } from '../../../../constants/stories.constants'
+import { vacants } from '@constants/stories'
 
 const meta: Meta<typeof JobCardMobile> = {
   title: 'Molecules/Job Card Mobile',

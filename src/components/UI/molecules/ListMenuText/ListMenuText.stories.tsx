@@ -1,6 +1,6 @@
 import { StoryObj, Meta } from '@storybook/react'
 import { ListMenuText } from './'
-import { listMenuText } from '@constants/stories.constants'
+import { listMenuText } from '@constants/stories'
 
 const meta: Meta<typeof ListMenuText> = {
   title: 'Molecules/List Menu Text',

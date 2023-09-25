@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 
 import BrandMenu from './BrandMenu.component'
-import { brands, ourBrandsText } from '../../../../constants/stories.constants'
+import { brands, ourBrandsText } from '@constants/stories'
 
 const meta: Meta<typeof BrandMenu> = {
   title: 'Organism/Brand Menu',

@@ -1,6 +1,6 @@
 import React from 'react'
 import { MinTrabajo } from '@constants/icons.constants'
-import { classMUI } from '@constants/stories.constants'
+import { classMUI } from '@constants/stories'
 import style from './MagnetoResolution.module.scss'
 import { IMagnetoResolution } from './MagnetoResolution.interface'
 

@@ -4,7 +4,7 @@ import { MainButton } from '@components/UI/atoms'
 import { IJobSkillsCard } from '@components/UI/molecules'
 import { MobileJobDetailsDrawer } from './MobileJobDetailsDrawer.component'
 
-import { CompanyLogo } from '@constants/stories.constants'
+import { CompanyLogo } from '@constants/stories'
 
 const jobCompanyLogo = {
   jobCompanyLogoProps: {

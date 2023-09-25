@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { optionsFilterMenu } from '@constants/stories.constants'
-import { appliedOptionsBySearchRenderType } from '@constants/stories.constants'
+import { optionsFilterMenu, appliedOptionsBySearchRenderType } from '@constants/stories'
 import {
   IGetOptionsOnSearchProps,
   ISearchRenderTypeOption,

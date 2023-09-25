@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { RightsReservedText } from './'
-import { RightsReservedProps } from '../../../../constants/stories.constants'
+import { RightsReservedProps } from '@constants/stories'
 
 const meta: Meta<typeof RightsReservedText> = {
   title: 'Molecules/Rights Reserved Text',

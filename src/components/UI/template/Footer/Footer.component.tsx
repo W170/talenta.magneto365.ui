@@ -1,7 +1,7 @@
 import React from 'react'
 import { LogoComponent } from '@components/UI/atoms'
 import { LogoMagneto } from '@constants/icons.constants'
-import { classMUI } from '@constants/stories.constants'
+import { classMUI } from '@constants/stories'
 import { MagnetoSocialMedia } from '@components/UI/organism'
 import { RightsReservedText } from '@components/UI/molecules'
 import style from './Footer.module.scss'

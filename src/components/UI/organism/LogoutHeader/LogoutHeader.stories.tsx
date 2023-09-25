@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { LogoutHeader } from './LogoutHeader.component'
 import { IMobileSearchbar } from '../../molecules'
-import { breadcrumbProps } from '../../../../constants/stories.constants'
+import { breadcrumbProps } from '@constants/stories'
 
 const leftLinkProps = {
   type: 'link' as const,

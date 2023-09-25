@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { HeaderDrawerCompany } from './HeaderDrawerCompany.components'
-import { LogoCompany, LogoProps, flag } from '../../../../constants/stories.constants'
+import { LogoCompany, flag, logoProps } from '@constants/stories'
 
 const meta: Meta<typeof HeaderDrawerCompany> = {
   title: 'Molecules/Header Drawer Company',
   component: HeaderDrawerCompany,
   args: {
-    logoProps: LogoProps,
+    logoProps: logoProps,
     logoCompany: LogoCompany,
     logoCompanyAlt: 'Logo Sura',
     flag,

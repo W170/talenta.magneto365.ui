@@ -8,14 +8,14 @@ import { useMediaQuery } from '../../../hooks'
 
 import {
   MenuButtonProps,
-  LogoProps,
+  logoProps,
   searchPropsButton,
   removePropsButton,
   MobileSearchbarButtonProps,
   SignInIcon,
   SignInStyles,
   SignUpButtonStyle
-} from '../../../../constants/stories.constants'
+} from '@constants/stories'
 import { BrandMenu } from '../BrandMenu'
 
 const Muiclass = 'magneto-ui'
@@ -100,7 +100,7 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
         <div className={styles[`${Muiclass}-logout-jobs-header--second-row__left-section`]}>
           {LogoutHeaderMenuButton}
           <a href={homeUrl}>
-            <LogoComponent {...LogoProps} isoView={true} />
+            <LogoComponent {...logoProps} isoView={true} />
           </a>
           {brandsProps.brands && brandsProps.brands?.length > 0 ? (
             <BrandMenu {...brandMenuProps} />

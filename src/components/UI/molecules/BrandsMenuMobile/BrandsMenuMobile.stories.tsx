@@ -1,6 +1,6 @@
 import { StoryObj, Meta } from '@storybook/react'
 import BrandsMenuMobile from './BrandsMenuMobile.component'
-import { brands, ourBrandsText } from '../../../../constants/stories.constants'
+import { brands, ourBrandsText } from '@constants/stories'
 
 const meta: Meta<typeof BrandsMenuMobile> = {
   title: 'Molecules/Brands Menu Mobile',

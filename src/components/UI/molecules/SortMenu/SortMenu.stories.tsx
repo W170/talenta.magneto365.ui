@@ -1,6 +1,6 @@
 import { StoryObj, Meta } from '@storybook/react'
 import { SortMenu } from './index'
-import { optionsFilterOrderBy } from '@constants'
+import { optionsFilterOrderBy } from '@constants/stories'
 
 const meta: Meta<typeof SortMenu> = {
   title: 'Molecules/ Sort Menu',

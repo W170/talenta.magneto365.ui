@@ -15,12 +15,12 @@ import { useMediaQuery } from '../../../hooks'
 import styles from './LoginHeader.modules.scss'
 
 import {
-  LogoProps,
+  logoProps,
   MenuButtonProps,
   MobileSearchbarButtonProps,
   searchPropsButton,
   removePropsButton
-} from '../../../../constants/stories.constants'
+} from '@constants/stories'
 
 const Component: React.FC<ILoginHeader> = ({
   onClick,
@@ -54,8 +54,8 @@ const Component: React.FC<ILoginHeader> = ({
 
   const loginHeaderMenuButton = useMediaQuery(<MainButton {...MenuButtonProps} onClick={onClick} />)
 
-  const loginHeaderLogo = useMediaQuery(<LogoComponent {...LogoProps} />, {
-    sm: <LogoComponent {...LogoProps} isoView={true} />
+  const loginHeaderLogo = useMediaQuery(<LogoComponent {...logoProps} />, {
+    sm: <LogoComponent {...logoProps} isoView={true} />
   })
 
   const loginHeaderMobileSearchbarButton = useMediaQuery(null, {

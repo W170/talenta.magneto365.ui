@@ -1,5 +1,5 @@
 import React from 'react'
-import { classMUI } from '@constants/stories.constants'
+import { classMUI } from '@constants/stories'
 import style from './RightsReservedText.module.scss'
 import { IRightsReservedText } from './RightsReservedText.interface'
 

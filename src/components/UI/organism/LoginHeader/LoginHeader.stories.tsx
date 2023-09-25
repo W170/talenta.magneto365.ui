@@ -9,7 +9,7 @@ import {
   SearchbarProps,
   MobileSearchbarProps,
   breadcrumbProps
-} from '../../../../constants/stories.constants'
+} from '@constants/stories'
 
 const meta: Meta<typeof LoginHeader> = {
   title: 'Organism/Login Header',

@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { optionsFilterMenu } from '@constants/stories.constants'
+import { optionsFilterMenu, ERenderType } from '@constants/stories'
 import { FilterCard } from './FilterCard.component'
-import { ERenderType } from '@constants'
 import { ISetIsApplied } from '@components/UI/template'
 
 const meta: Meta<typeof FilterCard> = {

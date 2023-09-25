@@ -3,7 +3,7 @@ import { ListSortMenu } from '../../molecules/ListSortMenu'
 import { IMobileSortMenu } from './MobileSortMenu.interface'
 import { MobileDrawer } from '../../molecules'
 import { IconItem } from '../../atoms'
-import { iconFilterOrder } from '@constants'
+import { iconFilterOrder } from '@constants/stories'
 import style from './MobileSortMenu.module.scss'
 
 const MobileSortMenu: React.FC<IMobileSortMenu> = ({

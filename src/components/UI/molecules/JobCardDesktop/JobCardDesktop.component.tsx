@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { classMUI } from '../../../../constants/stories.constants'
+import { classMUI } from '@constants/stories'
 import { IconItem } from '../../atoms'
 import { ArrowRight2, NoLogo } from '../../../../constants/icons.constants'
 import style from './JobCardDesktop.module.scss'

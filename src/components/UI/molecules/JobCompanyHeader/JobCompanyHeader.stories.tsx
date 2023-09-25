@@ -1,6 +1,6 @@
 import { StoryObj, Meta } from '@storybook/react'
 import { JobCompanyHeader } from './JobCompanyHeader.component'
-import { CompanyLogo } from '@constants/stories.constants'
+import { CompanyLogo } from '@constants/stories'
 
 const meta: Meta<typeof JobCompanyHeader> = {
   title: 'Molecules/Job Company Header',

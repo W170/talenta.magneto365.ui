@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { JobFooterCard } from './JobFooterCard.component'
 import { FacebookBlue, LinkedInBlue, SMSBlue, TwitterBlue, WhatsAppColor } from '../../../../constants/icons.constants'
-import { CompanyLogo } from '@constants/stories.constants'
+import { CompanyLogo } from '@constants/stories'
 
 const meta: Meta<typeof JobFooterCard> = {
   title: 'Molecules/Job Footer Card',

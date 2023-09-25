@@ -1,6 +1,6 @@
 import { StoryObj, Meta } from '@storybook/react'
 import { JobCompanyLogo } from './JobCompanyLogo.component'
-import { CompanyLogo } from '@constants/stories.constants'
+import { CompanyLogo } from '@constants/stories'
 
 const meta: Meta<typeof JobCompanyLogo> = {
   title: 'Atoms/Job Company Logo',

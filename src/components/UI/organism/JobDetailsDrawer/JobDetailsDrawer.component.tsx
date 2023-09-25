@@ -12,7 +12,7 @@ import {
 import { IJobDetailsDrawer } from './JobDetailsDrawer.interface'
 import styles from './JobDetailsDrawer.module.scss'
 
-import { anchorIconList, iconDetailList, iconFooterList } from '@constants/stories.constants'
+import { anchorIconList, iconDetailList, iconFooterList } from '@constants/stories'
 import { JobDetailsSkeleton } from './children'
 
 const Component: React.FC<IJobDetailsDrawer> = ({

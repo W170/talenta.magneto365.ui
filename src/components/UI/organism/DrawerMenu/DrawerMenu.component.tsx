@@ -5,13 +5,13 @@ import { IDrawerOrganism } from './DrawerMenu.interface'
 import style from './drawerMenu.module.scss'
 
 import {
-  LogoProps,
+  logoProps,
   DrawerLeftTabStyles,
   DrawerRightTabStyles,
   CreateAccountButton,
   LoginButton,
   ListIcon
-} from '../../../../constants/stories.constants'
+} from '@constants/stories'
 
 const Component: React.FC<IDrawerOrganism> = ({
   headerDrawerProps,
@@ -35,7 +35,7 @@ const Component: React.FC<IDrawerOrganism> = ({
       <Drawer isOpen={isOpen} onClose={handleClose}>
         <HeaderDrawerTabs
           {...headerDrawerProps}
-          logoProps={LogoProps}
+          logoProps={logoProps}
           leftTabStyle={DrawerLeftTabStyles}
           rightTabStyle={DrawerRightTabStyles}
         />

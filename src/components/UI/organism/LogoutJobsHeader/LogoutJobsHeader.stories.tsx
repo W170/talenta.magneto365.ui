@@ -8,7 +8,7 @@ import {
   brands,
   breadcrumbProps,
   ourBrandsText
-} from '../../../../constants/stories.constants'
+} from '@constants/stories'
 
 const meta: Meta<typeof LogoutJobsHeader> = {
   title: 'Organism/Logout Jobs Header',

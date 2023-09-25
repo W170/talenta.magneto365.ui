@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { HeaderDrawerTabs } from './HeaderDrawerTabs.components'
-import { logoProps } from '../../../../constants/stories.constants'
+import { logoProps } from '@constants/stories'
 import { ITabButton } from '../TabButton'
 
 const leftTabLink = {

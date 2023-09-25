@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import { JobDetailsDrawer } from './JobDetailsDrawer.component'
 
-import { CompanyLogo } from '@constants/stories.constants'
+import { CompanyLogo } from '@constants/stories'
 import { MainButton } from '../../atoms/MainButton/MainButton.component'
 import { Buildings2, Export3 } from '@constants/icons.constants'
 

@@ -3,10 +3,10 @@ import { Drawer } from '../../molecules/Drawer'
 import { ILoginTemplate } from './LoginTemplate.interface'
 import { ListMenuItems } from '../../molecules/ListMenuItems'
 import { ListIconLink } from '../../molecules/ListIconLink'
-import { ListIcon, logoPropsLogin } from '../../../../constants/stories.constants'
 import { LogoComponent } from '../../atoms/Logo'
 import { LoginHeader } from '../../organism/LoginHeader'
 import style from './loginTemplate.module.scss'
+import { ListIcon, logoPropsLogin } from '@constants/stories'
 
 const Component: React.FC<ILoginTemplate> = ({ listMenuProps, homeUrl, ...props }) => {
   const [toggleDrawer, setToggleDrawer] = useState(false)

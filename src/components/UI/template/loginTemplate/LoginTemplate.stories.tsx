@@ -1,15 +1,16 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { LoginTemplate } from './LoginTemplate.component'
-import { MobileSearchbarProps, breadcrumbProps } from '../../../../constants/stories.constants'
 import {
-  AvatarProps,
-  CurriculumTabProps,
-  JobsTabsProps,
-  ProcessTabsProps,
   listMenuProps,
   listMenuUserProps,
-  SearchbarProps
-} from '../../../../constants/stories.constants'
+  AvatarProps,
+  JobsTabsProps,
+  ProcessTabsProps,
+  CurriculumTabProps,
+  SearchbarProps,
+  MobileSearchbarProps,
+  breadcrumbProps
+} from '@constants/stories'
 
 const meta: Meta<typeof LoginTemplate> = {
   title: 'Template/Login',

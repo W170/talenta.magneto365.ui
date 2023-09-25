@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { DrawerMenu } from './DrawerMenu.component'
-import { listMenuProps } from '../../../../constants/stories.constants'
+import { listMenuProps } from '@constants/stories'
 
 const leftLink = {
   type: 'link' as const,
