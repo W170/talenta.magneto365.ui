@@ -4,6 +4,7 @@ import { IJobFooterCard } from '../../molecules/JobFooterCard'
 import { IJobDetailCard } from '../../molecules/JobDetailCard'
 import { IJobCompanyHeader } from '@components/UI/molecules/JobCompanyHeader'
 import { IJobsActions } from '@components/UI/molecules/JobActions'
+import { ReactNode } from 'react'
 export interface IJobDetailsDrawer {
   /**
    * Props for the job company logo and header section.
@@ -38,4 +39,8 @@ export interface IJobDetailsDrawer {
    * (Optional property)
    */
   isLoading?: boolean
+  /**
+   *
+   */
+  modalPendingInfoComponent?: ReactNode
 }

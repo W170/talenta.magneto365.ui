@@ -33,8 +33,10 @@ const JobsPage: React.FC<IJobsPage> = ({
     setJobSelected(null)
   }, [setJobSelected])
 
+  const hasVacants = !!vacantProps?.length && !isLoading
+
   const JobDetailsDrawerComponent = useMediaQuery(
-    <JobDetailContainer onClose={onClose} isOpen={showDetail}>
+    <JobDetailContainer onClose={onClose} isOpen={showDetail && hasVacants}>
       {jobDetailAction ? (
         jobDetailAction
       ) : (
