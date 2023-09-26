@@ -1,6 +1,6 @@
 import React, { FC, Fragment, useMemo } from 'react'
 import { ArrowLeft2 } from '@constants/icons.constants'
-import { defaultFilters } from '@constants'
+import { defaultFilters } from '@constants/stories'
 import { FilterHeader } from '@components/UI/organism/FilterHeader'
 import { MainButton } from '@components/UI/atoms'
 import { CardByRenderType } from './factory'

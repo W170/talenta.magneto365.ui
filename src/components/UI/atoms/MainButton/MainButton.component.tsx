@@ -3,8 +3,8 @@ import { IconItem } from '../Icon'
 import { Loading } from '../Loading'
 import { IMainButton } from './MainButton.interface'
 import styles from './MainButton.modules.scss'
-import { LoadingProps } from '../../../../constants/stories.constants'
 import { toCSSVariables } from '../../../../shared/utils/Function'
+import { LoadingProps } from '@constants/stories'
 
 const Component: React.FC<IMainButton> = ({
   buttonType,

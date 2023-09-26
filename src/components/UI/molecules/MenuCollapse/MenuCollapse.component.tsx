@@ -1,7 +1,7 @@
 import React, { Fragment, useCallback, useState } from 'react'
 import { IMenuCollapse } from './MenuCollapse.interface'
 import MenuCollapseChildren from './children/MenuCollapseChildren.component'
-import { classMUI } from '@constants/stories.constants'
+import { classMUI } from '@constants/stories'
 import style from './MenuCollapse.module.scss'
 
 const MenuCollapse: React.FC<IMenuCollapse> = ({ listMenu }) => {

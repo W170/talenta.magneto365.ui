@@ -1,5 +1,5 @@
 import React from 'react'
-import { classMUI } from '../../../../constants/stories.constants'
+import { classMUI } from '@constants/stories'
 import style from './JobCardMobile.module.scss'
 import { ICardJobMobile } from './JobCardMobile.interface'
 import { NoLogo } from '@constants/icons.constants'

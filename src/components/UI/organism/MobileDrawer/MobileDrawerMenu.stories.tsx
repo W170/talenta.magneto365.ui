@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { MobileDrawerMenu } from './MobileDrawerMenu.component'
-import { listMenuUserProps } from '../../../../constants/stories.constants'
+import { listMenuUserProps } from '@constants/stories'
 
 const meta: Meta<typeof MobileDrawerMenu> = {
   title: 'Organism/Mobile Drawer',

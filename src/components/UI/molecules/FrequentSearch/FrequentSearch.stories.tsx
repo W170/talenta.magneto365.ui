@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { FrequentSearch } from './FrequentSearch.component'
-import { searchList } from '../../../../constants/stories.constants'
+import { searchList } from '@constants/stories'
 
 const meta: Meta<typeof FrequentSearch> = {
   title: 'Molecules/Frequent Search',

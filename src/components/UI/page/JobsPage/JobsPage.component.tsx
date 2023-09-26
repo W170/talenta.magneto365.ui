@@ -8,7 +8,7 @@ import { useMediaQuery } from '@components/hooks'
 import { IJobsPage } from './JobsPage.interface'
 import style from './JobsPage.module.scss'
 
-import { classMUI } from '../../../../constants/stories.constants'
+import { classMUI } from '@constants/stories'
 
 const JobsPage: React.FC<IJobsPage> = ({
   jobDetailsDrawerProps,

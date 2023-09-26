@@ -1,5 +1,5 @@
 import React, { FC, Fragment } from 'react'
-import { ERenderType } from '@constants'
+import { ERenderType } from '@constants/stories'
 import { FilterCard, IFilterCard } from '@components/UI/organism/FilterCard'
 import { FilterCardOnSearch } from '@components/UI/organism/FilterCardOnSearch'
 

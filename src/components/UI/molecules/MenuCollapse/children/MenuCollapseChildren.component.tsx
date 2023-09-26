@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import { ListMenuText } from '../../ListMenuText'
 import { ArrowDown2 } from '@constants/icons.constants'
 import style from './MenuCollapseChildren.module.scss'
-import { classMUI } from '@constants/stories.constants'
+import { classMUI } from '@constants/stories'
 import { IMenuCollapseChildren } from './MenuCollapseChildren.interface'
 
 const MenuCollapseChildren: React.FC<IMenuCollapseChildren> = ({

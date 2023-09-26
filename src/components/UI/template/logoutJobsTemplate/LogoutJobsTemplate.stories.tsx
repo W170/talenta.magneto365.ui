@@ -6,10 +6,11 @@ import {
   SignInProps,
   SignUpProps,
   ListIcon,
-  breadcrumbProps
-} from '../../../../constants/stories.constants'
+  breadcrumbProps,
+  brands,
+  ourBrandsText
+} from '@constants/stories'
 import { IListMenuItems, MenuItemInfo } from '../../molecules'
-import { brands, ourBrandsText } from '../../../../constants/stories.constants'
 
 const LogoutJobsHeaderProps = {
   companyUrl: '/empleos/company',

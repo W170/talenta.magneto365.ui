@@ -8,11 +8,11 @@ import { MobileDrawer } from '../../molecules/MobileDrawer/MobileDrawer.componen
 
 import {
   MenuButtonProps,
-  LogoProps,
+  logoProps,
   searchPropsButton,
   removePropsButton,
   MobileSearchbarButtonProps
-} from '../../../../constants/stories.constants'
+} from '@constants/stories'
 import { BrandMenu } from '../BrandMenu'
 
 import styles from './LoginJobsHeader.module.scss'
@@ -100,7 +100,7 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
         <div className={styles[`${Muiclass}-login-jobs-header--second-row__left-section`]}>
           {LoginHeaderMenuButton}
           <a href={homeUrl}>
-            <LogoComponent {...LogoProps} isoView={true} />
+            <LogoComponent {...logoProps} isoView={true} />
           </a>
 
           {brandsProps.brands && brandsProps.brands?.length > 0 ? (

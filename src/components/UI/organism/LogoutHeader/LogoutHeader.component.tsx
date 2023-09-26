@@ -12,14 +12,14 @@ import {
   RightLinkStyles,
   RightTabStyles,
   MenuButtonProps,
-  LogoProps,
+  logoProps,
   searchPropsButton,
   removePropsButton,
   MobileSearchbarButtonProps,
   SignInIcon,
   SignInStyles,
   SignUpButtonStyle
-} from '../../../../constants/stories.constants'
+} from '@constants/stories'
 
 const Component: React.FC<ILogoutHeader> = ({
   leftTabButton,
@@ -74,8 +74,8 @@ const Component: React.FC<ILogoutHeader> = ({
   const LogoutHeaderMenuButton = useMediaQuery(<MainButton {...MenuButtonProps} onClick={onMenuClick} />)
 
   // Header Logo Component
-  const LogoutHeaderLogo = useMediaQuery(<LogoComponent {...LogoProps} />, {
-    sm: <LogoComponent {...LogoProps} isoView={true} />
+  const LogoutHeaderLogo = useMediaQuery(<LogoComponent {...logoProps} />, {
+    sm: <LogoComponent {...logoProps} isoView={true} />
   })
 
   // Mobile Searchbar Button Component

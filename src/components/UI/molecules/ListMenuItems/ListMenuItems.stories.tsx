@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { ListMenuItems } from './ListMenuItems.component'
-import { MenuList } from '../../../../constants/stories.constants'
+import { MenuList } from '@constants/stories'
 
 const urlParams = 'empleos-por-empresas'
 

@@ -5,7 +5,7 @@ import { Actions, MobileDrawer } from '@components/UI/molecules'
 import { IMobileJobDetailsActionsBar } from './MobileJobDetailsActionsBar.interface'
 import styles from './MobileJobDetailsActionsBar.module.scss'
 
-import { anchorIconList } from '@constants/stories.constants'
+import { anchorIconList } from '@constants/stories'
 import { More } from '../../../../constants/icons.constants'
 
 const Component: React.FC<IMobileJobDetailsActionsBar> = ({ externalButtonChild, actionsProps }) => {

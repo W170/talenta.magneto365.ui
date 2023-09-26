@@ -1,5 +1,5 @@
 import { StoryObj, Meta } from '@storybook/react'
-import { AvatarProps, listMenuUserProps } from '../../../../constants/stories.constants'
+import { AvatarProps, listMenuUserProps } from '@constants/stories'
 import { UserMenu } from './UserMenu.component'
 
 const meta: Meta<typeof UserMenu> = {

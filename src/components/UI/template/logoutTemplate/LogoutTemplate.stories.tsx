@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { IDrawerOrganism, ILogoutHeader } from '../../organism'
 import { LogoutTemplate } from './LogoutTemplate.component'
-import { breadcrumbProps, listMenuProps } from '../../../../constants/stories.constants'
+import { breadcrumbProps, listMenuProps } from '@constants/stories'
 
 const logoutHeaderProps: ILogoutHeader = {
   leftTabButton: {

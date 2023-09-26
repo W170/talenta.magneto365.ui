@@ -1,5 +1,5 @@
 import React from 'react'
-import { LoadingProps, classMUI } from '@constants/stories.constants'
+import { LoadingProps, classMUI } from '@constants/stories'
 import { IListMenuText } from './ListMenuText.interface'
 import { Loading } from '@components/UI/atoms'
 import style from './ListMenuText.module.scss'

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import SortBar from './SortBar.component'
-import { sortBarProps } from '@constants'
+import { sortBarProps } from '@constants/stories'
 
 const meta: Meta<typeof SortBar> = {
   title: 'Template/Sort Bar',

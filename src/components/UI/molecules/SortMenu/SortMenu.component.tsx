@@ -3,7 +3,7 @@ import { ListSortMenu } from '../ListSortMenu'
 import { IconItem, Popover } from '../../atoms'
 import { ISortMenu } from './SortMenu.interface'
 import withClickOut from '../../../hoc/withClickOut'
-import { menuSortButton } from '@constants'
+import { menuSortButton } from '@constants/stories'
 import style from './SortMenu.module.scss'
 
 const SortMenu: React.FC<ISortMenu> = ({

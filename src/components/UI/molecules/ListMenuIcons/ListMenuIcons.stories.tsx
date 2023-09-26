@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { ListMenuIcons } from './ListMenuIcons.component'
-import { Logout, MenuItems, Settings } from '../../../../constants/stories.constants'
+import { Logout, MenuItems, Settings } from '@constants/stories'
 
 const urlParams = 'guardados'
 

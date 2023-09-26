@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { BrandsContainer } from './'
-import { brands, ourBrandsText } from '../../../../constants/stories.constants'
+import { brands, ourBrandsText } from '@constants/stories'
 
 const meta: Meta<typeof BrandsContainer> = {
   title: 'Molecules/Brands Container',

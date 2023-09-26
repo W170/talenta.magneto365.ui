@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './JobCardSkeleton.module.scss'
-import { classMUI } from '@constants/stories.constants'
+import { classMUI } from '@constants/stories'
 
 const JobCardSkeleton = () => {
   return (

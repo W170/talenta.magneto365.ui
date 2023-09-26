@@ -1,6 +1,6 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-import { optionsFilterMenu } from '@constants/stories.constants'
+import { optionsFilterMenu } from '@constants/stories'
 import { MenuSearch } from '../MenuSearch'
 import { FilterMenuItem } from '../FilterMenuItem'
 import { FilterSearchItem } from '../FilterSearchItem'

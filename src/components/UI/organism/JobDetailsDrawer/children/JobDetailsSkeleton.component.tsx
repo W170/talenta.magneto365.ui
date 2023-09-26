@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { classMUI } from '@constants/stories.constants'
+import { classMUI } from '@constants/stories'
 import style from './JobDetailsSkeleton.module.scss'
 
 const Component = () => {

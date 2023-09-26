@@ -1,6 +1,6 @@
 import React from 'react'
 import { ListIconLink } from '@components/UI/molecules'
-import { ListIcon, SocialMediaProps, classMUI } from '@constants/stories.constants'
+import { ListIcon, SocialMediaProps, classMUI } from '@constants/stories'
 import { IMagnetoSocialMedia } from './MagnetoSocialMedia.interface'
 import style from './MagnetoSocialMedia.module.scss'
 

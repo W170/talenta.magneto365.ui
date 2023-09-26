@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Footer } from './'
-import { MagnetoResolutionProps, RightsReservedProps, listMenuText } from '@constants/stories.constants'
+import { MagnetoResolutionProps, RightsReservedProps, listMenuText } from '@constants/stories'
 
 const meta: Meta<typeof Footer> = {
   title: 'Template/Footer',

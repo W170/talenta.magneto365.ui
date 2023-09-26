@@ -4,7 +4,7 @@ import { ILogoutJobsTemplate } from './LogoutJobsTemplate.interface'
 import { Drawer } from '../../molecules/Drawer/Drawer.component'
 import { ListIconLink, ListMenuItems } from '../../molecules'
 import { Link, LogoComponent, MainButton } from '../../atoms'
-import { LogoProps, SignInIcon, SignUpButtonStyle } from '../../../../constants/stories.constants'
+import { logoProps, SignInIcon, SignUpButtonStyle } from '@constants/stories'
 import style from './LogoutJobsTemplate.module.scss'
 
 const Muiclass = 'magneto-ui'
@@ -30,7 +30,7 @@ const LogoutJobsTemplate: React.FC<ILogoutJobsTemplate> = ({
       <Drawer isOpen={toggleDrawer} onClose={() => setToggleDrawer(false)}>
         <div className={style[`${Muiclass}-logout-jobs-template--brands`]}>
           <a href={homeUrl}>
-            <LogoComponent {...LogoProps} isoView={true} />
+            <LogoComponent {...logoProps} isoView={true} />
           </a>
           <a href={companyUrl}>
             <img

@@ -3,7 +3,7 @@ import { MainButton } from '../../atoms'
 import { IMobileSearchbar } from './MobileSearchbar.interface'
 import styles from './MobileSearchbar.modules.scss'
 
-import { closeSearchMobileProps, searchMobileProps } from '../../../../constants/stories.constants'
+import { closeSearchMobileProps, searchMobileProps } from '@constants/stories'
 
 const Component: React.FC<IMobileSearchbar> = ({
   termValue,

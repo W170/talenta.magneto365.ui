@@ -12,7 +12,7 @@ import {
 import { MobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 
 import { IMobileJobDetailsDrawer } from './MobileJobDetailsDrawer.interface'
-import { iconDetailList, iconFooterList } from '@constants/stories.constants'
+import { iconDetailList, iconFooterList } from '@constants/stories'
 
 const Component: React.FC<IMobileJobDetailsDrawer> = ({
   jobCompanyLogoProps,
