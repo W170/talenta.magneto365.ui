@@ -4,6 +4,8 @@ import { LogoutTemplate } from './LogoutTemplate.component'
 import { breadcrumbProps, listMenuProps } from '@constants/stories'
 
 const logoutHeaderProps: ILogoutHeader = {
+  allJobsLink: '#',
+  allJobsText: 'Todos los empleos',
   leftTabButton: {
     type: 'link' as const,
     href: '#',

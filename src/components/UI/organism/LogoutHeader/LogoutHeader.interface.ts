@@ -11,4 +11,6 @@ export interface ILogoutHeader {
   onMenuClick?: () => void
   breadcrumbProps: IBreadcrumb
   homeUrl: string
+  allJobsText: string
+  allJobsLink: string
 }

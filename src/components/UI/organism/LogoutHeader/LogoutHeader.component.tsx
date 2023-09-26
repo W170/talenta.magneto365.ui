@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, LogoComponent, MainButton } from '../../atoms'
+import { Link, LogoComponent, MainButton, SearchItem } from '../../atoms'
 import { Breadcrumbs, MobileSearchbar, Tab, TabButton, Searchbar } from '../../molecules'
 
 import { ILogoutHeader } from './LogoutHeader.interface'
@@ -30,7 +30,9 @@ const Component: React.FC<ILogoutHeader> = ({
   signUpButton,
   breadcrumbProps,
   onMenuClick,
-  homeUrl
+  homeUrl,
+  allJobsText,
+  allJobsLink
 }) => {
   const { type, href, text } = signInLink
   const { buttonText, loadingState, onClick } = signUpButton
@@ -129,7 +131,10 @@ const Component: React.FC<ILogoutHeader> = ({
           <a href={homeUrl}>{LogoutHeaderLogo}</a>
           {LogoutHeaderMobileSearchbarButton}
         </div>
-        <div className={styles['magneto-ui-middle-section']}>{LogoutHeaderSearchbar}</div>
+        <div className={styles['magneto-ui-middle-section']}>
+          {LogoutHeaderSearchbar} <SearchItem tag={allJobsText} url={allJobsLink} />
+        </div>
+
         <div className={styles['magneto-ui-right-section']}>
           {LogoutHeaderLinkSignIn}
           {LogoutHeaderButtonSignUp}
