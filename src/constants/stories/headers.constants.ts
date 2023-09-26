@@ -3,8 +3,8 @@ import { IHeaderTabs, IListMenuIcons, IMenuItems, IMobileSearchbar, ISearchbar }
 import { IBrands } from '@components/UI/molecules/BrandsContainer/BrandsContainer.interface'
 import {
   Add,
+  AllEmployess,
   ArchiveTick,
-  BrifecaseTick,
   ClipboardClose,
   DocumentText,
   HambergerMenu,
@@ -12,6 +12,7 @@ import {
   MessageQuestion,
   ProfileAdd,
   SearchNormal1,
+  SuggestedEmployess,
   TaskSquare
 } from '@constants/icons.constants'
 
@@ -81,7 +82,13 @@ export const MenuItems: IMenuItems[] = [
     title: 'Empleos',
     items: [
       {
-        icon: BrifecaseTick,
+        icon: AllEmployess,
+        text: 'Ver todos',
+        slug: 'ver-todos',
+        url: '/ver-todos'
+      },
+      {
+        icon: SuggestedEmployess,
         text: 'Sugeridos',
         slug: 'sugeridos',
         url: '/sugeridos'
@@ -230,6 +237,12 @@ export const JobsTabsProps: IHeaderTabs = {
       tabType: 'tabTitle',
       url: '#',
       tabText: 'Empleos:'
+    },
+    {
+      tabType: 'tabOption',
+      url: '#',
+      tabText: 'Ver todos',
+      slug: 'ver-todos'
     },
     {
       tabType: 'tabOption',
