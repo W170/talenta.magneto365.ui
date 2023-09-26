@@ -3,7 +3,7 @@ import { IHeaderTabs, IListMenuIcons, IMenuItems, IMobileSearchbar, ISearchbar }
 import { IBrands } from '@components/UI/molecules/BrandsContainer/BrandsContainer.interface'
 import {
   Add,
-  AllEmployess,
+  AllJobs,
   ArchiveTick,
   ClipboardClose,
   DocumentText,
@@ -12,7 +12,7 @@ import {
   MessageQuestion,
   ProfileAdd,
   SearchNormal1,
-  SuggestedEmployess,
+  SuggestedJobs,
   TaskSquare
 } from '@constants/icons.constants'
 
@@ -82,13 +82,13 @@ export const MenuItems: IMenuItems[] = [
     title: 'Empleos',
     items: [
       {
-        icon: AllEmployess,
+        icon: AllJobs,
         text: 'Ver todos',
         slug: 'ver-todos',
         url: '/ver-todos'
       },
       {
-        icon: SuggestedEmployess,
+        icon: SuggestedJobs,
         text: 'Sugeridos',
         slug: 'sugeridos',
         url: '/sugeridos'
