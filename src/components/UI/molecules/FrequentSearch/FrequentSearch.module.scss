@@ -33,7 +33,7 @@
 
   &__buttons-container {
     display: block;
-    @media screen and (min-width: v.$screen-md) {
+    @media screen and (min-width: v.$screen-lg) {
       display: none;
     }
 
