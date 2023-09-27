@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, LogoComponent, MainButton } from '../../atoms'
+import { Link, LogoComponent, MainButton, SearchItem } from '../../atoms'
 import { Breadcrumbs, MobileSearchbar, Searchbar } from '../../molecules'
 
 import { ILogoutJobsHeader } from './LogoutJobsHeader.interface'
@@ -29,7 +29,9 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
   onMenuClick,
   homeUrl,
   brandMenuProps,
-  gif
+  gif,
+  allJobsText,
+  allJobsLink
 }) => {
   const { type, href, text } = signInLink
   const { buttonText, loadingState, onClick } = signUpButton
@@ -126,6 +128,7 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
         </div>
         <div className={styles[`${Muiclass}-logout-jobs-header--second-row__middle-section`]}>
           {LogoutHeaderSearchbar}
+          <SearchItem tag={allJobsText} url={allJobsLink} />
         </div>
         <div className={styles[`${Muiclass}-logout-jobs-header--second-row__right-section`]}>
           {LogoutHeaderLinkSignIn}

@@ -5,7 +5,7 @@ import { MenuIcon } from '../MenuIcon'
 import { IListMenuIcons } from './ListMenuIcons.interface'
 import { useMediaQuery } from '../../../hooks'
 import style from './listMenuIcons.module.scss'
-import { LoginCurve, Setting2 } from '../../../../constants/icons.constants'
+import { LogoutIcon, Setting2 } from '../../../../constants/icons.constants'
 
 const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, menuItems1440, logout, settings, haveGif }) => {
   const { logoutText, onClick } = logout
@@ -29,7 +29,7 @@ const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, menuItems144
         <MenuIcon type="button" onClick={onClickSettings} icon={Setting2} text={settingsText} />
       </div>
       <Divider />
-      <MenuIcon type="button" onClick={onClick} icon={LoginCurve} text={logoutText} />
+      <MenuIcon type="button" onClick={onClick} icon={LogoutIcon} text={logoutText} />
     </div>
   )
 }

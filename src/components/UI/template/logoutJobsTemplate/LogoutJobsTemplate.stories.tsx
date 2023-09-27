@@ -13,6 +13,8 @@ import {
 import { IListMenuItems, MenuItemInfo } from '../../molecules'
 
 const LogoutJobsHeaderProps = {
+  allJobsText: 'Todos los empleos',
+  allJobsLink: '#',
   companyUrl: '/empleos/company',
   searchbar: SearchbarProps,
   mobileSearchbar: MobileSearchbarProps,

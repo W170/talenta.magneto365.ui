@@ -51,7 +51,9 @@ const meta: Meta<typeof LogoutHeader> = {
     signInLink: SignInProps,
     signUpButton: SignUpProps,
     breadcrumbProps: breadcrumbProps,
-    homeUrl: '/home'
+    homeUrl: '/home',
+    allJobsLink: '#',
+    allJobsText: 'Todos los empleos'
   }
 }
 

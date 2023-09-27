@@ -14,6 +14,8 @@ const meta: Meta<typeof LogoutJobsHeader> = {
   title: 'Organism/Logout Jobs Header',
   component: LogoutJobsHeader,
   args: {
+    allJobsText: 'Todos los empleos',
+    allJobsLink: '#',
     searchbar: SearchbarProps,
     mobileSearchbar: MobileSearchbarProps,
     signInLink: SignInProps,

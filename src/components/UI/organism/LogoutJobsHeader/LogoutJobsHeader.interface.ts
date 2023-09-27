@@ -12,4 +12,6 @@ export interface ILogoutJobsHeader {
   homeUrl: string
   gif?: string | null
   brandMenuProps: IBrandMenu
+  allJobsText: string
+  allJobsLink: string
 }
