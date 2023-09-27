@@ -20,7 +20,7 @@ const Component: React.FC<IActions> = ({
 
   return (
     <div className={styles['magneto-ui-actions']}>
-      <div id={styles['magneto-ui__external-child']}> {externalButtonChild} </div>
+      <div id={styles['magneto-ui__external-child']}>{externalButtonChild}</div>
       <SaveButton {...saveButtonProps} />
       <ShareButton {...shareButtonProps} />
       {actionsLinkList?.map(({ url, text, Icon }, index: number) => (
