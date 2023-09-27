@@ -6,6 +6,7 @@ import {
   IJobSkillsCard
 } from '@components/UI/molecules'
 import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
+import { ReactNode } from 'react'
 
 export interface IMobileJobDetailsDrawer {
   /**
@@ -54,4 +55,8 @@ export interface IMobileJobDetailsDrawer {
    *
    */
   jobDetailAction?: JSX.Element | undefined
+  /**
+   *
+   */
+  modalPendingInfoComponent?: ReactNode | JSX.Element
 }

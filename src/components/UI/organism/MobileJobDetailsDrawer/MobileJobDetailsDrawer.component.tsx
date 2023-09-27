@@ -24,6 +24,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   jobFooterCardProps,
   mobileJobDetailsBarProps,
   jobDetailAction,
+  modalPendingInfoComponent,
   isOpen = true,
   onClose
 }) => {
@@ -34,22 +35,33 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   }
 
   return (
-    <Drawer isOpen={isOpen} isFull={true} onClose={handleClose} direction="right" customPadding={0} hideButton isMobile>
-      {jobDetailAction ? (
-        jobDetailAction
-      ) : (
-        <Fragment>
-          <MobileJobDetailsHeader returnText={jobDetailsHeaderText} onClick={handleClose} />
-          <JobCompanyHeader {...jobCompanyLogoProps} />
-          {jobDetailsProps && <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />}
-          <JobDetailCard {...jobDetailCardProps} />
-          {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
-          <JobApplyCard {...jobApplyCardProps} />
-          <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
-          <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} />
-        </Fragment>
-      )}
-    </Drawer>
+    <Fragment>
+      <Drawer
+        isOpen={isOpen}
+        isFull={true}
+        onClose={handleClose}
+        direction="right"
+        customPadding={0}
+        hideButton
+        isMobile
+      >
+        {jobDetailAction ? (
+          jobDetailAction
+        ) : (
+          <Fragment>
+            <MobileJobDetailsHeader returnText={jobDetailsHeaderText} onClick={handleClose} />
+            <JobCompanyHeader {...jobCompanyLogoProps} />
+            {jobDetailsProps && <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />}
+            <JobDetailCard {...jobDetailCardProps} />
+            {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
+            <JobApplyCard {...jobApplyCardProps} />
+            <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
+            <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} />
+          </Fragment>
+        )}
+      </Drawer>
+      {modalPendingInfoComponent}
+    </Fragment>
   )
 }
 
