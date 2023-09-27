@@ -42,5 +42,5 @@ export interface IJobDetailsDrawer {
   /**
    *
    */
-  modalPendingInfoComponent?: ReactNode
+  modalPendingInfoComponent?: ReactNode | JSX.Element
 }
