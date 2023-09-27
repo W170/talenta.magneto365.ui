@@ -23,5 +23,5 @@ export interface IJobApplyCard {
   /**
    * Content to be displayed as an external child element.
    */
-  externalChild: ReactNode
+  externalChild: ReactNode | JSX.Element
 }
