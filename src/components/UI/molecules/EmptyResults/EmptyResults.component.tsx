@@ -1,5 +1,4 @@
 import React from 'react'
-import { EmptyResult as EmptyResultImage } from '@constants/images.constants'
 import { SearchItem } from '@components/UI/atoms'
 import { classMUI } from '@constants/stories'
 import style from './EmptyResults.module.scss'
@@ -9,14 +8,15 @@ const EmptyResult: React.FC<IEmptyResutls> = ({
   titleNoResutls,
   noResultsDescription,
   noResultsDescriptionTwo,
-  filteredOptions
+  filteredOptions,
+  noResultsImage
 }) => {
   return (
     <main className={style[`${classMUI}-empty-result`]}>
       <span className={style[`${classMUI}-empty-result__img-container`]}>
         <img
           className={style[`${classMUI}-empty-result__img-container--img`]}
-          src={EmptyResultImage}
+          src={noResultsImage}
           alt="empty-result"
         />
       </span>
