@@ -89,10 +89,10 @@
     font-weight: 700;
     line-height: normal;
     color: v.$color-white;
+  }
 
-    :hover {
-      background-color: v.$color-blue-primary;
-      color: v.$color-white;
-    }
+  button:hover {
+    background: v.$color-blue-primary;
+    color: v.$color-white;
   }
 }
