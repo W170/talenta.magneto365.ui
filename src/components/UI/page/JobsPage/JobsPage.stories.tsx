@@ -14,6 +14,7 @@ import {
 import { sideFilterProps, sortBarProps, paginationProps } from '@constants/stories'
 
 import { Buildings2, Export3 } from '@constants/icons.constants'
+import { emptyResultsProps } from '@constants/stories/emptyResults.constants'
 
 const jobDetailsDrawer = {
   jobCompanyLogoProps: {
@@ -202,7 +203,8 @@ const meta: Meta<typeof JobsPage> = {
     paginationProps,
     jobSelected: vacants[0],
     isLoading: false,
-    device: 'desktop'
+    device: 'desktop',
+    emptyResultsProps
   },
   decorators: [
     (Story) => (
