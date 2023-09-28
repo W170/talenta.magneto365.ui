@@ -1,0 +1,60 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-empty-result {
+  border: 1px solid #e3e3e3;
+  border-radius: 20px;
+  max-width: 95%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  position: relative;
+
+  h2 {
+    font-size: 18px;
+    @media (min-width: v.$screen-md) {
+      font-size: 20px;
+    }
+  }
+  p {
+    font-size: 16px;
+    text-align: justify;
+  }
+  @media (min-width: v.$screen-lg) {
+    width: 85%;
+  }
+  @media (min-width: v.$screen-xxl) {
+    width: 65%;
+  }
+  &__img-container {
+    display: none;
+    @media (min-width: v.$screen-lg) {
+      width: 350px;
+      display: block;
+    }
+    @media (min-width: v.$screen-xl) {
+      width: 250px;
+      display: block;
+    }
+    &--img {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  &__info {
+    margin-left: 0px;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: v.$screen-md) {
+      margin-left: 25px;
+    }
+  }
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+  }
+}

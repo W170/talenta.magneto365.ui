@@ -5,6 +5,7 @@ import { ISortBar } from '@components/UI/template/SortBar/SortBar.interface'
 import { ISideFilter } from '@components/UI/template'
 import { IFooter } from '@components/UI/template/Footer/Footer.interface'
 import { DeviceType } from '@components/context/context.interface'
+import { IEmptyResutls } from '@components/UI/molecules/EmptyResults/EmptyResults.interface'
 
 export interface IJobsPage {
   /**
@@ -58,6 +59,10 @@ export interface IJobsPage {
    * This property show the action detail view
    */
   jobDetailAction?: JSX.Element | undefined
+  /**
+   * This prperty show values in the empty vacants card
+   */
+  emptyResultsProps: IEmptyResutls
 }
 
 export interface IVacancies extends IJobCard {

@@ -4,11 +4,10 @@ import { JobDetailContainer, JobCard, FrequentSearch, Pagination } from '@compon
 import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
 import { SortBar, Footer, SideFilter } from '@components/UI/template'
 import { useMediaQuery } from '@components/hooks'
-
 import { IJobsPage } from './JobsPage.interface'
 import style from './JobsPage.module.scss'
-
 import { classMUI } from '@constants/stories'
+import { EmptyResults } from '@components/UI/molecules/EmptyResults'
 
 const JobsPage: React.FC<IJobsPage> = ({
   jobDetailsDrawerProps,
@@ -23,6 +22,7 @@ const JobsPage: React.FC<IJobsPage> = ({
   jobSelected,
   isLoading,
   device,
+  emptyResultsProps,
   jobDetailAction
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
@@ -79,7 +79,7 @@ const JobsPage: React.FC<IJobsPage> = ({
           <SortBar {...sortBarProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
           <h1 className={style[`${classMUI}-jobs-page--title`]}>{sortBarProps?.mainTitle}</h1>
           <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>
-            {vacantProps?.length &&
+            {vacantProps?.length > 0 ? (
               vacantProps.map(({ id, ...props }) => (
                 <JobCard
                   isLoading={isLoading}
@@ -89,7 +89,10 @@ const JobsPage: React.FC<IJobsPage> = ({
                   key={`${id}-JobsPage`}
                   {...props}
                 />
-              ))}
+              ))
+            ) : (
+              <EmptyResults {...emptyResultsProps} />
+            )}
           </div>
           <Pagination {...paginationProps} />
           <FrequentSearch {...frequentSearchProps} />
