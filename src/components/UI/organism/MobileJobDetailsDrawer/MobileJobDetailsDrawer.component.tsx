@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useCallback, useMemo } from 'react'
 import {
   Drawer,
   JobCompanyHeader,
@@ -10,6 +10,7 @@ import {
   MobileJobDetailsHeader
 } from '@components/UI/molecules'
 import { MobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
+import { MobileJobDetailsDrawerSkeleton } from './children/MobileJobDetailsDrawerSkeleton.component'
 
 import { IMobileJobDetailsDrawer } from './MobileJobDetailsDrawer.interface'
 import { iconDetailList, iconFooterList } from '@constants/stories'
@@ -26,13 +27,45 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   jobDetailAction,
   modalPendingInfoComponent,
   isOpen = true,
+  isLoading,
   onClose
 }) => {
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     if (onClose) {
       onClose()
     }
-  }
+  }, [onClose])
+
+  const renderContent = useMemo(() => {
+    return jobDetailAction ? (
+      jobDetailAction
+    ) : isLoading ? (
+      <MobileJobDetailsDrawerSkeleton />
+    ) : (
+      <Fragment>
+        <MobileJobDetailsHeader returnText={jobDetailsHeaderText} onClick={handleClose} />
+        <JobCompanyHeader {...jobCompanyLogoProps} />
+        {jobDetailsProps && <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />}
+        <JobDetailCard {...jobDetailCardProps} />
+        {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
+        <JobApplyCard {...jobApplyCardProps} />
+        <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
+        <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} />
+      </Fragment>
+    )
+  }, [
+    handleClose,
+    isLoading,
+    jobApplyCardProps,
+    jobCompanyLogoProps,
+    jobDetailAction,
+    jobDetailCardProps,
+    jobDetailsHeaderText,
+    jobDetailsProps,
+    jobFooterCardProps,
+    jobSkillsCardProps,
+    mobileJobDetailsBarProps
+  ])
 
   return (
     <Fragment>
@@ -45,20 +78,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
         hideButton
         isMobile
       >
-        {jobDetailAction ? (
-          jobDetailAction
-        ) : (
-          <Fragment>
-            <MobileJobDetailsHeader returnText={jobDetailsHeaderText} onClick={handleClose} />
-            <JobCompanyHeader {...jobCompanyLogoProps} />
-            {jobDetailsProps && <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />}
-            <JobDetailCard {...jobDetailCardProps} />
-            {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
-            <JobApplyCard {...jobApplyCardProps} />
-            <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
-            <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} />
-          </Fragment>
-        )}
+        {renderContent}
       </Drawer>
       {modalPendingInfoComponent}
     </Fragment>

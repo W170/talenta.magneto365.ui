@@ -59,4 +59,9 @@ export interface IMobileJobDetailsDrawer {
    *
    */
   modalPendingInfoComponent?: ReactNode | JSX.Element
+  /**
+   * Specifies whether the component is in a loading state.
+   * (Optional property)
+   */
+  isLoading?: boolean
 }
