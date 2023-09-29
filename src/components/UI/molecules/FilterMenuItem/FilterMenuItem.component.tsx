@@ -1,5 +1,6 @@
 import React, { FC, Fragment, useCallback, useMemo } from 'react'
 import { SmallClose } from '@constants/icons.constants'
+import { formatNumber } from '@shared/utils/common'
 import { IconItem } from '@components/UI/atoms'
 import { IFilterMenuItem } from './FilterMenuItem.interface'
 import styles from './FilterMenuItem.module.scss'
@@ -21,7 +22,7 @@ export const FilterMenuItem: FC<IFilterMenuItem> = ({
   const displayOutput = useMemo(() => {
     if (isApplied) return <IconItem icon={SmallClose} size={17} />
     if (!hasTotal) return <Fragment />
-    return <output>{total}</output>
+    return <output>{formatNumber(total)}</output>
   }, [isApplied, total, hasTotal])
 
   const disabled = useMemo(() => {
