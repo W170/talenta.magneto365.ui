@@ -1,10 +1,10 @@
-import React, { Fragment, useCallback, useState } from 'react'
+import React, { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
 import FilterContainerMenu from '@components/UI/molecules/FilterContainerMenu/FilterContainerMenu.component'
 import { JobDetailContainer, JobCard, FrequentSearch, Pagination } from '@components/UI/molecules'
 import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
 import { SortBar, Footer, SideFilter } from '@components/UI/template'
 import { useMediaQuery } from '@components/hooks'
-
+import { showDetailByWindow } from './utils'
 import { IJobsPage } from './JobsPage.interface'
 import style from './JobsPage.module.scss'
 
@@ -28,15 +28,19 @@ const JobsPage: React.FC<IJobsPage> = ({
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [showDetail, setShowDetail] = useState(device === 'desktop')
 
+  useEffect(() => {
+    setShowDetail(showDetailByWindow())
+  }, [])
+
   const onClose = useCallback(() => {
     setShowDetail(false)
     setJobSelected(null)
   }, [setJobSelected])
 
-  const hasVacants = !!vacantProps?.length && !isLoading
+  const hasVacancies = useMemo(() => !!vacantProps?.length || isLoading, [isLoading, vacantProps?.length])
 
   const JobDetailsDrawerComponent = useMediaQuery(
-    <JobDetailContainer onClose={onClose} isOpen={showDetail && hasVacants}>
+    <JobDetailContainer onClose={onClose} isOpen={showDetail && hasVacancies}>
       {jobDetailAction ? (
         jobDetailAction
       ) : (
@@ -68,7 +72,7 @@ const JobsPage: React.FC<IJobsPage> = ({
 
   return (
     <Fragment>
-      <div className={style[`${classMUI}-jobs-page`]}>
+      <div id="magneto-ui-jobs-page" className={style[`${classMUI}-jobs-page`]}>
         <div className={style[`${classMUI}-jobs-page--filter-row`]}>
           <FilterContainerMenu>
             <SideFilter {...sideFilterProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
