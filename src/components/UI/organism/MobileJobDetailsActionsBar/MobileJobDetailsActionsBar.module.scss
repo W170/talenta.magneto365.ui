@@ -61,8 +61,8 @@
     color: v.$color-white;
   }
 
-  :hover {
-    background-color: v.$color-blue-primary;
+  button:hover {
+    background: v.$color-blue-primary;
     color: v.$color-white;
   }
 }
