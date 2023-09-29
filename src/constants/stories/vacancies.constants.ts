@@ -16,7 +16,7 @@ import {
   Location
 } from '@constants/icons.constants'
 
-export const vacants: IVacancies[] = [
+export const vacancies: IVacancies[] = [
   {
     id: 1,
     title: 'Desarrollador Web',

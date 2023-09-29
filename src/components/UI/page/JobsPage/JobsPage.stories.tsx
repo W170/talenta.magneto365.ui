@@ -9,7 +9,7 @@ import {
   RightsReservedProps,
   listMenuText,
   searchList,
-  vacants
+  vacancies
 } from '@constants/stories'
 import { sideFilterProps, sortBarProps, paginationProps } from '@constants/stories'
 
@@ -194,14 +194,14 @@ const meta: Meta<typeof JobsPage> = {
   tags: ['autodocs'],
   args: {
     sortBarProps,
-    vacantProps: vacants,
+    vacantProps: vacancies,
     jobDetailsDrawerProps: jobDetailsDrawer,
     mobileJobDetailsDrawerProps: mobileJobDetailsDrawer,
     frequentSearchProps: frequentSearch,
     sideFilterProps: sideFilterProps as ISideFilter,
     footerProps,
     paginationProps,
-    jobSelected: vacants[0],
+    jobSelected: vacancies[0],
     isLoading: false,
     device: 'desktop',
     emptyResultsProps
