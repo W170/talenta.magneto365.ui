@@ -55,6 +55,7 @@ const JobsPage: React.FC<IJobsPage> = ({
           onClose={onClose}
           isOpen={showDetail}
           jobDetailAction={jobDetailAction}
+          isLoading={isLoading || !jobSelected}
         />
       )
     }
