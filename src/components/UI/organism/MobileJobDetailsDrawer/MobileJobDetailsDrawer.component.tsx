@@ -50,13 +50,11 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
         {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
         <JobApplyCard {...jobApplyCardProps} />
         <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
-        <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} onClose={isOpen} />
       </Fragment>
     )
   }, [
     handleClose,
     isLoading,
-    isOpen,
     jobApplyCardProps,
     jobCompanyLogoProps,
     jobDetailAction,
@@ -64,8 +62,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
     jobDetailsHeaderText,
     jobDetailsProps,
     jobFooterCardProps,
-    jobSkillsCardProps,
-    mobileJobDetailsBarProps
+    jobSkillsCardProps
   ])
 
   return (
@@ -80,6 +77,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
         isMobile
       >
         {renderContent}
+        {!jobDetailAction && <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} onClose={isOpen} />}
       </Drawer>
       {modalPendingInfoComponent}
     </Fragment>
