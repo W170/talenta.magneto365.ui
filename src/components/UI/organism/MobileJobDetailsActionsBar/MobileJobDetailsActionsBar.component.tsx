@@ -8,15 +8,17 @@ import styles from './MobileJobDetailsActionsBar.module.scss'
 import { anchorIconList } from '@constants/stories'
 import { More } from '../../../../constants/icons.constants'
 
-const Component: React.FC<IMobileJobDetailsActionsBar> = ({ externalButtonChild, actionsProps }) => {
+const Component: React.FC<IMobileJobDetailsActionsBar> = ({ externalButtonChild, actionsProps, onClose }) => {
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
 
   const onOpenClick = () => {
     setToggleMobileDrawer(!toggleMobileDrawer)
   }
 
+  const showButtonContainer = onClose ? '' : styles['hideContainer']
+
   return (
-    <div className={styles.MobileJobDetailsActionsBarComponent}>
+    <div className={`${styles.MobileJobDetailsActionsBarComponent} ${showButtonContainer}`}>
       <div id={styles['magneto-ui__external-child']}>{externalButtonChild}</div>
       <div className={styles['DrawerButtonWrapper']}>
         <button type="button" onClick={onOpenClick}>

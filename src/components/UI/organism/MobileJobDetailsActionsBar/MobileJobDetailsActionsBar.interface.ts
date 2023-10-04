@@ -11,4 +11,8 @@ export interface IMobileJobDetailsActionsBar {
    * Content to be displayed as an external button.
    */
   externalButtonChild: ReactNode
+  /**
+   *
+   */
+  onClose: boolean
 }
