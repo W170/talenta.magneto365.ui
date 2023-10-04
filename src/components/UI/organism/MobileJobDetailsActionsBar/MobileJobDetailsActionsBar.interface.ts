@@ -14,5 +14,5 @@ export interface IMobileJobDetailsActionsBar {
   /**
    *
    */
-  onClose: boolean
+  onClose?: boolean
 }
