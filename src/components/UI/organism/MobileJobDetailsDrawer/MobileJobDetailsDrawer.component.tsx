@@ -50,12 +50,13 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
         {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
         <JobApplyCard {...jobApplyCardProps} />
         <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
-        <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} />
+        <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} onClose={isOpen} />
       </Fragment>
     )
   }, [
     handleClose,
     isLoading,
+    isOpen,
     jobApplyCardProps,
     jobCompanyLogoProps,
     jobDetailAction,
