@@ -87,7 +87,8 @@ const MobileJobDetailsActionsBar = {
       onCopyError: () => console.log('Error')
     },
     externalButtonChild: <MainButton buttonText="Aplicar" />
-  }
+  },
+  onClose: true
 }
 
 const meta: Meta<typeof MobileJobDetailsDrawer> = {

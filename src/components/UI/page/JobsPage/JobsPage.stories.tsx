@@ -170,7 +170,8 @@ const mobileJobDetailsDrawer = {
         onCopySuccess: () => console.log('Success')
       },
       externalButtonChild: <MainButton buttonText="Aplicar" />
-    }
+    },
+    onClose: true
   }
 }
 
