@@ -15,7 +15,7 @@ const Component: React.FC<IMobileJobDetailsActionsBar> = ({ externalButtonChild,
     setToggleMobileDrawer(!toggleMobileDrawer)
   }
 
-  const showButtonContainer = onClose ? '' : styles['hideContainer']
+  const showButtonContainer = onClose ? styles['showContainer'] : styles['hideContainer']
 
   return (
     <div className={`${styles.MobileJobDetailsActionsBarComponent} ${showButtonContainer}`}>
