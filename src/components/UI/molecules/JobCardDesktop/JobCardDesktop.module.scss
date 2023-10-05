@@ -46,9 +46,10 @@
   &--row3,
   &--row4 {
     display: flex;
-    @container (max-width: 1000px) {
-      min-height: 35px;
-    }
+
+    // @container (max-width: 1000px) {
+    //   min-height: 35px;
+    // }
   }
 
   &--row1 {
@@ -82,6 +83,10 @@
       max-width: 200px;
       overflow: hidden;
       text-overflow: ellipsis;
+      display: none;
+      @container (min-width: 600px) {
+        display: block;
+      }
     }
     &__position {
       font-weight: bold;
@@ -118,8 +123,17 @@
     flex-wrap: wrap;
     padding-right: 30px;
     min-width: 267px;
+
     p {
       margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @container (min-width: 800px) {
+        -webkit-line-clamp: 3;
+      }
     }
   }
   &--brand {

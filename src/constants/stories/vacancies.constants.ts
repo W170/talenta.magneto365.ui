@@ -24,7 +24,8 @@ export const vacancies: IVacancies[] = [
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
     companyName: 'Adidas',
     companySlug: 'adidas',
-    educationLevel: 'Profesional',
+    educationLevel:
+      'Básica primaria, Bachillerato (grados 6°, 7° u 8°), Bachillerato (grados 9°, 10° y 11°), Bachillerato completo, Técnico, Tecnólogo, Profesional, Especialización/ Maestría, Doctorado.',
     experience: '6 meses de experiencia',
     salary: '1.200.000 a 4.000.000',
     formatPublishDate: 'hace 10 dias',
