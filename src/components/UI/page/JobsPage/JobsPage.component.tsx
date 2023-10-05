@@ -9,6 +9,7 @@ import { IJobsPage } from './JobsPage.interface'
 import style from './JobsPage.module.scss'
 import { classMUI } from '@constants/stories'
 import { EmptyResults } from '@components/UI/molecules/EmptyResults'
+import { JobCardSkeleton } from '@components/UI/molecules/JobCard/children'
 
 const JobsPage: React.FC<IJobsPage> = ({
   jobDetailsDrawerProps,
@@ -61,6 +62,14 @@ const JobsPage: React.FC<IJobsPage> = ({
     }
   )
 
+  const cardsAltRender = useMemo(() => {
+    if (isLoading) {
+      return <JobCardSkeleton numCard={20} />
+    }
+
+    return <EmptyResults {...emptyResultsProps} />
+  }, [isLoading, emptyResultsProps])
+
   const handleVacant = useCallback(
     (id: number | null) => {
       if (id) {
@@ -85,20 +94,18 @@ const JobsPage: React.FC<IJobsPage> = ({
           <SortBar {...sortBarProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
           <h1 className={style[`${classMUI}-jobs-page--title`]}>{sortBarProps?.mainTitle}</h1>
           <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>
-            {vacantProps?.length > 0 ? (
-              vacantProps.map(({ id, ...props }) => (
-                <JobCard
-                  isLoading={isLoading}
-                  isActive={id === jobSelected?.id}
-                  id={id}
-                  showDetail={() => handleVacant(id)}
-                  key={`${id}-JobsPage`}
-                  {...props}
-                />
-              ))
-            ) : (
-              <EmptyResults {...emptyResultsProps} />
-            )}
+            {vacantProps.length <= 0 || isLoading
+              ? cardsAltRender
+              : vacantProps.map(({ id, ...props }) => (
+                  <JobCard
+                    isLoading={isLoading}
+                    isActive={id === jobSelected?.id}
+                    id={id}
+                    showDetail={() => handleVacant(id)}
+                    key={`${id}-JobsPage`}
+                    {...props}
+                  />
+                ))}
           </div>
           <Pagination {...paginationProps} />
           <FrequentSearch {...frequentSearchProps} />
