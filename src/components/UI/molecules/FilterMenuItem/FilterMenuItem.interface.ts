@@ -30,6 +30,10 @@ export interface IFilterMenuItem extends IFilterValue {
    */
   customId?: string
   /**
+   * This is a flag if the vacant is internal
+   */
+  hiddenCount?: boolean
+  /**
    * This function change if the item is isSelected
    */
   setIsApplied: (filter: ISetIsApplied) => Promise<void> | void

@@ -17,21 +17,22 @@ export const FilterMenuItem: FC<IFilterMenuItem> = ({
   isSearched,
   customClass,
   customId,
+  hiddenCount,
   setIsApplied
 }) => {
   const displayOutput = useMemo(() => {
     if (isApplied) return <IconItem icon={SmallClose} size={17} />
-    if (!hasTotal) return <Fragment />
+    if (!hasTotal || hiddenCount) return <Fragment />
     return <output>{formatNumber(total)}</output>
-  }, [isApplied, total, hasTotal])
+  }, [total, isApplied, hasTotal, hiddenCount])
 
   const disabled = useMemo(() => {
-    return isSearched || isApplied ? false : !total
-  }, [isApplied, isSearched, total])
+    return isSearched || isApplied || hiddenCount ? false : !total
+  }, [total, isApplied, isSearched, hiddenCount])
 
   const className = useMemo(() => {
-    return isApplied ? styles.selected : isSearched ? styles.isSearched : !total && styles.disabled
-  }, [isApplied, isSearched, total])
+    return isApplied ? styles.selected : isSearched ? styles.isSearched : hiddenCount ? '' : !total && styles.disabled
+  }, [total, isApplied, isSearched, hiddenCount])
 
   const handleClick = useCallback(() => {
     setIsApplied({ id, field, isApplied, multiple })
@@ -54,5 +55,6 @@ export const FilterMenuItem: FC<IFilterMenuItem> = ({
 }
 
 FilterMenuItem.defaultProps = {
-  isSearched: false
+  isSearched: false,
+  hiddenCount: false
 }
