@@ -22,7 +22,7 @@ const EmptyResult: React.FC<IEmptyResutls> = ({
       </span>
       <div className={style[`${classMUI}-empty-result__info`]}>
         <div>
-          <h2>{titleNoResutls}</h2>
+          <h1>{titleNoResutls}</h1>
           <p>{noResultsDescription}</p>
           <p>{noResultsDescriptionTwo}</p>
         </div>
