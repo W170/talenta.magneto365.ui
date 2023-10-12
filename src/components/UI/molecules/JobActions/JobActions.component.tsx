@@ -17,25 +17,26 @@ const Component: React.FC<IJobsActions> = ({
     title: actionsAnchorTitle?.[index]
   }))
 
+  const filteredActionsLinkList = actionsLinkList?.filter((item) => item.url !== null && item.url !== undefined)
+
   return (
     <div className={styles['magneto-ui-job-actions']}>
       <div id={styles['magneto-ui__external-child']}>{externalButtonChild}</div>
       <div className={styles['magneto-ui-job-actions__buttons-wrapper']}>
         <SaveButton {...saveButtonProps} />
         <ShareButton {...shareButtonProps} />
-        {actionsLinkList?.length &&
-          actionsLinkList?.map(({ url, title, icon }) => (
-            <a
-              className={styles['magneto-ui-job-actions__icon-wrapper']}
-              key={`${url}-JobActions`}
-              href={url}
-              target="_blank"
-              rel="noreferrer"
-              title={title}
-            >
-              <IconItem hover={true} size={20} icon={icon} />
-            </a>
-          ))}
+        {filteredActionsLinkList?.map(({ url, title, icon }) => (
+          <a
+            className={styles['magneto-ui-job-actions__icon-wrapper']}
+            key={`${url}-JobActions`}
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            title={title}
+          >
+            <IconItem hover={true} size={20} icon={icon} />
+          </a>
+        ))}
       </div>
     </div>
   )
