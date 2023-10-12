@@ -43,4 +43,8 @@ export interface IJobDetailsDrawer {
    *
    */
   modalPendingInfoComponent?: ReactNode | JSX.Element
+  /**
+   * This property show the action detail view
+   */
+  jobDetailAction?: JSX.Element | undefined
 }

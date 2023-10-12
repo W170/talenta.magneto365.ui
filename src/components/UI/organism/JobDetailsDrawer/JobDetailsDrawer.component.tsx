@@ -23,6 +23,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   jobSkillsCardProps,
   jobApplyCardProps,
   jobFooterCardProps,
+  jobDetailAction,
   modalPendingInfoComponent,
   isLoading
 }) => {
@@ -30,19 +31,23 @@ const Component: React.FC<IJobDetailsDrawer> = ({
 
   return (
     <Fragment>
-      <section className={styles.JobDetailsDrawerComponent}>
-        <div className={styles['JobHeaderCardWrapper']}>
-          <JobCompanyHeader {...jobCompanyLogoProps} />
-          <JobActions actionsAnchorIcons={anchorIconList} {...jobActionsProps} />
-        </div>
-        <div className={styles['JobBodyCardWrapper']}>
-          {jobDetailsProps && <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />}
-          <JobDetailCard {...jobDetailCardProps} />
-          <JobSkillsCard {...jobSkillsCardProps} />
-          <JobApplyCard {...jobApplyCardProps} />
-          <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
-        </div>
-      </section>
+      {jobDetailAction ? (
+        jobDetailAction
+      ) : (
+        <section className={styles.JobDetailsDrawerComponent}>
+          <div className={styles['JobHeaderCardWrapper']}>
+            <JobCompanyHeader {...jobCompanyLogoProps} />
+            <JobActions actionsAnchorIcons={anchorIconList} {...jobActionsProps} />
+          </div>
+          <div className={styles['JobBodyCardWrapper']}>
+            {jobDetailsProps && <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />}
+            <JobDetailCard {...jobDetailCardProps} />
+            <JobSkillsCard {...jobSkillsCardProps} />
+            <JobApplyCard {...jobApplyCardProps} />
+            <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
+          </div>
+        </section>
+      )}
       {modalPendingInfoComponent}
     </Fragment>
   )
