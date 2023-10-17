@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { IconItem } from '../../atoms'
 import { DrawerPortal } from './DrawerPortal'
 import { IDrawer } from './Drawer.interface'
@@ -22,9 +22,15 @@ const Component: React.FC<IDrawer> = ({
   const paddingValue = customPadding !== undefined ? `${customPadding}px` : `${DEFAULT_PADDING}px`
   const backgroundEffect = isMobile ? 'no-background' : 'background-drawer'
 
+  useEffect(() => {
+    const { body } = document
+    if (!body) return
+    body.style.overflowY = isOpen ? 'hidden' : 'auto'
+  }, [isOpen])
+
   return (
     <DrawerPortal>
-      <div className={`${style['magneto-ui-drawer']} ${style[fullDrawer]}`}>
+      <div id="magneto-ui-drawer" className={`${style['magneto-ui-drawer']} ${style[fullDrawer]}`}>
         <aside className={`${style[showDrawer]}`} style={{ padding: paddingValue }}>
           {!hideButton && (
             <button className={style['magneto-ui-close-button']} onClick={onClose}>
