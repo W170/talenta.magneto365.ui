@@ -30,7 +30,7 @@ const Component: React.FC<IDrawer> = ({
 
   return (
     <DrawerPortal>
-      <div id="magneto-ui-drawer" className={`${style['magneto-ui-drawer']} ${style[fullDrawer]}`}>
+      <div className={`${style['magneto-ui-drawer']} ${style[fullDrawer]}`}>
         <aside className={`${style[showDrawer]}`} style={{ padding: paddingValue }}>
           {!hideButton && (
             <button className={style['magneto-ui-close-button']} onClick={onClose}>
