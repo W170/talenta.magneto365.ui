@@ -1,13 +1,14 @@
 import React from 'react'
 import { IconItem } from '../../atoms'
-import { IJobDetails } from './JobDetails.interface'
+import { IDetailList, IJobDetails } from './JobDetails.interface'
 import styles from './JobDetails.module.scss'
 
-const Component: React.FC<IJobDetails> = ({ offerDetailsList, iconList }) => {
-  const jobDetailsList = offerDetailsList
+const Component: React.FC<IJobDetails> = ({ offerDetailsList, iconList, altList }) => {
+  const jobDetailsList: IDetailList[] = offerDetailsList
     ?.map((offerDetailText, index) => ({
       icon: iconList && iconList[index],
-      offerDetailText
+      offerDetailText,
+      alt: altList && altList[index]
     }))
     .filter(({ offerDetailText }) => !!offerDetailText)
 
@@ -15,9 +16,9 @@ const Component: React.FC<IJobDetails> = ({ offerDetailsList, iconList }) => {
     <div className={styles['magneto-ui-job-details']}>
       <div className={styles['magneto-ui-job-details__wrapper']}>
         {jobDetailsList?.length &&
-          jobDetailsList?.map(({ offerDetailText, icon }) => (
+          jobDetailsList?.map(({ offerDetailText, icon, alt = '' }) => (
             <div key={`${offerDetailText}-JobDetails`} className={styles['magneto-ui-job-details__item-detail']}>
-              <IconItem icon={icon} hover={false} size={16} />
+              <IconItem alt={alt} icon={icon} hover={false} size={16} />
               <p className={styles['magneto-ui-job-details__item-detail-text']}>{offerDetailText}</p>
             </div>
           ))}

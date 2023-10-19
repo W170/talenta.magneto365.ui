@@ -10,7 +10,7 @@ const Component: React.FC<IMobileJobDetailsHeader> = ({ returnText, onClick }) =
   return (
     <div className={styles['magneto-ui-mobile-job-details-header']}>
       <button onClick={onClick}>
-        <IconItem icon={ArrowLeft2} />
+        <IconItem alt="arrow-left" icon={ArrowLeft2} />
       </button>
       <p>{returnText}</p>
     </div>

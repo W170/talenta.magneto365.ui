@@ -26,10 +26,10 @@ const Component: React.FC<IJobFooterCard> = ({
         <div className={styles['magneto-ui-job-footer-card__wrapper']}>
           {jobFooterList?.length &&
             jobFooterList?.map(
-              ({ href, ariaLabel, icon, title }) =>
+              ({ href, ariaLabel, icon, title }, i) =>
                 href !== null && (
                   <a
-                    key={`${href}-jobFooterList`}
+                    key={`${href}-jobFooterList` + i}
                     title={title}
                     href={href}
                     target="_blank"

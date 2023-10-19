@@ -11,7 +11,7 @@ const Component: React.FC<IMoblieDrawer> = ({ onClose, isOpen, children }) => {
     <DrawerPortal>
       <div className={`${style['magneto-ui-mobile-drawer']}`}>
         <aside className={style[showMenu]}>
-          <button className={style['magneto-ui-close-button']} onClick={onClose}>
+          <button title="cerrar modal" className={style['magneto-ui-close-button']} onClick={onClose}>
             <IconItem icon={Add} hover={false} />
           </button>
           <div className={style['magneto-ui-container']}>{children}</div>

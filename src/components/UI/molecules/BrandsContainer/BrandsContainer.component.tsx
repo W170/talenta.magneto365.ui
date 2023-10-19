@@ -12,7 +12,7 @@ const BrandsContainer: React.FC<IBrandsContainer> = ({ brands, closeBrands, ourB
       <div className={style[`${Muiclass}-brands__header`]}>
         <div className={style[`${Muiclass}-brands__header--row`]}>
           <p>{ourBrandsText}</p>
-          <button onClick={closeBrands} type="button">
+          <button title="cerrar menu" onClick={closeBrands} type="button">
             <IconItem size={15} icon={Close} />
           </button>
         </div>

@@ -40,7 +40,7 @@ export const FilterHeader: FC<IFilterHeader> = ({
   return (
     <article className={styles['magneto-ui-filter-header']}>
       <div className={styles['magneto-ui-filter-header_title']}>
-        <p role="heading">{title}</p>
+        <p>{title}</p>
         {displayBtnClear}
       </div>
       {switchText && (

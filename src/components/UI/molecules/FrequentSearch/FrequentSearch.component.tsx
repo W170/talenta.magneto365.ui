@@ -18,7 +18,7 @@ const Component: React.FC<IFrequentSearch> = ({ searchHeading, searchList, showL
 
   return (
     <div className={styles['magneto-ui-frequent-search']}>
-      <h3 className={styles['magneto-ui-frequent-search__heading']}>{searchHeading}</h3>
+      <h2 className={styles['magneto-ui-frequent-search__heading']}>{searchHeading}</h2>
       <div className={styles['magneto-ui-frequent-search__items']}>
         {searchListResponsive.map(({ ...props }, i) => (
           <SearchItem key={i} {...props} />
@@ -29,6 +29,7 @@ const Component: React.FC<IFrequentSearch> = ({ searchHeading, searchList, showL
           <button
             className={styles['magneto-ui-frequent-search__buttons-container--btn']}
             onClick={() => setShowFullList(false)}
+            title={showMore}
           >
             {showMore} ({searchList.length})
           </button>
@@ -36,6 +37,7 @@ const Component: React.FC<IFrequentSearch> = ({ searchHeading, searchList, showL
           <button
             className={styles['magneto-ui-frequent-search__buttons-container--btn']}
             onClick={() => setShowFullList(true)}
+            title={showLess}
           >
             {showLess}
           </button>

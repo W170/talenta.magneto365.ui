@@ -11,4 +11,5 @@ export interface IListIconLink {
 export interface IListIcon {
   url?: string | null
   icon?: string | null
+  title?: string
 }
