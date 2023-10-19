@@ -19,4 +19,8 @@ export interface IconProps {
    * Ypu can add you custom className here
    */
   className?: string
+  /**
+   * Text alt in the img element
+   */
+  alt?: string | null
 }

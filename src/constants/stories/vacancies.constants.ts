@@ -101,4 +101,6 @@ export const anchorIconList = [Export3, Buildings2]
 
 export const iconDetailList = [Calendar1, People, Briefcase, DollarCircle, Location]
 
+export const altList = ['Calendar1-icon', 'People-icon', 'Briefcase-icon', 'DollarCircle-icon', 'Location-icon']
+
 export const iconFooterList = [FacebookBlue, WhatsAppColor, LinkedInBlue, TwitterBlue, SMSBlue]

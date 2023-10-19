@@ -7,10 +7,10 @@ const Component: React.FC<IListIconLink> = ({ listIcon, size, hover = true, spac
   return (
     <div style={{ gap: `${spacing}px` }} className={style['magneto-ui-list-icon']}>
       {listIcon.map(
-        ({ icon, url }: IListIcon, index: number) =>
+        ({ icon, url, title }: IListIcon, index: number) =>
           url && (
             <a key={index} href={url} target="_blank" rel="noopener noreferrer">
-              <IconItem hover={hover} size={size} icon={icon} />
+              <IconItem alt={title} hover={hover} size={size} icon={icon} />
             </a>
           )
       )}

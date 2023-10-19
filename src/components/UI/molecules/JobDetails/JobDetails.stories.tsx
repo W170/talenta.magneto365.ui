@@ -22,6 +22,7 @@ export const Default: Story = {
       undefined,
       'Bello - Copacabana - Itagui - La Estrella'
     ],
-    iconList: [Calendar1, People, Briefcase, DollarCircle, Location]
+    iconList: [Calendar1, People, Briefcase, DollarCircle, Location],
+    altList: ['Calendar1-icon', 'People-icon', 'Briefcase-icon', 'DollarCircle-icon', 'Location-icon']
   }
 }

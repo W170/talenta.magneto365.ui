@@ -23,12 +23,12 @@ export const MenuList: MenuItemInfo[] = [
 ]
 
 export const ListIcon: IListIcon[] = [
-  { icon: Facebook, url: 'https://www.facebook.com/MagnetoEmpleos?_rdc=4&_rdr' },
-  { icon: Instagram, url: 'https://www.instagram.com/magnetoempleos/' },
-  { icon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
-  { icon: Youtube, url: 'https://www.youtube.com/c/Magnetoempleos' },
-  { icon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
-  { icon: Link, url: 'https://www.magneto365.com/home/#comparte-magneto' }
+  { title: 'Magneto Facebook url', icon: Facebook, url: 'https://www.facebook.com/MagnetoEmpleos?_rdc=4&_rdr' },
+  { title: 'Magneto Instagram url', icon: Instagram, url: 'https://www.instagram.com/magnetoempleos/' },
+  { title: 'Magneto Linkedin url', icon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
+  { title: 'Magneto Youtube url', icon: Youtube, url: 'https://www.youtube.com/c/Magnetoempleos' },
+  { title: 'Magneto Tiktok url', icon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
+  { title: 'Magneto Link url', icon: Link, url: 'https://www.magneto365.com/home/#comparte-magneto' }
 ]
 
 export const listMenuProps: IListMenuItems = {

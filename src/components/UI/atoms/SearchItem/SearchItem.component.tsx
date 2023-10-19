@@ -6,9 +6,9 @@ import styles from './SearchItem.module.scss'
 
 const Component: React.FC<ISearchItem> = ({ tag, url }) => {
   return (
-    <a className={styles['magneto-ui--search-item']} href={url}>
+    <a title={tag} className={styles['magneto-ui--search-item']} href={url}>
       <p className={styles['magneto-ui--search-item__text']}>{tag}</p>
-      <IconItem hover={false} icon={ArrowRight2} size={14} />
+      <IconItem alt="arrow icon" hover={false} icon={ArrowRight2} size={14} />
     </a>
   )
 }
