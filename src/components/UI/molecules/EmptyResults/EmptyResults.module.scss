@@ -12,7 +12,9 @@
   position: relative;
 
   h2 {
-    font-size: 18px;
+    align-items: center;
+    font-size: 16px;
+    overflow: hidden;
     @media (min-width: v.$screen-md) {
       font-size: 20px;
     }
@@ -49,6 +51,14 @@
     flex-direction: column;
     @media (min-width: v.$screen-md) {
       margin-left: 25px;
+    }
+    &--search {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: 20ch;
+      margin-bottom: -7px;
     }
   }
   &__tags {
