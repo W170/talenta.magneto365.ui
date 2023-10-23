@@ -17,3 +17,9 @@ export const Default: Story = {
     offerCompanyLogo: CompanyLogo as unknown as JSX.Element
   }
 }
+
+export const NoLogo: Story = {
+  args: {
+    offerCompanyLogo: undefined
+  }
+}
