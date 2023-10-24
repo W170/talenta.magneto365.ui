@@ -4,18 +4,10 @@ import styles from './JobCompanyLogo.module.scss'
 import { NoLogo } from '@constants/icons.constants'
 
 const Component: React.FC<IJobCompanyLogo> = ({ offerCompanyLogo }) => {
-  if (typeof offerCompanyLogo === 'string') {
+  if (typeof offerCompanyLogo === 'string' || !offerCompanyLogo) {
     return (
       <div className={styles['magneto-ui-job-company-logo']}>
-        <img src={offerCompanyLogo} />
-      </div>
-    )
-  }
-
-  if (offerCompanyLogo === undefined) {
-    return (
-      <div className={styles['magneto-ui-job-company-logo']}>
-        <img src={NoLogo} />
+        <img src={offerCompanyLogo ? offerCompanyLogo : NoLogo} />
       </div>
     )
   }

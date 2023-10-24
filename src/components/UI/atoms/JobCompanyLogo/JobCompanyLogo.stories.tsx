@@ -8,6 +8,8 @@ const meta: Meta<typeof JobCompanyLogo> = {
   args: {}
 }
 
+const FaslyValue = ''
+
 export default meta
 
 type Story = StoryObj<typeof JobCompanyLogo>
@@ -20,6 +22,6 @@ export const Default: Story = {
 
 export const NoLogo: Story = {
   args: {
-    offerCompanyLogo: undefined
+    offerCompanyLogo: FaslyValue
   }
 }
