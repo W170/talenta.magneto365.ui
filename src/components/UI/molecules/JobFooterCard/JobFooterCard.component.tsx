@@ -2,6 +2,7 @@ import React from 'react'
 import { IconItem, ShareButton } from '../../atoms'
 import { IJobFooterCard } from './JobFooterCard.interface'
 import styles from './JobFooterCard.module.scss'
+import { NoLogo } from '@constants/icons.constants'
 
 const Component: React.FC<IJobFooterCard> = ({
   offerFooterHeader,
@@ -20,7 +21,7 @@ const Component: React.FC<IJobFooterCard> = ({
 
   return (
     <div className={styles['magneto-ui-job-footer-card']}>
-      <img src={offerCompanyLogo} alt={companyImgAlt} />
+      <img src={offerCompanyLogo ? offerCompanyLogo : NoLogo} alt={companyImgAlt} />
       <div className={styles['magneto-ui-job-footer-card__icons']}>
         <h2>{offerFooterHeader}</h2>
         <div className={styles['magneto-ui-job-footer-card__wrapper']}>
