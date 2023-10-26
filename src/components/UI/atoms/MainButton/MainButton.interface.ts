@@ -59,4 +59,8 @@ export interface IMainButton {
    * This te title attribute for the button tag
    */
   title?: string
+  /**
+   * It specifies that the button should be disabled.
+   */
+  disabled?: boolean
 }

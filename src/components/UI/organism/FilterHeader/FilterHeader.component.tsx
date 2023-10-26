@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useMemo } from 'react'
+import React, { FC, useMemo } from 'react'
 import { Broom } from '@constants/icons.constants'
 import { MainButton } from '@components/UI/atoms'
 import { Switch } from '@components/UI/atoms/Switch'
@@ -19,16 +19,18 @@ export const FilterHeader: FC<IFilterHeader> = ({
       title: buttonText,
       iconProps: { icon: Broom, size: 18 },
       className: styles['magneto-ui-filter-header_btn'],
+      disabled: !totalApplied,
       onClick: () => clearFilters()
     }
-  }, [buttonText, clearFilters])
+  }, [buttonText, totalApplied, clearFilters])
 
   const displayBtnClear = useMemo(() => {
-    if (!totalApplied) return <Fragment />
     return (
       <div className={styles['magneto-ui-filter-header_clean']}>
         <MainButton {...mainBtnProps} />
-        {totalApplied && <span>{`(${totalApplied})`}</span>}
+        {typeof totalApplied === 'number' && (
+          <span className={!totalApplied ? styles.disabled : ''}>{`(${totalApplied})`}</span>
+        )}
       </div>
     )
   }, [totalApplied, mainBtnProps])

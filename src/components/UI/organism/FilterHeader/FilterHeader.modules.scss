@@ -84,3 +84,7 @@ $filter-font-color: #282835;
     color: $filter-font-color;
   }
 }
+
+.disabled {
+  opacity: 0.4;
+}
