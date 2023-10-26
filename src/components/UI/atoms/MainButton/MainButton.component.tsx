@@ -16,6 +16,7 @@ const Component: React.FC<IMainButton> = ({
   isMobile,
   className,
   title,
+  disabled,
   onClick
 }) => {
   const stylesValue: CSSProperties = useMemo(() => toCSSVariables(buttonStyles), [buttonStyles])
@@ -40,13 +41,14 @@ const Component: React.FC<IMainButton> = ({
 
   return (
     <button
-      className={`${styles.MainButtonComponent} ${className}`}
+      className={`${styles.MainButtonComponent} ${className} ${disabled ? styles.disabled : ''}`}
       type={buttonType}
       style={stylesValue}
       onClick={onClick}
       data-button-size={buttonSize}
       data-is-mobile={isMobile}
       title={title}
+      disabled={disabled}
     >
       {renderContent()}
     </button>
