@@ -11,6 +11,7 @@ const Component: React.FC<IJobDetails> = ({ offerDetailsList, iconList, altList 
       alt: altList && altList[index]
     }))
     .filter(({ offerDetailText }) => !!offerDetailText)
+    .slice(0, 5)
 
   return (
     <div className={styles['magneto-ui-job-details']}>
@@ -18,7 +19,9 @@ const Component: React.FC<IJobDetails> = ({ offerDetailsList, iconList, altList 
         {jobDetailsList?.length &&
           jobDetailsList?.map(({ offerDetailText, icon, alt = '' }) => (
             <div key={`${offerDetailText}-JobDetails`} className={styles['magneto-ui-job-details__item-detail']}>
-              <IconItem alt={alt} icon={icon} hover={false} size={16} />
+              <div className={styles['magneto-ui-job-details__item-detail-icon']}>
+                <IconItem alt={alt} icon={icon} hover={false} size={16} />
+              </div>
               <p className={styles['magneto-ui-job-details__item-detail-text']}>{offerDetailText}</p>
             </div>
           ))}
