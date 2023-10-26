@@ -60,6 +60,10 @@
   }
 }
 
+.magneto-ui-filter-item:hover {
+  background-color: v.$disabled-color-gray2;
+}
+
 .skeleton {
   display: inline-block;
   width: 230px;
