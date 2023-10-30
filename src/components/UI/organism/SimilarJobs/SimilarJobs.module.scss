@@ -1,0 +1,27 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-similar-jobs-section {
+  width: 100%;
+  height: auto;
+  &__title {
+    margin: 40px 0 20px 0;
+    font-size: 18px;
+  }
+  &__link {
+    display: inline-block;
+    margin-top: 20px;
+    width: auto;
+    min-width: none;
+    height: 43px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    gap: 10px;
+    background-color: v.$disabled-color-gray;
+    transition: background-color ease-in-out 0.3s;
+    @media (min-width: v.$screen-lg) {
+      &:hover {
+        background-color: v.$disabled-color-gray2;
+      }
+    }
+  }
+}
