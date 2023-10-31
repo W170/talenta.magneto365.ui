@@ -28,6 +28,16 @@
   }
 
   &__icon-wrapper {
+    border-radius: 50%;
+    @media (width >= 1024px) {
+      &:hover {
+        background-color: v.$colors-magneto-neutral-gray-5;
+        transition: all ease-in-out 0.3s;
+      }
+    }
+  }
+
+  &__icon-anchor {
     display: inherit;
     justify-content: center;
     align-items: center;

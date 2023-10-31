@@ -26,16 +26,17 @@ const Component: React.FC<IJobsActions> = ({
         <SaveButton {...saveButtonProps} />
         <ShareButton {...shareButtonProps} />
         {filteredActionsLinkList?.map(({ url, title, icon }) => (
-          <a
-            className={styles['magneto-ui-job-actions__icon-wrapper']}
-            key={`${url}-JobActions`}
-            href={url}
-            target="_blank"
-            rel="noreferrer"
-            title={title}
-          >
-            <IconItem hover={true} size={20} icon={icon} />
-          </a>
+          <div className={styles['magneto-ui-job-actions__icon-wrapper']} key={`${url}-JobActions`}>
+            <a
+              className={styles['magneto-ui-job-actions__icon-anchor']}
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              title={title}
+            >
+              <IconItem hover={true} size={20} icon={icon} />
+            </a>
+          </div>
         ))}
       </div>
     </div>
