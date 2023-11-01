@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useRef } from 'react'
 import {
   JobCompanyHeader,
   JobActions,
@@ -25,8 +25,17 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   jobFooterCardProps,
   jobDetailAction,
   modalPendingInfoComponent,
-  isLoading
+  isLoading,
+  selectedJobId
 }) => {
+  const jobDetailsRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    if (jobDetailsRef.current) {
+      jobDetailsRef.current.scrollTop = 0
+    }
+  }, [selectedJobId])
+
   if (isLoading) return <JobDetailsSkeleton />
 
   return (
@@ -39,7 +48,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
             <JobCompanyHeader {...jobCompanyLogoProps} />
             <JobActions actionsAnchorIcons={anchorIconList} {...jobActionsProps} />
           </div>
-          <div className={styles['JobBodyCardWrapper']}>
+          <div className={styles['JobBodyCardWrapper']} ref={jobDetailsRef}>
             {jobDetailsProps && (
               <JobDetails altList={altList} iconList={iconDetailList} offerDetailsList={jobDetailsProps} />
             )}
