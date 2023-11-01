@@ -15,6 +15,7 @@ type Story = StoryObj<typeof SaveButton>
 export const Default: Story = {
   args: {
     buttonText: 'Guardar vacante',
-    buttonTitle: 'Guardar vacante'
+    buttonTitle: 'Guardar vacante',
+    isAuthenticated: true
   }
 }

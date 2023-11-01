@@ -12,10 +12,17 @@ const Component: React.FC<IShareButton> = ({ buttonTitle, buttonText, detailUrl,
   }
 
   return (
-    <button className={styles['magneto-ui-share-button']} title={buttonTitle} type="button" onClick={handleCopyClick}>
-      <IconItem hover={addHover} size={20} icon={Share} />
+    <div className={styles['magneto-ui-share-button']}>
+      <button
+        className={styles['magneto-ui-share-button__btn']}
+        title={buttonTitle}
+        type="button"
+        onClick={handleCopyClick}
+      >
+        <IconItem hover={addHover} size={20} icon={Share} />
+      </button>
       {buttonText && <p className={styles['magneto-ui-share-button__mobile-text']}>{buttonText}</p>}
-    </button>
+    </div>
   )
 }
 
