@@ -3,9 +3,11 @@
 .magneto-ui-similar-jobs-section {
   width: 100%;
   height: auto;
+  padding: 10px 20px 120px 20px;
+  border-top: 1px solid rgb(220, 220, 220);
   &__title {
     margin: 40px 0 20px 0;
-    font-size: 18px;
+    font-size: 17px;
   }
   &__link {
     display: inline-block;

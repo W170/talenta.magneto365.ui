@@ -11,15 +11,20 @@ const SimilarJobs: React.FC<ISimilarJobs> = ({
   hideLogo,
   similarJobsCard
 }) => {
+  //TODO:PLS REMOVE THIS BOOLEAN WHEN THE SIMILAR VACANCIES PAGE EXIST
+  const pageExists = false
+
   return (
     <div className={`${styles[`${classMUI}-similar-jobs-section`]}`}>
       <h3 className={`${styles[`${classMUI}-similar-jobs-section__title`]}`}>{`${sectionTitle}:`}</h3>
       {similarJobsCard.map(({ id, ...props }) => (
         <SimilarJobsCard key={id} hideLogo={hideLogo} {...props} />
       ))}
-      <a className={`${styles[`${classMUI}-similar-jobs-section__link`]}`} title={moreJobsText} href={moreJobsLink}>
-        {moreJobsText}
-      </a>
+      {pageExists && (
+        <a className={`${styles[`${classMUI}-similar-jobs-section__link`]}`} title={moreJobsText} href={moreJobsLink}>
+          {moreJobsText}
+        </a>
+      )}
     </div>
   )
 }

@@ -14,6 +14,7 @@ import styles from './JobDetailsDrawer.module.scss'
 
 import { anchorIconList, iconDetailList, iconFooterList, altList } from '@constants/stories'
 import { JobDetailsSkeleton } from './children'
+import { SimilarJobs } from '../SimilarJobs'
 
 const Component: React.FC<IJobDetailsDrawer> = ({
   jobCompanyLogoProps,
@@ -26,7 +27,8 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   jobDetailAction,
   modalPendingInfoComponent,
   isLoading,
-  selectedJobId
+  selectedJobId,
+  similarJobsProps
 }) => {
   const jobDetailsRef = useRef<HTMLDivElement | null>(null)
 
@@ -56,6 +58,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
             <JobSkillsCard {...jobSkillsCardProps} />
             <JobApplyCard {...jobApplyCardProps} />
             <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
+            <SimilarJobs {...similarJobsProps} />
           </div>
         </section>
       )}

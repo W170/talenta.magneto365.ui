@@ -7,6 +7,7 @@ import {
 } from '@components/UI/molecules'
 import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 import { ReactNode } from 'react'
+import { ISimilarJobs } from '../SimilarJobs/SimilarJobs.interface'
 
 export interface IMobileJobDetailsDrawer {
   /**
@@ -64,4 +65,8 @@ export interface IMobileJobDetailsDrawer {
    * (Optional property)
    */
   isLoading?: boolean
+  /**
+   *These are the properties of similar jobs ui
+   */
+  similarJobsProps: ISimilarJobs
 }

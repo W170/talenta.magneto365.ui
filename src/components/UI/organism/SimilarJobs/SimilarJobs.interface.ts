@@ -16,7 +16,7 @@ export interface ISimilarJobs {
   /**
    * this property hide the image
    */
-  hideLogo: boolean
+  hideLogo?: boolean
   /**
    * these are similar jobs cards values
    */
