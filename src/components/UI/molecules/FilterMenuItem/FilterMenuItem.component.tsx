@@ -37,7 +37,7 @@ export const FilterMenuItem: FC<IFilterMenuItem> = ({
   }, [total, isApplied, isSearched, hiddenCount])
 
   const handleClick = useCallback(() => {
-    const customId = type === 'RANGE' ? { id, from: props.from, to: props.to } : id
+    const customId = type === 'RANGE' ? { id: id as string, from: props.from as string, to: props.to as string } : id
     setIsApplied({ id: customId, field, isApplied, multiple })
   }, [setIsApplied, id, field, isApplied, multiple, type, props.from, props.to])
 
