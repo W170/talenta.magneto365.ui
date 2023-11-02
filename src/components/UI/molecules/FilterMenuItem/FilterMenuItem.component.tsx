@@ -12,13 +12,15 @@ export const FilterMenuItem: FC<IFilterMenuItem> = ({
   field,
   multiple,
   loading,
+  type,
   isApplied,
   hasTotal,
   isSearched,
   customClass,
   customId,
   hiddenCount,
-  setIsApplied
+  setIsApplied,
+  ...props
 }) => {
   const displayOutput = useMemo(() => {
     if (isApplied) return <IconItem icon={SmallClose} size={17} />
@@ -35,8 +37,9 @@ export const FilterMenuItem: FC<IFilterMenuItem> = ({
   }, [total, isApplied, isSearched, hiddenCount])
 
   const handleClick = useCallback(() => {
-    setIsApplied({ id, field, isApplied, multiple })
-  }, [setIsApplied, id, field, isApplied, multiple])
+    const customId = type === 'RANGE' ? { id: id as string, from: props.from as string, to: props.to as string } : id
+    setIsApplied({ id: customId, field, isApplied, multiple })
+  }, [setIsApplied, id, field, isApplied, multiple, type, props.from, props.to])
 
   if (loading) return <div className={styles.skeleton} />
 
