@@ -16,7 +16,7 @@ export interface ISetIsAppliedProps {
   /**
    * This is the ai of the filter to apply or de-apply
    */
-  id: string | number
+  id: string | number | { id?: string | number; from?: string | number | null; to?: string | number | null }
   /**
    * This is the flag that indicate if the filter is applied
    */

@@ -127,16 +127,16 @@ export interface IFilterValue {
 
 export interface ISetIsApplied {
   field: string
-  id: string | number
+  id: string | number | { id?: string | number; from?: string | number | null; to?: string | number | null }
   isApplied: boolean
   multiple: boolean
 }
 
 export interface IUnApplyWithChild {
   child: IFilter
-  parentId: string | number
+  parentId: string | number | { id?: string | number; from?: string | number | null; to?: string | number | null }
   parentField: string
-  newParentId?: string | number
+  newParentId?: string | number | { id?: string | number; from?: string | number | null; to?: string | number | null }
 }
 export interface ISearchRenderTypeOption {
   id: string | number
