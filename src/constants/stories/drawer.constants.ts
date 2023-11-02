@@ -1,5 +1,5 @@
 import { IListIcon, IListMenuItems, MenuItemInfo } from '@components/UI/molecules'
-import { Facebook, Instagram, Link, Linkedin, Tiktok, Youtube } from '@constants/icons.constants'
+import { Facebook, Instagram, Linkedin, Tiktok, Youtube } from '@constants/icons.constants'
 
 export const MenuList: MenuItemInfo[] = [
   { text: 'Inicio', url: '#', slug: 'inicio' },
@@ -27,8 +27,7 @@ export const ListIcon: IListIcon[] = [
   { title: 'Magneto Instagram url', icon: Instagram, url: 'https://www.instagram.com/magnetoempleos/' },
   { title: 'Magneto Linkedin url', icon: Linkedin, url: 'https://www.linkedin.com/company/magnetoempleos/' },
   { title: 'Magneto Youtube url', icon: Youtube, url: 'https://www.youtube.com/c/Magnetoempleos' },
-  { title: 'Magneto Tiktok url', icon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' },
-  { title: 'Magneto Link url', icon: Link, url: 'https://www.magneto365.com/home/#comparte-magneto' }
+  { title: 'Magneto Tiktok url', icon: Tiktok, url: 'https://www.tiktok.com/@magnetoempleos' }
 ]
 
 export const listMenuProps: IListMenuItems = {

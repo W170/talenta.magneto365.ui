@@ -29,6 +29,23 @@ const JobsPage: React.FC<IJobsPage> = ({
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [showDetail, setShowDetail] = useState(device === 'desktop')
+  const [selectedJobId, setSelectedJobId] = useState<number | null>(null)
+
+  const handleVacant = useCallback(
+    (id: number | null) => {
+      if (id) {
+        setJobSelected(id)
+        setShowDetail(true)
+        return
+      }
+    },
+    [setJobSelected]
+  )
+
+  const handleJobCardClick = (id: number | null) => {
+    setSelectedJobId(id)
+    handleVacant(id)
+  }
 
   useEffect(() => {
     setShowDetail(showDetailByWindow())
@@ -46,7 +63,11 @@ const JobsPage: React.FC<IJobsPage> = ({
       {jobDetailAction ? (
         jobDetailAction
       ) : (
-        <JobDetailsDrawer {...jobDetailsDrawerProps} isLoading={isLoading || !jobSelected} />
+        <JobDetailsDrawer
+          {...jobDetailsDrawerProps}
+          isLoading={isLoading || !jobSelected}
+          selectedJobId={selectedJobId}
+        />
       )}
     </JobDetailContainer>,
     {
@@ -62,6 +83,10 @@ const JobsPage: React.FC<IJobsPage> = ({
     }
   )
 
+  const mainTitleByMediaQuery = useMediaQuery(<Fragment />, {
+    md: <h1 className={style[`${classMUI}-jobs-page--title`]}>{sortBarProps?.mainTitle}</h1>
+  })
+
   const cardsAltRender = useMemo(() => {
     if (isLoading) {
       return <JobCardSkeleton numCard={20} />
@@ -69,17 +94,6 @@ const JobsPage: React.FC<IJobsPage> = ({
 
     return <EmptyResults {...emptyResultsProps} />
   }, [isLoading, emptyResultsProps])
-
-  const handleVacant = useCallback(
-    (id: number | null) => {
-      if (id) {
-        setJobSelected(id)
-        setShowDetail(true)
-        return
-      }
-    },
-    [setJobSelected]
-  )
 
   return (
     <Fragment>
@@ -89,10 +103,9 @@ const JobsPage: React.FC<IJobsPage> = ({
             <SideFilter {...sideFilterProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
           </FilterContainerMenu>
         </div>
-
         <div className={style[`${classMUI}-jobs-page--center-row`]}>
           <SortBar {...sortBarProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
-          <h1 className={style[`${classMUI}-jobs-page--title`]}>{sortBarProps?.mainTitle}</h1>
+          {mainTitleByMediaQuery}
           <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>
             {vacantProps.length <= 0 || isLoading
               ? cardsAltRender
@@ -101,7 +114,7 @@ const JobsPage: React.FC<IJobsPage> = ({
                     isLoading={isLoading}
                     isActive={id === jobSelected?.id}
                     id={id}
-                    showDetail={() => handleVacant(id)}
+                    showDetail={() => handleJobCardClick(id)}
                     key={`${id}-JobsPage`}
                     {...props}
                   />

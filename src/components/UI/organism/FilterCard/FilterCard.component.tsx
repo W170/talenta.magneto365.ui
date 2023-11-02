@@ -62,7 +62,7 @@ export const FilterCard: FC<IFilterCard> = ({
       )}
       <div className={styles['magneto-ui-filter-card_options']}>
         {options.map((opt, key) => {
-          const optProps = { ...props, ...opt, hasTotal, setIsApplied }
+          const optProps = { ...props, ...opt, hasTotal, setIsApplied, type: props.type }
           return <FilterMenuItem key={`${key}-${opt.label}`} {...optProps} />
         })}
       </div>

@@ -33,6 +33,9 @@
       &:focus-visible {
         outline: none;
       }
+      &:focus::placeholder {
+        opacity: 0;
+      }
     }
 
     .magneto-ui-searchbar-buttons {

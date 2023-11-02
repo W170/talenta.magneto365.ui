@@ -47,4 +47,8 @@ export interface IJobDetailsDrawer {
    * This property show the action detail view
    */
   jobDetailAction?: JSX.Element | undefined
+  /**
+   *
+   */
+  selectedJobId?: number | null
 }

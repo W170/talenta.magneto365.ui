@@ -14,6 +14,10 @@ export interface IFilterMenuItem extends IFilterValue {
    */
   loading: boolean
   /**
+   * This type shows how send the id in the setIsApplied function
+   */
+  type?: string | null
+  /**
    * This flag indicate if the item render the total of vacancies
    */
   hasTotal?: boolean

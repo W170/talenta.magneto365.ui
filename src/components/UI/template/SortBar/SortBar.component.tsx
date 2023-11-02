@@ -37,6 +37,10 @@ const SortBar: React.FC<ISortBar> = ({
     }
   )
 
+  const mainTitleByMediaQuery = useMediaQuery(<h1 className={styles['magneto-ui-main-title']}>{mainTitle}</h1>, {
+    md: <Fragment />
+  })
+
   return (
     <Fragment>
       <div className={styles['magneto-ui-sort-menu']}>
@@ -49,7 +53,7 @@ const SortBar: React.FC<ISortBar> = ({
             size={17}
             isActive={true}
           />
-          <h1 className={styles['magneto-ui-main-title']}>{mainTitle}</h1>
+          {mainTitleByMediaQuery}
           <p className={`${styles['magneto-ui-btn-text']} ${styles.hidden}`}>{filterSummary}</p>
         </div>
         <div className={styles['magneto-ui-section-menu']}>

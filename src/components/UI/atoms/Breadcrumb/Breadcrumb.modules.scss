@@ -6,7 +6,7 @@
 
   p {
     align-items: center;
-    color: v.$text-color-disable;
+    color: v.$filter-item-font-color;
     font-style: normal;
     font-size: 12px;
     line-height: 13px;
@@ -17,7 +17,6 @@
       text-transform: capitalize;
     }
     &:hover {
-      color: v.$color-blue-hover;
       opacity: 0.7;
     }
   }
