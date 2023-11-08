@@ -12,21 +12,18 @@ const Component: React.FC<IShareButton> = ({ buttonTitle, buttonText, detailUrl,
   }
 
   return (
-    <div className={styles['magneto-ui-share-button']}>
-      <button
-        className={styles['magneto-ui-share-button__btn']}
-        title={buttonTitle}
-        type="button"
-        onClick={handleCopyClick}
-      >
-        <IconItem hover={addHover} size={20} icon={Share} />
-      </button>
-      {buttonText && <p className={styles['magneto-ui-share-button__mobile-text']}>{buttonText}</p>}
-    </div>
+    <button
+      className={`${styles['magneto-ui-share-button']} ${addHover && styles['hover-effect']}`}
+      type="button"
+      onClick={handleCopyClick}
+      title={buttonTitle}
+    >
+      <div className={styles['button-content']}>
+        <IconItem size={20} icon={Share} />
+        {buttonText && <p className={styles['magneto-ui-share-button__mobile-text']}>{buttonText}</p>}
+      </div>
+    </button>
   )
 }
 
-/**
- * UI Atom Component of Save Button
- */
 export const ShareButton = Component
