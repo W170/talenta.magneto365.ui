@@ -26,3 +26,8 @@ export default meta
 type Story = StoryObj<typeof SimilarJobs>
 
 export const Default: Story = {}
+export const HideLogo: Story = {
+  args: {
+    hideLogo: true
+  }
+}
