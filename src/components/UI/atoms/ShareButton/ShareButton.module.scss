@@ -1,25 +1,11 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 
 .magneto-ui-share-button {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 18px;
-
-  &__btn {
-    border: none;
-    border-radius: 50%;
-    background-color: transparent;
-    padding: 12px 13px;
-    cursor: pointer;
-
-    @media (width >= 1024px) {
-      &:hover {
-        background-color: v.$colors-magneto-neutral-gray-5;
-        transition: all ease-in-out 0.3s;
-      }
-    }
-  }
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  padding: 12px 13px;
+  cursor: pointer;
 
   &__mobile-text {
     margin: 0px;
@@ -28,5 +14,18 @@
     font-weight: 400;
     line-height: normal;
     color: v.$text-color-black;
+  }
+
+  .button-content {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+}
+
+.hover-effect {
+  &:hover {
+    background-color: v.$colors-magneto-neutral-gray-5;
+    transition: all ease-in-out 0.3s;
   }
 }

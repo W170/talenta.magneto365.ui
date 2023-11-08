@@ -18,3 +18,11 @@ export const Default: Story = {
     onCopySuccess: () => console.log('Success')
   }
 }
+
+export const HoverEffect: Story = {
+  args: {
+    buttonTitle: 'Compartir Vacante',
+    onCopySuccess: () => console.log('Success'),
+    addHover: true
+  }
+}
