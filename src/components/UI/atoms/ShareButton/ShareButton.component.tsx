@@ -19,7 +19,7 @@ const Component: React.FC<IShareButton> = ({ buttonTitle, buttonText, detailUrl,
       title={buttonTitle}
     >
       <div className={styles['button-content']}>
-        <IconItem size={20} icon={Share} />
+        <IconItem size={20} icon={Share} hover={addHover} />
         {buttonText && <p className={styles['magneto-ui-share-button__mobile-text']}>{buttonText}</p>}
       </div>
     </button>

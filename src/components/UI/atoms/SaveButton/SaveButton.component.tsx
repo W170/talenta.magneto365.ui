@@ -13,7 +13,7 @@ const Component: React.FC<ISaveButton> = ({ isAuthenticated, isSaved, buttonText
       title={buttonTitle}
     >
       <div className={styles['button-content']}>
-        <IconItem size={20} icon={isSaved ? ArchiveRemove : ArchiveAdd} />
+        <IconItem size={20} icon={isSaved ? ArchiveRemove : ArchiveAdd} hover={addHover} />
         {buttonText && <p className={styles['magneto-ui-save-button__mobile-text']}>{buttonText}</p>}
       </div>
     </button>
