@@ -58,7 +58,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
             <JobSkillsCard {...jobSkillsCardProps} />
             <JobApplyCard {...jobApplyCardProps} />
             <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
-            <SimilarJobs {...similarJobsProps} />
+            {similarJobsProps && <SimilarJobs {...similarJobsProps} />}
           </div>
         </section>
       )}

@@ -55,5 +55,5 @@ export interface IJobDetailsDrawer {
   /**
    * These are the properties of similar jobs ui
    */
-  similarJobsProps: ISimilarJobs
+  similarJobsProps?: ISimilarJobs
 }
