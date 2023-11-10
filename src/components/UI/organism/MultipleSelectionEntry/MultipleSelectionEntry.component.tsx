@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, useEffect, useCallback } from 'react'
+import React, { useState, ChangeEvent, useCallback, useMemo } from 'react'
 
 import { classMUI } from '@constants/stories'
 import style from './MultipleSelectionEntry.module.scss'
@@ -14,13 +14,19 @@ const MultipleSelectionEntry: React.FC<IMultipleSelectionentry> = ({
   numberOfSelectable = 3,
   onChange
 }) => {
+  const valueSaved = useMemo(() => {
+    if (selectedValues) {
+      return listOptions.filter((options) => selectedValues.includes(options.id))
+    }
+  }, [listOptions, selectedValues])
+
   const [inputValue, setInputValue] = useState('')
-  const [localSelectedValues, localSetSelectedValues] = useState<IListOption[]>(selectedValues || [])
+  const [localSelectedValues, localSetSelectedValues] = useState<IListOption[]>(valueSaved || [])
   const [localListOptions, localSetListOptions] = useState<IListOption[]>(listOptions)
 
-  useEffect(() => {
-    if (selectedValues) onChange(selectedValues)
-  }, [onChange, selectedValues])
+  // useEffect(() => {
+  //   if (selectedValues) onChange(selectedValues)
+  // }, [onChange, selectedValues])
 
   const addValueToArray = useCallback(
     (value: IListOption) => {
@@ -69,12 +75,12 @@ const MultipleSelectionEntry: React.FC<IMultipleSelectionentry> = ({
   return (
     <div className={`${style[`${classMUI}-multiple-selection-entry`]}`}>
       <ContainerOptions
+        removeValueToArray={removeValueToArray}
         dropDownTitle={dropDownTitle}
         numberOfSelectable={numberOfSelectable}
         inputSearchProps={inputSearchProps}
         addValueToArray={addValueToArray}
         listOptions={localListOptions}
-        removeValueToArray={removeValueToArray}
         selectedValues={localSelectedValues}
       />
     </div>

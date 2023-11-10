@@ -3,7 +3,7 @@ export interface IMultipleSelectionentry {
   dropDownTitle: string
   listOptions: IListOption[]
   numberOfSelectable?: number
-  selectedValues?: IListOption[]
+  selectedValues?: number[]
   onChange: (value: IListOption[]) => void
 }
 

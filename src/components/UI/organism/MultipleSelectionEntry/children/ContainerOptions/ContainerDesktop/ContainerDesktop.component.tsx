@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useMemo } from 'react'
 import { InputSearch, Tag } from '@components/UI/atoms'
 import { SelectItem } from '../../SelectItem'
 import { Close } from '@constants/icons.constants'
@@ -21,12 +21,6 @@ const ContainerDesktop: React.FC<IContainerOptions> = ({
   const limitOfSelectable = useMemo(() => {
     return selectedValues.length < numberOfSelectable
   }, [numberOfSelectable, selectedValues.length])
-
-  useEffect(() => {
-    if (selectedValues.length === numberOfSelectable) {
-      setOpenOptions(false)
-    }
-  }, [selectedValues.length, numberOfSelectable])
 
   return (
     <>

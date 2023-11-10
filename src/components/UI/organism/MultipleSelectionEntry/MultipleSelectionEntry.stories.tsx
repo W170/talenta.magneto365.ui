@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { listOptionsDemo, selectedValuesDemo } from '@constants/stories/multipleSelection.constants'
+import { listOptionsDemo } from '@constants/stories/multipleSelection.constants'
 import { MultipleSelectionEntry } from '.'
 
 const meta: Meta<typeof MultipleSelectionEntry> = {
@@ -10,7 +10,10 @@ const meta: Meta<typeof MultipleSelectionEntry> = {
     placeholder: 'Busca un sector laboral',
     numberOfSelectable: 3,
     listOptions: listOptionsDemo,
-    selectedValues: selectedValuesDemo
+    selectedValues: [1, 2, 3],
+    onChange: (e) => {
+      console.log(e)
+    }
   }
 }
 export default meta
