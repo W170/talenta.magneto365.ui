@@ -1,0 +1,55 @@
+@use '../../../../../../../shared/stylesheets/mixins.scss' as m;
+.magneto-ui-container-options {
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #e9e9f6;
+  position: relative;
+
+  input {
+    position: relative;
+    border: none;
+    outline: transparent;
+    border-radius: 12px;
+    z-index: 1;
+  }
+  &-tags-container {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 4px;
+    align-self: stretch;
+    flex-wrap: wrap;
+    margin: 10px 0px;
+  }
+  &__menu {
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    border-radius: 0px 0px 12px 12px;
+    top: 50px;
+    border: 1px solid #e9e9f6;
+    border-top: none;
+    z-index: 1;
+
+    &--tags {
+      padding: 0 18px;
+      display: flex;
+      align-items: flex-start;
+      align-content: flex-start;
+      gap: 4px;
+      align-self: stretch;
+      flex-wrap: wrap;
+      margin: 10px 0px;
+    }
+    &--list {
+      padding: 0 18px;
+      display: flex;
+      flex-direction: column;
+      min-height: auto;
+      max-height: 236px;
+      overflow: hidden;
+      overflow-y: scroll;
+      @include m.scroll-filter;
+    }
+  }
+}
