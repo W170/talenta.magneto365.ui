@@ -9,4 +9,6 @@ export interface IContainerOptions {
   addValueToArray: (value: IListOption) => void
   numberOfSelectable: number
   dropDownTitle: string
+  clickOut?: boolean
+  setClickOut?: React.Dispatch<React.SetStateAction<boolean>>
 }

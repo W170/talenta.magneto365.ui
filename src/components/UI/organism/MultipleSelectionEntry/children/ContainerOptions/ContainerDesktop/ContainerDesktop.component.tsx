@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { InputSearch, Tag } from '@components/UI/atoms'
 import { SelectItem } from '../../SelectItem'
 import { Close } from '@constants/icons.constants'
@@ -6,6 +6,8 @@ import { classMUI } from '@constants/stories'
 import style from './ContainerDesktop.module.scss'
 import { IContainerOptions } from '../ContainerOptions.interface'
 import { DropDownButton } from '../../DropDownButton'
+import { withClickOut } from '@components/hoc'
+import { IListOption } from '../../../MultipleSelectionEntry.interface'
 
 const ContainerDesktop: React.FC<IContainerOptions> = ({
   inputSearchProps,
@@ -14,17 +16,24 @@ const ContainerDesktop: React.FC<IContainerOptions> = ({
   removeValueToArray,
   addValueToArray,
   numberOfSelectable,
-  dropDownTitle
+  dropDownTitle,
+  clickOut = false,
+  setClickOut = () => ({})
 }) => {
-  const [openOptions, setOpenOptions] = useState(false)
-
   const limitOfSelectable = useMemo(() => {
     return selectedValues.length < numberOfSelectable
   }, [numberOfSelectable, selectedValues.length])
 
+  const removeTag = (itemSelected: IListOption) => {
+    removeValueToArray(itemSelected)
+    setTimeout(() => {
+      setClickOut(true)
+    }, 0.1)
+  }
+
   return (
     <>
-      {openOptions ? (
+      {clickOut ? (
         <div className={`${style[`${classMUI}-container-options`]}`}>
           <InputSearch {...inputSearchProps} />
           <div className={`${style[`${classMUI}-container-options__menu`]}`}>
@@ -35,25 +44,26 @@ const ContainerDesktop: React.FC<IContainerOptions> = ({
                   text={itemSelected.name}
                   icon={Close}
                   bgColor="#F4F4FA"
-                  onClick={() => removeValueToArray(itemSelected)}
+                  onClick={() => removeTag(itemSelected)}
                 />
               ))}
             </div>
             <div className={`${style[`${classMUI}-container-options__menu--list`]}`}>
               {listOptions.map((value) => (
                 <SelectItem
-                  disable={!limitOfSelectable}
+                  disable={!limitOfSelectable || selectedValues.includes(value)}
                   key={value.id}
                   onClick={() => addValueToArray(value)}
                   text={value.name}
                 />
               ))}
+              k=
             </div>
           </div>
         </div>
       ) : (
         <>
-          {limitOfSelectable && <DropDownButton title={dropDownTitle} onClick={() => setOpenOptions(true)} />}
+          {limitOfSelectable && <DropDownButton title={dropDownTitle} onClick={() => setClickOut(true)} />}
           <div className={`${style[`${classMUI}-container-options-tags-container`]}`}>
             {selectedValues.map((itemSelected) => (
               <Tag
@@ -71,4 +81,4 @@ const ContainerDesktop: React.FC<IContainerOptions> = ({
   )
 }
 
-export default ContainerDesktop
+export default withClickOut(ContainerDesktop)
