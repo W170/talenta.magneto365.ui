@@ -2,7 +2,7 @@ import { ISearchInput } from '@components/UI/atoms/InputSearch/InputSearch.inter
 import { IListOption } from '../../MultipleSelectionEntry.interface'
 
 export interface IContainerOptions {
-  inputSearchProps: ISearchInput
+  inputSearchProps?: ISearchInput
   selectedValues: IListOption[]
   listOptions: IListOption[]
   removeValueToArray: (value: IListOption) => void

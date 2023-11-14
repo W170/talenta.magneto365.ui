@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react'
-import { InputSearch, Tag } from '@components/UI/atoms'
+import { Tag } from '@components/UI/atoms'
 import { SelectItem } from '../../SelectItem'
 import { Close } from '@constants/icons.constants'
 import { classMUI } from '@constants/stories'
@@ -9,7 +9,6 @@ import style from './ContainerMobile.module.scss'
 import { DropDownButton } from '../../DropDownButton'
 
 const ContainerDesktop: React.FC<IContainerOptions> = ({
-  inputSearchProps,
   selectedValues,
   listOptions,
   removeValueToArray,
@@ -40,7 +39,6 @@ const ContainerDesktop: React.FC<IContainerOptions> = ({
       <div style={{ zIndex: 99999999 }}>
         <MobileDrawer isOpen={openOptions} onClose={() => setOpenOptions(false)}>
           <div className={`${style[`${classMUI}-container-options`]}`}>
-            <InputSearch {...inputSearchProps} />
             <div className={`${style[`${classMUI}-container-options__menu`]}`}>
               <div className={`${style[`${classMUI}-container-options__menu--tags`]}`}>
                 {selectedValues.map((itemSelected) => (
@@ -56,7 +54,7 @@ const ContainerDesktop: React.FC<IContainerOptions> = ({
               <div className={`${style[`${classMUI}-container-options__menu--list`]}`}>
                 {listOptions.map((value) => (
                   <SelectItem
-                    disable={!limitOfSelectable}
+                    disable={!limitOfSelectable || selectedValues.includes(value)}
                     key={value.id}
                     onClick={() => addValueToArray(value)}
                     text={value.name}

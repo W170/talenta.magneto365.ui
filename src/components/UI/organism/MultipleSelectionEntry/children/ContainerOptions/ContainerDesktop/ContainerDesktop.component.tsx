@@ -35,7 +35,7 @@ const ContainerDesktop: React.FC<IContainerOptions> = ({
     <>
       {clickOut ? (
         <div className={`${style[`${classMUI}-container-options`]}`}>
-          <InputSearch {...inputSearchProps} />
+          {inputSearchProps && <InputSearch {...inputSearchProps} />}
           <div className={`${style[`${classMUI}-container-options__menu`]}`}>
             <div className={`${style[`${classMUI}-container-options__menu--tags`]}`}>
               {selectedValues.map((itemSelected) => (
@@ -57,7 +57,6 @@ const ContainerDesktop: React.FC<IContainerOptions> = ({
                   text={value.name}
                 />
               ))}
-              k=
             </div>
           </div>
         </div>
