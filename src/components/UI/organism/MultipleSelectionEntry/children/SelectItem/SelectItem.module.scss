@@ -19,4 +19,8 @@
 }
 .disable {
   color: v.$disabled-color-gray3;
+  &:hover {
+    background-color: white;
+    cursor: default;
+  }
 }
