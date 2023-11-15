@@ -43,8 +43,10 @@ export const useMultipleSelectionEntry = ({
       const valueExists = localSelectedValues.some((currentValues) => currentValues.id === value.id)
       if (valueExists) return
       if (localSelectedValues.length === numberOfSelectable) return
-      localSetSelectedValues((prevValues) => [...prevValues, value])
-      onChange([...localSelectedValues, value])
+      localSetSelectedValues((prevValues) => {
+        onChange([...prevValues, value])
+        return [...prevValues, value]
+      })
     },
     [localSelectedValues, numberOfSelectable, onChange]
   )

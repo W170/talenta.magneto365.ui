@@ -10,7 +10,7 @@ const meta: Meta<typeof MultipleSelectionEntry> = {
     placeholder: 'Busca un sector laboral',
     numberOfSelectable: 3,
     listOptions: listOptionsDemo,
-    selectedValues: [1, 2, 3],
+    selectedValues: [1, 2],
     onChange: (e) => {
       console.log(e)
     }

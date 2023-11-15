@@ -31,7 +31,6 @@ const MultipleSelectionEntry: React.FC<IMultipleSelectionentry> = ({
     inputValue,
     onChange: handleInputChange
   }
-
   return (
     <div className={`${style[`${classMUI}-multiple-selection-entry`]}`}>
       <ContainerOptions

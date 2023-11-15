@@ -2,15 +2,17 @@
 .magneto-ui-container-options {
   background-color: white;
   border-radius: 12px;
-  border: 1px solid #e9e9f6;
   position: relative;
 
   input {
-    position: relative;
     border: none;
     outline: transparent;
     border-radius: 12px;
-    z-index: 3;
+    z-index: 6;
+  }
+  &-drop-down-container {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
   }
   &-tags-container {
     display: flex;
@@ -23,14 +25,10 @@
   }
   &__menu {
     background-color: white;
-    width: 100%;
-    position: absolute;
-    border-radius: 0px 0px 12px 12px;
-    top: 50px;
+    border-radius: 12px;
     border: 1px solid #e9e9f6;
     border-top: none;
-    z-index: 2;
-
+    z-index: 4;
     &--tags {
       padding: 0 18px;
       display: flex;
@@ -52,4 +50,8 @@
       @include m.scroll-filter;
     }
   }
+}
+
+.hide {
+  opacity: 0;
 }
