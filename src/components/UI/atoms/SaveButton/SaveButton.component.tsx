@@ -6,12 +6,17 @@ import { ArchiveAdd, ArchiveRemove } from '@constants/icons.constants'
 
 const Component: React.FC<ISaveButton> = ({ isAuthenticated, isSaved, buttonText, buttonTitle, addHover, onClick }) => {
   return isAuthenticated ? (
-    <div className={styles['magneto-ui-save-button']}>
-      <button className={styles['magneto-ui-save-button__btn']} type="button" onClick={onClick} title={buttonTitle}>
-        <IconItem hover={addHover} size={20} icon={isSaved ? ArchiveRemove : ArchiveAdd} />
-      </button>
-      {buttonText && <p className={styles['magneto-ui-save-button__mobile-text']}>{buttonText}</p>}
-    </div>
+    <button
+      className={`${styles['magneto-ui-save-button']} ${addHover && styles['hover-effect']}`}
+      type="button"
+      onClick={onClick}
+      title={buttonTitle}
+    >
+      <div className={styles['button-content']}>
+        <IconItem size={20} icon={isSaved ? ArchiveRemove : ArchiveAdd} hover={addHover} />
+        {buttonText && <p className={styles['magneto-ui-save-button__mobile-text']}>{buttonText}</p>}
+      </div>
+    </button>
   ) : null
 }
 

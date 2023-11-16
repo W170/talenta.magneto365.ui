@@ -19,3 +19,11 @@ export const Default: Story = {
     isAuthenticated: true
   }
 }
+
+export const HoverEffect: Story = {
+  args: {
+    buttonTitle: 'Guardar vacante',
+    isAuthenticated: true,
+    addHover: true
+  }
+}

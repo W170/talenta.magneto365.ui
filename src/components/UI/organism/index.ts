@@ -13,3 +13,5 @@ export * from './MobileDrawer'
 export * from './MobileJobDetailsDrawer'
 export * from './MobileSortMenu'
 export * from './SimilarJobs'
+export * from './MultipleSelectionEntry'
+
