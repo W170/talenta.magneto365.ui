@@ -1,0 +1,36 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+.magneto-ui-select-item {
+  background: none;
+  display: flex;
+  align-items: center;
+  border: none;
+  text-align: left;
+  height: auto;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+  @media screen and(min-width: v.$screen-md) {
+    &:hover {
+      background-color: v.$disabled-color-gray;
+    }
+  }
+}
+.disable {
+  color: v.$disabled-color-gray3;
+  &:hover {
+    background-color: white;
+    cursor: default;
+  }
+}
+
+.selected {
+  background-color: v.$disabled-color-gray;
+  color: black;
+  &:hover {
+    background-color: v.$disabled-color-gray;
+    cursor: default;
+  }
+  cursor: default;
+}
