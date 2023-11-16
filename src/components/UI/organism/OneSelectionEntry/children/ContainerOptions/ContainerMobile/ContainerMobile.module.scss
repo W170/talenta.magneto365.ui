@@ -1,0 +1,32 @@
+@use '../../../../../../../shared/stylesheets/mixins.scss' as m;
+.magneto-ui-container-options {
+  background-color: white;
+  border-radius: 12px;
+  input {
+    outline: transparent;
+    border-radius: 12px;
+    &:focus {
+      outline: transparent;
+    }
+    &:hover {
+      outline: transparent;
+    }
+  }
+
+  &__menu {
+    background-color: white;
+    width: 100%;
+    border-radius: 0px 0px 12px 12px;
+    border-top: none;
+    &--list {
+      padding: 0 18px;
+      display: flex;
+      flex-direction: column;
+      min-height: auto;
+      max-height: 350px;
+      overflow: hidden;
+      overflow-y: scroll;
+      @include m.scroll-filter;
+    }
+  }
+}

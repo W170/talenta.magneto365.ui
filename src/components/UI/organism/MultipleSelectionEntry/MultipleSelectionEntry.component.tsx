@@ -3,7 +3,6 @@ import React from 'react'
 import { classMUI } from '@constants/stories'
 import style from './MultipleSelectionEntry.module.scss'
 import ContainerOptions from './children/ContainerOptions/ContainerOptions.component'
-import { withClickOut } from '@components/hoc'
 import { IMultipleSelectionentry } from './MultipleSelectionEntry.interface'
 import { useMultipleSelectionEntry } from './hooks/useMultipleSelectionEntry'
 
@@ -46,4 +45,4 @@ const MultipleSelectionEntry: React.FC<IMultipleSelectionentry> = ({
   )
 }
 
-export default withClickOut(MultipleSelectionEntry)
+export default MultipleSelectionEntry
