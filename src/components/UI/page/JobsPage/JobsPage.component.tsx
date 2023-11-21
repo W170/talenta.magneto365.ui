@@ -10,6 +10,7 @@ import style from './JobsPage.module.scss'
 import { classMUI } from '@constants/stories'
 import { EmptyResults } from '@components/UI/molecules/EmptyResults'
 import { JobCardSkeleton } from '@components/UI/molecules/JobCard/children'
+import { Paragraph } from '@components/UI/atoms'
 
 const JobsPage: React.FC<IJobsPage> = ({
   jobDetailsDrawerProps,
@@ -25,7 +26,8 @@ const JobsPage: React.FC<IJobsPage> = ({
   isLoading,
   device,
   emptyResultsProps,
-  jobDetailAction
+  jobDetailAction,
+  customParagraph
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [showDetail, setShowDetail] = useState(device === 'desktop')
@@ -120,6 +122,7 @@ const JobsPage: React.FC<IJobsPage> = ({
                   />
                 ))}
           </div>
+          {customParagraph && <Paragraph paragraph={customParagraph} />}
           <Pagination {...paginationProps} />
           <FrequentSearch {...frequentSearchProps} />
         </div>
