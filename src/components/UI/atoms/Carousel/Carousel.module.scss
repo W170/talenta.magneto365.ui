@@ -1,0 +1,87 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-carousel {
+  width: 100%;
+  padding: 1rem;
+  position: relative;
+  &__btn-prev,
+  &__btn-next {
+    z-index: 2;
+    background-color: v.$color-blue-primary;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    color: #fff;
+    top: 40%;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    &.magneto-ui-disabled {
+      display: none;
+    }
+  }
+  &__btn-prev {
+    left: -2%;
+  }
+  &__btn-next {
+    right: -2%;
+  }
+
+  &__values {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 140px;
+    &--link {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+        max-width: 80px;
+        height: auto;
+      }
+    }
+  }
+  &__loading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  @media screen and (max-width: v.$screen-md) {
+    padding: 0;
+    padding-bottom: 1rem;
+    width: 100vw;
+    overflow: scroll hidden;
+    &__btn-prev,
+    &__btn-next {
+      display: none;
+    }
+    &__values {
+      min-height: auto;
+      padding: 0;
+      overflow: hidden scroll;
+      &--link {
+        img {
+          max-width: 95px;
+          margin: 0 5px;
+        }
+      }
+      @media screen and (max-width: v.$screen-xs) {
+        min-width: 245%;
+        padding-bottom: 1rem;
+      }
+    }
+  }
+}
