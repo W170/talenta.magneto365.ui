@@ -1,0 +1,19 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-book-type {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  img {
+    margin-right: 5px;
+    width: 13px;
+    height: 13px;
+  }
+  span {
+    color: #a3a3b5;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

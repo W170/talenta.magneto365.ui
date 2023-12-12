@@ -1,0 +1,21 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui {
+  &-button-card {
+    display: flex;
+    align-items: center;
+    background: none;
+  }
+  &-button-borrow {
+    font-size: 12px;
+    display: flex;
+    padding: 8px 15px !important;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1 0 0;
+    p {
+      font-size: 12px !important;
+    }
+  }
+}

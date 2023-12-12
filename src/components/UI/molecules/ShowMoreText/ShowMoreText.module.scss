@@ -1,0 +1,50 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-show-more-text {
+  padding: auto;
+  &__text {
+    padding: 0;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+  }
+  &__button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      background: none;
+      cursor: pointer;
+      position: relative;
+      width: 100%;
+      img {
+        background: #f4f4fa;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      filter: blur(25px);
+      background: white;
+    }
+    &.magneto-ui-show {
+      margin-top: 1rem;
+      &::before {
+        content: '';
+        filter: blur(0);
+        background: none;
+      }
+    }
+    button {
+      border: none;
+    }
+  }
+}

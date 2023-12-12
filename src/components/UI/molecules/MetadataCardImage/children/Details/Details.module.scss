@@ -1,0 +1,32 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-details {
+  padding: 0%;
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    position: relative;
+    width: 100%;
+    margin: 1.25rem 0 1.1875rem;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+  &__publisher--info {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  &__formats {
+    &--info {
+      margin-bottom: 1rem;
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-library-menu {
+  background-color: #f4f4fa;
+  min-width: 320px;
+  max-width: 340px;
+  padding: 10px;
+  border-radius: 8px;
+  display: block;
+  cursor: pointer;
+  &__title {
+    width: 70%;
+    text-align: center;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    img {
+      width: auto;
+      height: 83px;
+    }
+  }
+}

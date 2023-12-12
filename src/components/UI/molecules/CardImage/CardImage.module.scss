@@ -1,0 +1,33 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-card-image {
+  display: block;
+  margin: 5px;
+  color: #14141c;
+  max-width: 150px;
+  position: relative;
+  &__available {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: #22d3b7;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    display: flex;
+    border-radius: 3px;
+    img {
+      margin-right: 5px;
+      width: 18px;
+    }
+    span {
+      font-size: 13px;
+      line-height: none;
+      color: #14141c;
+    }
+  }
+  &__cover {
+    width: 100%;
+    border-radius: 6px;
+  }
+}
