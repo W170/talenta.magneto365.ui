@@ -16,9 +16,9 @@ const SimilarJobsCard: React.FC<ISimilarJobsCard> = ({
   hideLogo
 }) => {
   const formatInfo = useMemo(() => {
-    const citiesFormat = cities ? `${cities[0]} ${cities.length > 1 ? `(+${cities.length - 1})` : ''} | ` : ''
-    const salaryFormat = salary ? `${salary} | ` : ''
-    const experienceFormat = experience ? `${experience}` : ''
+    const citiesFormat = cities ? `${cities[0]} ${cities.length > 1 ? `(+${cities.length - 1})` : ''}` : ''
+    const salaryFormat = salary ? ` | ${salary}` : ''
+    const experienceFormat = experience ? ` | ${experience}` : ''
 
     return `${citiesFormat}${salaryFormat}${experienceFormat}`
   }, [cities, salary, experience])
@@ -29,7 +29,7 @@ const SimilarJobsCard: React.FC<ISimilarJobsCard> = ({
         <img
           className={`${styles[`${classMUI}-similar-jobs__img`]}`}
           src={companyLogo ? companyLogo : NoLogo}
-          alt={`${companyName}-logo`.toLowerCase()}
+          alt={`${companyName ? companyName : 'company'}-logo`.toLowerCase()}
         />
       )}
       <div>
