@@ -9,12 +9,14 @@ import {
   RightsReservedProps,
   listMenuText,
   searchList,
+  similarVacanciesCardsProps,
   vacancies
 } from '@constants/stories'
 import { sideFilterProps, sortBarProps, paginationProps } from '@constants/stories'
 
 import { Buildings2, Export3 } from '@constants/icons.constants'
 import { emptyResultsProps } from '@constants/stories/emptyResults.constants'
+import { sectionTitle, moreJobsText, moreJobsLink } from '../../../../constants/stories/similarJobs.constants'
 
 const jobDetailsDrawer = {
   jobCompanyLogoProps: {
@@ -90,6 +92,12 @@ const jobDetailsDrawer = {
       buttonTitle: 'Copiar',
       onCopySuccess: () => console.log('Success')
     }
+  },
+  similarJobsProps: {
+    moreJobsLink,
+    moreJobsText,
+    sectionTitle,
+    similarJobsCard: similarVacanciesCardsProps
   }
 }
 
@@ -172,6 +180,12 @@ const mobileJobDetailsDrawer = {
       externalButtonChild: <MainButton buttonText="Aplicar" />
     },
     onClose: true
+  },
+  similarJobsProps: {
+    moreJobsLink,
+    moreJobsText,
+    sectionTitle,
+    similarJobsCard: similarVacanciesCardsProps
   }
 }
 
