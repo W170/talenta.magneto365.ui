@@ -15,6 +15,8 @@ import { sideFilterProps, sortBarProps, paginationProps } from '@constants/stori
 
 import { Buildings2, Export3 } from '@constants/icons.constants'
 import { emptyResultsProps } from '@constants/stories/emptyResults.constants'
+import { ECandidateState, ImageCarousel } from '@components/UI/organism'
+import { carouselProps } from '@constants/stories/carousel.constants'
 
 const jobDetailsDrawer = {
   jobCompanyLogoProps: {
@@ -189,6 +191,13 @@ const footerProps = {
   menuFooterLink: listMenuText
 }
 
+const imageCarouselProps = {
+  title: '¡Crea tu hoja de vida y accede a miles de libros gratis!',
+  titleFinished: 'Libros recomendados',
+  values: carouselProps,
+  buttonAction: <MainButton buttonText="Crear cuenta" />
+}
+
 const meta: Meta<typeof JobsPage> = {
   title: 'Pages/Jobs Page',
   component: JobsPage,
@@ -205,7 +214,8 @@ const meta: Meta<typeof JobsPage> = {
     jobSelected: vacancies[0],
     isLoading: false,
     device: 'desktop',
-    emptyResultsProps
+    emptyResultsProps,
+    carouselComponent: <ImageCarousel {...imageCarouselProps} candidateState={ECandidateState.AUTH} />
   },
   decorators: [
     (Story) => (

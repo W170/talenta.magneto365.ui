@@ -26,8 +26,9 @@ const JobsPage: React.FC<IJobsPage> = ({
   isLoading,
   device,
   emptyResultsProps,
+  customParagraph,
   jobDetailAction,
-  customParagraph
+  carouselComponent = <React.Fragment />
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [showDetail, setShowDetail] = useState(device === 'desktop')
@@ -108,6 +109,7 @@ const JobsPage: React.FC<IJobsPage> = ({
         <div className={style[`${classMUI}-jobs-page--center-row`]}>
           <SortBar {...sortBarProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
           {mainTitleByMediaQuery}
+          {carouselComponent}
           <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>
             {vacantProps.length <= 0 || isLoading
               ? cardsAltRender

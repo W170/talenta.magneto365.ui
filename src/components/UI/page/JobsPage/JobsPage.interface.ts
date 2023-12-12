@@ -6,6 +6,7 @@ import { ISideFilter } from '@components/UI/template'
 import { IFooter } from '@components/UI/template/Footer/Footer.interface'
 import { DeviceType } from '@components/context/context.interface'
 import { IEmptyResutls } from '@components/UI/molecules/EmptyResults/EmptyResults.interface'
+import React from 'react'
 
 export interface IJobsPage {
   /**
@@ -67,6 +68,10 @@ export interface IJobsPage {
    * This is the custom custom paragraph to show in the search hit pages
    */
   customParagraph?: string
+  /**
+   * This property dispplay a component to images overdrive
+   */
+  carouselComponent?: React.ReactElement | JSX.Element
 }
 
 export interface IVacancies extends IJobCard {
