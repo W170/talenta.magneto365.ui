@@ -14,6 +14,8 @@ const SimilarJobs: React.FC<ISimilarJobs> = ({
   //TODO:PLS REMOVE THIS BOOLEAN WHEN THE SIMILAR VACANCIES PAGE EXIST
   const pageExists = false
 
+  if (similarJobsCard.length <= 0) return null
+
   return (
     <div className={`${styles[`${classMUI}-similar-jobs-section`]}`}>
       <h3 className={`${styles[`${classMUI}-similar-jobs-section__title`]}`}>{`${sectionTitle}:`}</h3>
