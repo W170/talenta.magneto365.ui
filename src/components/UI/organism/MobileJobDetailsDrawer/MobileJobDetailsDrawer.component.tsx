@@ -52,7 +52,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
         {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
         <JobApplyCard {...jobApplyCardProps} />
         <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
-        <SimilarJobs {...similarJobsProps} />
+        {similarJobsProps ? <SimilarJobs {...similarJobsProps} /> : null}
       </Fragment>
     )
   }, [
