@@ -1,0 +1,54 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+.magneto-ui-collection-section {
+  position: relative;
+  &__content {
+    padding: 1rem 5%;
+    position: relative;
+  }
+
+  &__all-books {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    &--content {
+      padding: 12px 25px;
+      border-radius: 30px;
+      background: #f4f4fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 20px;
+        margin-left: 5px;
+      }
+    }
+  }
+  &__title,
+  &__subtitle {
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+  &__title {
+    padding-top: 1rem;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+  }
+  &__subtitle {
+    display: block;
+    font-weight: 600;
+  }
+  &__options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(50vw / 8), 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+}

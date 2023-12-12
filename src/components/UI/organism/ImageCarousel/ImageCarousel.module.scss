@@ -1,0 +1,14 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-image-carousel {
+  padding: 1rem 2rem;
+  background-color: #e0f3fb;
+  border-radius: 12px;
+  width: 90%;
+  margin: 0 auto;
+  min-height: 270px;
+  @media screen and (max-width: v.$screen-md) {
+    min-height: auto;
+    padding: 1rem;
+  }
+}

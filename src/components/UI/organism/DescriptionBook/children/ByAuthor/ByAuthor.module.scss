@@ -1,0 +1,30 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-by-author {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  a {
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    color: #000096;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+  }
+  span {
+    margin-right: 4px;
+    overflow: hidden;
+    color: #63637e;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+}

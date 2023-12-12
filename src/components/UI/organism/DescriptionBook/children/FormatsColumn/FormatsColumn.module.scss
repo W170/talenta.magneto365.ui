@@ -1,0 +1,37 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-formats-column {
+  padding: 0 15%;
+  h6,
+  p {
+    font-size: 0.875rem;
+    margin: 0;
+    padding: 0;
+  }
+  h6 {
+    margin: 1rem 0;
+    text-transform: uppercase;
+  }
+  &__item {
+    margin-bottom: 1rem;
+  }
+  &__links {
+    display: flex;
+    gap: 5px 10px;
+    flex-wrap: wrap;
+    a {
+      height: auto;
+      padding: 8px 10px 8px 10px;
+      border-radius: 30px;
+      gap: 5px;
+      white-space: nowrap;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 0em;
+      text-align: left;
+      cursor: pointer;
+      background: #f4f4fa;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-carousel-library {
+  padding: 1rem;
+  &.magneto-ui-not-values {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__values {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 100%;
+      max-width: 80px;
+      height: auto;
+    }
+  }
+  @media screen and (max-width: v.$screen-md) {
+    padding: 0;
+    overflow: scroll hidden;
+    &__values {
+      min-width: 60px;
+      margin: 0 5px;
+    }
+  }
+}

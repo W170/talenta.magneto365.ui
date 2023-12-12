@@ -1,0 +1,16 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-static-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  &__value {
+    height: 90px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
