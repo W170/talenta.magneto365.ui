@@ -1,0 +1,22 @@
+export const listOptions = [
+  { id: 0, label: 'Cédula de ciudadanía', shortLabel: 'CC', order: 0 },
+  { id: 1, label: 'Pasaporte', shortLabel: 'PA', order: 1 },
+  { id: 2, label: 'Cédula extranjería', shortLabel: 'CE', order: 2 },
+  { id: 3, label: 'Tarjeta de identificación', shortLabel: 'TI', order: 3 },
+  { id: 4, label: 'Otro', shortLabel: 'OTRO', order: 4 },
+  { id: 5, label: 'CUIL', shortLabel: 'CUIL', order: 5 },
+  { id: 6, label: 'RUT', shortLabel: 'RUT', order: 6 },
+  { id: 7, label: 'CI', shortLabel: 'CI', order: 7 },
+  { id: 8, label: 'RG', shortLabel: 'RG', order: 8 },
+  { id: 9, label: 'CTPS', shortLabel: 'CTPS', order: 9 },
+  { id: 10, label: 'CPF', shortLabel: 'CPF', order: 10 },
+  { id: 11, label: 'PIS', shortLabel: 'PIS', order: 11 },
+  { id: 12, label: 'Reservista', shortLabel: 'Reservista', order: 12 },
+  { id: 13, label: 'PAS', shortLabel: 'PAS', order: 13 },
+  { id: 14, label: 'L.E/DNI', shortLabel: 'L.E/DNI', order: 14 },
+  { id: 15, label: 'CARNET_EXT.', shortLabel: 'CARNET_EXT.', order: 15 },
+  { id: 16, label: 'LM', shortLabel: 'LM', order: 16 },
+  { id: 17, label: 'RUC', shortLabel: 'RUC', order: 17 },
+  { id: 18, label: 'P.NAC', shortLabel: 'P.NAC', order: 18 },
+  { id: 19, label: 'Permiso por Protección Temporal', shortLabel: 'PPT', order: 19 }
+]

@@ -63,6 +63,10 @@ export interface IJobsPage {
    * This prperty show values in the empty vacants card
    */
   emptyResultsProps: IEmptyResutls
+  /**
+   * This is the custom custom paragraph to show in the search hit pages
+   */
+  customParagraph?: string
 }
 
 export interface IVacancies extends IJobCard {
