@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { ContextAppProvider } from '../src/components/context/context.component'
 export const withContext = (Story: React.FC) => {
   return (
