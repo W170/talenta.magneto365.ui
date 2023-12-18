@@ -34,7 +34,7 @@ module.exports = {
     autodocs: true,
     defaultName: 'Documentation'
   },
-  webpackFinal: async (config) => {
+  webpackFinal: async (config, { configType }) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       '@assets': path.resolve(__dirname, '/src/assets'),
@@ -42,6 +42,10 @@ module.exports = {
       '@constants': path.resolve(__dirname, '/src/constants'),
       '@shared': path.resolve(__dirname, '/src/shared'),
       '@utils': path.resolve(__dirname, '/src/utils')
+    }
+    if (configType === 'PRODUCTION') {
+      // Set the public path for production build
+      config.output.publicPath = '/ui/'
     }
     return config
   }
