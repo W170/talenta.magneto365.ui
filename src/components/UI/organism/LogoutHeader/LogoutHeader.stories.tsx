@@ -1,3 +1,4 @@
+import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { LogoutHeader } from './LogoutHeader.component'
 import { IMobileSearchbar } from '../../molecules'
@@ -54,7 +55,14 @@ const meta: Meta<typeof LogoutHeader> = {
     homeUrl: '/home',
     allJobsLink: '#',
     allJobsText: 'Todos los empleos'
-  }
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ margin: '-16px' }}>
+        <Story />
+      </div>
+    )
+  ]
 }
 
 export default meta
