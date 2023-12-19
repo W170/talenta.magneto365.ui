@@ -14,6 +14,7 @@ import { MobileJobDetailsDrawerSkeleton } from './children/MobileJobDetailsDrawe
 
 import { IMobileJobDetailsDrawer } from './MobileJobDetailsDrawer.interface'
 import { iconDetailList, iconFooterList } from '@constants/stories'
+import { SimilarJobs } from '../SimilarJobs'
 
 const Component: React.FC<IMobileJobDetailsDrawer> = ({
   jobCompanyLogoProps,
@@ -28,7 +29,8 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   modalPendingInfoComponent,
   isOpen = true,
   isLoading,
-  onClose
+  onClose,
+  similarJobsProps
 }) => {
   const handleClose = useCallback(() => {
     if (onClose) {
@@ -50,6 +52,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
         {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
         <JobApplyCard {...jobApplyCardProps} />
         <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
+        {similarJobsProps ? <SimilarJobs {...similarJobsProps} /> : null}
       </Fragment>
     )
   }, [
@@ -62,7 +65,8 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
     jobDetailsHeaderText,
     jobDetailsProps,
     jobFooterCardProps,
-    jobSkillsCardProps
+    jobSkillsCardProps,
+    similarJobsProps
   ])
 
   return (

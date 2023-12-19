@@ -15,9 +15,19 @@
 }
 
 @mixin mediumButton {
+  height: 32px;
   p {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 17px;
+    width: max-content;
+    height: 16px;
+    @media (min-width: v.$screen-md) {
+      font-size: 14px;
+      height: unset;
+    }
+  }
+  @media (min-width: v.$screen-md) {
+    height: unset;
   }
 
   &[data-is-mobile='true'] {
@@ -62,8 +72,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing, 0px);
-  padding: 10px 20px;
+  gap: 5px;
+  padding: 10px;
 
   border: none;
   border-radius: 50px;
@@ -71,6 +81,11 @@
   color: var(--text-color);
   cursor: pointer;
   transition: all ease-in-out 0.3s;
+
+  @media (min-width: v.$screen-md) {
+    gap: var(--spacing, 0px);
+    padding: 10px 20px;
+  }
 
   &:hover {
     filter: brightness(0.9);
