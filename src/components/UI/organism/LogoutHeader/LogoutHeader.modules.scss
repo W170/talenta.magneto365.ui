@@ -7,10 +7,13 @@
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  padding: 5px 20px;
+  padding: 10px;
   background-color: v.$color-white;
   border-bottom: 1px solid v.$color-tertiary-gray;
   height: 60px;
+  @media (min-width: v.$screen-md) {
+    padding: 5px 20px;
+  }
   @media (min-width: v.$screen-lg) {
     height: 113px;
   }
@@ -29,10 +32,14 @@
 
     .magneto-ui-left-section {
       display: inherit;
-      gap: 20px;
+      gap: 10px;
 
       button {
         padding: 0px;
+      }
+
+      @media (min-width: v.$screen-md) {
+        gap: 20px;
       }
     }
 
@@ -58,7 +65,10 @@
 
     .magneto-ui-right-section {
       display: inherit;
-      gap: 18px;
+      gap: 10px;
+      @media (min-width: v.$screen-md) {
+        gap: 18px;
+      }
     }
   }
 

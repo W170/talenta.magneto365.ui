@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Link, LogoComponent, MainButton, SearchItem } from '../../atoms'
 import { Breadcrumbs, MobileSearchbar, Tab, TabButton, Searchbar } from '../../molecules'
 
@@ -37,8 +37,8 @@ const Component: React.FC<ILogoutHeader> = ({
   const { type, href, text } = signInLink
   const { buttonText, loadingState, onClick } = signUpButton
   const [showSearchBar, setShowSearchBar] = useState(false)
-  const isMobileButton = useMediaQuery(false, {
-    md: true
+  const iconSize = useMediaQuery(25, {
+    sm: 16
   })
 
   const toggleSearchBar = () => {
@@ -82,6 +82,7 @@ const Component: React.FC<ILogoutHeader> = ({
 
   // Mobile Searchbar Button Component
   const LogoutHeaderMobileSearchbarButton = useMediaQuery(null, {
+    xs: <Fragment />,
     md: <MainButton onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
   })
 
@@ -95,14 +96,7 @@ const Component: React.FC<ILogoutHeader> = ({
 
   // SignIn Link Component
   const LogoutHeaderLinkSignIn = useMediaQuery(
-    <Link
-      type={type}
-      href={href}
-      text={text}
-      iconProps={SignInIcon}
-      linkStyles={SignInStyles}
-      isMobile={isMobileButton}
-    />
+    <Link type={type} href={href} text={text} iconProps={{ ...SignInIcon, size: iconSize }} linkStyles={SignInStyles} />
   )
 
   // SignUp Button Component
@@ -110,9 +104,9 @@ const Component: React.FC<ILogoutHeader> = ({
     <MainButton
       {...SignUpButtonStyle}
       buttonText={buttonText}
+      iconProps={{ ...SignUpButtonStyle.iconProps, size: iconSize }}
       onClick={onClick}
       loadingState={loadingState}
-      isMobile={isMobileButton}
     />
   )
 
