@@ -23,10 +23,10 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   others = ''
 }) => {
   const citiesformatted = useMemo(() => {
-    if (cities.length > 5) {
-      return cities.slice(0, 5).join(', ')
+    if (cities?.length > 5) {
+      return cities?.slice(0, 5).join(', ')
     }
-    return cities.join(', ')
+    return cities?.join(', ')
   }, [cities])
 
   const infoRow4 = [contractType, salary, experience, educationLevel].join(' ')
@@ -59,7 +59,7 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
         <div className={style[`${classMUI}-card-jobs--row3`]}>
           <p>
             {citiesformatted}
-            {cities.length > 5 && ', ' + others}
+            {cities?.length > 5 && ', ' + others}
           </p>
         </div>
         <div className={style[`${classMUI}-card-jobs--row4`]}>
