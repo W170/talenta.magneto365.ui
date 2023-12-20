@@ -2,9 +2,9 @@ import { classMUI } from '@constants/stories'
 import React, { useMemo } from 'react'
 import style from './ImageCarousel.module.scss'
 import { ECandidateState, IImageCarousel } from './ImageCarousel.interface'
-import { TitleCarousel } from '@components/UI/molecules'
 import { CarouselLibrary } from './children/CarouselLibrary'
 import { useMediaQuery } from '@components/hooks'
+import { TitleCarousel } from './children/TitleCarousel'
 
 const ImageCarousel: React.FC<IImageCarousel> = ({ title, titleFinished, values, candidateState, ...otherProps }) => {
   const isFinishedStatus = useMemo(() => candidateState === ECandidateState.FINISHED, [candidateState])
