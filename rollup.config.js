@@ -1,17 +1,14 @@
-import makePackageJson from 'rollup-plugin-generate-package-json'
-import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
+import resolve from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
 import url from '@rollup/plugin-url'
-import autoprefixer from 'autoprefixer'
-import postcss from 'rollup-plugin-postcss'
-import dts from 'rollup-plugin-dts'
-import stringHash from 'string-hash'
 import dotEnv from 'dotenv'
 import path from 'path'
+import dts from 'rollup-plugin-dts'
+import generatePackageJson from 'rollup-plugin-generate-package-json'
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import packageJson from './package.json'
-import { listDirectory } from './rollup.utils'
+import { listDirectory, postcssPlugin } from './rollup.utils'
 
 const plugins = [
   peerDepsExternal(),
@@ -24,57 +21,52 @@ const plugins = [
     publicPath: dotEnv.config().parsed.ASSETS_CDN_URL,
     limit: 0,
     emitFiles: true
-  }),
-  typescript({ tsconfig: './tsconfig.json', useTsconfigDeclarationDir: true }),
-  postcss({
-    autoModules: false,
-    onlyModules: false,
-    plugins: [autoprefixer],
-    modules: {
-      generateScopedName: (name, filename, css) => {
-        if (filename.includes('global')) {
-          return name
-        }
-        const hash = stringHash(css).toString(36).substring(0, 5)
-        const { base } = path.parse(
-          filename.replace(/\.modules?\.scss/g, '').replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`)
-        )
-        return `mg_${base}_${name}_${hash}`.replace(/_{2,}/g, '_')
-      }
-    },
-    extract: 'css/magneto.ui.lib.min.css',
-    extensions: ['.module.scss', '.modules.scss'],
-    use: ['sass'],
-    minimize: true,
-    sourceMap: false
   })
 ]
-const subFolderPlugins = (folderName) => [
+
+const folderList = [
+  // { inputMap: 'components/UI/atoms', outputMap: 'atoms' },
+  // { inputMap: 'components/UI/molecules', outputMap: 'molecules' },
+  // { inputMap: 'components/UI/organism', outputMap: 'organism' },
+  // { inputMap: 'components/UI/page', outputMap: 'page' },
+  { inputMap: 'components/UI/template', outputMap: 'template' }
+]
+
+const subfolderPlugins = (folderName, map) => [
   ...plugins,
-  makePackageJson({
+  postcssPlugin(true),
+  typescript({
+    tsconfig: './tsconfig.json',
+    declaration: false
+  }),
+  generatePackageJson({
     baseContents: {
-      name: `${packageJson.name}/${folderName}`,
+      name: `${packageJson.name}/${map.outputMap}/${folderName}`,
       private: true,
-      main: '../cjs/index.js', // --> points to cjs format entry point of whole library
+      main: '../../cjs/index.js', // --> points to cjs format entry point of whole library
       module: './index.js', // --> points to esm format entry point of individual component
-      types: './types/index.d.ts' // --> points to types definition file of individual component
+      types: `../../esm/types/${map.inputMap}/${folderName}/index.d.ts` // --> points to types definition file of individual component
     }
   })
 ]
 
-const folderBuilds = listDirectory('./src/components/UI/template').map((folder) => {
-  return {
-    input: `src/components/UI/template/${folder}/index.ts`,
-    output: {
-      file: `dist/${folder}/index.js`,
-      sourcemap: true,
-      exports: 'named',
-      format: 'esm'
-    },
-    plugins: subFolderPlugins(folder),
-    external: ['antd', 'react', 'axios', 'react-dom']
-  }
-})
+const folderBuilds = folderList.flatMap((map) =>
+  listDirectory(`./src/${map.inputMap}`).map((folder) => {
+    return {
+      input: [`src/${map.inputMap}/${folder}/index.ts`],
+      output: [
+        {
+          file: `dist/${map.outputMap}/${folder}/index.js`,
+          sourcemap: true,
+          exports: 'named',
+          format: 'esm'
+        }
+      ],
+      plugins: subfolderPlugins(folder, map),
+      external: ['antd', 'react', 'axios', 'react-dom']
+    }
+  })
+)
 
 export default [
   {
@@ -92,7 +84,7 @@ export default [
       }
     ],
     external: ['antd', 'react', 'axios', 'react-dom'],
-    plugins: [...plugins]
+    plugins: [...plugins, postcssPlugin(false), typescript({ tsconfig: './tsconfig.json', declaration: true })]
   },
   ...folderBuilds,
   {
