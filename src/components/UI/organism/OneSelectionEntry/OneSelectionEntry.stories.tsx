@@ -7,6 +7,7 @@ const meta: Meta<typeof OneSelectionEntry> = {
   component: OneSelectionEntry,
   args: {
     dropDownTitle: 'Tipo de identificacion',
+    responsiveMenu: true,
     listOptions,
     selectedValue: 1,
     onChange: (e) => {

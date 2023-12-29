@@ -5,7 +5,13 @@ import { IOneSelectionentry } from './OneSelectionEntry.interface'
 import { useOneSelectionEntry } from './hooks/useOneSelectionEntry'
 import style from './OneSelectionEntry.module.scss'
 
-const OneSelectionEntry: React.FC<IOneSelectionentry> = ({ dropDownTitle, listOptions, selectedValue, onChange }) => {
+const OneSelectionEntry: React.FC<IOneSelectionentry> = ({
+  dropDownTitle,
+  listOptions,
+  selectedValue,
+  onChange,
+  responsiveMenu = true
+}) => {
   const { addValue, localListOptions, localSelectedValue } = useOneSelectionEntry({
     listOptions,
     selectedValue,
@@ -22,6 +28,7 @@ const OneSelectionEntry: React.FC<IOneSelectionentry> = ({ dropDownTitle, listOp
   return (
     <div className={`${style[`${classMUI}-one-selection-entry`]}`}>
       <ContainerOptions
+        responsiveMenu={responsiveMenu}
         dropDownTitle={dropDownTitleSelection}
         addValue={addValue}
         listOptions={localListOptions}
