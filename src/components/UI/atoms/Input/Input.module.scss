@@ -27,4 +27,9 @@
     transform: translateY(-50%);
     left: 10px;
   }
+  &__error {
+    color: red;
+    font-size: 14px;
+    margin: 5px;
+  }
 }
