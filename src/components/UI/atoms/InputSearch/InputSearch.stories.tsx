@@ -7,7 +7,6 @@ const meta: Meta<typeof InputSearch> = {
   tags: ['autodocs'],
   args: {
     placeholder: 'Search something',
-    inputValue: 'Input Value',
     onChange: (e) => e.target.value,
     searchOnClick: () => console.log('h')
   }
