@@ -47,8 +47,7 @@ const Input: React.FC<IInput> = ({
         </label>
         <input
           style={{
-            padding: hideIcon ? '0px 10px' : '0px 40px',
-            width: hideIcon ? 'calc(100% - 22px)' : 'calc(100% - 82px)'
+            padding: hideIcon ? '0px 10px' : '0px 40px'
           }}
           className={styles[`${classMUI}-input-container__input`]}
           type={type}
