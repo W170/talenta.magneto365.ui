@@ -12,7 +12,8 @@ const meta: Meta<typeof Input> = {
     value: 'value',
     hideIcon: false,
     type: 'email',
-    customIcon: ''
+    customIcon: '',
+    error: 'Campo requerido'
   }
 }
 

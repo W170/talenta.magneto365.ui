@@ -31,4 +31,8 @@ export interface IInput {
    * this property in true hide the input icon
    */
   hideIcon?: boolean
+  /**
+   * this property add an error message
+   */
+  error?: string
 }
