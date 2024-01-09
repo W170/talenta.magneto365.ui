@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react'
 import { IInput } from './Input.interface'
 import { classMUI } from '@constants/stories'
 import styles from './Input.module.scss'
-import { DocumentText, Email, Mobile } from '@constants/icons.constants'
+import { DocumentTextGray, Email, Mobile } from '@constants/icons.constants'
 
 const Input: React.FC<IInput> = ({ value = '', onChange, name, type, placeholder, customIcon, hideIcon = false }) => {
   const [onFocus, setOnFocus] = useState(false)
@@ -11,14 +11,14 @@ const Input: React.FC<IInput> = ({ value = '', onChange, name, type, placeholder
   const dinamycIcon = useMemo(() => {
     switch (type) {
       case 'text':
-        return DocumentText
+        return DocumentTextGray
       case 'email':
         return Email
       case 'number':
         return Mobile
 
       default:
-        return DocumentText
+        return DocumentTextGray
     }
   }, [type])
 
