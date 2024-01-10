@@ -16,7 +16,6 @@ const Component: React.FC<IMetadataCardImage> = ({ title, byText, authors, media
         <Popover
           widthBase={5}
           show={clickOut}
-          className={style[`${classMUI}-metadata-card-image__submenu-menu`]}
           content={
             <ListMenuText
               title={'hola'}
