@@ -5,7 +5,7 @@ import { ICollectionSection } from './CollectionSection.interface'
 import { CardImage, ICardImage } from '@components/UI/molecules/CardImage'
 import { ArrowRight2 } from '@constants/icons.constants'
 
-const CollectionSection: React.FC<ICollectionSection> = ({ title, subtitle, textButton, isFeatured, values }) => {
+const CollectionSection: React.FC<ICollectionSection> = ({ title, subtitle, textButton, withSub = false, values }) => {
   const [currentValues, setCurrentValues] = useState<ICardImage[]>([])
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const CollectionSection: React.FC<ICollectionSection> = ({ title, subtitle, text
     <section className={`${style[`${classMUI}-collection-section`]}`}>
       <div className={style[`${classMUI}-collection-section__content`]}>
         <h4 className={style[`${classMUI}-collection-section__title`]}>{title}</h4>
-        {isFeatured ? <h6 className={style[`${classMUI}-collection-section__subtitle`]}>{subtitle}</h6> : null}
+        {withSub ? <h6 className={style[`${classMUI}-collection-section__subtitle`]}>{subtitle}</h6> : null}
         <div className={style[`${classMUI}-collection-section__options`]}>
           {currentValues?.map(({ id, ...restProps }) => (
             <CardImage key={id} id={id} {...restProps} />

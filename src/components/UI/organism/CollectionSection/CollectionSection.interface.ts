@@ -4,6 +4,6 @@ export interface ICollectionSection {
   title: string
   subtitle: string
   textButton: string
-  isFeatured: boolean
+  withSub: boolean
   values: ICardImage[]
 }

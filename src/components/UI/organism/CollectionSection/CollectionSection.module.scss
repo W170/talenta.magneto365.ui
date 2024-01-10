@@ -2,7 +2,7 @@
 .magneto-ui-collection-section {
   position: relative;
   &__content {
-    padding: 1rem 5%;
+    padding: 1rem 20%;
     position: relative;
   }
 
@@ -37,13 +37,26 @@
   }
   &__title {
     padding-top: 1rem;
-    font-size: 20px;
     font-weight: 700;
+    text-align: center;
+
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0em;
     text-align: center;
   }
   &__subtitle {
     display: block;
-    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: center;
   }
   &__options {
     display: grid;
