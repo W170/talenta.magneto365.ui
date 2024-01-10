@@ -7,14 +7,27 @@ import { useMediaQuery } from '@components/hooks'
 import { TitleCarousel } from './children/TitleCarousel'
 
 const ImageCarousel: React.FC<IImageCarousel> = ({ title, titleFinished, values, candidateState, ...otherProps }) => {
+  const isTesting = true
+
   const isFinishedStatus = useMemo(() => candidateState === ECandidateState.FINISHED, [candidateState])
-  const DesktopOrMobileCarousel = useMediaQuery(<CarouselLibrary values={values} candidateState={candidateState} />, {
-    sm: isFinishedStatus ? <CarouselLibrary values={values} candidateState={candidateState} /> : null
-  })
+  const DesktopOrMobileCarousel = useMediaQuery(
+    <CarouselLibrary values={values} candidateState={candidateState} isTesting={isTesting} />,
+    {
+      sm: isFinishedStatus ? (
+        <CarouselLibrary values={values} candidateState={candidateState} isTesting={isTesting} />
+      ) : null
+    }
+  )
 
   return (
     <section className={style[`${classMUI}-image-carousel`]}>
-      <TitleCarousel title={title} titleFinished={titleFinished} isFinishedStatus={isFinishedStatus} {...otherProps} />
+      <TitleCarousel
+        title={title}
+        titleFinished={titleFinished}
+        isFinishedStatus={isFinishedStatus}
+        isTesting={isTesting}
+        {...otherProps}
+      />
       {DesktopOrMobileCarousel}
     </section>
   )

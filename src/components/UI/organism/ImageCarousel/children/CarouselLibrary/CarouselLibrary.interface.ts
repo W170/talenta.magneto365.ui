@@ -14,4 +14,5 @@ export interface ICarouselLibrary {
    */
   values: IImageValues[]
   candidateState: ECandidateState
+  isTesting?: boolean
 }

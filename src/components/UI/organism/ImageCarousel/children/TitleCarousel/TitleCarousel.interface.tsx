@@ -3,4 +3,5 @@ export interface ITitleCarousel {
   titleFinished: string
   isFinishedStatus?: boolean
   buttonAction: React.ReactElement | React.ReactNode
+  isTesting?: boolean
 }

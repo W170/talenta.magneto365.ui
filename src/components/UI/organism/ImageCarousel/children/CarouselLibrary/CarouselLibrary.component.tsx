@@ -6,7 +6,7 @@ import { Carousel } from '@components/UI/atoms'
 import { ECandidateState } from '../../ImageCarousel.interface'
 import { useMediaQuery, useResizeElement } from '@components/hooks'
 
-const Component: React.FC<ICarouselLibrary> = ({ values, candidateState }) => {
+const Component: React.FC<ICarouselLibrary> = ({ values, candidateState, isTesting }) => {
   const newClassName = useMemo(() => {
     const classOriginal = style[`${classMUI}-carousel-library`]
     const notValues = style[`${classMUI}-not-values`]
@@ -41,14 +41,14 @@ const Component: React.FC<ICarouselLibrary> = ({ values, candidateState }) => {
   const displayValues = useMemo(
     () =>
       values.length
-        ? values.map(({ id, cover, title, href }) => {
+        ? values.map(({ id, cover, title }) => {
             const item = <img src={cover} alt={title} />
-            if (candidateState === ECandidateState.FINISHED) {
+            if (candidateState === ECandidateState.FINISHED || isTesting) {
               return (
                 <a
                   key={id}
                   className={style[`${classMUI}-carousel-library__values`]}
-                  href={href}
+                  href={'https://developers.magneto365.com/overdrive/?path=/story/organism-description-book--default'}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -56,11 +56,15 @@ const Component: React.FC<ICarouselLibrary> = ({ values, candidateState }) => {
                 </a>
               )
             } else {
-              return <div className={style[`${classMUI}-carousel-library__values`]}>{item}</div>
+              return (
+                <div className={style[`${classMUI}-carousel-library__values`]} key={id}>
+                  {item}
+                </div>
+              )
             }
           })
         : [],
-    [candidateState, values]
+    [candidateState, isTesting, values]
   )
 
   return (
