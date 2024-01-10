@@ -1,0 +1,8 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-overdrive-page {
+  box-sizing: border-box;
+  &__content {
+    margin-top: 1rem;
+  }
+}

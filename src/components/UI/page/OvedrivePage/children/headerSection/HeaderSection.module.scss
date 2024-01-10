@@ -1,0 +1,24 @@
+.magneto-ui-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  position: relative;
+  &::before {
+    content: '';
+    border-bottom: 1px solid #e9e9f6;
+    width: 100%;
+    position: absolute;
+    bottom: 15%;
+    left: 0;
+  }
+  &__first {
+    flex-grow: 1.5;
+  }
+  &__second {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
