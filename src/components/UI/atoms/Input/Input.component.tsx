@@ -35,7 +35,7 @@ const Input: React.FC<IInput> = ({
     <>
       <div className={styles[`${classMUI}-input-container`]}>
         <label
-          htmlFor="inputField"
+          htmlFor={name}
           style={{
             left: hideIcon ? '10px' : '40px',
             top: haveValueOrFocus ? '20%' : '50%',
@@ -56,7 +56,7 @@ const Input: React.FC<IInput> = ({
           onChange={onChange}
           onFocus={() => setOnFocus(true)}
           onBlur={() => setOnFocus(false)}
-          id="inputField"
+          id={name}
         />
 
         {hideIcon ? null : (
