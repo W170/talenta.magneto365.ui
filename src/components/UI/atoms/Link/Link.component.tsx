@@ -8,7 +8,14 @@ const Component: React.FC<ILinkProps> = ({ type, href, text, iconProps, linkStyl
   const stylesValue: CSSProperties = useMemo(() => toCSSVariables(linkStyles), [linkStyles])
 
   return (
-    <a className={styles.linkComponent} style={stylesValue} href={href} data-link-type={type} data-is-mobile={isMobile}>
+    <a
+      className={styles.linkComponent}
+      style={stylesValue}
+      href={href}
+      title={text}
+      data-link-type={type}
+      data-is-mobile={isMobile}
+    >
       {iconProps && <IconItem {...iconProps} />}
       {!isMobile && <p>{text}</p>}
     </a>

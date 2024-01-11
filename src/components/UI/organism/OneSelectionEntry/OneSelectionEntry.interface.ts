@@ -4,6 +4,7 @@ export interface IOneSelectionentry {
   listOptions: IListOption[]
   selectedValue?: number | null
   onChange: (value: number) => void
+  responsiveMenu?: boolean
 }
 
 export interface IListOption {

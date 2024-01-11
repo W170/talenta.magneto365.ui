@@ -47,7 +47,7 @@ const Component: React.FC<IMainButton> = ({
       onClick={onClick}
       data-button-size={buttonSize}
       data-is-mobile={isMobile}
-      title={title}
+      title={title ? title : buttonText}
       disabled={disabled}
     >
       {renderContent()}

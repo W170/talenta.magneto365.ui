@@ -5,4 +5,5 @@ export interface IContainerOptions {
   listOptions: IListOption[]
   addValue: (value: number) => void
   dropDownTitle: string
+  responsiveMenu?: boolean
 }

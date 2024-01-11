@@ -16,7 +16,7 @@ const SimilarJobsCard: React.FC<ISimilarJobsCard> = ({
   hideLogo
 }) => {
   const formatInfo = useMemo(() => {
-    const citiesFormat = cities ? `${cities[0]} ${cities.length > 1 ? `(+${cities.length - 1})` : ''}` : ''
+    const citiesFormat = cities ? `${cities[0]} ${cities?.length > 1 ? `(+${cities?.length - 1})` : ''}` : ''
     const salaryFormat = salary ? ` | ${salary}` : ''
     const experienceFormat = experience ? ` | ${experience}` : ''
 

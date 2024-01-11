@@ -48,7 +48,7 @@ const JobCardMobile: React.FC<ICardJobMobile> = ({
             <h3>{companyName},</h3>
             <p>{formatPublishDate},</p>
             <p>
-              {cities[0]} {cities.length > 1 && <span>{others},</span>}{' '}
+              {cities[0]} {cities?.length > 1 && <span>{others},</span>}{' '}
             </p>
             <p>{salary}</p>
             <p>{experience} </p>
