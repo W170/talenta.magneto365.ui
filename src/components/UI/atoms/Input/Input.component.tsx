@@ -32,8 +32,8 @@ const Input: React.FC<IInput> = ({
   }, [type])
 
   return (
-    <>
-      <div className={styles[`${classMUI}-input-container`]}>
+    <div className={styles[`${classMUI}-input`]}>
+      <div className={styles[`${classMUI}-input--container`]}>
         <label
           htmlFor={name}
           style={{
@@ -41,7 +41,7 @@ const Input: React.FC<IInput> = ({
             top: haveValueOrFocus ? '20%' : '50%',
             fontSize: haveValueOrFocus ? '12px' : '14px'
           }}
-          className={styles[`${classMUI}-input-container__label`]}
+          className={styles[`${classMUI}-input--container__label`]}
         >
           {placeholder}
         </label>
@@ -49,7 +49,7 @@ const Input: React.FC<IInput> = ({
           style={{
             padding: hideIcon ? '0px 10px' : '0px 40px'
           }}
-          className={styles[`${classMUI}-input-container__input`]}
+          className={styles[`${classMUI}-input--container__input`]}
           type={type}
           name={name}
           value={value}
@@ -60,11 +60,11 @@ const Input: React.FC<IInput> = ({
         />
 
         {hideIcon ? null : (
-          <img className={styles[`${classMUI}-input-container__icon`]} src={customIcon ? customIcon : dinamycIcon} />
+          <img className={styles[`${classMUI}-input--container__icon`]} src={customIcon ? customIcon : dinamycIcon} />
         )}
       </div>
-      <span className={styles[`${classMUI}-input-container__error`]}>{error}</span>
-    </>
+      {error && <span className={styles[`${classMUI}-input--container__error`]}>{error}</span>}
+    </div>
   )
 }
 
