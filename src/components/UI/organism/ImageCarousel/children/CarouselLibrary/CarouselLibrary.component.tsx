@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import { ICarouselLibrary } from './CarouselLibrary.interface'
 import style from './CarouselLibrary.module.scss'
 import { classMUI } from '@constants/stories'
@@ -38,17 +38,25 @@ const Component: React.FC<ICarouselLibrary> = ({ values, candidateState, isTesti
     return 3
   }, [isMobile, numberViewCards])
 
+  const hrefToUse = useCallback(
+    (href: string) =>
+      isTesting
+        ? 'https://developers.magneto365.com/overdrive/iframe.html?id=organism-description-book--default&viewMode=story'
+        : href,
+    [isTesting]
+  )
+
   const displayValues = useMemo(
     () =>
       values.length
-        ? values.map(({ id, cover, title }) => {
+        ? values.map(({ id, cover, title, href }) => {
             const item = <img src={cover} alt={title} />
             if (candidateState === ECandidateState.FINISHED || isTesting) {
               return (
                 <a
                   key={id}
                   className={style[`${classMUI}-carousel-library__values`]}
-                  href={'https://developers.magneto365.com/overdrive/?path=/story/organism-description-book--default'}
+                  href={hrefToUse(href)}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -64,7 +72,7 @@ const Component: React.FC<ICarouselLibrary> = ({ values, candidateState, isTesti
             }
           })
         : [],
-    [candidateState, isTesting, values]
+    [candidateState, hrefToUse, isTesting, values]
   )
 
   return (
