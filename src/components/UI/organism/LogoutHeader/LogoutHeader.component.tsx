@@ -32,7 +32,8 @@ const Component: React.FC<ILogoutHeader> = ({
   onMenuClick,
   homeUrl,
   allJobsText,
-  allJobsLink
+  allJobsLink,
+  hasMobileSearchBarButton
 }) => {
   const { type, href, text } = signInLink
   const { buttonText, loadingState, onClick } = signUpButton
@@ -82,7 +83,11 @@ const Component: React.FC<ILogoutHeader> = ({
 
   // Mobile Searchbar Button Component
   const LogoutHeaderMobileSearchbarButton = useMediaQuery(null, {
-    xs: <Fragment />,
+    xs: hasMobileSearchBarButton ? (
+      <MainButton onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
+    ) : (
+      <Fragment />
+    ),
     md: <MainButton onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
   })
 
@@ -142,5 +147,9 @@ const Component: React.FC<ILogoutHeader> = ({
 /**
  * UI Header Organisim for 1024 resolution/size
  */
+
+Component.defaultProps = {
+  hasMobileSearchBarButton: false
+}
 
 export const LogoutHeader = Component

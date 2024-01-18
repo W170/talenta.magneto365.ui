@@ -13,4 +13,5 @@ export interface ILogoutHeader {
   homeUrl: string
   allJobsText: string
   allJobsLink: string
+  hasMobileSearchBarButton?: boolean
 }
