@@ -12,7 +12,8 @@ const Input: React.FC<IInput> = ({
   placeholder,
   customIcon,
   hideIcon = false,
-  error
+  error,
+  disabled = false
 }) => {
   const [onFocus, setOnFocus] = useState(false)
   const haveValueOrFocus = onFocus || value.length > 0
@@ -49,6 +50,7 @@ const Input: React.FC<IInput> = ({
           style={{
             padding: hideIcon ? '0px 10px' : '0px 40px'
           }}
+          disabled={disabled}
           className={styles[`${classMUI}-input--container__input`]}
           type={type}
           name={name}
