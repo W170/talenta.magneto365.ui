@@ -33,8 +33,12 @@ export const Message: FC<IMessage> = (props) => {
 }
 
 export const message = (props: IMessage) => {
+  const idMessageDiv = 'magneto-ui-message'
   if (!document) return
+  const messageActive = document.querySelector(`#${idMessageDiv}`)
+  if (messageActive) return
   const container = document.createElement('div')
+  container.setAttribute('id', idMessageDiv)
   document.body.appendChild(container)
   ReactDOM.render(<Message {...props} />, container)
   const duration = props.duration ? props.duration : initialState.duration
