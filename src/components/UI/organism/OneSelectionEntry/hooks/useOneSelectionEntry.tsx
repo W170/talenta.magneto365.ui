@@ -10,7 +10,6 @@ interface IUseMultipleSelectionEntry {
 export const useOneSelectionEntry = ({ selectedValue, listOptions, onChange }: IUseMultipleSelectionEntry) => {
   const [localSelectedValue, localSetSelectedValue] = useState<IListOption>()
   const [localListOptions, localSetListOptions] = useState<IListOption[]>([])
-  console.log('🚀', localSelectedValue)
 
   const getListOptions = useCallback(async () => {
     const options = await listOptions
