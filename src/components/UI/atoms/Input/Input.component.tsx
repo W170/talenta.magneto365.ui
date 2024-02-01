@@ -13,7 +13,8 @@ const Input: React.FC<IInput> = ({
   customIcon,
   hideIcon = false,
   error,
-  disabled = false
+  disabled = false,
+  autoFocus = false
 }) => {
   const [onFocus, setOnFocus] = useState(false)
   const haveValueOrFocus = onFocus || value.length > 0
@@ -59,6 +60,7 @@ const Input: React.FC<IInput> = ({
           onFocus={() => setOnFocus(true)}
           onBlur={() => setOnFocus(false)}
           id={name}
+          autoFocus={autoFocus}
         />
 
         {hideIcon ? null : (
