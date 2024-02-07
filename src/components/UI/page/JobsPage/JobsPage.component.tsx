@@ -50,7 +50,7 @@ const JobsPage: React.FC<IJobsPage> = ({
   }
 
   useEffect(() => {
-    setShowDetail(showDetailByWindow())
+    setShowDetail(showDetailByWindow('magneto-ui-jobs-page'))
   }, [])
 
   const onClose = useCallback(() => {
