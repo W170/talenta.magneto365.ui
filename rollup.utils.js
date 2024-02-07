@@ -37,7 +37,7 @@ export const postcssPlugin = (isSub) =>
         return `mg_${base}_${name}_${mappedHash || hash}`.replace(/_{2,}/g, '_')
       }
     },
-    extract: !isSub ? 'css/magneto.ui.lib.min.css' : undefined,
+    extract: 'css/magneto.ui.lib.min.css',
     exclude: !isSub ? ['*.css'] : [],
     extensions: ['.css'],
     minimize: true,
