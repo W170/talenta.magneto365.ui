@@ -1,5 +1,6 @@
 import React, { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
-import { EmptyResults, JobDetailContainer, JobCard, JobCardSkeleton, Pagination } from '@components/UI/molecules'
+import { EmptyResults, JobDetailContainer, JobCard, Pagination } from '@components/UI/molecules'
+import { JobCardSkeleton } from '@components/UI/molecules/JobCard/children'
 import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
 import { useMediaQuery } from '@components/hooks'
 import { classMUI } from '@constants/stories'
@@ -7,7 +8,7 @@ import { showDetailByWindow } from '../JobsPage/utils'
 import { ISuggestedJobsPage } from './SuggestedJobsPage.interface'
 import style from './SuggestedJobsPage.module.scss'
 
-const SuggestedJobsPage: React.FC<ISuggestedJobsPage> = ({
+const Component: React.FC<ISuggestedJobsPage> = ({
   device,
   emptyResultsProps,
   isLoading,
@@ -108,4 +109,4 @@ const SuggestedJobsPage: React.FC<ISuggestedJobsPage> = ({
   )
 }
 
-export default SuggestedJobsPage
+export const SuggestedJobsPage = Component
