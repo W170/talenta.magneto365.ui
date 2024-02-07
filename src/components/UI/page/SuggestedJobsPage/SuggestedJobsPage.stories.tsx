@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import { MainButton } from '@components/UI/atoms'
-import SuggestedJobsPage from './SuggestedJobsPage.component'
+import { SuggestedJobsPage } from './SuggestedJobsPage.component'
 import { CompanyLogo, paginationProps, vacancies } from '@constants/stories'
 
 import { Buildings2, Export3 } from '@constants/icons.constants'
