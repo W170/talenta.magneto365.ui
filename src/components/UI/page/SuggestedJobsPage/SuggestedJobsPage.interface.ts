@@ -48,7 +48,7 @@ export interface ISuggestedJobsPage {
   setJobSelected: (id: number | null) => void
 }
 
-export interface IVacancies extends IJobCard {
+interface IVacancies extends IJobCard {
   /**
    * Additional data specific to the offer vacancy.
    */
