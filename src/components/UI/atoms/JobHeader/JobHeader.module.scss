@@ -15,12 +15,27 @@
     color: v.$text-color-blue;
   }
 
-  &__subtitle {
+  &__subtitle,
+  &__link {
     margin: 0;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     color: v.$colors-magneto-neutral;
+  }
+
+  &__link {
+    padding: 1px 10px;
+    margin-left: -10px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      color: v.$colors-magneto-neutral;
+      background-color: v.$disabled-color-gray;
+    }
   }
 }

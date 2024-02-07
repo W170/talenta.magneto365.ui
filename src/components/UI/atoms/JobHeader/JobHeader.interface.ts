@@ -10,6 +10,10 @@ export interface IJobHeader {
    */
   offerCompanyName?: string
   /**
+   * The optional company url to see his vacancies.
+   */
+  offerCompanyLink?: string
+  /**
    * Specifies whether the job header is hidden or visible.
    * (Optional property)
    */
