@@ -10,7 +10,6 @@ interface IUseMultipleSelectionEntry {
 export const useOneSelectionEntry = ({ selectedValue, listOptions, onChange }: IUseMultipleSelectionEntry) => {
   const [localSelectedValue, localSetSelectedValue] = useState<IListOption>()
   const [localListOptions, localSetListOptions] = useState<IListOption[]>([])
-  console.log('🚀', localSelectedValue)
 
   const getListOptions = useCallback(async () => {
     const options = await listOptions
@@ -18,7 +17,7 @@ export const useOneSelectionEntry = ({ selectedValue, listOptions, onChange }: I
   }, [listOptions])
 
   const getSaveOptions = useCallback(async () => {
-    if (selectedValue) {
+    if (selectedValue !== undefined && (selectedValue || Number.isInteger(selectedValue))) {
       const saveOptionsFilter = await listOptions.filter((options) => options.id === selectedValue)
       localSetSelectedValue(saveOptionsFilter[0])
     }
