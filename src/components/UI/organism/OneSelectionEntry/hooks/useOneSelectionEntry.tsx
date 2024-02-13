@@ -17,7 +17,7 @@ export const useOneSelectionEntry = ({ selectedValue, listOptions, onChange }: I
   }, [listOptions])
 
   const getSaveOptions = useCallback(async () => {
-    if (selectedValue) {
+    if (selectedValue !== undefined && (selectedValue || Number.isInteger(selectedValue))) {
       const saveOptionsFilter = await listOptions.filter((options) => options.id === selectedValue)
       localSetSelectedValue(saveOptionsFilter[0])
     }
