@@ -14,7 +14,7 @@
     object-fit: contain;
   }
 
-  h2 {
+  p {
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
@@ -70,7 +70,7 @@
   }
 
   @media screen and (max-width: (v.$screen-xl + 80px)) {
-    h2 {
+    p {
       font-size: 12px;
     }
 
