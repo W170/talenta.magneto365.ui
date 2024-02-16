@@ -1,5 +1,4 @@
 export interface IOneSelectionentry {
-  placeholder: string
   dropDownTitle: string
   listOptions: IListOption[]
   selectedValue?: number | null

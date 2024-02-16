@@ -12,7 +12,9 @@ const Input: React.FC<IInput> = ({
   placeholder,
   customIcon,
   hideIcon = false,
-  error
+  error,
+  disabled = false,
+  autoFocus = false
 }) => {
   const [onFocus, setOnFocus] = useState(false)
   const haveValueOrFocus = onFocus || value.length > 0
@@ -38,7 +40,7 @@ const Input: React.FC<IInput> = ({
           htmlFor={name}
           style={{
             left: hideIcon ? '10px' : '40px',
-            top: haveValueOrFocus ? '20%' : '50%',
+            top: haveValueOrFocus ? '30%' : '45%',
             fontSize: haveValueOrFocus ? '12px' : '14px'
           }}
           className={styles[`${classMUI}-input--container__label`]}
@@ -49,6 +51,7 @@ const Input: React.FC<IInput> = ({
           style={{
             padding: hideIcon ? '0px 10px' : '0px 40px'
           }}
+          disabled={disabled}
           className={styles[`${classMUI}-input--container__input`]}
           type={type}
           name={name}
@@ -57,6 +60,7 @@ const Input: React.FC<IInput> = ({
           onFocus={() => setOnFocus(true)}
           onBlur={() => setOnFocus(false)}
           id={name}
+          autoFocus={autoFocus}
         />
 
         {hideIcon ? null : (

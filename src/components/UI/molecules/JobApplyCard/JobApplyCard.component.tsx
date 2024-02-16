@@ -7,7 +7,7 @@ const Component: React.FC<IJobApplyCard> = ({ offerApplyHeader, offerApplyElemen
     <div className={styles['magneto-ui-job-apply-card']}>
       <div className={styles['magneto-ui-job-apply-card__wrapper']}>
         <div className={styles['magneto-ui-job-apply-card__header']}>
-          <h2>{offerApplyHeader}</h2>
+          <p>{offerApplyHeader}</p>
           {offerApplyElements?.length &&
             offerApplyElements
               .filter(({ offerApplyInfo }) => !!offerApplyInfo)
@@ -16,7 +16,7 @@ const Component: React.FC<IJobApplyCard> = ({ offerApplyHeader, offerApplyElemen
                   className={styles['magneto-ui-job-apply-card__requirements']}
                   key={`${offerApplyLabel}-JobApplyCard`}
                 >
-                  <h3>{offerApplyLabel}</h3>
+                  <p>{offerApplyLabel}</p>
                   <p>{offerApplyInfo}</p>
                 </div>
               ))}

@@ -19,7 +19,7 @@ const OneSelectionEntry: React.FC<IOneSelectionentry> = ({
   })
 
   const dropDownTitleSelection = useMemo(() => {
-    if (localSelectedValue) {
+    if (localSelectedValue !== undefined && (localSelectedValue || Number.isInteger(localSelectedValue))) {
       return localSelectedValue.label
     }
     return dropDownTitle

@@ -35,4 +35,12 @@ export interface IInput {
    * this property add an error message
    */
   error?: string
+  /**
+   * this property disable the input
+   */
+  disabled?: boolean
+  /**
+   * this property customize the auto-focus for the input
+   */
+  autoFocus?: boolean
 }

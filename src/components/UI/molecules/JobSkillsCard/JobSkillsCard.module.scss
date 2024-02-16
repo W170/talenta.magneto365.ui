@@ -6,7 +6,7 @@
   padding: 20px;
   gap: 12px;
 
-  h2 {
+  & > p {
     color: v.$text-color-black;
     font-size: 14px;
     font-style: normal;
@@ -27,7 +27,7 @@
   }
 
   @media screen and (max-width: (v.$screen-lg)) {
-    h2 {
+    p {
       font-size: 12px;
     }
 
