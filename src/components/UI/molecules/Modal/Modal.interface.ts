@@ -21,6 +21,8 @@ export interface IModal {
    * This property adds a description at the top of the modal after the title
    */
   description: string
+  /**This is the custom className */
+  className?: string
 }
 
 export interface IModalPortal {

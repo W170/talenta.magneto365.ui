@@ -39,4 +39,8 @@ export interface IInput {
    * this property disable the input
    */
   disabled?: boolean
+  /**
+   * this property customize the auto-focus for the input
+   */
+  autoFocus?: boolean
 }
