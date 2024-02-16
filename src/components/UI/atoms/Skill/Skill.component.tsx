@@ -49,7 +49,7 @@ const Component: React.FC<ISkill> = ({ name, score }) => {
   return (
     <div ref={skillRef} className={styles['magneto-ui-skill']}>
       <div className={styles['magneto-ui-skill__wrapper']}>
-        <h3>{name}</h3>
+        <p>{name}</p>
         <div
           className={`${styles['magneto-ui-skill__bar']} ${fillAnimation || styles['magneto-ui-skill--no-animation']}`}
         ></div>
