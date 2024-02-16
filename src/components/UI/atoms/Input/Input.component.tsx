@@ -40,7 +40,7 @@ const Input: React.FC<IInput> = ({
           htmlFor={name}
           style={{
             left: hideIcon ? '10px' : '40px',
-            top: haveValueOrFocus ? '30%' : '50%',
+            top: haveValueOrFocus ? '30%' : '45%',
             fontSize: haveValueOrFocus ? '12px' : '14px'
           }}
           className={styles[`${classMUI}-input--container__label`]}
