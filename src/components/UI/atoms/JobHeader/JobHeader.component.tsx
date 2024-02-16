@@ -12,12 +12,12 @@ const Component: React.FC<IJobHeader> = ({ offerTitle, offerCompanyName, offerCo
         </a>
       )
     }
-    return <h3 className={styles['magneto-ui-job-header__subtitle']}>{offerCompanyName}</h3>
+    return <h2 className={styles['magneto-ui-job-header__subtitle']}>{offerCompanyName}</h2>
   }, [isHidden, offerCompanyLink, offerCompanyName])
 
   return (
     <div className={styles['magneto-ui-job-header']}>
-      <h2 className={styles['magneto-ui-job-header__title']}>{offerTitle}</h2>
+      <h1 className={styles['magneto-ui-job-header__title']}>{offerTitle}</h1>
       {showCompanyName}
     </div>
   )
