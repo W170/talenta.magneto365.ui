@@ -97,14 +97,22 @@ const JobsPage: React.FC<IJobsPage> = ({
     return <EmptyResults {...emptyResultsProps} />
   }, [isLoading, emptyResultsProps])
 
+  const sideFilterAltRender = useMemo(() => {
+    if (vacantProps.length === 0) return
+
+    return (
+      <div className={style[`${classMUI}-jobs-page--filter-row`]}>
+        <FilterContainerMenu>
+          <SideFilter {...sideFilterProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
+        </FilterContainerMenu>
+      </div>
+    )
+  }, [isFiltersOpen, sideFilterProps, vacantProps])
+
   return (
     <Fragment>
       <div id="magneto-ui-jobs-page" className={style[`${classMUI}-jobs-page`]}>
-        <div className={style[`${classMUI}-jobs-page--filter-row`]}>
-          <FilterContainerMenu>
-            <SideFilter {...sideFilterProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
-          </FilterContainerMenu>
-        </div>
+        {sideFilterAltRender}
         <div className={style[`${classMUI}-jobs-page--center-row`]}>
           <SortBar {...sortBarProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
           {mainTitleByMediaQuery}
