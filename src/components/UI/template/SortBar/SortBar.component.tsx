@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useMemo, useState } from 'react'
 import { iconFilterOrder, menuSortButton } from '@constants/stories'
 import { Setting4 } from '@constants/icons.constants'
 import { useMediaQuery } from '@components/hooks'
@@ -20,7 +20,8 @@ const SortBar: React.FC<ISortBar> = ({
   titleBtnOrder,
   setIsFiltersOpen,
   orderFilter,
-  setFilter
+  setFilter,
+  emptyVacant
 }) => {
   const [showMenu, setShowMenu] = useState(false)
 
@@ -41,6 +42,23 @@ const SortBar: React.FC<ISortBar> = ({
     md: <Fragment />
   })
 
+  const sortBarButtonAltRender = useMemo(() => {
+    if (emptyVacant) return
+
+    return (
+      <div className={styles['magneto-ui-section-menu']}>
+        {sortMenu}
+        <button
+          className={`${styles['magneto-ui-btn-order']} ${styles.hidden}`}
+          title={titleBtnOrder}
+          onClick={orderFilter}
+        >
+          <IconItem {...iconFilterOrder} />
+        </button>
+      </div>
+    )
+  }, [emptyVacant, orderFilter, sortMenu, titleBtnOrder])
+
   return (
     <Fragment>
       <div className={styles['magneto-ui-sort-menu']}>
@@ -56,16 +74,7 @@ const SortBar: React.FC<ISortBar> = ({
           {mainTitleByMediaQuery}
           <p className={`${styles['magneto-ui-btn-text']} ${styles.hidden}`}>{filterSummary}</p>
         </div>
-        <div className={styles['magneto-ui-section-menu']}>
-          {sortMenu}
-          <button
-            className={`${styles['magneto-ui-btn-order']} ${styles.hidden}`}
-            title={titleBtnOrder}
-            onClick={orderFilter}
-          >
-            <IconItem {...iconFilterOrder} />
-          </button>
-        </div>
+        {sortBarButtonAltRender}
       </div>
       <MobileSortMenu
         isOpen={showMenu}
