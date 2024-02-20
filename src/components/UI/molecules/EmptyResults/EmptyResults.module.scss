@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  padding: 20px;
+  padding: 30px;
   position: relative;
 
   h2 {
@@ -27,7 +27,7 @@
     width: 85%;
   }
   @media (min-width: v.$screen-xxl) {
-    width: 65%;
+    width: 50%;
   }
   &__img-container {
     display: none;
@@ -67,6 +67,21 @@
     align-items: center;
     gap: 15px;
   }
+  &__magneto-business {
+    margin: 24px 0 0 0;
+
+    & > p {
+      color: #14141c;
+      margin: 0;
+    }
+
+    a {
+      color: #000096;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
