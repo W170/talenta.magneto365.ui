@@ -5,7 +5,7 @@ import { ISortBar } from '@components/UI/template/SortBar/SortBar.interface'
 import { ISideFilter } from '@components/UI/template'
 import { IFooter } from '@components/UI/template/Footer/Footer.interface'
 import { DeviceType } from '@components/context/context.interface'
-import { IEmptyResutls } from '@components/UI/molecules/EmptyResults/EmptyResults.interface'
+import { IEmptyResults } from '@components/UI/molecules/EmptyResults/EmptyResults.interface'
 
 export interface IJobsPage {
   /**
@@ -62,7 +62,7 @@ export interface IJobsPage {
   /**
    * This prperty show values in the empty vacants card
    */
-  emptyResultsProps: IEmptyResutls
+  emptyResultsProps: IEmptyResults
   /**
    * This is the custom custom paragraph to show in the search hit pages
    */
