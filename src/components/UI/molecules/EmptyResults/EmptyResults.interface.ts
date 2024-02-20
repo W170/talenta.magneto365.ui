@@ -1,10 +1,10 @@
 import { ISearchItem } from '@components/UI/atoms'
 
-export interface IEmptyResutls {
+export interface IEmptyResults {
   /**
    * This property show title in the card
    */
-  titleNoResutls: string
+  titleNoResults: string
   /**
    * This property show image in the card
    */
@@ -21,4 +21,27 @@ export interface IEmptyResutls {
    * This property show link list to redirect
    */
   filteredOptions: ISearchItem[]
+  /**
+   *
+   */
+  noResultsMagnetoBusinessOne: string
+  /**
+   *
+   */
+  noResultsMagnetoBusinessTwo: string
+  /**
+   *
+   */
+  magnetoBusiness?: IMagnetoBusiness
+}
+
+interface IMagnetoBusiness {
+  /**
+   *
+   */
+  magnetoLink: string
+  /**
+   *
+   */
+  magnetoText: string
 }
