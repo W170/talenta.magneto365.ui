@@ -194,3 +194,10 @@ export default meta
 type Story = StoryObj<typeof SuggestedJobsPage>
 
 export const Default: Story = {}
+
+export const EmptyResults: Story = {
+  args: {
+    ...Default.args,
+    vacantProps: []
+  }
+}
