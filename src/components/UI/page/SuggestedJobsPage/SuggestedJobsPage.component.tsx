@@ -1,39 +1,27 @@
 import React, { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
-import FilterContainerMenu from '@components/UI/molecules/FilterContainerMenu/FilterContainerMenu.component'
-import { JobDetailContainer, JobCard, FrequentSearch, Pagination } from '@components/UI/molecules'
-import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
-import { SortBar, Footer, SideFilter } from '@components/UI/template'
-import { useMediaQuery } from '@components/hooks'
-import { showDetailByWindow } from './utils'
-import { IJobsPage } from './JobsPage.interface'
-import style from './JobsPage.module.scss'
-import { classMUI } from '@constants/stories'
-import { EmptyResults } from '@components/UI/molecules/EmptyResults'
+import { EmptyResults, JobDetailContainer, JobCard, Pagination } from '@components/UI/molecules'
 import { JobCardSkeleton } from '@components/UI/molecules/JobCard/children'
-import { Paragraph } from '@components/UI/atoms'
+import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
+import { useMediaQuery } from '@components/hooks'
+import { classMUI } from '@constants/stories'
+import { showDetailByWindow } from '../JobsPage/utils'
+import { ISuggestedJobsPage } from './SuggestedJobsPage.interface'
+import style from './SuggestedJobsPage.module.scss'
 
-const JobsPage: React.FC<IJobsPage> = ({
-  jobDetailsDrawerProps,
-  mobileJobDetailsDrawerProps,
-  sortBarProps,
-  sideFilterProps,
-  frequentSearchProps,
-  vacantProps,
-  footerProps,
-  paginationProps,
-  setJobSelected,
-  jobSelected,
-  isLoading,
+const Component: React.FC<ISuggestedJobsPage> = ({
   device,
   emptyResultsProps,
+  isLoading,
   jobDetailAction,
-  customParagraph
+  jobDetailsDrawerProps,
+  jobSelected,
+  mobileJobDetailsDrawerProps,
+  paginationProps,
+  setJobSelected,
+  vacantProps
 }) => {
-  const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [showDetail, setShowDetail] = useState(device === 'desktop')
   const [selectedJobId, setSelectedJobId] = useState<number | null>(null)
-
-  const emptyVacant = vacantProps.length === 0
 
   const handleVacant = useCallback(
     (id: number | null) => {
@@ -52,7 +40,7 @@ const JobsPage: React.FC<IJobsPage> = ({
   }
 
   useEffect(() => {
-    setShowDetail(showDetailByWindow('magneto-ui-jobs-page'))
+    setShowDetail(showDetailByWindow('magneto-ui-suggestedJobs-page'))
   }, [])
 
   const onClose = useCallback(() => {
@@ -87,10 +75,6 @@ const JobsPage: React.FC<IJobsPage> = ({
     }
   )
 
-  const mainTitleByMediaQuery = useMediaQuery(<Fragment />, {
-    md: <h1 className={style[`${classMUI}-jobs-page--title`]}>{sortBarProps?.mainTitle}</h1>
-  })
-
   const cardsAltRender = useMemo(() => {
     if (isLoading) {
       return <JobCardSkeleton numCard={20} />
@@ -99,31 +83,11 @@ const JobsPage: React.FC<IJobsPage> = ({
     return <EmptyResults {...emptyResultsProps} />
   }, [isLoading, emptyResultsProps])
 
-  const sideFilterAltRender = useMemo(() => {
-    if (emptyVacant) return
-
-    return (
-      <div className={style[`${classMUI}-jobs-page--filter-row`]}>
-        <FilterContainerMenu>
-          <SideFilter {...sideFilterProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
-        </FilterContainerMenu>
-      </div>
-    )
-  }, [emptyVacant, isFiltersOpen, sideFilterProps])
-
   return (
     <Fragment>
-      <div id="magneto-ui-jobs-page" className={style[`${classMUI}-jobs-page`]}>
-        {sideFilterAltRender}
-        <div className={style[`${classMUI}-jobs-page--center-row`]}>
-          <SortBar
-            {...sortBarProps}
-            isFiltersOpen={isFiltersOpen}
-            setIsFiltersOpen={setIsFiltersOpen}
-            emptyVacant={emptyVacant}
-          />
-          {mainTitleByMediaQuery}
-          <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>
+      <div id="magneto-ui-suggestedJobs-page" className={style[`${classMUI}-suggestedJobs-page`]}>
+        <div className={style[`${classMUI}-suggestedJobs-page--center-row`]}>
+          <div className={style[`${classMUI}-suggestedJobs-page--center-row__jobs-result`]}>
             {vacantProps.length <= 0 || isLoading
               ? cardsAltRender
               : vacantProps.map(({ id, ...props }) => (
@@ -137,15 +101,12 @@ const JobsPage: React.FC<IJobsPage> = ({
                   />
                 ))}
           </div>
-          {customParagraph && <Paragraph paragraph={customParagraph} />}
           <Pagination {...paginationProps} />
-          <FrequentSearch {...frequentSearchProps} />
         </div>
-        <div className={style[`${classMUI}-jobs-page__jobs-detail`]}>{JobDetailsDrawerComponent}</div>
+        <div className={style[`${classMUI}-suggestedJobs-page__jobs-detail`]}>{JobDetailsDrawerComponent}</div>
       </div>
-      <Footer {...footerProps} />
     </Fragment>
   )
 }
 
-export default JobsPage
+export const SuggestedJobsPage = Component
