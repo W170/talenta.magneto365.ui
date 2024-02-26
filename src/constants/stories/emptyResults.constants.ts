@@ -15,11 +15,5 @@ export const emptyResultsProps: IEmptyResults = {
     { tag: 'Empleos más buscados', url: '#' },
     { tag: 'Volver al inicio', url: '#' },
     { tag: 'Blog', url: '#' }
-  ],
-  noResultsMagnetoBusinessOne: '¿Tienes ofertas de empleo para publicar? Visita ',
-  noResultsMagnetoBusinessTwo: ' y publica ilimitadamente.',
-  magnetoBusiness: {
-    magnetoLink: '#',
-    magnetoText: 'Magneto Negocios'
-  }
+  ]
 }
