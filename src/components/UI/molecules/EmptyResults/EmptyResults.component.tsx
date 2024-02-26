@@ -9,10 +9,7 @@ const EmptyResult: React.FC<IEmptyResults> = ({
   noResultsDescription,
   noResultsDescriptionTwo,
   filteredOptions,
-  noResultsImage,
-  noResultsMagnetoBusinessOne,
-  noResultsMagnetoBusinessTwo,
-  magnetoBusiness
+  noResultsImage
 }) => {
   const emptyCardTitle = useMemo(() => {
     const regex = /'([^']+)'/
@@ -59,13 +56,6 @@ const EmptyResult: React.FC<IEmptyResults> = ({
           {filteredOptions.map(({ tag, url }, index: number) => (
             <SearchItem key={index + tag} tag={tag} url={url} />
           ))}
-        </div>
-        <div className={style[`${classMUI}-empty-result__magneto-business`]}>
-          <p>
-            {noResultsMagnetoBusinessOne}
-            <a href={magnetoBusiness?.magnetoLink}>{magnetoBusiness?.magnetoText}</a>
-            {noResultsMagnetoBusinessTwo}
-          </p>
         </div>
       </div>
     </main>

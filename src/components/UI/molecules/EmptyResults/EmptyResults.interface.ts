@@ -21,27 +21,4 @@ export interface IEmptyResults {
    * This property show link list to redirect
    */
   filteredOptions: ISearchItem[]
-  /**
-   *
-   */
-  noResultsMagnetoBusinessOne: string
-  /**
-   *
-   */
-  noResultsMagnetoBusinessTwo: string
-  /**
-   *
-   */
-  magnetoBusiness?: IMagnetoBusiness
-}
-
-interface IMagnetoBusiness {
-  /**
-   *
-   */
-  magnetoLink: string
-  /**
-   *
-   */
-  magnetoText: string
 }
