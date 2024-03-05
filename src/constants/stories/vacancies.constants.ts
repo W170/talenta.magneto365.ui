@@ -13,7 +13,8 @@ import {
   Share,
   TwitterBlue,
   WhatsAppColor,
-  Location
+  Location,
+  Tag
 } from '@constants/icons.constants'
 
 export const vacancies: IVacancies[] = [
@@ -99,8 +100,15 @@ export const buttonIconsList = [ArchiveAdd, Share]
 
 export const anchorIconList = [Export3, Buildings2]
 
-export const iconDetailList = [Calendar1, People, Briefcase, DollarCircle, Location]
+export const iconDetailList = [Calendar1, People, Briefcase, DollarCircle, Location, Tag]
 
-export const altList = ['Calendar1-icon', 'People-icon', 'Briefcase-icon', 'DollarCircle-icon', 'Location-icon']
+export const altList = [
+  'Calendar1-icon',
+  'People-icon',
+  'Briefcase-icon',
+  'DollarCircle-icon',
+  'Location-icon',
+  'Tag-icon'
+]
 
 export const iconFooterList = [FacebookBlue, WhatsAppColor, LinkedInBlue, TwitterBlue, SMSBlue]
