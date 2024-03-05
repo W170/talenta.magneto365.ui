@@ -2,10 +2,10 @@ import React, { useMemo } from 'react'
 import { SearchItem } from '@components/UI/atoms'
 import { classMUI } from '@constants/stories'
 import style from './EmptyResults.module.scss'
-import { IEmptyResutls } from './EmptyResults.interface'
+import { IEmptyResults } from './EmptyResults.interface'
 
-const EmptyResult: React.FC<IEmptyResutls> = ({
-  titleNoResutls,
+const EmptyResult: React.FC<IEmptyResults> = ({
+  titleNoResults,
   noResultsDescription,
   noResultsDescriptionTwo,
   filteredOptions,
@@ -13,11 +13,11 @@ const EmptyResult: React.FC<IEmptyResutls> = ({
 }) => {
   const emptyCardTitle = useMemo(() => {
     const regex = /'([^']+)'/
-    const match = regex.exec(titleNoResutls)
+    const match = regex.exec(titleNoResults)
     const arrayTitle = []
 
     if (match) {
-      arrayTitle.push(titleNoResutls.substring(0, match.index))
+      arrayTitle.push(titleNoResults.substring(0, match.index))
       arrayTitle.push(match[0])
       arrayTitle.push(match[1])
     }
@@ -33,9 +33,9 @@ const EmptyResult: React.FC<IEmptyResutls> = ({
       </h2>
     )
 
-    const titleWithFilter = <h2>{titleNoResutls}</h2>
+    const titleWithFilter = <h2>{titleNoResults}</h2>
     return match ? titleWithSearch : titleWithFilter
-  }, [titleNoResutls])
+  }, [titleNoResults])
 
   return (
     <main className={style[`${classMUI}-empty-result`]}>

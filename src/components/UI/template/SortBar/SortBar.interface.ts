@@ -50,4 +50,8 @@ export interface ISortBar {
    *This function change the filter with the selected option
    */
   setFilter: (menuItem: { key: string }) => void
+  /**
+   *
+   */
+  emptyVacant?: boolean
 }

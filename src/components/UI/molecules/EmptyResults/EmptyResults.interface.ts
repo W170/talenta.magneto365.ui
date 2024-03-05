@@ -1,10 +1,10 @@
 import { ISearchItem } from '@components/UI/atoms'
 
-export interface IEmptyResutls {
+export interface IEmptyResults {
   /**
    * This property show title in the card
    */
-  titleNoResutls: string
+  titleNoResults: string
   /**
    * This property show image in the card
    */

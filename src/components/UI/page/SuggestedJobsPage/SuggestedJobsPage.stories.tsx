@@ -1,25 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import { MainButton } from '@components/UI/atoms'
-import JobsPage from './JobsPage.component'
-import { ISideFilter } from '@components/UI/template'
-import {
-  CompanyLogo,
-  MagnetoResolutionProps,
-  RightsReservedProps,
-  listMenuText,
-  searchList,
-  similarVacanciesCardsProps,
-  vacancies
-} from '@constants/stories'
-import { sideFilterProps, sortBarProps, paginationProps } from '@constants/stories'
+import { SuggestedJobsPage } from './SuggestedJobsPage.component'
+import { CompanyLogo, paginationProps, vacancies } from '@constants/stories'
 
 import { Buildings2, Export3 } from '@constants/icons.constants'
 import { emptyResultsProps } from '@constants/stories/emptyResults.constants'
-import { ECandidateState, ImageCarousel } from '@components/UI/organism'
-import { carouselProps } from '@constants/stories/carousel.constants'
-import { sectionTitle, moreJobsText, moreJobsLink } from '../../../../constants/stories/similarJobs.constants'
-import { IVacancies } from '@components/UI/page'
 
 const jobDetailsDrawer = {
   jobCompanyLogoProps: {
@@ -95,12 +81,6 @@ const jobDetailsDrawer = {
       buttonTitle: 'Copiar',
       onCopySuccess: () => console.log('Success')
     }
-  },
-  similarJobsProps: {
-    moreJobsLink,
-    moreJobsText,
-    sectionTitle,
-    similarJobsCard: similarVacanciesCardsProps
   }
 }
 
@@ -183,56 +163,22 @@ const mobileJobDetailsDrawer = {
       externalButtonChild: <MainButton buttonText="Aplicar" />
     },
     onClose: true
-  },
-  similarJobsProps: {
-    moreJobsLink,
-    moreJobsText,
-    sectionTitle,
-    similarJobsCard: similarVacanciesCardsProps
   }
 }
 
-const frequentSearch = {
-  searchHeading: 'Búsquedas de empleo más frecuentes',
-  searchList,
-  showLess: 'Ver menos',
-  showMore: 'Ver mas'
-}
-
-const footerProps = {
-  followText: 'Siguenos',
-  magnetoResolutionProps: MagnetoResolutionProps,
-  rightsReservedProps: RightsReservedProps,
-  menuFooterLink: listMenuText
-}
-
-const imageCarouselProps = {
-  title: '¡Crea tu hoja de vida y accede a miles de libros gratis!',
-  titleFinished: 'Libros recomendados',
-  values: carouselProps,
-  buttonAction: <MainButton buttonText="Crear cuenta" />
-}
-
-const emptyVacant: IVacancies[] = []
-
-const meta: Meta<typeof JobsPage> = {
-  title: 'Pages/Jobs Page',
-  component: JobsPage,
+const meta: Meta<typeof SuggestedJobsPage> = {
+  title: 'Pages/Suggested Jobs Page',
+  component: SuggestedJobsPage,
   tags: ['autodocs'],
   args: {
-    sortBarProps,
-    vacantProps: vacancies,
-    jobDetailsDrawerProps: jobDetailsDrawer,
-    mobileJobDetailsDrawerProps: mobileJobDetailsDrawer,
-    frequentSearchProps: frequentSearch,
-    sideFilterProps: sideFilterProps as ISideFilter,
-    footerProps,
-    paginationProps,
-    jobSelected: vacancies[0],
-    isLoading: false,
     device: 'desktop',
     emptyResultsProps,
-    carouselComponent: <ImageCarousel {...imageCarouselProps} candidateState={ECandidateState.AUTH} />
+    isLoading: false,
+    jobDetailsDrawerProps: jobDetailsDrawer,
+    jobSelected: vacancies[0],
+    mobileJobDetailsDrawerProps: mobileJobDetailsDrawer,
+    vacantProps: vacancies,
+    paginationProps
   },
   decorators: [
     (Story) => (
@@ -245,13 +191,13 @@ const meta: Meta<typeof JobsPage> = {
 
 export default meta
 
-type Story = StoryObj<typeof JobsPage>
+type Story = StoryObj<typeof SuggestedJobsPage>
 
 export const Default: Story = {}
 
 export const EmptyResults: Story = {
   args: {
     ...Default.args,
-    vacantProps: emptyVacant
+    vacantProps: []
   }
 }
