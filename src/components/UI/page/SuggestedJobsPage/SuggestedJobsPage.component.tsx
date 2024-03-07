@@ -1,5 +1,5 @@
 import React, { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
-import { EmptyResults, JobDetailContainer, JobCard, Pagination } from '@components/UI/molecules'
+import { EmptyResults, JobDetailContainer, JobCard } from '@components/UI/molecules'
 import { JobCardSkeleton } from '@components/UI/molecules/JobCard/children'
 import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
 import { useMediaQuery } from '@components/hooks'
@@ -16,10 +16,10 @@ const Component: React.FC<ISuggestedJobsPage> = ({
   jobDetailsDrawerProps,
   jobSelected,
   mobileJobDetailsDrawerProps,
-  paginationProps,
   setJobSelected,
   vacantProps
 }) => {
+  const [isBottomPage, setIsBottomPage] = useState<boolean>(false)
   const [showDetail, setShowDetail] = useState(device === 'desktop')
   const [selectedJobId, setSelectedJobId] = useState<number | null>(null)
 
@@ -33,6 +33,32 @@ const Component: React.FC<ISuggestedJobsPage> = ({
     },
     [setJobSelected]
   )
+
+  useEffect(() => {
+    const element = document.getElementsByTagName('body')[0]
+    element.style.overflowY = 'hidden'
+    return () => {
+      element.style.overflowY = 'auto'
+    }
+  }, [])
+
+  useEffect(() => {
+    console.log('Is bottom page: ', isBottomPage)
+  }, [isBottomPage])
+
+  useEffect(() => {
+    const element = document.getElementById('magneto-ui-suggestedJobs-page')
+    if (!element) return
+    const handleScroll = () => {
+      const { scrollTop, clientHeight, scrollHeight } = element
+      const isBottom = scrollTop + clientHeight >= scrollHeight
+      setIsBottomPage(isBottom)
+    }
+    element.addEventListener('scroll', handleScroll)
+    return () => {
+      element.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const handleJobCardClick = (id: number | null) => {
     setSelectedJobId(id)
@@ -101,7 +127,6 @@ const Component: React.FC<ISuggestedJobsPage> = ({
                   />
                 ))}
           </div>
-          <Pagination {...paginationProps} />
         </div>
         <div className={style[`${classMUI}-suggestedJobs-page__jobs-detail`]}>{JobDetailsDrawerComponent}</div>
       </div>

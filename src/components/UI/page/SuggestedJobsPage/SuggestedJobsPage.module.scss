@@ -3,6 +3,8 @@
 .magneto-ui-suggestedJobs-page {
   display: flex;
   justify-content: center;
+  height: 100vh;
+  overflow-y: auto !important;
 
   &--center-row {
     width: 100%;
