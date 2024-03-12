@@ -67,6 +67,10 @@ export interface IJobsPage {
    * This is the custom custom paragraph to show in the search hit pages
    */
   customParagraph?: string
+  /**
+   * This is the dynamic url that google robots will use to navigate with simple anchors
+   */
+  dynamicPaginationUrl: string
 }
 
 export interface IVacancies extends IJobCard {

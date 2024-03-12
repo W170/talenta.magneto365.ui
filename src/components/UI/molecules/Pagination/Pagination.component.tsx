@@ -6,7 +6,13 @@ import { createPagination } from './utils'
 import { IPaginationProps } from './Pagination.interface'
 import styles from './Pagination.module.scss'
 
-export const Pagination: FC<IPaginationProps> = ({
+type dynamicProps = {
+  dynamicUrl?: string
+}
+
+type ComposedProps = IPaginationProps & dynamicProps
+
+export const Pagination: FC<ComposedProps> = ({
   total,
   current,
   pageSize,
@@ -14,7 +20,8 @@ export const Pagination: FC<IPaginationProps> = ({
   onChange,
   prevTitle,
   nextTitle,
-  numberOfButtons
+  numberOfButtons,
+  dynamicUrl
 }) => {
   const handleClick = useCallback(
     (page: number) => {
@@ -43,19 +50,37 @@ export const Pagination: FC<IPaginationProps> = ({
       <ul>
         {!buttons.includes(first) && (
           <li>
-            <BtnPagination loading={loading} value={first} current={current} onClick={() => handleClick(first)} />
+            <BtnPagination
+              loading={loading}
+              value={first}
+              current={current}
+              onClick={() => handleClick(first)}
+              dynamicPaginationUrl={dynamicUrl}
+            />
             <IconItem icon={Ellipsis} className={styles['magneto-ui-pagination_ellipsis']} />
           </li>
         )}
         {buttons.map((page, index) => (
           <li key={`${page}-${index}`}>
-            <BtnPagination loading={loading} value={page} current={current} onClick={() => handleClick(page)} />
+            <BtnPagination
+              loading={loading}
+              value={page}
+              current={current}
+              onClick={() => handleClick(page)}
+              dynamicPaginationUrl={dynamicUrl}
+            />
           </li>
         ))}
         {!buttons.includes(last) && (
           <li>
             <IconItem icon={Ellipsis} className={styles['magneto-ui-pagination_ellipsis']} />
-            <BtnPagination loading={loading} value={last} current={current} onClick={() => handleClick(last)} />
+            <BtnPagination
+              loading={loading}
+              value={last}
+              current={current}
+              onClick={() => handleClick(last)}
+              dynamicPaginationUrl={dynamicUrl}
+            />
           </li>
         )}
       </ul>
