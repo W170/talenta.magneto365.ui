@@ -64,4 +64,8 @@ export interface IJobCard {
    * this property show or hidde skeleton
    */
   isLoading?: boolean
+  /**
+   * url to redirect
+   */
+  actionsAnchorLinks?: string
 }
