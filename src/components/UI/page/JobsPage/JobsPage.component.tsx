@@ -37,7 +37,6 @@ const JobsPage: React.FC<IJobsPage> = ({
   const {
     jobActionsProps: { actionsAnchorLinks }
   } = jobDetailsDrawerProps
-  // console.log(dynamicPaginationUrl)
   const emptyVacant = vacantProps.length === 0
   const handleVacant = useCallback(
     (id: number | null) => {
@@ -131,16 +130,16 @@ const JobsPage: React.FC<IJobsPage> = ({
             {vacantProps.length <= 0 || isLoading
               ? cardsAltRender
               : vacantProps.map(({ id, ...props }) => (
-                  <JobCard
-                    isLoading={isLoading}
-                    isActive={id === jobSelected?.id}
-                    id={id}
-                    showDetail={() => handleJobCardClick(id)}
-                    actionsAnchorLinks={actionsAnchorLinks[0]}
-                    key={`${id}-JobsPage`}
-                    {...props}
-                  />
-                ))}
+                <JobCard
+                  isLoading={isLoading}
+                  isActive={id === jobSelected?.id}
+                  id={id}
+                  showDetail={() => handleJobCardClick(id)}
+                  actionsAnchorLinks={actionsAnchorLinks[0]}
+                  key={`${id}-JobsPage`}
+                  {...props}
+                />
+              ))}
           </div>
           {customParagraph && <Paragraph paragraph={customParagraph} />}
           <Pagination dynamicUrl={dynamicPaginationUrl} {...paginationProps} />
