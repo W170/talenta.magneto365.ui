@@ -1,4 +1,4 @@
-import { IEmptyResutls, IJobCard, IJobSkillsCard, IPaginationProps } from '@components/UI/molecules'
+import { IEmptyResults, IJobCard, IJobSkillsCard, IPaginationProps } from '@components/UI/molecules'
 import { IJobDetailsDrawer, IMobileJobDetailsDrawer } from '@components/UI/organism'
 import { DeviceType } from '@components/context/context.interface'
 
@@ -10,7 +10,7 @@ export interface ISuggestedJobsPage {
   /**
    * This property shows values in the empty vacancies card.
    */
-  emptyResultsProps: IEmptyResutls
+  emptyResultsProps: IEmptyResults
   /**
    * This property should activate the loading state in the components.
    */

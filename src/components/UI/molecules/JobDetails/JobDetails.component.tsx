@@ -11,7 +11,6 @@ const Component: React.FC<IJobDetails> = ({ offerDetailsList, iconList, altList 
       alt: altList && altList[index]
     }))
     .filter(({ offerDetailText }) => !!offerDetailText)
-    .slice(0, 5)
 
   return (
     <div className={styles['magneto-ui-job-details']}>
