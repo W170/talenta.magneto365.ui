@@ -72,13 +72,22 @@ export interface IJobsPage {
    */
   carouselComponent?: React.ReactElement | JSX.Element
   /**
-   * This is the dynamic url that google robots will use to navigate with simple anchors
+   * This property display a component to images overdrive
    */
-  dynamicPaginationUrl: string
+  carouselComponent?: React.ReactElement | JSX.Element
+  /**
+   * This object contains dynamics urls that google robots will use to navigate with simple anchors in vacancies titles and pagination
+   */
+  dynamicPaginationUrl: IDynamicUrl
 }
 
 export interface IVacancies extends IJobCard {
   offerVacancyData?: string
   offerDescription?: string
   offerSkills?: IJobSkillsCard
+}
+
+export interface IDynamicUrl {
+  fullUrl: string
+  fullJobsUrl: string
 }

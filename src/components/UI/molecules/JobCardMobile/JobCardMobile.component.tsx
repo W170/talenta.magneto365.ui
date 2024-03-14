@@ -19,7 +19,8 @@ const JobCardMobile: React.FC<ICardJobMobile> = ({
   experience,
   showDetail,
   others,
-  actionsAnchorLinks
+  jobSlug,
+  dynamicUrl
 }) => {
   return (
     <article
@@ -43,7 +44,12 @@ const JobCardMobile: React.FC<ICardJobMobile> = ({
       <div className={style[`${classMUI}-card-mobile-jobs--data`]}>
         <div className={style[`${classMUI}-card-mobile-jobs--row2`]}>
           <div>
-            <a href={actionsAnchorLinks} title={title as string} rel="noreferrer" onClick={(e) => e.stopPropagation()}>
+            <a
+              href={`${dynamicUrl}/${jobSlug}`}
+              title={title as string}
+              rel="noreferrer"
+              onClick={(e) => e.stopPropagation()}
+            >
               <h2 className={`${style[`${classMUI}-card-mobile-jobs--row2__position`]} ${workSeen}`}>{title}</h2>
             </a>
           </div>

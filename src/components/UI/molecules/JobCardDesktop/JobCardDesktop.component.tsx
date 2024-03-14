@@ -21,7 +21,8 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   contractType,
   showDetail,
   others = '',
-  actionsAnchorLinks
+  jobSlug,
+  dynamicUrl
 }) => {
   const citiesformatted = useMemo(() => {
     if (cities?.length > 5) {
@@ -31,7 +32,7 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   }, [cities])
 
   const infoRow4 = [contractType, salary, experience, educationLevel].join(' ')
-  // console.log(actionsAnchorLinks)
+
   return (
     <article
       onClick={showDetail}
@@ -54,7 +55,7 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
       <div className={style[`${classMUI}-card-jobs--data`]}>
         <div className={style[`${classMUI}-card-jobs--row2`]}>
           <a
-            href={actionsAnchorLinks}
+            href={`${dynamicUrl}/${jobSlug}`}
             title={title as string}
             target="_blank"
             rel="noreferrer"
