@@ -65,7 +65,11 @@ export interface IJobCard {
    */
   isLoading?: boolean
   /**
-   * url to redirect
+   * jobSlug of the vacancy
    */
-  actionsAnchorLinks?: string
+  jobSlug?: string
+  /**
+   * This is the dynamic url that google robots will use to navigate with simple anchors
+   */
+  dynamicUrl?: string
 }

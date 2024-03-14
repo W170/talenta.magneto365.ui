@@ -34,9 +34,8 @@ const JobsPage: React.FC<IJobsPage> = ({
   const [showDetail, setShowDetail] = useState(device === 'desktop')
   const [selectedJobId, setSelectedJobId] = useState<number | null>(null)
 
-  const {
-    jobActionsProps: { actionsAnchorLinks }
-  } = jobDetailsDrawerProps
+  const { fullUrl, fullJobsUrl } = dynamicPaginationUrl
+
   const emptyVacant = vacantProps.length === 0
   const handleVacant = useCallback(
     (id: number | null) => {
@@ -130,19 +129,19 @@ const JobsPage: React.FC<IJobsPage> = ({
             {vacantProps.length <= 0 || isLoading
               ? cardsAltRender
               : vacantProps.map(({ id, ...props }) => (
-                <JobCard
-                  isLoading={isLoading}
-                  isActive={id === jobSelected?.id}
-                  id={id}
-                  showDetail={() => handleJobCardClick(id)}
-                  actionsAnchorLinks={actionsAnchorLinks[0]}
-                  key={`${id}-JobsPage`}
-                  {...props}
-                />
-              ))}
+                  <JobCard
+                    isLoading={isLoading}
+                    isActive={id === jobSelected?.id}
+                    id={id}
+                    showDetail={() => handleJobCardClick(id)}
+                    dynamicUrl={fullJobsUrl}
+                    key={`${id}-JobsPage`}
+                    {...props}
+                  />
+                ))}
           </div>
           {customParagraph && <Paragraph paragraph={customParagraph} />}
-          <Pagination dynamicUrl={dynamicPaginationUrl} {...paginationProps} />
+          <Pagination dynamicUrl={fullUrl} {...paginationProps} />
           <FrequentSearch {...frequentSearchProps} />
         </div>
         <div className={style[`${classMUI}-jobs-page__jobs-detail`]}>{JobDetailsDrawerComponent}</div>

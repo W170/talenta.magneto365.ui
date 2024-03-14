@@ -68,13 +68,18 @@ export interface IJobsPage {
    */
   customParagraph?: string
   /**
-   * This is the dynamic url that google robots will use to navigate with simple anchors
+   * This object contains dynamics urls that google robots will use to navigate with simple anchors in vacancies titles and pagination
    */
-  dynamicPaginationUrl: string
+  dynamicPaginationUrl: IDynamicUrl
 }
 
 export interface IVacancies extends IJobCard {
   offerVacancyData?: string
   offerDescription?: string
   offerSkills?: IJobSkillsCard
+}
+
+export interface IDynamicUrl {
+  fullUrl: string
+  fullJobsUrl: string
 }
