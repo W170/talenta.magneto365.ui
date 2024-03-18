@@ -54,8 +54,9 @@ const Component: React.FC<ISuggestedJobsPage> = ({
 
   useEffect(() => {
     if (!fetchMoredata) return
+    setIsBottomPage(false)
     onChangePage(currentPage + 1, pageSize)
-  }, [currentPage, fetchMoredata, onChangePage, pageSize, paginationProps])
+  }, [currentPage, fetchMoredata, onChangePage, pageSize])
 
   useEffect(() => {
     const element = document.getElementById('magneto-ui-suggestedJobs-page')
