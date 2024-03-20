@@ -5,8 +5,9 @@ import { JobDetailsDrawer } from './JobDetailsDrawer.component'
 import { CompanyLogo } from '@constants/stories'
 import { MainButton } from '../../atoms/MainButton/MainButton.component'
 import { Buildings2, Export3 } from '@constants/icons.constants'
+import { IJobCompanyHeader } from '../../molecules/JobCompanyHeader'
 
-const jobCompanyLogo = {
+const jobCompanyLogo: IJobCompanyHeader = {
   jobCompanyLogoProps: {
     offerCompanyLogo: CompanyLogo as unknown as JSX.Element,
     alt: 'Grupo Exito Logo'
