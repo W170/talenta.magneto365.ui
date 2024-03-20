@@ -23,4 +23,14 @@ export interface IBreadcrumb {
    * this text replace the last position in the bredcrumbs text if it exists
    */
   detailTitle?: string | null
+
+  /**
+   * This field is used to load the breadcrumbs text from the server [SEO]
+   */
+  breadCrumbFromServer?: string[]
+
+  /**
+   * This field is used to load breadcrumb URLs from the server [SEO]
+   */
+  urlFromServer?: string[]
 }
