@@ -18,4 +18,10 @@ export interface IJobHeader {
    * (Optional property)
    */
   isHidden?: boolean
+
+  /**
+   * Specifies what type of title it is, MainTitle or SubTitle
+   * (Optional property)
+   */
+  typeTitle?: 'MainTitle' | 'SubTitle' | undefined
 }
