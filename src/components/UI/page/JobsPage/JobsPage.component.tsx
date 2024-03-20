@@ -35,7 +35,7 @@ const JobsPage: React.FC<IJobsPage> = ({
   const [showDetail, setShowDetail] = useState(device === 'desktop')
   const [selectedJobId, setSelectedJobId] = useState<number | null>(null)
 
-  const { fullUrl, fullJobsUrl } = dynamicPaginationUrl
+  const { fullUrl, fullJobsUrl } = dynamicPaginationUrl || {}
 
   const emptyVacant = vacantProps.length === 0
   const handleVacant = useCallback(
