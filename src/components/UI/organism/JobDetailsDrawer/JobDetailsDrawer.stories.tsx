@@ -13,7 +13,8 @@ const jobCompanyLogo = {
   },
   jobHeaderProps: {
     offerTitle: 'Comunicador Audiovisual',
-    offerCompanyName: 'Grupo Exito'
+    offerCompanyName: 'Grupo Exito',
+    typeTitle: 'SubTitle'
   }
 }
 const jobActions = {
