@@ -1,0 +1,52 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui--date-dropdown {
+  &__wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__select {
+    position: relative;
+    width: 168px;
+    height: 57px;
+    padding: 16px 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 300;
+    color: #14141c;
+    background: #fff;
+    border: 1px solid #cfcfde;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:focus-visible {
+      outline: none;
+    }
+    &:disabled {
+      color: #a3a3b5;
+      background: #e9e9f6;
+    }
+  }
+
+  &__option {
+    width: 141px;
+    height: 17px;
+    padding: 5px;
+    border-radius: 5px;
+    background: #fff;
+  }
+  &__icon {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    background: transparent;
+    height: auto;
+    pointer-events: none;
+    padding: 16px 20px 16px 0;
+  }
+}
