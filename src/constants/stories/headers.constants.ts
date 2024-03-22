@@ -54,7 +54,7 @@ export const breadcrumbProps: IBreadcrumb = {
   breadCrumbFromServer: ['empleos', 'validador de negocios de vivienda 9a322b78 249e 4932 970e 7853eea97bc6'],
   urlFromServer: [
     'http://localhost:8060/co/empleos',
-    'http://localhost:8060/co/validador-de-negocios-de-vivienda-9a322b78-249e-4932-970e-7853eea97bc6'
+    'http://localhost:8060/co/empleos/validador-de-negocios-de-vivienda-9a322b78-249e-4932-970e-7853eea97bc6'
   ]
 }
 
