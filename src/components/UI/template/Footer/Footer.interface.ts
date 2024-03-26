@@ -7,4 +7,5 @@ export interface IFooter {
   magnetoResolutionProps: IMagnetoResolution
   rightsReservedProps: IRightsReservedText
   menuFooterLink: IFooterMenuLinks
+  showFooter?: boolean
 }

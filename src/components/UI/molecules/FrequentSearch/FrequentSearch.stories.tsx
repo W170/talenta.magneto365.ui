@@ -9,7 +9,8 @@ const meta: Meta<typeof FrequentSearch> = {
     searchHeading: 'Empleos mas frecuentes',
     searchList,
     showLess: 'Ver menos -',
-    showMore: 'Ver mas'
+    showMore: 'Ver mas',
+    showFrequentSearch: true
   }
 }
 

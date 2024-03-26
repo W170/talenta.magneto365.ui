@@ -10,7 +10,8 @@ const meta: Meta<typeof Footer> = {
     followText: 'Siguenos',
     magnetoResolutionProps: MagnetoResolutionProps,
     rightsReservedProps: RightsReservedProps,
-    menuFooterLink: listMenuText
+    menuFooterLink: listMenuText,
+    showFooter: undefined
   }
 }
 
