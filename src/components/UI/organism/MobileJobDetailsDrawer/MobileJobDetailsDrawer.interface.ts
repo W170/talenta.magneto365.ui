@@ -8,6 +8,7 @@ import {
 import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 import { ReactNode } from 'react'
 import { ISimilarJobs } from '../SimilarJobs/SimilarJobs.interface'
+import { IJobVideo } from '@components/UI/molecules/JobVideo'
 
 export interface IMobileJobDetailsDrawer {
   /**
@@ -69,4 +70,16 @@ export interface IMobileJobDetailsDrawer {
    *These are the properties of similar jobs ui
    */
   similarJobsProps?: ISimilarJobs
+  /**
+   * Props for the job video informative section
+   */
+  jobVideo?: IJobVideo
+  /**
+   * This property shows or hides the video component
+   */
+  loadVideo?: boolean
+  /**
+   * This property changes when the video component is assembled or disassembled.
+   */
+  setLoadVideo?: (load: boolean) => void
 }

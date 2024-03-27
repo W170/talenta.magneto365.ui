@@ -4,6 +4,7 @@ import {
   JobCompanyHeader,
   JobDetails,
   JobDetailCard,
+  JobVideo,
   JobSkillsCard,
   JobApplyCard,
   JobFooterCard,
@@ -30,7 +31,10 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   isOpen = true,
   isLoading,
   onClose,
-  similarJobsProps
+  similarJobsProps,
+  jobVideo,
+  loadVideo,
+  setLoadVideo
 }) => {
   const handleClose = useCallback(() => {
     if (onClose) {
@@ -48,6 +52,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
         <MobileJobDetailsHeader returnText={jobDetailsHeaderText} onClick={handleClose} />
         <JobCompanyHeader {...jobCompanyLogoProps} />
         {jobDetailsProps && <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />}
+        {jobVideo && <JobVideo {...jobVideo} loadVideo={loadVideo} setLoadVideo={setLoadVideo} />}
         <JobDetailCard {...jobDetailCardProps} />
         {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
         <JobApplyCard {...jobApplyCardProps} />
@@ -66,7 +71,10 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
     jobDetailsProps,
     jobFooterCardProps,
     jobSkillsCardProps,
-    similarJobsProps
+    similarJobsProps,
+    jobVideo,
+    loadVideo,
+    setLoadVideo
   ])
 
   return (

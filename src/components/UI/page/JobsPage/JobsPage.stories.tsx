@@ -18,6 +18,7 @@ import { Buildings2, Export3 } from '@constants/icons.constants'
 import { emptyResultsProps } from '@constants/stories/emptyResults.constants'
 import { sectionTitle, moreJobsText, moreJobsLink } from '../../../../constants/stories/similarJobs.constants'
 import { IVacancies } from '@components/UI/page'
+import { jobVideo } from '@constants/stories/jobVideo.constants'
 
 const jobDetailsDrawer = {
   jobCompanyLogoProps: {
@@ -99,7 +100,8 @@ const jobDetailsDrawer = {
     moreJobsText,
     sectionTitle,
     similarJobsCard: similarVacanciesCardsProps
-  }
+  },
+  jobVideo: jobVideo
 }
 
 const mobileJobDetailsDrawer = {
