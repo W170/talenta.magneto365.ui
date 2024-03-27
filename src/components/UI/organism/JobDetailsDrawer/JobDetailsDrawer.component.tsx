@@ -4,6 +4,7 @@ import {
   JobActions,
   JobDetails,
   JobDetailCard,
+  JobVideo,
   JobSkillsCard,
   JobApplyCard,
   JobFooterCard
@@ -28,7 +29,10 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   modalPendingInfoComponent,
   isLoading,
   selectedJobId,
-  similarJobsProps
+  similarJobsProps,
+  jobVideo,
+  loadVideo,
+  setLoadVideo
 }) => {
   const jobDetailsRef = useRef<HTMLDivElement | null>(null)
 
@@ -54,6 +58,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
             {jobDetailsProps && (
               <JobDetails altList={altList} iconList={iconDetailList} offerDetailsList={jobDetailsProps} />
             )}
+            {jobVideo && <JobVideo {...jobVideo} loadVideo={loadVideo} setLoadVideo={setLoadVideo} />}
             <JobDetailCard {...jobDetailCardProps} />
             <JobSkillsCard {...jobSkillsCardProps} />
             <JobApplyCard {...jobApplyCardProps} />
