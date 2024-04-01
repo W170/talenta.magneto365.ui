@@ -72,10 +72,6 @@ export interface IJobsPage {
    */
   carouselComponent?: React.ReactElement | JSX.Element
   /**
-   * This property display a component to images overdrive
-   */
-  carouselComponent?: React.ReactElement | JSX.Element
-  /**
    * This object contains dynamics urls that google robots will use to navigate with simple anchors in vacancies titles and pagination
    */
   dynamicPaginationUrl: IDynamicUrl
