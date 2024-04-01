@@ -9,6 +9,7 @@ $thumb-top: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 
   input[type='range'] {
     width: $slider-width;
@@ -21,9 +22,7 @@ $thumb-top: 9px;
 }
 
 .track,
-.range,
-.left_value,
-.right_value {
+.range {
   position: absolute;
 }
 
@@ -45,20 +44,16 @@ $thumb-top: 9px;
   height: $slider-height;
   z-index: 2;
 }
+.values {
+  display: flex;
+  gap: 5px;
+}
 
 .left_value,
 .right_value {
   color: black;
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 20px;
-}
-
-.left_value {
-  left: 6px;
-}
-
-.right_value {
-  right: -4px;
 }
 
 .thumb,
@@ -73,6 +68,7 @@ $thumb-top: 9px;
   height: 0;
   width: $slider-width;
   outline: none;
+  top: -2px;
 }
 
 .zIndex_3 {

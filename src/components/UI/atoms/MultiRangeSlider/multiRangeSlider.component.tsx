@@ -1,15 +1,43 @@
-import React, { useCallback, useEffect, useState, useRef, FC, Fragment } from 'react'
+import React, { useCallback, useEffect, useState, useRef, FC, useMemo } from 'react'
 import { IMultiRangeSlider } from './multiRangeSlider.interface'
 import styles from './multiRangeSlider.module.scss'
 
-export const MultiRangeSlider: FC<IMultiRangeSlider> = ({ min, max, showValues, onChange }) => {
+export const MultiRangeSlider: FC<IMultiRangeSlider> = ({
+  min,
+  max,
+  currentMin,
+  currentMax,
+  showValues,
+  onChange,
+  currency
+}) => {
   const [minVal, setMinVal] = useState(min)
   const [maxVal, setMaxVal] = useState(max)
+
+  useEffect(() => {
+    if (currentMin) {
+      setMinVal(currentMin)
+    }
+  }, [currentMin])
+
+  useEffect(() => {
+    if (currentMax) {
+      setMaxVal(currentMax)
+    }
+  }, [currentMax])
+
   const minValRef = useRef<HTMLInputElement>(null)
   const maxValRef = useRef<HTMLInputElement>(null)
   const range = useRef<HTMLDivElement>(null)
 
   const getPercent = useCallback((value: number) => Math.round(((value - min) / (max - min)) * 100), [min, max])
+
+  const hasCurrency = useMemo(() => {
+    if (currency) {
+      return `${currency.code}${minVal.toLocaleString()} ${currency.to} `
+    }
+    return minVal.toLocaleString()
+  }, [currency, minVal])
 
   useEffect(() => {
     if (maxValRef.current) {
@@ -34,7 +62,7 @@ export const MultiRangeSlider: FC<IMultiRangeSlider> = ({ min, max, showValues, 
     }
   }, [maxVal, getPercent])
 
-  useEffect(() => {
+  const handleMouseUpValues = useCallback(() => {
     onChange({ min: minVal, max: maxVal })
   }, [minVal, maxVal, onChange])
 
@@ -46,6 +74,7 @@ export const MultiRangeSlider: FC<IMultiRangeSlider> = ({ min, max, showValues, 
         max={max}
         value={minVal}
         ref={minValRef}
+        onMouseUp={handleMouseUpValues}
         onChange={(event) => {
           const value = Math.min(+event.target.value, maxVal - 1)
           setMinVal(value)
@@ -63,6 +92,7 @@ export const MultiRangeSlider: FC<IMultiRangeSlider> = ({ min, max, showValues, 
         max={max}
         value={maxVal}
         ref={maxValRef}
+        onMouseUp={handleMouseUpValues}
         onChange={(event) => {
           const value = Math.max(+event.target.value, minVal + 1)
           setMaxVal(value)
@@ -75,10 +105,10 @@ export const MultiRangeSlider: FC<IMultiRangeSlider> = ({ min, max, showValues, 
         <div className={styles.track} />
         <div ref={range} className={styles.range} />
         {showValues && (
-          <Fragment>
-            <div className={styles.left_value}>{minVal}</div>
-            <div className={styles.right_value}>{maxVal}</div>
-          </Fragment>
+          <div className={styles.values}>
+            <div className={styles.left_value}>{hasCurrency}</div>
+            <div className={styles.right_value}>{maxVal.toLocaleString()}</div>
+          </div>
         )}
       </div>
     </div>

@@ -8,7 +8,11 @@ const meta: Meta<typeof MultiRangeSlider> = {
     min: 0,
     max: 1000,
     showValues: true,
-    onChange: (v) => console.log('MultiRangeSlider', v)
+    onChange: (v) => console.log('MultiRangeSlider', v),
+    currency: {
+      code: '$',
+      to: 'a'
+    }
   }
 }
 

@@ -15,4 +15,21 @@ export interface IMultiRangeSlider {
    * This function is called when the value change
    */
   onChange: (v: unknown) => void
+  /**
+   * this property show currency character
+   */
+  currency?: ICurrency
+  /**
+   * this property set a value in the range slide
+   */
+  currentMin?: number
+  /**
+   * this property set a value in the range slide
+   */
+  currentMax?: number
+}
+
+interface ICurrency {
+  code: string
+  to: string
 }
