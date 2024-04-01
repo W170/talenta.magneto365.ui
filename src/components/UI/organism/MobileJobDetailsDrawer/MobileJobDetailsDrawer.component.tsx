@@ -35,7 +35,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   similarJobsProps,
   jobVideo,
   loadVideo,
-  setLoadVideo
+  setLoadVideo,
   swipeProps
 }) => {
   const handleClose = useCallback(() => {
