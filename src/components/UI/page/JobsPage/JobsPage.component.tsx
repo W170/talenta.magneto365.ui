@@ -32,6 +32,7 @@ const JobsPage: React.FC<IJobsPage> = ({
   dynamicPaginationUrl
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
+  const [loadVideo, setLoadVideo] = useState(false)
   const [showDetail, setShowDetail] = useState(device === 'desktop')
   const [selectedJobId, setSelectedJobId] = useState<number | null>(null)
 
@@ -52,6 +53,7 @@ const JobsPage: React.FC<IJobsPage> = ({
   const handleJobCardClick = (id: number | null) => {
     setSelectedJobId(id)
     handleVacant(id)
+    setLoadVideo(false)
   }
 
   useEffect(() => {
@@ -74,6 +76,8 @@ const JobsPage: React.FC<IJobsPage> = ({
           {...jobDetailsDrawerProps}
           isLoading={isLoading || !jobSelected}
           selectedJobId={selectedJobId}
+          loadVideo={loadVideo}
+          setLoadVideo={setLoadVideo}
         />
       )}
     </JobDetailContainer>,
@@ -85,6 +89,8 @@ const JobsPage: React.FC<IJobsPage> = ({
           isOpen={showDetail}
           jobDetailAction={jobDetailAction}
           isLoading={isLoading || !jobSelected}
+          loadVideo={loadVideo}
+          setLoadVideo={setLoadVideo}
         />
       )
     }

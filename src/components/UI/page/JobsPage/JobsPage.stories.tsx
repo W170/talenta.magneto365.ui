@@ -20,6 +20,7 @@ import { ECandidateState, ImageCarousel } from '@components/UI/organism'
 import { carouselProps } from '@constants/stories/carousel.constants'
 import { sectionTitle, moreJobsText, moreJobsLink } from '../../../../constants/stories/similarJobs.constants'
 import { IVacancies } from '@components/UI/page'
+import { jobVideo } from '@constants/stories/jobVideo.constants'
 
 const jobDetailsDrawer = {
   jobCompanyLogoProps: {
@@ -101,7 +102,8 @@ const jobDetailsDrawer = {
     moreJobsText,
     sectionTitle,
     similarJobsCard: similarVacanciesCardsProps
-  }
+  },
+  jobVideo: jobVideo
 }
 
 const mobileJobDetailsDrawer = {
