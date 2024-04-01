@@ -8,6 +8,7 @@ import {
 import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 import { ReactNode } from 'react'
 import { ISimilarJobs } from '../SimilarJobs/SimilarJobs.interface'
+import { SwipeProps } from '../Swipe/Swipe.interface'
 
 export interface IMobileJobDetailsDrawer {
   /**
@@ -69,4 +70,8 @@ export interface IMobileJobDetailsDrawer {
    *These are the properties of similar jobs ui
    */
   similarJobsProps?: ISimilarJobs
+  /**
+   *These are the properties of swipe
+   */
+  swipeProps?: SwipeProps
 }

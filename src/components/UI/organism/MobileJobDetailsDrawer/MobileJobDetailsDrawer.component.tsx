@@ -15,6 +15,7 @@ import { MobileJobDetailsDrawerSkeleton } from './children/MobileJobDetailsDrawe
 import { IMobileJobDetailsDrawer } from './MobileJobDetailsDrawer.interface'
 import { iconDetailList, iconFooterList } from '@constants/stories'
 import { SimilarJobs } from '../SimilarJobs'
+import { Swipe } from '../Swipe'
 
 const Component: React.FC<IMobileJobDetailsDrawer> = ({
   jobCompanyLogoProps,
@@ -30,7 +31,8 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   isOpen = true,
   isLoading,
   onClose,
-  similarJobsProps
+  similarJobsProps,
+  swipeProps
 }) => {
   const handleClose = useCallback(() => {
     if (onClose) {
@@ -69,6 +71,18 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
     similarJobsProps
   ])
 
+  const content = useMemo(
+    () =>
+      swipeProps ? (
+        <Swipe {...swipeProps} openModal={isOpen && swipeProps.openModal}>
+          {renderContent}
+        </Swipe>
+      ) : (
+        renderContent
+      ),
+    [isOpen, renderContent, swipeProps]
+  )
+
   return (
     <Fragment>
       <Drawer
@@ -80,7 +94,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
         hideButton
         isMobile
       >
-        {renderContent}
+        {content}
         {!jobDetailAction && <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} onClose={isOpen} />}
       </Drawer>
       {modalPendingInfoComponent}
