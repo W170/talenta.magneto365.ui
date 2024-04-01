@@ -8,7 +8,9 @@ import {
 import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 import { ReactNode } from 'react'
 import { ISimilarJobs } from '../SimilarJobs/SimilarJobs.interface'
+import { IJobVideo } from '@components/UI/molecules/JobVideo'
 import { SwipeProps } from '../Swipe/Swipe.interface'
+
 
 export interface IMobileJobDetailsDrawer {
   /**
@@ -71,7 +73,20 @@ export interface IMobileJobDetailsDrawer {
    */
   similarJobsProps?: ISimilarJobs
   /**
+   * Props for the job video informative section
+   */
+  jobVideo?: IJobVideo
+  /**
+   * This property shows or hides the video component
+   */
+  loadVideo?: boolean
+  /**
+   * This property changes when the video component is assembled or disassembled.
+   */
+  setLoadVideo?: (load: boolean) => void
+   /**
    *These are the properties of swipe
    */
   swipeProps?: SwipeProps
+
 }

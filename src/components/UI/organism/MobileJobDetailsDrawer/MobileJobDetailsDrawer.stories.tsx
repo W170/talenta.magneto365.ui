@@ -4,6 +4,7 @@ import { MainButton } from '@components/UI/atoms'
 import { MobileJobDetailsDrawer } from './MobileJobDetailsDrawer.component'
 
 import { CompanyLogo } from '@constants/stories'
+import { jobVideo } from '@constants/stories/jobVideo.constants'
 
 const jobCompanyLogo = {
   jobCompanyLogoProps: {
@@ -111,6 +112,7 @@ export const Default: Story = {
     jobApplyCardProps: jobApplyCard,
     jobFooterCardProps: jobFooterCard,
     mobileJobDetailsBarProps: MobileJobDetailsActionsBar,
-    isOpen: true
+    isOpen: true,
+    jobVideo: jobVideo
   }
 }
