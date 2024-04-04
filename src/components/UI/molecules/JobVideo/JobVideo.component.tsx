@@ -13,10 +13,11 @@ const JobVideo: React.FC<IJobVideo> = ({
   setLoadVideo
 }) => {
   const [detailJobId, setDetailJobId] = useState(0)
+  const [uploadVideo, setUploadVideo] = useState(false)
 
   const handleLoadVideo = () => {
     setDetailJobId(jobId as number)
-    setLoadVideo && setLoadVideo(true)
+    setLoadVideo ? setLoadVideo(true) : setUploadVideo(true)
   }
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const JobVideo: React.FC<IJobVideo> = ({
     }
   }, [detailJobId, jobId, setLoadVideo])
 
-  return loadVideo ? (
+  return loadVideo || uploadVideo ? (
     <VideoComponent vjsOptions={vjsOptions} key={`lazyVideo_${jobId}`} className={styles[videoClassName]} />
   ) : (
     <div className={styles['magneto-ui-job-video']} onClick={handleLoadVideo}>
