@@ -1,67 +1,78 @@
-import React, { useState } from 'react'
-import { IOptionValues, DateDropdown } from '@components/UI/atoms/DateDropdown'
+import React, { useEffect, useState } from 'react'
+import { DateDropdown, IOptionValues } from '@components/UI/atoms/DateDropdown'
+import { monthOptionsValue, yearOptionsLabel, yearOptionsValue } from '@constants/stories/DatePicker.constants'
+import { parseDate } from '@components/UI/molecules/DatePicker/utils'
 import { IDatePicker } from './DatePicker.interface'
 import styles from './DatePicker.module.scss'
+const defaultValue = (value: Date) => {
+  return value ? parseDate(value) : { initialMonth: '', initialYear: '' }
+}
 
+const yearOptionsList: IOptionValues[] = yearOptionsLabel?.map((optionLabel, index) => ({
+  optionValue: yearOptionsValue[index],
+  optionLabel
+}))
 const Component: React.FC<IDatePicker> = ({
-  monthOptionsValue,
   monthOptionsLabels,
-  yearOptionsValue,
-  yearOptionsLabel,
   monthPlaceholder,
   yearPlaceholder,
-  disabledDate
+  value,
+  disabled,
+  onChange
 }) => {
-  const [selectedMonthOption, setSelectedOptionOne] = useState('')
-  const [selectedYearOption, setSelectedOptionTwo] = useState('')
+  const { initialMonth, initialYear } = defaultValue(value)
+
+  const [selectedMonth, setSelectedMonth] = useState<string>(initialMonth)
+  const [selectedYear, setSelectedYear] = useState<string>(initialYear)
   const FIRST_OF_MONTH = 1
 
-  const monthOptionsList: IOptionValues[] = monthOptionsLabels
-    ?.map((optionLabel, index) => ({
-      optionValue: monthOptionsValue[index],
-      optionLabel
-    }))
-    .filter(({ optionLabel }) => !!optionLabel)
-    .slice(0, 12)
-
-  const yearOptionsList: IOptionValues[] = yearOptionsLabel?.map((optionLabel, index) => ({
-    optionValue: yearOptionsValue[index],
+  const monthOptionsList: IOptionValues[] = monthOptionsLabels?.map((optionLabel, index) => ({
+    optionValue: monthOptionsValue[index],
     optionLabel
   }))
 
-  const onOptionMonthChanged = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedOptionOne(event.target.value)
+  const handleMonthChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedMonth(event.target.value)
   }
 
-  const onOptionYearChanged = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedOptionTwo(event.target.value)
+  const handleYearChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedYear(event.target.value)
   }
 
-  const composeDate = () => {
-    return new Date(`${selectedMonthOption}/${FIRST_OF_MONTH}/${selectedYearOption}`)
-  }
+  useEffect(() => {
+    if (selectedMonth !== initialMonth && selectedYear !== initialYear) {
+      if (disabled) {
+        onChange(null)
+      } else if (selectedMonth !== '' && selectedYear !== '') {
+        onChange(new Date(Number(selectedYear), Number(selectedMonth), FIRST_OF_MONTH))
+      }
+    }
+  }, [disabled, initialMonth, initialYear, onChange, selectedMonth, selectedYear])
 
-  console.log(composeDate())
+  useEffect(() => {
+    if (disabled) {
+      setSelectedMonth('')
+      setSelectedYear('')
+    }
+  }, [disabled])
 
   return (
     <div className={styles['magneto-ui--date-picker__wrapper']}>
       <DateDropdown
-        dateOptions={monthOptionsList}
         placeholderLabel={monthPlaceholder}
-        selectedOption={selectedMonthOption}
-        onOptionChanged={onOptionMonthChanged}
-        disabled={disabledDate}
+        dateOptions={monthOptionsList}
+        selectedOption={selectedMonth}
+        onOptionChanged={handleMonthChange}
+        disabled={disabled}
       />
       <DateDropdown
-        dateOptions={yearOptionsList}
         placeholderLabel={yearPlaceholder}
-        selectedOption={selectedYearOption}
-        onOptionChanged={onOptionYearChanged}
-        disabled={disabledDate}
+        dateOptions={yearOptionsList}
+        selectedOption={selectedYear}
+        onOptionChanged={handleYearChange}
+        disabled={disabled}
       />
-      <button onClick={composeDate}>Enviar fecha</button>
     </div>
   )
 }
-
 export const DatePicker = Component
