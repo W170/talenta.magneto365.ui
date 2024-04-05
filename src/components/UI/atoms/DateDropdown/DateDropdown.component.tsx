@@ -1,19 +1,17 @@
 import React, { useMemo } from 'react'
 import { IconItem } from '@components/UI/atoms'
-import { IDateDropdown } from './DateDropdown.interface'
-import styles from './DateDropdown.module.scss'
+import { IDateDropdown } from '@components/UI/atoms'
 import { ArrowDown3, ArrowDown4 } from '@constants/icons.constants'
-
+import styles from './DateDropdown.module.scss'
 const Component: React.FC<IDateDropdown> = ({
   placeholderLabel,
   dateOptions,
-  selectedOption,
+  selectedOption = '',
   onOptionChanged,
   disabled = false
 }) => {
   const disabledArrow = useMemo(() => {
     if (disabled) return <IconItem icon={ArrowDown4} alt="arrow-icon" size={24} />
-
     return <IconItem icon={ArrowDown3} alt="arrow-icon" size={24} />
   }, [disabled])
 
@@ -23,10 +21,9 @@ const Component: React.FC<IDateDropdown> = ({
         className={styles[`magneto-ui--date-dropdown__select`]}
         value={selectedOption}
         onChange={onOptionChanged}
-        defaultValue={placeholderLabel}
         disabled={disabled}
       >
-        <option className={styles['magneto-ui--date-dropdown__option']} value="" disabled>
+        <option className={styles['magneto-ui--date-dropdown__option']} value="" disabled hidden>
           {placeholderLabel}
         </option>
         {dateOptions?.map(({ optionValue, optionLabel }) => (
