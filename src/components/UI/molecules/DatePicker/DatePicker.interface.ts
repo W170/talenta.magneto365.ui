@@ -15,22 +15,17 @@ export interface IDatePicker {
   monthPlaceholder: string
   /*
    */
-  monthOptionsValue: number[]
-  /*
-   */
   monthOptionsLabels: string[]
   /*
-   *
    */
   yearPlaceholder: string
   /*
    */
-  yearOptionsValue: number[]
+  value: Date
   /*
    */
-  yearOptionsLabel: string[]
+  disabled?: boolean
   /*
-   *
    */
-  disabledDate?: boolean
+  onChange: (value: string | Date | null) => void
 }
