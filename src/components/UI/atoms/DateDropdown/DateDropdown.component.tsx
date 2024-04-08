@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { IconItem } from '@components/UI/atoms'
 import { IDateDropdown } from '@components/UI/atoms'
-import { ArrowDown3, ArrowDown4 } from '@constants/icons.constants'
+import { ArrowDown2, ArrowDown3 } from '@constants/icons.constants'
 import styles from './DateDropdown.module.scss'
 const Component: React.FC<IDateDropdown> = ({
   placeholderLabel,
@@ -11,7 +11,10 @@ const Component: React.FC<IDateDropdown> = ({
   disabled = false
 }) => {
   const disabledArrow = useMemo(() => {
-    if (disabled) return <IconItem icon={ArrowDown4} alt="arrow-icon" size={24} />
+    if (disabled)
+      return (
+        <IconItem className={styles['magneto-ui--date-dropdown__icon']} icon={ArrowDown2} alt="arrow-icon" size={24} />
+      )
     return <IconItem icon={ArrowDown3} alt="arrow-icon" size={24} />
   }, [disabled])
 
