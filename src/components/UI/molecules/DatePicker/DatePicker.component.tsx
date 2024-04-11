@@ -20,10 +20,8 @@ const Component: React.FC<IDatePicker> = ({
   disabled,
   onChange
 }) => {
-  const { initialMonth, initialYear } = defaultValue(value)
-
-  const [selectedMonth, setSelectedMonth] = useState<string>(initialMonth)
-  const [selectedYear, setSelectedYear] = useState<string>(initialYear)
+  const [selectedMonth, setSelectedMonth] = useState<string>(defaultValue(value).initialMonth)
+  const [selectedYear, setSelectedYear] = useState<string>(defaultValue(value).initialYear)
   const FIRST_OF_MONTH = 1
 
   const monthOptionsList: IOptionValues[] = monthOptionsLabels?.map((optionLabel, index) => ({
@@ -33,28 +31,25 @@ const Component: React.FC<IDatePicker> = ({
 
   const handleMonthChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedMonth(event.target.value)
+    if (selectedYear != '') {
+      onChange(new Date(Number(selectedYear), Number(event.target.value), FIRST_OF_MONTH))
+    }
   }
 
   const handleYearChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedYear(event.target.value)
-  }
-
-  useEffect(() => {
-    if (selectedMonth !== initialMonth && selectedYear !== initialYear) {
-      if (disabled) {
-        onChange(null)
-      } else if (selectedMonth !== '' && selectedYear !== '') {
-        onChange(new Date(Number(selectedYear), Number(selectedMonth), FIRST_OF_MONTH))
-      }
+    if (selectedMonth != '') {
+      onChange(new Date(Number(event.target.value), Number(selectedMonth), FIRST_OF_MONTH))
     }
-  }, [disabled, initialMonth, initialYear, onChange, selectedMonth, selectedYear])
+  }
 
   useEffect(() => {
     if (disabled) {
       setSelectedMonth('')
       setSelectedYear('')
+      onChange(null)
     }
-  }, [disabled])
+  }, [disabled, onChange])
 
   return (
     <div className={styles['magneto-ui--date-picker__wrapper']}>
