@@ -4,7 +4,7 @@ export function generateYearArray() {
   const endYear = currentYear + 26
   const yearsCount = endYear - startYear + 1
 
-  let yearsArray = Array.from({ length: yearsCount }, (_, index) => startYear + index)
+  let yearsArray = Array.from({ length: yearsCount }, (_, index) => startYear + index).reverse()
 
   if (currentYear > endYear) {
     const difference = currentYear - endYear
