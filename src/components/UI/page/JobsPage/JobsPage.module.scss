@@ -37,5 +37,6 @@
   box-sizing: border-box;
   @media (max-width: v.$screen-md) {
     display: block;
+    font-size: 18px;
   }
 }
