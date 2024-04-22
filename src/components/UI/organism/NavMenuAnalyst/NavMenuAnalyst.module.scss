@@ -1,0 +1,107 @@
+@use '../../../../shared/stylesheets/variables' as v;
+
+.magneto-ui-nav-menu-analyst {
+  background-color: v.$color-blue-dark2;
+  width: 60px;
+  height: 100%;
+  &__container {
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      background: #00000026;
+      width: 4px;
+
+      &-thumb {
+        background: transparent;
+        border: none;
+        border-color: transparent;
+        border-radius: 20px;
+        background: #c2c8cf;
+      }
+
+      &-button {
+        &:vertical {
+          &:start:decrement {
+            background: transparent url('/src/assets/miniArrowGrayUp.svg') no-repeat center center;
+          }
+
+          &:end:increment {
+            background: transparent url('/src/assets/miniArrowGrayDown.svg') no-repeat center center;
+          }
+        }
+      }
+    }
+  }
+  &--full-menu {
+    width: 100%;
+    > div {
+      height: calc(100% - 70px);
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+    }
+  }
+  &__overflow-placeholder {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  &__header {
+    padding-inline: 20px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ffffff14;
+  }
+  &__sections {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__section {
+    > div:not([class]) {
+      > div {
+        > div {
+          > div:last-child {
+            > div {
+              > div {
+                > div {
+                  padding-bottom: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__footer {
+    padding-bottom: 10px;
+    display: none;
+    &--full-menu {
+      display: block;
+    }
+  }
+  &__footer-section {
+    &:only-child {
+      a {
+        &:hover {
+          background-color: transparent;
+          p {
+            color: v.$color-white !important;
+          }
+        }
+        > p {
+          font-size: 12px;
+          color: v.$color-blue-dark5 !important;
+          transition: color 0.1s ease-in-out;
+        }
+      }
+    }
+  }
+}
