@@ -1,5 +1,23 @@
-import { IAvatar, ILoading, ILogoComponent, IMainButton, IconProps } from '@components/UI/atoms'
-import { IsoLogoMagneto, LoginCurve, LogoMagneto, ProfileAdd, Refresh } from '@constants/icons.constants'
+import {
+  IAvatar,
+  ILoading,
+  ILogoComponent,
+  IMainButton,
+  IMenuDropdownProps,
+  IUserMenuButtonAnalystProps,
+  IconProps
+} from '@components/UI/atoms'
+import {
+  ArrowDownWhite,
+  HomeUnderline,
+  IsoLogoMagneto,
+  IsoLogoMagnetoDark,
+  LoginCurve,
+  LogoMagneto,
+  LogoMagnetoDark,
+  ProfileAdd,
+  Refresh
+} from '@constants/icons.constants'
 
 export const classMUI = 'magneto-ui'
 
@@ -7,6 +25,12 @@ export const logoProps: ILogoComponent = {
   alt: 'Logo Magneto',
   logo: LogoMagneto,
   isoType: IsoLogoMagneto
+}
+
+export const logoPropsDark: ILogoComponent = {
+  alt: 'Logo Magneto',
+  logo: LogoMagnetoDark,
+  isoType: IsoLogoMagnetoDark
 }
 
 export const logoPropsLogin: ILogoComponent = {
@@ -73,5 +97,24 @@ export const SignUpButtonStyle: IMainButton = {
     icon: ProfileAdd,
     hover: true,
     color: '#090467 '
+  }
+}
+
+export const UserMenuButtonAnalystProps: IUserMenuButtonAnalystProps = {
+  user: 'Gabriel López',
+  company: 'Comfama',
+  className: 'magneto-ui-user-menu-button-analyst',
+  onClick: () => ({})
+}
+
+export const MenuDropdownProps: IMenuDropdownProps = {
+  title: 'Inicio',
+  prefixIcon: {
+    icon: HomeUnderline
+  },
+  className: 'magneto-ui-menu-dropdown',
+  listClassName: 'magneto-ui-menu-dropdown__list',
+  suffixIcon: {
+    icon: ArrowDownWhite
   }
 }
