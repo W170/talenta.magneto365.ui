@@ -109,6 +109,8 @@ const Option: React.FC<INavMenuAnalystOptionProps> = ({
         icon={icons(isActive(option), option.icons)}
         url={option.data}
         className={linkStyles}
+        type={onClick ? 'button' : 'link'}
+        onClick={onClick ? () => onClick(option) : undefined}
       />
     )
   }
