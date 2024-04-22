@@ -1,0 +1,75 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-user-menu-analyst-company {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  > div {
+    &:first-child {
+      margin: 5px 0;
+    }
+  }
+  &__invite-btn-container {
+    width: 100%;
+    animation: fadeIn 0.4s ease-in-out;
+    > button {
+      width: 100%;
+      background-color: v.$color-blue-dark2;
+      color: v.$color-white;
+      border-radius: 30px;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  &__dropdown {
+    background-color: v.$color-tertiary-gray;
+    color: v.$text-color-black;
+    border-radius: 6px;
+    > div {
+      &:first-child {
+        padding: 8px;
+      }
+    }
+    span {
+      color: v.$text-color-black;
+      font-weight: 700;
+    }
+  }
+  &__list {
+    padding: 0 8px 8px;
+    a {
+      color: v.$text-color-black;
+      width: fit-content;
+      font-size: 13px;
+      font-weight: 400;
+      padding: 5px;
+      &:not(:last-child) {
+        text-decoration: none;
+      }
+      &:not(:last-child):hover {
+        text-decoration: underline;
+      }
+      &:last-child {
+        color: v.$color-blue-dark3;
+        font-weight: 700;
+      }
+    }
+    p {
+      margin: 0;
+    }
+  }
+  &__arrow {
+    transform: rotate(-90deg);
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
