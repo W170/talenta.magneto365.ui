@@ -1,0 +1,13 @@
+@use '../../../../shared/stylesheets/variables' as v;
+
+.magneto-ui-nav-menu-drawer-analyst {
+  &__drawer {
+    > aside {
+      > button {
+        > img {
+          filter: invert(100%) brightness(200%);
+        }
+      }
+    }
+  }
+}
