@@ -34,6 +34,7 @@ export interface IMenuIcon {
    */
   size?: number
   /**
-   * You can set the iconUrl here
+   * Class name of each menu icon type
    */
+  className?: string
 }
