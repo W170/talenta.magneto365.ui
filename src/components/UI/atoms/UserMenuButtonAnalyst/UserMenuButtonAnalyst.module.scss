@@ -1,0 +1,16 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-user-menu-button-analyst {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #0000004d;
+  border: none;
+  color: v.$color-white;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 16.8px;
+  border-radius: 4px;
+  padding: 5px;
+}
