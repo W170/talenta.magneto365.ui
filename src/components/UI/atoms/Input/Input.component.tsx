@@ -61,6 +61,7 @@ const Input: React.FC<IInput> = ({
           onBlur={() => setOnFocus(false)}
           id={name}
           autoFocus={autoFocus}
+          autoComplete="off"
         />
 
         {hideIcon ? null : (
