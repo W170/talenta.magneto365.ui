@@ -36,6 +36,9 @@ const JobCardMobile: React.FC<ICardJobMobile> = ({
               className={style[`${classMUI}-card-mobile-jobs--brand__img`]}
               alt={companySlug ? companySlug : 'company-slug'}
               src={companyLogo ? companyLogo : NoLogo}
+              loading="lazy"
+              width={'50px'}
+              height={'50px'}
             />
           </div>
         </div>

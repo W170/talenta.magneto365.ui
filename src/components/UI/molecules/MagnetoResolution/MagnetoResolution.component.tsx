@@ -7,7 +7,13 @@ import { IMagnetoResolution } from './MagnetoResolution.interface'
 const MagnetoResolution: React.FC<IMagnetoResolution> = ({ resolutionText, resolutionHrefText, resolutionHref }) => {
   return (
     <div className={`${style[`${classMUI}-magneto-resolution`]}`}>
-      <img className={`${style[`${classMUI}-magneto-resolution__img`]}`} src={MinTrabajo} alt="min-trabajo-img" />
+      <img
+        className={`${style[`${classMUI}-magneto-resolution__img`]}`}
+        src={MinTrabajo}
+        alt="min-trabajo-img"
+        loading="lazy"
+        width={'300px'}
+      />
       <p className={`${style[`${classMUI}-magneto-resolution__text`]}`}>
         {resolutionText}
         <a className={`${style[`${classMUI}-magneto-resolution__text--link`]}`} href={resolutionHref}>
