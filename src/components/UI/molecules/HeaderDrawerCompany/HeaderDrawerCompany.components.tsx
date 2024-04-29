@@ -8,7 +8,7 @@ const Component: React.FC<IHeaderDrawerCompany> = ({ logo, alt, logoCompany, log
     <div className={style['header-drawer-company']}>
       <LogoComponent logo={logo} alt={alt} />
       <LogoComponent logo={logoCompany} alt={logoCompanyAlt} />
-      <img src={flag} alt={flagAlt} />
+      <img src={flag} alt={flagAlt} loading="lazy" width={'25px'} height={'20px'} />
     </div>
   )
 }

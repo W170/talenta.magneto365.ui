@@ -47,6 +47,9 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
               className={style[`${classMUI}-card-jobs--brand__img`]}
               alt={companySlug ? companySlug : 'company-slug'}
               src={companyLogo ? companyLogo : NoLogo}
+              loading="lazy"
+              width={'67px'}
+              height={'67px'}
             />
           </div>
         </div>
