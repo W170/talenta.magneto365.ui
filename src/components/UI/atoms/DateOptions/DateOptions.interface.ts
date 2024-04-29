@@ -1,13 +1,11 @@
-import React from "react";
-
 export interface IDateOption {
   optionsList: IOptionValues[]
   /*
    */
-  handleOnClick: (event:  React.MouseEvent<HTMLLIElement>) => void;
+  handleOnClick: (optionValue: string | number) => void
   /*
    */
-  selected?: number | string
+  selected: string | number | null
 }
 
 export interface IOptionValues {
