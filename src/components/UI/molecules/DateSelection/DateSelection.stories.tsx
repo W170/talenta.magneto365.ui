@@ -1,13 +1,18 @@
-import {Meta, StoryObj} from "@storybook/react";
+import { Meta, StoryObj } from '@storybook/react'
 
-import {DateSelection} from "@components/UI/molecules/DateSelection/DateSelection.component";
-import {monthOptionsValue, months} from "@constants/stories/DatePicker.constants";
-import {DateOptions} from "@components/UI/atoms/DateOptions";
+import { DateSelection } from '@components/UI/molecules/DateSelection/DateSelection.component'
+import { monthOptionsValue, months, yearOptionsLabel, yearOptionsValue } from '@constants/stories/DatePicker.constants'
 
-const storyMonths = [];
+const storyMonths = []
 
 for (let i = 0; i < Math.min(monthOptionsValue.length, months.length); i++) {
-  storyMonths.push({optionValue: monthOptionsValue[i], optionLabel: months[i]});
+  storyMonths.push({ optionValue: monthOptionsValue[i], optionLabel: months[i] })
+}
+
+const storyYears = []
+
+for (let i = 0; i < Math.min(yearOptionsValue.length, yearOptionsLabel.length); i++) {
+  storyYears.push({ optionValue: yearOptionsValue[i], optionLabel: yearOptionsLabel[i] })
 }
 
 const meta: Meta<typeof DateSelection> = {
@@ -25,6 +30,17 @@ const meta: Meta<typeof DateSelection> = {
 
 export default meta
 
-type Story = StoryObj<typeof DateOptions>
+type Story = StoryObj<typeof DateSelection>
 
 export const Default: Story = {}
+
+export const Years: Story = {
+  args: {
+    isOpen: true,
+    onClose: () => ({}),
+    dateOptions: storyYears,
+    selectionHeader: 'Selecciona un año',
+    cancelSelection: 'Cerrar',
+    applySelection: 'Seleccionar'
+  }
+}
