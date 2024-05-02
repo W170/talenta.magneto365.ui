@@ -101,6 +101,19 @@
       font-weight: bold;
     }
 
+    &__urgent {
+      display: flex;
+      flex-direction: row;
+      border-radius: 4px;
+      padding: 3px 5px;
+      background-color: #fec759;
+      color: black;
+      align-items: center;
+      > img {
+        color: black;
+      }
+    }
+
     &__variant {
       display: flex;
       flex-direction: column;

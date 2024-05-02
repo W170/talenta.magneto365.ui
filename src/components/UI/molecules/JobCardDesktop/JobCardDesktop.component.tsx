@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { classMUI } from '@constants/stories'
 import { IconItem } from '../../atoms'
-import { ArrowRight2, NoLogo } from '../../../../constants/icons.constants'
+import { ArrowRight2, NoLogo, Urgent } from '../../../../constants/icons.constants'
 import style from './JobCardDesktop.module.scss'
 import { ICardJobDesktop } from './JobCardDesktop.interface'
 
@@ -20,6 +20,7 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   experience,
   contractType,
   showDetail,
+  urgent,
   others = '',
   jobSlug,
   dynamicUrl
@@ -68,6 +69,12 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
           </a>
           <h3>{companyName}</h3>
           <p>{formatPublishDate}</p>
+          {urgent && (
+            <div className={style[`${classMUI}-card-jobs--row2__urgent`]}>
+              <IconItem alt={'alt'} icon={Urgent} hover={false} size={18} />
+              <p>{urgent}</p>
+            </div>
+          )}
         </div>
         <div className={style[`${classMUI}-card-jobs--row3`]}>
           <p>
