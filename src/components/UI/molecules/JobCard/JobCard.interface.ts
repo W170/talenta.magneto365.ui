@@ -72,4 +72,8 @@ export interface IJobCard {
    * This is the dynamic url that google robots will use to navigate with simple anchors
    */
   dynamicUrl?: string
+  /**
+   * This is the string for urgent jobs
+   */
+  urgent?: string
 }
