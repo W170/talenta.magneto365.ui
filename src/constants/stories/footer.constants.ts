@@ -17,7 +17,8 @@ export const listMenuText: IFooterMenuLinks = {
     links: [
       {
         tag: 'Conoce Magneto',
-        href: ''
+        href: '',
+        openNewTab: true
       },
       {
         tag: 'Ver todo los empleos',
