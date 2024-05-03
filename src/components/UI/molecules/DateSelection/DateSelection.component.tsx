@@ -5,13 +5,15 @@ import { IDateSelection } from '@components/UI/molecules/DateSelection/DateSelec
 import styles from './DateSelection.module.scss'
 
 const Component: React.FC<IDateSelection> = ({
+  applyLabel,
+  cancelLabel,
+  dateOptions,
   isOpen,
   onClose,
-  selectionHeader,
-  cancelSelection,
-  applySelection,
-  dateOptions
+  onApplyCallback,
+  selectionHeader
 }) => {
+  const [initialSelectedOption, setInitialSelectedOption] = useState<string | number | null>(null)
   const [selectedOption, setSelectedOption] = useState<string | number | null>(null)
 
   const handleOptionClick = (optionValue: string | number) => {
@@ -19,10 +21,14 @@ const Component: React.FC<IDateSelection> = ({
   }
 
   const onCancelClick = () => {
-    console.log('Cierro')
+    setSelectedOption(initialSelectedOption)
+    onClose()
   }
+
   const onApplyClick = () => {
-    console.log('Apply')
+    setInitialSelectedOption(selectedOption)
+    onApplyCallback(selectedOption)
+    onClose()
   }
 
   return (
@@ -35,10 +41,10 @@ const Component: React.FC<IDateSelection> = ({
       </div>
       <div className={styles['magneto-ui--date-selection__btn--wrapper']}>
         <button className={styles['magneto-ui--date-selection__cancel-btn']} onClick={onCancelClick}>
-          {cancelSelection}
+          {cancelLabel}
         </button>
         <button className={styles['magneto-ui--date-selection__apply-btn']} onClick={onApplyClick}>
-          {applySelection}
+          {applyLabel}
         </button>
       </div>
     </MobileDrawer>
