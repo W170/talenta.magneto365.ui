@@ -1,0 +1,31 @@
+.magneto-ui-radio-button {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 1px solid #f0f1f3;
+  padding: 10px 16px;
+  color: #1f2329;
+  font-weight: 400;
+  &--checked {
+    background-color: #e3e7e9;
+    border-color: transparent;
+    color: #1a324c;
+    font-weight: 700;
+  }
+  &--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+    filter: grayscale(100%);
+  }
+  input[type='radio'] {
+    display: none;
+  }
+  &__children {
+    font-size: 14px;
+    font-weight: inherit;
+    color: inherit;
+  }
+}
