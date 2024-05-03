@@ -1,0 +1,36 @@
+.magneto-ui--mobile-date-picker {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 163px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    border: 1px solid #e3e7e9;
+
+    .placeholder-text {
+      color: #667688;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .placeholder-up {
+      transform: translateY(-200%);
+      font-size: 12px;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    display: inline-block;
+    top: 5px;
+    right: -110px;
+  }
+}
