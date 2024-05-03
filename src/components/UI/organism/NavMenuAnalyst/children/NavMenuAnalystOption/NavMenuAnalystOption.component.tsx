@@ -1,22 +1,26 @@
-import React, { useCallback, useState, useEffect, useRef } from 'react'
-import { INavMenuAnalysIcons, INavMenuAnalystOption } from '../../NavMenuAnalyst.interface'
+import React, { useCallback, useState, useEffect, useRef, useMemo } from 'react'
+import { INavMenuAnalystIcons, INavMenuAnalystOption } from '../../NavMenuAnalyst.interface'
 import { INavMenuAnalystOptionProps } from './NavMenuAnalystOption.interface'
 import { MenuDropdown } from '@components/UI/atoms'
 import { MenuIcon } from '@components/UI/molecules'
+import { navMenuAnalystIcons } from '../../NavMenuAnalyst.constants'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './NavMenuAnalystOption.module.scss'
 
-const Option: React.FC<INavMenuAnalystOptionProps> = ({
+const Component: React.FC<INavMenuAnalystOptionProps> = ({
   isDrawerOpen,
   isFullWidth,
   isOpenedFromHeader,
   isParentOpen = true,
   isScrollAnimated,
-  onClick,
+  onDropdownClick,
+  onOptionClick,
   openedDropdown = false,
   option,
-  path
+  path,
+  queryString = {}
 }) => {
+  const { useQueryString = false, rel = 'noreferrer', target = '_self' } = option
   const [isOpenDropdown, setIsOpenDropdown] = useState<boolean>(openedDropdown)
   const [scrolledToOption, setScrolledToOption] = useState<boolean>(false)
   const optionRef = useRef<HTMLDivElement>(null)
@@ -47,7 +51,7 @@ const Option: React.FC<INavMenuAnalystOptionProps> = ({
         return pathName === option.data
       }
       if (option.data && Array.isArray(option.data)) {
-        return option.data.some((c) => c.subChildren?.some((subC) => isActive(subC)))
+        return option.data.some((c) => c.children?.some((child) => isActive(child)))
       }
       return false
     },
@@ -57,7 +61,7 @@ const Option: React.FC<INavMenuAnalystOptionProps> = ({
   const childrenActive = useCallback(
     (option: INavMenuAnalystOption): boolean => {
       if (option.data && Array.isArray(option.data)) {
-        return option.data.some((c) => c.subChildren?.some((subC) => isActive(subC)))
+        return option.data.some((c) => c.children?.some((child) => isActive(child)))
       }
       return false
     },
@@ -68,19 +72,34 @@ const Option: React.FC<INavMenuAnalystOptionProps> = ({
     if (isFullWidth && !scrolledToOption) {
       setScrolledToOption(true)
     }
-    if (onClick) {
-      onClick(option)
+    if (onDropdownClick) {
+      onDropdownClick(option)
     }
 
     setIsOpenDropdown(!isOpenDropdown)
-  }, [isOpenDropdown, onClick, option, isFullWidth, scrolledToOption])
+  }, [isOpenDropdown, onDropdownClick, option, isFullWidth, scrolledToOption])
 
-  const icons = useCallback((active: boolean, icons: INavMenuAnalysIcons | undefined): string | undefined => {
+  const icons = useCallback((active: boolean, icons: INavMenuAnalystIcons | undefined): string | undefined => {
     if (active) {
       return icons?.active
     }
     return icons?.normal
   }, [])
+
+  const url = useMemo(() => {
+    if (option.data && !Array.isArray(option.data) && typeof option.data === 'string') {
+      const hasParams = option.data?.includes('?')
+      const delimiter = useQueryString && queryString && hasParams ? '&' : ''
+
+      const queryStringParams = Object.entries(queryString)
+        .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+        .join('&')
+
+      return useQueryString && queryStringParams
+        ? `${option.data}${hasParams ? delimiter : '?'}${queryStringParams}`
+        : option.data
+    }
+  }, [option.data, queryString, useQueryString])
 
   const linkStyles = CNM.get({
     styles,
@@ -107,10 +126,19 @@ const Option: React.FC<INavMenuAnalystOptionProps> = ({
       <MenuIcon
         text={option.title || ''}
         icon={icons(isActive(option), option.icons)}
-        url={option.data}
+        iconSize={18}
+        url={url}
         className={linkStyles}
-        type={onClick ? 'button' : 'link'}
-        onClick={onClick ? () => onClick(option) : undefined}
+        type={typeof option.data === 'function' || onOptionClick ? 'button' : 'link'}
+        onClick={
+          onOptionClick
+            ? () => onOptionClick(option)
+            : typeof option.data === 'function'
+            ? () => (option.data as (option: INavMenuAnalystOption) => void)(option)
+            : undefined
+        }
+        target={target}
+        rel={rel}
       />
     )
   }
@@ -143,20 +171,22 @@ const Option: React.FC<INavMenuAnalystOptionProps> = ({
                 {item.title}
               </span>
             )}
-            {item.subChildren.map((subItem, j) => (
-              <Option
-                key={`option-${subItem.title}-${j}`}
-                option={subItem}
+            {item.children.map((child, j) => (
+              <Component
+                key={`option-${child.title}-${j}`}
+                option={{ ...child, icons: child.icon ? navMenuAnalystIcons[child.icon] : { ...child.icons } }}
                 isFullWidth={isFullWidth}
                 isOpenedFromHeader={isOpenedFromHeader}
                 path={path}
                 openedDropdown={
-                  !scrolledToOption ? childrenActive(subItem) && !isOpenedFromHeader && isOpenDropdown : false
+                  !scrolledToOption ? childrenActive(child) && !isOpenedFromHeader && isOpenDropdown : false
                 }
                 isDrawerOpen={isDrawerOpen}
                 isScrollAnimated={isScrollAnimated}
                 isParentOpen={isOpenDropdown}
-                onClick={onClick}
+                onDropdownClick={onDropdownClick}
+                onOptionClick={onOptionClick}
+                queryString={queryString}
               />
             ))}
           </React.Fragment>
@@ -166,4 +196,7 @@ const Option: React.FC<INavMenuAnalystOptionProps> = ({
   )
 }
 
-export default Option
+/**
+ * Organism UI child component of nav menu analyst
+ */
+export const NavMenuAnalystOption = Component

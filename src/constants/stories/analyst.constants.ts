@@ -1,20 +1,5 @@
-import {
-  ArrowDownBlue,
-  ArrowDownWhite,
-  HambergerMenuDark,
-  HeadsetBlack,
-  HomeUnderline,
-  LogoutBlack,
-  NoLogo,
-  Notification
-} from '@constants/icons.constants'
-import {
-  IBreadcrumbs,
-  ICompanyAnalyst,
-  IMenuIcon,
-  IUserAnalyst,
-  IUserMenuDropdownAnalystProps
-} from '@components/UI/molecules'
+import { HambergerMenuDark, HomeUnderline, Notification } from '@constants/icons.constants'
+import { IBreadcrumbs, IUserAnalyst, IUserMenuWrapperAnalystProps } from '@components/UI/molecules'
 import { IHeaderAnalystProps, INavMenuAnalystProps } from '@components/UI/organism'
 import { IMainButton, ILinkProps } from '@components/UI/atoms'
 import { logoPropsDark } from './common.constants'
@@ -45,60 +30,83 @@ export const BreadCrumbAnalystProps: IBreadcrumbs = {
 }
 
 export const UserAnalystProps: IUserAnalyst = {
-  avatar: {
-    userImage:
-      'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
-  },
+  avatar:
+    'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
   name: 'Gabriel López',
-  mail: 'gabriel@me.com'
+  email: 'gabriel@me.com'
 }
-
-export const CompanyAnalystProps: ICompanyAnalyst = {
-  name: 'Comfama',
-  subCompanies: [
-    {
-      name: 'Pymes',
-      href: 'http://localhost:8060/pymes'
-    },
-    {
-      name: 'Distribuidores',
-      href: 'http://localhost:8060/pymes/distribuidores'
-    },
-    {
-      name: 'Ver todos',
-      href: 'http://localhost:8060/pymes/distribuidores'
-    }
-  ]
-}
-
-export const FirstUserMenuAnalystOptionsProps: IMenuIcon[] = [
-  {
-    text: 'Soporte',
-    icon: HeadsetBlack
-  }
-]
-
-export const LastUserMenuAnalystOptionsProps: IMenuIcon[] = [
-  {
-    text: 'Iniciar sesión',
-    icon: LogoutBlack
-  }
-]
 
 export const UserNotificationProps: ILinkProps = { iconProps: { icon: Notification, size: 20 }, href: '#' }
 
-export const UserMenuAnalystProps: IUserMenuDropdownAnalystProps = {
+export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
   user: UserAnalystProps,
-  company: CompanyAnalystProps,
-  shareButtonProps: {
-    buttonText: 'Invitar una empresa'
+  companyName: 'Comfama',
+  queryString: {
+    lng: 'es-CO'
   },
-  options: [
+  headerSections: [
     {
-      section: FirstUserMenuAnalystOptionsProps
+      children: [
+        {
+          title: 'Comfama',
+          data: [
+            {
+              children: [
+                {
+                  title: 'Farmacias del Sur',
+                  data: '/farmacias-del-sur',
+                  useQueryString: true
+                },
+                {
+                  title: 'Metales sas',
+                  data: '/metales-sas'
+                },
+                {
+                  title: 'Pollos Brosty',
+                  data: '/pollos-brosty'
+                },
+                {
+                  title: 'Los Perritos',
+                  data: '/los-perritos'
+                },
+                {
+                  title: 'Ver todos',
+                  data: '/ver-todos',
+                  isLinkHighlighted: true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  footerSections: [
+    {
+      children: [
+        {
+          title: 'Ayudanos a mejorar',
+          icon: 'helpImprove',
+          data: '/ayudanos-a-mejorar',
+          useQueryString: true,
+          target: '_blank',
+          rel: 'noopener noreferrer'
+        },
+        {
+          title: 'Soporte',
+          icon: 'support',
+          data: (option) => console.log(option)
+        }
+      ]
     },
     {
-      section: LastUserMenuAnalystOptionsProps
+      children: [
+        {
+          title: 'Cerrar sesión',
+          icon: 'logout',
+          data: '/cerrar-sesion'
+        }
+      ]
     }
   ]
 }
@@ -106,63 +114,57 @@ export const UserMenuAnalystProps: IUserMenuDropdownAnalystProps = {
 export const HeaderAnalystProps: IHeaderAnalystProps = {
   // onMainMenuClick: () => ({}),
   className: 'magneto-ui-header-analyst',
-  logoProps: logoPropsDark,
+  logoProps: {
+    ...logoPropsDark,
+    href: '/inicio',
+    rel: 'noreferrer',
+    target: '_self'
+  },
   breadCrumbProps: BreadCrumbAnalystProps,
   userMenuProps: UserMenuAnalystProps,
   userNotificationProps: UserNotificationProps
 }
 
 export const NavMenuAnalystProps: INavMenuAnalystProps = {
-  path: '/test-de-aprendizaje',
+  path: '/inicio',
+  queryString: {
+    lng: 'es-CO',
+    access_token: '123'
+  },
   sections: [
     {
-      subChildren: [
+      children: [
         {
           title: 'Inicio',
           data: '/inicio',
-          icons: {
-            normal: ArrowDownWhite,
-            active: ArrowDownBlue
-          }
+          icon: 'home'
         }
       ]
     },
     {
       title: 'Procesos de selección',
-      subChildren: [
+      children: [
         {
           title: 'Solicitud de vacantes',
           data: '/solicitud-de-vacantes',
-          icons: {
-            normal: ArrowDownWhite,
-            active: ArrowDownBlue
-          }
+          icon: 'requestVacancies'
         },
         {
           title: 'Vacantes',
           data: '/vacantes',
-          icons: {
-            normal: ArrowDownWhite,
-            active: ArrowDownBlue
-          }
+          icon: 'vacancies'
         },
         {
           title: 'Catálogo de candidatos',
           data: '/catalogo-de-candidatos',
-          icons: {
-            normal: ArrowDownWhite,
-            active: ArrowDownBlue
-          }
+          icon: 'candidatesCatalogue'
         },
         {
           title: 'Recursos',
-          icons: {
-            normal: ArrowDownWhite,
-            active: ArrowDownBlue
-          },
+          icon: 'resources',
           data: [
             {
-              subChildren: [
+              children: [
                 {
                   title: 'Imagenes',
                   data: '/imagenes'
@@ -191,16 +193,13 @@ export const NavMenuAnalystProps: INavMenuAnalystProps = {
     },
     {
       title: 'Información de la empresa',
-      subChildren: [
+      children: [
         {
           title: 'Configuración',
-          icons: {
-            normal: ArrowDownWhite,
-            active: ArrowDownBlue
-          },
+          icon: 'settings',
           data: [
             {
-              subChildren: [
+              children: [
                 {
                   title: 'General',
                   data: '/general'
@@ -233,45 +232,21 @@ export const NavMenuAnalystProps: INavMenuAnalystProps = {
             },
             {
               title: 'Integraciones',
-              subChildren: [
+              children: [
                 {
                   title: 'PSW - Pruebas psicológicas',
                   data: '/psw'
                 },
                 {
                   title: 'CARIS - Exámenes médicos',
-                  icons: {
-                    normal: ArrowDownWhite,
-                    active: ArrowDownBlue
-                  },
+                  icon: 'candidatesCatalogue',
                   data: [
                     {
                       title: 'Pruebas psicológicas',
-                      subChildren: [
+                      children: [
                         {
                           title: 'Todas',
                           data: '/pruebas-psicológicas'
-                        },
-                        {
-                          title: 'Test',
-                          icons: {
-                            normal: ArrowDownWhite,
-                            active: ArrowDownBlue
-                          },
-                          data: [
-                            {
-                              subChildren: [
-                                {
-                                  title: 'Test de habilidad',
-                                  data: '/test-de-habilidad'
-                                },
-                                {
-                                  title: 'Test de aprendizaje',
-                                  data: '/test-de-aprendizaje'
-                                }
-                              ]
-                            }
-                          ]
                         }
                       ]
                     }
@@ -287,10 +262,10 @@ export const NavMenuAnalystProps: INavMenuAnalystProps = {
   footer: [
     {
       title: 'Legal',
-      subChildren: [
+      children: [
         {
           title: 'Política de tratamiento de datos personales',
-          data: '#'
+          data: '/politica-de-tratamiento-de-datos-personales'
         },
         {
           title: 'Aviso de privacidad',
@@ -303,13 +278,28 @@ export const NavMenuAnalystProps: INavMenuAnalystProps = {
       ]
     }
   ],
-  country: {
-    title: 'Colombia',
-    icons: {
-      normal: NoLogo
+  regions: [
+    {
+      lang: 'es-CO',
+      flag: 'https://media-stage.magneto365.com/flags/col.svg?Expires=1714694399&Key-Pair-Id=K1VVO70ZORFDQU&Signature=fdI3ltKjm1P3Z1vNvFkxYO0mQvcKdxrbLcfsSmVZlzlVuM7-uYPUMEIwzJa6MVr3mZdKaUMIN5VKtZwEXsG0yYyqwRFaTuw9GbnYg9KNdCrrG9q7Jb-jVk1IsxAHn7DcK~Th3lW8I3f5RbHXkCnvMvP6HJfCgUhNTt78qJGEuYhFOl4Nzo119M2hQ7~2UnnaLi34IcDfONTNvkx9LS~z5nwgYMuW1trbXWYbbXb02ft~UGA3IGBiMMPyaF030VIlYtL4JUzfjlBvG9hlz1S8VTmxLx7YDK9GMJqtMfG41Q1iqb8ZsZDzGW-KnZs6nIzBDhecQWUT4EwnKSg8bHFMjg__',
+      name: 'Colombia'
+    },
+    {
+      lang: 'en-US',
+      flag: 'https://media-stage.magneto365.com/flags/usa.svg?Expires=1714694399&Key-Pair-Id=K1VVO70ZORFDQU&Signature=XEXTObH580OxOBcK9XGi2mNuGIF4AtkSHywENG25XKtX19Ln48g7hZwDAGRMzdCUTijA9wq2qUcJEdScCrKxseRMTLJ-mg61Rv-dZ5gl0nMvRmMsKmr0r6qhuQYperNJVhyGzx3QvvbnuMqo7XrcD6R-g6o8G9P8hMykBSD-2hZrlLR48sD-OxgVsyIuuhNAWG-OEGZpsKOeSNSkwmS3trqPLpGE7ElhrY0Yb0-LWorA9~zEjyXVKLyhW2cEsvG~qJAdiRa4FCE7EPt-IYuB2MgXEUAM7Z92KslZLsUYsU7hJ5mwaFZbtFxvraERFd1EjkEpCHZ4rbkt82v~KrS13w__',
+      name: 'Estados Unidos'
+    },
+    {
+      lang: 'es-MX',
+      flag: 'https://media-stage.magneto365.com/flags/mex.svg?Expires=1714694399&Key-Pair-Id=K1VVO70ZORFDQU&Signature=jApkK-mOhaySEg5~XbvESET40P2McTz82Q7cowNmzNXMWjf-alNZdN3Htl12FaodEtpvB9lOddIgrazI5JFQkI0oxVdTb2p7~zUeV-hGH07N6D0E104YWSY9ORNwJU7ErT82Z7~gTZaoYi4OXaHX1QfBHCGgqkdzaM4V4Qm1v4tMl68jK8uhP87fwgMDLKN2H-juIlU0m8oHR6IWfqsYf3JJ9CeyQJtMJKbCXzsidrMj-uWVtVXbiMb794b252-kqI6~yUMD8Yml4fAIB2yAzB1l0UvBpT5fjVaRN~qKMx2psmEYm~prwFeYrVCPToPK8OZ4gkAvRTm6~IfJnpEwpQ__',
+      name: 'Mexico'
     }
+  ],
+  defaultRegion: 'es-MX',
+  regionModal: {
+    apply: 'Aplicar',
+    cancel: 'Cancelar',
+    title: 'Por favor seleccione su región'
   },
-  onCountryClick: () => {
-    console.log('Hi')
-  }
+  onRegionChange: (region) => console.log(region)
 }

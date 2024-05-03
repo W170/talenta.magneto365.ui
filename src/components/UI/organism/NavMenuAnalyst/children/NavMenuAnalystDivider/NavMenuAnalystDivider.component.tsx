@@ -5,7 +5,7 @@ import { useMediaQuery } from '@components/hooks'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './NavMenuAnalystDivider.module.scss'
 
-const NavMenuAnalystDivider: React.FC<INavMenuAnalystDividerProps> = ({ isFullWidth, showMobile = true, title }) => {
+const Component: React.FC<INavMenuAnalystDividerProps> = ({ isFullWidth, showMobile = true, title }) => {
   const sectionDivider = useMediaQuery(
     isFullWidth ? (
       <h3 className={CNM.get({ styles, cls: ['nav-menu-analyst-divider__title'] })}>{title}</h3>
@@ -19,4 +19,7 @@ const NavMenuAnalystDivider: React.FC<INavMenuAnalystDividerProps> = ({ isFullWi
   return <div className={CNM.get({ styles, cls: ['nav-menu-analyst-divider'] })}>{sectionDivider}</div>
 }
 
-export default NavMenuAnalystDivider
+/**
+ * Organism UI child component of nav menu analyst
+ */
+export const NavMenuAnalystDivider = Component

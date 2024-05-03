@@ -1,4 +1,4 @@
-import { INavMenuAnalystOption } from '../../NavMenuAnalyst.interface'
+import { INavMenuAnalystOption, INavMenuAnalystQueryString } from '../../NavMenuAnalyst.interface'
 
 export interface INavMenuAnalystOptionProps {
   /**
@@ -22,9 +22,13 @@ export interface INavMenuAnalystOptionProps {
    */
   isScrollAnimated?: boolean
   /**
-   * On click
+   * handles dropdown click
    */
-  onClick?: (option: INavMenuAnalystOption | null) => void
+  onDropdownClick?: (option: INavMenuAnalystOption | null) => void
+  /**
+   * handles option click
+   */
+  onOptionClick?: (option: INavMenuAnalystOption | null) => void
   /**
    * Is open dropdown menu
    */
@@ -37,4 +41,8 @@ export interface INavMenuAnalystOptionProps {
    * Custom path to highlight menu option
    */
   path?: string
+  /**
+   * Query string params
+   */
+  queryString?: INavMenuAnalystQueryString
 }

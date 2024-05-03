@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import { HeaderAnalyst, NavMenuDrawerAnalyst, NavMenuAnalyst, INavMenuAnalystOption } from '@components/UI/organism'
-import { IAnalystTemplate } from './AnalystTemplate.interface'
+import { IAnalystTemplateProps } from './AnalystTemplate.interface'
 import { useMediaQuery } from '@components/hooks'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './AnalystTemplate.module.scss'
 
-const AnalystTemplate: React.FC<IAnalystTemplate> = ({
+const Component: React.FC<IAnalystTemplateProps> = ({
   children,
   childrenClassName = '',
   className = '',
@@ -18,35 +18,36 @@ const AnalystTemplate: React.FC<IAnalystTemplate> = ({
   const [isOpenedFromHeader, setIsOpenedFromHeader] = useState<boolean>(false)
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false)
 
-  const toggleMenu = (open?: boolean, drawerTriggered?: boolean) => {
-    setIsDrawerOpen(open ?? !isDrawerOpen)
-    setActiveDropdown(null)
-    if (drawerTriggered) {
-      setIsMenuScrollAnimated(false)
-      setIsOpenedFromHeader(true)
-    } else {
-      setIsMenuScrollAnimated(true)
-      setIsOpenedFromHeader(false)
-    }
-  }
-
-  const handleDropdownClick = (
-    option: INavMenuAnalystOption | null,
-    drawerTriggered?: boolean,
-    isChangeOpenedFrom?: boolean
-  ) => {
-    if (isChangeOpenedFrom) {
-      setIsMenuScrollAnimated(false)
-    } else {
+  const toggleMenu = useCallback(
+    (open?: boolean, drawerTriggered?: boolean) => {
+      setIsDrawerOpen(open ?? !isDrawerOpen)
+      setActiveDropdown(null)
       if (drawerTriggered) {
-        toggleMenu(true, true)
+        setIsMenuScrollAnimated(false)
+        setIsOpenedFromHeader(true)
       } else {
-        toggleMenu(true, false)
+        setIsMenuScrollAnimated(true)
+        setIsOpenedFromHeader(false)
       }
-    }
+    },
+    [isDrawerOpen]
+  )
 
-    setActiveDropdown(option)
-  }
+  const handleDropdownClick = useCallback(
+    (option: INavMenuAnalystOption | null, drawerTriggered?: boolean, isChangeOpenedFrom?: boolean) => {
+      if (isChangeOpenedFrom) {
+        setIsMenuScrollAnimated(false)
+      } else {
+        if (drawerTriggered) {
+          toggleMenu(true, true)
+        } else {
+          toggleMenu(true, false)
+        }
+      }
+      setActiveDropdown(option)
+    },
+    [toggleMenu]
+  )
 
   const header = useMediaQuery(
     <HeaderAnalyst
@@ -84,4 +85,7 @@ const AnalystTemplate: React.FC<IAnalystTemplate> = ({
   )
 }
 
-export default AnalystTemplate
+/**
+ * Template UI component of analyst template
+ */
+export const AnalystTemplate = Component

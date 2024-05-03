@@ -1,41 +1,48 @@
-import { IAvatar, IMainButton } from '@components/UI/atoms'
-import { IMenuIcon } from '@components/UI/molecules'
+import { IUserMenuAnalystOption } from './children'
 
 export interface IUserMenuAnalystProps {
   /**
-   * Company data
+   * Array of menu options by section for the header
    */
-  company: ICompanyAnalyst
+  headerSections?: IUserMenuAnalystSection[]
   /**
-   * Array of menu options by section
+   * Array of menu options by section for the footer
    */
-  options?: IUserMenuAnalystSections[]
-  /**
-   * Share button props
-   */
-  shareButtonProps: IMainButton
+  footerSections?: IUserMenuAnalystSection[]
   /**
    * User data
    */
   user: IUserAnalyst
+  /**
+   * Query string params
+   */
+  queryString?: IUserMenuAnalystQueryString
 }
 
-export interface IUserMenuAnalystSections {
+export interface IUserMenuAnalystSection {
   /**
-   * Array of menu options
+   * Section title
    */
-  section?: IMenuIcon[]
+  title?: string
+  /**
+   * Section navigation options
+   */
+  children: IUserMenuAnalystOption[]
+}
+
+export interface IUserMenuAnalystQueryString {
+  [key: string]: string
 }
 
 export interface IUserAnalyst {
   /**
    * Avatar of the user
    */
-  avatar: IAvatar
+  avatar?: string
   /**
    * Mail of the user
    */
-  mail: string
+  email: string
   /**
    * Name of the user
    */
@@ -50,7 +57,7 @@ export interface ICompanyAnalyst {
   /**
    * List of subcompanies
    */
-  subCompanies?: ISubCompanyAnalyst[]
+  children?: ISubCompanyAnalyst[]
 }
 
 export interface ISubCompanyAnalyst {

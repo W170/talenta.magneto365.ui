@@ -9,23 +9,23 @@
   padding: 10px;
   border-radius: 10px;
   position: relative;
-  &::after {
-    content: '';
-    position: absolute;
-    top: -19px;
-    right: 14px;
-    border: 10px solid transparent;
-    border-bottom-color: v.$color-white;
-  }
+  box-sizing: border-box;
   @media screen and (min-width: v.$screen-sm) {
-    width: fit-content;
+    &::after {
+      content: '';
+      position: absolute;
+      top: -19px;
+      right: 14px;
+      border: 10px solid transparent;
+      border-bottom-color: v.$color-white;
+    }
     min-width: 357px;
   }
   &__header {
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    padding: 15px 10px;
+    padding: 10px;
     background-color: #f4f4fa;
   }
   &__user {
@@ -49,6 +49,38 @@
     }
     &--mail {
       font-weight: 400;
+    }
+  }
+  &__company {
+    margin-top: 10px;
+    &--empty {
+      margin-top: 0;
+    }
+  }
+  &__company-dropdown {
+    background-color: #e3e7e9;
+    &:hover {
+      background-color: #e3e7e9 !important;
+    }
+    > div:first-child {
+      > span {
+        color: #0a0c0e;
+        font-weight: 700;
+      }
+    }
+    a {
+      color: v.$text-color-black;
+      padding: 12px 5px;
+      &:hover {
+        background-color: transparent;
+        text-decoration: underline;
+      }
+      &:first-child {
+        padding-top: 0;
+      }
+      &:last-child {
+        padding-bottom: 0;
+      }
     }
   }
 }

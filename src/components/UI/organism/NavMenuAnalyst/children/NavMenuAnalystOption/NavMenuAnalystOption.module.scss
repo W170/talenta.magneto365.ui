@@ -12,6 +12,7 @@
     > p {
       color: v.$color-white !important;
       display: none;
+      font-size: 14px !important;
     }
     > img {
       height: 18px;
@@ -47,6 +48,7 @@
     position: relative;
     transition: all 0.3s ease-in-out;
     background-color: transparent;
+    font-size: 14px;
     > div:first-child {
       > span,
       > div {

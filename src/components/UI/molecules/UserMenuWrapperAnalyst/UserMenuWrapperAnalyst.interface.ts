@@ -1,6 +1,10 @@
 import { IUserMenuAnalystProps } from '@components/UI/molecules'
 
-export interface IUserMenuDropdownAnalystProps extends IUserMenuAnalystProps {
+export interface IUserMenuWrapperAnalystProps extends IUserMenuAnalystProps {
+  /**
+   * Company name
+   */
+  companyName: string
   /**
    * State to open or close user menu
    */

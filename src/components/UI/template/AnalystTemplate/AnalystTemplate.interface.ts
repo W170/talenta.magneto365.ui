@@ -1,7 +1,7 @@
 import { IHeaderAnalystProps } from '@components/UI/organism'
 import { INavMenuDrawerAnalystProps } from '@components/UI/organism/NavMenuDrawerAnalyst'
 
-export interface IAnalystTemplate {
+export interface IAnalystTemplateProps {
   /**
    * Children to render
    */

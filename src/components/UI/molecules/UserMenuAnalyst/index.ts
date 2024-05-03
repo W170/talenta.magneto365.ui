@@ -1,2 +1,2 @@
-export { default as UserMenuAnalyst } from './UserMenuAnalyst.component'
+export { UserMenuAnalyst } from './UserMenuAnalyst.component'
 export * from './UserMenuAnalyst.interface'

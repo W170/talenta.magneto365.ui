@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { Drawer } from '@components/UI/molecules'
 import { INavMenuDrawerAnalystProps } from './NavMenuDrawerAnalyst.interface'
 import { NavMenuAnalyst } from '@components/UI/organism'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './NavMenuDrawerAnalyst.module.scss'
 
-const NavMenuDrawerAnalyst: React.FC<INavMenuDrawerAnalystProps> = ({ isDrawerOpen = false, onClose, ...props }) => {
-  const handleClose = () => {
+const Component: React.FC<INavMenuDrawerAnalystProps> = ({ isDrawerOpen = false, onClose, ...props }) => {
+  const handleClose = useCallback(() => {
     if (onClose) {
       onClose()
     }
-  }
+  }, [onClose])
 
   return (
     <Drawer
@@ -24,4 +24,7 @@ const NavMenuDrawerAnalyst: React.FC<INavMenuDrawerAnalystProps> = ({ isDrawerOp
   )
 }
 
-export default NavMenuDrawerAnalyst
+/**
+ * Organism UI component of navigation menu analyst
+ */
+export const NavMenuDrawerAnalyst = Component

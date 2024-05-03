@@ -1,7 +1,7 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { UserMenuAnalystProps } from '@constants/stories'
-import UserMenuAnalyst from './UserMenuAnalyst.component'
+import { UserMenuAnalyst } from './UserMenuAnalyst.component'
 
 const meta: Meta<typeof UserMenuAnalyst> = {
   title: 'Molecules/User Menu Analyst',

@@ -104,7 +104,7 @@ export const UserMenuButtonAnalystProps: IUserMenuButtonAnalystProps = {
   user: 'Gabriel López',
   company: 'Comfama',
   className: 'magneto-ui-user-menu-button-analyst',
-  onClick: () => ({})
+  onClick: () => console.log('click')
 }
 
 export const MenuDropdownProps: IMenuDropdownProps = {

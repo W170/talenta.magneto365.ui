@@ -1,11 +1,11 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { UserMenuAnalystProps } from '@constants/stories'
-import { UserMenuDropdownAnalyst } from './UserMenuDropdownAnalyst.component'
+import { UserMenuWrapperAnalyst } from './UserMenuWrapperAnalyst.component'
 
-const meta: Meta<typeof UserMenuDropdownAnalyst> = {
-  title: 'Molecules/User Menu Dropdown Analyst',
-  component: UserMenuDropdownAnalyst,
+const meta: Meta<typeof UserMenuWrapperAnalyst> = {
+  title: 'Molecules/User Menu Wrapper Analyst',
+  component: UserMenuWrapperAnalyst,
   args: { ...UserMenuAnalystProps },
   decorators: [
     (Story) => (
@@ -18,6 +18,6 @@ const meta: Meta<typeof UserMenuDropdownAnalyst> = {
 
 export default meta
 
-type Story = StoryObj<typeof UserMenuDropdownAnalyst>
+type Story = StoryObj<typeof UserMenuWrapperAnalyst>
 
 export const Default: Story = {}

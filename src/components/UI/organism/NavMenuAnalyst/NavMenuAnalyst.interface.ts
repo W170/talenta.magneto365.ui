@@ -10,9 +10,9 @@ export interface INavMenuAnalystProps {
    */
   className?: string
   /**
-   * Show country
+   * Default region
    */
-  country: INavMenuAnalystOption
+  defaultRegion: string
   /**
    * Menu footer
    */
@@ -40,7 +40,7 @@ export interface INavMenuAnalystProps {
   /**
    * Function to handle country click
    */
-  onCountryClick: () => void
+  onRegionChange?: (region: INavMenuAnalystRegion) => void
   /**
    * Function to handle dropdown click
    */
@@ -50,9 +50,21 @@ export interface INavMenuAnalystProps {
    */
   path?: string
   /**
+   * Menu region data options
+   */
+  regions: INavMenuAnalystRegion[]
+  /**
+   * Region modal display texts
+   */
+  regionModal: INavMMenuAnalystRegionModal
+  /**
    * Menu navigation options
    */
   sections: INavMenuAnalystSection[]
+  /**
+   * Query string params
+   */
+  queryString?: INavMenuAnalystQueryString
 }
 
 export interface INavMenuAnalystSection {
@@ -63,25 +75,41 @@ export interface INavMenuAnalystSection {
   /**
    * Section navigation options
    */
-  subChildren: INavMenuAnalystOption[]
+  children: INavMenuAnalystOption[]
 }
 
 export interface INavMenuAnalystOption {
   /**
-   * Option title
+   * Data for the option, can be a string or an array of INavMenuAnalystSection
    */
-  title?: string
-  /**
-   * Option href
-   */
-  data?: string | INavMenuAnalystSection[]
+  data?: string | INavMenuAnalystSection[] | ((option: INavMenuAnalystOption) => void)
   /**
    * Icons props
    */
-  icons?: INavMenuAnalysIcons
+  icons?: INavMenuAnalystIcons
+  /**
+   * Icon index type
+   */
+  icon?: string
+  /**
+   * Enables query string params
+   */
+  useQueryString?: boolean
+  /**
+   * Relationship when opening the link
+   */
+  rel?: string
+  /**
+   * Target when opening the link
+   */
+  target?: string
+  /**
+   * Option title
+   */
+  title?: string
 }
 
-export interface INavMenuAnalysIcons {
+export interface INavMenuAnalystIcons {
   /**
    * Icon normal state
    */
@@ -90,4 +118,20 @@ export interface INavMenuAnalysIcons {
    * Icon active state
    */
   active?: string
+}
+
+export interface INavMenuAnalystQueryString {
+  [key: string]: string
+}
+
+export interface INavMenuAnalystRegion {
+  lang: string
+  flag: string
+  name: string
+}
+
+export interface INavMMenuAnalystRegionModal {
+  title: string
+  cancel: string
+  apply: string
 }

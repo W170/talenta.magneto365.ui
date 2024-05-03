@@ -1,6 +1,6 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-import AnalystTemplate from './AnalystTemplate.component'
+import { AnalystTemplate } from './AnalystTemplate.component'
 import { HeaderAnalystProps, NavMenuAnalystProps } from '@constants/stories'
 
 const meta: Meta<typeof AnalystTemplate> = {

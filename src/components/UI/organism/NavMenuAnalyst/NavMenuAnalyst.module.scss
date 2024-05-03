@@ -15,7 +15,6 @@
     &::-webkit-scrollbar {
       background: #00000026;
       width: 4px;
-
       &-thumb {
         background: transparent;
         border: none;
@@ -27,11 +26,11 @@
       &-button {
         &:vertical {
           &:start:decrement {
-            background: transparent url('/src/assets/miniArrowGrayUp.svg') no-repeat center center;
+            background: transparent var(--custom-scrollbar-thumb-up-background) no-repeat center center;
           }
 
           &:end:increment {
-            background: transparent url('/src/assets/miniArrowGrayDown.svg') no-repeat center center;
+            background: transparent var(--custom-scrollbar-thumb-down-background) no-repeat center center;
           }
         }
       }
@@ -102,6 +101,13 @@
           transition: color 0.1s ease-in-out;
         }
       }
+    }
+  }
+  &__region {
+    img {
+      border-radius: 2px;
+      width: 21px;
+      height: 14px;
     }
   }
 }

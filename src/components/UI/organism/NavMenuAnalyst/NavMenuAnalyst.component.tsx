@@ -1,27 +1,33 @@
-import React, { useRef, useEffect, useCallback } from 'react'
-import { Divider, Option } from './children'
-import { INavMenuAnalystOption, INavMenuAnalystProps } from './NavMenuAnalyst.interface'
+import React, { useRef, useEffect, useCallback, useState } from 'react'
+import { Divider, Option, Modal } from './children'
+import { INavMenuAnalystOption, INavMenuAnalystProps, INavMenuAnalystRegion } from './NavMenuAnalyst.interface'
 import { LogoComponent } from '@components/UI/atoms'
 import { logoPropsDark } from '@constants/stories'
+import { MiniArrowGrayDown, MiniArrowGrayUp } from '@constants/icons.constants'
+import { navMenuAnalystIcons } from './NavMenuAnalyst.constants'
 import { useMediaQuery } from '@components/hooks'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './NavMenuAnalyst.module.scss'
 
-const NavMenuAnalyst: React.FC<INavMenuAnalystProps> = ({
+const Component: React.FC<INavMenuAnalystProps> = ({
   activeDropdown,
   className = '',
-  country,
+  defaultRegion,
   footer,
   isDrawerOpen,
   isFullWidth,
   isOpenedFromHeader,
   isScrollAnimated,
   logoProps = logoPropsDark,
-  onCountryClick,
   onDropdownClick,
+  onRegionChange,
   path,
+  queryString,
+  regions,
+  regionModal,
   sections
 }) => {
+  const [isRegionModalOpen, setIsRegionModalOpen] = useState<boolean>(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -38,11 +44,21 @@ const NavMenuAnalyst: React.FC<INavMenuAnalystProps> = ({
         return true
       }
       if (option.data && Array.isArray(option.data)) {
-        return option.data.some((c) => c.subChildren?.some((subC) => childrenActive(subC)))
+        return option.data.some((c) => c.children?.some((child) => childrenActive(child)))
       }
       return false
     },
     [activeDropdown]
+  )
+
+  const handleRegionChange = useCallback(
+    (localRegion: INavMenuAnalystRegion | null) => {
+      if (localRegion) {
+        onRegionChange && onRegionChange(localRegion)
+      }
+      setIsRegionModalOpen(false)
+    },
+    [onRegionChange]
   )
 
   const headerLogo = useMediaQuery(
@@ -56,17 +72,21 @@ const NavMenuAnalyst: React.FC<INavMenuAnalystProps> = ({
       {sections.map((section, i) => (
         <div key={`section-${section.title}-${i}`} className={CNM.get({ styles, cls: ['nav-menu-analyst__section'] })}>
           <Divider title={section.title} isFullWidth={isFullWidth} />
-          {section.subChildren.map((subChildren, j) => (
-            <div key={`section-option-${subChildren.title}-${j}`}>
+          {section.children.map((child, j) => (
+            <div key={`section-option-${child.title}-${j}`}>
               <Option
-                option={subChildren}
+                option={{
+                  ...child,
+                  icons: child.icon ? navMenuAnalystIcons[child.icon] : { ...child.icons }
+                }}
                 isFullWidth={isFullWidth}
                 path={path}
-                openedDropdown={childrenActive(subChildren) && isDrawerOpen}
+                openedDropdown={childrenActive(child) && isDrawerOpen}
                 isDrawerOpen={isDrawerOpen}
                 isOpenedFromHeader={isOpenedFromHeader}
                 isScrollAnimated={isScrollAnimated}
-                onClick={onDropdownClick}
+                onDropdownClick={onDropdownClick}
+                queryString={queryString}
               />
             </div>
           ))}
@@ -75,10 +95,32 @@ const NavMenuAnalyst: React.FC<INavMenuAnalystProps> = ({
     </div>
   )
 
-  const countryContainer = useMediaQuery(
-    <div className={CNM.get({ styles, cls: ['nav-menu-analyst__country'] })}>
-      <Option option={country} isFullWidth={isFullWidth} onClick={onCountryClick} />
-    </div>
+  const regionContainer = useMediaQuery(
+    regions && defaultRegion && (
+      <div className={CNM.get({ styles, cls: ['nav-menu-analyst__region'] })}>
+        <Option
+          isFullWidth={isFullWidth}
+          onOptionClick={() => setIsRegionModalOpen(true)}
+          option={{
+            icons: {
+              normal:
+                regions.find((r) => r.lang === defaultRegion)?.flag ||
+                (regions && regions.length > 0 ? regions[0].flag : '')
+            },
+            title:
+              regions.find((r) => r.lang === defaultRegion)?.name ||
+              (regions && regions.length > 0 ? regions[0].name : '')
+          }}
+        />
+        <Modal
+          defaultRegion={defaultRegion}
+          isOpen={isRegionModalOpen}
+          onClose={handleRegionChange}
+          regionModal={regionModal}
+          regions={regions}
+        />
+      </div>
+    )
   )
 
   const footerSections = useMediaQuery(
@@ -94,13 +136,23 @@ const NavMenuAnalyst: React.FC<INavMenuAnalystProps> = ({
           className={CNM.get({ styles, cls: ['nav-menu-analyst__footer-section'] })}
         >
           <Divider title={option.title} isFullWidth={isFullWidth} showMobile={false} />
-          {option.subChildren.map((subChildren, j) => (
-            <Option key={`footer-option-${subChildren.title}-${j}`} option={subChildren} isFullWidth={isFullWidth} />
+          {option.children.map((child, j) => (
+            <Option
+              key={`footer-option-${child.title}-${j}`}
+              option={child}
+              isFullWidth={isFullWidth}
+              queryString={queryString}
+            />
           ))}
         </div>
       ))}
     </footer>
   )
+
+  const customScrollbarButtonsStyle = {
+    '--custom-scrollbar-thumb-down-background': `url(${MiniArrowGrayDown})`,
+    '--custom-scrollbar-thumb-up-background': `url(${MiniArrowGrayUp})`
+  }
 
   return (
     <div
@@ -110,13 +162,20 @@ const NavMenuAnalyst: React.FC<INavMenuAnalystProps> = ({
       })}
     >
       {isFullWidth && headerLogo}
-      <div ref={containerRef} className={CNM.get({ styles, cls: ['nav-menu-analyst__container'] })}>
+      <div
+        ref={containerRef}
+        style={customScrollbarButtonsStyle as React.CSSProperties}
+        className={CNM.get({ styles, cls: ['nav-menu-analyst__container'] })}
+      >
         {sectionsContainer}
-        {countryContainer}
+        {regionContainer}
         {footerSections}
       </div>
     </div>
   )
 }
 
-export default NavMenuAnalyst
+/**
+ * Organism UI component of navigation menu analyst
+ */
+export const NavMenuAnalyst = Component
