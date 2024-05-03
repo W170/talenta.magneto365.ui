@@ -49,35 +49,27 @@ const Component: React.FC<IAnalystTemplateProps> = ({
     [toggleMenu]
   )
 
-  const header = useMediaQuery(
-    <HeaderAnalyst
-      onMainMenuClick={() => toggleMenu(true, true)}
-      {...headerProps}
-      className={CNM.get({ styles, cls: [`analyst-template__header`, headerProps.className] })}
-    />
-  )
-
   const sideMenu = useMediaQuery(<NavMenuAnalyst onDropdownClick={handleDropdownClick} {...navigationMenuProps} />, {
     sm: null
   })
 
-  const sideMenuDrawer = useMediaQuery(
-    <NavMenuDrawerAnalyst
-      onDropdownClick={(option) => handleDropdownClick(option, true, true)}
-      activeDropdown={activeDropdown}
-      isDrawerOpen={isDrawerOpen}
-      onClose={() => toggleMenu(false)}
-      isScrollAnimated={isMenuScrollAnimated}
-      isOpenedFromHeader={isOpenedFromHeader}
-      {...navigationMenuProps}
-    />
-  )
-
   return (
     <div className={CNM.get({ styles, cls: ['analyst-template', className] })}>
-      {header}
+      <HeaderAnalyst
+        onMainMenuClick={() => toggleMenu(true, true)}
+        {...headerProps}
+        className={CNM.get({ styles, cls: [`analyst-template__header`, headerProps.className] })}
+      />
       <div className={CNM.get({ styles, cls: ['analyst-template__container', containerClassName] })}>
-        {sideMenuDrawer}
+        <NavMenuDrawerAnalyst
+          onDropdownClick={(option) => handleDropdownClick(option, true, true)}
+          activeDropdown={activeDropdown}
+          isDrawerOpen={isDrawerOpen}
+          onClose={() => toggleMenu(false)}
+          isScrollAnimated={isMenuScrollAnimated}
+          isOpenedFromHeader={isOpenedFromHeader}
+          {...navigationMenuProps}
+        />
         {sideMenu}
         <main className={CNM.get({ styles, cls: ['analyst-template__children', childrenClassName] })}>{children}</main>
       </div>

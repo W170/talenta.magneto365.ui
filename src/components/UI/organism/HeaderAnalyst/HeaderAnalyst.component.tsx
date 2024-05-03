@@ -16,8 +16,6 @@ const Component: React.FC<IHeaderAnalystProps> = ({
   userMenuProps,
   userNotificationProps
 }) => {
-  const headerMenuButton = useMediaQuery(<MainButton onClick={onMainMenuClick} {...MenuButtonAnalystProps} />)
-
   const headerLogo = useMediaQuery(
     <a href={logoProps.href} rel={logoProps.rel} target={logoProps.target}>
       <LogoComponent {...logoProps} />
@@ -31,12 +29,6 @@ const Component: React.FC<IHeaderAnalystProps> = ({
     }
   )
 
-  const userNotification = useMediaQuery(
-    <Link iconProps={{ icon: Notification, size: 20 }} {...userNotificationProps} />
-  )
-
-  const userMenuDropdownAnalyst = useMediaQuery(<UserMenuWrapperAnalyst {...userMenuProps} />)
-
   const headerBreadCrumb = useMediaQuery(breadCrumbProps && <Breadcrumbs {...breadCrumbProps} />, {
     sm: null
   })
@@ -45,12 +37,12 @@ const Component: React.FC<IHeaderAnalystProps> = ({
     <header className={CNM.get({ styles, cls: ['header-analyst', className] })}>
       <div className={CNM.get({ styles, cls: ['header-analyst__container'] })}>
         <div className={CNM.get({ styles, cls: ['header-analyst__main-menu'] })}>
-          {headerMenuButton}
+          <MainButton onClick={onMainMenuClick} {...MenuButtonAnalystProps} />
           {headerLogo}
         </div>
         <div className={CNM.get({ styles, cls: ['header-analyst__user-menu'] })}>
-          {userNotificationProps && userNotification}
-          {userMenuDropdownAnalyst}
+          {userNotificationProps && <Link iconProps={{ icon: Notification, size: 20 }} {...userNotificationProps} />}
+          <UserMenuWrapperAnalyst {...userMenuProps} />
         </div>
       </div>
       <div className={CNM.get({ styles, cls: ['header-analyst__container'] })}>{headerBreadCrumb}</div>

@@ -3,7 +3,6 @@ import { ArrowDownWhite } from '@constants/icons.constants'
 import { IconItem } from '@components/UI/atoms'
 import { IMenuDropdownProps } from './MenuDropdown.interface'
 import { List } from './children'
-import { useMediaQuery } from '@components/hooks'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './MenuDropdown.module.scss'
 
@@ -34,20 +33,10 @@ const Component: React.FC<IMenuDropdownProps> = ({
     e.stopPropagation()
   }, [])
 
-  const prefix = useMediaQuery(prefixIcon && <IconItem size={18} {...prefixIcon} />)
-
-  const suffix = useMediaQuery(<IconItem size={18} {...suffixIcon} />)
-
-  const dropdown = useMediaQuery(
-    <List opened={localOpened ?? false} listClassName={listClassName}>
-      {children}
-    </List>
-  )
-
   return (
     <div className={CNM.get({ styles, cls: ['menu-dropdown', className] })} onClick={toggleOptions}>
       <div className={CNM.get({ styles, cls: ['menu-dropdown__container'] })}>
-        {prefix}
+        {prefixIcon && <IconItem size={18} {...prefixIcon} />}
         <span className={CNM.get({ styles, cls: ['menu-dropdown__title'] })}>{title}</span>
         <div
           className={CNM.get({
@@ -55,10 +44,14 @@ const Component: React.FC<IMenuDropdownProps> = ({
             cls: ['menu-dropdown__suffix', localOpened && 'menu-dropdown__suffix--visible']
           })}
         >
-          {suffix}
+          <IconItem size={18} {...suffixIcon} />
         </div>
       </div>
-      <div onClick={handleButtonClick}>{dropdown}</div>
+      <div onClick={handleButtonClick}>
+        <List opened={localOpened ?? false} listClassName={listClassName}>
+          {children}
+        </List>
+      </div>
     </div>
   )
 }
