@@ -23,8 +23,8 @@ const meta: Meta<typeof DateSelection> = {
     onClose: () => ({}),
     dateOptions: storyMonths,
     selectionHeader: 'Selecciona un mes',
-    cancelSelection: 'Cerrar',
-    applySelection: 'Seleccionar'
+    cancelLabel: 'Cerrar',
+    applyLabel: 'Seleccionar'
   }
 }
 
@@ -40,7 +40,7 @@ export const Years: Story = {
     onClose: () => ({}),
     dateOptions: storyYears,
     selectionHeader: 'Selecciona un año',
-    cancelSelection: 'Cerrar',
-    applySelection: 'Seleccionar'
+    cancelLabel: 'Cerrar',
+    applyLabel: 'Seleccionar'
   }
 }
