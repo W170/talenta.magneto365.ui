@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { UserMenuButtonAnalystProps } from '@constants/stories'
-import UserMenuButtonAnalyst from './UserMenuButtonAnalyst.component'
+import { UserMenuButtonAnalyst } from './UserMenuButtonAnalyst.component'
 
 const meta: Meta<typeof UserMenuButtonAnalyst> = {
   title: 'Atoms/User Menu Button Analyst',

@@ -1,7 +1,7 @@
 import React from 'react'
 import { MenuDropdownProps } from '@constants/stories'
 import { Meta, StoryObj } from '@storybook/react'
-import MenuDropdown from './MenuDropdown.component'
+import { MenuDropdown } from './MenuDropdown.component'
 
 const meta: Meta<typeof MenuDropdown> = {
   title: 'Atoms/Menu Dropdown',

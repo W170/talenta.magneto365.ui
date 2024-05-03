@@ -1,48 +1,47 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { ArrowDownWhite } from '@constants/icons.constants'
 import { IconItem } from '@components/UI/atoms'
 import { IMenuDropdownProps } from './MenuDropdown.interface'
+import { List } from './children'
 import { useMediaQuery } from '@components/hooks'
 import CNM from '@utils/classNameManager/classNameManager.util'
-import MenuDropdownList from './children/MenuDropdownList.component'
 import styles from './MenuDropdown.module.scss'
 
-const MenuDropdown: React.FC<IMenuDropdownProps> = ({
+const Component: React.FC<IMenuDropdownProps> = ({
   children,
   className = '',
   listClassName = '',
   onClick,
-  opened = false,
+  opened,
   prefixIcon,
   suffixIcon = { icon: ArrowDownWhite },
   title
 }) => {
-  const [localOpened, setLocalOpened] = useState<boolean>(opened)
+  const [localOpened, setLocalOpened] = useState<boolean | undefined>(opened)
 
-  const toggleOptions = () => {
+  const toggleOptions = useCallback(() => {
     if (onClick) {
       onClick(!localOpened)
-      return
     }
-    setLocalOpened(!localOpened)
-  }
+    setLocalOpened(opened ?? !localOpened)
+  }, [localOpened, onClick, opened])
 
   useEffect(() => {
     setLocalOpened(opened)
   }, [opened])
 
-  const handleButtonClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleButtonClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation()
-  }
+  }, [])
 
   const prefix = useMediaQuery(prefixIcon && <IconItem size={18} {...prefixIcon} />)
 
   const suffix = useMediaQuery(<IconItem size={18} {...suffixIcon} />)
 
   const dropdown = useMediaQuery(
-    <MenuDropdownList opened={localOpened} listClassName={listClassName}>
+    <List opened={localOpened ?? false} listClassName={listClassName}>
       {children}
-    </MenuDropdownList>
+    </List>
   )
 
   return (
@@ -64,4 +63,7 @@ const MenuDropdown: React.FC<IMenuDropdownProps> = ({
   )
 }
 
-export default MenuDropdown
+/**
+ * Atom UI component of menu dropdown
+ */
+export const MenuDropdown = Component

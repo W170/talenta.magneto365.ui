@@ -1,5 +1,5 @@
 import React from 'react'
-import { Breadcrumbs, UserMenuDropdownAnalyst } from '@components/UI/molecules'
+import { Breadcrumbs, UserMenuWrapperAnalyst } from '@components/UI/molecules'
 import { IHeaderAnalystProps } from './HeaderAnalyst.interface'
 import { LogoComponent, MainButton, Link } from '@components/UI/atoms'
 import { logoPropsDark, MenuButtonAnalystProps } from '@constants/stories'
@@ -8,27 +8,36 @@ import { useMediaQuery } from '@components/hooks'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './HeaderAnalyst.module.scss'
 
-const HeaderAnalyst: React.FC<IHeaderAnalystProps> = ({
+const Component: React.FC<IHeaderAnalystProps> = ({
   breadCrumbProps,
   className = '',
-  logoProps = logoPropsDark,
+  logoProps = { ...logoPropsDark },
   onMainMenuClick,
   userMenuProps,
   userNotificationProps
 }) => {
   const headerMenuButton = useMediaQuery(<MainButton onClick={onMainMenuClick} {...MenuButtonAnalystProps} />)
 
-  const headerLogo = useMediaQuery(<LogoComponent {...logoProps} />, {
-    sm: <LogoComponent {...logoProps} isoView={true} />
-  })
+  const headerLogo = useMediaQuery(
+    <a href={logoProps.href} rel={logoProps.rel} target={logoProps.target}>
+      <LogoComponent {...logoProps} />
+    </a>,
+    {
+      sm: (
+        <a href={logoProps.href} rel={logoProps.rel} target={logoProps.target}>
+          <LogoComponent {...logoProps} isoView={true} />
+        </a>
+      )
+    }
+  )
 
   const userNotification = useMediaQuery(
     <Link iconProps={{ icon: Notification, size: 20 }} {...userNotificationProps} />
   )
 
-  const userMenuDropdownAnalyst = useMediaQuery(<UserMenuDropdownAnalyst {...userMenuProps} />)
+  const userMenuDropdownAnalyst = useMediaQuery(<UserMenuWrapperAnalyst {...userMenuProps} />)
 
-  const headerBreadCrumb = useMediaQuery(<Breadcrumbs {...breadCrumbProps} />, {
+  const headerBreadCrumb = useMediaQuery(breadCrumbProps && <Breadcrumbs {...breadCrumbProps} />, {
     sm: null
   })
 
@@ -49,4 +58,7 @@ const HeaderAnalyst: React.FC<IHeaderAnalystProps> = ({
   )
 }
 
-export default HeaderAnalyst
+/**
+ * Organism UI component of header analyst
+ */
+export const HeaderAnalyst = Component

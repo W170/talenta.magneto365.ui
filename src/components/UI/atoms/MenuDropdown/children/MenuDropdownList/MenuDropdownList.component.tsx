@@ -3,7 +3,7 @@ import { IMenuDropdownListProps } from './MenuDropdownList.interface'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './MenuDropdownList.module.scss'
 
-const MenuDropdownList: React.FC<IMenuDropdownListProps> = ({ children, listClassName, opened }) => {
+const Component: React.FC<IMenuDropdownListProps> = ({ children, listClassName, opened }) => {
   return (
     <div className={CNM.get({ styles, cls: ['menu-dropdown-list', opened && 'menu-dropdown-list--visible'] })}>
       <div
@@ -18,4 +18,7 @@ const MenuDropdownList: React.FC<IMenuDropdownListProps> = ({ children, listClas
   )
 }
 
-export default MenuDropdownList
+/**
+ * Atom UI child component of menu dropdown
+ */
+export const MenuDropdownList = Component

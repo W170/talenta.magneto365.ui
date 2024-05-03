@@ -1,11 +1,11 @@
-import { IBreadcrumbs, IUserMenuDropdownAnalystProps } from '@components/UI/molecules'
+import { IBreadcrumbs, IUserMenuWrapperAnalystProps } from '@components/UI/molecules'
 import { ILogoComponent, ILinkProps } from '@components/UI/atoms'
 
 export interface IHeaderAnalystProps {
   /**
    * Breadcrumbs props
    */
-  breadCrumbProps: IBreadcrumbs
+  breadCrumbProps?: IBreadcrumbs
   /**
    * Class name
    */
@@ -13,7 +13,7 @@ export interface IHeaderAnalystProps {
   /**
    * Logo props
    */
-  logoProps?: ILogoComponent
+  logoProps?: ILogoAnalystProps
   /**
    * Main menu button click handler
    */
@@ -21,9 +21,24 @@ export interface IHeaderAnalystProps {
   /**
    * User menu data and handlers
    */
-  userMenuProps: IUserMenuDropdownAnalystProps
+  userMenuProps: IUserMenuWrapperAnalystProps
   /**
    * User notification link props
    */
   userNotificationProps?: ILinkProps
+}
+
+export interface ILogoAnalystProps extends ILogoComponent {
+  /**
+   * Link to redirect
+   */
+  href?: string
+  /**
+   * Link rel
+   */
+  rel?: string
+  /**
+   * Link target
+   */
+  target?: string
 }
