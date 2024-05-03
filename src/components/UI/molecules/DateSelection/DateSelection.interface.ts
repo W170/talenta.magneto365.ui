@@ -1,26 +1,25 @@
-import React from 'react';
-import {IOptionValues} from "@components/UI/atoms/DateOptions";
+import { IOptionValues } from '@components/UI/atoms/DateOptions'
 
 export interface IDateSelection {
   /*
    */
-  isOpen: boolean;
+  applyLabel: string
   /*
    */
-  onClose: () => void;
-  /*
-   */
-  selectionHeader: string
-  /*
-   */
-  cancelSelection: string
-  /*
-   */
-  applySelection: string
+  cancelLabel: string
   /*
    */
   dateOptions: IOptionValues[]
   /*
    */
-  onClick: (event: React.MouseEvent<HTMLLIElement>) => void
+  isOpen: boolean
+  /*
+   */
+  onClose: () => void
+  /*
+   */
+  onApplyCallback: (optionValue: string | number | null) => void
+  /*
+   */
+  selectionHeader: string
 }
