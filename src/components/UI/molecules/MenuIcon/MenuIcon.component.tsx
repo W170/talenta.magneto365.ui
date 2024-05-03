@@ -3,14 +3,31 @@ import { IconItem } from '../../atoms'
 import { IMenuIcon } from './MenuIcon.interface'
 import style from './menuIcon.module.scss'
 
-const Component: React.FC<IMenuIcon> = ({ text, icon, url, type = 'link', onClick, isActive, className = '' }) => {
+const Component: React.FC<IMenuIcon> = ({
+  text,
+  icon,
+  iconSize = 20,
+  url,
+  type = 'link',
+  onClick,
+  isActive,
+  className = '',
+  rel,
+  target
+}) => {
   const menuActive = isActive ? style['isActive'] : ''
 
   return (
     <>
       {type === 'link' ? (
-        <a href={url} className={`${style['magneto-ui-menu-icon']} ${menuActive} ${className}`} title={text}>
-          {icon && <IconItem size={20} hover={false} icon={icon} />}
+        <a
+          href={url}
+          className={`${style['magneto-ui-menu-icon']} ${menuActive} ${className}`}
+          title={text}
+          rel={rel}
+          target={target}
+        >
+          {icon && <IconItem size={iconSize} hover={false} icon={icon} />}
           <p className={style['magneto-ui-menu-text']}>{text}</p>
         </a>
       ) : (
@@ -19,7 +36,7 @@ const Component: React.FC<IMenuIcon> = ({ text, icon, url, type = 'link', onClic
           className={`${style['magneto-ui-menu-icon']} ${menuActive} ${className}`}
           title={text}
         >
-          {icon && <IconItem size={20} hover={false} icon={icon} />}
+          {icon && <IconItem size={iconSize} hover={false} icon={icon} />}
           <p className={style['magneto-ui-menu-text']}>{text}</p>
         </button>
       )}
