@@ -12,6 +12,9 @@ export interface IDateSelection {
   dateOptions: IOptionValues[]
   /*
    */
+  disabled?: boolean
+  /*
+   */
   isOpen: boolean
   /*
    */
