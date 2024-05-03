@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DateOptions } from '@components/UI/atoms/DateOptions'
 import { MobileDrawer } from '@components/UI/molecules'
 import { IDateSelection } from '@components/UI/molecules/DateSelection/DateSelection.interface'
@@ -8,6 +8,7 @@ const Component: React.FC<IDateSelection> = ({
   applyLabel,
   cancelLabel,
   dateOptions,
+  disabled,
   isOpen,
   onClose,
   onApplyCallback,
@@ -30,6 +31,13 @@ const Component: React.FC<IDateSelection> = ({
     onApplyCallback(selectedOption)
     onClose()
   }
+
+  useEffect(() => {
+    if (disabled) {
+      setSelectedOption(null)
+      setInitialSelectedOption(null)
+    }
+  }, [disabled])
 
   return (
     <MobileDrawer isOpen={isOpen} onClose={onClose}>
