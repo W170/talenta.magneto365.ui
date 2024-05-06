@@ -19,7 +19,7 @@
   &:hover {
     background-color: v.$disabled-color-gray;
   }
-  .magneto-ui-menu-text {
+  &__menu-text {
     font-size: 10px;
     @media (min-width: v.$screen-xxs) {
       font-size: 14px;

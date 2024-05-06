@@ -28,7 +28,7 @@ const Component: React.FC<IMenuIcon> = ({
           target={target}
         >
           {icon && <IconItem size={iconSize} hover={false} icon={icon} />}
-          <p className={style['magneto-ui-menu-text']}>{text}</p>
+          <p className={style['magneto-ui-menu-icon__menu-text']}>{text}</p>
         </a>
       ) : (
         <button
@@ -37,7 +37,7 @@ const Component: React.FC<IMenuIcon> = ({
           title={text}
         >
           {icon && <IconItem size={iconSize} hover={false} icon={icon} />}
-          <p className={style['magneto-ui-menu-text']}>{text}</p>
+          <p className={style['magneto-ui-menu-icon__menu-text']}>{text}</p>
         </button>
       )}
     </>
