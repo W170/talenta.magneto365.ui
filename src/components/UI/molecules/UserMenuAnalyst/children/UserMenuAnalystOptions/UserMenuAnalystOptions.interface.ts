@@ -7,6 +7,10 @@ export interface IUserMenuAnalystOptionsProps {
    */
   className?: string
   /**
+   * Is menu open or not
+   */
+  isMenuOpen?: boolean
+  /**
    * Class name for each option
    */
   optionClassNames?: IUserMenuAnalystOptionClassNames

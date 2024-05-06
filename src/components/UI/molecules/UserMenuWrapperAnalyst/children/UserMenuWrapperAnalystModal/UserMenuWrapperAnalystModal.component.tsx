@@ -1,6 +1,6 @@
 import React from 'react'
 import { IUserMenuWrapperAnalystModalProps } from '.'
-import { Modal, UserMenuAnalyst } from '@components/UI/molecules'
+import { MobileDrawer, UserMenuAnalyst } from '@components/UI/molecules'
 import { UserMenuButtonAnalyst } from '@components/UI/atoms'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './UserMenuWrapperAnalystModal.module.scss'
@@ -15,15 +15,18 @@ const Component: React.FC<IUserMenuWrapperAnalystModalProps> = ({
 }) => {
   return (
     <React.Fragment>
-      <Modal
-        className={CNM.get({ styles, cls: ['user-menu-wrapper-analyst-modal'] })}
+      <MobileDrawer
         isOpen={clickOut}
         onClose={() => setClickOut(!clickOut)}
-        title=""
-        description=""
+        className={CNM.get({ styles, cls: ['user-menu-wrapper-analyst-modal'] })}
       >
-        <UserMenuAnalyst user={user} headerSections={headerSections} footerSections={footerSections} />
-      </Modal>
+        <UserMenuAnalyst
+          isMenuOpen={clickOut}
+          user={user}
+          headerSections={headerSections}
+          footerSections={footerSections}
+        />
+      </MobileDrawer>
       <UserMenuButtonAnalyst user={user.name} company={companyName} onClick={() => setClickOut(true)} />
     </React.Fragment>
   )

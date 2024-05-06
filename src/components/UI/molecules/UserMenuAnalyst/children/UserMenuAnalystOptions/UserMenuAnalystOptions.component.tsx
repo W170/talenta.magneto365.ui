@@ -5,7 +5,13 @@ import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './UserMenuAnalystOptions.module.scss'
 import { Option } from './children'
 
-const Component: React.FC<IUserMenuAnalystOptionsProps> = ({ className, optionClassNames, options, queryString }) => {
+const Component: React.FC<IUserMenuAnalystOptionsProps> = ({
+  className,
+  isMenuOpen,
+  optionClassNames,
+  options,
+  queryString
+}) => {
   const isLastSection = useMemo(() => options?.length === 1, [options])
 
   return (
@@ -15,6 +21,7 @@ const Component: React.FC<IUserMenuAnalystOptionsProps> = ({ className, optionCl
           {option.children?.map((item, j) => (
             <Option
               key={`user-menu-analyst-option-${j}`}
+              isOpen={isMenuOpen}
               option={item}
               classNames={optionClassNames}
               queryString={queryString}

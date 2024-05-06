@@ -3,7 +3,9 @@
 .magneto-ui-nav-menu-drawer-analyst {
   &__drawer {
     > aside {
-      width: 300px;
+      @media screen and (min-width: v.$screen-md) {
+        width: 300px;
+      }
       > button {
         > img {
           filter: invert(100%) brightness(200%);

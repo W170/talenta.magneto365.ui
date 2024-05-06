@@ -51,7 +51,7 @@ const Component: React.FC<INavMenuAnalystOptionProps> = ({
         return pathName === option.data
       }
       if (option.data && Array.isArray(option.data)) {
-        return option.data.some((c) => c.children?.some((child) => isActive(child)))
+        return option.data.some((child) => child.children?.some((subChild) => isActive(subChild)))
       }
       return false
     },
@@ -61,7 +61,7 @@ const Component: React.FC<INavMenuAnalystOptionProps> = ({
   const childrenActive = useCallback(
     (option: INavMenuAnalystOption): boolean => {
       if (option.data && Array.isArray(option.data)) {
-        return option.data.some((c) => c.children?.some((child) => isActive(child)))
+        return option.data.some((child) => child.children?.some((subChild) => isActive(subChild)))
       }
       return false
     },

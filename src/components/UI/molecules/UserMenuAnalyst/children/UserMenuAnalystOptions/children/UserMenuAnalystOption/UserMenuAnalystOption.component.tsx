@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useState, useEffect } from 'react'
 import { ArrowLeft2 } from '@constants/icons.constants'
 import { IUserMenuAnalystOption, IUserMenuAnalystOptionProps } from './UserMenuAnalystOption.interface'
 import { MenuDropdown } from '@components/UI/atoms'
@@ -7,9 +7,13 @@ import { userMenuAnalystIcons } from '../../../../UserMenuAnalyst.constants'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './UserMenuAnalystOption.module.scss'
 
-const Component: React.FC<IUserMenuAnalystOptionProps> = ({ classNames, option, queryString = {} }) => {
+const Component: React.FC<IUserMenuAnalystOptionProps> = ({ classNames, option, isOpen, queryString = {} }) => {
   const [isOpenDropdown, setIsOpenDropdown] = useState<boolean>(false)
   const { useQueryString = false, isLinkHighlighted = false, rel = 'noreferrer', target = '_self' } = option
+
+  useEffect(() => {
+    setIsOpenDropdown(false)
+  }, [isOpen])
 
   const url = useMemo(() => {
     if (option.data && !Array.isArray(option.data) && typeof option.data === 'string') {

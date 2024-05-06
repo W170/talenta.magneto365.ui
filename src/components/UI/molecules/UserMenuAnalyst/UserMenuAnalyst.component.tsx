@@ -6,7 +6,13 @@ import { UserRoundedGray } from '@constants/icons.constants'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './UserMenuAnalyst.module.scss'
 
-const Component: React.FC<IUserMenuAnalystProps> = ({ headerSections, footerSections, user, queryString }) => {
+const Component: React.FC<IUserMenuAnalystProps> = ({
+  headerSections,
+  isMenuOpen = false,
+  footerSections,
+  user,
+  queryString
+}) => {
   const avatar = useMemo(() => user.avatar || UserRoundedGray, [user])
 
   return (
@@ -23,6 +29,7 @@ const Component: React.FC<IUserMenuAnalystProps> = ({ headerSections, footerSect
           <UserMenuAnalystOptions
             options={headerSections || []}
             queryString={queryString}
+            isMenuOpen={isMenuOpen}
             className={CNM.get({
               styles,
               cls: ['user-menu-analyst__company', headerSections?.length === 0 && 'user-menu-analyst__company--empty']

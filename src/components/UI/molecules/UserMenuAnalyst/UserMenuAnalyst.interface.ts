@@ -1,10 +1,14 @@
-import { IUserMenuAnalystOption } from './children'
+import { IUserMenuAnalystOption } from './children/UserMenuAnalystOptions/children'
 
 export interface IUserMenuAnalystProps {
   /**
    * Array of menu options by section for the header
    */
   headerSections?: IUserMenuAnalystSection[]
+  /**
+   * Is menu open or not
+   */
+  isMenuOpen?: boolean
   /**
    * Array of menu options by section for the footer
    */

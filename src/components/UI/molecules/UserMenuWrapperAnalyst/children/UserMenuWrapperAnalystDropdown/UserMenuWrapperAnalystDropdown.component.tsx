@@ -19,7 +19,14 @@ const Component: React.FC<IUserMenuWrapperAnalystDropdownProps> = ({
       <Popover
         widthBase={'auto' as unknown as number}
         show={clickOut}
-        content={<UserMenuAnalyst user={user} headerSections={headerSections} footerSections={footerSections} />}
+        content={
+          <UserMenuAnalyst
+            isMenuOpen={clickOut}
+            user={user}
+            headerSections={headerSections}
+            footerSections={footerSections}
+          />
+        }
         positionX="left"
         positionY="bottom"
       >
