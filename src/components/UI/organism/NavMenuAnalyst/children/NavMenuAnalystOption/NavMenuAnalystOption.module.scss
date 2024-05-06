@@ -10,9 +10,8 @@
     height: fit-content;
     position: relative;
     > p {
-      color: v.$color-white !important;
+      color: v.$color-white;
       display: none;
-      font-size: 14px !important;
     }
     > img {
       height: 18px;
@@ -31,7 +30,7 @@
         border-radius: 0 8px 8px 0;
       }
       > p {
-        color: v.$color-blue-light4 !important;
+        color: v.$color-blue-light4;
       }
     }
     &--full-menu {
@@ -81,7 +80,7 @@
         border-radius: 0 8px 8px 0;
       }
       span {
-        color: v.$color-blue-light4 !important;
+        color: v.$color-blue-light4;
       }
     }
     &--hover {
@@ -99,7 +98,7 @@
     &--active {
       background: #00082f66;
       > p {
-        color: v.$color-white !important;
+        color: v.$color-white;
       }
     }
     &--full-menu {
@@ -112,7 +111,7 @@
     }
   }
   &__dropdown-list &__dropdown {
-    border-radius: 4px !important;
+    border-radius: 4px;
   }
   &__dropdown-title {
     padding: 10px 14px;
