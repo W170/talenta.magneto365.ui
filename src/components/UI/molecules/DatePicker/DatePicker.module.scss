@@ -1,0 +1,11 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui--date-picker {
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}

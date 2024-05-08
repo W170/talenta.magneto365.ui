@@ -13,7 +13,7 @@ const Component: React.FC<IAvatar> = ({ userImage, fallbackImage, onClick }) => 
 
   return (
     <div className={styles.avatarComponent} onClick={onClick}>
-      {userImage && !imageError && <img src={userImage} alt="User Avatar" onError={handleError} />}
+      {userImage && !imageError && <img src={userImage} alt="User Avatar" loading="lazy" onError={handleError} />}
       {(!userImage || imageError) && (
         <div className={styles['magneto-ui-default-avatar']}>
           <IconItem icon={fallbackImage || User} hover={false} />

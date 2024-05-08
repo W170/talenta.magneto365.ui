@@ -8,7 +8,7 @@ const ListMenuText: React.FC<IListMenuText> = ({ title, links, createAccount, is
   return (
     <div className={`${style[`${classMUI}-list-menu`]}`}>
       <p className={`${style[`${classMUI}-list-menu__title`]}`}>{title}</p>
-      {links.map(({ tag, href, isCreateAccount }, i) =>
+      {links.map(({ tag, href, isCreateAccount, openNewTab }, i) =>
         isCreateAccount
           ? tag && (
               <div key={i} className={`${style[`${classMUI}-list-menu__create-account`]}`}>
@@ -23,7 +23,14 @@ const ListMenuText: React.FC<IListMenuText> = ({ title, links, createAccount, is
               </div>
             )
           : tag && (
-              <a className={`${style[`${classMUI}-list-menu__link`]}`} title={tag} key={i} href={href}>
+              <a
+                className={`${style[`${classMUI}-list-menu__link`]}`}
+                title={tag}
+                key={i}
+                href={href}
+                target={openNewTab ? '_blank' : '_self'}
+                rel="noreferrer"
+              >
                 {tag}
               </a>
             )

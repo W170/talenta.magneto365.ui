@@ -29,9 +29,11 @@ interface IMenuList {
   /**
    * this property containt url redirection
    */
-  href: ''
+  href: string
   /**
    * This property show create account button
    */
   isCreateAccount?: boolean
+
+  openNewTab?: boolean
 }
