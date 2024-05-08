@@ -1,0 +1,23 @@
+@use '../../../../shared/stylesheets/variables' as v;
+
+.magneto-ui-analyst-template {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  &__header {
+    z-index: 49;
+  }
+  &__container {
+    height: calc(100% - 60px);
+    display: flex;
+    flex-direction: row;
+    @media screen and (min-width: v.$screen-md) {
+      height: calc(100% - 76px);
+    }
+  }
+  &__children {
+    flex: 1;
+    height: 100%;
+    overflow: auto;
+  }
+}

@@ -8,6 +8,7 @@ import { Add } from '../../../../constants/icons.constants'
 const DEFAULT_PADDING = 20
 
 const Component: React.FC<IDrawer> = ({
+  className = '',
   isOpen,
   direction = 'left',
   isFull,
@@ -30,7 +31,7 @@ const Component: React.FC<IDrawer> = ({
 
   return (
     <DrawerPortal>
-      <div className={`${style['magneto-ui-drawer']} ${style[fullDrawer]}`}>
+      <div className={`${style['magneto-ui-drawer']} ${style[fullDrawer]} ${className}`}>
         <aside className={`${style[showDrawer]}`} style={{ padding: paddingValue }}>
           {!hideButton && (
             <button className={style['magneto-ui-close-button']} onClick={onClose}>

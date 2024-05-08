@@ -1,0 +1,22 @@
+.magneto-ui-menu-dropdown-list {
+  visibility: hidden;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: all 0.3s ease-in-out;
+  &--visible {
+    visibility: visible;
+    grid-template-rows: 1fr;
+  }
+  &__container {
+    color: inherit;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  &__children {
+    padding: 10px;
+    > * {
+      display: block;
+    }
+  }
+}

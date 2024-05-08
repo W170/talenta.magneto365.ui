@@ -1,3 +1,4 @@
+export * from './AnalystTemplate'
 export * from './Footer'
 export * from './loginJobsTemplate'
 export * from './loginTemplate'

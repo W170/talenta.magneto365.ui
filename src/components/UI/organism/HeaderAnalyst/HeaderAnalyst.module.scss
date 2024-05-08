@@ -1,0 +1,49 @@
+@use '../../../../shared/stylesheets/variables' as v;
+
+.magneto-ui-header-analyst {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: v.$color-blue-dark1;
+  min-height: 60px;
+  @media screen and (min-width: v.$screen-md) {
+    min-height: 76px;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 20px;
+    &:last-child {
+      a {
+        text-decoration: none;
+      }
+      p {
+        color: #99a4af;
+        font-size: 13px;
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+  &__main-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    > button {
+      padding: 0;
+    }
+  }
+  &__user-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    > a {
+      cursor: pointer;
+      p {
+        display: none;
+      }
+    }
+  }
+}

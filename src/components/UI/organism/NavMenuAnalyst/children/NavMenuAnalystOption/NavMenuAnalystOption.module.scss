@@ -1,0 +1,120 @@
+@use '../../../../../../shared/stylesheets/variables' as v;
+
+.magneto-ui-nav-menu-analyst-option {
+  &__link {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    height: fit-content;
+    position: relative;
+    > p {
+      color: v.$color-white;
+      display: none;
+    }
+    > img {
+      height: 18px;
+      width: 18px;
+    }
+    &--active {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 4px;
+        height: 18px;
+        transform: translateY(-50%);
+        background-color: v.$color-blue-light3;
+        border-radius: 0 8px 8px 0;
+      }
+      > p {
+        color: v.$color-blue-light4;
+      }
+    }
+    &--full-menu {
+      > p {
+        display: inline-block;
+      }
+    }
+    &:hover {
+      background: #00082f66;
+      border-radius: 0;
+    }
+  }
+  &__dropdown {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    background-color: transparent;
+    font-size: 14px;
+    > div:first-child {
+      > span,
+      > div {
+        display: none;
+      }
+      > img {
+        min-width: 18px;
+        min-height: 18px;
+      }
+    }
+    &--full-menu {
+      > div:first-child {
+        > span,
+        > div {
+          display: inline-block;
+        }
+      }
+    }
+    &--active {
+      background: #00082f66;
+      border-radius: 0 4px 4px 0;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 13px;
+        left: 0;
+        width: 4px;
+        height: 18px;
+        background-color: v.$color-blue-light3;
+        border-radius: 0 8px 8px 0;
+      }
+      span {
+        color: v.$color-blue-light4;
+      }
+    }
+    &--hover {
+      &:not(&--active):hover {
+        background: #00082f66;
+        border-radius: 0 4px 4px 0;
+      }
+    }
+  }
+  &__dropdown-list {
+    padding: 10px 24px 0;
+  }
+  &__dropdown-list > &__link {
+    padding: 10px 14px;
+    &--active {
+      background: #00082f66;
+      > p {
+        color: v.$color-white;
+      }
+    }
+    &--full-menu {
+      > p {
+        display: inline-block;
+      }
+    }
+    &:hover {
+      border-radius: 4px;
+    }
+  }
+  &__dropdown-list &__dropdown {
+    border-radius: 4px;
+  }
+  &__dropdown-title {
+    padding: 10px 14px;
+    color: v.$color-blue-light3;
+  }
+}

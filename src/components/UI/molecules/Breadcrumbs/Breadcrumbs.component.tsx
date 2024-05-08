@@ -4,11 +4,11 @@ import { IBreadcrumbs } from './Breadcrumbs.interface'
 import styles from './Breadcrumbs.modules.scss'
 import { iconPropsBreadCrumb } from '@constants/stories'
 
-const Component: React.FC<IBreadcrumbs> = ({ homeUrl, breadcrumbProps }) => {
+const Component: React.FC<IBreadcrumbs> = ({ homeUrl, breadcrumbProps, iconProps = iconPropsBreadCrumb }) => {
   return (
     <div className={styles.BreadcrumbsComponent}>
       <a href={homeUrl}>
-        <IconItem {...iconPropsBreadCrumb} />
+        <IconItem {...iconProps} />
       </a>
       {breadcrumbProps && <Breadcrumb {...breadcrumbProps} />}
     </div>

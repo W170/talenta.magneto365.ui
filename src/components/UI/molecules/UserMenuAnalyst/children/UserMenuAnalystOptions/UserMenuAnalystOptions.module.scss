@@ -1,0 +1,10 @@
+.magneto-ui-user-menu-analyst-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  &__divider {
+    > div {
+      margin: 0;
+    }
+  }
+}

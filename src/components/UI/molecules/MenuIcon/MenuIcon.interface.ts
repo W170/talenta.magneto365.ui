@@ -6,6 +6,10 @@ export interface IMenuIcon {
    */
   icon?: string | undefined
   /**
+   * You can set the size here
+   */
+  iconSize?: number
+  /**
    * Here is the menu text
    */
   text: string
@@ -34,6 +38,15 @@ export interface IMenuIcon {
    */
   size?: number
   /**
-   * You can set the iconUrl here
+   * Class name of each menu icon type
    */
+  className?: string
+  /**
+   * Relationship when opening the link
+   */
+  rel?: string
+  /**
+   * Target when opening the link
+   */
+  target?: string
 }
