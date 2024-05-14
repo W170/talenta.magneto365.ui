@@ -32,5 +32,5 @@ export interface IMenuDropdownProps {
   /**
    * Title of the dropdown
    */
-  title: string
+  title: string | React.ReactNode
 }
