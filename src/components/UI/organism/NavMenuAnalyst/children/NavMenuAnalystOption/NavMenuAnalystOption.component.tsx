@@ -20,7 +20,7 @@ const Component: React.FC<INavMenuAnalystOptionProps> = ({
   path,
   queryString = {}
 }) => {
-  const { useQueryString = false, rel = 'noreferrer', target = '_self' } = option
+  const { useQueryString = true, rel = 'noreferrer', target = '_self' } = option
   const [isOpenDropdown, setIsOpenDropdown] = useState<boolean>(openedDropdown)
   const [scrolledToOption, setScrolledToOption] = useState<boolean>(false)
   const optionRef = useRef<HTMLDivElement>(null)
@@ -43,19 +43,31 @@ const Component: React.FC<INavMenuAnalystOptionProps> = ({
     }
   }, [isDrawerOpen])
 
+  const getPathname = useCallback((url?: string) => {
+    try {
+      if (!url) return null
+
+      if (url.startsWith('/')) return url
+
+      return new URL(url).pathname
+    } catch (error) {
+      return null
+    }
+  }, [])
+
   const isActive = useCallback(
     (option: INavMenuAnalystOption): boolean => {
-      const pathName = path || window.location.pathname
+      const pathName = getPathname(path) || window.location.pathname
 
       if (option.data && typeof option.data === 'string') {
-        return pathName === option.data
+        return pathName === getPathname(option.data)
       }
       if (option.data && Array.isArray(option.data)) {
         return option.data.some((child) => child.children?.some((subChild) => isActive(subChild)))
       }
       return false
     },
-    [path]
+    [path, getPathname]
   )
 
   const childrenActive = useCallback(
@@ -126,6 +138,7 @@ const Component: React.FC<INavMenuAnalystOptionProps> = ({
       <MenuIcon
         text={option.title || ''}
         icon={icons(isActive(option), option.icons)}
+        iconProps={{ fallbackIcon: option.icons?.fallbackIcon, showDefaultFallback: false }}
         iconSize={18}
         url={url}
         className={linkStyles}
@@ -144,7 +157,7 @@ const Component: React.FC<INavMenuAnalystOptionProps> = ({
   }
 
   return (
-    <div ref={optionRef}>
+    <div title={option.title} ref={optionRef}>
       <MenuDropdown
         className={dropdownStyles}
         listClassName={CNM.get({

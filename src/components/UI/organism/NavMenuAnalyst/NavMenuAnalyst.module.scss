@@ -91,6 +91,9 @@
       a {
         &:hover {
           background-color: transparent;
+          &::before {
+            display: none;
+          }
           p {
             color: v.$color-white;
           }
