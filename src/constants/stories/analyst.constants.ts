@@ -40,6 +40,10 @@ export const UserNotificationProps: ILinkProps = { iconProps: { icon: Notificati
 
 export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
   user: UserAnalystProps,
+  action: {
+    title: 'Volver a Comfama',
+    data: '/comfama'
+  },
   companyName: 'Comfama',
   queryString: {
     lng: 'es-CO'
@@ -48,15 +52,10 @@ export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
     {
       children: [
         {
-          title: 'Comfama',
+          title: 'Administrando: Farmacias del Sur',
           data: [
             {
               children: [
-                {
-                  title: 'Farmacias del Sur',
-                  data: '/farmacias-del-sur',
-                  useQueryString: true
-                },
                 {
                   title: 'Metales sas',
                   data: '/metales-sas'
@@ -116,6 +115,7 @@ export const HeaderAnalystProps: IHeaderAnalystProps = {
   className: 'magneto-ui-header-analyst',
   logoProps: {
     ...logoPropsDark,
+    alt: 'hola',
     href: '/inicio',
     rel: 'noreferrer',
     target: '_self'
