@@ -62,6 +62,10 @@ export interface INavMenuAnalystProps {
    */
   sections: INavMenuAnalystSection[]
   /**
+   * Function to handle drawer menu visibility
+   */
+  setIsDrawerOpen?: (isOpen: boolean) => void
+  /**
    * Query string params
    */
   queryString?: INavMenuAnalystQueryString
@@ -118,6 +122,10 @@ export interface INavMenuAnalystIcons {
    * Icon active state
    */
   active?: string
+  /**
+   * Fallback icon when icon is not found
+   */
+  fallbackIcon?: string
 }
 
 export interface INavMenuAnalystQueryString {

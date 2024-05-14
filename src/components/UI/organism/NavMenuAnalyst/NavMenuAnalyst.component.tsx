@@ -3,7 +3,7 @@ import { Divider, Option, Modal } from './children'
 import { INavMenuAnalystOption, INavMenuAnalystProps, INavMenuAnalystRegion } from './NavMenuAnalyst.interface'
 import { LogoComponent } from '@components/UI/atoms'
 import { logoPropsDark } from '@constants/stories'
-import { MiniArrowGrayDown, MiniArrowGrayUp } from '@constants/icons.constants'
+import { IsoLogoMagnetoDark, MiniArrowGrayDown, MiniArrowGrayUp } from '@constants/icons.constants'
 import { navMenuAnalystIcons } from './NavMenuAnalyst.constants'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './NavMenuAnalyst.module.scss'
@@ -17,14 +17,15 @@ const Component: React.FC<INavMenuAnalystProps> = ({
   isFullWidth,
   isOpenedFromHeader,
   isScrollAnimated,
-  logoProps = logoPropsDark,
+  logoProps = { ...logoPropsDark },
   onDropdownClick,
   onRegionChange,
   path,
   queryString,
   regions,
   regionModal,
-  sections
+  sections,
+  setIsDrawerOpen
 }) => {
   const [isRegionModalOpen, setIsRegionModalOpen] = useState<boolean>(false)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -59,6 +60,11 @@ const Component: React.FC<INavMenuAnalystProps> = ({
     },
     [onRegionChange]
   )
+
+  const handleRegionModal = useCallback(() => {
+    setIsDrawerOpen && setIsDrawerOpen(false)
+    setIsRegionModalOpen(true)
+  }, [setIsDrawerOpen])
 
   const customScrollbarButtonsStyle = {
     '--custom-scrollbar-thumb-down-background': `url(${MiniArrowGrayDown})`,
@@ -114,9 +120,10 @@ const Component: React.FC<INavMenuAnalystProps> = ({
           <div className={CNM.get({ styles, cls: ['nav-menu-analyst__region'] })}>
             <Option
               isFullWidth={isFullWidth}
-              onOptionClick={() => setIsRegionModalOpen(true)}
+              onOptionClick={handleRegionModal}
               option={{
                 icons: {
+                  fallbackIcon: IsoLogoMagnetoDark,
                   normal:
                     regions.find((r) => r.lang === defaultRegion)?.flag ||
                     (regions && regions.length > 0 ? regions[0].flag : '')
