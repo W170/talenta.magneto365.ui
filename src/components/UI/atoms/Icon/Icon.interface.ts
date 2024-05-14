@@ -1,5 +1,13 @@
 export interface IconProps {
   /**
+   * Sets the fallback icon when the icon is not available
+   */
+  fallbackIcon?: string
+  /**
+   * Shows the default fallback icon with alt text
+   */
+  showDefaultFallback?: boolean
+  /**
    * Here is the icon component
    */
   icon?: string | null

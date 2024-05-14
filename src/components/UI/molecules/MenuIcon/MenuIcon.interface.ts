@@ -1,3 +1,5 @@
+import { IconProps } from '@components/UI/atoms'
+
 type itemType = 'button' | 'link'
 
 export interface IMenuIcon {
@@ -5,6 +7,10 @@ export interface IMenuIcon {
    * You can set the icon here
    */
   icon?: string | undefined
+  /**
+   * You can set the icon props here
+   */
+  iconProps?: IconProps
   /**
    * You can set the size here
    */

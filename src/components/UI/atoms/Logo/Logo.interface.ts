@@ -1,5 +1,13 @@
 export interface ILogoComponent {
   /**
+   * Sets the fallback image when the image is not available
+   */
+  fallbackImage?: string
+  /**
+   * Shows the default fallback icon with alt text
+   */
+  showDefaultFallback?: boolean
+  /**
    * This function change between logo and isoLogo
    */
   isoView?: boolean

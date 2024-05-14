@@ -6,6 +6,7 @@ import style from './menuIcon.module.scss'
 const Component: React.FC<IMenuIcon> = ({
   text,
   icon,
+  iconProps,
   iconSize = 20,
   url,
   type = 'link',
@@ -27,7 +28,7 @@ const Component: React.FC<IMenuIcon> = ({
           rel={rel}
           target={target}
         >
-          {icon && <IconItem size={iconSize} hover={false} icon={icon} />}
+          {icon && <IconItem size={iconSize} hover={false} icon={icon} {...iconProps} />}
           <p className={style['magneto-ui-menu-icon__menu-text']}>{text}</p>
         </a>
       ) : (
@@ -36,7 +37,7 @@ const Component: React.FC<IMenuIcon> = ({
           className={`${style['magneto-ui-menu-icon']} ${menuActive} ${className}`}
           title={text}
         >
-          {icon && <IconItem size={iconSize} hover={false} icon={icon} />}
+          {icon && <IconItem size={iconSize} hover={false} icon={icon} {...iconProps} />}
           <p className={style['magneto-ui-menu-icon__menu-text']}>{text}</p>
         </button>
       )}
