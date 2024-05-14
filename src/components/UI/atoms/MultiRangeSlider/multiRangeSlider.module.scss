@@ -1,4 +1,3 @@
-$slider-width: 260px;
 $slider-height: 10px;
 $slider-background: #cfcfde;
 $range-background: #04004d;
@@ -10,15 +9,10 @@ $thumb-top: 9px;
   align-items: center;
   justify-content: center;
   position: relative;
-
-  input[type='range'] {
-    width: $slider-width;
-  }
 }
 
 .slider {
   position: relative;
-  width: $slider-width;
 }
 
 .track,
@@ -66,7 +60,6 @@ $thumb-top: 9px;
   pointer-events: none;
   position: absolute;
   height: 0;
-  width: $slider-width;
   outline: none;
   top: -2px;
 }

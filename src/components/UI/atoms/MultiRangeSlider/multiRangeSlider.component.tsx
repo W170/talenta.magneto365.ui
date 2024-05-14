@@ -9,7 +9,11 @@ export const MultiRangeSlider: FC<IMultiRangeSlider> = ({
   currentMax,
   showValues,
   onChange,
-  currency
+  currency,
+  steps = 0,
+  size = 260,
+  defaultMin,
+  defaultMax
 }) => {
   const [minVal, setMinVal] = useState(min)
   const [maxVal, setMaxVal] = useState(max)
@@ -19,6 +23,18 @@ export const MultiRangeSlider: FC<IMultiRangeSlider> = ({
       setMinVal(currentMin)
     }
   }, [currentMin])
+
+  useEffect(() => {
+    if (defaultMin) {
+      setMinVal(defaultMin)
+    }
+  }, [defaultMin])
+
+  useEffect(() => {
+    if (defaultMax) {
+      setMaxVal(defaultMax)
+    }
+  }, [defaultMax])
 
   useEffect(() => {
     if (currentMax) {
@@ -69,9 +85,11 @@ export const MultiRangeSlider: FC<IMultiRangeSlider> = ({
   return (
     <div className={styles.container}>
       <input
+        style={{ width: size }}
         type="range"
         min={min}
         max={max}
+        step={steps}
         value={minVal}
         ref={minValRef}
         onMouseUp={handleMouseUpValues}
@@ -88,8 +106,10 @@ export const MultiRangeSlider: FC<IMultiRangeSlider> = ({
       />
       <input
         type="range"
+        style={{ width: size }}
         min={min}
         max={max}
+        step={steps}
         value={maxVal}
         ref={maxValRef}
         onMouseUp={handleMouseUpValues}
@@ -101,7 +121,7 @@ export const MultiRangeSlider: FC<IMultiRangeSlider> = ({
         className={`${styles.thumb} ${styles.zIndex_4}`}
       />
 
-      <div className={styles.slider}>
+      <div style={{ width: size }} className={styles.slider}>
         <div className={styles.track} />
         <div ref={range} className={styles.range} />
         {showValues && (
