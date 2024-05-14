@@ -22,7 +22,7 @@ const BrandsContainer: React.FC<IBrandsContainer> = ({ brands, closeBrands, ourB
         <div className={style[`${Muiclass}-brands-container__brands`]}>
           {brands?.map(({ brandAlt, brandImg, brandTitle, brandUrl }: IBrands, index) => (
             <a href={brandUrl} className={style[`${Muiclass}-brands-container__brands--brand`]} key={index}>
-              <img src={brandImg} alt={brandAlt} />
+              <img src={brandImg} alt={brandAlt} loading="lazy" width={'100px'} height={'26px'} />
               <p>{brandTitle}</p>
             </a>
           ))}

@@ -5,12 +5,12 @@ import { IModal } from './Modal.interface'
 import { Close } from '@constants/icons.constants'
 import { ModalPortal } from './ModalPortal.component'
 
-const Modal: React.FC<IModal> = ({ onClose, isOpen, children, title, description }) => {
+const Modal: React.FC<IModal> = ({ onClose, isOpen, children, title, description, className = '' }) => {
   if (!isOpen) return null
   return (
     <ModalPortal>
       <>
-        <div className={`${styles[`${classMUI}-modal`]}`}>
+        <div className={`${styles[`${classMUI}-modal`]} ${className}`}>
           <h2 className={`${styles[`${classMUI}-modal__title`]}`}>{title}</h2>
           <p className={`${styles[`${classMUI}-modal__description`]}`}>{description}</p>
           <div className={`${styles[`${classMUI}-modal__children-container`]}`}>{children}</div>

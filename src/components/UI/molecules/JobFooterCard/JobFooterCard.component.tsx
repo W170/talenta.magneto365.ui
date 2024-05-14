@@ -21,9 +21,15 @@ const Component: React.FC<IJobFooterCard> = ({
 
   return (
     <div className={styles['magneto-ui-job-footer-card']}>
-      <img src={offerCompanyLogo ? offerCompanyLogo : NoLogo} alt={companyImgAlt} />
+      <img
+        src={offerCompanyLogo ? offerCompanyLogo : NoLogo}
+        alt={companyImgAlt}
+        loading="lazy"
+        width={'100px'}
+        height={'100px'}
+      />
       <div className={styles['magneto-ui-job-footer-card__icons']}>
-        <h2>{offerFooterHeader}</h2>
+        <p>{offerFooterHeader}</p>
         <div className={styles['magneto-ui-job-footer-card__wrapper']}>
           {jobFooterList?.length &&
             jobFooterList?.map(

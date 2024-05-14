@@ -16,6 +16,9 @@ const MagnetoSocialMedia: React.FC<IMagnetoSocialMedia> = ({ followText }) => {
               className={`${style[`${classMUI}-magneto-social-media__app-links-container--img`]}`}
               src={img}
               alt={alt}
+              loading="lazy"
+              width={'150px'}
+              height={'45px'}
             />
           </a>
         ))}

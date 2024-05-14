@@ -27,12 +27,17 @@ const JobsPage: React.FC<IJobsPage> = ({
   device,
   emptyResultsProps,
   jobDetailAction,
-  customParagraph
+  customParagraph,
+  dynamicPaginationUrl
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
+  const [loadVideo, setLoadVideo] = useState(false)
   const [showDetail, setShowDetail] = useState(device === 'desktop')
   const [selectedJobId, setSelectedJobId] = useState<number | null>(null)
 
+  const { fullUrl, fullJobsUrl } = dynamicPaginationUrl || {}
+
+  const emptyVacant = vacantProps.length === 0
   const handleVacant = useCallback(
     (id: number | null) => {
       if (id) {
@@ -47,10 +52,11 @@ const JobsPage: React.FC<IJobsPage> = ({
   const handleJobCardClick = (id: number | null) => {
     setSelectedJobId(id)
     handleVacant(id)
+    setLoadVideo(false)
   }
 
   useEffect(() => {
-    setShowDetail(showDetailByWindow())
+    setShowDetail(showDetailByWindow('magneto-ui-jobs-page'))
   }, [])
 
   const onClose = useCallback(() => {
@@ -69,6 +75,8 @@ const JobsPage: React.FC<IJobsPage> = ({
           {...jobDetailsDrawerProps}
           isLoading={isLoading || !jobSelected}
           selectedJobId={selectedJobId}
+          loadVideo={loadVideo}
+          setLoadVideo={setLoadVideo}
         />
       )}
     </JobDetailContainer>,
@@ -80,6 +88,8 @@ const JobsPage: React.FC<IJobsPage> = ({
           isOpen={showDetail}
           jobDetailAction={jobDetailAction}
           isLoading={isLoading || !jobSelected}
+          loadVideo={loadVideo}
+          setLoadVideo={setLoadVideo}
         />
       )
     }
@@ -97,16 +107,29 @@ const JobsPage: React.FC<IJobsPage> = ({
     return <EmptyResults {...emptyResultsProps} />
   }, [isLoading, emptyResultsProps])
 
+  const sideFilterAltRender = useMemo(() => {
+    if (emptyVacant) return
+
+    return (
+      <div className={style[`${classMUI}-jobs-page--filter-row`]}>
+        <FilterContainerMenu>
+          <SideFilter {...sideFilterProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
+        </FilterContainerMenu>
+      </div>
+    )
+  }, [emptyVacant, isFiltersOpen, sideFilterProps])
+
   return (
     <Fragment>
       <div id="magneto-ui-jobs-page" className={style[`${classMUI}-jobs-page`]}>
-        <div className={style[`${classMUI}-jobs-page--filter-row`]}>
-          <FilterContainerMenu>
-            <SideFilter {...sideFilterProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
-          </FilterContainerMenu>
-        </div>
+        {sideFilterAltRender}
         <div className={style[`${classMUI}-jobs-page--center-row`]}>
-          <SortBar {...sortBarProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
+          <SortBar
+            {...sortBarProps}
+            isFiltersOpen={isFiltersOpen}
+            setIsFiltersOpen={setIsFiltersOpen}
+            emptyVacant={emptyVacant}
+          />
           {mainTitleByMediaQuery}
           <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>
             {vacantProps.length <= 0 || isLoading
@@ -117,13 +140,14 @@ const JobsPage: React.FC<IJobsPage> = ({
                     isActive={id === jobSelected?.id}
                     id={id}
                     showDetail={() => handleJobCardClick(id)}
+                    dynamicUrl={fullJobsUrl}
                     key={`${id}-JobsPage`}
                     {...props}
                   />
                 ))}
           </div>
           {customParagraph && <Paragraph paragraph={customParagraph} />}
-          <Pagination {...paginationProps} />
+          <Pagination dynamicUrl={fullUrl} {...paginationProps} />
           <FrequentSearch {...frequentSearchProps} />
         </div>
         <div className={style[`${classMUI}-jobs-page__jobs-detail`]}>{JobDetailsDrawerComponent}</div>

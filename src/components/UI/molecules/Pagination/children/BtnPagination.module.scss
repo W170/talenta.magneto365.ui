@@ -1,5 +1,10 @@
 @use '../../../../../shared/stylesheets/variables.scss' as v;
 
+.magneto-ui-btn-pagination_anchor {
+  text-decoration: none;
+  color: inherit !important;
+}
+
 .magneto-ui-btn-pagination_with__icon,
 .magneto-ui-btn-pagination_btn {
   display: flex;
@@ -41,6 +46,7 @@
 .magneto-ui-btn-pagination_active {
   background-color: v.$pagination-btn-active;
   color: v.$color-white;
+
   &:hover {
     background-color: v.$pagination-btn-active;
   }

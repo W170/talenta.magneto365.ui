@@ -14,6 +14,8 @@ const Component: React.FC<IconProps> = ({ icon, hover = false, size, className, 
           className={`${style['magneto-ui-icon']} ${isHover} ${className}`}
           src={icon}
           alt={alt ?? `${icon} icon item`}
+          loading="lazy"
+          width={'25px'}
         />
       )}
     </Fragment>

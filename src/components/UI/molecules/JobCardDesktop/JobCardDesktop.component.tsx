@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { classMUI } from '@constants/stories'
 import { IconItem } from '../../atoms'
-import { ArrowRight2, NoLogo } from '../../../../constants/icons.constants'
+import { ArrowRight2, NoLogo, Urgent } from '../../../../constants/icons.constants'
 import style from './JobCardDesktop.module.scss'
 import { ICardJobDesktop } from './JobCardDesktop.interface'
 
@@ -20,7 +20,10 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   experience,
   contractType,
   showDetail,
-  others = ''
+  urgent,
+  others = '',
+  jobSlug,
+  dynamicUrl
 }) => {
   const citiesformatted = useMemo(() => {
     if (cities?.length > 5) {
@@ -45,6 +48,9 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
               className={style[`${classMUI}-card-jobs--brand__img`]}
               alt={companySlug ? companySlug : 'company-slug'}
               src={companyLogo ? companyLogo : NoLogo}
+              loading="lazy"
+              width={'67px'}
+              height={'67px'}
             />
           </div>
         </div>
@@ -52,9 +58,23 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
 
       <div className={style[`${classMUI}-card-jobs--data`]}>
         <div className={style[`${classMUI}-card-jobs--row2`]}>
-          <h2 className={`${style[`${classMUI}-card-jobs--row2__position`]} ${workSeen}`}>{title}</h2>
+          <a
+            href={`${dynamicUrl}/${jobSlug}`}
+            title={title as string}
+            target="_blank"
+            rel="noreferrer"
+            onClick={(e) => e.preventDefault()}
+          >
+            <h2 className={`${style[`${classMUI}-card-jobs--row2__position`]} ${workSeen}`}>{title}</h2>
+          </a>
           <h3>{companyName}</h3>
           <p>{formatPublishDate}</p>
+          {urgent && (
+            <div className={style[`${classMUI}-card-jobs--row2__urgent`]}>
+              <IconItem alt={'alt'} icon={Urgent} hover={false} size={18} />
+              <p>{urgent}</p>
+            </div>
+          )}
         </div>
         <div className={style[`${classMUI}-card-jobs--row3`]}>
           <p>

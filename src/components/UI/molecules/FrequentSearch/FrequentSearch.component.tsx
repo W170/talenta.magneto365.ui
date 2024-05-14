@@ -1,10 +1,16 @@
-import React, { useMemo, useState } from 'react'
+import React, { Fragment, useMemo, useState } from 'react'
 import { IFrequentSearch } from './FrequentSearch.interface'
 import styles from './FrequentSearch.module.scss'
 import { SearchItem } from '@components/UI/atoms'
 import { useMediaQuery } from '../../../hooks/useMediaQuery/index'
 
-const Component: React.FC<IFrequentSearch> = ({ searchHeading, searchList, showLess, showMore }) => {
+const Component: React.FC<IFrequentSearch> = ({
+  searchHeading,
+  searchList,
+  showLess,
+  showMore,
+  showFrequentSearch
+}) => {
   const [showFullList, setShowFullList] = useState(true)
 
   const searchListDinamyc = useMemo(() => {
@@ -17,33 +23,39 @@ const Component: React.FC<IFrequentSearch> = ({ searchHeading, searchList, showL
   const searchListResponsive = useMediaQuery(searchList, { md: searchListDinamyc })
 
   return (
-    <div className={styles['magneto-ui-frequent-search']}>
-      <h2 className={styles['magneto-ui-frequent-search__heading']}>{searchHeading}</h2>
-      <div className={styles['magneto-ui-frequent-search__items']}>
-        {searchListResponsive.map(({ ...props }, i) => (
-          <SearchItem key={i} {...props} />
-        ))}
-      </div>
-      <div className={styles['magneto-ui-frequent-search__buttons-container']}>
-        {showFullList ? (
-          <button
-            className={styles['magneto-ui-frequent-search__buttons-container--btn']}
-            onClick={() => setShowFullList(false)}
-            title={showMore}
-          >
-            {showMore} ({searchList.length})
-          </button>
-        ) : (
-          <button
-            className={styles['magneto-ui-frequent-search__buttons-container--btn']}
-            onClick={() => setShowFullList(true)}
-            title={showLess}
-          >
-            {showLess}
-          </button>
-        )}
-      </div>
-    </div>
+    <>
+      {showFrequentSearch !== false ? (
+        <div className={styles['magneto-ui-frequent-search']}>
+          <h2 className={styles['magneto-ui-frequent-search__heading']}>{searchHeading}</h2>
+          <div className={styles['magneto-ui-frequent-search__items']}>
+            {searchListResponsive.map(({ ...props }, i) => (
+              <SearchItem key={i} {...props} />
+            ))}
+          </div>
+          <div className={styles['magneto-ui-frequent-search__buttons-container']}>
+            {showFullList ? (
+              <button
+                className={styles['magneto-ui-frequent-search__buttons-container--btn']}
+                onClick={() => setShowFullList(false)}
+                title={showMore}
+              >
+                {showMore} ({searchList.length})
+              </button>
+            ) : (
+              <button
+                className={styles['magneto-ui-frequent-search__buttons-container--btn']}
+                onClick={() => setShowFullList(true)}
+                title={showLess}
+              >
+                {showLess}
+              </button>
+            )}
+          </div>
+        </div>
+      ) : (
+        <Fragment />
+      )}
+    </>
   )
 }
 

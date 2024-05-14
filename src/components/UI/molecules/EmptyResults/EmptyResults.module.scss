@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  padding: 20px;
+  padding: 30px;
   position: relative;
 
   h2 {
@@ -27,7 +27,7 @@
     width: 85%;
   }
   @media (min-width: v.$screen-xxl) {
-    width: 65%;
+    width: 50%;
   }
   &__img-container {
     display: none;
@@ -67,6 +67,7 @@
     align-items: center;
     gap: 15px;
   }
+
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;

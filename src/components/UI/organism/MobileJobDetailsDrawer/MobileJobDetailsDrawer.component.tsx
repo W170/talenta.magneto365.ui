@@ -4,6 +4,7 @@ import {
   JobCompanyHeader,
   JobDetails,
   JobDetailCard,
+  JobVideo,
   JobSkillsCard,
   JobApplyCard,
   JobFooterCard,
@@ -15,6 +16,7 @@ import { MobileJobDetailsDrawerSkeleton } from './children/MobileJobDetailsDrawe
 import { IMobileJobDetailsDrawer } from './MobileJobDetailsDrawer.interface'
 import { iconDetailList, iconFooterList } from '@constants/stories'
 import { SimilarJobs } from '../SimilarJobs'
+import { Swipe } from '../Swipe'
 
 const Component: React.FC<IMobileJobDetailsDrawer> = ({
   jobCompanyLogoProps,
@@ -30,7 +32,11 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   isOpen = true,
   isLoading,
   onClose,
-  similarJobsProps
+  similarJobsProps,
+  jobVideo,
+  loadVideo,
+  setLoadVideo,
+  swipeProps
 }) => {
   const handleClose = useCallback(() => {
     if (onClose) {
@@ -48,6 +54,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
         <MobileJobDetailsHeader returnText={jobDetailsHeaderText} onClick={handleClose} />
         <JobCompanyHeader {...jobCompanyLogoProps} />
         {jobDetailsProps && <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />}
+        {jobVideo && <JobVideo {...jobVideo} loadVideo={loadVideo} setLoadVideo={setLoadVideo} />}
         <JobDetailCard {...jobDetailCardProps} />
         {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
         <JobApplyCard {...jobApplyCardProps} />
@@ -66,8 +73,23 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
     jobDetailsProps,
     jobFooterCardProps,
     jobSkillsCardProps,
-    similarJobsProps
+    similarJobsProps,
+    jobVideo,
+    loadVideo,
+    setLoadVideo
   ])
+
+  const content = useMemo(
+    () =>
+      swipeProps ? (
+        <Swipe {...swipeProps} openModal={isOpen && swipeProps.openModal}>
+          {renderContent}
+        </Swipe>
+      ) : (
+        renderContent
+      ),
+    [isOpen, renderContent, swipeProps]
+  )
 
   return (
     <Fragment>
@@ -80,7 +102,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
         hideButton
         isMobile
       >
-        {renderContent}
+        {content}
         {!jobDetailAction && <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} onClose={isOpen} />}
       </Drawer>
       {modalPendingInfoComponent}

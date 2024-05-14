@@ -6,9 +6,9 @@ export interface IRightsReservedText {
   /**
    * this property add url in the text
    */
-  mapSiteHref: string
+  mapSiteHref?: string
   /**
    * this property renders text with url
    */
-  mapSiteText: string
+  mapSiteText?: string
 }

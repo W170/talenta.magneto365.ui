@@ -80,4 +80,8 @@ export interface IBtnPaginationProps {
    * This is the function that will be called in the on-click event of the button
    */
   onClick: () => void
+  /**
+   * This is the dynamic url that google robots will use to navigate with simple anchors
+   */
+  dynamicPaginationUrl?: string
 }

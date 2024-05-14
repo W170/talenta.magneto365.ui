@@ -1,0 +1,43 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-radio-default {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  &--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+    filter: grayscale(100%);
+  }
+  input[type='radio'] {
+    display: none;
+  }
+  &__indicator {
+    height: 20px;
+    width: 20px;
+    background-color: v.$color-white;
+    border: 1px solid #a3adb8;
+    border-radius: 50%;
+    position: relative;
+    &--checked {
+      border-color: #0cbb4e;
+      &::after {
+        content: '';
+        height: 14px;
+        width: 14px;
+        background-color: #0cbb4e;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  &__label {
+    font-size: 14px;
+    font-weight: 400;
+    color: v.$text-color-black;
+  }
+}

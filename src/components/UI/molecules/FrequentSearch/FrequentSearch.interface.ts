@@ -18,4 +18,6 @@ export interface IFrequentSearch {
    * This text should be 'Show more' text
    */
   showMore: string
+
+  showFrequentSearch?: boolean
 }

@@ -17,6 +17,8 @@ import { sideFilterProps, sortBarProps, paginationProps } from '@constants/stori
 import { Buildings2, Export3 } from '@constants/icons.constants'
 import { emptyResultsProps } from '@constants/stories/emptyResults.constants'
 import { sectionTitle, moreJobsText, moreJobsLink } from '../../../../constants/stories/similarJobs.constants'
+import { IVacancies } from '@components/UI/page'
+import { jobVideo } from '@constants/stories/jobVideo.constants'
 
 const jobDetailsDrawer = {
   jobCompanyLogoProps: {
@@ -98,7 +100,8 @@ const jobDetailsDrawer = {
     moreJobsText,
     sectionTitle,
     similarJobsCard: similarVacanciesCardsProps
-  }
+  },
+  jobVideo: jobVideo
 }
 
 const mobileJobDetailsDrawer = {
@@ -203,6 +206,8 @@ const footerProps = {
   menuFooterLink: listMenuText
 }
 
+const emptyVacant: IVacancies[] = []
+
 const meta: Meta<typeof JobsPage> = {
   title: 'Pages/Jobs Page',
   component: JobsPage,
@@ -235,3 +240,10 @@ export default meta
 type Story = StoryObj<typeof JobsPage>
 
 export const Default: Story = {}
+
+export const EmptyResults: Story = {
+  args: {
+    ...Default.args,
+    vacantProps: emptyVacant
+  }
+}

@@ -17,7 +17,8 @@ export const listMenuText: IFooterMenuLinks = {
     links: [
       {
         tag: 'Conoce Magneto',
-        href: ''
+        href: '',
+        openNewTab: true
       },
       {
         tag: 'Ver todo los empleos',
@@ -154,9 +155,7 @@ export const listMenuText: IFooterMenuLinks = {
 }
 
 export const RightsReservedProps: IRightsReservedText = {
-  magnetoRightsText: 'Magneto Global S.A.S, todos los derechos reservados',
-  mapSiteHref: '#',
-  mapSiteText: 'Mapa del sitio'
+  magnetoRightsText: 'Magneto Global S.A.S, todos los derechos reservados'
 }
 
 export const MagnetoResolutionProps: IMagnetoResolution = {

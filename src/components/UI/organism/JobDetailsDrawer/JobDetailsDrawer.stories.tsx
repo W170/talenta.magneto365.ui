@@ -5,15 +5,18 @@ import { JobDetailsDrawer } from './JobDetailsDrawer.component'
 import { CompanyLogo } from '@constants/stories'
 import { MainButton } from '../../atoms/MainButton/MainButton.component'
 import { Buildings2, Export3 } from '@constants/icons.constants'
+import { IJobCompanyHeader } from '../../molecules/JobCompanyHeader'
+import { jobVideo } from '@constants/stories/jobVideo.constants'
 
-const jobCompanyLogo = {
+const jobCompanyLogo: IJobCompanyHeader = {
   jobCompanyLogoProps: {
     offerCompanyLogo: CompanyLogo as unknown as JSX.Element,
     alt: 'Grupo Exito Logo'
   },
   jobHeaderProps: {
     offerTitle: 'Comunicador Audiovisual',
-    offerCompanyName: 'Grupo Exito'
+    offerCompanyName: 'Grupo Exito',
+    typeTitle: 'SubTitle'
   }
 }
 const jobActions = {
@@ -106,6 +109,7 @@ export const Default: Story = {
     jobDetailCardProps: jobDetailCard,
     jobSkillsCardProps: jobSkillsCard,
     jobApplyCardProps: jobApplyCard,
-    jobFooterCardProps: jobFooterCard
+    jobFooterCardProps: jobFooterCard,
+    jobVideo: jobVideo
   }
 }

@@ -7,7 +7,7 @@ const Component: React.FC<IJobCompanyLogo> = ({ offerCompanyLogo }) => {
   if (typeof offerCompanyLogo === 'string' || !offerCompanyLogo) {
     return (
       <div className={styles['magneto-ui-job-company-logo']}>
-        <img src={offerCompanyLogo ? offerCompanyLogo : NoLogo} />
+        <img src={offerCompanyLogo ? offerCompanyLogo : NoLogo} loading="lazy" width={'100px'} height={'100px'} />
       </div>
     )
   }

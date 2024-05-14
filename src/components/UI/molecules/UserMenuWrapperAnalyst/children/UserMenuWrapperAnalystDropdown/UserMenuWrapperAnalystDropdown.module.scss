@@ -1,0 +1,14 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-user-menu-wrapper-analyst-dropdown {
+  @media screen and (min-width: v.$screen-md) {
+    > div:first-child {
+      > div:first-child {
+        border-radius: 10px;
+        top: calc(100% + 10px);
+        box-shadow: 0px 0px 15px 0px #00000026;
+        overflow: visible;
+      }
+    }
+  }
+}

@@ -26,7 +26,7 @@ const SearchbarProps = {
 const SignInProps = {
   type: 'button' as const,
   text: 'Iniciar Sesion',
-  href: '#'
+  href: '/login'
 }
 
 const MobileSearchbarProps: IMobileSearchbar = {

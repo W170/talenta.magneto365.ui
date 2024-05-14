@@ -29,7 +29,7 @@ const Component: React.FC<IActions> = ({
           <p key={index}>{text}</p>
         </a>
       ))}
-      <h2 className={styles['magneto-ui-actions__header']}>{ActionsHeader}</h2>
+      <p className={styles['magneto-ui-actions__header']}>{ActionsHeader}</p>
     </div>
   )
 }
