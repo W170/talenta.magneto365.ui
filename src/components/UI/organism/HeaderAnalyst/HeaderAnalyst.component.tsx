@@ -11,19 +11,19 @@ import styles from './HeaderAnalyst.module.scss'
 const Component: React.FC<IHeaderAnalystProps> = ({
   breadCrumbProps,
   className = '',
-  logoProps = { ...logoPropsDark },
+  logoProps = { fallbackImage: logoPropsDark.logo, ...logoPropsDark },
   onMainMenuClick,
   userMenuProps,
   userNotificationProps
 }) => {
   const headerLogo = useMediaQuery(
     <a href={logoProps.href} rel={logoProps.rel} target={logoProps.target}>
-      <LogoComponent {...logoProps} />
+      <LogoComponent fallbackImage={logoPropsDark.logo} {...logoProps} />
     </a>,
     {
       sm: (
         <a href={logoProps.href} rel={logoProps.rel} target={logoProps.target}>
-          <LogoComponent {...logoProps} isoView={true} />
+          <LogoComponent fallbackImage={logoPropsDark.isoType} {...logoProps} isoView={true} />
         </a>
       )
     }

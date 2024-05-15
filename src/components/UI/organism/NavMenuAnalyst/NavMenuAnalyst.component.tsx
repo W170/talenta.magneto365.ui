@@ -17,7 +17,7 @@ const Component: React.FC<INavMenuAnalystProps> = ({
   isFullWidth,
   isOpenedFromHeader,
   isScrollAnimated,
-  logoProps = { ...logoPropsDark },
+  logoProps = { fallbackImage: logoPropsDark.logo, ...logoPropsDark },
   onDropdownClick,
   onRegionChange,
   path,
@@ -80,7 +80,7 @@ const Component: React.FC<INavMenuAnalystProps> = ({
     >
       {isFullWidth && (
         <header className={CNM.get({ styles, cls: ['nav-menu-analyst__header'] })}>
-          <LogoComponent {...logoProps} />
+          <LogoComponent fallbackImage={logoPropsDark.logo} {...logoProps} />
         </header>
       )}
       <div
