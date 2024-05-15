@@ -13,24 +13,43 @@
     border-radius: 10px;
     border: 1px solid #e3e7e9;
 
-    .placeholder-text {
-      color: #667688;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-    }
+    &--disabled {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
 
-    .placeholder-up {
-      transform: translateY(-200%);
-      font-size: 12px;
+      width: 163px;
+      padding: 16px 20px;
+      border-radius: 10px;
+      border: 1px solid #e3e7e9;
+      background: #e3e7e9;
+
+      &__icon {
+        opacity: 0.4;
+      }
     }
   }
 
   &__icon {
     position: relative;
     display: inline-block;
-    top: 5px;
-    right: -110px;
+    top: 0px;
+    right: -116px;
+
+    &--disabled {
+      position: relative;
+      display: inline-block;
+      top: 0px;
+      right: -116px;
+      opacity: 0.4;
+    }
   }
+}
+
+.placeholder-text {
+  color: #667688;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
