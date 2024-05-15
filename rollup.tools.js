@@ -1,4 +1,3 @@
-import fs from 'fs'
 import path from 'path'
 import stringHash from 'string-hash'
 import autoprefixer from 'autoprefixer'
@@ -7,18 +6,16 @@ import typescript from '@rollup/plugin-typescript'
 import generatePackageJson from 'rollup-plugin-generate-package-json'
 import packageJson from './package.json'
 import { MAIN_PLUGINS } from './rollup.plugins'
-import { UI_MODULES } from './rollup.modules'
 
 const cssMapModules = new Map()
 
-export const GET_DIRECTORIES = (path) => {
-  const directories = fs.readdirSync(path, { withFileTypes: true })
-  return directories
-    .filter((directory) => directory.isDirectory() && directory.name !== '@types')
-    .map((directory) => directory.name)
+export const NORMALIZE_CSS_SUFFIX = (suffix) => {
+  if (suffix.length === 0) return ''
+  const lowerCamelSuffix = suffix.charAt(0).toLowerCase() + suffix.slice(1)
+  return lowerCamelSuffix.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)
 }
 
-export const CONFIG_POSTCSS_PLUGIN = (isSub) => {
+export const CONFIG_POSTCSS_PLUGIN = (isSub, suffix = 'lib') => {
   return postcss({
     plugins: [autoprefixer],
     autoModules: false,
@@ -39,7 +36,7 @@ export const CONFIG_POSTCSS_PLUGIN = (isSub) => {
         return `mg_${base}_${name}_${mappedHash || hash}`.replace(/_{2,}/g, '_')
       }
     },
-    extract: 'css/magneto.ui.lib.min.css',
+    extract: `css/magneto.ui.${suffix}.min.css`,
     exclude: !isSub ? ['*.css'] : [],
     extensions: ['.css'],
     minimize: true,
@@ -49,7 +46,7 @@ export const CONFIG_POSTCSS_PLUGIN = (isSub) => {
 
 export const GENERATE_MODULE_PLUGINS = (folderName, map) => [
   ...MAIN_PLUGINS,
-  CONFIG_POSTCSS_PLUGIN(true),
+  CONFIG_POSTCSS_PLUGIN(true, NORMALIZE_CSS_SUFFIX(folderName)),
   typescript({
     tsconfig: './tsconfig.json',
     declaration: false
@@ -66,23 +63,20 @@ export const GENERATE_MODULE_PLUGINS = (folderName, map) => [
 ]
 
 export const GENERATE_MODULES = (environment) => {
-  const modules = []
-  for (const [module, path] of UI_MODULES) {
-    if (!environment || module !== environment) continue
-    const subModules = GET_DIRECTORIES(`./src/${path}`).map((folder) => ({
-      input: [`src/${path}/${folder}/index.ts`],
+  const [module, feature, path] = environment.toString().split(':')
+  return [
+    {
+      input: [`src/${path}/index.ts`],
       output: [
         {
-          file: `dist/${module}/${folder}/index.js`,
+          file: `dist/${module}/${feature}/index.js`,
           sourcemap: true,
           exports: 'named',
           format: 'esm'
         }
       ],
-      plugins: GENERATE_MODULE_PLUGINS(folder, { inputMap: path, outputMap: module }),
+      plugins: GENERATE_MODULE_PLUGINS(feature, { inputMap: path, outputMap: module }),
       external: ['antd', 'react', 'axios', 'react-dom']
-    }))
-    modules.push(...subModules)
-  }
-  return modules
+    }
+  ]
 }

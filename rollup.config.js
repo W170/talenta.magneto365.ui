@@ -5,10 +5,9 @@ import typescript from '@rollup/plugin-typescript'
 import packageJson from './package.json'
 import { MAIN_PLUGINS } from './rollup.plugins'
 import { CONFIG_POSTCSS_PLUGIN, GENERATE_MODULES } from './rollup.tools'
-import { UI_MODULES } from './rollup.modules'
 
 export default ({ environment }) => {
-  if (UI_MODULES.has(environment)) return GENERATE_MODULES(environment)
+  if (environment) return GENERATE_MODULES(environment)
   return [
     {
       input: 'src/index.ts',
