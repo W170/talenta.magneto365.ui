@@ -27,7 +27,8 @@ const meta: Meta<typeof MobileDatePicker> = {
     yearDateOptions: storyYears,
     monthPlaceholder: 'Month',
     yearPlaceholder: 'Year',
-    selectionHeader: 'Selecciona un mes',
+    selectionMonthHeader: 'Selecciona un mes',
+    selectionYearHeader: 'Selecciona un año',
     value: new Date()
   }
 }
