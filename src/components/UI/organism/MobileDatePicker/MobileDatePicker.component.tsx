@@ -20,7 +20,8 @@ const Component: React.FC<IMobileDatePicker> = ({
   monthPlaceholder,
   yearPlaceholder,
   onChange,
-  selectionHeader,
+  selectionMonthHeader,
+  selectionYearHeader,
   value
 }) => {
   const [isMonthPickerOpen, setIsMonthPickerOpen] = useState(false)
@@ -93,8 +94,22 @@ const Component: React.FC<IMobileDatePicker> = ({
         }
         onClick={toggleMonthPicker}
       >
-        <span className={`${styles['placeholder-text']}`}>{monthPlaceholder}</span>
-        {monthSelected !== null ? getMonthName(monthSelected) : ''}
+        <span
+          className={
+            styles[
+              `${
+                monthSelected
+                  ? 'magneto-ui--mobile-date-picker__container--placeholder-shrink'
+                  : 'magneto-ui--mobile-date-picker__container--placeholder'
+              }`
+            ]
+          }
+        >
+          {monthPlaceholder}
+        </span>
+        <p className={styles['magneto-ui--mobile-date-picker__value']}>
+          {monthSelected !== null ? getMonthName(monthSelected) : ''}
+        </p>
         <span
           className={
             styles[
@@ -109,8 +124,9 @@ const Component: React.FC<IMobileDatePicker> = ({
         applyLabel={applyLabel}
         cancelLabel={cancelLabel}
         dateOptions={monthDateOptions}
+        disabled={disabled}
         isOpen={isMonthPickerOpen}
-        selectionHeader={selectionHeader}
+        selectionHeader={selectionMonthHeader}
         onClose={onClose}
         onApplyCallback={handleMonthDateSelection}
         initialValue={monthSelected}
@@ -127,8 +143,20 @@ const Component: React.FC<IMobileDatePicker> = ({
         }
         onClick={toggleYearPicker}
       >
-        <span className={`${styles['placeholder-text']}`}>{yearPlaceholder}</span>
-        {yearSelected}
+        <span
+          className={
+            styles[
+              `${
+                monthSelected
+                  ? 'magneto-ui--mobile-date-picker__container--placeholder-shrink'
+                  : 'magneto-ui--mobile-date-picker__container--placeholder'
+              }`
+            ]
+          }
+        >
+          {yearPlaceholder}
+        </span>
+        <p className={styles['magneto-ui--mobile-date-picker__value']}>{yearSelected}</p>
         <span
           className={
             styles[
@@ -143,8 +171,9 @@ const Component: React.FC<IMobileDatePicker> = ({
         applyLabel={applyLabel}
         cancelLabel={cancelLabel}
         dateOptions={yearDateOptions}
+        disabled={disabled}
         isOpen={isYearPickerOpen}
-        selectionHeader={selectionHeader}
+        selectionHeader={selectionYearHeader}
         onClose={onClose}
         onApplyCallback={handleYearDateSelection}
         initialValue={yearSelected}
