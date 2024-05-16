@@ -25,4 +25,7 @@ export interface IDateSelection {
   /*
    */
   selectionHeader: string
+  /*
+   */
+  initialValue: string | number | null
 }
