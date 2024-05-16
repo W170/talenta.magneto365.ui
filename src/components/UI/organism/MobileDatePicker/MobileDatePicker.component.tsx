@@ -1,9 +1,14 @@
-import React, { useCallback, useMemo, useState } from 'react'
-import { DateSelection } from '@components/UI/molecules/DateSelection'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { IconItem } from '@components/UI/atoms'
-import { ArrowDown2, ArrowDown3 } from '@constants/icons.constants'
+import { DateSelection } from '@components/UI/molecules/DateSelection'
 import { IMobileDatePicker } from '@components/UI/organism/MobileDatePicker/MobileDatePicker.interface'
 import styles from './MobileDatePicker.module.scss'
+import { parseDate } from '@components/UI/molecules/DatePicker/utils'
+import { ArrowDown2, ArrowDown3 } from '@constants/icons.constants'
+
+const defaultValue = (value: Date) => {
+  return value ? parseDate(value) : { initialMonth: '', initialYear: '' }
+}
 
 const Component: React.FC<IMobileDatePicker> = ({
   applyLabel,
@@ -15,13 +20,14 @@ const Component: React.FC<IMobileDatePicker> = ({
   monthPlaceholder,
   yearPlaceholder,
   onChange,
-  selectionHeader
+  selectionHeader,
+  value
 }) => {
   const [isMonthPickerOpen, setIsMonthPickerOpen] = useState(false)
   const [isYearPickerOpen, setIsYearPickerOpen] = useState(false)
 
-  const [monthSelected, setMonthSelected] = useState<string | number | null>()
-  const [yearSelected, setYearSelected] = useState<string | number | null>()
+  const [monthSelected, setMonthSelected] = useState<string | number | null>(defaultValue(value).initialMonth)
+  const [yearSelected, setYearSelected] = useState<string | number | null>(defaultValue(value).initialYear)
 
   const FIRST_OF_MONTH = 1
 
@@ -64,6 +70,14 @@ const Component: React.FC<IMobileDatePicker> = ({
       onChange(new Date(Number(yearSelected), Number(monthSelected), FIRST_OF_MONTH))
     }
   }
+
+  useEffect(() => {
+    if (disabled) {
+      setMonthSelected('')
+      setYearSelected('')
+      onChange(null)
+    }
+  }, [disabled, onChange])
 
   return (
     <section className={styles['magneto-ui--mobile-date-picker']}>
