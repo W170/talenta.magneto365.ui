@@ -12,7 +12,10 @@ export interface IMobileDatePicker {
   monthsLabels: string[]
   /*
    */
-  selectionHeader: string
+  selectionMonthHeader: string
+  /*
+   */
+  selectionYearHeader: string
   /*
    */
   monthDateOptions: IOptionValues[]
