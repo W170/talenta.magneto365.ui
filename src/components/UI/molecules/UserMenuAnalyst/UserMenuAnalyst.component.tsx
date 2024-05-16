@@ -47,7 +47,9 @@ const Component: React.FC<IUserMenuAnalystProps> = ({
           />
         )}
       </header>
-      {footerSections && <UserMenuAnalystOptions options={footerSections || []} queryString={queryString} />}
+      {footerSections && footerSections?.length > 0 && (
+        <UserMenuAnalystOptions options={footerSections || []} queryString={queryString} />
+      )}
     </div>
   )
 }

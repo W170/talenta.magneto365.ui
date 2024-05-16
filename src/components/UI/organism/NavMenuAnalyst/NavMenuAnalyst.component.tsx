@@ -116,7 +116,7 @@ const Component: React.FC<INavMenuAnalystProps> = ({
             </div>
           ))}
         </div>
-        {regions && defaultRegion && (
+        {regions && regions.length > 0 && defaultRegion && (
           <div className={CNM.get({ styles, cls: ['nav-menu-analyst__region'] })}>
             <Option
               isFullWidth={isFullWidth}
