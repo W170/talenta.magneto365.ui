@@ -7,13 +7,15 @@ const Component: React.FC<IDateOption> = ({ optionsList, selected, handleOnClick
     handleOnClick(optionValue)
   }
 
+  const parsedSelected = typeof selected === 'string' ? parseInt(selected, 10) : selected
+
   return (
     <div className={styles['magneto-ui--date-options']}>
       <ul className={styles['magneto-ui--date-options--wrapper']}>
         {optionsList.map(({ optionValue, optionLabel }) => (
           <li
             className={`${styles['magneto-ui--date-options__btn']} ${
-              selected === optionValue ? styles['magneto-ui--date-options__btn-selected'] : ''
+              parsedSelected === optionValue ? styles['magneto-ui--date-options__btn-selected'] : ''
             }`}
             key={optionValue}
             value={optionValue}
