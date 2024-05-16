@@ -113,6 +113,7 @@ const Component: React.FC<IMobileDatePicker> = ({
         selectionHeader={selectionHeader}
         onClose={onClose}
         onApplyCallback={handleMonthDateSelection}
+        initialValue={monthSelected}
       />
       <div
         className={
@@ -146,6 +147,7 @@ const Component: React.FC<IMobileDatePicker> = ({
         selectionHeader={selectionHeader}
         onClose={onClose}
         onApplyCallback={handleYearDateSelection}
+        initialValue={yearSelected}
       />
     </section>
   )
