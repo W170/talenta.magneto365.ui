@@ -12,10 +12,11 @@ const Component: React.FC<IDateSelection> = ({
   isOpen,
   onClose,
   onApplyCallback,
-  selectionHeader
+  selectionHeader,
+  initialValue
 }) => {
-  const [initialSelectedOption, setInitialSelectedOption] = useState<string | number | null>(null)
-  const [selectedOption, setSelectedOption] = useState<string | number | null>(null)
+  const [initialSelectedOption, setInitialSelectedOption] = useState<string | number | null>(initialValue)
+  const [selectedOption, setSelectedOption] = useState<string | number | null>(initialValue)
 
   const handleOptionClick = (optionValue: string | number) => {
     setSelectedOption(optionValue)
