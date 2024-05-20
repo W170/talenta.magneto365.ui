@@ -27,10 +27,12 @@
         &:vertical {
           &:start:decrement {
             background: transparent var(--custom-scrollbar-thumb-up-background) no-repeat center center;
+            min-height: 16px;
           }
 
           &:end:increment {
             background: transparent var(--custom-scrollbar-thumb-down-background) no-repeat center center;
+            min-height: 16px;
           }
         }
       }
