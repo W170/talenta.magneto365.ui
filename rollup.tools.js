@@ -46,18 +46,18 @@ export const CONFIG_POSTCSS_PLUGIN = (isSub, suffix = 'lib') => {
 
 export const GENERATE_MODULE_PLUGINS = (folderName, map) => [
   ...MAIN_PLUGINS,
-  CONFIG_POSTCSS_PLUGIN(true, NORMALIZE_CSS_SUFFIX(folderName)),
+  CONFIG_POSTCSS_PLUGIN(false, NORMALIZE_CSS_SUFFIX(folderName)),
   typescript({
     tsconfig: './tsconfig.json',
-    declaration: false
+    declaration: true
   }),
   generatePackageJson({
     baseContents: {
       name: `${packageJson.name}/${map.outputMap}/${folderName}`,
       private: true,
-      main: '../../cjs/index.js', // --> points to cjs format entry point of whole library
+      // main: '../../cjs/index.js', // --> points to cjs format entry point of whole library
       module: './index.js', // --> points to esm format entry point of individual component
-      types: `../../esm/types/${map.inputMap}/${folderName}/index.d.ts` // --> points to types definition file of individual component
+      types: `./types/index.d.ts` // --> points to types definition file of individual component
     }
   })
 ]
