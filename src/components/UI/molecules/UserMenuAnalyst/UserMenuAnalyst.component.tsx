@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { Avatar } from '@components/UI/atoms'
+import { Avatar, Link } from '@components/UI/atoms'
 import { IUserMenuAnalystProps } from './UserMenuAnalyst.interface'
 import { UserMenuAnalystOptions } from './children'
 import { UserRoundedGray } from '@constants/icons.constants'
@@ -7,6 +7,7 @@ import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './UserMenuAnalyst.module.scss'
 
 const Component: React.FC<IUserMenuAnalystProps> = ({
+  action,
   headerSections,
   isMenuOpen = false,
   footerSections,
@@ -23,6 +24,11 @@ const Component: React.FC<IUserMenuAnalystProps> = ({
           <div className={CNM.get({ styles, cls: ['user-menu-analyst__user-info'] })}>
             <span className={CNM.get({ styles, cls: ['user-menu-analyst__user-info--name'] })}>{user.name}</span>
             <span className={CNM.get({ styles, cls: ['user-menu-analyst__user-info--mail'] })}>{user.email}</span>
+            {action && (
+              <span className={CNM.get({ styles, cls: ['user-menu-analyst__user-info--action'] })}>
+                {typeof action.data === 'string' ? <Link text={action.title} href={action.data} /> : ''}
+              </span>
+            )}
           </div>
         </div>
         {headerSections && (
@@ -41,7 +47,9 @@ const Component: React.FC<IUserMenuAnalystProps> = ({
           />
         )}
       </header>
-      {footerSections && <UserMenuAnalystOptions options={footerSections || []} queryString={queryString} />}
+      {footerSections && footerSections?.length > 0 && (
+        <UserMenuAnalystOptions options={footerSections || []} queryString={queryString} />
+      )}
     </div>
   )
 }

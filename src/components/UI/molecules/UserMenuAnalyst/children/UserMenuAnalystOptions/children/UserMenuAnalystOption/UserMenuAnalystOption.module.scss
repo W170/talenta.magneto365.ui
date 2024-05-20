@@ -11,15 +11,16 @@
       text-decoration: underline;
       font-weight: 700;
     }
+    > p {
+      font-size: 13px;
+      line-height: 15.6px;
+    }
   }
   &__dropdown {
     background-color: transparent;
     color: v.$text-color-black;
     border-radius: 10px;
     background-color: #e3e7e9;
-    /* &:hover:not(&--open) {
-      background-color: v.$disabled-color-gray;
-    } */
     > div:first-child {
       height: fit-content;
       padding: 8px 10px;

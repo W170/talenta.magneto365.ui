@@ -4,12 +4,13 @@ import { IUserMenuAnalystOption, IUserMenuAnalystOptionProps } from './UserMenuA
 import { MenuDropdown } from '@components/UI/atoms'
 import { MenuIcon } from '@components/UI/molecules'
 import { userMenuAnalystIcons } from '../../../../UserMenuAnalyst.constants'
+import { UserMenuAnalystTitle as Title } from '../UserMenuAnalystTitle'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './UserMenuAnalystOption.module.scss'
 
 const Component: React.FC<IUserMenuAnalystOptionProps> = ({ classNames, option, isOpen, queryString = {} }) => {
   const [isOpenDropdown, setIsOpenDropdown] = useState<boolean>(false)
-  const { useQueryString = false, isLinkHighlighted = false, rel = 'noreferrer', target = '_self' } = option
+  const { useQueryString = true, isLinkHighlighted = false, rel = 'noreferrer', target = '_self' } = option
 
   useEffect(() => {
     setIsOpenDropdown(false)
@@ -59,7 +60,7 @@ const Component: React.FC<IUserMenuAnalystOptionProps> = ({ classNames, option, 
 
   return (
     <MenuDropdown
-      title={option.title || ''}
+      title={<Title title={option.title || ''} />}
       opened={isOpenDropdown}
       onClick={() => setIsOpenDropdown(!isOpenDropdown)}
       listClassName={CNM.get({ styles, cls: ['user-menu-analyst-option__dropdown-list'] })}

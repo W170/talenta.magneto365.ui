@@ -2,6 +2,10 @@ import { IUserMenuAnalystOption } from './children/UserMenuAnalystOptions/childr
 
 export interface IUserMenuAnalystProps {
   /**
+   * Action on click
+   */
+  action?: IUserMenuAnalystAction
+  /**
    * Array of menu options by section for the header
    */
   headerSections?: IUserMenuAnalystSection[]
@@ -73,4 +77,9 @@ export interface ISubCompanyAnalyst {
    * Name of the subcompany
    */
   name: string
+}
+
+export interface IUserMenuAnalystAction {
+  title: string
+  data: string | (() => void)
 }

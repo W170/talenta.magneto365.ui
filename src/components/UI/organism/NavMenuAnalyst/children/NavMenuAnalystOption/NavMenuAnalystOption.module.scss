@@ -36,6 +36,8 @@
     &--full-menu {
       > p {
         display: inline-block;
+        font-weight: 500;
+        font-size: 14px;
       }
     }
     &:hover {
@@ -60,7 +62,11 @@
     }
     &--full-menu {
       > div:first-child {
-        > span,
+        > span {
+          display: inline-block;
+          font-weight: 500;
+          font-size: 14px;
+        }
         > div {
           display: inline-block;
         }
@@ -116,5 +122,6 @@
   &__dropdown-title {
     padding: 10px 14px;
     color: v.$color-blue-light3;
+    font-weight: 700;
   }
 }

@@ -1,7 +1,6 @@
 import React from 'react'
-import { IRadioButtonProps } from './RadioButton.interface'
-import { useMediaQuery } from '@components/hooks'
 import { IconItem } from '@components/UI/atoms/Icon'
+import { IRadioButtonProps } from './RadioButton.interface'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './RadioButton.module.scss'
 
@@ -17,10 +16,6 @@ const Component: React.FC<IRadioButtonProps> = ({
   prefixIcon,
   suffixIcon
 }) => {
-  const prefix = useMediaQuery(prefixIcon && <IconItem size={18} {...prefixIcon} />)
-
-  const suffix = useMediaQuery(suffixIcon && <IconItem size={18} {...suffixIcon} />)
-
   return (
     <label
       className={CNM.get({
@@ -34,12 +29,12 @@ const Component: React.FC<IRadioButtonProps> = ({
       })}
       htmlFor={id}
     >
-      {prefix}
+      {prefixIcon && <IconItem size={18} {...prefixIcon} />}
       <input type="radio" disabled={disabled} id={id} checked={checked || defaultChecked} onChange={onChange} />
       {children && (
         <span className={CNM.get({ styles, cls: ['radio-button__children', childrenClassName] })}>{children}</span>
       )}
-      {suffix}
+      {suffixIcon && <IconItem size={18} {...suffixIcon} />}
     </label>
   )
 }

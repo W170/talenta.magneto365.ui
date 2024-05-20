@@ -68,6 +68,8 @@ const Component: React.FC<IAnalystTemplateProps> = ({
           onClose={() => toggleMenu(false)}
           isScrollAnimated={isMenuScrollAnimated}
           isOpenedFromHeader={isOpenedFromHeader}
+          setIsDrawerOpen={(open) => setIsDrawerOpen(open)}
+          logoProps={{ ...headerProps.logoProps }}
           {...navigationMenuProps}
         />
         {sideMenu}

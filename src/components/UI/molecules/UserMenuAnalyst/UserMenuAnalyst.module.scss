@@ -50,6 +50,16 @@
     &--mail {
       font-weight: 400;
     }
+    &--action {
+      a {
+        font-size: 12px;
+        line-height: 14.4px;
+        color: v.$color-blue-dark2;
+        p {
+          margin: 5px 0 0;
+        }
+      }
+    }
   }
   &__company {
     margin-top: 10px;
@@ -61,7 +71,6 @@
     > div:first-child {
       > span {
         color: #0a0c0e;
-        font-weight: 700;
       }
     }
     a {
