@@ -1,0 +1,76 @@
+.magneto-ui--mobile-date-picker {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  &__container {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 1fr;
+
+    width: 163px;
+    height: 40px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    border: 1px solid #e3e7e9;
+
+    &--disabled {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr;
+
+      width: 163px;
+      height: 40px;
+      padding: 16px 20px;
+      border-radius: 10px;
+      border: 1px solid #e3e7e9;
+      background: #e3e7e9;
+
+      &__icon {
+        opacity: 0.4;
+      }
+    }
+
+    &--placeholder {
+      grid-row: 2 / 3;
+      align-self: center;
+      color: #667688;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      &-shrink {
+        grid-row: 1 / 2;
+        align-self: center;
+        color: #c2c8cf;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
+
+  &__value {
+    grid-row: 2 / 3;
+    align-self: center;
+    margin: 0;
+  }
+
+  &__icon {
+    grid-row: 2 / 3;
+    &--disabled {
+      grid-row: 2 / 3;
+      opacity: 0.4;
+    }
+  }
+}
+
+//.placeholder-text {
+//  color: #667688;
+//  font-size: 14px;
+//  font-style: normal;
+//  font-weight: 400;
+//  line-height: normal;
+//}

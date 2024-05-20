@@ -34,3 +34,14 @@ export const years = [
   { optionValue: 2034, optionLabel: '2034' },
   { optionValue: 2035, optionLabel: '2035' }
 ]
+
+export const storyMonths: any = []
+export const storyYears: any = []
+
+for (let i = 0; i < Math.min(monthOptionsValue.length, months.length); i++) {
+  storyMonths.push({ optionValue: monthOptionsValue[i], optionLabel: months[i] })
+}
+
+for (let i = 0; i < Math.min(yearOptionsValue.length, yearOptionsLabel.length); i++) {
+  storyYears.push({ optionValue: yearOptionsValue[i], optionLabel: yearOptionsLabel[i] })
+}

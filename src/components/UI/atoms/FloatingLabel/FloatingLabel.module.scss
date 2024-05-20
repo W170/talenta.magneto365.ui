@@ -1,0 +1,23 @@
+.label {
+  position: absolute;
+  top: 16px;
+  left: 40px;
+  color: #bfbfbf;
+  font-size: 16px !important;
+  font-weight: normal;
+  transition: 0.2s ease all;
+  pointer-events: none;
+
+  &-float {
+    position: inherit;
+    bottom: 40px;
+    left: 40px;
+    font-size: 10px !important;
+    transition: 0.2s ease all;
+  }
+}
+
+.float-label {
+  position: relative;
+  margin-bottom: 12px;
+}
