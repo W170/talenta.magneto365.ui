@@ -13,6 +13,7 @@ const Component: React.FC<IDrawer> = ({
   direction = 'left',
   isFull,
   customPadding,
+  drawerWidth,
   isMobile,
   hideButton,
   children,
@@ -22,6 +23,7 @@ const Component: React.FC<IDrawer> = ({
   const fullDrawer = isFull ? `full-drawer` : ''
   const paddingValue = customPadding !== undefined ? `${customPadding}px` : `${DEFAULT_PADDING}px`
   const backgroundEffect = isMobile ? 'no-background' : 'background-drawer'
+  const widthValue = drawerWidth ? `${drawerWidth}px` : '400px'
 
   useEffect(() => {
     const { body } = document
@@ -32,7 +34,7 @@ const Component: React.FC<IDrawer> = ({
   return (
     <DrawerPortal>
       <div className={`${style['magneto-ui-drawer']} ${style[fullDrawer]} ${className}`}>
-        <aside className={`${style[showDrawer]}`} style={{ padding: paddingValue }}>
+        <aside className={`${style[showDrawer]}`} style={{ padding: paddingValue, width: widthValue }}>
           {!hideButton && (
             <button className={style['magneto-ui-close-button']} onClick={onClose}>
               <IconItem icon={Add} hover={false} />
