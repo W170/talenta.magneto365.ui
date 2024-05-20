@@ -7,6 +7,9 @@
   gap: 20px;
   padding-bottom: 120px;
   min-width: 620px;
+  @media screen and (min-width: v.$screen-md) {
+    max-height: 70vh;
+  }
   > h2 {
     font-weight: 700;
     font-size: 15px;
