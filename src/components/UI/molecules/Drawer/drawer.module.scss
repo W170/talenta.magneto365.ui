@@ -15,7 +15,7 @@
     overflow-y: auto;
 
     @media (min-width: v.$screen-md) {
-      width: 400px;
+      width: var(--drawer-width, 400px);
     }
 
     &::-webkit-scrollbar {
