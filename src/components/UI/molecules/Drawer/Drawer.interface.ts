@@ -46,7 +46,7 @@ export interface IDrawer {
   isFull?: boolean
   /*
    */
-  drawerWidth?: number
+  drawerWidth?: string
 }
 
 /**
