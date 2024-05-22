@@ -1,6 +1,7 @@
 export * from './Avatar'
 export * from './Breadcrumb'
 export * from './DateDropdown'
+export * from './DateOptions'
 export * from './Divider'
 export * from './HeaderTab'
 export * from './Icon'
