@@ -1,4 +1,4 @@
-import { IOptionValues } from '@components/UI/atoms/DateOptions'
+import { IOptionValues } from '@components/UI/atoms'
 
 export interface IDateSelection {
   /*
