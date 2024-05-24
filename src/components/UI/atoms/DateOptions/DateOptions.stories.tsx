@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { DateOptions } from '@components/UI/atoms/DateOptions/DateOptions'
+import { DateOptions } from '@components/UI/atoms/DateOptions'
 import { storyMonths, storyYears } from '@constants/stories/DatePicker.constants'
 
 const meta: Meta<typeof DateOptions> = {
