@@ -12,7 +12,14 @@ const Component: React.FC<IMenuDropdownListProps> = ({ children, listClassName, 
           cls: ['menu-dropdown-list__container', opened && 'menu-dropdown-list__container--visible']
         })}
       >
-        <div className={CNM.get({ styles, cls: ['menu-dropdown-list__children', listClassName] })}>{children}</div>
+        <div
+          className={CNM.get({
+            styles,
+            cls: ['menu-dropdown-list__children', opened && 'menu-dropdown-list__children--visible', listClassName]
+          })}
+        >
+          {children}
+        </div>
       </div>
     </div>
   )
