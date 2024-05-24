@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 
 import { MobileDatePicker } from '@components/UI/organism/MobileDatePicker/MobileDatePicker.component'
 
-import { storyMonths, months, storyYears } from '@constants/stories/DatePicker.constants'
+import { storyMonths, months } from '@constants/stories/DatePicker.constants'
 
 const meta: Meta<typeof MobileDatePicker> = {
   title: 'Organism/ Mobile DatePicker',
@@ -12,7 +12,6 @@ const meta: Meta<typeof MobileDatePicker> = {
     cancelLabel: 'Cerrar',
     monthsLabels: months,
     monthDateOptions: storyMonths,
-    yearDateOptions: storyYears,
     monthPlaceholder: 'Month',
     yearPlaceholder: 'Year',
     selectionMonthHeader: 'Selecciona un mes',
