@@ -3,6 +3,9 @@
 .magneto-ui-nav-menu-drawer-analyst {
   &__drawer {
     > aside {
+      @supports not (height: 100dvh) {
+        padding-bottom: 80px;
+      }
       @media screen and (min-width: v.$screen-md) {
         width: 300px;
       }

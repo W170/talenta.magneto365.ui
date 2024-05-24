@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
-import { Avatar, Link } from '@components/UI/atoms'
+import { Avatar, IconItem, Link } from '@components/UI/atoms'
 import { IUserMenuAnalystProps } from './UserMenuAnalyst.interface'
+import { userMenuAnalystIcons } from './UserMenuAnalyst.constants'
 import { UserMenuAnalystOptions } from './children'
 import { UserRoundedGray } from '@constants/icons.constants'
 import CNM from '@utils/classNameManager/classNameManager.util'
@@ -12,9 +13,24 @@ const Component: React.FC<IUserMenuAnalystProps> = ({
   isMenuOpen = false,
   footerSections,
   user,
-  queryString
+  queryString = {}
 }) => {
   const avatar = useMemo(() => user.avatar || UserRoundedGray, [user])
+
+  const actionUrl = useMemo(() => {
+    if (action && action.data && !Array.isArray(action.data) && typeof action.data === 'string') {
+      const hasParams = action.data.includes('?')
+      const delimiter = action.useQueryString !== false && queryString && hasParams ? '&' : ''
+
+      const queryStringParams = Object.entries(queryString)
+        .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value as string)}`)
+        .join('&')
+
+      return action.useQueryString !== false && queryStringParams
+        ? `${action.data}${hasParams ? delimiter : '?'}${queryStringParams}`
+        : action.data
+    }
+  }, [action, queryString])
 
   return (
     <div className={CNM.get({ styles, cls: ['user-menu-analyst'] })}>
@@ -24,10 +40,19 @@ const Component: React.FC<IUserMenuAnalystProps> = ({
           <div className={CNM.get({ styles, cls: ['user-menu-analyst__user-info'] })}>
             <span className={CNM.get({ styles, cls: ['user-menu-analyst__user-info--name'] })}>{user.name}</span>
             <span className={CNM.get({ styles, cls: ['user-menu-analyst__user-info--mail'] })}>{user.email}</span>
-            {action && (
+            {action && typeof action.data === 'string' ? (
               <span className={CNM.get({ styles, cls: ['user-menu-analyst__user-info--action'] })}>
-                {typeof action.data === 'string' ? <Link text={action.title} href={action.data} /> : ''}
+                <IconItem
+                  showDefaultFallback={false}
+                  size={14}
+                  icon={
+                    action.icon && userMenuAnalystIcons[action.icon] ? userMenuAnalystIcons[action.icon] : action.icon
+                  }
+                />
+                <Link text={action.title} href={actionUrl} rel={action.rel} target={action.target} />
               </span>
+            ) : (
+              <span className={CNM.get({ styles, cls: ['user-menu-analyst__user-info--title'] })}>{user.title}</span>
             )}
           </div>
         </div>

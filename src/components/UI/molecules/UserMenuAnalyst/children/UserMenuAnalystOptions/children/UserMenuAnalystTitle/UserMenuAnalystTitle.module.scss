@@ -1,10 +1,21 @@
+@use '../../../../../../../../shared/stylesheets/variables.scss' as v;
+
 .magneto-ui-user-menu-analyst-title {
-  font-size: 12px;
-  line-height: 14.4px;
-  &--title {
-    font-weight: 400;
-  }
-  &--main {
+  &__title {
     font-weight: 700;
+    font-size: 14px;
+    line-height: 16.8px;
+    color: #0a0c0e;
+  }
+  &__subtitle {
+    font-size: 12px;
+    line-height: 14.4px;
+    color: v.$color-blue-dark5;
+    &--first {
+      font-weight: 400;
+    }
+    &--last {
+      font-weight: 700;
+    }
   }
 }

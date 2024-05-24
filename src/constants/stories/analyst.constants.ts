@@ -3,6 +3,7 @@ import { IBreadcrumbs, IUserAnalyst, IUserMenuWrapperAnalystProps } from '@compo
 import { IHeaderAnalystProps, INavMenuAnalystProps } from '@components/UI/organism'
 import { IMainButton, ILinkProps } from '@components/UI/atoms'
 import { logoPropsDark } from './common.constants'
+import { EUserMenuAnalystOptionType } from '@components/UI/molecules/UserMenuAnalyst/children/UserMenuAnalystOptions/children'
 
 export const MenuButtonAnalystProps: IMainButton = {
   buttonType: 'button',
@@ -33,7 +34,8 @@ export const UserAnalystProps: IUserAnalyst = {
   avatar:
     'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
   name: 'Gabriel López',
-  email: 'gabriel@me.com'
+  email: 'gabriel@me.com',
+  title: 'Comfama'
 }
 
 export const UserNotificationProps: ILinkProps = { iconProps: { icon: Notification, size: 20 }, href: '#' }
@@ -42,9 +44,12 @@ export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
   user: UserAnalystProps,
   action: {
     title: 'Volver a Comfama',
-    data: '/comfama'
+    data: '/comfama',
+    icon: 'redo',
+    rel: 'noopener noreferrer',
+    target: '_blank',
+    useQueryString: true
   },
-  companyName: 'Comfama',
   queryString: {
     lng: 'es-CO'
   },
@@ -52,26 +57,54 @@ export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
     {
       children: [
         {
-          title: 'Administrando: Farmacias del Sur',
+          title: 'Empresas vinculadas',
+          subTitle: 'Administrando: Farmacias del Sur',
           data: [
             {
               children: [
                 {
                   title: 'Metales sas',
-                  data: '/metales-sas'
+                  data: '/metales-sas',
+                  type: EUserMenuAnalystOptionType.HOVER,
+                  suffix: [
+                    {
+                      title: 'Gestionar',
+                      icon: 'manage',
+                      data: '/gestionar'
+                    }
+                  ]
                 },
                 {
                   title: 'Pollos Brosty',
-                  data: '/pollos-brosty'
+                  data: '/pollos-brosty',
+                  type: EUserMenuAnalystOptionType.HOVER,
+                  suffix: [
+                    {
+                      title: 'Desvincular',
+                      icon: 'unlink',
+                      data: '/desvincular'
+                    }
+                  ]
                 },
                 {
                   title: 'Los Perritos',
-                  data: '/los-perritos'
+                  data: '/los-perritos',
+                  type: EUserMenuAnalystOptionType.HOVER
                 },
                 {
                   title: 'Ver todos',
                   data: '/ver-todos',
-                  isLinkHighlighted: true
+                  type: EUserMenuAnalystOptionType.UNDERLINE
+                },
+                /* {
+                  title: 'Aún no hay empresas vinculadas',
+                  type: EUserMenuAnalystOptionType.TEXT
+                }, */
+                {
+                  title: 'Invitar empresa',
+                  data: '/invitar-empresa',
+                  type: EUserMenuAnalystOptionType.BUTTON,
+                  icon: 'add'
                 }
               ]
             }

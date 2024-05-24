@@ -1,0 +1,74 @@
+@use '../../../../../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-user-menu-analyst-option-default {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  > div {
+    a {
+      height: 30px;
+      width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      cursor: pointer;
+      > div {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+  &__container {
+    gap: 18px;
+    height: fit-content;
+    min-height: 32px;
+    padding: 8px 10px;
+    text-decoration: none;
+    border-radius: 6px;
+    > p {
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 15.6px;
+      margin: 0;
+    }
+  }
+  &--button {
+    > a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      gap: 10px;
+      border-radius: 30px;
+      padding: 10px 20px;
+      margin-top: 10px;
+      > p {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 16.8px;
+        color: #0a0c0e;
+      }
+      &:hover {
+        background-color: white;
+      }
+    }
+  }
+  &--underline {
+    padding: 5px;
+    > a {
+      color: v.$color-blue-dark3;
+      text-decoration: underline;
+      width: fit-content;
+      padding: 0;
+      > p {
+        font-weight: 700;
+        color: v.$color-blue-dark3;
+      }
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}

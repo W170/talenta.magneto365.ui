@@ -55,6 +55,10 @@ export interface IUserAnalyst {
    * Name of the user
    */
   name: string
+  /**
+   * Title of the user
+   */
+  title: string
 }
 
 export interface ICompanyAnalyst {
@@ -80,6 +84,28 @@ export interface ISubCompanyAnalyst {
 }
 
 export interface IUserMenuAnalystAction {
-  title: string
+  /**
+   * Action link
+   */
   data: string | (() => void)
+  /**
+   * Action icon
+   */
+  icon?: string
+  /**
+   * Relationship when opening the link
+   */
+  rel?: string
+  /**
+   * Target when opening the link
+   */
+  target?: string
+  /**
+   * Action title
+   */
+  title: string
+  /**
+   * Enables query string params
+   */
+  useQueryString?: boolean
 }

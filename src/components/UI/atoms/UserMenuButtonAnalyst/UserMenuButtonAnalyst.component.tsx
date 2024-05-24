@@ -6,8 +6,8 @@ import { UserRoundedBlue, ArrowDownBlue } from '@constants/icons.constants'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './UserMenuButtonAnalyst.module.scss'
 
-const Component: React.FC<IUserMenuButtonAnalystProps> = ({ className, company, onClick, user }) => {
-  const userInfo = useMediaQuery(<span>{`${user} | ${company}`}</span>, {
+const Component: React.FC<IUserMenuButtonAnalystProps> = ({ className, title, onClick, user }) => {
+  const userInfo = useMediaQuery(<span>{`${user} | ${title}`}</span>, {
     sm: null
   })
 

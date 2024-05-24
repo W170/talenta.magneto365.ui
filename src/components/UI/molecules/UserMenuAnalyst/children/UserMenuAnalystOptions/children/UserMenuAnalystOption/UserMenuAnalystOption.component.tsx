@@ -1,8 +1,9 @@
-import React, { useMemo, useState, useEffect } from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
+import { getOptionType } from './UserMenuAnalystOption.constants'
+import { Actions } from './children'
 import { ArrowLeft2 } from '@constants/icons.constants'
 import { IUserMenuAnalystOption, IUserMenuAnalystOptionProps } from './UserMenuAnalystOption.interface'
 import { MenuDropdown } from '@components/UI/atoms'
-import { MenuIcon } from '@components/UI/molecules'
 import { userMenuAnalystIcons } from '../../../../UserMenuAnalyst.constants'
 import { UserMenuAnalystTitle as Title } from '../UserMenuAnalystTitle'
 import CNM from '@utils/classNameManager/classNameManager.util'
@@ -10,57 +11,50 @@ import styles from './UserMenuAnalystOption.module.scss'
 
 const Component: React.FC<IUserMenuAnalystOptionProps> = ({ classNames, option, isOpen, queryString = {} }) => {
   const [isOpenDropdown, setIsOpenDropdown] = useState<boolean>(false)
-  const { useQueryString = true, isLinkHighlighted = false, rel = 'noreferrer', target = '_self' } = option
 
   useEffect(() => {
     setIsOpenDropdown(false)
   }, [isOpen])
 
-  const url = useMemo(() => {
-    if (option.data && !Array.isArray(option.data) && typeof option.data === 'string') {
-      const hasParams = option.data?.includes('?')
-      const delimiter = useQueryString && queryString && hasParams ? '&' : ''
+  const url = useCallback(
+    (option: IUserMenuAnalystOption) => {
+      if (option.data && !Array.isArray(option.data) && typeof option.data === 'string') {
+        const hasParams = option.data.includes('?')
+        const delimiter = option.useQueryString !== false && queryString && hasParams ? '&' : ''
 
-      const queryStringParams = Object.entries(queryString)
-        .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value as string)}`)
-        .join('&')
+        const queryStringParams = Object.entries(queryString)
+          .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value as string)}`)
+          .join('&')
 
-      return useQueryString && queryStringParams
-        ? `${option.data}${hasParams ? delimiter : '?'}${queryStringParams}`
-        : option.data
-    }
-  }, [option.data, queryString, useQueryString])
+        return option.useQueryString !== false && queryStringParams
+          ? `${option.data}${hasParams ? delimiter : '?'}${queryStringParams}`
+          : option.data
+      }
+    },
+    [queryString]
+  )
 
   if (!Array.isArray(option.data)) {
+    const OptionType = getOptionType(option.type)
+
+    if (!OptionType) return null
+
     return (
-      <MenuIcon
-        className={CNM.get({
-          styles,
-          cls: [
-            'user-menu-analyst-option__link',
-            isLinkHighlighted && 'user-menu-analyst-option__link--highlighted',
-            classNames?.link
-          ]
-        })}
-        text={option.title || ''}
-        icon={option.icon && userMenuAnalystIcons[option.icon] ? userMenuAnalystIcons[option.icon] : option.icon}
-        iconSize={18}
-        url={url}
-        type={typeof option.data === 'function' ? 'button' : 'link'}
-        onClick={
-          typeof option.data === 'function'
-            ? () => (option.data as (option: IUserMenuAnalystOption) => void)(option)
-            : undefined
-        }
-        target={target}
-        rel={rel}
-      />
+      <div className={CNM.get({ styles, cls: ['user-menu-analyst-option__object'] })}>
+        <OptionType
+          className={CNM.get({ styles, cls: [classNames?.link] })}
+          option={option}
+          url={url(option)}
+          prefix={<Actions actions={option.prefix || []} getUrl={url} />}
+          suffix={<Actions actions={option.suffix || []} getUrl={url} />}
+        />
+      </div>
     )
   }
 
   return (
     <MenuDropdown
-      title={<Title title={option.title || ''} />}
+      title={<Title title={option.title || ''} subTitle={option.subTitle} />}
       opened={isOpenDropdown}
       onClick={() => setIsOpenDropdown(!isOpenDropdown)}
       listClassName={CNM.get({ styles, cls: ['user-menu-analyst-option__dropdown-list'] })}
@@ -79,6 +73,9 @@ const Component: React.FC<IUserMenuAnalystOptionProps> = ({ classNames, option, 
     >
       {option.data?.map((item, i) => (
         <React.Fragment key={`option-${item.title}-${i}`}>
+          {item.title && (
+            <span className={CNM.get({ styles, cls: ['user-menu-analyst-option__dropdown-title'] })}>{item.title}</span>
+          )}
           {item?.children?.map((child, j) => (
             <Component
               key={`option-${child.title}-${j}`}
