@@ -46,4 +46,12 @@ export interface ILinkProps {
    * Sets if link is mobile
    */
   isMobile?: boolean
+  /**
+   * Relationship when opening the link
+   */
+  rel?: string
+  /**
+   * Target when opening the link
+   */
+  target?: string
 }
