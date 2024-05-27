@@ -40,7 +40,7 @@ const Component: React.FC<IUserMenuAnalystProps> = ({
           <div className={CNM.get({ styles, cls: ['user-menu-analyst__user-info'] })}>
             <span className={CNM.get({ styles, cls: ['user-menu-analyst__user-info--name'] })}>{user.name}</span>
             <span className={CNM.get({ styles, cls: ['user-menu-analyst__user-info--mail'] })}>{user.email}</span>
-            {action && typeof action.data === 'string' ? (
+            {action ? (
               <span className={CNM.get({ styles, cls: ['user-menu-analyst__user-info--action'] })}>
                 <IconItem
                   showDefaultFallback={false}
@@ -49,7 +49,11 @@ const Component: React.FC<IUserMenuAnalystProps> = ({
                     action.icon && userMenuAnalystIcons[action.icon] ? userMenuAnalystIcons[action.icon] : action.icon
                   }
                 />
-                <Link text={action.title} href={actionUrl} rel={action.rel} target={action.target} />
+                {typeof action.data === 'string' ? (
+                  <Link text={action.title} href={actionUrl} rel={action.rel} target={action.target} />
+                ) : (
+                  <button onClick={action.data}>{action.title}</button>
+                )}
               </span>
             ) : (
               <span className={CNM.get({ styles, cls: ['user-menu-analyst__user-info--title'] })}>{user.title}</span>

@@ -64,10 +64,16 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      a {
+      a,
+      button {
         font-size: 12px;
         color: v.$color-blue-dark3;
         text-underline-offset: 3px;
+        text-decoration: underline;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        padding: 0;
         p {
           margin: 0;
         }

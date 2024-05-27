@@ -44,7 +44,8 @@ export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
   user: UserAnalystProps,
   action: {
     title: 'Volver a Comfama',
-    data: '/comfama',
+    // data: '/comfama',
+    data: () => console.log('Comfama'),
     icon: 'redo',
     rel: 'noopener noreferrer',
     target: '_blank',
