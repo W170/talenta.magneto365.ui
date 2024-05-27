@@ -70,7 +70,7 @@ export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
                     {
                       title: 'Gestionar',
                       icon: 'manage',
-                      data: '/gestionar'
+                      data: (option) => console.log(option)
                     }
                   ]
                 },

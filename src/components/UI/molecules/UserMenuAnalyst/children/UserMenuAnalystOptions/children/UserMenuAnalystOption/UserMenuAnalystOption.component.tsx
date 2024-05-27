@@ -45,8 +45,8 @@ const Component: React.FC<IUserMenuAnalystOptionProps> = ({ classNames, option, 
           className={CNM.get({ styles, cls: [classNames?.link] })}
           option={option}
           url={url(option)}
-          prefix={<Actions actions={option.prefix || []} getUrl={url} />}
-          suffix={<Actions actions={option.suffix || []} getUrl={url} />}
+          prefix={<Actions actions={option.prefix || []} getUrl={url} option={option} />}
+          suffix={<Actions actions={option.suffix || []} getUrl={url} option={option} />}
         />
       </div>
     )

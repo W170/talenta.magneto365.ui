@@ -19,7 +19,8 @@
     }
   }
   > div:last-child {
-    a {
+    a,
+    button {
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.3s ease-in-out;
@@ -29,6 +30,7 @@
       align-items: center;
       justify-content: center;
       background-color: #e3e7e9;
+      border: none;
       border-radius: 100%;
       cursor: pointer;
       > div {
@@ -40,7 +42,8 @@
   &:hover {
     background-color: #c2c8cf;
     > div {
-      a {
+      a,
+      button {
         opacity: 1;
         visibility: visible;
       }
@@ -62,7 +65,8 @@
     right: 5px;
     transform: translateY(-50%);
     > div {
-      > a {
+      > a,
+      button {
         height: 30px;
         width: 30px;
         display: grid;
