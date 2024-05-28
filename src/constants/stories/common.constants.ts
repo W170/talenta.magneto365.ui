@@ -102,7 +102,7 @@ export const SignUpButtonStyle: IMainButton = {
 
 export const UserMenuButtonAnalystProps: IUserMenuButtonAnalystProps = {
   user: 'Gabriel López',
-  company: 'Comfama',
+  title: 'Comfama',
   className: 'magneto-ui-user-menu-button-analyst',
   onClick: () => console.log('click')
 }

@@ -1,7 +1,7 @@
 import { classMUI } from '@constants/stories'
 
 interface IStylesConfig {
-  cls: (string | null | false | undefined)[]
+  cls: (string | string[] | null | false | undefined)[]
   styles?: { [key: string]: string }
 }
 
@@ -9,7 +9,7 @@ class CNM {
   static get({ cls, styles }: IStylesConfig): string {
     const appliedStyles = styles || {}
 
-    const validClassNames = CNM.getValidClassNames(cls)
+    const validClassNames = CNM.getValidClassNames(cls.flat(Infinity) as (string | null | false | undefined)[])
 
     if (validClassNames.length === 0) return ''
 

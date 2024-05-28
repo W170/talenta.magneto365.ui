@@ -7,10 +7,10 @@ import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './UserMenuWrapperAnalystDropdown.module.scss'
 
 const Component: React.FC<IUserMenuWrapperAnalystDropdownProps> = ({
+  action,
   user,
   clickOut = false,
   setClickOut = () => ({}),
-  companyName,
   footerSections,
   headerSections
 }) => {
@@ -23,6 +23,7 @@ const Component: React.FC<IUserMenuWrapperAnalystDropdownProps> = ({
           <UserMenuAnalyst
             isMenuOpen={clickOut}
             user={user}
+            action={action}
             headerSections={headerSections}
             footerSections={footerSections}
           />
@@ -30,7 +31,7 @@ const Component: React.FC<IUserMenuWrapperAnalystDropdownProps> = ({
         positionX="left"
         positionY="bottom"
       >
-        <UserMenuButtonAnalyst user={user.name} company={companyName} onClick={() => setClickOut(!clickOut)} />
+        <UserMenuButtonAnalyst user={user.name} title={user.title} onClick={() => setClickOut(!clickOut)} />
       </Popover>
     </div>
   )

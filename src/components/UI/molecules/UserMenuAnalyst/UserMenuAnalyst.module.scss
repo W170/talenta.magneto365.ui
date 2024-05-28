@@ -37,26 +37,45 @@
       width: 32px;
       height: 32px;
     }
+    > div:first-child {
+      cursor: default;
+    }
   }
   &__user-info {
     display: flex;
     flex-direction: column;
+    gap: 2px;
     font-size: 14px;
     line-height: 16.8px;
-    color: v.$text-color-black;
+    color: #0a0c0e;
     &--name {
       font-weight: 700;
     }
     &--mail {
       font-weight: 400;
     }
+    &--title {
+      font-size: 12px;
+      line-height: 14.4px;
+      font-weight: 400;
+      color: #1f2329;
+    }
     &--action {
-      a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      a,
+      button {
         font-size: 12px;
-        line-height: 14.4px;
-        color: v.$color-blue-dark2;
+        color: v.$color-blue-dark3;
+        text-underline-offset: 3px;
+        text-decoration: underline;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        padding: 0;
         p {
-          margin: 5px 0 0;
+          margin: 0;
         }
       }
     }
@@ -71,20 +90,6 @@
     > div:first-child {
       > span {
         color: #0a0c0e;
-      }
-    }
-    a {
-      color: v.$text-color-black;
-      padding: 12px 5px;
-      &:hover {
-        background-color: transparent;
-        text-decoration: underline;
-      }
-      &:first-child {
-        padding-top: 0;
-      }
-      &:last-child {
-        padding-bottom: 0;
       }
     }
   }

@@ -4,13 +4,13 @@ export interface IUserMenuButtonAnalystProps {
    */
   className?: string
   /**
-   * Company name
-   */
-  company: string
-  /**
    * Function to execute on click event
    */
   onClick?: () => void
+  /**
+   * Title
+   */
+  title: string
   /**
    * User name
    */

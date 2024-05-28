@@ -112,3 +112,7 @@ export { default as DollarCircleWhiteOutline } from '../assets/dollarCircleWhite
 export { default as DollarCircleBlueBold } from '../assets/dollarCircleBlueBold.svg'
 export { default as MiniArrowGrayUp } from '../assets/miniArrowGrayUp.svg'
 export { default as MiniArrowGrayDown } from '../assets/miniArrowGrayDown.svg'
+export { default as RedoDarkBlue } from '../assets/redoDarkBlue.svg'
+export { default as MouseCircleBlackOutline } from '../assets/mouseCircleDarkBlueOutline.svg'
+export { default as BuildingSlashBlackOutline } from '../assets/buildingSlashDarkBlueOutline.svg'
+export { default as AddSquareBlackOutline } from '../assets/addSquareBlackOutline.svg'

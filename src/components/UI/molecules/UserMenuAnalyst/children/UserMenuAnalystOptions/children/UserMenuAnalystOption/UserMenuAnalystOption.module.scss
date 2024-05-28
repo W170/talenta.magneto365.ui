@@ -1,20 +1,25 @@
 @use '../../../../../../../../shared/stylesheets/variables.scss' as v;
 
 .magneto-ui-user-menu-analyst-option {
-  &__link {
-    gap: 18px;
-    height: fit-content;
-    padding: 8px 10px;
-    text-decoration: none;
-    &--highlighted {
-      color: v.$color-blue-dark3;
-      text-decoration: underline;
-      font-weight: 700;
+  &__object {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    > div:last-child {
+      margin-left: auto;
     }
-    > p {
-      font-size: 13px;
-      line-height: 15.6px;
+    > span,
+    > a,
+    > button {
+      flex: 1;
     }
+  }
+  &__dropdown-title {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14.4px;
+    color: #1f2329;
   }
   &__dropdown {
     background-color: transparent;
@@ -29,16 +34,22 @@
   }
   &__dropdown-list {
     color: v.$text-color-black;
+    padding-top: 0;
     > a,
-    > button {
+    > button,
+    > span {
       height: fit-content;
-      padding: 8px 10px;
-      border-radius: 10px;
+      padding: 5px;
       gap: 10px;
+      min-height: 40px;
     }
-    > div {
-      margin: 6px 0;
-    }
+  }
+  &__empty-text {
+    padding-inline: 8px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15.6px;
+    color: v.$color-blue-dark5;
   }
   &__arrow {
     transform: rotate(-90deg);

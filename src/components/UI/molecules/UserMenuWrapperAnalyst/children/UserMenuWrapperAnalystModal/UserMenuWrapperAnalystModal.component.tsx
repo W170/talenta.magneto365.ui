@@ -6,8 +6,8 @@ import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './UserMenuWrapperAnalystModal.module.scss'
 
 const Component: React.FC<IUserMenuWrapperAnalystModalProps> = ({
+  action,
   clickOut = false,
-  companyName,
   footerSections,
   headerSections,
   setClickOut = () => ({}),
@@ -23,11 +23,12 @@ const Component: React.FC<IUserMenuWrapperAnalystModalProps> = ({
         <UserMenuAnalyst
           isMenuOpen={clickOut}
           user={user}
+          action={action}
           headerSections={headerSections}
           footerSections={footerSections}
         />
       </MobileDrawer>
-      <UserMenuButtonAnalyst user={user.name} company={companyName} onClick={() => setClickOut(true)} />
+      <UserMenuButtonAnalyst user={user.name} title={user.title} onClick={() => setClickOut(true)} />
     </React.Fragment>
   )
 }

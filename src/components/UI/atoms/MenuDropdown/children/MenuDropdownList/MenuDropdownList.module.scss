@@ -1,6 +1,5 @@
 .magneto-ui-menu-dropdown-list {
   visibility: hidden;
-  overflow: hidden;
   display: grid;
   grid-template-rows: 0fr;
   transition: all 0.3s ease-in-out;
@@ -10,11 +9,30 @@
   }
   &__container {
     color: inherit;
-    overflow: hidden;
+    min-height: 0;
+    height: 0;
+    visibility: visible;
+    opacity: 0;
     transition: all 0.3s ease-in-out;
+    &--visible {
+      visibility: visible;
+      opacity: 1;
+      height: 100%;
+    }
   }
   &__children {
     padding: 10px;
+    height: 100%;
+    transform-origin: top;
+    transform: scaleY(0);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    &--visible {
+      transform: scaleY(1);
+      visibility: visible;
+      opacity: 1;
+    }
     > * {
       display: block;
     }

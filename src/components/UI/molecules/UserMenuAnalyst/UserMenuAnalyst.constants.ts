@@ -1,7 +1,19 @@
-import { MagicStarBlackOutline, HeadsetBlackOutline, LogoutBlackOutline } from '@constants/icons.constants'
+import {
+  MagicStarBlackOutline,
+  HeadsetBlackOutline,
+  LogoutBlackOutline,
+  MouseCircleBlackOutline,
+  BuildingSlashBlackOutline,
+  AddSquareBlackOutline,
+  RedoDarkBlue
+} from '@constants/icons.constants'
 
 export const userMenuAnalystIcons: { [key: string]: string } = {
   helpImprove: MagicStarBlackOutline,
   support: HeadsetBlackOutline,
-  logout: LogoutBlackOutline
+  logout: LogoutBlackOutline,
+  manage: MouseCircleBlackOutline,
+  unlink: BuildingSlashBlackOutline,
+  add: AddSquareBlackOutline,
+  redo: RedoDarkBlue
 }
