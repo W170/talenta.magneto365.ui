@@ -22,14 +22,15 @@
     color: #1f2329;
   }
   &__dropdown {
-    background-color: transparent;
-    color: v.$text-color-black;
-    border-radius: 10px;
-    background-color: #e3e7e9;
-    > div:first-child {
-      height: fit-content;
-      padding: 8px 10px;
-      gap: 18px;
+    > div {
+      color: v.$text-color-black;
+      border-radius: 10px;
+      background-color: #e3e7e9;
+      > div:first-child {
+        height: fit-content;
+        padding: 8px 10px;
+        gap: 18px;
+      }
     }
   }
   &__dropdown-list {
