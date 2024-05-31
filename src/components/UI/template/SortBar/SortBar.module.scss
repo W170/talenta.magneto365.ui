@@ -52,11 +52,14 @@
   background-color: #f0f1f3;
   padding: 0.5em;
   border-radius: 50%;
-  width: 1em;
-  height: 1em;
+  width: 1rem;
+  height: 1rem;
   color: #8591a0;
   cursor: pointer;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .magneto-ui-btn-menu {
