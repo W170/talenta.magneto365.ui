@@ -13,4 +13,6 @@ export interface ITooltipProps {
    * the tooltip component must wrap a component
    */
   children: React.ReactNode
+
+  width?: string
 }
