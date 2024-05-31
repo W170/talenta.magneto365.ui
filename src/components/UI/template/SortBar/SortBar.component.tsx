@@ -22,7 +22,8 @@ const SortBar: React.FC<ISortBar> = ({
   orderFilter,
   setFilter,
   emptyVacant,
-  infoMessageQuotas
+  infoMessageQuotas,
+  widthInfoMessage
 }) => {
   const [showMenu, setShowMenu] = useState(false)
 
@@ -75,7 +76,7 @@ const SortBar: React.FC<ISortBar> = ({
           {mainTitleByMediaQuery}
           <p className={`${styles['magneto-ui-btn-text']} ${styles.hidden}`}>{filterSummary}</p>
           {infoMessageQuotas && (
-            <Tooltip title={infoMessageQuotas} position="bottom">
+            <Tooltip title={infoMessageQuotas} position="bottom" width={widthInfoMessage}>
               <div className={`${styles['magneto-ui-tooltip-quotas']}`}>
                 <span>?</span>
               </div>

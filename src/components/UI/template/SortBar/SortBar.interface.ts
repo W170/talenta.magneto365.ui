@@ -59,4 +59,6 @@ export interface ISortBar {
     Information message on number of quotas title
   */
   infoMessageQuotas?: string
+
+  widthInfoMessage?: string
 }
