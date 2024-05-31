@@ -35,7 +35,7 @@ export const optionsFilterOrderBy: ISortMenuItem[] = [
 export const sortBarProps = {
   textSortButton: 'FILTROS',
   mainTitle: 'Ofertas de empleo en colombia',
-  filterSummary: '280 empleos',
+  filterSummary: '280 cupos',
   textOrderFilter: 'Fecha de publicación',
   orderFields: optionsFilterOrderBy,
   orderByText: 'Organizar por',
@@ -44,5 +44,7 @@ export const sortBarProps = {
   titleBtnOrder: 'Ordenar de forma ascendente',
   setIsFiltersOpen: () => console.log('setIsFiltersOpen'),
   orderFilter: () => console.log('orderFilter'),
-  setFilter: (menuItem: { key: string }) => console.log(menuItem.key)
+  setFilter: (menuItem: { key: string }) => console.log(menuItem.key),
+  infoMessageQuotas:
+    'El número de resultados varias respecto al número de cupos, revisa los cupos disponibles en el detalle de las vacantes.'
 }

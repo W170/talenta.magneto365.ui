@@ -44,6 +44,19 @@
   font-size: 14px;
   color: v.$text-color-black;
   margin: 0 0 0 10px;
+  margin-right: 1em;
+}
+
+.magneto-ui-tooltip-quotas {
+  font-size: 14px;
+  background-color: #f0f1f3;
+  padding: 0.5em;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  color: #8591a0;
+  cursor: pointer;
+  text-align: center;
 }
 
 .magneto-ui-btn-menu {

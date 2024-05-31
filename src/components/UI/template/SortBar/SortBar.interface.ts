@@ -54,4 +54,9 @@ export interface ISortBar {
    *
    */
   emptyVacant?: boolean
+
+  /*
+    Information message on number of quotas title
+  */
+  infoMessageQuotas?: string
 }

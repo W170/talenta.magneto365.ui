@@ -2,7 +2,7 @@ import React, { Fragment, useMemo, useState } from 'react'
 import { iconFilterOrder, menuSortButton } from '@constants/stories'
 import { Setting4 } from '@constants/icons.constants'
 import { useMediaQuery } from '@components/hooks'
-import { MenuIcon } from '@components/UI/molecules'
+import { MenuIcon, Tooltip } from '@components/UI/molecules'
 import { SortMenu } from '@components/UI/molecules/SortMenu'
 import { IconItem } from '@components/UI/atoms'
 import MobileSortMenu from '@components/UI/organism/MobileSortMenu/MobileSortMenu.component'
@@ -21,7 +21,8 @@ const SortBar: React.FC<ISortBar> = ({
   setIsFiltersOpen,
   orderFilter,
   setFilter,
-  emptyVacant
+  emptyVacant,
+  infoMessageQuotas
 }) => {
   const [showMenu, setShowMenu] = useState(false)
 
@@ -73,6 +74,13 @@ const SortBar: React.FC<ISortBar> = ({
           />
           {mainTitleByMediaQuery}
           <p className={`${styles['magneto-ui-btn-text']} ${styles.hidden}`}>{filterSummary}</p>
+          {infoMessageQuotas && (
+            <Tooltip title={infoMessageQuotas} position="bottom">
+              <div className={`${styles['magneto-ui-tooltip-quotas']}`}>
+                <span>?</span>
+              </div>
+            </Tooltip>
+          )}
         </div>
         {sortBarButtonAltRender}
       </div>
