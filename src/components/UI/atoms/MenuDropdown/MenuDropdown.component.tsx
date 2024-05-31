@@ -35,22 +35,24 @@ const Component: React.FC<IMenuDropdownProps> = ({
 
   return (
     <div className={CNM.get({ styles, cls: ['menu-dropdown', className] })} onClick={toggleOptions}>
-      <div className={CNM.get({ styles, cls: ['menu-dropdown__container'] })}>
-        {prefixIcon && <IconItem size={18} {...prefixIcon} />}
-        <span className={CNM.get({ styles, cls: ['menu-dropdown__title'] })}>{title}</span>
-        <div
-          className={CNM.get({
-            styles,
-            cls: ['menu-dropdown__suffix', localOpened && 'menu-dropdown__suffix--visible']
-          })}
-        >
-          <IconItem size={18} {...suffixIcon} />
+      <div className={CNM.get({ styles, cls: ['menu-dropdown__content'] })}>
+        <div className={CNM.get({ styles, cls: ['menu-dropdown__container'] })}>
+          {prefixIcon && <IconItem size={18} {...prefixIcon} />}
+          <span className={CNM.get({ styles, cls: ['menu-dropdown__title'] })}>{title}</span>
+          <div
+            className={CNM.get({
+              styles,
+              cls: ['menu-dropdown__suffix', localOpened && 'menu-dropdown__suffix--visible']
+            })}
+          >
+            <IconItem size={18} {...suffixIcon} />
+          </div>
         </div>
-      </div>
-      <div onClick={handleButtonClick}>
-        <List opened={localOpened ?? false} listClassName={listClassName}>
-          {children}
-        </List>
+        <div onClick={handleButtonClick}>
+          <List opened={localOpened ?? false} listClassName={listClassName}>
+            {children}
+          </List>
+        </div>
       </div>
     </div>
   )
