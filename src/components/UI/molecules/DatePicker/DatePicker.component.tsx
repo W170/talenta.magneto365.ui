@@ -49,7 +49,8 @@ const Component: React.FC<IDatePicker> = ({
       setSelectedYear('')
       onChange(null)
     }
-  }, [disabled, onChange])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [disabled])
 
   return (
     <div className={styles['magneto-ui--date-picker__wrapper']}>

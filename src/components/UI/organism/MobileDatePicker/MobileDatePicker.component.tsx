@@ -78,7 +78,8 @@ const Component: React.FC<IMobileDatePicker> = ({
       setYearSelected('')
       onChange(null)
     }
-  }, [disabled, onChange])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [disabled])
 
   return (
     <section className={styles['magneto-ui--mobile-date-picker']}>
