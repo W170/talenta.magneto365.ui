@@ -50,7 +50,10 @@ export const DatePickerProps = {
   monthPlaceholder: 'Month',
   monthOptionsLabels: months,
   yearPlaceholder: 'Year',
-  value: new Date()
+  value: new Date(),
+  onChange: () => {
+    //
+  }
 }
 
 export const MobileDatePickerProps = {
@@ -63,5 +66,8 @@ export const MobileDatePickerProps = {
   yearPlaceholder: 'Year',
   selectionMonthHeader: 'Selecciona un mes',
   selectionYearHeader: 'Selecciona un año',
-  value: new Date()
+  value: new Date(),
+  onChange: () => {
+    //
+  }
 }
