@@ -49,7 +49,6 @@
   &__children-container {
     overflow-x: hidden;
     overflow-y: auto;
-    max-height: 350px;
     @include m.scroll-filter;
   }
 }

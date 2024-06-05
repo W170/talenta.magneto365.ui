@@ -23,6 +23,10 @@ export interface IModal {
   description: string
   /**This is the custom className */
   className?: string
+  /**
+   * This property can be used to change the max height of the modal children
+   */
+  customMaxHeight?: string
 }
 
 export interface IModalPortal {

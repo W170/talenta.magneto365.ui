@@ -1,6 +1,7 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import Modal from './Modal.component'
+
 import { OneSelectionEntry } from '@components/UI/organism'
 import { listOptions } from '../../../../constants/stories/inputSelect.constants'
 
@@ -24,8 +25,14 @@ const meta: Meta<typeof Modal> = {
     },
     title: 'Formularios de solicitud',
     description: 'Formularios de solicitud de vacantes existentes:',
+    customMaxHeight: '200px',
     children: (
       <>
+        <OneSelectionEntry {...selectProps} />
+        <OneSelectionEntry {...selectProps} />
+        <OneSelectionEntry {...selectProps} />
+        <OneSelectionEntry {...selectProps} />
+        <OneSelectionEntry {...selectProps} />
         <OneSelectionEntry {...selectProps} />
         <OneSelectionEntry {...selectProps} />
         <OneSelectionEntry {...selectProps} />
