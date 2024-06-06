@@ -1,0 +1,77 @@
+@use '/src/shared/stylesheets/variables.scss' as var;
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+$font-size: 18px;
+
+.date-input {
+  border-radius: 10px;
+  border: 1px solid var.$colors-magneto-neutral-gray-5;
+  background-color: var.$color-white;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  position: relative;
+
+  &__label {
+    color: rgb(117, 117, 117);
+    position: absolute;
+    font-size: $font-size;
+    cursor: text;
+    text-align: right;
+    width: 8.5rem;
+    white-space: pre;
+  }
+
+  &__input {
+    text-align: left;
+    border: none;
+    font-size: $font-size;
+    width: 8.5rem;
+    &:hover,
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__label--monospace {
+    padding: 1px 8px 0 0;
+  }
+
+  &__label--monospace,
+  &__input--monospace {
+    font-family: monospace;
+    word-spacing: -5px;
+  }
+
+  &__label--lato {
+    padding: 1px 0 0 0;
+  }
+
+  &__label--lato,
+  &__input--lato {
+    font-family: 'Lato';
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  &__label--courier {
+    padding: 1px 8px 0 0;
+  }
+
+  &__label--courier,
+  &__input--courier {
+    font-family: 'Courier New';
+    word-spacing: -5px;
+  }
+
+  &__label--lucida {
+    padding: 1px 8px 0 0;
+  }
+
+  &__label--lucida,
+  &__input--lucida {
+    font-family: Lucida;
+  }
+}
