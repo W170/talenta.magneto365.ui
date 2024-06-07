@@ -1,6 +1,7 @@
 export interface IDateInput {
   className?: string
-  onChange?: (value: Date) => void
-  value?: Date
-  font?: 'monospace' | 'courier' | 'lato' | 'lucida'
+  onChange?: (value?: Date | null | typeof NaN) => void
+  value?: Date | null | typeof NaN
+  fit?: boolean
+  hasError?: boolean
 }

@@ -1,69 +1,139 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
+import { isDate, isInvalidDate, notNumberRegex } from '../../../../shared/utils/common'
 import { IDateInput } from './DateInput.interface'
 import styles from './DateInput.module.scss'
-import { formatDateInputRegex, notNumberRegex } from '@shared/utils/common'
 
-const format = 'DD / MM / AAAA'
+const placeholder = ['D', 'D', 'M', 'M', 'A', 'A', 'A', 'A']
 
-const labelfontsClass = {
-  monospace: 'date-input__label--monospace',
-  courier: 'date-input__label--courier',
-  lato: 'date-input__label--lato',
-  lucida: 'date-input__label--lucida'
-}
+const Component: React.FC<IDateInput> = ({ value, onChange = () => null, fit = false, hasError = false }) => {
+  // Represent the value of every input field (there are 8 in total).
+  const [internalValues, setInternalValues] = useState<string[]>(Array(8).fill(''))
+  // An array of references of every input field.
+  const inputsRef = useRef<Array<HTMLInputElement | null>>([])
+  // Last value emited to onChange function
+  const lastValueEmitedRef = useRef(value)
 
-const inputfontsClass = {
-  monospace: 'date-input__input--monospace',
-  courier: 'date-input__input--courier',
-  lato: 'date-input__input--lato',
-  lucida: 'date-input__input--lucida'
-}
+  const handleEmit = (value: IDateInput['value']) => {
+    if (isDate(value)) {
+      lastValueEmitedRef.current = value
+      return onChange(value)
+    }
 
-const Component: React.FC<IDateInput> = ({ onChange = () => null, value, font = 'monospace' }) => {
-  const [internalValue, setInternalValue] = useState('')
+    if (isInvalidDate(value)) {
+      lastValueEmitedRef.current = value
+      return onChange(NaN)
+    }
 
-  const handleOnChange = (value: string) => {
-    const numbers = value.replace(notNumberRegex, '')
+    if (value !== lastValueEmitedRef.current) {
+      lastValueEmitedRef.current = value
+      return onChange(value)
+    }
+  }
 
-    if (numbers.length > 8) return
+  const handleChange = (index: number, value: string) => {
+    const newValues = [...internalValues]
+    newValues[index] = value.slice(-1)
+    setInternalValues(newValues)
 
-    const newValue = numbers
-      .split('')
-      .map((num, index) => {
-        if ([2, 4].includes(index)) {
-          return ` / ${num}`
-        }
+    // Focus the next input
+    if (value && index < internalValues.length - 1) {
+      inputsRef.current[index + 1]?.focus()
+    }
 
-        return num
-      })
-      .join('')
+    if (newValues.join('').length === 8) {
+      const [d1, d2, m1, m2, ...year] = newValues
+      handleEmit(new Date(`${year.join('')}-${m1}${m2}-${d1}${d2}`))
+    } else {
+      handleEmit(undefined)
+    }
+  }
 
-    setInternalValue(newValue)
+  const handleKeyDown = (index: number, key: string) => {
+    if (key === 'Backspace' && !internalValues[index] && index > 0) {
+      const newValues = [...internalValues]
+      newValues[index - 1] = ''
+      setInternalValues(newValues)
+      inputsRef.current[index - 1]?.focus()
+    } else if (key === 'ArrowLeft' && index > 0) {
+      inputsRef.current[index - 1]?.focus()
+    } else if (key === 'ArrowRight' && index < internalValues.length - 1) {
+      inputsRef.current[index + 1]?.focus()
+    }
+  }
 
-    if (formatDateInputRegex.test(newValue)) {
-      const [, day, month, year] = formatDateInputRegex.exec(newValue) ?? []
-      console.log(new Date(`${year}-${month}-${day}`))
-      onChange(new Date(`${year}-${month}-${day}`))
+  const handlePaste = (index: number, event: React.ClipboardEvent<HTMLInputElement>) => {
+    event.preventDefault()
+    const pasteData = event.clipboardData
+      ?.getData('text')
+      .replace(notNumberRegex, '')
+      .slice(0, internalValues.length - index)
+
+    if (pasteData == undefined) return
+
+    const newValues = [...internalValues]
+
+    for (let i = 0; i < pasteData.length; i++) {
+      newValues[index + i] = pasteData[i]
+    }
+
+    setInternalValues(newValues)
+
+    if (index + pasteData.length - 1 < internalValues.length) {
+      inputsRef.current[index + pasteData.length - 1]?.focus()
+    }
+
+    if (newValues.join('').length === 8) {
+      const [d1, d2, m1, m2, ...year] = newValues
+      handleEmit(new Date(Number(year.join('')), Number(`${m1}${m2}`) - 1, Number(`${d1}${d2}`)))
     }
   }
 
   useEffect(() => {
-    if (value != null) {
-      const formattedDate = `${value.getDate()}-${value.getMonth() + 1}-${value.getFullYear()}`
-      setInternalValue(formattedDate)
+    if (value === null) {
+      setInternalValues(Array(8).fill(''))
+    } else if (isDate(value)) {
+      const day = String(value.getDate()).padStart(2, '0').split('')
+      const month = String(value.getMonth() + 1)
+        .padStart(2, '0')
+        .split('')
+      const year = value.getFullYear().toString().split('')
+      setInternalValues([...day, ...month, ...year])
     }
   }, [value])
+
   return (
-    <div className={styles['date-input']}>
-      <label htmlFor="date-input" className={[styles['date-input__label'], styles[labelfontsClass[font]]].join(' ')}>
-        {format.replace(new RegExp(`^.{0,${internalValue.length}}`), '')}
-      </label>
-      <input
-        id="date-input"
-        className={[styles['date-input__input'], styles[inputfontsClass[font]]].join(' ')}
-        onChange={(e) => handleOnChange(e.target.value)}
-        value={internalValue}
-      />
+    <div
+      className={[
+        styles['date-input'],
+        fit ? styles['date-input--fit'] : '',
+        hasError ? styles['date-input--error'] : ''
+      ].join(' ')}
+    >
+      {internalValues.map((value, index) => (
+        <React.Fragment key={index}>
+          {[2, 4].includes(index) ? (
+            // include / separator in date (DD / MM / YYYY)
+            <span
+              className={[styles['date-input__separator'], value ? styles['date-input__separator--filled'] : ''].join(
+                ' '
+              )}
+            >
+              /
+            </span>
+          ) : null}
+          <input
+            className={styles['date-input__input']}
+            type="text"
+            maxLength={1}
+            value={value}
+            placeholder={placeholder[index]}
+            onChange={(e) => handleChange(index, e.target.value)}
+            onKeyDown={(e) => handleKeyDown(index, e.key)}
+            onPaste={(e) => handlePaste(index, e)}
+            ref={(el) => (inputsRef.current[index] = el)}
+          />
+        </React.Fragment>
+      ))}
     </div>
   )
 }
