@@ -3,6 +3,7 @@ import { isDate, isInvalidDate, notNumberRegex } from '../../../../shared/utils/
 import { IDateInput } from './DateInput.interface'
 import styles from './DateInput.module.scss'
 
+// placeholder to every input.
 const placeholder = ['D', 'D', 'M', 'M', 'A', 'A', 'A', 'A']
 
 const stringArraytoDate = (array: string[]) => {
