@@ -5,7 +5,18 @@ import styles from './DateInput.module.scss'
 
 const placeholder = ['D', 'D', 'M', 'M', 'A', 'A', 'A', 'A']
 
-const Component: React.FC<IDateInput> = ({ value, onChange = () => null, fit = false, hasError = false }) => {
+const stringArraytoDate = (array: string[]) => {
+  const [d1, d2, m1, m2, ...year] = array
+  return new Date(Number(year.join('')), Number(`${m1}${m2}`) - 1, Number(`${d1}${d2}`))
+}
+
+const Component: React.FC<IDateInput> = ({
+  className = '',
+  value,
+  onChange = () => null,
+  fit = false,
+  hasError = false
+}) => {
   // Represent the value of every input field (there are 8 in total).
   const [internalValues, setInternalValues] = useState<string[]>(Array(8).fill(''))
   // An array of references of every input field.
@@ -41,8 +52,7 @@ const Component: React.FC<IDateInput> = ({ value, onChange = () => null, fit = f
     }
 
     if (newValues.join('').length === 8) {
-      const [d1, d2, m1, m2, ...year] = newValues
-      handleEmit(new Date(`${year.join('')}-${m1}${m2}-${d1}${d2}`))
+      handleEmit(stringArraytoDate(newValues))
     } else {
       handleEmit(undefined)
     }
@@ -54,6 +64,12 @@ const Component: React.FC<IDateInput> = ({ value, onChange = () => null, fit = f
       newValues[index - 1] = ''
       setInternalValues(newValues)
       inputsRef.current[index - 1]?.focus()
+      handleEmit(undefined)
+    } else if (key === 'Backspace' && internalValues[index] && index > 0) {
+      const newValues = [...internalValues]
+      newValues[index] = ''
+      setInternalValues(newValues)
+      handleEmit(undefined)
     } else if (key === 'ArrowLeft' && index > 0) {
       inputsRef.current[index - 1]?.focus()
     } else if (key === 'ArrowRight' && index < internalValues.length - 1) {
@@ -83,8 +99,7 @@ const Component: React.FC<IDateInput> = ({ value, onChange = () => null, fit = f
     }
 
     if (newValues.join('').length === 8) {
-      const [d1, d2, m1, m2, ...year] = newValues
-      handleEmit(new Date(Number(year.join('')), Number(`${m1}${m2}`) - 1, Number(`${d1}${d2}`)))
+      handleEmit(stringArraytoDate(newValues))
     }
   }
 
@@ -96,7 +111,7 @@ const Component: React.FC<IDateInput> = ({ value, onChange = () => null, fit = f
       const month = String(value.getMonth() + 1)
         .padStart(2, '0')
         .split('')
-      const year = value.getFullYear().toString().split('')
+      const year = value.getFullYear().toString().padStart(4, '0').split('')
       setInternalValues([...day, ...month, ...year])
     }
   }, [value])
@@ -105,6 +120,7 @@ const Component: React.FC<IDateInput> = ({ value, onChange = () => null, fit = f
     <div
       className={[
         styles['date-input'],
+        className,
         fit ? styles['date-input--fit'] : '',
         hasError ? styles['date-input--error'] : ''
       ].join(' ')}
