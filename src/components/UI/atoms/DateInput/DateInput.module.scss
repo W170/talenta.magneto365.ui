@@ -1,4 +1,4 @@
-@use '/src/shared/stylesheets/variables.scss' as var;
+@use '../../../../shared/stylesheets/variables.scss' as var;
 
 $font-size: 18px;
 
@@ -15,7 +15,7 @@ $font-size: 18px;
     text-align: left;
     border: none;
     font-size: $font-size;
-    width: 0.8em;
+    width: 1em;
     &:hover,
     &:focus-visible {
       outline: none;
