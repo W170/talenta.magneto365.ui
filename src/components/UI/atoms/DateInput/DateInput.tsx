@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { isDate, isInvalidDate, notNumberRegex } from '../../../../shared/utils/common'
+import { isDate, notNumberRegex } from '../../../../shared/utils/common'
 import { IDateInput } from './DateInput.interface'
 import styles from './DateInput.module.scss'
 
@@ -29,11 +29,6 @@ const Component: React.FC<IDateInput> = ({
     if (isDate(value)) {
       lastValueEmitedRef.current = value
       return onChange(value)
-    }
-
-    if (isInvalidDate(value)) {
-      lastValueEmitedRef.current = value
-      return onChange(NaN)
     }
 
     if (value !== lastValueEmitedRef.current) {

@@ -1,14 +1,14 @@
 export interface IDateInput {
   className?: string
   /**
-   * this event can dispatch NaN value due to the input date is invalid
-   * @example (78/02/2000) 78 is an invalid day so the onChange will dispatch NaN value.
+   * if the user type an invalid date like (32/02/2000)
+   * the onChange goint to sent (03/03/2000)
    */
-  onChange?: (value?: Date | null | typeof NaN) => void
+  onChange?: (value?: Date | null) => void
   /**
    * if you pass null the component will reset.
    */
-  value?: Date | null | typeof NaN
+  value?: Date | null
   /**
    * fix the width based in content.
    */
