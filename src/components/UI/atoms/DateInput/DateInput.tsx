@@ -39,11 +39,12 @@ const Component: React.FC<IDateInput> = ({
 
   const handleChange = (index: number, value: string) => {
     const newValues = [...internalValues]
-    newValues[index] = value.slice(-1)
+    const numberValue = value.slice(-1).replace(notNumberRegex, '')
+    newValues[index] = numberValue
     setInternalValues(newValues)
 
     // Focus the next input
-    if (value && index < internalValues.length - 1) {
+    if (numberValue && index < internalValues.length - 1) {
       inputsRef.current[index + 1]?.focus()
     }
 
