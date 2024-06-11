@@ -1,0 +1,43 @@
+@use '../../../../shared/stylesheets/variables.scss' as var;
+
+$font-size: 18px;
+
+.date-input {
+  border-radius: 10px;
+  border: 1px solid var.$colors-magneto-neutral-gray-5;
+  background-color: var.$color-white;
+  display: flex;
+  justify-content: center;
+  padding: 19px 16px;
+  position: relative;
+
+  &__input {
+    text-align: left;
+    border: none;
+    font-size: $font-size;
+    width: 1em;
+    &:hover,
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__separator {
+    font-size: $font-size;
+    cursor: default;
+    margin: 0 5px;
+    color: rgb(117, 117, 117);
+  }
+
+  &__separator--filled {
+    color: var.$text-color-black;
+  }
+
+  &--fit {
+    width: fit-content;
+  }
+
+  &--error {
+    border-color: var.$alert-color-red;
+  }
+}
