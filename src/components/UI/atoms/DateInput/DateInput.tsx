@@ -62,7 +62,7 @@ const Component: React.FC<IDateInput> = ({
       setInternalValues(newValues)
       inputsRef.current[index - 1]?.focus()
       handleEmit(undefined)
-    } else if (key === 'Backspace' && internalValues[index] && index > 0) {
+    } else if (key === 'Backspace' && internalValues[index] && index >= 0) {
       const newValues = [...internalValues]
       newValues[index] = ''
       setInternalValues(newValues)
