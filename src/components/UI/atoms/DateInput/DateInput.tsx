@@ -144,6 +144,7 @@ const Component: React.FC<IDateInput> = ({
             onKeyDown={(e) => handleKeyDown(index, e.key)}
             onPaste={(e) => handlePaste(index, e)}
             ref={(el) => (inputsRef.current[index] = el)}
+            inputMode="numeric"
           />
         </React.Fragment>
       ))}
