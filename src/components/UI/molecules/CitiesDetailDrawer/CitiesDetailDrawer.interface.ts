@@ -1,7 +1,7 @@
 export interface ICitiesDetailDrawer {
   cities: ICityDetail[]
   isRemote: boolean
-  textRemote: string
+  textRemote?: string
 }
 
 export interface ICityDetail {

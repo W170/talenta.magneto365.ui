@@ -25,7 +25,7 @@ const Component: React.FC<IJobDetails> = ({ offerDetailsList, iconList, altList,
               <p className={styles['magneto-ui-job-details__item-detail-text']}>{offerDetailText}</p>
             </div>
           ))}
-        <CitiesDetailDrawer cities={cities} />
+        <CitiesDetailDrawer cities={cities} isRemote={false} textRemote="" />
       </div>
     </div>
   )
