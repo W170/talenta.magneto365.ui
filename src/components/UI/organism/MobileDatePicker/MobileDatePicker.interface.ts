@@ -1,5 +1,3 @@
-import { IOptionValues } from '@components/UI/atoms'
-
 export interface IMobileDatePicker {
   /*
    */
@@ -16,12 +14,6 @@ export interface IMobileDatePicker {
   /*
    */
   selectionYearHeader: string
-  /*
-   */
-  monthDateOptions: IOptionValues[]
-  /*
-   */
-  yearDateOptions: IOptionValues[]
   /*
    */
   monthPlaceholder: string
