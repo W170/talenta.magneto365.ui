@@ -12,6 +12,7 @@ const yearOptionsList: IOptionValues[] = yearOptionsLabel?.map((optionLabel, ind
   optionValue: yearOptionsValue[index],
   optionLabel
 }))
+
 const Component: React.FC<IDatePicker> = ({
   monthOptionsLabels,
   monthPlaceholder,
