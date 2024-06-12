@@ -1,22 +1,26 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import { IconItem } from '@components/UI/atoms'
+import { IconItem, IOptionValues } from '@components/UI/atoms'
 import { DateSelection } from '@components/UI/molecules/DateSelection'
 import { IMobileDatePicker } from '@components/UI/organism/MobileDatePicker/MobileDatePicker.interface'
 import styles from './MobileDatePicker.module.scss'
 import { parseDate } from '@components/UI/molecules/DatePicker/utils'
 import { ArrowDown2, ArrowDown3 } from '@constants/icons.constants'
+import { monthOptionsValue, yearOptionsLabel, yearOptionsValue } from '@constants/stories/DatePicker.constants'
 
 const defaultValue = (value: Date) => {
   return value ? parseDate(value) : { initialMonth: '', initialYear: '' }
 }
+
+const yearDateOptions: IOptionValues[] = yearOptionsLabel?.map((optionLabel, index) => ({
+  optionValue: yearOptionsValue[index],
+  optionLabel
+}))
 
 const Component: React.FC<IMobileDatePicker> = ({
   applyLabel,
   cancelLabel,
   disabled,
   monthsLabels,
-  monthDateOptions,
-  yearDateOptions,
   monthPlaceholder,
   yearPlaceholder,
   onChange,
@@ -31,6 +35,11 @@ const Component: React.FC<IMobileDatePicker> = ({
   const [yearSelected, setYearSelected] = useState<string | number | null>(defaultValue(value).initialYear)
 
   const FIRST_OF_MONTH = 1
+
+  const monthDateOptions: IOptionValues[] = monthsLabels?.map((optionLabel, index) => ({
+    optionValue: monthOptionsValue[index],
+    optionLabel
+  }))
 
   const getMonthName = (monthIndex: string | number | undefined) => {
     return monthsLabels[monthIndex as number]
