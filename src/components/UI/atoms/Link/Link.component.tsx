@@ -4,7 +4,7 @@ import styles from './Link.modules.scss'
 import { IconItem } from '../Icon'
 import { toCSSVariables } from '../../../../shared/utils/Function'
 
-const Component: React.FC<ILinkProps> = ({ type, href, text, iconProps, linkStyles, isMobile, rel, target }) => {
+const Component: React.FC<ILinkProps> = ({ type, href, text, title, iconProps, linkStyles, isMobile, rel, target }) => {
   const stylesValue: CSSProperties = useMemo(() => toCSSVariables(linkStyles), [linkStyles])
 
   return (
@@ -12,7 +12,7 @@ const Component: React.FC<ILinkProps> = ({ type, href, text, iconProps, linkStyl
       className={styles.linkComponent}
       style={stylesValue}
       href={href}
-      title={text}
+      title={title ? title : text}
       data-link-type={type}
       data-is-mobile={isMobile}
       rel={rel}

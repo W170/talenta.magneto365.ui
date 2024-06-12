@@ -1,3 +1,5 @@
+import { ICityDetail } from '../CitiesDetailDrawer'
+
 export interface IDetailList {
   /**
    * The text content of the detail item.
@@ -29,4 +31,9 @@ export interface IJobDetails {
    * This array contains the list of icons text alternatives
    */
   altList?: string[]
+
+  /**
+   * This array contains the list of cities and his url
+   */
+  cities: ICityDetail[]
 }

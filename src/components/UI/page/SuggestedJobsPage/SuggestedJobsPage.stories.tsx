@@ -41,8 +41,19 @@ const jobDetailsDrawer = {
     'Hace 10 días',
     '4 cupos, 256 aplicaron',
     '2 años de experiencia, profesional',
-    '$ 2.000.000 a $ 3.000.000',
-    'Bello - Copacabana - Itagui - La Estrella'
+    '$ 2.000.000 a $ 3.000.000'
+  ],
+  cities: [
+    {
+      name: 'Bello',
+      url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-bello',
+      title: 'Ofertas empleo en Bello'
+    },
+    {
+      name: 'Copacabana',
+      url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-copacabana',
+      title: 'Ofertas empleo en Copacabana'
+    }
   ],
   jobDetailCardProps: {
     offerDescription:
@@ -99,8 +110,19 @@ const mobileJobDetailsDrawer = {
     'Hace 10 días',
     '4 cupos, 256 aplicaron',
     '2 años de experiencia, profesional',
-    '$ 2.000.000 a $ 3.000.000',
-    'Bello - Copacabana - Itagui - La Estrella'
+    '$ 2.000.000 a $ 3.000.000'
+  ],
+  cities: [
+    {
+      name: 'Bello',
+      url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-bello',
+      title: 'Ofertas empleo en Bello'
+    },
+    {
+      name: 'Copacabana',
+      url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-copacabana',
+      title: 'Ofertas empleo en Copacabana'
+    }
   ],
   jobDetailCardProps: {
     offerDescription:

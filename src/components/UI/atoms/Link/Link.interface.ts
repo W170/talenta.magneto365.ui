@@ -54,4 +54,6 @@ export interface ILinkProps {
    * Target when opening the link
    */
   target?: string
+
+  title?: string
 }

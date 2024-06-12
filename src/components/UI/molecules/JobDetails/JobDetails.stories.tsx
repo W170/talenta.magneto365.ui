@@ -15,20 +15,43 @@ type Story = StoryObj<typeof JobDetails>
 
 export const Default: Story = {
   args: {
+    cities: [
+      {
+        name: 'Bello',
+        url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-bello',
+        title: 'Ofertas empleo en Bello'
+      },
+      {
+        name: 'Copacabana',
+        url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-copacabana',
+        title: 'Ofertas empleo en Copacabana'
+      }
+    ],
     offerDetailsList: [
       'Hace 10 días',
       '4 cupos, 256 aplicaron',
       '2 años de experiencia, profesional',
-      '$ 2.000.000 a $ 3.000.000',
-      'Bello - Copacabana - Itagui - La Estrella'
+      '$ 2.000.000 a $ 3.000.000'
     ],
-    iconList: [Calendar1, People, Briefcase, DollarCircle, Location],
-    altList: ['Calendar1-icon', 'People-icon', 'Briefcase-icon', 'DollarCircle-icon', 'Location-icon']
+    iconList: [Calendar1, People, Briefcase, DollarCircle],
+    altList: ['Calendar1-icon', 'People-icon', 'Briefcase-icon', 'DollarCircle-icon']
   }
 }
 
 export const FalsyValues: Story = {
   args: {
+    cities: [
+      {
+        name: 'Bello',
+        url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-bello',
+        title: 'Ofertas empleo en Bello'
+      },
+      {
+        name: 'Copacabana',
+        url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-copacabana',
+        title: 'Ofertas empleo en Copacabana'
+      }
+    ],
     offerDetailsList: [
       'Hace 10 días',
       '4 cupos, 256 aplicaron',
@@ -43,6 +66,18 @@ export const FalsyValues: Story = {
 
 export const LargeData: Story = {
   args: {
+    cities: [
+      {
+        name: 'Bello',
+        url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-bello',
+        title: 'Ofertas empleo en Bello'
+      },
+      {
+        name: 'Copacabana',
+        url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-copacabana',
+        title: 'Ofertas empleo en Copacabana'
+      }
+    ],
     offerDetailsList: [
       'Hace 9 días',
       '9999 cupos, 7 postulantes',
@@ -57,6 +92,18 @@ export const LargeData: Story = {
 
 export const ExceededElements: Story = {
   args: {
+    cities: [
+      {
+        name: 'Bello',
+        url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-bello',
+        title: 'Ofertas empleo en Bello'
+      },
+      {
+        name: 'Copacabana',
+        url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-copacabana',
+        title: 'Ofertas empleo en Copacabana'
+      }
+    ],
     offerDetailsList: [
       'Hace 9 días',
       '9999 cupos, 7 postulantes',
