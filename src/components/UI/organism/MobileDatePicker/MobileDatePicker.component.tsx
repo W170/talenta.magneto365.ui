@@ -28,6 +28,10 @@ const Component: React.FC<IMobileDatePicker> = ({
   selectionYearHeader,
   value
 }) => {
+  const mainClass = 'magneto-ui--mobile-date-picker__container'
+  const valueClass = '-value'
+  const disabledClass = '-disabled'
+
   const [isMonthPickerOpen, setIsMonthPickerOpen] = useState(false)
   const [isYearPickerOpen, setIsYearPickerOpen] = useState(false)
 
@@ -35,6 +39,18 @@ const Component: React.FC<IMobileDatePicker> = ({
   const [yearSelected, setYearSelected] = useState<string | number | null>(defaultValue(value).initialYear)
 
   const FIRST_OF_MONTH = 1
+
+  const componentClass = `${mainClass}${monthSelected || yearSelected ? valueClass : ''}${
+    disabled ? disabledClass : ''
+  }`.trim()
+
+  const placeholderClass = `${mainClass}${
+    monthSelected || yearSelected ? '-value--placeholder-shrink' : '--placeholder'
+  }`
+
+  const iconClass = `${mainClass}${monthSelected || yearSelected ? '-value__icon' : '__icon'}${
+    disabled ? '--disabled' : ''
+  }`
 
   const monthDateOptions: IOptionValues[] = monthsLabels?.map((optionLabel, index) => ({
     optionValue: monthOptionsValue[index],
@@ -92,43 +108,12 @@ const Component: React.FC<IMobileDatePicker> = ({
 
   return (
     <section className={styles['magneto-ui--mobile-date-picker']}>
-      <div
-        className={
-          styles[
-            `${
-              disabled
-                ? 'magneto-ui--mobile-date-picker__container--disabled'
-                : 'magneto-ui--mobile-date-picker__container'
-            }`
-          ]
-        }
-        onClick={toggleMonthPicker}
-      >
-        <span
-          className={
-            styles[
-              `${
-                monthSelected
-                  ? 'magneto-ui--mobile-date-picker__container--placeholder-shrink'
-                  : 'magneto-ui--mobile-date-picker__container--placeholder'
-              }`
-            ]
-          }
-        >
-          {monthPlaceholder}
-        </span>
+      <div className={styles[`${componentClass}`]} onClick={toggleMonthPicker}>
+        <span className={styles[`${placeholderClass}`]}>{monthPlaceholder}</span>
         <p className={styles['magneto-ui--mobile-date-picker__value']}>
           {monthSelected !== null ? getMonthName(monthSelected) : ''}
         </p>
-        <span
-          className={
-            styles[
-              `${disabled ? 'magneto-ui--mobile-date-picker__icon--disabled' : 'magneto-ui--mobile-date-picker__icon'}`
-            ]
-          }
-        >
-          {disabledArrow}
-        </span>
+        <span className={styles[`${iconClass}`]}>{disabledArrow}</span>
       </div>
       <DateSelection
         applyLabel={applyLabel}
@@ -141,41 +126,10 @@ const Component: React.FC<IMobileDatePicker> = ({
         onApplyCallback={handleMonthDateSelection}
         initialValue={monthSelected}
       />
-      <div
-        className={
-          styles[
-            `${
-              disabled
-                ? 'magneto-ui--mobile-date-picker__container--disabled'
-                : 'magneto-ui--mobile-date-picker__container'
-            }`
-          ]
-        }
-        onClick={toggleYearPicker}
-      >
-        <span
-          className={
-            styles[
-              `${
-                monthSelected
-                  ? 'magneto-ui--mobile-date-picker__container--placeholder-shrink'
-                  : 'magneto-ui--mobile-date-picker__container--placeholder'
-              }`
-            ]
-          }
-        >
-          {yearPlaceholder}
-        </span>
+      <div className={styles[`${componentClass}`]} onClick={toggleYearPicker}>
+        <span className={styles[`${placeholderClass}`]}>{yearPlaceholder}</span>
         <p className={styles['magneto-ui--mobile-date-picker__value']}>{yearSelected}</p>
-        <span
-          className={
-            styles[
-              `${disabled ? 'magneto-ui--mobile-date-picker__icon--disabled' : 'magneto-ui--mobile-date-picker__icon'}`
-            ]
-          }
-        >
-          {disabledArrow}
-        </span>
+        <span className={styles[`${iconClass}`]}>{disabledArrow}</span>
       </div>
       <DateSelection
         applyLabel={applyLabel}
