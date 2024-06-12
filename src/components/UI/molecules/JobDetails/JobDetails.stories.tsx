@@ -52,15 +52,9 @@ export const FalsyValues: Story = {
         title: 'Ofertas empleo en Copacabana'
       }
     ],
-    offerDetailsList: [
-      'Hace 10 días',
-      '4 cupos, 256 aplicaron',
-      null,
-      undefined,
-      'Bello - Copacabana - Itagui - La Estrella'
-    ],
-    iconList: [Calendar1, People, Briefcase, DollarCircle, Location],
-    altList: ['Calendar1-icon', 'People-icon', 'Briefcase-icon', 'DollarCircle-icon', 'Location-icon']
+    offerDetailsList: ['Hace 10 días', '4 cupos, 256 aplicaron', null, undefined],
+    iconList: [Calendar1, People, Briefcase, DollarCircle],
+    altList: ['Calendar1-icon', 'People-icon', 'Briefcase-icon', 'DollarCircle-icon']
   }
 }
 

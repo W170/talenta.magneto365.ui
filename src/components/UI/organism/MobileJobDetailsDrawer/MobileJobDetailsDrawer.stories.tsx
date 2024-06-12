@@ -21,8 +21,7 @@ const jobDetails = [
   'Hace 10 días',
   '4 cupos, 256 aplicaron',
   '2 años de experiencia, profesional',
-  '$ 2.000.000 a $ 3.000.000',
-  'Bello - Copacabana - Itagui - La Estrella'
+  '$ 2.000.000 a $ 3.000.000'
 ]
 
 const jobDetailCard = {
@@ -92,6 +91,19 @@ const MobileJobDetailsActionsBar = {
   onClose: true
 }
 
+const cities = [
+  {
+    name: 'Bello',
+    url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-bello',
+    title: 'Ofertas empleo en Bello'
+  },
+  {
+    name: 'Copacabana',
+    url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-copacabana',
+    title: 'Ofertas empleo en Copacabana'
+  }
+]
+
 const meta: Meta<typeof MobileJobDetailsDrawer> = {
   title: 'Organism/Mobile Job Details Drawer',
   component: MobileJobDetailsDrawer,
@@ -113,6 +125,7 @@ export const Default: Story = {
     jobFooterCardProps: jobFooterCard,
     mobileJobDetailsBarProps: MobileJobDetailsActionsBar,
     isOpen: true,
-    jobVideo: jobVideo
+    jobVideo: jobVideo,
+    cities
   }
 }

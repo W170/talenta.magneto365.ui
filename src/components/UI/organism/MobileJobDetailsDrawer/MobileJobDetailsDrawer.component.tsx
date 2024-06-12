@@ -36,7 +36,8 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   jobVideo,
   loadVideo,
   setLoadVideo,
-  swipeProps
+  swipeProps,
+  cities
 }) => {
   const handleClose = useCallback(() => {
     if (onClose) {
@@ -53,7 +54,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
       <Fragment>
         <MobileJobDetailsHeader returnText={jobDetailsHeaderText} onClick={handleClose} />
         <JobCompanyHeader {...jobCompanyLogoProps} />
-        {jobDetailsProps && <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} />}
+        {jobDetailsProps && <JobDetails iconList={iconDetailList} offerDetailsList={jobDetailsProps} cities={cities} />}
         {jobVideo && <JobVideo {...jobVideo} loadVideo={loadVideo} setLoadVideo={setLoadVideo} />}
         <JobDetailCard {...jobDetailCardProps} />
         {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
@@ -76,7 +77,8 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
     similarJobsProps,
     jobVideo,
     loadVideo,
-    setLoadVideo
+    setLoadVideo,
+    cities
   ])
 
   const content = useMemo(

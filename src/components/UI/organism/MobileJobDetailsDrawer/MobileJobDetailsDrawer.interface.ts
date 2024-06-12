@@ -3,14 +3,14 @@ import {
   IJobCompanyHeader,
   IJobDetailCard,
   IJobFooterCard,
-  IJobSkillsCard
+  IJobSkillsCard,
+  ICityDetail
 } from '@components/UI/molecules'
 import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 import { ReactNode } from 'react'
 import { ISimilarJobs } from '../SimilarJobs/SimilarJobs.interface'
 import { IJobVideo } from '@components/UI/molecules/JobVideo'
 import { SwipeProps } from '../Swipe/Swipe.interface'
-
 
 export interface IMobileJobDetailsDrawer {
   /**
@@ -84,9 +84,10 @@ export interface IMobileJobDetailsDrawer {
    * This property changes when the video component is assembled or disassembled.
    */
   setLoadVideo?: (load: boolean) => void
-   /**
+  /**
    *These are the properties of swipe
    */
   swipeProps?: SwipeProps
 
+  cities: ICityDetail[]
 }

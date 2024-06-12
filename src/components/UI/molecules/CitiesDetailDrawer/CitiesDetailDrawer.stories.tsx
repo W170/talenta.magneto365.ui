@@ -24,6 +24,27 @@ export const Default: Story = {
         url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-copacabana',
         title: 'Ofertas empleo en Copacabana'
       }
-    ]
+    ],
+    isRemote: true,
+    textRemote: 'Remoto / híbrido en: '
+  }
+}
+
+export const NoRemote: Story = {
+  args: {
+    cities: [
+      {
+        name: 'Bello',
+        url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-bello',
+        title: 'Ofertas empleo en Bello'
+      },
+      {
+        name: 'Copacabana',
+        url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-copacabana',
+        title: 'Ofertas empleo en Copacabana'
+      }
+    ],
+    isRemote: false,
+    textRemote: 'Remoto / híbrido en: '
   }
 }
