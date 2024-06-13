@@ -7,7 +7,7 @@ import styles from './CitiesDetailDrawer.module.scss'
 const CitiesDetailDrawer: React.FC<ICitiesDetailDrawer> = ({ cities, isRemote, textRemote }) => {
   return (
     <div className={styles['magneto-ui-cities-detail-drawer']}>
-      {cities?.length && (
+      {cities && cities?.length && (
         <>
           <div className={styles['magneto-ui-cities-detail-drawer__item-detail-icon']}>
             <IconItem alt={'Location-icon'} icon={Location} hover={false} size={16} />
