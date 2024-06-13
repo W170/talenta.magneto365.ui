@@ -5,7 +5,7 @@ import { MobileDatePicker } from './MobileDatePicker.component'
 import { storyMonths, months, storyYears } from '../../../../constants/stories/DatePicker.constants'
 
 const meta: Meta<typeof MobileDatePicker> = {
-  title: 'Organism/ Mobile DatePicker',
+  title: 'Organism/ Mobile DatePickerResponsive',
   component: MobileDatePicker,
   args: {
     applyLabel: 'Seleccionar',

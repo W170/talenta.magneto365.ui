@@ -3,8 +3,8 @@ import { DatePicker } from '@components/UI/molecules'
 import { MobileDatePicker } from '@components/UI/organism'
 import { useMediaQuery } from '@components/hooks'
 
-import { IDatePickerComponent } from './DatePicker.interface'
-import style from './DatePicker.module.scss'
+import { IDatePickerComponent } from '@components/UI/organism'
+import style from './DatePickerResponsive.module.scss'
 import { classMUI } from '@constants/stories'
 
 const Component: React.FC<IDatePickerComponent> = ({ datePickerProps, mobileDatePickerProps }) => {
@@ -15,4 +15,4 @@ const Component: React.FC<IDatePickerComponent> = ({ datePickerProps, mobileDate
   return <div className={style[`${classMUI}`]}>{DatePickerComponent}</div>
 }
 
-export const DatePickerComponent = Component
+export const DatePickerResponsiveComponent = Component

@@ -1,5 +1,5 @@
 export * from './BrandMenu'
-export * from './DatePicker'
+export * from './DatePickerResponsive'
 export * from './DrawerMenu'
 export * from './FilterCard'
 export * from './FilterHeader'

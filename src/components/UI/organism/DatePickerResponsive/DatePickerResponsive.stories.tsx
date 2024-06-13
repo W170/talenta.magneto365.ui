@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { DatePickerComponent } from './DatePicker.component'
+import { DatePickerResponsiveComponent } from './DatePickerResponsive.component'
 import { DatePickerProps, MobileDatePickerProps } from '../../../../constants/stories/DatePicker.constants'
 
-const meta: Meta<typeof DatePickerComponent> = {
+const meta: Meta<typeof DatePickerResponsiveComponent> = {
   title: 'Organism/ Date Picker Component',
-  component: DatePickerComponent,
+  component: DatePickerResponsiveComponent,
   args: {
     datePickerProps: DatePickerProps,
     mobileDatePickerProps: MobileDatePickerProps
@@ -13,6 +13,6 @@ const meta: Meta<typeof DatePickerComponent> = {
 
 export default meta
 
-type Story = StoryObj<typeof DatePickerComponent>
+type Story = StoryObj<typeof DatePickerResponsiveComponent>
 
 export const Default: Story = {}
