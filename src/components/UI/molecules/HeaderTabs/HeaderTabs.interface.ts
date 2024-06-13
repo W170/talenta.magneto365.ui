@@ -1,7 +1,10 @@
 import { IHeaderTab } from '../../atoms/'
 
 export interface HeaderTabItem extends Omit<IHeaderTab, 'isActive'> {
-  slug?: string
+  /**
+   * the slug match with the urlParam to active the HeaderTab.
+   */
+  slug?: string | Array<string>
 }
 
 export interface IHeaderTabs {
