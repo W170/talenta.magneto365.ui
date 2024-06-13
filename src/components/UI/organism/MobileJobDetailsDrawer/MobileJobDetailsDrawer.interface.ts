@@ -90,4 +90,8 @@ export interface IMobileJobDetailsDrawer {
   swipeProps?: SwipeProps
 
   cities: ICityDetail[]
+
+  isRemote: boolean
+
+  textRemote: string
 }
