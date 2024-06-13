@@ -33,7 +33,9 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   jobVideo,
   loadVideo,
   setLoadVideo,
-  cities
+  cities,
+  isRemote,
+  textRemote
 }) => {
   const jobDetailsRef = useRef<HTMLDivElement | null>(null)
 
@@ -62,6 +64,8 @@ const Component: React.FC<IJobDetailsDrawer> = ({
                 iconList={iconDetailList}
                 offerDetailsList={jobDetailsProps}
                 cities={cities}
+                isRemote={isRemote}
+                textRemote={textRemote}
               />
             )}
             {jobVideo && <JobVideo {...jobVideo} loadVideo={loadVideo} setLoadVideo={setLoadVideo} />}

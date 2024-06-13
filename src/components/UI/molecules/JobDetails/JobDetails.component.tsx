@@ -4,7 +4,7 @@ import CitiesDetailDrawer from '../CitiesDetailDrawer/CitiesDetailDrawer.compone
 import { IDetailList, IJobDetails } from './JobDetails.interface'
 import styles from './JobDetails.module.scss'
 
-const Component: React.FC<IJobDetails> = ({ offerDetailsList, iconList, altList, cities }) => {
+const Component: React.FC<IJobDetails> = ({ offerDetailsList, iconList, altList, cities, textRemote, isRemote }) => {
   const jobDetailsList: IDetailList[] = offerDetailsList
     ?.map((offerDetailText, index) => ({
       icon: iconList && iconList[index],
@@ -25,7 +25,7 @@ const Component: React.FC<IJobDetails> = ({ offerDetailsList, iconList, altList,
               <p className={styles['magneto-ui-job-details__item-detail-text']}>{offerDetailText}</p>
             </div>
           ))}
-        <CitiesDetailDrawer cities={cities} isRemote={false} textRemote="" />
+        <CitiesDetailDrawer cities={cities} isRemote={isRemote} textRemote={textRemote} />
       </div>
     </div>
   )

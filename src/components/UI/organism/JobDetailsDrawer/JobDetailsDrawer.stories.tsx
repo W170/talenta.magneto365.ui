@@ -127,3 +127,19 @@ export const Default: Story = {
     cities: cities
   }
 }
+
+export const CitiesRemote: Story = {
+  args: {
+    jobCompanyLogoProps: jobCompanyLogo,
+    jobActionsProps: jobActions,
+    jobDetailsProps: jobDetails,
+    jobDetailCardProps: jobDetailCard,
+    jobSkillsCardProps: jobSkillsCard,
+    jobApplyCardProps: jobApplyCard,
+    jobFooterCardProps: jobFooterCard,
+    jobVideo: jobVideo,
+    cities: cities,
+    isRemote: true,
+    textRemote: 'Remoto/hibrido en:'
+  }
+}

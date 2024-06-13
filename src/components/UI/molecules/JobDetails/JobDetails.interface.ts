@@ -36,4 +36,8 @@ export interface IJobDetails {
    * This array contains the list of cities and his url
    */
   cities: ICityDetail[]
+
+  isRemote: boolean
+
+  textRemote: string
 }

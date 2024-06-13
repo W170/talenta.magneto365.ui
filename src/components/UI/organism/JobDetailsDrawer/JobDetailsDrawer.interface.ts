@@ -72,4 +72,8 @@ export interface IJobDetailsDrawer {
   setLoadVideo?: (load: boolean) => void
 
   cities: ICityDetail[]
+
+  isRemote: boolean
+
+  textRemote: string
 }
