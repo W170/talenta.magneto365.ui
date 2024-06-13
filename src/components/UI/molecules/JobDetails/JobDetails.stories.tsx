@@ -38,6 +38,19 @@ export const Default: Story = {
   }
 }
 
+export const WithoutCities: Story = {
+  args: {
+    offerDetailsList: [
+      'Hace 10 días',
+      '4 cupos, 256 aplicaron',
+      '2 años de experiencia, profesional',
+      '$ 2.000.000 a $ 3.000.000'
+    ],
+    iconList: [Calendar1, People, Briefcase, DollarCircle],
+    altList: ['Calendar1-icon', 'People-icon', 'Briefcase-icon', 'DollarCircle-icon']
+  }
+}
+
 export const FalsyValues: Story = {
   args: {
     cities: [
