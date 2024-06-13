@@ -21,7 +21,11 @@ const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, menuItems144
             <p>{title ? title : null}</p>
             {items.map(({ slug, icon, ...props }, i: number) => (
               <Fragment key={i}>
-                <MenuIcon icon={icon} isActive={urlParam === slug ? true : false} {...props} />
+                <MenuIcon
+                  icon={icon}
+                  isActive={Array.isArray(slug) ? slug.includes(urlParam) : urlParam === slug}
+                  {...props}
+                />
               </Fragment>
             ))}
           </div>
