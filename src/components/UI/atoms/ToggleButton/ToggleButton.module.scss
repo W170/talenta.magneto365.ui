@@ -1,0 +1,17 @@
+.magneto-ui-toggle-button {
+  width: auto;
+  height: 41px;
+  padding: 12px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: filter ease-in-out 0.3s;
+  font-weight: normal;
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
+
+.toggle-button-selected {
+  border: none;
+  font-weight: bold;
+}
