@@ -1,22 +1,26 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import { IconItem } from '@components/UI/atoms'
+import { IconItem, IOptionValues } from '@components/UI/atoms'
 import { DateSelection } from '@components/UI/molecules/DateSelection'
 import { IMobileDatePicker } from '@components/UI/organism/MobileDatePicker/MobileDatePicker.interface'
 import styles from './MobileDatePicker.module.scss'
 import { parseDate } from '@components/UI/molecules/DatePicker/utils'
 import { ArrowDown2, ArrowDown3 } from '@constants/icons.constants'
+import { monthOptionsValue, yearOptionsLabel, yearOptionsValue } from '@constants/stories/DatePicker.constants'
 
 const defaultValue = (value: Date) => {
   return value ? parseDate(value) : { initialMonth: '', initialYear: '' }
 }
+
+const yearDateOptions: IOptionValues[] = yearOptionsLabel?.map((optionLabel, index) => ({
+  optionValue: yearOptionsValue[index],
+  optionLabel
+}))
 
 const Component: React.FC<IMobileDatePicker> = ({
   applyLabel,
   cancelLabel,
   disabled,
   monthsLabels,
-  monthDateOptions,
-  yearDateOptions,
   monthPlaceholder,
   yearPlaceholder,
   onChange,
@@ -24,6 +28,10 @@ const Component: React.FC<IMobileDatePicker> = ({
   selectionYearHeader,
   value
 }) => {
+  const mainClass = 'magneto-ui--mobile-date-picker__container'
+  const valueClass = '-value'
+  const disabledClass = '-disabled'
+
   const [isMonthPickerOpen, setIsMonthPickerOpen] = useState(false)
   const [isYearPickerOpen, setIsYearPickerOpen] = useState(false)
 
@@ -31,6 +39,23 @@ const Component: React.FC<IMobileDatePicker> = ({
   const [yearSelected, setYearSelected] = useState<string | number | null>(defaultValue(value).initialYear)
 
   const FIRST_OF_MONTH = 1
+
+  const componentClass = `${mainClass}${monthSelected || yearSelected ? valueClass : ''}${
+    disabled ? disabledClass : ''
+  }`.trim()
+
+  const placeholderClass = `${mainClass}${
+    monthSelected || yearSelected ? '-value--placeholder-shrink' : '--placeholder'
+  }`
+
+  const iconClass = `${mainClass}${monthSelected || yearSelected ? '-value__icon' : '__icon'}${
+    disabled ? '--disabled' : ''
+  }`
+
+  const monthDateOptions: IOptionValues[] = monthsLabels?.map((optionLabel, index) => ({
+    optionValue: monthOptionsValue[index],
+    optionLabel
+  }))
 
   const getMonthName = (monthIndex: string | number | undefined) => {
     return monthsLabels[monthIndex as number]
@@ -78,47 +103,17 @@ const Component: React.FC<IMobileDatePicker> = ({
       setYearSelected('')
       onChange(null)
     }
-  }, [disabled, onChange])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [disabled])
 
   return (
     <section className={styles['magneto-ui--mobile-date-picker']}>
-      <div
-        className={
-          styles[
-            `${
-              disabled
-                ? 'magneto-ui--mobile-date-picker__container--disabled'
-                : 'magneto-ui--mobile-date-picker__container'
-            }`
-          ]
-        }
-        onClick={toggleMonthPicker}
-      >
-        <span
-          className={
-            styles[
-              `${
-                monthSelected
-                  ? 'magneto-ui--mobile-date-picker__container--placeholder-shrink'
-                  : 'magneto-ui--mobile-date-picker__container--placeholder'
-              }`
-            ]
-          }
-        >
-          {monthPlaceholder}
-        </span>
+      <div className={styles[`${componentClass}`]} onClick={toggleMonthPicker}>
+        <span className={styles[`${placeholderClass}`]}>{monthPlaceholder}</span>
         <p className={styles['magneto-ui--mobile-date-picker__value']}>
           {monthSelected !== null ? getMonthName(monthSelected) : ''}
         </p>
-        <span
-          className={
-            styles[
-              `${disabled ? 'magneto-ui--mobile-date-picker__icon--disabled' : 'magneto-ui--mobile-date-picker__icon'}`
-            ]
-          }
-        >
-          {disabledArrow}
-        </span>
+        <span className={styles[`${iconClass}`]}>{disabledArrow}</span>
       </div>
       <DateSelection
         applyLabel={applyLabel}
@@ -131,41 +126,10 @@ const Component: React.FC<IMobileDatePicker> = ({
         onApplyCallback={handleMonthDateSelection}
         initialValue={monthSelected}
       />
-      <div
-        className={
-          styles[
-            `${
-              disabled
-                ? 'magneto-ui--mobile-date-picker__container--disabled'
-                : 'magneto-ui--mobile-date-picker__container'
-            }`
-          ]
-        }
-        onClick={toggleYearPicker}
-      >
-        <span
-          className={
-            styles[
-              `${
-                monthSelected
-                  ? 'magneto-ui--mobile-date-picker__container--placeholder-shrink'
-                  : 'magneto-ui--mobile-date-picker__container--placeholder'
-              }`
-            ]
-          }
-        >
-          {yearPlaceholder}
-        </span>
+      <div className={styles[`${componentClass}`]} onClick={toggleYearPicker}>
+        <span className={styles[`${placeholderClass}`]}>{yearPlaceholder}</span>
         <p className={styles['magneto-ui--mobile-date-picker__value']}>{yearSelected}</p>
-        <span
-          className={
-            styles[
-              `${disabled ? 'magneto-ui--mobile-date-picker__icon--disabled' : 'magneto-ui--mobile-date-picker__icon'}`
-            ]
-          }
-        >
-          {disabledArrow}
-        </span>
+        <span className={styles[`${iconClass}`]}>{disabledArrow}</span>
       </div>
       <DateSelection
         applyLabel={applyLabel}

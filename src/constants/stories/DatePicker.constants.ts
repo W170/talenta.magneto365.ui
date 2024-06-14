@@ -45,3 +45,29 @@ for (let i = 0; i < Math.min(monthOptionsValue.length, months.length); i++) {
 for (let i = 0; i < Math.min(yearOptionsValue.length, yearOptionsLabel.length); i++) {
   storyYears.push({ optionValue: yearOptionsValue[i], optionLabel: yearOptionsLabel[i] })
 }
+
+export const DatePickerProps = {
+  monthPlaceholder: 'Month',
+  monthOptionsLabels: months,
+  yearPlaceholder: 'Year',
+  value: new Date(),
+  onChange: () => {
+    //
+  }
+}
+
+export const MobileDatePickerProps = {
+  applyLabel: 'Seleccionar',
+  cancelLabel: 'Cerrar',
+  monthsLabels: months,
+  monthDateOptions: storyMonths,
+  yearDateOptions: storyYears,
+  monthPlaceholder: 'Month',
+  yearPlaceholder: 'Year',
+  selectionMonthHeader: 'Selecciona un mes',
+  selectionYearHeader: 'Selecciona un año',
+  value: new Date(),
+  onChange: () => {
+    //
+  }
+}

@@ -12,6 +12,7 @@ const yearOptionsList: IOptionValues[] = yearOptionsLabel?.map((optionLabel, ind
   optionValue: yearOptionsValue[index],
   optionLabel
 }))
+
 const Component: React.FC<IDatePicker> = ({
   monthOptionsLabels,
   monthPlaceholder,
@@ -49,7 +50,8 @@ const Component: React.FC<IDatePicker> = ({
       setSelectedYear('')
       onChange(null)
     }
-  }, [disabled, onChange])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [disabled])
 
   return (
     <div className={styles['magneto-ui--date-picker__wrapper']}>
