@@ -3,7 +3,7 @@ import React from 'react'
 import { MainButton } from '@components/UI/atoms'
 import { MobileJobDetailsDrawer } from './MobileJobDetailsDrawer.component'
 
-import { CompanyLogo } from '@constants/stories'
+import { CompanyLogo, CitiesDetailDrawerProps } from '@constants/stories'
 import { jobVideo } from '@constants/stories/jobVideo.constants'
 
 const jobCompanyLogo = {
@@ -91,19 +91,6 @@ const MobileJobDetailsActionsBar = {
   onClose: true
 }
 
-const cities = [
-  {
-    name: 'Bello',
-    url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-bello',
-    title: 'Ofertas empleo en Bello'
-  },
-  {
-    name: 'Copacabana',
-    url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-copacabana',
-    title: 'Ofertas empleo en Copacabana'
-  }
-]
-
 const meta: Meta<typeof MobileJobDetailsDrawer> = {
   title: 'Organism/Mobile Job Details Drawer',
   component: MobileJobDetailsDrawer,
@@ -126,6 +113,6 @@ export const Default: Story = {
     mobileJobDetailsBarProps: MobileJobDetailsActionsBar,
     isOpen: true,
     jobVideo: jobVideo,
-    cities
+    ...CitiesDetailDrawerProps
   }
 }
