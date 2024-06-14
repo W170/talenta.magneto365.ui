@@ -180,9 +180,7 @@ const Component: React.FC<INavMenuAnalystOptionProps> = ({
         {option.data.map((item, i) => (
           <React.Fragment key={`option-${item.title}-${i}`}>
             {item.title && (
-              <span className={CNM.get({ styles, cls: ['nav-menu-analyst-option__dropdown-title'] })}>
-                {item.title}
-              </span>
+              <p className={CNM.get({ styles, cls: ['nav-menu-analyst-option__dropdown-title'] })}>{item.title}</p>
             )}
             {item.children.map((child, j) => (
               <Component
