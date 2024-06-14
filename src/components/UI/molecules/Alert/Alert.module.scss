@@ -1,0 +1,35 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-alert {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  p {
+    margin: 0;
+  }
+}
+.magneto-ui-warning {
+  background-color: v.$alert-color-yellowBackground;
+  &--with-border {
+    border: 1px solid v.$alert-color-yellow;
+  }
+}
+.magneto-ui-success {
+  background-color: v.$alert-color-greenBackground;
+  &--with-border {
+    border: 1px solid v.$alert-color-green;
+  }
+}
+.magneto-ui-error {
+  background-color: v.$alert-color-redBackground;
+  &--with-border {
+    border: 1px solid v.$alert-color-red;
+  }
+}
+.magneto-ui-info {
+  background-color: v.$alert-color-blueBackground;
+  &--with-border {
+    border: 1px solid v.$alert-color-blue;
+  }
+}
