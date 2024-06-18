@@ -30,4 +30,6 @@ export interface IPopover {
    * This property can change position between aboslute or static to content container
    */
   staticContent?: boolean
+
+  className?: string
 }
