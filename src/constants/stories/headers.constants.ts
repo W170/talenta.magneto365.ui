@@ -152,8 +152,8 @@ export const SignUpProps = {
 export const CreateAccountButton: IMainButton = {
   buttonType: 'button',
   buttonStyles: {
-    buttonColor: '#70ECD4',
-    textColor: '#090467',
+    buttonColor: '#9EE4B8',
+    textColor: '#001B38',
     spacing: '10px'
   },
   iconProps: {

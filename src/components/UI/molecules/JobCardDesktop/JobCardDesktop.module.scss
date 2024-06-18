@@ -11,11 +11,11 @@
   container-type: inline-size;
 
   &:hover {
-    background-color: #f4f4fa;
+    background-color: #f0f1f3;
     cursor: pointer;
 
     p {
-      color: #14141c;
+      color: #0a0c0e;
     }
   }
 
@@ -39,7 +39,7 @@
   h2,
   h3 {
     font-size: 14px;
-    color: #14141c;
+    color: #667688;
     margin: 0;
   }
 
@@ -200,18 +200,18 @@
 }
 
 .is-active {
-  background-color: #e9e9f6;
+  background-color: #e3e7e9;
 
   &:hover .magneto-ui-card-jobs--row2__position {
     color: #000096;
   }
 
   &:hover {
-    background-color: #e9e9f6;
+    background-color: #f0f1f3;
   }
 
   p {
-    color: #14141c;
+    color: #0a0c0e;
   }
 
   .magneto-ui-card-jobs {
@@ -222,7 +222,7 @@
 
     &--row2__position {
       font-weight: bold;
-      color: #000096;
+      color: #0a0c0e;
     }
   }
 }

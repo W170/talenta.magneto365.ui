@@ -5,17 +5,19 @@
   flex-direction: row;
   align-items: center;
   gap: 5px;
-  padding: 8px 14px;
+  padding: 12px 25px;
   max-width: max-content;
   border-radius: 30px;
-  background-color: v.$disabled-color-gray;
   cursor: pointer;
-
   transition: all ease-in-out 0.3s;
+
+  &:hover {
+    background-color: #f0f1f3;
+  }
 
   @media (min-width: v.$screen-md) {
     &:hover {
-      background-color: v.$colors-magneto-neutral-gray-5;
+      background-color: #f0f1f3;
     }
   }
 
