@@ -26,10 +26,15 @@ export const Default: Story = {
       addHover: true,
       buttonTitle: 'Guardar'
     },
-    shareButtonProps: {
+    copyButtonProps: {
       buttonTitle: 'Compartir vacante',
       addHover: true,
-      onCopySuccess: () => console.log('Success')
+      onCopySuccess: () => console.log('Success'),
+      shareLinks: []
+    },
+    shareButtonProps: {
+      title: 'Compartir',
+      content: 'Compartir'
     },
     actionsAnchorIcons: [Export3, Buildings2],
     actionsAnchorLinks: ['link1', 'link2'],

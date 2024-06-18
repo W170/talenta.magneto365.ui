@@ -8,7 +8,7 @@
       display: block;
       position: absolute;
       top: -5px;
-      left: 10px;
+      left: 18px;
       width: 10px;
       height: 10px;
       border-top-right-radius: 5px;
@@ -22,8 +22,15 @@
   &__btn {
     background: transparent;
     border: none;
+    border-radius: 50%;
+    padding: 12px 13px;
+    cursor: pointer;
     &:focus-visible {
       outline: none;
+    }
+    &:hover {
+      background-color: #cfcfde;
+      transition: all ease-in-out 0.3s;
     }
   }
 }
