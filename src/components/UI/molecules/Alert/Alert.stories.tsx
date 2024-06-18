@@ -1,6 +1,6 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-import { Alert } from './'
+import { Alert } from './Alert.component'
 
 const meta: Meta<typeof Alert> = {
   title: 'Molecules/Alert',

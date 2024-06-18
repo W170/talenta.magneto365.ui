@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { IAlert } from './Alert.interface'
 import style from './Alert.module.scss'
 import { IconItem } from '@components/UI/atoms'
@@ -13,18 +13,18 @@ const alertIcons = {
   error: Error
 }
 
-const Alert: React.FC<IAlert> = ({ text, type, customText, border = false, size }) => {
+const Component: React.FC<IAlert> = ({ text, type, customText, border = false, size }) => {
   const borderStyle = border ? style[`${classMUI}-${type}--with-border`] : ''
   const typeStyle = style[`${classMUI}-${type}`]
 
-  const icon = alertIcons[type]
+  const iconByType = useMemo(() => alertIcons[type], [type])
 
   return (
     <div className={`${style[`${classMUI}-alert`]} ${borderStyle} ${typeStyle}`} style={{ width: size }}>
-      <IconItem className={style[`${classMUI}-icon`]} icon={icon} alt={type} />
+      <IconItem className={style[`${classMUI}-icon`]} icon={iconByType} alt={type} />
       <Text text={text} customText={customText} className={style[`${classMUI}-text`]} />
     </div>
   )
 }
 
-export default Alert
+export const Alert = Component
