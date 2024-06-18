@@ -38,3 +38,9 @@ export const CitiesDetailDrawerPropsWithoutUrl: ICitiesDetailDrawer = {
   isRemote: true,
   textRemote: 'Remoto / híbrido en: '
 }
+
+export const CitiesDetailDrawerPropsWithoutCities: ICitiesDetailDrawer = {
+  cities: [],
+  isRemote: true,
+  textRemote: 'Remoto / híbrido en: '
+}
