@@ -1,6 +1,6 @@
 import React from 'react'
 import { IconItem } from '../Icon'
-import { Share } from '@constants/icons.constants'
+import { Link1 } from '@constants/icons.constants'
 import { IShareButton } from './ShareButton.interface'
 import styles from './ShareButton.module.scss'
 
@@ -19,7 +19,7 @@ const Component: React.FC<IShareButton> = ({ buttonTitle, buttonText, detailUrl,
       title={buttonTitle}
     >
       <div className={styles['button-content']}>
-        <IconItem size={20} icon={Share} hover={addHover} />
+        <IconItem size={20} icon={Link1} hover={addHover} />
         {buttonText && <p className={styles['magneto-ui-share-button__mobile-text']}>{buttonText}</p>}
       </div>
     </button>
