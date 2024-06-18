@@ -29,8 +29,32 @@ export const Default: Story = {
         }
       },
       shareButtonProps: {
-        buttonText: 'Compartir',
-        onCopySuccess: () => console.log('Success')
+        title: 'Compartir',
+        content: 'Compartir'
+      },
+      copyButtonProps: {
+        buttonText: 'Copiar enlace',
+        onCopySuccess: () => console.log('Success'),
+        shareLinks: [
+          {
+            title: 'Facebook',
+            ariaLabel: 'Facebook',
+            href: '#',
+            name: 'Facebook'
+          },
+          {
+            title: 'LinkedIn',
+            ariaLabel: 'LinkedIn',
+            href: '#',
+            name: 'LinkedIn'
+          },
+          {
+            title: 'X',
+            ariaLabel: 'X',
+            href: '#',
+            name: 'X'
+          }
+        ]
       },
       externalButtonChild: <MainButton buttonText="Aplicar" />
     }

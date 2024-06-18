@@ -32,8 +32,28 @@ const jobActions = {
   },
   shareButtonProps: {
     buttonTitle: 'Compartir vacante',
-    addHover: true,
-    onCopySuccess: () => console.log('Success')
+    buttonText: 'Copiar Enlace',
+    onCopySuccess: () => console.log('Success'),
+    shareLinks: [
+      {
+        title: 'Facebook',
+        ariaLabel: 'Facebook',
+        href: '#',
+        name: 'Facebook'
+      },
+      {
+        title: 'LinkedIn',
+        ariaLabel: 'LinkedIn',
+        href: '#',
+        name: 'LinkedIn'
+      },
+      {
+        title: 'X',
+        ariaLabel: 'X',
+        href: '#',
+        name: 'X'
+      }
+    ]
   },
   actionsAnchorIcons: [Export3, Buildings2],
   actionsAnchorLinks: ['link1', 'link2'],

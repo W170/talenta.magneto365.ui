@@ -43,8 +43,28 @@ const jobDetailsDrawer = {
     },
     shareButtonProps: {
       buttonTitle: 'Compartir vacante',
-      addHover: true,
-      onCopySuccess: () => console.log('Success')
+      buttonText: 'Compartir',
+      onCopySuccess: () => console.log('Success'),
+      shareLinks: [
+        {
+          title: 'Facebook',
+          ariaLabel: 'Facebook',
+          href: '#',
+          name: 'Facebook'
+        },
+        {
+          title: 'LinkedIn',
+          ariaLabel: 'LinkedIn',
+          href: '#',
+          name: 'LinkedIn'
+        },
+        {
+          title: 'X',
+          ariaLabel: 'X',
+          href: '#',
+          name: 'X'
+        }
+      ]
     },
     actionsAnchorIcons: [Export3, Buildings2],
     actionsAnchorLinks: ['link1', 'link2'],
@@ -176,9 +196,33 @@ const mobileJobDetailsDrawer = {
         }
       },
       shareButtonProps: {
-        buttonTitle: 'Compartir vacante',
-        buttonText: 'Compartir',
-        onCopySuccess: () => console.log('Success')
+        title: 'Compartir',
+        content: 'Compartir'
+      },
+      copyButtonProps: {
+        buttonTitle: 'Copiar enlace',
+        buttonText: 'Copiar enlace',
+        onCopySuccess: () => console.log('Success'),
+        shareLinks: [
+          {
+            title: 'Facebook',
+            ariaLabel: 'Facebook',
+            href: '#',
+            name: 'Facebook'
+          },
+          {
+            title: 'LinkedIn',
+            ariaLabel: 'LinkedIn',
+            href: '#',
+            name: 'LinkedIn'
+          },
+          {
+            title: 'X',
+            ariaLabel: 'X',
+            href: '#',
+            name: 'X'
+          }
+        ]
       },
       externalButtonChild: <MainButton buttonText="Aplicar" />
     },

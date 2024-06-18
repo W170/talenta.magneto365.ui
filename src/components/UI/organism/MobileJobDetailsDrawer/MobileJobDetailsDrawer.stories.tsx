@@ -85,7 +85,8 @@ const MobileJobDetailsActionsBar = {
       buttonTitle: 'Compartir Vacante',
       buttonText: 'Compartir',
       onCopySuccess: () => console.log('Success'),
-      onCopyError: () => console.log('Error')
+      onCopyError: () => console.log('Error'),
+      shareLinks: []
     },
     externalButtonChild: <MainButton buttonText="Aplicar" />
   },
