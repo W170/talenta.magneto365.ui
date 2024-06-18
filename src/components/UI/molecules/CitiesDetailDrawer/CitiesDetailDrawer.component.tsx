@@ -19,7 +19,7 @@ const CitiesDetailDrawer: React.FC<ICitiesDetailDrawer> = ({ cities, isRemote, t
             {cities &&
               cities.map(({ name, url, title }, index) => (
                 <div className={styles['magneto-ui-cities-detail-drawer__item-detail-text-link']} key={url}>
-                  <Link href={url} target="_blank" text={name} title={title} />
+                  {url ? <Link href={url} target="_blank" text={name} title={title} /> : <span>{name}</span>}
                   {index !== cities.length - 1 && <span>{' - '}</span>}
                 </div>
               ))}

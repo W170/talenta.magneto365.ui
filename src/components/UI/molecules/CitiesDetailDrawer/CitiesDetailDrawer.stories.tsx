@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import CitiesDetailDrawer from './CitiesDetailDrawer.component'
-import { CitiesDetailDrawerProps } from '@constants/stories'
+import { CitiesDetailDrawerProps, CitiesDetailDrawerPropsWithoutUrl } from '@constants/stories'
 
 const meta: Meta<typeof CitiesDetailDrawer> = {
   title: 'Molecules/Cities Detail Drawer',
@@ -21,5 +21,11 @@ export const Default: Story = {
 export const NoRemote: Story = {
   args: {
     ...CitiesDetailDrawerProps
+  }
+}
+
+export const NoUrl: Story = {
+  args: {
+    ...CitiesDetailDrawerPropsWithoutUrl
   }
 }

@@ -6,6 +6,6 @@ export interface ICitiesDetailDrawer {
 
 export interface ICityDetail {
   name: string
-  url: string
+  url: string | null
   title: string
 }
