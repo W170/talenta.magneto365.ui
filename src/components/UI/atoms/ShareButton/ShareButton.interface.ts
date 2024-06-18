@@ -28,4 +28,6 @@ export interface IShareButton {
    * (Optional property)
    */
   onCopyError?: () => void
+
+  className?: string
 }
