@@ -75,28 +75,28 @@ export const AvatarProps: IAvatar = {
 export const SignInIcon: IconProps = {
   icon: LoginCurve,
   hover: false,
-  color: '#14141C'
+  color: '#0A0C0E'
 }
 
 //Link Atom
 export const SignInStyles = {
-  textColor: '#14141C',
-  buttonColor: 'transparent',
-  hoverColor: '#14141C'
+  textColor: '#0A0C0E',
+  buttonColor: '#F0F1F3',
+  hoverColor: '#C2C8CF'
 }
 
 export const SignUpButtonStyle: IMainButton = {
   buttonType: 'button',
   buttonSize: 'medium',
   buttonStyles: {
-    buttonColor: '#70ECD4',
-    textColor: '#090467',
+    buttonColor: '#9EE4B8',
+    textColor: '#001B38',
     spacing: '10px'
   },
   iconProps: {
     icon: ProfileAdd,
     hover: true,
-    color: '#090467 '
+    color: '#0A0C0E '
   }
 }
 
