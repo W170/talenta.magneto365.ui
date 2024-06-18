@@ -28,10 +28,15 @@ export const Default: Story = {
         //
       }
     },
-    shareButtonProps: {
+    copyButtonProps: {
       buttonTitle: 'share',
       buttonText: 'Compartir',
-      onCopySuccess: () => console.log('Success')
+      onCopySuccess: () => console.log('Success'),
+      shareLinks: []
+    },
+    shareButtonProps: {
+      content: 'Compartir',
+      title: 'Compartir'
     },
     externalButtonChild: <MainButton buttonText="Aplicar" />
   }

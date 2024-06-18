@@ -1,6 +1,6 @@
-import { IShareButton } from '@components/UI/atoms'
 import { ISaveButton } from '@components/UI/atoms/SaveButton'
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
+import { ISharePopover } from '../SharePopover'
 
 export interface IActions {
   /**
@@ -37,5 +37,23 @@ export interface IActions {
   /**
    * Props for the share button component.
    */
-  shareButtonProps: IShareButton
+  copyButtonProps: ISharePopover
+  /**
+   * props for sharebutton that display sharelinks.
+   */
+  shareButtonProps: {
+    title: string
+    content: React.ReactChild
+  }
+}
+
+export interface IShareLinksActions {
+  onBack: () => void
+
+  /**
+   * The header or title for the actions section.
+   */
+  ActionsHeader: string
+
+  shareButtonProps: ISharePopover
 }
