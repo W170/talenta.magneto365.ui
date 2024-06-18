@@ -14,7 +14,7 @@ const Component: React.FC<ISharePopover> = ({ shareLinks, classNameContent = '',
       positionX="right"
       positionY="bottom"
       show={show}
-      widthBase={100}
+      widthBase={45}
       content={
         <ul className={[style['content'], classNameContent].join(' ')}>
           {shareLinks.map(({ title, href, ariaLabel, icon, name }, index) => (
