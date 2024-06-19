@@ -5,7 +5,6 @@ import {
   Add,
   AllJobs,
   ArchiveTick,
-  ClipboardClose,
   DocumentText,
   HambergerMenu,
   Home2,
@@ -102,22 +101,11 @@ export const MenuItems: IMenuItems[] = [
         text: 'Guardados',
         slug: 'guardados',
         url: ''
-      }
-    ]
-  },
-  {
-    title: 'Procesos',
-    items: [
-      {
-        icon: TaskSquare,
-        text: 'Activos',
-        slug: '',
-        url: ''
       },
       {
-        icon: ClipboardClose,
-        text: 'Inactivos',
-        slug: '',
+        icon: TaskSquare,
+        text: 'En proceso',
+        slug: ['', ''],
         url: ''
       }
     ]
@@ -164,8 +152,8 @@ export const SignUpProps = {
 export const CreateAccountButton: IMainButton = {
   buttonType: 'button',
   buttonStyles: {
-    buttonColor: '#70ECD4',
-    textColor: '#090467',
+    buttonColor: '#9EE4B8',
+    textColor: '#001B38',
     spacing: '10px'
   },
   iconProps: {
@@ -267,20 +255,10 @@ export const ProcessTabsProps: IHeaderTabs = {
   urlParam: 'sugeridos',
   headerTabList: [
     {
-      tabType: 'tabTitle',
-      url: '#',
-      tabText: 'Procesos:'
-    },
-    {
       tabType: 'tabOption',
       url: '#',
-      tabText: 'Activos',
-      slug: 'procesos-activos'
-    },
-    {
-      tabType: 'tabOption',
-      url: '#',
-      tabText: 'Inactivos'
+      tabText: 'En proceso',
+      slug: ['procesos-activos', 'procesos-inactivos']
     }
   ],
   addDivider: true

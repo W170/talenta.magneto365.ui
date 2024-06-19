@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import { MainButton } from '@components/UI/atoms'
 import { SuggestedJobsPage } from './SuggestedJobsPage.component'
-import { CompanyLogo, paginationProps, vacancies } from '@constants/stories'
+import { CompanyLogo, paginationProps, vacancies, CitiesDetailDrawerProps } from '@constants/stories'
 
 import { Buildings2, Export3 } from '@constants/icons.constants'
 import { emptyResultsProps } from '@constants/stories/emptyResults.constants'
@@ -41,9 +41,9 @@ const jobDetailsDrawer = {
     'Hace 10 días',
     '4 cupos, 256 aplicaron',
     '2 años de experiencia, profesional',
-    '$ 2.000.000 a $ 3.000.000',
-    'Bello - Copacabana - Itagui - La Estrella'
+    '$ 2.000.000 a $ 3.000.000'
   ],
+  ...CitiesDetailDrawerProps,
   jobDetailCardProps: {
     offerDescription:
       '<h1>¡Trabaja con el Grupo Éxito!</h1><br /><p>Importante no estar en ningun otro proceso con el Grupo Éxito. Buscamos personas como tú,  que deseen trabajar en el cargo auxiliar polivalente.</p> <h1>¿Qué necesitas?</h1><br /><p>Mínimo 2 años de experiencia, ser profesional.<br /><br />Disponibilidad de tiempo para laborar del  21 de Enero 2022  al 17 de Julio de 2023 turnos de 6  horas diarias, con posibilidad  de continuar en otras temporadas o seguir en cargos fijos.<br /><br />Estar cursando los últimos grados de la carrera o haberla finalizado.</p><h1>¿Qué te ofrecemos?</h1><br /><p>Salario entre $2’000.000 a $3’000.000 aproximadamente.</p> <h1>¡Aplica y no te pierdas esta oportunidad!</h1><br /><p>Si está interesado(a) y cumple con los requisitos debe estar pendiente de su correo electrónico y número de celular personal para envío de pruebas psicotécnicas y citación a video entrevista. FAVOR actualice esta información en la plataforma si cambió de número o el correo no es suyo o no puede ingresar.</p>'
@@ -99,8 +99,19 @@ const mobileJobDetailsDrawer = {
     'Hace 10 días',
     '4 cupos, 256 aplicaron',
     '2 años de experiencia, profesional',
-    '$ 2.000.000 a $ 3.000.000',
-    'Bello - Copacabana - Itagui - La Estrella'
+    '$ 2.000.000 a $ 3.000.000'
+  ],
+  cities: [
+    {
+      name: 'Bello',
+      url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-bello',
+      title: 'Ofertas empleo en Bello'
+    },
+    {
+      name: 'Copacabana',
+      url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-copacabana',
+      title: 'Ofertas empleo en Copacabana'
+    }
   ],
   jobDetailCardProps: {
     offerDescription:

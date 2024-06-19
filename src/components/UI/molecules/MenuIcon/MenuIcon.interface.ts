@@ -28,9 +28,9 @@ export interface IMenuIcon {
    */
   url?: string
   /**
-   * Here is the url
+   * Here is the url could be a list.
    */
-  slug?: string
+  slug?: string | Array<string>
   /**
    * You must specify the type between link or button
    */

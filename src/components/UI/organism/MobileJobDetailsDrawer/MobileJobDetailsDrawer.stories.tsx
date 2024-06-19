@@ -3,7 +3,7 @@ import React from 'react'
 import { MainButton } from '@components/UI/atoms'
 import { MobileJobDetailsDrawer } from './MobileJobDetailsDrawer.component'
 
-import { CompanyLogo } from '@constants/stories'
+import { CompanyLogo, CitiesDetailDrawerProps } from '@constants/stories'
 import { jobVideo } from '@constants/stories/jobVideo.constants'
 import { shareLinks } from '../../../../constants/stories/vacancies.constants'
 
@@ -22,8 +22,7 @@ const jobDetails = [
   'Hace 10 días',
   '4 cupos, 256 aplicaron',
   '2 años de experiencia, profesional',
-  '$ 2.000.000 a $ 3.000.000',
-  'Bello - Copacabana - Itagui - La Estrella'
+  '$ 2.000.000 a $ 3.000.000'
 ]
 
 const jobDetailCard = {
@@ -115,6 +114,7 @@ export const Default: Story = {
     jobFooterCardProps: jobFooterCard,
     mobileJobDetailsBarProps: MobileJobDetailsActionsBar,
     isOpen: true,
-    jobVideo: jobVideo
+    jobVideo: jobVideo,
+    ...CitiesDetailDrawerProps
   }
 }

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { DatePicker } from './DatePicker.component'
-import { months } from '@constants/stories/DatePicker.constants'
+import { months } from '../../../../constants/stories/DatePicker.constants'
 
 const meta: Meta<typeof DatePicker> = {
   title: 'Molecules/Date Picker',

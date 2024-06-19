@@ -2,12 +2,12 @@ import React, { Fragment, useEffect, useRef } from 'react'
 import {
   JobCompanyHeader,
   JobActions,
-  JobDetails,
   JobDetailCard,
   JobVideo,
   JobSkillsCard,
   JobApplyCard,
-  JobFooterCard
+  JobFooterCard,
+  JobDetails
 } from '@components/UI/molecules'
 
 import { IJobDetailsDrawer } from './JobDetailsDrawer.interface'
@@ -32,7 +32,10 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   similarJobsProps,
   jobVideo,
   loadVideo,
-  setLoadVideo
+  setLoadVideo,
+  cities,
+  isRemote,
+  textRemote
 }) => {
   const jobDetailsRef = useRef<HTMLDivElement | null>(null)
 
@@ -56,7 +59,14 @@ const Component: React.FC<IJobDetailsDrawer> = ({
           </div>
           <div className={styles['JobBodyCardWrapper']} ref={jobDetailsRef}>
             {jobDetailsProps && (
-              <JobDetails altList={altList} iconList={iconDetailList} offerDetailsList={jobDetailsProps} />
+              <JobDetails
+                altList={altList}
+                iconList={iconDetailList}
+                offerDetailsList={jobDetailsProps}
+                cities={cities}
+                isRemote={isRemote}
+                textRemote={textRemote}
+              />
             )}
             {jobVideo && <JobVideo {...jobVideo} loadVideo={loadVideo} setLoadVideo={setLoadVideo} />}
             <JobDetailCard {...jobDetailCardProps} />

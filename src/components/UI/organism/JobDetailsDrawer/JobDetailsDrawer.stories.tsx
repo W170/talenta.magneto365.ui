@@ -7,6 +7,7 @@ import { MainButton } from '../../atoms/MainButton/MainButton.component'
 import { Buildings2, Export3 } from '@constants/icons.constants'
 import { IJobCompanyHeader } from '../../molecules/JobCompanyHeader'
 import { jobVideo } from '@constants/stories/jobVideo.constants'
+import { ICityDetail } from '../../molecules/CitiesDetailDrawer'
 import { shareLinks } from '../../../../constants/stories/vacancies.constants'
 
 const jobCompanyLogo: IJobCompanyHeader = {
@@ -47,8 +48,20 @@ const jobDetails = [
   'Hace 10 días',
   '4 cupos, 256 aplicaron',
   '2 años de experiencia, profesional',
-  '$ 2.000.000 a $ 3.000.000',
-  'Bello - Copacabana - Itagui - La Estrella'
+  '$ 2.000.000 a $ 3.000.000'
+]
+
+const cities: ICityDetail[] = [
+  {
+    name: 'Bello',
+    url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-bello',
+    title: 'Ofertas empleo en Bello'
+  },
+  {
+    name: 'Copacabana',
+    url: 'https://www-stg.magneto365.com/co/trabajos/ofertas-empleo-en-copacabana',
+    title: 'Ofertas empleo en Copacabana'
+  }
 ]
 
 const jobDetailCard = {
@@ -112,6 +125,23 @@ export const Default: Story = {
     jobSkillsCardProps: jobSkillsCard,
     jobApplyCardProps: jobApplyCard,
     jobFooterCardProps: jobFooterCard,
-    jobVideo: jobVideo
+    jobVideo: jobVideo,
+    cities: cities
+  }
+}
+
+export const CitiesRemote: Story = {
+  args: {
+    jobCompanyLogoProps: jobCompanyLogo,
+    jobActionsProps: jobActions,
+    jobDetailsProps: jobDetails,
+    jobDetailCardProps: jobDetailCard,
+    jobSkillsCardProps: jobSkillsCard,
+    jobApplyCardProps: jobApplyCard,
+    jobFooterCardProps: jobFooterCard,
+    jobVideo: jobVideo,
+    cities: cities,
+    isRemote: true,
+    textRemote: 'Remoto/hibrido en:'
   }
 }

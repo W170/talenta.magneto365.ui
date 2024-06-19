@@ -7,6 +7,7 @@ import { IJobsActions } from '@components/UI/molecules/JobActions'
 import { ReactNode } from 'react'
 import { ISimilarJobs } from '../SimilarJobs/SimilarJobs.interface'
 import { IJobVideo } from '@components/UI/molecules/JobVideo'
+import { ICityDetail } from '../../molecules/CitiesDetailDrawer'
 export interface IJobDetailsDrawer {
   /**
    * Props for the job company logo and header section.
@@ -69,4 +70,10 @@ export interface IJobDetailsDrawer {
    * This property changes when the video component is assembled or disassembled.
    */
   setLoadVideo?: (load: boolean) => void
+
+  cities: ICityDetail[]
+
+  isRemote: boolean
+
+  textRemote: string
 }

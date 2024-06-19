@@ -1,0 +1,43 @@
+.magneto-ui-input-plus {
+  background-color: #fff;
+  border: 1px solid #cfcfde;
+  border-radius: 10px;
+  height: 48px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 5px 10px 10px;
+  > input {
+    border: none;
+    width: 100%;
+    &::placeholder {
+      color: #a3a3b5;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  &__plus-button {
+    width: 36px;
+    height: 36px;
+    background-color: #090467;
+    border-radius: 4px;
+    transition: all ease-in-out 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    > img {
+      width: 22px;
+      height: auto;
+      filter: brightness(7);
+    }
+  }
+}
+
+.disabled {
+  background: #a3a3b5;
+  cursor: not-allowed;
+}
