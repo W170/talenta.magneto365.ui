@@ -16,6 +16,7 @@ import {
   Location,
   Tag
 } from '@constants/icons.constants'
+import { IShareLink } from '../../../dist'
 
 export const vacancies: IVacancies[] = [
   {
@@ -267,3 +268,30 @@ export const altList = [
 ]
 
 export const iconFooterList = [FacebookBlue, WhatsAppColor, LinkedInBlue, TwitterBlue, SMSBlue]
+
+export const shareLinks: IShareLink[] = [
+  {
+    title: 'Facebook',
+    ariaLabel: 'Facebook',
+    href: '#',
+    name: 'Facebook'
+  },
+  {
+    title: 'LinkedIn',
+    ariaLabel: 'LinkedIn',
+    href: '#',
+    name: 'LinkedIn'
+  },
+  {
+    title: 'X',
+    ariaLabel: 'X',
+    href: '#',
+    name: 'X'
+  },
+  {
+    title: 'SMS',
+    ariaLabel: 'SMS',
+    href: '#',
+    name: 'Sms'
+  }
+]

@@ -3,6 +3,7 @@ import React from 'react'
 import { MainButton } from '@components/UI/atoms'
 import { JobActions } from './JobActions.component'
 import { Buildings2, Export3 } from '../../../../constants/icons.constants'
+import { shareLinks } from '../../../../constants/stories/vacancies.constants'
 
 const meta: Meta<typeof JobActions> = {
   title: 'Molecules/Job Actions',
@@ -30,7 +31,7 @@ export const Default: Story = {
       buttonTitle: 'Compartir vacante',
       addHover: true,
       onCopySuccess: () => console.log('Success'),
-      shareLinks: []
+      shareLinks
     },
     shareButtonProps: {
       title: 'Compartir',

@@ -3,6 +3,7 @@ import React from 'react'
 import { MainButton } from '@components/UI/atoms'
 import { Actions } from './Actions.component'
 import { Buildings2, Export3 } from '@constants/icons.constants'
+import { shareLinks } from '../../../../constants/stories/vacancies.constants'
 
 const meta: Meta<typeof Actions> = {
   title: 'Molecules/Actions',
@@ -32,7 +33,7 @@ export const Default: Story = {
       buttonTitle: 'share',
       buttonText: 'Compartir',
       onCopySuccess: () => console.log('Success'),
-      shareLinks: []
+      shareLinks
     },
     shareButtonProps: {
       content: 'Compartir',

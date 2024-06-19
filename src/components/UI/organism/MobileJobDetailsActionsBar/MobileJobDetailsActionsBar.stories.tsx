@@ -2,6 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import { MainButton } from '@components/UI/atoms'
 import { MobileJobDetailsActionsBar } from './MobileJobDetailsActionsBar.component'
+import { shareLinks } from '../../../../constants/stories/vacancies.constants'
 
 const meta: Meta<typeof MobileJobDetailsActionsBar> = {
   title: 'Organism/Mobile Job Details Actions Bar',
@@ -35,26 +36,7 @@ export const Default: Story = {
       copyButtonProps: {
         buttonText: 'Copiar enlace',
         onCopySuccess: () => console.log('Success'),
-        shareLinks: [
-          {
-            title: 'Facebook',
-            ariaLabel: 'Facebook',
-            href: '#',
-            name: 'Facebook'
-          },
-          {
-            title: 'LinkedIn',
-            ariaLabel: 'LinkedIn',
-            href: '#',
-            name: 'LinkedIn'
-          },
-          {
-            title: 'X',
-            ariaLabel: 'X',
-            href: '#',
-            name: 'X'
-          }
-        ]
+        shareLinks
       },
       externalButtonChild: <MainButton buttonText="Aplicar" />
     }

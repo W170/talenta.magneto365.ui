@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { SharePopover } from './SharePopover'
+import { shareLinks } from '../../../../constants/stories/vacancies.constants'
 
 const meta: Meta<typeof SharePopover> = {
   title: 'Molecules/SharePopover',
@@ -7,32 +8,7 @@ const meta: Meta<typeof SharePopover> = {
   args: {
     buttonText: 'Compartir',
     buttonTitle: 'Compartir',
-    shareLinks: [
-      {
-        title: 'Facebook',
-        ariaLabel: 'Facebook',
-        href: '#',
-        name: 'Facebook'
-      },
-      {
-        title: 'LinkedIn',
-        ariaLabel: 'LinkedIn',
-        href: '#',
-        name: 'LinkedIn'
-      },
-      {
-        title: 'X',
-        ariaLabel: 'X',
-        href: '#',
-        name: 'X'
-      },
-      {
-        title: 'SMS',
-        ariaLabel: 'SMS',
-        href: '#',
-        name: 'Sms'
-      }
-    ]
+    shareLinks
   }
 }
 
