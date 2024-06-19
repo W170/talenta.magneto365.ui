@@ -8,6 +8,7 @@ import { Buildings2, Export3 } from '@constants/icons.constants'
 import { IJobCompanyHeader } from '../../molecules/JobCompanyHeader'
 import { jobVideo } from '@constants/stories/jobVideo.constants'
 import { ICityDetail } from '../../molecules/CitiesDetailDrawer'
+import { shareLinks } from '../../../../constants/stories/vacancies.constants'
 
 const jobCompanyLogo: IJobCompanyHeader = {
   jobCompanyLogoProps: {
@@ -33,8 +34,9 @@ const jobActions = {
   },
   shareButtonProps: {
     buttonTitle: 'Compartir vacante',
-    addHover: true,
-    onCopySuccess: () => console.log('Success')
+    buttonText: 'Copiar Enlace',
+    onCopySuccess: () => console.log('Success'),
+    shareLinks
   },
   actionsAnchorIcons: [Export3, Buildings2],
   actionsAnchorLinks: ['link1', 'link2'],

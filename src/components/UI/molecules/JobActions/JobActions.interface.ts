@@ -1,6 +1,6 @@
-import { IShareButton } from '@components/UI/atoms'
 import { ISaveButton } from '@components/UI/atoms/SaveButton'
 import { ReactNode } from 'react'
+import { ISharePopover } from '../SharePopover'
 
 export interface IJobsActions {
   /**
@@ -28,5 +28,5 @@ export interface IJobsActions {
   /**
    * Props for the share button component.
    */
-  shareButtonProps: IShareButton
+  shareButtonProps: ISharePopover
 }

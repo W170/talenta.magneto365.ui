@@ -5,6 +5,7 @@ import { MobileJobDetailsDrawer } from './MobileJobDetailsDrawer.component'
 
 import { CompanyLogo, CitiesDetailDrawerProps } from '@constants/stories'
 import { jobVideo } from '@constants/stories/jobVideo.constants'
+import { shareLinks } from '../../../../constants/stories/vacancies.constants'
 
 const jobCompanyLogo = {
   jobCompanyLogoProps: {
@@ -84,7 +85,8 @@ const MobileJobDetailsActionsBar = {
       buttonTitle: 'Compartir Vacante',
       buttonText: 'Compartir',
       onCopySuccess: () => console.log('Success'),
-      onCopyError: () => console.log('Error')
+      onCopyError: () => console.log('Error'),
+      shareLinks
     },
     externalButtonChild: <MainButton buttonText="Aplicar" />
   },

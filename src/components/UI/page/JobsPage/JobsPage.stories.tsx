@@ -20,6 +20,7 @@ import { emptyResultsProps } from '@constants/stories/emptyResults.constants'
 import { sectionTitle, moreJobsText, moreJobsLink } from '../../../../constants/stories/similarJobs.constants'
 import { IVacancies } from '@components/UI/page'
 import { jobVideo } from '@constants/stories/jobVideo.constants'
+import { shareLinks } from '../../../../constants/stories/vacancies.constants'
 
 const jobDetailsDrawer = {
   jobCompanyLogoProps: {
@@ -44,8 +45,9 @@ const jobDetailsDrawer = {
     },
     shareButtonProps: {
       buttonTitle: 'Compartir vacante',
-      addHover: true,
-      onCopySuccess: () => console.log('Success')
+      buttonText: 'Compartir',
+      onCopySuccess: () => console.log('Success'),
+      shareLinks
     },
     actionsAnchorIcons: [Export3, Buildings2],
     actionsAnchorLinks: ['link1', 'link2'],
@@ -177,9 +179,14 @@ const mobileJobDetailsDrawer = {
         }
       },
       shareButtonProps: {
-        buttonTitle: 'Compartir vacante',
-        buttonText: 'Compartir',
-        onCopySuccess: () => console.log('Success')
+        title: 'Compartir',
+        content: 'Compartir'
+      },
+      copyButtonProps: {
+        buttonTitle: 'Copiar enlace',
+        buttonText: 'Copiar enlace',
+        onCopySuccess: () => console.log('Success'),
+        shareLinks
       },
       externalButtonChild: <MainButton buttonText="Aplicar" />
     },

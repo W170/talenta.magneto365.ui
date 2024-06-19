@@ -1,7 +1,8 @@
 import React from 'react'
-import { IconItem, SaveButton, ShareButton } from '@components/UI/atoms'
+import { IconItem, SaveButton } from '@components/UI/atoms'
 import { IJobsActions } from './JobActions.interface'
 import styles from './JobActions.module.scss'
+import { SharePopover } from '../SharePopover'
 
 const Component: React.FC<IJobsActions> = ({
   actionsAnchorIcons,
@@ -24,7 +25,7 @@ const Component: React.FC<IJobsActions> = ({
       <div id={styles['magneto-ui__external-child']}>{externalButtonChild}</div>
       <div className={styles['magneto-ui-job-actions__buttons-wrapper']}>
         <SaveButton {...saveButtonProps} />
-        <ShareButton {...shareButtonProps} />
+        <SharePopover {...shareButtonProps} />
         {filteredActionsLinkList?.map(({ url, title, icon }) => (
           <div className={styles['magneto-ui-job-actions__icon-wrapper']} key={`${url}-JobActions`}>
             <a

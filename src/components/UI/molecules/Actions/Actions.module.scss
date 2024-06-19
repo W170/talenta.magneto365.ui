@@ -51,6 +51,11 @@
       line-height: normal;
       color: v.$text-color-black;
     }
+
+    &--no-decorator {
+      text-decoration: none;
+      color: v.$text-color-black;
+    }
   }
 
   &__apply-button {
@@ -65,6 +70,17 @@
       line-height: normal;
       color: v.$color-white;
     }
+  }
+
+  &__back {
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    font-size: 16px;
+  }
+
+  &__share {
+    margin-left: 10px;
   }
 }
 

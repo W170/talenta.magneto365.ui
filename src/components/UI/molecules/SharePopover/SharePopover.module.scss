@@ -1,0 +1,53 @@
+@use '../../../../shared/stylesheets/variables.scss' as var;
+
+.popover {
+  > :first-child {
+    overflow: visible !important;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -5px;
+      left: 18px;
+      width: 10px;
+      height: 10px;
+      border-top-right-radius: 5px;
+      background: var.$color-white;
+      z-index: -1;
+      transform: rotate(-45deg);
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.106);
+    }
+  }
+
+  &__btn {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    padding: 12px 13px;
+    cursor: pointer;
+    &:focus-visible {
+      outline: none;
+    }
+    &:hover {
+      background-color: #cfcfde;
+      transition: all ease-in-out 0.3s;
+    }
+  }
+}
+
+.content {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  background: var.$color-white;
+  min-width: 230px;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 2px;
+    text-decoration: none;
+    color: var.$text-color-black;
+  }
+}
