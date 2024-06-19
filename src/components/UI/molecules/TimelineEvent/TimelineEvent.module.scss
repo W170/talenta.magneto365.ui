@@ -1,0 +1,70 @@
+.magneto-ui-timeline-event {
+  display: flex;
+  gap: 10px;
+  &__icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &--bar {
+      height: 2px;
+      margin-bottom: 20px;
+      transform: rotate(90deg);
+    }
+    &--icon {
+      margin-bottom: 11px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    p {
+      margin: 0;
+    }
+    &--title {
+      font-family: Lato;
+      font-weight: 400;
+      font-size: 12px;
+      color: #667688;
+      &-checked,
+      &-current,
+      &-blocked {
+        padding-top: 11px;
+      }
+      &-blocked {
+        color: #a3adb8;
+        font-family: Lato;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+    &--subtitle {
+      color: #0a0c0e;
+      font-family: Lato;
+      font-size: 15px;
+      font-weight: 400;
+      &-current {
+        color: #1a324c;
+        font-weight: 900;
+      }
+      &-blocked {
+        color: #8591a0;
+      }
+    }
+  }
+}
+.checked {
+  width: 36px;
+  background-color: #6dd695;
+}
+.current,
+.blocked {
+  width: 36px;
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.06);
+}

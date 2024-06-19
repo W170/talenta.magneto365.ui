@@ -1,2 +1,2 @@
 export * from './Alert.interface'
-export { default as Alert } from './Alert.component'
+export { Alert } from './Alert.component'
