@@ -24,7 +24,7 @@ export interface IShareLink {
 }
 
 export interface ISharePopover extends IShareButton {
-  shareLinks: IShareLink[]
+  shareLinks?: IShareLink[]
 
   classNameContent?: string
 

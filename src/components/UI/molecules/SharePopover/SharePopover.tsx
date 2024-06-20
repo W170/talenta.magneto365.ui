@@ -6,7 +6,7 @@ import { ShareIcons } from '../../../../constants/vacancies.constants'
 import { ISharePopover } from './SharePopover.interface'
 
 const Component: React.FC<ISharePopover> = ({
-  shareLinks,
+  shareLinks = [],
   btnProps = {},
   classNameContent = '',
   classNameButton = '',
