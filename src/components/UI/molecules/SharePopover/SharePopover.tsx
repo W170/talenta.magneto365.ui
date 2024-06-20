@@ -5,7 +5,13 @@ import { Share } from '../../../../constants/icons.constants'
 import { ShareIcons } from '../../../../constants/vacancies.constants'
 import { ISharePopover } from './SharePopover.interface'
 
-const Component: React.FC<ISharePopover> = ({ shareLinks, classNameContent = '', classNameButton = '', ...rest }) => {
+const Component: React.FC<ISharePopover> = ({
+  shareLinks,
+  btnProps = {},
+  classNameContent = '',
+  classNameButton = '',
+  ...rest
+}) => {
   const [show, setShow] = useState(false)
 
   return (
@@ -44,7 +50,11 @@ const Component: React.FC<ISharePopover> = ({ shareLinks, classNameContent = '',
         </ul>
       }
     >
-      <button className={[style['popover__btn'], classNameButton].join(' ')} onClick={() => setShow((show) => !show)}>
+      <button
+        {...btnProps}
+        className={[style['popover__btn'], classNameButton].join(' ')}
+        onClick={() => setShow((show) => !show)}
+      >
         <IconItem size={20} icon={Share} />
       </button>
     </Popover>

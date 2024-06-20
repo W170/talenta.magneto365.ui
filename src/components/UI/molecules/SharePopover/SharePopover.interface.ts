@@ -29,4 +29,10 @@ export interface ISharePopover extends IShareButton {
   classNameContent?: string
 
   classNameButton?: string
+
+  /**
+   * These props will apply in the popover content,
+   * (in the button component to be more specific).
+   */
+  btnProps?: JSX.IntrinsicElements['button']
 }
