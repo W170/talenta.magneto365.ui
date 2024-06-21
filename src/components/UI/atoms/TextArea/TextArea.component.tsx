@@ -17,10 +17,14 @@ const TextArea: React.FC<ITextArea> = ({
 
   const haveValueOrFocus = onFocus || value.length > 0
 
-  const handleScroll: UIEventHandler<HTMLTextAreaElement> = useCallback((event) => {
-    const { scrollTop } = event.target as HTMLTextAreaElement
-    setShowPlaceholder(scrollTop === 0)
-  }, [])
+  const handleScroll: UIEventHandler<HTMLTextAreaElement> = useCallback(
+    (event) => {
+      const { scrollTop } = event.target as HTMLTextAreaElement
+      if (!!scrollTop !== showPlaceholder) return
+      setShowPlaceholder(scrollTop === 0)
+    },
+    [showPlaceholder]
+  )
 
   return (
     <div className={styles[`${classMUI}-text-area`]}>
