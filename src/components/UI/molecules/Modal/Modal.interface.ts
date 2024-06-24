@@ -16,11 +16,11 @@ export interface IModal {
   /**
    * This property adds a title in the top of the modal
    */
-  title: string
+  title?: string
   /**
    * This property adds a description at the top of the modal after the title
    */
-  description: string
+  description?: string
   /**This is the custom className */
   className?: string
   /**

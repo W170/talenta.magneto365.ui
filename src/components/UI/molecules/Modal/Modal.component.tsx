@@ -19,8 +19,8 @@ const Modal: React.FC<IModal> = ({
     <ModalPortal>
       <>
         <div className={`${styles[`${classMUI}-modal`]} ${className}`}>
-          <h2 className={`${styles[`${classMUI}-modal__title`]}`}>{title}</h2>
-          <p className={`${styles[`${classMUI}-modal__description`]}`}>{description}</p>
+          {title ? <h2 className={`${styles[`${classMUI}-modal__title`]}`}>{title}</h2> : null}
+          {description ? <p className={`${styles[`${classMUI}-modal__description`]}`}>{description}</p> : null}
           <div style={{ maxHeight: customMaxHeight }} className={`${styles[`${classMUI}-modal__children-container`]}`}>
             {children}
           </div>
