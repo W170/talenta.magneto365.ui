@@ -36,3 +36,7 @@ export interface IModalPortal {
    */
   children: false | JSX.Element | JSX.Element[]
 }
+
+export type IModalTitle = React.HTMLAttributes<HTMLHeadingElement>
+
+export type IModalDescription = React.HTMLAttributes<HTMLParagraphElement>
