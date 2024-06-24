@@ -40,17 +40,15 @@ const Component: React.FC<IMobileDatePicker> = ({
 
   const FIRST_OF_MONTH = 1
 
-  const componentClass = `${mainClass}${monthSelected === 0 || monthSelected || yearSelected ? valueClass : ''}${
+  const FALSY_VALUE_VALIDATION = monthSelected === 0 || monthSelected || yearSelected
+
+  const componentClass = `${mainClass}${FALSY_VALUE_VALIDATION ? valueClass : ''}${
     disabled ? disabledClass : ''
   }`.trim()
 
-  const placeholderClass = `${mainClass}${
-    monthSelected === 0 || monthSelected || yearSelected ? '-value--placeholder-shrink' : '--placeholder'
-  }`
+  const placeholderClass = `${mainClass}${FALSY_VALUE_VALIDATION ? '-value--placeholder-shrink' : '--placeholder'}`
 
-  const iconClass = `${mainClass}${monthSelected === 0 || monthSelected || yearSelected ? '-value__icon' : '__icon'}${
-    disabled ? '--disabled' : ''
-  }`
+  const iconClass = `${mainClass}${FALSY_VALUE_VALIDATION ? '-value__icon' : '__icon'}${disabled ? '--disabled' : ''}`
 
   const monthDateOptions: IOptionValues[] = monthsLabels?.map((optionLabel, index) => ({
     optionValue: monthOptionsValue[index],
