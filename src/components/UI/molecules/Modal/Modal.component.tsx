@@ -1,7 +1,7 @@
 import React from 'react'
 import { classMUI } from '@constants/stories'
 import styles from './Modal.module.scss'
-import { IModal } from './Modal.interface'
+import { IModal, IModalDescription, IModalTitle } from './Modal.interface'
 import { Close } from '@constants/icons.constants'
 import { ModalPortal } from './ModalPortal.component'
 
@@ -19,8 +19,8 @@ const Modal: React.FC<IModal> = ({
     <ModalPortal>
       <>
         <div className={`${styles[`${classMUI}-modal`]} ${className}`}>
-          <h2 className={`${styles[`${classMUI}-modal__title`]}`}>{title}</h2>
-          <p className={`${styles[`${classMUI}-modal__description`]}`}>{description}</p>
+          {title ? <h2 className={`${styles[`${classMUI}-modal__title`]}`}>{title}</h2> : null}
+          {description ? <p className={`${styles[`${classMUI}-modal__description`]}`}>{description}</p> : null}
           <div style={{ maxHeight: customMaxHeight }} className={`${styles[`${classMUI}-modal__children-container`]}`}>
             {children}
           </div>
@@ -34,4 +34,15 @@ const Modal: React.FC<IModal> = ({
   )
 }
 
-export default Modal
+const Title: React.FC<IModalTitle> = ({ className, children, ...props }) => (
+  <h2 className={`${styles[`${classMUI}-modal__title`]} ${className}`} {...props}>
+    {children}
+  </h2>
+)
+
+const Description: React.FC<IModalDescription> = ({ className, children, ...props }) => (
+  <p className={`${styles[`${classMUI}-modal__description`]} ${className}`} {...props}>
+    {children}
+  </p>
+)
+export default Object.assign(Modal, { Title, Description })
