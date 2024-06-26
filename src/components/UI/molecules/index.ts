@@ -1,4 +1,5 @@
 export * from './Actions'
+export * from './Alert'
 export * from './BrandsContainer'
 export * from './BrandsMenuMobile'
 export * from './BrandsMenuPopover'
