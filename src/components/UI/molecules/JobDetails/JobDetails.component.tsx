@@ -35,4 +35,6 @@ const Component: React.FC<IJobDetails> = ({ offerDetailsList, iconList, altList,
  * UI Molecule component for Job Detail
  */
 
+Component.displayName = 'JobDetails'
+
 export const JobDetails = Component
