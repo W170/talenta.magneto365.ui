@@ -12,7 +12,8 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    color: v.$colors-magneto-neutral;
+    flex-wrap: wrap;
+    color: v.$colors-magneto-neutral !important;
     &-remote {
       margin-right: 0.5em;
       margin-bottom: 0 !important;
