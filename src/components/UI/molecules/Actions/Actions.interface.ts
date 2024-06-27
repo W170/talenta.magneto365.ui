@@ -45,6 +45,10 @@ export interface IActions {
     title: string
     content: React.ReactChild
   }
+  /**
+   * company name.
+   */
+  offerCompanyName?: string
 }
 
 export interface IShareLinksActions {
@@ -56,4 +60,8 @@ export interface IShareLinksActions {
   ActionsHeader: string
 
   shareButtonProps: ISharePopover
+  /**
+   * company name.
+   */
+  offerCompanyName?: string
 }

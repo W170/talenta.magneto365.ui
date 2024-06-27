@@ -32,6 +32,7 @@ const Component: React.FC<ISharePopover> = ({
                 rel="noreferrer"
                 aria-label={ariaLabel}
                 className={style['content__link']}
+                onClick={() => setShow(false)}
               >
                 <IconItem size={40} icon={name ? ShareIcons[name].icon : icon} />
                 <span>{title}</span>
@@ -60,5 +61,7 @@ const Component: React.FC<ISharePopover> = ({
     </Popover>
   )
 }
+
+Component.displayName = 'SharePopover'
 
 export const SharePopover = Component

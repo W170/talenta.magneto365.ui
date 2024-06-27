@@ -13,7 +13,8 @@ const Component: React.FC<IActions> = ({
   externalButtonChild,
   saveButtonProps,
   shareButtonProps,
-  copyButtonProps
+  copyButtonProps,
+  offerCompanyName
 }) => {
   const [component, setComponent] = useState<React.ReactElement>()
 
@@ -38,7 +39,12 @@ const Component: React.FC<IActions> = ({
         title={shareButtonProps.title}
         onClick={() =>
           setComponent(
-            <Actions.ShareLinks shareButtonProps={copyButtonProps} ActionsHeader={ActionsHeader} onBack={handleBack} />
+            <Actions.ShareLinks
+              offerCompanyName={offerCompanyName}
+              shareButtonProps={copyButtonProps}
+              ActionsHeader={ActionsHeader}
+              onBack={handleBack}
+            />
           )
         }
       >
@@ -51,7 +57,10 @@ const Component: React.FC<IActions> = ({
           <p key={index}>{text}</p>
         </a>
       ))}
-      <p className={styles['magneto-ui-actions__header']}>{ActionsHeader}</p>
+      <div className={styles['magneto-ui-actions__header']}>
+        <p className={styles['magneto-ui-actions__header-title']}>{ActionsHeader}</p>
+        {offerCompanyName ? <p className={styles['magneto-ui-actions__header-subtitle']}>{offerCompanyName}</p> : null}
+      </div>
     </div>
   )
 }
@@ -59,7 +68,8 @@ const Component: React.FC<IActions> = ({
 const ShareLinksAction: React.FC<IShareLinksActions> = ({
   onBack,
   shareButtonProps: { shareLinks = [], ...shareProps },
-  ActionsHeader
+  ActionsHeader,
+  offerCompanyName
 }) => {
   return (
     <div className={styles['magneto-ui-actions']}>
@@ -77,7 +87,10 @@ const ShareLinksAction: React.FC<IShareLinksActions> = ({
           <span>{title}</span>
         </a>
       ))}
-      <p className={styles['magneto-ui-actions__header']}>{ActionsHeader}</p>
+      <div className={styles['magneto-ui-actions__header']}>
+        <p className={styles['magneto-ui-actions__header-title']}>{ActionsHeader}</p>
+        {offerCompanyName ? <p className={styles['magneto-ui-actions__header-subtitle']}>{offerCompanyName}</p> : null}
+      </div>
       <div className={styles['magneto-ui-actions__back']}>
         <button className={styles['magneto-ui-actions__button']} onClick={() => onBack()}>
           <IconItem size={20} icon={ArrowLeft2} />
