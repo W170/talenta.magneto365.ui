@@ -33,3 +33,19 @@
     }
   }
 }
+
+@mixin scroll-thin {
+  $size: 7px;
+  $background: #cfcfde;
+  $border-color: #f4f4fa;
+
+  &::-webkit-scrollbar {
+    width: $size;
+    position: relative;
+    &-thumb {
+      background: $background;
+      border: solid $border-color 1px;
+      border-radius: 10px;
+    }
+  }
+}

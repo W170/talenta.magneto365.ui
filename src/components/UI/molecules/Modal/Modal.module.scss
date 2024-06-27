@@ -49,7 +49,8 @@
   &__children-container {
     overflow-x: hidden;
     overflow-y: auto;
-    @include m.scroll-filter;
+    @include m.scroll-thin;
+    padding: 0 5px;
   }
 }
 
