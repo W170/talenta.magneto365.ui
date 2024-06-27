@@ -6,9 +6,10 @@ const meta: Meta<typeof ToggleButton> = {
   component: ToggleButton,
   tags: ['autodocs'],
   args: {
-    name: 'Click Here Baby',
-    id: '1',
-    onChange: ({ name, id }) => console.log({ name, id })
+    name: 'Click Here',
+    id: '3',
+    onChange: ({ name, id }) => console.log({ name, id }),
+    defaultValue: '3'
   }
 }
 

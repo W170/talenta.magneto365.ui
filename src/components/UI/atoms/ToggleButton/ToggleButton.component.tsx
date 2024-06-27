@@ -9,7 +9,9 @@ const Component: React.FC<IToggleButton> = ({ className, color, onChange, id, na
   useEffect(() => {
     if (defaultValue && defaultValue.includes(id.toString())) {
       setIsSelected(defaultValue)
+      return
     }
+    setIsSelected('')
   }, [defaultValue, id])
 
   const handleClick = useCallback(
@@ -33,7 +35,7 @@ const Component: React.FC<IToggleButton> = ({ className, color, onChange, id, na
     }
     return {
       backgroundColor: 'transparent',
-      border: `${color || '#E3E7E9'} solid 2px`
+      border: `${color || '#E3E7E9'} solid 1px`
     }
   }, [color, isSelected])
 

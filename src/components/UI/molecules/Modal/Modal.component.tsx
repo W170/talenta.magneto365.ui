@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { classMUI } from '@constants/stories'
 import styles from './Modal.module.scss'
 import { IModal, IModalDescription, IModalTitle } from './Modal.interface'
@@ -14,7 +14,14 @@ const Modal: React.FC<IModal> = ({
   className = '',
   customMaxHeight = '350px'
 }) => {
+  useEffect(() => {
+    const { body } = document
+    if (!body) return
+    body.style.overflowY = isOpen ? 'hidden' : 'auto'
+  }, [isOpen])
+
   if (!isOpen) return null
+
   return (
     <ModalPortal>
       <>
