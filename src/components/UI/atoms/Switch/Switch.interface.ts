@@ -4,7 +4,7 @@ export interface ISwitch {
    */
   title?: string
   /**
-   * This is the initial value of the switch
+   * This is the value of the switch
    */
   isActive: boolean
 

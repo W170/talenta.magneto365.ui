@@ -1,10 +1,13 @@
-import React, { FC, useCallback, useState } from 'react'
+import React, { FC, useCallback, useEffect, useState } from 'react'
 import styles from './Switch.module.scss'
 import { ISwitch } from './Switch.interface'
 
 export const Switch: FC<ISwitch> = ({ isActive, setIsActive, title, className }) => {
   const [checked, setChecked] = useState(isActive)
-  //TODO review is internal state is necessary
+
+  useEffect(() => {
+    setChecked(isActive)
+  }, [isActive])
 
   const handleChange = useCallback(() => {
     setChecked((state) => !state)
