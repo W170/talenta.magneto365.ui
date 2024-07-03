@@ -6,6 +6,17 @@ import styles from './ToggleButton.module.scss'
 const Component: React.FC<IToggleButton> = ({ className, color, onChange, id, name, defaultValue }) => {
   const [isSelected, setIsSelected] = useState<string>('')
 
+  const isColorDark = (color: string) => {
+    const hex = color.replace('#', '')
+    const r = parseInt(hex.substring(0, 2), 16)
+    const g = parseInt(hex.substring(2, 4), 16)
+    const b = parseInt(hex.substring(4, 6), 16)
+
+    const luminosity = 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+    return luminosity < 128
+  }
+
   useEffect(() => {
     if (defaultValue && defaultValue.includes(id.toString())) {
       setIsSelected(defaultValue)
@@ -28,9 +39,12 @@ const Component: React.FC<IToggleButton> = ({ className, color, onChange, id, na
   )
 
   const selectStyles = useMemo(() => {
+    const textColor = isColorDark(color || '#FFFFFF') ? '#FFFFFF' : '#000000'
+
     if (isSelected) {
       return {
-        backgroundColor: color || '#F0F1F3'
+        backgroundColor: color || '#F0F1F3',
+        color: textColor
       }
     }
     return {
