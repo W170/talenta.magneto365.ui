@@ -5,15 +5,7 @@ import { IModal, IModalDescription, IModalTitle } from './Modal.interface'
 import { Close } from '@constants/icons.constants'
 import { ModalPortal } from './ModalPortal.component'
 
-const Modal: React.FC<IModal> = ({
-  onClose,
-  isOpen,
-  children,
-  title,
-  description,
-  className = '',
-  customMaxHeight = '350px'
-}) => {
+const Modal: React.FC<IModal> = ({ onClose, isOpen, children, title, description, className = '' }) => {
   useEffect(() => {
     const { body } = document
     if (!body) return
@@ -24,19 +16,15 @@ const Modal: React.FC<IModal> = ({
 
   return (
     <ModalPortal>
-      <>
-        <div className={`${styles[`${classMUI}-modal`]} ${className}`}>
-          {title ? <h2 className={`${styles[`${classMUI}-modal__title`]}`}>{title}</h2> : null}
-          {description ? <p className={`${styles[`${classMUI}-modal__description`]}`}>{description}</p> : null}
-          <div style={{ maxHeight: customMaxHeight }} className={`${styles[`${classMUI}-modal__children-container`]}`}>
-            {children}
-          </div>
-          <button className={`${styles[`${classMUI}-modal__close-btn`]}`} onClick={onClose} type="button">
-            <img src={Close} alt="close icon" />
-          </button>
-        </div>
-        <span className={`${styles[`${classMUI}-background-modal`]}`} onClick={onClose} />
-      </>
+      <div className={`${styles[`${classMUI}-modal`]} ${className}`}>
+        {title ? <h2 className={`${styles[`${classMUI}-modal__title`]}`}>{title}</h2> : null}
+        {description ? <p className={`${styles[`${classMUI}-modal__description`]}`}>{description}</p> : null}
+        {children}
+        <button className={`${styles[`${classMUI}-modal__close-btn`]}`} onClick={onClose} type="button">
+          <img src={Close} alt="close icon" />
+        </button>
+      </div>
+      <span className={`${styles[`${classMUI}-background-modal`]}`} onClick={onClose} />
     </ModalPortal>
   )
 }
