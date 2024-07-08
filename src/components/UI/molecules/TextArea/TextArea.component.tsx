@@ -1,7 +1,8 @@
-import React, { UIEventHandler, useCallback, useState } from 'react'
+import React, { ChangeEvent, UIEventHandler, useCallback, useEffect, useState } from 'react'
 import { ITextArea } from './TextArea.interface'
 import { classMUI } from '@constants/stories'
 import styles from './TextArea.module.scss'
+import { ComparativeCounter } from '@components/UI/atoms'
 
 const TextArea: React.FC<ITextArea> = ({
   value = '',
@@ -10,10 +11,27 @@ const TextArea: React.FC<ITextArea> = ({
   placeholder,
   error,
   rows = 4,
-  disabled = false
+  disabled = false,
+  hasCounter = false,
+  maxCounterValue = 0
 }) => {
   const [onFocus, setOnFocus] = useState(false)
   const [showPlaceholder, setShowPlaceholder] = useState(true)
+  const [inputValue, setInputValue] = useState('')
+
+  useEffect(() => {
+    if (value && hasCounter) {
+      setInputValue(value)
+    }
+  }, [hasCounter, value])
+
+  const handleChange = useCallback(
+    (e: ChangeEvent<HTMLTextAreaElement>) => {
+      onChange(e)
+      setInputValue(e.target.value)
+    },
+    [onChange]
+  )
 
   const haveValueOrFocus = onFocus || value.length > 0
 
@@ -46,7 +64,7 @@ const TextArea: React.FC<ITextArea> = ({
           className={styles[`${classMUI}-text-area--container__text-area`]}
           name={name}
           value={value}
-          onChange={onChange}
+          onChange={handleChange}
           onFocus={() => setOnFocus(true)}
           onBlur={() => setOnFocus(false)}
           onScroll={handleScroll}
@@ -54,7 +72,10 @@ const TextArea: React.FC<ITextArea> = ({
           rows={rows}
         />
       </div>
-      {error && <span className={styles[`${classMUI}-text-area--container__error`]}>{error}</span>}
+      <div className={styles[`${classMUI}-text-area__footer`]}>
+        <span className={styles[`${classMUI}-text-area--container__error`]}>{error}</span>
+        {hasCounter && <ComparativeCounter current={inputValue.length} max={maxCounterValue} />}
+      </div>
     </div>
   )
 }

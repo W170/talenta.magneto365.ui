@@ -29,4 +29,12 @@ export interface ITextArea {
    * this property add an error message
    */
   error?: string
+  /**
+   * this property sets the counter component below the input
+   */
+  hasCounter?: boolean
+  /**
+   * this property sets the max counter value
+   */
+  maxCounterValue?: number
 }

@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { ChangeEvent } from 'react'
-import { TextArea } from './'
+import { TextArea } from '.'
 
 const meta: Meta<typeof TextArea> = {
-  title: 'Atoms/TextArea',
+  title: 'Molecules/TextArea',
   component: TextArea,
   tags: ['autodocs'],
   args: {
@@ -12,7 +12,9 @@ const meta: Meta<typeof TextArea> = {
     name: 'text-area',
     value: 'Text area value',
     error: 'Campo requerido',
-    disabled: false
+    disabled: false,
+    hasCounter: true,
+    maxCounterValue: 150
   }
 }
 

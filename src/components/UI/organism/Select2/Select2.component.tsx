@@ -1,11 +1,12 @@
 import React, { useMemo } from 'react'
-import { Input, Tag } from '@components/UI/atoms'
+import { Tag } from '@components/UI/atoms'
 import { withClickOut } from '@components/hoc'
 import { classMUI } from '@constants/stories'
 import { ArrowLeft2, Close } from '../../../../constants/icons.constants'
 import { ISelectOptions } from './Select2.interface'
 import styles from './Select2.module.scss'
 import useSelect2 from './Select2.hook'
+import { Input } from '@components/UI/molecules'
 
 const Component: React.FC<ISelectOptions> = ({
   selectList,

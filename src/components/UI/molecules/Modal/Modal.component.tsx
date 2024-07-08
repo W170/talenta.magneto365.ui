@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { classMUI } from '@constants/stories'
 import styles from './Modal.module.scss'
 import { IModal, IModalDescription, IModalTitle } from './Modal.interface'
 import { Close } from '@constants/icons.constants'
-import { ModalPortal } from './ModalPortal.component'
 
 const Modal: React.FC<IModal> = ({ onClose, isOpen, children, title, description, className = '' }) => {
   useEffect(() => {
@@ -15,7 +14,7 @@ const Modal: React.FC<IModal> = ({ onClose, isOpen, children, title, description
   if (!isOpen) return null
 
   return (
-    <ModalPortal>
+    <Fragment>
       <div className={`${styles[`${classMUI}-modal`]} ${className}`}>
         {title ? <h2 className={`${styles[`${classMUI}-modal__title`]}`}>{title}</h2> : null}
         {description ? <p className={`${styles[`${classMUI}-modal__description`]}`}>{description}</p> : null}
@@ -25,7 +24,7 @@ const Modal: React.FC<IModal> = ({ onClose, isOpen, children, title, description
         </button>
       </div>
       <span className={`${styles[`${classMUI}-background-modal`]}`} onClick={onClose} />
-    </ModalPortal>
+    </Fragment>
   )
 }
 

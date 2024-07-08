@@ -43,4 +43,12 @@ export interface IInput {
    * this property customize the auto-focus for the input
    */
   autoFocus?: boolean
+  /**
+   * this property sets the counter component below the input
+   */
+  hasCounter?: boolean
+  /**
+   * this property sets the max counter value
+   */
+  maxCounterValue?: number
 }

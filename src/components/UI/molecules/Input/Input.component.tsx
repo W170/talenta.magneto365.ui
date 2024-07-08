@@ -1,8 +1,9 @@
-import React, { useMemo, useState } from 'react'
+import React, { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react'
 import { IInput } from './Input.interface'
 import { classMUI } from '@constants/stories'
 import styles from './Input.module.scss'
 import { DocumentTextGray, Email, Mobile } from '@constants/icons.constants'
+import { ComparativeCounter } from '@components/UI/atoms'
 
 const Input: React.FC<IInput> = ({
   value = '',
@@ -14,10 +15,19 @@ const Input: React.FC<IInput> = ({
   hideIcon = false,
   error,
   disabled = false,
-  autoFocus = false
+  autoFocus = false,
+  hasCounter = false,
+  maxCounterValue = 0
 }) => {
   const [onFocus, setOnFocus] = useState(false)
   const haveValueOrFocus = onFocus || value.length > 0
+  const [inputValue, setInputValue] = useState('')
+
+  useEffect(() => {
+    if (value && hasCounter) {
+      setInputValue(value)
+    }
+  }, [hasCounter, value])
 
   const dinamycIcon = useMemo(() => {
     switch (type) {
@@ -32,6 +42,14 @@ const Input: React.FC<IInput> = ({
         return DocumentTextGray
     }
   }, [type])
+
+  const handleChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      onChange(e)
+      setInputValue(e.target.value)
+    },
+    [onChange]
+  )
 
   return (
     <div className={styles[`${classMUI}-input`]}>
@@ -56,7 +74,7 @@ const Input: React.FC<IInput> = ({
           type={type}
           name={name}
           value={value}
-          onChange={onChange}
+          onChange={handleChange}
           onFocus={() => setOnFocus(true)}
           onBlur={() => setOnFocus(false)}
           id={name}
@@ -68,7 +86,10 @@ const Input: React.FC<IInput> = ({
           <img className={styles[`${classMUI}-input--container__icon`]} src={customIcon ? customIcon : dinamycIcon} />
         )}
       </div>
-      {error && <span className={styles[`${classMUI}-input--container__error`]}>{error}</span>}
+      <div className={styles[`${classMUI}-input__footer`]}>
+        <span className={styles[`${classMUI}-input--container__error`]}>{error}</span>
+        {hasCounter && <ComparativeCounter current={inputValue.length} max={maxCounterValue} />}
+      </div>
     </div>
   )
 }

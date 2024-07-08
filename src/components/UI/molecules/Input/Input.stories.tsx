@@ -3,19 +3,21 @@ import { Input } from './'
 import { ChangeEvent } from 'react'
 
 const meta: Meta<typeof Input> = {
-  title: 'Atoms/Input',
+  title: 'Molecules/Input',
   component: Input,
   tags: ['autodocs'],
   args: {
     placeholder: 'Write something',
-    onChange: (e: ChangeEvent<HTMLInputElement>) => e.target.value,
+    onChange: (e: ChangeEvent<HTMLInputElement>) => console.log(e.target.value),
     name: 'email',
     value: 'value',
     hideIcon: false,
     type: 'email',
     customIcon: '',
     error: 'Campo requerido',
-    disabled: false
+    disabled: false,
+    hasCounter: true,
+    maxCounterValue: 2600
   }
 }
 
