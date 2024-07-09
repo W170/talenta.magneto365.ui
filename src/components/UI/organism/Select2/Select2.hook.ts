@@ -3,7 +3,7 @@ import { ISelectField, ISelectOptions } from './Select2.interface'
 
 const useSelect2 = ({
   setTerm,
-  currentFields,
+  currentFields = [],
   limitSelections,
   setClickOut = () => ({}),
   onChange,
@@ -24,11 +24,12 @@ const useSelect2 = ({
   }, [searchValue, setTerm])
 
   useEffect(() => {
-    if (currentFields) {
-      if (currentFields?.length > 0) {
-        setValueSelected(currentFields)
+    setValueSelected((prev) => {
+      if (currentFields.map((field) => field.id).join() === prev.map((p) => p.id).join()) {
+        return prev
       }
-    }
+      return currentFields
+    })
   }, [currentFields])
 
   useEffect(() => {
@@ -39,10 +40,6 @@ const useSelect2 = ({
     }
     setDisableList(false)
   }, [limitSelections, setClickOut, valueSelected.length])
-
-  useEffect(() => {
-    onChange(valueSelected)
-  }, [onChange, valueSelected])
 
   const handleSearch = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value)
@@ -55,22 +52,34 @@ const useSelect2 = ({
     return selectList
   }, [searchValue, selectList, setTerm])
 
-  const handleChange = useCallback(
-    (selectedValue: ISelectField) => {
-      if (isMultiple) {
-        setValueSelected((prev) => [...prev, selectedValue])
-        return
-      }
-      setClickOut(false)
-      setSearchValue('')
-      setValueSelected([selectedValue])
-    },
-    [isMultiple, setClickOut]
-  )
+  const handleSelected = (value: ISelectField[] | ((prev: ISelectField[]) => ISelectField[])) => {
+    if (Array.isArray(value)) {
+      setValueSelected(value)
+      onChange(value)
+      return
+    }
 
-  const removeValue = useCallback((id: string | number) => {
-    setValueSelected((prev) => prev.filter((p) => p.id !== id))
-  }, [])
+    setValueSelected((prev) => {
+      const result = value(prev)
+      onChange(result)
+      return result
+    })
+  }
+
+  const handleChange = (selectedValue: ISelectField) => {
+    if (isMultiple) {
+      handleSelected((prev) => [...prev, selectedValue])
+      return
+    }
+    setClickOut(false)
+    setSearchValue('')
+    handleSelected([selectedValue])
+  }
+
+  const removeValue = (id: string | number) => {
+    handleSelected((prev) => prev.filter((p) => p.id !== id))
+  }
+
   return { list, removeValue, handleChange, disableList, handleSearch, searchValue, valueSelected }
 }
 
