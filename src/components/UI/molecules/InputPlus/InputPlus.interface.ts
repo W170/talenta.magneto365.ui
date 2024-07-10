@@ -19,4 +19,8 @@ export interface IInputPlus {
    * this property show a circular progress spinner
    */
   isLoading?: boolean
+  /**
+   * this property sets custom color
+   */
+  color?: string
 }

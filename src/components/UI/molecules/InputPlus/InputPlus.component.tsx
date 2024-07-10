@@ -5,7 +5,14 @@ import { IInputPlus } from './InputPlus.interface'
 import { classMUI } from '../../../../constants/stories/common.constants'
 import styles from './InputPlus.module.scss'
 
-export const InputPlus: React.FC<IInputPlus> = ({ onChange, placeholder, maxWords = 4, disabled, isLoading }) => {
+export const InputPlus: React.FC<IInputPlus> = ({
+  onChange,
+  placeholder,
+  maxWords = 4,
+  disabled,
+  isLoading,
+  color = '#090467'
+}) => {
   const [inputValue, setInputValue] = useState<string>('')
   const [disabledBtn, setDisabledBtn] = useState<boolean>(false)
 
@@ -32,25 +39,23 @@ export const InputPlus: React.FC<IInputPlus> = ({ onChange, placeholder, maxWord
     [disabled, maxWords]
   )
 
-  const handleSubmmit = useCallback(
-    (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault()
-      onChange(inputValue)
-      setInputValue('')
-    },
-    [inputValue, onChange]
-  )
+  const handleSubmmit = useCallback(() => {
+    onChange(inputValue)
+    setInputValue('')
+  }, [inputValue, onChange])
 
   return (
-    <form className={styles[`${classMUI}-input-plus`]} onSubmit={handleSubmmit}>
+    <div className={styles[`${classMUI}-input-plus`]}>
       <input placeholder={placeholder} value={inputValue} onChange={handleValue} type="text" />
       <button
-        type="submit"
+        type="button"
+        onClick={handleSubmmit}
         className={`${styles[`${classMUI}-input-plus__plus-button`]} ${disabledBtn ? styles.disabled : ''}`}
         disabled={disabledBtn}
+        style={{ backgroundColor: color }}
       >
         {isLoading ? <FlatLoader color="white" secondColor="transparent" /> : <img src={Add} alt="icon" />}
       </button>
-    </form>
+    </div>
   )
 }
