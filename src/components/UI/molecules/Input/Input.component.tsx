@@ -17,7 +17,8 @@ const Input: React.FC<IInput> = ({
   disabled = false,
   autoFocus = false,
   hasCounter = false,
-  maxCounterValue = 0
+  maxCounterValue = 0,
+  ...props
 }) => {
   const [onFocus, setOnFocus] = useState(false)
   const haveValueOrFocus = onFocus || value.length > 0
@@ -66,6 +67,7 @@ const Input: React.FC<IInput> = ({
           {placeholder}
         </label>
         <input
+          {...props}
           style={{
             padding: hideIcon ? '0px 10px' : '0px 40px'
           }}

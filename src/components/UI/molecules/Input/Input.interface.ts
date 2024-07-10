@@ -2,7 +2,7 @@ import { ChangeEvent } from 'react'
 
 type Type = 'text' | 'number' | 'email'
 
-export interface IInput {
+export interface IInput extends React.InputHTMLAttributes<HTMLInputElement> {
   /**
    * this property change value text
    */
