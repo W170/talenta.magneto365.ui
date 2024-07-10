@@ -53,7 +53,7 @@ const Input: React.FC<IInput> = ({
   )
 
   return (
-    <div style={{ height: 'auto' }}>
+    <div style={{ height: 'auto', width: '100%' }}>
       <div className={styles[`${classMUI}-input`]}>
         <div>
           <div className={styles[`${classMUI}-input--container`]}>
