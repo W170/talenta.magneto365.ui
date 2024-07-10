@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import { IToggleButton } from './ToggleButton.interface'
 import { classMUI } from '@constants/stories'
 import styles from './ToggleButton.module.scss'
 
-const Component: React.FC<IToggleButton> = ({ className, color, onChange, id, name, defaultValue }) => {
+const Component: React.FC<IToggleButton> = ({ className, color, onChange, id, name, currentSelect }) => {
   const [isSelected, setIsSelected] = useState<string>('')
 
   const isColorDark = (color: string) => {
@@ -17,17 +17,9 @@ const Component: React.FC<IToggleButton> = ({ className, color, onChange, id, na
     return luminosity < 128
   }
 
-  useEffect(() => {
-    if (defaultValue && defaultValue.includes(id.toString())) {
-      setIsSelected(defaultValue)
-      return
-    }
-    setIsSelected('')
-  }, [defaultValue, id])
-
   const handleClick = useCallback(
     ({ id, name }) => {
-      if (isSelected) {
+      if (isSelected || currentSelect) {
         setIsSelected('')
         onChange({ id, name: undefined })
         return
@@ -35,28 +27,29 @@ const Component: React.FC<IToggleButton> = ({ className, color, onChange, id, na
       onChange({ id, name })
       setIsSelected(id.toString())
     },
-    [isSelected, onChange]
+    [currentSelect, isSelected, onChange]
   )
 
   const selectStyles = useMemo(() => {
     const textColor = isColorDark(color || '#FFFFFF') ? '#FFFFFF' : '#000000'
 
-    if (isSelected) {
+    if (isSelected || currentSelect) {
       return {
         backgroundColor: color || '#F0F1F3',
-        color: textColor
+        color: textColor,
+        border: 'none'
       }
     }
     return {
       backgroundColor: 'transparent',
       border: `${color || '#E3E7E9'} solid 1px`
     }
-  }, [color, isSelected])
+  }, [color, currentSelect, isSelected])
 
   return (
     <button
       className={`${styles[`${classMUI}-toggle-button`]} ${className || ''} ${
-        isSelected ? styles['toggle-button-selected'] : ''
+        isSelected || currentSelect ? styles['toggle-button-selected'] : ''
       }`}
       style={{ ...selectStyles }}
       onClick={() => handleClick({ id, name })}
