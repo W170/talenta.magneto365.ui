@@ -4,7 +4,7 @@ import { IScoreLevel } from './ScoreLevel.interface'
 import { Trash } from '../../../../constants/icons.constants'
 import styles from './ScoreLevel.module.scss'
 
-const Component: React.FC<IScoreLevel> = ({ name, onChange, removeSkill, scoreValue, levels, color }) => {
+const Component: React.FC<IScoreLevel> = ({ name, onChange, removeSkill, scoreValue, levels, color, id }) => {
   const [score, setScore] = useState<number>(scoreValue || 1)
   const [spanHover, setSpanHover] = useState<number>(0)
 
@@ -15,9 +15,13 @@ const Component: React.FC<IScoreLevel> = ({ name, onChange, removeSkill, scoreVa
   const handleScoreChange = useCallback(
     (newScore: number) => {
       setScore(newScore)
-      onChange({ name, score: newScore })
+      if (id) {
+        onChange({ name, level: newScore, id })
+        return
+      }
+      onChange({ name, level: newScore })
     },
-    [name, onChange]
+    [id, name, onChange]
   )
 
   const setDinamycColor = useCallback(

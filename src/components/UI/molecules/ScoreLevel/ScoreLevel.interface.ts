@@ -6,7 +6,7 @@ export interface IScoreLevel {
   /**
    * this fuction returns the name and score selected
    */
-  onChange: ({ name, score }: { name: string; score: number }) => void
+  onChange: ({ name, level, id }: { name: string; level: number; id?: number }) => void
   /**
    * this property returns the name selected for deletion
    */
@@ -23,4 +23,8 @@ export interface IScoreLevel {
    * this property can change the default color
    */
   color?: string
+  /**
+   * this property sets the id
+   */
+  id?: number
 }
