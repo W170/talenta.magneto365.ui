@@ -18,7 +18,7 @@ export interface IToggleButton {
   /**
    * this property sets default value
    */
-  defaultValue?: string
+  currentSelect?: boolean //
   /**
    *  this function returns the name and id value of the button when clicked on
    */

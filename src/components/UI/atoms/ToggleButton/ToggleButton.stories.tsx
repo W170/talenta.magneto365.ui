@@ -9,7 +9,7 @@ const meta: Meta<typeof ToggleButton> = {
     name: 'Click Here',
     id: '3',
     onChange: ({ name, id }) => console.log({ name, id }),
-    defaultValue: '3'
+    currentSelect: true
   }
 }
 

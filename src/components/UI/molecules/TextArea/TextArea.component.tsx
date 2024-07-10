@@ -13,7 +13,8 @@ const TextArea: React.FC<ITextArea> = ({
   rows = 4,
   disabled = false,
   hasCounter = false,
-  maxCounterValue = 0
+  maxCounterValue = 0,
+  ...props
 }) => {
   const [onFocus, setOnFocus] = useState(false)
   const [showPlaceholder, setShowPlaceholder] = useState(true)
@@ -24,6 +25,10 @@ const TextArea: React.FC<ITextArea> = ({
       setInputValue(value)
     }
   }, [hasCounter, value])
+
+  const countCharacters = (str: string) => {
+    return str.replace(/\s+/g, '').length
+  }
 
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -60,6 +65,7 @@ const TextArea: React.FC<ITextArea> = ({
           </label>
         )}
         <textarea
+          {...props}
           disabled={disabled}
           className={styles[`${classMUI}-text-area--container__text-area`]}
           name={name}
@@ -74,7 +80,7 @@ const TextArea: React.FC<ITextArea> = ({
       </div>
       <div className={styles[`${classMUI}-text-area__footer`]}>
         <span className={styles[`${classMUI}-text-area--container__error`]}>{error}</span>
-        {hasCounter && <ComparativeCounter current={inputValue.length} max={maxCounterValue} />}
+        {hasCounter && <ComparativeCounter current={countCharacters(inputValue)} max={maxCounterValue} />}
       </div>
     </div>
   )

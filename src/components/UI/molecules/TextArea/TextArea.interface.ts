@@ -1,6 +1,6 @@
 import { ChangeEvent } from 'react'
 
-export interface ITextArea {
+export interface ITextArea extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   /**
    * this property change value text
    */
