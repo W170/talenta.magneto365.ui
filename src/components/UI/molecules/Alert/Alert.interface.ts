@@ -21,6 +21,10 @@ export interface IAlert {
    * this property set the size the alert
    */
   size?: number
+  /**
+   * this property set close onClick on the alert
+   */
+  onClose?: (() => void) | null
 }
 
 export type EAlertType = 'success' | 'warning' | 'info' | 'error'
