@@ -25,6 +25,10 @@ export interface IAlert {
    * this property set close onClick on the alert
    */
   onClose?: (() => void) | null
+  /**
+   * this property set custom classname
+   */
+  className?: string
 }
 
 export type EAlertType = 'success' | 'warning' | 'info' | 'error'
