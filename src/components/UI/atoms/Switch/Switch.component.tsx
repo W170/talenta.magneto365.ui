@@ -2,7 +2,7 @@ import React, { FC, useCallback, useEffect, useState } from 'react'
 import styles from './Switch.module.scss'
 import { ISwitch } from './Switch.interface'
 
-export const Switch: FC<ISwitch> = ({ isActive, setIsActive, title, className }) => {
+export const Switch: FC<ISwitch> = ({ isActive = false, setIsActive = () => null, title = '', className = '' }) => {
   const [checked, setChecked] = useState(isActive)
 
   useEffect(() => {
@@ -23,8 +23,4 @@ export const Switch: FC<ISwitch> = ({ isActive, setIsActive, title, className })
       {title && <p>{title}</p>}
     </div>
   )
-}
-
-Switch.defaultProps = {
-  className: ''
 }

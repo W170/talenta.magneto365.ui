@@ -16,8 +16,8 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
   child,
   filtersApplied,
   params,
-  searchPlaceholder,
-  switchText,
+  searchPlaceholder = '',
+  switchText = '',
   setIsApplied,
   unApplyWithChild,
   getOptionsOnLoad,
@@ -171,9 +171,4 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
       {displayChild}
     </article>
   )
-}
-
-FilterCardOnSearch.defaultProps = {
-  searchPlaceholder: '',
-  switchText: ''
 }

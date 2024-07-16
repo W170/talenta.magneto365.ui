@@ -15,7 +15,7 @@ const Component: React.FC<IMainButton> = ({
   iconProps,
   isMobile,
   className,
-  title,
+  title = '',
   disabled,
   onClick
 }) => {
@@ -55,9 +55,6 @@ const Component: React.FC<IMainButton> = ({
   )
 }
 
-Component.defaultProps = {
-  title: ''
-}
 /**
  * Atom UI component of button for general purpose
  */

@@ -11,7 +11,7 @@ const MobileSortMenu: React.FC<IMobileSortMenu> = ({
   orderFields,
   orderByText,
   textOrderFilter,
-  titleBtnOrder,
+  titleBtnOrder = '',
   onClose,
   setFilter,
   orderFilter,
@@ -36,10 +36,6 @@ const MobileSortMenu: React.FC<IMobileSortMenu> = ({
       <ListSortMenu {...listMenuProps} />
     </MobileDrawer>
   )
-}
-
-MobileSortMenu.defaultProps = {
-  titleBtnOrder: ''
 }
 
 export default MobileSortMenu

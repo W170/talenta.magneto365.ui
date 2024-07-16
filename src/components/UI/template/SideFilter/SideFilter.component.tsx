@@ -9,7 +9,7 @@ import styles from './SideFilter.module.scss'
 
 const SideFilter: FC<ISideFilter> = ({
   title,
-  filters,
+  filters = [],
   totalAppliedFilters,
   filterSummary,
   buttonText,
@@ -92,10 +92,6 @@ const SideFilter: FC<ISideFilter> = ({
       {displayBackground}
     </Fragment>
   )
-}
-
-SideFilter.defaultProps = {
-  filters: []
 }
 
 export default SideFilter

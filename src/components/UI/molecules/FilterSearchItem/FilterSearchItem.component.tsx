@@ -4,7 +4,7 @@ import { IconItem } from '@components/UI/atoms'
 import { IFilterSearchItem } from './FilterSearchItem.interface'
 import styles from './FilterSearchItem.module.scss'
 
-export const FilterSearchItem: FC<IFilterSearchItem> = ({ placeholder, disabled, loading, handleSearch }) => {
+export const FilterSearchItem: FC<IFilterSearchItem> = ({ placeholder, disabled = false, loading, handleSearch }) => {
   const inputRef = useRef(null)
 
   if (loading)
@@ -26,8 +26,4 @@ export const FilterSearchItem: FC<IFilterSearchItem> = ({ placeholder, disabled,
       />
     </div>
   )
-}
-
-FilterSearchItem.defaultProps = {
-  disabled: false
 }

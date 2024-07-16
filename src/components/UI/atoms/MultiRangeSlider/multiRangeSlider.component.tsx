@@ -7,7 +7,7 @@ export const MultiRangeSlider: FC<IMultiRangeSlider> = ({
   max,
   currentMin,
   currentMax,
-  showValues,
+  showValues = true,
   onChange,
   currency,
   steps = 0,
@@ -133,8 +133,4 @@ export const MultiRangeSlider: FC<IMultiRangeSlider> = ({
       </div>
     </div>
   )
-}
-
-MultiRangeSlider.defaultProps = {
-  showValues: true
 }

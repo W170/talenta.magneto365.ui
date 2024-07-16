@@ -11,8 +11,8 @@ export const FilterCard: FC<IFilterCard> = ({
   label,
   values,
   renderType,
-  searchPlaceholder,
-  switchText,
+  searchPlaceholder = '',
+  switchText = '',
   setIsApplied,
   ...props
 }) => {
@@ -44,12 +44,7 @@ export const FilterCard: FC<IFilterCard> = ({
       <div className={styles['magneto-ui-filter-card_header']}>
         <p>{label}</p>
         {switchText && (
-          <Switch
-            //TODO: review isActive, setIsActive
-            title={switchText}
-            setIsActive={(value) => console.log('Change isActive', value)}
-            isActive
-          />
+          <Switch title={switchText} setIsActive={(value) => console.log('Change isActive', value)} isActive />
         )}
       </div>
 
@@ -68,9 +63,4 @@ export const FilterCard: FC<IFilterCard> = ({
       </div>
     </article>
   )
-}
-
-FilterCard.defaultProps = {
-  searchPlaceholder: '',
-  switchText: ''
 }

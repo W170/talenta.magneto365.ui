@@ -15,10 +15,10 @@ export const FilterMenuItem: FC<IFilterMenuItem> = ({
   type,
   isApplied,
   hasTotal,
-  isSearched,
+  isSearched = false,
   customClass,
   customId,
-  hiddenCount,
+  hiddenCount = false,
   setIsApplied,
   ...props
 }) => {
@@ -55,9 +55,4 @@ export const FilterMenuItem: FC<IFilterMenuItem> = ({
       {displayOutput}
     </button>
   )
-}
-
-FilterMenuItem.defaultProps = {
-  isSearched: false,
-  hiddenCount: false
 }

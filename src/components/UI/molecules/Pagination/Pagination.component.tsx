@@ -20,7 +20,7 @@ export const Pagination: FC<ComposedProps> = ({
   onChange,
   prevTitle,
   nextTitle,
-  numberOfButtons,
+  numberOfButtons = 3,
   dynamicUrl
 }) => {
   const handleClick = useCallback(
@@ -89,8 +89,4 @@ export const Pagination: FC<ComposedProps> = ({
       )}
     </div>
   )
-}
-
-Pagination.defaultProps = {
-  numberOfButtons: 3
 }

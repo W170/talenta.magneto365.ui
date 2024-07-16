@@ -33,7 +33,7 @@ const Component: React.FC<ILogoutHeader> = ({
   homeUrl,
   allJobsText,
   allJobsLink,
-  hasMobileSearchBarButton
+  hasMobileSearchBarButton = false
 }) => {
   const { type, href, text } = signInLink
   const { buttonText, loadingState, onClick } = signUpButton
@@ -147,9 +147,5 @@ const Component: React.FC<ILogoutHeader> = ({
 /**
  * UI Header Organisim for 1024 resolution/size
  */
-
-Component.defaultProps = {
-  hasMobileSearchBarButton: false
-}
 
 export const LogoutHeader = Component

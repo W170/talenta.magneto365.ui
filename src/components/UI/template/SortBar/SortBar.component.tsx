@@ -17,7 +17,7 @@ const SortBar: React.FC<ISortBar> = ({
   orderFields,
   orderByText,
   loading,
-  titleBtnOrder,
+  titleBtnOrder = '',
   setIsFiltersOpen,
   orderFilter,
   setFilter,
@@ -98,10 +98,6 @@ const SortBar: React.FC<ISortBar> = ({
       />
     </Fragment>
   )
-}
-
-SortBar.defaultProps = {
-  titleBtnOrder: ''
 }
 
 export default SortBar
