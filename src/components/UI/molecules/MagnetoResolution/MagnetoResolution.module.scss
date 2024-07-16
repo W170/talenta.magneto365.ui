@@ -7,25 +7,26 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
+  gap: 10px;
   @media (min-width: v.$screen-md) {
     gap: 20px;
-    padding: 0;
+    padding: 20px;
     align-items: center;
     justify-content: flex-start;
     flex-direction: row;
   }
   &__img {
-    width: 300px;
+    width: 80px;
     height: auto;
     @media (min-width: v.$screen-xs) {
-      width: 380px;
+      width: 80px;
     }
   }
   &__text {
     font-size: 13px;
     width: 100%;
     @media (min-width: v.$screen-lg) {
-      width: 500px;
+      width: 670px;
     }
     text-align: justify;
     color: v.$colors-magneto-neutral;

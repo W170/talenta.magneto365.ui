@@ -12,7 +12,7 @@ const MagnetoResolution: React.FC<IMagnetoResolution> = ({ resolutionText, resol
         src={MinTrabajo}
         alt="min-trabajo-img"
         loading="lazy"
-        width={'300px'}
+        width="80px"
       />
       <p className={`${style[`${classMUI}-magneto-resolution__text`]}`}>
         {resolutionText}
