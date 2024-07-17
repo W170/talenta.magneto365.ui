@@ -50,7 +50,7 @@
     transition: all 0.3s ease-in-out;
     background-color: transparent;
     font-size: 14px;
-    > div:first-child {
+    > div {
       > div:first-child {
         > span,
         > div {
@@ -63,7 +63,7 @@
       }
     }
     &--full-menu {
-      > div:first-child {
+      > div {
         > div:first-child {
           > span {
             display: inline-block;
