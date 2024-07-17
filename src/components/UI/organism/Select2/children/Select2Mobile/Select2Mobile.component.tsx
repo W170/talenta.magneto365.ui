@@ -54,7 +54,7 @@ const Component = <T,>({
       <MobileDrawer
         isOpen={isModalOpen && !disableList}
         onClose={() => handleVisible(false)}
-        className={CNM.get({ styles, cls: ['autocomplete-mobile', className] })}
+        className={CNM.get({ styles, cls: ['select2-desktop', className] })}
       >
         <Select2Input
           searchValue={searchValue}
