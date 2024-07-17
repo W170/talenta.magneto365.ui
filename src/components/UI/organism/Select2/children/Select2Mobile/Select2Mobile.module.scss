@@ -1,0 +1,64 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-autocomplete-mobile {
+  > * {
+    box-sizing: border-box;
+  }
+  > aside {
+    padding: 30px 20px;
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  &__input-container {
+    > div {
+      > img {
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+  &__container {
+    height: 488px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    &::-webkit-scrollbar {
+      width: 5px;
+      border-radius: 15px;
+
+      &-track {
+        background-color: rgba(241, 241, 241, 0.353);
+        border-radius: 15px;
+      }
+
+      &-thumb {
+        border-radius: 15px;
+        background-color: v.$disabled-color-gray2;
+        &:hover {
+          background-color: v.$disabled-color-gray3;
+        }
+      }
+    }
+  }
+  &__item {
+    &--active {
+      background-color: #f0f1f3;
+      border-radius: 8px;
+    }
+  }
+  &__input {
+    padding-left: 46px;
+    padding-right: 20px;
+    background-color: #f0f1f3;
+    border: none;
+  }
+  &__save-button {
+    background-color: #f0f1f3;
+    border-radius: 30px;
+    padding: 10px 20px;
+  }
+}

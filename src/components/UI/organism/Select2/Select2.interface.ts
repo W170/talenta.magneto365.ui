@@ -1,8 +1,8 @@
-export interface ISelectOptions {
+export interface ISelectOptions<T> {
   /**
    * this property establish a list with this interface
    */
-  selectList: ISelectField[]
+  selectList: (ISelectField & T)[]
   /**
    * this property sets the placeholder
    */
@@ -18,7 +18,7 @@ export interface ISelectOptions {
   /**
    * this function gives you the values selected
    */
-  onChange: (value: ISelectField[]) => void
+  onChange: (value: (ISelectField & T)[]) => void
   /**
    * this property allows multiple selections or single selections
    */
@@ -46,11 +46,54 @@ export interface ISelectOptions {
   /**
    * this propertys sets currents values
    */
-  currentFields?: ISelectField[]
+  currentFields?: (ISelectField & T)[]
+  /**
+   * enables mobile version
+   */
+  isMobile?: boolean
+  /**
+   * renders a custom component
+   */
+  render?: (data: T, index: number) => JSX.Element
+  /**
+   * custom class name for styling
+   */
+  className?: string
 }
 
 export interface ISelectField {
   id: string | number
   name: string
   img?: string
+}
+
+export interface ISelectHook<T> {
+  /**
+   * enables or disables options list
+   */
+  disableList: boolean
+  /**
+   * this function stores the selected values
+   */
+  handleChange: (selectedValue: ISelectField & T) => void
+  /**
+   * this function stores the written text
+   */
+  handleSearch: (event: React.ChangeEvent<HTMLInputElement>) => void
+  /**
+   * list of all options
+   */
+  list: (ISelectField & T)[]
+  /**
+   * this function removes a selected value
+   */
+  removeValue: (id: string | number) => void
+  /**
+   * input written text
+   */
+  searchValue: string
+  /**
+   * array of all selected values
+   */
+  valueSelected: (ISelectField & T)[]
 }
