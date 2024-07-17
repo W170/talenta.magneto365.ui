@@ -83,7 +83,11 @@ export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
                     {
                       title: 'Desvincular',
                       icon: 'unlink',
-                      data: '/desvincular'
+                      data: '/desvincular',
+                      selfQueryString: {
+                        nit: '9905',
+                        name: 'Pollos Brosty'
+                      }
                     }
                   ]
                 },
@@ -105,7 +109,10 @@ export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
                   title: 'Invitar empresa',
                   data: '/invitar-empresa',
                   type: EUserMenuAnalystOptionType.BUTTON,
-                  icon: 'add'
+                  icon: 'add',
+                  selfQueryString: {
+                    invite: 'true'
+                  }
                 }
               ]
             }

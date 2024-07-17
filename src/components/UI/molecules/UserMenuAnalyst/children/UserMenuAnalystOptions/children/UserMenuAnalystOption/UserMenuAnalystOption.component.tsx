@@ -20,9 +20,10 @@ const Component: React.FC<IUserMenuAnalystOptionProps> = ({ classNames, option, 
     (option: IUserMenuAnalystOption) => {
       if (option.data && !Array.isArray(option.data) && typeof option.data === 'string') {
         const hasParams = option.data.includes('?')
-        const delimiter = option.useQueryString !== false && queryString && hasParams ? '&' : ''
+        const delimiter =
+          option.useQueryString !== false && (queryString || option?.selfQueryString) && hasParams ? '&' : ''
 
-        const queryStringParams = Object.entries(queryString)
+        const queryStringParams = Object.entries({ ...queryString, ...option?.selfQueryString })
           .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value as string)}`)
           .join('&')
 
