@@ -1,0 +1,76 @@
+.magneto-ui-select2-input {
+  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
+  &__button {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #cfcfde;
+    border-radius: 10px;
+    height: 48px;
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    transition: all ease-in-out 0.3s;
+    padding: 0 11px;
+    > span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      > p {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        > img {
+          width: 17px;
+          height: 17px;
+          border-radius: 4px;
+        }
+      }
+      > img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    > img {
+      transition: all ease-in-out 0.3s;
+      filter: brightness(0);
+      width: 17px;
+      height: 17px;
+    }
+    &--disabled {
+      background-color: #e3e7e9;
+      border: none;
+      > p {
+        opacity: 0.3;
+      }
+      > span {
+        > p {
+          opacity: 0.3;
+        }
+      }
+      > img {
+        opacity: 0.3;
+      }
+    }
+  }
+  &__button-text {
+    &--selected {
+      color: rgb(35, 35, 35);
+    }
+    &--placeholder {
+      color: #a3a5af;
+    }
+  }
+  &__suffix-icon {
+    &--rotate-arrow {
+      transform: rotate(90deg);
+    }
+    &--static-arrow {
+      transform: rotate(270deg);
+    }
+  }
+}

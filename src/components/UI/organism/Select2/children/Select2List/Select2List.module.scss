@@ -1,0 +1,54 @@
+@use '../../../../../../shared/stylesheets/mixins.scss' as *;
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+@mixin desktop-list-style() {
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+  position: absolute;
+  top: 40px;
+  border: solid #cfcfde 1px;
+  border-top: none;
+  max-height: 187px;
+  padding: 0px 15px 15px 15px;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.magneto-ui-select2-list {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  @include scroll-thin;
+  &--desktop {
+    @include desktop-list-style;
+  }
+  > button {
+    border: none;
+    width: 100%;
+    position: relative;
+    text-align: left;
+    padding: 7px;
+    border-radius: 5px;
+    transition: background-color ease-in-out 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    &:hover {
+      background-color: #f4f4fa;
+    }
+    > img {
+      width: 17px;
+      height: 17px;
+      border-radius: 4px;
+    }
+  }
+  &__item {
+    &--is-selected {
+      background-color: #f4f4fa;
+    }
+    &--not-selected {
+      background-color: white;
+    }
+  }
+}

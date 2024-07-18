@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, ChangeEvent, useMemo } from 'react'
-import { ISelectField, ISelectOptions } from './Select2.interface'
+import { ISelectField, ISelectHook, ISelectOptions } from './Select2.interface'
 
-const useSelect2 = ({
+const useSelect2 = <T>({
   setTerm,
   currentFields = [],
   limitSelections,
@@ -10,10 +10,10 @@ const useSelect2 = ({
   isMultiple,
   selectList
 }: Pick<
-  ISelectOptions,
+  ISelectOptions<T>,
   'setClickOut' | 'setTerm' | 'currentFields' | 'isMultiple' | 'selectList' | 'onChange' | 'limitSelections'
->) => {
-  const [valueSelected, setValueSelected] = useState<ISelectField[]>([])
+>): ISelectHook<T> => {
+  const [valueSelected, setValueSelected] = useState<(ISelectField & T)[]>([])
   const [searchValue, setSearchValue] = useState<string>('')
   const [disableList, setDisableList] = useState(false)
 
@@ -24,6 +24,8 @@ const useSelect2 = ({
   }, [searchValue, setTerm])
 
   useEffect(() => {
+    if (!currentFields || !currentFields.length) return
+
     setValueSelected((prev) => {
       if (currentFields.map((field) => field.id).join() === prev.map((p) => p.id).join()) {
         return prev
@@ -52,7 +54,7 @@ const useSelect2 = ({
     return selectList
   }, [searchValue, selectList, setTerm])
 
-  const handleSelected = (value: ISelectField[] | ((prev: ISelectField[]) => ISelectField[])) => {
+  const handleSelected = (value: (ISelectField & T)[] | ((prev: (ISelectField & T)[]) => (ISelectField & T)[])) => {
     if (Array.isArray(value)) {
       setValueSelected(value)
       onChange(value)
@@ -66,7 +68,7 @@ const useSelect2 = ({
     })
   }
 
-  const handleChange = (selectedValue: ISelectField) => {
+  const handleChange = (selectedValue: ISelectField & T) => {
     if (isMultiple) {
       handleSelected((prev) => [...prev, selectedValue])
       return
