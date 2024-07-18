@@ -26,6 +26,10 @@ export interface ISelect2InputProps<T> {
    */
   icon?: string
   /**
+   * the name of the input
+   */
+  name?: string
+  /**
    * placeholder when input or button are empty
    */
   placeholder: string

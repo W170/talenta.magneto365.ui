@@ -67,6 +67,7 @@ const Component = <T,>({
           icon={icon}
           valueSelected={valueSelected}
           haveTags={haveTags}
+          name={`${placeholder}-mobile`}
         />
         <Select2Tags onRemove={removeValue} tags={valueSelected} visible={haveTags} />
         <Select2List

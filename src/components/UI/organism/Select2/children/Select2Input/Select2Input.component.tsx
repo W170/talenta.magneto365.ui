@@ -15,7 +15,8 @@ const Component = <T,>({
   disableList,
   icon,
   valueSelected,
-  haveTags
+  haveTags,
+  name
 }: ISelect2InputProps<T>): JSX.Element => {
   const arrowRotate = useMemo(
     () =>
@@ -36,7 +37,7 @@ const Component = <T,>({
           type="text"
           value={searchValue}
           placeholder={placeholder}
-          name={placeholder}
+          name={name || placeholder}
           hideIcon
           onChange={handleSearch}
           disabled={disabled}
