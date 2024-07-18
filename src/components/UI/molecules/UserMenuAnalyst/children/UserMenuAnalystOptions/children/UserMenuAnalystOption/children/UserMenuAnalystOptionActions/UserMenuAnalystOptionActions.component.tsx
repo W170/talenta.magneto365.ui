@@ -12,7 +12,7 @@ const Component: React.FC<IUserMenuAnalystOptionActionsProps> = ({ actions, getU
   return (
     <React.Fragment>
       {actions.map((action, index) => (
-        <Tooltip key={`${action.title}-${index}`} title={action.title || ''} position="bottom">
+        <Tooltip key={`${action.title}-${index}`} title={action.title || ''} position="bottom" width="fit-content">
           <Action action={action} getUrl={getUrl} option={option}>
             <IconItem
               showDefaultFallback={false}

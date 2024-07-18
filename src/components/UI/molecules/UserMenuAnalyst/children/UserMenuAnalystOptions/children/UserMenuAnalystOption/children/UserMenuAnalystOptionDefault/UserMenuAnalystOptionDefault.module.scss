@@ -55,7 +55,7 @@
         color: #0a0c0e;
       }
       &:hover {
-        background-color: white;
+        background-color: #f0f1f3;
       }
     }
   }
@@ -72,6 +72,8 @@
       }
       &:hover {
         background-color: transparent;
+        text-decoration: underline;
+        color: v.$color-blue-dark3;
       }
     }
   }

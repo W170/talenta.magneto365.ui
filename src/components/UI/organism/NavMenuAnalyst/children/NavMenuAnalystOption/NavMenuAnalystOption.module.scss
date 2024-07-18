@@ -50,25 +50,29 @@
     transition: all 0.3s ease-in-out;
     background-color: transparent;
     font-size: 14px;
-    > div:first-child {
-      > span,
-      > div {
-        display: none;
-      }
-      > img {
-        min-width: 18px;
-        min-height: 18px;
+    > div {
+      > div:first-child {
+        > span,
+        > div {
+          display: none;
+        }
+        > img {
+          min-width: 18px;
+          min-height: 18px;
+        }
       }
     }
     &--full-menu {
-      > div:first-child {
-        > span {
-          display: inline-block;
-          font-weight: 500;
-          font-size: 14px;
-        }
-        > div {
-          display: inline-block;
+      > div {
+        > div:first-child {
+          > span {
+            display: inline-block;
+            font-weight: 500;
+            font-size: 14px;
+          }
+          > div {
+            display: inline-block;
+          }
         }
       }
     }
@@ -101,6 +105,7 @@
   }
   &__dropdown-list > &__link {
     padding: 10px 14px;
+    min-height: 37px;
     &--active {
       background: #00082f66;
       > p {
@@ -123,5 +128,7 @@
     padding: 10px 14px;
     color: v.$color-blue-light3;
     font-weight: 700;
+    min-height: 37px;
+    margin: 0;
   }
 }

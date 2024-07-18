@@ -19,6 +19,7 @@
     }
   }
   > div:last-child {
+    display: flex;
     a,
     button {
       opacity: 0;

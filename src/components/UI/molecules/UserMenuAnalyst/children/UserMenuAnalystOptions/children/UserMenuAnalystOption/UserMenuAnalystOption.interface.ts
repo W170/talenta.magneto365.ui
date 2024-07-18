@@ -60,6 +60,10 @@ export interface IUserMenuAnalystOptionBase {
    */
   target?: string
   /**
+   * Optional query string by option
+   */
+  selfQueryString?: IUserMenuAnalystQueryString
+  /**
    * Option title
    */
   title?: string
