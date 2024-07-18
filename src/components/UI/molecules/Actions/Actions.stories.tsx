@@ -39,6 +39,8 @@ export const Default: Story = {
       content: 'Compartir',
       title: 'Compartir'
     },
-    externalButtonChild: <MainButton buttonText="Aplicar" />
+    externalButtonChild: <MainButton buttonText="Aplicar" />,
+    backText: 'Volver',
+    offerCompanyName: 'Grupo Exito'
   }
 }

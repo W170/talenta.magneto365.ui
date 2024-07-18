@@ -16,7 +16,7 @@ const Component: React.FC<ISharePopover> = ({
 
   return (
     <Popover
-      className={style['popover']}
+      className={[style['popover'], !show ? style['popover--hidden'] : ''].join(' ')}
       positionX="right"
       positionY="bottom"
       show={show}
@@ -44,7 +44,6 @@ const Component: React.FC<ISharePopover> = ({
               {...rest}
               onCopySuccess={() => {
                 rest.onCopySuccess()
-                setShow(false)
               }}
             />
           </li>
@@ -55,6 +54,7 @@ const Component: React.FC<ISharePopover> = ({
         {...btnProps}
         className={[style['popover__btn'], classNameButton].join(' ')}
         onClick={() => setShow((show) => !show)}
+        onBlur={() => setShow(false)}
       >
         <IconItem size={20} icon={Share} />
       </button>

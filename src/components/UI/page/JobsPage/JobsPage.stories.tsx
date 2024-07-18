@@ -188,7 +188,9 @@ const mobileJobDetailsDrawer = {
         onCopySuccess: () => console.log('Success'),
         shareLinks
       },
-      externalButtonChild: <MainButton buttonText="Aplicar" />
+      externalButtonChild: <MainButton buttonText="Aplicar" />,
+      backText: 'Volver',
+      offerCompanyName: 'Grupo Exito'
     },
     onClose: true
   },

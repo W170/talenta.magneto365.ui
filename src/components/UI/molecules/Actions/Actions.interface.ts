@@ -49,6 +49,10 @@ export interface IActions {
    * company name.
    */
   offerCompanyName?: string
+  /**
+   * just a text to inform about back action.
+   */
+  backText?: string
 }
 
 export interface IShareLinksActions {
@@ -64,4 +68,8 @@ export interface IShareLinksActions {
    * company name.
    */
   offerCompanyName?: string
+  /**
+   * just a text to inform about back action.
+   */
+  backText?: string
 }

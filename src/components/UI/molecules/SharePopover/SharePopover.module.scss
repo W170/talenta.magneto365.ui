@@ -19,6 +19,12 @@
     }
   }
 
+  &--hidden {
+    > :first-child {
+      z-index: -1;
+    }
+  }
+
   &__btn {
     background: transparent;
     border: none;
