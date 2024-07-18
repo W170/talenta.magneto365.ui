@@ -14,7 +14,8 @@ const Component: React.FC<IActions> = ({
   saveButtonProps,
   shareButtonProps,
   copyButtonProps,
-  offerCompanyName
+  offerCompanyName,
+  backText
 }) => {
   const [component, setComponent] = useState<React.ReactElement>()
 
@@ -43,6 +44,7 @@ const Component: React.FC<IActions> = ({
               offerCompanyName={offerCompanyName}
               shareButtonProps={copyButtonProps}
               ActionsHeader={ActionsHeader}
+              backText={backText}
               onBack={handleBack}
             />
           )
@@ -69,7 +71,8 @@ const ShareLinksAction: React.FC<IShareLinksActions> = ({
   onBack,
   shareButtonProps: { shareLinks = [], ...shareProps },
   ActionsHeader,
-  offerCompanyName
+  offerCompanyName,
+  backText
 }) => {
   return (
     <div className={styles['magneto-ui-actions']}>
@@ -95,7 +98,7 @@ const ShareLinksAction: React.FC<IShareLinksActions> = ({
         <button className={styles['magneto-ui-actions__button']} onClick={() => onBack()}>
           <IconItem size={20} icon={ArrowLeft2} />
         </button>
-        Volver
+        {backText}
       </div>
     </div>
   )
