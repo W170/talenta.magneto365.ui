@@ -1,10 +1,16 @@
+@use '../../../../shared/stylesheets/variables.scss' as *;
+
 .magneto-ui-score-level {
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   height: auto;
-  padding: 0 12px;
+  gap: 7px;
+  @media screen and (min-width: $screen-md) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
   > p {
     font-size: 14px;
     margin: 5px 0;
@@ -12,8 +18,13 @@
 
   &__summary {
     display: flex;
-    align-items: center;
-    gap: 25px;
+    flex-direction: column;
+    gap: 7px;
+    @media screen and (min-width: $screen-md) {
+      gap: 25px;
+      flex-direction: row;
+      align-items: center;
+    }
     > div {
       display: flex;
       align-items: center;
@@ -33,8 +44,11 @@
       font-size: 14px;
       color: #63637e;
       min-width: 80px;
-      text-align: right;
+      text-align: left;
       margin: 5px 0;
+      @media screen and (min-width: $screen-md) {
+        text-align: right;
+      }
     }
     > button {
       cursor: pointer;

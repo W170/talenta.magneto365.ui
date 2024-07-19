@@ -58,10 +58,14 @@ const Component: React.FC<IScoreLevel> = ({ name, onChange, removeSkill, scoreVa
           ))}
         </div>
         <p>{labelScore}</p>
-        <button onClick={() => removeSkill(name)} type="button">
-          <img src={Trash} alt="remove-skill-icon" />
-        </button>
       </div>
+      <button
+        className={styles['magneto-ui-score-level__delete-action']}
+        onClick={() => removeSkill(name)}
+        type="button"
+      >
+        <img src={Trash} alt="remove-skill-icon" />
+      </button>
     </div>
   )
 }
