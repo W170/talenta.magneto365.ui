@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { FlatLoader } from '../../atoms/FlatLoader'
-import { Add } from '../../../../constants/icons.constants'
+import { Add2 } from '../../../../constants/icons.constants'
 import { IInputPlus } from './InputPlus.interface'
 import { classMUI } from '../../../../constants/stories/common.constants'
 import styles from './InputPlus.module.scss'
@@ -11,7 +11,7 @@ export const InputPlus: React.FC<IInputPlus> = ({
   maxWords = 4,
   disabled,
   isLoading,
-  color = '#090467'
+  className = ''
 }) => {
   const [inputValue, setInputValue] = useState<string>('')
   const [disabledBtn, setDisabledBtn] = useState<boolean>(false)
@@ -44,17 +44,35 @@ export const InputPlus: React.FC<IInputPlus> = ({
     setInputValue('')
   }, [inputValue, onChange])
 
+  const handleKeyDown = useCallback(
+    (event: React.KeyboardEvent<HTMLInputElement>) => {
+      if (event.key === 'Enter' && !disabledBtn) {
+        handleSubmmit()
+      }
+    },
+    [disabledBtn, handleSubmmit]
+  )
+
   return (
-    <div className={styles[`${classMUI}-input-plus`]}>
-      <input placeholder={placeholder} value={inputValue} onChange={handleValue} type="text" />
+    <div className={`${styles[`${classMUI}-input-plus`]} ${className}`}>
+      <input
+        onKeyDown={handleKeyDown}
+        placeholder={placeholder}
+        value={inputValue}
+        onChange={handleValue}
+        type="text"
+      />
       <button
         type="button"
         onClick={handleSubmmit}
         className={`${styles[`${classMUI}-input-plus__plus-button`]} ${disabledBtn ? styles.disabled : ''}`}
         disabled={disabledBtn}
-        style={{ backgroundColor: color }}
       >
-        {isLoading ? <FlatLoader color="white" secondColor="transparent" /> : <img src={Add} alt="icon" />}
+        {isLoading ? (
+          <FlatLoader color="white" secondColor="transparent" />
+        ) : (
+          <img className={`${disabledBtn ? styles['disabled-img'] : ''}`} src={Add2} alt="icon" />
+        )}
       </button>
     </div>
   )

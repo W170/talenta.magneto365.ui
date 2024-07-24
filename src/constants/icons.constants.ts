@@ -1,4 +1,5 @@
 export { default as Add } from '../assets/Add.svg'
+export { default as Add2 } from '../assets/Add2.svg'
 export { default as AddSquareBlackOutline } from '../assets/addSquareBlackOutline.svg'
 export { default as AllJobs } from '../assets/all-jobs.svg'
 export { default as AppGallery } from '../assets/app-galery.svg'

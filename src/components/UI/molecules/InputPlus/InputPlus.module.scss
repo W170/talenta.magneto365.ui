@@ -2,13 +2,14 @@
   background-color: #fff;
   border: 1px solid #cfcfde;
   border-radius: 10px;
-  height: 48px;
+  height: 40px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  padding: 10px 5px 10px 10px;
+  padding: 0px 0px 0px 10px;
+  overflow: hidden;
   > input {
     border: none;
     width: 100%;
@@ -21,22 +22,25 @@
   }
   &__plus-button {
     width: 36px;
-    height: 36px;
-    border-radius: 4px;
+    height: 100%;
     transition: all ease-in-out 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
+    background-color: #e3e7e9;
     > img {
       width: 22px;
       height: auto;
-      filter: brightness(7);
     }
   }
 }
 
 .disabled {
-  background: #a3a3b5;
+  background-color: #cad0d2;
   cursor: not-allowed;
+}
+
+.disabled-img {
+  filter: brightness(10);
 }

@@ -20,7 +20,7 @@ export interface IInputPlus {
    */
   isLoading?: boolean
   /**
-   * this property sets custom color
+   * set custom classname
    */
-  color?: string
+  className?: string
 }
