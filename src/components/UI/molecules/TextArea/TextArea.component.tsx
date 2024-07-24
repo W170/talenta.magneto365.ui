@@ -1,4 +1,4 @@
-import React, { ChangeEvent, UIEventHandler, useCallback, useEffect, useState } from 'react'
+import React, { ChangeEvent, UIEventHandler, useCallback, useEffect, useMemo, useState } from 'react'
 import { ITextArea } from './TextArea.interface'
 import { classMUI } from '@constants/stories'
 import styles from './TextArea.module.scss'
@@ -26,10 +26,6 @@ const TextArea: React.FC<ITextArea> = ({
     }
   }, [hasCounter, value])
 
-  const countCharacters = (str: string) => {
-    return str.replace(/\s+/g, '').length
-  }
-
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLTextAreaElement>) => {
       onChange(e)
@@ -38,7 +34,9 @@ const TextArea: React.FC<ITextArea> = ({
     [onChange]
   )
 
-  const haveValueOrFocus = onFocus || value.length > 0
+  const haveValueOrFocus = useMemo(() => {
+    if (value !== null) return onFocus || value?.length > 0
+  }, [onFocus, value])
 
   const handleScroll: UIEventHandler<HTMLTextAreaElement> = useCallback(
     (event) => {
@@ -80,7 +78,7 @@ const TextArea: React.FC<ITextArea> = ({
       </div>
       <div className={styles[`${classMUI}-text-area__footer`]}>
         <span className={styles[`${classMUI}-text-area--container__error`]}>{error}</span>
-        {hasCounter && <ComparativeCounter current={countCharacters(inputValue)} max={maxCounterValue} />}
+        {hasCounter && <ComparativeCounter current={inputValue?.length} max={maxCounterValue} />}
       </div>
     </div>
   )
