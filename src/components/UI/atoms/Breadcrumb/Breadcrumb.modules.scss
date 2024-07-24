@@ -4,13 +4,9 @@
   display: flex;
   align-items: center;
 
-  a {
-    color: #8591a0;
-  }
-
   p {
     align-items: center;
-    color: #667688;
+    color: v.$filter-item-font-color;
     font-style: normal;
     font-size: 12px;
     line-height: 13px;

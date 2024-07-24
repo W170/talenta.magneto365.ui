@@ -4,7 +4,7 @@
   display: flex;
   width: 100%;
   border-radius: 8px;
-  background-color: #f0f1f3;
+  background-color: v.$disabled-color-gray;
 
   form {
     display: inherit;
@@ -24,7 +24,7 @@
       font-weight: 400;
       font-size: 14px;
       line-height: 17px;
-      color: #a3adb8;
+      color: v.$text-color-disable;
 
       &:not(:placeholder-shown) {
         color: #020202;
