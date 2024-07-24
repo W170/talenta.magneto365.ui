@@ -29,6 +29,10 @@ export interface IAlert {
    * this property set custom classname
    */
   className?: string
+  /**
+   * this property add a new button or component on the alert
+   */
+  extraButton?: React.ReactChild
 }
 
 export type EAlertType = 'success' | 'warning' | 'info' | 'error'
