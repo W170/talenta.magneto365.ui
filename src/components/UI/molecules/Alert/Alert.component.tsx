@@ -13,7 +13,16 @@ const alertIcons = {
   error: Error
 }
 
-const Component: React.FC<IAlert> = ({ text, type, customText, border = false, size, onClose, className = '' }) => {
+const Component: React.FC<IAlert> = ({
+  text,
+  type,
+  customText,
+  border = false,
+  size,
+  onClose,
+  className = '',
+  extraButton
+}) => {
   const borderStyle = border ? style[`${classMUI}-${type}--with-border`] : ''
   const typeStyle = style[`${classMUI}-${type}`]
   const iconByType = useMemo(() => alertIcons[type], [type])
@@ -27,6 +36,7 @@ const Component: React.FC<IAlert> = ({ text, type, customText, border = false, s
           <IconItem icon={Close} alt={type} />
         </button>
       )}
+      {extraButton}
     </div>
   )
 }
