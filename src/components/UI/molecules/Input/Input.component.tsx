@@ -21,8 +21,10 @@ const Input: React.FC<IInput> = ({
   ...props
 }) => {
   const [onFocus, setOnFocus] = useState(false)
-  const haveValueOrFocus = onFocus || value.length > 0
   const [inputValue, setInputValue] = useState('')
+  const haveValueOrFocus = useMemo(() => {
+    if (value !== null) return onFocus || value?.length > 0
+  }, [onFocus, value])
 
   useEffect(() => {
     if (value && hasCounter) {
@@ -30,19 +32,13 @@ const Input: React.FC<IInput> = ({
     }
   }, [hasCounter, value])
 
-  const dinamycIcon = useMemo(() => {
-    switch (type) {
-      case 'text':
-        return DocumentTextGray
-      case 'email':
-        return Email
-      case 'number':
-        return Mobile
-
-      default:
-        return DocumentTextGray
+  const dinamyIcon = useMemo(() => {
+    return {
+      ['text']: DocumentTextGray,
+      ['email']: Email,
+      ['number']: Mobile
     }
-  }, [type])
+  }, [])
 
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
@@ -89,7 +85,7 @@ const Input: React.FC<IInput> = ({
             {hideIcon ? null : (
               <img
                 className={styles[`${classMUI}-input--container__icon`]}
-                src={customIcon ? customIcon : dinamycIcon}
+                src={customIcon ? customIcon : dinamyIcon[type] || DocumentTextGray}
               />
             )}
           </div>
