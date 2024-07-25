@@ -1,12 +1,17 @@
 @use '../../../../../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../../../../../shared/stylesheets/mixins.scss' as *;
 
 .magneto-ui-nav-menu-analyst-region-modal-content {
   &__container {
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(1, minmax(0, 1fr));
+    overflow-y: auto;
+    max-height: 510px;
+    @include scroll-thin;
     @media screen and (min-width: v.$screen-md) {
       grid-template-columns: repeat(4, minmax(120px, 1fr));
+      max-height: 284px;
     }
   }
   &__option {

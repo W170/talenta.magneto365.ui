@@ -48,6 +48,7 @@ const Component: React.FC<INavMenuAnalystRegionModalProps> = ({
           onClose={() => handleClose(null)}
           className={CNM.get({ styles, cls: ['nav-menu-analyst-region-modal'] })}
         >
+          <h2>{regionModal.title}</h2>
           <Content
             defaultRegion={defaultRegion}
             handleClose={handleClose}
