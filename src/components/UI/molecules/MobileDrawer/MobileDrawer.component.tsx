@@ -6,17 +6,22 @@ import style from './mobileDrawer.module.scss'
 import { Add } from '../../../../constants/icons.constants'
 
 const Component: React.FC<IMoblieDrawer> = ({ onClose, isOpen, children, className = '' }) => {
-  const showMenu = isOpen ? 'show' : 'hidden'
   const [showContent, setShowContent] = useState<boolean>(false)
+  const [renderPortal, setRenderPortal] = useState<boolean>(isOpen)
+  const showMenu = showContent ? 'show' : 'hidden'
 
   useEffect(() => {
     let timer: NodeJS.Timeout | null = null
     if (isOpen) {
-      setShowContent(true)
-    } else {
+      setRenderPortal(true)
       timer = setTimeout(() => {
-        setShowContent(false)
-      }, 200)
+        setShowContent(true)
+      }, 100)
+    } else {
+      setShowContent(false)
+      timer = setTimeout(() => {
+        setRenderPortal(false)
+      }, 500)
     }
     return () => {
       if (timer) {
@@ -26,17 +31,21 @@ const Component: React.FC<IMoblieDrawer> = ({ onClose, isOpen, children, classNa
   }, [isOpen])
 
   return (
-    <DrawerPortal>
-      <div className={`${style['magneto-ui-mobile-drawer']} ${className}`}>
-        <aside className={style[showMenu]}>
-          <button title="cerrar modal" className={style['magneto-ui-close-button']} onClick={onClose}>
-            <IconItem icon={Add} hover={false} />
-          </button>
-          {showContent && <div className={style['magneto-ui-container']}>{children}</div>}
-        </aside>
-        {isOpen && <span className={`${style['background-drawer']}`} onClick={onClose} />}
-      </div>
-    </DrawerPortal>
+    <>
+      {renderPortal && (
+        <DrawerPortal>
+          <div className={`${style['magneto-ui-mobile-drawer']} ${className}`}>
+            <aside className={style[showMenu]}>
+              <button title="cerrar modal" className={style['magneto-ui-close-button']} onClick={onClose}>
+                <IconItem icon={Add} hover={false} />
+              </button>
+              <div className={style['magneto-ui-container']}>{children}</div>
+            </aside>
+            {isOpen && <span className={`${style['background-drawer']}`} onClick={onClose} />}
+          </div>
+        </DrawerPortal>
+      )}
+    </>
   )
 }
 /**

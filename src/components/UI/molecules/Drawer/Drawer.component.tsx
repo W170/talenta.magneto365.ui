@@ -19,12 +19,13 @@ const Component: React.FC<IDrawer> = ({
   children,
   onClose
 }) => {
-  const showDrawer = isOpen ? `show-${direction}` : `hidden-${direction}`
   const fullDrawer = isFull ? `full-drawer` : ''
   const paddingValue = customPadding !== undefined ? `${customPadding}px` : `${DEFAULT_PADDING}px`
   const backgroundEffect = isMobile ? 'no-background' : 'background-drawer'
   const widthValue = { '--drawer-width': drawerWidth }
   const [showContent, setShowContent] = useState<boolean>(false)
+  const [renderPortal, setRenderPortal] = useState<boolean>(isOpen)
+  const showDrawer = showContent ? `show-${direction}` : `hidden-${direction}`
 
   useEffect(() => {
     const { body } = document
@@ -35,10 +36,14 @@ const Component: React.FC<IDrawer> = ({
   useEffect(() => {
     let timer: NodeJS.Timeout | null = null
     if (isOpen) {
-      setShowContent(true)
-    } else {
+      setRenderPortal(true)
       timer = setTimeout(() => {
-        setShowContent(false)
+        setShowContent(true)
+      }, 100)
+    } else {
+      setShowContent(false)
+      timer = setTimeout(() => {
+        setRenderPortal(false)
       }, 500)
     }
     return () => {
@@ -49,19 +54,23 @@ const Component: React.FC<IDrawer> = ({
   }, [isOpen])
 
   return (
-    <DrawerPortal>
-      <div className={`${style['magneto-ui-drawer']} ${style[fullDrawer]} ${className}`}>
-        <aside className={`${style[showDrawer]}`} style={{ padding: paddingValue, ...widthValue }}>
-          {!hideButton && (
-            <button className={style['magneto-ui-close-button']} onClick={onClose}>
-              <IconItem icon={Add} hover={false} />
-            </button>
-          )}
-          {showContent && children}
-        </aside>
-        {isOpen && <span className={`${style[backgroundEffect]}`} onClick={onClose} />}
-      </div>
-    </DrawerPortal>
+    <>
+      {renderPortal && (
+        <DrawerPortal>
+          <div className={`${style['magneto-ui-drawer']} ${style[fullDrawer]} ${className}`}>
+            <aside className={`${style[showDrawer]}`} style={{ padding: paddingValue, ...widthValue }}>
+              {!hideButton && (
+                <button className={style['magneto-ui-close-button']} onClick={onClose}>
+                  <IconItem icon={Add} hover={false} />
+                </button>
+              )}
+              {children}
+            </aside>
+            {isOpen && <span className={`${style[backgroundEffect]}`} onClick={onClose} />}
+          </div>
+        </DrawerPortal>
+      )}
+    </>
   )
 }
 
