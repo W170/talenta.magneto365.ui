@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IconItem } from '../../atoms'
 import { DrawerPortal } from './DrawerPortal'
 import { IDrawer } from './Drawer.interface'
@@ -24,11 +24,28 @@ const Component: React.FC<IDrawer> = ({
   const paddingValue = customPadding !== undefined ? `${customPadding}px` : `${DEFAULT_PADDING}px`
   const backgroundEffect = isMobile ? 'no-background' : 'background-drawer'
   const widthValue = { '--drawer-width': drawerWidth }
+  const [showContent, setShowContent] = useState<boolean>(false)
 
   useEffect(() => {
     const { body } = document
     if (!body) return
     body.style.overflowY = isOpen ? 'hidden' : 'auto'
+  }, [isOpen])
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout | null = null
+    if (isOpen) {
+      setShowContent(true)
+    } else {
+      timer = setTimeout(() => {
+        setShowContent(false)
+      }, 500)
+    }
+    return () => {
+      if (timer) {
+        clearTimeout(timer)
+      }
+    }
   }, [isOpen])
 
   return (
@@ -40,7 +57,7 @@ const Component: React.FC<IDrawer> = ({
               <IconItem icon={Add} hover={false} />
             </button>
           )}
-          {children}
+          {showContent && children}
         </aside>
         {isOpen && <span className={`${style[backgroundEffect]}`} onClick={onClose} />}
       </div>
