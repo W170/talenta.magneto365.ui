@@ -10,6 +10,7 @@ const Tags: React.FC<ITag> = ({ text, onClick, icon, bgColor = '#F4F4FA', textCo
       className={style[`${classMUI}-tag`]}
       style={{ backgroundColor: bgColor, color: textColor }}
       onClick={onClick}
+      type="button"
     >
       {text}
       <IconItem icon={icon} alt="tag-icon" />
