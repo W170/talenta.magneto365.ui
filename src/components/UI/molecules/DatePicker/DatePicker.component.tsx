@@ -4,7 +4,7 @@ import { monthOptionsValue, yearOptionsLabel, yearOptionsValue } from '@constant
 import { parseDate } from '@components/UI/molecules/DatePicker/utils'
 import { IDatePicker } from './DatePicker.interface'
 import styles from './DatePicker.module.scss'
-const defaultValue = (value: Date) => {
+const defaultValue = (value?: Date) => {
   return value ? parseDate(value) : { initialMonth: '', initialYear: '' }
 }
 

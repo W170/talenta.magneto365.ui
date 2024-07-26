@@ -24,7 +24,7 @@ export interface IDatePicker {
   /**
    * The selected date value for the date picker.
    */
-  value: Date
+  value?: Date
   /**
    * Specifies whether the date picker is disabled or not.
    */
