@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { getOptionTypeStyles } from '../../UserMenuAnalystOption.constants'
 import { IUserMenuAnalystOption } from '../../UserMenuAnalystOption.interface'
 import { IUserMenuAnalystOptionDefault } from './UserMenuAnalystOptionDefault.interface'
@@ -7,8 +7,27 @@ import { userMenuAnalystIcons } from '@components/UI/molecules/UserMenuAnalyst/U
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './UserMenuAnalystOptionDefault.module.scss'
 
-const Component: React.FC<IUserMenuAnalystOptionDefault> = ({ className, option, prefix, suffix, url }) => {
+const Component: React.FC<IUserMenuAnalystOptionDefault> = ({
+  className,
+  handleModal,
+  handleMenuOpen,
+  option,
+  prefix,
+  suffix,
+  url
+}) => {
   const { rel = 'noreferrer', target = '_self' } = option
+
+  const handleOnClick = useCallback(() => {
+    if (option.modal && handleModal && handleMenuOpen) {
+      handleMenuOpen(false)
+      return handleModal(option.modal, true)
+    }
+
+    if (typeof option.data === 'function') {
+      return (option.data as (option: IUserMenuAnalystOption) => void)(option)
+    }
+  }, [handleModal, handleMenuOpen, option])
 
   return (
     <span
@@ -28,12 +47,8 @@ const Component: React.FC<IUserMenuAnalystOptionDefault> = ({ className, option,
         iconProps={{ showDefaultFallback: false }}
         iconSize={18}
         url={url}
-        type={typeof option.data === 'function' ? 'button' : 'link'}
-        onClick={
-          typeof option.data === 'function'
-            ? () => (option.data as (option: IUserMenuAnalystOption) => void)(option)
-            : undefined
-        }
+        type={typeof option.data === 'function' || option.modal ? 'button' : 'link'}
+        onClick={handleOnClick}
         target={target}
         rel={rel}
       />

@@ -7,6 +7,14 @@ export interface IUserMenuAnalystOptionsProps {
    */
   className?: string
   /**
+   * Function to handle modal visibility from analyst template
+   */
+  handleModal?: (name: string, visible: boolean) => void
+  /**
+   * Function to handle menu visibility
+   */
+  handleMenuOpen?: React.Dispatch<React.SetStateAction<boolean>>
+  /**
    * Is menu open or not
    */
   isMenuOpen?: boolean

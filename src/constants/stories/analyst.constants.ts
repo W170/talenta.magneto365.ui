@@ -1,8 +1,11 @@
 import { HambergerMenuDark, HomeUnderline, Notification } from '@constants/icons.constants'
 import { IBreadcrumbs, IUserAnalyst, IUserMenuWrapperAnalystProps } from '@components/UI/molecules'
-import { IHeaderAnalystProps, INavMenuAnalystProps } from '@components/UI/organism'
+import { IHeaderAnalystProps, INavMenuAnalystProps, IModalAnalystProps } from '@components/UI/organism'
 import { IMainButton, ILinkProps } from '@components/UI/atoms'
 import { logoPropsDark } from './common.constants'
+import { IAnalystTemplateProps } from '@components/UI/template'
+import { Error } from '@constants/icons.constants'
+import { EModalAnalystActionType } from '@components/UI/organism/ModalAnalyst/children'
 import { EUserMenuAnalystOptionType } from '@components/UI/molecules/UserMenuAnalyst/children/UserMenuAnalystOptions/children'
 
 export const MenuButtonAnalystProps: IMainButton = {
@@ -83,18 +86,21 @@ export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
                     {
                       title: 'Desvincular',
                       icon: 'unlink',
-                      data: '/desvincular',
-                      selfQueryString: {
-                        nit: '9905',
-                        name: 'Pollos Brosty'
-                      }
+                      modal: 'unlink-distributor'
                     }
                   ]
                 },
                 {
                   title: 'Los Perritos',
                   data: '/los-perritos',
-                  type: EUserMenuAnalystOptionType.HOVER
+                  type: EUserMenuAnalystOptionType.HOVER,
+                  suffix: [
+                    {
+                      title: 'Hola',
+                      icon: 'manage',
+                      modal: 'hi-modal'
+                    }
+                  ]
                 },
                 {
                   title: 'Ver todos',
@@ -343,4 +349,99 @@ export const NavMenuAnalystProps: INavMenuAnalystProps = {
     title: 'Por favor seleccione su región'
   },
   onRegionChange: (region) => console.log(region)
+}
+
+export const ModalAnalystProps: IModalAnalystProps = {
+  isOpen: true,
+  handleClose: (visible) => console.log(visible),
+  name: 'unlink-distributor',
+  screens: [
+    {
+      key: 0,
+      header: {
+        title: '¿Está seguro que desea desvincularse de Comfama?',
+        prefixIcon: {
+          icon: 'danger',
+          size: 20
+        }
+      },
+      content: 'Tenga en cuenta que al desvincular esta empresa se perderán los datos que están registrados.',
+      footer: {
+        hasTopDivider: false,
+        actions: [
+          {
+            key: 'cancel',
+            title: 'Cancelar',
+            loading: true,
+            type: EModalAnalystActionType.GRAY,
+            action: async () => ({ step: 0 })
+          },
+          {
+            key: 'next',
+            title: 'Si, desvincular',
+            type: EModalAnalystActionType.RED,
+            loading: true,
+            prefixIcon: {
+              icon: 'closeCircle',
+              size: 20
+            },
+            action: async () => ({ step: 1 })
+          }
+        ]
+      }
+    },
+    {
+      key: 1,
+      header: {
+        title: 'Desvinculación de la empresa',
+        prefixIcon: {
+          icon: Error,
+          size: 20
+        }
+      },
+      content: 'Comfama fue desvinculada correctamente',
+      footer: {
+        hasTopDivider: false,
+        actions: [
+          {
+            key: 'understood',
+            title: 'Entendido',
+            type: EModalAnalystActionType.GREEN,
+            action: async () => ({ closeModal: true })
+          }
+        ]
+      }
+    }
+  ]
+}
+
+export const AnalystTemplateProps: Omit<IAnalystTemplateProps, 'children'> = {
+  headerProps: { ...HeaderAnalystProps },
+  navigationMenuProps: { ...NavMenuAnalystProps },
+  modals: [
+    ModalAnalystProps,
+    {
+      name: 'hi-modal',
+      screens: [
+        {
+          key: 0,
+          header: {
+            title: 'Hola'
+          },
+          content: 'Este es un mensaje de prueba.',
+          footer: {
+            hasTopDivider: false,
+            actions: [
+              {
+                key: 'close',
+                title: 'Cerrar',
+                type: EModalAnalystActionType.GRAY,
+                action: async () => ({ closeModal: true })
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
 }

@@ -4,7 +4,15 @@ import { IUserMenuAnalystOptionHoverProps } from './UserMenuAnalystOptionHover.i
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './UserMenuAnalystOptionHover.module.scss'
 
-const Component: React.FC<IUserMenuAnalystOptionHoverProps> = ({ className, option, prefix, suffix, url }) => {
+const Component: React.FC<IUserMenuAnalystOptionHoverProps> = ({
+  className,
+  handleModal,
+  handleMenuOpen,
+  option,
+  prefix,
+  suffix,
+  url
+}) => {
   return (
     <span
       className={CNM.get({
@@ -15,6 +23,8 @@ const Component: React.FC<IUserMenuAnalystOptionHoverProps> = ({ className, opti
       {prefix}
       <Default
         className={CNM.get({ styles, cls: ['user-menu-analyst-option-hover__default'] })}
+        handleMenuOpen={handleMenuOpen}
+        handleModal={handleModal}
         option={option}
         url={url}
       />

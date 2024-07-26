@@ -1,0 +1,15 @@
+.magneto-ui-modal-analyst-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  &--desktop:first-child {
+    padding: 30px;
+    min-height: unset;
+  }
+  &--mobile {
+    > aside:first-child {
+      padding: 30px 20px;
+      box-sizing: border-box;
+    }
+  }
+}

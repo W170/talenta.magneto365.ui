@@ -1,14 +1,13 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { AnalystTemplate } from './AnalystTemplate.component'
-import { HeaderAnalystProps, NavMenuAnalystProps } from '@constants/stories'
+import { AnalystTemplateProps } from '@constants/stories'
 
 const meta: Meta<typeof AnalystTemplate> = {
   title: 'Template/Analyst Template',
   component: AnalystTemplate,
   args: {
-    headerProps: { ...HeaderAnalystProps },
-    navigationMenuProps: { ...NavMenuAnalystProps },
+    ...AnalystTemplateProps,
     children: <div style={{ padding: '20px' }}>Analyst Template</div>
   }
 }

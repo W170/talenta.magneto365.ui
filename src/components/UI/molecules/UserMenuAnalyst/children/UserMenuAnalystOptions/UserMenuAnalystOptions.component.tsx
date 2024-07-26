@@ -7,6 +7,8 @@ import { Option } from './children'
 
 const Component: React.FC<IUserMenuAnalystOptionsProps> = ({
   className,
+  handleModal,
+  handleMenuOpen,
   isMenuOpen,
   optionClassNames,
   options,
@@ -25,6 +27,8 @@ const Component: React.FC<IUserMenuAnalystOptionsProps> = ({
               option={item}
               classNames={optionClassNames}
               queryString={queryString}
+              handleModal={handleModal}
+              handleMenuOpen={handleMenuOpen}
             />
           ))}
 

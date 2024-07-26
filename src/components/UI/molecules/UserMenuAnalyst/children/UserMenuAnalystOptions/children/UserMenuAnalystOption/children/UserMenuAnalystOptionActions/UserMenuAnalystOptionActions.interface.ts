@@ -6,6 +6,14 @@ export interface IUserMenuAnalystOptionActionsProps {
    */
   actions: (IUserMenuAnalystOptionBase & { data?: string | ((option: IUserMenuAnalystOption) => void) })[]
   /**
+   * Function to handle modal visibility from analyst template
+   */
+  handleModal?: (name: string, visible: boolean) => void
+  /**
+   * Function to handle menu visibility
+   */
+  handleMenuOpen?: React.Dispatch<React.SetStateAction<boolean>>
+  /**
    * Function to get URL of action with query string parameters
    */
   getUrl: (option: IUserMenuAnalystOption) => string | undefined
@@ -20,6 +28,14 @@ export interface IUserMenuAnalystOptionActionProps {
    * Selected action
    */
   action: IUserMenuAnalystOptionBase & { data?: string | ((option: IUserMenuAnalystOption) => void) }
+  /**
+   *
+   */
+  handleModal?: (name: string, visible: boolean) => void
+  /**
+   *
+   */
+  handleMenuOpen?: React.Dispatch<React.SetStateAction<boolean>>
   /**
    * Function to get URL of action with query string parameters
    */
