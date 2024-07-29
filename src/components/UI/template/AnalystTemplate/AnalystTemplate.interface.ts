@@ -1,4 +1,4 @@
-import { IHeaderAnalystProps } from '@components/UI/organism'
+import { IHeaderAnalystProps, IModalAnalyst } from '@components/UI/organism'
 import { INavMenuDrawerAnalystProps } from '@components/UI/organism/NavMenuDrawerAnalyst'
 
 export interface IAnalystTemplateProps {
@@ -26,4 +26,8 @@ export interface IAnalystTemplateProps {
    * Navigation menu props
    */
   navigationMenuProps: INavMenuDrawerAnalystProps
+  /**
+   * Array of modals
+   */
+  modals: IModalAnalyst[]
 }

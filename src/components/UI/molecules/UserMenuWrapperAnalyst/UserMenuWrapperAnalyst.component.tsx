@@ -20,8 +20,8 @@ const Component: React.FC<IUserMenuWrapperAnalystProps> = ({ ...props }) => {
     }
   }, [visible])
 
-  const container = useMediaQuery(<Dropdown {...props} />, {
-    sm: <Modal {...props} clickOut={visible} setClickOut={() => setVisible(!visible)} />
+  const container = useMediaQuery(<Dropdown handleMenuOpen={setVisible} {...props} />, {
+    sm: <Modal {...props} clickOut={visible} handleMenuOpen={setVisible} setClickOut={() => setVisible(!visible)} />
   })
 
   return container

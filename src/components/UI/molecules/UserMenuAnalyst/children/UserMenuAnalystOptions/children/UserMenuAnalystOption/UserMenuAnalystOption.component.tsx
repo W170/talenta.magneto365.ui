@@ -9,7 +9,14 @@ import { UserMenuAnalystTitle as Title } from '../UserMenuAnalystTitle'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './UserMenuAnalystOption.module.scss'
 
-const Component: React.FC<IUserMenuAnalystOptionProps> = ({ classNames, option, isOpen, queryString = {} }) => {
+const Component: React.FC<IUserMenuAnalystOptionProps> = ({
+  classNames,
+  option,
+  handleModal,
+  handleMenuOpen,
+  isOpen,
+  queryString = {}
+}) => {
   const [isOpenDropdown, setIsOpenDropdown] = useState<boolean>(false)
 
   useEffect(() => {
@@ -46,8 +53,26 @@ const Component: React.FC<IUserMenuAnalystOptionProps> = ({ classNames, option, 
           className={CNM.get({ styles, cls: [classNames?.link] })}
           option={option}
           url={url(option)}
-          prefix={<Actions actions={option.prefix || []} getUrl={url} option={option} />}
-          suffix={<Actions actions={option.suffix || []} getUrl={url} option={option} />}
+          handleModal={handleModal}
+          handleMenuOpen={handleMenuOpen}
+          prefix={
+            <Actions
+              actions={option.prefix || []}
+              getUrl={url}
+              handleModal={handleModal}
+              handleMenuOpen={handleMenuOpen}
+              option={option}
+            />
+          }
+          suffix={
+            <Actions
+              actions={option.suffix || []}
+              getUrl={url}
+              handleModal={handleModal}
+              handleMenuOpen={handleMenuOpen}
+              option={option}
+            />
+          }
         />
       </div>
     )
@@ -86,6 +111,8 @@ const Component: React.FC<IUserMenuAnalystOptionProps> = ({ classNames, option, 
               }}
               option={child}
               queryString={queryString}
+              handleModal={handleModal}
+              handleMenuOpen={handleMenuOpen}
             />
           ))}
         </React.Fragment>

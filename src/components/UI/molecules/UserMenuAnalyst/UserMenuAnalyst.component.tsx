@@ -10,6 +10,8 @@ import styles from './UserMenuAnalyst.module.scss'
 const Component: React.FC<IUserMenuAnalystProps> = ({
   action,
   headerSections,
+  handleModal,
+  handleMenuOpen,
   isMenuOpen = false,
   footerSections,
   user,
@@ -65,6 +67,8 @@ const Component: React.FC<IUserMenuAnalystProps> = ({
             options={headerSections || []}
             queryString={queryString}
             isMenuOpen={isMenuOpen}
+            handleModal={handleModal}
+            handleMenuOpen={handleMenuOpen}
             className={CNM.get({
               styles,
               cls: ['user-menu-analyst__company', headerSections?.length === 0 && 'user-menu-analyst__company--empty']
@@ -77,7 +81,12 @@ const Component: React.FC<IUserMenuAnalystProps> = ({
         )}
       </header>
       {footerSections && footerSections?.length > 0 && (
-        <UserMenuAnalystOptions options={footerSections || []} queryString={queryString} />
+        <UserMenuAnalystOptions
+          handleModal={handleModal}
+          handleMenuOpen={handleMenuOpen}
+          options={footerSections || []}
+          queryString={queryString}
+        />
       )}
     </div>
   )

@@ -1,9 +1,16 @@
 import React, { useState, useCallback } from 'react'
-import { HeaderAnalyst, NavMenuDrawerAnalyst, NavMenuAnalyst, INavMenuAnalystOption } from '@components/UI/organism'
 import { IAnalystTemplateProps } from './AnalystTemplate.interface'
-import { useMediaQuery } from '@components/hooks'
 import CNM from '@utils/classNameManager/classNameManager.util'
+import { useAnalystModal } from './AnalystTemplate.hook'
 import styles from './AnalystTemplate.module.scss'
+import { useMediaQuery } from '@components/hooks'
+import {
+  HeaderAnalyst,
+  NavMenuDrawerAnalyst,
+  NavMenuAnalyst,
+  INavMenuAnalystOption,
+  ModalAnalyst
+} from '@components/UI/organism'
 
 const Component: React.FC<IAnalystTemplateProps> = ({
   children,
@@ -11,12 +18,14 @@ const Component: React.FC<IAnalystTemplateProps> = ({
   className = '',
   containerClassName = '',
   headerProps,
-  navigationMenuProps
+  navigationMenuProps,
+  modals
 }) => {
   const [activeDropdown, setActiveDropdown] = useState<INavMenuAnalystOption | null>(null)
   const [isMenuScrollAnimated, setIsMenuScrollAnimated] = useState<boolean>(false)
   const [isOpenedFromHeader, setIsOpenedFromHeader] = useState<boolean>(false)
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false)
+  const { modalOpen, handleModal } = useAnalystModal(modals)
 
   const toggleMenu = useCallback(
     (open?: boolean, drawerTriggered?: boolean) => {
@@ -55,9 +64,17 @@ const Component: React.FC<IAnalystTemplateProps> = ({
 
   return (
     <div className={CNM.get({ styles, cls: ['analyst-template', className] })}>
+      <ModalAnalyst
+        isOpen={modalOpen.some((modal) => modal.visible === true)}
+        name={modalOpen.find((modal) => modal.visible)?.name || ''}
+        data={modalOpen.find((modal) => modal.visible)?.data}
+        screens={modals?.find((modal) => modal.name === modalOpen.find((modal) => modal.visible)?.name)?.screens ?? []}
+        handleClose={handleModal}
+      />
       <HeaderAnalyst
         onMainMenuClick={() => toggleMenu(true, true)}
         {...headerProps}
+        handleModal={handleModal}
         className={CNM.get({ styles, cls: [`analyst-template__header`, headerProps.className] })}
       />
       <div className={CNM.get({ styles, cls: ['analyst-template__container', containerClassName] })}>

@@ -11,6 +11,7 @@ import styles from './HeaderAnalyst.module.scss'
 const Component: React.FC<IHeaderAnalystProps> = ({
   breadCrumbProps,
   className = '',
+  handleModal,
   logoProps = { fallbackImage: logoPropsDark.logo, ...logoPropsDark },
   onMainMenuClick,
   userMenuProps,
@@ -42,7 +43,7 @@ const Component: React.FC<IHeaderAnalystProps> = ({
         </div>
         <div className={CNM.get({ styles, cls: ['header-analyst__user-menu'] })}>
           {userNotificationProps && <Link iconProps={{ icon: Notification, size: 20 }} {...userNotificationProps} />}
-          <UserMenuWrapperAnalyst {...userMenuProps} />
+          <UserMenuWrapperAnalyst {...userMenuProps} handleModal={handleModal} />
         </div>
       </div>
       <div className={CNM.get({ styles, cls: ['header-analyst__container'] })}>{headerBreadCrumb}</div>

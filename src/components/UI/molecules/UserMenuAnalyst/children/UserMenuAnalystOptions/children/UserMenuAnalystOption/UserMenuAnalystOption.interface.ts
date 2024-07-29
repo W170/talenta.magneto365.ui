@@ -7,6 +7,14 @@ export interface IUserMenuAnalystOptionProps {
    */
   classNames?: IUserMenuAnalystOptionClassNames
   /**
+   * Function to handle modal visibility from analyst template
+   */
+  handleModal?: (name: string, visible: boolean, data: unknown) => void
+  /**
+   * Function to handle menu visibility
+   */
+  handleMenuOpen?: React.Dispatch<React.SetStateAction<boolean>>
+  /**
    * Is the option open
    */
   isOpen?: boolean
@@ -52,6 +60,13 @@ export interface IUserMenuAnalystOptionBase {
    */
   icon?: string
   /**
+   * Name of the modal to open
+   */
+  modal?: {
+    name: string
+    data: unknown
+  }
+  /**
    * Relationship when opening the link
    */
   rel?: string
@@ -87,6 +102,14 @@ export interface IUserMenuAnalystOptionCommonProps {
    * Classnames to get principal styling
    */
   className: string
+  /**
+   *
+   */
+  handleModal?: (name: string, visible: boolean, data: unknown) => void
+  /**
+   *
+   */
+  handleMenuOpen?: React.Dispatch<React.SetStateAction<boolean>>
   /**
    * Option to show
    */

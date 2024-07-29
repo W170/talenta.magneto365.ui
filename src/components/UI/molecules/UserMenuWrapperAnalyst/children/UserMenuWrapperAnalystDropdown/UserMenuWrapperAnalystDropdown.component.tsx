@@ -10,6 +10,7 @@ const Component: React.FC<IUserMenuWrapperAnalystDropdownProps> = ({
   action,
   user,
   clickOut = false,
+  handleModal,
   setClickOut = () => ({}),
   footerSections,
   headerSections
@@ -24,6 +25,8 @@ const Component: React.FC<IUserMenuWrapperAnalystDropdownProps> = ({
             isMenuOpen={clickOut}
             user={user}
             action={action}
+            handleModal={handleModal}
+            handleMenuOpen={setClickOut}
             headerSections={headerSections}
             footerSections={footerSections}
           />

@@ -10,6 +10,7 @@ const Component: React.FC<IUserMenuWrapperAnalystModalProps> = ({
   clickOut = false,
   footerSections,
   headerSections,
+  handleModal,
   setClickOut = () => ({}),
   user
 }) => {
@@ -24,6 +25,8 @@ const Component: React.FC<IUserMenuWrapperAnalystModalProps> = ({
           isMenuOpen={clickOut}
           user={user}
           action={action}
+          handleModal={handleModal}
+          handleMenuOpen={setClickOut}
           headerSections={headerSections}
           footerSections={footerSections}
         />
