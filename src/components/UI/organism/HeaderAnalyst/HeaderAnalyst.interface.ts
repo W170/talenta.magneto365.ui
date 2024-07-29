@@ -13,7 +13,7 @@ export interface IHeaderAnalystProps {
   /**
    * Function to handle modal visibility from analyst template
    */
-  handleModal?: (name: string, visible: boolean) => void
+  handleModal?: (name: string, visible: boolean, data: unknown) => void
   /**
    * Logo props
    */

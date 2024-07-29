@@ -67,6 +67,7 @@ const Component: React.FC<IAnalystTemplateProps> = ({
       <ModalAnalyst
         isOpen={modalOpen.some((modal) => modal.visible === true)}
         name={modalOpen.find((modal) => modal.visible)?.name || ''}
+        data={modalOpen.find((modal) => modal.visible)?.data}
         screens={modals?.find((modal) => modal.name === modalOpen.find((modal) => modal.visible)?.name)?.screens ?? []}
         handleClose={handleModal}
       />

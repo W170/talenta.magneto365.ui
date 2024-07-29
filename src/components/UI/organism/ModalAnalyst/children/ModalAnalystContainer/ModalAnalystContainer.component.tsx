@@ -6,22 +6,36 @@ import CNM from '@utils/classNameManager/classNameManager.util'
 import { IModalAnalystContainerProps } from './ModalAnalystContainer.interface'
 import { ModalAnalystContent, ModalAnalystFooter, ModalAnalystHeader } from '../index'
 
-const Component: React.FC<IModalAnalystContainerProps> = ({ handleClose, isOpen, name, screens, step, setStep }) => {
+const Component: React.FC<IModalAnalystContainerProps> = ({
+  handleClose,
+  isOpen,
+  name,
+  data,
+  screens,
+  step,
+  setStep
+}) => {
   const component = useMemo(
     () => (
       <div className={CNM.get({ styles, cls: ['modal-analyst-container'] })}>
         <ModalAnalystHeader header={screens[step]?.header} />
         <ModalAnalystContent content={screens[step]?.content} />
-        <ModalAnalystFooter footer={screens[step]?.footer} name={name} setStep={setStep} handleClose={handleClose} />
+        <ModalAnalystFooter
+          footer={screens[step]?.footer}
+          name={name}
+          data={data}
+          setStep={setStep}
+          handleClose={handleClose}
+        />
       </div>
     ),
-    [handleClose, name, screens, step, setStep]
+    [handleClose, name, data, screens, step, setStep]
   )
 
   const container = useMediaQuery(
     <Modal
       isOpen={isOpen}
-      onClose={() => handleClose(name, false)}
+      onClose={() => handleClose(name, false, undefined)}
       className={CNM.get({ styles, cls: ['modal-analyst-container--desktop'] })}
     >
       {component}
@@ -30,7 +44,7 @@ const Component: React.FC<IModalAnalystContainerProps> = ({ handleClose, isOpen,
       sm: (
         <MobileDrawer
           isOpen={isOpen}
-          onClose={() => handleClose(name, false)}
+          onClose={() => handleClose(name, false, undefined)}
           className={CNM.get({ styles, cls: ['modal-analyst-container--mobile'] })}
         >
           {component}

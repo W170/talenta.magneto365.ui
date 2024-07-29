@@ -47,10 +47,9 @@ const Action: React.FC<IUserMenuAnalystOptionActionProps> = ({
   option
 }) => {
   const handleOnClick = useCallback(() => {
-    console.log(handleMenuOpen)
     if (action.modal && handleModal && handleMenuOpen) {
       handleMenuOpen(false)
-      return handleModal(action.modal, true)
+      return handleModal(action.modal.name, true, action.modal.data)
     }
     return action.data && (action.data as (option: IUserMenuAnalystOption) => void)(option)
   }, [action, handleModal, handleMenuOpen, option])

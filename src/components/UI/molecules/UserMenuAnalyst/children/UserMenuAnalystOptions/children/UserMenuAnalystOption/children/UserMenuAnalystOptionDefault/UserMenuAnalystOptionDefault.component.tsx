@@ -21,7 +21,7 @@ const Component: React.FC<IUserMenuAnalystOptionDefault> = ({
   const handleOnClick = useCallback(() => {
     if (option.modal && handleModal && handleMenuOpen) {
       handleMenuOpen(false)
-      return handleModal(option.modal, true)
+      return handleModal(option.modal.name, true, option.modal.data)
     }
 
     if (typeof option.data === 'function') {

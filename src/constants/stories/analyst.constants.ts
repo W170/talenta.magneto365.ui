@@ -74,7 +74,7 @@ export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
                     {
                       title: 'Gestionar',
                       icon: 'manage',
-                      data: (option) => console.log(option)
+                      data: (option: unknown) => console.log(option)
                     }
                   ]
                 },
@@ -86,7 +86,10 @@ export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
                     {
                       title: 'Desvincular',
                       icon: 'unlink',
-                      modal: 'unlink-distributor'
+                      modal: {
+                        name: 'unlink-distributor',
+                        data: { obj: 123 }
+                      }
                     }
                   ]
                 },
@@ -98,7 +101,10 @@ export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
                     {
                       title: 'Hola',
                       icon: 'manage',
-                      modal: 'hi-modal'
+                      modal: {
+                        name: 'hi-modal',
+                        data: {}
+                      }
                     }
                   ]
                 },
@@ -141,7 +147,7 @@ export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
         {
           title: 'Soporte',
           icon: 'support',
-          data: (option) => console.log(option)
+          data: (option: unknown) => console.log(option)
         }
       ]
     },
@@ -355,6 +361,7 @@ export const ModalAnalystProps: IModalAnalystProps = {
   isOpen: true,
   handleClose: (visible) => console.log(visible),
   name: 'unlink-distributor',
+  data: {},
   screens: [
     {
       key: 0,
@@ -374,7 +381,10 @@ export const ModalAnalystProps: IModalAnalystProps = {
             title: 'Cancelar',
             loading: true,
             type: EModalAnalystActionType.GRAY,
-            action: async () => ({ step: 0 })
+            action: async (data) => {
+              console.log(data)
+              return { closeModal: true }
+            }
           },
           {
             key: 'next',

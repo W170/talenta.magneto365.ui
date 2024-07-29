@@ -9,7 +9,7 @@ export interface IUserMenuAnalystOptionProps {
   /**
    * Function to handle modal visibility from analyst template
    */
-  handleModal?: (name: string, visible: boolean) => void
+  handleModal?: (name: string, visible: boolean, data: unknown) => void
   /**
    * Function to handle menu visibility
    */
@@ -62,7 +62,10 @@ export interface IUserMenuAnalystOptionBase {
   /**
    * Name of the modal to open
    */
-  modal?: string
+  modal?: {
+    name: string
+    data: unknown
+  }
   /**
    * Relationship when opening the link
    */
@@ -102,7 +105,7 @@ export interface IUserMenuAnalystOptionCommonProps {
   /**
    *
    */
-  handleModal?: (name: string, visible: boolean) => void
+  handleModal?: (name: string, visible: boolean, data: unknown) => void
   /**
    *
    */

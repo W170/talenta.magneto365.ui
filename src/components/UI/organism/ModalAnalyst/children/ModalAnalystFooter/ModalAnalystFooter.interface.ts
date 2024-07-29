@@ -2,9 +2,10 @@ import { IconProps } from '@components/UI/atoms'
 
 export interface IModalAnalystFooterProps {
   name: string
+  data: unknown
   footer?: IModalAnalystFooter
   setStep: React.Dispatch<React.SetStateAction<number>>
-  handleClose: (name: string, visible: boolean) => void
+  handleClose: (name: string, visible: boolean, data: unknown) => void
 }
 
 export interface IModalAnalystFooter {
@@ -19,7 +20,7 @@ export interface IModalAnalystAction {
   title?: string
   loading?: boolean
   type: EModalAnalystActionType
-  action: () => Promise<{ step?: number; closeModal?: boolean }>
+  action: (data: unknown) => Promise<{ step?: number; closeModal?: boolean }>
 }
 
 export interface IModalAnalystLoading {

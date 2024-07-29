@@ -7,7 +7,7 @@ import { IModalAnalystAction, IModalAnalystLoading } from './ModalAnalystFooter.
 import { IModalAnalystFooterProps } from './ModalAnalystFooter.interface'
 import { MODAL_ICONS } from '../../ModalAnalyst.constants'
 
-const Component: React.FC<IModalAnalystFooterProps> = ({ footer, handleClose, name, setStep }) => {
+const Component: React.FC<IModalAnalystFooterProps> = ({ footer, handleClose, name, data, setStep }) => {
   const { hasTopDivider, actions } = footer || {}
   const [loading, setLoading] = useState<IModalAnalystLoading[]>(
     Array.from({ length: actions?.length || 0 }, (_, i) => ({
@@ -31,19 +31,19 @@ const Component: React.FC<IModalAnalystFooterProps> = ({ footer, handleClose, na
     async ({ action, title }: IModalAnalystAction) => {
       if (action && !loading.some((action) => action.loading)) {
         setLoading(setterLoading(title, true))
-        const { step: newStep, closeModal } = (await action()) || { step: 0, closeModal: false }
+        const { step: newStep, closeModal } = (await action(data)) || { step: 0, closeModal: false }
         setLoading(setterLoading(title, false))
 
         if (newStep) {
           setStep(newStep)
         }
         if (closeModal) {
-          handleClose(name, false)
+          handleClose(name, false, data)
           setStep(0)
         }
       }
     },
-    [setStep, handleClose, setterLoading, loading, name]
+    [setStep, handleClose, setterLoading, loading, name, data]
   )
 
   return (
