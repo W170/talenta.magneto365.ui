@@ -6,6 +6,7 @@
   cursor: pointer;
   transition: filter ease-in-out 0.3s;
   font-weight: normal;
+  border: #e3e7e9 solid 1px;
   &:hover {
     filter: brightness(0.9);
   }

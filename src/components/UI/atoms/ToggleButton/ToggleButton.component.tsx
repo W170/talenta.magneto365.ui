@@ -41,8 +41,7 @@ const Component: React.FC<IToggleButton> = ({ className, color, onChange, id, na
       }
     }
     return {
-      backgroundColor: 'transparent',
-      border: `${color || '#E3E7E9'} solid 1px`
+      backgroundColor: 'transparent'
     }
   }, [color, currentSelect, isSelected])
 
