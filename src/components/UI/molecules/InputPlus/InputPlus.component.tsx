@@ -46,8 +46,11 @@ export const InputPlus: React.FC<IInputPlus> = ({
 
   const handleKeyDown = useCallback(
     (event: React.KeyboardEvent<HTMLInputElement>) => {
-      if (event.key === 'Enter' && !disabledBtn) {
-        handleSubmmit()
+      if (event.key === 'Enter') {
+        event.preventDefault()
+        if (!disabledBtn) {
+          handleSubmmit()
+        }
       }
     },
     [disabledBtn, handleSubmmit]
