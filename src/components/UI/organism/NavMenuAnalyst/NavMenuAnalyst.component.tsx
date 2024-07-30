@@ -1,12 +1,13 @@
-import React, { useRef, useEffect, useCallback, useState } from 'react'
-import { Divider, Option, Modal } from './children'
-import { INavMenuAnalystOption, INavMenuAnalystProps, INavMenuAnalystRegion } from './NavMenuAnalyst.interface'
+import React, { useRef, useEffect, useCallback } from 'react'
+import { Divider, Option } from './children'
+import { INavMenuAnalystOption, INavMenuAnalystProps } from './NavMenuAnalyst.interface'
 import { LogoComponent } from '@components/UI/atoms'
 import { logoPropsDark } from '@constants/stories'
 import { IsoLogoMagnetoDark, MiniArrowGrayDown, MiniArrowGrayUp } from '@constants/icons.constants'
 import { navMenuAnalystIcons } from './NavMenuAnalyst.constants'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './NavMenuAnalyst.module.scss'
+import { useAnalyst } from '@components/UI/template/AnalystTemplate/AnalystTemplate.context'
 
 const Component: React.FC<INavMenuAnalystProps> = ({
   activeDropdown,
@@ -19,16 +20,14 @@ const Component: React.FC<INavMenuAnalystProps> = ({
   isScrollAnimated,
   logoProps = { fallbackImage: logoPropsDark.logo, ...logoPropsDark },
   onDropdownClick,
-  onRegionChange,
   path,
   queryString,
   regions,
-  regionModal,
   sections,
   setIsDrawerOpen
 }) => {
-  const [isRegionModalOpen, setIsRegionModalOpen] = useState<boolean>(false)
   const containerRef = useRef<HTMLDivElement>(null)
+  const { handleRegionModal } = useAnalyst()
 
   useEffect(() => {
     if (containerRef.current) {
@@ -51,20 +50,10 @@ const Component: React.FC<INavMenuAnalystProps> = ({
     [activeDropdown]
   )
 
-  const handleRegionChange = useCallback(
-    (localRegion: INavMenuAnalystRegion | null) => {
-      if (localRegion) {
-        onRegionChange && onRegionChange(localRegion)
-      }
-      setIsRegionModalOpen(false)
-    },
-    [onRegionChange]
-  )
-
-  const handleRegionModal = useCallback(() => {
+  const handleRegionModalClick = useCallback(() => {
     setIsDrawerOpen && setIsDrawerOpen(false)
-    setIsRegionModalOpen(true)
-  }, [setIsDrawerOpen])
+    handleRegionModal(true)
+  }, [setIsDrawerOpen, handleRegionModal])
 
   const customScrollbarButtonsStyle = {
     '--custom-scrollbar-thumb-down-background': `url(${MiniArrowGrayDown})`,
@@ -120,7 +109,7 @@ const Component: React.FC<INavMenuAnalystProps> = ({
           <div className={CNM.get({ styles, cls: ['nav-menu-analyst__region'] })}>
             <Option
               isFullWidth={isFullWidth}
-              onOptionClick={handleRegionModal}
+              onOptionClick={handleRegionModalClick}
               option={{
                 icons: {
                   fallbackIcon: IsoLogoMagnetoDark,
@@ -132,13 +121,6 @@ const Component: React.FC<INavMenuAnalystProps> = ({
                   regions.find((r) => r.lang === defaultRegion)?.name ||
                   (regions && regions.length > 0 ? regions[0].name : '')
               }}
-            />
-            <Modal
-              defaultRegion={defaultRegion}
-              isOpen={isRegionModalOpen}
-              onClose={handleRegionChange}
-              regionModal={regionModal}
-              regions={regions}
             />
           </div>
         )}

@@ -1,32 +1,28 @@
 import React, { useCallback, useState } from 'react'
-import { INavMenuAnalystRegion } from '../../NavMenuAnalyst.interface'
+import { INavMenuAnalystRegion } from '../NavMenuAnalyst/NavMenuAnalyst.interface'
 import { INavMenuAnalystRegionModalProps } from './NavMenuAnalystRegionModal.interface'
 import { MobileDrawer, Modal } from '@components/UI/molecules'
 import { NavMenuAnalystRegionModalContent as Content } from './children/NavMenuAnalystRegionModalContent'
 import { useMediaQuery } from '@components/hooks'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './NavMenuAnalystRegionModal.module.scss'
+import { useAnalyst } from '@components/UI/template/AnalystTemplate/AnalystTemplate.context'
 
-const Component: React.FC<INavMenuAnalystRegionModalProps> = ({
-  defaultRegion,
-  isOpen,
-  regions,
-  regionModal,
-  onClose
-}) => {
+const Component: React.FC<INavMenuAnalystRegionModalProps> = ({ defaultRegion, regions, regionModal }) => {
   const [selectedRegion, setSelectedRegion] = useState<INavMenuAnalystRegion | null>(null)
+  const { modalRegion, handleRegionChange } = useAnalyst()
 
   const handleClose = useCallback(
     (region: INavMenuAnalystRegion | null) => {
       setSelectedRegion(null)
-      onClose(region)
+      handleRegionChange(region)
     },
-    [onClose]
+    [handleRegionChange]
   )
 
   const container = useMediaQuery(
     <Modal
-      isOpen={isOpen}
+      isOpen={modalRegion}
       onClose={() => handleClose(null)}
       title={regionModal.title}
       description=""
@@ -44,7 +40,7 @@ const Component: React.FC<INavMenuAnalystRegionModalProps> = ({
     {
       sm: (
         <MobileDrawer
-          isOpen={isOpen}
+          isOpen={modalRegion}
           onClose={() => handleClose(null)}
           className={CNM.get({ styles, cls: ['nav-menu-analyst-region-modal'] })}
         >
