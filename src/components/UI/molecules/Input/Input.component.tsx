@@ -8,7 +8,7 @@ import { ComparativeCounter } from '@components/UI/atoms'
 const Input: React.FC<IInput> = ({
   value = '',
   onChange,
-  name,
+  name = '',
   type,
   placeholder,
   customIcon,
@@ -31,6 +31,12 @@ const Input: React.FC<IInput> = ({
       setInputValue(value)
     }
   }, [hasCounter, value])
+
+  useEffect(() => {
+    if (autoFocus && document.getElementById(name)) {
+      document.getElementById(name)?.focus()
+    }
+  }, [autoFocus, name])
 
   const dinamyIcon = useMemo(() => {
     return {
@@ -78,7 +84,6 @@ const Input: React.FC<IInput> = ({
               onFocus={() => setOnFocus(true)}
               onBlur={() => setOnFocus(false)}
               id={name}
-              autoFocus={autoFocus}
               autoComplete="off"
             />
 

@@ -41,6 +41,7 @@ const Component = <T,>({
           hideIcon
           onChange={handleSearch}
           disabled={disabled}
+          autoFocus={clickOut}
         />
       </div>
       <button
