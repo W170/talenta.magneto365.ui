@@ -7,7 +7,7 @@ import { parseDate } from '@components/UI/molecules/DatePicker/utils'
 import { ArrowDown2, ArrowDown3 } from '@constants/icons.constants'
 import { monthOptionsValue, yearOptionsLabel, yearOptionsValue } from '@constants/stories/DatePicker.constants'
 
-const defaultValue = (value: Date) => {
+const defaultValue = (value?: Date) => {
   return value ? parseDate(value) : { initialMonth: '', initialYear: '' }
 }
 
@@ -90,7 +90,7 @@ const Component: React.FC<IMobileDatePicker> = ({
 
   const handleYearDateSelection = (yearSelected: string | number | null) => {
     setYearSelected(yearSelected)
-    if (monthSelected != '') {
+    if (monthSelected !== '') {
       onChange(new Date(Number(yearSelected), Number(monthSelected), FIRST_OF_MONTH))
     }
   }
