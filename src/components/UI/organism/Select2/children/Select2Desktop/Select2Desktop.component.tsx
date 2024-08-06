@@ -19,7 +19,8 @@ const Component = <T,>({
   searchValue,
   setClickOut = () => ({}),
   valueSelected,
-  render
+  render,
+  isMultiple
 }: ISelect2DesktopProps<T>): JSX.Element => {
   return (
     <div className={CNM.get({ styles, cls: ['select2-desktop', className] })}>
@@ -33,7 +34,7 @@ const Component = <T,>({
         disableList={disableList}
         icon={icon}
         valueSelected={valueSelected}
-        haveTags={haveTags}
+        isMultiple={isMultiple}
       />
 
       <Select2Tags onRemove={removeValue} tags={valueSelected} visible={haveTags} />

@@ -46,9 +46,9 @@ const Component = <T,>({
         handleSearch={handleSearch}
         setClickOut={() => handleVisible(true)}
         disableList={disableList}
+        isMultiple={isMultiple}
         icon={icon}
         valueSelected={valueSelected}
-        haveTags={haveTags}
       />
       <Select2Tags onRemove={removeValue} tags={valueSelected} visible={haveTags} />
       <MobileDrawer
@@ -66,8 +66,8 @@ const Component = <T,>({
           disableList={disableList}
           icon={icon}
           valueSelected={valueSelected}
-          haveTags={haveTags}
           name={`${placeholder}-mobile`}
+          isMultiple={isMultiple}
         />
         <Select2Tags onRemove={removeValue} tags={valueSelected} visible={haveTags} />
         <Select2List

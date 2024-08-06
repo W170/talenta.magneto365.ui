@@ -15,7 +15,7 @@ const Component = <T,>({
   disableList,
   icon,
   valueSelected,
-  haveTags,
+  isMultiple,
   name
 }: ISelect2InputProps<T>): JSX.Element => {
   const arrowRotate = useMemo(
@@ -70,7 +70,7 @@ const Component = <T,>({
           >
             {valueSelected[0]?.img && <img src={valueSelected[0]?.img} alt="selected-img" />}
 
-            {haveTags ? placeholder : valueSelected[0]?.name || placeholder}
+            {isMultiple ? placeholder : valueSelected[0]?.name || placeholder}
           </p>
         </span>
 

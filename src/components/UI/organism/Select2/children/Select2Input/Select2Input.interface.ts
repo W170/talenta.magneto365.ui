@@ -18,10 +18,6 @@ export interface ISelect2InputProps<T> {
    */
   handleSearch: (event: React.ChangeEvent<HTMLInputElement>) => void
   /**
-   * shows conditionally a list of tags
-   */
-  haveTags?: boolean
-  /**
    * preffix icon
    */
   icon?: string
@@ -45,4 +41,8 @@ export interface ISelect2InputProps<T> {
    * array of all selected values
    */
   valueSelected: (ISelectField & T)[]
+  /**
+   * this property allows you to select several values
+   */
+  isMultiple?: boolean
 }
