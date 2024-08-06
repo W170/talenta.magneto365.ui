@@ -1,15 +1,17 @@
 import React, { useState, useCallback } from 'react'
 import { IAnalystTemplateProps } from './AnalystTemplate.interface'
 import CNM from '@utils/classNameManager/classNameManager.util'
-import { useAnalystModal } from './AnalystTemplate.hook'
+import { AnalystProvider } from './AnalystTemplate.context'
 import styles from './AnalystTemplate.module.scss'
 import { useMediaQuery } from '@components/hooks'
+import { useAnalystModal } from './hooks'
 import {
   HeaderAnalyst,
   NavMenuDrawerAnalyst,
   NavMenuAnalyst,
   INavMenuAnalystOption,
-  ModalAnalyst
+  ModalAnalyst,
+  NavMenuAnalystRegionModal
 } from '@components/UI/organism'
 
 const Component: React.FC<IAnalystTemplateProps> = ({
@@ -25,7 +27,7 @@ const Component: React.FC<IAnalystTemplateProps> = ({
   const [isMenuScrollAnimated, setIsMenuScrollAnimated] = useState<boolean>(false)
   const [isOpenedFromHeader, setIsOpenedFromHeader] = useState<boolean>(false)
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false)
-  const { modalOpen, handleModal } = useAnalystModal(modals)
+  const { modal, handleModal } = useAnalystModal(modals)
 
   const toggleMenu = useCallback(
     (open?: boolean, drawerTriggered?: boolean) => {
@@ -63,36 +65,48 @@ const Component: React.FC<IAnalystTemplateProps> = ({
   })
 
   return (
-    <div className={CNM.get({ styles, cls: ['analyst-template', className] })}>
-      <ModalAnalyst
-        isOpen={modalOpen.some((modal) => modal.visible === true)}
-        name={modalOpen.find((modal) => modal.visible)?.name || ''}
-        data={modalOpen.find((modal) => modal.visible)?.data}
-        screens={modals?.find((modal) => modal.name === modalOpen.find((modal) => modal.visible)?.name)?.screens ?? []}
-        handleClose={handleModal}
-      />
-      <HeaderAnalyst
-        onMainMenuClick={() => toggleMenu(true, true)}
-        {...headerProps}
-        handleModal={handleModal}
-        className={CNM.get({ styles, cls: [`analyst-template__header`, headerProps.className] })}
-      />
-      <div className={CNM.get({ styles, cls: ['analyst-template__container', containerClassName] })}>
-        <NavMenuDrawerAnalyst
-          onDropdownClick={(option) => handleDropdownClick(option, true, true)}
-          activeDropdown={activeDropdown}
-          isDrawerOpen={isDrawerOpen}
-          onClose={() => toggleMenu(false)}
-          isScrollAnimated={isMenuScrollAnimated}
-          isOpenedFromHeader={isOpenedFromHeader}
-          setIsDrawerOpen={(open) => setIsDrawerOpen(open)}
-          logoProps={{ ...headerProps.logoProps }}
-          {...navigationMenuProps}
+    <AnalystProvider modals={modals} onRegionChange={navigationMenuProps.onRegionChange}>
+      <div className={CNM.get({ styles, cls: ['analyst-template', className] })}>
+        <ModalAnalyst
+          isOpen={modal.some((modalLocal) => modalLocal.visible === true)}
+          name={modal.find((modalLocal) => modalLocal.visible)?.name || ''}
+          data={modal.find((modalLocal) => modalLocal.visible)?.data}
+          screens={
+            modals?.find((modalLocal) => modalLocal.name === modal.find((modalLocal) => modalLocal.visible)?.name)
+              ?.screens ?? []
+          }
+          handleClose={handleModal}
         />
-        {sideMenu}
-        <main className={CNM.get({ styles, cls: ['analyst-template__children', childrenClassName] })}>{children}</main>
+        <NavMenuAnalystRegionModal
+          defaultRegion={navigationMenuProps.defaultRegion}
+          regionModal={navigationMenuProps.regionModal}
+          regions={navigationMenuProps.regions}
+        />
+        <HeaderAnalyst
+          onMainMenuClick={() => toggleMenu(true, true)}
+          {...headerProps}
+          handleModal={handleModal}
+          className={CNM.get({ styles, cls: [`analyst-template__header`, headerProps.className] })}
+        />
+        <div className={CNM.get({ styles, cls: ['analyst-template__container', containerClassName] })}>
+          <NavMenuDrawerAnalyst
+            onDropdownClick={(option) => handleDropdownClick(option, true, true)}
+            activeDropdown={activeDropdown}
+            isDrawerOpen={isDrawerOpen}
+            onClose={() => toggleMenu(false)}
+            isScrollAnimated={isMenuScrollAnimated}
+            isOpenedFromHeader={isOpenedFromHeader}
+            setIsDrawerOpen={(open) => setIsDrawerOpen(open)}
+            logoProps={{ ...headerProps.logoProps }}
+            {...navigationMenuProps}
+          />
+          {sideMenu}
+          <main className={CNM.get({ styles, cls: ['analyst-template__children', childrenClassName] })}>
+            {children}
+          </main>
+        </div>
       </div>
-    </div>
+    </AnalystProvider>
   )
 }
 

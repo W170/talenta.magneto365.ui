@@ -1,4 +1,4 @@
-import { IHeaderAnalystProps, IModalAnalyst } from '@components/UI/organism'
+import { IHeaderAnalystProps, IModalAnalyst, INavMenuAnalystRegion } from '@components/UI/organism'
 import { INavMenuDrawerAnalystProps } from '@components/UI/organism/NavMenuDrawerAnalyst'
 
 export interface IAnalystTemplateProps {
@@ -30,4 +30,16 @@ export interface IAnalystTemplateProps {
    * Array of modals
    */
   modals: IModalAnalyst[]
+}
+
+export interface IAnalystProviderProps {
+  children: React.ReactNode
+  modals?: IModalAnalyst[]
+  onRegionChange?: (region: INavMenuAnalystRegion) => void
+}
+
+export interface IModalProps {
+  name: string
+  visible: boolean
+  data?: unknown
 }

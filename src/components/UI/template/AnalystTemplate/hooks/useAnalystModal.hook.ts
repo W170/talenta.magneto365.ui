@@ -1,10 +1,11 @@
 import { useState, useCallback } from 'react'
 import { IModalAnalyst } from '@components/UI/organism'
+import { IModalProps } from '../AnalystTemplate.interface'
 
-export const useAnalystModal = (modals: IModalAnalyst[]) => {
-  const [modal, setModal] = useState<{ name: string; visible: boolean; data?: unknown }[]>(
-    Array.from({ length: modals?.length }, (_, i) => ({
-      name: modals[i].name,
+export const useAnalystModal = (modals?: IModalAnalyst[]) => {
+  const [modal, setModal] = useState<IModalProps[]>(
+    Array.from({ length: modals?.length || 0 }, (_, i) => ({
+      name: modals ? modals[i].name : '',
       visible: false,
       data: undefined
     }))
@@ -17,5 +18,5 @@ export const useAnalystModal = (modals: IModalAnalyst[]) => {
     [modal]
   )
 
-  return { modalOpen: modal, handleModal }
+  return { modal, handleModal }
 }
