@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MainButton } from '../../atoms'
 import { ISearchbar } from './Searchbar.interface'
 import styles from './Searchbar.modules.scss'
@@ -10,18 +10,22 @@ const Component: React.FC<ISearchbar> = ({
   removeButtonProps,
   termValue
 }) => {
-  const [searchValue, setSearchValue] = useState(termValue ? termValue : '')
+  const [searchValue, setSearchValue] = useState('')
+
+  useEffect(() => {
+    if (termValue) {
+      setSearchValue(termValue)
+    }
+  }, [termValue])
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
     onSearch(searchValue)
-    localStorage.setItem('searchValue', searchValue)
   }
 
   const handleClearSearch = () => {
     setSearchValue('')
     onSearch('')
-    localStorage.removeItem('searchValue')
   }
 
   return (
