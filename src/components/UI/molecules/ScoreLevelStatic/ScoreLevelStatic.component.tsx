@@ -10,7 +10,7 @@ const Component: React.FC<IScoreLevelStatic> = ({ name, scoreValue, levels, colo
 
   const setDinamycColor = useCallback(
     (value: number) => {
-      const bkgColor = color || '#090467'
+      const bkgColor = color || 'rgb(26, 50, 76)'
       const props = {
         backgroundColor: bkgColor
       }

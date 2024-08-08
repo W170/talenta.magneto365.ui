@@ -6,6 +6,7 @@ const meta: Meta<typeof ScoreLevelStatic> = {
   title: 'Molecules/Score Level Static',
   component: ScoreLevelStatic,
   args: {
+    color: 'red',
     ...scoreProps
   }
 }
