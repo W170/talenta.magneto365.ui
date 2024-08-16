@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useMemo } from 'react'
+import React, { FC, Fragment, useEffect, useMemo } from 'react'
 import { ArrowLeft2 } from '@constants/icons.constants'
 import { defaultFilters } from '@constants/stories'
 import { FilterHeader } from '@components/UI/organism/FilterHeader'
@@ -44,17 +44,6 @@ const SideFilter: FC<ISideFilter> = ({
     }
   }, [title, buttonText, filterSummary, totalAppliedFilters, clearFilters])
 
-  const displayBtnClose = useMemo(() => {
-    return (
-      <MainButton
-        iconProps={{ icon: ArrowLeft2, size: 20 }}
-        className={`${styles['magneto-ui-side-filter_btn__close']} ${isFiltersOpen ? styles.btn_close : ''}`}
-        title={titleBtnClose}
-        onClick={() => setIsFiltersOpen((isOpen) => !isOpen)}
-      />
-    )
-  }, [isFiltersOpen, titleBtnClose, setIsFiltersOpen])
-
   const displayFilters = useMemo(() => {
     const renderFilters = filters.length ? filters : defaultFilters
     return renderFilters?.map((item, i) => {
@@ -79,15 +68,30 @@ const SideFilter: FC<ISideFilter> = ({
     return <span className={styles['magneto-iu-side-filter_background']} onClick={() => setIsFiltersOpen(false)} />
   }, [isFiltersOpen, setIsFiltersOpen])
 
+  useEffect(() => {
+    const { body } = document
+    if (!body) return
+    body.style.overflowY = isFiltersOpen ? 'hidden' : 'auto'
+  }, [isFiltersOpen])
+
   return (
     <Fragment>
-      {displayBtnClose}
       <aside className={`${styles['magneto-iu-side-filter']} ${isFiltersOpen ? styles.open : ''}`}>
         <div className={styles['magneto-iu-side-filter_content']}>
           <FilterHeader {...headerProps} />
           {displayFilters}
         </div>
       </aside>
+      {isFiltersOpen && (
+        <div style={{ position: 'absolute', height: '100vh', right: '5px', zIndex: '9999' }}>
+          <MainButton
+            iconProps={{ icon: ArrowLeft2, size: 20 }}
+            className={`${styles['magneto-ui-side-filter_btn__close']} ${isFiltersOpen ? styles.btn_close : ''}`}
+            title={titleBtnClose}
+            onClick={() => setIsFiltersOpen((isOpen) => !isOpen)}
+          />
+        </div>
+      )}
       {displayBtnMain}
       {displayBackground}
     </Fragment>
