@@ -1,6 +1,14 @@
 export interface IBardLoader {
   /**
-   * this property sets the color of the bard loader
+   * Class name of bar loader wrapper
+   */
+  className?: string
+  /**
+   * Color of loading bar
    */
   color?: string
+  /**
+   * Percentage of completed
+   */
+  percent?: number
 }
