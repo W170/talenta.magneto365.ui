@@ -23,4 +23,8 @@ export interface IInputPlus {
    * set custom classname
    */
   className?: string
+  /**
+   * this fn get the input value
+   */
+  getValue?: (value: string) => void
 }

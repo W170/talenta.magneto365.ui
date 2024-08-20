@@ -11,7 +11,8 @@ export const InputPlus: React.FC<IInputPlus> = ({
   maxWords = 4,
   disabled,
   isLoading,
-  className = ''
+  className = '',
+  getValue
 }) => {
   const [inputValue, setInputValue] = useState<string>('')
   const [disabledBtn, setDisabledBtn] = useState<boolean>(false)
@@ -23,6 +24,12 @@ export const InputPlus: React.FC<IInputPlus> = ({
     }
     setDisabledBtn(false)
   }, [disabled])
+
+  useEffect(() => {
+    if (getValue && inputValue) {
+      getValue(inputValue)
+    }
+  }, [getValue, inputValue])
 
   const handleValue = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,8 +47,10 @@ export const InputPlus: React.FC<IInputPlus> = ({
   )
 
   const handleSubmmit = useCallback(() => {
-    onChange(inputValue)
-    setInputValue('')
+    if (inputValue) {
+      onChange(inputValue)
+      setInputValue('')
+    }
   }, [inputValue, onChange])
 
   const handleKeyDown = useCallback(
