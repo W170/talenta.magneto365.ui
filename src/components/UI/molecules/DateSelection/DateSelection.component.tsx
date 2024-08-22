@@ -41,7 +41,7 @@ const Component: React.FC<IDateSelection> = ({
   }, [disabled])
 
   return (
-    <MobileDrawer isOpen={isOpen} onClose={onClose}>
+    <MobileDrawer isOpen={isOpen} onClose={onClose} className={styles['magneto-ui--date-selection']}>
       <div className={styles['magneto-ui--date-selection__header']}>
         <h2>{selectionHeader}</h2>
       </div>

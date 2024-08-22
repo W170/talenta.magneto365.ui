@@ -7,8 +7,8 @@
     display: grid;
     grid-template-rows: 100%;
     grid-template-columns: 1fr;
-    width: 163px;
-    padding: 16px 20px;
+    width: 100%;
+    padding: 12px;
     border-radius: 10px;
     border: 1px solid #e3e7e9;
 
@@ -16,7 +16,7 @@
       grid-area: 1 / 1 / 1 / 1;
       align-self: center;
       color: #667688;
-      font-size: 14px;
+      font-size: 12px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
@@ -35,8 +35,8 @@
       grid-template-rows: 50% 50%;
       grid-template-columns: 1fr;
 
-      width: 163px;
-      padding: 16px 20px;
+      width: 100%;
+      padding: 4px 12px;
       border-radius: 10px;
       border: 1px solid #e3e7e9;
 
@@ -65,8 +65,8 @@
       display: grid;
       grid-template-rows: 100%;
       grid-template-columns: 1fr;
-      width: 163px;
-      padding: 16px 20px;
+      width: 100%;
+      padding: 12px;
       border-radius: 10px;
       border: 1px solid #e3e7e9;
       background: #e3e7e9;
@@ -87,6 +87,7 @@
     grid-area: 2 / 1 / 3 / 2;
     align-self: center;
     margin: 0;
+    font-size: 13px;
   }
 
   &__icon {
