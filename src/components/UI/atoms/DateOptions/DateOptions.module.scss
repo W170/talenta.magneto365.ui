@@ -1,41 +1,61 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
 .magneto-ui--date-options {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 12rem;
+  height: 10.3rem;
   overflow-y: auto;
 
   &--wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 5px;
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    &::-webkit-scrollbar {
+      width: 5px;
+      border-radius: 15px;
+
+      &-track {
+        background-color: rgba(241, 241, 241, 0.353);
+        border-radius: 15px;
+      }
+
+      &-thumb {
+        border-radius: 15px;
+        background-color: v.$disabled-color-gray2;
+        &:hover {
+          background-color: v.$disabled-color-gray3;
+        }
+      }
+    }
   }
 
   &__btn {
-  display: flex;
-  width: 100px;
-  padding: 10px;
-  margin: 0;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 5px;
-  background: #ffffff;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    background: #ffffff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 
     &-selected {
       background: #001b38;
-      color: #FFF;
+      color: #fff;
       font-size: 14px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
     }
   }
-
 }
