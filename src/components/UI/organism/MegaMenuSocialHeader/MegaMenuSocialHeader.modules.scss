@@ -1,0 +1,92 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.mega-menu-header {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 5px 20px 0px 20px;
+  background-color: v.$color-gray-background;
+  color: #47535f;
+  font-size: 13px;
+
+  &__options {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__help {
+    > :first-child {
+      overflow: visible !important;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -5px;
+        left: 150px;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: 5px;
+        background: v.$color-white;
+        z-index: -1;
+        transform: rotate(-45deg);
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.106);
+      }
+
+      &--hidden {
+        > :first-child {
+          z-index: -1;
+        }
+      }
+    }
+
+    &--button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5px;
+      color: #47535f;
+      font-size: 13px;
+      border: none;
+      font-family: Times;
+      cursor: pointer;
+
+      > p {
+        padding: 0px;
+        margin: 0px;
+        color: #47535f;
+        font-size: 13px;
+      }
+    }
+
+    &--options {
+      list-style-type: none;
+      margin: 0px;
+      padding: 8px;
+      width: max-content;
+      z-index: 1;
+    }
+
+    &--option {
+      > a {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        padding: 8px 10px;
+        color: #47535f;
+        font-size: 13px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__blog {
+    color: #47535f;
+    > p {
+      margin: 0;
+    }
+  }
+}
