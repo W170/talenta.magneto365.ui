@@ -28,7 +28,8 @@ const JobsPage: React.FC<IJobsPage> = ({
   emptyResultsProps,
   jobDetailAction,
   customParagraph,
-  dynamicPaginationUrl
+  dynamicPaginationUrl,
+  displayAlwaysFilter
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [loadVideo, setLoadVideo] = useState(false)
@@ -49,11 +50,14 @@ const JobsPage: React.FC<IJobsPage> = ({
     [setJobSelected]
   )
 
-  const handleJobCardClick = (id: number | null) => {
-    setSelectedJobId(id)
-    handleVacant(id)
-    setLoadVideo(false)
-  }
+  const handleJobCardClick = useCallback(
+    (id: number | null) => {
+      setSelectedJobId(id)
+      handleVacant(id)
+      setLoadVideo(false)
+    },
+    [handleVacant]
+  )
 
   useEffect(() => {
     setShowDetail(showDetailByWindow('magneto-ui-jobs-page'))
@@ -104,11 +108,25 @@ const JobsPage: React.FC<IJobsPage> = ({
       return <JobCardSkeleton numCard={20} />
     }
 
-    return <EmptyResults {...emptyResultsProps} />
-  }, [isLoading, emptyResultsProps])
+    if (emptyVacant) {
+      return <EmptyResults {...emptyResultsProps} />
+    }
+
+    return vacantProps.map(({ id, ...props }) => (
+      <JobCard
+        isLoading={isLoading}
+        isActive={id === jobSelected?.id}
+        id={id}
+        showDetail={() => handleJobCardClick(id)}
+        dynamicUrl={fullJobsUrl}
+        key={`${id}-JobsPage`}
+        {...props}
+      />
+    ))
+  }, [isLoading, emptyVacant, emptyResultsProps, vacantProps, jobSelected, fullJobsUrl, handleJobCardClick])
 
   const sideFilterAltRender = useMemo(() => {
-    if (emptyVacant) return
+    if (!displayAlwaysFilter && emptyVacant) return
 
     return (
       <div className={style[`${classMUI}-jobs-page--filter-row`]}>
@@ -117,7 +135,7 @@ const JobsPage: React.FC<IJobsPage> = ({
         </FilterContainerMenu>
       </div>
     )
-  }, [emptyVacant, isFiltersOpen, sideFilterProps])
+  }, [displayAlwaysFilter, sideFilterProps, isFiltersOpen, emptyVacant])
 
   return (
     <Fragment>
@@ -131,21 +149,7 @@ const JobsPage: React.FC<IJobsPage> = ({
             emptyVacant={emptyVacant}
           />
           {mainTitleByMediaQuery}
-          <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>
-            {vacantProps.length <= 0 || isLoading
-              ? cardsAltRender
-              : vacantProps.map(({ id, ...props }) => (
-                  <JobCard
-                    isLoading={isLoading}
-                    isActive={id === jobSelected?.id}
-                    id={id}
-                    showDetail={() => handleJobCardClick(id)}
-                    dynamicUrl={fullJobsUrl}
-                    key={`${id}-JobsPage`}
-                    {...props}
-                  />
-                ))}
-          </div>
+          <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>{cardsAltRender}</div>
           {customParagraph && <Paragraph paragraph={customParagraph} />}
           <Pagination dynamicUrl={fullUrl} {...paginationProps} />
           <FrequentSearch {...frequentSearchProps} />

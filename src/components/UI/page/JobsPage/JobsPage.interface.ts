@@ -60,7 +60,7 @@ export interface IJobsPage {
    */
   jobDetailAction?: JSX.Element | undefined
   /**
-   * This prperty show values in the empty vacants card
+   * This property show values in the empty vacants card
    */
   emptyResultsProps: IEmptyResults
   /**
@@ -71,6 +71,10 @@ export interface IJobsPage {
    * This object contains dynamics urls that google robots will use to navigate with simple anchors in vacancies titles and pagination
    */
   dynamicPaginationUrl: IDynamicUrl
+  /**
+   * This property show or hide the filter always in the desktop of jobsite
+   */
+  displayAlwaysFilter?: boolean
 }
 
 export interface IVacancies extends IJobCard {

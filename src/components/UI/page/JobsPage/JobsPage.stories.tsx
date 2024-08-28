@@ -235,7 +235,8 @@ const meta: Meta<typeof JobsPage> = {
     jobSelected: vacancies[0],
     isLoading: false,
     device: 'desktop',
-    emptyResultsProps
+    emptyResultsProps,
+    displayAlwaysFilter: true
   },
   decorators: [
     (Story) => (
