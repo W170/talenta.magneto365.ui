@@ -61,7 +61,9 @@ const Component: React.FC<IMegaMenuSocialHeader> = ({ tabs, blog, helpOptions })
           content={makeHelpOption}
           show={showHelpOptions}
           widthBase={50}
-          className={styles['mega-menu-header__help']}
+          className={`${styles['mega-menu-header__help']} ${
+            showHelpOptions ? '' : styles['mega-menu-header__help--hidden']
+          }`}
         >
           <button
             onClick={handleClickHelpOption(!showHelpOptions)}

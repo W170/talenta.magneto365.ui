@@ -1,7 +1,6 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 
 .mega-menu-header {
-  box-sizing: border-box;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -35,11 +34,11 @@
         transform: rotate(-45deg);
         box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.106);
       }
-
-      &--hidden {
-        > :first-child {
-          z-index: -1;
-        }
+    }
+    &--hidden {
+      > :first-child {
+        z-index: -1;
+        overflow: hidden !important;
       }
     }
 
@@ -68,6 +67,7 @@
       padding: 8px;
       width: max-content;
       z-index: 1;
+      background-color: white;
     }
 
     &--option {
