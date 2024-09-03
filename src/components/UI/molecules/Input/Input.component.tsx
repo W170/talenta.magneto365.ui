@@ -18,6 +18,8 @@ const Input: React.FC<IInput> = ({
   autoFocus = false,
   hasCounter = false,
   maxCounterValue = 0,
+  actionIcon,
+  actionInputIcon = () => null,
   ...props
 }) => {
   const [onFocus, setOnFocus] = useState(false)
@@ -94,6 +96,15 @@ const Input: React.FC<IInput> = ({
                 src={customIcon ? customIcon : dinamyIcon[type] || DocumentTextGray}
               />
             )}
+            {actionIcon ? (
+              <button
+                type="button"
+                onClick={actionInputIcon}
+                className={styles[`${classMUI}-input--container__icon-action`]}
+              >
+                <img src={actionIcon} />
+              </button>
+            ) : null}
           </div>
         </div>
       </div>

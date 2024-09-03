@@ -36,6 +36,19 @@
       left: 10px;
       z-index: 1;
     }
+    &__icon-action {
+      position: absolute;
+      top: 54%;
+      transform: translateY(-50%);
+      z-index: 1;
+      right: 10px;
+      border: none;
+      background: none;
+      > img {
+        width: 18px;
+        height: 18px;
+      }
+    }
     &__error {
       color: red;
       font-size: 14px;

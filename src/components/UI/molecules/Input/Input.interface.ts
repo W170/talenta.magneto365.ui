@@ -28,6 +28,14 @@ export interface IInput extends React.InputHTMLAttributes<HTMLInputElement> {
    */
   customIcon?: string
   /**
+   * this property add a action icon in the input element
+   */
+  actionIcon?: string
+  /**
+   * this property add a custom function in the actionIcon
+   */
+  actionInputIcon?: () => void
+  /**
    * this property in true hide the input icon
    */
   hideIcon?: boolean

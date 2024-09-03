@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Input } from './'
 import { ChangeEvent } from 'react'
+import { EyeSlash } from '@constants/icons.constants'
 
 const meta: Meta<typeof Input> = {
   title: 'Molecules/Input',
@@ -17,7 +18,9 @@ const meta: Meta<typeof Input> = {
     error: 'Campo requerido',
     disabled: false,
     hasCounter: true,
-    maxCounterValue: 2600
+    maxCounterValue: 2600,
+    actionIcon: EyeSlash,
+    actionInputIcon: () => console.log('CLICK ON ICON')
   }
 }
 
