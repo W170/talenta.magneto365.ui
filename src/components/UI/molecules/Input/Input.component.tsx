@@ -1,8 +1,8 @@
 import React, { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react'
-import { IInput } from './Input.interface'
+import { IInput, TIconType } from './Input.interface'
 import { classMUI } from '@constants/stories'
 import styles from './Input.module.scss'
-import { DocumentTextGray, Email, Mobile } from '@constants/icons.constants'
+import { DocumentTextGray, Email, EyeSlash, Mobile } from '@constants/icons.constants'
 import { ComparativeCounter } from '@components/UI/atoms'
 
 const Input: React.FC<IInput> = ({
@@ -38,11 +38,12 @@ const Input: React.FC<IInput> = ({
     }
   }, [autoFocus, name])
 
-  const dinamyIcon = useMemo(() => {
+  const dinamyIcon: Record<TIconType, string> = useMemo(() => {
     return {
       ['text']: DocumentTextGray,
       ['email']: Email,
-      ['number']: Mobile
+      ['number']: Mobile,
+      ['password']: EyeSlash
     }
   }, [])
 

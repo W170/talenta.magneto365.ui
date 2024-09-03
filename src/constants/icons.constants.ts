@@ -39,6 +39,7 @@ export { default as DollarCircleWhiteOutline } from '../assets/dollarCircleWhite
 export { default as Ellipsis } from '../assets/Ellipsis-h.svg'
 export { default as Email } from '../assets/Email.svg'
 export { default as Error } from '../assets/error.svg'
+export { default as EyeSlash } from '../assets/eye-slash.svg'
 export { default as Export3 } from '../assets/Export3.svg'
 export { default as Facebook } from '../assets/Facebook.svg'
 export { default as FacebookBlue } from '../assets/Facebook2.svg'

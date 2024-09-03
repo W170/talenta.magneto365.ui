@@ -1,6 +1,6 @@
 import { ChangeEvent } from 'react'
 
-type Type = 'text' | 'number' | 'email'
+export type TIconType = 'text' | 'number' | 'email' | 'password'
 
 export interface IInput extends React.InputHTMLAttributes<HTMLInputElement> {
   /**
@@ -18,7 +18,7 @@ export interface IInput extends React.InputHTMLAttributes<HTMLInputElement> {
   /**
    * this property have input type
    */
-  type: Type
+  type: TIconType
   /**
    * this property add placeholder text in the input
    */
