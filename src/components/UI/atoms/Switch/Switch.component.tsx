@@ -2,7 +2,13 @@ import React, { FC, useCallback, useEffect, useState } from 'react'
 import styles from './Switch.module.scss'
 import { ISwitch } from './Switch.interface'
 
-export const Switch: FC<ISwitch> = ({ isActive = false, setIsActive = () => null, title = '', className = '' }) => {
+export const Switch: FC<ISwitch> = ({
+  isActive = false,
+  setIsActive = () => null,
+  title = '',
+  className = '',
+  isDisabled = false
+}) => {
   const [checked, setChecked] = useState(isActive)
 
   useEffect(() => {
@@ -10,9 +16,10 @@ export const Switch: FC<ISwitch> = ({ isActive = false, setIsActive = () => null
   }, [isActive])
 
   const handleChange = useCallback(() => {
+    if (isDisabled) return
     setChecked((state) => !state)
     setIsActive(!isActive)
-  }, [setIsActive, isActive])
+  }, [isDisabled, setIsActive, isActive])
 
   return (
     <div className={`${styles['magneto-ui-switch_container']} ${className}`}>

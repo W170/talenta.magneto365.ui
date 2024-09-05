@@ -7,7 +7,6 @@ export interface ISwitch {
    * This is the value of the switch
    */
   isActive: boolean
-
   /**
    * This function change if the item is isActive
    */
@@ -16,4 +15,8 @@ export interface ISwitch {
    * This is the optional className for custom styles
    */
   className?: string
+  /**
+   * this property disables the click event
+   */
+  isDisabled?: boolean
 }
