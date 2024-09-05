@@ -108,10 +108,20 @@ const Input: React.FC<IInput> = ({
           </div>
         </div>
       </div>
-      <div className={styles[`${classMUI}-input__footer`]}>
-        <span style={{ width: hasCounter ? '80%' : '100%' }} className={styles[`${classMUI}-input--container__error`]}>
-          {error}
-        </span>
+
+      <div
+        className={`${styles[`${classMUI}-input__footer`]} ${
+          !error && hasCounter ? styles['footer-without-error'] : ''
+        }`}
+      >
+        {error && (
+          <span
+            style={{ width: hasCounter ? '80%' : '100%' }}
+            className={styles[`${classMUI}-input--container__error`]}
+          >
+            {error}
+          </span>
+        )}
         {hasCounter && <ComparativeCounter current={inputValue.length} max={maxCounterValue} />}
       </div>
     </div>
