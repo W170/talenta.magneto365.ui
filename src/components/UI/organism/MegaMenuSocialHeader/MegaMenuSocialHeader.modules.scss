@@ -1,8 +1,7 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 
-.mega-menu-header {
+.mega-menu-social-header {
   display: flex;
-  width: 100%;
   justify-content: space-between;
   padding: 5px 20px 0px 20px;
   background-color: v.$color-gray-background;
@@ -15,9 +14,11 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    margin-bottom: 4px;
   }
 
   &__help {
+    height: auto;
     > :first-child {
       overflow: visible !important;
       &::after {
@@ -50,7 +51,6 @@
       color: #47535f;
       font-size: 13px;
       border: none;
-      font-family: Times;
       cursor: pointer;
 
       > p {
