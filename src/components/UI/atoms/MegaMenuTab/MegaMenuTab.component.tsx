@@ -3,19 +3,23 @@ import styles from './MegaMenuTab.module.scss'
 import { IMegaMenuTab } from './MegaMenuTab.interface'
 import { classMUI } from '@constants/stories'
 import { ArrowDown2 } from '@constants/icons.constants'
-import { IconItem } from '@components/UI/atoms'
+import { SearchItem } from '../SearchItem'
 
-const MegaMenuTab: React.FC<IMegaMenuTab> = ({ label, selected }) => {
+const MegaMenuTab: React.FC<IMegaMenuTab> = ({ label, selected, url }) => {
   return (
     <div
       className={`${styles[`${classMUI}-mega-menu-tab`]} ${
-        selected ? styles[`${classMUI}-mega-menu-tab--selected`] : ''
+        selected ? styles[`${classMUI}-mega-menu-tab__selected`] : ''
       }`}
     >
-      <div className={`${styles[`${classMUI}-mega-menu-tab__label`]}`}>{label}</div>
-      {!selected && (
-        <IconItem className={styles[`${classMUI}-mega-menu-tab__icon`]} icon={ArrowDown2} alt="arrow-icon" size={13} />
-      )}
+      <SearchItem
+        tag={label}
+        url={url}
+        icon={`${selected ? '' : ArrowDown2}`}
+        className={`${styles[`${classMUI}-mega-menu-tab__label`]} ${
+          selected ? styles[`${classMUI}-mega-menu-tab__label-selected`] : ''
+        }`}
+      />
     </div>
   )
 }
