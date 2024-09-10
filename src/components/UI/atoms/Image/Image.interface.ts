@@ -11,4 +11,6 @@ export interface IImage {
    * This property is the play icon in the picture
    */
   playIcon?: JSX.Element
+
+  className?: string
 }
