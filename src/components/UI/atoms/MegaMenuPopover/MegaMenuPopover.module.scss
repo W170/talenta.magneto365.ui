@@ -1,0 +1,46 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-mega-menu-popover {
+  &__action {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    height: 100%;
+    align-items: center;
+    color: #0a0c0e;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+
+    &--text {
+      margin: 0px;
+      padding: 0px;
+    }
+    &--icon {
+      color: #0a0c0e;
+      &-reverse {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__shadow {
+    position: fixed;
+    z-index: -1;
+    top: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.75);
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &__content {
+    top: 60px;
+    left: 0;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+  }
+}
