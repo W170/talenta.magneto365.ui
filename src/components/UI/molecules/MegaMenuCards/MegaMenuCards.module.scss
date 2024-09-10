@@ -1,0 +1,51 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.mega-menu-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  align-items: center;
+
+  &__title {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+    h4 {
+      font-size: 15px;
+      margin: 0px;
+    }
+  }
+
+  &__action {
+    background-color: #1a324c;
+    border-radius: 30px;
+    height: 22px;
+    align-items: center;
+    padding: 8px 10px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    text-decoration: none;
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      color: white;
+    }
+
+    &--grey {
+      background-color: #f0f1f3;
+      border-radius: 6px;
+      height: fit-content;
+      p {
+        font-size: 12px;
+        font-weight: 700;
+        color: #0a0c0e;
+      }
+    }
+  }
+}
