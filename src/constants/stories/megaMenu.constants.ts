@@ -3,16 +3,7 @@ import { IMegaMenuTab } from '@components/UI/atoms/MegaMenuTab/MegaMenuTab.inter
 import { IMegaMenuCards } from '@components/UI/molecules/MegaMenuCards/MegaMenuCards.interface'
 import { IMegaMenuJobs, IMegaMenuSocialHeader } from '@components/UI/template/MegaMenu/MegaMenuContext.interface'
 import { ArrowDown2, ArrowLeft2, HeadsetBlackOutline, QuestionCircle } from '@constants/icons.constants'
-import {
-  BriefcaseBlue,
-  BriefcaseGrey,
-  BuildingBlue,
-  BuildingGrey,
-  CourthouseBlue,
-  CourthouseGrey,
-  LocationBlue,
-  LocationGrey
-} from '@constants/megaMenu.constants'
+import { BriefcaseBlue, BuildingBlue, CourthouseBlue, LocationBlue } from '@constants/megaMenu.constants'
 
 export const megaMenuSocialTabs: IMegaMenuTab[] = [
   { label: 'Personas', selected: true, url: 'https://www.magneto365.com/es/' },
