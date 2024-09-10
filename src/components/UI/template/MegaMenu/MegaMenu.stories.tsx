@@ -1,61 +1,36 @@
+import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-// import { IDrawerOrganism, ILogoutHeader } from '../../organism'
 import { MegaMenu } from './MegaMenu.component'
-import { listMenuProps, megaMenuSocialHeader } from '@constants/stories'
-// import {IMegaMenu} from './MegaMenu.interface'
-import { IDrawerOrganism } from '../../organism'
+import { megaMenuSocialHeader, megaMenuJobs, megaMenuCards, megaMenuJobsIcon } from '@constants/stories'
+import MegaMenuCards from '@components/UI/molecules/MegaMenuCards/MegaMenuCards.component'
+import { IMegaMenuJobsTabs } from './MegaMenuContext.interface'
+import { withMegaMenuContainer } from '../../../hoc'
 
-const SignUp = () => {
-  //
-}
-
-const LogIn = () => {
-  //
-}
-
-const headerDrawerMenuProps: IDrawerOrganism = {
-  headerDrawerProps: {
-    homeUrl: '/home',
-    leftTabLink: {
-      type: 'link' as const,
-      href: '#',
-      text: 'Busco Empleo',
-      linkStyles: {
-        textColor: '#000',
-        buttonColor: '#FFF',
-        hoverColor: '#000',
-        visitedColor: '#282828'
-      }
-    },
-    rightTabLink: {
-      type: 'link' as const,
-      href: '#',
-      text: 'Soy reclutador',
-      linkStyles: {
-        textColor: '#A3A3B5',
-        buttonColor: 'transparent',
-        hoverColor: '#A3A3B5'
-      }
+const jobsTabs = megaMenuJobs.tabs.map((job: IMegaMenuJobsTabs, key) => {
+  const Content = withMegaMenuContainer(MegaMenuCards)
+  if (key == 0)
+    return {
+      ...job,
+      content: (
+        <Content
+          wrapperProps={megaMenuCards}
+          sideProps={{ jobs: megaMenuJobsIcon, selected: 0, action: { label: 'Ver todos', url: 'www.google.com' } }}
+        />
+      )
     }
-  },
-  listMenuProps: listMenuProps,
-  createAccountButton: {
-    buttonText: 'Crear Cuenta',
-    onClick: SignUp
-  },
-  loginButton: {
-    buttonText: 'Iniciar Sesión',
-    onClick: LogIn
+  return {
+    ...job,
+    content: <MegaMenuCards {...megaMenuCards} />
   }
-}
+})
 
 const meta: Meta<typeof MegaMenu> = {
   title: 'Template/MegaMenu',
   component: MegaMenu,
   tags: ['autodocs'],
   args: {
-    headerProps: megaMenuSocialHeader,
-    headerDrawerMenuProps: headerDrawerMenuProps
+    socialHeaderProps: megaMenuSocialHeader,
+    jobsProps: { ...megaMenuJobs, tabs: jobsTabs }
   }
 }
 

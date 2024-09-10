@@ -1,2 +1,2 @@
-export * from './LogoutTemplate.interface'
-export { LogoutTemplate } from './LogoutTemplate.component'
+export * from './MegaMenu.interface'
+export { MegaMenu } from './MegaMenu.component'

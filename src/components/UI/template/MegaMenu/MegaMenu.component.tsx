@@ -1,17 +1,26 @@
+import React from 'react'
 import { MegaMenuSocialHeader } from '@components/UI/organism/MegaMenuSocialHeader'
-import React, { useState } from 'react'
-import { DrawerMenu } from '../../organism/DrawerMenu'
-import { IMegaMenu } from './MegaMenu.interface'
+import { MegaMenuProvider } from './MegaMenu.context'
+import { IMegaMenuContext } from './MegaMenuContext.interface'
+import { MegaMenuMainHeader } from '@components/UI/organism/MegaMenuMainHeader/MegaMenuMainHeader.component'
+import { MegaMenuSideCards } from '@components/UI/molecules/MegaMenuSideCards'
+import { MegaMenuCard } from '@components/UI/atoms'
+import { MegaMenuCards } from '@components/UI/molecules'
+import styles from './MegaMenu.module.scss'
 
-const Component: React.FC<IMegaMenu> = ({ headerProps, headerDrawerMenuProps }) => {
-  const [toggleModal, setToggleModal] = useState(false)
-
+const Component: React.FC<IMegaMenuContext> = ({ ...props }) => {
   return (
-    <React.Fragment>
-      <MegaMenuSocialHeader {...headerProps} />
-      <DrawerMenu {...headerDrawerMenuProps} isOpen={toggleModal} onClose={() => setToggleModal(false)} />
-    </React.Fragment>
+    <MegaMenuProvider {...props}>
+      <header className={styles['mega-menu']}>
+        <MegaMenuSocialHeader />
+        <MegaMenuMainHeader />
+      </header>
+    </MegaMenuProvider>
   )
 }
 
-export const MegaMenu = Component
+export const MegaMenu = Object.assign(Component, {
+  Cards: MegaMenuCards,
+  Card: MegaMenuCard,
+  SideCards: MegaMenuSideCards
+})
