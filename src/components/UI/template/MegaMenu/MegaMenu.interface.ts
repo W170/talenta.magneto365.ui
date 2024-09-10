@@ -1,6 +1,5 @@
-import { IMegaMenuJobs, IMegaMenuSocialHeader } from './MegaMenuContext.interface'
+import { IBreadcrumbs } from '@components/UI/molecules'
 
 export interface IMegaMenu {
-  socialHeaderProps: IMegaMenuSocialHeader
-  jobsProps: IMegaMenuJobs
+  breadcrumbsProps?: IBreadcrumbs
 }

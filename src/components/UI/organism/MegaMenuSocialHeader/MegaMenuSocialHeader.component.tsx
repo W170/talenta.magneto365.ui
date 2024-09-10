@@ -42,7 +42,7 @@ const Component: React.FC = () => {
           helpOptions.map((option, key) => (
             <li key={key} className={styles['mega-menu-social-header__help--option']}>
               <a href={option.url}>
-                {option.icon && <IconItem alt="arrow icon" hover={false} icon={megaMenuHelpIcons[key]} size={16} />}
+                <IconItem alt="arrow icon" hover={false} icon={megaMenuHelpIcons[key]} size={16} />
                 <p>{option.label}</p>
               </a>
             </li>

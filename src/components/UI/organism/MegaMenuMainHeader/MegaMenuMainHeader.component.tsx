@@ -28,7 +28,7 @@ const Component: React.FC = () => {
           href={'https://login.magneto365.com/candidates?'}
           text={'Iniciar Sesion'}
           iconProps={{ ...SignInIcon, size: 15 }}
-          linkStyles={SignInStyles}
+          linkStyles={{ ...SignInStyles, buttonColor: '#FFFFFF' }}
         />
 
         <MainButton

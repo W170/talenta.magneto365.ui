@@ -4,4 +4,8 @@
   background-color: white;
   z-index: 2;
   border-bottom: 1px solid #e9e9f6;
+
+  &__breadcrumb {
+    margin-bottom: 10px;
+  }
 }

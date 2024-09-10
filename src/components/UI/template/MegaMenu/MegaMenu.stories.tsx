@@ -1,7 +1,13 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { MegaMenu } from './MegaMenu.component'
-import { megaMenuSocialHeader, megaMenuJobs, megaMenuCards, megaMenuJobsIcon } from '@constants/stories'
+import {
+  megaMenuSocialHeader,
+  megaMenuJobs,
+  megaMenuCards,
+  megaMenuJobsIcon,
+  megaMenuBreadcrumbs
+} from '@constants/stories'
 import MegaMenuCards from '@components/UI/molecules/MegaMenuCards/MegaMenuCards.component'
 import { IMegaMenuJobsTabs } from './MegaMenuContext.interface'
 import { withMegaMenuContainer } from '../../../hoc'
@@ -30,7 +36,8 @@ const meta: Meta<typeof MegaMenu> = {
   tags: ['autodocs'],
   args: {
     socialHeaderProps: megaMenuSocialHeader,
-    jobsProps: { ...megaMenuJobs, tabs: jobsTabs }
+    jobsProps: { ...megaMenuJobs, tabs: jobsTabs },
+    breadcrumbsProps: megaMenuBreadcrumbs
   }
 }
 
