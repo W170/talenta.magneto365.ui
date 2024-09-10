@@ -28,7 +28,7 @@ const MegaMenuJobsTabs: React.FC = () => {
                 <Button
                   key={index}
                   buttonText={label}
-                  suffixIcon={megaMenuJobsIcons[index][isSelectedTab(index) ? 0 : 1]}
+                  suffixIcon={megaMenuJobsIcons[index]}
                   iconSize={16}
                   className={`${style[`mega-menu-jobs-tabs__tab`]} ${
                     isSelectedTab(index) ? style[`selected-tab`] : ''

@@ -2,6 +2,7 @@ import React from 'react'
 import style from './MegaMenuSideCards.module.scss'
 import { IMegaMenuSideCards } from './MegaMenuSideCards.interface'
 import { MegaMenuCard, SearchItem } from '@components/UI/atoms'
+import { ArrowRightWhite } from '@constants/icons.constants'
 
 const MegaMenuSideCards: React.FC<IMegaMenuSideCards> = ({ jobs, action, selected }) => {
   return (
@@ -20,7 +21,12 @@ const MegaMenuSideCards: React.FC<IMegaMenuSideCards> = ({ jobs, action, selecte
         ))}
       {action && (
         <li>
-          <SearchItem url={action.url} tag={action.label} className={`${style[`mega-menu-side-cards__action`]}`} />
+          <SearchItem
+            url={action.url}
+            tag={action.label}
+            className={`${style[`mega-menu-side-cards__action`]}`}
+            icon={ArrowRightWhite}
+          />
         </li>
       )}
     </ul>

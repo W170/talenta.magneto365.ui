@@ -17,6 +17,16 @@
     margin-bottom: 4px;
   }
 
+  &__blog {
+    text-decoration: none;
+    text-decoration: underline;
+    margin: 0px;
+    padding: 0px;
+    :hover {
+      color: unset;
+    }
+  }
+
   &__help {
     height: auto;
     > :first-child {
@@ -71,21 +81,30 @@
     }
 
     &--option {
+      padding: 8px 10px;
       > a {
+        all: unset;
         display: flex;
         flex-direction: row;
         gap: 15px;
-        padding: 8px 10px;
+        align-items: center;
         color: #47535f;
         font-size: 13px;
         text-decoration: none;
+      }
+      > p {
+        all: unset;
+        margin: 0px;
+        padding: 0px;
       }
     }
   }
 
   &__blog {
+    all: unset;
     color: #47535f;
     > p {
+      all: unset;
       margin: 0;
     }
   }

@@ -3,11 +3,11 @@ import { MegaMenuSocialHeader } from '@components/UI/organism/MegaMenuSocialHead
 import { MegaMenuProvider } from './MegaMenu.context'
 import { IMegaMenuContext } from './MegaMenuContext.interface'
 import { MegaMenuMainHeader } from '@components/UI/organism/MegaMenuMainHeader/MegaMenuMainHeader.component'
-import { MegaMenuSideCards } from '@components/UI/molecules/MegaMenuSideCards'
 import { MegaMenuCard } from '@components/UI/atoms'
 import { Breadcrumbs, MegaMenuCards } from '@components/UI/molecules'
 import styles from './MegaMenu.module.scss'
 import { IMegaMenu } from './MegaMenu.interface'
+import { withMegaMenuContainer } from '@components/hoc'
 
 const Component: React.FC<IMegaMenuContext & IMegaMenu> = ({ breadcrumbsProps, ...props }) => {
   return (
@@ -28,5 +28,5 @@ const Component: React.FC<IMegaMenuContext & IMegaMenu> = ({ breadcrumbsProps, .
 export const MegaMenu = Object.assign(Component, {
   Cards: MegaMenuCards,
   Card: MegaMenuCard,
-  SideCards: MegaMenuSideCards
+  SideCards: withMegaMenuContainer(MegaMenuCards)
 })

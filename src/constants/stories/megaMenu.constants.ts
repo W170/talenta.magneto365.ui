@@ -73,12 +73,7 @@ export const megaMenuCards: IMegaMenuCards = {
     url: 'https://www.magneto365.com/es'
   }
 }
-export const megaMenuJobsIcons = [
-  [LocationBlue, LocationGrey],
-  [CourthouseBlue, CourthouseGrey],
-  [BriefcaseBlue, BriefcaseGrey],
-  [BuildingBlue, BuildingGrey]
-]
+export const megaMenuJobsIcons = [LocationBlue, CourthouseBlue, BriefcaseBlue, BuildingBlue]
 
 export const megaMenuJobs: IMegaMenuJobs = {
   allJobsAction: { label: 'Ver todos los empleos', url: 'https://www.magneto365.com/co/empleos', icon: ArrowLeft2 },
