@@ -1,0 +1,44 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.mega-menu-jobs-tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: max-content;
+  list-style: none;
+  justify-content: flex-start;
+  padding: 0px 12px;
+  margin: 0px;
+  margin-bottom: 10px;
+
+  a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: white;
+    &:hover {
+      background-color: white;
+    }
+  }
+  li {
+    display: flex;
+    align-items: center;
+  }
+
+  &__tab {
+    color: #667688;
+  }
+  &__container {
+    padding: 12px;
+    padding-top: 0px;
+  }
+  &__content {
+    padding: 12px;
+  }
+}
+
+.selected-tab {
+  background-color: v.$color-gray-background !important;
+  color: #1a324c;
+  // font-weight: 700;
+}
