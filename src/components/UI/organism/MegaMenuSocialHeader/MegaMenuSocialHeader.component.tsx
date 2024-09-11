@@ -43,7 +43,7 @@ const Component: React.FC = () => {
             <li key={key} className={styles['mega-menu-social-header__help--option']}>
               <a href={option.url}>
                 <IconItem alt="arrow icon" hover={false} icon={megaMenuHelpIcons[key]} size={16} />
-                <p>{option.label}</p>
+                <p className={styles['mega-menu-social-header__help--option-text']}>{option.label}</p>
               </a>
             </li>
           ))}

@@ -81,7 +81,7 @@
     }
 
     &--option {
-      padding: 8px 10px;
+      padding: 16px 10px;
       > a {
         all: unset;
         display: flex;
@@ -92,10 +92,10 @@
         font-size: 13px;
         text-decoration: none;
       }
-      > p {
+      &-text {
         all: unset;
-        margin: 0px;
-        padding: 0px;
+        margin: 0px !important;
+        padding: 0px !important;
       }
     }
   }
