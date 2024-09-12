@@ -5,7 +5,13 @@ import { IMoblieDrawer } from './MobileDrawer.interface'
 import style from './mobileDrawer.module.scss'
 import { Add } from '../../../../constants/icons.constants'
 
-const Component: React.FC<IMoblieDrawer> = ({ onClose, isOpen, children, className = '' }) => {
+const Component: React.FC<IMoblieDrawer> = ({
+  onClose,
+  isOpen,
+  children,
+  className = '',
+  blockBackgroundClose = false
+}) => {
   const [showContent, setShowContent] = useState<boolean>(false)
   const [renderPortal, setRenderPortal] = useState<boolean>(isOpen)
   const showMenu = showContent ? 'show' : 'hidden'
@@ -41,7 +47,9 @@ const Component: React.FC<IMoblieDrawer> = ({ onClose, isOpen, children, classNa
               </button>
               <div className={style['magneto-ui-container']}>{children}</div>
             </aside>
-            {isOpen && <span className={`${style['background-drawer']}`} onClick={onClose} />}
+            {isOpen && (
+              <span className={`${style['background-drawer']}`} onClick={blockBackgroundClose ? () => null : onClose} />
+            )}
           </div>
         </DrawerPortal>
       )}

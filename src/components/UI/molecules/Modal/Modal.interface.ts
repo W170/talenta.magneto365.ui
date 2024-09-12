@@ -23,6 +23,10 @@ export interface IModal {
   description?: string
   /**This is the custom className */
   className?: string
+  /**
+   * this property blocks fn onClose from background
+   */
+  blockBackgroundClose?: boolean
 }
 
 export interface IModalPortal {

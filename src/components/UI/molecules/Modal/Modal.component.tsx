@@ -4,7 +4,15 @@ import styles from './Modal.module.scss'
 import { IModal, IModalDescription, IModalTitle } from './Modal.interface'
 import { Close } from '@constants/icons.constants'
 
-const Modal: React.FC<IModal> = ({ onClose, isOpen, children, title, description, className = '' }) => {
+const Modal: React.FC<IModal> = ({
+  onClose,
+  isOpen,
+  children,
+  title,
+  description,
+  className = '',
+  blockBackgroundClose = false
+}) => {
   useEffect(() => {
     const { body } = document
     if (!body) return
@@ -23,7 +31,10 @@ const Modal: React.FC<IModal> = ({ onClose, isOpen, children, title, description
           <img src={Close} alt="close icon" />
         </button>
       </div>
-      <span className={`${styles[`${classMUI}-background-modal`]}`} onClick={onClose} />
+      <span
+        className={`${styles[`${classMUI}-background-modal`]}`}
+        onClick={blockBackgroundClose ? () => null : onClose}
+      />
     </Fragment>
   )
 }

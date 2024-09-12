@@ -12,4 +12,8 @@ export interface IMoblieDrawer {
    * can receive components inside the drawer
    */
   children: JSX.Element | JSX.Element[]
+  /**
+   * this property blocks fn onClose from background
+   */
+  blockBackgroundClose?: boolean
 }

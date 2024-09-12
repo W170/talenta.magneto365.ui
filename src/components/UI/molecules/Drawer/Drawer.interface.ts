@@ -47,6 +47,10 @@ export interface IDrawer {
   /*
    */
   drawerWidth?: string
+  /**
+   * this property blocks fn onClose from background
+   */
+  blockBackgroundClose?: boolean
 }
 
 /**
