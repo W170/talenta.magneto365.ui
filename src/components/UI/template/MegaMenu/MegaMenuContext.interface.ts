@@ -20,11 +20,13 @@ export interface IMegaMenuSocialHeader {
 }
 export interface IMegaMenuJobsTabs {
   label: string
+  url: string
   content?: ReactNode
 }
 
 export interface IMegaMenuJobs {
   tabs: IMegaMenuJobsTabs[]
+  onChangeTab?: (index: number) => void
   jobAction?: IMegaMenuAction
   allJobsAction?: IMegaMenuLink
 }

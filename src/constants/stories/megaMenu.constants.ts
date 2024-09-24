@@ -12,7 +12,7 @@ export const megaMenuSocialTabs: IMegaMenuTab[] = [
 ]
 
 export const megaMenuJobImage: IMegaMenuCard = {
-  title: 'Cajero cafeteria',
+  title: 'Cajero cafeteria en la esquina del barrio de por mi casa',
   quotas: 30,
   onClick: () => {
     console.log()
@@ -27,8 +27,8 @@ export const megaMenuJobIcon: IMegaMenuCard = {
   }
 }
 
-export const megaMenuJobsIcon = Array(40).fill(megaMenuJobIcon)
-export const megaMenuJobsImage = Array(40).fill(megaMenuJobImage)
+export const megaMenuJobsIcon = Array(36).fill(megaMenuJobIcon)
+export const megaMenuJobsImage = Array(36).fill(megaMenuJobImage)
 
 export const megaMenuSocialHeader: IMegaMenuSocialHeader = {
   tabs: megaMenuSocialTabs,
@@ -71,16 +71,20 @@ export const megaMenuJobs: IMegaMenuJobs = {
   jobAction: { label: 'Empleo', icon: ArrowDown2 },
   tabs: [
     {
-      label: 'Empleos por ubicacion'
+      label: 'Empleos por ubicacion',
+      url: 'https://www.magneto365.com/es/blog'
     },
     {
-      label: 'Empleos por sector laboral'
+      label: 'Empleos por sector laboral',
+      url: 'https://www.magneto365.com/es/blog'
     },
     {
-      label: 'Empleos por cargo'
+      label: 'Empleos por cargo',
+      url: 'https://www.magneto365.com/es/blog'
     },
     {
-      label: 'Empleos por empresa'
+      label: 'Empleos por empresa',
+      url: 'https://www.magneto365.com/es/blog'
     }
   ]
 }

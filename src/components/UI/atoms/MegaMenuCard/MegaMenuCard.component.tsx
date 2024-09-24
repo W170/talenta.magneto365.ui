@@ -1,13 +1,38 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { ArrowRight2 } from '@constants/icons.constants'
 import { IconItem } from '../Icon'
 import { Image } from '../Image'
 import { IMegaMenuCard } from './MegaMenuCard.interface'
 import styles from './MegaMenuCard.module.scss'
 
-const MegaMenuCard: React.FC<IMegaMenuCard> = ({ title, logo, icon, quotas, onClick, className, showRigthArrow }) => {
+const MegaMenuCard: React.FC<IMegaMenuCard> = ({
+  title,
+  logo,
+  icon,
+  quotas,
+  onClick,
+  className,
+  showRigthArrow,
+  href,
+  target
+}) => {
+  const handleClick = useCallback(
+    (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+      if (onClick != null) {
+        event.preventDefault()
+        onClick()
+      }
+    },
+    [onClick]
+  )
+
   return (
-    <div className={`${styles[`magneto-ui-mega-menu-card`]} ${className ? className : ''}`} onClick={onClick}>
+    <a
+      className={`${styles[`magneto-ui-mega-menu-card`]} ${className ? className : ''}`}
+      onClick={handleClick}
+      href={href}
+      target={target}
+    >
       {icon && (
         <div className={styles[`magneto-ui-mega-menu-card__icon`]}>
           <IconItem icon={icon} size={16} />
@@ -27,7 +52,7 @@ const MegaMenuCard: React.FC<IMegaMenuCard> = ({ title, logo, icon, quotas, onCl
           <IconItem icon={ArrowRight2} size={16} />
         </div>
       )}
-    </div>
+    </a>
   )
 }
 

@@ -4,7 +4,15 @@
   background-color: white;
   z-index: 2;
   border-bottom: 1px solid #e9e9f6;
+  a {
+    color: #292F37;
+    cursor: pointer;
+    text-decoration: none;
 
+    &:hover {
+      color: #292F37;
+    }
+  }
   &__breadcrumb {
     margin-bottom: 10px;
     margin-left: 16px;

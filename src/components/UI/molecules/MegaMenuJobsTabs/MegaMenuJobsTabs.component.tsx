@@ -1,18 +1,20 @@
 import React, { useCallback, useMemo, useState } from 'react'
 import style from './MegaMenuJobsTabs.module.scss'
 import { megaMenuJobsIcons } from '@constants/stories'
-import { Button, Divider, SearchItem } from '@components/UI/atoms'
+import { Divider, SearchItem } from '@components/UI/atoms'
 import { useMegaMenuJobs } from '@components/UI/template/MegaMenu/MegaMenu.context'
+import { ButtonLink } from '@components/UI/atoms/ButtonLink'
 
 const MegaMenuJobsTabs: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState<number>(0)
-  const { tabs } = useMegaMenuJobs()
+  const { tabs, onChangeTab } = useMegaMenuJobs()
 
   const onClickTab = useCallback(
-    (index) => () => {
+    (index: number) => () => {
       setSelectedTab(index)
+      onChangeTab && onChangeTab(index)
     },
-    []
+    [onChangeTab]
   )
   const isSelectedTab = useCallback((index: number) => selectedTab == index, [selectedTab])
 
@@ -23,17 +25,18 @@ const MegaMenuJobsTabs: React.FC = () => {
       <nav>
         <ul className={`${style[`mega-menu-jobs-tabs`]}`}>
           {tabs &&
-            tabs.map(({ label }, index) => (
+            tabs.map(({ label, url }, index) => (
               <li key={index}>
-                <Button
-                  key={index}
+                <ButtonLink
                   buttonText={label}
+                  href={url}
+                  onClick={onClickTab(index)}
                   suffixIcon={megaMenuJobsIcons[index]}
-                  iconSize={16}
                   className={`${style[`mega-menu-jobs-tabs__tab`]} ${
                     isSelectedTab(index) ? style[`selected-tab`] : ''
                   }`}
-                  onClick={onClickTab(index)}
+                  target={'_blank'}
+                  iconSize={16}
                 />
               </li>
             ))}

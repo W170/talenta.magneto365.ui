@@ -10,10 +10,15 @@
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
 
   &__title {
     font-size: 13px;
     font-weight: 700;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 1.3em;
   }
   &__icon {
     height: 16px;

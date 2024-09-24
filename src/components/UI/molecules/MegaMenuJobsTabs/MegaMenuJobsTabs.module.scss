@@ -26,7 +26,9 @@
   }
 
   &__tab {
-    color: #667688;
+    > p {
+      color: #667688;
+    }
     > img {
       opacity: 0.65;
     }
@@ -41,10 +43,13 @@
 }
 
 .selected-tab {
+  border-radius: 5px !important;
   background-color: v.$color-gray-background !important;
   color: #1a324c;
   > img {
     opacity: 1;
   }
-  // font-weight: 700;
+  > p {
+    color: #1a324c;
+  }
 }

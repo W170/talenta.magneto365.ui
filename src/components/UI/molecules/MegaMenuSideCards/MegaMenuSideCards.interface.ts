@@ -3,6 +3,6 @@ import { IMegaMenuLink } from '@components/UI/template/MegaMenu/MegaMenuContext.
 
 export interface IMegaMenuSideCards {
   jobs: IMegaMenuCard[]
-  selected: number
+  onSelectCard?: (index: number) => void
   action?: IMegaMenuLink
 }

@@ -27,17 +27,17 @@ const MegaMenuCards: React.FC<IMegaMenuCards> = ({ jobs, action, title, actionTi
               <MegaMenuCard {...job} />
             </li>
           ))}
-        {action && (
-          <li>
-            <SearchItem
-              url={action.url}
-              tag={action.label}
-              icon={ArrowRightWhite}
-              className={`${style[`mega-menu-cards__action`]}`}
-            />
-          </li>
-        )}
       </ul>
+      {action && (
+        <div style={{display: 'flex', marginTop: 20, justifyContent: 'end'}}>
+          <SearchItem
+            url={action.url}
+            tag={action.label}
+            icon={ArrowRightWhite}
+            className={`${style[`mega-menu-cards__action`]}`}
+          />
+        </div>
+      )}
     </nav>
   )
 }

@@ -20,7 +20,13 @@ const jobsTabs = megaMenuJobs.tabs.map((job: IMegaMenuJobsTabs, key) => {
       content: (
         <Content
           wrapperProps={megaMenuCards}
-          sideProps={{ jobs: megaMenuJobsIcon, selected: 0, action: { label: 'Ver todos', url: 'www.google.com' } }}
+          sideProps={{
+            jobs: megaMenuJobsIcon,
+            onSelectCard: () => {
+              console.log('side card changed')
+            },
+            action: { label: 'Ver todos', url: 'www.google.com' }
+          }}
         />
       )
     }

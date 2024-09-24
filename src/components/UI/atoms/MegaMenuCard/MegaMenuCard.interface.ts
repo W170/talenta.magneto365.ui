@@ -4,6 +4,8 @@ export interface IMegaMenuCard {
   icon?: string
   className?: string
   quotas: number
+  href?: string
+  target?: string
   onClick: () => void
   showRigthArrow?: boolean
 }

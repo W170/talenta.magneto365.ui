@@ -1,6 +1,12 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 
 .magneto-ui-mega-menu-popover {
+  &__dropdown {
+    display: none;
+    &--open {
+      display: unset;
+    }
+  }
   &__action {
     border: none;
     display: flex;
@@ -26,14 +32,18 @@
   }
 
   &__shadow {
-    position: fixed;
-    z-index: -1;
-    top: 0px;
+    position: absolute;
+    top: 73px;
     right: 0px;
     background-color: rgba(0, 0, 0, 0.75);
     height: 100vh;
     overflow: hidden;
     width: 100%;
+    cursor: pointer;
+
+    body {
+      overflow: hidden;
+    }
   }
 
   &__content {
@@ -42,5 +52,7 @@
     position: absolute;
     background-color: white;
     width: 100%;
+    max-height: 60vh;
+    overflow: auto;
   }
 }

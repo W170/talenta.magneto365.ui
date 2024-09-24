@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { IconItem } from '../Icon'
 import styles from './MegaMenuPopover.module.scss'
 import { useMegaMenuJobs } from '@components/UI/template/MegaMenu/MegaMenu.context'
@@ -12,10 +12,17 @@ const MegaMenuPopover: React.FC = ({ children }) => {
   const handleShowContent = useCallback(
     (show: boolean) => (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
       event.preventDefault()
+      event.stopPropagation()
       setShowContent(show)
     },
     []
   )
+
+  useEffect(() => {
+    const { body } = document
+    if (!body) return
+    body.style.overflowY = showContent ? 'hidden' : 'auto'
+  }, [showContent])
 
   return (
     <>
@@ -32,19 +39,21 @@ const MegaMenuPopover: React.FC = ({ children }) => {
           />
         </button>
       )}
-      {showContent && (
-        <>
-          <div className={styles[`${popoverClassName}__shadow`]} onClick={handleShowContent(false)} />
-          <div
-            className={styles[`${popoverClassName}__content`]}
-            onClick={(event: React.MouseEvent<HTMLElement, MouseEvent>) => {
-              event.stopPropagation()
-            }}
-          >
-            {children}
-          </div>
-        </>
-      )}
+      <div
+        className={`${styles[`${popoverClassName}__dropdown`]} ${
+          showContent ? styles[`${popoverClassName}__dropdown--open`] : ''
+        }`}
+      >
+        <div className={styles[`${popoverClassName}__shadow`]} onClick={handleShowContent(false)} />
+        <div
+          className={styles[`${popoverClassName}__content`]}
+          onClick={(event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+            event.stopPropagation()
+          }}
+        >
+          {children}
+        </div>
+      </div>
     </>
   )
 }
