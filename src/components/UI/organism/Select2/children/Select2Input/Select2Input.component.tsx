@@ -16,7 +16,8 @@ const Component = <T,>({
   icon,
   valueSelected,
   isMultiple,
-  name
+  name,
+  setTerm
 }: ISelect2InputProps<T>): JSX.Element => {
   const arrowRotate = useMemo(
     () =>
@@ -29,6 +30,21 @@ const Component = <T,>({
       }),
     [clickOut]
   )
+
+  const label = useMemo(() => {
+    if (isMultiple) {
+      return <span>{placeholder}</span>
+    }
+    if (valueSelected[0]?.name) {
+      return (
+        <span className={styles['select-label']}>
+          <span>{placeholder}</span>
+          <span>{valueSelected[0]?.name}</span>
+        </span>
+      )
+    }
+    return <span>{placeholder}</span>
+  }, [isMultiple, placeholder, valueSelected])
 
   return (
     <div className={CNM.get({ styles, cls: ['select2-input'] })}>
@@ -69,12 +85,10 @@ const Component = <T,>({
             })}
           >
             {valueSelected[0]?.img && <img src={valueSelected[0]?.img} alt="selected-img" />}
-
-            {isMultiple ? placeholder : valueSelected[0]?.name || placeholder}
+            {label}
           </p>
         </span>
-
-        <img src={ArrowLeft2} alt="arrow-icon" className={arrowRotate} />
+        {!setTerm && <img src={ArrowLeft2} alt="arrow-icon" className={arrowRotate} />}
       </button>
     </div>
   )

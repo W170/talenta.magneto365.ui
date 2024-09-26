@@ -22,7 +22,8 @@ const Component = <T,>({
   searchValue,
   setClickOut = () => ({}),
   valueSelected,
-  render
+  render,
+  setTerm
 }: ISelect2MobileProps<T>): JSX.Element => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
 
@@ -68,6 +69,7 @@ const Component = <T,>({
           valueSelected={valueSelected}
           name={`${placeholder}-mobile`}
           isMultiple={isMultiple}
+          setTerm={setTerm}
         />
         <Select2Tags onRemove={removeValue} tags={valueSelected} visible={haveTags} />
         <Select2List

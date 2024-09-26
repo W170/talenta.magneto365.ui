@@ -43,9 +43,11 @@ const Component = <T,>({
 
   if (!visible) return null
 
+  if (!list.length) return null
+
   return (
     <div className={CNM.get({ styles, cls: ['select2-list', !isMobile && 'select2-list--desktop'] })}>
-      {list?.map(({ ...props }, index) => (
+      {list.map(({ ...props }, index) => (
         <button
           type="button"
           key={props?.id}

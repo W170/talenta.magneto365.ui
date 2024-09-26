@@ -11,9 +11,10 @@ const meta: Meta<typeof Select2> = {
     className: 'className',
     onChange: (value) => console.log(value),
     placeholder: 'Probando',
-    isMultiple: true,
+    isMultiple: false,
     haveTags: true,
     limitSelections: 3,
+    currentFields: [{ id: generateID(), name: 'Medellin' }],
     icon: UserRoundedGray,
     selectList: [
       { id: generateID(), name: 'Medellin' },

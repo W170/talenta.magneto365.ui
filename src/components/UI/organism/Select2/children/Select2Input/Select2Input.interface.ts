@@ -45,4 +45,8 @@ export interface ISelect2InputProps<T> {
    * this property allows you to select several values
    */
   isMultiple?: boolean
+  /**
+   * this property gives you the written text
+   */
+  setTerm?: (value: string) => void
 }
