@@ -69,12 +69,12 @@ const useSelect2 = <T>({
   }
 
   const handleChange = (selectedValue: ISelectField & T) => {
+    setClickOut(false)
+    setSearchValue('')
     if (isMultiple) {
       handleSelected((prev) => [...prev, selectedValue])
       return
     }
-    setClickOut(false)
-    setSearchValue('')
     handleSelected([selectedValue])
   }
 

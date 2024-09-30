@@ -28,7 +28,7 @@ const Component = <T,>({
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
 
   useEffect(() => {
-    if ((isMultiple && limitSelections === valueSelected.length) || (!isMultiple && valueSelected.length)) {
+    if ((isMultiple && limitSelections === valueSelected.length) || valueSelected.length) {
       setIsModalOpen(false)
     }
   }, [disableList, isMultiple, limitSelections, valueSelected])
@@ -78,8 +78,8 @@ const Component = <T,>({
           list={list}
           onSelected={handleChange}
           selected={valueSelected}
-          visible
           render={render}
+          visible
         />
       </MobileDrawer>
     </React.Fragment>
