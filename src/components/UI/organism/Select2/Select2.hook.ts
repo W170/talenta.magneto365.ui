@@ -24,7 +24,10 @@ const useSelect2 = <T>({
   }, [searchValue, setTerm])
 
   useEffect(() => {
-    if (!currentFields || !currentFields.length) return
+    if (!currentFields || !currentFields.length) {
+      setValueSelected([])
+      return
+    }
 
     setValueSelected((prev) => {
       if (currentFields.map((field) => field.id).join() === prev.map((p) => p.id).join()) {
