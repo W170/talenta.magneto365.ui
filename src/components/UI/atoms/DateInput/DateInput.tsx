@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { isDate, notNumberRegex } from '../../../../shared/utils/common'
 import { IDateInput } from './DateInput.interface'
+import { fixArrayDate } from '@utils/date/dateInput.util'
 import styles from './DateInput.module.scss'
 
 // placeholder to every input.
@@ -41,7 +42,7 @@ const Component: React.FC<IDateInput> = ({
     const newValues = [...internalValues]
     const numberValue = value.slice(-1).replace(notNumberRegex, '')
     newValues[index] = numberValue
-    setInternalValues(newValues)
+    setInternalValues(fixArrayDate(newValues) as string[])
 
     // Focus the next input
     if (numberValue && index < internalValues.length - 1) {
