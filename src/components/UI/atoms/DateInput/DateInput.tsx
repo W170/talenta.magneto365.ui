@@ -122,6 +122,12 @@ const Component: React.FC<IDateInput> = ({
         hasError ? styles['date-input--error'] : ''
       ].join(' ')}
     >
+      <div
+        className={styles['date-input__left']}
+        onClick={() => {
+          inputsRef.current[0]?.focus()
+        }}
+      ></div>
       {internalValues.map((value, index) => (
         <React.Fragment key={index}>
           {[2, 4].includes(index) ? (
@@ -148,6 +154,12 @@ const Component: React.FC<IDateInput> = ({
           />
         </React.Fragment>
       ))}
+      <div
+        className={styles['date-input__right']}
+        onClick={() => {
+          inputsRef.current[inputsRef.current.length - 1]?.focus()
+        }}
+      ></div>
     </div>
   )
 }

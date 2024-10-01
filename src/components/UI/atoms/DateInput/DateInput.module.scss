@@ -8,7 +8,7 @@ $font-size: 18px;
   background-color: var.$color-white;
   display: flex;
   justify-content: center;
-  padding: 19px 16px;
+  padding: 19px 0;
   position: relative;
 
   &__input {
@@ -27,7 +27,7 @@ $font-size: 18px;
   &__separator {
     font-size: $font-size;
     cursor: default;
-    margin: 0 5px;
+    margin: 0;
     color: #a3a3b5;
   }
 
@@ -41,5 +41,11 @@ $font-size: 18px;
 
   &--error {
     border-color: var.$alert-color-red;
+  }
+
+  &__left,
+  &__right {
+    flex: 1;
+    min-width: 16px;
   }
 }
