@@ -1,9 +1,14 @@
 import { IMegaMenuCard } from '@components/UI/atoms'
 import { IMegaMenuTab } from '@components/UI/atoms/MegaMenuTab/MegaMenuTab.interface'
 import { IMegaMenuCards } from '@components/UI/molecules/MegaMenuCards/MegaMenuCards.interface'
-import { IMegaMenuJobs, IMegaMenuSocialHeader } from '@components/UI/template/MegaMenu/MegaMenuContext.interface'
+import {
+  IMegaMenuJobs,
+  IMegaMenuMainHeader,
+  IMegaMenuSocialHeader
+} from '@components/UI/template/MegaMenu/MegaMenuContext.interface'
 import { ArrowDown2, ArrowLeft2, HeadsetBlackOutline, QuestionCircle } from '@constants/icons.constants'
 import { BriefcaseBlue, BuildingBlue, CourthouseBlue, LocationBlue } from '@constants/megaMenu.constants'
+import { SearchbarProps } from './headers.constants'
 
 export const megaMenuSocialTabs: IMegaMenuTab[] = [
   { label: 'Personas', selected: true, url: 'https://www.magneto365.com/es/' },
@@ -29,6 +34,21 @@ export const megaMenuJobIcon: IMegaMenuCard = {
 
 export const megaMenuJobsIcon = Array(36).fill(megaMenuJobIcon)
 export const megaMenuJobsImage = Array(36).fill(megaMenuJobImage)
+
+export const megaMenuMainHeader: IMegaMenuMainHeader = {
+  logoProps: {
+    url: 'string'
+  },
+  searchBarProps: SearchbarProps,
+  loginProps: {
+    signUpText: 'Crear cuenta',
+    loginUrl: 'https://www.magneto365.com/es/',
+    onClickSignUp: async () => {
+      console.log('prueba')
+    },
+    loginText: 'Iniciar sesion'
+  }
+}
 
 export const megaMenuSocialHeader: IMegaMenuSocialHeader = {
   tabs: megaMenuSocialTabs,

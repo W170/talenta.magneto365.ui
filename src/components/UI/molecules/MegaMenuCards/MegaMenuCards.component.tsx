@@ -3,6 +3,7 @@ import style from './MegaMenuCards.module.scss'
 import { IMegaMenuCards } from './MegaMenuCards.interface'
 import { MegaMenuCard, SearchItem } from '@components/UI/atoms'
 import { ArrowRightWhite } from '@constants/icons.constants'
+import { ButtonLink } from '@components/UI/atoms/ButtonLink'
 
 const MegaMenuCards: React.FC<IMegaMenuCards> = ({ jobs, action, title, actionTitle, className }) => {
   return (
@@ -14,7 +15,7 @@ const MegaMenuCards: React.FC<IMegaMenuCards> = ({ jobs, action, title, actionTi
             <SearchItem
               url={actionTitle.url}
               tag={actionTitle.label}
-              className={`${style[`mega-menu-cards__action`]} ${style[`mega-menu-cards__action--grey`]}`}
+              className={`${style[`mega-menu-cards__action--grey`]}`}
             />
           )}
         </div>
@@ -29,14 +30,13 @@ const MegaMenuCards: React.FC<IMegaMenuCards> = ({ jobs, action, title, actionTi
           ))}
       </ul>
       {action && (
-        <div style={{display: 'flex', marginTop: 20, justifyContent: 'end'}}>
-          <SearchItem
-            url={action.url}
-            tag={action.label}
-            icon={ArrowRightWhite}
-            className={`${style[`mega-menu-cards__action`]}`}
-          />
-        </div>
+        <ButtonLink
+          buttonText={action.label}
+          href={action.url}
+          target={'_blank'}
+          prefixIcon={ArrowRightWhite}
+          className={`${style[`mega-menu-cards__action`]}`}
+        />
       )}
     </nav>
   )

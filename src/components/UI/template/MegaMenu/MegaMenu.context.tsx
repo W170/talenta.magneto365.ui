@@ -1,5 +1,10 @@
 import React, { createContext, useContext } from 'react'
-import { IMegaMenuContext, IMegaMenuJobs, IMegaMenuSocialHeader } from './MegaMenuContext.interface'
+import {
+  IMegaMenuContext,
+  IMegaMenuJobs,
+  IMegaMenuSocialHeader,
+  IMegaMenuMainHeader
+} from './MegaMenuContext.interface'
 
 const initialContext: IMegaMenuContext = {
   socialHeaderProps: {
@@ -8,7 +13,8 @@ const initialContext: IMegaMenuContext = {
   },
   jobsProps: {
     tabs: []
-  }
+  },
+  mainHeaderProps: {}
 }
 
 const MegaMenuContext = createContext<IMegaMenuContext>(initialContext)
@@ -27,4 +33,9 @@ export const useMegaMenuSocialHeader = (): IMegaMenuSocialHeader => {
 export const useMegaMenuJobs = (): IMegaMenuJobs => {
   const { jobsProps } = useContext(MegaMenuContext)
   return jobsProps
+}
+
+export const useMegaMenuMain = (): IMegaMenuMainHeader => {
+  const { mainHeaderProps } = useContext(MegaMenuContext)
+  return mainHeaderProps
 }

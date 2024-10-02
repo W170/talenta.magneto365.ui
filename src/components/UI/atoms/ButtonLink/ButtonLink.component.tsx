@@ -16,8 +16,10 @@ const Component: React.FC<IButtonLink> = ({
 }) => {
   const handleClick = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-      event.preventDefault()
-      onClick && onClick()
+      if (onClick) {
+        event.preventDefault()
+        onClick()
+      }
     },
     [onClick]
   )

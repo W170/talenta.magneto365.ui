@@ -6,7 +6,8 @@ import {
   megaMenuJobs,
   megaMenuCards,
   megaMenuJobsIcon,
-  megaMenuBreadcrumbs
+  megaMenuBreadcrumbs,
+  megaMenuMainHeader
 } from '@constants/stories'
 import MegaMenuCards from '@components/UI/molecules/MegaMenuCards/MegaMenuCards.component'
 import { IMegaMenuJobsTabs } from './MegaMenuContext.interface'
@@ -43,7 +44,8 @@ const meta: Meta<typeof MegaMenu> = {
   args: {
     socialHeaderProps: megaMenuSocialHeader,
     jobsProps: { ...megaMenuJobs, tabs: jobsTabs },
-    breadcrumbsProps: megaMenuBreadcrumbs
+    breadcrumbsProps: megaMenuBreadcrumbs,
+    mainHeaderProps: megaMenuMainHeader
   }
 }
 
