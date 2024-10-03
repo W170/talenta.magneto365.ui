@@ -21,6 +21,8 @@ const Component: React.FC<IDateInput> = ({
 }) => {
   // Represent the value of every input field (there are 8 in total).
   const [internalValues, setInternalValues] = useState<string[]>(Array(8).fill(''))
+  // With for every input text
+  const [width, setWidth] = useState<number | string>('2ch')
   // An array of references of every input field.
   const inputsRef = useRef<Array<HTMLInputElement | null>>([])
   // Last value emited to onChange function
@@ -114,6 +116,18 @@ const Component: React.FC<IDateInput> = ({
     }
   }, [value])
 
+  useEffect(() => {
+    if (inputsRef.current && inputsRef.current[0]) {
+      // get font-family
+      const computedStyle = window.getComputedStyle(inputsRef.current[0])
+      const canvas = document.createElement('canvas')
+      const context = canvas.getContext('2d')
+      if (!context) return
+      context.font = `18px ${computedStyle.fontFamily}`
+      setWidth(context.measureText('M').width)
+    }
+  }, [])
+
   return (
     <div
       className={[
@@ -143,6 +157,7 @@ const Component: React.FC<IDateInput> = ({
           ) : null}
           <input
             className={styles['date-input__input']}
+            style={{ width }}
             type="text"
             maxLength={1}
             value={value}
