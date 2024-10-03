@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { IconItem } from '../Icon'
+import { IconItem } from '../../atoms/Icon'
 import styles from './MegaMenuPopover.module.scss'
 import { useMegaMenuJobs } from '@components/UI/template/MegaMenu/MegaMenu.context'
 import { ArrowDown2 } from '@constants/icons.constants'

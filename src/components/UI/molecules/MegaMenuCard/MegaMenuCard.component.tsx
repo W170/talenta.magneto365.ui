@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import { ArrowRight2 } from '@constants/icons.constants'
-import { IconItem } from '../Icon'
-import { Image } from '../Image'
+import { IconItem } from '../../atoms/Icon'
+import { Image } from '../../atoms/Image'
 import { IMegaMenuCard } from './MegaMenuCard.interface'
 import styles from './MegaMenuCard.module.scss'
 

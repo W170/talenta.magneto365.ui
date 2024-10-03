@@ -9,7 +9,7 @@ import {
   megaMenuBreadcrumbs,
   megaMenuMainHeader
 } from '@constants/stories'
-import MegaMenuCards from '@components/UI/molecules/MegaMenuCards/MegaMenuCards.component'
+import { MegaMenuCards } from '@components/UI/molecules'
 import { IMegaMenuJobsTabs } from './MegaMenuContext.interface'
 import { withMegaMenuContainer } from '../../../hoc'
 

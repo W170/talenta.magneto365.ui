@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link, LogoComponent, MainButton, MegaMenuPopover } from '@components/UI/atoms'
-import { MegaMenuJobsTabs, Searchbar } from '@components/UI/molecules'
+import { Link, LogoComponent, MainButton } from '@components/UI/atoms'
+import { MegaMenuJobsTabs, MegaMenuPopover, Searchbar } from '@components/UI/molecules'
 import styles from './MegaMenuMainHeader.modules.scss'
 import { SignInIcon, SignInStyles, SignUpButtonStyle, searchPropsButton, removePropsButton } from '@constants/stories'
 import { LogoMagneto } from '@constants/icons.constants'

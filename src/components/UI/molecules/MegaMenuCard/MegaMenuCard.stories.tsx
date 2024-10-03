@@ -3,7 +3,7 @@ import MegaMenuCard from './MegaMenuCard.component'
 import { Location } from '@constants/icons.constants'
 
 const meta: Meta<typeof MegaMenuCard> = {
-  title: 'Atoms/Mega Menu Card',
+  title: 'Molecules/Mega Menu Card',
   component: MegaMenuCard
 }
 

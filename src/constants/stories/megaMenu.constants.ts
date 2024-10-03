@@ -1,6 +1,5 @@
-import { IMegaMenuCard } from '@components/UI/atoms'
 import { IMegaMenuTab } from '@components/UI/atoms/MegaMenuTab/MegaMenuTab.interface'
-import { IMegaMenuCards } from '@components/UI/molecules/MegaMenuCards/MegaMenuCards.interface'
+import { IMegaMenuCard , IMegaMenuCards} from '@components/UI/molecules'
 import {
   IMegaMenuJobs,
   IMegaMenuMainHeader,

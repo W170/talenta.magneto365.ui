@@ -1,8 +1,9 @@
 import React, { useCallback, useState } from 'react'
 import style from './MegaMenuSideCards.module.scss'
 import { IMegaMenuSideCards } from './MegaMenuSideCards.interface'
-import { MegaMenuCard, SearchItem } from '@components/UI/atoms'
 import { ArrowRightWhite } from '@constants/icons.constants'
+import { MegaMenuCard } from '../MegaMenuCard'
+import { SearchItem } from '@components/UI/atoms'
 
 const MegaMenuSideCards: React.FC<IMegaMenuSideCards> = ({ jobs, action, onSelectCard }) => {
   const [selected, setSelected] = useState(0)

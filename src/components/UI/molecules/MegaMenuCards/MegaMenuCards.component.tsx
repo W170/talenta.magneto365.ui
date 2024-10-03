@@ -1,9 +1,10 @@
 import React from 'react'
 import style from './MegaMenuCards.module.scss'
 import { IMegaMenuCards } from './MegaMenuCards.interface'
-import { MegaMenuCard, SearchItem } from '@components/UI/atoms'
+import { SearchItem } from '@components/UI/atoms'
 import { ArrowRightWhite } from '@constants/icons.constants'
 import { ButtonLink } from '@components/UI/atoms/ButtonLink'
+import MegaMenuCard from '../MegaMenuCard/MegaMenuCard.component'
 
 const MegaMenuCards: React.FC<IMegaMenuCards> = ({ jobs, action, title, actionTitle, className }) => {
   return (
