@@ -41,4 +41,12 @@ export interface IMobileDatePicker {
    * The selected date value for the date picker.
    */
   value?: Date
+  /**
+   * value for setting future years
+   */
+  futureYears?: number
+  /**
+   * value for setting past years
+   */
+  pastYears?: number
 }

@@ -3,18 +3,13 @@ import { IconItem, IOptionValues } from '@components/UI/atoms'
 import { DateSelection } from '@components/UI/molecules/DateSelection'
 import { IMobileDatePicker } from '@components/UI/organism/MobileDatePicker/MobileDatePicker.interface'
 import styles from './MobileDatePicker.module.scss'
-import { parseDate } from '@components/UI/molecules/DatePicker/utils'
+import { generateYearArray, parseDate } from '@components/UI/molecules/DatePicker/utils'
 import { ArrowDown2, ArrowDown3 } from '@constants/icons.constants'
-import { monthOptionsValue, yearOptionsLabel, yearOptionsValue } from '@constants/stories/DatePicker.constants'
+import { monthOptionsValue } from '@constants/stories/DatePicker.constants'
 
 const defaultValue = (value?: Date) => {
   return value ? parseDate(value) : { initialMonth: '', initialYear: '' }
 }
-
-const yearDateOptions: IOptionValues[] = yearOptionsLabel?.map((optionLabel, index) => ({
-  optionValue: yearOptionsValue[index],
-  optionLabel
-}))
 
 const Component: React.FC<IMobileDatePicker> = ({
   applyLabel,
@@ -26,7 +21,9 @@ const Component: React.FC<IMobileDatePicker> = ({
   onChange,
   selectionMonthHeader,
   selectionYearHeader,
-  value
+  value,
+  futureYears,
+  pastYears
 }) => {
   const mainClass = 'magneto-ui--mobile-date-picker__container'
   const valueClass = '-value'
@@ -37,6 +34,13 @@ const Component: React.FC<IMobileDatePicker> = ({
 
   const [monthSelected, setMonthSelected] = useState<string | number | null>(defaultValue(value).initialMonth)
   const [yearSelected, setYearSelected] = useState<string | number | null>(defaultValue(value).initialYear)
+
+  const { yearsArrayToString, yearsArray } = generateYearArray(futureYears, pastYears)
+
+  const yearDateOptions: IOptionValues[] = yearsArrayToString?.map((optionLabel, index) => ({
+    optionValue: yearsArray[index],
+    optionLabel
+  }))
 
   const FIRST_OF_MONTH = 1
 

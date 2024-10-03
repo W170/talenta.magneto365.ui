@@ -1,8 +1,7 @@
 import { generateYearArray } from '@components/UI/molecules/DatePicker/utils'
 
 export const monthOptionsValue = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-export const yearOptionsValue = generateYearArray().yearsArray
-export const yearOptionsLabel = generateYearArray().yearsArraytoString
+const { yearsArray, yearsArrayToString } = generateYearArray()
 
 //Story const
 
@@ -42,8 +41,8 @@ for (let i = 0; i < Math.min(monthOptionsValue.length, months.length); i++) {
   storyMonths.push({ optionValue: monthOptionsValue[i], optionLabel: months[i] })
 }
 
-for (let i = 0; i < Math.min(yearOptionsValue.length, yearOptionsLabel.length); i++) {
-  storyYears.push({ optionValue: yearOptionsValue[i], optionLabel: yearOptionsLabel[i] })
+for (let i = 0; i < Math.min(yearsArray.length, yearsArrayToString.length); i++) {
+  storyYears.push({ optionValue: yearsArray[i], optionLabel: yearsArrayToString[i] })
 }
 
 export const DatePickerProps = {

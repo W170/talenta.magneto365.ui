@@ -1,7 +1,7 @@
-export function generateYearArray() {
+export function generateYearArray(additionalYears = 26, pastYears = 74) {
   const currentYear = new Date().getFullYear()
-  const startYear = currentYear - 74
-  const endYear = currentYear + 26
+  const startYear = currentYear - pastYears
+  const endYear = currentYear + additionalYears
   const yearsCount = endYear - startYear + 1
 
   let yearsArray = Array.from({ length: yearsCount }, (_, index) => startYear + index).reverse()
@@ -13,7 +13,7 @@ export function generateYearArray() {
     yearsArray = yearsArray.concat(newYears)
   }
 
-  const yearsArraytoString = yearsArray.map((year) => year.toString())
+  const yearsArrayToString = yearsArray.map((year) => year.toString())
 
-  return { yearsArray, yearsArraytoString }
+  return { yearsArray, yearsArrayToString }
 }

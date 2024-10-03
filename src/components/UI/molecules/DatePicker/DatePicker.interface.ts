@@ -33,4 +33,12 @@ export interface IDatePicker {
    * Callback function to be executed when the selected date in the date picker changes.
    */
   onChange: (value: string | Date | null) => void
+  /**
+   * value for setting future years
+   */
+  futureYears?: number
+  /**
+   * value for setting past years
+   */
+  pastYears?: number
 }
