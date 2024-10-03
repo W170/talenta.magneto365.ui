@@ -107,10 +107,12 @@ const Component: React.FC<IMobileDatePicker> = ({
   return (
     <section className={styles['magneto-ui--mobile-date-picker']}>
       <div className={styles[`${componentClass}`]} onClick={toggleMonthPicker}>
-        <span className={styles[`${placeholderClass}`]}>{monthPlaceholder}</span>
-        <p className={styles['magneto-ui--mobile-date-picker__value']}>
-          {monthSelected !== null ? getMonthName(monthSelected) : ''}
-        </p>
+        <div className={styles['magneto-ui--mobile-date-picker__input']}>
+          <span className={styles[`${placeholderClass}`]}>{monthPlaceholder}</span>
+          <p className={styles['magneto-ui--mobile-date-picker__value']}>
+            {monthSelected !== null ? getMonthName(monthSelected) : ''}
+          </p>
+        </div>
         <span className={styles[`${iconClass}`]}>{disabledArrow}</span>
       </div>
       <DateSelection
@@ -125,8 +127,10 @@ const Component: React.FC<IMobileDatePicker> = ({
         initialValue={monthSelected}
       />
       <div className={styles[`${componentClass}`]} onClick={toggleYearPicker}>
-        <span className={styles[`${placeholderClass}`]}>{yearPlaceholder}</span>
-        <p className={styles['magneto-ui--mobile-date-picker__value']}>{yearSelected}</p>
+        <div className={styles['magneto-ui--mobile-date-picker__input']}>
+          <span className={styles[`${placeholderClass}`]}>{yearPlaceholder}</span>
+          <p className={styles['magneto-ui--mobile-date-picker__value']}>{yearSelected}</p>
+        </div>
         <span className={styles[`${iconClass}`]}>{disabledArrow}</span>
       </div>
       <DateSelection
