@@ -1,0 +1,9 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-mega-menu-tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  background-color: v.$color-gray-background;
+  width: max-content;
+}

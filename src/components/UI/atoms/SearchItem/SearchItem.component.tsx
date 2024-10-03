@@ -4,11 +4,11 @@ import { ISearchItem } from './SearchItem.interface'
 import { ArrowRight2 } from '@constants/icons.constants'
 import styles from './SearchItem.module.scss'
 
-const Component: React.FC<ISearchItem> = ({ tag, url }) => {
+const Component: React.FC<ISearchItem> = ({ tag, url, className, icon = ArrowRight2 }) => {
   return (
-    <a title={tag} className={styles['magneto-ui--search-item']} href={url}>
+    <a title={tag} className={`${className ? className : styles['magneto-ui--search-item']}`} href={url}>
       <p className={styles['magneto-ui--search-item__text']}>{tag}</p>
-      <IconItem alt="arrow icon" hover={false} icon={ArrowRight2} size={14} />
+      <IconItem alt="arrow icon" hover={false} icon={icon} size={14} />
     </a>
   )
 }

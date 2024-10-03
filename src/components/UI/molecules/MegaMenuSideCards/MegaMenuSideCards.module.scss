@@ -1,0 +1,35 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.mega-menu-side-cards {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 10px;
+  margin: 0px;
+  background-color: #f0f1f3;
+  border-radius: 8px;
+
+  &__action {
+    background-color: #1a324c;
+    border-radius: 30px;
+    height: fit-content;
+    padding: 12px 10px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      color: white;
+    }
+  }
+
+  &__card {
+    border-color: #e0e4e7 !important;
+
+    &--selected {
+      background-color: white;
+    }
+  }
+}

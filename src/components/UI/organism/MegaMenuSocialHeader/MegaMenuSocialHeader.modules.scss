@@ -1,0 +1,111 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.mega-menu-social-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px 0px 20px;
+  background-color: v.$color-gray-background;
+  color: #47535f;
+  font-size: 13px;
+
+  &__options {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+
+  &__blog {
+    text-decoration: none;
+    text-decoration: underline;
+    margin: 0px;
+    padding: 0px;
+    :hover {
+      color: unset;
+    }
+  }
+
+  &__help {
+    height: auto;
+    > :first-child {
+      overflow: visible !important;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -5px;
+        left: 150px;
+        width: 10px;
+        height: 10px;
+        border-top-right-radius: 5px;
+        background: v.$color-white;
+        z-index: -1;
+        transform: rotate(-45deg);
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.106);
+      }
+    }
+    &--hidden {
+      > :first-child {
+        z-index: -1;
+        overflow: hidden !important;
+      }
+    }
+
+    &--button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5px;
+      color: #47535f;
+      font-size: 13px;
+      border: none;
+      cursor: pointer;
+
+      > p {
+        padding: 0px;
+        margin: 0px;
+        color: #47535f;
+        font-size: 13px;
+      }
+    }
+
+    &--options {
+      list-style-type: none;
+      margin: 0px;
+      padding: 8px;
+      width: max-content;
+      z-index: 1;
+      background-color: white;
+    }
+
+    &--option {
+      padding: 16px 10px;
+      > a {
+        all: unset;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+        color: #47535f;
+        font-size: 13px;
+        text-decoration: none;
+      }
+      &-text {
+        all: unset;
+        margin: 0px !important;
+        padding: 0px !important;
+      }
+    }
+  }
+
+  &__blog {
+    all: unset;
+    color: #47535f;
+    > p {
+      all: unset;
+      margin: 0;
+    }
+  }
+}

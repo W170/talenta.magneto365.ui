@@ -1,0 +1,8 @@
+export { default as BriefcaseBlue } from '../assets/megaMenu/briefcase-blue.svg'
+export { default as BriefcaseGrey } from '../assets/megaMenu/briefcase-grey.svg'
+export { default as BuildingBlue } from '../assets/megaMenu/building-blue.svg'
+export { default as BuildingGrey } from '../assets/megaMenu/building-grey.svg'
+export { default as CourthouseBlue } from '../assets/megaMenu/courthouse-blue.svg'
+export { default as CourthouseGrey } from '../assets/megaMenu/courthouse-grey.svg'
+export { default as LocationBlue } from '../assets/megaMenu/location-blue.svg'
+export { default as LocationGrey } from '../assets/megaMenu/location-grey.svg'

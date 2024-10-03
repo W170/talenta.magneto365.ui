@@ -1,0 +1,16 @@
+@use '../../../shared/stylesheets/variables.scss' as v;
+
+.mega-menu-side-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+
+  &__side {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  &__main {
+    grid-area: 1 / 2 / 2 / 6;
+  }
+}
