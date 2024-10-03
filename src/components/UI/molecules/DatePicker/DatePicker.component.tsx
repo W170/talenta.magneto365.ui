@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { DateDropdown, IOptionValues } from '@components/UI/atoms/DateDropdown'
-import { monthOptionsValue, yearOptionsLabel, yearOptionsValue } from '@constants/stories/DatePicker.constants'
-import { parseDate } from '@components/UI/molecules/DatePicker/utils'
+import { monthOptionsValue } from '@constants/stories/DatePicker.constants'
+import { generateYearArray, parseDate } from '@components/UI/molecules/DatePicker/utils'
 import { IDatePicker } from './DatePicker.interface'
 import styles from './DatePicker.module.scss'
 const defaultValue = (value?: Date) => {
   return value ? parseDate(value) : { initialMonth: '', initialYear: '' }
 }
-
-const yearOptionsList: IOptionValues[] = yearOptionsLabel?.map((optionLabel, index) => ({
-  optionValue: yearOptionsValue[index],
-  optionLabel
-}))
 
 const Component: React.FC<IDatePicker> = ({
   monthOptionsLabels,
@@ -19,11 +14,20 @@ const Component: React.FC<IDatePicker> = ({
   yearPlaceholder,
   value,
   disabled,
-  onChange
+  onChange,
+  futureYears,
+  pastYears
 }) => {
   const [selectedMonth, setSelectedMonth] = useState<string>(defaultValue(value).initialMonth)
   const [selectedYear, setSelectedYear] = useState<string>(defaultValue(value).initialYear)
   const FIRST_OF_MONTH = 1
+
+  const { yearsArrayToString, yearsArray } = generateYearArray(futureYears, pastYears)
+
+  const yearOptionsList: IOptionValues[] = yearsArrayToString?.map((optionLabel, index) => ({
+    optionValue: yearsArray[index],
+    optionLabel
+  }))
 
   const monthOptionsList: IOptionValues[] = monthOptionsLabels?.map((optionLabel, index) => ({
     optionValue: monthOptionsValue[index],
