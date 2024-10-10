@@ -3,7 +3,15 @@ import { IToggleButton } from './ToggleButton.interface'
 import { classMUI } from '@constants/stories'
 import styles from './ToggleButton.module.scss'
 
-const Component: React.FC<IToggleButton> = ({ className, color, onChange, id, name, currentSelect }) => {
+const Component: React.FC<IToggleButton> = ({
+  className,
+  color,
+  onChange,
+  id,
+  name,
+  currentSelect,
+  baseColor = 'transparent'
+}) => {
   const [isSelected, setIsSelected] = useState<string>('')
 
   const isColorDark = (color: string) => {
@@ -41,9 +49,10 @@ const Component: React.FC<IToggleButton> = ({ className, color, onChange, id, na
       }
     }
     return {
-      backgroundColor: 'transparent'
+      backgroundColor: baseColor,
+      color: textColor
     }
-  }, [color, currentSelect, isSelected])
+  }, [baseColor, color, currentSelect, isSelected])
 
   return (
     <button

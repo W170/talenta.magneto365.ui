@@ -4,9 +4,13 @@ export interface IToggleButton {
    */
   className?: string
   /**
-   * this property sets the background and border color
+   * this property sets the background and border color when is selected
    */
   color?: string
+  /**
+   * this property sets the background when is not selected
+   */
+  baseColor?: string
   /**
    * this property sets the button name
    */
