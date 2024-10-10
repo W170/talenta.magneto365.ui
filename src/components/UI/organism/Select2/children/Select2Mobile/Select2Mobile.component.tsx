@@ -50,6 +50,7 @@ const Component = <T,>({
         isMultiple={isMultiple}
         icon={icon}
         valueSelected={valueSelected}
+        setTerm={setTerm}
       />
       <Select2Tags onRemove={removeValue} tags={valueSelected} visible={haveTags} />
       <MobileDrawer
