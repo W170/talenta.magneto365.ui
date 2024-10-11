@@ -5,7 +5,7 @@ import styles from './ToggleButton.module.scss'
 
 const Component: React.FC<IToggleButton> = ({
   className,
-  color,
+  color = 'blue',
   onChange,
   id,
   name,
@@ -39,18 +39,16 @@ const Component: React.FC<IToggleButton> = ({
   )
 
   const selectStyles = useMemo(() => {
-    const textColor = isColorDark(color || '#FFFFFF') ? '#FFFFFF' : '#000000'
-
     if (isSelected || currentSelect) {
       return {
-        backgroundColor: color || '#F0F1F3',
-        color: textColor,
+        backgroundColor: color,
+        color: isColorDark(color || '#FFFFFF') ? '#FFFFFF' : '#000000',
         border: 'none'
       }
     }
     return {
       backgroundColor: baseColor,
-      color: textColor
+      color: isColorDark(baseColor || '#FFFFFF') ? '#FFFFFF' : '#000000'
     }
   }, [baseColor, color, currentSelect, isSelected])
 
