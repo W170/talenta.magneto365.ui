@@ -1,7 +1,7 @@
 import { classMUI } from '@constants/stories'
 
 interface IStylesConfig {
-  cls: (string | string[] | null | false | undefined)[]
+  cls: (string | string[] | null | boolean | undefined)[]
   styles?: { [key: string]: string }
 }
 
