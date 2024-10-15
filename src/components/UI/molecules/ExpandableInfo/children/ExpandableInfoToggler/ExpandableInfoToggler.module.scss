@@ -1,0 +1,95 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-expandable-info-toggler {
+  &__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    &--no-details {
+      cursor: default;
+    }
+    &--blue {
+      background-color: v.$color-blue-dark2;
+      border: solid 1px v.$color-blue-dark3;
+      padding: 8px;
+    }
+    &--white {
+      background-color: v.$color-white;
+      border: none;
+      border-bottom: solid 1px #f0f1f3;
+      padding: 10px;
+    }
+    &--small {
+      border: solid 1px #e0e4e7;
+      background-color: #f0f1f3;
+      border-radius: 4px;
+      padding: 4px 8px;
+      gap: 4px;
+      justify-content: center;
+      > span {
+        display: none;
+      }
+      > img {
+        display: flex;
+      }
+      @media screen and (min-width: v.$screen-md) {
+        justify-content: space-between;
+        background-color: transparent;
+        min-height: 40px;
+        padding: 8px;
+        border-radius: 6px;
+        gap: 20px;
+        > span {
+          display: inline;
+        }
+        > img {
+          display: none;
+        }
+      }
+    }
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    &--blue {
+      color: #cef1dc;
+    }
+    &--white {
+      color: #292f37;
+    }
+    &--small {
+      @media screen and (max-width: calc(v.$screen-md - 1px)) {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+  }
+  &__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    > img {
+      display: none;
+    }
+    &--small {
+      > img {
+        display: flex;
+        @media screen and (min-width: v.$screen-md) {
+          display: none;
+        }
+      }
+    }
+    &--large {
+      > img {
+        display: flex;
+      }
+    }
+  }
+}

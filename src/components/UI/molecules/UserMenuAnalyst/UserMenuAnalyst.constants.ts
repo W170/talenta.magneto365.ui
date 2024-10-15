@@ -5,7 +5,8 @@ import {
   MouseCircleBlackOutline,
   BuildingSlashBlackOutline,
   AddSquareBlackOutline,
-  RedoDarkBlue
+  RedoDarkBlue,
+  WhatsAppDark
 } from '@constants/icons.constants'
 
 export const userMenuAnalystIcons: { [key: string]: string } = {
@@ -15,5 +16,6 @@ export const userMenuAnalystIcons: { [key: string]: string } = {
   manage: MouseCircleBlackOutline,
   unlink: BuildingSlashBlackOutline,
   add: AddSquareBlackOutline,
-  redo: RedoDarkBlue
+  redo: RedoDarkBlue,
+  whatsApp: WhatsAppDark
 }
