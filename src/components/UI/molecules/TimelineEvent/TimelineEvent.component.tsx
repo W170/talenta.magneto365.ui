@@ -11,13 +11,13 @@ const timelineIcons = {
   blocked: Lock
 }
 
-const Component: React.FC<TimelineEventProps> = ({ title, subtitle, status }) => {
+const Component: React.FC<TimelineEventProps> = ({ title, subtitle, status, index = 0, onClick = () => ({}) }) => {
   const iconByType = useMemo(() => timelineIcons[status], [status])
   const titleStyle = style[`${classMUI}-timeline-event__text--title-${status}`]
   const subtitleStyle = style[`${classMUI}-timeline-event__text--subtitle-${status}`]
 
   return (
-    <div className={style[`${classMUI}-timeline-event`]}>
+    <button type="button" onClick={() => onClick(status, index)} className={style[`${classMUI}-timeline-event`]}>
       <div className={style[`${classMUI}-timeline-event__icon`]}>
         <div className={`${style[`${classMUI}-timeline-event__icon--bar`]} ${style[status]}`}></div>
         <IconItem className={style[`${classMUI}-timeline-event__icon--icon`]} icon={iconByType} alt={status} />
@@ -26,7 +26,7 @@ const Component: React.FC<TimelineEventProps> = ({ title, subtitle, status }) =>
         <p className={`${style[`${classMUI}-timeline-event__text--title`]} ${titleStyle}`}>{title}</p>
         <p className={`${style[`${classMUI}-timeline-event__text--subtitle`]} ${subtitleStyle}`}>{subtitle}</p>
       </div>
-    </div>
+    </button>
   )
 }
 

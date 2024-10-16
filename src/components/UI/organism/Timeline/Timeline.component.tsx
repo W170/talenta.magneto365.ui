@@ -10,7 +10,7 @@ const STATUS: { [key: string]: TimelineEventStatus } = {
   BLOCKED: 'blocked'
 }
 
-const Component: React.FC<ITimelineProps> = ({ steps, currentStep }) => {
+const Component: React.FC<ITimelineProps> = ({ steps, currentStep, onClick = () => ({}) }) => {
   currentStep = Math.max(currentStep, 1)
 
   const getStatus = (index: number): TimelineEventStatus => {
@@ -26,7 +26,14 @@ const Component: React.FC<ITimelineProps> = ({ steps, currentStep }) => {
   return (
     <div className={style[`${classMUI}-timeline`]}>
       {steps.map(({ subtitle, title }, index) => (
-        <TimelineEvent key={index} title={title} subtitle={subtitle} status={getStatus(index)} />
+        <TimelineEvent
+          index={index + 1}
+          onClick={onClick}
+          key={index}
+          title={title}
+          subtitle={subtitle}
+          status={getStatus(index)}
+        />
       ))}
     </div>
   )

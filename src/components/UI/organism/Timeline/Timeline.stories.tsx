@@ -1,6 +1,7 @@
 import React from 'react'
 import { StoryObj, Meta } from '@storybook/react'
 import { Timeline } from './Timeline.component'
+import { timeLineSteps } from '../../../../constants/stories/timeLine.constants'
 
 const meta: Meta<typeof Timeline> = {
   title: 'Organism/Timeline',
@@ -14,24 +15,8 @@ type Story = StoryObj<typeof Timeline>
 export const Default: Story = {
   args: {
     currentStep: 1,
-    steps: [
-      {
-        title: 'Nivel 1',
-        subtitle: 'Preferencias de empleo'
-      },
-      {
-        title: 'Nivel 2',
-        subtitle: 'Hazte visible y aplica a empleos'
-      },
-      {
-        title: 'Nivel 3',
-        subtitle: 'Haz que tu perfil destaque'
-      },
-      {
-        title: 'Nivel 4',
-        subtitle: 'Entra en los candidatos TOP'
-      }
-    ]
+    steps: timeLineSteps,
+    onClick: (status, index) => console.log({ status, index })
   },
   render: (args) => <Timeline {...args} />
 }
