@@ -11,7 +11,8 @@ const meta: Meta<typeof MessageSample> = {
   title: 'Molecules/Message',
   component: MessageSample,
   args: {
-    text: 'This is a sample info message',
+    text: 'Info.',
+    description: 'Description.',
     type: 'info',
     duration: 3000
   },
@@ -32,21 +33,21 @@ export const Default: Story = {}
 
 export const Success: Story = {
   args: {
-    text: 'Success message',
+    text: 'Success message.',
     type: 'success',
     duration: 4000
   }
 }
 export const Warning: Story = {
   args: {
-    text: 'Warning message',
+    text: 'Warning message.',
     type: 'warning',
     duration: 2000
   }
 }
 export const Error: Story = {
   args: {
-    text: 'Error message',
+    text: 'Error message.',
     type: 'error',
     duration: 1500
   }

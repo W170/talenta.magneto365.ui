@@ -1,4 +1,9 @@
-import { Success, Info, Warning, Error } from '@constants/icons.constants'
+import {
+  InfoCircleBlueBold,
+  TickCircleGreenBold,
+  WarningYellowBold,
+  CloseCircleRedBold
+} from '@constants/icons.constants'
 import { IMessage } from '../Message.interface'
 
 export const initialState: IMessage = {
@@ -8,8 +13,10 @@ export const initialState: IMessage = {
 }
 
 export const iconByType = {
-  info: Info,
-  success: Success,
-  warning: Warning,
-  error: Error
+  info: InfoCircleBlueBold,
+  success: TickCircleGreenBold,
+  warning: WarningYellowBold,
+  error: CloseCircleRedBold
 }
+
+export const transitionDuration = 300
