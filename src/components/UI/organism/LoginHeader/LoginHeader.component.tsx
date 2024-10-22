@@ -21,6 +21,7 @@ import {
   searchPropsButton,
   removePropsButton
 } from '@constants/stories'
+import { SearchButton } from '@components/UI/molecules/SearchButton'
 
 const Component: React.FC<ILoginHeader> = ({
   onClick,
@@ -59,7 +60,7 @@ const Component: React.FC<ILoginHeader> = ({
   })
 
   const loginHeaderMobileSearchbarButton = useMediaQuery(null, {
-    md: <MainButton onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
+    md: <SearchButton searchValue={searchbar.termValue} onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
   })
 
   const loginHeaderSearchbar = useMediaQuery(

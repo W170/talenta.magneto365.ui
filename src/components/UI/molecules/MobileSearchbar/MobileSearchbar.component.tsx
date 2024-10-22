@@ -37,6 +37,7 @@ const Component: React.FC<IMobileSearchbar> = ({
   return (
     <div className={styles.MobileSearchbarComponent} data-show-mobile-searchbar={showMobileSearchbar}>
       <form onSubmit={handleSubmit}>
+        {searchValue && <div className={styles['search-badge']} />}
         <MainButton className={styles['magneto-ui-search-button']} {...searchMobileProps} />
         <label htmlFor="search" />
         <input
@@ -46,6 +47,7 @@ const Component: React.FC<IMobileSearchbar> = ({
           onChange={(e) => setSearchValue(e.target.value)}
           ref={searchInputRef}
         />
+
         <MainButton
           className={styles['magneto-ui-remove-button']}
           onClick={handleClearSearch}

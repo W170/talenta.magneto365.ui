@@ -4,7 +4,7 @@ export interface ISearchbar {
   /**
    * Sets the value for the input in the searchbar
    */
-  termValue: any
+  termValue: string
   /**
    * Placeholder text for the searchbar
    */
