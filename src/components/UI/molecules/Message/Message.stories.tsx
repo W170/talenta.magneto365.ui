@@ -1,10 +1,21 @@
-import React, { FC } from 'react'
+import React, { useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-import { message } from './Message.component'
-import { IMessage } from './Message.interface'
+import { IMessageProps } from './Message.interface'
+import { Message } from './Message.component'
 
-const MessageSample: FC<IMessage> = (props) => {
-  return <button onClick={() => message(props)}>Open message</button>
+const MessageSample: React.FC<IMessageProps> = (props) => {
+  const [visible, setVisible] = useState<boolean>(false)
+
+  const handleClick = (localVisible: boolean) => {
+    setVisible(localVisible)
+  }
+
+  return (
+    <React.Fragment>
+      <Message {...props} onHide={handleClick} visible={visible} />
+      <button onClick={() => handleClick(true)}>Message</button>
+    </React.Fragment>
+  )
 }
 
 const meta: Meta<typeof MessageSample> = {

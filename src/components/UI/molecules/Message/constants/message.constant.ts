@@ -4,9 +4,9 @@ import {
   WarningYellowBold,
   CloseCircleRedBold
 } from '@constants/icons.constants'
-import { IMessage } from '../Message.interface'
+import { IMessageProps } from '../Message.interface'
 
-export const initialState: IMessage = {
+export const initialState: IMessageProps = {
   text: '',
   type: 'info',
   duration: 3000
