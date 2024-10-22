@@ -4,8 +4,11 @@ import { ISelect } from './Select.interface'
 import { ArrowDown2 } from '@constants/icons.constants'
 import { SelectInput } from './children/SelectInput/SelectInput.component'
 import { classNames, stubTrue } from '@shared/utils/common'
-import styles from './Select.module.scss'
 import { ISelectInput } from './children/SelectInput/SelectInput.interface'
+import { SelectClickout } from './children/SelectClickout'
+import { SelectDrawer } from './children/SelectDrawer'
+import { SelectListCheck } from './children/SelectListCheck'
+import styles from './Select.module.scss'
 
 const cx = classNames.bind(styles)
 
@@ -55,4 +58,10 @@ const Component = <T,>({
  * @experimental this component is early, so that the interface component and behavrior could change.
  * @deprecated this function will change soon.
  */
-export const Select = Object.assign(Component, { useContext: useSelectContext, Input: SelectInput })
+export const Select = Object.assign(Component, {
+  useContext: useSelectContext,
+  Input: SelectInput,
+  Clickout: SelectClickout,
+  Drawer: SelectDrawer,
+  ListCheck: SelectListCheck
+})

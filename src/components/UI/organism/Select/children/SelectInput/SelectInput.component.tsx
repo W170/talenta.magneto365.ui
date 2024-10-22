@@ -5,8 +5,8 @@ import { ArrowDown2 } from '@constants/icons.constants'
 import { classNames } from '@shared/utils/common'
 import { IValueSelect } from '../../Select.interface'
 import { generateID } from '@utils/generateID/generateID.util'
-import styles from './SelectInput.module.scss'
 import { IconItem } from '@components/UI/atoms'
+import styles from './SelectInput.module.scss'
 
 const cx = classNames.bind(styles)
 
