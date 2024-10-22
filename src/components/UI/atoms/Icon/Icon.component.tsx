@@ -28,6 +28,7 @@ const Component: React.FC<IconProps> = ({
     <Fragment>
       {icon && (
         <img
+          data-name="icon"
           style={customStyle}
           className={`${style['magneto-ui-icon']} ${isHover} ${className}`}
           src={iconSrc}
