@@ -38,6 +38,7 @@
     height: 1.5rem;
     margin: 19px 20px;
     z-index: 1;
+    position: relative;
   }
 
   input {
@@ -86,4 +87,14 @@
 
 .buttonClose {
   @include buttonClose;
+}
+.search-badge {
+  background-color: red;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 8px;
+  top: 0px;
+  border-radius: 50%;
+  border: white 2px solid;
 }

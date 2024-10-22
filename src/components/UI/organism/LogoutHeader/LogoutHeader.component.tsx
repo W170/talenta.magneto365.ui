@@ -20,6 +20,7 @@ import {
   SignInStyles,
   SignUpButtonStyle
 } from '@constants/stories'
+import { SearchButton } from '@components/UI/molecules/SearchButton/SearchButton.component'
 
 const Component: React.FC<ILogoutHeader> = ({
   leftTabButton,
@@ -46,11 +47,11 @@ const Component: React.FC<ILogoutHeader> = ({
     setShowSearchBar(!showSearchBar)
   }
 
-  // Mobile Searchbar Component
   const LogoutHeaderMobileSearchbar = useMediaQuery(null, {
     md: (
       <MobileSearchbar
         {...mobileSearchbar}
+        termValue={searchbar.termValue}
         onClick={() => setShowSearchBar(false)}
         showMobileSearchbar={showSearchBar}
         focusSearchInput={showSearchBar}
@@ -84,11 +85,11 @@ const Component: React.FC<ILogoutHeader> = ({
   // Mobile Searchbar Button Component
   const LogoutHeaderMobileSearchbarButton = useMediaQuery(null, {
     xs: hasMobileSearchBarButton ? (
-      <MainButton onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
+      <SearchButton searchValue={searchbar.termValue} onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
     ) : (
       <Fragment />
     ),
-    md: <MainButton onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
+    md: <SearchButton searchValue={searchbar.termValue} onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
   })
 
   // Searchbar Component

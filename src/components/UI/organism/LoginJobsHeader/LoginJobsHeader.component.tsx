@@ -16,6 +16,7 @@ import {
 import { BrandMenu } from '../BrandMenu'
 
 import styles from './LoginJobsHeader.module.scss'
+import { SearchButton } from '@components/UI/molecules/SearchButton'
 
 const Muiclass = 'magneto-ui'
 
@@ -78,7 +79,7 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
   const LoginHeaderMenuButton = useMediaQuery(<MainButton {...MenuButtonProps} onClick={onMenuClick} />)
 
   const LogoutHeaderMobileSearchbarButton = useMediaQuery(null, {
-    md: <MainButton onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
+    md: <SearchButton searchValue={searchbar.termValue} onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
   })
 
   const LogoutHeaderSearchbar = useMediaQuery(

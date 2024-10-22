@@ -1,0 +1,13 @@
+.search-button {
+  position: relative;
+  &__badge {
+    background-color: red;
+    width: 11px;
+    height: 11px;
+    position: absolute;
+    left: 11px;
+    top: -2px;
+    border-radius: 50%;
+    border: white 2px solid;
+  }
+}

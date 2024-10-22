@@ -37,6 +37,7 @@ const Component: React.FC<ISearchbar> = ({
           onChange={(e) => setSearchValue(e.target.value)}
           placeholder={placeholder}
         />
+        {searchValue && <div className={styles['SearchbarComponent__badge']} />}
         <div className={styles['magneto-ui-searchbar-buttons']}>
           {searchValue && (
             <>
