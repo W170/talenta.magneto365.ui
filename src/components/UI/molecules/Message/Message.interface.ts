@@ -1,5 +1,9 @@
 export interface IMessageProps {
   /**
+   * Optional class name
+   */
+  className?: string
+  /**
    * Optional description of the message
    */
   description?: string

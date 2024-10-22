@@ -6,6 +6,7 @@ import { IMessageProps } from './Message.interface'
 import styles from './Message.module.scss'
 
 export const Component: React.FC<IMessageProps> = ({
+  className,
   description,
   duration = 3000,
   onHide,
@@ -79,11 +80,13 @@ export const Component: React.FC<IMessageProps> = ({
 
   return localVisible
     ? ReactDOM.createPortal(
-        <div className={containerStyles} style={containerVar as React.CSSProperties}>
-          <img src={iconByType[type]} className={styles.icon} alt={type} />
-          <div>
-            {text && <span className={textStyles(!!description)}>{text}</span>}
-            {description && <span className={textStyles()}>{description}</span>}
+        <div style={containerVar as React.CSSProperties} className={CNM.get({ styles, cls: [className] })}>
+          <div className={containerStyles}>
+            <img src={iconByType[type]} className={styles.icon} alt={type} />
+            <div>
+              {text && <span className={textStyles(!!description)}>{text}</span>}
+              {description && <span className={textStyles()}>{description}</span>}
+            </div>
           </div>
         </div>,
         document.body
