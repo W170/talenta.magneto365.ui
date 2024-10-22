@@ -44,11 +44,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    &--open {
-      color: black;
-    }
+    &--open,
     &--selected {
-      color: black;
+      color: #0a0c0e;
     }
   }
 }

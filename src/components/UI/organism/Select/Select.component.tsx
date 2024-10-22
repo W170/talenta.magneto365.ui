@@ -10,7 +10,14 @@ import { ISelectInput } from './children/SelectInput/SelectInput.interface'
 const cx = classNames.bind(styles)
 
 const defaultSelect = <T,>(props: ISelectInput<T>) => {
-  return <Select.Input hideIcon actionIcon={ArrowDown2} {...props} />
+  return (
+    <Select.Input
+      hideIcon
+      className={cx('select-input', { 'select-input--open': props.open })}
+      actionIcon={ArrowDown2}
+      {...props}
+    />
+  )
 }
 
 const Component = <T,>({

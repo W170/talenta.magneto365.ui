@@ -3,3 +3,14 @@
     position: relative;
   }
 }
+
+.select-input {
+  img[data-name='icon'] {
+    transition: all ease-in-out 300ms;
+  }
+  &--open {
+    img[data-name='icon'] {
+      transform: rotate(180deg);
+    }
+  }
+}

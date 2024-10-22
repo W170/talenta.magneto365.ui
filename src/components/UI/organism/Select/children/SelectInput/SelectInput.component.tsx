@@ -44,21 +44,17 @@ const Component = <T,>({
   if (!readOnly) {
     return (
       <div
-        className={cx(
-          'select-input',
-          {
-            'select-input--with-icon': actionIcon !== undefined,
-            'select-input--no-placeholder': rest.placeholder.length === 0
-          },
-          className
-        )}
+        className={cx('select-input', className, {
+          'select-input--with-icon': actionIcon !== undefined,
+          'select-input--no-placeholder': rest.placeholder.length === 0
+        })}
         onClick={onClick}
       >
         <Input
           name={ref.current.id}
           value={open ? value : getLabel(selected)}
           onChange={onChange}
-          actionIcon={open ? undefined : actionIcon}
+          actionIcon={actionIcon}
           {...rest}
         />
       </div>
@@ -66,7 +62,7 @@ const Component = <T,>({
   }
 
   return (
-    <button className={cx('select-button')} onClick={onClick}>
+    <button className={cx('select-button', className)} onClick={onClick}>
       <span
         className={cx('select-button__placeholder', {
           'select-button__placeholder--selected': selected.length > 0,
@@ -75,7 +71,7 @@ const Component = <T,>({
       >
         {open ? rest.placeholder : selected.length > 0 ? getLabel(selected) : rest.placeholder}
       </span>
-      {actionIcon ? <IconItem icon={ArrowDown2} size={20} /> : null}
+      {actionIcon ? <IconItem icon={actionIcon} size={20} /> : null}
     </button>
   )
 }
