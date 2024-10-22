@@ -1,3 +1,5 @@
+import { IconProps } from '@components/UI/atoms'
+
 export interface IMessageProps {
   /**
    * Optional class name
@@ -11,6 +13,10 @@ export interface IMessageProps {
    * This is the optional duration in milliseconds
    * */
   duration?: number
+  /**
+   * Optional props for the icon
+   */
+  iconProps?: IconProps
   /**
    * This is the function to be called when the message is hidden
    */

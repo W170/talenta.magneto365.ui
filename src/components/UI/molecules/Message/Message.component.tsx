@@ -4,11 +4,13 @@ import CNM from '@utils/classNameManager/classNameManager.util'
 import { iconByType, transitionDuration } from './constants'
 import { IMessageProps } from './Message.interface'
 import styles from './Message.module.scss'
+import { IconItem } from '@components/UI/atoms'
 
 export const Component: React.FC<IMessageProps> = ({
   className,
   description,
   duration = 3000,
+  iconProps,
   onHide,
   text,
   type = 'info',
@@ -82,7 +84,14 @@ export const Component: React.FC<IMessageProps> = ({
     ? ReactDOM.createPortal(
         <div style={containerVar as React.CSSProperties} className={CNM.get({ styles, cls: [className] })}>
           <div className={containerStyles}>
-            <img src={iconByType[type]} className={styles.icon} alt={type} />
+            <IconItem
+              alt={type}
+              className={CNM.get({ styles, cls: ['message__icon'] })}
+              icon={iconByType[type]}
+              showDefaultFallback={false}
+              size={20}
+              {...iconProps}
+            />
             <div>
               {text && <span className={textStyles(!!description)}>{text}</span>}
               {description && <span className={textStyles()}>{description}</span>}
