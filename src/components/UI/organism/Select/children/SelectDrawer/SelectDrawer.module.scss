@@ -1,0 +1,9 @@
+.select-drawer {
+  & > aside {
+    height: 80dvh;
+    box-sizing: border-box;
+  }
+  *[data-name='select-list'] {
+    display: contents;
+  }
+}

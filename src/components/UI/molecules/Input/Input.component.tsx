@@ -102,7 +102,7 @@ const Input: React.FC<IInput> = ({
                 onClick={actionInputIcon}
                 className={styles[`${classMUI}-input--container__icon-action`]}
               >
-                <img src={actionIcon} />
+                <img data-name="icon" src={actionIcon} />
               </button>
             ) : null}
           </div>
