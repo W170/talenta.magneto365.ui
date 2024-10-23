@@ -1,3 +1,4 @@
+import { IShareLink } from '@components/UI/molecules'
 import { IVacancies } from '@components/UI/page'
 import {
   ArchiveAdd,
@@ -16,7 +17,6 @@ import {
   Location,
   Tag
 } from '@constants/icons.constants'
-import { IShareLink } from '../../../dist'
 
 export const vacancies: IVacancies[] = [
   {

@@ -1,6 +1,5 @@
 import React from 'react'
-import { MainButton } from '@components/UI/atoms'
-import { IMainButton } from '../../../../../dist'
+import { IMainButton, MainButton } from '@components/UI/atoms'
 import styles from './SearchButton.module.scss'
 
 const Component: React.FC<IMainButton & { searchValue: string }> = ({ ...props }) => {

@@ -1,4 +1,5 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../shared/stylesheets/mixins.scss' as m;
 
 .magneto-ui-mobile-drawer {
   & > aside {
@@ -35,8 +36,9 @@
       }
     }
     .magneto-ui-container {
-      overflow-y: auto;
+      @include m.scroll-shadows;
       height: min-content;
+      padding: 0 10px;
       max-height: 300px;
       @media (min-width: v.$screen-xxs) {
         max-height: 550px;

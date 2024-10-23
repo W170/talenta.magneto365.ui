@@ -1,4 +1,4 @@
-export interface IMoblieDrawer {
+export interface IMobileDrawer {
   className?: string
   /**
    * open drawer
