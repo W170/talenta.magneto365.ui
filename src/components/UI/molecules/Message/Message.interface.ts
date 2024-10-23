@@ -28,9 +28,11 @@ export interface IMessageProps {
   /**
    * This is the type of message
    *  */
-  type?: 'info' | 'success' | 'warning' | 'error'
+  type?: TMessageType
   /**
    * Handles visibility of the message
    */
   visible?: boolean
 }
+
+export type TMessageType = 'info' | 'success' | 'warning' | 'error'
