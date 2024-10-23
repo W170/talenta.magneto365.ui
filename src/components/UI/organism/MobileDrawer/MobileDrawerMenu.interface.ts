@@ -1,6 +1,6 @@
-import { IListMenuIcons, IMoblieDrawer } from '../../molecules'
+import { IListMenuIcons, IMobileDrawer } from '../../molecules'
 
-export interface IMobileDrawerMenu extends IMoblieDrawer {
+export interface IMobileDrawerMenu extends IMobileDrawer {
   /**
    * menu items props
    */
