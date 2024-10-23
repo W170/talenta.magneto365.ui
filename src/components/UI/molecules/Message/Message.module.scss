@@ -1,77 +1,66 @@
-:root {
-  --default-duration: 2.5s;
-}
+@use '../../../../shared/stylesheets/variables.scss' as v;
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  visibility: hidden;
-  background-color: #fff;
-  color: black;
-  left: 50%;
-  top: 30px;
-  min-width: 210px;
-  max-width: 350px;
-  padding: 16px;
-  border-radius: 12px;
-  margin-left: -125px;
-  position: fixed;
-  z-index: 60;
-  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
-}
-
-.container.show {
-  visibility: visible;
-  -webkit-animation: fadeIn 0.5s, fadeOut 0.5s var(--default-duration);
-  animation: fadeIn 0.5s, fadeOut 0.5s var(--default-duration);
-}
-
-.icon {
-  width: 20px;
-}
-
-@-webkit-keyframes fadeIn {
-  from {
-    top: 0;
-    opacity: 0;
+.magneto-ui-message {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: fixed;
+    z-index: 99999;
+    box-shadow: 0px 0px 15px 0px #00000026;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 210px;
+    max-width: 420px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 4px solid;
+    color: #292f37;
+    font-size: 14px;
+    line-height: 17px;
+    transition: all var(--transition-duration) ease-in-out;
+    &--show {
+      visibility: visible;
+      opacity: 1;
+      top: 30px;
+    }
+    &--hidden {
+      visibility: hidden;
+      opacity: 0;
+      top: 0;
+    }
+    &--info {
+      background-color: v.$alert-color-blueBackground;
+      border-left-color: v.$alert-color-blue;
+    }
+    &--success {
+      background-color: v.$alert-color-greenBackground;
+      border-left-color: #0cbb4e;
+    }
+    &--warning {
+      background-color: v.$alert-color-yellowBackground;
+      border-left-color: v.$alert-color-yellow;
+    }
+    &--error {
+      background-color: v.$alert-color-redBackground;
+      border-left-color: v.$alert-color-red;
+    }
   }
-  to {
-    top: 30px;
-    opacity: 1;
+  &__text {
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: 400;
+    margin: 0;
+    &--bold {
+      font-weight: 700;
+    }
+    &:last-child {
+      margin-left: 3px;
+    }
   }
-}
-
-@keyframes fadeIn {
-  from {
-    top: 0;
-    opacity: 0;
-  }
-  to {
-    top: 30px;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeOut {
-  from {
-    top: 30px;
-    opacity: 1;
-  }
-  to {
-    top: 0;
-    opacity: 0;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    top: 30px;
-    opacity: 1;
-  }
-  to {
-    top: 0;
-    opacity: 0;
+  &__icon {
+    width: 20px;
   }
 }

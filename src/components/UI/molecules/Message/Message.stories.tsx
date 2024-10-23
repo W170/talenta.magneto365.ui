@@ -1,17 +1,29 @@
-import React, { FC } from 'react'
+import React, { useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-import { message } from './Message.component'
-import { IMessage } from './Message.interface'
+import { IMessageProps } from './Message.interface'
+import { Message } from './Message.component'
 
-const MessageSample: FC<IMessage> = (props) => {
-  return <button onClick={() => message(props)}>Open message</button>
+const MessageSample: React.FC<IMessageProps> = (props) => {
+  const [visible, setVisible] = useState<boolean>(false)
+
+  const handleClick = (localVisible: boolean) => {
+    setVisible(localVisible)
+  }
+
+  return (
+    <React.Fragment>
+      <Message {...props} onHide={handleClick} visible={visible} />
+      <button onClick={() => handleClick(true)}>Message</button>
+    </React.Fragment>
+  )
 }
 
 const meta: Meta<typeof MessageSample> = {
   title: 'Molecules/Message',
   component: MessageSample,
   args: {
-    text: 'This is a sample info message',
+    text: 'Info.',
+    description: 'Description.',
     type: 'info',
     duration: 3000
   },
@@ -32,21 +44,21 @@ export const Default: Story = {}
 
 export const Success: Story = {
   args: {
-    text: 'Success message',
+    text: 'Success message.',
     type: 'success',
     duration: 4000
   }
 }
 export const Warning: Story = {
   args: {
-    text: 'Warning message',
+    text: 'Warning message.',
     type: 'warning',
     duration: 2000
   }
 }
 export const Error: Story = {
   args: {
-    text: 'Error message',
+    text: 'Error message.',
     type: 'error',
     duration: 1500
   }
