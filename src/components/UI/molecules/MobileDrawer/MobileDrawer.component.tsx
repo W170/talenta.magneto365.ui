@@ -48,7 +48,7 @@ const Component: React.FC<IMobileDrawer> = ({
               <button title="close-modal" className={cx('magneto-ui-close-button')} onClick={onClose}>
                 <IconItem icon={Add} hover={false} />
               </button>
-              <div className={cx('magneto-ui-container', 'scroll-shadows')}>{children}</div>
+              <div className={cx('magneto-ui-container')}>{children}</div>
             </aside>
             {isOpen && (
               <span className={cx('background-drawer')} onClick={blockBackgroundClose ? () => null : onClose} />
