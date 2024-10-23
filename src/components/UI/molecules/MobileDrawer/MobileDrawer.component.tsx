@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { IconItem } from '../../atoms'
 import { DrawerPortal } from '../Drawer/DrawerPortal'
-import { IMoblieDrawer } from './MobileDrawer.interface'
+import { IMobileDrawer } from './MobileDrawer.interface'
 import style from './mobileDrawer.module.scss'
 import { Add } from '../../../../constants/icons.constants'
+import { classNames } from '@shared/utils/common'
 
-const Component: React.FC<IMoblieDrawer> = ({
+const cx = classNames.bind(style)
+
+const Component: React.FC<IMobileDrawer> = ({
   onClose,
   isOpen,
   children,
@@ -40,15 +43,15 @@ const Component: React.FC<IMoblieDrawer> = ({
     <>
       {renderPortal && (
         <DrawerPortal>
-          <div className={`${style['magneto-ui-mobile-drawer']} ${className}`}>
+          <div className={cx('magneto-ui-mobile-drawer', className)}>
             <aside className={style[showMenu]}>
-              <button title="cerrar modal" className={style['magneto-ui-close-button']} onClick={onClose}>
+              <button title="close-modal" className={cx('magneto-ui-close-button')} onClick={onClose}>
                 <IconItem icon={Add} hover={false} />
               </button>
-              <div className={style['magneto-ui-container']}>{children}</div>
+              <div className={cx('magneto-ui-container', 'scroll-shadows')}>{children}</div>
             </aside>
             {isOpen && (
-              <span className={`${style['background-drawer']}`} onClick={blockBackgroundClose ? () => null : onClose} />
+              <span className={cx('background-drawer')} onClick={blockBackgroundClose ? () => null : onClose} />
             )}
           </div>
         </DrawerPortal>
