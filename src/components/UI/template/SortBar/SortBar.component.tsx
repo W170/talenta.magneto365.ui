@@ -26,6 +26,14 @@ const SortBar: React.FC<ISortBar> = ({
   widthInfoMessage
 }) => {
   const [showMenu, setShowMenu] = useState(false)
+  const tooltip = useMediaQuery(
+    <Tooltip title={infoMessageQuotas || ''} position="bottom" width={widthInfoMessage}>
+      <div className={`${styles['magneto-ui-tooltip-quotas']}`}>
+        <span>?</span>
+      </div>
+    </Tooltip>,
+    { sm: <Fragment /> }
+  )
 
   const sortMenu = useMediaQuery(
     <SortMenu orderFields={orderFields} textOrderFilter={textOrderFilter} setFilter={setFilter} loading={loading} />,
@@ -75,13 +83,7 @@ const SortBar: React.FC<ISortBar> = ({
           />
           {mainTitleByMediaQuery}
           <p className={`${styles['magneto-ui-btn-text']} ${styles.hidden}`}>{filterSummary}</p>
-          {infoMessageQuotas && (
-            <Tooltip title={infoMessageQuotas} position="bottom" width={widthInfoMessage}>
-              <div className={`${styles['magneto-ui-tooltip-quotas']}`}>
-                <span>?</span>
-              </div>
-            </Tooltip>
-          )}
+          {infoMessageQuotas && tooltip}
         </div>
         {sortBarButtonAltRender}
       </div>

@@ -56,13 +56,10 @@
   height: 1.5rem;
   color: #8591a0;
   cursor: pointer;
+  display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-  display: none;
-  @media screen and (min-width: v.$screen-md) {
-    display: flex;
-  }
 }
 
 .magneto-ui-btn-menu {
