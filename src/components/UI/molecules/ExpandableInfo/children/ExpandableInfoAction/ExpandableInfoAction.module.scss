@@ -1,0 +1,55 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-expandable-info-action {
+  &__button {
+    width: 100%;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    &--dark-blue {
+      color: v.$color-white;
+      background-color: v.$color-blue-dark1;
+      &:hover {
+        color: v.$color-white;
+      }
+    }
+    &--light-blue {
+      color: v.$color-blue-dark2;
+      background-color: v.$color-blue-light4;
+      &:hover {
+        color: v.$color-blue-dark2;
+        background-color: v.$color-blue-light2;
+      }
+    }
+    &--white {
+      color: v.$color-blue-dark3;
+      background-color: v.$color-white;
+      &:hover {
+        color: v.$color-blue-dark3;
+      }
+    }
+    &--green {
+      color: #090467;
+      background-color: #9ee4b8;
+      &:hover {
+        color: #090467;
+        background-color: #6dd695;
+      }
+    }
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16.8px;
+    color: inherit;
+    text-align: center;
+  }
+}
