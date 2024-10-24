@@ -52,9 +52,9 @@ const Component: React.FC<IExpandableInfoActionProps> = ({
     <div className={CNM.get({ styles, cls: ['expandable-info-action', className] })}>
       <div className={CNM.get({ styles, cls: ['expandable-info-action__container'] })}>
         <Component {...componentProps}>
-          {(prefixIcon || loading) && <IconItem size={18} {...prefixIcon} icon={icon(prefixIcon?.icon)} />}
+          {(prefixIcon || loading) && <IconItem size={12} {...prefixIcon} icon={icon(prefixIcon?.icon)} />}
           <span className={CNM.get({ styles, cls: ['expandable-info-action__title'] })}>{title}</span>
-          {suffixIcon && <IconItem size={18} {...suffixIcon} icon={icon(suffixIcon.icon)} />}
+          {suffixIcon && <IconItem size={12} {...suffixIcon} icon={icon(suffixIcon.icon)} />}
         </Component>
       </div>
     </div>

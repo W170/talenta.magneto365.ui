@@ -3,13 +3,13 @@
 .magneto-ui-expandable-info-action {
   &__button {
     width: 100%;
-    min-height: 36px;
+    min-height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 10px 20px;
-    border-radius: 50px;
+    padding: 8px 15px;
+    border-radius: 30px;
     border: none;
     cursor: pointer;
     text-decoration: none;
@@ -32,6 +32,7 @@
     &--white {
       color: v.$color-blue-dark3;
       background-color: v.$color-white;
+      min-height: 28px;
       &:hover {
         color: v.$color-blue-dark3;
       }
@@ -44,11 +45,19 @@
         background-color: #6dd695;
       }
     }
+    > img {
+      min-height: 12px;
+      min-width: 12px;
+      width: 12px;
+      height: 12px;
+      object-fit: contain;
+      aspect-ratio: 1 / 1;
+    }
   }
   &__title {
     font-weight: 700;
-    font-size: 14px;
-    line-height: 16.8px;
+    font-size: 12px;
+    line-height: 14px;
     color: inherit;
     text-align: center;
   }

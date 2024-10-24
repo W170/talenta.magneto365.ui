@@ -21,7 +21,8 @@
       background-color: v.$color-white;
       border: none;
       border-bottom: solid 1px #f0f1f3;
-      padding: 10px;
+      padding-left: 10px;
+      min-height: 30px;
     }
     &--small {
       border: solid 1px #e0e4e7;
