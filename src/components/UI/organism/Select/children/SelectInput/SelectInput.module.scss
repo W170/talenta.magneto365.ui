@@ -5,6 +5,14 @@
     }
   }
 
+  &--disabled {
+    & > div {
+      & > div {
+        background: #f0f1f3;
+      }
+    }
+  }
+
   &--no-placeholder {
     input {
       margin-top: 4px;
@@ -37,16 +45,33 @@
   display: flex;
   align-items: center;
   padding: 0 1rem;
-  &__placeholder {
+  &--disabled {
+    background: #f0f1f3;
+  }
+
+  &__input {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     text-align: left;
+  }
+
+  &__placeholder {
     color: #a3a3b5;
     flex: 1;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    &--open,
-    &--selected {
+    &--open {
       color: #0a0c0e;
     }
+
+    &--selected {
+      color: #a3a3b5;
+    }
+  }
+
+  &__value {
+    color: #0a0c0e;
   }
 }

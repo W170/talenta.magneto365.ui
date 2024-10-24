@@ -2,6 +2,10 @@ import React from 'react'
 import { ISelectInput } from './children/SelectInput/SelectInput.interface'
 
 export interface ISelect<T> {
+  className?: string
+
+  getLabel?: ISelectInput<T>['getLabel']
+
   value: IValueSelect<T>[]
   onChange?: (value: IValueSelect<T>[]) => void
 

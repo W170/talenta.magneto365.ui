@@ -30,25 +30,30 @@ const Component = <T,>({
   options,
   value,
   onChange = stubTrue,
-  inputReadonly = false
+  inputReadonly = false,
+  className,
+  getLabel
 }: ISelect<T>) => {
   const [open, setOpen] = useState(false)
   const [search, setSearch] = useState('')
 
   return (
     <SelectContext.Provider value={{ options, value, onSwitch: setOpen, onChange, search, open, onSearch: setSearch }}>
-      {renderSelect({
-        placeholder,
-        readOnly: inputReadonly,
-        onChange: ({ target }) => setSearch(target.value),
-        type: 'text',
-        value: search,
-        open,
-        onClick: () => setOpen(true),
-        selected: value
-      })}
-      <div className={cx('select__list-container')} data-name="select-list-container">
-        {children}
+      <div className={className}>
+        {renderSelect({
+          placeholder,
+          readOnly: inputReadonly,
+          onChange: ({ target }) => setSearch(target.value),
+          type: 'text',
+          value: search,
+          open,
+          onClick: () => setOpen(true),
+          selected: value,
+          getLabel
+        })}
+        <div className={cx('select__list-container')} data-name="select-list-container">
+          {children}
+        </div>
       </div>
     </SelectContext.Provider>
   )

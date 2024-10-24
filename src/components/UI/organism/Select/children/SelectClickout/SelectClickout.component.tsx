@@ -9,6 +9,7 @@ const cx = classNames.bind(styles)
 type Props = {
   clickOut: boolean
   setClickOut: (value: boolean) => void
+  children?: React.ReactNode
 }
 
 const SelectClickout: React.FC<Props> = ({ children, clickOut, setClickOut }) => {
@@ -34,4 +35,4 @@ const SelectClickout: React.FC<Props> = ({ children, clickOut, setClickOut }) =>
   return null
 }
 
-export default withClickOut(SelectClickout)
+export default withClickOut(SelectClickout) as React.FC<Omit<Props, 'clickOut' | 'setClickOut'>>
