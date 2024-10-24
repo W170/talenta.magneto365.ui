@@ -1,3 +1,5 @@
+@use '../../../../../../shared/stylesheets/mixins.scss' as *;
+
 .select-list {
   position: absolute;
   width: 100%;
@@ -14,6 +16,10 @@
   border-left: 1px solid #e0e4e7;
   box-sizing: border-box;
   display: none;
+
+  overflow-y: auto;
+  @include scroll-thin;
+
   &--visible {
     display: flex;
   }

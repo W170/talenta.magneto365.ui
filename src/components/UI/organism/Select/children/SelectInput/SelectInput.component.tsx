@@ -24,6 +24,7 @@ const Component = <T,>({
   selected,
   getLabel = getDefaulSelected,
   readOnly,
+  disabled,
   ...rest
 }: ISelectInput<T>) => {
   const ref = useRef({ onChange, id: generateID() })
@@ -46,12 +47,17 @@ const Component = <T,>({
       <div
         className={cx('select-input', className, {
           'select-input--with-icon': actionIcon !== undefined,
-          'select-input--no-placeholder': rest.placeholder.length === 0
+          'select-input--no-placeholder': rest.placeholder.length === 0,
+          'select-input--disabled': disabled
         })}
-        onClick={onClick}
+        onClick={() => (disabled ? null : onClick())}
+        data-name="select-input"
+        data-selected={selected.length > 0}
+        data-is-open={open}
       >
         <Input
           name={ref.current.id}
+          disabled={disabled}
           value={open ? value : getLabel(selected)}
           onChange={onChange}
           actionIcon={actionIcon}
@@ -62,15 +68,35 @@ const Component = <T,>({
   }
 
   return (
-    <button className={cx('select-button', className)} onClick={onClick}>
-      <span
-        className={cx('select-button__placeholder', {
-          'select-button__placeholder--selected': selected.length > 0,
-          'select-button__placeholder--open': open
-        })}
-      >
-        {open ? rest.placeholder : selected.length > 0 ? getLabel(selected) : rest.placeholder}
-      </span>
+    <button
+      className={cx('select-button', { 'select-button--disabled': disabled }, className)}
+      disabled={disabled}
+      onClick={onClick}
+      data-name="select-button"
+      data-selected={selected.length > 0}
+      data-is-open={open}
+    >
+      <div className={cx('select-button__input')}>
+        {rest.placeholder.length > 0 ? (
+          <span
+            className={cx('select-button__placeholder', {
+              'select-button__placeholder--open': open,
+              'select-button__placeholder--selected': selected.length > 0
+            })}
+          >
+            {rest.placeholder}
+          </span>
+        ) : null}
+        {selected.length > 0 ? (
+          <span
+            className={cx('select-button__value', {
+              'select-button__placeholder--open': open
+            })}
+          >
+            {getLabel(selected)}
+          </span>
+        ) : null}
+      </div>
       {actionIcon ? <IconItem icon={actionIcon} size={20} /> : null}
     </button>
   )
