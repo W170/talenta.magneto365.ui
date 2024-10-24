@@ -16,6 +16,10 @@ export const expandableInfoProps: IExpandableInfoProps = {
       {
         children: [
           {
+            title: 'Plan gratuito',
+            summary: '10'
+          },
+          {
             title: 'Plan estándar:',
             summary: '20',
             content: [

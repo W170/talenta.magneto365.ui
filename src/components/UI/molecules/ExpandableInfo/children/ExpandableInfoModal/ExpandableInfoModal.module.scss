@@ -3,6 +3,10 @@
     padding: 12px 20px 20px 20px;
     > div {
       overflow: visible;
+      padding: 0;
+      > div {
+        padding: 0;
+      }
     }
   }
 }

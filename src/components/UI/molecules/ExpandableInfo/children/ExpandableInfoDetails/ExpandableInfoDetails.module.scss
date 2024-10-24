@@ -14,10 +14,15 @@
     border-bottom: solid 1px #f0f1f3;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 10px 8px;
+    gap: 4px;
+    &:first-child {
+      padding: 10px 8px;
+    }
     @media screen and (min-width: v.$screen-md) {
-      padding: 4px 8px;
+      &:first-child {
+        padding: 4px 8px;
+      }
+      padding: 8px 4px;
     }
     &--multiple {
       padding: 0;
@@ -33,7 +38,6 @@
     z-index: 13;
     &--initial {
       background-color: transparent;
-      padding-inline: 4px;
     }
   }
   &__item {
@@ -67,7 +71,9 @@
     }
   }
   &__footer {
-    padding: 4px;
+    @media screen and (min-width: v.$screen-md) {
+      padding: 4px;
+    }
   }
   &__action {
     > div > button {
