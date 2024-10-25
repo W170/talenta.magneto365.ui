@@ -5,6 +5,15 @@ import styles from './Checkbox.module.scss'
 
 const cx = classNames.bind(styles)
 
+const defaultCheck: ICheckbox['renderCheck'] = ({ type, checked }) => {
+  if (type === 'background') return
+  return (
+    <div aria-checked={checked} role="checkbox" className={cx('checkbox__box', { 'checkbox__box--checked': checked })}>
+      {checked ? <>&#x2713;</> : null}
+    </div>
+  )
+}
+
 const Component: React.FC<ICheckbox> = ({
   id,
   checked,
@@ -13,6 +22,7 @@ const Component: React.FC<ICheckbox> = ({
   type = 'box',
   className,
   display = 'inline',
+  renderCheck = defaultCheck,
   ...rest
 }) => {
   return (
@@ -24,6 +34,7 @@ const Component: React.FC<ICheckbox> = ({
       data-name="checkbox-container"
       htmlFor={id}
     >
+      {renderCheck({ checked, type })}
       <input
         data-name="checkbox"
         checked={checked}
