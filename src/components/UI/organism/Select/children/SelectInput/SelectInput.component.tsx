@@ -2,7 +2,7 @@ import React, { ChangeEvent, useEffect, useRef } from 'react'
 import { Input } from '@components/UI/molecules'
 import { ISelectInput } from './SelectInput.interface'
 import { ArrowDown2 } from '@constants/icons.constants'
-import { classNames } from '@shared/utils/common'
+import { classNames, stubTrue, stubUndefined } from '@shared/utils/common'
 import { IValueSelect } from '../../Select.interface'
 import { generateID } from '@utils/generateID/generateID.util'
 import { IconItem } from '@components/UI/atoms'
@@ -15,16 +15,18 @@ const getDefaulSelected = <T,>(selected: IValueSelect<T>[]) => {
 }
 
 const Component = <T,>({
-  onChange,
-  value,
+  onChange = stubTrue,
+  value = '',
   className,
-  onClick,
+  onClick = stubUndefined,
   open = false,
   actionIcon = ArrowDown2,
-  selected,
+  selected = [],
   getLabel = getDefaulSelected,
   readOnly,
   disabled,
+  placeholder = '',
+  type = 'text',
   ...rest
 }: ISelectInput<T>) => {
   const ref = useRef({ onChange, id: generateID() })
@@ -47,7 +49,7 @@ const Component = <T,>({
       <div
         className={cx('select-input', className, {
           'select-input--with-icon': actionIcon !== undefined,
-          'select-input--no-placeholder': rest.placeholder.length === 0,
+          'select-input--no-placeholder': placeholder.length === 0,
           'select-input--disabled': disabled
         })}
         onClick={() => (disabled ? null : onClick())}
@@ -61,6 +63,8 @@ const Component = <T,>({
           value={open ? value : getLabel(selected)}
           onChange={onChange}
           actionIcon={actionIcon}
+          placeholder={placeholder}
+          type={type}
           {...rest}
         />
       </div>
@@ -75,16 +79,17 @@ const Component = <T,>({
       data-name="select-button"
       data-selected={selected.length > 0}
       data-is-open={open}
+      type="button"
     >
       <div className={cx('select-button__input')}>
-        {rest.placeholder.length > 0 ? (
+        {placeholder.length > 0 ? (
           <span
             className={cx('select-button__placeholder', {
               'select-button__placeholder--open': open,
               'select-button__placeholder--selected': selected.length > 0
             })}
           >
-            {rest.placeholder}
+            {placeholder}
           </span>
         ) : null}
         {selected.length > 0 ? (

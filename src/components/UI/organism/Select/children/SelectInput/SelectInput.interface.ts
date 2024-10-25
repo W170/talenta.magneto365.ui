@@ -1,16 +1,23 @@
-import { IInput } from '@components/UI/molecules/Input/Input.interface'
+import { IInput } from '../../../../molecules/Input/Input.interface'
 import { ISelect, IValueSelect } from '../../Select.interface'
 
-export interface ISelectInput<T> extends IInput {
+export interface ISelectInput<T> extends Omit<IInput, 'onChange' | 'value' | 'placeholder' | 'type'> {
+  /**
+   * input value.
+   */
+  value?: IInput['value']
+  /**
+   * event to request change.
+   */
+  onChange?: IInput['onChange']
   /**
    * placeholder for input.
    */
-  placeholder: IInput['placeholder']
-
+  placeholder?: IInput['placeholder']
   /**
    * type for input.
    */
-  type: IInput['type']
+  type?: IInput['type']
 
   /**
    * to know if the select is open.
@@ -20,12 +27,12 @@ export interface ISelectInput<T> extends IInput {
   /**
    * select value.
    */
-  selected: ISelect<T>['value']
+  selected?: ISelect<T>['value']
 
   /**
    * onClick on input container.
    */
-  onClick: () => void
+  onClick?: () => void
 
   /**
    * display values selected in input.
