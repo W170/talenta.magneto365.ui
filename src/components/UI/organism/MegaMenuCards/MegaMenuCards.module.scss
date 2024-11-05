@@ -9,6 +9,10 @@
   padding: 0px;
   align-items: center;
 
+  &__filter {
+    margin-bottom: 10px;
+  }
+
   &__title {
     display: flex;
     flex-direction: row;
