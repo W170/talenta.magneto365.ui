@@ -12,7 +12,7 @@ import {
   People,
   SMSBlue,
   Share,
-  TwitterBlue,
+  X,
   WhatsAppColor,
   Location,
   Tag
@@ -267,7 +267,7 @@ export const altList = [
   'Tag-icon'
 ]
 
-export const iconFooterList = [FacebookBlue, WhatsAppColor, LinkedInBlue, TwitterBlue, SMSBlue]
+export const iconFooterList = [FacebookBlue, WhatsAppColor, LinkedInBlue, X, SMSBlue]
 
 export const shareLinks: IShareLink[] = [
   {

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { JobFooterCard } from './JobFooterCard.component'
-import { FacebookBlue, LinkedInBlue, SMSBlue, TwitterBlue, WhatsAppColor } from '../../../../constants/icons.constants'
+import { FacebookBlue, LinkedInBlue, SMSBlue, X, WhatsAppColor } from '../../../../constants/icons.constants'
 import { CompanyLogo } from '@constants/stories'
 
 const meta: Meta<typeof JobFooterCard> = {
@@ -21,10 +21,10 @@ export const Default: Story = {
       { href: '#', ariaLabel: 'facebook', title: 'Facebook' },
       { href: '#', ariaLabel: 'whatsapp', title: 'Whatsapp' },
       { href: '#', ariaLabel: 'linkedin', title: 'Linkedin' },
-      { href: '#', ariaLabel: 'twitter', title: 'Twitter' },
+      { href: '#', ariaLabel: 'x', title: 'X' },
       { href: '#', ariaLabel: 'sms', title: 'Correo' }
     ],
-    iconList: [FacebookBlue, WhatsAppColor, LinkedInBlue, TwitterBlue, SMSBlue],
+    iconList: [FacebookBlue, WhatsAppColor, LinkedInBlue, X, SMSBlue],
     shareButtonProps: {
       buttonTitle: 'Compartir vacante',
       onCopySuccess: () => console.log('Success')

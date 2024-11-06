@@ -73,10 +73,10 @@ const jobDetailsDrawer = {
       { href: '#', ariaLabel: 'facebook', title: 'Facebook' },
       { href: '#', ariaLabel: 'whatsapp', title: 'Whatsapp' },
       { href: '#', ariaLabel: 'linkedin', title: 'Linkedin' },
-      { href: '#', ariaLabel: 'twitter', title: 'Twitter' },
+      { href: '#', ariaLabel: 'x', title: 'X' },
       { href: '#', ariaLabel: 'sms', title: 'Correo' }
     ],
-    offerFooterTitle: ['Facebook', 'Whatsapp', 'Linkedin', 'Twitter', 'Correo'],
+    offerFooterTitle: ['Facebook', 'Whatsapp', 'Linkedin', 'X', 'Correo'],
     shareButtonProps: {
       buttonTitle: 'Copiar',
       onCopySuccess: () => console.log('Success')
@@ -143,10 +143,10 @@ const mobileJobDetailsDrawer = {
       { href: '#', ariaLabel: 'facebook', title: 'Facebook' },
       { href: '#', ariaLabel: 'whatsapp', title: 'Whatsapp' },
       { href: '#', ariaLabel: 'linkedin', title: 'Linkedin' },
-      { href: '#', ariaLabel: 'twitter', title: 'Twitter' },
+      { href: '#', ariaLabel: 'x', title: 'X' },
       { href: '#', ariaLabel: 'sms', title: 'Correo' }
     ],
-    offerFooterTitle: ['Facebook', 'Whatsapp', 'Linkedin', 'Twitter', 'Correo'],
+    offerFooterTitle: ['Facebook', 'Whatsapp', 'Linkedin', 'X', 'Correo'],
     shareButtonProps: {
       buttonTitle: 'Copiar',
       onCopySuccess: () => console.log('Success')
