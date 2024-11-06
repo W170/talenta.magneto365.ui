@@ -24,7 +24,8 @@ const Component: React.FC<IUserMenuAnalystOptionDefault> = ({
       return handleModal(option.modal.name, true, option.modal.data)
     }
 
-    if (typeof option.data === 'function') {
+    if (typeof option.data === 'function' && handleMenuOpen) {
+      handleMenuOpen(false)
       return (option.data as (option: IUserMenuAnalystOption) => void)(option)
     }
   }, [handleModal, handleMenuOpen, option])
