@@ -11,7 +11,7 @@ const Component: React.FC<IJobDetails> = ({ offerDetailsList, iconList, altList,
       offerDetailText,
       alt: altList && altList[index]
     }))
-    .filter(({ offerDetailText }) => !!offerDetailText)
+    .filter(({ offerDetailText }, index) => !!offerDetailText && index !== 1)
 
   return (
     <div className={styles['magneto-ui-job-details']}>
