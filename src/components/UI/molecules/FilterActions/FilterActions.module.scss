@@ -1,0 +1,23 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.filter-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+
+  &__action {
+    padding: 6px !important;
+    border-radius: 6px;
+    font-size: 5;
+    background-color: white;
+    color: #0a0c0e;
+    > p {
+      font-size: 12px;
+    }
+
+    &--selected {
+      background-color: #1f2329 !important;
+      color: white;
+    }
+  }
+}

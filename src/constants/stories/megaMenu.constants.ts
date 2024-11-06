@@ -1,5 +1,7 @@
 import { IMegaMenuTab } from '@components/UI/atoms/MegaMenuTab/MegaMenuTab.interface'
-import { IMegaMenuCard, IMegaMenuCards } from '@components/UI/molecules'
+import { IMegaMenuCard } from '@components/UI/molecules'
+import { IMegaMenuCards } from '@components/UI/organism'
+
 import {
   IMegaMenuJobs,
   IMegaMenuMainHeader,
@@ -14,6 +16,8 @@ export const megaMenuSocialTabs: IMegaMenuTab[] = [
   { label: 'Negocios y pymes', selected: false, url: 'https://www.magneto365.com/es/' },
   { label: 'Corporativos', selected: false, url: 'https://www.magneto365.com/es/' }
 ]
+
+export const alphabet = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'
 
 export const megaMenuJobImage: IMegaMenuCard = {
   title: 'Cajero cafeteria en la esquina del barrio de por mi casa',
@@ -70,6 +74,13 @@ export const megaMenuSocialHeader: IMegaMenuSocialHeader = {
   ]
 }
 export const megaMenuHelpIcons = [QuestionCircle, HeadsetBlackOutline]
+export const filterProps = {
+  allActionText: 'Todas',
+  onClickAction: () => {
+    console.log('')
+  },
+  title: 'Filtrar por letra inicial:'
+}
 
 export const megaMenuCards: IMegaMenuCards = {
   jobs: megaMenuJobsImage,
@@ -81,7 +92,8 @@ export const megaMenuCards: IMegaMenuCards = {
   actionTitle: {
     label: 'Ver empleos por cargo',
     url: 'https://www.magneto365.com/es'
-  }
+  },
+  filterProps
 }
 export const megaMenuJobsIcons = [LocationBlue, CourthouseBlue, BriefcaseBlue, BuildingBlue]
 

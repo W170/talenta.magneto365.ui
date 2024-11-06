@@ -4,9 +4,18 @@ import { IMegaMenuCards } from './MegaMenuCards.interface'
 import { SearchItem } from '@components/UI/atoms'
 import { ArrowRightWhite } from '@constants/icons.constants'
 import { ButtonLink } from '@components/UI/atoms/ButtonLink'
-import MegaMenuCard from '../MegaMenuCard/MegaMenuCard.component'
+import { MegaMenuCard } from '@components/UI/molecules'
+import { AlphabetFilter } from '@components/UI/organism'
 
-const MegaMenuCards: React.FC<IMegaMenuCards> = ({ jobs, action, title, actionTitle, className }) => {
+const MegaMenuCards: React.FC<IMegaMenuCards> = ({
+  jobs,
+  action,
+  title,
+  actionTitle,
+  className,
+  filterProps,
+  maxCards = 39
+}) => {
   return (
     <nav className={className}>
       {title && (
@@ -21,10 +30,10 @@ const MegaMenuCards: React.FC<IMegaMenuCards> = ({ jobs, action, title, actionTi
           )}
         </div>
       )}
-
+      {filterProps && <AlphabetFilter className={style[`mega-menu-cards__filter`]} {...filterProps} />}
       <ul className={`${style[`mega-menu-cards`]}`}>
         {jobs &&
-          jobs.slice(0, 39).map((job, key) => (
+          jobs.slice(0, maxCards).map((job, key) => (
             <li key={key}>
               <MegaMenuCard {...job} />
             </li>

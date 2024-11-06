@@ -1,0 +1,20 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.alphabet-filter {
+  display: flex;
+  flex-direction: row;
+  background-color: #f0f1f3;
+  padding: 12px;
+  gap: 8px;
+  width: 100%;
+  align-items: center;
+  border-radius: 8px;
+
+  &__title {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0px;
+    white-space: nowrap;
+    color: #0a0c0e;
+  }
+}

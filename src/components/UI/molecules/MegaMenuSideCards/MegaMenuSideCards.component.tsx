@@ -5,7 +5,7 @@ import { ArrowRightWhite } from '@constants/icons.constants'
 import { MegaMenuCard } from '../MegaMenuCard'
 import { SearchItem } from '@components/UI/atoms'
 
-const MegaMenuSideCards: React.FC<IMegaMenuSideCards> = ({ jobs, action, onSelectCard }) => {
+const MegaMenuSideCards: React.FC<IMegaMenuSideCards> = ({ jobs, action, onSelectCard, maxCards = 10 }) => {
   const [selected, setSelected] = useState(0)
 
   const handleClick = useCallback(
@@ -18,7 +18,7 @@ const MegaMenuSideCards: React.FC<IMegaMenuSideCards> = ({ jobs, action, onSelec
   return (
     <ul className={`${style[`mega-menu-side-cards`]}`}>
       {jobs &&
-        jobs.slice(0, 10).map((job, key) => (
+        jobs.slice(0, maxCards).map((job, key) => (
           <li key={key}>
             <MegaMenuCard
               {...job}
