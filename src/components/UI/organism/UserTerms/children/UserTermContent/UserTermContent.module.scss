@@ -1,4 +1,5 @@
 @use '../../../../../../shared/stylesheets/mixins.scss' as m;
+@use '../../../../../../shared/stylesheets/variables.scss' as *;
 
 .user-term-content {
   background-color: #f0f1f3;
@@ -7,6 +8,9 @@
   padding: 10px;
   margin: 15px 0;
   overflow-y: scroll;
-  max-height: 400px;
+  max-height: 250px;
+  @media screen and (min-width: $screen-md) {
+    max-height: 350px;
+  }
   @include m.scroll-thin();
 }
