@@ -23,7 +23,7 @@ export namespace IUserTerm {
     /**
      * this property sets children elements
      */
-    children: React.ReactNode
+    children?: React.ReactNode
   }
   export interface SubTitle {
     /**
@@ -33,7 +33,7 @@ export namespace IUserTerm {
     /**
      * this property sets children elements
      */
-    children: React.ReactNode
+    children?: React.ReactNode
   }
   export interface Highlight {
     /**
@@ -43,7 +43,7 @@ export namespace IUserTerm {
     /**
      * this property sets children elements
      */
-    children: React.ReactNode
+    children?: React.ReactNode
   }
   export interface Text {
     /**
@@ -53,7 +53,7 @@ export namespace IUserTerm {
     /**
      * this property sets children elements
      */
-    children: React.ReactNode
+    children?: React.ReactNode
   }
   export interface Content {
     /**
@@ -63,7 +63,7 @@ export namespace IUserTerm {
     /**
      * this property sets children elements
      */
-    children: React.ReactNode
+    children?: React.ReactNode
   }
   export interface UlList {
     /**
@@ -73,7 +73,7 @@ export namespace IUserTerm {
     /**
      * this property sets children elements
      */
-    children: React.ReactNode
+    children?: React.ReactNode
   }
 
   export interface Check {
@@ -92,7 +92,7 @@ export namespace IUserTerm {
     /**
      * this property sets children elements
      */
-    children: React.ReactNode
+    children?: React.ReactNode
   }
   export interface Submit extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     /**

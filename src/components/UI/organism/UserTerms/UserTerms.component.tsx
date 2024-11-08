@@ -15,7 +15,7 @@ import { UserTermUList } from './children/UserTermUList'
 
 const cx = classNames.bind(styles)
 
-const Component: React.FC<IUserTerm> = ({ children, isOpen, onClose }) => {
+const Component: React.FC<IUserTerm> = ({ children, isOpen, onClose = () => ({}) }) => {
   const container = useMediaQuery(
     <Modal className={cx('user-term-modal')} blockBackgroundClose isOpen={isOpen} onClose={onClose}>
       {children}
