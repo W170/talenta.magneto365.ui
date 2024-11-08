@@ -22,7 +22,7 @@ const Component: React.FC<IUserTerm> = ({ children, isOpen, onClose }) => {
     </Modal>,
     {
       sm: (
-        <MobileDrawer blockBackgroundClose isOpen={isOpen} onClose={onClose}>
+        <MobileDrawer className={cx('user-term-drawer')} blockBackgroundClose isOpen={isOpen} onClose={onClose}>
           {children}
         </MobileDrawer>
       )

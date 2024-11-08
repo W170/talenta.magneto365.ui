@@ -27,7 +27,12 @@ const Modal: React.FC<IModal> = ({
         {title ? <h2 className={`${styles[`${classMUI}-modal__title`]}`}>{title}</h2> : null}
         {description ? <p className={`${styles[`${classMUI}-modal__description`]}`}>{description}</p> : null}
         {children}
-        <button className={`${styles[`${classMUI}-modal__close-btn`]}`} onClick={onClose} type="button">
+        <button
+          data-name="close-drawer"
+          className={`${styles[`${classMUI}-modal__close-btn`]}`}
+          onClick={onClose}
+          type="button"
+        >
           <img src={Close} alt="close icon" />
         </button>
       </div>

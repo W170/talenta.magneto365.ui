@@ -1,4 +1,15 @@
 .user-term-modal {
   padding: 40px 20px;
   max-width: 600px;
+  [data-name='close-drawer'] {
+    display: none;
+  }
+}
+
+.user-term-drawer {
+  > aside {
+    [data-name='close-drawer'] {
+      display: none;
+    }
+  }
 }
