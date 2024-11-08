@@ -11,45 +11,69 @@ export interface IUserTerm {
   /**
    * this property closes the ui
    */
-  onClose: () => void
+  onClose?: () => void
 }
 
 export namespace IUserTerm {
   export interface Title {
-    className?: string
     /**
      * this property sets custom styles
      */
+    className?: string
+    /**
+     * this property sets children elements
+     */
+    children: React.ReactNode
   }
   export interface SubTitle {
-    className?: string
     /**
      * this property sets custom styles
      */
+    className?: string
+    /**
+     * this property sets children elements
+     */
+    children: React.ReactNode
   }
   export interface Highlight {
-    className?: string
     /**
      * this property sets custom styles
      */
+    className?: string
+    /**
+     * this property sets children elements
+     */
+    children: React.ReactNode
   }
   export interface Text {
-    className?: string
     /**
      * this property sets custom styles
      */
+    className?: string
+    /**
+     * this property sets children elements
+     */
+    children: React.ReactNode
   }
   export interface Content {
-    className?: string
     /**
      * this property sets custom styles
      */
+    className?: string
+    /**
+     * this property sets children elements
+     */
+    children: React.ReactNode
   }
   export interface UlList {
-    className?: string
     /**
      * this property sets custom styles
      */
+    className?: string
+    /**
+     * this property sets children elements
+     */
+    children: React.ReactNode
   }
 
   export interface Check {
@@ -60,11 +84,15 @@ export namespace IUserTerm {
     /**
      * this property check the input
      */
-    isChecked: boolean
+    isChecked?: boolean
     /**
      * this fn returns true or false depending on checked
      */
-    onChange: (value: boolean) => void
+    onChange?: (value: boolean) => void
+    /**
+     * this property sets children elements
+     */
+    children: React.ReactNode
   }
   export interface Submit extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     /**
