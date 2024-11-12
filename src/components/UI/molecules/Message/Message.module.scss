@@ -20,6 +20,10 @@
     font-size: 14px;
     line-height: 17px;
     transition: all var(--transition-duration) ease-in-out;
+    width: 90%;
+    @media screen and (min-width: v.$screen-md) {
+      width: auto;
+    }
     &--show {
       visibility: visible;
       opacity: 1;
