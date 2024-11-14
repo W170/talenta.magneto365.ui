@@ -1,3 +1,8 @@
+export interface IToggleButtonOnchangeValues {
+  name?: string
+  id: string | number
+}
+
 export interface IToggleButton {
   /**
    * You can extend the style properties with class names
@@ -26,5 +31,9 @@ export interface IToggleButton {
   /**
    *  this function returns the name and id value of the button when clicked on
    */
-  onChange: ({ name, id }: { name?: string; id?: string | number }) => void
+  onChange?: (value: IToggleButtonOnchangeValues) => void
+  /**
+   * this property sets custom Icon
+   */
+  customIcon?: string
 }
