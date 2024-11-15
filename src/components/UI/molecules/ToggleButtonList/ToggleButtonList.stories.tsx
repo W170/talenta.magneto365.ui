@@ -7,7 +7,8 @@ const meta: Meta<typeof ToggleButtonList> = {
   component: ToggleButtonList,
   args: {
     list: toggleButtonList,
-    onChange: (value) => console.log(value)
+    onChange: (value) => console.log(value),
+    currentSelect: { id: 1, name: 'hombre' }
   }
 }
 
