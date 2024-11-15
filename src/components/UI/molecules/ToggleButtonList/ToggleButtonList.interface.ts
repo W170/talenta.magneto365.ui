@@ -12,9 +12,13 @@ export type TToggleButtonList = {
   /**
    * this property returns the values of the toggle button selected
    */
-  onChange?: (value: IToggleButtonOnchangeValues | null) => void
+  onChange?: (value: IToggleButtonOnchangeValues | null | number) => void
   /**
    * this property sets customs className for toggle buttons
    */
   className?: string
+  /**
+   * this property sets the default value or current value of the toggle button
+   */
+  currentSelect?: Pick<IToggleButton, 'id' | 'name'>
 }
