@@ -14,7 +14,7 @@ const Component = ({ fraudLink }: { fraudLink: string }) => {
           Magneto y sus empresas aliadas nunca te pedirán dinero a cambio en un proceso de selección. Ten cuidado,
           revisa bien la vacante y si ves algo sospechoso repórtalo.
         </p>
-        <a className={styles['fraud-card-job__link']} href={fraudLink}>
+        <a target="_blank" rel="noreferrer" className={styles['fraud-card-job__link']} href={fraudLink}>
           <img src={WarningHex} alt="warning" />
           Reportar fraude
         </a>
