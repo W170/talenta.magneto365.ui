@@ -1,4 +1,5 @@
 export * from './Avatar'
+export * from './Badge'
 export * from './BarLoader'
 export * from './Breadcrumb'
 export * from './Button'

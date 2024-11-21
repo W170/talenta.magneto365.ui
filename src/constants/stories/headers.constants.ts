@@ -258,7 +258,8 @@ export const ProcessTabsProps: IHeaderTabs = {
       tabType: 'tabOption',
       url: '#',
       tabText: 'En proceso',
-      slug: ['procesos-activos', 'procesos-inactivos']
+      slug: ['procesos-activos', 'procesos-inactivos'],
+      count: 27
     }
   ],
   addDivider: true

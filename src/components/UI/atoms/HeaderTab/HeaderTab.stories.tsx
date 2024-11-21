@@ -21,6 +21,7 @@ export const TabOption: Story = {
   args: {
     tabType: 'tabOption',
     url: '#',
-    tabText: 'Sugeridos'
+    tabText: 'Sugeridos',
+    count: 27
   }
 }
