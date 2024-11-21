@@ -17,5 +17,12 @@ export interface IHeaderTab {
    * Sets the active state of tab
    */
   isActive: boolean
+  /**
+   * Sets custom className
+   */
   className?: string
+  /**
+   * Sets badge count
+   */
+  count?: number
 }
