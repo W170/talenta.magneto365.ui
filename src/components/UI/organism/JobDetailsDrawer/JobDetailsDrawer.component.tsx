@@ -7,7 +7,8 @@ import {
   JobSkillsCard,
   JobApplyCard,
   JobFooterCard,
-  JobDetails
+  JobDetails,
+  FraudCardJob
 } from '@components/UI/molecules'
 
 import { IJobDetailsDrawer } from './JobDetailsDrawer.interface'
@@ -35,7 +36,8 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   setLoadVideo,
   cities,
   isRemote,
-  textRemote
+  textRemote,
+  fraudLink
 }) => {
   const jobDetailsRef = useRef<HTMLDivElement | null>(null)
 
@@ -71,6 +73,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
             {jobVideo && <JobVideo {...jobVideo} loadVideo={loadVideo} setLoadVideo={setLoadVideo} />}
             <JobDetailCard {...jobDetailCardProps} />
             <JobSkillsCard {...jobSkillsCardProps} />
+            <FraudCardJob fraudLink={fraudLink} />
             <JobApplyCard {...jobApplyCardProps} />
             <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
             {similarJobsProps ? <SimilarJobs {...similarJobsProps} /> : null}

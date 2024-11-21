@@ -8,7 +8,8 @@ import {
   JobSkillsCard,
   JobApplyCard,
   JobFooterCard,
-  MobileJobDetailsHeader
+  MobileJobDetailsHeader,
+  FraudCardJob
 } from '@components/UI/molecules'
 import { MobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 import { MobileJobDetailsDrawerSkeleton } from './children/MobileJobDetailsDrawerSkeleton.component'
@@ -39,7 +40,8 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   swipeProps,
   cities,
   isRemote,
-  textRemote
+  textRemote,
+  fraudLink
 }) => {
   const handleClose = useCallback(() => {
     if (onClose) {
@@ -68,29 +70,31 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
         {jobVideo && <JobVideo {...jobVideo} loadVideo={loadVideo} setLoadVideo={setLoadVideo} />}
         <JobDetailCard {...jobDetailCardProps} />
         {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
+        <FraudCardJob fraudLink={fraudLink} />
         <JobApplyCard {...jobApplyCardProps} />
         <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
         {similarJobsProps ? <SimilarJobs {...similarJobsProps} /> : null}
       </Fragment>
     )
   }, [
-    handleClose,
-    isLoading,
-    jobApplyCardProps,
-    jobCompanyLogoProps,
     jobDetailAction,
-    jobDetailCardProps,
+    isLoading,
     jobDetailsHeaderText,
+    handleClose,
+    jobCompanyLogoProps,
     jobDetailsProps,
-    jobFooterCardProps,
-    jobSkillsCardProps,
-    similarJobsProps,
+    cities,
+    isRemote,
+    textRemote,
     jobVideo,
     loadVideo,
     setLoadVideo,
-    cities,
-    isRemote,
-    textRemote
+    jobDetailCardProps,
+    jobSkillsCardProps,
+    fraudLink,
+    jobApplyCardProps,
+    jobFooterCardProps,
+    similarJobsProps
   ])
 
   const content = useMemo(

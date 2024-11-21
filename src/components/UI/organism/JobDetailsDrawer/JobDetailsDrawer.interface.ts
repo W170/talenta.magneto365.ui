@@ -76,4 +76,8 @@ export interface IJobDetailsDrawer {
   isRemote: boolean
 
   textRemote: string
+  /**
+   * set link to fraud card
+   */
+  fraudLink: string
 }
