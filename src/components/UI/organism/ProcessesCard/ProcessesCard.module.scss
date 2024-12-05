@@ -1,0 +1,94 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.processes-text-common {
+  margin: 2px 0;
+  text-align: left;
+}
+
+.processes-card {
+  width: 100%;
+  height: auto;
+  padding: 20px 60px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  position: relative;
+  transition: background-color ease-in-out 0.3s;
+  gap: 20px;
+  @media screen and (min-width: v.$screen-md) {
+    height: 92px;
+    flex-direction: row;
+    align-items: center;
+  }
+  &:hover {
+    background-color: #f0f1f3;
+  }
+
+  &__section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__status-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    background-color: #f1fbf4;
+    padding: 8px 12px;
+    width: 100%;
+    @media screen and (min-width: v.$screen-md) {
+      width: auto;
+    }
+  }
+
+  &__brand {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 6px;
+    object-fit: cover;
+    border: solid 2px #f0f1f3;
+  }
+
+  &__title {
+    color: #292f37;
+    font-size: 14px;
+    font-weight: 700;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 35ch;
+    @extend .processes-text-common;
+
+    @media screen and (min-width: v.$screen-sm) {
+      max-width: 45ch;
+    }
+    @media screen and (min-width: v.$screen-md) {
+      max-width: 50ch;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    color: #47535f;
+    @extend .processes-text-common;
+  }
+
+  &__arrow-left {
+    width: 20px;
+    height: 20px;
+    transition: transform ease-in-out 0.3s;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translate(-10%, -50%);
+  }
+
+  &:hover .processes-card__arrow-left {
+    transform: translate(10%, -50%);
+  }
+}
