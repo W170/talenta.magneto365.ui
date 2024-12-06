@@ -41,7 +41,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   cities,
   isRemote,
   textRemote,
-  fraudLink
+  fraudCardJobProps
 }) => {
   const handleClose = useCallback(() => {
     if (onClose) {
@@ -70,7 +70,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
         {jobVideo && <JobVideo {...jobVideo} loadVideo={loadVideo} setLoadVideo={setLoadVideo} />}
         <JobDetailCard {...jobDetailCardProps} />
         {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
-        <FraudCardJob fraudLink={fraudLink} />
+        <FraudCardJob {...fraudCardJobProps} />
         <JobApplyCard {...jobApplyCardProps} />
         <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
         {similarJobsProps ? <SimilarJobs {...similarJobsProps} /> : null}
@@ -91,7 +91,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
     setLoadVideo,
     jobDetailCardProps,
     jobSkillsCardProps,
-    fraudLink,
+    fraudCardJobProps,
     jobApplyCardProps,
     jobFooterCardProps,
     similarJobsProps

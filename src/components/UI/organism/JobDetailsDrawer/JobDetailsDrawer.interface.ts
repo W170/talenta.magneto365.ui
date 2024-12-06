@@ -8,6 +8,8 @@ import { ReactNode } from 'react'
 import { ISimilarJobs } from '../SimilarJobs/SimilarJobs.interface'
 import { IJobVideo } from '@components/UI/molecules/JobVideo'
 import { ICityDetail } from '../../molecules/CitiesDetailDrawer'
+import { IFraudCardJob } from '../../molecules/FraudCardJob/FraudCardJob.interface'
+
 export interface IJobDetailsDrawer {
   /**
    * Props for the job company logo and header section.
@@ -76,8 +78,9 @@ export interface IJobDetailsDrawer {
   isRemote: boolean
 
   textRemote: string
+
   /**
-   * set link to fraud card
+   * Props for the fraud card job.
    */
-  fraudLink: string
+  fraudCardJobProps: IFraudCardJob
 }

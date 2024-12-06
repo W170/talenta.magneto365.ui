@@ -1,22 +1,20 @@
 import React from 'react'
-import styles from './FraudCardJob.module.scss'
 import { Warning3D, WarningHex } from '@constants/icons.constants'
+import { IFraudCardJob } from './FraudCardJob.interface'
+import styles from './FraudCardJob.module.scss'
 
-const Component = ({ fraudLink }: { fraudLink: string }) => {
+const Component: React.FC<IFraudCardJob> = ({ title, content, linkText, link }) => {
   return (
     <div className={styles['fraud-card-job']}>
       <div className={styles['fraud-card-job__header']}>
         <img src={Warning3D} alt="warning" />
-        <h4>¡Ten cuidado con el fraude!</h4>
+        <h4>{title}</h4>
       </div>
       <div>
-        <p className={styles['fraud-card-job__text']}>
-          Magneto y sus empresas aliadas nunca te pedirán dinero a cambio en un proceso de selección. Ten cuidado,
-          revisa bien la vacante y si ves algo sospechoso repórtalo.
-        </p>
-        <a target="_blank" rel="noreferrer" className={styles['fraud-card-job__link']} href={fraudLink}>
+        <p className={styles['fraud-card-job__text']}>{content}</p>
+        <a target="_blank" rel="noreferrer" className={styles['fraud-card-job__link']} href={link}>
           <img src={WarningHex} alt="warning" />
-          Reportar fraude
+          {linkText}
         </a>
       </div>
     </div>

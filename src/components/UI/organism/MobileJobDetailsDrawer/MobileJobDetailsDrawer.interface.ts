@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import {
   IJobApplyCard,
   IJobCompanyHeader,
@@ -7,10 +8,10 @@ import {
   ICityDetail
 } from '@components/UI/molecules'
 import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
-import { ReactNode } from 'react'
-import { ISimilarJobs } from '../SimilarJobs/SimilarJobs.interface'
 import { IJobVideo } from '@components/UI/molecules/JobVideo'
+import { ISimilarJobs } from '../SimilarJobs/SimilarJobs.interface'
 import { SwipeProps } from '../Swipe/Swipe.interface'
+import { IFraudCardJob } from './../../molecules/FraudCardJob/FraudCardJob.interface'
 
 export interface IMobileJobDetailsDrawer {
   /**
@@ -95,7 +96,7 @@ export interface IMobileJobDetailsDrawer {
 
   textRemote: string
   /**
-   * set link to fraud card
+   * Props for the fraud card job.
    */
-  fraudLink: string
+  fraudCardJobProps: IFraudCardJob
 }

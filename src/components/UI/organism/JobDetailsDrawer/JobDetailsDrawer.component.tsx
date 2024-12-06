@@ -37,7 +37,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   cities,
   isRemote,
   textRemote,
-  fraudLink
+  fraudCardJobProps
 }) => {
   const jobDetailsRef = useRef<HTMLDivElement | null>(null)
 
@@ -73,7 +73,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
             {jobVideo && <JobVideo {...jobVideo} loadVideo={loadVideo} setLoadVideo={setLoadVideo} />}
             <JobDetailCard {...jobDetailCardProps} />
             <JobSkillsCard {...jobSkillsCardProps} />
-            <FraudCardJob fraudLink={fraudLink} />
+            <FraudCardJob {...fraudCardJobProps} />
             <JobApplyCard {...jobApplyCardProps} />
             <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
             {similarJobsProps ? <SimilarJobs {...similarJobsProps} /> : null}
