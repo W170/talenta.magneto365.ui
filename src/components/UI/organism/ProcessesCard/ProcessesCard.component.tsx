@@ -12,9 +12,13 @@ import { ProcessesCardIconStatus } from './children/ProcessesCardIconStatus/Proc
 
 const cx = classNames.bind(styles)
 
-const Component: React.FC<IProcessesCard> = ({ children, className, isSelected = false }) => {
+const Component: React.FC<IProcessesCard> = ({ children, className, isSelected = false, ...props }) => {
   return (
-    <button className={cx('processes-card', className, { 'processes-card--is-selected': isSelected })} type="button">
+    <button
+      {...props}
+      className={cx('processes-card', className, { 'processes-card--is-selected': isSelected })}
+      type="button"
+    >
       {children}
     </button>
   )
