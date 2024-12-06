@@ -5,6 +5,27 @@
   text-align: left;
 }
 
+.processes-text-status {
+  &--Sent {
+    opacity: 1;
+  }
+  &--Hired {
+    opacity: 1;
+  }
+  &--Pending {
+    opacity: 1;
+  }
+  &--Finalists {
+    opacity: 1;
+  }
+  &--Discarded {
+    opacity: 0.5;
+  }
+  &--Validation {
+    opacity: 1;
+  }
+}
+
 .processes-card {
   width: 100%;
   height: auto;
@@ -26,6 +47,12 @@
   &:hover {
     background-color: #f0f1f3;
   }
+  &--is-selected {
+    background-color: #e0e4e7;
+    &:hover {
+      background-color: #e0e4e7;
+    }
+  }
 
   &__section {
     display: flex;
@@ -33,15 +60,64 @@
     gap: 20px;
   }
 
+  &:hover .processes-card__arrow-left {
+    transform: translate(10%, -50%);
+  }
+
+  &:hover .processes-card__status-card {
+    &--Sent {
+      background-color: white;
+    }
+    &--Hired {
+      background-color: #f1fbf4;
+    }
+    &--Pending {
+      background-color: white;
+    }
+    &--Finalists {
+      background-color: white;
+    }
+    &--Discarded {
+      background-color: #fff5f5;
+    }
+    &--Validation {
+      background-color: white;
+    }
+    &--is-selected {
+      background-color: white;
+    }
+  }
+
   &__status-card {
     display: flex;
     flex-direction: column;
     border-radius: 6px;
-    background-color: #f1fbf4;
     padding: 8px 12px;
     width: 100%;
+    transition: background-color 1s ease-in-out;
     @media screen and (min-width: v.$screen-md) {
       width: auto;
+    }
+    &--Sent {
+      background-color: #f0f1f3;
+    }
+    &--Hired {
+      background-color: #f1fbf4;
+    }
+    &--Pending {
+      background-color: #f0f1f3;
+    }
+    &--Finalists {
+      background-color: #f0f1f3;
+    }
+    &--Discarded {
+      background-color: #fff5f5;
+    }
+    &--Validation {
+      background-color: #f0f1f3;
+    }
+    &--is-selected {
+      background-color: white;
     }
   }
 
@@ -70,12 +146,23 @@
     @media screen and (min-width: v.$screen-md) {
       max-width: 50ch;
     }
+    @extend .processes-text-status;
   }
 
   &__text {
     font-size: 14px;
     color: #47535f;
     @extend .processes-text-common;
+    @extend .processes-text-status;
+    &--strong {
+      font-weight: 700;
+    }
+  }
+
+  &__icon-status {
+    width: 16px;
+    height: 16px;
+    margin: 0 5px;
   }
 
   &__arrow-left {
@@ -86,9 +173,5 @@
     right: 25px;
     top: 50%;
     transform: translate(-10%, -50%);
-  }
-
-  &:hover .processes-card__arrow-left {
-    transform: translate(10%, -50%);
   }
 }

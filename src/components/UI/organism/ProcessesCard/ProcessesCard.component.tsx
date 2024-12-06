@@ -8,18 +8,20 @@ import { ProcessesCardBrand } from './children/ProcessesCardBrand/ProcessesCardB
 import { ProcessesCardTitle } from './children/ProcessesCardTitle/ProcessesCardTitle.component'
 import { ProcessesCardText } from './children/ProcessesCardText/ProcessesCardText.component'
 import { ProcessesCardArrow } from './children/ProcessesCardArrow/ProcessesCardArrow.component'
+import { ProcessesCardIconStatus } from './children/ProcessesCardIconStatus/ProcessesCardIconStatus.component'
 
 const cx = classNames.bind(styles)
 
-const Component: React.FC<IProcessesCard> = ({ children, className }) => {
+const Component: React.FC<IProcessesCard> = ({ children, className, isSelected = false }) => {
   return (
-    <button className={cx('processes-card', className)} type="button">
+    <button className={cx('processes-card', className, { 'processes-card--is-selected': isSelected })} type="button">
       {children}
     </button>
   )
 }
 
 export const ProcessesCard = Object.assign(Component, {
+  IconStatus: ProcessesCardIconStatus,
   Section: ProcessesCardSection,
   Status: ProcessesCardStatus,
   Brand: ProcessesCardBrand,
