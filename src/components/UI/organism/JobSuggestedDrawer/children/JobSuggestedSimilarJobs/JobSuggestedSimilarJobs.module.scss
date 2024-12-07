@@ -1,0 +1,86 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.job-suggested-similar-jobs {
+  width: 100%;
+  height: auto;
+  padding: 0px 20px 0px 10px;
+  &__title {
+    padding: 0px 5px 0px 10px;
+    font-size: 19px;
+  }
+
+  &__text {
+    color: v.$text-color-black;
+    font-size: 16px;
+
+    p,
+    span:nth-child(1) {
+      font-size: 18px;
+    }
+  }
+  &__search {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 14px;
+    border-radius: 30px;
+    background-color: v.$disabled-color-gray;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    margin: 15px 10px;
+    justify-content: center;
+
+    @media (min-width: v.$screen-md) {
+      width: fit-content;
+      margin-right: auto;
+      &:hover {
+        background-color: v.$colors-magneto-neutral-gray-5;
+      }
+      &:hover img {
+        transform: translateX(5px);
+      }
+    }
+
+    img {
+      margin-left: 0;
+      transition: all ease-in-out 0.3s;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    &--alternative-bg {
+      background-color: v.$color-blue-dark3;
+      text-decoration: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5px;
+      padding: 8px 14px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all ease-in-out 0.3s;
+      margin: 0px 20px;
+      justify-content: center;
+      @media (min-width: v.$screen-md) {
+        width: fit-content;
+        margin-right: auto;
+
+        &:hover img {
+          transform: translateX(5px);
+        }
+      }
+      img {
+        margin-left: 0;
+        transition: all ease-in-out 0.3s;
+      }
+      p {
+        font-size: 18px;
+        font-weight: 600;
+        color: v.$color-white;
+      }
+    }
+  }
+}

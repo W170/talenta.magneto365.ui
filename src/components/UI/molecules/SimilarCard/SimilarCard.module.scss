@@ -1,0 +1,45 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.similar-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  padding: 12px 30px 12px 5px;
+  min-height: 95.52px;
+  transition: all ease-in-out 0.3s;
+  border-radius: 13px;
+
+  @media (min-width: v.$screen-lg) {
+    &:hover {
+      background-color: #f4f4fa;
+    }
+    &:hover &__arrow {
+      right: 5px;
+    }
+  }
+  &__text {
+    color: v.$text-color-black;
+    font-size: 16px;
+
+    p,
+    span:nth-child(1) {
+      font-size: 18px;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    transition: right ease-in-out 0.3s;
+    opacity: 0.4;
+    &-mobile {
+      @media (max-width: v.$screen-md) {
+        display: none;
+      }
+    }
+  }
+}

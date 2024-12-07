@@ -1,0 +1,29 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-job-company-header {
+  display: flex;
+  flex-direction: row;
+  padding: 20px 32px 0px 32px;
+  align-items: center;
+  gap: 20px;
+  p,
+  h1 {
+    color: v.$color-blue-dark3;
+    font-size: 20px;
+  }
+  a,
+  h2 {
+    font-size: 16px;
+  }
+  @media (1440px <= width < 1920px) {
+    padding: 20px 28px 0px 28px;
+  }
+
+  @media (1024px <= width < 1280px) {
+    padding: 20px 20px 0px 20px;
+  }
+
+  @media (375px <= width < 1024px) {
+    padding: 20px 20px 10px 20px;
+  }
+}
