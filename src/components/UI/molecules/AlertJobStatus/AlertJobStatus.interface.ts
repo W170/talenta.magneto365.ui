@@ -24,4 +24,23 @@ export namespace IAlertJobStatus {
      */
     className?: string
   }
+  export interface Icon {
+    /**
+     * Additional class names for custom styling.
+     */
+    className?: string
+    /**
+     * Here is the icon component
+     */
+    src?: string | null
+    /**
+     * You can change the size of the icon by adding a numeric value here
+     */
+    size?: number
+
+    /**
+     * Text alt in the img element
+     */
+    alt?: string | null
+  }
 }

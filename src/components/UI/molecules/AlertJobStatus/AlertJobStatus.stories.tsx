@@ -1,13 +1,12 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { AlertJobStatus } from './AlertJobStatus.component'
-import { IconItem, SearchItem } from '@components/UI/atoms'
-import { Warning3D } from '@constants/icons.constants'
+import { SearchItem } from '@components/UI/atoms'
 import { ArrowRightWhite } from '@constants/icons.constants'
-import { customText } from '@constants/stories/alertJob.constants'
+import { customText, simpleCustomText } from '@constants/stories/alertJob.constants'
 import styles from './AlertJobStatus.module.scss'
 
-const { Container, Text } = AlertJobStatus
+const { Container, Text, Icon } = AlertJobStatus
 
 const meta: Meta<typeof AlertJobStatus> = {
   title: 'Molecules/Alert Job Status',
@@ -16,7 +15,7 @@ const meta: Meta<typeof AlertJobStatus> = {
     children: (
       <>
         <Container>
-          <IconItem icon={Warning3D} size={34} />
+          <Icon />
           <Text customText={customText} />
         </Container>
         <SearchItem
@@ -41,8 +40,8 @@ export const WithoutAnchorText: Story = {
     children: (
       <>
         <Container>
-          <IconItem icon={Warning3D} size={34} />
-          <Text text="Esta vacante no recibe más aplicaciones." />
+          <Icon />
+          <Text customText={simpleCustomText} />
         </Container>
       </>
     )

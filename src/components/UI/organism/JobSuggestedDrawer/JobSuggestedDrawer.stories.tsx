@@ -1,13 +1,11 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { JobSuggestedDrawer } from './JobSuggestedDrawer.component'
-import { IconItem } from '@components/UI/atoms'
 import { simpleCustomText } from '@constants/stories/alertJob.constants'
-import { Warning3D } from '@constants/icons.constants'
 import { jobCompanyHeader, SimilarJobsData } from '@constants/stories/jobSuggestedDrawer.constants'
 import { AlertJobStatus } from '../../molecules/AlertJobStatus/AlertJobStatus.component'
 
-const { Container, Text } = AlertJobStatus
+const { Container, Text, Icon } = AlertJobStatus
 
 const { Header, Alert, SimilarJobs } = JobSuggestedDrawer
 
@@ -21,7 +19,7 @@ const meta: Meta<typeof JobSuggestedDrawer> = {
         <Header {...jobCompanyHeader} />
         <Alert>
           <Container>
-            <IconItem icon={Warning3D} size={34} alt={'Alert Icon'} />
+            <Icon />
             <Text customText={simpleCustomText} />
           </Container>
         </Alert>
