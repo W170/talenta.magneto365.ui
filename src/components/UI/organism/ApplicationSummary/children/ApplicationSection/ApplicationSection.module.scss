@@ -1,0 +1,24 @@
+.section-summary {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0px;
+
+  p {
+    margin: 0;
+    padding: 0;
+    line-height: 14px;
+  }
+}
+
+.start {
+  justify-content: flex-start;
+}
+
+.center {
+  justify-content: center;
+}
+
+.end {
+  justify-content: flex-end;
+}
