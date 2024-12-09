@@ -7,15 +7,14 @@ import { Warning3D } from '@constants/icons.constants'
 const cx = classNames.bind(styles)
 
 export const AlertJobStatusIcon: React.FC<IAlertJobStatus.Icon> = ({ src, size = 34, alt, className }) => {
-  const customStyle = size ? { width: size + 'px' } : {}
+  const customWidth = size ? { width: size + 'px' } : {}
   return (
     <img
-      style={customStyle}
+      style={customWidth}
       className={cx('alert-job__icon', className)}
       src={src ?? Warning3D}
-      alt={alt ?? `icon item`}
+      alt={alt ?? `icon-item`}
       loading="lazy"
-      width={'25px'}
     />
   )
 }

@@ -17,16 +17,59 @@ export interface ISimilarCard {
 }
 
 export interface ISimilarCardData {
+  /**
+   * unique identifier for the job or card.
+   */
   id?: number | null
+
+  /**
+   * title of the job or offer. Required.
+   */
   title: string
+
+  /**
+   * salary for the job. Can be a string or null.
+   */
   salary: string | null
+
+  /**
+   * indicates if agreement is required for the job. Optional, can be boolean or null.
+   */
   toAgree: boolean | null
+
+  /**
+   * list of cities where the job is available. Required.
+   */
   cities: string[]
+
+  /**
+   * URL slug for the job.
+   */
   jobUrlSlug: string
+
+  /**
+   * required experience for the job.
+   */
   experience: string | null
+
+  /**
+   * URL for the company logo.
+   */
   companyLogo: string | null
+
+  /**
+   * company name.
+   */
   companyName?: string | null
+
+  /**
+   * type of contract for the job.
+   */
   contractType?: string | null
+
+  /**
+   * determines if the company logo should be hidden.
+   */
   hideLogo?: boolean
 }
 
