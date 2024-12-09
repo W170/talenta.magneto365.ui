@@ -26,7 +26,7 @@ export interface ISimilarCardData {
   experience: string | null
   companyLogo: string | null
   companyName?: string | null
-  contractType: string
+  contractType?: string | null
   hideLogo?: boolean
 }
 
