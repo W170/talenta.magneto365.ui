@@ -1,0 +1,18 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.similar-card-logo {
+  width: 70px;
+  height: 50px;
+  min-width: 70px;
+  min-height: 50px;
+  @media (min-width: v.$screen-md) {
+    width: 90px;
+    height: 70px;
+    min-width: 90px;
+    min-height: 70px;
+  }
+  background-color: white;
+  object-fit: contain;
+  border-radius: 4px;
+  padding: 5px;
+}
