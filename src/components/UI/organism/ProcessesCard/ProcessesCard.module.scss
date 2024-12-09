@@ -126,7 +126,8 @@
     height: 50px;
     overflow: hidden;
     border-radius: 6px;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 1px;
     border: solid 2px #f0f1f3;
   }
 
