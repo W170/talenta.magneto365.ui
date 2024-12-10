@@ -14,5 +14,13 @@ export interface ITooltipProps {
    */
   children: React.ReactNode
 
+  /**
+   * this property set the tooltip width
+   */
   width?: string
+
+  /**
+   * this property set the tooltip visibility
+   */
+  hidden?: boolean
 }

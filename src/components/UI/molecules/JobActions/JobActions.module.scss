@@ -38,10 +38,11 @@
   }
 
   &__icon-anchor {
-    display: inherit;
+    display: flex;
     justify-content: center;
     align-items: center;
     padding: 12px 13px;
+    width: 16px;
   }
 
   @media screen and (max-width: (v.$screen-xl + 80px)) {
