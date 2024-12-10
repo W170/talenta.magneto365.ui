@@ -10,7 +10,7 @@ const Component: React.FC<ISaveButton> = ({ isAuthenticated, isSaved, buttonText
       className={`${styles['magneto-ui-save-button']} ${addHover && styles['hover-effect']}`}
       type="button"
       onClick={onClick}
-      title={buttonTitle}
+      aria-label={buttonTitle}
     >
       <div className={styles['button-content']}>
         <IconItem size={20} icon={isSaved ? ArchiveRemove : ArchiveAdd} hover={addHover} />
