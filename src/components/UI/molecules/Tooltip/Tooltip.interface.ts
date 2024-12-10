@@ -22,5 +22,5 @@ export interface ITooltipProps {
   /**
    * this property set the tooltip visibility
    */
-  hidden?: boolean
+  visible?: boolean
 }
