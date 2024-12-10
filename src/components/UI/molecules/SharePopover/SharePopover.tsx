@@ -51,7 +51,7 @@ const Component: React.FC<ISharePopover> = ({
         </ul>
       }
     >
-      <Tooltip title={btnProps.title || 'Compartir'} position="bottom" hidden={!show}>
+      <Tooltip title={btnProps.title || 'Compartir'} position="bottom" visible={!show}>
         <button
           {...btnProps}
           className={[style['popover__btn'], classNameButton].join(' ')}

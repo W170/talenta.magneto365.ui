@@ -30,7 +30,7 @@ const Component: React.FC<IJobsActions> = ({
     )
 
     return (
-      <Tooltip title={title} position="bottom" hidden={isMobile}>
+      <Tooltip title={title} position="bottom" visible={isMobile}>
         {iconContent}
       </Tooltip>
     )
@@ -42,7 +42,7 @@ const Component: React.FC<IJobsActions> = ({
     <div className={styles['magneto-ui-job-actions']}>
       <div id={styles['magneto-ui__external-child']}>{externalButtonChild}</div>
       <div className={styles['magneto-ui-job-actions__buttons-wrapper']}>
-        <Tooltip title={saveButtonProps.buttonTitle || 'Guardar'} position="bottom" hidden={isMobile}>
+        <Tooltip title={saveButtonProps.buttonTitle || 'Guardar'} position="bottom" visible={isMobile}>
           <SaveButton {...saveButtonProps} />
         </Tooltip>
         <SharePopover {...shareButtonProps} />
