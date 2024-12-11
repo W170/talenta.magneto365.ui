@@ -97,6 +97,7 @@
     transition: background-color 1s ease-in-out;
     @media screen and (min-width: v.$screen-md) {
       width: auto;
+      min-width: 180px;
     }
     &--Sent {
       background-color: #f0f1f3;
