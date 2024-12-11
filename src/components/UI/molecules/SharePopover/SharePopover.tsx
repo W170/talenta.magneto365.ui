@@ -54,6 +54,8 @@ const Component: React.FC<ISharePopover> = ({
       <Tooltip title={btnProps.title || 'Compartir'} position="bottom" visible={!show}>
         <button
           {...btnProps}
+          title=""
+          aria-label={btnProps.title}
           className={[style['popover__btn'], classNameButton].join(' ')}
           onClick={() => setShow((show) => !show)}
           onBlur={() => setShow(false)}
