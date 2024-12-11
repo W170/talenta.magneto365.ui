@@ -31,7 +31,7 @@ const meta: Meta<typeof ApplicationSummary> = {
             <Text>Grupo Éxito</Text>
           </div>
         </Section>
-        <Divider />
+        <Divider spacing={15} />
         <Alert
           text="Destaca entre los otros candidatos completando los datos del nivel 3. En este nivel podrás compartir o descargar tu hoja de vida en formato PDF."
           type="info"
