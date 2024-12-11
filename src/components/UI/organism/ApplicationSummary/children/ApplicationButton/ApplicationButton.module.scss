@@ -1,3 +1,5 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
 .button-summary {
   margin: 10px 0px;
   border: none;
@@ -7,17 +9,22 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  @media (max-width: v.$screen-sm) {
+    width: 100%;
+    justify-content: center;
+    gap: 30px;
+  }
 }
 
 .primary {
   background-color: #1a324c;
   color: #ffffff;
-  font-size: 16px;
   font-weight: 700;
 }
 
 .secondary {
   background-color: #f0f1f3;
   color: #0a0c0e;
-  font-size: 18px;
 }
