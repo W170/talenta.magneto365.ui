@@ -5,7 +5,7 @@ import { IconItem } from '../Icon'
 import { ArrowLeft2, ArrowRight2 } from '../../../../constants/icons.constants'
 import { Drawer } from '../../molecules'
 
-const Component: React.FC<IMegaMenuDrawerItem> = ({ url = '#', text = '', isActive, icon, content }) => {
+const Component: React.FC<IMegaMenuDrawerItem> = ({ url = '#', text = '', isActive, icon, content, onClickOption }) => {
   const [openDrawer, setOpenDrawer] = useState(false)
   const menuActive = isActive ? style['is-active'] : ''
 
@@ -14,12 +14,13 @@ const Component: React.FC<IMegaMenuDrawerItem> = ({ url = '#', text = '', isActi
   }, [openDrawer])
   const anchorAction = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+      onClickOption && onClickOption()
       if (content) {
         event.preventDefault()
         toggleDrawer()
       }
     },
-    [content, toggleDrawer]
+    [content, onClickOption, toggleDrawer]
   )
 
   return (

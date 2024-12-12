@@ -25,4 +25,6 @@ export interface IMegaMenuDrawerItem {
     child: ReactNode
     title: string
   }
+
+  onClickOption?: () => void
 }

@@ -16,9 +16,9 @@ const withMegaMenuContainer = <T,>(
 
     const toogleDrawer = useCallback(
       (index?: number) => {
-        setShowDrawer(!showDrawer)
-        setTitle(sideProps.jobs.at(index ?? 0)?.title ?? '')
         sideProps.onSelectCard && sideProps.onSelectCard(index ?? 0)
+        setTitle(sideProps.jobs.at(index ?? 0)?.title ?? '')
+        setShowDrawer(!showDrawer)
       },
       [showDrawer, sideProps]
     )
@@ -35,25 +35,31 @@ const withMegaMenuContainer = <T,>(
         </div>
       </>,
       {
-        md: <MegaMenuSideCards {...sideProps} onSelectCard={toogleDrawer} />
+        md: (
+          <>
+            <MegaMenuSideCards
+              {...sideProps}
+              onSelectCard={(index) => {
+                sideProps.onSelectCard && sideProps.onSelectCard(index)
+                toogleDrawer(index)
+              }}
+            />
+            <Drawer
+              isOpen={showDrawer}
+              toggleDrawer={toogleDrawer}
+              content={
+                <div className={styles['mega-menu-side-container__main']}>
+                  <WrappedComponent {...wrapperProps} />
+                </div>
+              }
+              title={title}
+            />
+          </>
+        )
       }
     )
 
-    return (
-      <div className={styles['mega-menu-side-container']}>
-        {renderCards}
-        <Drawer
-          isOpen={showDrawer}
-          toggleDrawer={toogleDrawer}
-          content={
-            <div className={styles['mega-menu-side-container__main']}>
-              <WrappedComponent {...wrapperProps} />
-            </div>
-          }
-          title={title}
-        />
-      </div>
-    )
+    return <div className={styles['mega-menu-side-container']}>{renderCards}</div>
   }
 
   return Component

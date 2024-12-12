@@ -20,7 +20,7 @@ import { ButtonLink } from '@components/UI/atoms/ButtonLink'
 
 const Component: React.FC<IMegaMenuDrawer> = ({ isOpen = false, onClose }) => {
   const { homeUrl, loginProps } = useMegaMenuMain()
-  const { tabs, allJobsAction } = useMegaMenuJobs()
+  const { tabs, allJobsAction, onChangeTab } = useMegaMenuJobs()
   const {
     socialHeaderProps: { blog, helpOptions }
   } = useMegaMenu()
@@ -30,6 +30,7 @@ const Component: React.FC<IMegaMenuDrawer> = ({ isOpen = false, onClose }) => {
       onClose()
     }
   }
+  const onClickOption = useCallback((index: number) => () => onChangeTab && onChangeTab(index), [onChangeTab])
 
   const closeButton = useMemo(
     () => (
@@ -55,12 +56,13 @@ const Component: React.FC<IMegaMenuDrawer> = ({ isOpen = false, onClose }) => {
             child: tab.content,
             title: tab.label
           }}
+          onClickOption={onClickOption(index)}
           isActive={isActiveOption(tab.url)}
           key={index}
           icon={megaMenuJobsIcons[index]}
         />
       )),
-    [isActiveOption, tabs]
+    [isActiveOption, onClickOption, tabs]
   )
 
   const socialOptions = useMemo(
