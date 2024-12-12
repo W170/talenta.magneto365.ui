@@ -2,13 +2,14 @@ import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import { JobDetailsDrawer } from './JobDetailsDrawer.component'
 
-import { CompanyLogo } from '@constants/stories'
+import { CompanyLogo } from '../../../../constants/stories'
 import { MainButton } from '../../atoms/MainButton/MainButton.component'
-import { Buildings2, Export3 } from '@constants/icons.constants'
+import { Buildings2, Export3 } from '../../../../constants/icons.constants'
 import { IJobCompanyHeader } from '../../molecules/JobCompanyHeader'
-import { jobVideo } from '@constants/stories/jobVideo.constants'
+import { jobVideo } from '../../../../constants/stories/jobVideo.constants'
 import { ICityDetail } from '../../molecules/CitiesDetailDrawer'
 import { shareLinks } from '../../../../constants/stories/vacancies.constants'
+import { fraudCardJob } from '../../../../constants/stories/fraudCardJob.constant'
 
 const jobCompanyLogo: IJobCompanyHeader = {
   jobCompanyLogoProps: {
@@ -126,7 +127,8 @@ export const Default: Story = {
     jobApplyCardProps: jobApplyCard,
     jobFooterCardProps: jobFooterCard,
     jobVideo: jobVideo,
-    cities: cities
+    cities: cities,
+    fraudCardJobProps: fraudCardJob
   }
 }
 

@@ -30,7 +30,7 @@ export interface IMegaMenuCard {
   /**
    * Onclick callback
    * */
-  onClick: () => void
+  onClick?: () => void
   /**
    * Show arrow icon
    * */

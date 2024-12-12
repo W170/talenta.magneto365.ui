@@ -1,0 +1,180 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.processes-text-common {
+  margin: 2px 0;
+  text-align: left;
+}
+
+.processes-text-status {
+  &--Sent {
+    opacity: 1;
+  }
+  &--Hired {
+    opacity: 1;
+  }
+  &--Pending {
+    opacity: 1;
+  }
+  &--Finalists {
+    opacity: 1;
+  }
+  &--Discarded {
+    opacity: 0.5;
+  }
+  &--Validation {
+    opacity: 1;
+  }
+}
+
+.processes-card {
+  width: 100%;
+  height: auto;
+  padding: 20px 60px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  position: relative;
+  transition: background-color ease-in-out 0.3s;
+  gap: 20px;
+  @media screen and (min-width: v.$screen-md) {
+    height: 92px;
+    flex-direction: row;
+    align-items: center;
+  }
+  &:hover {
+    background-color: #f0f1f3;
+  }
+  &--is-selected {
+    background-color: #e0e4e7;
+    &:hover {
+      background-color: #e0e4e7;
+    }
+  }
+
+  &__section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &:hover .processes-card__arrow-left {
+    transform: translate(10%, -50%);
+  }
+
+  &:hover .processes-card__status-card {
+    &--Sent {
+      background-color: white;
+    }
+    &--Hired {
+      background-color: #f1fbf4;
+    }
+    &--Pending {
+      background-color: white;
+    }
+    &--Finalists {
+      background-color: white;
+    }
+    &--Discarded {
+      background-color: #fff5f5;
+    }
+    &--Validation {
+      background-color: white;
+    }
+    &--is-selected {
+      background-color: white;
+    }
+  }
+
+  &__status-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    padding: 8px 12px;
+    width: 100%;
+    transition: background-color 1s ease-in-out;
+    @media screen and (min-width: v.$screen-md) {
+      width: auto;
+      min-width: 180px;
+    }
+    &--Sent {
+      background-color: #f0f1f3;
+    }
+    &--Hired {
+      background-color: #f1fbf4;
+    }
+    &--Pending {
+      background-color: #f0f1f3;
+    }
+    &--Finalists {
+      background-color: #f0f1f3;
+    }
+    &--Discarded {
+      background-color: #fff5f5;
+    }
+    &--Validation {
+      background-color: #f0f1f3;
+    }
+    &--is-selected {
+      background-color: white;
+    }
+  }
+
+  &__brand {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 6px;
+    object-fit: contain;
+    padding: 1px;
+    border: solid 2px #f0f1f3;
+    background-color: white;
+  }
+
+  &__title {
+    color: #292f37;
+    font-size: 14px;
+    font-weight: 700;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 35ch;
+    @extend .processes-text-common;
+
+    @media screen and (min-width: v.$screen-sm) {
+      max-width: 45ch;
+    }
+    @media screen and (min-width: v.$screen-md) {
+      max-width: 50ch;
+    }
+    @extend .processes-text-status;
+  }
+
+  &__text {
+    font-size: 14px;
+    color: #47535f;
+    @extend .processes-text-common;
+    @extend .processes-text-status;
+    &--strong {
+      font-weight: 700;
+    }
+  }
+
+  &__icon-status {
+    width: 16px;
+    height: 16px;
+    margin: 0 5px;
+  }
+
+  &__arrow-left {
+    width: 20px;
+    height: 20px;
+    transition: transform ease-in-out 0.3s;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translate(-10%, -50%);
+  }
+}

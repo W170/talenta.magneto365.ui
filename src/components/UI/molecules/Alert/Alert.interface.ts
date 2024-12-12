@@ -8,7 +8,7 @@ export interface IAlert {
   /**
    * This is the main text in the alert
    * */
-  text?: string
+  text?: string | React.ReactNode
   /**
    * This is the custom text in the alert
    * */

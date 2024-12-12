@@ -37,7 +37,7 @@ const Component: React.FC<IActions> = ({
       <SaveButton {...saveButtonProps} />
       <button
         className={styles['magneto-ui-actions__button']}
-        title={shareButtonProps.title}
+        aria-label={shareButtonProps.title}
         onClick={() =>
           setComponent(
             <Actions.ShareLinks

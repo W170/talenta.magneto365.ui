@@ -6,4 +6,5 @@ export interface IMegaMenuSideCards {
   onSelectCard?: (index: number) => void
   action?: IMegaMenuLink
   maxCards?: number
+  initValue?: number
 }

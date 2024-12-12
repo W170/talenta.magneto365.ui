@@ -4,6 +4,7 @@ import style from './SharePopover.module.scss'
 import { Share } from '../../../../constants/icons.constants'
 import { ShareIcons } from '../../../../constants/vacancies.constants'
 import { ISharePopover } from './SharePopover.interface'
+import { Tooltip } from '../Tooltip'
 
 const Component: React.FC<ISharePopover> = ({
   shareLinks = [],
@@ -39,7 +40,7 @@ const Component: React.FC<ISharePopover> = ({
               </a>
             </li>
           ))}
-          <li>
+          <li className={style['content__share']}>
             <ShareButton
               {...rest}
               onCopySuccess={() => {
@@ -50,14 +51,18 @@ const Component: React.FC<ISharePopover> = ({
         </ul>
       }
     >
-      <button
-        {...btnProps}
-        className={[style['popover__btn'], classNameButton].join(' ')}
-        onClick={() => setShow((show) => !show)}
-        onBlur={() => setShow(false)}
-      >
-        <IconItem size={20} icon={Share} />
-      </button>
+      <Tooltip title={btnProps.title || 'Compartir'} position="bottom" visible={!show}>
+        <button
+          {...btnProps}
+          title=""
+          aria-label={btnProps.title}
+          className={[style['popover__btn'], classNameButton].join(' ')}
+          onClick={() => setShow((show) => !show)}
+          onBlur={() => setShow(false)}
+        >
+          <IconItem size={20} icon={Share} />
+        </button>
+      </Tooltip>
     </Popover>
   )
 }

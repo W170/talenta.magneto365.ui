@@ -24,6 +24,7 @@ import { jobVideo } from '@constants/stories/jobVideo.constants'
 import { shareLinks } from '../../../../constants/stories/vacancies.constants'
 
 const jobDetailsDrawer = {
+  fraudLink: 'https://www.google.com',
   jobCompanyLogoProps: {
     jobCompanyLogoProps: {
       offerCompanyLogo: CompanyLogo as unknown as JSX.Element
@@ -109,6 +110,7 @@ const jobDetailsDrawer = {
 }
 
 const mobileJobDetailsDrawer = {
+  fraudLink: 'https://www.google.com',
   jobCompanyLogoProps: {
     jobCompanyLogoProps: {
       offerCompanyLogo: CompanyLogo as unknown as JSX.Element

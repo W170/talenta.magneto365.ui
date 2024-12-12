@@ -5,8 +5,8 @@ import { ArrowRightWhite } from '@constants/icons.constants'
 import { MegaMenuCard } from '../MegaMenuCard'
 import { SearchItem } from '@components/UI/atoms'
 
-const MegaMenuSideCards: React.FC<IMegaMenuSideCards> = ({ jobs, action, onSelectCard, maxCards = 10 }) => {
-  const [selected, setSelected] = useState(0)
+const MegaMenuSideCards: React.FC<IMegaMenuSideCards> = ({ jobs, action, onSelectCard, initValue, maxCards = 10 }) => {
+  const [selected, setSelected] = useState(initValue || 0)
 
   const handleClick = useCallback(
     (index: number) => () => {
@@ -15,6 +15,7 @@ const MegaMenuSideCards: React.FC<IMegaMenuSideCards> = ({ jobs, action, onSelec
     },
     [onSelectCard]
   )
+
   return (
     <ul className={`${style[`mega-menu-side-cards`]}`}>
       {jobs &&
@@ -26,7 +27,7 @@ const MegaMenuSideCards: React.FC<IMegaMenuSideCards> = ({ jobs, action, onSelec
               className={`${style[`mega-menu-side-cards__card`]} ${
                 selected == key ? style[`mega-menu-side-cards__card--selected`] : ''
               }`}
-              onClick={handleClick(key)}
+              onClick={onSelectCard ? handleClick(key) : undefined}
             />
           </li>
         ))}
