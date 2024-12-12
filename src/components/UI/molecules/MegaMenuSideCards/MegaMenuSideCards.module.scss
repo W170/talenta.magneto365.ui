@@ -4,7 +4,7 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 10px;
   padding: 10px;
   margin: 0px;
   background-color: #f0f1f3;
@@ -31,5 +31,10 @@
     &--selected {
       background-color: white;
     }
+  }
+
+  @media (max-width: v.$screen-md) {
+    background-color: white;
+    padding: 0px;
   }
 }

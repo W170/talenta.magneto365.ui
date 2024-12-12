@@ -1,0 +1,91 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.mega-menu-drawer {
+  > aside {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: auto;
+  }
+  &__tabs {
+    padding: 0px 2rem;
+    width: auto !important;
+    display: flex !important;
+    justify-content: space-around;
+  }
+
+  &__links {
+    display: flex;
+    width: 100%;
+    padding: 10px 0px;
+    bottom: 0;
+    background-color: #f0f1f3;
+  }
+
+  &__options {
+    margin: 37px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &--action {
+      width: auto;
+      margin-bottom: 27px;
+
+      > p {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        color: #292f37;
+      }
+    }
+  }
+
+  &__content {
+    padding: 20px;
+    flex: 1;
+  }
+
+  &__close {
+    display: flex;
+    justify-content: flex-end;
+    height: 35px;
+    background-color: #f0f1f3;
+    > button {
+      position: relative;
+      right: 15px;
+      bottom: 0px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    & > :nth-child(1) {
+      transform: rotate(45deg);
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+// .menu-container {
+//   margin-top: 16px;
+//   @media (min-width: v.$screen-md) {
+//     margin-top: 40px;
+//   }
+// }
+
+// .actionsContainer {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 16px;
+//   margin: 16px 0px;
+//   @media (min-width: v.$screen-md) {
+//     gap: 25px;
+//     margin-top: 40px;
+//   }
+// }

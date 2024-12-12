@@ -29,7 +29,7 @@ export const FilterActions: FC<IFilterActions> = ({ allAction, onClickAction, fi
         }`}
         buttonText={letter}
         key={index}
-      ></Button>
+      />
     ))
   }, [allAction, handleClickAction, selected])
 

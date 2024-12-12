@@ -3,12 +3,12 @@
 .filter-actions {
   display: flex;
   flex-direction: row;
-  gap: 8px;
+  gap: 5px;
+  flex-wrap: wrap;
 
   &__action {
-    padding: 6px !important;
+    padding: 4px !important;
     border-radius: 6px;
-    font-size: 5;
     background-color: white;
     color: #0a0c0e;
     > p {

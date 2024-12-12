@@ -1,3 +1,4 @@
+import { IFiltersRef } from '@components/UI/molecules'
 import { Ref } from 'react'
 
 export interface IAlphabetFilter {
@@ -5,5 +6,5 @@ export interface IAlphabetFilter {
   allActionText: string
   className?: string
   onClickAction: (index: number, value: string) => void
-  filtersRef?: Ref<unknown>
+  filtersRef?: Ref<IFiltersRef>
 }
