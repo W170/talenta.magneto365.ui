@@ -18,8 +18,9 @@ const withMegaMenuContainer = <T,>(
       (index?: number) => {
         setShowDrawer(!showDrawer)
         setTitle(sideProps.jobs.at(index ?? 0)?.title ?? '')
+        sideProps.onSelectCard && sideProps.onSelectCard(index ?? 0)
       },
-      [showDrawer, sideProps.jobs]
+      [showDrawer, sideProps]
     )
 
     const renderCards = useMediaQuery(
