@@ -4,6 +4,7 @@ import { IconItem } from '../../atoms/Icon'
 import { Image } from '../../atoms/Image'
 import { IMegaMenuCard } from './MegaMenuCard.interface'
 import styles from './MegaMenuCard.module.scss'
+import { useMediaQuery } from '@components/hooks'
 
 const MegaMenuCard: React.FC<IMegaMenuCard> = ({
   title,
@@ -25,6 +26,16 @@ const MegaMenuCard: React.FC<IMegaMenuCard> = ({
     },
     [onClick]
   )
+
+  const rigthArrow = (
+    <div className={styles[`magneto-ui-mega-menu-card__arrow`]}>
+      <IconItem icon={ArrowRight2} size={16} />
+    </div>
+  )
+
+  const arrow = useMediaQuery(showRigthArrow && rigthArrow, {
+    md: rigthArrow
+  })
 
   return (
     <a
@@ -49,11 +60,7 @@ const MegaMenuCard: React.FC<IMegaMenuCard> = ({
           maximumFractionDigits: 3
         })} cupos`}</div>
       </div>
-      {showRigthArrow && (
-        <div className={styles[`magneto-ui-mega-menu-card__arrow`]}>
-          <IconItem icon={ArrowRight2} size={16} />
-        </div>
-      )}
+      {arrow}
     </a>
   )
 }

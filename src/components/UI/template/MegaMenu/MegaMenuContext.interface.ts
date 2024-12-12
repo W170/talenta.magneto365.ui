@@ -28,9 +28,8 @@ export interface IMegaMenuMainHeader {
     onClickSignUp: (event: Event) => Promise<void>
   }
   searchBarProps?: ISearchbar
-  logoProps?: {
-    url: string
-  }
+  homeUrl?: string
+  homeText?: string
 }
 
 export interface IMegaMenuJobsTabs {

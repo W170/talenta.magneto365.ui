@@ -13,4 +13,8 @@
   &__main {
     grid-area: 1 / 2 / 2 / 6;
   }
+
+  @media (max-width: v.$screen-md) {
+    display: block;
+  }
 }

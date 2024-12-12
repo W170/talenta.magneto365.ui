@@ -11,19 +11,46 @@
   padding: 14px 14px 14px 16px;
   justify-content: space-between;
 
+  @media (max-width: v.$screen-md) {
+    gap: 5px;
+    padding: 15px 12px;
+  }
+
+  &__main {
+    display: flex;
+    gap: 8px;
+    flex: 5;
+    justify-content: space-between;
+    @media (max-width: v.$screen-md) {
+      justify-content: flex-start;
+      margin-right: 0px;
+    }
+  }
+  &__menu {
+    padding: 0px;
+  }
   &__search {
     width: calc(100vw / 2.5);
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 20px;
+
+    &-button {
+      padding: 0px !important;
+    }
+    @media (max-width: v.$screen-md) {
+      width: max-content;
+    }
   }
 
   &__login {
     display: flex;
     flex-direction: row;
+    flex: 2;
     align-items: center;
-    gap: 20px;
+    justify-content: flex-end;
+    gap: 5px;
     > a {
       text-decoration: none;
     }

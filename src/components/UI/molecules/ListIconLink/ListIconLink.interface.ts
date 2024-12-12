@@ -6,6 +6,7 @@ export interface IListIconLink {
   listIcon: IListIcon[]
   size?: number
   hover?: boolean
+  className?: string
 }
 
 export interface IListIcon {
