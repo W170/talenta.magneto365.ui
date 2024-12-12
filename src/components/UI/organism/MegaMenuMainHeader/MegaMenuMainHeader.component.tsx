@@ -72,7 +72,7 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
     md: <MainButton {...MenuButtonProps} className={styles['mega-menu-main-header__menu']} onClick={toggleDrawerMenu} />
   })
 
-  const loginAction = useMediaQuery(
+  const loginAction = (
     <Link
       type={'button'}
       href={loginProps?.loginUrl || ''}
@@ -82,7 +82,7 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
     />
   )
 
-  const logoutAction = useMediaQuery(
+  const logoutAction = (
     <MainButton
       {...SignUpButtonStyle}
       buttonText={loginProps?.signUpText || ''}

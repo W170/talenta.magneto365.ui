@@ -21,10 +21,12 @@ export interface IMegaMenuDrawerItem {
   /**
    * Icon for each option
    */
-  content?: {
-    child: ReactNode
-    title: string
-  }
+  content?: IMegaMenuDrawerItemContent
 
   onClickOption?: () => void
+}
+
+export interface IMegaMenuDrawerItemContent {
+  child: ReactNode
+  title: string
 }

@@ -10,9 +10,7 @@ const MegaMenuTabs: React.FC<{ showArrows?: boolean; className?: string }> = ({ 
   } = useMegaMenu()
   return (
     <div className={`${style[`${classMUI}-mega-menu-tabs`]} ${className ? className : ''}`}>
-      {tabs.length > 0 &&
-        tabs.length > 0 &&
-        tabs.map((tab, key) => <MegaMenuTab key={key} showArrow={showArrows} {...tab} />)}
+      {tabs.length > 0 && tabs.map((tab, key) => <MegaMenuTab key={key} showArrow={showArrows} {...tab} />)}
     </div>
   )
 }

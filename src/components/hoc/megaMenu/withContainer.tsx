@@ -3,7 +3,7 @@ import { MegaMenuSideCards } from '@components/UI/molecules/MegaMenuSideCards'
 import { IMegaMenuSideCards } from '@components/UI/molecules/MegaMenuSideCards/MegaMenuSideCards.interface'
 import React, { useCallback, useState } from 'react'
 import styles from './withContainer.module.scss'
-import { MegaMenuDrawerItem } from '@components/UI/atoms/MegaMenuDrawerItem/MegaMenuDrawerItem.component'
+import { MegaMenuDrawerItem } from '@components/UI/molecules/MegaMenuDrawerItem/MegaMenuDrawerItem.component'
 
 const { Drawer } = MegaMenuDrawerItem
 

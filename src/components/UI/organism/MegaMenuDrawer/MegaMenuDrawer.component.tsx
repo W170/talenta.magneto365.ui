@@ -15,12 +15,12 @@ import {
 import { Add, Home2 } from '@constants/icons.constants'
 import { MegaMenuTabs } from '@components/UI/molecules/MegaMenuSocialTabs'
 import { useMegaMenu, useMegaMenuJobs, useMegaMenuMain } from '@components/UI/template/MegaMenu/MegaMenu.context'
-import { MegaMenuDrawerItem } from '@components/UI/atoms/MegaMenuDrawerItem'
+import { MegaMenuDrawerItem } from '@components/UI/molecules/MegaMenuDrawerItem'
 import { ButtonLink } from '@components/UI/atoms/ButtonLink'
 
 const Component: React.FC<IMegaMenuDrawer> = ({ isOpen = false, onClose }) => {
   const [currentPage, setCurrentPage] = useState('')
-  const { homeUrl, loginProps } = useMegaMenuMain()
+  const { homeUrl, homeText, loginProps } = useMegaMenuMain()
   const { tabs, allJobsAction, onChangeTab } = useMegaMenuJobs()
   const {
     socialHeaderProps: { blog, helpOptions }
@@ -127,7 +127,7 @@ const Component: React.FC<IMegaMenuDrawer> = ({ isOpen = false, onClose }) => {
 
         <div className={style['mega-menu-drawer__options']}>
           <MegaMenuDrawerItem
-            text={'Inicio'}
+            text={homeText ?? 'Inicio'}
             url={homeUrl || ''}
             isActive={isActiveOption(homeUrl || '')}
             key={'home-action'}

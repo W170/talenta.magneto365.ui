@@ -29,6 +29,7 @@ export interface IMegaMenuMainHeader {
   }
   searchBarProps?: ISearchbar
   homeUrl?: string
+  homeText?: string
 }
 
 export interface IMegaMenuJobsTabs {

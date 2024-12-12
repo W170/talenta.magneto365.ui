@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react'
+import React, { useCallback } from 'react'
 import { ArrowRight2 } from '@constants/icons.constants'
 import { IconItem } from '../../atoms/Icon'
 import { Image } from '../../atoms/Image'
@@ -27,14 +27,12 @@ const MegaMenuCard: React.FC<IMegaMenuCard> = ({
     [onClick]
   )
 
-  const rigthArrow = useMemo(
-    () => (
-      <div className={styles[`magneto-ui-mega-menu-card__arrow`]}>
-        <IconItem icon={ArrowRight2} size={16} />
-      </div>
-    ),
-    []
+  const rigthArrow = (
+    <div className={styles[`magneto-ui-mega-menu-card__arrow`]}>
+      <IconItem icon={ArrowRight2} size={16} />
+    </div>
   )
+
   const arrow = useMediaQuery(showRigthArrow && rigthArrow, {
     md: rigthArrow
   })
