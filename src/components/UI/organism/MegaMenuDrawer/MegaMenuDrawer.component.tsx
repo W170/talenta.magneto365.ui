@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { MainButton } from '../../atoms'
 import { Drawer, ListIconLink } from '../../molecules'
 import { IconItem, LogoComponent } from '../../atoms'
@@ -19,6 +19,7 @@ import { MegaMenuDrawerItem } from '@components/UI/atoms/MegaMenuDrawerItem'
 import { ButtonLink } from '@components/UI/atoms/ButtonLink'
 
 const Component: React.FC<IMegaMenuDrawer> = ({ isOpen = false, onClose }) => {
+  const [currentPage, setCurrentPage] = useState('')
   const { homeUrl, loginProps } = useMegaMenuMain()
   const { tabs, allJobsAction, onChangeTab } = useMegaMenuJobs()
   const {
@@ -41,9 +42,16 @@ const Component: React.FC<IMegaMenuDrawer> = ({ isOpen = false, onClose }) => {
     [onClose]
   )
 
-  const isActiveOption = useCallback((url: string) => {
-    const currentPage = window.location.href
-    return currentPage == url
+  const isActiveOption = useCallback(
+    (url: string) => {
+      return currentPage == url
+    },
+    [currentPage]
+  )
+
+  useEffect(() => {
+    if (typeof window == 'undefined') return
+    setCurrentPage(window.location.href)
   }, [])
 
   const options = useMemo(
