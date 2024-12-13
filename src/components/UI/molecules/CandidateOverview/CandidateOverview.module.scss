@@ -70,9 +70,27 @@
     &--color {
       &-gray {
         color: #667688;
+        > * {
+          color: #667688;
+        }
+        &:hover {
+          color: #667688;
+          > * {
+            color: #667688;
+          }
+        }
       }
       &-black {
         color: #292f37;
+        > * {
+          color: #292f37;
+        }
+        &:hover {
+          color: #292f37;
+          > * {
+            color: #292f37;
+          }
+        }
       }
     }
     &--link {
@@ -83,6 +101,10 @@
     }
     &--function {
       cursor: pointer;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
     }
     &-container {
       display: flex;
