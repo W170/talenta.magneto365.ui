@@ -10,6 +10,8 @@ import { jobVideo } from '../../../../constants/stories/jobVideo.constants'
 import { ICityDetail } from '../../molecules/CitiesDetailDrawer'
 import { shareLinks } from '../../../../constants/stories/vacancies.constants'
 import { fraudCardJob } from '../../../../constants/stories/fraudCardJob.constant'
+import { IAlertJobStatus } from '../../molecules/AlertJobStatus/AlertJobStatus.interface'
+import { AlertJobStatus } from '../../molecules/AlertJobStatus/AlertJobStatus.component'
 const jobActions = {
   externalButtonChild: <MainButton buttonText="Aplicar" />,
   saveButtonProps: {
@@ -107,6 +109,29 @@ const jobFooterCard = {
   }
 }
 
+const { Container, Text, Icon } = AlertJobStatus
+
+const alertJobStatusProps: IAlertJobStatus = {
+  children: (
+    <>
+      <Container>
+        <Icon type="success" />
+        <Text
+          customText={[
+            { value: 'Ya aplicaste a este empleo', fontWeight: 'bold', lineBreak: true },
+            { value: 'Puedes ver el estado de tu aplicación ', fontWeight: 'normal' },
+            {
+              value: <a href={'_blank'}>{'Mis procesos'}</a>,
+              fontWeight: 'bold'
+            }
+          ]}
+        />
+      </Container>
+    </>
+  ),
+  type: 'normal'
+}
+
 const meta: Meta<typeof JobDetailsDrawer> = {
   title: 'Organism/Job Details Drawer',
   component: JobDetailsDrawer,
@@ -128,7 +153,8 @@ export const Default: Story = {
     jobFooterCardProps: jobFooterCard,
     jobVideo: jobVideo,
     cities: cities,
-    fraudCardJobProps: fraudCardJob
+    fraudCardJobProps: fraudCardJob,
+    alertJobStatusProps: alertJobStatusProps
   }
 }
 
