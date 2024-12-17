@@ -15,4 +15,9 @@ export interface IMobileJobDetailsActionsBar {
    *
    */
   onClose?: boolean
+
+  /**
+   * Props for show button apply
+   */
+  isApplied?: boolean
 }
