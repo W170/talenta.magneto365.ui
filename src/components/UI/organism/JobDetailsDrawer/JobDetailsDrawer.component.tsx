@@ -80,7 +80,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
             {jobVideo && <JobVideo {...jobVideo} loadVideo={loadVideo} setLoadVideo={setLoadVideo} />}
             <JobDetailCard {...jobDetailCardProps} />
             <JobSkillsCard {...jobSkillsCardProps} />
-            <FraudCardJob {...fraudCardJobProps} />
+            {fraudCardJobProps && <FraudCardJob {...fraudCardJobProps} />}
             <JobApplyCard {...jobApplyCardProps} />
             <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
             {similarJobsProps ? <SimilarJobs {...similarJobsProps} /> : null}

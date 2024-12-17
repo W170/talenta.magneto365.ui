@@ -74,7 +74,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
         {jobVideo && <JobVideo {...jobVideo} loadVideo={loadVideo} setLoadVideo={setLoadVideo} />}
         <JobDetailCard {...jobDetailCardProps} />
         {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
-        <FraudCardJob {...fraudCardJobProps} />
+        {fraudCardJobProps && <FraudCardJob {...fraudCardJobProps} />}
         <JobApplyCard {...jobApplyCardProps} isApplied={isApplied} />
         <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
         {similarJobsProps ? <SimilarJobs {...similarJobsProps} /> : null}
