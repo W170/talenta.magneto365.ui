@@ -10,7 +10,10 @@ export interface IAlertJobStatus {
    * Additional class names for custom styling.
    */
   className?: string
-
+  /**
+   * type to background alert 'warning' or 'normal'.
+   * default: warning
+   */
   type?: EAlertJobStatusType
 }
 
@@ -44,7 +47,9 @@ export namespace IAlertJobStatus {
      * Text alt in the img element
      */
     alt?: string | null
-
+    /**
+     * type to icon alert 'warning' or 'success'.
+     */
     type?: EAlertJobStatusIcon
   }
 }

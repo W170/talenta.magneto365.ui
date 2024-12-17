@@ -29,6 +29,9 @@ export interface IJobsActions {
    * Props for the share button component.
    */
   shareButtonProps: ISharePopover
-
+  /**
+   * Props for render save button.
+   * it's true it will not display save button
+   */
   isApplied?: boolean
 }
