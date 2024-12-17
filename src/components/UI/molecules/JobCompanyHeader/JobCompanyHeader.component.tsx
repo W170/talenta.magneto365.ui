@@ -2,12 +2,22 @@ import React from 'react'
 import { JobCompanyLogo, JobHeader } from '@components/UI/atoms'
 import { IJobCompanyHeader } from './JobCompanyHeader.interface'
 import styles from './JobCompanyHeader.module.scss'
+import { anchorIconList } from '@constants/stories'
+import { JobActions } from '@components/UI/molecules'
 
-const Component: React.FC<IJobCompanyHeader> = ({ jobCompanyLogoProps, jobHeaderProps }) => {
+const Component: React.FC<IJobCompanyHeader> = ({
+  jobCompanyLogoProps,
+  jobHeaderProps,
+  jobActionsProps,
+  isApplied
+}) => {
   return (
     <div className={styles['magneto-ui-job-company-header']}>
       <JobCompanyLogo {...jobCompanyLogoProps} />
-      <JobHeader {...jobHeaderProps} />
+      <div className={styles['magneto-ui-job-company-header__data-actions']}>
+        <JobHeader {...jobHeaderProps} />
+        {isApplied && <JobActions isApplied={isApplied} actionsAnchorIcons={anchorIconList} {...jobActionsProps} />}
+      </div>
     </div>
   )
 }

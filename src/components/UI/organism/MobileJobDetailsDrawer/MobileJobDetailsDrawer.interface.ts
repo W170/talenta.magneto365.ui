@@ -5,7 +5,8 @@ import {
   IJobDetailCard,
   IJobFooterCard,
   IJobSkillsCard,
-  ICityDetail
+  ICityDetail,
+  IAlertJobStatus
 } from '@components/UI/molecules'
 import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 import { IJobVideo } from '@components/UI/molecules/JobVideo'
@@ -99,4 +100,8 @@ export interface IMobileJobDetailsDrawer {
    * Props for the fraud card job.
    */
   fraudCardJobProps: IFraudCardJob
+
+  isApplied?: boolean
+
+  alertJobStatusProps?: IAlertJobStatus
 }

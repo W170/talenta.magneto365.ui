@@ -10,18 +10,6 @@ import { jobVideo } from '../../../../constants/stories/jobVideo.constants'
 import { ICityDetail } from '../../molecules/CitiesDetailDrawer'
 import { shareLinks } from '../../../../constants/stories/vacancies.constants'
 import { fraudCardJob } from '../../../../constants/stories/fraudCardJob.constant'
-
-const jobCompanyLogo: IJobCompanyHeader = {
-  jobCompanyLogoProps: {
-    offerCompanyLogo: CompanyLogo as unknown as JSX.Element,
-    alt: 'Grupo Exito Logo'
-  },
-  jobHeaderProps: {
-    offerTitle: 'Comunicador Audiovisual',
-    offerCompanyName: 'Grupo Exito',
-    typeTitle: 'SubTitle'
-  }
-}
 const jobActions = {
   externalButtonChild: <MainButton buttonText="Aplicar" />,
   saveButtonProps: {
@@ -43,6 +31,18 @@ const jobActions = {
   actionsAnchorLinks: ['link1', 'link2'],
   ctionsAnchorLinks: ['link1', 'link2'],
   actionsAnchorTitle: ['Abrir esta oferta en otra pestaña', 'Ver empresa']
+}
+const jobCompanyLogo: IJobCompanyHeader = {
+  jobCompanyLogoProps: {
+    offerCompanyLogo: CompanyLogo as unknown as JSX.Element,
+    alt: 'Grupo Exito Logo'
+  },
+  jobHeaderProps: {
+    offerTitle: 'Comunicador Audiovisual',
+    offerCompanyName: 'Grupo Exito',
+    typeTitle: 'SubTitle'
+  },
+  jobActionsProps: jobActions
 }
 
 const jobDetails = [

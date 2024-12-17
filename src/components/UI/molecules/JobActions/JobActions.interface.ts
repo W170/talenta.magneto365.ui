@@ -29,4 +29,6 @@ export interface IJobsActions {
    * Props for the share button component.
    */
   shareButtonProps: ISharePopover
+
+  isApplied?: boolean
 }

@@ -17,7 +17,7 @@ export interface ICustomText {
   /**
    * This is the value to the custom text
    * */
-  value: string
+  value: string | React.ReactNode
   /**
    * This is the custom font weight to text
    * */

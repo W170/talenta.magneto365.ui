@@ -1,3 +1,4 @@
+import { IAlertJobStatus } from './../../molecules/AlertJobStatus/AlertJobStatus.interface'
 import { IJobSkillsCard } from '../../molecules/JobSkillsCard'
 import { IJobApplyCard } from '../../molecules/JobApplyCard'
 import { IJobFooterCard } from '../../molecules/JobFooterCard'
@@ -83,4 +84,8 @@ export interface IJobDetailsDrawer {
    * Props for the fraud card job.
    */
   fraudCardJobProps: IFraudCardJob
+
+  isApplied?: boolean
+
+  alertJobStatusProps?: IAlertJobStatus
 }

@@ -10,6 +10,8 @@ export interface IAlertJobStatus {
    * Additional class names for custom styling.
    */
   className?: string
+
+  type?: EAlertJobStatusType
 }
 
 export namespace IAlertJobStatus {
@@ -42,5 +44,9 @@ export namespace IAlertJobStatus {
      * Text alt in the img element
      */
     alt?: string | null
+
+    type?: EAlertJobStatusIcon
   }
 }
+export type EAlertJobStatusType = 'warning' | 'normal'
+export type EAlertJobStatusIcon = 'success' | 'warning'
