@@ -16,7 +16,9 @@ const Component: React.FC<IJobCompanyHeader> = ({
       <JobCompanyLogo {...jobCompanyLogoProps} />
       <div className={styles['magneto-ui-job-company-header__data-actions']}>
         <JobHeader {...jobHeaderProps} />
-        {isApplied && <JobActions isApplied={isApplied} actionsAnchorIcons={anchorIconList} {...jobActionsProps} />}
+        {isApplied && jobActionsProps && (
+          <JobActions isApplied={isApplied} actionsAnchorIcons={anchorIconList} {...jobActionsProps} />
+        )}
       </div>
     </div>
   )

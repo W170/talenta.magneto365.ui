@@ -15,5 +15,5 @@ export interface IJobCompanyHeader {
   /**
    * Props for the actions section associated with the job details.
    */
-  jobActionsProps: IJobsActions
+  jobActionsProps?: IJobsActions
 }
