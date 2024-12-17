@@ -1,21 +1,16 @@
 import React, { useEffect } from 'react'
 import { ModalPortal } from '../Modal/ModalPortal.component'
-import Styles from './Notification.module.scss'
+import styles from './Notification.module.scss'
 import { Close } from '@constants/icons.constants'
 import { INotification } from './Notification.interface'
 
 const Notification: React.FC<INotification> = ({
   onClose,
-  title,
-  description,
+  message,
   position = 'top-right',
-  containerClassName = '',
-  contentClassName = '',
-  titleClassName = '',
-  descriptionClassName = '',
-  childrenClassName = '',
+  className,
   autoCloseDuration = 5000,
-  children
+  extraContent
 }) => {
   useEffect(() => {
     if (autoCloseDuration > 0) {
@@ -26,19 +21,19 @@ const Notification: React.FC<INotification> = ({
 
   return (
     <ModalPortal>
-      <div className={`${Styles.notification} ${Styles[position]} ${containerClassName}`} role="alert">
-        <div className={`${Styles['notification__content']} ${contentClassName}`}>
-          <div className={Styles['notification__text']}>
-            {title && <h2 className={`${Styles['notification__title']} ${titleClassName}`}>{title}</h2>}
-            {description && (
-              <p className={`${Styles['notification__description']} ${descriptionClassName}`}>{description}</p>
-            )}
-          </div>
-          <button className={Styles['notification__close-btn']} onClick={onClose} type="button">
+      <div className={`${styles.notification} ${styles[position]} ${className}`} role="alert">
+        <div className={styles['notification__content']}>
+          <div className={styles['notification__message']}>{message}</div>
+          <button
+            className={styles['notification__close-btn']}
+            onClick={onClose}
+            type="button"
+            aria-label="Close notification"
+          >
             <img src={Close} alt="close icon" />
           </button>
         </div>
-        {children && <div className={childrenClassName}>{children}</div>}
+        {extraContent && extraContent}
       </div>
     </ModalPortal>
   )
