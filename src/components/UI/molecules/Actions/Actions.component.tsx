@@ -15,7 +15,8 @@ const Component: React.FC<IActions> = ({
   shareButtonProps,
   copyButtonProps,
   offerCompanyName,
-  backText
+  backText,
+  isApplied
 }) => {
   const [component, setComponent] = useState<React.ReactElement>()
 
@@ -33,7 +34,7 @@ const Component: React.FC<IActions> = ({
 
   return (
     <div className={styles['magneto-ui-actions']}>
-      <div id={styles['magneto-ui__external-child']}>{externalButtonChild}</div>
+      <div id={styles['magneto-ui__external-child']}>{!isApplied && externalButtonChild}</div>
       <SaveButton {...saveButtonProps} />
       <button
         className={styles['magneto-ui-actions__button']}

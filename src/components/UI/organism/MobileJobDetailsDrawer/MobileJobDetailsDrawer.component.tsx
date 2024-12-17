@@ -75,7 +75,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
         <JobDetailCard {...jobDetailCardProps} />
         {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
         <FraudCardJob {...fraudCardJobProps} />
-        <JobApplyCard {...jobApplyCardProps} />
+        <JobApplyCard {...jobApplyCardProps} isApplied={isApplied} />
         <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
         {similarJobsProps ? <SimilarJobs {...similarJobsProps} /> : null}
       </Fragment>
@@ -127,7 +127,9 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
         isMobile
       >
         {content}
-        {!jobDetailAction && <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} onClose={isOpen} />}
+        {!jobDetailAction && (
+          <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} onClose={isOpen} isApplied={isApplied} />
+        )}
       </Drawer>
       {modalPendingInfoComponent}
     </Fragment>
