@@ -83,7 +83,7 @@ export interface IJobDetailsDrawer {
   /**
    * Props for the fraud card job.
    */
-  fraudCardJobProps: IFraudCardJob
+  fraudCardJobProps?: IFraudCardJob
   /**
    * Props for show actions buttons or alert
    */
