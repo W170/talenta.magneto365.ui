@@ -9,7 +9,7 @@
   padding: 0px;
   align-items: center;
 
-  @media (max-width: v.$screen-lg) {
+  @media (max-width: v.$screen-xl) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 

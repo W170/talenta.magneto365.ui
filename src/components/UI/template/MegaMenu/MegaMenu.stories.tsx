@@ -11,10 +11,10 @@ import {
 } from '@constants/stories'
 import { MegaMenuCards } from '@components/UI/organism'
 import { IMegaMenuJobsTabs } from './MegaMenuContext.interface'
-import { withMegaMenuContainer } from '../../../hoc'
+import { withMegaMenuSideCards } from '../../../hoc'
 
 const jobsTabs = megaMenuJobs.tabs.map((job: IMegaMenuJobsTabs, key) => {
-  const Content = withMegaMenuContainer(MegaMenuCards)
+  const Content = withMegaMenuSideCards(MegaMenuCards)
   if (key == 0)
     return {
       ...job,
