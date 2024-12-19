@@ -7,7 +7,7 @@ import { ButtonLink } from '@components/UI/atoms/ButtonLink'
 
 const MegaMenuJobsTabs: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState<number>(0)
-  const { tabs, onChangeTab } = useMegaMenuJobs()
+  const { tabs, onChangeTab, allJobsAction } = useMegaMenuJobs()
 
   const onClickTab = useCallback(
     (index: number) => () => {
@@ -42,7 +42,7 @@ const MegaMenuJobsTabs: React.FC = () => {
             ))}
           <Divider direction={'VERTICAL'} />
           <li>
-            <SearchItem tag={'Todos los empleos'} url={'https://www.magneto365.com/co/empleos'} />
+            <SearchItem tag={allJobsAction?.label ?? ''} url={allJobsAction?.url ?? ''} />
           </li>
         </ul>
       </nav>

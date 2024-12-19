@@ -3,7 +3,7 @@ import { IMegaMenuContext } from './MegaMenuContext.interface'
 import { MegaMenuCard } from '@components/UI/molecules'
 import { MegaMenuCards } from '@components/UI/organism'
 import { IMegaMenu } from './MegaMenu.interface'
-import { withMegaMenuContainer } from '@components/hoc'
+import { withMegaMenuSideCards } from '@components/hoc'
 import { useMediaQuery } from '@components/hooks'
 import { MegaMenuDesktop } from './MegaMenuDesktop.component'
 import { MegaMenuMobile } from './MegaMenuMobile.component'
@@ -15,5 +15,5 @@ const Component: React.FC<IMegaMenuContext & IMegaMenu> = (props) => {
 export const MegaMenu = Object.assign(Component, {
   Cards: MegaMenuCards,
   Card: MegaMenuCard,
-  SideCards: withMegaMenuContainer(MegaMenuCards)
+  SideCards: withMegaMenuSideCards(MegaMenuCards)
 })
