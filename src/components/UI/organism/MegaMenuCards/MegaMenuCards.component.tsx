@@ -57,7 +57,7 @@ const MegaMenuCards: React.FC<IMegaMenuCards> = ({
         <ButtonLink
           buttonText={action.label}
           href={action.url}
-          target={'_blank'}
+          target={action.target ?? '_self'}
           prefixIcon={ArrowRightWhite}
           className={`${style[`mega-menu-cards__action`]}`}
         />
