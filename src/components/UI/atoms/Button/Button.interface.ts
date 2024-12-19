@@ -24,11 +24,11 @@ export interface IButton {
   /**
    * Suffix icon
    */
-  suffixIcon?: string
+  suffixIcon?: string | React.ReactNode
   /**
    * Preffix icon
    */
-  prefixIcon?: string
+  prefixIcon?: string | React.ReactNode
   /**
    * Icon size
    */
