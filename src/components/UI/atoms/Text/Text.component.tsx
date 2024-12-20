@@ -3,12 +3,12 @@ import { classMUI } from '@constants/stories'
 import style from './Text.module.scss'
 import { IText } from './Text.interface'
 
-const Componente: React.FC<IText> = ({ text, customText, className }) => {
+const Component: React.FC<IText> = ({ text, customText, className }) => {
   const textRender = useMemo(() => {
     return customText?.length ? (
       <span className={className}>
         {customText.map(({ value, fontWeight, lineBreak = false }, index) => (
-          <Fragment key={`${value}-${index}`}>
+          <Fragment key={`custom-text-${index}`}>
             <span className={style[`${classMUI}-${fontWeight}`]}>{value}</span>
             {lineBreak && <br />}
           </Fragment>
@@ -22,4 +22,4 @@ const Componente: React.FC<IText> = ({ text, customText, className }) => {
   return <>{textRender}</>
 }
 
-export const Text = Componente
+export const Text = Component

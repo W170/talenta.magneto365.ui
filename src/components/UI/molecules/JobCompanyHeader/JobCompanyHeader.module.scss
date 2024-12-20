@@ -7,6 +7,16 @@
   align-items: center;
   gap: 20px;
 
+  &__data-actions {
+    display: flex;
+    flex-direction: column;
+    > :nth-child(2) {
+      padding: 0;
+      padding-top: 5px;
+      gap: 0;
+    }
+  }
+
   @media (1440px <= width < 1920px) {
     padding: 20px 28px 0px 28px;
   }

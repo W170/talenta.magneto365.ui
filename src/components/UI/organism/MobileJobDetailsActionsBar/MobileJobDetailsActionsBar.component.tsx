@@ -8,7 +8,12 @@ import styles from './MobileJobDetailsActionsBar.module.scss'
 import { anchorIconList } from '@constants/stories'
 import { More } from '../../../../constants/icons.constants'
 
-const Component: React.FC<IMobileJobDetailsActionsBar> = ({ externalButtonChild, actionsProps, onClose }) => {
+const Component: React.FC<IMobileJobDetailsActionsBar> = ({
+  externalButtonChild,
+  actionsProps,
+  onClose,
+  isApplied
+}) => {
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
 
   const onOpenClick = () => {
@@ -19,14 +24,14 @@ const Component: React.FC<IMobileJobDetailsActionsBar> = ({ externalButtonChild,
 
   return (
     <div className={`${styles.MobileJobDetailsActionsBarComponent} ${showButtonContainer}`}>
-      <div id={styles['magneto-ui__external-child']}>{externalButtonChild}</div>
+      <div id={styles['magneto-ui__external-child']}>{!isApplied && externalButtonChild}</div>
       <div className={styles['DrawerButtonWrapper']}>
         <button type="button" onClick={onOpenClick}>
           <IconItem icon={More} hover={false} />
         </button>
       </div>
       <MobileDrawer isOpen={toggleMobileDrawer} onClose={() => setToggleMobileDrawer(!toggleMobileDrawer)}>
-        <Actions ActionsAnchorIcons={anchorIconList} {...actionsProps} />
+        <Actions ActionsAnchorIcons={anchorIconList} {...actionsProps} isApplied={isApplied} />
       </MobileDrawer>
     </div>
   )
