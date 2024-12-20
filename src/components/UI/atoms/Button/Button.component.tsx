@@ -20,12 +20,16 @@ const Component: React.FC<IButton> = ({
       onClick={onClick}
       title={buttonTitle}
     >
-      {suffixIcon && (
+      {typeof suffixIcon === 'string' ? (
         <IconItem size={iconSize} icon={suffixIcon} hover={addHover} className={styles['magneto-ui-button__icon']} />
+      ) : (
+        suffixIcon
       )}
       {buttonText && <p className={styles['magneto-ui-button__mobile-text']}>{buttonText}</p>}
-      {prefixIcon && (
+      {typeof prefixIcon === 'string' ? (
         <IconItem size={iconSize} icon={prefixIcon} hover={addHover} className={styles['magneto-ui-button__icon']} />
+      ) : (
+        prefixIcon
       )}
     </button>
   )
