@@ -5,6 +5,7 @@ import { ReactNode } from 'react'
 export interface IMegaMenuLink {
   label: string
   url: string
+  target?: string
   icon?: string | undefined
 }
 
