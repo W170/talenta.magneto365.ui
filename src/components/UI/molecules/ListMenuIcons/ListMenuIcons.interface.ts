@@ -1,3 +1,4 @@
+import { IAvatar } from '@components/UI/atoms'
 import { IMenuIcon } from '../MenuIcon/MenuIcon.interface'
 
 export interface IListMenuIcons {
@@ -7,6 +8,8 @@ export interface IListMenuIcons {
   logout: ILogout
   settings: ISettings
   haveGif?: boolean
+  profileImage: IAvatar
+  isAuthenticated: boolean
 }
 
 export interface IMenuItems {

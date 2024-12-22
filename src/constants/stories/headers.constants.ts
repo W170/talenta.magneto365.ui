@@ -134,7 +134,9 @@ export const listMenuUserProps: IListMenuIcons = {
   menuItems: MenuItems,
   menuItems1440,
   logout: Logout,
-  settings: Settings
+  settings: Settings,
+  profileImage: {},
+  isAuthenticated: false
 }
 
 export const SignInProps = {

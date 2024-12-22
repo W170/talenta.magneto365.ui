@@ -5,13 +5,13 @@ import { MenuIcon } from '../MenuIcon'
 import { IListMenuIcons } from './ListMenuIcons.interface'
 import { useMediaQuery } from '../../../hooks'
 import style from './listMenuIcons.module.scss'
-import { LogoutIcon, Setting2 } from '../../../../constants/icons.constants'
+import { LogoutIcon } from '../../../../constants/icons.constants'
+import { getIcons } from '@utils/icons/getIcons.util'
 
-const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, menuItems1440, logout, settings, haveGif }) => {
+const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, logout }) => {
   const { logoutText, onClick } = logout
-  const { settingsText, onClick: onClickSettings } = settings
 
-  const userMenu = useMediaQuery(menuItems1440 && !haveGif ? menuItems1440 : menuItems, { xl: menuItems })
+  const userMenu = useMediaQuery(menuItems, { xl: menuItems })
 
   return (
     <div className={style['mangeto-ui-list-menu-icons']}>
@@ -22,17 +22,16 @@ const Component: React.FC<IListMenuIcons> = ({ urlParam, menuItems, menuItems144
             {items.map(({ slug, icon, ...props }, i: number) => (
               <Fragment key={i}>
                 <MenuIcon
-                  icon={icon}
+                  icon={getIcons(icon)}
                   isActive={Array.isArray(slug) ? slug.includes(urlParam) : urlParam === slug}
                   {...props}
                 />
               </Fragment>
             ))}
+            <Divider spacing={30} />
           </div>
         ))}
-        <MenuIcon type="button" onClick={onClickSettings} icon={Setting2} text={settingsText} />
       </div>
-      <Divider />
       <MenuIcon type="button" onClick={onClick} icon={LogoutIcon} text={logoutText} />
     </div>
   )
