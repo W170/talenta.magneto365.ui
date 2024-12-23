@@ -7,7 +7,19 @@ import {
   IMegaMenuMainHeader,
   IMegaMenuSocialHeader
 } from '@components/UI/template/MegaMenu/MegaMenuContext.interface'
-import { ArrowDown2, ArrowLeft2, HeadsetBlackOutline, QuestionCircle } from '@constants/icons.constants'
+import {
+  AllJobs,
+  ArchiveTick,
+  ArrowDown2,
+  ArrowLeft2,
+  DocumentText,
+  HeadsetBlackOutline,
+  MessageQuestion,
+  QuestionCircle,
+  Setting2,
+  SuggestedJobs,
+  TaskSquare
+} from '@constants/icons.constants'
 import { Book, BriefcaseBlue, BuildingBlue, CourthouseBlue, LocationBlue } from '@constants/megaMenu.constants'
 import { SearchbarProps } from './headers.constants'
 
@@ -94,6 +106,15 @@ export const megaMenuCards: IMegaMenuCards = {
   filterProps
 }
 export const megaMenuJobsIcons = [LocationBlue, CourthouseBlue, BriefcaseBlue, BuildingBlue]
+export const megaMenuUserLoggedIcons = {
+  allJobs: AllJobs,
+  suggestedJobs: SuggestedJobs,
+  savedJobs: ArchiveTick,
+  inProcess: TaskSquare,
+  resume: DocumentText,
+  settings: Setting2,
+  help: MessageQuestion
+}
 export const mobileSocialIcons = [Book, HeadsetBlackOutline, QuestionCircle]
 
 export const megaMenuJobs: IMegaMenuJobs = {
