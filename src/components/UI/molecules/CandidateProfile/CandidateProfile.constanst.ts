@@ -1,6 +1,37 @@
-import { ECandidateProfileSectionTypes } from ".";
+import { BuildingWhite, Date, DollarCircleWhiteOutline, EmailSquare, Location, Mobile, PeopleInfo, Position, Teacher, UserTag } from '@constants/icons.constants';
 
-const candidateProfileTypes ={
-    // [ECandidateProfileSectionTypes.BASIC] = CandidateProfileBasic,
-    // [ECandidateProfileSectionTypes.QUICK_ACCESS] = CandidateProfileQuickAccess
+export const candidateProfileIcons = {
+    company: BuildingWhite,
+    role: UserTag,
+    position: Position,
+    date: Date,
+    people: PeopleInfo,
+    location: Location,
+    mobile: Mobile,
+    teacher: Teacher,
+    email: EmailSquare,
+    dollar: DollarCircleWhiteOutline
 }
+
+export const quickAccessIcon = [
+    'company',
+    'charge',
+    'position'
+];
+
+export const basicIcon=[
+    'company',
+    'date',
+    'people',
+    'email',
+    'mobile',
+    'location',
+    'teacher',
+    'dollar'
+]
+
+export const candidateProfileLabels = [
+    "Empresa",
+    "Cargo",
+    "Posición"
+];

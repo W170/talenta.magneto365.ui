@@ -36,8 +36,12 @@ const Component: React.FC<ICandidateProfile> = ({ details }) => {
                             <h4>Ingenierio de sistemas</h4>
                         </div>
                     </div>
-                    <div className={cx('magneto-ui-candidate-profile__container-header__button')} onClick={handleMenuToggle}>
-                        <IconItem icon={ArrowDownGreen} hover={false} className={cx('magneto-ui-candidate-profile__container-header__button-icon')} />
+                    <div className={cx('magneto-ui-candidate-profile__container-header__button', { 'magneto-ui-candidate-profile__container-header__button--open': isOpen })} onClick={handleMenuToggle}>
+                        <IconItem
+                            icon={ArrowDownGreen}
+                            hover={false}
+                            className={cx('magneto-ui-candidate-profile__container-header__button-icon')}
+                        />
                     </div>
                 </div>
                 {isOpen && (

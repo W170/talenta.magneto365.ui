@@ -1,0 +1,36 @@
+.magneto-ui-candidate-profile__basic{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+
+    &-section{
+        padding-top: 6px;
+    }
+    &-title{
+        margin: 0px;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 700;
+        color: #6DD695;
+    }
+    &-item{
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        padding: 5px 0px;
+        align-items: center;
+        p{
+            margin: 0px;
+        }
+    }
+    &-icon{
+        width: 15px;
+        height: 15px;
+    }
+    &-text{
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 400;
+    }
+}
