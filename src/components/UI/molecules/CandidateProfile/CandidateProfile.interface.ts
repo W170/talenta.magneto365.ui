@@ -3,6 +3,7 @@ export interface ICandidateProfile {
     /**
      * The value of the option.
      */
+    data?: ICanidateProfileData
     details: ICandidateProfileSection[]
 }
 
@@ -12,6 +13,12 @@ export interface ICandidateProfileSection {
     children: ICandidateProfileTextContainer[]
 }
 
+export interface ICanidateProfileData{
+    name: string
+    last_updated: string
+    img: string
+    role: string
+}
 export enum ECandidateProfileSectionTypes {
     BASIC = "basic",
     QUICK_ACCESS = "quick_access"

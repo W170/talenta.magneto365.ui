@@ -11,7 +11,7 @@ import { CandidateProfileBasic } from './children/CandidateProfileBasic';
 
 const cx = classNames.bind(styles);
 
-const Component: React.FC<ICandidateProfile> = ({ details }) => {
+const Component: React.FC<ICandidateProfile> = ({ data, details }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleMenuToggle = () => {
@@ -28,12 +28,12 @@ const Component: React.FC<ICandidateProfile> = ({ details }) => {
                     <div className={cx('magneto-ui-candidate-profile__container-header__avatar')}>
                         <Avatar
                             onClick={() => { }}
-                            userImage="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                            userImage={data?.img}
                         />
                         <div className={cx('magneto-ui-candidate-profile__container-header__avatar-title')}>
-                            <p>Ultima actualización</p>
-                            <h3>Sebastian Cabal Quiroz</h3>
-                            <h4>Ingenierio de sistemas</h4>
+                            <p>{data?.last_updated}</p>
+                            <h3>{data?.name}</h3>
+                            <h4>{data?.role}</h4>
                         </div>
                     </div>
                     <div className={cx('magneto-ui-candidate-profile__container-header__button', { 'magneto-ui-candidate-profile__container-header__button--open': isOpen })} onClick={handleMenuToggle}>
