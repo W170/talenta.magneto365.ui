@@ -7,7 +7,7 @@ import { ArrowRightWhite } from '@constants/icons.constants'
 import styles from './AlertJobModal.module.scss'
 import { withControlField } from '../../../../shared/utils/storybook/withControlField.hoc'
 
-const { Header, Body, Footer, Title, Icon } = AlertJobModal
+const { Header, Body, Button, Footer, Title, Icon } = AlertJobModal
 const CheckboxWithControllerField = withControlField(Checkbox)
 
 const meta: Meta<typeof AlertJobModal> = {
@@ -50,12 +50,7 @@ const meta: Meta<typeof AlertJobModal> = {
           </CheckboxWithControllerField>
         </Body>
         <Footer>
-          <SearchItem
-            url={'#'}
-            tag={'Crear alerta'}
-            className={styles['alert-modal__searchitem']}
-            icon={ArrowRightWhite}
-          />
+          <Button>Crear alerta</Button>
         </Footer>
       </>
     )

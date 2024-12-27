@@ -60,7 +60,7 @@
       padding: 0;
     }
   }
-  &__searchitem {
+  &__button {
     background-color: $color-blue-dark3;
     display: flex;
     align-items: center;
@@ -84,7 +84,6 @@
     }
     p {
       color: white;
-      font-weight: 700;
       font-size: 16px;
     }
     &:hover img {

@@ -96,4 +96,23 @@ export namespace IAlertJobModal {
      */
     className?: string
   }
+  export interface Button extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    /**
+     * React children to be rendered inside the container.
+     */
+    children?: React.ReactNode
+
+    /**
+     * Additional class names for custom styling.
+     */
+    className?: string
+    /**
+     * Here is the icon button component
+     */
+    icon?: string | null
+    /**
+     * You can change the size of the icon by adding a numeric value here
+     */
+    sizeIcon?: number
+  }
 }
