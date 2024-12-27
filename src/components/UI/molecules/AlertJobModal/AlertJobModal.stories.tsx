@@ -1,9 +1,8 @@
 import React, { ChangeEvent } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { AlertJobModal } from './AlertJobModal.component'
-import { SearchItem, Checkbox } from '@components/UI/atoms'
+import { Checkbox } from '@components/UI/atoms'
 import { Input } from '@components/UI/molecules'
-import { ArrowRightWhite } from '@constants/icons.constants'
 import styles from './AlertJobModal.module.scss'
 import { withControlField } from '../../../../shared/utils/storybook/withControlField.hoc'
 
@@ -92,12 +91,7 @@ export const AlertJobModalLoginForm: Story = {
           />
         </Body>
         <Footer>
-          <SearchItem
-            url={'#'}
-            tag={'Crear alerta'}
-            className={styles['alert-modal__searchitem']}
-            icon={ArrowRightWhite}
-          />
+          <Button>Crear alerta</Button>
         </Footer>
       </>
     )
