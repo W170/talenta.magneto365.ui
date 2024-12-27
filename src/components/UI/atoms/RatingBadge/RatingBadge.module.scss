@@ -1,0 +1,26 @@
+.magneto-ui-rating-badge{
+    * {
+        box-sizing: border-box;
+    }
+    &__container{
+        display: flex;
+        flex-direction: row;
+        padding: 4px 8px;
+        border-radius: 25px;
+        background-color: white;
+        gap: 2px;
+        align-items: center;
+        width: fit-content;
+    }
+    &__icon{
+        width: 12px;
+        height: 12px;
+    }
+    &__score{
+        font-size: 10px;
+        line-height: 14px;
+        font-weight: 700;
+        color: #0A0C0E;
+        margin: 0;
+    }
+}

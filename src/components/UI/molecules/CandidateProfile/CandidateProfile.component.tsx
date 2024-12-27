@@ -7,6 +7,7 @@ import { ArrowDownGreen } from '@constants/icons.constants';
 import { IconItem } from '../../atoms/Icon'
 import { CandidateProfileQuickAccess } from './children/CandidateProfileQuickAccess';
 import { CandidateProfileBasic } from './children/CandidateProfileBasic';
+import { RatingBadge } from '../../atoms/RatingBadge/RatingBadge.component';
 
 
 const cx = classNames.bind(styles);
@@ -24,13 +25,18 @@ const Component: React.FC<ICandidateProfile> = ({ data, details }) => {
     return (
         <div className={cx('magneto-ui-candidate-profile')}>
             <div className={cx('magneto-ui-candidate-profile__container')}>
-                <div className={cx('magneto-ui-candidate-profile__container-header' , { 'magneto-ui-candidate-profile__container-header--open': isOpen })}>
-                    <div className={cx('magneto-ui-candidate-profile__container-header__avatar')}>
-                        <Avatar
-                            onClick={() => { }}
-                            userImage={data?.img}
-                        />
-                        <div className={cx('magneto-ui-candidate-profile__container-header__avatar-title')}>
+                <div className={cx('magneto-ui-candidate-profile__container-header', { 'magneto-ui-candidate-profile__container-header--open': isOpen })}>
+                    <div className={cx('magneto-ui-candidate-profile__container-header__user')}>
+                        <div className={cx('magneto-ui-candidate-profile__container-header__avatar')}>
+                            <div className={cx('magneto-ui-candidate-profile__container-header__avatar-logo')}>
+                                <Avatar onClick={() => { }} userImage={data?.img} />
+                            </div>
+                            <div className={cx('magneto-ui-candidate-profile__container-header__avatar-rating')}>
+                                <RatingBadge score={data?.score || "4.5"} />
+                            </div>
+                        </div>
+
+                        <div className={cx('magneto-ui-candidate-profile__container-header__user-title')}>
                             <p>{data?.last_updated}</p>
                             <h3>{data?.name}</h3>
                             <h4>{data?.role}</h4>

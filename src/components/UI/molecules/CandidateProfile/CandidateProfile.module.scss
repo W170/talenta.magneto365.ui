@@ -18,22 +18,18 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+
             &--open {
                 padding-bottom: 16px;
                 border-bottom: 1px solid #1A324C;
             }
 
-            &__avatar {
+            &__user {
                 display: flex;
                 flex-direction: row;
                 text-align: left;
-                gap: 20px;
+                gap: 30px;
                 align-items: center;
-
-                img {
-                    width: 46px;
-                    height: 46px;
-                }
 
                 &-title {
                     display: flex;
@@ -62,6 +58,29 @@
                         color: #6DD695;
                         margin: 0;
                     }
+                }
+            }
+
+            &__avatar {
+                display: flex;
+                flex-direction: row;
+
+                &-logo {
+                    display: flex;
+                    flex-direction: row;
+                    position: relative;
+
+                    img {
+                        width: 46px;
+                        height: 46px;
+                    }
+                }
+
+                &-rating {
+                    position: absolute;
+                    z-index: 20;
+                    top: 90px;
+                    left: 77px;
                 }
             }
 
@@ -223,6 +242,7 @@
                     }
                 }
             }
+
             &-green {
                 color: #6DD695;
 
@@ -238,6 +258,7 @@
                     }
                 }
             }
+
             &-blue {
                 color: #66C1EA;
 

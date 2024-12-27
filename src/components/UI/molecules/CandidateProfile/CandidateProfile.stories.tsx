@@ -13,4 +13,4 @@ export default meta
 
 type Story = StoryObj<typeof CandidateProfile>
 
-export const Defaylt: Story = {}
+export const Default: Story = {}

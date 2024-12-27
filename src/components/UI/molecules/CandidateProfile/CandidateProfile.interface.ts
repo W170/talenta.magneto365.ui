@@ -18,6 +18,7 @@ export interface ICanidateProfileData{
     last_updated: string
     img: string
     role: string
+    score?: string
 }
 export enum ECandidateProfileSectionTypes {
     BASIC = "basic",
