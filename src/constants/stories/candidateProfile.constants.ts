@@ -1,7 +1,7 @@
 import { ICandidateProfile } from "@components/UI/molecules/CandidateProfile";
 
 export const candidateProfile: ICandidateProfile = {
-    "data":{
+    "data": {
         "name": "Sebastian cabal",
         "last_updated": "Ultima actualización 26/12/2024",
         "img": "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
@@ -28,7 +28,7 @@ export const candidateProfile: ICandidateProfile = {
                             },
                             "size": "sm",
                             "weight": "medium",
-                            "color": "black",
+                            "color": "white",
                             "data": "Empresa"
                         },
                         {
@@ -38,7 +38,7 @@ export const candidateProfile: ICandidateProfile = {
                             },
                             "size": "sm",
                             "weight": "medium",
-                            "color": "black",
+                            "color": "white",
                             "data": "Cargo"
 
                         },
@@ -49,7 +49,7 @@ export const candidateProfile: ICandidateProfile = {
                             },
                             "size": "sm",
                             "weight": "medium",
-                            "color": "black",
+                            "color": "white",
                             "data": "Posición"
                         }
                     ]
@@ -61,7 +61,7 @@ export const candidateProfile: ICandidateProfile = {
                 "value": "Datos personales",
                 "size": "lg",
                 "weight": "bold",
-                "color": "gray"
+                "color": "green"
             },
             "type": "basic",
             "children": [
@@ -76,7 +76,7 @@ export const candidateProfile: ICandidateProfile = {
                             },
                             "size": "sm",
                             "weight": "normal",
-                            "color": "gray"
+                            "color": "white"
                         },
                         {
                             "value": "14 / 08 / 1987",
@@ -85,7 +85,7 @@ export const candidateProfile: ICandidateProfile = {
                             },
                             "size": "sm",
                             "weight": "normal",
-                            "color": "gray"
+                            "color": "white"
                         },
                         {
                             "value": "Masculino, 35 años",
@@ -94,7 +94,7 @@ export const candidateProfile: ICandidateProfile = {
                             },
                             "size": "sm",
                             "weight": "normal",
-                            "color": "gray"
+                            "color": "white"
                         },
                         {
                             "value": "nombre@correo.com",
@@ -103,7 +103,7 @@ export const candidateProfile: ICandidateProfile = {
                             },
                             "size": "sm",
                             "weight": "normal",
-                            "color": "gray"
+                            "color": "white"
                         },
                         {
                             "value": "+57 3002002028",
@@ -112,7 +112,7 @@ export const candidateProfile: ICandidateProfile = {
                             },
                             "size": "sm",
                             "weight": "normal",
-                            "color": "gray"
+                            "color": "white"
                         },
                         {
                             "value": "Medellín, Colombia",
@@ -121,7 +121,7 @@ export const candidateProfile: ICandidateProfile = {
                             },
                             "size": "sm",
                             "weight": "normal",
-                            "color": "gray"
+                            "color": "blue"
                         }
                     ]
                 }
@@ -132,7 +132,7 @@ export const candidateProfile: ICandidateProfile = {
                 "value": "Nivel de estudios",
                 "size": "lg",
                 "weight": "bold",
-                "color": "gray"
+                "color": "green"
             },
             "type": "basic",
             "children": [
@@ -147,7 +147,7 @@ export const candidateProfile: ICandidateProfile = {
                             },
                             "size": "sm",
                             "weight": "normal",
-                            "color": "gray"
+                            "color": "white"
                         }
                     ]
                 }
@@ -158,7 +158,7 @@ export const candidateProfile: ICandidateProfile = {
                 "value": "Aspiración salarial",
                 "size": "lg",
                 "weight": "bold",
-                "color": "gray"
+                "color": "green"
             },
             "type": "basic",
             "children": [
@@ -173,7 +173,7 @@ export const candidateProfile: ICandidateProfile = {
                             },
                             "size": "sm",
                             "weight": "normal",
-                            "color": "gray"
+                            "color": "white"
                         }
                     ]
                 }
@@ -184,7 +184,7 @@ export const candidateProfile: ICandidateProfile = {
                 "value": "Categoría",
                 "size": "lg",
                 "weight": "bold",
-                "color": "gray"
+                "color": "green"
             },
             "type": "basic",
             "children": [
@@ -199,7 +199,7 @@ export const candidateProfile: ICandidateProfile = {
                             },
                             "size": "sm",
                             "weight": "normal",
-                            "color": "gray"
+                            "color": "white"
                         }
                     ]
                 }

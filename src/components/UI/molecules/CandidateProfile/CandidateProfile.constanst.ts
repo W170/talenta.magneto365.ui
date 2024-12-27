@@ -1,4 +1,4 @@
-import { BuildingWhite, Date, DollarCircleWhiteOutline, EmailSquare, Location, Mobile, PeopleInfo, Position, Teacher, UserTag } from '@constants/icons.constants';
+import { BuildingWhite, Date, DollarCircleWhiteOutline, EmailSquare, Location, LocationBlueBold, Mobile, PeopleInfo, Position, Teacher, UserTag } from '@constants/icons.constants';
 
 export const candidateProfileIcons = {
     company: BuildingWhite,
@@ -6,7 +6,7 @@ export const candidateProfileIcons = {
     position: Position,
     date: Date,
     people: PeopleInfo,
-    location: Location,
+    location: LocationBlueBold,
     mobile: Mobile,
     teacher: Teacher,
     email: EmailSquare,

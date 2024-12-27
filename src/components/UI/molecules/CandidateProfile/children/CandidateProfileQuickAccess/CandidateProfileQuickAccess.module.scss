@@ -6,7 +6,6 @@
     background-color: #1A324C;
 
     &-section {
-
         padding: 5px;
     }
 
@@ -15,31 +14,27 @@
         flex-direction: column;
         gap: 10px;
     }
+
     &-item {
         display: grid;
-        grid-template-columns: 13px  1fr 100px;
+        grid-template-columns: 13px 1fr 100px;
         gap: 10px;
+        font-size: 10px;
+        line-height: 14px;
+
+        >p {
+            &:first-child {
+                font-weight: 400;
+            }
+
+            &:last-child {
+                font-weight: 900;
+            }
+        }
     }
 
     &-icon {
         width: 13px;
         height: 13px;
     }
-
-    &-label {
-        font-size: 10px;
-        line-height: 14px;
-        font-weight: 400;
-        color: white;
-        margin: 0px;
-    }
-
-    &-text {
-        margin: 0px;
-        font-size: 10px;
-        line-height: 14px;
-        font-weight: 900;
-        color: white;
-    }
-
 }

@@ -117,7 +117,10 @@ export enum ECandidateProfileFontColor {
     /*   GRAY = '#667688',
       BLACK = '#292F37' */
     GRAY = 'gray',
-    BLACK = 'black'
+    BLACK = 'black',
+    WHITE = 'white',
+    GREEN = 'green',
+    BLUE = 'blue',
 }
 
 export type TCandidateProfileTextFontColor = `${ECandidateProfileFontColor}`

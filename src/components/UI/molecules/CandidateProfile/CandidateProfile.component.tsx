@@ -24,7 +24,7 @@ const Component: React.FC<ICandidateProfile> = ({ data, details }) => {
     return (
         <div className={cx('magneto-ui-candidate-profile')}>
             <div className={cx('magneto-ui-candidate-profile__container')}>
-                <div className={cx('magneto-ui-candidate-profile__container-header')}>
+                <div className={cx('magneto-ui-candidate-profile__container-header' , { 'magneto-ui-candidate-profile__container-header--open': isOpen })}>
                     <div className={cx('magneto-ui-candidate-profile__container-header__avatar')}>
                         <Avatar
                             onClick={() => { }}
