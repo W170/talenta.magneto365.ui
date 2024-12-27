@@ -1,12 +1,9 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { AlertJobStatus } from './AlertJobStatus.component'
-import { SearchItem } from '@components/UI/atoms'
-import { ArrowRightWhite } from '@constants/icons.constants'
 import { customText, simpleCustomText } from '@constants/stories/alertJob.constants'
-import styles from './AlertJobStatus.module.scss'
 
-const { Container, Text, Icon } = AlertJobStatus
+const { Container, Text, Button, Icon } = AlertJobStatus
 
 const meta: Meta<typeof AlertJobStatus> = {
   title: 'Molecules/Alert Job Status',
@@ -18,12 +15,7 @@ const meta: Meta<typeof AlertJobStatus> = {
           <Icon />
           <Text customText={customText} />
         </Container>
-        <SearchItem
-          icon={ArrowRightWhite}
-          url={'#'}
-          tag={'Crear alerta'}
-          className={styles['alert-job__search-item']}
-        />
+        <Button>Crear alerta</Button>
       </>
     )
   }

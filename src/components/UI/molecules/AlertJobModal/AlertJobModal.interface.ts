@@ -1,24 +1,51 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
-export interface IAlertJobStatus {
+export interface IAlertJobModal {
   /**
    * React children to be rendered inside the component.
    */
-  children?: React.ReactNode
+  children: JSX.Element | JSX.Element[]
 
   /**
    * Additional class names for custom styling.
    */
   className?: string
+
   /**
-   * type to background alert 'warning' or 'normal'.
-   * default: warning
+   * Represents whether the modal is open or closed.
    */
-  type?: EAlertJobStatusType
+  open: boolean
+
+  /**
+   * Callback function to be executed when the modal is closed.
+   */
+  onClose: () => void
 }
 
-export namespace IAlertJobStatus {
-  export interface Container {
+export namespace IAlertJobModal {
+  export interface Header {
+    /**
+     * React children to be rendered inside the container.
+     */
+    children?: React.ReactNode
+
+    /**
+     * Additional class names for custom styling.
+     */
+    className?: string
+  }
+  export interface Body {
+    /**
+     * React children to be rendered inside the container.
+     */
+    children?: React.ReactNode
+
+    /**
+     * Additional class names for custom styling.
+     */
+    className?: string
+  }
+  export interface Footer {
     /**
      * React children to be rendered inside the container.
      */
@@ -47,10 +74,27 @@ export namespace IAlertJobStatus {
      * Text alt in the img element
      */
     alt?: string | null
+  }
+  export interface Title {
     /**
-     * type to icon alert 'warning' or 'success'.
+     * Set title text on modal header
      */
-    type?: EAlertJobStatusIcon
+    title: string
+
+    /**
+     * Set subtitle text on modal header
+     */
+    subtitle?: string | null
+
+    /**
+     * React children to be rendered inside the container.
+     */
+    children?: React.ReactNode
+
+    /**
+     * Additional class names for custom styling.
+     */
+    className?: string
   }
   export interface Button extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     /**
@@ -72,5 +116,3 @@ export namespace IAlertJobStatus {
     sizeIcon?: number
   }
 }
-export type EAlertJobStatusType = 'warning' | 'normal'
-export type EAlertJobStatusIcon = 'success' | 'warning'

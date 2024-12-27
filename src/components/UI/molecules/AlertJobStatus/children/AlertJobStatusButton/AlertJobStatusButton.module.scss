@@ -1,0 +1,37 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as *;
+.alert-modal__button {
+  background-color: $color-blue-dark3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  height: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 30px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  padding: 0;
+  width: 100%;
+  order: 1;
+  transition: all ease-in-out 0.3s;
+
+  @media screen and (min-width: $screen-md) {
+    width: fit-content;
+    margin-left: auto;
+    order: 0;
+    padding: 0 15px;
+  }
+  img {
+    margin-left: 0;
+    transition: all ease-in-out 0.3s;
+  }
+
+  &:hover img {
+    @media (min-width: $screen-md) {
+      transform: translateX(5px);
+    }
+  }
+}
