@@ -1,0 +1,337 @@
+.magneto-ui-candidate-profile {
+    * {
+        box-sizing: border-box;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        gap: 16px;
+        background-color: #001B38;
+        color: white;
+        text-align: left;
+
+
+        &-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            &--open {
+                padding-bottom: 16px;
+                border-bottom: 1px solid #1A324C;
+            }
+
+            &__user {
+                display: flex;
+                flex-direction: row;
+                text-align: left;
+                gap: 30px;
+                align-items: stretch;
+
+                &-title {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    p {
+                        font-size: 10px;
+                        line-height: 14px;
+                        font-weight: 400;
+                        color: #99A4AF;
+                        margin: 0;
+                    }
+
+                    h3 {
+                        font-size: 16px;
+                        line-height: 20px;
+                        font-weight: 900;
+                        color: white;
+                        margin: 0;
+                    }
+
+                    h4 {
+                        font-size: 16px;
+                        line-height: 20px;
+                        font-weight: 400;
+                        color: #6DD695;
+                        margin: 0;
+                    }
+                }
+            }
+
+            &__avatar {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                &-logo {
+                    display: flex;
+                    flex-direction: row;
+                    position: relative;
+                    background-color: white;
+                    border-radius: 50%;
+                    padding: 4px;
+
+                    img {
+                        width: 46px;
+                        height: 46px;
+                    }
+                }
+
+                &-rating {
+                    position: absolute;
+                    z-index: 20;
+                    bottom: 5px;
+                    right: -20px;
+                }
+            }
+
+            &__button {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                background-color: #1A324C;
+                gap: 10px;
+
+                &-icon {
+                    width: 12px;
+                    height: 6px;
+                }
+
+                &--open {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    &__dropdown {
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+        background-color: #001B38;
+
+    }
+
+    &__text {
+        font-size: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        color: inherit;
+        margin: 0;
+        padding: 0;
+
+        &--size {
+            &-xs {
+                font-size: 10px;
+                line-height: 14px;
+            }
+
+            &-sm {
+                font-size: 12px;
+                line-height: 16px;
+            }
+
+            &-md {
+                font-size: 14px;
+                line-height: 18px;
+            }
+
+            &-lg {
+                font-size: 16px;
+                line-height: 20px;
+            }
+
+            &-xl {
+                font-size: 18px;
+                line-height: 22px;
+            }
+
+            &-xxl {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+
+        &--weight {
+            &-thin {
+                font-weight: 100;
+            }
+
+            &-extraLight {
+                font-weight: 200;
+            }
+
+            &-light {
+                font-weight: 300;
+            }
+
+            &-normal {
+                font-weight: 400;
+            }
+
+            &-medium {
+                font-weight: 500;
+            }
+
+            &-semi-bold {
+                font-weight: 600;
+            }
+
+            &-bold {
+                font-weight: 700;
+            }
+
+            &-extraBold {
+                font-weight: 800;
+            }
+
+            &-black {
+                font-weight: 900;
+            }
+        }
+
+        &--color {
+            &-gray {
+                color: #667688;
+
+                >* {
+                    color: #667688;
+                }
+
+                &:hover {
+                    color: #667688;
+
+                    >* {
+                        color: #667688;
+                    }
+                }
+            }
+
+            &-white {
+                color: white;
+
+                >* {
+                    color: white;
+                }
+
+                &:hover {
+                    color: white;
+
+                    >* {
+                        color: white;
+                    }
+                }
+            }
+
+            &-black {
+                color: #292f37;
+
+                >* {
+                    color: #292f37;
+                }
+
+                &:hover {
+                    color: #292f37;
+
+                    >* {
+                        color: #292f37;
+                    }
+                }
+            }
+
+            &-green {
+                color: #6DD695;
+
+                >* {
+                    color: #6DD695;
+                }
+
+                &:hover {
+                    color: #6DD695;
+
+                    >* {
+                        color: #6DD695;
+                    }
+                }
+            }
+
+            &-blue {
+                color: #66C1EA;
+
+                >* {
+                    color: #66C1EA;
+                }
+
+                &:hover {
+                    color: #66C1EA;
+
+                    >* {
+                        color: #66C1EA;
+                    }
+                }
+            }
+        }
+
+        &--link {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &--function {
+            cursor: pointer;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &-container {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+        }
+    }
+
+    &__separation {
+        &--none {
+            gap: 0;
+        }
+
+        &--sm {
+            gap: 5px;
+        }
+
+        &--md {
+            gap: 10px;
+        }
+
+        &--lg {
+            gap: 15px;
+        }
+
+        &--xl {
+            gap: 20px;
+        }
+
+        &--xxl {
+            gap: 25px;
+        }
+
+        &--xxxl {
+            gap: 30px;
+        }
+    }
+}
