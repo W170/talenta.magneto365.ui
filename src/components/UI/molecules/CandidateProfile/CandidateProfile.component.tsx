@@ -39,6 +39,7 @@ const Component: React.FC<ICandidateProfile> = ({ data, details }) => {
                         <div className={cx('magneto-ui-candidate-profile__container-header__user-title')}>
                             <p>{data?.last_updated}</p>
                             <h3>{data?.name}</h3>
+                            <h3>{data?.lastname}</h3>
                             <h4>{data?.role}</h4>
                         </div>
                     </div>

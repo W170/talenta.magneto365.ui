@@ -15,6 +15,7 @@ export interface ICandidateProfileSection {
 
 export interface ICanidateProfileData{
     name: string
+    lastname: string
     last_updated: string
     img: string
     role: string
