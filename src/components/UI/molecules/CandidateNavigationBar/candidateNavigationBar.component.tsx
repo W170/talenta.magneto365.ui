@@ -21,10 +21,11 @@ const Component: React.FC<ICandidateNavigationBar> = ({ className, menuOptions})
           `${active && "candidateNavigationBar__menuActive"}`
         )}
       >
-        {menuOptions && menuOptions.map(({ icon, label, onClick }: ImenuOptions) => (
+        {menuOptions && menuOptions.map(({ icon, label, onClick }: ImenuOptions, index:number) => (
           <div
             onClick={() => onClick()}
             className={cx("candidateNavigationBar__menuActive--option")}
+            key={label || index}
           >
             <div className={cx("candidateNavigationBar__menuActive--icon")}>
               <IconItem icon={icon} color="#292F37" />
