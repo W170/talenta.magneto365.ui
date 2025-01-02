@@ -6,7 +6,6 @@ import { Start } from "@constants/icons.constants";
 const cx = classNames.bind(styles);
 
 const Component: React.FC<IRatingBadge> = ({ score }) => {
-    console.log("SCORE -->",score);
     return (
         <div className={cx('magneto-ui-rating-badge')}>
             <div className={cx('magneto-ui-rating-badge__container')}>

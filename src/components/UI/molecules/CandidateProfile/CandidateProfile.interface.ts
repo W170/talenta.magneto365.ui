@@ -4,7 +4,8 @@ export interface ICandidateProfile {
      * The value of the option.
      */
     data?: ICanidateProfileData
-    details: ICandidateProfileSection[]
+    details: ICandidateProfileSection[],
+    className?: string;
 }
 
 export interface ICandidateProfileSection {

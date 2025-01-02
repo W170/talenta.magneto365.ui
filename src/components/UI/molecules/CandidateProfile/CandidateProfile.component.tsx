@@ -12,7 +12,7 @@ import { RatingBadge } from '../../atoms/RatingBadge/RatingBadge.component';
 
 const cx = classNames.bind(styles);
 
-const Component: React.FC<ICandidateProfile> = ({ data, details }) => {
+const Component: React.FC<ICandidateProfile> = ({ data, details, className }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleMenuToggle = () => {
@@ -24,7 +24,7 @@ const Component: React.FC<ICandidateProfile> = ({ data, details }) => {
 
     return (
         <div className={cx('magneto-ui-candidate-profile')}>
-            <div className={cx('magneto-ui-candidate-profile__container')}>
+            <div className={cx('magneto-ui-candidate-profile__container', className)}>
                 <div className={cx('magneto-ui-candidate-profile__container-header', { 'magneto-ui-candidate-profile__container-header--open': isOpen })}>
                     <div className={cx('magneto-ui-candidate-profile__container-header__user')}>
                         <div className={cx('magneto-ui-candidate-profile__container-header__avatar')}>
