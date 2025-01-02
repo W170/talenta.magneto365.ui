@@ -6,3 +6,4 @@ export { default as CourthouseBlue } from '../assets/megaMenu/courthouse-blue.sv
 export { default as CourthouseGrey } from '../assets/megaMenu/courthouse-grey.svg'
 export { default as LocationBlue } from '../assets/megaMenu/location-blue.svg'
 export { default as LocationGrey } from '../assets/megaMenu/location-grey.svg'
+export { default as Book } from '../assets/megaMenu/book.svg'

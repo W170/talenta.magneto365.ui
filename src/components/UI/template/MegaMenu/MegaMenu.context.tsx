@@ -5,6 +5,7 @@ import {
   IMegaMenuSocialHeader,
   IMegaMenuMainHeader
 } from './MegaMenuContext.interface'
+import { IlistMenuUserProps } from '@components/UI/organism'
 
 const initialContext: IMegaMenuContext = {
   socialHeaderProps: {
@@ -14,7 +15,22 @@ const initialContext: IMegaMenuContext = {
   jobsProps: {
     tabs: []
   },
-  mainHeaderProps: {}
+  mainHeaderProps: {},
+  listMenuUserProps: {
+    urlParam: '',
+    menuItems: [],
+    menuItems1440: [],
+    logout: {
+      logoutText: '',
+      onClick: () => ({})
+    },
+    settings: {
+      settingsText: '',
+      onClick: () => ({})
+    },
+    profileImage: {},
+    isAuthenticated: false
+  }
 }
 
 const MegaMenuContext = createContext<IMegaMenuContext>(initialContext)
@@ -38,4 +54,9 @@ export const useMegaMenuJobs = (): IMegaMenuJobs => {
 export const useMegaMenuMain = (): IMegaMenuMainHeader => {
   const { mainHeaderProps } = useContext(MegaMenuContext)
   return mainHeaderProps
+}
+
+export const useLoggedInUser = (): IlistMenuUserProps => {
+  const { listMenuUserProps } = useContext(MegaMenuContext)
+  return listMenuUserProps
 }

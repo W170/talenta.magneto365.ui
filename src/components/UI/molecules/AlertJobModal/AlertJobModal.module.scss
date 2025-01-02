@@ -1,0 +1,95 @@
+@use '../../../../shared/stylesheets/variables.scss' as *;
+.alert-modal {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  background-color: #ffff;
+  &__header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+    > label {
+      margin-bottom: 10px;
+      &:nth-child(2) {
+        margin-top: 20px;
+      }
+      > p {
+        margin: 0;
+      }
+    }
+    > p {
+      margin: 10px 0px;
+      font-weight: bolder;
+    }
+  }
+  &__footer {
+    display: flex;
+    place-content: center;
+    padding-top: 20px;
+  }
+  &__icon {
+    padding: 20px;
+  }
+  &__title {
+    place-content: center;
+    padding: 20px;
+    > p {
+      margin: 0;
+      font-size: 15px;
+      &:nth-child(1) {
+        color: $color-blue-dark5;
+      }
+      &:nth-child(2) {
+        color: $color-blue-dark3;
+        font-weight: bold;
+        margin-top: 5px;
+        font-size: 18px;
+      }
+    }
+  }
+  &__checkbox {
+    p > a {
+      text-decoration-color: $color-blue-dark4;
+      color: $color-blue-dark4;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  &__button {
+    background-color: $color-blue-dark3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    height: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+    width: fit-content;
+    order: 1;
+    transition: all ease-in-out 0.3s;
+    img {
+      margin-left: 0;
+      transition: all ease-in-out 0.3s;
+    }
+    p {
+      color: white;
+      font-size: 16px;
+    }
+    &:hover img {
+      @media (min-width: $screen-md) {
+        transform: translateX(5px);
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react'
 import { IJobApplyCard, JobRequirementsElement } from './JobApplyCard.interface'
 import styles from './JobApplyCard.module.scss'
 
-const Component: React.FC<IJobApplyCard> = ({ offerApplyHeader, offerApplyElements, externalChild }) => {
+const Component: React.FC<IJobApplyCard> = ({ offerApplyHeader, offerApplyElements, externalChild, isApplied }) => {
   return (
     <div className={styles['magneto-ui-job-apply-card']}>
       <div className={styles['magneto-ui-job-apply-card__wrapper']}>
@@ -21,7 +21,7 @@ const Component: React.FC<IJobApplyCard> = ({ offerApplyHeader, offerApplyElemen
                 </div>
               ))}
         </div>
-        <div id={styles['magneto-ui__external-child']}>{externalChild}</div>
+        {!isApplied && <div id={styles['magneto-ui__external-child']}>{externalChild}</div>}
       </div>
     </div>
   )

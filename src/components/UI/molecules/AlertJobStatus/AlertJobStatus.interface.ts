@@ -10,6 +10,11 @@ export interface IAlertJobStatus {
    * Additional class names for custom styling.
    */
   className?: string
+  /**
+   * type to background alert 'warning' or 'normal'.
+   * default: warning
+   */
+  type?: EAlertJobStatusType
 }
 
 export namespace IAlertJobStatus {
@@ -42,5 +47,30 @@ export namespace IAlertJobStatus {
      * Text alt in the img element
      */
     alt?: string | null
+    /**
+     * type to icon alert 'warning' or 'success'.
+     */
+    type?: EAlertJobStatusIcon
+  }
+  export interface Button extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    /**
+     * React children to be rendered inside the container.
+     */
+    children?: React.ReactNode
+
+    /**
+     * Additional class names for custom styling.
+     */
+    className?: string
+    /**
+     * Here is the icon button component
+     */
+    icon?: string | null
+    /**
+     * You can change the size of the icon by adding a numeric value here
+     */
+    sizeIcon?: number
   }
 }
+export type EAlertJobStatusType = 'warning' | 'normal'
+export type EAlertJobStatusIcon = 'success' | 'warning'

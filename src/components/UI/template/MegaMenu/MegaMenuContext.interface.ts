@@ -1,10 +1,12 @@
 import { IMegaMenuTab } from '@components/UI/atoms/MegaMenuTab/MegaMenuTab.interface'
 import { ISearchbar } from '@components/UI/molecules'
+import { IlistMenuUserProps } from '@components/UI/organism'
 import { ReactNode } from 'react'
 
 export interface IMegaMenuLink {
   label: string
   url: string
+  target?: string
   icon?: string | undefined
 }
 
@@ -28,9 +30,8 @@ export interface IMegaMenuMainHeader {
     onClickSignUp: (event: Event) => Promise<void>
   }
   searchBarProps?: ISearchbar
-  logoProps?: {
-    url: string
-  }
+  homeUrl?: string
+  homeText?: string
 }
 
 export interface IMegaMenuJobsTabs {
@@ -50,4 +51,5 @@ export interface IMegaMenuContext {
   socialHeaderProps: IMegaMenuSocialHeader
   jobsProps: IMegaMenuJobs
   mainHeaderProps: IMegaMenuMainHeader
+  listMenuUserProps: IlistMenuUserProps
 }

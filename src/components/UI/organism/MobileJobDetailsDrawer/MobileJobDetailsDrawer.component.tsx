@@ -9,7 +9,8 @@ import {
   JobApplyCard,
   JobFooterCard,
   MobileJobDetailsHeader,
-  FraudCardJob
+  FraudCardJob,
+  AlertJobStatus
 } from '@components/UI/molecules'
 import { MobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 import { MobileJobDetailsDrawerSkeleton } from './children/MobileJobDetailsDrawerSkeleton.component'
@@ -41,7 +42,9 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   cities,
   isRemote,
   textRemote,
-  fraudCardJobProps
+  fraudCardJobProps,
+  isApplied,
+  alertJobStatusProps
 }) => {
   const handleClose = useCallback(() => {
     if (onClose) {
@@ -58,6 +61,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
       <Fragment>
         <MobileJobDetailsHeader returnText={jobDetailsHeaderText} onClick={handleClose} />
         <JobCompanyHeader {...jobCompanyLogoProps} />
+        {isApplied && <AlertJobStatus {...alertJobStatusProps} />}
         {jobDetailsProps && (
           <JobDetails
             iconList={iconDetailList}
@@ -70,8 +74,8 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
         {jobVideo && <JobVideo {...jobVideo} loadVideo={loadVideo} setLoadVideo={setLoadVideo} />}
         <JobDetailCard {...jobDetailCardProps} />
         {jobSkillsCardProps && <JobSkillsCard {...jobSkillsCardProps} />}
-        <FraudCardJob {...fraudCardJobProps} />
-        <JobApplyCard {...jobApplyCardProps} />
+        {fraudCardJobProps && <FraudCardJob {...fraudCardJobProps} />}
+        <JobApplyCard {...jobApplyCardProps} isApplied={isApplied} />
         <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
         {similarJobsProps ? <SimilarJobs {...similarJobsProps} /> : null}
       </Fragment>
@@ -94,7 +98,9 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
     fraudCardJobProps,
     jobApplyCardProps,
     jobFooterCardProps,
-    similarJobsProps
+    similarJobsProps,
+    alertJobStatusProps,
+    isApplied
   ])
 
   const content = useMemo(
@@ -121,7 +127,9 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
         isMobile
       >
         {content}
-        {!jobDetailAction && <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} onClose={isOpen} />}
+        {!jobDetailAction && (
+          <MobileJobDetailsActionsBar {...mobileJobDetailsBarProps} onClose={isOpen} isApplied={isApplied} />
+        )}
       </Drawer>
       {modalPendingInfoComponent}
     </Fragment>

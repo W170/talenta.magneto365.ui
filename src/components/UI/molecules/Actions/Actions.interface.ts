@@ -53,6 +53,11 @@ export interface IActions {
    * just a text to inform about back action.
    */
   backText?: string
+
+  /**
+   * Props for show apply button
+   */
+  isApplied?: boolean
 }
 
 export interface IShareLinksActions {

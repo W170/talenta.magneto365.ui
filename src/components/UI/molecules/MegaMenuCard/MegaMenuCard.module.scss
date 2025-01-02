@@ -55,5 +55,8 @@
 
   &__arrow {
     margin-left: auto;
+    @media screen and (max-width: v.$screen-sm) {
+      opacity: 0.5;
+    }
   }
 }

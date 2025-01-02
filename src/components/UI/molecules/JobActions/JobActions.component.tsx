@@ -12,7 +12,8 @@ const Component: React.FC<IJobsActions> = ({
   actionsAnchorTitle,
   externalButtonChild,
   saveButtonProps,
-  shareButtonProps
+  shareButtonProps,
+  isApplied
 }) => {
   const actionsLinkList = actionsAnchorIcons?.map((_, index: number) => ({
     icon: actionsAnchorIcons?.[index],
@@ -40,11 +41,13 @@ const Component: React.FC<IJobsActions> = ({
 
   return (
     <div className={styles['magneto-ui-job-actions']}>
-      <div id={styles['magneto-ui__external-child']}>{externalButtonChild}</div>
+      {!isApplied && <div id={styles['magneto-ui__external-child']}>{externalButtonChild}</div>}
       <div className={styles['magneto-ui-job-actions__buttons-wrapper']}>
-        <Tooltip title={saveButtonProps.buttonTitle || 'Guardar'} position="bottom" visible={isMobile}>
-          <SaveButton {...saveButtonProps} />
-        </Tooltip>
+        {!isApplied && (
+          <Tooltip title={saveButtonProps.buttonTitle || 'Guardar'} position="bottom" visible={isMobile}>
+            <SaveButton {...saveButtonProps} />
+          </Tooltip>
+        )}
         <SharePopover {...shareButtonProps} />
         {filteredActionsLinkList?.map(({ url, title, icon }) => (
           <div className={styles['magneto-ui-job-actions__icon-wrapper']} key={`${url}-JobActions`}>

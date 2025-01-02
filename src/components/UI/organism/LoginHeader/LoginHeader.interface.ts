@@ -23,4 +23,6 @@ export interface IlistMenuUserProps {
   menuItems1440?: IMenuItems[]
   logout: ILogout
   settings: ISettings
+  profileImage: IAvatar
+  isAuthenticated: boolean
 }

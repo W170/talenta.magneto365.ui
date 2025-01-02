@@ -7,8 +7,20 @@ import {
   IMegaMenuMainHeader,
   IMegaMenuSocialHeader
 } from '@components/UI/template/MegaMenu/MegaMenuContext.interface'
-import { ArrowDown2, ArrowLeft2, HeadsetBlackOutline, QuestionCircle } from '@constants/icons.constants'
-import { BriefcaseBlue, BuildingBlue, CourthouseBlue, LocationBlue } from '@constants/megaMenu.constants'
+import {
+  AllJobs,
+  ArchiveTick,
+  ArrowDown2,
+  ArrowLeft2,
+  DocumentText,
+  HeadsetBlackOutline,
+  MessageQuestion,
+  QuestionCircle,
+  Setting2,
+  SuggestedJobs,
+  TaskSquare
+} from '@constants/icons.constants'
+import { Book, BriefcaseBlue, BuildingBlue, CourthouseBlue, LocationBlue } from '@constants/megaMenu.constants'
 import { SearchbarProps } from './headers.constants'
 
 export const megaMenuSocialTabs: IMegaMenuTab[] = [
@@ -39,9 +51,7 @@ export const megaMenuJobsIcon = Array(36).fill(megaMenuJobIcon)
 export const megaMenuJobsImage = Array(36).fill(megaMenuJobImage)
 
 export const megaMenuMainHeader: IMegaMenuMainHeader = {
-  logoProps: {
-    url: 'string'
-  },
+  homeUrl: 'http://localhost:6006/iframe.html?args=&id=template-megamenu--default&viewMode=story',
   searchBarProps: SearchbarProps,
   loginProps: {
     signUpText: 'Crear cuenta',
@@ -96,6 +106,16 @@ export const megaMenuCards: IMegaMenuCards = {
   filterProps
 }
 export const megaMenuJobsIcons = [LocationBlue, CourthouseBlue, BriefcaseBlue, BuildingBlue]
+export const megaMenuUserLoggedIcons = {
+  allJobs: AllJobs,
+  suggestedJobs: SuggestedJobs,
+  savedJobs: ArchiveTick,
+  inProcess: TaskSquare,
+  resume: DocumentText,
+  settings: Setting2,
+  help: MessageQuestion
+}
+export const mobileSocialIcons = [Book, HeadsetBlackOutline, QuestionCircle]
 
 export const megaMenuJobs: IMegaMenuJobs = {
   allJobsAction: { label: 'Ver todos los empleos', url: 'https://www.magneto365.com/co/empleos', icon: ArrowLeft2 },
