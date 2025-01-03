@@ -56,7 +56,16 @@ export interface ICandidateNavigationBar {
 }
 
 export interface ImenuOptions {
+  /**
+   * icon of Candidate navigation bar
+   */
   icon: string
+  /**
+   * label of Candidate navigation bar
+   */
   label: string
+  /**
+   * onClick of Candidate navigation bar
+   */
   onClick: any
 }

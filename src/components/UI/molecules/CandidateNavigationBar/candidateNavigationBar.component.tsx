@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import { ICandidateNavigationBar, ImenuOptions } from './candidateNavigationBar.interface'
+import { ICandidateNavigationBar } from './candidateNavigationBar.interface'
 import styles from './candidateNavigationBar.module.scss'
 import { classNames } from '@shared/utils/common'
 import { IconItem } from '@components/UI/atoms'
 import { ArrowLeft2, ArrowRight2 } from '@constants/icons.constants'
-import { SwipeDowm } from './children/swipeDowm/swipeDowm.component'
+import { NavigationBarMenu } from './children/navigationBarMenu/navigationBarMenu.component'
 
 const Component: React.FC<ICandidateNavigationBar> = ({
   className,
-  menuOptions,
+  menuOptions = [],
   onClickbuttonLeft,
   onclickButtonCenter,
   textButtonCenter,
@@ -31,23 +31,7 @@ const Component: React.FC<ICandidateNavigationBar> = ({
 
   return (
     <div className={cx('candidateNavigationBar', `${activeMenu}`, className && className)}>
-      {menuOptions && (
-        <div className={cx('candidateNavigationBar__menu', `${active && 'candidateNavigationBar__menuActive'}`)}>
-          <SwipeDowm onSwipeDown={handleSwipeDown} />
-          {menuOptions.map(({ icon, label, onClick }: ImenuOptions, index: number) => (
-            <div
-              onClick={() => onClick()}
-              className={cx('candidateNavigationBar__menuActive--option')}
-              key={label || index}
-            >
-              <div className={cx('candidateNavigationBar__menuActive--icon')}>
-                <IconItem icon={icon} color="#ef09f4" />
-              </div>
-              {label}
-            </div>
-          ))}
-        </div>
-      )}
+      <NavigationBarMenu active={active} menuOptions={menuOptions} onSwipeDown={handleSwipeDown} />
       <div className={cx('candidateNavigationBar__buttons')}>
         <div className={cx('candidateNavigationBar__buttons--decline')} onClick={() => onClickbuttonLeft?.()}>
           <IconItem icon={iconButtonLeft} size={12} />
