@@ -1,4 +1,5 @@
 import { IconProps } from '@components/UI/atoms'
+import {IExpandableInfoProps} from "@components/UI/molecules";
 export interface ICandidateProfile {
     /**
      * The value of the option.
@@ -6,6 +7,9 @@ export interface ICandidateProfile {
     data?: ICanidateProfileData
     details: ICandidateProfileSection[],
     className?: string;
+    expandableInfoProps? : IExpandableInfoProps,
+    expandable? : boolean
+
 }
 
 export interface ICandidateProfileSection {

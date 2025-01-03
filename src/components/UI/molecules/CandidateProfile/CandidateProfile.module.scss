@@ -11,17 +11,21 @@
         background-color: #001B38;
         color: white;
         text-align: left;
-
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
         &-header {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+            padding-bottom: 0;
+            border-bottom: none;
+            transition: all 0.3s ease;
 
             &--open {
                 padding-bottom: 16px;
                 border-bottom: 1px solid #1A324C;
+                transition: all 0.3s ease;
             }
 
             &__user {
@@ -99,6 +103,7 @@
                 border-radius: 50%;
                 background-color: #1A324C;
                 gap: 10px;
+                transition: transform 0.3s ease;
 
                 &-icon {
                     width: 12px;

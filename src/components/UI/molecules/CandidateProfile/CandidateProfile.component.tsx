@@ -1,6 +1,6 @@
 import { Avatar } from '../../atoms/Avatar/Avatar.component';
 import { classNames } from '@shared/utils/common';
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { ICandidateProfile } from "./CandidateProfile.interface";
 import styles from './CandidateProfile.module.scss';
 import { ArrowDownGreen } from '@constants/icons.constants';
@@ -8,19 +8,26 @@ import { IconItem } from '../../atoms/Icon'
 import { CandidateProfileQuickAccess } from './children/CandidateProfileQuickAccess';
 import { CandidateProfileBasic } from './children/CandidateProfileBasic';
 import { RatingBadge } from '../../atoms/RatingBadge/RatingBadge.component';
+import {ExpandableInfo} from "@components/UI/molecules";
 
 
 const cx = classNames.bind(styles);
 
-const Component: React.FC<ICandidateProfile> = ({ data, details, className }) => {
-    const [isOpen, setIsOpen] = useState(false);
+const Component: React.FC<ICandidateProfile> = ({ data, details, className, expandableInfoProps, expandable }) => {
+    const [isOpen, setIsOpen] = useState( false);
+
+    useEffect(() => {
+        if (expandable !== undefined) {
+            setIsOpen(expandable);
+        }
+    }, [expandable]);
+
 
     const handleMenuToggle = () => {
         setIsOpen((prevState) => !prevState);
     };
     const quickAccessDetails = details.filter((data) => data.type === "quick_access");
     const basicDetails = details.filter((data) => data.type === "basic");
-
 
     return (
         <div className={cx('magneto-ui-candidate-profile')}>
@@ -53,8 +60,11 @@ const Component: React.FC<ICandidateProfile> = ({ data, details, className }) =>
                 </div>
                 {isOpen && (
                     <div className={cx('magneto-ui-candidate-profile__container-dropdown')}>
-                        {quickAccessDetails.length > 0 && (
+                        {!expandableInfoProps && quickAccessDetails.length > 0 && (
                             <CandidateProfileQuickAccess details={quickAccessDetails} />
+                        )}
+                        {expandableInfoProps && (
+                                <ExpandableInfo {...expandableInfoProps} />
                         )}
                         {basicDetails.length > 0 && (
                             <CandidateProfileBasic details={basicDetails} />
