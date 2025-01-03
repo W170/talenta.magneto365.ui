@@ -3,7 +3,10 @@
 .candidateNavigationBar {
   width: 100%;
   height: 80px;
-  background-color: v.$color-primary-green;
+  background-color: v.$color-white;
+  border-top: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7;
+  border-left: 1px solid #e7e7e7;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
   display: grid;
@@ -58,6 +61,10 @@
 
     &--menu {
       background-color: v.$color-gray-background;
+      transform: rotate(90deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     &--center {
