@@ -1,0 +1,45 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.navigationButtonsBar {
+  &__buttons {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+
+    &--decline,
+    &--menu {
+      height: 30px;
+      width: 30px;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    &--decline {
+      background-color: v.$alert-color-red;
+    }
+
+    &--menu {
+      background-color: v.$color-gray-background;
+      transform: rotate(90deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--center {
+      width: 60%;
+      height: 30px;
+      background-color: v.$color-blue-dark1;
+      border-radius: 25px;
+      color: v.$color-white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+}
