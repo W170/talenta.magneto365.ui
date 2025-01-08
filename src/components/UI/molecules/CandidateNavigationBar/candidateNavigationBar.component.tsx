@@ -2,10 +2,9 @@ import React, { useState } from 'react'
 import { ICandidateNavigationBar } from './candidateNavigationBar.interface'
 import styles from './candidateNavigationBar.module.scss'
 import { classNames } from '@shared/utils/common'
-import { IconItem } from '@components/UI/atoms'
-import { ArrowLeft2, ArrowRight2 } from '@constants/icons.constants'
 import { NavigationBarMenu } from './children/navigationBarMenu/navigationBarMenu.component'
-import { NavigationButtonBar } from './children/NavigationButtonsBar/navigationButtonBar.component'
+import { NavigationButtonBar } from './children/navigationButtonsBar/navigationButtonBar.component'
+import { CandidateButtonsArrow } from './children/navigationButtonsArrow/candidateButtonsArrow.component'
 
 const Component: React.FC<ICandidateNavigationBar> = ({
   className,
@@ -43,15 +42,11 @@ const Component: React.FC<ICandidateNavigationBar> = ({
         setActive={() => setActive(!active)}
         active={active}
       />
-      <div className={cx('candidateNavigationBar__navigation')}>
-        <div onClick={() => onClickArrowLeft?.()}>
-          <IconItem icon={ArrowLeft2} />
-        </div>
-        <div className={cx('candidateNavigationBar__navigation--center')}>{text}</div>
-        <div onClick={() => onClickArrowRight?.()}>
-          <IconItem icon={ArrowRight2} />
-        </div>
-      </div>
+      <CandidateButtonsArrow
+        onClickArrowLeft={() => onClickArrowLeft?.()}
+        onClickArrowRight={() => onClickArrowRight?.()}
+        text={text}
+      />
     </div>
   )
 }
