@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { ICandidateNavigationBar } from './candidateNavigationBar.interface'
 import styles from './candidateNavigationBar.module.scss'
 import { classNames } from '@shared/utils/common'
@@ -19,19 +19,34 @@ const Component: React.FC<ICandidateNavigationBar> = ({
   onClickArrowRight,
   text
 }) => {
+  const ref = useRef<HTMLDivElement>(null)
   const [active, setActive] = useState(false)
 
   const cx = classNames.bind(styles)
 
   const activeMenu = active && 'candidateNavigationBarActive'
 
-  const handleSwipeDown = () => {
+  const onChangeInactiveMenu = () => {
     setActive(false)
   }
 
+  useEffect(() => {
+    if (active) {
+      const handleClickOutside = (event: MouseEvent) => {
+        if (ref.current && !ref.current.contains(event.target as Node)) {
+          onChangeInactiveMenu()
+        }
+      }
+      document.addEventListener('mousedown', handleClickOutside)
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside)
+      }
+    }
+  }, [active])
+
   return (
-    <div className={cx('candidateNavigationBar', `${activeMenu}`, className && className)}>
-      <NavigationBarMenu active={active} menuOptions={menuOptions} onSwipeDown={handleSwipeDown} />
+    <div className={cx('candidateNavigationBar', `${activeMenu}`, className && className)} ref={ref}>
+      <NavigationBarMenu active={active} menuOptions={menuOptions} onSwipeDown={onChangeInactiveMenu} />
       <NavigationButtonBar
         textButtonCenter={textButtonCenter}
         sufix={sufix}
