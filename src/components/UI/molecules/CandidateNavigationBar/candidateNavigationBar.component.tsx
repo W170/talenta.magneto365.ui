@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { ICandidateNavigationBar } from './candidateNavigationBar.interface'
 import styles from './candidateNavigationBar.module.scss'
 import { classNames } from '@shared/utils/common'
-import { IconItem } from '@components/UI/atoms'
-import { ArrowLeft2, ArrowRight2 } from '@constants/icons.constants'
 import { NavigationBarMenu } from './children/navigationBarMenu/navigationBarMenu.component'
+import { NavigationButtonBar } from './children/navigationButtonsBar/navigationButtonBar.component'
+import { CandidateButtonsArrow } from './children/navigationButtonsArrow/candidateButtonsArrow.component'
 
 const Component: React.FC<ICandidateNavigationBar> = ({
   className,
@@ -32,28 +32,21 @@ const Component: React.FC<ICandidateNavigationBar> = ({
   return (
     <div className={cx('candidateNavigationBar', `${activeMenu}`, className && className)}>
       <NavigationBarMenu active={active} menuOptions={menuOptions} onSwipeDown={handleSwipeDown} />
-      <div className={cx('candidateNavigationBar__buttons')}>
-        <div className={cx('candidateNavigationBar__buttons--decline')} onClick={() => onClickbuttonLeft?.()}>
-          <IconItem icon={iconButtonLeft} size={12} />
-        </div>
-        <div className={cx('candidateNavigationBar__buttons--center')} onClick={() => onclickButtonCenter?.()}>
-          {prefix && <IconItem icon={ArrowLeft2} />}
-          {textButtonCenter}
-          {sufix && <IconItem icon={ArrowLeft2} />}
-        </div>
-        <div className={cx('candidateNavigationBar__buttons--menu')} onClick={() => setActive(!active)}>
-          ...
-        </div>
-      </div>
-      <div className={cx('candidateNavigationBar__navigation')}>
-        <div onClick={() => onClickArrowLeft?.()}>
-          <IconItem icon={ArrowLeft2} />
-        </div>
-        <div className={cx('candidateNavigationBar__navigation--center')}>{text}</div>
-        <div onClick={() => onClickArrowRight?.()}>
-          <IconItem icon={ArrowRight2} />
-        </div>
-      </div>
+      <NavigationButtonBar
+        textButtonCenter={textButtonCenter}
+        sufix={sufix}
+        prefix={prefix}
+        iconButtonLeft={iconButtonLeft}
+        onClickbuttonLeft={() => onClickbuttonLeft?.()}
+        onclickButtonCenter={() => onclickButtonCenter?.()}
+        setActive={() => setActive(!active)}
+        active={active}
+      />
+      <CandidateButtonsArrow
+        onClickArrowLeft={() => onClickArrowLeft?.()}
+        onClickArrowRight={() => onClickArrowRight?.()}
+        text={text}
+      />
     </div>
   )
 }
