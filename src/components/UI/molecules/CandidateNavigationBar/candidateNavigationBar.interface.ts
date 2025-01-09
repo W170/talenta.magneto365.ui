@@ -57,6 +57,10 @@ export interface ICandidateNavigationBar {
 
 export interface ImenuOptions {
   /**
+   * color of icon Candidate navigation bar
+   */
+  color: string
+  /**
    * icon of Candidate navigation bar
    */
   icon: string

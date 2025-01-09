@@ -14,3 +14,9 @@ export interface INavigationBarMenu {
    */
   onSwipeDown: () => void
 }
+
+export enum NAVIGATION_BAR_MENU_ICONS_COLOR {
+  DARK_BLUE = 'dark-blue',
+  WHITE = 'white',
+  BLACK = 'black'
+}
