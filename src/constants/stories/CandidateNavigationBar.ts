@@ -4,7 +4,8 @@ import { Close } from '@constants/icons.constants'
 export const ICandidateBarProps: ICandidateNavigationBar = {
   className: '',
   textButtonCenter: 'Siguiente Etapa',
-  iconButtonLeft: Close,
+  iconButtonLeft: 'close',
+  colorIconButtonLeft: 'white',
   prefix: Close,
   text: 'Candidato 1 de 1',
   menuOptions: [

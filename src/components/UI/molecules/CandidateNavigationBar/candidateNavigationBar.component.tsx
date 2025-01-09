@@ -13,6 +13,7 @@ const Component: React.FC<ICandidateNavigationBar> = ({
   onclickButtonCenter,
   textButtonCenter,
   iconButtonLeft,
+  colorIconButtonLeft,
   prefix,
   sufix,
   onClickArrowLeft,
@@ -49,6 +50,7 @@ const Component: React.FC<ICandidateNavigationBar> = ({
       <NavigationBarMenu active={active} menuOptions={menuOptions} onSwipeDown={onChangeInactiveMenu} />
       <NavigationButtonBar
         textButtonCenter={textButtonCenter}
+        colorIconButtonLeft={colorIconButtonLeft}
         sufix={sufix}
         prefix={prefix}
         iconButtonLeft={iconButtonLeft}

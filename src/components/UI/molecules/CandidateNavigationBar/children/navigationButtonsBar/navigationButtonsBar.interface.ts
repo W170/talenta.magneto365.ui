@@ -10,6 +10,11 @@ export interface InavigationButtonBar {
   iconButtonLeft: string
 
   /**
+   * Icon for the left button in the navigation bar
+   */
+  colorIconButtonLeft: string
+
+  /**
    * Function to handle the click event of the center button in the navigation bar
    */
   onclickButtonCenter: () => void
@@ -38,4 +43,9 @@ export interface InavigationButtonBar {
    * Text for the center button in the navigation bar
    */
   textButtonCenter: string
+}
+
+export enum NAVIGATION_BAR_BUTTONS_ICONS_COLOR {
+  WHITE = 'white',
+  BLACK = 'black'
 }
