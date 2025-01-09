@@ -22,7 +22,7 @@ const Component: React.FC<InavigationButtonBar> = ({
   return (
     <div className={cx('navigationButtonsBar__buttons')}>
       <div className={cx('navigationButtonsBar__buttons--decline')} onClick={() => onClickbuttonLeft?.()}>
-        <IconItem icon={NAVIGATION_BAR_BUTTONS_ICONS[iconButtonLeft][colorIconButtonLeft]} size={12} />
+        <IconItem icon={NAVIGATION_BAR_BUTTONS_ICONS[iconButtonLeft][colorIconButtonLeft]} size={14} />
       </div>
       <div className={cx('navigationButtonsBar__buttons--center')} onClick={() => onclickButtonCenter?.()}>
         {prefix && <IconItem icon={ArrowLeft2} />}
