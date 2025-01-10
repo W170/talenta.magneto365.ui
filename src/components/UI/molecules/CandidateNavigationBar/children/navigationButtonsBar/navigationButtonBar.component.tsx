@@ -4,9 +4,11 @@ import { classNames } from '@shared/utils/common'
 import { InavigationButtonBar } from './navigationButtonsBar.interface'
 import { IconItem } from '@components/UI/atoms'
 import { ArrowLeft2 } from '@constants/icons.constants'
+import { NAVIGATION_BAR_BUTTONS_ICONS } from './navigationButtonbar.constants'
 
 const Component: React.FC<InavigationButtonBar> = ({
   iconButtonLeft,
+  colorIconButtonLeft,
   onClickbuttonLeft,
   onclickButtonCenter,
   setActive,
@@ -20,7 +22,7 @@ const Component: React.FC<InavigationButtonBar> = ({
   return (
     <div className={cx('navigationButtonsBar__buttons')}>
       <div className={cx('navigationButtonsBar__buttons--decline')} onClick={() => onClickbuttonLeft?.()}>
-        <IconItem icon={iconButtonLeft} size={12} />
+        <IconItem icon={NAVIGATION_BAR_BUTTONS_ICONS[iconButtonLeft][colorIconButtonLeft]} size={14} />
       </div>
       <div className={cx('navigationButtonsBar__buttons--center')} onClick={() => onclickButtonCenter?.()}>
         {prefix && <IconItem icon={ArrowLeft2} />}

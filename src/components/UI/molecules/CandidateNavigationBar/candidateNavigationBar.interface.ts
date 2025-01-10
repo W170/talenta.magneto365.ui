@@ -3,6 +3,10 @@ export interface ICandidateNavigationBar {
    * Class name of Candidate navigation bar
    */
   className?: string
+  /**
+   * Color icon Button Left of Candidate navigation bar
+   */
+  colorIconButtonLeft: string
 
   /**
    * Icon Button Left of Candidate navigation bar
@@ -56,6 +60,10 @@ export interface ICandidateNavigationBar {
 }
 
 export interface ImenuOptions {
+  /**
+   * color of icon Candidate navigation bar
+   */
+  color: string
   /**
    * icon of Candidate navigation bar
    */

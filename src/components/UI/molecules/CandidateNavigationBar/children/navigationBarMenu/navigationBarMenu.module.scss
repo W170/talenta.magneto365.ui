@@ -9,6 +9,7 @@
     text-align: center;
     overflow-y: auto;
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    position: relative;
   }
   &__menuActive {
     max-height: 150px;
@@ -23,6 +24,10 @@
       background-color: v.$color-gray-background;
       border-radius: 100%;
       padding: 2px;
+      height: 30px;
+      width: 30px;
+      display: flex;
+      justify-content: center;
     }
   }
 }
