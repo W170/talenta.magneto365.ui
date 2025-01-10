@@ -5,6 +5,7 @@ import styles from './horizontalMenu.module.scss'
 import { Button } from './../../atoms/Button'
 import { IconItem } from '@components/UI/atoms'
 import { ArrowLeft2 } from '@constants/icons.constants'
+import { HORIZONTAL_MENU_ICONS } from './horizontalMenu.constant'
 
 const Component: React.FC<IHorizontalMenu> = ({ className, options, onChange, onclick }) => {
   const [selectedItem, setSelectedItem] = useState(0)
@@ -26,7 +27,7 @@ const Component: React.FC<IHorizontalMenu> = ({ className, options, onChange, on
       </div>
       {options.map(({ icon, label }, key) => (
         <Button
-          suffixIcon={icon}
+          suffixIcon={HORIZONTAL_MENU_ICONS[icon]}
           className={cx('horizontalMenu__button', {
             horizontalMenu__buttonActive: selectedItem === key
           })}
