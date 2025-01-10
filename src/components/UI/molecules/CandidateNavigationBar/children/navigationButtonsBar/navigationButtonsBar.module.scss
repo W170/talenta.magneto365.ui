@@ -40,6 +40,15 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      position: relative;
+    }
+    &--prefix {
+      position: absolute;
+      left: 10px;
+    }
+    &--sufix {
+      position: absolute;
+      right: 10px;
     }
   }
 }

@@ -3,6 +3,15 @@ export interface InavigationButtonBar {
    * Indicates whether the navigation bar is active
    */
   active: boolean
+  /**
+   * Color prefix Button Left of Candidate navigation bar
+   */
+  colorPrefix?: string
+
+  /**
+   * Color sufix Button Left of Candidate navigation bar
+   */
+  colorSufix?: string
 
   /**
    * Icon for the left button in the navigation bar

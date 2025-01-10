@@ -9,6 +9,16 @@ export interface ICandidateNavigationBar {
   colorIconButtonLeft: string
 
   /**
+   * Color prefix Button Left of Candidate navigation bar
+   */
+  colorPrefix?: string
+
+  /**
+   * Color sufix Button Left of Candidate navigation bar
+   */
+  colorSufix?: string
+
+  /**
    * Icon Button Left of Candidate navigation bar
    */
   iconButtonLeft: string
