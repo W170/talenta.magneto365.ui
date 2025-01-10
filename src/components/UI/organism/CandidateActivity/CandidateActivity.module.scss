@@ -1,0 +1,245 @@
+.magneto-ui-candidate-activity{
+    * {
+        box-sizing: border-box;
+    }
+    &__container{
+        display: flex;
+        flex-direction: column;
+        padding: 20px 16px 100px 16px;
+        gap: 12px;
+
+        &-header{
+            display: flex;
+            flex-direction: column;
+            border-radius: 6px;
+            padding: 10px;
+            gap: 8px;
+            background-color: #F0F1F3;
+
+        }
+        &-current-process{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        &-other-process{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+    }
+    &__text {
+        font-size: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        color: inherit;
+        margin: 0;
+        padding: 0;
+
+        &--size {
+            &-xs {
+                font-size: 10px;
+                line-height: 14px;
+            }
+
+            &-sm {
+                font-size: 12px;
+                line-height: 16px;
+            }
+
+            &-md {
+                font-size: 14px;
+                line-height: 18px;
+            }
+
+            &-lg {
+                font-size: 16px;
+                line-height: 20px;
+            }
+
+            &-xl {
+                font-size: 18px;
+                line-height: 22px;
+            }
+
+            &-xxl {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+
+        &--weight {
+            &-thin {
+                font-weight: 100;
+            }
+
+            &-extraLight {
+                font-weight: 200;
+            }
+
+            &-light {
+                font-weight: 300;
+            }
+
+            &-normal {
+                font-weight: 400;
+            }
+
+            &-medium {
+                font-weight: 500;
+            }
+
+            &-semi-bold {
+                font-weight: 600;
+            }
+
+            &-bold {
+                font-weight: 700;
+            }
+
+            &-extraBold {
+                font-weight: 800;
+            }
+
+            &-black {
+                font-weight: 900;
+            }
+        }
+
+        &--color {
+            &-gray {
+                color: #667688;
+
+                >* {
+                    color: #667688;
+                }
+
+                &:hover {
+                    color: #667688;
+
+                    >* {
+                        color: #667688;
+                    }
+                }
+            }
+            &-lightGray {
+                color: #47535F;
+
+                >* {
+                    color: #47535F;
+                }
+
+                &:hover {
+                    color: #47535F;
+
+                    >* {
+                        color: #47535F;
+                    }
+                }
+            }
+
+            &-white {
+                color: white;
+
+                >* {
+                    color: white;
+                }
+
+                &:hover {
+                    color: white;
+
+                    >* {
+                        color: white;
+                    }
+                }
+            }
+
+            &-black {
+                color: #292f37;
+
+                >* {
+                    color: #292f37;
+                }
+
+                &:hover {
+                    color: #292f37;
+
+                    >* {
+                        color: #292f37;
+                    }
+                }
+            }
+
+            &-green {
+                color: #6DD695;
+
+                >* {
+                    color: #6DD695;
+                }
+
+                &:hover {
+                    color: #6DD695;
+
+                    >* {
+                        color: #6DD695;
+                    }
+                }
+            }
+
+            &-blue {
+                color: #66C1EA;
+
+                >* {
+                    color: #66C1EA;
+                }
+
+                &:hover {
+                    color: #66C1EA;
+
+                    >* {
+                        color: #66C1EA;
+                    }
+                }
+            }
+            &-red {
+                color: #E10000;
+
+                >* {
+                    color: #E10000;
+                }
+
+                &:hover {
+                    color: #E10000;
+
+                    >* {
+                        color: #E10000;
+                    }
+                }
+            }
+        }
+
+        &--link {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &--function {
+            cursor: pointer;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &-container {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+        }
+    }
+}

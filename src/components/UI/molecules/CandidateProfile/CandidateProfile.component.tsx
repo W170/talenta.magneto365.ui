@@ -10,7 +10,6 @@ import { CandidateProfileBasic } from './children/CandidateProfileBasic';
 import { RatingBadge } from '../../atoms/RatingBadge/RatingBadge.component';
 import {ExpandableInfo} from "@components/UI/molecules";
 
-
 const cx = classNames.bind(styles);
 
 const Component: React.FC<ICandidateProfile> = ({ data, details, className, expandableInfoProps, expandable }) => {
