@@ -1,5 +1,5 @@
-import { ICandidateOverviewProps } from '@components/UI/molecules'
-import { ICandidateProfile } from "@components/UI/molecules/CandidateProfile";
+import { ICandidateOverviewProps, ICandidateProfile } from '@components/UI/molecules'
+import { ICandidateTags, ICandidateComments } from '@components/UI/organism'
 
 export const candidateOverviewProps: ICandidateOverviewProps = {
   data: [
@@ -348,221 +348,290 @@ export const candidateOverviewProps: ICandidateOverviewProps = {
               {
                 value:
                   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-                }
-              ]
-            }
+              }
+            ]
           }
-        ]
-      }
-    ]
-  }
+        }
+      ]
+    }
+  ]
+}
 
 export const candidateProfile: ICandidateProfile = {
-    "data": {
-        "name": "Sebastian",
-        "lastname": "Cabal Quiroz",
-        "last_updated": "Ultima actualización 26/12/2024",
-        "img": "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-        "role": "Ingeniero de sistemas",
-        "score": "4.5"
-    },
-    "details": [
+  data: {
+    name: 'Sebastian',
+    lastname: 'Cabal Quiroz',
+    last_updated: 'Ultima actualización 26/12/2024',
+    img: 'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+    role: 'Ingeniero de sistemas',
+    score: '4.5'
+  },
+  details: [
+    {
+      title: {
+        value: 'Información laboral',
+        size: 'lg',
+        weight: 'bold',
+        color: 'black'
+      },
+      type: 'quick_access',
+      children: [
         {
-            "title": {
-                "value": "Información laboral",
-                "size": "lg",
-                "weight": "bold",
-                "color": "black"
+          direction: 'column',
+          separation: 'md',
+          children: [
+            {
+              value: 'Grupo Bolivar',
+              prefixIcon: {
+                icon: 'company'
+              },
+              size: 'sm',
+              weight: 'medium',
+              color: 'white',
+              data: 'Empresa'
             },
-            "type": "quick_access",
-            "children": [
-                {
-                    "direction": "column",
-                    "separation": "md",
-                    "children": [
-                        {
-                            "value": "Grupo Bolivar",
-                            "prefixIcon": {
-                                "icon": "company"
-                            },
-                            "size": "sm",
-                            "weight": "medium",
-                            "color": "white",
-                            "data": "Empresa"
-                        },
-                        {
-                            "value": "Analista funcional",
-                            "prefixIcon": {
-                                "icon": "role"
-                            },
-                            "size": "sm",
-                            "weight": "medium",
-                            "color": "white",
-                            "data": "Cargo"
-
-                        },
-                        {
-                            "value": "Interno",
-                            "prefixIcon": {
-                                "icon": "position"
-                            },
-                            "size": "sm",
-                            "weight": "medium",
-                            "color": "white",
-                            "data": "Posición"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "title": {
-                "value": "Datos personales",
-                "size": "lg",
-                "weight": "bold",
-                "color": "green"
+            {
+              value: 'Analista funcional',
+              prefixIcon: {
+                icon: 'role'
+              },
+              size: 'sm',
+              weight: 'medium',
+              color: 'white',
+              data: 'Cargo'
             },
-            "type": "basic",
-            "children": [
-                {
-                    "direction": "column",
-                    "separation": "md",
-                    "children": [
-                        {
-                            "value": "CC 1037651011",
-                            "prefixIcon": {
-                                "icon": "id"
-                            },
-                            "size": "sm",
-                            "weight": "normal",
-                            "color": "white"
-                        },
-                        {
-                            "value": "14 / 08 / 1987",
-                            "prefixIcon": {
-                                "icon": "calendar"
-                            },
-                            "size": "sm",
-                            "weight": "normal",
-                            "color": "white"
-                        },
-                        {
-                            "value": "Masculino, 35 años",
-                            "prefixIcon": {
-                                "icon": "gender"
-                            },
-                            "size": "sm",
-                            "weight": "normal",
-                            "color": "white"
-                        },
-                        {
-                            "value": "nombre@correo.com",
-                            "prefixIcon": {
-                                "icon": "email"
-                            },
-                            "size": "sm",
-                            "weight": "normal",
-                            "color": "white"
-                        },
-                        {
-                            "value": "+57 3002002028",
-                            "prefixIcon": {
-                                "icon": "phone"
-                            },
-                            "size": "sm",
-                            "weight": "normal",
-                            "color": "white"
-                        },
-                        {
-                            "value": "Medellín, Colombia",
-                            "prefixIcon": {
-                                "icon": "location"
-                            },
-                            "size": "sm",
-                            "weight": "normal",
-                            "color": "blue"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "title": {
-                "value": "Nivel de estudios",
-                "size": "lg",
-                "weight": "bold",
-                "color": "green"
-            },
-            "type": "basic",
-            "children": [
-                {
-                    "direction": "column",
-                    "separation": "md",
-                    "children": [
-                        {
-                            "value": "Especialización / maestría",
-                            "prefixIcon": {
-                                "icon": "education"
-                            },
-                            "size": "sm",
-                            "weight": "normal",
-                            "color": "white"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "title": {
-                "value": "Aspiración salarial",
-                "size": "lg",
-                "weight": "bold",
-                "color": "green"
-            },
-            "type": "basic",
-            "children": [
-                {
-                    "direction": "column",
-                    "separation": "md",
-                    "children": [
-                        {
-                            "value": "$2.000.000",
-                            "prefixIcon": {
-                                "icon": "salary"
-                            },
-                            "size": "sm",
-                            "weight": "normal",
-                            "color": "white"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "title": {
-                "value": "Categoría",
-                "size": "lg",
-                "weight": "bold",
-                "color": "green"
-            },
-            "type": "basic",
-            "children": [
-                {
-                    "direction": "column",
-                    "separation": "md",
-                    "children": [
-                        {
-                            "value": "Diseño",
-                            "prefixIcon": {
-                                "icon": "category"
-                            },
-                            "size": "sm",
-                            "weight": "normal",
-                            "color": "white"
-                        }
-                    ]
-                }
-            ]
+            {
+              value: 'Interno',
+              prefixIcon: {
+                icon: 'position'
+              },
+              size: 'sm',
+              weight: 'medium',
+              color: 'white',
+              data: 'Posición'
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      title: {
+        value: 'Datos personales',
+        size: 'lg',
+        weight: 'bold',
+        color: 'green'
+      },
+      type: 'basic',
+      children: [
+        {
+          direction: 'column',
+          separation: 'md',
+          children: [
+            {
+              value: 'CC 1037651011',
+              prefixIcon: {
+                icon: 'id'
+              },
+              size: 'sm',
+              weight: 'normal',
+              color: 'white'
+            },
+            {
+              value: '14 / 08 / 1987',
+              prefixIcon: {
+                icon: 'calendar'
+              },
+              size: 'sm',
+              weight: 'normal',
+              color: 'white'
+            },
+            {
+              value: 'Masculino, 35 años',
+              prefixIcon: {
+                icon: 'gender'
+              },
+              size: 'sm',
+              weight: 'normal',
+              color: 'white'
+            },
+            {
+              value: 'nombre@correo.com',
+              prefixIcon: {
+                icon: 'email'
+              },
+              size: 'sm',
+              weight: 'normal',
+              color: 'white'
+            },
+            {
+              value: '+57 3002002028',
+              prefixIcon: {
+                icon: 'phone'
+              },
+              size: 'sm',
+              weight: 'normal',
+              color: 'white'
+            },
+            {
+              value: 'Medellín, Colombia',
+              prefixIcon: {
+                icon: 'location'
+              },
+              size: 'sm',
+              weight: 'normal',
+              color: 'blue'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      title: {
+        value: 'Nivel de estudios',
+        size: 'lg',
+        weight: 'bold',
+        color: 'green'
+      },
+      type: 'basic',
+      children: [
+        {
+          direction: 'column',
+          separation: 'md',
+          children: [
+            {
+              value: 'Especialización / maestría',
+              prefixIcon: {
+                icon: 'education'
+              },
+              size: 'sm',
+              weight: 'normal',
+              color: 'white'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      title: {
+        value: 'Aspiración salarial',
+        size: 'lg',
+        weight: 'bold',
+        color: 'green'
+      },
+      type: 'basic',
+      children: [
+        {
+          direction: 'column',
+          separation: 'md',
+          children: [
+            {
+              value: '$2.000.000',
+              prefixIcon: {
+                icon: 'salary'
+              },
+              size: 'sm',
+              weight: 'normal',
+              color: 'white'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      title: {
+        value: 'Categoría',
+        size: 'lg',
+        weight: 'bold',
+        color: 'green'
+      },
+      type: 'basic',
+      children: [
+        {
+          direction: 'column',
+          separation: 'md',
+          children: [
+            {
+              value: 'Diseño',
+              prefixIcon: {
+                icon: 'category'
+              },
+              size: 'sm',
+              weight: 'normal',
+              color: 'white'
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+export const candidateTagsProps: Omit<ICandidateTags, 'onAdd' | 'onRemove'> = {
+  title: 'Etiquetas',
+  description: 'Escribe y presiona enter para crear la etiqueta, máximo 5 palabras por etiqueta.',
+  value: ['Etiqueta 1', 'Etiqueta 2', 'Etiqueta 3', 'Etiqueta 4', 'Etiqueta 5'],
+  inputProps: {
+    placeholder: 'Etiquetas',
+    buttonText: 'Guardar'
+  }
+}
+
+export const candidateCommentsProps: Omit<ICandidateComments, 'onAdd'> = {
+  title: 'Comentarios',
+  description: 'Deja un comentario, sólo lo verán los usuarios de tu compañía.',
+  value: [
+    {
+      title: 'Comentarios generales',
+      children: [
+        {
+          children: [
+            {
+              name: 'Juan Esteban Ocampo',
+              date: '15/11/2022',
+              description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.'
+            },
+            {
+              name: 'Juan Esteban Ocampo',
+              date: '15/11/2022',
+              detail: '(1 respuesta)',
+              description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'Comentarios por procesos',
+      children: [
+        {
+          title: 'Analista de comunicaciones',
+          children: [
+            {
+              name: 'Marcela Muñoz',
+              date: '15/11/2022',
+              description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.'
+            }
+          ]
+        },
+        {
+          title: 'Analista de ecommerce',
+          children: [
+            {
+              name: 'Juan Carlos',
+              date: '15/11/2022',
+              description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.'
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  inputProps: {
+    placeholder: 'Comentario',
+    buttonText: 'Guardar'
+  }
 }
