@@ -1,0 +1,280 @@
+.magneto-ui-vacancy-stage-card {
+  * {
+    box-sizing: border-box;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 10px;
+    gap: 8px;
+    border-radius: 6px;
+    background-color: white;
+    &--open {
+      background-color: #f0f1f3;
+    }
+
+    &-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+
+      &__vacancyIcon {
+        transform: rotate(90deg);
+      }
+
+      &__title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        h3,
+        p {
+          margin: 0px;
+        }
+      }
+
+      &__button {
+        &--open {
+          transform: rotate(180deg);
+        }
+      }
+
+      &__icon {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &-not-data {
+      display: flex;
+      justify-content: center;
+      font-size: 12px;
+      line-height: 14.4px;
+      font-weight: 400;
+      color: #47535f;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  &__text {
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+
+    &--size {
+      &-xs {
+        font-size: 10px;
+        line-height: 14px;
+      }
+
+      &-sm {
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      &-md {
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      &-lg {
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      &-xl {
+        font-size: 18px;
+        line-height: 22px;
+      }
+
+      &-xxl {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+
+    &--weight {
+      &-thin {
+        font-weight: 100;
+      }
+
+      &-extraLight {
+        font-weight: 200;
+      }
+
+      &-light {
+        font-weight: 300;
+      }
+
+      &-normal {
+        font-weight: 400;
+      }
+
+      &-medium {
+        font-weight: 500;
+      }
+
+      &-semi-bold {
+        font-weight: 600;
+      }
+
+      &-bold {
+        font-weight: 700;
+      }
+
+      &-extraBold {
+        font-weight: 800;
+      }
+
+      &-black {
+        font-weight: 900;
+      }
+    }
+
+    &--color {
+      &-gray {
+        color: #667688;
+
+        > * {
+          color: #667688;
+        }
+
+        &:hover {
+          color: #667688;
+
+          > * {
+            color: #667688;
+          }
+        }
+      }
+      &-lightGray {
+        color: #47535f;
+
+        > * {
+          color: #47535f;
+        }
+
+        &:hover {
+          color: #47535f;
+
+          > * {
+            color: #47535f;
+          }
+        }
+      }
+
+      &-white {
+        color: white;
+
+        > * {
+          color: white;
+        }
+
+        &:hover {
+          color: white;
+
+          > * {
+            color: white;
+          }
+        }
+      }
+
+      &-black {
+        color: #292f37;
+
+        > * {
+          color: #292f37;
+        }
+
+        &:hover {
+          color: #292f37;
+
+          > * {
+            color: #292f37;
+          }
+        }
+      }
+
+      &-green {
+        color: #6dd695;
+
+        > * {
+          color: #6dd695;
+        }
+
+        &:hover {
+          color: #6dd695;
+
+          > * {
+            color: #6dd695;
+          }
+        }
+      }
+
+      &-blue {
+        color: #66c1ea;
+
+        > * {
+          color: #66c1ea;
+        }
+
+        &:hover {
+          color: #66c1ea;
+
+          > * {
+            color: #66c1ea;
+          }
+        }
+      }
+      &-red {
+        color: #e10000;
+
+        > * {
+          color: #e10000;
+        }
+
+        &:hover {
+          color: #e10000;
+
+          > * {
+            color: #e10000;
+          }
+        }
+      }
+    }
+
+    &--link {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &--function {
+      cursor: pointer;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-container {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+    }
+  }
+}
