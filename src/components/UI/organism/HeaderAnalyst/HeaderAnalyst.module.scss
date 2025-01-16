@@ -35,6 +35,12 @@
       padding: 0;
     }
   }
+  &__legend {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #66c1ea;
+  }
   &__user-menu {
     display: flex;
     align-items: center;
