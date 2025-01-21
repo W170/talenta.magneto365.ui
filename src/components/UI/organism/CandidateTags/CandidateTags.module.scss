@@ -1,0 +1,92 @@
+.magneto-ui-candidate-tags {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__header {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: solid 1px #e0e4e7;
+  }
+  &__title {
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0a0c0e;
+    margin: 0;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 16px;
+    border-bottom: solid 1px #f0f1f3;
+  }
+  &__description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #0a0c0e;
+    margin: 0;
+  }
+  &__input {
+    position: relative;
+    > div > div:first-child {
+      height: 40px;
+      > div > div {
+        > input {
+          height: 40px;
+          margin: 0;
+        }
+      }
+    }
+    &--disabled {
+      > div > div:first-child > div > div > input {
+        padding: 10px 10px 0 40px !important;
+      }
+    }
+    &--active {
+      > div > div:first-child > div > div > input {
+        padding: 10px 85px 0 40px !important;
+      }
+    }
+  }
+  &__button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    min-height: 30px;
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: #001b38;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &--disabled {
+      opacity: 0;
+      visibility: hidden;
+    }
+    &--active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__footer {
+    padding-bottom: 16px;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}

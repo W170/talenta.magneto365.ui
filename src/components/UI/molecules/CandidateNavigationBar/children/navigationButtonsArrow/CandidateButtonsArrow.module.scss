@@ -1,0 +1,16 @@
+.candidateButtonsArrow {
+  &__navigation {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+    &--center {
+      width: 60%;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+}

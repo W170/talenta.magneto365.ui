@@ -1,0 +1,44 @@
+.magneto-ui-candidateProfile-page {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  &__header {
+    display: flex;
+    white-space: nowrap;
+  }
+
+  &__content {
+
+
+    &__header {
+      position: relative;
+      width: 100%;
+      transition: position 0.3s ease;
+
+      &__fixed {
+        position: fixed;  // Cambia a fixed cuando sea necesario
+        top: 0;
+        left: 0;
+        z-index: 999;
+      }
+    }
+  }
+
+  &__footer {
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  &__candidateProfile {
+    position: sticky;
+    top: 60px; // El valor debe coincidir con la altura del HorizontalMenu
+    z-index: 900; // Menor que el menú para que el menú esté delante inicialmente
+    padding: 10px;
+  }
+}

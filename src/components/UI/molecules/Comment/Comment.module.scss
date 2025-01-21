@@ -1,0 +1,38 @@
+.magneto-ui-comment {
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    > div:first-child > div {
+      height: 25px;
+      width: 25px;
+      > img {
+        height: 25px;
+        width: 25px;
+      }
+    }
+  }
+  &__name {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: #0a0c0e;
+    margin: 0;
+  }
+  &__info {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 11px;
+    line-height: 14px;
+    color: #737373;
+    margin: 0;
+  }
+  &__description {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 14px;
+    color: #1f2329;
+    margin: 0;
+    padding-left: 36px;
+  }
+}
