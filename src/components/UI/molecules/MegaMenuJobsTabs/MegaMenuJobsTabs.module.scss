@@ -26,6 +26,18 @@
   }
 
   &__tab {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    width: max-content;
+    padding: 10px 8px;
+    text-decoration: none;
+    cursor: pointer;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 6px;
+    align-items: center;
     > p {
       color: #667688;
     }

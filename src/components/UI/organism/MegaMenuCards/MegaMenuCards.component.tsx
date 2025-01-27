@@ -1,8 +1,7 @@
 import React from 'react'
 import style from './MegaMenuCards.module.scss'
 import { IMegaMenuCards } from './MegaMenuCards.interface'
-import { SearchItem } from '@components/UI/atoms'
-import { ArrowRightWhite } from '@constants/icons.constants'
+import { ArrowRight2, ArrowRightWhite } from '@constants/icons.constants'
 import { ButtonLink } from '@components/UI/atoms/ButtonLink'
 import { MegaMenuCard } from '@components/UI/molecules'
 import { AlphabetFilter } from '@components/UI/organism'
@@ -22,9 +21,12 @@ const MegaMenuCards: React.FC<IMegaMenuCards> = ({
       <div className={`${style[`mega-menu-cards__title`]}`}>
         <h4>{title}</h4>
         {actionTitle && (
-          <SearchItem
-            url={actionTitle.url}
-            tag={actionTitle.label}
+          <ButtonLink
+            href={actionTitle.url}
+            buttonText={actionTitle.label}
+            onClick={actionTitle.onClick}
+            prefixIcon={ArrowRight2}
+            iconSize={14}
             className={`${style[`mega-menu-cards__action--grey`]}`}
           />
         )}
@@ -32,9 +34,12 @@ const MegaMenuCards: React.FC<IMegaMenuCards> = ({
     ),
     {
       md: title && actionTitle && (
-        <SearchItem
-          url={actionTitle.url}
-          tag={actionTitle.label}
+        <ButtonLink
+          href={actionTitle.url}
+          buttonText={actionTitle.label}
+          onClick={actionTitle.onClick}
+          prefixIcon={ArrowRight2}
+          iconSize={14}
           className={`${style[`mega-menu-cards__action--grey`]}`}
         />
       )
@@ -57,6 +62,7 @@ const MegaMenuCards: React.FC<IMegaMenuCards> = ({
         <ButtonLink
           buttonText={action.label}
           href={action.url}
+          onClick={action.onClick}
           target={action.target ?? '_self'}
           prefixIcon={ArrowRightWhite}
           className={`${style[`mega-menu-cards__action`]}`}

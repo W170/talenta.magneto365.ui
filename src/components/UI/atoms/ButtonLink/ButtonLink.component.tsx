@@ -26,7 +26,7 @@ const Component: React.FC<IButtonLink> = ({
 
   return (
     <a
-      className={`${className} ${styles['button-link']} `}
+      className={`${className ? className : styles['button-link']}`}
       type="button"
       onClick={handleClick}
       href={href}

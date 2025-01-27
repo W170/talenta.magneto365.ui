@@ -3,7 +3,7 @@ import style from './MegaMenuSideCards.module.scss'
 import { IMegaMenuSideCards } from './MegaMenuSideCards.interface'
 import { ArrowRightWhite } from '@constants/icons.constants'
 import { MegaMenuCard } from '../MegaMenuCard'
-import { SearchItem } from '@components/UI/atoms'
+import { ButtonLink } from '@components/UI/atoms/ButtonLink'
 
 const MegaMenuSideCards: React.FC<IMegaMenuSideCards> = ({
   jobs,
@@ -44,11 +44,12 @@ const MegaMenuSideCards: React.FC<IMegaMenuSideCards> = ({
         ))}
       {action && (
         <li>
-          <SearchItem
-            url={action.url}
-            tag={action.label}
+          <ButtonLink
+            href={action.url}
+            buttonText={action.label}
+            onClick={action.onClick}
             className={`${style[`mega-menu-side-cards__action`]}`}
-            icon={ArrowRightWhite}
+            prefixIcon={ArrowRightWhite}
           />
         </li>
       )}
