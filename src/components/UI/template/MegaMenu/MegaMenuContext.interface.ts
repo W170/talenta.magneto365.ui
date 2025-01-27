@@ -1,11 +1,13 @@
 import { IMegaMenuTab } from '@components/UI/atoms/MegaMenuTab/MegaMenuTab.interface'
 import { ISearchbar } from '@components/UI/molecules'
+import { IPopoverRef } from '@components/UI/molecules/MegaMenuPopover/MegaMenuPopover.interface'
 import { IlistMenuUserProps } from '@components/UI/organism'
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 
 export interface IMegaMenuLink {
   label: string
   url: string
+  onClick?: () => void
   target?: string
   icon?: string | undefined
 }
@@ -45,6 +47,7 @@ export interface IMegaMenuJobs {
   onChangeTab?: (index: number) => void
   jobAction?: IMegaMenuAction
   allJobsAction?: IMegaMenuLink
+  popoverRef?: React.Ref<IPopoverRef>
 }
 
 export interface IMegaMenuContext {
