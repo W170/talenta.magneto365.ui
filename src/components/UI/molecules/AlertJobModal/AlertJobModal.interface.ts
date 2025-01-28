@@ -10,7 +10,10 @@ export interface IAlertJobModal {
    * Additional class names for custom styling.
    */
   className?: string
-
+  /**
+   * Additional class names for custom styling.
+   */
+  mobileClassName?: string
   /**
    * Represents whether the modal is open or closed.
    */

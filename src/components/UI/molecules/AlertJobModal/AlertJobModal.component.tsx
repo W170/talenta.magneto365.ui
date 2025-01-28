@@ -2,21 +2,26 @@ import React from 'react'
 import styles from './AlertJobModal.module.scss'
 import { classNames } from '@shared/utils/common'
 import { IAlertJobModal } from './AlertJobModal.interface'
-import { Modal } from '@components/UI/molecules/Modal'
 import { AlertJobModalIcon } from './children/AlertJobModalIcon/AlertJobModalIcon.component'
 import { AlertJobModalHeader } from './children/AlertJobModalHeader/AlertJobModalHeader.component'
 import { AlertJobModalTitle } from './children/AlertJobModalTitle/AlertJobModalTitle.component'
 import { AlertJobModalBody } from './children/AlertJobModalBody/AlertJobModalBody.component'
 import { AlertJobModalFooter } from './children/AlertJobModalFooter/AlertJobModalFooter.component'
 import { AlertJobModalButton } from './children/AlertJobModalButton/AlertJobModalButton.component'
+import { ModalResponsive } from '../ModalResponsive'
 
 const cx = classNames.bind(styles)
 
-const Component: React.FC<IAlertJobModal> = ({ children, className, open, onClose }) => {
+const Component: React.FC<IAlertJobModal> = ({ children, className, mobileClassName, open, onClose }) => {
   return (
-    <Modal isOpen={open} onClose={onClose} className={cx('alert-modal', className)}>
+    <ModalResponsive
+      open={open}
+      onClose={onClose}
+      modalClassName={cx('alert-modal', className)}
+      mobileDrawerClassName={cx('alert-modal__mobile', mobileClassName)}
+    >
       {children}
-    </Modal>
+    </ModalResponsive>
   )
 }
 
