@@ -1,20 +1,7 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { AlertsPanel } from './AlertsPanel.component'
-const alerts = [
-  {
-    id: 1,
-    text: 'Comunicador Audiovisual'
-  },
-  {
-    id: 2,
-    text: 'Servicio al cliente'
-  },
-  {
-    id: 3,
-    text: 'Ventas'
-  }
-]
+import { alerts } from '@constants/stories/alertsPanel.constants'
 const { Item, List } = AlertsPanel
 const meta: Meta<typeof AlertsPanel> = {
   title: 'Organism/Alert Panel',
