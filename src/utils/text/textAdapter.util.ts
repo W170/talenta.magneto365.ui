@@ -5,7 +5,7 @@ export const similarJobTextAdapter = (job: ISimilarCardData) => {
   const text: ICustomText[] = [
     { value: job.title, fontWeight: 'bold', lineBreak: true },
     {
-      value: job.contractType ? `${job.companyName} | ${job.contractType}` : String(job.companyName),
+      value: job.contractType ? `${job.contractType}` : String(job.experience),
       fontWeight: 'normal',
       lineBreak: true
     },
