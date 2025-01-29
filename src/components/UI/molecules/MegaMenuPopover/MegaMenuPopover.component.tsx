@@ -1,11 +1,12 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState, useImperativeHandle } from 'react'
 import { IconItem } from '../../atoms/Icon'
 import styles from './MegaMenuPopover.module.scss'
 import { useMegaMenuJobs } from '@components/UI/template/MegaMenu/MegaMenu.context'
 import { ArrowDown2 } from '@constants/icons.constants'
+import { IMegaMenuPopover } from './MegaMenuPopover.interface'
 const popoverClassName = 'magneto-ui-mega-menu-popover'
 
-const MegaMenuPopover: React.FC = ({ children }) => {
+const MegaMenuPopover: React.FC<IMegaMenuPopover> = ({ children, popoverRef }) => {
   const [showContent, setShowContent] = useState(false)
   const { jobAction } = useMegaMenuJobs()
 
@@ -17,6 +18,10 @@ const MegaMenuPopover: React.FC = ({ children }) => {
     },
     []
   )
+
+  useImperativeHandle(popoverRef, () => ({
+    setShow: (show: boolean) => setShowContent(show)
+  }))
 
   useEffect(() => {
     const { body } = document

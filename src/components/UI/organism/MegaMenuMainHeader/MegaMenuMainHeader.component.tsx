@@ -19,7 +19,7 @@ import {
   MobileSearchbarButtonProps,
   MenuButtonProps
 } from '@constants/stories'
-import { useLoggedInUser, useMegaMenuMain } from '@components/UI/template/MegaMenu/MegaMenu.context'
+import { useLoggedInUser, useMegaMenuJobs, useMegaMenuMain } from '@components/UI/template/MegaMenu/MegaMenu.context'
 import { SearchButton } from '@components/UI/molecules/SearchButton/SearchButton.component'
 import { useMediaQuery } from '@components/hooks'
 import { MobileSearchbar } from '../../molecules'
@@ -29,14 +29,16 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
   const [showSearchBar, setShowSearchBar] = useState(false)
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
   const { homeUrl, searchBarProps, loginProps } = useMegaMenuMain()
+  const { popoverRef } = useMegaMenuJobs()
+
   const listMenuUserProps = useLoggedInUser()
-  const { profileImage, isAuthenticated } = listMenuUserProps
+  const { profileImage = {}, isAuthenticated } = listMenuUserProps
   const toggleSearchBar = () => {
     setShowSearchBar(!showSearchBar)
   }
 
   const renderLogo = useMediaQuery(<LogoComponent {...logoProps} />, {
-    sm: <LogoComponent {...logoProps} isoView={true} />
+    sm: <LogoComponent {...logoProps} isoView />
   })
 
   const LogoutHeaderMobileSearchbar = useMediaQuery(null, {
@@ -60,7 +62,7 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
       {searchBarProps && (
         <Searchbar searchButtonProps={searchPropsButton} removeButtonProps={removePropsButton} {...searchBarProps} />
       )}
-      <MegaMenuPopover>
+      <MegaMenuPopover popoverRef={popoverRef}>
         <MegaMenuJobsTabs />
       </MegaMenuPopover>
     </>,

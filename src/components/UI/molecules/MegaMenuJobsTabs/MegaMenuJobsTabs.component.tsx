@@ -1,9 +1,10 @@
 import React, { useCallback, useMemo, useState } from 'react'
 import style from './MegaMenuJobsTabs.module.scss'
 import { megaMenuJobsIcons } from '@constants/stories'
-import { Divider, SearchItem } from '@components/UI/atoms'
+import { Divider } from '@components/UI/atoms'
 import { useMegaMenuJobs } from '@components/UI/template/MegaMenu/MegaMenu.context'
 import { ButtonLink } from '@components/UI/atoms/ButtonLink'
+import { ArrowRight2 } from '@constants/icons.constants'
 
 const MegaMenuJobsTabs: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState<number>(0)
@@ -42,7 +43,13 @@ const MegaMenuJobsTabs: React.FC = () => {
             ))}
           <Divider direction={'VERTICAL'} />
           <li>
-            <SearchItem tag={allJobsAction?.label ?? ''} url={allJobsAction?.url ?? ''} />
+            <ButtonLink
+              buttonText={allJobsAction?.label ?? ''}
+              href={allJobsAction?.url ?? ''}
+              onClick={allJobsAction?.onClick}
+              prefixIcon={ArrowRight2}
+              iconSize={14}
+            />
           </li>
         </ul>
       </nav>

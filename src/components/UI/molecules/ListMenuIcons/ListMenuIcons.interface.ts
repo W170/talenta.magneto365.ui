@@ -8,8 +8,8 @@ export interface IListMenuIcons {
   logout: ILogout
   settings: ISettings
   haveGif?: boolean
-  profileImage: IAvatar
-  isAuthenticated: boolean
+  profileImage?: IAvatar
+  isAuthenticated?: boolean
 }
 
 export interface IMenuItems {
