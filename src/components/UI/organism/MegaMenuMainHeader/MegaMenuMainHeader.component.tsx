@@ -37,18 +37,9 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
     setShowSearchBar(!showSearchBar)
   }
 
-  const renderLogo = useMediaQuery(
-    <a href={homeUrl}>
-      <LogoComponent {...logoProps} />
-    </a>,
-    {
-      sm: (
-        <a href={homeUrl}>
-          <LogoComponent {...logoProps} isoView />
-        </a>
-      )
-    }
-  )
+  const renderLogo = useMediaQuery(<LogoComponent {...logoProps} />, {
+    sm: <LogoComponent {...logoProps} isoView />
+  })
 
   const LogoutHeaderMobileSearchbar = useMediaQuery(null, {
     md: (
