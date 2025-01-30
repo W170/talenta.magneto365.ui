@@ -7,7 +7,8 @@ import {
   AddSquareBlackOutline,
   RedoDarkBlue,
   WhatsAppDark,
-  Messages2BlackOutline
+  Messages2BlackOutline,
+  Security
 } from '@constants/icons.constants'
 
 export const userMenuAnalystIcons: { [key: string]: string } = {
@@ -19,5 +20,6 @@ export const userMenuAnalystIcons: { [key: string]: string } = {
   add: AddSquareBlackOutline,
   redo: RedoDarkBlue,
   whatsApp: WhatsAppDark,
-  rateUsHelp: Messages2BlackOutline
+  rateUsHelp: Messages2BlackOutline,
+  recoverPassword:Security
 }
