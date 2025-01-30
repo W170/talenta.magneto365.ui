@@ -1,21 +1,21 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-import { Text } from './Text.component'
+import { TextCustom } from './Text.component'
 
-const meta: Meta<typeof Text> = {
-  title: 'Atoms/Text',
-  component: Text
+const meta: Meta<typeof TextCustom> = {
+  title: 'Atoms/TextCustom',
+  component: TextCustom
 }
 
 export default meta
 
-type Story = StoryObj<typeof Text>
+type Story = StoryObj<typeof TextCustom>
 
 export const Default: Story = {
   args: {
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dolor diam, commodo ac laoreet et, pellentesque ac lacus. Vestibulum placerat placerat purus at imperdiet. Mauris iaculis urna sit amet nulla scelerisque mattis.'
   },
-  render: (args) => <Text {...args} />
+  render: (args) => <TextCustom {...args} />
 }
 
 export const CustomText: Story = {
@@ -26,5 +26,5 @@ export const CustomText: Story = {
       { value: 'this is the second text', fontWeight: 'normal', lineBreak: false }
     ]
   },
-  render: (args) => <Text {...args} />
+  render: (args) => <TextCustom {...args} />
 }

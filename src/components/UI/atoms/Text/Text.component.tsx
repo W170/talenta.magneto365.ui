@@ -3,7 +3,7 @@ import { classMUI } from '@constants/stories'
 import style from './Text.module.scss'
 import { IText } from './Text.interface'
 
-const Component: React.FC<IText> = ({ text, customText, className }) => {
+export const TextCustom: React.FC<IText> = ({ text, customText, className }) => {
   const textRender = useMemo(() => {
     return customText?.length ? (
       <span className={className}>
@@ -21,5 +21,3 @@ const Component: React.FC<IText> = ({ text, customText, className }) => {
 
   return <>{textRender}</>
 }
-
-export const Text = Component

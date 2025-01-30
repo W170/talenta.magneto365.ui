@@ -1,1 +1,1 @@
-export { Text } from './Text.component'
+export { TextCustom } from './Text.component'
