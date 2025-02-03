@@ -7,7 +7,8 @@ const meta: Meta<typeof MegaMenuEmpty> = {
   tags: ['autodocs'],
   args: {
     title: 'No hay un resultado disponible',
-    subtitle: 'En este momento no tenemos un resultado para este contenido. Estamos trabajando en ello.'
+    subtitle: 'En este momento no tenemos un resultado para este contenido. Estamos trabajando en ello.',
+    imageData: 'noData'
   }
 }
 
