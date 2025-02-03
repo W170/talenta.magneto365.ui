@@ -50,6 +50,7 @@ export interface IMainButton {
   /**
    * Optional click handler
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onClick?: (event: any) => void
   /**
    * This is the custom className

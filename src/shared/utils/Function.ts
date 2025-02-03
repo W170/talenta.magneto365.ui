@@ -1,5 +1,6 @@
 import { CSSProperties } from 'react'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const toCSSVariables = (input?: any): CSSProperties => {
   const output: Record<string, string> = {}
 

@@ -18,6 +18,7 @@ export interface IDrawer {
    * The content that can be displayed inside the drawer.
    * It can be a single JSX element, an array of JSX elements, or any other type.
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children: JSX.Element | JSX.Element[] | any
 
   /**

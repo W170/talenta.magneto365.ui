@@ -6,7 +6,7 @@ export const classNames = {
         .filter((param) => param != null)
         .map((cls) => {
           if (typeof cls === 'string') return stylesObj[cls] ?? cls
-          return Object.entries(cls!)
+          return Object.entries(cls)
             .filter(([, value]) => value)
             .map(([key]) => stylesObj[key] ?? key)
             .join(' ')
