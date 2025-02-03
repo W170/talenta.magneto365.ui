@@ -22,6 +22,12 @@ import {
 } from '@constants/icons.constants'
 import { Book, BriefcaseBlue, BuildingBlue, CourthouseBlue, LocationBlue } from '@constants/megaMenu.constants'
 import { SearchbarProps } from './headers.constants'
+import { NoData, Waiting } from '@constants/gifs.constants'
+
+export const staticMessages: { [key: string]: string } = {
+  noData: NoData,
+  waiting: Waiting
+}
 
 export const megaMenuSocialTabs: IMegaMenuTab[] = [
   { label: 'Personas', selected: true, url: 'https://www.magneto365.com/es/' },
