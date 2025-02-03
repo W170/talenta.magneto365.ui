@@ -1,6 +1,6 @@
 import { HambergerMenuDark, HomeUnderline, Notification } from '@constants/icons.constants'
 import { IBreadcrumbs, IUserAnalyst, IUserMenuWrapperAnalystProps } from '@components/UI/molecules'
-import { IHeaderAnalystProps, INavMenuAnalystProps, IModalAnalystProps } from '@components/UI/organism'
+import { IHeaderAnalyst, INavMenuAnalystProps, IModalAnalystProps } from '@components/UI/organism'
 import { IMainButton, ILinkProps } from '@components/UI/atoms'
 import { logoPropsDark } from './common.constants'
 import { IAnalystTemplateProps } from '@components/UI/template'
@@ -163,9 +163,9 @@ export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
   ]
 }
 
-export const HeaderAnalystProps: IHeaderAnalystProps = {
-  // onMainMenuClick: () => ({}),
+export const HeaderAnalystProps: IHeaderAnalyst = {
   className: 'magneto-ui-header-analyst',
+  legend: 'Plan premium',
   logoProps: {
     ...logoPropsDark,
     alt: 'hola',

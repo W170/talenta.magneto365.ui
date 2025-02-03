@@ -1,17 +1,20 @@
 import React from 'react'
 import { Breadcrumbs, UserMenuWrapperAnalyst } from '@components/UI/molecules'
-import { IHeaderAnalystProps } from './HeaderAnalyst.interface'
-import { LogoComponent, MainButton, Link } from '@components/UI/atoms'
 import { logoPropsDark, MenuButtonAnalystProps } from '@constants/stories'
+import { LogoComponent, MainButton, Link } from '@components/UI/atoms'
+import { IHeaderAnalyst } from './HeaderAnalyst.interface'
 import { Notification } from '@constants/icons.constants'
 import { useMediaQuery } from '@components/hooks'
-import CNM from '@utils/classNameManager/classNameManager.util'
+import { classNames } from '@shared/utils/common'
 import styles from './HeaderAnalyst.module.scss'
 
-const Component: React.FC<IHeaderAnalystProps> = ({
+const cx = classNames.bind(styles)
+
+const Component: React.FC<IHeaderAnalyst> = ({
   breadCrumbProps,
   className = '',
   handleModal,
+  legend,
   logoProps = { fallbackImage: logoPropsDark.logo, ...logoPropsDark },
   onMainMenuClick,
   userMenuProps,
@@ -35,18 +38,19 @@ const Component: React.FC<IHeaderAnalystProps> = ({
   })
 
   return (
-    <header className={CNM.get({ styles, cls: ['header-analyst', className] })}>
-      <div className={CNM.get({ styles, cls: ['header-analyst__container'] })}>
-        <div className={CNM.get({ styles, cls: ['header-analyst__main-menu'] })}>
+    <header className={cx('magneto-ui-header-analyst', className)}>
+      <div className={cx('magneto-ui-header-analyst__container')}>
+        <div className={cx('magneto-ui-header-analyst__main-menu')}>
           <MainButton onClick={onMainMenuClick} {...MenuButtonAnalystProps} />
           {headerLogo}
+          {legend && <span className={cx('magneto-ui-header-analyst__legend')}>{legend}</span>}
         </div>
-        <div className={CNM.get({ styles, cls: ['header-analyst__user-menu'] })}>
+        <div className={cx('magneto-ui-header-analyst__user-menu')}>
           {userNotificationProps && <Link iconProps={{ icon: Notification, size: 20 }} {...userNotificationProps} />}
           <UserMenuWrapperAnalyst {...userMenuProps} handleModal={handleModal} />
         </div>
       </div>
-      <div className={CNM.get({ styles, cls: ['header-analyst__container'] })}>{headerBreadCrumb}</div>
+      <div className={cx('magneto-ui-header-analyst__container')}>{headerBreadCrumb}</div>
     </header>
   )
 }
