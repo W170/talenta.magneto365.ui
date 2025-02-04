@@ -1,6 +1,6 @@
 import React, { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
 import FilterContainerMenu from '@components/UI/molecules/FilterContainerMenu/FilterContainerMenu.component'
-import { JobDetailContainer, JobCard, FrequentSearch, Pagination } from '@components/UI/molecules'
+import { JobDetailContainer, JobCard, FrequentSearch, Pagination, CreateAccountCTA } from '@components/UI/molecules'
 import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
 import { SortBar, Footer, SideFilter } from '@components/UI/template'
 import { useMediaQuery } from '@components/hooks'
@@ -29,7 +29,8 @@ const JobsPage: React.FC<IJobsPage> = ({
   jobDetailAction,
   customParagraph,
   dynamicPaginationUrl,
-  displayAlwaysFilter
+  displayAlwaysFilter,
+  createAccountCTAProps
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [loadVideo, setLoadVideo] = useState(false)
@@ -148,6 +149,7 @@ const JobsPage: React.FC<IJobsPage> = ({
             setIsFiltersOpen={setIsFiltersOpen}
             emptyVacant={emptyVacant}
           />
+          {createAccountCTAProps && <CreateAccountCTA {...createAccountCTAProps} />}
           {mainTitleByMediaQuery}
           <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>{cardsAltRender}</div>
           {customParagraph && <Paragraph paragraph={customParagraph} />}
