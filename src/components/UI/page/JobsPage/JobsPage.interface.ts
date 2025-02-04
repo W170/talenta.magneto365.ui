@@ -6,6 +6,7 @@ import { ISideFilter } from '@components/UI/template'
 import { IFooter } from '@components/UI/template/Footer/Footer.interface'
 import { DeviceType } from '@components/context/context.interface'
 import { IEmptyResults } from '@components/UI/molecules/EmptyResults/EmptyResults.interface'
+import { ICreateAccountCTA } from '@components/UI/molecules/CreateAccountCTA/CreateAccountCTA.interface'
 
 export interface IJobsPage {
   /**
@@ -55,7 +56,7 @@ export interface IJobsPage {
    * This property indicates the type of device being rendered.
    */
   device: DeviceType
-  /* *
+  /**
    * This property show the action detail view
    */
   jobDetailAction?: JSX.Element | undefined
@@ -75,6 +76,10 @@ export interface IJobsPage {
    * This property show or hide the filter always in the desktop of jobsite
    */
   displayAlwaysFilter?: boolean
+  /**
+   * This property sets the create account card data
+   */
+  createAccountCTAProps?: ICreateAccountCTA
 }
 
 export interface IVacancies extends IJobCard {
