@@ -3,6 +3,7 @@
 
 .magneto-iu-side-filter {
   background-color: v.$color-white;
+  border-right: solid 1px #e9e9f6;
   @media (max-width: v.$screen-md) {
     display: flex;
     flex-direction: column;
