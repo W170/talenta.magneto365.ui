@@ -7,7 +7,7 @@ import styles from './CreateAccountCTA.module.scss'
 
 const Component: React.FC<ICreateAccountCTA> = ({ ctaClick, description, title, isLoading }) => {
   return (
-    <button onClick={ctaClick} className={styles['create-account-cta']}>
+    <button disabled={isLoading} onClick={ctaClick} className={styles['create-account-cta']}>
       {isLoading ? (
         <div className={styles['create-account-cta__loader']}>
           <DotsLoader color="#1a324c" count={3} />
