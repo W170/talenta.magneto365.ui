@@ -1,0 +1,26 @@
+.magneto-ui-position-link {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 8px;
+  border: 1px solid #e0e4e7;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #47535f;
+  width: auto;
+
+  img {
+    opacity: 0;
+  }
+
+  &:hover {
+    background-color: #f0f1f3;
+    color: #292f37;
+    cursor: pointer;
+
+    img {
+      opacity: 1;
+    }
+  }
+}
