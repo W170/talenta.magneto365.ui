@@ -41,8 +41,10 @@ const Component: React.FC<IHeaderAnalyst> = ({
     <header className={cx('magneto-ui-header-analyst', className)}>
       <div className={cx('magneto-ui-header-analyst__container')}>
         <div className={cx('magneto-ui-header-analyst__main-menu')}>
-          <MainButton onClick={onMainMenuClick} {...MenuButtonAnalystProps} />
-          {headerLogo}
+          <div className={cx('magneto-ui-header-analyst__logo')}>
+            <MainButton onClick={onMainMenuClick} {...MenuButtonAnalystProps} />
+            {headerLogo}
+          </div>
           {legend && <span className={cx('magneto-ui-header-analyst__legend')}>{legend}</span>}
         </div>
         <div className={cx('magneto-ui-header-analyst__user-menu')}>
