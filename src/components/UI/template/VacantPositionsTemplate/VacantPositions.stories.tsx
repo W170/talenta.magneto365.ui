@@ -10,7 +10,13 @@ const meta: Meta<typeof VacantPositions> = {
   args: {
     title: 'Selecciona la categoría en la que quieres buscar un cargo',
     subtitle: 'Te llevaremos a la sección donde podrás acceder a la información de salarios y funciones de esos cargos',
-    showBackButton: true,
+    backButtonProps: {
+      buttonText: 'Volver',
+      href: '/',
+      onClick: () => {
+        console.log()
+      }
+    },
     viewMoreProps: {
       buttonText: 'Conoce todas las vacantes disponibles para Ingenieros',
       href: '/',
@@ -39,7 +45,13 @@ export const CustomTemplate: Story = {
   args: {
     title: 'Selecciona la categoría en la que quieres buscar un cargo',
     subtitle: 'Te llevaremos a la sección donde podrás acceder a la información de salarios y funciones de esos cargos',
-    showBackButton: true,
+    backButtonProps: {
+      buttonText: 'Volver',
+      href: '/',
+      onClick: () => {
+        console.log()
+      }
+    },
     viewMoreProps: {
       buttonText: 'Conoce todas las vacantes disponibles para Ingenieros',
       href: '/',

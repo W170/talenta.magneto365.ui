@@ -12,7 +12,7 @@ const VacantPositions: React.FC<IVacantPositions> = ({
   subtitle,
   banner,
   filterProps,
-  showBackButton,
+  backButtonProps,
   viewMoreProps,
   children
 }) => {
@@ -21,13 +21,12 @@ const VacantPositions: React.FC<IVacantPositions> = ({
       <div className={style[`${Muiclass}-vacant-positions-layout-top-container`]}>
         {banner && banner}
         {filterProps && <AlphabetFilter {...filterProps} />}
-        {showBackButton && (
+        {backButtonProps && (
           <ButtonLink
-            buttonText="Volver"
             suffixIcon={ArrowLeft2}
-            onClick={() => console.log()}
             className={style[`${Muiclass}-vacant-positions-layout-top-container__back-button`]}
             iconSize={16}
+            {...backButtonProps}
           />
         )}
         {(title || subtitle) && (

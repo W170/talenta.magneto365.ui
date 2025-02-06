@@ -1,3 +1,4 @@
+import { IButtonLink } from '@components/UI/atoms'
 import { IAlphabetFilter } from '@components/UI/organism/AlphabetFilter/AlphabetFilter.interface'
 
 export interface IVacantPositions {
@@ -5,13 +6,7 @@ export interface IVacantPositions {
   subtitle?: string
   banner?: React.ReactNode
   filterProps?: IAlphabetFilter
-  showBackButton?: boolean
-  viewMoreProps?: IViewMoreProps
+  backButtonProps?: IButtonLink
+  viewMoreProps?: IButtonLink
   children?: React.ReactNode
-}
-
-export interface IViewMoreProps {
-  buttonText: string
-  href: string
-  onClick: () => void
 }
