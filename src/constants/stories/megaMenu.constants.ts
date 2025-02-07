@@ -12,6 +12,7 @@ import {
   ArchiveTick,
   ArrowDown2,
   ArrowLeft2,
+  Bell,
   DocumentText,
   HeadsetBlackOutline,
   MessageQuestion,
@@ -119,7 +120,8 @@ export const megaMenuUserLoggedIcons = {
   inProcess: TaskSquare,
   resume: DocumentText,
   settings: Setting2,
-  help: MessageQuestion
+  help: MessageQuestion,
+  alerts: Bell
 }
 export const mobileSocialIcons = [Book, HeadsetBlackOutline, QuestionCircle]
 
