@@ -38,7 +38,7 @@ const SortMenu: React.FC<ISortMenu> = ({
         disabled={loading}
       >
         <p className={style['magneto-ui-btn-text']}>{textOrderFilter}</p>
-        <IconItem {...menuSortButton} />
+        <IconItem {...menuSortButton} isRotate={clickOut} />
       </button>
     </Popover>
   )

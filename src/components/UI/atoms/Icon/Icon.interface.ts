@@ -31,4 +31,8 @@ export interface IconProps {
    * Text alt in the img element
    */
   alt?: string | null
+  /**
+   * Rotate image 180 deg
+   */
+  isRotate?: boolean
 }
