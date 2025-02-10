@@ -12,12 +12,13 @@
   transition: all 0.3s ease-in-out;
   height: 15px;
   padding: 18px 5px;
+  margin-bottom: 2px;
   @media (min-width: v.$screen-xxs) {
     padding: 25px 10px;
     height: 40px;
   }
   &:hover {
-    background-color: v.$disabled-color-gray;
+    background-color: v.$color-gray-background;
   }
   &__menu-text {
     font-size: 10px;
@@ -30,9 +31,9 @@
 }
 
 .isActive {
-  background-color: v.$disabled-color-gray2;
+  background-color: v.$selected-color-gray;
 
   &:hover {
-    background-color: v.$disabled-color-gray2;
+    background-color: v.$selected-color-gray;
   }
 }
