@@ -1,6 +1,9 @@
 import React, { Fragment, useState, useMemo } from 'react'
 import { IconProps } from './Icon.interface'
-import style from './icon.module.scss'
+import styles from './icon.module.scss'
+import { classNames } from '@shared/utils/common'
+
+const cx = classNames.bind(styles)
 
 const Component: React.FC<IconProps> = ({
   fallbackIcon,
@@ -9,7 +12,8 @@ const Component: React.FC<IconProps> = ({
   hover = false,
   size,
   className,
-  alt
+  alt,
+  isRotate
 }) => {
   const [imageError, setImageError] = useState<boolean>(false)
 
@@ -19,7 +23,7 @@ const Component: React.FC<IconProps> = ({
 
   const iconSrc = useMemo(() => (!imageError ? icon ?? undefined : fallbackIcon), [fallbackIcon, imageError, icon])
 
-  const isHover = hover ? style['magneto-ui-hover'] : ''
+  const isHover = hover ? cx('magneto-ui-hover') : ''
   const customStyle = size ? { width: size + 'px' } : {}
 
   if (!iconSrc && !showDefaultFallback) return null
@@ -30,7 +34,7 @@ const Component: React.FC<IconProps> = ({
         <img
           data-name="icon"
           style={customStyle}
-          className={`${style['magneto-ui-icon']} ${isHover} ${className}`}
+          className={cx('magneto-ui-icon', { 'magneto-ui-rotate': isRotate }, isHover, className)}
           src={iconSrc}
           alt={alt ?? `${icon} icon item`}
           loading="lazy"

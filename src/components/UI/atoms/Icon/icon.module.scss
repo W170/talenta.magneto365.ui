@@ -4,6 +4,7 @@
   justify-content: center;
   width: 25px;
   height: auto;
+  transition: all 0.2s;
 }
 
 .magneto-ui-hover {
@@ -11,4 +12,8 @@
   &:hover {
     transform: scale(1.1);
   }
+}
+
+.magneto-ui-rotate {
+  transform: rotate(180deg);
 }
