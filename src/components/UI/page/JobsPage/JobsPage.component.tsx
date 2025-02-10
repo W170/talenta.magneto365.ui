@@ -71,6 +71,12 @@ const JobsPage: React.FC<IJobsPage> = ({
 
   const hasVacancies = useMemo(() => !!vacantProps?.length || isLoading, [isLoading, vacantProps?.length])
 
+  useEffect(() => {
+    if (!jobSelected && showDetail && device === 'mobile') {
+      onClose()
+    }
+  }, [device, jobSelected, onClose, showDetail])
+
   const JobDetailsDrawerComponent = useMediaQuery(
     <JobDetailContainer onClose={onClose} isOpen={showDetail && hasVacancies}>
       {jobDetailAction ? (
