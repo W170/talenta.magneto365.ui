@@ -1,0 +1,25 @@
+.magneto-ui-list-icon-item {
+  background-color: #eeeff1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 6px;
+  max-width: 320px;
+
+  &__title {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    > p {
+      margin: 0;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
