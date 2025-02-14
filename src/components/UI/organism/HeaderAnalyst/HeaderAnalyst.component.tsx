@@ -1,6 +1,6 @@
 import React from 'react'
 import { Breadcrumbs, UserMenuWrapperAnalyst } from '@components/UI/molecules'
-import { logoPropsDark, MenuButtonAnalystProps } from '@constants/stories'
+import { logoPropsDark, MenuButtonAnalystProps } from '@constants/stories/common.constants'
 import { LogoComponent, MainButton, Link } from '@components/UI/atoms'
 import { IHeaderAnalyst } from './HeaderAnalyst.interface'
 import { Notification } from '@constants/icons.constants'

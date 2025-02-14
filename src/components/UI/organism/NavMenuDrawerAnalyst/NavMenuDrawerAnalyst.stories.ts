@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { NavMenuAnalystProps } from '@constants/stories'
+import { NavMenuAnalystProps } from '@constants/stories/analyst.constants'
 import { NavMenuDrawerAnalyst } from './NavMenuDrawerAnalyst.component'
 
 const meta: Meta<typeof NavMenuDrawerAnalyst> = {

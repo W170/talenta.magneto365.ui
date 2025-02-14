@@ -1,4 +1,4 @@
-import { HeaderAnalystProps } from '@constants/stories'
+import { HeaderAnalystProps } from '@constants/stories/analyst.constants'
 import { Meta, StoryObj } from '@storybook/react'
 import { HeaderAnalyst } from './HeaderAnalyst.component'
 
