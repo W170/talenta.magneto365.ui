@@ -4,7 +4,7 @@ import style from './CategoryGrid.module.scss'
 
 const CategoryGrid = <T,>({ elements, render: Component, columnsNumber = 2 }: ICategoryGrid<T>) => {
   const gridStyle = {
-    gridTemplateColumns: `repeat(${columnsNumber}, 1fr)`
+    gridTemplateColumns: `repeat(${columnsNumber}, minmax(300px, 1fr))`
   }
 
   return (

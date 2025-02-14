@@ -6,7 +6,14 @@
   padding: 0 220px;
   margin: 63px 0;
 
-  @media screen and (max-width: v.$screen-md) {
-    grid-template-columns: 1fr;
+  @media (max-width: v.$screen-md) {
+    padding: 0 12px;
+    margin: 40px 0;
+  }
+
+  @media (max-width: v.$screen-sm) {
+    padding: 0 12px;
+    margin: 40px 0;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
   }
 }

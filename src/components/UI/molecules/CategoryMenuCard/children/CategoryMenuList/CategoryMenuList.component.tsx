@@ -24,7 +24,7 @@ const Component = ({ list, isOpen, onClick, seeAllText, href }: ICategoryMenuLis
         isOpen ? styles[`magneto-ui-category-menu-list--is-open`] : ''
       }`}
     >
-      {list.map(({ id, name, href }) => (
+      {list.map(({ id, name, href, onClick }) => (
         <ButtonLink
           key={id}
           onClick={onClick}

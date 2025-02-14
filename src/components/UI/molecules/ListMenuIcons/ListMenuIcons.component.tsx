@@ -23,7 +23,7 @@ const Component: React.FC<IListMenuIcons> = ({ menuItems1440, haveGif, urlParam,
             {items.map(({ slug, icon, ...props }, i: number) => (
               <Fragment key={i}>
                 <MenuIcon
-                  icon={icon && icon in megaMenuUserLoggedIcons ? getIcons(icon) : icon}
+                  icon={icon && icon in megaMenuUserLoggedIcons ? getIcons(megaMenuUserLoggedIcons, icon) : icon}
                   isActive={Array.isArray(slug) ? slug.includes(urlParam) : urlParam === slug}
                   {...props}
                 />

@@ -6,6 +6,8 @@ import styles from './CategoryMenuCard.module.scss'
 import { useMediaQuery } from '@components/hooks'
 import { CategoryMenuList } from './children/CategoryMenuList'
 import { withClickOut } from '@components/hoc'
+import { getIcons } from '@utils/icons/getIcons.util'
+import { programaticIcons } from '@constants/stories'
 
 const CategoryMenuCard: React.FC<ICategoryMenuCard> = ({
   name,
@@ -41,7 +43,7 @@ const CategoryMenuCard: React.FC<ICategoryMenuCard> = ({
       >
         {icon && (
           <div className={styles[`magneto-ui-category-menu-container-card__icon`]}>
-            <IconItem icon={icon} size={16} />
+            <IconItem icon={getIcons(programaticIcons, icon)} size={16} />
           </div>
         )}
         <div className={styles[`magneto-ui-category-menu-container-card__content`]}>

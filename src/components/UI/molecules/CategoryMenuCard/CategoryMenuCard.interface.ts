@@ -33,4 +33,5 @@ export interface ICategoryField {
   id: string | number
   name: string
   href: string
+  onClick?: () => void
 }

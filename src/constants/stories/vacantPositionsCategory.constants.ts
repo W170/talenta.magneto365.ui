@@ -1,12 +1,29 @@
 import { IButtonLink } from '@components/UI/atoms'
-import { Location } from '@constants/icons.constants'
+import {
+  Book1,
+  Box,
+  Broom,
+  Brush2,
+  Computing,
+  Device1,
+  Glass,
+  Hospital,
+  Like,
+  Location,
+  Message,
+  Ranking,
+  Setting,
+  Sun,
+  Tree,
+  Video1
+} from '@constants/icons.constants'
 import { generateID } from '@utils/generateID/generateID.util'
 
 export const categoriesData = [
   {
     id: 1,
     name: 'Tecnología y sistemas',
-    icon: Location,
+    icon: 'oficios-varios-aseo-seguridad',
     list: [
       { id: generateID(), name: 'Desarrollador de Software', href: 'https://www.magneto365.com/es' },
       { id: generateID(), name: 'Analista de Datos' },
@@ -17,7 +34,7 @@ export const categoriesData = [
   {
     id: 2,
     name: 'Ventas y servicio al cliente',
-    icon: Location,
+    icon: 'ventas-servicio-cliente-marketing',
     list: [
       { id: generateID(), name: 'Asesor Comercial' },
       { id: generateID(), name: 'Ejecutivo de Ventas' },
@@ -167,3 +184,21 @@ export const vacantPositionsSearchList: IButtonLink[] = [
   { buttonText: 'Guía Turístico' },
   { buttonText: 'Chef Ejecutivo' }
 ]
+
+export const programaticIcons = {
+  'oficios-varios-aseo-seguridad': Broom,
+  'manufactura-produccion-operativos': Box,
+  'construccion-oficios-artesanias': Brush2,
+  'tecnicos-reparaciones-mantenimiento': Setting,
+  'ventas-servicio-cliente-marketing': Like,
+  'medios-arte-produccion-audiovisual': Video1,
+  'direccion-gerencia': Ranking,
+  'profesionales-consultorias-servicios': Message,
+  'informatica-tecnologia-sistemas': Device1,
+  ingenieria: Computing,
+  'agricultura-recursos-naturales': Tree,
+  'educacion-formacion-docencia': Book1,
+  'salud-medicina': Hospital,
+  'ciencia-investigacion': Glass,
+  'hoteleria-turismo-gastronomia': Sun
+}
