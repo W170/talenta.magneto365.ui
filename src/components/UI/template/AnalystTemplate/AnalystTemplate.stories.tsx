@@ -1,7 +1,7 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { AnalystTemplate } from './AnalystTemplate.component'
-import { AnalystTemplateProps } from '@constants/stories'
+import { AnalystTemplateProps } from '@constants/stories/analyst.constants'
 
 const meta: Meta<typeof AnalystTemplate> = {
   title: 'Template/Analyst Template',

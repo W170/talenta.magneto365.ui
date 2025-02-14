@@ -1,25 +1,12 @@
-import { HambergerMenuDark, HomeUnderline, Notification } from '@constants/icons.constants'
+import { HomeUnderline, Notification } from '@constants/icons.constants'
 import { IBreadcrumbs, IUserAnalyst, IUserMenuWrapperAnalystProps } from '@components/UI/molecules'
 import { IHeaderAnalyst, INavMenuAnalystProps, IModalAnalystProps } from '@components/UI/organism'
-import { IMainButton, ILinkProps } from '@components/UI/atoms'
+import { ILinkProps } from '@components/UI/atoms'
 import { logoPropsDark } from './common.constants'
 import { IAnalystTemplateProps } from '@components/UI/template'
 import { Error } from '@constants/icons.constants'
 import { EModalAnalystActionType } from '@components/UI/organism/ModalAnalyst/children'
 import { EUserMenuAnalystOptionType } from '@components/UI/molecules/UserMenuAnalyst/children/UserMenuAnalystOptions/children'
-
-export const MenuButtonAnalystProps: IMainButton = {
-  buttonType: 'button',
-  buttonStyles: {
-    buttonColor: 'transparent'
-  },
-  iconProps: {
-    icon: HambergerMenuDark,
-    hover: false,
-    color: '#FFFFFF',
-    size: 20
-  }
-}
 
 export const BreadCrumbAnalystProps: IBreadcrumbs = {
   breadcrumbProps: {

@@ -9,6 +9,7 @@ import {
 } from '@components/UI/atoms'
 import {
   ArrowDownWhite,
+  HambergerMenuDark,
   HomeUnderline,
   IsoLogoMagneto,
   IsoLogoMagnetoDark,
@@ -116,5 +117,18 @@ export const MenuDropdownProps: IMenuDropdownProps = {
   listClassName: 'magneto-ui-menu-dropdown__list',
   suffixIcon: {
     icon: ArrowDownWhite
+  }
+}
+
+export const MenuButtonAnalystProps: IMainButton = {
+  buttonType: 'button',
+  buttonStyles: {
+    buttonColor: 'transparent'
+  },
+  iconProps: {
+    icon: HambergerMenuDark,
+    hover: false,
+    color: '#FFFFFF',
+    size: 20
   }
 }
