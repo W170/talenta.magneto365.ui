@@ -25,7 +25,7 @@ import { generateID } from '@utils/generateID/generateID.util'
 export const categoriesData: ICategoryMenuCard[] = [
   {
     name: 'Tecnología y sistemas',
-    icon: Location,
+    icon: 'oficios-varios-aseo-seguridad',
     list: [
       { id: generateID(), name: 'Desarrollador de Software', href: 'https://www.magneto365.com/es' },
       { id: generateID(), name: 'Analista de Datos', href: 'https://www.magneto365.com/es' },
