@@ -10,7 +10,8 @@ import {
   JobFooterCard,
   MobileJobDetailsHeader,
   FraudCardJob,
-  AlertJobStatus
+  AlertJobStatus,
+  Alert
 } from '@components/UI/molecules'
 import { MobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 import { MobileJobDetailsDrawerSkeleton } from './children/MobileJobDetailsDrawerSkeleton.component'
@@ -19,6 +20,7 @@ import { IMobileJobDetailsDrawer } from './MobileJobDetailsDrawer.interface'
 import { iconDetailList, iconFooterList } from '@constants/stories'
 import { SimilarJobs } from '../SimilarJobs'
 import { Swipe } from '../Swipe'
+import styles from './MobileJobDetailsDrawer.module.scss'
 
 const Component: React.FC<IMobileJobDetailsDrawer> = ({
   jobCompanyLogoProps,
@@ -44,7 +46,8 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   textRemote,
   fraudCardJobProps,
   isApplied,
-  alertJobStatusProps
+  alertJobStatusProps,
+  canApply
 }) => {
   const handleClose = useCallback(() => {
     if (onClose) {
@@ -60,7 +63,11 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
     ) : (
       <Fragment>
         <MobileJobDetailsHeader returnText={jobDetailsHeaderText} onClick={handleClose} />
+
         <JobCompanyHeader {...jobCompanyLogoProps} />
+        {canApply?.isApplicable === false && (
+          <Alert type="info" text={canApply?.message} className={styles['job-locked-alert']} />
+        )}
         {isApplied && <AlertJobStatus {...alertJobStatusProps} />}
         {jobDetailsProps && (
           <JobDetails
@@ -85,7 +92,11 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
     isLoading,
     jobDetailsHeaderText,
     handleClose,
+    canApply?.isApplicable,
+    canApply?.message,
     jobCompanyLogoProps,
+    isApplied,
+    alertJobStatusProps,
     jobDetailsProps,
     cities,
     isRemote,
@@ -98,9 +109,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
     fraudCardJobProps,
     jobApplyCardProps,
     jobFooterCardProps,
-    similarJobsProps,
-    alertJobStatusProps,
-    isApplied
+    similarJobsProps
   ])
 
   const content = useMemo(
