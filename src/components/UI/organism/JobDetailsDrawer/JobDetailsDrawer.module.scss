@@ -17,6 +17,11 @@
     border-bottom: 1px solid #e9e9f6;
     background: #ffffff;
     z-index: 1;
+
+    .JobLockedAlert {
+      margin: 6px 10px 20px 10px;
+      color: #292f37;
+    }
   }
 
   .JobBodyCardWrapper {

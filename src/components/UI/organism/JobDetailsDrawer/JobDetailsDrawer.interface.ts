@@ -11,6 +11,11 @@ import { IJobVideo } from '@components/UI/molecules/JobVideo'
 import { ICityDetail } from '../../molecules/CitiesDetailDrawer'
 import { IFraudCardJob } from '../../molecules/FraudCardJob/FraudCardJob.interface'
 
+export interface ICanApply {
+  message: string
+  isApplicable: boolean
+}
+
 export interface IJobDetailsDrawer {
   /**
    * Props for the job company logo and header section.
@@ -92,4 +97,8 @@ export interface IJobDetailsDrawer {
    * Props for show alert when apply
    */
   alertJobStatusProps?: IAlertJobStatus
+  /**
+   * Props for show alert when user can´t apply
+   */
+  canApply?: ICanApply
 }

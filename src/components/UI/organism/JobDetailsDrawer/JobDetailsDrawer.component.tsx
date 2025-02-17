@@ -9,7 +9,8 @@ import {
   JobFooterCard,
   JobDetails,
   FraudCardJob,
-  AlertJobStatus
+  AlertJobStatus,
+  Alert
 } from '@components/UI/molecules'
 
 import { IJobDetailsDrawer } from './JobDetailsDrawer.interface'
@@ -40,7 +41,8 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   textRemote,
   fraudCardJobProps,
   alertJobStatusProps,
-  isApplied
+  isApplied,
+  canApply
 }) => {
   const jobDetailsRef = useRef<HTMLDivElement | null>(null)
 
@@ -60,6 +62,9 @@ const Component: React.FC<IJobDetailsDrawer> = ({
         <section className={styles.JobDetailsDrawerComponent}>
           <div className={styles['JobHeaderCardWrapper']}>
             <JobCompanyHeader {...jobCompanyLogoProps} isApplied={isApplied} jobActionsProps={jobActionsProps} />
+            {canApply?.isApplicable === false && (
+              <Alert type="info" text={canApply?.message} className={styles.JobLockedAlert} />
+            )}
             {isApplied ? (
               <AlertJobStatus {...alertJobStatusProps} />
             ) : (
