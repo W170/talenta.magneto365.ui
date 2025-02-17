@@ -1,0 +1,64 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-horizontal-menu {
+  border-bottom: solid 1px #e0e4e7;
+  min-height: 52px;
+  width: 100%;
+  min-width: 200px;
+  background-color: v.$color-white;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow: scroll;
+  scrollbar-width: none;
+  &__back {
+    padding: 0;
+    margin: 0;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #e3e7e9;
+    background-color: transparent;
+    min-width: 38px;
+    min-height: 35px;
+    cursor: pointer;
+  }
+  &__nav {
+    display: flex;
+    flex: 1;
+    padding-inline: 10px;
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 4px;
+    list-style: none;
+  }
+  &__button {
+    border-radius: 6px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    &:hover {
+      background-color: #e3e7e9;
+    }
+    &--active {
+      background-color: #e3e7e9;
+    }
+    > img {
+      height: 18px;
+      width: 18px;
+    }
+    > p {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: #0a0c0e;
+    }
+  }
+}

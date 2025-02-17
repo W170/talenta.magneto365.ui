@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { HorizontalMenu } from './horizontalMenu.component'
+import { HorizontalMenu } from './HorizontalMenu.component'
 import { HorizontalMenuPropsOptions } from '../../../../constants/stories/horizontalMenu.constant'
 
 const meta: Meta<typeof HorizontalMenu> = {

@@ -7,7 +7,6 @@ export interface IHorizontalMenu {
    * options of horizontal menu
    */
   options: { icon: string; label: string }[]
-
   /**
    * onChange of horizontal menu
    */

@@ -5,7 +5,7 @@ export const HorizontalMenuPropsOptions: IHorizontalMenu = {
     { icon: 'users', label: 'Perfil candidato' },
     { icon: 'clockLine', label: 'Actividad' },
     { icon: 'tag', label: 'Etiquetas' },
-    { icon: 'messageText1', label: 'Comentarios' },
+    { icon: 'messageText', label: 'Comentarios' },
     { icon: 'star', label: 'Valoraciones' },
     { icon: 'id', label: 'Documentos' },
     { icon: 'bell', label: 'Notificaciones' }

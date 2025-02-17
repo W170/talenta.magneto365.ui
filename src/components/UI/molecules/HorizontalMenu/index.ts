@@ -1,2 +1,2 @@
-export * from './horizontalMenu.interface'
-export { HorizontalMenu } from './horizontalMenu.component'
+export * from './HorizontalMenu.interface'
+export { HorizontalMenu } from './HorizontalMenu.component'
