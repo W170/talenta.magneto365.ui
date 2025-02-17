@@ -13,6 +13,7 @@ import { IJobVideo } from '@components/UI/molecules/JobVideo'
 import { ISimilarJobs } from '../SimilarJobs/SimilarJobs.interface'
 import { SwipeProps } from '../Swipe/Swipe.interface'
 import { IFraudCardJob } from './../../molecules/FraudCardJob/FraudCardJob.interface'
+import { ICanApply } from '../JobDetailsDrawer'
 
 export interface IMobileJobDetailsDrawer {
   /**
@@ -108,4 +109,8 @@ export interface IMobileJobDetailsDrawer {
    * Props for show alert when apply
    */
   alertJobStatusProps?: IAlertJobStatus
+  /**
+   * Props for show alert when user can´t apply
+   */
+  canApply?: ICanApply
 }
