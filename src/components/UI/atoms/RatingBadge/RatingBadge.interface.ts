@@ -1,3 +1,3 @@
-export interface IRatingBadge{
-    score: string;
+export interface IRatingBadge {
+  score: string
 }
