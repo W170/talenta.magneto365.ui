@@ -1,3 +1,3 @@
-import { ICandidateProfile } from "../..";
+import { ICandidateProfile } from '../../CandidateProfile.interface'
 
-export type TCandidateProfileQuickAccess = ICandidateProfile;
+export type TCandidateProfileQuickAccess = ICandidateProfile

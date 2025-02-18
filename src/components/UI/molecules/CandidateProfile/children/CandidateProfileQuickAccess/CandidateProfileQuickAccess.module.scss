@@ -1,40 +1,20 @@
-.magneto-ui-candidate-profile__quick-access {
-    display: flex;
-    gap: 20px;
-    border-radius: 4px;
+.magneto-ui-candidate-profile-quick-access {
+  display: flex;
+  gap: 20px;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: #1a324c;
+  &__section {
     padding: 5px;
-    background-color: #1A324C;
-
-    &-section {
-        padding: 5px;
-    }
-
-    &-group {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    &-item {
-        display: grid;
-        grid-template-columns: 13px 1fr 100px;
-        gap: 5px;
-        font-size: 10px;
-        line-height: 14px;
-
-        >p {
-            &:first-child {
-                font-weight: 400;
-            }
-
-            &:last-child {
-                font-weight: 900;
-            }
-        }
-    }
-
-    &-icon {
-        width: 13px;
-        height: 13px;
-    }
+  }
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__item {
+    display: grid;
+    grid-template-columns: 13px 1fr 100px;
+    gap: 5px;
+  }
 }

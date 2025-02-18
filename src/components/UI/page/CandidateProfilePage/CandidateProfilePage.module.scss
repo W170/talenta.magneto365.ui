@@ -3,22 +3,22 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-
+  * {
+    box-sizing: border-box;
+  }
   &__header {
     display: flex;
     white-space: nowrap;
   }
 
   &__content {
-
-
     &__header {
       position: relative;
       width: 100%;
       transition: position 0.3s ease;
 
       &__fixed {
-        position: fixed;  // Cambia a fixed cuando sea necesario
+        position: fixed; // Cambia a fixed cuando sea necesario
         top: 0;
         left: 0;
         z-index: 999;
