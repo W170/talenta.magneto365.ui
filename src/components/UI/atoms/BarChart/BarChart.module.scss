@@ -1,7 +1,7 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 
 .magneto-ui-chart-bar {
-  width: 60px;
+  width: min(4vw, 60px);
   background-color: #a3adb8;
   position: relative;
 
@@ -19,10 +19,22 @@
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    top: -50px;
-    left: -40px;
+    bottom: 100%;
+    left: 50%;
     z-index: 1;
-    // bottom: 10px;
+    transform: translateX(-50%);
+    margin-bottom: 8px;
+  }
+
+  .popover-left {
+    left: auto;
+    right: 0;
+    transform: translateX(-5%);
+  }
+
+  .popover-right {
+    left: 0;
+    transform: translateX(0%);
   }
 
   &:hover {

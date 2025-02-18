@@ -2,11 +2,15 @@
 
 .magneto-ui-chart-bars {
   width: max-content;
+  display: flex;
+  flex-direction: column;
+  position: relative;
   &__chart {
     display: flex;
     flex-direction: row;
     gap: 12px;
     align-items: end;
+    flex-wrap: wrap;
   }
 
   &__minmax {
@@ -16,9 +20,8 @@
 
     > p {
       margin: 0px;
-      margin-top: 8px;
       font-family: Lato;
-      font-size: 14px;
+      font-size: clamp(14px, 1.5vw, 16px);
       font-style: normal;
       font-weight: 400;
     }
@@ -31,7 +34,7 @@
       margin: 0px;
       margin-top: 8px;
       font-family: Lato;
-      font-size: 22px;
+      font-size: clamp(14px, 2vw, 22px);
       font-style: normal;
       font-weight: 700;
     }
