@@ -9,6 +9,7 @@ const meta: Meta<typeof CandidateDocuments> = {
     inputFileInterfaceProps: {
       onFileSelect: (files: File[]) => console.log('Archivo seleccionado:', files)
     },
+    errorMessage: 'Sin documentos',
     inputFileButton: {
       text: 'carga documento',
       icon: FileDownloadLinearBlack

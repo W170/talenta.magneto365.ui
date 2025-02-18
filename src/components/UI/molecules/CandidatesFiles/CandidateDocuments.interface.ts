@@ -4,6 +4,7 @@ import { IInputFileText } from '@components/UI/atoms/InputFile/children/InputTex
 
 export interface ICandidateDocuments {
   classname?: string
+  errorMessage: string
   inputFileInterfaceProps: IInputFileInterface
   inputFileButton: IInputFileButton
   inputFileText: IInputFileText

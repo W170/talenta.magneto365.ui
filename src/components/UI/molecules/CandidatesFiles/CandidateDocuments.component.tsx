@@ -1,7 +1,8 @@
 import React from 'react'
 import {
-    ICandidateDocuments,
-    ICandidateDocumentChildren, ICandidateDocumentItem
+  ICandidateDocuments,
+  ICandidateDocumentChildren,
+  ICandidateDocumentItem
 } from '@components/UI/molecules/CandidatesFiles/CandidateDocuments.interface'
 import { InputFile } from '@components/UI/atoms/InputFile/InputFile.component'
 import style from './CandidateDocuments.module.scss'
@@ -20,9 +21,13 @@ const DocumentItem: React.FC<ICandidateDocumentItem> = ({ title, icon, info }) =
 const DocumentGroup: React.FC<ICandidateDocumentChildren> = ({ title, child }) => (
   <div className={style['magneto-ui-candidate-documents__group']}>
     {title && <p>{title}</p>}
-    {child.map((doc, index) => (
-      <DocumentItem key={index} title={doc.title} icon={doc.icon} info={doc.info} />
-    ))}
+    {child.length > 0 ? (
+      child.map((doc, index) => <DocumentItem key={index} title={doc.title} icon={doc.icon} info={doc.info} />)
+    ) : (
+      <div className={`${style['magneto-ui-candidate-documents__no-length']}`}>
+        <p>dasda</p>
+      </div>
+    )}
   </div>
 )
 
@@ -44,12 +49,13 @@ const CandidateDocuments: React.FC<ICandidateDocuments> = ({
         />
       </InputFile>
 
-      {child.map((section, index) => (
-        <div key={index} className={style['magneto-ui-candidate-documents__section']}>
-          {section.sectionTitle && <p>{section.sectionTitle}</p>}
-          <DocumentGroup title={section.sectionChild.title} child={section.sectionChild.child} />
-        </div>
-      ))}
+      {child.length &&
+        child.map((section, index) => (
+          <div key={index} className={style['magneto-ui-candidate-documents__section']}>
+            {section.sectionTitle && <p>{section.sectionTitle}</p>}
+            <DocumentGroup title={section.sectionChild.title} child={section.sectionChild.child} />
+          </div>
+        ))}
     </div>
   )
 }
