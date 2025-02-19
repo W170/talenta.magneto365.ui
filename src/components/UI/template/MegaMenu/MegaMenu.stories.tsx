@@ -45,7 +45,8 @@ const meta: Meta<typeof MegaMenu> = {
     socialHeaderProps: megaMenuSocialHeader,
     jobsProps: { ...megaMenuJobs, tabs: jobsTabs },
     breadcrumbsProps: megaMenuBreadcrumbs,
-    mainHeaderProps: megaMenuMainHeader
+    mainHeaderProps: megaMenuMainHeader,
+    listMenuUserProps: {}
   }
 }
 
