@@ -27,11 +27,27 @@ export interface ICategoryMenuCard {
    * Url to redirect
    * */
   href: string
+  /**
+   * See more button text
+   * */
+  seeAllText: string
 }
 
 export interface ICategoryField {
+  /**
+   * This is the field id
+   * */
   id: string | number
+  /**
+   * This is the field name
+   * */
   name: string
+  /**
+   * Url to redirect
+   * */
   href: string
+  /**
+   * Onclick callback
+   * */
   onClick?: () => void
 }

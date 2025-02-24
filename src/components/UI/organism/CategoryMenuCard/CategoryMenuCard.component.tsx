@@ -3,10 +3,9 @@ import { ArrowDown2 } from '@constants/icons.constants'
 import { IconItem } from '../../atoms/Icon'
 import { ICategoryMenuCard } from './CategoryMenuCard.interface'
 import styles from './CategoryMenuCard.module.scss'
-import { useMediaQuery } from '@components/hooks'
 import { CategoryMenuList } from './children/CategoryMenuList'
 import { withClickOut } from '@components/hoc'
-import { getIcons } from '@utils/icons/getIcons.util'
+import { getIcon } from '@utils/icons/getIcons.util'
 import { programaticIcons } from '@constants/stories'
 
 const CategoryMenuCard: React.FC<ICategoryMenuCard> = ({
@@ -16,7 +15,8 @@ const CategoryMenuCard: React.FC<ICategoryMenuCard> = ({
   clickOut,
   setClickOut = () => ({}),
   list,
-  href
+  href,
+  seeAllText
 }) => {
   const downArrow = (
     <div
@@ -26,10 +26,6 @@ const CategoryMenuCard: React.FC<ICategoryMenuCard> = ({
       <IconItem icon={ArrowDown2} size={16} />
     </div>
   )
-
-  const arrow = useMediaQuery(downArrow, {
-    md: downArrow
-  })
 
   const handleToggle = () => {
     setClickOut(!clickOut)
@@ -43,21 +39,15 @@ const CategoryMenuCard: React.FC<ICategoryMenuCard> = ({
       >
         {icon && (
           <div className={styles[`magneto-ui-category-menu-container-card__icon`]}>
-            <IconItem icon={getIcons(programaticIcons, icon)} size={16} />
+            <IconItem icon={getIcon(programaticIcons, icon)} size={16} />
           </div>
         )}
         <div className={styles[`magneto-ui-category-menu-container-card__content`]}>
           <div className={styles[`magneto-ui-category-menu-container-card__title`]}>{name}</div>
         </div>
-        {arrow}
+        {downArrow}
       </div>
-      <CategoryMenuList
-        list={list}
-        seeAllText="Ver mas salarios y funciones"
-        onClick={onClick}
-        isOpen={clickOut}
-        href={href}
-      />
+      <CategoryMenuList list={list} seeAllText={seeAllText} onClick={onClick} isOpen={clickOut} href={href} />
     </div>
   )
 }

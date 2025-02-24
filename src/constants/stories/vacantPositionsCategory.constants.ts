@@ -1,4 +1,7 @@
 import { IButtonLink } from '@components/UI/atoms'
+import { IBarsChart } from '@components/UI/molecules/BarsChart/BarsChart.interface'
+import { ICategoryMenuCard } from '@components/UI/organism'
+import { IVacantPositions } from '@components/UI/template'
 import {
   Book1,
   Box,
@@ -19,157 +22,61 @@ import {
 } from '@constants/icons.constants'
 import { generateID } from '@utils/generateID/generateID.util'
 
-export const categoriesData = [
+export const categoriesData: ICategoryMenuCard[] = [
   {
-    id: 1,
     name: 'Tecnología y sistemas',
-    icon: 'oficios-varios-aseo-seguridad',
+    icon: Location,
     list: [
       { id: generateID(), name: 'Desarrollador de Software', href: 'https://www.magneto365.com/es' },
-      { id: generateID(), name: 'Analista de Datos' },
-      { id: generateID(), name: 'Administrador de Redes' }
+      { id: generateID(), name: 'Analista de Datos', href: 'https://www.magneto365.com/es' },
+      { id: generateID(), name: 'Administrador de Redes', href: 'https://www.magneto365.com/es' }
     ],
-    href: 'https://www.magneto365.com/es'
+    href: 'https://www.magneto365.com/es',
+    seeAllText: 'Ver mas empleos'
   },
   {
-    id: 2,
-    name: 'Ventas y servicio al cliente',
-    icon: 'ventas-servicio-cliente-marketing',
-    list: [
-      { id: generateID(), name: 'Asesor Comercial' },
-      { id: generateID(), name: 'Ejecutivo de Ventas' },
-      { id: generateID(), name: 'Representante de Servicio' }
-    ]
-  },
-  {
-    id: 3,
-    name: 'Consultoría y servicios profesionales',
+    name: 'Tecnología y sistemas',
     icon: Location,
     list: [
-      { id: generateID(), name: 'Consultor de Negocios' },
-      { id: generateID(), name: 'Abogado Corporativo' },
-      { id: generateID(), name: 'Asesor Financiero' }
-    ]
+      { id: generateID(), name: 'Desarrollador de Software', href: 'https://www.magneto365.com/es' },
+      { id: generateID(), name: 'Analista de Datos', href: 'https://www.magneto365.com/es' },
+      { id: generateID(), name: 'Administrador de Redes', href: 'https://www.magneto365.com/es' }
+    ],
+    href: 'https://www.magneto365.com/es',
+    seeAllText: 'Ver mas empleos'
   },
   {
-    id: 4,
-    name: 'Ingeniería',
+    name: 'Tecnología y sistemas',
     icon: Location,
     list: [
-      { id: generateID(), name: 'Ingeniero Civil' },
-      { id: generateID(), name: 'Ingeniero Mecánico' },
-      { id: generateID(), name: 'Ingeniero Eléctrico' }
-    ]
+      { id: generateID(), name: 'Desarrollador de Software', href: 'https://www.magneto365.com/es' },
+      { id: generateID(), name: 'Analista de Datos', href: 'https://www.magneto365.com/es' },
+      { id: generateID(), name: 'Administrador de Redes', href: 'https://www.magneto365.com/es' }
+    ],
+    href: 'https://www.magneto365.com/es',
+    seeAllText: 'Ver mas empleos'
   },
   {
-    id: 5,
-    name: 'Oficios varios, aseo y seguridad',
+    name: 'Tecnología y sistemas',
     icon: Location,
     list: [
-      { id: generateID(), name: 'Conserje' },
-      { id: generateID(), name: 'Guardia de Seguridad' },
-      { id: generateID(), name: 'Supervisor de Limpieza' }
-    ]
+      { id: generateID(), name: 'Desarrollador de Software', href: 'https://www.magneto365.com/es' },
+      { id: generateID(), name: 'Analista de Datos', href: 'https://www.magneto365.com/es' },
+      { id: generateID(), name: 'Administrador de Redes', href: 'https://www.magneto365.com/es' }
+    ],
+    href: 'https://www.magneto365.com/es',
+    seeAllText: 'Ver mas empleos'
   },
   {
-    id: 6,
-    name: 'Manufactura y producción',
+    name: 'Tecnología y sistemas',
     icon: Location,
     list: [
-      { id: generateID(), name: 'Operario de Producción' },
-      { id: generateID(), name: 'Supervisor de Planta' },
-      { id: generateID(), name: 'Inspector de Calidad' }
-    ]
-  },
-  {
-    id: 7,
-    name: 'Salud y medicina',
-    icon: Location,
-    list: [
-      { id: generateID(), name: 'Médico General' },
-      { id: generateID(), name: 'Enfermero/a' },
-      { id: generateID(), name: 'Técnico en Laboratorio' }
-    ]
-  },
-  {
-    id: 8,
-    name: 'Medios, arte y producción audiovisual',
-    icon: Location,
-    list: [
-      { id: generateID(), name: 'Diseñador Gráfico' },
-      { id: generateID(), name: 'Editor de Video' },
-      { id: generateID(), name: 'Fotógrafo Profesional' }
-    ]
-  },
-  {
-    id: 9,
-    name: 'Dirección y gerencia',
-    icon: Location,
-    list: [
-      { id: generateID(), name: 'Gerente de Proyecto' },
-      { id: generateID(), name: 'Director de Operaciones' },
-      { id: generateID(), name: 'CEO / Director General' }
-    ]
-  },
-  {
-    id: 10,
-    name: 'Técnicos y de mantenimiento',
-    icon: Location,
-    list: [
-      { id: generateID(), name: 'Técnico en Refrigeración' },
-      { id: generateID(), name: 'Electricista Industrial' },
-      { id: generateID(), name: 'Mecánico Automotriz' }
-    ]
-  },
-  {
-    id: 11,
-    name: 'Educación y docencia',
-    icon: Location,
-    list: [
-      { id: generateID(), name: 'Profesor Universitario' },
-      { id: generateID(), name: 'Docente de Secundaria' },
-      { id: generateID(), name: 'Instructor de Idiomas' }
-    ]
-  },
-  {
-    id: 12,
-    name: 'Construcción y oficios',
-    icon: Location,
-    list: [
-      { id: generateID(), name: 'Maestro de Obra' },
-      { id: generateID(), name: 'Albañil' },
-      { id: generateID(), name: 'Plomero' }
-    ]
-  },
-  {
-    id: 13,
-    name: 'Agricultura y recursos naturales',
-    icon: Location,
-    list: [
-      { id: generateID(), name: 'Agrónomo' },
-      { id: generateID(), name: 'Técnico Agropecuario' },
-      { id: generateID(), name: 'Especialista en Recursos Naturales' }
-    ]
-  },
-  {
-    id: 14,
-    name: 'Hotelería y turismo',
-    icon: Location,
-    list: [
-      { id: generateID(), name: 'Gerente de Hotel' },
-      { id: generateID(), name: 'Guía Turístico' },
-      { id: generateID(), name: 'Chef Ejecutivo' }
-    ]
-  },
-  {
-    id: 15,
-    name: 'Ciencia e investigación',
-    icon: Location,
-    list: [
-      { id: generateID(), name: 'Investigador Científico' },
-      { id: generateID(), name: 'Biólogo' },
-      { id: generateID(), name: 'Físico Teórico' }
-    ]
+      { id: generateID(), name: 'Desarrollador de Software', href: 'https://www.magneto365.com/es' },
+      { id: generateID(), name: 'Analista de Datos', href: 'https://www.magneto365.com/es' },
+      { id: generateID(), name: 'Administrador de Redes', href: 'https://www.magneto365.com/es' }
+    ],
+    href: 'https://www.magneto365.com/es',
+    seeAllText: 'Ver mas empleos'
   }
 ]
 
@@ -201,4 +108,51 @@ export const programaticIcons = {
   'salud-medicina': Hospital,
   'ciencia-investigacion': Glass,
   'hoteleria-turismo-gastronomia': Sun
+}
+
+export const vacantPositionsData: IVacantPositions = {
+  title: 'Selecciona la categoría en la que quieres buscar un cargo',
+  subtitle: 'Te llevaremos a la sección donde podrás acceder a la información de salarios y funciones de esos cargos',
+  backButtonProps: {
+    buttonText: 'Volver',
+    href: '/',
+    onClick: () => {
+      console.log()
+    }
+  },
+  viewMoreProps: {
+    buttonText: 'Conoce todas las vacantes disponibles para Ingenieros',
+    href: '/',
+    onClick: () => {
+      console.log()
+    }
+  },
+  filterProps: {
+    allActionText: 'Todas',
+    onClickAction: () => {
+      console.log('')
+    },
+    title: 'Filtrar por letra inicial:'
+  }
+}
+
+export const BarsChartData: IBarsChart = {
+  data: [
+    { bin: [1000000, 1500000], jobText: 'test', heightPercentage: 1 },
+    { bin: [1500000, 2000000], jobText: 'test', heightPercentage: 0.5 },
+    { bin: [2000000, 2500000], jobText: 'test', heightPercentage: 0.75 },
+    { bin: [2500000, 3000000], jobText: 'test', heightPercentage: 0.25 },
+    { bin: [3000000, 3500000], jobText: 'test', heightPercentage: 0.04 },
+    { bin: [4000000, 4500000], jobText: 'test', heightPercentage: 0.15 },
+    { bin: [5000000, 5500000], jobText: 'test', heightPercentage: 0.1 },
+    { bin: [6000000, 6500000], jobText: 'test', heightPercentage: 0.25 },
+    { bin: [7000000, 7500000], jobText: 'test', heightPercentage: 0.1 },
+    { bin: [8000000, 8500000], jobText: 'test', heightPercentage: 0.5 }
+  ],
+  mean: 1400000,
+  texts: {
+    jobs: 'empleos',
+    mean: 'Promedio',
+    month: 'mes'
+  }
 }

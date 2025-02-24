@@ -2,40 +2,44 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { IBarChart } from './BarChart.interface'
 import styles from './BarChart.module.scss'
 import { numberToCurrency } from '@utils/currency/currency.util'
-import { useHover } from '@components/hooks/useHover.hook'
+import { TPopoverPosition } from './interfaces'
+import { EPositions } from './enums'
 
-const Component: React.FC<IBarChart> = ({ bin: range, y: percentage, jobText, maxHeight = 400, maxPercentage = 1 }) => {
+const Component: React.FC<IBarChart> = ({
+  bin: range,
+  heightPercentage: percentage,
+  jobText,
+  maxHeight = 400,
+  maxPercentage = 1
+}) => {
   const barRef = useRef<HTMLDivElement>(null)
-  const isHoverBar = useHover(barRef)
+  const [isHover, setIsHover] = useState(false)
   const [minRange, maxRange] = useMemo(() => range, [range])
-  const [popoverPosition, setPopoverPosition] = useState<'left' | 'right' | 'center'>('center')
+  const [popoverPosition, setPopoverPosition] = useState<TPopoverPosition>(EPositions.center)
 
   useEffect(() => {
-    if (isHoverBar && barRef.current) {
-      // Get the coordinates and dimensions of the bar on the screen
+    if (isHover && barRef.current) {
       const rect = barRef.current.getBoundingClientRect()
-      // Get the total width of the browser window
       const screenWidth = window.innerWidth
-      // Based on the edge, evaluate cases to prevent popover from being cut off
       if (rect.right > screenWidth - 50) {
-        setPopoverPosition('left')
+        setPopoverPosition(EPositions.left)
       } else if (rect.left < 50) {
-        setPopoverPosition('right')
+        setPopoverPosition(EPositions.right)
       } else {
-        setPopoverPosition('center')
+        setPopoverPosition(EPositions.center)
       }
     }
-  }, [isHoverBar])
+  }, [isHover])
 
   const popoverContent = useMemo(
     () =>
-      isHoverBar && (
+      isHover && (
         <div className={`${styles['magneto-ui-chart-bar__popover']} ${styles[`popover-${popoverPosition}`]}`}>
           <div>{`${numberToCurrency(minRange)} - ${numberToCurrency(maxRange)}`}</div>
           <div>{`${percentage * 100}% ${jobText}`}</div>
         </div>
       ),
-    [isHoverBar, jobText, maxRange, minRange, percentage, popoverPosition]
+    [isHover, jobText, maxRange, minRange, percentage, popoverPosition]
   )
 
   return (
@@ -45,6 +49,8 @@ const Component: React.FC<IBarChart> = ({ bin: range, y: percentage, jobText, ma
       }}
       ref={barRef}
       className={styles['magneto-ui-chart-bar']}
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
     >
       {popoverContent}
     </div>

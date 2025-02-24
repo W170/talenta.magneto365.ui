@@ -2,13 +2,13 @@ import { Meta, StoryObj } from '@storybook/react'
 import { BarChart } from './BarChart.component'
 
 const meta: Meta<typeof BarChart> = {
-  title: 'Charts/Bar chart',
+  title: 'Atoms/Bar chart',
   component: BarChart,
   tags: ['autodocs'],
   args: {
     bin: [1000000, 5000000],
-    y: 0.5,
-    jobText: "empleos"
+    heightPercentage: 0.5,
+    jobText: 'empleos'
   }
 }
 

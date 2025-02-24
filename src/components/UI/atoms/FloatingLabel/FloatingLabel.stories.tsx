@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-import { FloatingLabel } from '@components/UI/atoms/FloatingLabel/FloatingLabel.component'
+import { FloatingLabel } from './FloatingLabel.component'
 import { Input } from '@components/UI/atoms'
 
 const meta: Meta<typeof FloatingLabel> = {

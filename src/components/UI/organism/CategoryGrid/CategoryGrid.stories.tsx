@@ -1,7 +1,7 @@
 import { StoryObj, Meta } from '@storybook/react'
 import CategoryGrid from './CategoryGrid.component'
 import { categoriesData, vacantPositionsSearchList } from '@constants/stories'
-import { CategoryMenuCard } from '../../molecules/CategoryMenuCard'
+import { CategoryMenuCard } from '../../organism/CategoryMenuCard'
 import { PositionLink } from '../../molecules/PositionLink'
 
 const meta: Meta<typeof CategoryGrid> = {

@@ -1,20 +1,15 @@
 import React from 'react'
 import { ICategoryMenuList } from './CategoryMenuList.interface'
-import { useMediaQuery } from '@components/hooks'
 import { ArrowRight2 } from '@constants/icons.constants'
 import styles from './CategoryMenuList.module.scss'
 import { ButtonLink, IconItem } from '@components/UI/atoms'
 
-const Component = ({ list, isOpen, onClick, seeAllText, href }: ICategoryMenuList): JSX.Element | null => {
+const Component: React.FC<ICategoryMenuList> = ({ list, isOpen, onClick, seeAllText, href }): JSX.Element | null => {
   const rightArrow = (
     <div className={styles[`magneto-ui-category-menu-list-seeAll__arrow`]}>
       <IconItem icon={ArrowRight2} size={16} />
     </div>
   )
-
-  const arrow = useMediaQuery(rightArrow, {
-    md: rightArrow
-  })
 
   if (!list.length) return null
 
@@ -40,7 +35,7 @@ const Component = ({ list, isOpen, onClick, seeAllText, href }: ICategoryMenuLis
           className={`${styles[`magneto-ui-category-menu-list-seeAll__item`]}`}
           buttonText={seeAllText}
         />
-        {arrow}
+        {rightArrow}
       </div>
     </div>
   )

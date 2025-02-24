@@ -6,7 +6,7 @@ export interface IBarChart {
   /**
    * Sets the percentage of the bar
    */
-  y: number
+  heightPercentage: number
   /**
    * Sets the description text of the bar
    */
