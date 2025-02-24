@@ -28,6 +28,7 @@ const Component: React.FC<IQualification> = ({ rating = -1, onClick }) => {
             onMouseEnter={() => setHover(index)}
             onMouseLeave={() => setHover(-1)}
             onClick={() => onClickQualification(index)}
+            key={index}
           >
             <img
               alt={alt}
