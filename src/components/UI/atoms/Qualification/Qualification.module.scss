@@ -1,0 +1,9 @@
+.qualification{
+    display: flex;
+    padding: 2px;
+    margin: 2px;
+    &_star{
+        cursor: pointer;
+        width: 30px;
+    }
+}
