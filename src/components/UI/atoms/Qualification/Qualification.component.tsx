@@ -6,8 +6,8 @@ import { classNames } from '@shared/utils/common';
 const cx = classNames.bind(styles);
 
 const Component: React.FC<IQualification> = ({ rating = -1, onClick }) => {
-    const [Qualification, setQualification] = useState<Number>(-1);
-    const [hover, setHover] = useState<Number>(-1);
+    const [Qualification, setQualification] = useState<number>(-1);
+    const [hover, setHover] = useState<number>(-1);
 
     useEffect(()=>{
         if(rating > 0 && rating <= 5){
