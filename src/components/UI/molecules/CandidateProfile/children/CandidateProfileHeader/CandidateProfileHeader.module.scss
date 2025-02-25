@@ -1,0 +1,12 @@
+.magneto-ui-candidate-profile-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  transition: all 0.3s ease;
+  border-bottom: solid 1px transparent;
+  &--open {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #1a324c;
+  }
+}

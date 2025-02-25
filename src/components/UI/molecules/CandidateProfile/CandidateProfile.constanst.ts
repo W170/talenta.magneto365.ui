@@ -99,7 +99,6 @@ export const textStyle = (text?: ICandidateProfileText, defaultStyle?: string[])
     'magneto-ui-candidate-profile__text',
     text?.size && `magneto-ui-candidate-profile__text--size-${text.size}`,
     text?.color && `magneto-ui-candidate-profile__text--color-${text.color}`,
-    text?.weight && `magneto-ui-candidate-profile__text--weight-${text.weight}`,
-    text?.separation && `magneto-ui-candidate-profile__text--separation-${text.separation}`
+    text?.weight && `magneto-ui-candidate-profile__text--weight-${text.weight}`
   )
 }

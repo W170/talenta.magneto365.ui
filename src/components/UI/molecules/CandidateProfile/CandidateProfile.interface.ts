@@ -1,15 +1,21 @@
 import { IconProps } from '@components/UI/atoms'
 import { IExpandableInfoProps } from '@components/UI/molecules'
 
+export interface ICandidateContext {
+  isOpen: boolean
+  onChangeOpen: (isOpen: boolean) => void
+}
+
 export interface ICandidateProfile {
   /**
    * The value of the option.
    */
   data?: ICanidateProfileData
-  details: ICandidateProfileSection[]
+  details?: ICandidateProfileSection[]
   className?: string
   expandableInfoProps?: IExpandableInfoProps
-  expandable?: boolean
+  isOpen?: boolean
+  onChangeOpen?: (isOpen: boolean) => void
 }
 
 export interface ICandidateProfileSection {
@@ -44,16 +50,6 @@ export interface ICandidateProfileText {
 
 export interface ICandidateProfileTextContainer {
   children?: ICandidateProfileText[]
-}
-
-export enum ECandidateProfileTextSeparation {
-  NONE = 'none',
-  SM = 'sm',
-  MD = 'md',
-  LG = 'lg',
-  XL = 'xl',
-  XXL = 'xxl',
-  XXXL = 'xxxl'
 }
 
 export enum ECandidateProfileFontSize {
