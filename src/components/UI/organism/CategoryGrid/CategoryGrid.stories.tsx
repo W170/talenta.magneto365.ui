@@ -2,7 +2,7 @@ import { StoryObj, Meta } from '@storybook/react'
 import CategoryGrid from './CategoryGrid.component'
 import { categoriesData, vacantPositionsSearchList } from '@constants/stories'
 import { CategoryMenuCard } from '../../organism/CategoryMenuCard'
-import { PositionLink } from '../../molecules/PositionLink'
+import { ButtonLink } from '../../atoms/ButtonLink'
 
 const meta: Meta<typeof CategoryGrid> = {
   title: 'Organism/Category Grid',
@@ -24,7 +24,7 @@ export const CustomComponentList: Story = {
   name: 'ButtonLink',
   args: {
     elements: vacantPositionsSearchList,
-    render: PositionLink,
+    render: ButtonLink,
     columnsNumber: 3
   }
 }
