@@ -1,0 +1,158 @@
+.magneto-ui-typography {
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  &--size {
+    &-xs {
+      font-size: 10px;
+      line-height: 14px;
+    }
+    &-sm {
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &-md {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    &-lg {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    &-xl {
+      font-size: 18px;
+      line-height: 22px;
+    }
+    &-xxl {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+  &--weight {
+    &-thin {
+      font-weight: 100;
+    }
+    &-extraLight {
+      font-weight: 200;
+    }
+    &-light {
+      font-weight: 300;
+    }
+    &-normal {
+      font-weight: 400;
+    }
+    &-medium {
+      font-weight: 500;
+    }
+    &-semi-bold {
+      font-weight: 600;
+    }
+    &-bold {
+      font-weight: 700;
+    }
+    &-extraBold {
+      font-weight: 800;
+    }
+    &-black {
+      font-weight: 900;
+    }
+  }
+  &--color {
+    &-gray {
+      color: #99a4af;
+      > * {
+        color: #99a4af;
+      }
+      &:hover {
+        color: #99a4af;
+        > * {
+          color: #99a4af;
+        }
+      }
+    }
+    &-white {
+      color: white;
+      > * {
+        color: white;
+      }
+      &:hover {
+        color: white;
+        > * {
+          color: white;
+        }
+      }
+    }
+    &-black {
+      color: #292f37;
+      > * {
+        color: #292f37;
+      }
+      &:hover {
+        color: #292f37;
+        > * {
+          color: #292f37;
+        }
+      }
+    }
+    &-green {
+      color: #6dd695;
+      > * {
+        color: #6dd695;
+      }
+      &:hover {
+        color: #6dd695;
+        > * {
+          color: #6dd695;
+        }
+      }
+    }
+    &-blue {
+      color: #66c1ea;
+      > * {
+        color: #66c1ea;
+      }
+      &:hover {
+        color: #66c1ea;
+        > * {
+          color: #66c1ea;
+        }
+      }
+    }
+  }
+  &--code {
+    margin: 0 3px;
+    padding-inline: 6px;
+    padding-block: 3px 2px;
+    background: rgba(150, 150, 150, 0.1);
+    border: 1px solid rgba(100, 100, 100, 0.2);
+    border-radius: 3px;
+  }
+  &--delete {
+    text-decoration: line-through;
+  }
+  &--italic {
+    font-style: italic;
+  }
+  &--keyboard {
+    margin: 0 3px;
+    padding-inline: 6px;
+    padding-block: 3px 2px;
+    background: rgba(150, 150, 150, 0.06);
+    border: 1px solid rgba(100, 100, 100, 0.2);
+    border-bottom-width: 2px;
+    border-radius: 3px;
+  }
+  &--mark {
+    background: #faad14;
+  }
+  &--strong {
+    font-weight: bold;
+  }
+  &--underline {
+    text-decoration: underline;
+  }
+}
