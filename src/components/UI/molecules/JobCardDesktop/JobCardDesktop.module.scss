@@ -1,170 +1,124 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
 .magneto-ui-card-jobs {
   display: flex;
   align-items: center;
-  padding: 32px 20px;
+  padding: 20px;
   min-height: 127px;
   width: 100%;
   gap: 30px;
-  border-radius: 13px;
   position: relative;
   transition: all ease-in-out 0.3s;
   container-type: inline-size;
 
-  &:hover {
-    background-color: #f4f4fa;
+  &--urgent {
+    border-left: solid 6px #faad14;
+  }
+
+  &__container:hover,
+  &--job-open {
+    background-color: #e0e4e7;
     cursor: pointer;
-
-    p {
-      color: #14141c;
-    }
   }
 
-  &:hover &--arrow {
-    opacity: 1;
-    right: 4px;
+  &__container {
+    display: table;
+    width: 100%;
+    position: relative;
   }
 
-  &--data {
-    grid-template-columns: repeat(1, 1fr);
-
-    @container (min-width: 600px) {
-      display: grid;
-      padding-right: 30px;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-  }
-
-  p,
-  h2,
-  h3 {
-    font-size: 14px;
-    color: #14141c;
-    margin: 0;
-  }
-
-  &--row1,
-  &--row2,
-  &--row3,
-  &--row4 {
+  &__render-right {
+    position: absolute;
     display: flex;
-
-    // @container (max-width: 1000px) {
-    //   min-height: 35px;
-    // }
+    justify-content: flex-end;
+    margin-right: 20px;
+    top: 20px;
+    right: 0;
   }
 
-  &--row1 {
-    align-items: center;
-    width: 67px;
-    height: 67px;
+  &__options {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 10px;
   }
 
-  &--row2 {
+  &__data {
+    flex: 1;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+  }
 
-    @container (min-width: 1270px) {
-      width: 700px;
-      gap: 10px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      justify-content: left;
-      align-items: center;
-    }
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+  }
 
-    a {
-      text-decoration: none;
-    }
-
-    h2,
-    h3 {
-      max-width: 200px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    p {
-      margin: 0;
-      max-width: 200px;
-      overflow: hidden;
-      text-overflow: ellipsis;
+  &__arrow {
+    transform: rotateZ(180deg);
+    filter: invert(76%) sepia(21%) saturate(155%) hue-rotate(171deg) brightness(88%) contrast(87%);
+    @media screen and (max-width: v.$screen-md) {
       display: none;
-
-      @container (min-width: 600px) {
-        display: block;
-      }
-    }
-
-    &__position {
-      font-weight: bold;
-    }
-
-    &__urgent {
-      display: flex;
-      flex-direction: row;
-      border-radius: 4px;
-      padding: 3px 5px;
-      background-color: #fec759;
-      color: black;
-      align-items: center;
-      > img {
-        color: black;
-      }
-    }
-
-    &__variant {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
   }
 
-  &--row3 {
-    justify-content: left;
-    gap: 50px;
+  &__container:hover &__arrow,
+  &--job-open &__arrow {
+    filter: unset;
+  }
 
-    &__info1 {
-      display: flex;
-      align-items: center;
+  &__text {
+    font-size: 14px;
+    color: #47535f;
+    font-weight: 400;
+    margin: 0;
+    @media screen and (max-width: v.$screen-md) {
+      font-size: 12px;
+      text-wrap: nowrap;
     }
-
-    p {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      margin: 0;
+    &--bold {
+      font-weight: 700;
     }
-
-    &__info2 {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
+    &--big {
+      font-size: 16px;
+      @media screen and (max-width: v.$screen-md) {
+        font-size: 14px;
+      }
+    }
+    &--small {
+      font-size: 12px;
+      @media screen and (max-width: v.$screen-md) {
+        font-size: 10px;
+      }
     }
   }
 
-  &--row4 {
+  &__published {
+    text-wrap: nowrap;
+  }
+
+  &__urgent {
+    display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    padding-right: 30px;
-    min-width: 267px;
-
-    p {
-      margin: 0;
-      display: -webkit-box;
-      -webkit-line-clamp: 1;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-
-      @container (min-width: 800px) {
-        -webkit-line-clamp: 3;
-      }
-    }
+    gap: 4px;
   }
 
-  &--brand {
+  &__urgent-icon {
+    filter: invert(79%) sepia(9%) saturate(6576%) hue-rotate(347deg) brightness(98%) contrast(99%);
+  }
+
+  &__a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__company {
+    font-weight: 400;
+  }
+
+  &__brand {
     overflow: hidden;
     background-color: rgb(255, 255, 255);
     display: flex;
@@ -172,57 +126,12 @@
     justify-content: center;
     border-radius: 10px;
 
-    &__img {
+    &-img {
       width: 67px;
       height: 67px;
       background-color: white;
       object-fit: contain;
       padding: 5px;
-    }
-  }
-
-  &--arrow {
-    transition: all 0.3s ease-in-out;
-    opacity: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 34px;
-    position: absolute;
-    right: 15px;
-  }
-}
-
-.was-seen {
-  p {
-    color: #63637e;
-    font-weight: normal;
-  }
-}
-
-.is-active {
-  background-color: #e9e9f6;
-
-  &:hover .magneto-ui-card-jobs--row2__position {
-    color: #000096;
-  }
-
-  &:hover {
-    background-color: #e9e9f6;
-  }
-
-  p {
-    color: #14141c;
-  }
-
-  .magneto-ui-card-jobs {
-    &--arrow {
-      opacity: 1;
-      right: 4px;
-    }
-
-    &--row2__position {
-      font-weight: bold;
-      color: #000096;
     }
   }
 }
