@@ -92,3 +92,23 @@ export interface IDynamicUrl {
   fullUrl: string
   fullJobsUrl: string
 }
+
+export type TVacantOptionType =
+  | {
+      type: 'link'
+      href: string
+    }
+  | {
+      type: 'menu'
+      children: TVacantOption[]
+    }
+  | {
+      type: 'button'
+      onClick?: VoidFunction
+    }
+
+export type TVacantOption = {
+  className?: string
+  label: string
+  icon?: string
+} & TVacantOptionType
