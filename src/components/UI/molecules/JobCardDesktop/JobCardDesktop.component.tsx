@@ -1,30 +1,41 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useRef } from 'react'
 import { classMUI } from '@constants/stories'
 import { IconItem } from '../../atoms'
-import { ArrowRight2, NoLogo, Urgent } from '../../../../constants/icons.constants'
-import style from './JobCardDesktop.module.scss'
+import { ArrowLeft2, NoLogo, Urgent } from '../../../../constants/icons.constants'
 import { ICardJobDesktop } from './JobCardDesktop.interface'
+import { classNames } from '@shared/utils/common'
+import style from './JobCardDesktop.module.scss'
+import { useWithElement } from '@components/hooks/useWithElement'
+
+const cx = classNames.bind(style)
+
+const getJobSubtitle = (companyName?: string | null, ...args: Array<string | null | undefined>) => {
+  const additionalData = args.filter((arg) => arg !== undefined).join(', ')
+  if (companyName) return `${companyName} | ${additionalData}`
+  return additionalData
+}
 
 const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   isCompanyPage = false,
-  workSeen,
   jobOpen,
   cities = [],
   salary,
   companyName,
   title,
-  educationLevel,
   formatPublishDate,
   companyLogo,
   companySlug,
-  experience,
   contractType,
   showDetail,
   urgent,
-  others = '',
   jobSlug,
-  dynamicUrl
+  dynamicUrl,
+  renderRight
 }) => {
+  const optionsRef = useRef<HTMLElement>(null)
+
+  const width = useWithElement(optionsRef)
+
   const citiesformatted = useMemo(() => {
     if (cities?.length > 5) {
       return cities?.slice(0, 5).join(', ')
@@ -32,64 +43,73 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
     return cities?.join(', ')
   }, [cities])
 
-  const infoRow4 = [contractType, salary, experience, educationLevel].join(' ')
-
   return (
-    <article
-      onClick={showDetail}
-      className={`${style[`${classMUI}-card-jobs`]} ${workSeen ? style[workSeen] : ''} ${
-        jobOpen ? style[jobOpen] : ''
-      }`}
-    >
-      {!isCompanyPage && (
-        <div className={style[`${classMUI}-card-jobs--row1`]}>
-          <div className={style[`${classMUI}-card-jobs--brand`]}>
-            <img
-              className={style[`${classMUI}-card-jobs--brand__img`]}
-              alt={companySlug ? companySlug : 'company-slug'}
-              src={companyLogo ? companyLogo : NoLogo}
-              loading="lazy"
-              width={'67px'}
-              height={'67px'}
-            />
-          </div>
-        </div>
-      )}
-
-      <div className={style[`${classMUI}-card-jobs--data`]}>
-        <div className={style[`${classMUI}-card-jobs--row2`]}>
-          <a
-            href={`${dynamicUrl}/${jobSlug}`}
-            title={title as string}
-            target="_blank"
-            rel="noreferrer"
-            onClick={(e) => e.preventDefault()}
-          >
-            <h2 className={`${style[`${classMUI}-card-jobs--row2__position`]} ${workSeen}`}>{title}</h2>
-          </a>
-          <h3>{companyName}</h3>
-          <p>{formatPublishDate}</p>
-          {urgent && (
-            <div className={style[`${classMUI}-card-jobs--row2__urgent`]}>
-              <IconItem alt={'alt'} icon={Urgent} hover={false} size={18} />
-              <p>{urgent}</p>
+    <div className={cx(`${classMUI}-card-jobs__container`)}>
+      <article
+        onClick={showDetail}
+        className={cx(
+          `${classMUI}-card-jobs`,
+          jobOpen && `${classMUI}-card-jobs--jobOpen`,
+          urgent && `${classMUI}-card-jobs--urgent`
+        )}
+      >
+        {!isCompanyPage && (
+          <div className={cx(`${classMUI}-card-jobs__brand`)}>
+            <div>
+              <img
+                className={cx(`${classMUI}-card-jobs__brand-img`)}
+                alt={companySlug ? companySlug : 'company-slug'}
+                src={companyLogo ? companyLogo : NoLogo}
+                loading="lazy"
+                width={'67px'}
+                height={'67px'}
+              />
             </div>
-          )}
+          </div>
+        )}
+
+        <div className={cx(`${classMUI}-card-jobs__data`)}>
+          <section className={cx(`${classMUI}-card-jobs__header`)}>
+            <span className={cx(`${classMUI}-card-jobs__text`, `${classMUI}-card-jobs__published`)}>
+              {formatPublishDate}
+            </span>
+            <section ref={optionsRef} className={cx(`${classMUI}-card-jobs__options`, 'opciones')}>
+              {/** Reference container to place right content */}
+            </section>
+          </section>
+          <h2
+            className={cx(
+              `${classMUI}-card-jobs__text`,
+              `${classMUI}-card-jobs__text--big`,
+              `${classMUI}-card-jobs__text--bold`
+            )}
+          >
+            <a
+              href={`${dynamicUrl}/${jobSlug}`}
+              title={title as string}
+              target="_blank"
+              rel="noreferrer"
+              onClick={(e) => e.preventDefault()}
+              className={cx(`${classMUI}-card-jobs__a`)}
+            >
+              {title}
+            </a>
+          </h2>
+          <h3 className={cx(`${classMUI}-card-jobs__text`)}>{getJobSubtitle(companyName, contractType)}</h3>
+          <p className={cx(`${classMUI}-card-jobs__text`)}>{salary}</p>
+          <p className={cx(`${classMUI}-card-jobs__text`)}>{citiesformatted}</p>
         </div>
-        <div className={style[`${classMUI}-card-jobs--row3`]}>
-          <p>
-            {citiesformatted}
-            {cities?.length > 5 && ', ' + others}
-          </p>
-        </div>
-        <div className={style[`${classMUI}-card-jobs--row4`]}>
-          <p>{infoRow4}</p>
-        </div>
+      </article>
+      <div style={{ width: width || 300 }} className={cx(`${classMUI}-card-jobs__render-right`)}>
+        {urgent ? (
+          <span className={cx(`${classMUI}-card-jobs__urgent`, `${classMUI}-card-jobs__text--small`)}>
+            <IconItem className={cx(`${classMUI}-card-jobs__urgent-icon`)} icon={Urgent} size={14} /> {urgent}
+          </span>
+        ) : null}
+        {renderRight ? renderRight() : null}
+        <IconItem icon={ArrowLeft2} size={16} className={cx(`${classMUI}-card-jobs__arrow`)} />
       </div>
-      <div className={style[`${classMUI}-card-jobs--arrow`]}>
-        <IconItem icon={ArrowRight2} />
-      </div>
-    </article>
+    </div>
   )
 }
 
