@@ -1,8 +1,9 @@
 import React, { useMemo } from 'react'
-import { IJobCard } from './JobCard.interface'
+import { useMediaQuery } from '@components/hooks'
+import { JobCardOptionDrawer } from './children/JobCardOptionDrawer'
+import { JobCardOption } from './children/JobCardOption'
 import { JobCardDesktop } from '../JobCardDesktop'
-import { JobCardMobile } from '../JobCardMobile'
-import { useMediaQuery } from '../../../hooks'
+import { IJobCard } from './JobCard.interface'
 
 const JobCard: React.FC<IJobCard> = ({ wasSeen = false, isActive = false, ...props }) => {
   const { workSeen, jobOpen } = useMemo(() => {
@@ -16,12 +17,25 @@ const JobCard: React.FC<IJobCard> = ({ wasSeen = false, isActive = false, ...pro
     jobOpen,
     ...props
   }
+  const device = useMediaQuery('desktop', { md: 'mobile' })
 
-  const cardResponsive = useMediaQuery(<JobCardDesktop {...cardProps} />, {
-    md: <JobCardMobile {...cardProps} />
-  })
+  if (device === 'mobile') {
+    return (
+      <JobCardDesktop
+        renderRight={() => (
+          <JobCardOptionDrawer
+            backText={cardProps.backText}
+            menu={cardProps.menu ?? []}
+            title={cardProps.title}
+            company={cardProps.companyName}
+          />
+        )}
+        {...cardProps}
+      />
+    )
+  }
 
-  return <>{cardResponsive}</>
+  return <JobCardDesktop renderRight={() => <JobCardOption menu={props.menu ?? []} />} {...cardProps} />
 }
 
 export default JobCard

@@ -6,6 +6,9 @@ const meta: Meta<typeof JobCard> = {
   title: 'Molecules/Job Card',
   component: JobCard,
   tags: ['autodocs'],
+  parameters: {
+    layout: 'fullscreen'
+  },
   args: {
     isLoading: false,
     ...vacancies[1]
