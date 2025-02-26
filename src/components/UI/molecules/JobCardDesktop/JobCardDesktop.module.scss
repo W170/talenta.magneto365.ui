@@ -50,6 +50,20 @@
     flex-direction: column;
   }
 
+  &__button {
+    border: none;
+    background: transparent;
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__white-space {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
   &__header {
     display: flex;
     align-items: flex-end;
