@@ -44,7 +44,8 @@ export const vacancies: IVacancies[] = [
         { id: 12, name: 'Capacidad de negociación', score: 4 },
         { id: 12, name: 'Conocimiento de microfinanzas', score: 1 }
       ]
-    }
+    },
+    menu: []
   },
   {
     id: 2,
@@ -69,7 +70,9 @@ export const vacancies: IVacancies[] = [
         { id: 12, name: 'Capacidad de negociación', score: 4 },
         { id: 12, name: 'Conocimiento de microfinanzas', score: 1 }
       ]
-    }
+    },
+    backText: 'Atrás',
+    menu: []
   },
   {
     id: 3,
@@ -80,7 +83,7 @@ export const vacancies: IVacancies[] = [
     companySlug: 'legos',
     educationLevel: 'Tecnologo',
     experience: '6 meses de experiencia',
-    salary: '3.000.000',
+    salary: 'COP $ 3.000.000',
     formatPublishDate: 'hace 2 meses',
     others: 'otras',
     contractType: 'Termino indefinido',
@@ -96,7 +99,8 @@ export const vacancies: IVacancies[] = [
         { id: 12, name: 'Capacidad de negociación', score: 4 },
         { id: 12, name: 'Conocimiento de microfinanzas', score: 1 }
       ]
-    }
+    },
+    menu: []
   },
   {
     id: 4,
@@ -122,7 +126,8 @@ export const vacancies: IVacancies[] = [
         { id: 12, name: 'Capacidad de negociación', score: 4 },
         { id: 12, name: 'Conocimiento de microfinanzas', score: 1 }
       ]
-    }
+    },
+    menu: []
   },
   {
     id: 5,
@@ -147,7 +152,8 @@ export const vacancies: IVacancies[] = [
         { id: 12, name: 'Capacidad de negociación', score: 4 },
         { id: 12, name: 'Conocimiento de microfinanzas', score: 1 }
       ]
-    }
+    },
+    menu: []
   },
   {
     id: 6,
@@ -172,7 +178,8 @@ export const vacancies: IVacancies[] = [
         { id: 12, name: 'Capacidad de negociación', score: 4 },
         { id: 12, name: 'Conocimiento de microfinanzas', score: 1 }
       ]
-    }
+    },
+    menu: []
   },
   {
     id: 7,
@@ -198,7 +205,8 @@ export const vacancies: IVacancies[] = [
         { id: 12, name: 'Capacidad de negociación', score: 4 },
         { id: 12, name: 'Conocimiento de microfinanzas', score: 1 }
       ]
-    }
+    },
+    menu: []
   },
   {
     id: 8,
@@ -223,7 +231,8 @@ export const vacancies: IVacancies[] = [
         { id: 12, name: 'Capacidad de negociación', score: 4 },
         { id: 12, name: 'Conocimiento de microfinanzas', score: 1 }
       ]
-    }
+    },
+    menu: []
   },
   {
     id: 9,
@@ -248,9 +257,78 @@ export const vacancies: IVacancies[] = [
         { id: 12, name: 'Capacidad de negociación', score: 4 },
         { id: 12, name: 'Conocimiento de microfinanzas', score: 1 }
       ]
-    }
+    },
+    menu: []
   }
-]
+].map((vacant) => ({
+  ...vacant,
+  menu: [
+    {
+      type: 'button',
+      label: 'Guardar Vacante',
+      icon: 'ArchiveAdd'
+    },
+    {
+      type: 'menu',
+      label: 'Compartir',
+      icon: 'Share',
+      children: [
+        {
+          type: 'link',
+          label: 'Facebook',
+          href: 'facebook',
+          className: 'icon--big',
+          icon: 'Facebook'
+        },
+        {
+          type: 'link',
+          label: 'Whatsapp',
+          icon: 'WhatsApp',
+          className: 'icon--big',
+          href: 'whastapp'
+        },
+        {
+          type: 'link',
+          label: 'Linkedin',
+          href: 'linkedin',
+          className: 'icon--big',
+          icon: 'LinkedIn'
+        },
+        {
+          type: 'link',
+          label: 'X',
+          href: 'x',
+          className: 'icon--big',
+          icon: 'X'
+        },
+        {
+          type: 'link',
+          label: 'Correo',
+          href: 'email',
+          className: 'icon--big',
+          icon: 'Sms'
+        },
+        {
+          type: 'button',
+          label: 'Copiar Enlace',
+          icon: 'ShareBold'
+        }
+      ]
+    },
+    {
+      type: 'link',
+      label: 'Abrir en otra pestaña',
+      href: 'other link',
+      icon: 'Export'
+    },
+    {
+      type: 'link',
+      label: 'Ver empresa',
+      icon: 'Building',
+      href: 'enterprise'
+    }
+  ]
+}))
 
 export const buttonIconsList = [ArchiveAdd, Share]
 
