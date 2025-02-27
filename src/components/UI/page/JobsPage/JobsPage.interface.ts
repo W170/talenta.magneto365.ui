@@ -93,6 +93,9 @@ export interface IDynamicUrl {
   fullJobsUrl: string
 }
 
+/**
+ * Different kinds of option. links for anchor tag, button for button tag and menu for dropdown component.
+ */
 export type TVacantOptionType =
   | {
       type: 'link'
@@ -109,6 +112,13 @@ export type TVacantOptionType =
 
 export type TVacantOption = {
   className?: string
+  /**
+   * Label to display in the option ui.
+   */
   label: string
+  /**
+   * icon to display in the option ui.
+   * @example values in ShareIcons constant like Facebook, X, Sms, Export or custom value as a link.
+   */
   icon?: string
 } & TVacantOptionType
