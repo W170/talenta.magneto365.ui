@@ -14,8 +14,8 @@ const VacantOption: React.FC<IVacantOption> = ({ option, onClick }) => {
   const handleClick = () => {
     if (option.type === 'button') {
       option.onClick?.()
-      onClick?.()
     }
+    onClick?.()
   }
 
   const icon = ShareIcons[option.icon as keyof typeof ShareIcons]

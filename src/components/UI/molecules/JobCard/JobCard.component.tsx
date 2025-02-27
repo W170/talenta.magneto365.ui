@@ -35,7 +35,7 @@ const JobCard: React.FC<IJobCard> = ({ wasSeen = false, isActive = false, ...pro
     )
   }
 
-  return <JobCardDesktop renderRight={() => <JobCardOption menu={props.menu ?? []} />} {...cardProps} />
+  return <JobCardDesktop renderRight={() => <JobCardOption menu={cardProps.menu ?? []} />} {...cardProps} />
 }
 
 export default JobCard
