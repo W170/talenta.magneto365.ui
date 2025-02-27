@@ -1,5 +1,6 @@
 import {
   ArchiveAdd,
+  ArchiveRemove,
   Building5,
   Export3,
   FacebookBlue,
@@ -35,6 +36,9 @@ export const ShareIcons = {
   },
   ArchiveAdd: {
     icon: ArchiveAdd
+  },
+  ArchiveRemove: {
+    icon: ArchiveRemove
   },
   Export: {
     icon: Export3

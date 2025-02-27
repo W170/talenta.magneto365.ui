@@ -44,15 +44,8 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   }, [cities])
 
   return (
-    <div className={cx(`${classMUI}-card-jobs__container`)}>
-      <article
-        onClick={showDetail}
-        className={cx(
-          `${classMUI}-card-jobs`,
-          jobOpen && `${classMUI}-card-jobs--jobOpen`,
-          urgent && `${classMUI}-card-jobs--urgent`
-        )}
-      >
+    <div className={cx(`${classMUI}-card-jobs__container`, jobOpen && `${classMUI}-card-jobs--job-open`)}>
+      <article onClick={showDetail} className={cx(`${classMUI}-card-jobs`, urgent && `${classMUI}-card-jobs--urgent`)}>
         {!isCompanyPage && (
           <div className={cx(`${classMUI}-card-jobs__brand`)}>
             <div>

@@ -17,8 +17,15 @@
 
   &--link {
     display: flex;
+    color: #292f37;
     text-decoration: none;
     gap: 10px;
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-visible {
+      color: #292f37;
+    }
   }
 
   &--menu {
