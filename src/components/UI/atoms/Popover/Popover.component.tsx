@@ -22,9 +22,11 @@ const Component: React.FC<IPopover> = ({
       setHideComponent(true)
       return
     }
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setHideComponent(false)
     }, 300)
+
+    return () => clearTimeout(timer)
   }, [show])
 
   return (
