@@ -1,0 +1,67 @@
+.option,
+.option > div {
+  width: 100%;
+  display: block;
+  padding: 12px 13px;
+  border: none;
+  background: transparent;
+
+  font-size: 14px;
+  font-weight: 400;
+  text-wrap: nowrap;
+  color: #292f37;
+
+  &:hover {
+    background: #f0f1f3;
+  }
+
+  &--link {
+    display: flex;
+    color: #292f37;
+    text-decoration: none;
+    gap: 10px;
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-visible {
+      color: #292f37;
+    }
+  }
+
+  &--menu {
+    padding: 0;
+    & > div > div {
+      padding: 0;
+    }
+  }
+
+  &--menu-open {
+    background: #f0f1f3;
+    border-radius: 5px;
+    a,
+    button {
+      &:hover {
+        background: #e0e4e7;
+      }
+    }
+  }
+
+  &__menu-list {
+    padding: 0;
+    padding-top: 1rem;
+  }
+
+  &--button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.icon {
+  &--big {
+    img[data-name='icon'] {
+      transform: scale(2);
+    }
+  }
+}

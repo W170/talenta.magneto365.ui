@@ -6,6 +6,9 @@ const meta: Meta<typeof JobCardDesktop> = {
   title: 'Molecules/Job Card Desktop',
   component: JobCardDesktop,
   tags: ['autodocs'],
+  parameters: {
+    layout: 'fullscreen'
+  },
   args: {
     ...vacancies[2]
   }
@@ -25,12 +28,25 @@ export const IsActive: Story = {
 
 export const WasSeen: Story = {
   args: {
-    workSeen: 'was-seen'
+    // not used for now.
+    //workSeen: 'was-seen'
   }
 }
 
 export const IsCompanyPage: Story = {
   args: {
     isCompanyPage: true
+  }
+}
+
+export const UrgentMobile: Story = {
+  args: {
+    urgent: '¡Urgente!'
+  }
+}
+
+export const NoUrgent: Story = {
+  args: {
+    urgent: undefined
   }
 }

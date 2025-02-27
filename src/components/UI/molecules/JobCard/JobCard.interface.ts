@@ -1,3 +1,5 @@
+import { TVacantOption } from '@components/UI/page'
+
 export interface IJobCard {
   id: number | null
   /**
@@ -76,4 +78,12 @@ export interface IJobCard {
    * This is the string for urgent jobs
    */
   urgent?: string
+  /**
+   * This property display menu options in vacant card.
+   */
+  menu?: TVacantOption[]
+  /**
+   * This property show back action in mobile job card options.
+   */
+  backText?: string
 }
