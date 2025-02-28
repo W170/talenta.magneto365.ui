@@ -1,7 +1,7 @@
 import React, { useContext }  from 'react'
 import { classNames } from '@shared/utils/common'
 import styles from './date.module.scss'
-import { CandidateCommentsContext } from "../../candidateComments.component";
+import { CommentsMobileContext } from "../../candidateComments.component";
 
 const cx = classNames.bind(styles);
 
@@ -23,7 +23,7 @@ const formatDate = (inputDate: string | number | Date): string => {
 };
 
 const Component: React.FC<{ date: string | number | Date }> = ({ date }) => {
-  const context = useContext(CandidateCommentsContext);
+  const context = useContext(CommentsMobileContext);
 
   if (date) {
     return <div className={cx("date")}>{formatDate(date)}</div>;
@@ -31,7 +31,7 @@ const Component: React.FC<{ date: string | number | Date }> = ({ date }) => {
     if (context?.data?.length) {
       return (
         <>
-          {context.data.map(({ date }, index) => (
+          {context.data.map(({ date }: { date: string | number | Date } , index: number) => (
             <div className={cx('date')} key={index}>
                 {formatDate(date)}
             </div>

@@ -2,12 +2,12 @@ import React, { useContext }  from 'react'
 import { IDescription } from './description.interface'
 import { classNames } from '@shared/utils/common'
 import styles from './description.module.scss'
-import { CandidateCommentsContext } from "../../candidateComments.component";
+import { CommentsMobileContext } from "../../candidateComments.component";
 
 const cx = classNames.bind(styles);
 
 const Component: React.FC<IDescription> = ({ description }) => {
-    const context = useContext(CandidateCommentsContext);
+    const context = useContext(CommentsMobileContext);
 
     if (description) {
       return (
@@ -17,7 +17,7 @@ const Component: React.FC<IDescription> = ({ description }) => {
     if (context?.data?.length) {
       return (
         <>
-          {context.data.map(({ description }, index) => (
+          {context.data.map(({ description }: IDescription, index: number) => (
             <div className={cx('description')} key={index}>
                 {description}
             </div>

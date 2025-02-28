@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { CandidateComments } from './candidateComments.component'
+import { CommentsMobile } from './candidateComments.component'
 
-const meta: Meta<typeof CandidateComments> = {
-  title: 'Molecules/Candidate Comments',
-  component: CandidateComments,
+const meta: Meta<typeof CommentsMobile> = {
+  title: 'Molecules/Comments Mobile',
+  component: CommentsMobile,
   args:{
     data:[{
       src: "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
@@ -25,6 +25,6 @@ const meta: Meta<typeof CandidateComments> = {
 
 export default meta
 
-type Story = StoryObj<typeof CandidateComments>
+type Story = StoryObj<typeof CommentsMobile>
 
 export const Default: Story = {}

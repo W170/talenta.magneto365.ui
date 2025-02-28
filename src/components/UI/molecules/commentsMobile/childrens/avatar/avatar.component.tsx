@@ -3,11 +3,11 @@ import { IAvatar } from './avatar.interface'
 import { classNames } from '@shared/utils/common'
 import styles from './avatar.module.scss'
 import { Avatar } from '@components/UI/atoms'
-import { CandidateCommentsContext } from "../../candidateComments.component";
+import { CommentsMobileContext } from "../../candidateComments.component";
 const cx = classNames.bind(styles);
 
 const Component: React.FC<IAvatar> = ({ src }) => {
-  const context = useContext(CandidateCommentsContext);
+  const context = useContext(CommentsMobileContext);
   if (src) {
     return (
       <div className={cx("avatar")}>

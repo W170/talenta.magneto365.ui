@@ -2,12 +2,12 @@ import React, { useContext }  from 'react'
 import { IRating } from './rating.interface'
 import { classNames } from '@shared/utils/common'
 import styles from './rating.module.scss'
-import { CandidateCommentsContext } from "../../candidateComments.component";
+import { CommentsMobileContext } from "../../candidateComments.component";
 import { StartDark } from '@constants/icons.constants'
 const cx = classNames.bind(styles);
 
 const Component: React.FC<IRating> = ({ rating }) => {
-    const context = useContext(CandidateCommentsContext);
+    const context = useContext(CommentsMobileContext);
 
     if (rating) {
       return (
@@ -22,11 +22,11 @@ const Component: React.FC<IRating> = ({ rating }) => {
     if (context?.data?.length) {
       return (
         <>
-          {context.data.map(({ rating }, index) => (
+          {context.data.map(({ rating }: IRating, index: number) => (
             <div className={cx("rating")} key={index}>
               <img src={StartDark} />
               <div className={cx('rating_number')}>
-                {rating.toFixed(1)}
+                {rating && rating.toFixed(1)}
               </div>
             </div>
           ))}

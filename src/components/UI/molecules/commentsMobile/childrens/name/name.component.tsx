@@ -2,12 +2,12 @@ import React, { useContext }  from 'react'
 import { IName } from './name.interface'
 import { classNames } from '@shared/utils/common'
 import styles from './name.module.scss'
-import { CandidateCommentsContext } from "../../candidateComments.component";
+import { CommentsMobileContext } from "../../candidateComments.component";
 
 const cx = classNames.bind(styles);
 
 const Component: React.FC<IName> = ({ name }) => {
-    const context = useContext(CandidateCommentsContext);
+    const context = useContext(CommentsMobileContext);
 
     if (name) {
       return (
@@ -19,7 +19,7 @@ const Component: React.FC<IName> = ({ name }) => {
     if (context?.data?.length) {
       return (
         <>
-          {context.data.map(({ name }, index) => (
+          {context.data.map(({ name }: IName, index: number) => (
             <div className={cx('name')} key={index}>
                 {name}
             </div>

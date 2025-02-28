@@ -1,11 +1,11 @@
 import { ReactElement } from "react"
 
-export  interface ICandidateComments  {
+export  interface ICommentsMobile  {
     children: ReactElement
     data: Idata[]
 }
 
-interface Idata {
+export interface Idata {
     src: string,
     name: string,
     rating: number ,
@@ -13,7 +13,7 @@ interface Idata {
     description: string
 }
 
-export  interface ICandidateCommentsContext  {
+export  interface ICommentsMobileContext  {
     data: Idata[]
 }
 

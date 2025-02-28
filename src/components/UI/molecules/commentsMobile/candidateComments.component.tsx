@@ -1,5 +1,5 @@
 import React, {createContext} from 'react'
-import { ICandidateComments, ICandidateCommentsContext } from './candidateComments.interface'
+import { ICommentsMobile, ICommentsMobileContext, Idata } from './candidateComments.interface'
 import { classNames } from '@shared/utils/common'
 import styles from './candidateComments.module.scss'
 import { AvatarComments } from './childrens/avatar/avatar.component'
@@ -9,15 +9,15 @@ import { DateCommets } from './childrens/date/date.component'
 import { Description } from './childrens/description/description.component'
 const cx = classNames.bind(styles);
 
-export const CandidateCommentsContext = createContext<ICandidateCommentsContext | undefined>(undefined);
+export const CommentsMobileContext = createContext<ICommentsMobileContext | undefined>(undefined);
 
-const Component: React.FC<ICandidateComments> = ({ children, data = [] }) => {
+const Component: React.FC<ICommentsMobile> = ({ children, data = [] }) => {
   return (
-    <CandidateCommentsContext.Provider value={{ data }}>
+    <CommentsMobileContext.Provider value={{ data }}>
       <div className={cx("candidateComments")}>
         {data.length > 0 ? (
           <div className={cx("candidateComments_ratings")}>
-            {data.map(({src, name, rating, date, description }, index) => (
+            {data.map(({src, name, rating, date, description }: Idata, index: number) => (
               <>
                  <div className={cx("candidateComments_ratings-title")}>
                   <AvatarComments key={index} src={src} />
@@ -36,12 +36,12 @@ const Component: React.FC<ICandidateComments> = ({ children, data = [] }) => {
           <div className={cx("candidateComments_noRatings")}>Sin valoraciones</div>
         )}
       </div>
-    </CandidateCommentsContext.Provider>
+    </CommentsMobileContext.Provider>
   );
 };
 /**
  *  Molecule UI component of Candidate Comments
  */
 
-export const CandidateComments = Object.assign(Component, { avatar: AvatarComments, nameCommets: Name, ratingCommets:Rating, dateCommets:DateCommets  });
+export const CommentsMobile = Object.assign(Component, { avatar: AvatarComments, nameCommets: Name, ratingCommets:Rating, dateCommets:DateCommets  });
 
