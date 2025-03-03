@@ -12,6 +12,11 @@ export interface IBarsChart {
   mean: number
 
   /**
+   * Sets the maximum height of the bar
+   */
+  maxHeight?: number
+
+  /**
    * Text labels used in the chart
    */
   texts: IBarsChartText

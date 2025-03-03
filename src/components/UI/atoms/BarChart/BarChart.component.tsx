@@ -36,7 +36,7 @@ const Component: React.FC<IBarChart> = ({
       isHover && (
         <div className={`${styles['magneto-ui-chart-bar__popover']} ${styles[`popover-${popoverPosition}`]}`}>
           <div>{`${numberToCurrency(minRange)} - ${numberToCurrency(maxRange)}`}</div>
-          <div>{`${percentage * 100}% ${jobText}`}</div>
+          <div>{`${Math.round(percentage * 100)}% ${jobText}`}</div>
         </div>
       ),
     [isHover, jobText, maxRange, minRange, percentage, popoverPosition]
