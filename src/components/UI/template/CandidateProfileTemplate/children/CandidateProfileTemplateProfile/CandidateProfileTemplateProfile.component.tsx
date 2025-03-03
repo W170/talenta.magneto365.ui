@@ -1,0 +1,68 @@
+import React, { useState, useEffect, useCallback } from 'react'
+import { MiniArrowGrayDown, MiniArrowGrayUp } from '@constants/icons.constants'
+import { useCandidateProfile } from '../../CandidateProfileTemplate.context'
+import styles from './CandidateProfileTemplateProfile.module.scss'
+import { classNames } from '@shared/utils/common'
+
+const cx = classNames.bind(styles)
+const customScrollbarButtonsStyle = {
+  '--custom-scrollbar-thumb-down-background': `url(${MiniArrowGrayDown})`,
+  '--custom-scrollbar-thumb-up-background': `url(${MiniArrowGrayUp})`
+}
+
+const Component: React.FC = ({ children }) => {
+  const [scrolled, setScrolled] = useState<boolean>(false)
+  const [isInTop, setIsInTop] = useState<boolean>(true)
+
+  const { isProfileOpen, setIsProfileOpen } = useCandidateProfile()
+
+  const handleOnChangeOpen = useCallback(
+    (localIsOpen: boolean) => {
+      setIsProfileOpen(localIsOpen)
+
+      if (localIsOpen && window.scrollY > 0) {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+        setIsInTop(localIsOpen)
+      }
+    },
+    [setIsProfileOpen]
+  )
+
+  useEffect(() => {
+    const handleScroll = async () => {
+      if (scrolled && !isInTop) return
+      setScrolled(window.scrollY > 0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [isInTop, scrolled])
+
+  useEffect(() => {
+    if (scrolled) {
+      setIsProfileOpen(false)
+    }
+  }, [scrolled, setIsProfileOpen])
+
+  return (
+    <div
+      style={customScrollbarButtonsStyle as React.CSSProperties}
+      className={cx('magneto-ui-candidate-profile-page-profile')}
+    >
+      {React.Children.map(children, (child) => {
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, {
+            onChangeOpen: handleOnChangeOpen,
+            isOpen: isProfileOpen
+          })
+        }
+        return child
+      })}
+    </div>
+  )
+}
+
+export const CandidateProfileTemplateProfile = Component

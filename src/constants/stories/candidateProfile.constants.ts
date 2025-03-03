@@ -1,5 +1,18 @@
-import { ICandidateOverviewProps, ICandidateProfile } from '@components/UI/molecules'
-import { ICandidateTags, ICandidateComments } from '@components/UI/organism'
+import { ICandidateTags, ICandidateComments, ICandidateActivity, CandidateActivity } from '@components/UI/organism'
+import { ICandidateOverviewProps, CandidateOverview } from '@components/UI/molecules'
+import { ICandidateProfileTemplate } from '@components/UI/template'
+import {
+  BuildingWhite,
+  Date,
+  DollarCircleWhiteOutline,
+  EmailSquare,
+  LocationBlueBold,
+  Mobile,
+  PeopleInfo,
+  Position,
+  Teacher,
+  UserTag
+} from '@constants/icons.constants'
 
 export const candidateOverviewProps: ICandidateOverviewProps = {
   data: [
@@ -357,150 +370,89 @@ export const candidateOverviewProps: ICandidateOverviewProps = {
   ]
 }
 
-export const candidateProfile: ICandidateProfile = {
-  data: {
-    name: 'Sebastian',
-    lastname: 'Cabal Quiroz',
-    last_updated: 'Ultima actualización 26/12/2024',
-    img: 'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-    role: 'Ingeniero de sistemas',
-    score: '4.5'
+export const candidateProfileProps: Record<string, any> = {
+  avatar: {
+    userImage:
+      'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
   },
+  score: '4.5',
+  header: {
+    lastUpdate: 'Ultima actualización 26/12/2024',
+    name: 'Sebastian',
+    lastName: 'Cabal Quiroz',
+    role: 'Ingeniero de sistemas'
+  },
+  internal: [
+    {
+      icon: BuildingWhite,
+      title: 'Empresa',
+      value: 'Grupo Bolivar'
+    },
+    {
+      icon: UserTag,
+      title: 'Cargo',
+      value: 'Analista funcional'
+    },
+    {
+      icon: Position,
+      title: 'Posicion',
+      value: 'Interno'
+    }
+  ],
   details: [
     {
-      type: 'quick_access',
+      title: 'Datos personales',
       children: [
         {
-          direction: 'column',
-          separation: 'md',
-          children: [
-            {
-              data: 'Empresa',
-              value: 'Grupo Bolivar',
-              prefixIcon: {
-                icon: 'company'
-              }
-            },
-            {
-              data: 'Cargo',
-              value: 'Analista funcional',
-              prefixIcon: {
-                icon: 'role'
-              }
-            },
-            {
-              data: 'Posición',
-              value: 'Interno',
-              prefixIcon: {
-                icon: 'position'
-              }
-            }
-          ]
+          value: 'CC 1037651011',
+          icon: Position
+        },
+        {
+          value: '14 / 08 / 1987',
+          icon: Date
+        },
+        {
+          value: 'Masculino, 35 años',
+          icon: PeopleInfo
+        },
+        {
+          value: 'nombre@correo.com',
+          icon: EmailSquare
+        },
+        {
+          value: '+57 3002002028',
+          icon: Mobile
+        },
+        {
+          value: 'Medellín, Colombia',
+          color: 'blue',
+          icon: LocationBlueBold
         }
       ]
     },
     {
-      title: {
-        value: 'Datos personales'
-      },
-      type: 'details',
+      title: 'Nivel de estudios',
       children: [
         {
-          children: [
-            {
-              value: 'CC 1037651011',
-              prefixIcon: {
-                icon: 'position'
-              }
-            },
-            {
-              value: '14 / 08 / 1987',
-              prefixIcon: {
-                icon: 'date'
-              }
-            },
-            {
-              value: 'Masculino, 35 años',
-              prefixIcon: {
-                icon: 'people'
-              }
-            },
-            {
-              value: 'nombre@correo.com',
-              prefixIcon: {
-                icon: 'email'
-              }
-            },
-            {
-              value: '+57 3002002028',
-              prefixIcon: {
-                icon: 'mobile'
-              }
-            },
-            {
-              value: 'Medellín, Colombia',
-              prefixIcon: {
-                icon: 'location'
-              },
-              color: 'blue'
-            }
-          ]
+          value: 'Especialización / maestría',
+          icon: Teacher
         }
       ]
     },
     {
-      title: {
-        value: 'Nivel de estudios',
-        weight: 'bold',
-        color: 'green'
-      },
-      type: 'details',
+      title: 'Aspiración salarial',
       children: [
         {
-          children: [
-            {
-              value: 'Especialización / maestría',
-              prefixIcon: {
-                icon: 'teacher'
-              }
-            }
-          ]
+          value: '$2.000.000',
+          icon: DollarCircleWhiteOutline
         }
       ]
     },
     {
-      title: {
-        value: 'Aspiración salarial'
-      },
-      type: 'details',
+      title: 'Categoría',
       children: [
         {
-          children: [
-            {
-              value: '$2.000.000',
-              prefixIcon: {
-                icon: 'dollar'
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      title: {
-        value: 'Categoría'
-      },
-      type: 'details',
-      children: [
-        {
-          children: [
-            {
-              value: 'Diseño',
-              prefixIcon: {
-                icon: 'category'
-              }
-            }
-          ]
+          value: 'Diseño'
         }
       ]
     }
@@ -575,4 +527,277 @@ export const candidateCommentsProps: Omit<ICandidateComments, 'onAdd'> = {
     placeholder: 'Comentario',
     buttonText: 'Guardar'
   }
+}
+
+export const candidateActivity: ICandidateActivity = {
+  candidateDetail: {
+    vacancyOrigin: {
+      size: 'md',
+      weight: 'black',
+      color: 'lightGray',
+      value: 'Aplicacion desde',
+      data: 'Sep 2024'
+    },
+    date: {
+      size: 'md',
+      weight: 'normal',
+      color: 'lightGray',
+      value: 'Fecha',
+      data: 'Sep 2024'
+    },
+    currentProcess: {
+      size: 'md',
+      weight: 'normal',
+      color: 'black',
+      value: 'Proceso actual',
+      data: 'Sep 2024'
+    },
+    otherProcesses: {
+      size: 'md',
+      weight: 'normal',
+      color: 'black',
+      value: 'Otros procesos',
+      data: 'Sep 2024'
+    },
+    process: [
+      {
+        title: {
+          size: 'md',
+          weight: 'bold',
+          color: 'black',
+          value: 'Proceso actual',
+          data: 'Sep 2024'
+        },
+        vacancyDetail: [
+          {
+            title: {
+              value: 'Consultor Rrhh',
+              size: 'md',
+              weight: 'bold',
+              color: 'black'
+            },
+            status: {
+              value: 'Activo',
+              size: 'sm',
+              weight: 'normal',
+              color: 'green'
+            },
+            date: {
+              value: 'Septiembre 2024',
+              size: 'xs',
+              weight: 'normal',
+              color: 'lightGray'
+            },
+            origin: {
+              value: 'Jobsite Empleos y vacantes',
+              size: 'xs',
+              weight: 'normal',
+              color: 'lightGray'
+            },
+            stage: {
+              value: 'Etapa: Prueba técnica',
+              size: 'xs',
+              weight: 'normal',
+              color: 'lightGray'
+            },
+            children: [
+              {
+                stageDetail: {
+                  title: {
+                    size: 'md',
+                    weight: 'bold',
+                    color: 'black',
+                    value: 'Etapa: prueba tecnica'
+                  },
+                  date: {
+                    size: 'xs',
+                    weight: 'normal',
+                    color: 'black',
+                    value: 'Sep 2024 | 4:15px'
+                  },
+                  email: {
+                    size: 'xs',
+                    weight: 'normal',
+                    color: 'black',
+                    value: 'correo@correo'
+                  },
+                  children: {
+                    children: [
+                      {
+                        size: 'md',
+                        weight: 'bold',
+                        color: 'black',
+                        value: 'Etapa: prueba tecnica'
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        title: {
+          size: 'md',
+          weight: 'bold',
+          color: 'black',
+          value: 'Otros procesos',
+          data: 'Sep 2024'
+        },
+        vacancyDetail: [
+          {
+            title: {
+              value: 'Consultor Rrhh',
+              size: 'md',
+              weight: 'bold',
+              color: 'black'
+            },
+            status: {
+              value: 'Descartado',
+              size: 'sm',
+              weight: 'normal',
+              color: 'red'
+            },
+            date: {
+              value: 'Septiembre 2024',
+              size: 'xs',
+              weight: 'normal',
+              color: 'lightGray'
+            },
+            origin: {
+              value: 'Jobsite Empleos y vacantes',
+              size: 'xs',
+              weight: 'normal',
+              color: 'lightGray'
+            },
+            stage: {
+              value: 'Etapa: Prueba técnica',
+              size: 'xs',
+              weight: 'normal',
+              color: 'lightGray'
+            },
+            children: [
+              {
+                stageDetail: {
+                  title: {
+                    size: 'md',
+                    weight: 'bold',
+                    color: 'black',
+                    value: 'Etapa: prueba tecnica'
+                  },
+                  date: {
+                    size: 'xs',
+                    weight: 'normal',
+                    color: 'black',
+                    value: 'Sep 2024 | 4:15px'
+                  },
+                  email: {
+                    size: 'xs',
+                    weight: 'normal',
+                    color: 'black',
+                    value: 'correo@correo'
+                  },
+                  children: {
+                    children: [
+                      {
+                        size: 'md',
+                        weight: 'bold',
+                        color: 'black',
+                        value: 'Etapa: prueba tecnica'
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            title: {
+              value: 'Consultor Rrhh',
+              size: 'md',
+              weight: 'bold',
+              color: 'black'
+            },
+            status: {
+              value: 'Descartado',
+              size: 'sm',
+              weight: 'normal',
+              color: 'red'
+            },
+            date: {
+              value: 'Septiembre 2024',
+              size: 'xs',
+              weight: 'normal',
+              color: 'lightGray'
+            },
+            origin: {
+              value: 'Jobsite Empleos y vacantes',
+              size: 'xs',
+              weight: 'normal',
+              color: 'lightGray'
+            },
+            stage: {
+              value: 'Etapa: Prueba técnica',
+              size: 'xs',
+              weight: 'normal',
+              color: 'lightGray'
+            },
+            children: [
+              {
+                stageDetail: {
+                  title: {
+                    size: 'md',
+                    weight: 'bold',
+                    color: 'black',
+                    value: 'Etapa: prueba tecnica'
+                  },
+                  date: {
+                    size: 'xs',
+                    weight: 'normal',
+                    color: 'black',
+                    value: 'Sep 2024 | 4:15px'
+                  },
+                  email: {
+                    size: 'xs',
+                    weight: 'normal',
+                    color: 'black',
+                    value: 'correo@correo'
+                  },
+                  children: {
+                    children: [
+                      {
+                        size: 'md',
+                        weight: 'bold',
+                        color: 'black',
+                        value: 'Etapa: prueba tecnica'
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+
+export const candidateProfilePageProps: ICandidateProfileTemplate = {
+  profile: candidateProfileProps,
+  screens: [
+    {
+      name: 'candidateOverview',
+      icon: 'users',
+      component: CandidateOverview,
+      title: 'Perfil de candidato'
+    },
+    {
+      name: 'candidateActivity',
+      icon: 'activity',
+      component: CandidateActivity,
+      title: 'Actividad de candidato'
+    }
+  ]
 }

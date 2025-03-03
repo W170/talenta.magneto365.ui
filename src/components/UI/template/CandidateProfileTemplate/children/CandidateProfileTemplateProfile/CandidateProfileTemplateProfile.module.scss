@@ -1,0 +1,39 @@
+.magneto-ui-candidate-profile-page-profile {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  &__container {
+    max-height: calc(100vh - 52px);
+    @supports (height: 100dvh) {
+      max-height: calc(100dvh - 52px);
+    }
+    > footer {
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        background: #00000026;
+        width: 10px;
+        &-thumb {
+          background: transparent;
+          border: none;
+          border-color: transparent;
+          border-radius: 20px;
+          background: #c2c8cf;
+        }
+
+        &-button {
+          &:vertical {
+            &:start:decrement {
+              background: transparent var(--custom-scrollbar-thumb-up-background) no-repeat center center;
+              min-height: 16px;
+            }
+
+            &:end:increment {
+              background: transparent var(--custom-scrollbar-thumb-down-background) no-repeat center center;
+              min-height: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

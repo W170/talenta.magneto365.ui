@@ -3,7 +3,7 @@ import style from './InputFile.module.scss'
 import { InputFileText, InputFileButton } from './index'
 import { IInputFileInterface } from '@components/UI/atoms/InputFile/inputFile.interface'
 
-const Component: React.FC<IInputFileInterface> = ({ children, className, onFileSelect, ...rest }) => {
+const Component: React.FC<IInputFileInterface> = ({ children, className, onFileSelect }) => {
   const inputFileRef = useRef<HTMLInputElement | null>(null)
 
   const handleFileClick = () => {

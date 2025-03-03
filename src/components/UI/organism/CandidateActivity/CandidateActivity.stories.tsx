@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { CandidateActivity } from './CandidateActivity.component'
-import { candidateActivity } from '@constants/stories/candidateActivity.constants'
+import { candidateActivity } from '@constants/stories/candidateProfile.constants'
+
 const meta: Meta<typeof CandidateActivity> = {
   title: 'Organism/ Candidate Activity',
   component: CandidateActivity,
