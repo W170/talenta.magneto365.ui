@@ -32,4 +32,7 @@ const Component: React.FC<TCandidateProfileToggler> = ({ className, onClick, ...
   )
 }
 
+/**
+ * Molecule UI component child of candidate profile
+ */
 export const CandidateProfileToggler = Component

@@ -33,4 +33,7 @@ const Component: React.FC<TCandidateProfileDropdown> = ({ children, ...props }) 
   )
 }
 
+/**
+ * Molecule UI component child of candidate profile
+ */
 export const CandidateProfileDropdown = Component

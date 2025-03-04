@@ -21,4 +21,7 @@ const Component: React.FC<ICandidateProfileAvatar> = ({ avatar, score, ...props 
   )
 }
 
+/**
+ * Molecule UI component child of candidate profile
+ */
 export const CandidateProfileAvatar = Component

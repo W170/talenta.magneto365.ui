@@ -21,4 +21,7 @@ const Component: React.FC<TCandidateProfileHeader> = ({ children, className, ...
   )
 }
 
+/**
+ * Molecule UI component child of candidate profile
+ */
 export const CandidateProfileHeader = Component

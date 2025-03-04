@@ -1,46 +1,9 @@
 .magneto-ui-candidate-profile {
-  &__container {
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-    background-color: #001b38;
-    color: white;
-    text-align: left;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  }
-  &__user {
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-    gap: 30px;
-    align-items: stretch;
-    &-title {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-  }
-  &__separation {
-    &--none {
-      gap: 0;
-    }
-    &--sm {
-      gap: 5px;
-    }
-    &--md {
-      gap: 10px;
-    }
-    &--lg {
-      gap: 15px;
-    }
-    &--xl {
-      gap: 20px;
-    }
-    &--xxl {
-      gap: 25px;
-    }
-    &--xxxl {
-      gap: 30px;
-    }
-  }
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: #001b38;
+  color: white;
+  text-align: left;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
