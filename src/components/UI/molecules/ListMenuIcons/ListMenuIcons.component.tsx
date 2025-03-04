@@ -6,7 +6,7 @@ import { IListMenuIcons } from './ListMenuIcons.interface'
 import { useMediaQuery } from '../../../hooks'
 import style from './listMenuIcons.module.scss'
 import { LogoutIcon } from '../../../../constants/icons.constants'
-import { getIcons } from '@utils/icons/getIcons.util'
+import { getIcon } from '@utils/icons/getIcons.util'
 import { megaMenuUserLoggedIcons } from '@constants/stories'
 
 const Component: React.FC<IListMenuIcons> = ({ menuItems1440, haveGif, urlParam, menuItems, logout }) => {
@@ -23,7 +23,7 @@ const Component: React.FC<IListMenuIcons> = ({ menuItems1440, haveGif, urlParam,
             {items.map(({ slug, icon, ...props }, i: number) => (
               <Fragment key={i}>
                 <MenuIcon
-                  icon={icon && icon in megaMenuUserLoggedIcons ? getIcons(icon) : icon}
+                  icon={icon && icon in megaMenuUserLoggedIcons ? getIcon(megaMenuUserLoggedIcons, icon) : icon}
                   isActive={Array.isArray(slug) ? slug.includes(urlParam) : urlParam === slug}
                   {...props}
                 />

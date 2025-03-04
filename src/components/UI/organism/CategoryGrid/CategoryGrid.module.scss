@@ -1,0 +1,19 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-category-grid-wrapper {
+  display: grid;
+  gap: 8px 20px;
+  padding: 0 220px;
+  margin: 63px 0;
+
+  @media (max-width: v.$screen-md) {
+    padding: 0 12px;
+    margin: 40px 0;
+  }
+
+  @media (max-width: v.$screen-sm) {
+    padding: 0 12px;
+    margin: 40px 0;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  }
+}

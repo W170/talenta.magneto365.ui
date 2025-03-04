@@ -1,0 +1,83 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-vacant-positions-layout {
+  display: flex;
+  flex-direction: column;
+
+  &-top-container {
+    display: flex;
+    flex-direction: column;
+
+    &__back-button {
+      display: flex;
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 22px;
+      margin-top: 30px;
+      margin-left: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      color: #0a0c0e;
+    }
+
+    &--description {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 63px;
+
+      h2 {
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 22px;
+        color: #0a0c0e;
+        margin: 0;
+        text-align: center;
+      }
+
+      h3 {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        margin: 12px 0 20px;
+        color: #0a0c0e;
+        text-align: center;
+      }
+
+      @media (max-width: v.$screen-md) {
+        margin-top: 40px;
+        padding: 0 12px;
+      }
+    }
+  }
+
+  &-view-more-container {
+    display: flex;
+    justify-content: center;
+    margin: 63px 0;
+
+    &__button {
+      display: flex;
+      padding: 13px;
+      border-radius: 30px;
+      background-color: #1a324c;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: normal;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    @media (max-width: v.$screen-sm) {
+      padding: 20px 12px;
+      position: relative;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 8;
+      margin: 0;
+    }
+  }
+}

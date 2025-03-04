@@ -1,0 +1,71 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-category-menu-list {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  padding: 4px 8px 8px;
+  background-color: #f0f1f3;
+  border: 1px solid #e0e4e7;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  opacity: 0;
+  transform: translateY(-5px);
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+
+  &--is-open {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear;
+  }
+
+  &-listItem {
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #47535f;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ffffff;
+      color: #292f37;
+    }
+  }
+
+  &-seeAll {
+    border-top: solid 1px #e0e4e7;
+    padding-top: 8px;
+    margin-top: 4px;
+    display: flex;
+    flex-direction: row;
+    align-self: stretch;
+    gap: 10px;
+    cursor: pointer;
+
+    &__item {
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 400;
+      color: #47535f;
+      text-decoration: none;
+      padding: 8px;
+    }
+
+    &__arrow {
+      margin-left: auto;
+      align-self: center;
+
+      @media screen and (max-width: v.$screen-sm) {
+        opacity: 0.5;
+      }
+    }
+  }
+}
