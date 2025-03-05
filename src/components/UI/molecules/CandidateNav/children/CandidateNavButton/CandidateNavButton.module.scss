@@ -1,0 +1,38 @@
+.magneto-ui-candidate-nav-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 13px;
+  border: none;
+  background-color: transparent;
+  gap: 10px;
+
+  &--red {
+    border-radius: 30px;
+    width: 44px;
+    background-color: #e10000;
+    color: white;
+  }
+
+  &--dark_blue {
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    background-color: #00162d;
+    color: white;
+    gap: 10px;
+    padding: 12px 25px;
+  }
+
+  &--gray {
+    border-radius: 30px;
+    width: 44px;
+    background-color: #f0f1f3;
+    color: black;
+  }
+
+  &--left {
+    width: 100%;
+    justify-content: start;
+  }
+}

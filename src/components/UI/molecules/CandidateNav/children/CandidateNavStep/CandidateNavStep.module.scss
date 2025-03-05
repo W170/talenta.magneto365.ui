@@ -1,0 +1,14 @@
+.magneto-ui-candidate-nav-step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    width: 44px;
+    background-color: transparent;
+    border: none;
+  }
+}

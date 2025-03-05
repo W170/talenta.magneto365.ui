@@ -17,13 +17,13 @@ const Component: React.FC<TCandidateProfileDropdown> = ({ children, ...props }) 
       {...props}
     >
       <div
-        className={cx('magneto-ui-candidate-profile-dropdown-container', {
-          'magneto-ui-candidate-profile-dropdown-container--visible': isOpen
+        className={cx('magneto-ui-candidate-profile-dropdown__container', {
+          'magneto-ui-candidate-profile-dropdown__container--visible': isOpen
         })}
       >
         <div
-          className={cx('magneto-ui-candidate-profile-dropdown-content', {
-            'magneto-ui-candidate-profile-dropdown-content--visible': isOpen
+          className={cx('magneto-ui-candidate-profile-dropdown__content', {
+            'magneto-ui-candidate-profile-dropdown__content--visible': isOpen
           })}
         >
           {children}
