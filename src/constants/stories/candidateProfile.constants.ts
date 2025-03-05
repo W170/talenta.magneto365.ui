@@ -2,16 +2,26 @@ import { ICandidateTags, ICandidateComments, ICandidateActivity, CandidateActivi
 import { ICandidateOverviewProps, CandidateOverview } from '@components/UI/molecules'
 import { ICandidateProfileTemplate } from '@components/UI/template'
 import {
+  ArchiveAdd,
   BuildingWhite,
   Date,
   DollarCircleWhiteOutline,
   EmailSquare,
   LocationBlueBold,
   Mobile,
+  More,
   PeopleInfo,
   Position,
+  shareLinearBlack,
   Teacher,
-  UserTag
+  UserCheckLinearBlack,
+  UserTag,
+  VideoAddLinearBlack,
+  ArrowRightWhite,
+  CloseWhite,
+  Email,
+  BanWhite,
+  ArrowRightLinearWhite
 } from '@constants/icons.constants'
 
 export const candidateOverviewProps: ICandidateOverviewProps = {
@@ -800,4 +810,47 @@ export const candidateProfilePageProps: ICandidateProfileTemplate = {
       title: 'Actividad de candidato'
     }
   ]
+}
+
+export const CandidateNavProps: Record<string, any> = {
+  cancelar: CloseWhite,
+  nextStep: {
+    value: 'Siguiente etapa',
+    icon: ArrowRightWhite
+  },
+  optionIcon: More,
+  options: [
+    {
+      icon: VideoAddLinearBlack,
+      value: 'Repetir video entrevista'
+    },
+    {
+      icon: ArchiveAdd,
+      value: 'Separar candidato'
+    },
+    {
+      icon: shareLinearBlack,
+      value: 'Compartir'
+    },
+    {
+      icon: UserCheckLinearBlack,
+      value: 'Marcar como contratado'
+    }
+  ],
+  candidate: {
+    candidateCount: '1 de 1',
+    amount: 1,
+    value: 'Candidato ',
+    count: 1
+  },
+  shareIcon: shareLinearBlack,
+  inviteAi: {
+    icon: Email,
+    value: 'Invitar a postular'
+  },
+  block: BanWhite,
+  sendVacant: {
+    icon: ArrowRightLinearWhite,
+    value: 'Enviar a una vacante'
+  }
 }

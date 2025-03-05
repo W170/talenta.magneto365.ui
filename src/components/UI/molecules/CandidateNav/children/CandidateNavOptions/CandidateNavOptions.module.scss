@@ -1,18 +1,23 @@
-.magneto-ui-candidate-profile-dropdown {
+.magneto-ui-candidate-nav-options {
+  padding: 16px 16px 0;
+  border-bottom: 1px solid #e5e5e5;
   visibility: hidden;
   display: grid;
   grid-template-rows: 0fr;
   transition: all 0.3s ease-in-out;
+
   &--visible {
     visibility: visible;
     grid-template-rows: 1fr;
   }
+
   &__container {
     min-height: 0;
     height: 0;
     visibility: visible;
     opacity: 0;
     transition: all 0.3s ease-in-out;
+
     &--visible {
       padding-top: 16px;
       visibility: visible;
@@ -20,6 +25,7 @@
       height: 100%;
     }
   }
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -32,10 +38,16 @@
     transition: all 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
+
     &--visible {
       transform: scaleY(1);
       visibility: visible;
       opacity: 1;
     }
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
   }
 }
