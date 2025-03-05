@@ -1,9 +1,12 @@
 import React, { useRef } from 'react'
+import { TInputFile } from '@components/UI/atoms/InputFile/inputFile.interface'
+import { classNames } from '@shared/utils/common'
 import style from './InputFile.module.scss'
-import { InputFileText, InputFileButton } from './index'
-import { IInputFileInterface } from '@components/UI/atoms/InputFile/inputFile.interface'
+import * as children from './children'
 
-const Component: React.FC<IInputFileInterface> = ({ children, className, onFileSelect }) => {
+const cx = classNames.bind(style)
+
+const Component: React.FC<TInputFile> = ({ children, className, onChange, ...props }) => {
   const inputFileRef = useRef<HTMLInputElement | null>(null)
 
   const handleFileClick = () => {
@@ -12,42 +15,41 @@ const Component: React.FC<IInputFileInterface> = ({ children, className, onFileS
 
   const handleFileDrop = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault()
-    const files = Array.from(event.dataTransfer.files)
-    if (files.length && onFileSelect) {
-      onFileSelect(files)
+    const files = event.dataTransfer.files
+
+    if (files.length && inputFileRef.current) {
+      const dataTransfer = new DataTransfer()
+      Array.from(files).forEach((file) => dataTransfer.items.add(file))
+
+      inputFileRef.current.files = dataTransfer.files
+
+      inputFileRef.current.dispatchEvent(new Event('change', { bubbles: true }))
     }
   }
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(event.target.files || [])
-    if (files.length && onFileSelect) {
-      onFileSelect(files)
-    }
+    onChange?.(event)
   }
 
   const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault()
   }
+
   return (
-    <div
-      className={`${style['magneto-ui-input-file--container']} ${className}`}
-      onClick={handleFileClick}
-      onDrop={handleFileDrop}
-      onDragOver={handleDragOver}
-    >
+    <div className={cx(className)} onClick={handleFileClick} onDrop={handleFileDrop} onDragOver={handleDragOver}>
       {children}
       <input
-        type="file"
-        ref={inputFileRef}
-        style={{ display: 'none' }} // Oculta el input
+        className={cx('magneto-ui-input-file')}
         onChange={handleFileChange}
-        multiple
+        ref={inputFileRef}
+        type="file"
+        {...props}
       />
     </div>
   )
 }
 
-export const InputFile = Object.assign(Component, {
-  Text: InputFileText,
-  Button: InputFileButton
-})
+/**
+ * Atom UI component of Input File
+ */
+export const InputFile = Object.assign(Component, children)

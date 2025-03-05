@@ -1,13 +1,12 @@
-import { IInputFileInterface } from '@components/UI/atoms/InputFile/inputFile.interface'
-import { IInputFileButton } from '@components/UI/atoms/InputFile/children/InputButton/InputFileButton.interface'
-import { IInputFileText } from '@components/UI/atoms/InputFile/children/InputText/InputFileText.interface'
+import { TInputFile } from '@components/UI/atoms/InputFile/inputFile.interface'
+import { TInputFileButton } from '@components/UI/atoms/InputFile/children/InputFileButton/InputFileButton.interface'
 
 export interface ICandidateDocuments {
   classname?: string
   errorMessage: string
-  inputFileInterfaceProps: IInputFileInterface
-  inputFileButton: IInputFileButton
-  inputFileText: IInputFileText
+  inputFileInterfaceProps: TInputFile
+  inputFileButton: TInputFileButton
+  inputFileText: string
   child: ICandidateDocumentSection[]
 }
 
