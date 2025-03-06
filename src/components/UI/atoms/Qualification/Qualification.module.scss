@@ -1,8 +1,9 @@
-.qualification {
+.magneto-ui-qualification {
   display: flex;
   padding: 2px;
   margin: 2px;
-  &_star {
+  list-style: none;
+  &__star {
     cursor: pointer;
     width: 30px;
   }

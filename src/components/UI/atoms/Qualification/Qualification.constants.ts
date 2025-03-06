@@ -3,31 +3,31 @@ import { IQualificationStar } from './Qualification.interface'
 
 export const QUALIFICATION: IQualificationStar[] = [
   {
-    alt: 'Rating 1',
+    alt: 'Rating star 1',
     icon: StartGray,
     iconHover: StarGreyFilled,
     iconSelect: StartDark
   },
   {
-    alt: 'Rating 2',
+    alt: 'Rating star 2',
     icon: StartGray,
     iconHover: StarGreyFilled,
     iconSelect: StartDark
   },
   {
-    alt: 'Rating 3',
+    alt: 'Rating star 3',
     icon: StartGray,
     iconHover: StarGreyFilled,
     iconSelect: StartDark
   },
   {
-    alt: 'Rating 4',
+    alt: 'Rating star 4',
     icon: StartGray,
     iconHover: StarGreyFilled,
     iconSelect: StartDark
   },
   {
-    alt: 'Rating 5',
+    alt: 'Rating star 5',
     icon: StartGray,
     iconHover: StarGreyFilled,
     iconSelect: StartDark

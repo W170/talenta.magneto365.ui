@@ -1,13 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { IQualification } from './Qualification.interface'
 import { QUALIFICATION } from './Qualification.constants'
-import styles from './Qualification.module.scss'
 import { classNames } from '@shared/utils/common'
+import styles from './Qualification.module.scss'
+
 const cx = classNames.bind(styles)
 
 const Component: React.FC<IQualification> = ({ rating = -1, onClick }) => {
-  const [Qualification, setQualification] = useState<number>(-1)
+  const [qualification, setQualification] = useState<number>(-1)
   const [hover, setHover] = useState<number>(-1)
+
+  const onClickQualification = useCallback(
+    (value: number) => {
+      onClick?.(value)
+      setQualification(value)
+    },
+    [onClick]
+  )
 
   useEffect(() => {
     if (rating > 0 && rating <= 5) {
@@ -15,28 +24,23 @@ const Component: React.FC<IQualification> = ({ rating = -1, onClick }) => {
     }
   }, [rating])
 
-  const onClickQualification = (value: number) => {
-    onClick && onClick(value)
-    setQualification(value)
-  }
-
   return (
-    <div className={cx('qualification')}>
+    <ul className={cx('magneto-ui-qualification')}>
       {QUALIFICATION.map(({ alt, icon, iconHover, iconSelect }, index) => (
-        <div
-          className={cx('qualification_star')}
+        <li
+          className={cx('magneto-ui-qualification__star')}
           onMouseEnter={() => setHover(index)}
           onMouseLeave={() => setHover(-1)}
           onClick={() => onClickQualification(index)}
-          key={index}
+          key={`qualification-star-${index}`}
         >
           <img
             alt={alt}
-            src={index <= Number(Qualification) ? iconSelect : index <= Number(hover) ? iconHover : icon}
+            src={index <= Number(qualification) ? iconSelect : index <= Number(hover) ? iconHover : icon}
           />
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }
 /**

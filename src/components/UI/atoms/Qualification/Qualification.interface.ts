@@ -6,7 +6,7 @@ export interface IQualification {
   /**
    * Function to change the rating value
    */
-  onClick: (value: number) => void
+  onClick?: (value: number) => void
 }
 
 export interface IQualificationStar {
