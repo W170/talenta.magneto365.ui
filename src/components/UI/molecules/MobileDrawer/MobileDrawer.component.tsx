@@ -43,8 +43,8 @@ const Component: React.FC<IMobileDrawer> = ({
     <>
       {renderPortal && (
         <DrawerPortal>
-          <div className={cx('magneto-ui-mobile-drawer', className)}>
-            <aside className={style[showMenu]}>
+          <div className={cx('magneto-ui-mobile-drawer')}>
+            <aside className={cx(showMenu, className)}>
               <button
                 data-name="close-drawer"
                 title="close-modal"
