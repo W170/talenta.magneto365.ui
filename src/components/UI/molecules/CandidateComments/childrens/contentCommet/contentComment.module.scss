@@ -1,0 +1,12 @@
+.contentCommet {
+  padding: 5px;
+  margin: 5px;
+  &-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &-decription {
+    padding: 2px 0 0 50px;
+  }
+}
