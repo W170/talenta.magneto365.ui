@@ -1,8 +1,8 @@
 .magneto-ui-typography {
-  font-size: inherit;
   font-style: inherit;
-  font-weight: inherit;
-  line-height: inherit;
+  font-size: var(--size, inherit);
+  font-weight: var(--weight, inherit);
+  line-height: calc(var(--size, inherit) + 4px);
   color: inherit;
   margin: 0;
   padding: 0;
@@ -27,16 +27,36 @@
       font-size: 18px;
       line-height: 22px;
     }
-    &-xxl {
+    &-xl-2 {
       font-size: 20px;
       line-height: 24px;
+    }
+    &-xl-3 {
+      font-size: 22px;
+      line-height: 26px;
+    }
+    &-xl-4 {
+      font-size: 24px;
+      line-height: 28px;
+    }
+    &-xl-5 {
+      font-size: 26px;
+      line-height: 30px;
+    }
+    &-xl-6 {
+      font-size: 28px;
+      line-height: 32px;
+    }
+    &-xl-7 {
+      font-size: 30px;
+      line-height: 34px;
     }
   }
   &--weight {
     &-thin {
       font-weight: 100;
     }
-    &-extraLight {
+    &-extra-light {
       font-weight: 200;
     }
     &-light {
@@ -54,7 +74,7 @@
     &-bold {
       font-weight: 700;
     }
-    &-extraBold {
+    &-extra-bold {
       font-weight: 800;
     }
     &-black {
@@ -154,5 +174,17 @@
   }
   &--underline {
     text-decoration: underline;
+  }
+  &--ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &--ellipsis-multiline {
+    display: -webkit-box;
+    line-clamp: var(--ellipsis-lines);
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--ellipsis-lines);
+    overflow: hidden;
   }
 }

@@ -1,2 +1,2 @@
-export { Title } from './TypographyTitle.component'
+export { TypographyTitle as Title } from './TypographyTitle.component'
 export * from './TypographyTitle.interface'

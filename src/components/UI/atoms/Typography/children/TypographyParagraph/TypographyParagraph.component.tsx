@@ -1,9 +1,15 @@
 import React from 'react'
+import { typographyStyles, applyWrappers, omitTypographyProps } from '../../Typography.constant'
 import { TTypographyParagraph } from './TypographyParagraph.interface'
-import { typographyStyles } from '../../Typography.constant'
 
 const Component: React.FC<TTypographyParagraph> = ({ children, ...props }) => {
-  return <p className={typographyStyles({ ...props })}>{children}</p>
+  const { className, style } = typographyStyles({ ...props })
+
+  return (
+    <p {...omitTypographyProps(props)} className={className} style={style}>
+      {applyWrappers(children, props)}
+    </p>
+  )
 }
 
-export const Paragraph = Component
+export const TypographyParagraph = Component
