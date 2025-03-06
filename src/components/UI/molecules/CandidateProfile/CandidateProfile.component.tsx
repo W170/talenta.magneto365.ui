@@ -7,9 +7,9 @@ import * as children from './children'
 
 const cx = classNames.bind(styles)
 
-const Component: React.FC<TCandidateProfile> = ({ children, className, ...props }) => {
+const Component: React.FC<TCandidateProfile> = ({ children, className, isOpen, onChangeOpen, ...props }) => {
   return (
-    <CandidateProfileProvider>
+    <CandidateProfileProvider isOpen={isOpen} onChangeOpen={onChangeOpen}>
       <article className={cx('magneto-ui-candidate-profile', className)} {...props}>
         {children}
       </article>

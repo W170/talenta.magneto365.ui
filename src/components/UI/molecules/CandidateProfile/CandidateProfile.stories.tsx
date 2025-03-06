@@ -5,8 +5,8 @@ import { CandidateProfile } from './CandidateProfile.component'
 import { IconItem, Typography } from '../../atoms'
 import { ExpandableInfo } from '../../molecules'
 
-export const CandidateProfileStory: React.FC = () => (
-  <CandidateProfile>
+export const CandidateProfileStory: React.FC = ({ ...props }) => (
+  <CandidateProfile {...props}>
     <CandidateProfile.Header>
       <CandidateProfile.Avatar avatar={candidateProfileProps.avatar} score={candidateProfileProps.score} />
       <div>
