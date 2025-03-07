@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { classNames } from '@shared/utils/common'
 import styles from './date.module.scss'
-import { CommentsMobileContext } from '../../candidateComments.component'
+import { IDate } from './date.interface'
 
 const cx = classNames.bind(styles)
 
@@ -22,23 +22,17 @@ const formatDate = (inputDate: string | number | Date): string => {
   }).format(parsedDate)
 }
 
-const Component: React.FC<{ date: string | number | Date }> = ({ date }) => {
-  const context = useContext(CommentsMobileContext)
+const Component: React.FC<IDate> = ({ date, ...props }) => {
+  const componentDate = (value: string | number | Date) => (
+    <div className={cx('date')} {...props}>
+      {formatDate(value)}
+    </div>
+  )
 
   if (date) {
-    return <div className={cx('date')}>{formatDate(date)}</div>
+    return componentDate(date)
   }
-  if (context?.data?.length) {
-    return (
-      <>
-        {context.data.map(({ date }: { date: string | number | Date }, index: number) => (
-          <div className={cx('date')} key={index}>
-            {formatDate(date)}
-          </div>
-        ))}
-      </>
-    )
-  }
+
   return null
 }
 /**
