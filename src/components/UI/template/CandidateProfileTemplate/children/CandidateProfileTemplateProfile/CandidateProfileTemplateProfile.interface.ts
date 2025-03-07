@@ -1,3 +1,3 @@
-import { ICandidateProfile } from '@components/UI/molecules'
+import { TCandidateProfile } from '@components/UI/molecules'
 
-export type TCandidateProfilePageProfile = ICandidateProfile
+export type TCandidateProfilePageProfile = TCandidateProfile

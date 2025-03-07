@@ -1,9 +1,10 @@
 import React from 'react'
-import { classNames } from '@shared/utils/common'
-import styles from './CandidateNavStep.module.scss'
-import { IconItem } from '@components/UI/atoms'
-import { ArrowLeft2, ArrowRight2 } from '@constants/icons.constants'
 import { ICandidateNavStepProps } from './CandidateNavStep.interface'
+import { ArrowLeft2, ArrowRight2 } from '@constants/icons.constants'
+import styles from './CandidateNavStep.module.scss'
+import { classNames } from '@shared/utils/common'
+import { IconItem } from '@components/UI/atoms'
+
 const cs = classNames.bind(styles)
 
 const Component: React.FC<ICandidateNavStepProps> = ({ children, onChange, count }) => {
@@ -32,4 +33,7 @@ const Component: React.FC<ICandidateNavStepProps> = ({ children, onChange, count
   )
 }
 
+/**
+ * Molecule UI component child of Candidate Nav
+ */
 export const CandidateNavStep = Component

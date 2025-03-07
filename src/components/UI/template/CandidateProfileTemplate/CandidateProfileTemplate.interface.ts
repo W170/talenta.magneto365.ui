@@ -1,22 +1,14 @@
 import { FC } from 'react'
-import { TCandidateProfilePageNav, TCandidateProfilePageProfile } from './children'
-import { IHorizontalMenu } from '@components/UI/molecules'
 
 export interface ICandidateProfileTemplate {
   screens: ICandidateScreen[]
+  onChangeScreen?: (screen?: ICandidateScreen, index?: number) => void
 }
 
-export interface ICandidateProfileTemplateCompound extends React.FC<ICandidateProfileTemplate> {
-  Header: FC<IHorizontalMenu>
-  Profile: FC<TCandidateProfilePageProfile>
-  Screen: FC
-  Nav: FC<TCandidateProfilePageNav>
-}
-
-export interface ICandidateScreen<T = unknown> {
+export interface ICandidateScreen {
   icon: string
   name: string
-  component: React.FC<T>
+  component: FC
   title: string
 }
 
@@ -26,8 +18,11 @@ export interface ICandidateTemplateContext {
   setActiveScreen: (index: number) => void
   isProfileOpen: boolean
   setIsProfileOpen: (state: boolean) => void
+  navHeight: number
+  setNavHeight: (height: number) => void
 }
 
 export interface ICandidateProvider {
   screens: ICandidateScreen[]
+  onChangeScreen?: (screen?: ICandidateScreen, index?: number) => void
 }

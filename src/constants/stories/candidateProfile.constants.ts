@@ -1,6 +1,5 @@
-import { ICandidateTags, ICandidateComments, ICandidateActivity, CandidateActivity } from '@components/UI/organism'
-import { ICandidateOverviewProps, CandidateOverview } from '@components/UI/molecules'
-import { ICandidateProfileTemplate } from '@components/UI/template'
+import { ICandidateTags, ICandidateComments, ICandidateActivity } from '@components/UI/organism'
+import { ICandidateOverviewProps } from '@components/UI/molecules'
 import {
   ArchiveAdd,
   BuildingWhite,
@@ -794,24 +793,6 @@ export const candidateActivity: ICandidateActivity = {
   }
 }
 
-export const candidateProfilePageProps: ICandidateProfileTemplate = {
-  profile: candidateProfileProps,
-  screens: [
-    {
-      name: 'candidateOverview',
-      icon: 'users',
-      component: CandidateOverview,
-      title: 'Perfil de candidato'
-    },
-    {
-      name: 'candidateActivity',
-      icon: 'activity',
-      component: CandidateActivity,
-      title: 'Actividad de candidato'
-    }
-  ]
-}
-
 export const CandidateNavProps: Record<string, any> = {
   cancelar: CloseWhite,
   nextStep: {
@@ -831,6 +812,14 @@ export const CandidateNavProps: Record<string, any> = {
     {
       icon: shareLinearBlack,
       value: 'Compartir'
+    },
+    {
+      icon: UserCheckLinearBlack,
+      value: 'Marcar como contratado'
+    },
+    {
+      icon: UserCheckLinearBlack,
+      value: 'Marcar como contratado'
     },
     {
       icon: UserCheckLinearBlack,

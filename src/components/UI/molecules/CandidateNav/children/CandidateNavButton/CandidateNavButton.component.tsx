@@ -1,21 +1,21 @@
-import { classNames } from '@shared/utils/common'
 import React, { useCallback } from 'react'
-import styles from './CandidateNavButton.module.scss'
-import { useCandidateNav } from '../../CandidateNav.context'
 import { ICandidateNavButton } from './CandidateNavButton.interface'
+import { useCandidateNav } from '../../CandidateNav.context'
+import styles from './CandidateNavButton.module.scss'
+import { classNames } from '@shared/utils/common'
 
 const cs = classNames.bind(styles)
 
 const Component: React.FC<ICandidateNavButton> = ({ children, toggler, onClick, variant, ...props }) => {
   const { onChangeOpen } = useCandidateNav()
+
   const handlerOnClick = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
+    (evt: React.MouseEvent<HTMLButtonElement>) => {
       if (toggler) {
+        evt.stopPropagation()
         onChangeOpen()
       }
-      if (onClick) {
-        onClick(e)
-      }
+      onClick?.(evt)
     },
     [toggler, onChangeOpen, onClick]
   )
@@ -33,4 +33,7 @@ const Component: React.FC<ICandidateNavButton> = ({ children, toggler, onClick, 
   )
 }
 
+/**
+ * Molecule UI component child of Candidate Nav
+ */
 export const CandidateNavButton = Component

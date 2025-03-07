@@ -1,3 +1,1 @@
-import { ICandidateNavigationBar } from '@components/UI/molecules'
-
-export type TCandidateProfilePageNav = ICandidateNavigationBar
+export type TCandidateProfilePageNav = React.HTMLAttributes<HTMLDivElement>
