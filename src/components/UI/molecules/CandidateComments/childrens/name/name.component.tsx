@@ -1,15 +1,12 @@
 import React from 'react'
 import { IName } from './name.interface'
-import { classNames } from '@shared/utils/common'
-import styles from './name.module.scss'
-
-const cx = classNames.bind(styles)
+import { Typography } from '@components/UI/atoms'
 
 const Component: React.FC<IName> = ({ name, ...props }) => {
   const componentName = (value: string) => (
-    <div className={cx('name')} {...props}>
-      {value}
-    </div>
+    <Typography.Text {...props} size="md" color="black" strong>
+      {value}{' '}
+    </Typography.Text>
   )
 
   if (name) {
