@@ -29,4 +29,12 @@
       background-color: #e0e4e7;
     }
   }
+  &--arrow{
+    display: flex;
+    justify-content: center;
+    width: 44px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
 }

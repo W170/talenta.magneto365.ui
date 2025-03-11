@@ -3,12 +3,13 @@ import { Meta, StoryObj } from '@storybook/react'
 import { CandidateNav } from './CandidateNav.component'
 import { IconItem, Typography } from '../../atoms'
 import { CandidateNavProps } from '../../../../constants/stories'
+import { ArrowLeft2, ArrowRight2 } from '../../../../constants/icons.constants'
 
 export const CandidateNavStory = ({ ...props }) => {
-  const [count, setCount] = useState(CandidateNavProps.candidate.count)
+  const [count] = useState(CandidateNavProps.candidate.count)
 
-  const handleChange = (newCount: number) => {
-    setCount(newCount)
+  const handleChange = () => {
+    console.log("hola")
   }
 
   return (
@@ -58,7 +59,10 @@ export const CandidateNavStory = ({ ...props }) => {
           </CandidateNav.Button>
         </div>
         <div style={{ padding: '0 33px', marginTop: '6px' }}>
-          <CandidateNav.Step onChange={handleChange} count={count}>
+          <CandidateNav.Step>
+            <CandidateNav.Button variant="arrow" onClick={handleChange}>
+              <IconItem size={20} icon={ArrowLeft2} />
+            </CandidateNav.Button>
             <div style={{ flex: 1, textAlign: 'center' }}>
               <Typography.Text size={'sm'} weight="normal" color="black">
                 {CandidateNavProps.candidate.value}
@@ -67,6 +71,9 @@ export const CandidateNavStory = ({ ...props }) => {
                 {count}
               </Typography.Text>
             </div>
+            <CandidateNav.Button variant="arrow" onClick={handleChange}>
+              <IconItem size={20} icon={ArrowRight2} />
+            </CandidateNav.Button>
           </CandidateNav.Step>
         </div>
       </CandidateNav>
@@ -109,7 +116,10 @@ export const Catalogue: Story = {
         </CandidateNav.Button>
       </div>
       <div style={{ padding: '0 33px', marginTop: '6px' }}>
-        <CandidateNav.Step count={CandidateNavProps.candidate.count}>
+        <CandidateNav.Step>
+          <CandidateNav.Button variant="arrow" >
+            <IconItem size={20} icon={ArrowLeft2} />
+          </CandidateNav.Button>
           <div style={{ flex: 1, textAlign: 'center' }}>
             <Typography.Text size={'sm'} weight="normal" color="black">
               {CandidateNavProps.candidate.value}
@@ -118,6 +128,9 @@ export const Catalogue: Story = {
               {CandidateNavProps.candidate.count}
             </Typography.Text>
           </div>
+          <CandidateNav.Button variant="arrow">
+            <IconItem size={20} icon={ArrowRight2} />
+          </CandidateNav.Button>
         </CandidateNav.Step>
       </div>
     </CandidateNav>
@@ -148,7 +161,10 @@ export const AI: Story = {
         </CandidateNav.Button>
       </div>
       <div style={{ padding: '0 33px', marginTop: '6px' }}>
-        <CandidateNav.Step count={CandidateNavProps.candidate.count}>
+        <CandidateNav.Step >
+          <CandidateNav.Button variant="arrow">
+            <IconItem size={20} icon={ArrowLeft2} />
+          </CandidateNav.Button>
           <div style={{ flex: 1, textAlign: 'center' }}>
             <Typography.Text size={'sm'} weight="normal" color="black">
               {CandidateNavProps.candidate.value}
@@ -157,6 +173,9 @@ export const AI: Story = {
               {CandidateNavProps.candidate.count}
             </Typography.Text>
           </div>
+          <CandidateNav.Button variant="arrow" >
+            <IconItem size={20} icon={ArrowRight2} />
+          </CandidateNav.Button>
         </CandidateNav.Step>
       </div>
     </CandidateNav>
