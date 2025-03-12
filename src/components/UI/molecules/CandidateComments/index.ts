@@ -1,2 +1,2 @@
 export * from './candidateComments.interface'
-export { CommentsContext } from './candidateComments.component'
+export { CandidateComments } from './candidateComments.component'
