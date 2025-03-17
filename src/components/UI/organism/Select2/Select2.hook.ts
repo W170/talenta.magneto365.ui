@@ -24,8 +24,27 @@ const useSelect2 = <T>({
   }, [searchValue, setTerm])
 
   useEffect(() => {
-    if (!currentFields || !currentFields.length) {
-      setValueSelected([])
+    if (!currentFields) {
+      if (valueSelected.length !== 0) {
+        setValueSelected([])
+      }
+      return
+    }
+
+    if (!Array.isArray(currentFields)) {
+      if ('id' in currentFields && 'name' in currentFields) {
+        const newValue = [currentFields]
+        if (JSON.stringify(valueSelected) !== JSON.stringify(newValue)) {
+          setValueSelected(newValue)
+        }
+      }
+      return
+    }
+
+    if (currentFields.length === 0) {
+      if (valueSelected.length !== 0) {
+        setValueSelected([])
+      }
       return
     }
 
@@ -35,7 +54,7 @@ const useSelect2 = <T>({
       }
       return currentFields
     })
-  }, [currentFields])
+  }, [currentFields, valueSelected])
 
   useEffect(() => {
     if (limitSelections && valueSelected.length >= limitSelections) {
