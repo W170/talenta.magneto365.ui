@@ -16,10 +16,10 @@ const Component: React.FC<TCandidateProfilePageNav> = ({ children, className, ..
 
       if (screenWidth < 360) {
         setTimeout(() => {
-          setNavHeight(openedNavOptions ? 320 : navRef.current?.offsetHeight || 102)
+          setNavHeight(openedNavOptions ? 320 : navRef.current?.offsetHeight || 111)
         }, 300)
       } else {
-        setNavHeight(openedNavOptions ? 320 : 102)
+        setNavHeight(openedNavOptions ? 320 : 111)
       }
     },
     [setNavHeight]
