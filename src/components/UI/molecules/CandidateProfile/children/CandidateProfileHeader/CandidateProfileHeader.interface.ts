@@ -1,1 +1,3 @@
-export type TCandidateProfileHeader = React.HTMLAttributes<HTMLDivElement>
+import { TCollapseHeader } from '@components/UI/atoms'
+
+export type TCandidateProfileHeader = TCollapseHeader

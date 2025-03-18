@@ -1,1 +1,3 @@
-export type TCandidateProfileToggler = React.ButtonHTMLAttributes<HTMLButtonElement>
+import { TCollapseToggler } from '@components/UI/atoms'
+
+export type TCandidateProfileToggler = TCollapseToggler

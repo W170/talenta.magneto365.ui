@@ -1,23 +1,23 @@
 import React from 'react'
 import { TCandidateProfileHeader } from './CandidateProfileHeader.interface'
-import { useCandidateProfile } from '../../CandidateProfile.context'
 import styles from './CandidateProfileHeader.module.scss'
 import { classNames } from '@shared/utils/common'
+import { Collapse } from '@components/UI/atoms'
 
 const cx = classNames.bind(styles)
 
 const Component: React.FC<TCandidateProfileHeader> = ({ children, className, ...props }) => {
-  const { isOpen } = useCandidateProfile()
+  const { open } = Collapse.useCollapse()
 
   return (
-    <header
+    <Collapse.Header
       className={cx('magneto-ui-candidate-profile-header', className, {
-        'magneto-ui-candidate-profile-header--open': isOpen
+        'magneto-ui-candidate-profile-header--open': open
       })}
       {...props}
     >
       {children}
-    </header>
+    </Collapse.Header>
   )
 }
 

@@ -1,6 +1,3 @@
-export type TCandidateProfile = React.HTMLAttributes<HTMLDivElement> & Partial<ICandidateContext>
+import { ICollapseContext } from '@components/UI/atoms'
 
-export interface ICandidateContext {
-  isOpen: boolean
-  onChangeOpen: (isOpen: boolean) => void
-}
+export type TCandidateProfile = React.HTMLAttributes<HTMLDivElement> & Partial<ICollapseContext>

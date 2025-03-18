@@ -25,7 +25,7 @@ export const CandidateProfileStory: React.FC = ({ ...props }) => (
       </div>
       <CandidateProfile.Toggler style={{ marginLeft: 'auto' }} />
     </CandidateProfile.Header>
-    <CandidateProfile.Dropdown>
+    <CandidateProfile.Body>
       <div
         style={{
           padding: '5px',
@@ -70,7 +70,7 @@ export const CandidateProfileStory: React.FC = ({ ...props }) => (
           </div>
         ))}
       </div>
-    </CandidateProfile.Dropdown>
+    </CandidateProfile.Body>
   </CandidateProfile>
 )
 

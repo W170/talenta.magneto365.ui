@@ -1,34 +1,33 @@
 import React, { useCallback } from 'react'
 import { TCandidateProfileToggler } from './CandidateProfileToggler.interface'
-import { useCandidateProfile } from '../../CandidateProfile.context'
 import { ArrowDownGreen } from '@constants/icons.constants'
 import styles from './CandidateProfileToggler.module.scss'
+import { IconItem, Collapse } from '@components/UI/atoms'
 import { classNames } from '@shared/utils/common'
-import { IconItem } from '@components/UI/atoms'
 
 const cx = classNames.bind(styles)
 
 const Component: React.FC<TCandidateProfileToggler> = ({ className, onClick, ...props }) => {
-  const { isOpen, onChangeOpen } = useCandidateProfile()
+  const { open, onChangeOpen } = Collapse.useCollapse()
 
   const handleOnClick = useCallback(
     (evt: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      if (onClick) onClick(evt)
-      onChangeOpen(!isOpen)
+      onClick?.(evt)
+      onChangeOpen(!open)
     },
-    [isOpen, onChangeOpen, onClick]
+    [open, onChangeOpen, onClick]
   )
 
   return (
-    <button
+    <Collapse.Toggler
       {...props}
       className={cx('magneto-ui-candidate-profile-toggler', className, {
-        'magneto-ui-candidate-profile-toggler--open': isOpen
+        'magneto-ui-candidate-profile-toggler--open': open
       })}
       onClick={handleOnClick}
     >
       <IconItem icon={ArrowDownGreen} hover={false} />
-    </button>
+    </Collapse.Toggler>
   )
 }
 

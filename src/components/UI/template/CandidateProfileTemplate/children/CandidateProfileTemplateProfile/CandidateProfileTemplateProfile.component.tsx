@@ -63,7 +63,7 @@ const Component: React.FC = ({ children }) => {
           return React.cloneElement(child, {
             className: cx('magneto-ui-candidate-profile-page-profile__container'),
             onChangeOpen: handleOnChangeOpen,
-            isOpen: isProfileOpen
+            open: isProfileOpen
           })
         }
         return child
