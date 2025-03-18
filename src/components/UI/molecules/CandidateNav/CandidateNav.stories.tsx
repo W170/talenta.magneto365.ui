@@ -9,7 +9,7 @@ export const CandidateNavStory = ({ ...props }) => {
   const [count] = useState(CandidateNavProps.candidate.count)
 
   const handleChange = () => {
-    console.log("hola")
+    console.log('hola')
   }
 
   return (
@@ -24,7 +24,10 @@ export const CandidateNavStory = ({ ...props }) => {
       <CandidateNav {...props}>
         <CandidateNav.Options>
           {CandidateNavProps.options.map((option, index) => (
-            <CandidateNav.Option key={index}>
+            <CandidateNav.Option
+              key={index}
+              style={{ display: 'flex', alignItems: 'center', padding: '0 20px', gap: '5px', minHeight: '44px' }}
+            >
               <div
                 style={{
                   minHeight: 30,
@@ -117,7 +120,7 @@ export const Catalogue: Story = {
       </div>
       <div style={{ padding: '0 33px', marginTop: '6px' }}>
         <CandidateNav.Step>
-          <CandidateNav.Button variant="arrow" >
+          <CandidateNav.Button variant="arrow">
             <IconItem size={20} icon={ArrowLeft2} />
           </CandidateNav.Button>
           <div style={{ flex: 1, textAlign: 'center' }}>
@@ -161,7 +164,7 @@ export const AI: Story = {
         </CandidateNav.Button>
       </div>
       <div style={{ padding: '0 33px', marginTop: '6px' }}>
-        <CandidateNav.Step >
+        <CandidateNav.Step>
           <CandidateNav.Button variant="arrow">
             <IconItem size={20} icon={ArrowLeft2} />
           </CandidateNav.Button>
@@ -173,7 +176,7 @@ export const AI: Story = {
               {CandidateNavProps.candidate.count}
             </Typography.Text>
           </div>
-          <CandidateNav.Button variant="arrow" >
+          <CandidateNav.Button variant="arrow">
             <IconItem size={20} icon={ArrowRight2} />
           </CandidateNav.Button>
         </CandidateNav.Step>

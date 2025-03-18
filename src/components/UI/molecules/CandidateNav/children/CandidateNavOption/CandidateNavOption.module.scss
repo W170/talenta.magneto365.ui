@@ -1,17 +1,4 @@
 .magneto-ui-candidate-nav-option {
   width: 100%;
   list-style: none;
-  &__button {
-    min-height: 44px;
-    width: 100%;
-    border: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    gap: 5px;
-    padding-inline: 20px;
-    background-color: transparent;
-    cursor: pointer;
-  }
 }

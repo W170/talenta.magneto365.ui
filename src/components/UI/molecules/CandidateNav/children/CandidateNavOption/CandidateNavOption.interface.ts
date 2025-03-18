@@ -1,1 +1,1 @@
-export type TCandidateNavOption = React.ButtonHTMLAttributes<HTMLButtonElement>
+export type TCandidateNavOption = React.HTMLAttributes<HTMLLIElement>
