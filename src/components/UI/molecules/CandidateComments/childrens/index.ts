@@ -1,5 +1,0 @@
-export * from './avatar'
-export * from './date'
-export * from './description'
-export * from './name'
-export * from './rating'
