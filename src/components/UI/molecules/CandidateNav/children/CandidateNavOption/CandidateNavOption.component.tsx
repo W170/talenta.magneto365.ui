@@ -1,6 +1,5 @@
 import React from 'react'
 import { TCandidateNavOption } from './CandidateNavOption.interface'
-// import { useCandidateNav } from '../../CandidateNav.context'
 import styles from './CandidateNavOption.module.scss'
 import { classNames } from '@shared/utils/common'
 

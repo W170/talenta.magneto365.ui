@@ -6,7 +6,7 @@ import { classNames } from '@shared/utils/common'
 
 const cs = classNames.bind(styles)
 
-const Component: React.FC<ICandidateNavButton> = ({ children, toggler, onClick, variant, ...props }) => {
+const Component: React.FC<ICandidateNavButton> = ({ children, className, toggler, onClick, variant, ...props }) => {
   const { onChangeOpen } = useCandidateNav()
 
   const handlerOnClick = useCallback(
@@ -22,10 +22,14 @@ const Component: React.FC<ICandidateNavButton> = ({ children, toggler, onClick, 
 
   return (
     <button
-      className={cs('magneto-ui-candidate-nav-button', {
-        [`magneto-ui-candidate-nav-button--${variant}`]: !!variant
-      })}
       {...props}
+      className={cs(
+        'magneto-ui-candidate-nav-button',
+        {
+          [`magneto-ui-candidate-nav-button--${variant}`]: !!variant
+        },
+        className
+      )}
       onClick={handlerOnClick}
     >
       {children}
