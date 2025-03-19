@@ -17,4 +17,7 @@ const Component: React.FC<IRatingBadge> = ({ score }) => {
   )
 }
 
+/**
+ * Atom UI component of Rating Badge
+ */
 export const RatingBadge = Component
