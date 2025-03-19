@@ -19,4 +19,12 @@ export interface IModalResponsive {
    * this property sets customs styles for the mobile drawer
    */
   mobileDrawerClassName?: string
+  /**
+   * this property sets custom className in the background span to modal
+   */
+  backgroundClassNameDesktop?: string
+  /**
+   * this property sets custom className in the background span to drawer
+   */
+  backgroundClassNameMobile?: string
 }

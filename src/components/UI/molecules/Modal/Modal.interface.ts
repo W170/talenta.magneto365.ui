@@ -27,6 +27,10 @@ export interface IModal {
    * this property blocks fn onClose from background
    */
   blockBackgroundClose?: boolean
+  /**
+   * this property sets custom className in the background span
+   */
+  backgroundClassName?: string
 }
 
 export interface IModalPortal {

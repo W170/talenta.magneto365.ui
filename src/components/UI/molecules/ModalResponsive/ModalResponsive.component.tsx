@@ -4,14 +4,27 @@ import { MobileDrawer } from '../MobileDrawer'
 import { Modal } from '../Modal'
 import { IModalResponsive } from './ModalResponsive.interface'
 
-const Component: React.FC<IModalResponsive> = ({ children, open, onClose, modalClassName, mobileDrawerClassName }) => {
+const Component: React.FC<IModalResponsive> = ({
+  children,
+  open,
+  onClose,
+  modalClassName = '',
+  mobileDrawerClassName = '',
+  backgroundClassNameDesktop = '',
+  backgroundClassNameMobile = ''
+}) => {
   const container = useMediaQuery(
-    <Modal className={modalClassName} isOpen={open} onClose={onClose}>
+    <Modal className={modalClassName} backgroundClassName={backgroundClassNameDesktop} isOpen={open} onClose={onClose}>
       {children}
     </Modal>,
     {
       md: (
-        <MobileDrawer className={mobileDrawerClassName} isOpen={open} onClose={onClose}>
+        <MobileDrawer
+          backgroundClassName={backgroundClassNameMobile}
+          className={mobileDrawerClassName}
+          isOpen={open}
+          onClose={onClose}
+        >
           {children}
         </MobileDrawer>
       )

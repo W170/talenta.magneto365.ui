@@ -12,7 +12,8 @@ const Modal: React.FC<IModal> = ({
   title,
   description,
   className = '',
-  blockBackgroundClose = false
+  blockBackgroundClose = false,
+  backgroundClassName = ''
 }) => {
   useEffect(() => {
     const { body } = document
@@ -38,7 +39,7 @@ const Modal: React.FC<IModal> = ({
         </button>
       </div>
       <span
-        className={`${styles[`${classMUI}-background-modal`]}`}
+        className={`${styles[`${classMUI}-background-modal`]} ${backgroundClassName}`}
         onClick={blockBackgroundClose ? () => null : onClose}
       />
     </ModalPortal>

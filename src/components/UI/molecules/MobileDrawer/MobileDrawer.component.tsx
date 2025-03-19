@@ -13,7 +13,8 @@ const Component: React.FC<IMobileDrawer> = ({
   isOpen,
   children,
   className = '',
-  blockBackgroundClose = false
+  blockBackgroundClose = false,
+  backgroundClassName = ''
 }) => {
   const [showContent, setShowContent] = useState<boolean>(false)
   const [renderPortal, setRenderPortal] = useState<boolean>(isOpen)
@@ -56,7 +57,10 @@ const Component: React.FC<IMobileDrawer> = ({
               <div className={cx('magneto-ui-container')}>{children}</div>
             </aside>
             {isOpen && (
-              <span className={cx('background-drawer')} onClick={blockBackgroundClose ? () => null : onClose} />
+              <span
+                className={cx('background-drawer', backgroundClassName)}
+                onClick={blockBackgroundClose ? () => null : onClose}
+              />
             )}
           </div>
         </DrawerPortal>
