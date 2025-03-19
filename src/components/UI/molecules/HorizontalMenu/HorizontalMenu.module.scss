@@ -10,8 +10,6 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  overflow: scroll;
-  scrollbar-width: none;
   &__back {
     padding: 0;
     margin: 0;
@@ -29,6 +27,8 @@
     display: flex;
     flex: 1;
     padding-inline: 10px;
+    overflow: scroll;
+    scrollbar-width: none;
   }
   &__list {
     margin: 0;
@@ -59,6 +59,7 @@
       font-size: 14px;
       line-height: 17px;
       color: #0a0c0e;
+      white-space: nowrap;
     }
   }
 }

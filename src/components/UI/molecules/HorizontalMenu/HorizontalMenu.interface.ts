@@ -6,7 +6,7 @@ export interface IHorizontalMenu {
   /**
    * options of horizontal menu
    */
-  options: { icon: string; title: string }[]
+  options: IHorizontalMenuOption[]
   /**
    * onChange of horizontal menu
    */
@@ -15,4 +15,9 @@ export interface IHorizontalMenu {
    * onclick of horizontal menu
    */
   onclick?: () => void
+}
+
+export interface IHorizontalMenuOption {
+  icon: React.ReactNode
+  title: string
 }
