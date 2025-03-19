@@ -1,7 +1,6 @@
 export * from './AlphabetFilter'
 export * from './ApplicationSummary'
 export * from './BrandMenu'
-export * from './CandidateTags'
 export * from './DatePickerResponsive'
 export * from './DrawerMenu'
 export * from './FilterCard'
