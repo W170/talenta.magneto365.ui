@@ -50,7 +50,7 @@ const Component: React.FC = ({ children }) => {
 
   return (
     <div
-      className={cx('magneto-ui-candidate-profile-page-profile')}
+      className={cx('magneto-ui-candidate-profile-template-profile')}
       style={
         {
           ...customScrollbarButtonsStyle,
@@ -61,7 +61,7 @@ const Component: React.FC = ({ children }) => {
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
           return React.cloneElement(child, {
-            className: cx('magneto-ui-candidate-profile-page-profile__container'),
+            className: cx('magneto-ui-candidate-profile-template-profile__container'),
             onChangeOpen: handleOnChangeOpen,
             open: isProfileOpen
           })
@@ -72,4 +72,7 @@ const Component: React.FC = ({ children }) => {
   )
 }
 
+/**
+ * Template UI child component of Candidate Profile.
+ */
 export const CandidateProfileTemplateProfile = Component

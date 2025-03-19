@@ -3,7 +3,7 @@ import { ICandidateTemplateContext, ICandidateProvider } from './CandidateProfil
 
 const CandidateContext = createContext<ICandidateTemplateContext | undefined>(undefined)
 
-export const CandidateProfileProvider: React.FC<ICandidateProvider> = ({ children, onChangeScreen, screens }) => {
+export const Provider: React.FC<ICandidateProvider> = ({ children, onChangeScreen, screens }) => {
   const [isProfileOpen, setIsProfileOpen] = useState<boolean>(true)
   const [activeScreen, setActiveScreen] = useState<number>(0)
   const [navHeight, setNavHeight] = useState<number>(0)
@@ -27,6 +27,6 @@ export const CandidateProfileProvider: React.FC<ICandidateProvider> = ({ childre
 
 export const useCandidateProfile = () => {
   const context = useContext(CandidateContext)
-  if (!context) throw new Error('useCandidate must be used within a CandidateProvider')
+  if (!context) throw new Error('useCandidate must be used within a CandidateProfile.Provider')
   return context
 }

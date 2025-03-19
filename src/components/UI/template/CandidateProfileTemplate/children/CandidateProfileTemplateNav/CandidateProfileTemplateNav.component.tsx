@@ -41,10 +41,13 @@ const Component: React.FC<TCandidateProfilePageNav> = ({ children, className, ..
   }, [handleOnShow, setNavHeight])
 
   return (
-    <div {...props} ref={navRef} className={cx('magneto-ui-candidate-profile-page-nav', className)}>
+    <div {...props} ref={navRef} className={cx('magneto-ui-candidate-profile-template-nav', className)}>
       {React.isValidElement(children) ? React.cloneElement(children, { onShow: handleOnShow }) : children}
     </div>
   )
 }
 
+/**
+ * Template UI child component of Candidate Profile.
+ */
 export const CandidateProfileTemplateNav = Component

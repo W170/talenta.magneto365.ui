@@ -23,4 +23,7 @@ const Component: React.FC<any> = ({ ...props }) => {
   )
 }
 
+/**
+ * Template UI child component of Candidate Profile.
+ */
 export const CandidateProfileTemplateScreen = Component

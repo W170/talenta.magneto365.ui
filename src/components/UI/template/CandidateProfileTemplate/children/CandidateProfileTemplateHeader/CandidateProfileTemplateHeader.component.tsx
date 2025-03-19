@@ -1,12 +1,13 @@
 import React, { useMemo, useCallback } from 'react'
-import { HorizontalMenu, IHorizontalMenu } from '@components/UI/molecules'
+import { TCandidateProfileTemplateHeader } from './CandidateProfileTemplateHeader.interface'
 import { useCandidateProfile } from '../../CandidateProfileTemplate.context'
 import styles from './CandidateProfileTemplateHeader.module.scss'
+import { HorizontalMenu } from '@components/UI/molecules'
 import { classNames } from '@shared/utils/common'
 
 const cx = classNames.bind(styles)
 
-const Component: React.FC<IHorizontalMenu> = () => {
+const Component: React.FC<TCandidateProfileTemplateHeader> = ({ ...props }) => {
   const { setActiveScreen, screens } = useCandidateProfile()
 
   const menuOptions = useMemo(() => screens.map((screen) => ({ title: screen.title, icon: screen.icon })), [screens])
@@ -20,6 +21,7 @@ const Component: React.FC<IHorizontalMenu> = () => {
 
   return (
     <HorizontalMenu
+      {...props}
       options={menuOptions}
       onChange={onMenuOptionClick}
       className={cx('magneto-ui-candidate-profile-page__nav')}
@@ -27,4 +29,7 @@ const Component: React.FC<IHorizontalMenu> = () => {
   )
 }
 
+/**
+ * Template UI child component of Candidate Profile.
+ */
 export const CandidateProfileTemplateHeader = Component
