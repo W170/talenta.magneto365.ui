@@ -8,7 +8,7 @@ const meta: Meta<typeof InputFile> = {
   title: 'Atoms/Input File',
   component: InputFile,
   render: () => (
-    <InputFile onFileSelect={(files) => console.log('Archivo seleccionado:', files)}>
+    <InputFile onChange={(evt) => console.log('Archivo seleccionado:', evt.target.files)} multiple>
       <InputFile.Container>
         <InputFile.Button>
           <IconItem icon={FileDownloadLinearBlack} />
