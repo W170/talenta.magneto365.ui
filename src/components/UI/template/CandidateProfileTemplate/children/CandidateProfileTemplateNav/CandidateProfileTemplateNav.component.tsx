@@ -42,7 +42,12 @@ const Component: React.FC<TCandidateProfileTemplateNav> = ({ children, className
 
   return (
     <div {...props} ref={navRef} className={cx('magneto-ui-candidate-profile-template-nav', className)}>
-      {React.isValidElement(children) ? React.cloneElement(children, { onShow: handleOnShow }) : children}
+      {React.Children.map(children, (child) => {
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, { onShow: handleOnShow })
+        }
+        return child
+      })}
     </div>
   )
 }
