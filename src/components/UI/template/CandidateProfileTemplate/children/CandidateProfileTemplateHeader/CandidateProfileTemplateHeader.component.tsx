@@ -24,7 +24,7 @@ const Component: React.FC<TCandidateProfileTemplateHeader> = ({ ...props }) => {
       {...props}
       options={menuOptions}
       onChange={onMenuOptionClick}
-      className={cx('magneto-ui-candidate-profile-page__nav')}
+      className={cx('magneto-ui-candidate-profile-template__nav')}
     />
   )
 }

@@ -1,1 +1,1 @@
-export type TCandidateProfilePageNav = React.HTMLAttributes<HTMLDivElement>
+export type TCandidateProfileTemplateNav = React.HTMLAttributes<HTMLDivElement>

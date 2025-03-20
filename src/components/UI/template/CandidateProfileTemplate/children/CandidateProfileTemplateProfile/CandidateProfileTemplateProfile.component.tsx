@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import { ICandidateProfileTemplateProfile } from './CandidateProfileTemplateProfile.interface'
 import { MiniArrowGrayDown, MiniArrowGrayUp } from '@constants/icons.constants'
 import { useCandidateProfile } from '../../CandidateProfileTemplate.context'
 import styles from './CandidateProfileTemplateProfile.module.scss'
@@ -11,7 +12,7 @@ const customScrollbarButtonsStyle = {
   '--custom-scrollbar-thumb-up-background': `url(${MiniArrowGrayUp})`
 }
 
-const Component: React.FC = ({ children }) => {
+const Component: React.FC<ICandidateProfileTemplateProfile> = ({ children, containerRef, getContainer }) => {
   const [scrolled, setScrolled] = useState<boolean>(false)
   const [isInTop, setIsInTop] = useState<boolean>(true)
 
@@ -22,25 +23,43 @@ const Component: React.FC = ({ children }) => {
       setIsProfileOpen(localIsOpen)
 
       if (localIsOpen && window.scrollY > 0) {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
         setIsInTop(localIsOpen)
+
+        const containerElement = containerRef?.current || getContainer?.()
+
+        if (containerElement) {
+          containerElement.scrollTo({ top: 0, behavior: 'smooth' })
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' })
+        }
       }
     },
-    [setIsProfileOpen]
+    [containerRef, getContainer, setIsProfileOpen]
   )
 
   useEffect(() => {
-    const handleScroll = async () => {
+    const containerElement = containerRef?.current || getContainer?.()
+
+    const handleScroll = () => {
       if (scrolled && !isInTop) return
-      setScrolled(window.scrollY > 0)
+      const scrollY = containerElement ? containerElement.scrollTop : window.scrollY
+      setScrolled(scrollY > 0)
     }
 
-    window.addEventListener('scroll', handleScroll)
+    if (containerElement) {
+      containerElement.addEventListener('scroll', handleScroll)
+    } else {
+      window.addEventListener('scroll', handleScroll)
+    }
 
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      if (containerElement) {
+        containerElement.removeEventListener('scroll', handleScroll)
+      } else {
+        window.removeEventListener('scroll', handleScroll)
+      }
     }
-  }, [isInTop, scrolled])
+  }, [containerRef, getContainer, isInTop, scrolled])
 
   useEffect(() => {
     if (scrolled) {
