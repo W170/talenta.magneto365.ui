@@ -38,28 +38,32 @@
     list-style: none;
   }
   &__button {
-    border-radius: 6px;
-    padding: 10px 12px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 14px;
-    &:hover {
-      background-color: #e3e7e9;
+    > button {
+      border-radius: 6px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      &:hover {
+        background-color: #e3e7e9;
+      }
+      > img {
+        height: 18px;
+        width: 18px;
+      }
+      > p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #0a0c0e;
+        white-space: nowrap;
+      }
     }
     &--active {
-      background-color: #e3e7e9;
-    }
-    > img {
-      height: 18px;
-      width: 18px;
-    }
-    > p {
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 17px;
-      color: #0a0c0e;
-      white-space: nowrap;
+      > button {
+        background-color: #e3e7e9;
+      }
     }
   }
 }

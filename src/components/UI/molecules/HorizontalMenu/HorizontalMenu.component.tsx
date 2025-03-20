@@ -26,15 +26,13 @@ const Component: React.FC<IHorizontalMenu> = ({ className, options, onChange, on
       <nav className={cx('magneto-ui-horizontal-menu__nav')}>
         <ul className={cx('magneto-ui-horizontal-menu__list')}>
           {options.map(({ icon, title }, key) => (
-            <li key={key}>
-              <Button
-                suffixIcon={icon}
-                className={cx('magneto-ui-horizontal-menu__button', {
-                  'magneto-ui-horizontal-menu__button--active': selectedItem === key
-                })}
-                buttonText={title}
-                onClick={() => setSelectedItem(key)}
-              />
+            <li
+              key={key}
+              className={cx('magneto-ui-horizontal-menu__button', {
+                'magneto-ui-horizontal-menu__button--active': selectedItem === key
+              })}
+            >
+              <Button suffixIcon={icon} buttonText={title} onClick={() => setSelectedItem(key)} />
             </li>
           ))}
         </ul>
