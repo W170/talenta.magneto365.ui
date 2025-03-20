@@ -12,9 +12,9 @@ export interface IHorizontalMenu {
    */
   onChange?: (selectedItem: number) => void
   /**
-   * onclick of horizontal menu
+   * onClick of horizontal menu
    */
-  onclick?: () => void
+  onClick?: () => void
 }
 
 export interface IHorizontalMenuOption {

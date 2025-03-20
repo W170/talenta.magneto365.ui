@@ -7,7 +7,7 @@ import styles from './HorizontalMenu.module.scss'
 
 const cx = classNames.bind(styles)
 
-const Component: React.FC<IHorizontalMenu> = ({ className, options, onChange, onclick }) => {
+const Component: React.FC<IHorizontalMenu> = ({ className, options, onChange, onClick }) => {
   const [selectedItem, setSelectedItem] = useState<number>(0)
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Component: React.FC<IHorizontalMenu> = ({ className, options, onChange, on
 
   return (
     <header className={cx('magneto-ui-horizontal-menu', className)}>
-      <button className={cx('magneto-ui-horizontal-menu__back')} onClick={() => onclick?.()}>
+      <button className={cx('magneto-ui-horizontal-menu__back')} onClick={() => onClick?.()}>
         <IconItem icon={ArrowLeft2} size={20} />
       </button>
       <nav className={cx('magneto-ui-horizontal-menu__nav')}>
