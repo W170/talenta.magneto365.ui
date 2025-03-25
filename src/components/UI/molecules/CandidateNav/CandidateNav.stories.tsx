@@ -49,7 +49,7 @@ export const CandidateNavStory = ({ ...props }) => {
         </CandidateNav.Options>
         <div style={{ display: 'flex', flexDirection: 'row', padding: '8px 33px 0', gap: '8px', width: '100%' }}>
           <CandidateNav.Button variant="red">
-            <IconItem showDefaultFallback={false} size={16} icon={CandidateNavProps.cancelar} />
+            <img style={{ width: '12px', height: '12px', filter: 'invert(1)' }} src={CandidateNavProps.cancelar} />
           </CandidateNav.Button>
           <CandidateNav.Button variant="dark-blue" style={{ flex: 1 }}>
             <Typography.Paragraph size={'lg'} weight="bold" color="white">
@@ -94,93 +94,3 @@ export default meta
 type Story = StoryObj<typeof CandidateNav>
 
 export const Default: Story = {}
-
-export const Catalogue: Story = {
-  render: () => (
-    <CandidateNav>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          padding: '8px 33px ',
-          gap: '8px',
-          width: '100%',
-          justifyContent: 'center'
-        }}
-      >
-        <CandidateNav.Button variant="red">
-          <IconItem showDefaultFallback={false} size={16} icon={CandidateNavProps.block} />
-        </CandidateNav.Button>
-        <CandidateNav.Button variant="dark-blue">
-          <Typography.Paragraph size={'lg'} weight="bold" color="white">
-            {CandidateNavProps.sendVacant.value}
-          </Typography.Paragraph>
-          <IconItem showDefaultFallback={false} size={20} icon={CandidateNavProps.sendVacant.icon} />
-        </CandidateNav.Button>
-      </div>
-      <div style={{ padding: '0 33px', marginTop: '6px' }}>
-        <CandidateNav.Step>
-          <CandidateNav.Button variant="arrow">
-            <IconItem size={20} icon={ArrowLeft2} />
-          </CandidateNav.Button>
-          <div style={{ flex: 1, textAlign: 'center' }}>
-            <Typography.Text size={'sm'} weight="normal" color="black">
-              {CandidateNavProps.candidate.value}
-            </Typography.Text>
-            <Typography.Text size={'sm'} weight="bold" color="black">
-              {CandidateNavProps.candidate.count}
-            </Typography.Text>
-          </div>
-          <CandidateNav.Button variant="arrow">
-            <IconItem size={20} icon={ArrowRight2} />
-          </CandidateNav.Button>
-        </CandidateNav.Step>
-      </div>
-    </CandidateNav>
-  )
-}
-
-export const AI: Story = {
-  render: () => (
-    <CandidateNav>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          padding: '8px 33px ',
-          gap: '8px',
-          width: '100%',
-          justifyContent: 'center'
-        }}
-      >
-        <CandidateNav.Button variant="gray">
-          <IconItem showDefaultFallback={false} size={16} icon={CandidateNavProps.shareIcon} />
-        </CandidateNav.Button>
-        <CandidateNav.Button variant="dark-blue">
-          <Typography.Paragraph size={'lg'} weight="bold" color="white">
-            {CandidateNavProps.inviteAi.value}
-          </Typography.Paragraph>
-          <IconItem showDefaultFallback={false} size={20} icon={CandidateNavProps.inviteAi.icon} />
-        </CandidateNav.Button>
-      </div>
-      <div style={{ padding: '0 33px', marginTop: '6px' }}>
-        <CandidateNav.Step>
-          <CandidateNav.Button variant="arrow">
-            <IconItem size={20} icon={ArrowLeft2} />
-          </CandidateNav.Button>
-          <div style={{ flex: 1, textAlign: 'center' }}>
-            <Typography.Text size={'sm'} weight="normal" color="black">
-              {CandidateNavProps.candidate.value}
-            </Typography.Text>
-            <Typography.Text size={'sm'} weight="bold" color="black">
-              {CandidateNavProps.candidate.count}
-            </Typography.Text>
-          </div>
-          <CandidateNav.Button variant="arrow">
-            <IconItem size={20} icon={ArrowRight2} />
-          </CandidateNav.Button>
-        </CandidateNav.Step>
-      </div>
-    </CandidateNav>
-  )
-}
