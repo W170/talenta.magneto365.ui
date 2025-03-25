@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
 import { TInputFile } from '@components/UI/atoms/InputFile/inputFile.interface'
 import { classNames } from '@shared/utils/common'
+import { Button, Container } from './children'
 import style from './InputFile.module.scss'
-import * as children from './children'
 
 const cx = classNames.bind(style)
 
@@ -52,4 +52,7 @@ const Component: React.FC<TInputFile> = ({ children, className, onChange, ...pro
 /**
  * Atom UI component of Input File
  */
-export const InputFile = Object.assign(Component, children)
+export const InputFile = Object.assign(Component, {
+  Button,
+  Container
+})

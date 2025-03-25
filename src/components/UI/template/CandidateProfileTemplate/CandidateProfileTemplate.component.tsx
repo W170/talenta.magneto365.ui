@@ -2,8 +2,8 @@ import React from 'react'
 import { ICandidateProfileTemplate } from './CandidateProfileTemplate.interface'
 import * as context from './CandidateProfileTemplate.context'
 import styles from './CandidateProfileTemplate.module.scss'
+import { Header, Nav, Profile, Screen } from './children'
 import { classNames } from '@shared/utils/common'
-import * as children from './children'
 
 const cx = classNames.bind(styles)
 
@@ -18,4 +18,10 @@ const Component: React.FC<ICandidateProfileTemplate> = ({ children, onChangeScre
 /**
  * Template UI component of Candidate Profile.
  */
-export const CandidateProfileTemplate = Object.assign(Component, { ...children, ...context })
+export const CandidateProfileTemplate = Object.assign(Component, {
+  Header,
+  Nav,
+  Profile,
+  Screen,
+  ...context
+})

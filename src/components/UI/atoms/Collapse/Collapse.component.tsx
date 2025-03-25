@@ -1,7 +1,7 @@
 import React from 'react'
+import { Body, Header, Toggler } from './children'
 import { TCollapse } from './Collapse.interface'
 import * as context from './Collapse.context'
-import * as children from './children'
 
 const Component: React.FC<TCollapse> = ({ children, defaultOpen, open, onChangeOpen, ...props }) => {
   return (
@@ -14,4 +14,9 @@ const Component: React.FC<TCollapse> = ({ children, defaultOpen, open, onChangeO
 /**
  * Atom UI component of Collapse
  */
-export const Collapse = Object.assign(Component, { ...children, ...context })
+export const Collapse = Object.assign(Component, {
+  Body,
+  Header,
+  Toggler,
+  ...context
+})

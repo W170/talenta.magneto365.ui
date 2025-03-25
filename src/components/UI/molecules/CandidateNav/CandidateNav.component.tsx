@@ -1,15 +1,15 @@
 import React from 'react'
-import { ICandidateNav } from './CandidateNav.interface'
+import { Button, Option, Options, Step } from './children'
+import { TCandidateNav } from './CandidateNav.interface'
 import * as context from './CandidateNav.context'
 import { classNames } from '@shared/utils/common'
 import styles from './CandidateNav.module.scss'
-import * as children from './children'
 
 const cs = classNames.bind(styles)
 
-const Component: React.FC<ICandidateNav> = ({ children, className, onShow, ...props }) => {
+const Component: React.FC<TCandidateNav> = ({ children, className, ...props }) => {
   return (
-    <context.Provider onShow={onShow}>
+    <context.Provider>
       <div className={cs('magneto-ui-candidate-nav', className)} {...props}>
         {children}
       </div>
@@ -20,4 +20,10 @@ const Component: React.FC<ICandidateNav> = ({ children, className, onShow, ...pr
 /**
  *  Molecule UI component of Candidate Nav
  */
-export const CandidateNav = Object.assign(Component, { ...children, ...context })
+export const CandidateNav = Object.assign(Component, {
+  Button,
+  Option,
+  Options,
+  Step,
+  ...context
+})
