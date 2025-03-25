@@ -18,6 +18,12 @@ export interface IHorizontalMenu {
 }
 
 export interface IHorizontalMenuOption {
+  /**
+   * Icon of horizontal menu option
+   */
   icon: React.ReactNode
+  /**
+   * Title of horizontal menu option
+   */
   title: string
 }

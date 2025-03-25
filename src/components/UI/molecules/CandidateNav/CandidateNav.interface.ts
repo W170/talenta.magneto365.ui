@@ -1,12 +1,12 @@
-export interface ICandidateNav extends React.HTMLAttributes<HTMLDivElement> {
-  onShow?: (visible: boolean) => void
-}
+export type TCandidateNav = React.HTMLAttributes<HTMLDivElement>
 
 export interface ICandidateNavContext {
+  /**
+   * Handles options visibility
+   */
   showOptions: boolean
+  /**
+   * Function to change options visibility
+   */
   onChangeOpen: (value?: boolean) => void
-}
-
-export interface ICandidateNavProdiver {
-  onShow?: (visible: boolean) => void
 }

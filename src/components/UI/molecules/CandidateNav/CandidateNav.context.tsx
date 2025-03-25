@@ -1,9 +1,9 @@
 import React, { createContext, useCallback, useContext, useState } from 'react'
-import { ICandidateNavContext, ICandidateNavProdiver } from './CandidateNav.interface'
+import { ICandidateNavContext } from './CandidateNav.interface'
 
 const CandidateNavContext = createContext<ICandidateNavContext | undefined>(undefined)
 
-export const Provider: React.FC<ICandidateNavProdiver> = ({ children }) => {
+export const Provider: React.FC = ({ children }) => {
   const [showOptions, setShowOptions] = useState<boolean>(false)
 
   const onChangeOpen = useCallback((value?: boolean) => {
