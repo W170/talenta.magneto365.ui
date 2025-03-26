@@ -22,16 +22,14 @@ const Component: React.FC<ICandidateProfileTemplateProfile> = ({ children, conta
     (localIsOpen: boolean) => {
       setIsProfileOpen(localIsOpen)
 
-      if (localIsOpen && window.scrollY > 0) {
+      const containerElement = containerRef?.current || getContainer?.()
+
+      if (containerElement && containerElement.scrollTop > 0 && localIsOpen) {
         setIsInTop(localIsOpen)
-
-        const containerElement = containerRef?.current || getContainer?.()
-
-        if (containerElement) {
-          containerElement.scrollTo({ top: 0, behavior: 'smooth' })
-        } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' })
-        }
+        containerElement.scrollTo({ top: 0, behavior: 'smooth' })
+      } else if (window.scrollY > 0 && localIsOpen) {
+        setIsInTop(localIsOpen)
+        window.scrollTo({ top: 0, behavior: 'smooth' })
       }
     },
     [containerRef, getContainer, setIsProfileOpen]
