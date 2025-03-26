@@ -134,3 +134,8 @@ export const CandidateNavProps: Record<string, any> = {
     value: 'Invitar a postular'
   }
 }
+
+export const candidateProfileTemplateProps = {
+  name: 'candidateOverview',
+  title: 'Perfil de candidato'
+}
