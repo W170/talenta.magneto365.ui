@@ -57,7 +57,7 @@ const MegaMenuCard: React.FC<IMegaMenuCard> = ({
       )}
       <div className={styles[`magneto-ui-mega-menu-card__content`]}>
         <div className={styles[`magneto-ui-mega-menu-card__title`]}>{title}</div>
-        <div className={styles[`magneto-ui-mega-menu-card__quotas`]}>{`${numberToCurrency(quotas)} cupos`}</div>
+        <div className={styles[`magneto-ui-mega-menu-card__quotas`]}>{`${numberToCurrency(quotas, false)} cupos`}</div>
       </div>
       {arrow}
     </a>
