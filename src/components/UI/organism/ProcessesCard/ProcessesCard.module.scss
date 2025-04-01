@@ -21,6 +21,9 @@
   &--Discarded {
     opacity: 0.5;
   }
+  &--Canceled {
+    opacity: 0.5;
+  }
   &--Validation {
     opacity: 1;
   }
@@ -80,6 +83,9 @@
     &--Discarded {
       background-color: #fff5f5;
     }
+    &--Canceled {
+      background-color: #fff5f5;
+    }
     &--Validation {
       background-color: white;
     }
@@ -112,6 +118,9 @@
       background-color: #f0f1f3;
     }
     &--Discarded {
+      background-color: #fff5f5;
+    }
+    &--Canceled {
       background-color: #fff5f5;
     }
     &--Validation {
