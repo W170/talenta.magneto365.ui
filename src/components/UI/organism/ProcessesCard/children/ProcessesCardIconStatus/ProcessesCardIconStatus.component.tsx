@@ -13,7 +13,8 @@ const Component: React.FC<IProcessesCard.IStatusIcon> = ({ status, ...props }) =
       Hired: UserTick,
       Pending: ClockLine,
       Sent: DocumentForward,
-      Validation: DocumentSearch
+      Validation: DocumentSearch,
+      Canceled: UserRemove
     }
     return icons[status]
   }

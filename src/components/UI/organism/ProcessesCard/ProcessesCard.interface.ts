@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
-export type IStatusJob = 'Sent' | 'Pending' | 'Validation' | 'Finalists' | 'Hired' | 'Discarded'
+export type IStatusJob = 'Sent' | 'Pending' | 'Validation' | 'Finalists' | 'Hired' | 'Discarded' | 'Canceled'
 
 export interface ICommonProcessesCardPros {
   /**
