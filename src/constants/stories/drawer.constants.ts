@@ -9,8 +9,12 @@ import {
   FacebookSolid,
   LinkedinSolid,
   YoutubeSolid,
-  TiktokSolid
+  TiktokSolid,
+  TickCircleGreenBold,
+  Clock,
+  Close
 } from '@constants/icons.constants'
+import { IListIconItem } from '@components/UI/molecules/ListIconsItems'
 
 export const MenuList: MenuItemInfo[] = [
   { text: 'Inicio', url: '#', slug: 'inicio' },
@@ -53,3 +57,9 @@ export const listMenuProps: IListMenuItems = {
   menuList: MenuList,
   urlParam: 'empleos-por-empresas'
 }
+
+export const ListIconItem: IListIconItem[] = [
+  { title: 'Recibidas', icon: TickCircleGreenBold, info: '0' },
+  { title: 'pendientes', icon: Clock, info: '0' },
+  { title: 'Rechazadas', icon: Close, info: '0' }
+]
