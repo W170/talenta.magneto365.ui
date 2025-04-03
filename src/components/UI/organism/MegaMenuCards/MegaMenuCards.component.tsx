@@ -19,7 +19,7 @@ const MegaMenuCards: React.FC<IMegaMenuCards> = ({
   const renderTitle = useMediaQuery(
     title && (
       <div className={`${style[`mega-menu-cards__title`]}`}>
-        <h4>{title}</h4>
+        <p>{title}</p>
         {actionTitle && (
           <ButtonLink
             href={actionTitle.url}

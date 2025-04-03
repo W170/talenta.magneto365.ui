@@ -9,6 +9,7 @@ const Component: React.FC<IBarChart> = ({
   bin: range,
   heightPercentage: percentage,
   jobText,
+  point,
   maxHeight = 400,
   maxPercentage = 1
 }) => {
@@ -52,6 +53,7 @@ const Component: React.FC<IBarChart> = ({
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
+      <div className={styles['magneto-ui-chart-bar__point']} style={{ backgroundColor: point }} />
       {popoverContent}
     </div>
   )
