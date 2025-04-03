@@ -19,4 +19,8 @@ export interface IBarChart {
    * Sets the maximum height of the bar
    */
   maxHeight?: number
+  /**
+   * Point color (RGB) or color
+   */
+  point?: string
 }

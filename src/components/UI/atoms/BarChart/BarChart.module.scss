@@ -5,6 +5,14 @@
   background-color: #a3adb8;
   position: relative;
 
+  &__point {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: -4px;
+    right: calc((min(4vw, 60px) / 2) - 4px);
+  }
   &__popover {
     position: absolute;
     display: flex;
