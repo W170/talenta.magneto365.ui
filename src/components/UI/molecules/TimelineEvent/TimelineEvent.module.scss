@@ -28,6 +28,9 @@
       height: 20px;
       z-index: 1;
     }
+    .unlocked {
+      filter: invert(48%) sepia(13%) saturate(938%) hue-rotate(183deg) brightness(89%) contrast(88%);
+    }
   }
   &__text {
     display: flex;
@@ -42,7 +45,8 @@
       color: #667688;
       &-checked,
       &-current,
-      &-blocked {
+      &-blocked,
+      &-unlocked {
         padding-top: 11px;
       }
       &-blocked {
@@ -72,7 +76,8 @@
   background-color: #6dd695;
 }
 .current,
-.blocked {
+.blocked,
+.unlocked {
   width: 36px;
   margin-bottom: 20px;
   background-color: rgba(0, 0, 0, 0.06);
