@@ -18,7 +18,7 @@ export interface ITimelineProps {
   /**
    * this property sets the icon as clock
    */
-  isNotBlocked: boolean
+  isNotBlocked?: boolean
 }
 
 type StepDetails = {
