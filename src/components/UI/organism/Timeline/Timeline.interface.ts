@@ -1,4 +1,4 @@
-import { TimelineEventStatus } from '@components/UI/molecules'
+import { TimeLineItemStatus } from '@components/UI/molecules'
 
 export interface ITimelineProps {
   /**
@@ -13,7 +13,12 @@ export interface ITimelineProps {
   /**
    * this property sets the position of the list and status
    */
-  onClick?: (status: TimelineEventStatus, value: number) => void
+  onClick?: (status: TimeLineItemStatus, value: number) => void
+
+  /**
+   * this property sets the icon as clock
+   */
+  isNotBlocked?: boolean
 }
 
 type StepDetails = {
