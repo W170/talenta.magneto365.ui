@@ -31,6 +31,9 @@
     .unlocked {
       filter: invert(48%) sepia(13%) saturate(938%) hue-rotate(183deg) brightness(89%) contrast(88%);
     }
+    img {
+      background-color: unset;
+    }
   }
   &__text {
     display: flex;
@@ -49,7 +52,8 @@
       &-unlocked {
         padding-top: 11px;
       }
-      &-blocked {
+      &-blocked,
+      &-unlocked {
         color: #a3adb8;
         font-size: 12px;
         font-style: normal;
@@ -65,7 +69,8 @@
         color: #1a324c;
         font-weight: 900;
       }
-      &-blocked {
+      &-blocked,
+      &-unlocked {
         color: #8591a0;
       }
     }
