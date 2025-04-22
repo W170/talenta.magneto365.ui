@@ -8,82 +8,85 @@
   width: 100%;
   transition: background-color ease-in-out 0.3s;
   padding-bottom: 9px;
+
   &:hover {
     background-color: #f0f1f3;
     cursor: pointer;
   }
+
   &__icon {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    &--bar {
+
+    &-bar {
       height: 2px;
       margin-bottom: 20px;
       transform: rotate(90deg);
+      background-color: rgba(0, 0, 0, 0.06);
+      width: 36px;
+
+      &--checked {
+        background-color: #6dd695;
+      }
+
+      &--current,
+      &--blocked,
+      &--unlocked {
+        margin-bottom: 20px;
+      }
     }
-    &--icon {
+
+    &-icon {
       margin-bottom: 11px;
       width: 20px;
       height: 20px;
       z-index: 1;
-    }
-    .unlocked {
-      filter: invert(48%) sepia(13%) saturate(938%) hue-rotate(183deg) brightness(89%) contrast(88%);
-    }
-    img {
-      background-color: unset;
+      &--unlocked {
+        filter: invert(48%) sepia(13%) saturate(938%) hue-rotate(183deg) brightness(89%) contrast(88%);
+      }
     }
   }
+
   &__text {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     p {
       margin: 0;
     }
-    &--title {
+
+    &-title {
       font-weight: 400;
       font-size: 12px;
       color: #667688;
-      &-checked,
-      &-current,
-      &-blocked,
-      &-unlocked {
-        padding-top: 11px;
-      }
-      &-blocked,
-      &-unlocked {
+      padding-top: 11px;
+
+      &--blocked,
+      &--unlocked {
         color: #a3adb8;
         font-size: 12px;
         font-style: normal;
-        font-weight: 400;
         line-height: normal;
       }
     }
-    &--subtitle {
+
+    &-subtitle {
       color: #0a0c0e;
       font-size: 15px;
       font-weight: 400;
-      &-current {
+
+      &--current {
         color: #1a324c;
         font-weight: 900;
       }
-      &-blocked,
-      &-unlocked {
+
+      &--blocked,
+      &--unlocked {
         color: #8591a0;
       }
     }
   }
-}
-.checked {
-  width: 36px;
-  background-color: #6dd695;
-}
-.current,
-.blocked,
-.unlocked {
-  width: 36px;
-  margin-bottom: 20px;
-  background-color: rgba(0, 0, 0, 0.06);
 }

@@ -1,41 +1,28 @@
 import React, { useMemo } from 'react'
-import { TimelineEventProps, TimeLineItemStatus } from './TimelineEvent.interface'
-import { Checked, Clock, Lock } from '@constants/icons.constants'
+import { TimelineEventProps } from './TimelineEvent.interface'
 import style from './TimelineEvent.module.scss'
-import { classMUI } from '@constants/stories'
 import { IconItem } from '@components/UI/atoms'
 import { classNames } from '@shared/utils/common'
-
-const timelineIcons = {
-  checked: Checked,
-  current: Clock,
-  unlocked: Clock,
-  blocked: Lock
-}
+import { BASE_CLASS, TIMELINE_ICONS } from '@constants/timelineEvent.constants'
 
 const cx = classNames.bind(style)
 
 const Component: React.FC<TimelineEventProps> = ({ title, subtitle, status, index = 0, onClick = () => ({}) }) => {
-  const iconByType = useMemo(() => timelineIcons[status], [status])
-  const className = `${classMUI}-timeline-event`
-  const titleStyle = `${className}__text--title-${status}`
-  const subtitleStyle = `${className}__text--subtitle-${status}`
+  const iconByType = useMemo(() => TIMELINE_ICONS[status], [status])
 
   return (
-    <button type="button" onClick={() => onClick(status, index)} className={style[`${classMUI}-timeline-event`]}>
-      <div className={cx(`${className}__icon`)}>
-        <div className={cx(`${className}__icon--bar`, `${status}`)}></div>
+    <button type="button" onClick={() => onClick(status, index)} className={style[BASE_CLASS]}>
+      <div className={cx(`${BASE_CLASS}__icon`)}>
+        <div className={cx(`${BASE_CLASS}__icon-bar`, `${BASE_CLASS}__icon-bar--${status}`)} />
         <IconItem
-          className={cx(`${className}__icon--icon`, {
-            unlocked: status === TimeLineItemStatus.UNLOCKED
-          })}
+          className={cx(`${BASE_CLASS}__icon-icon`, `${BASE_CLASS}__icon-icon--${status}`)}
           icon={iconByType}
           alt={status}
         />
       </div>
-      <div className={cx(`${className}__text`)}>
-        <p className={cx(`${className}__text--title`, `${titleStyle}`)}>{title}</p>
-        <p className={cx(`${className}__text--subtitle`, `${subtitleStyle}`)}>{subtitle}</p>
+      <div className={cx(`${BASE_CLASS}__text`)}>
+        <p className={cx(`${BASE_CLASS}__text-title`, `${BASE_CLASS}__text-title--${status}`)}>{title}</p>
+        <p className={cx(`${BASE_CLASS}__text-subtitle`, `${BASE_CLASS}__text-subtitle--${status}`)}>{subtitle}</p>
       </div>
     </button>
   )
