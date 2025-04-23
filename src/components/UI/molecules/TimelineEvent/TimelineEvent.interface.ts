@@ -10,7 +10,7 @@ export interface TimelineEventProps {
   /**
    * The status of the event in the timeline. It can be 'checked', 'current', or 'blocked'.
    */
-  status: TimelineEventStatus
+  status: TimeLineItemStatus
   /**
    * this property have the position of the list
    */
@@ -18,7 +18,12 @@ export interface TimelineEventProps {
   /**
    * this property sets the position of the list and status
    */
-  onClick?: (status: TimelineEventStatus, value: number) => void
+  onClick?: (status: TimeLineItemStatus, value: number) => void
 }
 
-export type TimelineEventStatus = 'checked' | 'current' | 'blocked'
+export enum TimeLineItemStatus {
+  CHECKED = 'checked',
+  CURRENT = 'current',
+  BLOCKED = 'blocked',
+  UNLOCKED = 'unlocked'
+}

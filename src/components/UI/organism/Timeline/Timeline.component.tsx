@@ -2,25 +2,22 @@ import React from 'react'
 import { ITimelineProps } from './Timeline.interface'
 import style from './Timeline.module.scss'
 import { classMUI } from '@constants/stories'
-import { TimelineEvent, TimelineEventStatus } from '../../molecules/TimelineEvent'
+import { TimelineEvent, TimeLineItemStatus } from '../../molecules/TimelineEvent'
 
-const STATUS: { [key: string]: TimelineEventStatus } = {
-  CHECKED: 'checked',
-  CURRENT: 'current',
-  BLOCKED: 'blocked'
-}
-
-const Component: React.FC<ITimelineProps> = ({ steps, currentStep, onClick = () => ({}) }) => {
+const Component: React.FC<ITimelineProps> = ({ steps, currentStep, onClick = () => ({}), isNotBlocked }) => {
   currentStep = Math.max(currentStep, 1)
 
-  const getStatus = (index: number): TimelineEventStatus => {
+  const getStatus = (index: number): TimeLineItemStatus => {
     if (index + 1 < currentStep) {
-      return STATUS.CHECKED
+      return TimeLineItemStatus.CHECKED
     }
     if (index + 1 === currentStep) {
-      return STATUS.CURRENT
+      return TimeLineItemStatus.CURRENT
     }
-    return STATUS.BLOCKED
+    if (isNotBlocked) {
+      return TimeLineItemStatus.UNLOCKED
+    }
+    return TimeLineItemStatus.BLOCKED
   }
 
   return (

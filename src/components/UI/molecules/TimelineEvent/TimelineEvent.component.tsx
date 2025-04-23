@@ -1,30 +1,28 @@
 import React, { useMemo } from 'react'
 import { TimelineEventProps } from './TimelineEvent.interface'
-import { Checked, Clock, Lock } from '@constants/icons.constants'
 import style from './TimelineEvent.module.scss'
-import { classMUI } from '@constants/stories'
 import { IconItem } from '@components/UI/atoms'
+import { classNames } from '@shared/utils/common'
+import { BASE_CLASS, TIMELINE_ICONS } from '@constants/timelineEvent.constants'
 
-const timelineIcons = {
-  checked: Checked,
-  current: Clock,
-  blocked: Lock
-}
+const cx = classNames.bind(style)
 
 const Component: React.FC<TimelineEventProps> = ({ title, subtitle, status, index = 0, onClick = () => ({}) }) => {
-  const iconByType = useMemo(() => timelineIcons[status], [status])
-  const titleStyle = style[`${classMUI}-timeline-event__text--title-${status}`]
-  const subtitleStyle = style[`${classMUI}-timeline-event__text--subtitle-${status}`]
+  const iconByType = useMemo(() => TIMELINE_ICONS[status], [status])
 
   return (
-    <button type="button" onClick={() => onClick(status, index)} className={style[`${classMUI}-timeline-event`]}>
-      <div className={style[`${classMUI}-timeline-event__icon`]}>
-        <div className={`${style[`${classMUI}-timeline-event__icon--bar`]} ${style[status]}`}></div>
-        <IconItem className={style[`${classMUI}-timeline-event__icon--icon`]} icon={iconByType} alt={status} />
+    <button type="button" onClick={() => onClick(status, index)} className={style[BASE_CLASS]}>
+      <div className={cx(`${BASE_CLASS}__icon`)}>
+        <div className={cx(`${BASE_CLASS}__icon-bar`, `${BASE_CLASS}__icon-bar--${status}`)} />
+        <IconItem
+          className={cx(`${BASE_CLASS}__icon-icon`, `${BASE_CLASS}__icon-icon--${status}`)}
+          icon={iconByType}
+          alt={status}
+        />
       </div>
-      <div className={style[`${classMUI}-timeline-event__text`]}>
-        <p className={`${style[`${classMUI}-timeline-event__text--title`]} ${titleStyle}`}>{title}</p>
-        <p className={`${style[`${classMUI}-timeline-event__text--subtitle`]} ${subtitleStyle}`}>{subtitle}</p>
+      <div className={cx(`${BASE_CLASS}__text`)}>
+        <p className={cx(`${BASE_CLASS}__text-title`, `${BASE_CLASS}__text-title--${status}`)}>{title}</p>
+        <p className={cx(`${BASE_CLASS}__text-subtitle`, `${BASE_CLASS}__text-subtitle--${status}`)}>{subtitle}</p>
       </div>
     </button>
   )
