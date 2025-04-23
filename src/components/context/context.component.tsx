@@ -1,12 +1,15 @@
 import React from 'react'
 import { EventDispatcherContextProvider } from './EventDispatcherContext.component'
 import { ResponsiveContextProvider } from './ResponsiveContext.component'
+import { ContainerContextProvider } from './container/container.context'
 import { IContextAppProvider } from './context.interface'
 
-export const ContextAppProvider: React.FC<IContextAppProvider> = ({ children, device }) => {
+export const ContextAppProvider: React.FC<IContextAppProvider> = ({ children, device, container }) => {
   return (
     <EventDispatcherContextProvider>
-      <ResponsiveContextProvider device={device}>{children}</ResponsiveContextProvider>
+      <ContainerContextProvider container={container}>
+        <ResponsiveContextProvider device={device}>{children}</ResponsiveContextProvider>
+      </ContainerContextProvider>
     </EventDispatcherContextProvider>
   )
 }
