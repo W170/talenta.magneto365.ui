@@ -21,9 +21,12 @@
       background-color: #f4f4fa;
     }
   }
-  > p {
+  &__p {
     font-size: 14px;
     margin: 5px 0;
+    max-width: 1fr;
+    text-wrap: balance;
+    word-break: break-word;
   }
 
   &__summary {
