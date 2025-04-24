@@ -1,13 +1,15 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react'
+import { ContainerContext } from '@components/context/container/container.context'
 
 const withClickOut = <T,>(WrappedComponent: React.FC<T>): React.FC<T> => {
   const Component: React.FC<T> = (props) => {
+    const { container } = useContext(ContainerContext)
     const [clickOut, setClickOut] = useState(false)
 
     const ref = useRef<HTMLDivElement>(null)
 
     const handleClick = useCallback(
-      (e: MouseEvent) => {
+      (e: Event) => {
         if (clickOut) {
           if (ref.current && !ref.current.contains(e.target as Node)) {
             setClickOut(!clickOut)
@@ -18,11 +20,11 @@ const withClickOut = <T,>(WrappedComponent: React.FC<T>): React.FC<T> => {
     )
 
     useEffect(() => {
-      document.addEventListener('click', handleClick)
+      container?.addEventListener('click', handleClick)
       return () => {
-        document.removeEventListener('click', handleClick)
+        container?.removeEventListener('click', handleClick)
       }
-    }, [handleClick])
+    }, [handleClick, container])
 
     return (
       <div ref={ref}>
