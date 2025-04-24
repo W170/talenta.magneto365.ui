@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom'
-import React, { useEffect, useRef, useState, useMemo, useCallback } from 'react'
+import React, { useEffect, useRef, useState, useMemo, useCallback, useContext } from 'react'
 import CNM from '@utils/classNameManager/classNameManager.util'
+import { ContainerContext } from '@components/context/container/container.context'
 import { iconByType, transitionDuration } from './constants'
 import { IMessageProps } from './Message.interface'
 import styles from './Message.module.scss'
@@ -21,6 +22,7 @@ export const Component: React.FC<IMessageProps> = ({
   const [isAnimating, setIsAnimating] = useState<boolean>(false)
   const removeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const { container } = useContext(ContainerContext)
 
   const containerVar = useMemo(
     () => ({
@@ -80,7 +82,7 @@ export const Component: React.FC<IMessageProps> = ({
     setIsAnimating(visible)
   }, [isAnimating, visible])
 
-  return localVisible
+  return localVisible && container
     ? ReactDOM.createPortal(
         <div style={containerVar as React.CSSProperties} className={CNM.get({ styles, cls: [className] })}>
           <div className={containerStyles}>
@@ -98,7 +100,7 @@ export const Component: React.FC<IMessageProps> = ({
             </div>
           </div>
         </div>,
-        document.body
+        container
       )
     : null
 }

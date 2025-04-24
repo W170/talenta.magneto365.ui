@@ -1,6 +1,7 @@
-import React, { useMemo } from 'react'
+import React, { useContext, useMemo } from 'react'
 import ReactDOM from 'react-dom'
 import { InputSearch, Tag } from '@components/UI/atoms'
+import { ContainerContext } from '@components/context/container/container.context'
 import { SelectItem } from '../../SelectItem'
 import { Close } from '@constants/icons.constants'
 import { classMUI } from '@constants/stories'
@@ -20,6 +21,7 @@ const ContainerDesktop: React.FC<IContainerOptions> = ({
 }) => {
   const { containerOptions, menuPosition, toggleDropdown, limitOfSelectable, inputRef, isOpen, dropdownRef } =
     useContainerDesktop({ numberOfSelectable, selectedValues })
+  const { container } = useContext(ContainerContext)
 
   const hideComponent = useMemo(() => {
     return isOpen ? style['hide'] : ''
@@ -49,6 +51,7 @@ const ContainerDesktop: React.FC<IContainerOptions> = ({
 
       <div ref={containerOptions} className={`${style[`${classMUI}-container-options`]}`}>
         {isOpen &&
+          container &&
           ReactDOM.createPortal(
             <div
               style={{
@@ -84,7 +87,7 @@ const ContainerDesktop: React.FC<IContainerOptions> = ({
                 ))}
               </div>
             </div>,
-            document.body
+            container
           )}
       </div>
     </div>
