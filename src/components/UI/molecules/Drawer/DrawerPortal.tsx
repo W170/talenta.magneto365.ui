@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
+import { isServer } from '@constants/env.constants'
 import { ContainerContext } from '@components/context/container/container.context'
 import { IDrawerPortal } from './Drawer.interface'
 
 export const DrawerPortal: React.FC<IDrawerPortal> = ({ children }) => {
   const portalNode = useRef<Element | null>(null)
-  const { isServer, container } = useContext(ContainerContext)
+  const { container } = useContext(ContainerContext)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -19,7 +20,7 @@ export const DrawerPortal: React.FC<IDrawerPortal> = ({ children }) => {
         container.removeChild(portalNode.current)
       }
     }
-  }, [container, isServer])
+  }, [container])
 
   return mounted && portalNode.current ? ReactDOM.createPortal(children, portalNode.current) : null
 }

@@ -1,7 +1,5 @@
 export interface IContainerContext {
-  container: HTMLElement | null
-  isClient: boolean
-  isServer: boolean
+  container: HTMLElement | ShadowRoot | null
 }
 
 export interface IContainerContextProvider {
