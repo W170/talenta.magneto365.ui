@@ -44,7 +44,7 @@ const Component: React.FC<IScoreLevel> = ({ name, onChange, removeSkill, scoreVa
 
   return (
     <div className={styles['magneto-ui-score-level']}>
-      <p>{name}</p>
+      <p className={styles['magneto-ui-score-level__p']}>{name}</p>
       <div className={styles['magneto-ui-score-level__summary']}>
         <div>
           {levels.map((_, index) => (
