@@ -53,7 +53,7 @@ export const storiesFilters = [
         operator: 1,
         label: 'Administración y oficina',
         total: 235,
-        isApplied: false
+        isApplied: true
       },
       {
         id: 31,
@@ -94,83 +94,6 @@ export const storiesFilters = [
     searchPlaceholder: 'Buscar sector laboral'
   },
   {
-    label: 'País',
-    field: 'country_id',
-    type: 'EQUAL',
-    renderType: 'SEARCH',
-    renderChild: 'DISABLED',
-    dataType: 'number',
-    multiple: false,
-    repository: {
-      type: 'endPoint',
-      defaultFilter: {},
-      defaultOrder: {},
-      defaultOperator: 1,
-      source: 'v1/public/filters/search/countries_*',
-      fieldFullSearch: 'name.analyzed',
-      sourceName: 'countries_*',
-      fieldsAlias: {
-        id: 'id',
-        label: 'name',
-        parentId: null
-      }
-    },
-    child: {
-      label: 'Departamento',
-      field: 'department_id',
-      type: 'EQUAL',
-      renderType: 'SEARCH',
-      renderChild: 'DISABLED',
-      dataType: 'number',
-      multiple: true,
-      repository: {
-        type: 'endPoint',
-        defaultFilter: {},
-        defaultOrder: {},
-        defaultOperator: 1,
-        source: 'v1/public/filters/search/departments_*',
-        fieldFullSearch: 'name.analyzed',
-        sourceName: 'departments_*',
-        fieldsAlias: {
-          id: 'id',
-          label: 'full_name',
-          parentId: 'country_id'
-        }
-      },
-      child: {
-        label: 'Ciudad',
-        field: 'city_id',
-        type: 'EQUAL',
-        renderType: 'SEARCH',
-        dataType: 'number',
-        multiple: true,
-        repository: {
-          type: 'endPoint',
-          defaultFilter: {},
-          defaultOrder: {},
-          defaultOperator: 1,
-          source: 'v1/public/filters/search/cities_*',
-          fieldFullSearch: 'name.analyzed',
-          sourceName: 'cities_*',
-          fieldsAlias: {
-            id: 'id',
-            label: 'full_name',
-            parentId: 'department_id'
-          }
-        },
-        values: [],
-        filtersApplied: ['17453@789', '17414@789', '16963@776'],
-        searchPlaceholder: 'Buscar ciudad'
-      },
-      values: [],
-      filtersApplied: ['789@47', '776@47'],
-      searchPlaceholder: 'Buscar departamento'
-    },
-    values: [],
-    filtersApplied: [47],
-    searchPlaceholder: 'Buscar país'
-  },
-  {
     label: 'Salario',
     field: 'salary_show',
     type: 'RANGE',
@@ -204,7 +127,7 @@ export const storiesFilters = [
         id: 'BK-01',
         label: 'Desde $781.242',
         total: 466,
-        isApplied: false
+        isApplied: true
       },
       {
         operator: 1,
@@ -353,7 +276,7 @@ export const storiesFilters = [
         id: 'BK-06',
         label: '5 a 8 años',
         total: 31,
-        isApplied: false
+        isApplied: true
       },
       {
         operator: 1,
@@ -606,9 +529,9 @@ export const storiesFilters = [
 ]
 
 export const sideFilterProps = {
-  title: 'Filtrar empleos',
+  title: 'Filtrar',
   filters: storiesFilters as IFilter[],
-  totalAppliedFilters: 1,
+  totalAppliedFilters: 3,
   filterSummary: '3169 empleos',
   buttonText: 'Limpiar',
   loading: false,
