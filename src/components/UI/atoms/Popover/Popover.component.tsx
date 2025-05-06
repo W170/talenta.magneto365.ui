@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { IPopover } from './Popover.interface'
-import style from './popover.module.scss'
+import styles from './popover.module.scss'
 
 const Component: React.FC<IPopover> = ({
   children,
@@ -10,10 +10,11 @@ const Component: React.FC<IPopover> = ({
   show,
   widthBase,
   staticContent,
-  className = ''
+  className = '',
+  style
 }) => {
   const showMenu = show ? 'show' : 'hidden'
-  const staticContentClass = staticContent ? style['static-content'] : ''
+  const staticContentClass = staticContent ? styles['static-content'] : ''
 
   const [hideComponent, setHideComponent] = useState(false)
 
@@ -32,13 +33,15 @@ const Component: React.FC<IPopover> = ({
   return (
     <div
       style={{ width: widthBase }}
-      className={[style['magneto-ui-popover-container'], staticContentClass, className].join(' ')}
+      className={[styles['magneto-ui-popover-container'], staticContentClass, className].join(' ')}
     >
-      <div className={`${style['magneto-ui-popover']} ${style[positionX]} ${style[positionY]} ${style[showMenu]}`}>
+      <div className={`${styles['magneto-ui-popover']} ${styles[positionX]} ${styles[positionY]} ${styles[showMenu]}`}>
         {hideComponent && content}
       </div>
 
-      <div className={style['magneto-ui-popover-children']}>{children}</div>
+      <div style={style} className={styles['magneto-ui-popover-children']}>
+        {children}
+      </div>
     </div>
   )
 }

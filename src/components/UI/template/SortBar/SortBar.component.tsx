@@ -1,4 +1,4 @@
-import React, { Fragment, useMemo, useState } from 'react'
+import React, { Fragment, useCallback, useMemo, useState } from 'react'
 import { iconFilterOrder, menuSortButton } from '@constants/stories'
 import { Setting4 } from '@constants/icons.constants'
 import { useMediaQuery } from '@components/hooks'
@@ -26,6 +26,7 @@ const SortBar: React.FC<ISortBar> = ({
   widthInfoMessage
 }) => {
   const [showMenu, setShowMenu] = useState(false)
+  const [rotateOrderIcon, setRotateOrderIcon] = useState(false)
   const tooltip = useMediaQuery(
     <Tooltip title={infoMessageQuotas || ''} position="bottom" width={widthInfoMessage}>
       <div className={`${styles['magneto-ui-tooltip-quotas']}`}>
@@ -52,6 +53,11 @@ const SortBar: React.FC<ISortBar> = ({
     md: <Fragment />
   })
 
+  const handleOrder = useCallback(() => {
+    orderFilter()
+    setRotateOrderIcon(!rotateOrderIcon)
+  }, [rotateOrderIcon, orderFilter])
+
   const sortBarButtonAltRender = useMemo(() => {
     if (emptyVacant) return
 
@@ -61,13 +67,13 @@ const SortBar: React.FC<ISortBar> = ({
         <button
           className={`${styles['magneto-ui-btn-order']} ${styles.hidden}`}
           title={titleBtnOrder}
-          onClick={orderFilter}
+          onClick={handleOrder}
         >
-          <IconItem {...iconFilterOrder} />
+          <IconItem isRotate={rotateOrderIcon} {...iconFilterOrder} />
         </button>
       </div>
     )
-  }, [emptyVacant, orderFilter, sortMenu, titleBtnOrder])
+  }, [emptyVacant, sortMenu, titleBtnOrder, handleOrder, rotateOrderIcon])
 
   return (
     <Fragment>
