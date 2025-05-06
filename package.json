@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/W170/talenta.magneto365.ui.git"
   },
-  "version": "2.68.1-beta",
+  "version": "2.69.0-beta",
   "description": "Magneto365 UI common components",
   "scripts": {
     "lint": "eslint ./src --ext .js,.ts,.jsx,.tsx",
