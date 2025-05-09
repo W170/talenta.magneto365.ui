@@ -12,7 +12,8 @@ export const InputPlus: React.FC<IInputPlus> = ({
   disabled,
   isLoading,
   className = '',
-  getValue
+  getValue,
+  maxLength
 }) => {
   const [inputValue, setInputValue] = useState<string>('')
   const [disabledBtn, setDisabledBtn] = useState<boolean>(false)
@@ -46,7 +47,7 @@ export const InputPlus: React.FC<IInputPlus> = ({
     [disabled, maxWords]
   )
 
-  const handleSubmmit = useCallback(() => {
+  const handleSubmit = useCallback(() => {
     if (inputValue) {
       onChange(inputValue)
       setInputValue('')
@@ -58,11 +59,11 @@ export const InputPlus: React.FC<IInputPlus> = ({
       if (event.key === 'Enter') {
         event.preventDefault()
         if (!disabledBtn) {
-          handleSubmmit()
+          handleSubmit()
         }
       }
     },
-    [disabledBtn, handleSubmmit]
+    [disabledBtn, handleSubmit]
   )
 
   return (
@@ -73,10 +74,11 @@ export const InputPlus: React.FC<IInputPlus> = ({
         value={inputValue}
         onChange={handleValue}
         type="text"
+        maxLength={maxLength}
       />
       <button
         type="button"
-        onClick={handleSubmmit}
+        onClick={handleSubmit}
         className={`${styles[`${classMUI}-input-plus__plus-button`]} ${disabledBtn ? styles.disabled : ''}`}
         disabled={disabledBtn}
       >

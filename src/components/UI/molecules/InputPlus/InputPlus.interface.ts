@@ -27,4 +27,8 @@ export interface IInputPlus {
    * this fn get the input value
    */
   getValue?: (value: string) => void
+  /**
+   * this property sets the max length
+   */
+  maxLength?: number
 }
