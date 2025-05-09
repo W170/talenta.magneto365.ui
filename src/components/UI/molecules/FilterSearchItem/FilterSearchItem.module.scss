@@ -5,15 +5,12 @@
   align-items: center;
   gap: 10px;
   background-color: v.$color-white;
-  width: 240px;
-  max-width: 240px;
-  min-width: 240px;
   height: 40px;
   max-height: 40px;
   padding: 16px 15px;
   border-radius: 10px;
   border: solid 1px v.$selected-color-item;
-  margin-top: 10px;
+  margin-top: 5px;
 
   @media (max-width: v.$screen-md) {
     width: inherit;
@@ -28,6 +25,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     border: none;
+    width: 100%;
     &::first-letter {
       text-transform: capitalize;
     }

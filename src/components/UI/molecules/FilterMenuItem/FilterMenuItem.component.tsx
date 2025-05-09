@@ -25,7 +25,7 @@ export const FilterMenuItem: FC<IFilterMenuItem> = ({
   const displayOutput = useMemo(() => {
     if (isApplied) return <IconItem icon={SmallClose} size={17} />
     if (!hasTotal || hiddenCount) return <Fragment />
-    return <output>{formatNumber(total)}</output>
+    return <div className={styles['magneto-ui-filter-item__counter']}>{formatNumber(total)}</div>
   }, [total, isApplied, hasTotal, hiddenCount])
 
   const disabled = useMemo(() => {
