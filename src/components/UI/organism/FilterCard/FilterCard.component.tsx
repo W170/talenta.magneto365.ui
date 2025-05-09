@@ -26,11 +26,7 @@ export const FilterCard: FC<IFilterCard> = ({
 
   const hasSearch = useMemo(() => renderType === ERenderType.multiSelect, [renderType])
   const hasTotal = useMemo(() => !values.find((value) => value.isApplied), [values])
-  const appliedOption = useMemo(() => {
-    const option = options.find(({ isApplied }) => isApplied)
-    if (option != undefined) setShowItems(true)
-    return option
-  }, [options])
+  const appliedOption = useMemo(() => options.find(({ isApplied }) => isApplied), [options])
   const hasntOptions = useMemo(() => options.every(({ total }) => total == 0 || total == undefined), [options])
   const isInteractiveSection = useMemo(() => !hasntOptions && !appliedOption, [hasntOptions, appliedOption])
 
@@ -63,6 +59,10 @@ export const FilterCard: FC<IFilterCard> = ({
     if (hasntOptions) return <Fragment />
     return options.map(renderItem)
   }, [options, appliedOption, renderItem, hasntOptions])
+
+  useEffect(() => {
+    if (appliedOption != undefined) setShowItems(true)
+  }, [appliedOption])
 
   useEffect(() => {
     setOptions(values)
