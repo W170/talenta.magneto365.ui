@@ -1,14 +1,17 @@
+import { MagnetoUIColor, MagnetoUIText } from 'magneto-ui'
+
 export interface ITypographyBase extends Pick<React.HTMLAttributes<HTMLElement>, 'className' | 'style'> {
   /** If `true`, the text is rendered in a monospaced font like code. */
   code?: boolean
   /**
-   * Text color. This is in beta and might change in the future.
+   * Text color.
    *
-   * @beta
    * @default "black"
-   * @example "gray" | "black" | "white" | "green" | "blue"
+   * @example "transparent" | "green-50" | "grey-200" | "red-100"
+   * @see MagnetoUIColor
+   * @inheritdoc
    */
-  color?: TTypographyFontColor
+  color?: MagnetoUIColor
   /** If `true`, the text is displayed with a strikethrough. */
   delete?: boolean
   /** If `true`, the text is displayed in italics. */
@@ -20,21 +23,19 @@ export interface ITypographyBase extends Pick<React.HTMLAttributes<HTMLElement>,
   /**
    * Font size. When a number is provided, the unit is `px` and line height is calculated automatically adding 4px.
    *
-   * @default "md"
+   * @default "lg"
    * @example
-   * - `"xs"` → `10px`
-   * - `"sm"` → `12px`
-   * - `"md"` → `14px`
-   * - `"lg"` → `16px`
-   * - `"xl"` → `18px`
-   * - `"xl-2"` → `20px`
-   * - `"xl-3"` → `22px`
-   * - `"xl-4"` → `24px`
-   * - `"xl-5"` → `26px`
-   * - `"xl-6"` → `28px`
-   * - `"xl-7"` → `30px`
+   * - `"sm"` → `0.5rem`
+   * - `"md"` → `0.75rem`
+   * - `"lg"` → `1rem`
+   * - `"xl"` → `1.25rem`
+   * - `"2xl"` → `1.5rem`
+   * - `"3xl"` → `1.75rem`
+   * - `"4xl"` → `2rem`
+   * @see MagnetoUIText
+   * @inheritdoc
    */
-  size?: ITypographyFontSize | number
+  size?: MagnetoUIText | number
   /** If `true`, the text is displayed in bold. */
   strong?: boolean
   /** If `true`, the text is underlined. */
@@ -64,22 +65,6 @@ export interface ITypographyEllipsis {
   rows?: number
 }
 
-export enum ETypographyFontSize {
-  XS = 'xs',
-  SM = 'sm',
-  MD = 'md',
-  LG = 'lg',
-  XL = 'xl',
-  XL2 = 'xl-2',
-  XL3 = 'xl-3',
-  XL4 = 'xl-4',
-  XL5 = 'xl-5',
-  XL6 = 'xl-6',
-  XL7 = 'xl-7'
-}
-
-export type ITypographyFontSize = `${ETypographyFontSize}`
-
 export enum ETypographyFontWeight {
   THIN = 'thin',
   EXTRA_LIGHT = 'extra-light',
@@ -93,13 +78,3 @@ export enum ETypographyFontWeight {
 }
 
 export type TTypographyFontWeight = `${ETypographyFontWeight}`
-
-export enum ETypographyFontColor {
-  GRAY = 'gray',
-  BLACK = 'black',
-  WHITE = 'white',
-  GREEN = 'green',
-  BLUE = 'blue'
-}
-
-export type TTypographyFontColor = `${ETypographyFontColor}`

@@ -1,0 +1,12 @@
+@import '../../../../../shared/stylesheets/tokens';
+
+.magneto-ui-design-system-margin {
+  &__container {
+    display: flex;
+  }
+  @each $key, $value in $margin-map {
+    &__example-#{$key} {
+      margin-right: $value;
+    }
+  }
+}

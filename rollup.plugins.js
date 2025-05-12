@@ -1,6 +1,7 @@
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
+import copy from 'rollup-plugin-copy'
 import url from '@rollup/plugin-url'
 import path from 'path'
 import dotEnv from 'dotenv'
@@ -16,5 +17,9 @@ export const MAIN_PLUGINS = [
     publicPath: dotEnv.config().parsed.ASSETS_CDN_URL,
     limit: 0,
     emitFiles: true
+  }),
+  copy({
+    targets: [{ src: 'src/shared/stylesheets/tokens/**/*', dest: 'dist/tokens' }],
+    hook: 'writeBundle'
   })
 ]

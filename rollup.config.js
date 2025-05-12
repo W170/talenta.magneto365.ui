@@ -47,6 +47,16 @@ export default ({ environment }) => {
         })
       ],
       external: [/\.(css|less|scss)$/]
+    },
+    {
+      input: 'src/@types/tokens.d.ts',
+      output: [
+        {
+          file: 'dist/tokens.d.ts',
+          format: 'esm'
+        }
+      ],
+      plugins: [dts()]
     }
   ]
 }

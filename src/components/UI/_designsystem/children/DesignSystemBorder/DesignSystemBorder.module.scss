@@ -1,0 +1,11 @@
+@import '../../../../../shared/stylesheets/tokens';
+
+.magneto-ui-design-system-border {
+  @each $key, $value in $border-map {
+    &__example-#{$key} {
+      border-width: $value;
+      border-color: $color-blue-light-400;
+      border-style: solid;
+    }
+  }
+}

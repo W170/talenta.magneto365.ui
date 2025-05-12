@@ -1,0 +1,31 @@
+{
+  "values": {
+    "inherit": "scale.$scale-inherit",
+    "none": "scale.$scale-none",
+    "auto": "scale.$scale-auto",
+    "min": "scale.$scale-min",
+    "xs": "scale.$scale-rem-xs",
+    "sm": "scale.$scale-rem-sm",
+    "md": "scale.$scale-rem-md",
+    "lg": "scale.$scale-rem-lg",
+    "xl": "scale.$scale-rem-xl",
+    "2xl": "scale.$scale-rem-2xl",
+    "3xl": "scale.$scale-rem-3xl",
+    "4xl": "scale.$scale-rem-4xl",
+    "full": "scale.$scale-full"
+  },
+  "utilities": {
+    "imports": [
+      {
+        "file": "_scale.scss",
+        "alias": "scale"
+      }
+    ]
+  },
+  "docs": {
+    "description": "Spacing SCCS vars used for setting margin around elements for consistent layout spacing.",
+    "example": "```scss\n.card {\n  margin: $margin-sm;\n}\n```",
+    "category": "spacing",
+    "tags": "spacing, margin, layout, spacing-system"
+  }
+}

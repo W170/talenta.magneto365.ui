@@ -1,8 +1,11 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, forwardRef } from 'react'
 import { typographyStyles, applyWrappers, omitTypographyProps } from '../../Typography.constant'
 import { ITypographyTitle } from './TypographyTitle.interface'
 
-const Component: React.FC<ITypographyTitle> = ({ children, level = 2, ...props }) => {
+const BaseComponent = (
+  { children, level = 2, ...props }: ITypographyTitle,
+  ref: React.ForwardedRef<HTMLHeadingElement>
+) => {
   const { className, style } = typographyStyles({ ...props })
 
   const Wrapper = useMemo(() => {
@@ -13,8 +16,14 @@ const Component: React.FC<ITypographyTitle> = ({ children, level = 2, ...props }
   return React.createElement(
     Wrapper,
     { ...omitTypographyProps(props), className, style },
-    applyWrappers(children, props)
+    applyWrappers(children, props),
+    ref
   )
 }
 
+const Component = forwardRef<HTMLHeadingElement, ITypographyTitle>(BaseComponent)
+
+/**
+ * Atom UI child component of Typography
+ */
 export const TypographyTitle = Component

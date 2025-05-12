@@ -1,0 +1,22 @@
+{
+  "values": {
+    "inherit": "scale.$scale-inherit",
+    "min": "scale.$scale-min",
+    "1": "scale.$scale-px-2xs",
+    "2": "scale.$scale-px-xs"
+  },
+  "utilities": {
+    "imports": [
+      {
+        "file": "_scale.scss",
+        "alias": "scale"
+      }
+    ]
+  },
+  "docs": {
+    "description": "Border SCSS vars used to define border width consistently across components.",
+    "example": "```scss\n.card {\n  border: $border-1 solid $color-grey-50;\n}\n```",
+    "category": "visual",
+    "tags": "border, style, width, outline, visual"
+  }
+}
