@@ -1,55 +1,32 @@
+@use '~/src/shared/stylesheets/tokens/text' as *;
+@use '~/src/shared/stylesheets/tokens/color' as *;
+
 .magneto-ui-typography {
   font-style: inherit;
-  font-size: var(--size, inherit);
+  font-size: var(--size, 1rem);
   font-weight: var(--weight, inherit);
   line-height: calc(var(--size, inherit) + 4px);
-  color: inherit;
+  color: #0a0c0e;
   margin: 0;
   padding: 0;
-  &--size {
-    &-xs {
-      font-size: 10px;
-      line-height: 14px;
+  @each $size, $value in $text-map {
+    &--size-#{$size} {
+      font-size: $value;
+      line-height: calc($value + 4px);
     }
-    &-sm {
-      font-size: 12px;
-      line-height: 16px;
-    }
-    &-md {
-      font-size: 14px;
-      line-height: 18px;
-    }
-    &-lg {
-      font-size: 16px;
-      line-height: 20px;
-    }
-    &-xl {
-      font-size: 18px;
-      line-height: 22px;
-    }
-    &-xl-2 {
-      font-size: 20px;
-      line-height: 24px;
-    }
-    &-xl-3 {
-      font-size: 22px;
-      line-height: 26px;
-    }
-    &-xl-4 {
-      font-size: 24px;
-      line-height: 28px;
-    }
-    &-xl-5 {
-      font-size: 26px;
-      line-height: 30px;
-    }
-    &-xl-6 {
-      font-size: 28px;
-      line-height: 32px;
-    }
-    &-xl-7 {
-      font-size: 30px;
-      line-height: 34px;
+  }
+  @each $color, $value in $color-map {
+    &--color-#{$color} {
+      color: $value;
+      > * {
+        color: $value;
+      }
+      &:hover {
+        color: $value;
+        > * {
+          color: $value;
+        }
+      }
     }
   }
   &--weight {
@@ -79,68 +56,6 @@
     }
     &-black {
       font-weight: 900;
-    }
-  }
-  &--color {
-    &-gray {
-      color: #99a4af;
-      > * {
-        color: #99a4af;
-      }
-      &:hover {
-        color: #99a4af;
-        > * {
-          color: #99a4af;
-        }
-      }
-    }
-    &-white {
-      color: white;
-      > * {
-        color: white;
-      }
-      &:hover {
-        color: white;
-        > * {
-          color: white;
-        }
-      }
-    }
-    &-black {
-      color: #292f37;
-      > * {
-        color: #292f37;
-      }
-      &:hover {
-        color: #292f37;
-        > * {
-          color: #292f37;
-        }
-      }
-    }
-    &-green {
-      color: #6dd695;
-      > * {
-        color: #6dd695;
-      }
-      &:hover {
-        color: #6dd695;
-        > * {
-          color: #6dd695;
-        }
-      }
-    }
-    &-blue {
-      color: #66c1ea;
-      > * {
-        color: #66c1ea;
-      }
-      &:hover {
-        color: #66c1ea;
-        > * {
-          color: #66c1ea;
-        }
-      }
     }
   }
   &--code {
