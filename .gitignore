@@ -107,3 +107,7 @@ dist
 
 # Storybook static files
 storybook-static/
+
+# Tokens
+src/@types/tokens.d.ts
+src/shared/stylesheets/tokens/

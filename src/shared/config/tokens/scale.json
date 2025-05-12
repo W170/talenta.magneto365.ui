@@ -1,0 +1,58 @@
+{
+  "values": {
+    "inherit": "inherit",
+    "none": "none",
+    "auto": "auto",
+    "full": "100%",
+    "min": "0",
+    "px": {
+      "base": "16px",
+      "2xs": "1px",
+      "xs": "4px",
+      "sm": "8px",
+      "md": "12px",
+      "lg": "16px",
+      "xl": "20px",
+      "2xl": "24px",
+      "3xl": "28px",
+      "4xl": "32px",
+      "breakpoint": {
+        "2xs": "375px",
+        "xs": "480px",
+        "sm": "576px",
+        "md": "768px",
+        "lg": "992px",
+        "xl": "1024px",
+        "2xl": "1280px",
+        "3xl": "1440px"
+      }
+    },
+    "rem": {
+      "2xs": "calc($scale-px-2xs / $scale-px-base) * 1rem",
+      "xs": "calc($scale-px-xs / $scale-px-base) * 1rem",
+      "sm": "calc($scale-px-sm / $scale-px-base) * 1rem",
+      "md": "calc($scale-px-md / $scale-px-base) * 1rem",
+      "lg": "calc($scale-px-lg / $scale-px-base) * 1rem",
+      "xl": "calc($scale-px-xl / $scale-px-base) * 1rem",
+      "2xl": "calc($scale-px-2xl / $scale-px-base) * 1rem",
+      "3xl": "calc($scale-px-3xl / $scale-px-base) * 1rem",
+      "4xl": "calc($scale-px-4xl / $scale-px-base) * 1rem",
+      "breakpoint": {
+        "2xs": "calc($scale-px-breakpoint-2xs / $scale-px-base) * 1rem",
+        "xs": "calc($scale-px-breakpoint-xs / $scale-px-base) * 1rem",
+        "sm": "calc($scale-px-breakpoint-sm / $scale-px-base) * 1rem",
+        "md": "calc($scale-px-breakpoint-md / $scale-px-base) * 1rem",
+        "lg": "calc($scale-px-breakpoint-lg / $scale-px-base) * 1rem",
+        "xl": "calc($scale-px-breakpoint-xl / $scale-px-base) * 1rem",
+        "2xl": "calc($scale-px-breakpoint-2xl / $scale-px-base) * 1rem",
+        "3xl": "calc($scale-px-breakpoint-3xl / $scale-px-base) * 1rem"
+      }
+    }
+  },
+  "docs": {
+    "description": "Scale SCSS vars for handling responsive designs.",
+    "example": "```scss\n.icon:hover {\n  transform: scale($scale-up);\n}\n```",
+    "category": "motion",
+    "tags": "scale, transform, animation, motion"
+  }
+}
