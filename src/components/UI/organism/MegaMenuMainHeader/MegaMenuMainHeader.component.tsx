@@ -24,11 +24,12 @@ import { SearchButton } from '@components/UI/molecules/SearchButton/SearchButton
 import { useMediaQuery } from '@components/hooks'
 import { MobileSearchbar } from '../../molecules'
 import { IMegaMenuMainHeader } from './MegaMenuMainHeader.interface'
+import { Select2 } from '../Select2'
 
 const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
   const [showSearchBar, setShowSearchBar] = useState(false)
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
-  const { homeUrl, searchBarProps, loginProps } = useMegaMenuMain()
+  const { homeUrl, searchBarProps, loginProps, selectCountry } = useMegaMenuMain()
   const { popoverRef } = useMegaMenuJobs()
 
   const listMenuUserProps = useLoggedInUser()
@@ -116,6 +117,7 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
         {LogoutHeaderMobileSearchbar}
         {LogoutHeaderMenuButton}
         <a href={homeUrl}>{renderLogo}</a>
+        {selectCountry && <Select2 haveTags={false} isMultiple={false} {...selectCountry} />}
         <div className={styles['mega-menu-main-header__search']}>{renderSearchBar}</div>
       </div>
       <div className={styles['mega-menu-main-header__login']}>
