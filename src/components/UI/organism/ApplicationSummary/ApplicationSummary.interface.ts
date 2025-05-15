@@ -13,6 +13,10 @@ export interface IApplicationSummary {
    * this property closes the ui
    */
   onClose: () => void
+  /**
+   * this property sets custom styles
+   */
+  className?: string
 }
 
 export namespace IApplicationSummary {
