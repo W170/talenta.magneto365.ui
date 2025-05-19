@@ -20,6 +20,6 @@ export const MAIN_PLUGINS = [
   }),
   copy({
     targets: [{ src: 'src/shared/stylesheets/tokens/**/*', dest: 'dist/tokens' }],
-    hook: 'writeBundle'
+    hook: 'buildEnd'
   })
 ]
