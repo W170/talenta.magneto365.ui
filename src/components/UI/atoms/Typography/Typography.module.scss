@@ -1,5 +1,4 @@
-@use '~/src/shared/stylesheets/tokens/text' as *;
-@use '~/src/shared/stylesheets/tokens/color' as *;
+@use '../../../../shared/stylesheets/tokens' as *;
 
 .magneto-ui-typography {
   font-style: inherit;
@@ -16,7 +15,7 @@
     }
   }
   @each $color, $value in $color-map {
-    &--color-#{$color} {
+    &--color-#{'' + $color} {
       color: $value;
       > * {
         color: $value;
