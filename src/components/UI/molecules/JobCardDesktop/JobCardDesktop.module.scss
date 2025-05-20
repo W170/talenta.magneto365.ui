@@ -88,16 +88,24 @@
     color: #47535f;
     font-weight: 400;
     margin: 0;
-    @media screen and (max-width: v.$screen-md) {
-      font-size: 12px;
-      text-wrap: nowrap;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 25ch;
+    font-size: 12px;
+    text-wrap: nowrap;
+    @media screen and (min-width: v.$screen-sm) {
+      font-size: 14px;
+      max-width: 60ch;
     }
     &--bold {
       font-weight: 700;
     }
     &--big {
+      max-width: 100ch;
       font-size: 16px;
       @media screen and (max-width: v.$screen-md) {
+        max-width: 15ch;
         font-size: 14px;
       }
     }

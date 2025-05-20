@@ -10,9 +10,13 @@ import styles from './ApplicationSummary.module.scss'
 import { classNames } from '@shared/utils/common'
 
 const cx = classNames.bind(styles)
-const Component: React.FC<IApplicationSummary> = ({ children, ...props }) => {
+const Component: React.FC<IApplicationSummary> = ({ children, className, ...props }) => {
   return (
-    <ModalResponsive modalClassName={cx('summary-modal')} mobileDrawerClassName={cx('summary-drawer')} {...props}>
+    <ModalResponsive
+      modalClassName={cx('summary-modal', className)}
+      mobileDrawerClassName={cx('summary-drawer')}
+      {...props}
+    >
       {children}
     </ModalResponsive>
   )
