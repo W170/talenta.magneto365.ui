@@ -61,6 +61,12 @@
         "file": "_scale.scss",
         "alias": "scale"
       }
+    ],
+    "classes": [
+      {
+        "prefix": "stroke",
+        "properties": [{ "property": "stroke" }]
+      }
     ]
   },
   "docs": {

@@ -1,13 +1,13 @@
 {
   "values": {
-    "2xs": "scale.$scale-rem-breakpoint-2xs",
-    "xs": "scale.$scale-rem-breakpoint-xs",
-    "sm": "scale.$scale-rem-breakpoint-sm",
-    "md": "scale.$scale-rem-breakpoint-md",
-    "lg": "scale.$scale-rem-breakpoint-lg",
-    "xl": "scale.$scale-rem-breakpoint-xl",
-    "2xl": "scale.$scale-rem-breakpoint-2xl",
-    "3xl": "scale.$scale-rem-breakpoint-3xl"
+    "2xs": "scale.$scale-rem-container-2xs",
+    "xs": "scale.$scale-rem-container-xs",
+    "sm": "scale.$scale-rem-container-sm",
+    "md": "scale.$scale-rem-container-md",
+    "lg": "scale.$scale-rem-container-lg",
+    "xl": "scale.$scale-rem-container-xl",
+    "2xl": "scale.$scale-rem-container-2xl",
+    "3xl": "scale.$scale-rem-container-3xl"
   },
   "utilities": {
     "imports": [

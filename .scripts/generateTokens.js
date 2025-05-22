@@ -157,9 +157,17 @@ class DesignToken {
 
     // Utility classes
     if (utilities.classes?.length) {
-      for (const { prefix, properties } of utilities.classes) {
+      for (const { prefix, properties, conditions } of utilities.classes) {
         for (const [classKey, varKey] of Object.entries(scssVarsObj)) {
-          const className = `.${prefix}-${classKey}`
+          const { excludeValues, removeFromClass } = conditions || {}
+
+          if (excludeValues?.some((e) => classKey.split('-').includes(e))) continue
+
+          const filteredClassKey = classKey
+            .split('-')
+            .filter((word) => !removeFromClass?.includes(word))
+            .join('-')
+          const className = `.${prefix}-${filteredClassKey}`
           const declarations = properties
             .map(({ property, fn }) => `  ${property}: ${fn ? fn.replace(/\((.*?)\)/, `($${varKey})`) : `$${varKey}`};`)
             .join('\n')
