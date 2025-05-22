@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { IHorizontalMenu } from './HorizontalMenu.interface'
 import { ArrowLeft2 } from '@constants/icons.constants'
 import { IconItem, Button } from '@components/UI/atoms'
@@ -10,11 +10,13 @@ const cx = classNames.bind(styles)
 const Component: React.FC<IHorizontalMenu> = ({ className, options, onChange, onClick }) => {
   const [selectedItem, setSelectedItem] = useState<number>(0)
 
-  useEffect(() => {
-    if (onChange) {
-      onChange(selectedItem)
-    }
-  }, [selectedItem, onChange])
+  const handleOnSelect = useCallback(
+    (key: number) => {
+      setSelectedItem(key)
+      onChange?.(key)
+    },
+    [onChange]
+  )
 
   if (!options || !Array.isArray(options)) return null
 
@@ -32,7 +34,7 @@ const Component: React.FC<IHorizontalMenu> = ({ className, options, onChange, on
                 'magneto-ui-horizontal-menu__button--active': selectedItem === key
               })}
             >
-              <Button suffixIcon={icon} buttonText={title} onClick={() => setSelectedItem(key)} />
+              <Button suffixIcon={icon} buttonText={title} onClick={() => handleOnSelect(key)} />
             </li>
           ))}
         </ul>
