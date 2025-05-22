@@ -1,0 +1,60 @@
+@use '../../../../../../../shared/stylesheets/variables.scss' as v;
+
+.defaultNotificationCard {
+  display: flex;
+  gap: 15px;
+  border-top: 1px solid v.$color-gray-background;
+  border-bottom: 1px solid v.$color-gray-background;
+  padding: 20px;
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: v.$color-white;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid v.$color-gray-background;
+    padding: 10px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    &-details {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    &-detail {
+      color: #47535f;
+    }
+    &-button {
+      background-color: v.$color-gray-background;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 30px;
+      width: fit-content;
+      min-width: 140px;
+      padding: 7px 14px;
+    }
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 20px;
+      &-right {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      &-badge {
+        height: 10px;
+        width: 10px;
+        > span {
+          animation: none;
+        }
+      }
+    }
+  }
+}
