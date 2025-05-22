@@ -8,7 +8,7 @@ import { ExpandableInfo } from '../../molecules'
 export const CandidateProfileStory: React.FC = ({ ...props }) => (
   <CandidateProfile {...props}>
     <CandidateProfile.Header>
-      <CandidateProfile.Avatar avatar={candidateProfileProps.avatar} score={candidateProfileProps.score} />
+      <CandidateProfile.Avatar userImage={candidateProfileProps.avatar.userImage} score={candidateProfileProps.score} />
       <div>
         <Typography.Paragraph size={'xs'} weight="normal" color="gray">
           {candidateProfileProps.header.lastUpdate}

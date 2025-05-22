@@ -8,15 +8,16 @@ import { classNames } from '@shared/utils/common'
 const cx = classNames.bind(styles)
 
 const Component: React.FC<TCandidateProfileTemplateHeader> = ({ ...props }) => {
-  const { setActiveScreen, screens } = useCandidateProfile()
+  const { setActiveScreen, screens, setIsProfileOpen } = useCandidateProfile()
 
   const menuOptions = useMemo(() => screens.map((screen) => ({ title: screen.title, icon: screen.icon })), [screens])
 
   const onMenuOptionClick = useCallback(
     (selectedOption: number) => {
       setActiveScreen(selectedOption)
+      setIsProfileOpen(false)
     },
-    [setActiveScreen]
+    [setActiveScreen, setIsProfileOpen]
   )
 
   return (

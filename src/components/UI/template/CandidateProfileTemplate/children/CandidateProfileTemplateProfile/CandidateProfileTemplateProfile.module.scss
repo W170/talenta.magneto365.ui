@@ -8,8 +8,9 @@
     @supports (max-height: 100dvh) {
       max-height: calc(100dvh - 52px - var(--nav-height, 0px));
     }
-    > footer {
+    > div {
       overflow-y: auto;
+      scrollbar-color: #c2c8cf #00000026;
       &::-webkit-scrollbar {
         background: #00000026;
         width: 10px;
