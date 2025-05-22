@@ -23,6 +23,16 @@ export const Default: Story = {
           ...candidateProfileTemplateProps,
           component: () => <div style={{ height: '200vh', background: 'gray' }}></div>,
           icon: <IconItem icon={LinkDark} />
+        },
+        {
+          ...candidateProfileTemplateProps,
+          component: () => <div style={{ height: '200vh', background: 'red' }}></div>,
+          icon: <IconItem icon={LinkDark} />
+        },
+        {
+          ...candidateProfileTemplateProps,
+          component: () => <div style={{ height: '200vh', background: 'yellow' }}></div>,
+          icon: <IconItem icon={LinkDark} />
         }
       ]}
       onChangeScreen={(screen, index) => console.log(screen, index)}

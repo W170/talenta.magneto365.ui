@@ -10,6 +10,7 @@
     }
     > footer {
       overflow-y: auto;
+      scrollbar-color: #c2c8cf #00000026;
       &::-webkit-scrollbar {
         background: #00000026;
         width: 10px;
