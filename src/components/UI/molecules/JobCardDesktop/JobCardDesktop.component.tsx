@@ -37,10 +37,9 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   const width = useWithElement(optionsRef)
 
   const citiesformatted = useMemo(() => {
-    if (cities?.length > 5) {
-      return cities?.slice(0, 5).join(', ')
-    }
-    return cities?.join(', ')
+    const safeCities = Array.isArray(cities) ? cities : []
+
+    return safeCities.length > 5 ? safeCities.slice(0, 5).join(', ') : safeCities.join(', ')
   }, [cities])
 
   return (
