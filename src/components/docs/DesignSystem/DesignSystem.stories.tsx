@@ -1,35 +1,44 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-import { DesignSystemShowCase } from './DesignSystem.component'
+import { DesignSystem } from './DesignSystem.component'
 import {
-  DesignSystemShowCaseBorder,
-  DesignSystemShowCaseColor,
-  DesignSystemShowCaseGap,
-  DesignSystemShowCaseMargin,
-  DesignSystemShowCaseOpacity,
-  DesignSystemShowCasePadding,
-  DesignSystemShowCaseRadius,
-  DesignSystemShowCaseScreen,
-  DesignSystemShowCaseShadow,
-  DesignSystemShowCaseText,
-  DesignSystemShowCaseScale
+  DesignSystemBorder,
+  DesignSystemColor,
+  DesignSystemGap,
+  DesignSystemMargin,
+  DesignSystemOpacity,
+  DesignSystemPadding,
+  DesignSystemRadius,
+  DesignSystemScreen,
+  DesignSystemShadow,
+  DesignSystemText,
+  DesignSystemScale,
+  DesignSystemUtilityClasses
 } from './children'
 
-const meta: Meta<typeof DesignSystemShowCase> = {
+const meta: Meta<typeof DesignSystem> = {
   title: 'Design System',
   parameters: {
     docs: {
+      page: null,
       description: {
         component:
-          'Design system showcase. Here you can find things such as colors, border, gap, margin, opacity, padding, radius, screen, shadow, text and scale. When using SCSS variables, use the first column token in each table, for example: $color-transparent.'
+          'Design system showcase. Here you can find things such as colors, border, gap, margin, opacity, padding, radius, screen, shadow, text and scale. When using SCSS variables, use the first column token in each table, for example: $color-transparent. Design systems is NOT exported as a React component.'
       }
     }
-  }
+  },
+  component: DesignSystem
 }
 
 export default meta
 
-type ColorStory = StoryObj<typeof DesignSystemShowCaseColor>
+type Story = StoryObj<typeof DesignSystem>
+
+export const Default: Story = {
+  render: () => <DesignSystem />
+}
+
+type ColorStory = StoryObj<typeof DesignSystemColor>
 
 export const Color: ColorStory = {
   parameters: {
@@ -39,10 +48,10 @@ export const Color: ColorStory = {
       }
     }
   },
-  render: () => <DesignSystemShowCaseColor />
+  render: () => <DesignSystemColor />
 }
 
-type BorderStory = StoryObj<typeof DesignSystemShowCaseBorder>
+type BorderStory = StoryObj<typeof DesignSystemBorder>
 
 export const Border: BorderStory = {
   parameters: {
@@ -52,10 +61,10 @@ export const Border: BorderStory = {
       }
     }
   },
-  render: () => <DesignSystemShowCaseBorder />
+  render: () => <DesignSystemBorder />
 }
 
-type GapStory = StoryObj<typeof DesignSystemShowCaseGap>
+type GapStory = StoryObj<typeof DesignSystemGap>
 
 export const Gap: GapStory = {
   parameters: {
@@ -65,10 +74,10 @@ export const Gap: GapStory = {
       }
     }
   },
-  render: () => <DesignSystemShowCaseGap />
+  render: () => <DesignSystemGap />
 }
 
-type MarginStory = StoryObj<typeof DesignSystemShowCaseMargin>
+type MarginStory = StoryObj<typeof DesignSystemMargin>
 
 export const Margin: MarginStory = {
   parameters: {
@@ -78,10 +87,10 @@ export const Margin: MarginStory = {
       }
     }
   },
-  render: () => <DesignSystemShowCaseMargin />
+  render: () => <DesignSystemMargin />
 }
 
-type OpacityStory = StoryObj<typeof DesignSystemShowCaseOpacity>
+type OpacityStory = StoryObj<typeof DesignSystemOpacity>
 
 export const Opacity: OpacityStory = {
   parameters: {
@@ -91,10 +100,10 @@ export const Opacity: OpacityStory = {
       }
     }
   },
-  render: () => <DesignSystemShowCaseOpacity />
+  render: () => <DesignSystemOpacity />
 }
 
-type PaddingStory = StoryObj<typeof DesignSystemShowCasePadding>
+type PaddingStory = StoryObj<typeof DesignSystemPadding>
 
 export const Padding: PaddingStory = {
   parameters: {
@@ -104,10 +113,10 @@ export const Padding: PaddingStory = {
       }
     }
   },
-  render: () => <DesignSystemShowCasePadding />
+  render: () => <DesignSystemPadding />
 }
 
-type RadiusStory = StoryObj<typeof DesignSystemShowCaseRadius>
+type RadiusStory = StoryObj<typeof DesignSystemRadius>
 
 export const Radius: RadiusStory = {
   parameters: {
@@ -117,10 +126,10 @@ export const Radius: RadiusStory = {
       }
     }
   },
-  render: () => <DesignSystemShowCaseRadius />
+  render: () => <DesignSystemRadius />
 }
 
-type ScreenStory = StoryObj<typeof DesignSystemShowCaseScreen>
+type ScreenStory = StoryObj<typeof DesignSystemScreen>
 
 export const Screen: ScreenStory = {
   parameters: {
@@ -130,10 +139,10 @@ export const Screen: ScreenStory = {
       }
     }
   },
-  render: () => <DesignSystemShowCaseScreen />
+  render: () => <DesignSystemScreen />
 }
 
-type ShadowStory = StoryObj<typeof DesignSystemShowCaseShadow>
+type ShadowStory = StoryObj<typeof DesignSystemShadow>
 
 export const Shadow: ShadowStory = {
   parameters: {
@@ -143,10 +152,10 @@ export const Shadow: ShadowStory = {
       }
     }
   },
-  render: () => <DesignSystemShowCaseShadow />
+  render: () => <DesignSystemShadow />
 }
 
-type TextStory = StoryObj<typeof DesignSystemShowCaseText>
+type TextStory = StoryObj<typeof DesignSystemText>
 
 export const Text: TextStory = {
   parameters: {
@@ -156,10 +165,10 @@ export const Text: TextStory = {
       }
     }
   },
-  render: () => <DesignSystemShowCaseText />
+  render: () => <DesignSystemText />
 }
 
-type ScaleStory = StoryObj<typeof DesignSystemShowCaseScale>
+type ScaleStory = StoryObj<typeof DesignSystemScale>
 
 export const Scale: ScaleStory = {
   parameters: {
@@ -169,5 +178,18 @@ export const Scale: ScaleStory = {
       }
     }
   },
-  render: () => <DesignSystemShowCaseScale />
+  render: () => <DesignSystemScale />
+}
+
+type UtilityClassesStory = StoryObj<typeof DesignSystemUtilityClasses>
+
+export const UtilityClasses: UtilityClassesStory = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Utility classes design system showcase.'
+      }
+    }
+  },
+  render: () => <DesignSystemUtilityClasses />
 }

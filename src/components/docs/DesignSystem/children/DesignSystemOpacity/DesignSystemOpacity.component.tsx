@@ -30,7 +30,8 @@ const Component: React.FC = () => {
                 <div
                   className={`${cx(`magneto-ui-design-system-opacity__example-${key}`)} ${pCx(
                     `magneto-ui-design-system__example-box`,
-                    `magneto-ui-design-system__example-box--yellow`
+                    `magneto-ui-design-system__example-box--yellow`,
+                    'magneto-ui-design-system__example-box--base-size'
                   )}`}
                 ></div>
               </td>
@@ -42,4 +43,4 @@ const Component: React.FC = () => {
   )
 }
 
-export const DesignSystemShowCaseOpacity = Component
+export const DesignSystemOpacity = Component

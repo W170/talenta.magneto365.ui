@@ -31,13 +31,15 @@ const Component: React.FC = () => {
                   <div
                     className={pCx(
                       'magneto-ui-design-system__example-box',
-                      'magneto-ui-design-system__example-box--green'
+                      'magneto-ui-design-system__example-box--green',
+                      'magneto-ui-design-system__example-box--base-size'
                     )}
                   />
                   <div
                     className={pCx(
                       'magneto-ui-design-system__example-box',
-                      'magneto-ui-design-system__example-box--green'
+                      'magneto-ui-design-system__example-box--green',
+                      'magneto-ui-design-system__example-box--base-size'
                     )}
                   />
                 </div>
@@ -50,4 +52,4 @@ const Component: React.FC = () => {
   )
 }
 
-export const DesignSystemShowCaseGap = Component
+export const DesignSystemGap = Component

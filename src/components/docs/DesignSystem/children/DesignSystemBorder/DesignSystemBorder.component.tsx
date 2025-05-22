@@ -41,4 +41,4 @@ const Component: React.FC = () => {
   )
 }
 
-export const DesignSystemShowCaseBorder = Component
+export const DesignSystemBorder = Component

@@ -37,4 +37,4 @@ const Component: React.FC = () => {
   )
 }
 
-export const DesignSystemShowCaseText = Component
+export const DesignSystemText = Component

@@ -29,7 +29,8 @@ const Component: React.FC = () => {
                 <div
                   className={`${cx(`magneto-ui-design-system-shadow__example-${key}`)} ${pCx(
                     'magneto-ui-design-system__example-box',
-                    'magneto-ui-design-system__example-box--blue-dark'
+                    'magneto-ui-design-system__example-box--blue-dark',
+                    'magneto-ui-design-system__example-box--base-size'
                   )}`}
                 />
               </td>
@@ -41,4 +42,4 @@ const Component: React.FC = () => {
   )
 }
 
-export const DesignSystemShowCaseShadow = Component
+export const DesignSystemShadow = Component

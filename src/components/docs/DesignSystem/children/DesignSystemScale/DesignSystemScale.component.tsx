@@ -31,4 +31,4 @@ const Component: React.FC = () => {
   )
 }
 
-export const DesignSystemShowCaseScale = Component
+export const DesignSystemScale = Component

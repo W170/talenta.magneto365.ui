@@ -30,13 +30,15 @@ const Component: React.FC = () => {
                 <div
                   className={`${cx(`magneto-ui-design-system-padding__example-${key}`)} ${pCx(
                     'magneto-ui-design-system__example-box',
-                    'magneto-ui-design-system__example-box--blue-dark'
+                    'magneto-ui-design-system__example-box--blue-dark',
+                    'magneto-ui-design-system__example-box--base-size'
                   )}`}
                 >
                   <div
                     className={`${pCx(
                       'magneto-ui-design-system__example-box',
-                      'magneto-ui-design-system__example-box--blue-light'
+                      'magneto-ui-design-system__example-box--blue-light',
+                      'magneto-ui-design-system__example-box--base-size'
                     )}`}
                   />
                 </div>
@@ -49,4 +51,4 @@ const Component: React.FC = () => {
   )
 }
 
-export const DesignSystemShowCasePadding = Component
+export const DesignSystemPadding = Component

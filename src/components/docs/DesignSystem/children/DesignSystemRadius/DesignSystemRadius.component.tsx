@@ -30,7 +30,8 @@ const Component: React.FC = () => {
                 <div
                   className={`${cx(`magneto-ui-design-system-radius__example-${key}`)} ${pCx(
                     'magneto-ui-design-system__example-box',
-                    'magneto-ui-design-system__example-box--green'
+                    'magneto-ui-design-system__example-box--green',
+                    'magneto-ui-design-system__example-box--base-size'
                   )}`}
                 />
               </td>
@@ -42,4 +43,4 @@ const Component: React.FC = () => {
   )
 }
 
-export const DesignSystemShowCaseRadius = Component
+export const DesignSystemRadius = Component
