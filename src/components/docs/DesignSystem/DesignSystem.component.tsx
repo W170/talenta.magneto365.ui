@@ -11,6 +11,7 @@ const Component: React.FC = () => {
         <h2 className={cx('magneto-ui-design-system__title')}>SCSS vars usage</h2>
         <code>{`@import '~magneto365.ui/dist/tokens';`}</code>
         <code>{`.button { background-color: $color-blue-dark-400; }`}</code>
+        <code>{`@each $size, $value in $text-map { &--#{$size} { font-size: $value; }}`}</code>
 
         <code>{`/* ------------------------ or named import ------------------------ */`}</code>
 
