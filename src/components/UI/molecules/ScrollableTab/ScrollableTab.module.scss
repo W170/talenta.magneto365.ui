@@ -1,0 +1,36 @@
+@use '../../../../shared/stylesheets/variables.scss' as variables;
+
+.magneto-ui-scrollable-tab {
+  position: relative;
+  min-width: 192px;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    gap: 4px;
+  }
+
+  &__arrow {
+    background-color: variables.$color-gray-background;
+    transform: translateY(-50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    top: 50%;
+
+    > img {
+      color: variables.$colors-magneto-neutral-gray-900;
+    }
+
+    &--left {
+      left: 0;
+    }
+    &--right {
+      right: 0;
+    }
+  }
+}
