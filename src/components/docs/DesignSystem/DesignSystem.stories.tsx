@@ -13,7 +13,7 @@ import {
   DesignSystemShadow,
   DesignSystemText,
   DesignSystemScale,
-  DesignSystemUtilityClasses
+  DesignSystemUtilityClass
 } from './children'
 
 const meta: Meta<typeof DesignSystem> = {
@@ -22,8 +22,7 @@ const meta: Meta<typeof DesignSystem> = {
     docs: {
       page: null,
       description: {
-        component:
-          'Design system showcase. Here you can find things such as colors, border, gap, margin, opacity, padding, radius, screen, shadow, text and scale. When using SCSS variables, use the first column token in each table, for example: $color-transparent. Design systems is NOT exported as a React component.'
+        component: `Design system showcase. Here you can find things such as colors, borders, gaps, margins, opacities, paddings, radius, screens, shadows, texts, scales and utility classes. Use the first column of each table to use the design system. Design system is NOT exported as a React component.`
       }
     }
   },
@@ -181,9 +180,9 @@ export const Scale: ScaleStory = {
   render: () => <DesignSystemScale />
 }
 
-type UtilityClassesStory = StoryObj<typeof DesignSystemUtilityClasses>
+type UtilityClassesStory = StoryObj<typeof DesignSystemUtilityClass>
 
-export const UtilityClasses: UtilityClassesStory = {
+export const UtilityClass: UtilityClassesStory = {
   parameters: {
     docs: {
       description: {
@@ -191,5 +190,5 @@ export const UtilityClasses: UtilityClassesStory = {
       }
     }
   },
-  render: () => <DesignSystemUtilityClasses />
+  render: () => <DesignSystemUtilityClass />
 }
