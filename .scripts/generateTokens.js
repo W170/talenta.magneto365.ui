@@ -3,10 +3,11 @@ const path = require('path')
 const warning = '// Auto-generated DO NOT EDIT\n'
 
 class DesignToken {
-  tokensDir = path.resolve(__dirname, '../src/shared/config/tokens')
+  tokensDir = path.resolve(__dirname, '../src/shared/tokens/data')
   scssOutput = path.resolve(__dirname, '../src/shared/stylesheets/tokens')
   typesDir = path.resolve(__dirname, '../src/@types')
-  typesOutput = path.join(this.typesDir, 'tokens.d.ts')
+  typesDOutput = path.join(this.typesDir, 'tokens.d.ts')
+  typesOutput = path.join(__dirname, '../src/shared/tokens/index.ts')
 
   // Main function
   run() {
@@ -69,6 +70,7 @@ class DesignToken {
 
   // Remove previous token types definitions
   removePreviousTypesFile() {
+    if (fs.existsSync(this.typesDOutput)) fs.unlinkSync(this.typesDOutput)
     if (fs.existsSync(this.typesOutput)) fs.unlinkSync(this.typesOutput)
   }
 
@@ -100,7 +102,9 @@ class DesignToken {
 
   // Write in a global types file
   writeGlobalTypes(typeDefs) {
-    const content = `${warning}declare module 'magneto-ui' {\n\n${typeDefs.join('\n')}}\n`
+    const contentD = `${warning}declare module 'magneto-ui' {\n\n${typeDefs.join('\n')}}\n`
+    const content = `${warning}\n${typeDefs.join('\n')}\n`
+    fs.writeFileSync(this.typesDOutput, contentD)
     fs.writeFileSync(this.typesOutput, content)
   }
 
