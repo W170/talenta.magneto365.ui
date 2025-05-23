@@ -1,0 +1,12 @@
+@import '../../../../../shared/stylesheets/tokens';
+
+.magneto-ui-design-system-screen {
+  @each $key, $value in $screen-map {
+    &__example-#{$key} {
+      display: none;
+      @media screen and (min-width: $value) {
+        display: block;
+      }
+    }
+  }
+}

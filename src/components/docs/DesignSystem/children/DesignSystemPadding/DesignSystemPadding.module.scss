@@ -1,0 +1,9 @@
+@import '../../../../../shared/stylesheets/tokens';
+
+.magneto-ui-design-system-padding {
+  @each $key, $value in $padding-map {
+    &__example-#{$key} {
+      padding-left: $value;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "values": {
+    "transparent": "transparent",
+    "inherit": "scale.$scale-inherit",
+    "current": "currentColor",
+    "blue": {
+      "dark": {
+        "50": "#99a4af",
+        "100": "#667688",
+        "200": "#334960",
+        "300": "#1a324c",
+        "400": "#001b38",
+        "500": "#00162d"
+      },
+      "light": {
+        "50": "#f0f9ff",
+        "100": "#e0f3fb",
+        "200": "#a3daf2",
+        "300": "#66c1ea",
+        "400": "#00a7e1",
+        "500": "#007da9"
+      }
+    },
+    "green": {
+      "50": "#f1fbf4",
+      "100": "#cef1dc",
+      "200": "#9ee4b8",
+      "300": "#6dd695",
+      "400": "#3dc971",
+      "500": "#0cbb4e",
+      "600": "#098c3b"
+    },
+    "grey": {
+      "50": "#ffffff",
+      "100": "#f0f1f3",
+      "200": "#e0e4e7",
+      "300": "#c2c8cf",
+      "400": "#a3adb8",
+      "500": "#8591a0",
+      "600": "#667688",
+      "700": "#47535f",
+      "800": "#292f37",
+      "900": "#0a0c0e"
+    },
+    "red": {
+      "50": "#fff5f5",
+      "100": "#febfbf",
+      "200": "#e10000",
+      "300": "#8b0000"
+    },
+    "yellow": {
+      "50": "#fffaef",
+      "100": "#fde0a6",
+      "200": "#fcc75d",
+      "300": "#faad14"
+    }
+  },
+  "utilities": {
+    "imports": [
+      {
+        "file": "_scale.scss",
+        "alias": "scale"
+      }
+    ],
+    "classes": [
+      {
+        "prefix": "stroke",
+        "properties": [{ "property": "stroke" }]
+      },
+      {
+        "prefix": "fill",
+        "properties": [{ "property": "fill" }]
+      },
+      {
+        "prefix": "bg",
+        "properties": [{ "property": "background-color" }]
+      },
+      {
+        "prefix": "color",
+        "properties": [{ "property": "color" }]
+      }
+    ]
+  },
+  "docs": {
+    "description": "Color SCC vars used to maintain brand and accessibility standards across the UI.",
+    "example": "```scss\n.button {\n  background-color: $color-red-300;\n  color: $color-grey-50;\n}\n```",
+    "category": "theme",
+    "tags": "color, theme, palette, branding, accessibility"
+  }
+}

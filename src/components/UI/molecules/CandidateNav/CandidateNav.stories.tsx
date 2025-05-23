@@ -41,7 +41,7 @@ export const CandidateNavStory = ({ ...props }) => {
               >
                 <IconItem showDefaultFallback={false} size={18} icon={option.icon} />
               </div>
-              <Typography.Paragraph size={'md'} weight="normal" color="black">
+              <Typography.Paragraph size={'md'} weight="normal" color="grey-900">
                 {option.value}
               </Typography.Paragraph>
             </CandidateNav.Option>
@@ -52,7 +52,7 @@ export const CandidateNavStory = ({ ...props }) => {
             <img style={{ width: '12px', height: '12px', filter: 'invert(1)' }} src={CandidateNavProps.cancelar} />
           </CandidateNav.Button>
           <CandidateNav.Button variant="dark-blue" style={{ flex: 1 }}>
-            <Typography.Paragraph size={'lg'} weight="bold" color="white">
+            <Typography.Paragraph size={'lg'} weight="bold" color="grey-50">
               {CandidateNavProps.nextStep.value}
             </Typography.Paragraph>
             <IconItem showDefaultFallback={false} size={20} icon={CandidateNavProps.nextStep.icon} />
@@ -67,10 +67,10 @@ export const CandidateNavStory = ({ ...props }) => {
               <IconItem size={20} icon={ArrowLeft2} />
             </CandidateNav.Button>
             <div style={{ flex: 1, textAlign: 'center' }}>
-              <Typography.Text size={'sm'} weight="normal" color="black">
+              <Typography.Text size="md" weight="normal" color="grey-900">
                 {CandidateNavProps.candidate.value}
               </Typography.Text>
-              <Typography.Text size={'sm'} weight="bold" color="black">
+              <Typography.Text size="md" weight="bold" color="grey-900">
                 {count}
               </Typography.Text>
             </div>

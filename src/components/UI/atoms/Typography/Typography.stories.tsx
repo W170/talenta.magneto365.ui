@@ -16,9 +16,9 @@ const meta: Meta<typeof Typography> = {
 
 export default meta
 
-type Story = StoryObj<typeof Typography>
+type ParagraphStory = StoryObj<typeof Typography.Paragraph>
 
-export const Default: Story = {
+export const Default: ParagraphStory = {
   parameters: {
     docs: {
       description: {
@@ -28,7 +28,7 @@ export const Default: Story = {
   },
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
-      <Typography.Paragraph weight={400} size={16} color="black" className="className">
+      <Typography.Paragraph weight={400} size={16} color="red-300" className="className">
         Text
       </Typography.Paragraph>
       <Typography.Paragraph code>Code</Typography.Paragraph>
@@ -36,13 +36,17 @@ export const Default: Story = {
       <Typography.Paragraph italic>Italic</Typography.Paragraph>
       <Typography.Paragraph keyboard>Keyboard</Typography.Paragraph>
       <Typography.Paragraph mark>Mark</Typography.Paragraph>
-      <Typography.Paragraph strong>Strong</Typography.Paragraph>
+      <Typography.Paragraph strong weight="black">
+        Strong
+      </Typography.Paragraph>
       <Typography.Paragraph underline>Underline</Typography.Paragraph>
     </div>
   )
 }
 
-export const Title: Story = {
+type TitleStory = StoryObj<typeof Typography.Title>
+
+export const Title: TitleStory = {
   parameters: {
     docs: {
       description: {
@@ -55,7 +59,7 @@ export const Title: Story = {
       <Typography.Title
         level={1}
         strong
-        size="xl-2"
+        size="2xl"
         className="className"
         style={{ filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))' }}
       >
@@ -80,7 +84,7 @@ export const Title: Story = {
   )
 }
 
-export const Paragraph: Story = {
+export const Paragraph: ParagraphStory = {
   parameters: {
     docs: {
       description: {
@@ -111,7 +115,9 @@ export const Paragraph: Story = {
   )
 }
 
-export const Text: Story = {
+type TextStory = StoryObj<typeof Typography.Text>
+
+export const Text: TextStory = {
   parameters: {
     docs: {
       description: {
@@ -121,14 +127,16 @@ export const Text: Story = {
   },
   render: () => (
     <React.Fragment>
-      <Typography.Text size="md">Lorem ipsum dolor sit amet consectetur adipisicing elit.</Typography.Text>
+      <Typography.Text>Lorem ipsum dolor sit amet consectetur adipisicing elit.</Typography.Text>
       <Typography.Text keyboard>Example</Typography.Text>
       <Typography.Text weight="bold">Quisquam, quae.</Typography.Text>
     </React.Fragment>
   )
 }
 
-export const Link: Story = {
+type LinkStory = StoryObj<typeof Typography.Link>
+
+export const Link: LinkStory = {
   parameters: {
     docs: {
       description: {
