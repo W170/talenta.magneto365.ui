@@ -109,7 +109,7 @@
   },
   "docs": {
     "description": "Scale SCSS vars for handling responsive designs.",
-    "example": "```scss\n.icon:hover {\n  transform: scale($scale-up);\n}\n```",
+    "example": "```scss\n.icon:hover {\n  transform: scale($scale-rem-md);\n}\n```",
     "category": "motion",
     "tags": "scale, transform, animation, motion"
   }

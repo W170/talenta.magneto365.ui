@@ -18,7 +18,7 @@
   },
   "docs": {
     "description": "Text SCSS vars for consistent font sizes.",
-    "example": "```scss\n.title {\n  font-size: $text-xl;\n  font-weight: $weight-bold;\n}\n```",
+    "example": "```scss\n.title {\n  font-size: $text-xl;\n}\n```",
     "category": "typography",
     "tags": "text, typography, font, size, weight, line-height"
   }

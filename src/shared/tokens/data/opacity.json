@@ -24,7 +24,7 @@
   },
   "docs": {
     "description": "Opacity SCC vars used to define transparency levels for elements and UI states.",
-    "example": "```scss\n.overlay {\n  opacity: $opacity-75;\n}\n```",
+    "example": "```scss\n.overlay {\n  opacity: $opacity-70;\n}\n```",
     "category": "visual",
     "tags": "opacity, transparency, visibility, visual"
   }
