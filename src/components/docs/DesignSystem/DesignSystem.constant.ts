@@ -1,6 +1,6 @@
-import scale from '@shared/config/tokens/scale.json'
-import color from '@shared/config/tokens/color.json'
-import opacity from '@shared/config/tokens/opacity.json'
+import scale from '@shared/tokens/data/scale.json'
+import color from '@shared/tokens/data/color.json'
+import opacity from '@shared/tokens/data/opacity.json'
 
 export const flattenTokens = (obj: Record<string, any>, prefix: string[] = []): [string, string][] => {
   const entries: [string, string][] = []

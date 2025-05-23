@@ -1,6 +1,6 @@
 import React from 'react'
 import { classNames } from '@shared/utils/common'
-import data from '@shared/config/tokens/gap.json'
+import data from '@shared/tokens/data/gap.json'
 import pStyles from '../../DesignSystem.module.scss'
 import styles from './DesignSystemGap.module.scss'
 import { flattenTokens, resolveValue, evaluateCalc } from '../../DesignSystem.constant'

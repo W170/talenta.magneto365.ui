@@ -1,6 +1,6 @@
 import React from 'react'
 import { classNames } from '@shared/utils/common'
-import data from '@shared/config/tokens/color.json'
+import data from '@shared/tokens/data/color.json'
 import pStyles from '../../DesignSystem.module.scss'
 import styles from './DesignSystemColor.module.scss'
 import { resolveValue, flattenTokens, evaluateCalc } from '../../DesignSystem.constant'

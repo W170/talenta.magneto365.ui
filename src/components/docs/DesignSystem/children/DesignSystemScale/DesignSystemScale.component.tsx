@@ -1,6 +1,6 @@
 import React from 'react'
 import { classNames } from '@shared/utils/common'
-import data from '@shared/config/tokens/scale.json'
+import data from '@shared/tokens/data/scale.json'
 import pStyles from '../../DesignSystem.module.scss'
 import { resolveValue, flattenTokens, evaluateCalc } from '../../DesignSystem.constant'
 

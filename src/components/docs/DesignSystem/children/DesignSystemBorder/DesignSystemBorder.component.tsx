@@ -1,6 +1,6 @@
 import React from 'react'
 import { classNames } from '@shared/utils/common'
-import data from '@shared/config/tokens/border.json'
+import data from '@shared/tokens/data/border.json'
 import pStyles from '../../DesignSystem.module.scss'
 import styles from './DesignSystemBorder.module.scss'
 import { flattenTokens, resolveValue, evaluateCalc } from '../../DesignSystem.constant'

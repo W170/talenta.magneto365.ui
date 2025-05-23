@@ -9,4 +9,4 @@ export { DesignSystemScale } from './DesignSystemScale/DesignSystemScale.compone
 export { DesignSystemScreen } from './DesignSystemScreen/DesignSystemScreen.component'
 export { DesignSystemShadow } from './DesignSystemShadow/DesignSystemShadow.component'
 export { DesignSystemText } from './DesignSystemText/DesignSystemText.component'
-export { DesignSystemUtilityClasses } from './DesignSystemUtilityClasses/DesignSystemUtilityClasses.component'
+export { DesignSystemUtilityClass } from './DesignSystemUtilityClass/DesignSystemUtilityClass.component'

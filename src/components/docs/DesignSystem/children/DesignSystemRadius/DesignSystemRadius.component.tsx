@@ -1,6 +1,6 @@
 import React from 'react'
 import { classNames } from '@shared/utils/common'
-import data from '@shared/config/tokens/radius.json'
+import data from '@shared/tokens/data/radius.json'
 import pStyles from '../../DesignSystem.module.scss'
 import styles from './DesignSystemRadius.module.scss'
 import { resolveValue, flattenTokens, evaluateCalc } from '../../DesignSystem.constant'

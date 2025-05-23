@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { classNames } from '@shared/utils/common'
-import data from '@shared/config/tokens/scale.json'
+import data from '@shared/tokens/data/scale.json'
 import pStyles from '../../DesignSystem.module.scss'
 import { resolveValue, flattenTokens, evaluateCalc } from '../../DesignSystem.constant'
 
@@ -15,9 +15,9 @@ const Component: React.FC = () => {
         <table className={pCx('magneto-ui-design-system__table')} key={name}>
           <thead>
             <tr>
-              <th>CSS Utility Class for: {name}</th>
+              <th>Utility Class: {name}</th>
               {properties.map(({ property }) => (
-                <th key={property}>{property}</th>
+                <th key={property}>CSS Property: {property}</th>
               ))}
             </tr>
           </thead>
@@ -48,4 +48,4 @@ const Component: React.FC = () => {
   )
 }
 
-export const DesignSystemUtilityClasses = Component
+export const DesignSystemUtilityClass = Component

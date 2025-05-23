@@ -1,6 +1,6 @@
 import React from 'react'
 import { classNames } from '@shared/utils/common'
-import data from '@shared/config/tokens/shadow.json'
+import data from '@shared/tokens/data/shadow.json'
 import pStyles from '../../DesignSystem.module.scss'
 import styles from './DesignSystemShadow.module.scss'
 import { flattenTokens, resolveValue } from '../../DesignSystem.constant'
