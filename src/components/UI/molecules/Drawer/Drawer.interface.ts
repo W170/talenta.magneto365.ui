@@ -52,6 +52,10 @@ export interface IDrawer {
    * this property blocks fn onClose from background
    */
   blockBackgroundClose?: boolean
+  /**
+   * this property sets custom styles into background drawer
+   */
+  backGroundClassName?: string
 }
 
 /**

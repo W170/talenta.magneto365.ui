@@ -18,7 +18,8 @@ const Component: React.FC<IDrawer> = ({
   hideButton,
   children,
   onClose,
-  blockBackgroundClose = false
+  blockBackgroundClose = false,
+  backGroundClassName = ''
 }) => {
   const fullDrawer = isFull ? `full-drawer` : ''
   const paddingValue = customPadding !== undefined ? `${customPadding}px` : `${DEFAULT_PADDING}px`
@@ -68,7 +69,10 @@ const Component: React.FC<IDrawer> = ({
               {children}
             </aside>
             {isOpen && (
-              <span className={`${style[backgroundEffect]}`} onClick={blockBackgroundClose ? () => null : onClose} />
+              <span
+                className={`${style[backgroundEffect]} ${backGroundClassName}`}
+                onClick={blockBackgroundClose ? () => null : onClose}
+              />
             )}
           </div>
         </DrawerPortal>
