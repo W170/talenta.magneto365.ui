@@ -6,6 +6,9 @@
   border-top: 1px solid v.$color-gray-background;
   border-bottom: 1px solid v.$color-gray-background;
   padding: 20px;
+  &:hover {
+    background-color: v.$color-gray-background;
+  }
   &__icon {
     display: flex;
     align-items: center;
@@ -27,10 +30,12 @@
       gap: 5px;
     }
     &-detail {
-      color: #47535f;
+      > span {
+        color: #47535f;
+      }
     }
     &-button {
-      background-color: v.$color-gray-background;
+      background-color: v.$selected-color-gray;
       font-weight: 700;
       font-size: 1rem;
       border-radius: 30px;
