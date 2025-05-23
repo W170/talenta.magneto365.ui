@@ -66,6 +66,18 @@
       {
         "prefix": "stroke",
         "properties": [{ "property": "stroke" }]
+      },
+      {
+        "prefix": "fill",
+        "properties": [{ "property": "fill" }]
+      },
+      {
+        "prefix": "bg",
+        "properties": [{ "property": "background-color" }]
+      },
+      {
+        "prefix": "color",
+        "properties": [{ "property": "color" }]
       }
     ]
   },
