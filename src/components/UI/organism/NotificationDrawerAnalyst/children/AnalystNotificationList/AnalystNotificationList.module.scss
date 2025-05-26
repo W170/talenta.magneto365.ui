@@ -4,4 +4,22 @@
   border-top: 1px solid v.$color-gray-background;
   border-bottom: 1px solid v.$color-gray-background;
   margin-top: 10px;
+  flex-grow: 1;
+  min-height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 15px 0;
+  > div {
+    border-width: 4px !important;
+  }
 }
