@@ -1,17 +1,26 @@
+import { AnalystNotificationType, AnalystNotificationEvent } from '../../enums'
 /**
  * Types of notifications that can be displayed to the analyst.
  */
-export type INotificationType = 'requests' | 'candidateManagement' | 'vacancyStatuses' | 'interviews'
+export type INotificationType =
+  | AnalystNotificationType.requests
+  | AnalystNotificationType.candidateManagement
+  | AnalystNotificationType.vacancyStatuses
+  | AnalystNotificationType.interviews
 
 /**
  * Possible events related to requests.
  */
-export type IRequestEvent = 'created' | 'assigned' | 'named' | 'rejected'
+export type IRequestEvent =
+  | AnalystNotificationEvent.created
+  | AnalystNotificationEvent.assigned
+  | AnalystNotificationEvent.named
+  | AnalystNotificationEvent.rejected
 
 /**
  * Possible events related to candidate management.
  */
-export type ICandidateManagementEvent = 'matchFound'
+export type ICandidateManagementEvent = AnalystNotificationEvent.matchFound
 
 /**
  * Base notification structure shared by all notification types.
@@ -54,7 +63,7 @@ export interface IRequestNotification extends IBaseNotification {
   /**
    * Type discriminator for requests
    */
-  type: 'requests'
+  type: AnalystNotificationType.requests
   /**
    * Specific event within the requests category
    */
@@ -68,7 +77,7 @@ export interface ICandidateManagementNotification extends IBaseNotification {
   /**
    * Type discriminator for candidate management
    */
-  type: 'candidateManagement'
+  type: AnalystNotificationType.candidateManagement
   /**
    * Specific event within the candidate management category
    */
@@ -88,4 +97,25 @@ export interface IAnalystNotificationListProps {
    * Array of notifications to be rendered
    */
   notifications: IAnalystNotification[]
+}
+
+/**
+ * Result returned by the useInfiniteNotifications hook.
+ */
+export interface UseInfiniteNotificationsResult {
+  /**
+   * Array of notifications currently loaded
+   */
+  notifications: IAnalystNotification[]
+
+  /**
+   * Ref callback to be assigned to the last notification element.
+   * Triggers loading of more items when it enters the viewport.
+   */
+  lastNotificationRef: (node: HTMLDivElement | null) => void
+
+  /**
+   * Indicates whether new notifications are currently being fetched
+   */
+  isLoading: boolean
 }
