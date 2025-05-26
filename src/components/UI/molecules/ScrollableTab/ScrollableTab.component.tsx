@@ -4,7 +4,7 @@ import styles from './ScrollableTab.module.scss'
 import { IScrollableTab } from './ScrollableTab.interface'
 import { ArrowLeft2, ArrowRight2 } from '@constants/icons.constants'
 
-const Component: React.FC<IScrollableTab> = ({ children, scrollAmount = 100 }) => {
+const Component: React.FC<IScrollableTab> = ({ children, scrollAmount = 100, className }) => {
   const containerRef = React.useRef<HTMLDivElement>(null)
   const [showLeftArrow, setShowLeftArrow] = useState(false)
   const [showRightArrow, setShowRightArrow] = useState(false)
@@ -40,7 +40,7 @@ const Component: React.FC<IScrollableTab> = ({ children, scrollAmount = 100 }) =
   }, [])
 
   return (
-    <div className={styles['magneto-ui-scrollable-tab']} role="tablist">
+    <div className={`${styles['magneto-ui-scrollable-tab']} ${className}`} role="tablist">
       {showLeftArrow && (
         <Button
           addHover

@@ -14,7 +14,7 @@ const Component: React.FC<INotificationDrawerAnalystProps> = ({ isDrawerOpen = f
   }, [onClose])
 
   return (
-    <Drawer isOpen={isDrawerOpen} onClose={handlerClose} direction="right" drawerWidth="616px" customPadding={0}>
+    <Drawer isOpen={isDrawerOpen} onClose={handlerClose} direction="right" drawerWidth="632px" customPadding={0}>
       <div className={`${styles['magneto-ui-notification-drawer-analyst']}`}>
         <header className={`${styles['magneto-ui-notification-drawer-analyst__header']}`}>
           <IconItem alt={'notification icon'} icon={NotificationBlack} color="#292F37" />

@@ -5,4 +5,8 @@ export interface IScrollableTab {
    * @default 100
    */
   scrollAmount?: number
+  /**
+   * Optional prop to add custom className
+   */
+  className?: string
 }
