@@ -46,7 +46,7 @@ export const WithCustomScrollAmount: Story = {
   }
 }
 
-export const WithSelected: Story = {
+export const WithTabSelected: Story = {
   args: {
     children: (
       <>
@@ -63,7 +63,7 @@ export const WithSelected: Story = {
   }
 }
 
-export const WithDisable: Story = {
+export const WithTabsDisabled: Story = {
   args: {
     children: (
       <>
