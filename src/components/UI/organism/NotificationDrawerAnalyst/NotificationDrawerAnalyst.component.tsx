@@ -16,13 +16,15 @@ const Component: React.FC<INotificationDrawerAnalystProps> = ({ isDrawerOpen = f
   return (
     <Drawer isOpen={isDrawerOpen} onClose={handlerClose} direction="right" drawerWidth="632px" customPadding={0}>
       <div className={`${styles['magneto-ui-notification-drawer-analyst']}`}>
-        <header className={`${styles['magneto-ui-notification-drawer-analyst__header']}`}>
-          <IconItem alt={'notification icon'} icon={NotificationBlack} color="#292F37" />
-          <Typography.Title weight={'bold'} color="black" size={'lg'}>
-            {headerConfig.title}
-          </Typography.Title>
-        </header>
-        <NotificationDrawerTabs sections={sectionConfig} tooltipText={headerConfig.tabTooltipText} />
+        <div className={`${styles['magneto-ui-notification-drawer-analyst__header-container']}`}>
+          <header className={`${styles['magneto-ui-notification-drawer-analyst__header']}`}>
+            <IconItem alt={'notification icon'} icon={NotificationBlack} color="#292F37" />
+            <Typography.Title weight={'bold'} color="black" size={'lg'}>
+              {headerConfig.title}
+            </Typography.Title>
+          </header>
+          <NotificationDrawerTabs sections={sectionConfig} tooltipText={headerConfig.tabTooltipText} />
+        </div>
         <AnalystNotificationList />
         <footer className={`${styles['magneto-ui-notification-drawer-analyst__footer']}`}>
           <Button buttonText={footerConfig.actionText} onClick={() => console.log('Clicked')} />

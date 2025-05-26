@@ -1,15 +1,15 @@
 @use '../../../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../../../shared/stylesheets/mixins.scss' as m;
 
 .analystNotificationList {
   border-top: 1px solid v.$color-gray-background;
   border-bottom: 1px solid v.$color-gray-background;
   margin-top: 10px;
   flex-grow: 1;
-  min-height: 100%;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  overflow-y: auto;
+  @include m.scroll-thin();
 }
 
 .loader {
