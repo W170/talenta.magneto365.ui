@@ -13,11 +13,11 @@
   border: 1px solid variables.$selected-color-gray;
   color: variables.$colors-magneto-neutral-gray-900;
 
-  &--selected {
+  &[aria-selected='true'] {
     background: variables.$selected-color-gray;
   }
 
-  &--disabled {
+  &[aria-disabled='true'] {
     cursor: default;
     color: variables.$colors-magneto-neutral-gray-400;
   }

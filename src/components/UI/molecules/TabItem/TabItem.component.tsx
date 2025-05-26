@@ -5,13 +5,14 @@ import { ITabItem } from './TabItem.interface'
 const Component: React.FC<ITabItem> = ({ text, className = '', onClick, isDisabled, isSelected }) => {
   return (
     <button
-      className={`${styles['magneto-ui-tab-item']} ${className}
-        ${isDisabled ? styles['magneto-ui-tab-item--disabled'] : ''}
-        ${isSelected ? styles['magneto-ui-tab-item--selected'] : ''}
-      `}
+      className={`${styles['magneto-ui-tab-item']} ${className}`}
       disabled={isDisabled}
       onClick={onClick}
+      aria-selected={isSelected}
+      aria-disabled={isDisabled}
+      tabIndex={isDisabled ? -1 : 0}
       type="button"
+      role="tab"
     >
       {text}
     </button>
