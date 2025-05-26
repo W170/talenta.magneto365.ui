@@ -64,18 +64,22 @@
     ],
     "classes": [
       {
+        "name": "stroke",
         "prefix": "stroke",
         "properties": [{ "property": "stroke" }]
       },
       {
+        "name": "fill",
         "prefix": "fill",
         "properties": [{ "property": "fill" }]
       },
       {
+        "name": "background",
         "prefix": "bg",
         "properties": [{ "property": "background-color" }]
       },
       {
+        "name": "color",
         "prefix": "color",
         "properties": [{ "property": "color" }]
       }

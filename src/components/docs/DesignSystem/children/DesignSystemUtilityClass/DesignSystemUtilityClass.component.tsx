@@ -1,48 +1,28 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import { classNames } from '@shared/utils/common'
-import data from '@shared/tokens/data/scale.json'
 import pStyles from '../../DesignSystem.module.scss'
-import { resolveValue, flattenTokens, evaluateCalc } from '../../DesignSystem.constant'
+import { DesignSystemUtilityClassRenderer } from './children'
+
+import border from '@shared/tokens/data/border.json'
+import color from '@shared/tokens/data/color.json'
+import gap from '@shared/tokens/data/gap.json'
+import margin from '@shared/tokens/data/margin.json'
+import opacity from '@shared/tokens/data/opacity.json'
+import padding from '@shared/tokens/data/padding.json'
+import radius from '@shared/tokens/data/radius.json'
+import scale from '@shared/tokens/data/scale.json'
+import screen from '@shared/tokens/data/screen.json'
+import shadow from '@shared/tokens/data/shadow.json'
+import text from '@shared/tokens/data/text.json'
 
 const pCx = classNames.bind(pStyles)
+const tokens = [border, color, gap, margin, opacity, padding, radius, scale, screen, shadow, text]
 
 const Component: React.FC = () => {
-  const tokens = useMemo(() => flattenTokens(data.values), [])
-
   return (
     <div className={pCx('magneto-ui-design-system__container')}>
-      {data.utilities.classes.map(({ conditions, name, prefix, properties }) => (
-        <table className={pCx('magneto-ui-design-system__table')} key={name}>
-          <thead>
-            <tr>
-              <th>Utility Class: {name}</th>
-              {properties.map(({ property }) => (
-                <th key={property}>CSS Property: {property}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {tokens
-              .filter((token) => !conditions.excludeValues?.some((e: string) => token[0].split('-').includes(e)))
-              .map(([key, value]) => {
-                const resolved = resolveValue(value)
-                const filteredClassKey = key
-                  .split('-')
-                  .filter((word: string) => !conditions.removeFromClass?.includes(word))
-                  .join('-')
-                return (
-                  <tr key={key}>
-                    <td>{`.${prefix}-${filteredClassKey}`}</td>
-                    {properties.map(({ property }) => (
-                      <td key={property}>
-                        {resolved !== value ? (resolved.startsWith('calc') ? evaluateCalc(resolved) : resolved) : value}
-                      </td>
-                    ))}
-                  </tr>
-                )
-              })}
-          </tbody>
-        </table>
+      {tokens.map((token, index) => (
+        <DesignSystemUtilityClassRenderer key={index} token={token} />
       ))}
     </div>
   )
