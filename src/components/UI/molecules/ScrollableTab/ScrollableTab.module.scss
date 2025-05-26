@@ -3,6 +3,8 @@
 .magneto-ui-scrollable-tab {
   position: relative;
   min-width: 192px;
+  display: flex;
+  justify-content: center;
 
   &__container {
     display: flex;

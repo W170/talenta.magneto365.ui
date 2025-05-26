@@ -28,6 +28,24 @@ export const Default: Story = {
   }
 }
 
+export const WithCustomScrollAmount: Story = {
+  args: {
+    children: (
+      <>
+        <TabItem text={'Todo'} />
+        <TabItem text={'Solicitudes'} />
+        <TabItem text={'Gestión de candidatos'} />
+        <TabItem text={'Estados de vacante'} />
+        <TabItem text={'Entrevistas'} />
+        {Array.from({ length: 20 }).map((_, index) => (
+          <TabItem key={`lorem-${index + 1}`} text={`Lorem ipsum ${index + 1}`} />
+        ))}
+      </>
+    ),
+    scrollAmount: 500
+  }
+}
+
 export const WithSelected: Story = {
   args: {
     children: (
