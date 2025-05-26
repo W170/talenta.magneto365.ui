@@ -1,6 +1,7 @@
 export type IDesignSystem = {
   values: IDesignSystemValues
   utilities?: IDesignSystemUtilities
+  docs?: IDesignSystemDocs
 }
 
 export type IDesignSystemValues = {
