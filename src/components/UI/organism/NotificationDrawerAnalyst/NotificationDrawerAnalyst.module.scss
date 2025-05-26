@@ -1,4 +1,8 @@
+@use '../../../../shared/stylesheets/variables.scss' as variables;
+
 .magneto-ui-notification-drawer-analyst {
+  display: flex;
+  flex-direction: column;
   &__header {
     display: flex;
     align-items: center;
@@ -7,5 +11,18 @@
     margin-bottom: 24px;
     padding-top: 12px;
     padding-left: 12px;
+  }
+
+  &__footer {
+    width: 100%;
+    padding: 12px;
+    border-top: 1px solid variables.$color-gray-background;
+    > button {
+      width: 100%;
+      font-weight: 700;
+      text-align: center;
+      justify-content: center;
+      color: variables.$color-blue-dark5;
+    }
   }
 }

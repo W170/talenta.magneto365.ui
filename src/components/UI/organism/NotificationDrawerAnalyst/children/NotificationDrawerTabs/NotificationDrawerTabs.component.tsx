@@ -1,13 +1,23 @@
-import { ScrollableTab } from '@components/UI/molecules/ScrollableTab'
-import React from 'react'
-import { INotificationDrawerTabs } from './NotificationDrawerTabs.interface'
+import React, { useState } from 'react'
 import { TabItem } from '@components/UI/molecules/TabItem'
+import { ScrollableTab } from '@components/UI/molecules/ScrollableTab'
+import { INotificationDrawerTabs } from './NotificationDrawerTabs.interface'
+import { Tooltip } from '@components/UI/molecules'
 
-const Component: React.FC<INotificationDrawerTabs> = ({ sections }) => {
+const Component: React.FC<INotificationDrawerTabs> = ({ sections, tooltipText }) => {
+  const [selectedTab, setSelectedTab] = useState('all')
+
   return (
     <ScrollableTab>
-      {sections.map((section, index) => (
-        <TabItem key={section} text={section} isDisabled={index > 2} isSelected={index === 1} />
+      {Object.entries(sections).map(([key, section]) => (
+        <Tooltip key={key} position="bottom" visible={section.isDisabled} title={tooltipText}>
+          <TabItem
+            text={section.label}
+            isDisabled={section.isDisabled}
+            isSelected={key === selectedTab}
+            onClick={() => setSelectedTab(key)}
+          />
+        </Tooltip>
       ))}
     </ScrollableTab>
   )

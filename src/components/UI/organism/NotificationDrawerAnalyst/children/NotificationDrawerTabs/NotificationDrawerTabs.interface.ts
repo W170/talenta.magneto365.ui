@@ -1,3 +1,6 @@
+import { ISectionConfiguration } from '../../NotificationDrawerAnalyst.interface'
+
 export interface INotificationDrawerTabs {
-  sections: string[]
+  sections: Record<string, ISectionConfiguration>
+  tooltipText: string
 }
