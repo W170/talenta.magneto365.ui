@@ -1,6 +1,8 @@
 export enum AnalystNotificationType {
   requests = 'requests',
-  candidateManagement = 'candidateManagement'
+  candidateManagement = 'candidateManagement',
+  vacancyStatuses = 'vacancyStatuses',
+  interviews = 'interviews'
 }
 
 export enum AnalystNotificationEvent {

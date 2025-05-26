@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IAnalystNotificationCardProps, DefaultNotificationProps } from './AnalystNotificationCard.interface'
 import { IRequestNotification, ICandidateManagementNotification } from '../AnalystNotificationList.interface'
 import { TaskSquare, ArrowRight2, Sparkles } from '@constants/icons.constants'
@@ -11,6 +11,14 @@ import { Badge } from '@components/UI/atoms'
 import { AnalystNotificationEvent, AnalystNotificationType } from '../../../enums'
 
 const DefaultNotificationCard = (props: DefaultNotificationProps) => {
+  const [isRead, setIsRead] = useState(props.read)
+  const handleClick = () => {
+    if (!props.read) {
+      setIsRead(true)
+      //TODO: call mark as read endpoint
+    }
+    props.action()
+  }
   return (
     <div className={styles.defaultNotificationCard}>
       <div className={styles['defaultNotificationCard__icon']}>
@@ -25,7 +33,7 @@ const DefaultNotificationCard = (props: DefaultNotificationProps) => {
             <Typography.Text size="xs" weight="normal" color="gray">
               {props.timestamp}
             </Typography.Text>
-            {!props.read && <Badge className={styles['defaultNotificationCard__content-title-badge']} />}
+            {!isRead && <Badge className={styles['defaultNotificationCard__content-title-badge']} />}
           </div>
         </div>
         <div className={styles['defaultNotificationCard__content-details']}>
@@ -37,7 +45,7 @@ const DefaultNotificationCard = (props: DefaultNotificationProps) => {
           className={styles['defaultNotificationCard__content-button']}
           prefixIcon={ArrowRight2}
           buttonText={props.actionTitle}
-          onClick={props.action}
+          onClick={handleClick}
         />
       </div>
     </div>
