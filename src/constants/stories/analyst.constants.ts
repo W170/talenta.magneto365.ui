@@ -7,7 +7,6 @@ import { IAnalystTemplateProps } from '@components/UI/template'
 import { Error } from '@constants/icons.constants'
 import { EModalAnalystActionType } from '@components/UI/organism/ModalAnalyst/children'
 import { EUserMenuAnalystOptionType } from '@components/UI/molecules/UserMenuAnalyst/children/UserMenuAnalystOptions/children'
-import { INotificationDrawerAnalystProps } from '@components/UI/organism/NotificationDrawerAnalyst'
 
 export const BreadCrumbAnalystProps: IBreadcrumbs = {
   breadcrumbProps: {
@@ -442,51 +441,4 @@ export const AnalystTemplateProps: Omit<IAnalystTemplateProps, 'children'> = {
       ]
     }
   ]
-}
-
-export const NotificationDrawerAnalystProps: INotificationDrawerAnalystProps = {
-  isDrawerOpen: false,
-  drawerConfig: {
-    headerConfig: {
-      title: 'Notificaciones',
-      tabTooltipText: 'Próximamente'
-    },
-    footerConfig: {
-      actionText: 'Marcar todo como leído',
-      actionUrl: '/api/mark-as-read'
-    },
-    defaultKey: 'requests',
-    sectionConfig: {
-      all: {
-        apiUrl: '/api/all',
-        filters: { filter1: 'value1' },
-        label: 'Todo',
-        isDisabled: false
-      },
-      requests: {
-        apiUrl: '/api/section1',
-        filters: { filter1: 'value2' },
-        label: 'Solicitudes',
-        isDisabled: false
-      },
-      candidates: {
-        apiUrl: '/api/section3',
-        filters: { filter2: 'value3' },
-        label: 'Gestión de candidatos',
-        isDisabled: false
-      },
-      vacants: {
-        apiUrl: '/api/section4',
-        filters: { filter2: 'value4' },
-        label: 'Estados de vacante',
-        isDisabled: true
-      },
-      interviews: {
-        apiUrl: '/api/section5',
-        filters: { filter2: 'value5' },
-        label: 'Entrevistas',
-        isDisabled: true
-      }
-    }
-  }
 }
