@@ -1,0 +1,121 @@
+.company-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: left;
+  gap: 12px;
+
+  &__with-desc {
+    border-radius: 8px;
+    padding: 12px;
+    gap: 2px;
+
+    & h3,
+    h4 {
+      margin: 0;
+    }
+
+    &__title {
+      color: #47535f;
+
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__title {
+    color: #292f37;
+    align-items: center;
+  }
+
+  &__vacant-title {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    margin: 0;
+  }
+
+  &__vacant-company {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  &__vacant-company-salary {
+    font-size: 12px;
+    margin: 0;
+  }
+
+  &__logo {
+    background: #fff;
+    border-radius: 8px;
+    padding: 4px;
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+  }
+
+  &__content {
+    color: red;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__footer {
+    display: flex;
+    place-content: center;
+    width: 100%;
+    gap: 8px;
+
+    &-button {
+      background-color: #fff;
+      display: flex;
+      place-content: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 30px;
+      width: 100%;
+      text-decoration: none;
+
+      p {
+        font-weight: bold;
+      }
+
+      img {
+        color: #0a0c0e;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  &__job-count {
+    font-size: 14px;
+    color: #8591a0;
+    margin: 0;
+  }
+
+  &__description {
+    font-size: 12px;
+    color: #333;
+    text-align: left;
+
+    margin: 0;
+    padding: 0;
+  }
+}
