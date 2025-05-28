@@ -2,7 +2,7 @@
   "values": {
     "inherit": "scale.$scale-inherit",
     "min": "scale.$scale-min",
-    "1": "scale.$scale-px-2xs",
+    "1": "scale.$scale-px-xxs",
     "2": "scale.$scale-px-xs"
   },
   "utilities": {
