@@ -1,6 +1,6 @@
 {
   "values": {
-    "2xs": "scale.$scale-rem-container-2xs",
+    "xxs": "scale.$scale-rem-container-xxs",
     "xs": "scale.$scale-rem-container-xs",
     "sm": "scale.$scale-rem-container-sm",
     "md": "scale.$scale-rem-container-md",

@@ -13,7 +13,8 @@ import {
   DesignSystemShadow,
   DesignSystemText,
   DesignSystemScale,
-  DesignSystemUtilityClass
+  DesignSystemUtilityClass,
+  DesignSystemWeight
 } from './children'
 
 const meta: Meta<typeof DesignSystem> = {
@@ -165,6 +166,19 @@ export const Text: TextStory = {
     }
   },
   render: () => <DesignSystemText />
+}
+
+type WeightStory = StoryObj<typeof DesignSystemWeight>
+
+export const Weight: WeightStory = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Weight design system showcase.'
+      }
+    }
+  },
+  render: () => <DesignSystemWeight />
 }
 
 type ScaleStory = StoryObj<typeof DesignSystemScale>

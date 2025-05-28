@@ -10,3 +10,4 @@ export { DesignSystemScreen } from './DesignSystemScreen/DesignSystemScreen.comp
 export { DesignSystemShadow } from './DesignSystemShadow/DesignSystemShadow.component'
 export { DesignSystemText } from './DesignSystemText/DesignSystemText.component'
 export { DesignSystemUtilityClass } from './DesignSystemUtilityClass/DesignSystemUtilityClass.component'
+export { DesignSystemWeight } from './DesignSystemWeight/DesignSystemWeight.component'
