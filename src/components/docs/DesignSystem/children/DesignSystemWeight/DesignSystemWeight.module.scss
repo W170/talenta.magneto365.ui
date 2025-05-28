@@ -1,0 +1,9 @@
+@import '../../../../../shared/stylesheets/tokens';
+
+.magneto-ui-design-system-weight {
+  @each $key, $value in $weight-map {
+    &__example-#{$key} {
+      font-weight: $value;
+    }
+  }
+}
