@@ -8,20 +8,24 @@
   background-color: #fffaef;
   border: solid 1px #faad14;
   margin: 20px;
+
   &__header {
     display: flex;
     align-items: center;
     gap: 10px;
-    > h4 {
+
+    > p {
       margin: 0;
       font-size: 16px;
       font-weight: 700;
+      color: $text-color-black;
     }
   }
 
   &__text {
     margin: 15px 0;
   }
+
   &__link {
     background-color: white;
     display: flex;
@@ -38,10 +42,12 @@
     color: black;
     text-decoration: none;
     padding: 0 15px;
+
     @media screen and (min-width: $screen-md) {
       width: fit-content;
       justify-content: space-between;
     }
+
     &:hover,
     &:active {
       color: black;

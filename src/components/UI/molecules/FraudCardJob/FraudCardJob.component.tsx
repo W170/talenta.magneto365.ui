@@ -8,7 +8,7 @@ const Component: React.FC<IFraudCardJob> = ({ title, content, linkText, link }) 
     <div className={styles['fraud-card-job']}>
       <div className={styles['fraud-card-job__header']}>
         <img src={Warning3D} alt="warning" />
-        <h4>{title}</h4>
+        <p>{title}</p>
       </div>
       <div>
         <p className={styles['fraud-card-job__text']}>{content}</p>
