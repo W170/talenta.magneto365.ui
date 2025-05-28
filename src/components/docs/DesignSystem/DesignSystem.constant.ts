@@ -34,7 +34,7 @@ export const evaluateCalc = (value: string): string => {
   }
 
   try {
-    return `${eval(numericExpr).toFixed(2)}rem`
+    return `${Math.trunc(eval(numericExpr) * 1000) / 1000}rem`
   } catch (e) {
     return value
   }
