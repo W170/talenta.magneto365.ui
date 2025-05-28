@@ -43,4 +43,8 @@ export interface IJobFooterCard {
    * Props for the share button component.
    */
   shareButtonProps: IShareButton
+  /**
+   * This is the company name
+   */
+  companyName?: string
 }
