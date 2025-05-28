@@ -6,6 +6,7 @@
   background-color: transparent;
   pointer-events: none;
   position: absolute;
+  z-index: 9999;
 
   &__inner {
     background-color: var(--black-bg);
