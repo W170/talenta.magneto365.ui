@@ -26,7 +26,7 @@ const Component: React.FC<IFrequentSearch> = ({
     <>
       {showFrequentSearch !== false ? (
         <div className={styles['magneto-ui-frequent-search']}>
-          <h2 className={styles['magneto-ui-frequent-search__heading']}>{searchHeading}</h2>
+          <p className={styles['magneto-ui-frequent-search__heading']}>{searchHeading}</p>
           <div className={styles['magneto-ui-frequent-search__items']}>
             {searchListResponsive.map(({ ...props }, i) => (
               <SearchItem key={i} {...props} />

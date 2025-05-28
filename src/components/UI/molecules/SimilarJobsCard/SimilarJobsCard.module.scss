@@ -10,6 +10,7 @@
   min-height: 95.52px;
   transition: all ease-in-out 0.3s;
   border-radius: 13px;
+
   p {
     font-size: 14px;
     color: v.$text-color-black;
@@ -19,6 +20,7 @@
     &:hover {
       background-color: #f4f4fa;
     }
+
     &:hover &__arrow {
       right: 5px;
     }
@@ -29,17 +31,20 @@
     height: 50px;
     min-width: 70px;
     min-height: 50px;
+
     @media (min-width: v.$screen-md) {
       width: 90px;
       height: 70px;
       min-width: 90px;
       min-height: 70px;
     }
+
     background-color: white;
     object-fit: contain;
     border-radius: 4px;
     padding: 5px;
   }
+
   &__title {
     margin: 0px;
     font-weight: bold;
@@ -48,7 +53,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 1;
+    font-size: 14px;
+    color: v.$text-color-black;
   }
+
   &__info {
     margin: 0px;
     display: -webkit-box;
@@ -57,6 +65,7 @@
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
   }
+
   &__arrow {
     position: absolute;
     top: 50%;
