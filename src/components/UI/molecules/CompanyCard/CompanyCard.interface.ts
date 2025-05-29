@@ -27,10 +27,6 @@ interface IBaseCompanyCardProps {
 
 export interface IWithDescriptionProps extends IBaseCompanyCardProps {
   /**
-   * Type of the company card
-   */
-  companyCardType: 'withDescription'
-  /**
    * Number of job openings
    */
   jobCount: string
@@ -44,10 +40,6 @@ export interface IWithDescriptionProps extends IBaseCompanyCardProps {
   buttonText: string
 }
 export interface IWithoutDescriptionProps extends IBaseCompanyCardProps {
-  /**
-   * Type of the company card
-   */
-  companyCardType: 'withoutDescription'
   /**
    * Title of the job opening
    */

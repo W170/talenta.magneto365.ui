@@ -43,9 +43,9 @@ export interface ICarousel {
    */
   scrollInterval?: number
   /**
-   * Enable responsive design for the carousel
+   * Enable mobile scrollable for the carousel
    */
-  responsive?: boolean
+  mobileScrollable?: boolean
   /**
    * Size of the buttons
    */
@@ -102,11 +102,11 @@ export namespace ICarousel {
     /**
      * Buttons to navigate to the previous slide in the carousel
      */
-    prevSlide: () => void
+    onPrevSlide: () => void
     /**
      * Buttons to navigate to the next slide in the carousel
      */
-    nextSlide: () => void
+    onNextSlide: () => void
     /**
      * Additional class names for custom styling.
      */

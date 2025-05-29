@@ -1,82 +1,48 @@
-import React, { useCallback, useEffect, useState, useRef } from 'react'
+import { useMediaQuery } from '@components/hooks'
+import { useCarouselScroll } from '@components/hooks/useCarouselScroll'
+import { carouselPrefix } from '@constants/stories'
+import { classNames } from '@shared/utils/common'
+import React, { useMemo, useRef } from 'react'
+import { ICarousel } from './Carousel.interface'
 import styles from './Carousel.module.scss'
 import { CarouselButtons } from './children/CarouselButtons/CarouselButtons.component'
 import { CarouselFooter } from './children/CarouselFooter/CarouselFooter.component'
 import { CarouselHeader } from './children/CarouselHeader/CarouselHeader.component'
 import { CarouselItems } from './children/CarouselItems/CarouselItems.component'
-import { classNames } from '@shared/utils/common'
-import { carouselPrefix } from '@constants/stories'
-import { useMediaQuery } from '@components/hooks'
-import { ICarousel } from './Carousel.interface'
+import { getAllItems, getChildrenByType } from '@utils/domNode/nodeCount.util'
 
 const cx = classNames.bind(styles)
-
-const getChildrenByType = (children: React.ReactNode, type: React.ElementType) =>
-  React.Children.toArray(children).filter((child) => React.isValidElement(child) && child.type === type)
-
-const getAllItems = (children: React.ReactNode) => {
-  const items: React.ReactNode[] = []
-  React.Children.forEach(children, (child) => {
-    if (React.isValidElement(child) && child.type === CarouselItems)
-      React.Children.forEach(child.props.children, (item) => items.push(item))
-  })
-  return items
-}
 
 const Component: React.FC<ICarousel> = ({
   children,
   classNamesObject,
   autoScroll = true,
   scrollInterval = 15,
-  responsive = true,
+  mobileScrollable = true,
   sizeButtons = 16,
   itemsPerSection = 3,
   gap = 16,
   maxContainerWidth = '100%'
 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0)
   const itemsContainerRef = useRef<HTMLDivElement>(null)
-  const autoScrollIntervalRef = useRef<NodeJS.Timeout | null>(null)
-
   const isMobile = useMediaQuery(false, { xs: true, sm: true, md: true })
-  const allItems = getAllItems(children)
+  const allItems = getAllItems(children, CarouselItems)
   const totalSections = Math.ceil(allItems.length / itemsPerSection)
+  const gapClass = useMemo(() => `${carouselPrefix}__gap-${gap}`, [gap])
 
-  const setupAutoScrollInterval = useCallback(() => {
-    if (autoScrollIntervalRef.current) clearInterval(autoScrollIntervalRef.current)
-    if (autoScroll && !isMobile && totalSections > 1)
-      autoScrollIntervalRef.current = setInterval(
-        () => setCurrentIndex((i) => (i + 1) % totalSections),
-        scrollInterval * 1000
-      )
-  }, [autoScroll, scrollInterval, isMobile, totalSections])
-
-  // Set up auto-scroll interval on mount and when dependencies change
-  useEffect(() => {
-    setupAutoScrollInterval()
-    return () => {
-      if (autoScrollIntervalRef.current) {
-        clearInterval(autoScrollIntervalRef.current)
-      }
-    }
-  }, [setupAutoScrollInterval])
-
-  // Adjust current index if it exceeds total sections
-  useEffect(() => {
-    setCurrentIndex((prev) => Math.min(prev, Math.max(totalSections - 1, 0)))
-  }, [totalSections])
-
-  const changeSlide = (dir: 1 | -1) => {
-    setCurrentIndex((i) => (i + dir + totalSections) % totalSections)
-    setupAutoScrollInterval()
-  }
+  const { currentIndex, changeSlide } = useCarouselScroll({
+    totalSections,
+    autoScroll,
+    scrollInterval,
+    isDisabled: isMobile
+  })
 
   const renderButtons = () =>
     !isMobile &&
     totalSections > 1 && (
       <CarouselButtons
-        nextSlide={() => changeSlide(1)}
-        prevSlide={() => changeSlide(-1)}
+        onNextSlide={() => changeSlide(1)}
+        onPrevSlide={() => changeSlide(-1)}
         size={sizeButtons}
         className={classNamesObject?.buttons}
       />
@@ -87,11 +53,11 @@ const Component: React.FC<ICarousel> = ({
     isMobile ? (
       <div
         className={cx(
-          responsive ? `${carouselPrefix}__mobile-slider` : `${carouselPrefix}__mobile-noScroll`,
+          mobileScrollable ? `${carouselPrefix}__mobile-slider` : `${carouselPrefix}__mobile-noScroll`,
+          gapClass,
           classNamesObject?.items
         )}
         ref={itemsContainerRef}
-        style={{ gap: `${gap}px` }}
       >
         {allItems.map((item, idx) => (
           <div key={idx} className={cx(`${carouselPrefix}__mobile-item`, classNamesObject?.item)}>
@@ -105,15 +71,11 @@ const Component: React.FC<ICarousel> = ({
           key={i}
           className={cx(
             `${carouselPrefix}__section`,
+            `${carouselPrefix}__section--flex`,
             { [`${carouselPrefix}__section--active`]: i === currentIndex },
+            gapClass,
             classNamesObject?.item
           )}
-          style={{
-            gap: `${gap}px`,
-            display: 'flex',
-            flexWrap: 'nowrap',
-            justifyContent: 'flex-start'
-          }}
         >
           {allItems.slice(i * itemsPerSection, (i + 1) * itemsPerSection).map((item, idx) => (
             <div key={idx} className={cx(`${carouselPrefix}__grid-item`)}>
@@ -126,8 +88,12 @@ const Component: React.FC<ICarousel> = ({
 
   return (
     <div
-      className={cx(carouselPrefix, { [`${carouselPrefix}--mobile`]: responsive && isMobile }, classNamesObject?.base)}
-      style={{ maxWidth: maxContainerWidth, margin: '0 auto' }}
+      className={cx(
+        carouselPrefix,
+        { [`${carouselPrefix}--mobile`]: mobileScrollable && isMobile },
+        classNamesObject?.base
+      )}
+      style={{ maxWidth: maxContainerWidth }}
     >
       <div className={cx(`${carouselPrefix}__header-container`, classNamesObject?.headerContainer)}>
         {getChildrenByType(children, CarouselHeader)}

@@ -6,7 +6,7 @@
   text-align: left;
   gap: 12px;
 
-  &__with-desc {
+  &__withoutDesc {
     border-radius: 8px;
     padding: 12px;
     gap: 2px;
@@ -16,7 +16,10 @@
       margin: 0;
     }
 
-    &__title {
+    a {
+      text-decoration: none;
+    }
+    &-text {
       color: #47535f;
 
       display: flex;
@@ -50,7 +53,7 @@
     margin: 0;
   }
 
-  &__vacant-company-salary {
+  &__vacant-companySalary {
     font-size: 12px;
     margin: 0;
   }
@@ -104,7 +107,7 @@
     margin: 0;
   }
 
-  &__job-count {
+  &__jobCount {
     font-size: 14px;
     color: #8591a0;
     margin: 0;

@@ -9,18 +9,18 @@ import { ICarousel } from '../../Carousel.interface'
 const cx = classNames.bind(styles)
 
 export const CarouselButtons: React.FC<ICarousel.Buttons> = ({
-  prevSlide,
-  nextSlide,
+  onPrevSlide,
+  onNextSlide,
   className,
   size,
   icons = { left: ArrowLeft2, right: ArrowRight2 }
 }) => {
   return (
     <div className={cx(styles[`${carouselPrefix}__buttons`], className)}>
-      <button className={styles.carousel__button} onClick={prevSlide}>
+      <button className={styles.carousel__button} onClick={onPrevSlide}>
         <IconItem icon={icons.left} size={size} />
       </button>
-      <button className={styles.carousel__button} onClick={nextSlide}>
+      <button className={styles.carousel__button} onClick={onNextSlide}>
         <IconItem icon={icons.right} size={size} />
       </button>
     </div>

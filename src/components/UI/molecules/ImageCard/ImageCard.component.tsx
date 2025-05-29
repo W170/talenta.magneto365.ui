@@ -15,11 +15,10 @@ const Component: React.FC<ICardImage> = ({
   title,
   description,
   dimensions = { height: '250px', width: '500px' },
-  icon = { showIcon: true, size: 14 },
-  link
+  icon = { showIcon: true, size: 14 }
 }) => {
-  const contentComponent = (
-    <>
+  return (
+    <div className={cx(imageCardPrefix, className)} style={dimensions}>
       <img className={styles[`${imageCardPrefix}__image`]} src={imagePath} alt={alt} loading="lazy" />
       <div className={styles[`${imageCardPrefix}__overlay`]}>
         <p className={styles[`${imageCardPrefix}__title`]}>{title}</p>
@@ -30,12 +29,6 @@ const Component: React.FC<ICardImage> = ({
           )}
         </div>
       </div>
-    </>
-  )
-
-  return (
-    <div className={cx(imageCardPrefix, className)} style={dimensions}>
-      {link ? <a href={link}>{contentComponent}</a> : contentComponent}
     </div>
   )
 }

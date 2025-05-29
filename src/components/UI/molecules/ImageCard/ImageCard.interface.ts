@@ -29,10 +29,6 @@ export interface ICardImage {
    * Icon props to be displayed on the image card.
    */
   icon?: IconProps & { showIcon?: boolean }
-  /**
-   *  Link to be opened when the image card is clicked.
-   */
-  link?: string
 }
 
 interface ICardImageStyles {

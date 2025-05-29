@@ -39,10 +39,10 @@ export const Default: Story = {
   ),
   args: {
     autoScroll: true,
-    responsive: true,
+    mobileScrollable: true,
     scrollInterval: 15,
     itemsPerSection: 5,
-    gap: 22,
+    gap: 16,
     maxContainerWidth: '1000px'
   }
 }
