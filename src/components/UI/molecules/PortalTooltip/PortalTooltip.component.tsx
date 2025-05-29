@@ -6,28 +6,33 @@ import styles from './PortalTooltip.module.scss'
 const Component: React.FC<IPortalTooltipProps> = ({
   children,
   title,
-  position,
+  position = 'bottom',
   enterDelay,
   leaveDelay,
-  offset = 8
+  offset = 8,
+  hasArrow = true,
+  visible = true,
+  width = 'fit-content'
 }) => {
-  const [visible, setVisible] = useState(false)
+  const [open, setOpen] = useState(false)
   const [coords, setCoords] = useState({ top: 0, left: 0 })
   const triggerRef = useRef<HTMLDivElement>(null)
   const tooltipRef = useRef<HTMLDivElement>(null)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const showTooltip = () => {
+    if (!visible) return
     timeoutRef.current && clearTimeout(timeoutRef.current)
     timeoutRef.current = setTimeout(() => {
-      setVisible(true)
+      setOpen(true)
     }, enterDelay)
   }
 
   const hideTooltip = () => {
+    if (!visible) return
     timeoutRef.current && clearTimeout(timeoutRef.current)
     timeoutRef.current = setTimeout(() => {
-      setVisible(false)
+      setOpen(false)
     }, leaveDelay)
   }
 
@@ -66,13 +71,23 @@ const Component: React.FC<IPortalTooltipProps> = ({
   }, [position, offset])
 
   useEffect(() => {
-    if (visible) updatePosition()
-  }, [visible, updatePosition])
+    if (open) updatePosition()
+  }, [open, updatePosition])
+
+  useEffect(() => {
+    const handleResize = () => open && updatePosition()
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      timeoutRef.current && clearTimeout(timeoutRef.current)
+    }
+  }, [open, updatePosition])
 
   return (
     <>
       <div
         ref={triggerRef}
+        style={{ width: 'fit-content' }}
         onMouseEnter={showTooltip}
         onMouseLeave={hideTooltip}
         onFocus={showTooltip}
@@ -82,18 +97,20 @@ const Component: React.FC<IPortalTooltipProps> = ({
         {children}
       </div>
 
-      {visible &&
+      {open &&
+        visible &&
         ReactDOM.createPortal(
           <div
             ref={tooltipRef}
             className={styles['portal-tooltip']}
             style={{
               top: `${coords.top}px`,
-              left: `${coords.left}px`
+              left: `${coords.left}px`,
+              width
             }}
           >
             <div className={styles['portal-tooltip__inner']}>
-              <div className={styles['portal-tooltip__inner-arrow']} data-position={position} />
+              {hasArrow && <div className={styles['portal-tooltip__inner-arrow']} data-position={position} />}
               {title}
             </div>
           </div>,
