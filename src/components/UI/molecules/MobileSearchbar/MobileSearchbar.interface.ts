@@ -20,4 +20,8 @@ export interface IMobileSearchbar {
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   termValue?: any
+  /**
+   * placeholder
+   */
+  placeholder?: string
 }

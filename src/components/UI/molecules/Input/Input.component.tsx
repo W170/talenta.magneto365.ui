@@ -19,6 +19,7 @@ const Input: React.FC<IInput> = ({
   hasCounter = false,
   maxCounterValue = 0,
   actionIcon,
+  mainClassName,
   actionInputIcon = () => null,
   ...props
 }) => {
@@ -59,7 +60,7 @@ const Input: React.FC<IInput> = ({
 
   return (
     <div style={{ height: 'auto', width: '100%' }}>
-      <div className={styles[`${classMUI}-input`]}>
+      <div className={`${styles[`${classMUI}-input`]} ${mainClassName}`}>
         <div>
           <div className={styles[`${classMUI}-input--container`]}>
             <label
