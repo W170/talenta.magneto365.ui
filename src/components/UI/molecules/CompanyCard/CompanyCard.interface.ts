@@ -1,4 +1,6 @@
-interface IBaseCompanyCardProps {
+import { ReactNode } from 'react'
+
+interface IBaseCompanyComponentProps {
   /**
    * Logo of the company
    */
@@ -22,10 +24,9 @@ interface IBaseCompanyCardProps {
   /**
    * Background color of the card
    */
-  backgroundColor?: string
+  backgroundColor?: 'gray' | 'white' | 'transparent'
 }
-
-export interface IWithDescriptionProps extends IBaseCompanyCardProps {
+export interface IWithDescriptionProps extends IBaseCompanyComponentProps {
   /**
    * Number of job openings
    */
@@ -39,7 +40,7 @@ export interface IWithDescriptionProps extends IBaseCompanyCardProps {
    */
   buttonText: string
 }
-export interface IWithoutDescriptionProps extends IBaseCompanyCardProps {
+export interface IWithoutDescriptionProps extends IBaseCompanyComponentProps {
   /**
    * Title of the job opening
    */
@@ -51,3 +52,45 @@ export interface IWithoutDescriptionProps extends IBaseCompanyCardProps {
 }
 
 export type ICompanyCardProps = IWithDescriptionProps | IWithoutDescriptionProps
+
+interface IBaseCardProps {
+  /**
+   * Class name for the component
+   */
+  className?: string
+  /**
+   * Background color of the card
+   */
+  backgroundColor?: 'gray' | 'white' | 'transparent'
+  /**
+   * Logo of the company
+   */
+  logo: string
+  /**
+   * Name of the company
+   */
+  companyName: string
+  /**
+   * Header content to display
+   */
+  headerContent: ReactNode
+}
+
+// Interfaces específicas que extienden la base
+export interface IWithDescriptionCardProps extends IBaseCardProps {
+  /**
+   * Main content to display
+   */
+  mainContent: ReactNode
+  /**
+   * Footer content to display
+   */
+  footerContent: ReactNode
+}
+
+export interface IWithoutDescriptionCardProps extends IBaseCardProps {
+  /**
+   * Link to the company page
+   */
+  buttonLink: string
+}

@@ -1,29 +1,27 @@
 import { SearchItem } from '@components/UI/atoms'
 import { companyCardPrefix } from '@constants/stories'
 import { classNames } from '@shared/utils/common'
-import React, { ReactNode } from 'react'
+import React from 'react'
 import styles from './CompanyCard.module.scss'
-import { ICompanyCardProps, IWithDescriptionProps, IWithoutDescriptionProps } from './CompanyCard.interface'
+import {
+  ICompanyCardProps,
+  IWithDescriptionCardProps,
+  IWithDescriptionProps,
+  IWithoutDescriptionCardProps,
+  IWithoutDescriptionProps
+} from './CompanyCard.interface'
 const cx = classNames.bind(styles)
 
-const WithDescriptionCard = ({
+const WithDescriptionCard: React.FC<IWithDescriptionCardProps> = ({
   className,
-  backgroundColor = '#F0F1F3',
+  backgroundColor,
   logo,
   companyName,
   headerContent,
   mainContent,
   footerContent
-}: {
-  className?: string
-  backgroundColor?: string
-  logo: string
-  companyName: string
-  headerContent: ReactNode
-  mainContent: ReactNode
-  footerContent: ReactNode
 }) => (
-  <div className={cx(companyCardPrefix, className)} style={{ backgroundColor }}>
+  <div className={cx(companyCardPrefix, `${companyCardPrefix}__bg--${backgroundColor}`, className)}>
     <div className={styles[`${companyCardPrefix}__header`]}>
       <img src={logo} alt={companyName} className={styles[`${companyCardPrefix}__logo`]} loading="lazy" />
       {headerContent}
@@ -33,22 +31,15 @@ const WithDescriptionCard = ({
   </div>
 )
 
-const WithoutDescriptionCard = ({
+const WithoutDescriptionCard: React.FC<IWithoutDescriptionCardProps> = ({
   className,
-  backgroundColor = '#F0F1F3',
+  backgroundColor,
   logo,
   companyName,
   buttonLink,
   headerContent
-}: {
-  className?: string
-  backgroundColor?: string
-  logo: string
-  companyName: string
-  buttonLink: string
-  headerContent: ReactNode
 }) => (
-  <div className={cx(`${companyCardPrefix}__withoutDesc`, className)} style={{ backgroundColor }}>
+  <div className={cx(`${companyCardPrefix}__withoutDesc`, `${companyCardPrefix}__bg--${backgroundColor}`, className)}>
     <a href={buttonLink}>
       <div className={styles[`${companyCardPrefix}__header`]}>
         <img src={logo} alt={companyName} className={styles[`${companyCardPrefix}__logo`]} loading="lazy" />
@@ -62,7 +53,7 @@ export const CompanyCardWithDescription: React.FC<IWithDescriptionProps> = ({
   className,
   logo,
   companyName,
-  backgroundColor = '#F0F1F3',
+  backgroundColor = 'gray',
   jobCount,
   description,
   buttonText,
@@ -96,7 +87,7 @@ export const CompanyCardWithoutDescription: React.FC<IWithoutDescriptionProps> =
   className,
   logo,
   companyName,
-  backgroundColor = '#F0F1F3',
+  backgroundColor = 'gray',
   vacantTitle,
   salary,
   buttonLink

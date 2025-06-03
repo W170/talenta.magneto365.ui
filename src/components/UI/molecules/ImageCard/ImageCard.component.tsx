@@ -17,8 +17,13 @@ const Component: React.FC<ICardImage> = ({
   dimensions = { height: '250px', width: '500px' },
   icon = { showIcon: true, size: 14 }
 }) => {
+  const customStyles = {
+    '--card-width': dimensions.width,
+    '--card-height': dimensions.height
+  } as React.CSSProperties
+
   return (
-    <div className={cx(imageCardPrefix, className)} style={dimensions}>
+    <div className={cx(imageCardPrefix, className)} style={customStyles}>
       <img className={styles[`${imageCardPrefix}__image`]} src={imagePath} alt={alt} loading="lazy" />
       <div className={styles[`${imageCardPrefix}__overlay`]}>
         <p className={styles[`${imageCardPrefix}__title`]}>{title}</p>

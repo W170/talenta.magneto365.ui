@@ -6,6 +6,17 @@
   text-align: left;
   gap: 12px;
 
+  &__bg {
+    &--gray {
+      background-color: #f0f1f3;
+    }
+    &--white {
+      background-color: #ffffff;
+    }
+    &--transparent {
+      background-color: transparent;
+    }
+  }
   &__withoutDesc {
     border-radius: 8px;
     padding: 12px;
