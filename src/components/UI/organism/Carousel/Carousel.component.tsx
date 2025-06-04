@@ -22,7 +22,9 @@ const Component: React.FC<ICarousel> = ({
   sizeButtons = 16,
   itemsPerSection = 3,
   gap = 16,
-  maxContainerWidth = '100%'
+  maxContainerWidth = '100%',
+  currentIndex: controlledIndex,
+  onChangeSlide
 }) => {
   const itemsContainerRef = useRef<HTMLDivElement>(null)
   const isMobile = useMediaQuery(false, { xs: true, sm: true, md: true })
@@ -30,12 +32,22 @@ const Component: React.FC<ICarousel> = ({
   const totalSections = Math.ceil(allItems.length / itemsPerSection)
   const gapClass = useMemo(() => `${carouselPrefix}__gap-${gap}`, [gap])
 
-  const { currentIndex, changeSlide } = useCarouselScroll({
+  const { currentIndex: internalIndex, changeSlide: internalChangeSlide } = useCarouselScroll({
     totalSections,
     autoScroll,
     scrollInterval,
     isDisabled: isMobile
   })
+
+  const currentIndex = controlledIndex ?? internalIndex
+  const changeSlide = (dir: 1 | -1) => {
+    if (typeof controlledIndex === 'number' && onChangeSlide) {
+      const next = (controlledIndex + dir + totalSections) % totalSections
+      onChangeSlide(next)
+    } else {
+      internalChangeSlide(dir)
+    }
+  }
 
   const renderButtons = () =>
     !isMobile &&

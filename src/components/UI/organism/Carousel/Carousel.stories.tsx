@@ -26,7 +26,7 @@ export const Default: Story = {
       {cityCards.map((card, index) => (
         <Items key={index}>
           <ImageCard
-            dimensions={{ width: 146, height: 176 }}
+            dimensions={{ width: '146px', height: '150px' }}
             title={card.title}
             description={card.description}
             imagePath={card.imagePath}

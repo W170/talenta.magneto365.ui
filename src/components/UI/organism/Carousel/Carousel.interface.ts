@@ -62,6 +62,14 @@ export interface ICarousel {
    * Maximum width of the container
    */
   maxContainerWidth?: string
+  /**
+   * (Opcional) Índice actual del slide, para modo controlado
+   */
+  currentIndex?: number
+  /**
+   * (Opcional) Callback para cambiar el slide, para modo controlado
+   */
+  onChangeSlide?: (newIndex: number) => void
 }
 
 export namespace ICarousel {
