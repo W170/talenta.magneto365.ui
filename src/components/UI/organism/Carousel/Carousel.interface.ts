@@ -63,11 +63,11 @@ export interface ICarousel {
    */
   maxContainerWidth?: string
   /**
-   * (Opcional) Índice actual del slide, para modo controlado
+   *  Current index of the carousel, for controlled mode
    */
   currentIndex?: number
   /**
-   * (Opcional) Callback para cambiar el slide, para modo controlado
+   * Callback function to change the slide
    */
   onChangeSlide?: (newIndex: number) => void
 }
