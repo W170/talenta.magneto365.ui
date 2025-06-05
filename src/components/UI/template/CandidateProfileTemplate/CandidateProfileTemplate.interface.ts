@@ -59,6 +59,14 @@ export interface ICandidateTemplateContext {
    * Function to set the height of bottom navigation
    */
   setNavHeight: (height: number) => void
+  /**
+   * Height of header
+   */
+  headerHeight: number
+  /**
+   * Function to set the height of header
+   */
+  setHeaderHeight: (height: number) => void
 }
 
 export interface ICandidateProvider {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback, useMemo } from 'react'
 import { ICandidateProfileTemplateProfile } from './CandidateProfileTemplateProfile.interface'
 import { MiniArrowGrayDown, MiniArrowGrayUp } from '@constants/icons.constants'
 import { useCandidateProfile } from '../../CandidateProfileTemplate.context'
@@ -16,8 +16,18 @@ const Component: React.FC<ICandidateProfileTemplateProfile> = ({ children, conta
   const [scrolled, setScrolled] = useState<boolean>(false)
   const [isInTop, setIsInTop] = useState<boolean>(true)
 
-  const { isProfileOpen, setIsProfileOpen, navHeight } = useCandidateProfile()
+  const { isProfileOpen, setIsProfileOpen, navHeight, headerHeight } = useCandidateProfile()
 
+  const containerVars = useMemo(
+    () =>
+      ({
+        ...customScrollbarButtonsStyle,
+        '--nav-height': `${navHeight}px`,
+        '--header-height': `${headerHeight}px`
+      } as React.CSSProperties),
+    [headerHeight, navHeight]
+  )
+  
   const handleOnChangeOpen = useCallback(
     (localIsOpen: boolean) => {
       setIsProfileOpen(localIsOpen)
@@ -66,15 +76,7 @@ const Component: React.FC<ICandidateProfileTemplateProfile> = ({ children, conta
   }, [scrolled, setIsProfileOpen])
 
   return (
-    <div
-      className={cx('magneto-ui-candidate-profile-template-profile')}
-      style={
-        {
-          ...customScrollbarButtonsStyle,
-          '--nav-height': `${navHeight}px`
-        } as React.CSSProperties
-      }
-    >
+    <div className={cx('magneto-ui-candidate-profile-template-profile')} style={containerVars}>
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
           return React.cloneElement(child, {
