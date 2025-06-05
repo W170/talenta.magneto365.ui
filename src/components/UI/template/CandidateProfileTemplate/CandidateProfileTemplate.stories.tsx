@@ -3,8 +3,8 @@ import { CandidateProfileStory } from '../../molecules/CandidateProfile/Candidat
 import { CandidateNavStory } from '../../molecules/CandidateNav/CandidateNav.stories'
 import { CandidateProfileTemplate } from './CandidateProfileTemplate.component'
 import { candidateProfileTemplateProps } from '../../../../constants/stories'
-import { LinkDark } from '../../../../constants/icons.constants'
-import { IconItem } from '../../atoms'
+import { LinkDark, ArrowLeft2 } from '../../../../constants/icons.constants'
+import { IconItem, Typography } from '../../atoms'
 
 const meta: Meta<typeof CandidateProfileTemplate> = {
   title: 'Template/Candidate Profile',
@@ -37,7 +37,24 @@ export const Default: Story = {
       ]}
       onChangeScreen={(screen, index) => console.log(screen, index)}
     >
-      <CandidateProfileTemplate.Header />
+      <CandidateProfileTemplate.Header>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            minHeight: '50px',
+            paddingBlock: '10px',
+            paddingInline: '12px'
+          }}
+        >
+          <IconItem icon={ArrowLeft2} />
+          <Typography.Text weight="bold" size="lg" color="grey-800">
+            Perfil del candidato
+          </Typography.Text>
+        </div>
+        <CandidateProfileTemplate.MainNav />
+      </CandidateProfileTemplate.Header>
       <CandidateProfileTemplate.Profile>
         <CandidateProfileStory />
       </CandidateProfileTemplate.Profile>
