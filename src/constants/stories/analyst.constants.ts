@@ -1,10 +1,8 @@
-import { HomeUnderline, Notification } from '@constants/icons.constants'
+import { HomeUnderline, Error } from '@constants/icons.constants'
 import { IBreadcrumbs, IUserAnalyst, IUserMenuWrapperAnalystProps } from '@components/UI/molecules'
 import { IHeaderAnalyst, INavMenuAnalystProps, IModalAnalystProps } from '@components/UI/organism'
-import { ILinkProps } from '@components/UI/atoms'
 import { logoPropsDark } from './common.constants'
 import { IAnalystTemplateProps } from '@components/UI/template'
-import { Error } from '@constants/icons.constants'
 import { EModalAnalystActionType } from '@components/UI/organism/ModalAnalyst/children'
 import { EUserMenuAnalystOptionType } from '@components/UI/molecules/UserMenuAnalyst/children/UserMenuAnalystOptions/children'
 
@@ -27,8 +25,6 @@ export const UserAnalystProps: IUserAnalyst = {
   email: 'gabriel@me.com',
   title: 'Comfama'
 }
-
-export const UserNotificationProps: ILinkProps = { iconProps: { icon: Notification, size: 20 }, href: '#' }
 
 export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
   user: UserAnalystProps,
@@ -161,8 +157,7 @@ export const HeaderAnalystProps: IHeaderAnalyst = {
     target: '_self'
   },
   breadCrumbProps: BreadCrumbAnalystProps,
-  userMenuProps: UserMenuAnalystProps,
-  userNotificationProps: UserNotificationProps
+  userMenuProps: UserMenuAnalystProps
 }
 
 export const NavMenuAnalystProps: INavMenuAnalystProps = {

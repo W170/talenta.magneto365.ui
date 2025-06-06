@@ -1,5 +1,6 @@
 import { IBreadcrumbs, IUserMenuWrapperAnalystProps } from '@components/UI/molecules'
-import { ILogoComponent, ILinkProps } from '@components/UI/atoms'
+import { ILogoComponent } from '@components/UI/atoms'
+import React from 'react'
 
 export interface IHeaderAnalyst {
   /**
@@ -31,9 +32,9 @@ export interface IHeaderAnalyst {
    */
   userMenuProps: IUserMenuWrapperAnalystProps
   /**
-   * User notification link props
+   * Component to display a custom notification bell
    */
-  userNotificationProps?: ILinkProps
+  notificationBell?: React.ReactNode
 }
 
 export interface ILogoAnalyst extends ILogoComponent {
