@@ -6,11 +6,11 @@ import { classNames } from '@shared/utils/common'
 
 const cx = classNames.bind(styles)
 
-const Component: React.FC<ICandidateProfileAvatar> = ({ avatar, score, ...props }) => {
+const Component: React.FC<ICandidateProfileAvatar> = ({ fallbackImage, onClick, score, userImage, ...props }) => {
   return (
     <div className={cx('magneto-ui-candidate-profile-avatar')} {...props}>
       <picture className={cx('magneto-ui-candidate-profile-avatar__picture')}>
-        <Avatar {...avatar} />
+        <Avatar userImage={userImage} fallbackImage={fallbackImage} onClick={onClick} />
       </picture>
       {score && (
         <div className={cx('magneto-ui-candidate-profile-avatar__score')}>

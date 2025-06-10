@@ -6,6 +6,7 @@ const CandidateContext = createContext<ICandidateTemplateContext | undefined>(un
 export const Provider: React.FC<ICandidateProvider> = ({ children, onChangeScreen, screens }) => {
   const [isProfileOpen, setIsProfileOpen] = useState<boolean>(true)
   const [activeScreen, setActiveScreen] = useState<number>(0)
+  const [headerHeight, setHeaderHeight] = useState<number>(0)
   const [navHeight, setNavHeight] = useState<number>(0)
   const prevScreenRef = useRef<number | null>(null)
 
@@ -18,7 +19,17 @@ export const Provider: React.FC<ICandidateProvider> = ({ children, onChangeScree
 
   return (
     <CandidateContext.Provider
-      value={{ activeScreen, setActiveScreen, screens, isProfileOpen, setIsProfileOpen, navHeight, setNavHeight }}
+      value={{
+        activeScreen,
+        setActiveScreen,
+        screens,
+        isProfileOpen,
+        setIsProfileOpen,
+        navHeight,
+        setNavHeight,
+        headerHeight,
+        setHeaderHeight
+      }}
     >
       {children}
     </CandidateContext.Provider>

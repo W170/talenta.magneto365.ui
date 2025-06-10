@@ -1,0 +1,9 @@
+@import '../../../../../shared/stylesheets/tokens';
+
+.magneto-ui-design-system-text {
+  @each $key, $value in $text-map {
+    &__example-#{$key} {
+      font-size: $value;
+    }
+  }
+}

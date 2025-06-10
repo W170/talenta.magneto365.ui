@@ -1,0 +1,9 @@
+@import '../../../../../shared/stylesheets/tokens';
+
+.magneto-ui-design-system-radius {
+  @each $key, $value in $radius-map {
+    &__example-#{$key} {
+      border-radius: $value;
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "values": {
+    "inherit": "inherit",
+    "none": "none",
+    "auto": "auto",
+    "full": "100%",
+    "min": "0",
+    "px": {
+      "base": "16px",
+      "xxs": "1px",
+      "xs": "4px",
+      "sm": "8px",
+      "sm-2": "10px",
+      "md": "12px",
+      "md-2": "14px",
+      "lg": "16px",
+      "xl": "20px",
+      "2xl": "24px",
+      "3xl": "28px",
+      "4xl": "32px",
+      "container": {
+        "xxs": "375px",
+        "xs": "480px",
+        "sm": "576px",
+        "md": "768px",
+        "lg": "992px",
+        "xl": "1024px",
+        "2xl": "1280px",
+        "3xl": "1440px"
+      }
+    },
+    "rem": {
+      "xxs": "calc($scale-px-xxs / $scale-px-base) * 1rem",
+      "xs": "calc($scale-px-xs / $scale-px-base) * 1rem",
+      "sm": "calc($scale-px-sm / $scale-px-base) * 1rem",
+      "sm-2": "calc($scale-px-sm-2 / $scale-px-base) * 1rem",
+      "md": "calc($scale-px-md / $scale-px-base) * 1rem",
+      "md-2": "calc($scale-px-md-2 / $scale-px-base) * 1rem",
+      "lg": "calc($scale-px-lg / $scale-px-base) * 1rem",
+      "xl": "calc($scale-px-xl / $scale-px-base) * 1rem",
+      "2xl": "calc($scale-px-2xl / $scale-px-base) * 1rem",
+      "3xl": "calc($scale-px-3xl / $scale-px-base) * 1rem",
+      "4xl": "calc($scale-px-4xl / $scale-px-base) * 1rem",
+      "container": {
+        "xxs": "calc($scale-px-container-xxs / $scale-px-base) * 1rem",
+        "xs": "calc($scale-px-container-xs / $scale-px-base) * 1rem",
+        "sm": "calc($scale-px-container-sm / $scale-px-base) * 1rem",
+        "md": "calc($scale-px-container-md / $scale-px-base) * 1rem",
+        "lg": "calc($scale-px-container-lg / $scale-px-base) * 1rem",
+        "xl": "calc($scale-px-container-xl / $scale-px-base) * 1rem",
+        "2xl": "calc($scale-px-container-2xl / $scale-px-base) * 1rem",
+        "3xl": "calc($scale-px-container-3xl / $scale-px-base) * 1rem"
+      }
+    }
+  },
+  "utilities": {
+    "classes": [
+      {
+        "name": "width",
+        "prefix": "w",
+        "conditions": {
+          "excludeValues": ["px"],
+          "removeFromClass": ["rem"]
+        },
+        "properties": [{ "property": "width" }]
+      },
+      {
+        "name": "min-width",
+        "prefix": "min-w",
+        "conditions": {
+          "excludeValues": ["px"],
+          "removeFromClass": ["rem"]
+        },
+        "properties": [{ "property": "min-width" }]
+      },
+      {
+        "name": "height",
+        "prefix": "h",
+        "conditions": {
+          "excludeValues": ["px"],
+          "removeFromClass": ["rem"]
+        },
+        "properties": [{ "property": "height" }]
+      },
+      {
+        "name": "min-height",
+        "prefix": "min-h",
+        "conditions": {
+          "excludeValues": ["px"],
+          "removeFromClass": ["rem"]
+        },
+        "properties": [{ "property": "min-height" }]
+      },
+      {
+        "name": "square",
+        "prefix": "sq",
+        "conditions": {
+          "excludeValues": ["px", "container"],
+          "removeFromClass": ["rem"]
+        },
+        "properties": [{ "property": "width" }, { "property": "height" }]
+      },
+      {
+        "name": "min-square",
+        "prefix": "min-sq",
+        "conditions": {
+          "excludeValues": ["px", "container"],
+          "removeFromClass": ["rem"]
+        },
+        "properties": [{ "property": "min-width" }, { "property": "min-height" }]
+      }
+    ]
+  },
+  "docs": {
+    "description": "Scale SCSS vars for handling responsive designs.",
+    "example": "```scss\n.icon:hover {\n  transform: scale($scale-rem-md);\n}\n```",
+    "category": "motion",
+    "tags": "scale, transform, animation, motion"
+  }
+}

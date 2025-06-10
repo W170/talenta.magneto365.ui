@@ -8,18 +8,18 @@ import { ExpandableInfo } from '../../molecules'
 export const CandidateProfileStory: React.FC = ({ ...props }) => (
   <CandidateProfile {...props}>
     <CandidateProfile.Header>
-      <CandidateProfile.Avatar avatar={candidateProfileProps.avatar} score={candidateProfileProps.score} />
+      <CandidateProfile.Avatar userImage={candidateProfileProps.avatar.userImage} score={candidateProfileProps.score} />
       <div>
-        <Typography.Paragraph size={'xs'} weight="normal" color="gray">
+        <Typography.Paragraph size="md" weight="normal" color="grey-500">
           {candidateProfileProps.header.lastUpdate}
         </Typography.Paragraph>
-        <Typography.Title level={3} size="lg" weight="black" color="white">
+        <Typography.Title level={3} size="lg" weight="black" color="grey-50">
           {candidateProfileProps.header.name}
         </Typography.Title>
-        <Typography.Title level={3} size="lg" weight="normal" color="white">
+        <Typography.Title level={3} size="lg" weight="normal" color="grey-50">
           {candidateProfileProps.header.lastName}
         </Typography.Title>
-        <Typography.Title level={4} size="lg" weight="normal" color="green">
+        <Typography.Title level={4} size="lg" weight="normal" color="green-300">
           {candidateProfileProps.header.role}
         </Typography.Title>
       </div>
@@ -40,10 +40,10 @@ export const CandidateProfileStory: React.FC = ({ ...props }) => (
         {candidateProfileProps.internal.map((detail, detailIndex) => (
           <React.Fragment key={`internal-${detailIndex}`}>
             <IconItem showDefaultFallback={false} size={15} icon={detail.icon} />
-            <Typography.Text size="xs" weight="normal" color="white">
+            <Typography.Text size="md" weight="normal" color="grey-50">
               {detail.title}
             </Typography.Text>
-            <Typography.Text size="xs" weight="black" color="white">
+            <Typography.Text size="md" weight="black" color="grey-50">
               {detail.value}
             </Typography.Text>
           </React.Fragment>
@@ -53,7 +53,7 @@ export const CandidateProfileStory: React.FC = ({ ...props }) => (
       <div>
         {candidateProfileProps.details.map((detail, detailIndex) => (
           <div key={detailIndex} style={{ display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px' }}>
-            <Typography.Title level={4} size="lg" weight="bold" color="green">
+            <Typography.Title level={4} size="lg" weight="bold" color="green-300">
               {detail.title}
             </Typography.Title>
             {detail.children.map((child, childIndex) => (
@@ -62,7 +62,7 @@ export const CandidateProfileStory: React.FC = ({ ...props }) => (
                 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}
               >
                 <IconItem showDefaultFallback={false} size={15} icon={child.icon} />
-                <Typography.Text size="sm" weight="normal" color={child.color}>
+                <Typography.Text size="md" weight="normal" color={child.color}>
                   {child.value}
                 </Typography.Text>
               </div>

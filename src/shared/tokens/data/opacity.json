@@ -1,0 +1,31 @@
+{
+  "values": {
+    "inherit": "scale.$scale-inherit",
+    "min": "scale.$scale-min",
+    "10": 0.1,
+    "12": 0.12,
+    "20": 0.2,
+    "30": 0.3,
+    "40": 0.4,
+    "50": 0.5,
+    "60": 0.6,
+    "70": 0.7,
+    "80": 0.8,
+    "90": 0.9,
+    "full": 1
+  },
+  "utilities": {
+    "imports": [
+      {
+        "file": "_scale.scss",
+        "alias": "scale"
+      }
+    ]
+  },
+  "docs": {
+    "description": "Opacity SCC vars used to define transparency levels for elements and UI states.",
+    "example": "```scss\n.overlay {\n  opacity: $opacity-70;\n}\n```",
+    "category": "visual",
+    "tags": "opacity, transparency, visibility, visual"
+  }
+}
