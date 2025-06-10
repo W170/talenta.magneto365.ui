@@ -13,13 +13,11 @@ export const DrawerPortal: React.FC<IDrawerPortal> = ({ children, customContaine
     if (isServer || !container) return
     portalNode.current = document.createElement('div')
     portalNode.current.classList.add('magneto-ui-drawer')
-    ;(customContainer || container)?.appendChild(portalNode.current)
+    customContainer?.appendChild(portalNode.current) || container.appendChild(portalNode.current)
 
     setMounted(true)
     return () => {
-      if (portalNode.current) {
-        ;(customContainer || container).removeChild(portalNode.current)
-      }
+      if (portalNode.current) (customContainer || container).removeChild(portalNode.current)
     }
   }, [container, customContainer])
 
