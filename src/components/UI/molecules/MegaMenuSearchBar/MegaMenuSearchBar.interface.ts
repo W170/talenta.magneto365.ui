@@ -53,4 +53,5 @@ export interface ISearchOptions {
   title: string
   subtitle?: string
   url: string
+  field?: string
 }

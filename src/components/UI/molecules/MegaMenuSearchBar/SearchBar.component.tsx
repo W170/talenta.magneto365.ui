@@ -100,12 +100,12 @@ const SearchBar: React.FC<ISearchBar> = ({
         <div className={styles['mega-menu-search-bar__input-options']} ref={optionsRef}>
           {sectionTitle && renderSectionTitle}
           {options.length > 0 &&
-            options.map(({ title, subtitle, url }: ISearchOptions, index: number) => (
+            options.map(({ title, subtitle, url, field }: ISearchOptions, index: number) => (
               <div
                 className={`${styles['mega-menu-search-bar__input-option']} ${
                   selectedOption == index ? styles['mega-menu-search-bar__input-option--selected'] : ''
                 }`}
-                onClick={onPressOption({ title, subtitle, url })}
+                onClick={onPressOption({ title, subtitle, url, field })}
                 key={index}
               >
                 <a href={url} ref={linkRef}>
