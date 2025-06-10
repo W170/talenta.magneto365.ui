@@ -52,6 +52,12 @@ export interface IDrawer {
    * this property blocks fn onClose from background
    */
   blockBackgroundClose?: boolean
+
+  /**
+   * An optional custom container where the Drawer Portal will be rendered.
+   * If not provided, it will use the body.
+   */
+  customContainer?: IDrawerPortal['customContainer']
 }
 
 /**
@@ -63,4 +69,10 @@ export interface IDrawerPortal {
    * It can be a single JSX element, an array of JSX elements, or `false` to indicate no content.
    */
   children: false | JSX.Element | JSX.Element[]
+
+  /**
+   * An optional custom container where the Drawer Portal will be rendered.
+   * If not provided, it will use the body.
+   */
+  customContainer?: HTMLElement | ShadowRoot
 }
