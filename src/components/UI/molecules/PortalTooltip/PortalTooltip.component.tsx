@@ -23,7 +23,7 @@ const Component: React.FC<IPortalTooltipProps> = ({
     <>
       <div
         ref={triggerRef}
-        style={{ width: 'fit-content' }}
+        className={styles['portal-tooltip__trigger']}
         onMouseEnter={showTooltip}
         onMouseLeave={hideTooltip}
         onFocus={showTooltip}

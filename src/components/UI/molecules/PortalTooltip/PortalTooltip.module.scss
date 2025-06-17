@@ -8,6 +8,10 @@
   position: absolute;
   z-index: 9999;
 
+  &__trigger {
+    width: fit-content;
+  }
+
   &__inner {
     background-color: var(--black-bg);
     position: relative;
