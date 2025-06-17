@@ -1,7 +1,8 @@
 import ReactDOM from 'react-dom'
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { IPortalTooltipProps } from './PortalTooltip.interface'
 import styles from './PortalTooltip.module.scss'
+import { ContainerContext } from '@components/context/container/container.context'
 
 const Component: React.FC<IPortalTooltipProps> = ({
   children,
@@ -19,6 +20,7 @@ const Component: React.FC<IPortalTooltipProps> = ({
   const triggerRef = useRef<HTMLDivElement>(null)
   const tooltipRef = useRef<HTMLDivElement>(null)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const { container } = useContext(ContainerContext)
 
   const showTooltip = () => {
     if (!visible) return
@@ -114,7 +116,7 @@ const Component: React.FC<IPortalTooltipProps> = ({
               {title}
             </div>
           </div>,
-          document.body
+          container || document.body
         )}
     </>
   )
