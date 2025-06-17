@@ -1,31 +1,33 @@
-import React, { useMemo, useCallback } from 'react'
-import { TCandidateProfileTemplateHeader } from './CandidateProfileTemplateHeader.interface'
+import React, { useEffect, useRef } from 'react'
 import { useCandidateProfile } from '../../CandidateProfileTemplate.context'
 import styles from './CandidateProfileTemplateHeader.module.scss'
-import { HorizontalMenu } from '@components/UI/molecules'
 import { classNames } from '@shared/utils/common'
 
 const cx = classNames.bind(styles)
 
-const Component: React.FC<TCandidateProfileTemplateHeader> = ({ ...props }) => {
-  const { setActiveScreen, screens } = useCandidateProfile()
+const Component: React.FC = ({ children }) => {
+  const { setHeaderHeight } = useCandidateProfile()
+  const headerRef = useRef<HTMLDivElement>(null)
 
-  const menuOptions = useMemo(() => screens.map((screen) => ({ title: screen.title, icon: screen.icon })), [screens])
+  useEffect(() => {
+    const handleResize = () => {
+      if (!headerRef.current) return
+      setHeaderHeight(headerRef.current.offsetHeight)
+    }
 
-  const onMenuOptionClick = useCallback(
-    (selectedOption: number) => {
-      setActiveScreen(selectedOption)
-    },
-    [setActiveScreen]
-  )
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [setHeaderHeight])
 
   return (
-    <HorizontalMenu
-      {...props}
-      options={menuOptions}
-      onChange={onMenuOptionClick}
-      className={cx('magneto-ui-candidate-profile-template__nav')}
-    />
+    <div ref={headerRef} className={cx('magneto-ui-candidate-profile-template-header')}>
+      {children}
+    </div>
   )
 }
 

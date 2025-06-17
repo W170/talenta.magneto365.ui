@@ -1,12 +1,14 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../shared/stylesheets/tokens' as m;
 
 .magneto-ui-horizontal-menu {
   border-bottom: solid 1px #e0e4e7;
   min-height: 52px;
+  padding-inline: m.$padding-sm-2;
+  padding-block: m.$padding-xs;
   width: 100%;
   min-width: 200px;
   background-color: v.$color-white;
-  padding-left: 10px;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -26,7 +28,6 @@
   &__nav {
     display: flex;
     flex: 1;
-    padding-inline: 10px;
     overflow: scroll;
     scrollbar-width: none;
   }

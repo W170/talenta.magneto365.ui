@@ -6,6 +6,7 @@ import { ICardJobDesktop } from './JobCardDesktop.interface'
 import { classNames } from '@shared/utils/common'
 import style from './JobCardDesktop.module.scss'
 import { useWithElement } from '@components/hooks/useWithElement'
+import { altDynamicText } from '@constants/img.constants'
 
 const cx = classNames.bind(style)
 
@@ -24,7 +25,6 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   title,
   formatPublishDate,
   companyLogo,
-  companySlug,
   contractType,
   showDetail,
   urgent,
@@ -37,10 +37,9 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   const width = useWithElement(optionsRef)
 
   const citiesformatted = useMemo(() => {
-    if (cities?.length > 5) {
-      return cities?.slice(0, 5).join(', ')
-    }
-    return cities?.join(', ')
+    const safeCities = Array.isArray(cities) ? cities : []
+
+    return safeCities.length > 5 ? safeCities.slice(0, 5).join(', ') : safeCities.join(', ')
   }, [cities])
 
   return (
@@ -51,7 +50,7 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
             <div>
               <img
                 className={cx(`${classMUI}-card-jobs__brand-img`)}
-                alt={companySlug ? companySlug : 'company-slug'}
+                alt={companyName ? `${altDynamicText.workAt} ${companyName}` : 'company-name'}
                 src={companyLogo ? companyLogo : NoLogo}
                 loading="lazy"
                 width={'67px'}

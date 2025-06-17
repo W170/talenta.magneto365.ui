@@ -52,27 +52,32 @@ export const candidateProfileProps: Record<string, any> = {
       children: [
         {
           value: 'CC 1037651011',
-          icon: Position
+          icon: Position,
+          color: 'grey-50'
         },
         {
           value: '14 / 08 / 1987',
-          icon: Date
+          icon: Date,
+          color: 'grey-50'
         },
         {
           value: 'Masculino, 35 años',
-          icon: PeopleInfo
+          icon: PeopleInfo,
+          color: 'grey-50'
         },
         {
           value: 'nombre@correo.com',
-          icon: EmailSquare
+          icon: EmailSquare,
+          color: 'grey-50'
         },
         {
           value: '+57 3002002028',
-          icon: Mobile
+          icon: Mobile,
+          color: 'grey-50'
         },
         {
           value: 'Medellín, Colombia',
-          color: 'blue',
+          color: 'blue-light-300',
           icon: LocationBlueBold
         }
       ]
@@ -82,7 +87,8 @@ export const candidateProfileProps: Record<string, any> = {
       children: [
         {
           value: 'Especialización / maestría',
-          icon: Teacher
+          icon: Teacher,
+          color: 'grey-50'
         }
       ]
     },
@@ -91,7 +97,8 @@ export const candidateProfileProps: Record<string, any> = {
       children: [
         {
           value: '$2.000.000',
-          icon: DollarCircleWhiteOutline
+          icon: DollarCircleWhiteOutline,
+          color: 'grey-50'
         }
       ]
     },
@@ -99,7 +106,8 @@ export const candidateProfileProps: Record<string, any> = {
       title: 'Categoría',
       children: [
         {
-          value: 'Diseño'
+          value: 'Diseño',
+          color: 'grey-50'
         }
       ]
     }

@@ -1,0 +1,93 @@
+@import '../../../shared/stylesheets/tokens';
+
+.magneto-ui-design-system {
+  &__title {
+    margin: 0;
+    font-size: $text-lg;
+    color: $color-red-200;
+  }
+  &__preview {
+    background-color: $color-blue-dark-400;
+    color: $color-yellow-200;
+    padding: $padding-4xl;
+    display: flex;
+    flex-direction: column;
+    gap: $gap-lg;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    > thead {
+      > tr > th {
+        padding: 10px;
+        border: 1px solid $color-grey-800;
+        background-color: $color-grey-800;
+        color: $color-grey-50;
+        white-space: nowrap;
+        &:first-child {
+          border-top-left-radius: $radius-sm;
+        }
+        &:last-child {
+          border-top-right-radius: $radius-sm;
+        }
+      }
+    }
+    > tbody {
+      > tr {
+        &:last-child {
+          td {
+            &:first-child {
+              border-bottom-left-radius: $radius-sm;
+            }
+            &:last-child {
+              border-bottom-right-radius: $radius-sm;
+            }
+          }
+        }
+        td {
+          padding: 10px;
+          border-right: 1px solid $color-grey-300;
+          border-bottom: 1px solid $color-grey-300;
+          &:first-child {
+            border-left: 1px solid $color-grey-300;
+          }
+        }
+      }
+    }
+  }
+  &__example-box {
+    &--base-size {
+      min-height: 20px;
+      min-width: 20px;
+    }
+    &--green {
+      background-color: $color-green-600;
+    }
+    &--yellow {
+      background-color: $color-yellow-300;
+    }
+    &--red {
+      background-color: $color-red-200;
+    }
+    &--blue {
+      &-light {
+        background-color: $color-blue-light-400;
+      }
+      &-dark {
+        background-color: $color-blue-dark-200;
+      }
+    }
+    &--grey {
+      background-color: $color-grey-400;
+    }
+    &--pink {
+      background-color: $color-red-100;
+    }
+  }
+}

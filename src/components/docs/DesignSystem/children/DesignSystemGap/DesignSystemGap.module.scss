@@ -1,0 +1,10 @@
+@import '../../../../../shared/stylesheets/tokens';
+
+.magneto-ui-design-system-gap {
+  @each $key, $value in $gap-map {
+    &__example-#{$key} {
+      display: flex;
+      gap: $value;
+    }
+  }
+}

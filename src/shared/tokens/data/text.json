@@ -1,0 +1,26 @@
+{
+  "values": {
+    "sm-2": "scale.$scale-rem-sm-2",
+    "md": "scale.$scale-rem-md",
+    "md-2": "scale.$scale-rem-md-2",
+    "lg": "scale.$scale-rem-lg",
+    "xl": "scale.$scale-rem-xl",
+    "2xl": "scale.$scale-rem-2xl",
+    "3xl": "scale.$scale-rem-3xl",
+    "4xl": "scale.$scale-rem-4xl"
+  },
+  "utilities": {
+    "imports": [
+      {
+        "file": "_scale.scss",
+        "alias": "scale"
+      }
+    ]
+  },
+  "docs": {
+    "description": "Text SCSS vars for consistent font sizes.",
+    "example": "```scss\n.title {\n  font-size: $text-xl;\n}\n```",
+    "category": "typography",
+    "tags": "text, typography, font, size, weight, line-height"
+  }
+}

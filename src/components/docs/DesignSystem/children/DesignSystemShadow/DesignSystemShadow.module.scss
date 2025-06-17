@@ -1,0 +1,9 @@
+@import '../../../../../shared/stylesheets/tokens';
+
+.magneto-ui-design-system-shadow {
+  @each $key, $value in $shadow-map {
+    &__example-#{$key} {
+      box-shadow: $value;
+    }
+  }
+}

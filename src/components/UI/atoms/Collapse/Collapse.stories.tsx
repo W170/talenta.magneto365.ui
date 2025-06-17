@@ -14,14 +14,14 @@ const meta: Meta<typeof Collapse> = {
       defaultOpen
     >
       <Collapse.Header style={{ justifyContent: 'space-between' }}>
-        <Typography.Text color="white">Header</Typography.Text>
+        <Typography.Text color="grey-50">Header</Typography.Text>
         <Collapse.Toggler>
           <IconItem icon={ArrowDownWhite} />
         </Collapse.Toggler>
       </Collapse.Header>
       <Collapse.Body>
         <div style={{ padding: '10px' }}>
-          <Typography.Text color="white">Body</Typography.Text>
+          <Typography.Text color="grey-50">Body</Typography.Text>
         </div>
       </Collapse.Body>
     </Collapse>

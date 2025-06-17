@@ -3,6 +3,7 @@ import { IconItem, ShareButton } from '../../atoms'
 import { IJobFooterCard } from './JobFooterCard.interface'
 import styles from './JobFooterCard.module.scss'
 import { NoLogo } from '@constants/icons.constants'
+import { altDynamicText } from '@constants/img.constants'
 
 const Component: React.FC<IJobFooterCard> = ({
   offerFooterHeader,
@@ -10,7 +11,8 @@ const Component: React.FC<IJobFooterCard> = ({
   offerFooterList,
   iconList,
   shareButtonProps,
-  companyImgAlt
+  companyImgAlt,
+  companyName
 }) => {
   const jobFooterList = offerFooterList?.map(({ href, title, ariaLabel }, index) => ({
     icon: iconList && iconList[index],
@@ -23,7 +25,7 @@ const Component: React.FC<IJobFooterCard> = ({
     <div className={styles['magneto-ui-job-footer-card']}>
       <img
         src={offerCompanyLogo ? offerCompanyLogo : NoLogo}
-        alt={companyImgAlt}
+        alt={companyImgAlt ? companyImgAlt : `${altDynamicText.workAt} ${companyName}`}
         loading="lazy"
         width={'100px'}
         height={'100px'}

@@ -2,7 +2,7 @@ import React from 'react'
 import { IInlineDetails } from './InlineDetails.interface'
 import { Typography } from '../Typography'
 
-export function InlineDetails({ details, className }: IInlineDetails) {
+export function InlineDetails({ details, className }: Readonly<IInlineDetails>) {
   const formatedDetails = details.join(' | ')
 
   return (

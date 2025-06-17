@@ -18,7 +18,7 @@ const SimilarJobs: React.FC<ISimilarJobs> = ({
 
   return (
     <div className={`${styles[`${classMUI}-similar-jobs-section`]}`}>
-      <h3 className={`${styles[`${classMUI}-similar-jobs-section__title`]}`}>{`${sectionTitle}:`}</h3>
+      <p className={`${styles[`${classMUI}-similar-jobs-section__title`]}`}>{`${sectionTitle}:`}</p>
       {similarJobsCard.map(({ id, ...props }) => (
         <SimilarJobsCard key={id} hideLogo={hideLogo} {...props} />
       ))}

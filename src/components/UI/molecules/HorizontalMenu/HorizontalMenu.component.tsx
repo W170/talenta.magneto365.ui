@@ -1,28 +1,26 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { IHorizontalMenu } from './HorizontalMenu.interface'
-import { ArrowLeft2 } from '@constants/icons.constants'
-import { IconItem, Button } from '@components/UI/atoms'
 import { classNames } from '@shared/utils/common'
 import styles from './HorizontalMenu.module.scss'
+import { Button } from '@components/UI/atoms'
 
 const cx = classNames.bind(styles)
 
-const Component: React.FC<IHorizontalMenu> = ({ className, options, onChange, onClick }) => {
+const Component: React.FC<IHorizontalMenu> = ({ className, options, onChange }) => {
   const [selectedItem, setSelectedItem] = useState<number>(0)
 
-  useEffect(() => {
-    if (onChange) {
-      onChange(selectedItem)
-    }
-  }, [selectedItem, onChange])
+  const handleOnSelect = useCallback(
+    (key: number) => {
+      setSelectedItem(key)
+      onChange?.(key)
+    },
+    [onChange]
+  )
 
   if (!options || !Array.isArray(options)) return null
 
   return (
     <header className={cx('magneto-ui-horizontal-menu', className)}>
-      <button className={cx('magneto-ui-horizontal-menu__back')} onClick={() => onClick?.()}>
-        <IconItem icon={ArrowLeft2} size={20} />
-      </button>
       <nav className={cx('magneto-ui-horizontal-menu__nav')}>
         <ul className={cx('magneto-ui-horizontal-menu__list')}>
           {options.map(({ icon, title }, key) => (
@@ -32,7 +30,7 @@ const Component: React.FC<IHorizontalMenu> = ({ className, options, onChange, on
                 'magneto-ui-horizontal-menu__button--active': selectedItem === key
               })}
             >
-              <Button suffixIcon={icon} buttonText={title} onClick={() => setSelectedItem(key)} />
+              <Button suffixIcon={icon} buttonText={title} onClick={() => handleOnSelect(key)} />
             </li>
           ))}
         </ul>

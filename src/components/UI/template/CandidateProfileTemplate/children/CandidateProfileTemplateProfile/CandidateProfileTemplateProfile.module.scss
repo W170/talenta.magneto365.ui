@@ -3,13 +3,14 @@
   top: 0;
   z-index: 10;
   &__container {
-    max-height: calc(100vh - 52px - var(--nav-height, 0px));
+    max-height: calc(100vh - var(--header-height, 0px) - var(--nav-height, 0px));
     transition: all 0.3s ease-in-out;
     @supports (max-height: 100dvh) {
-      max-height: calc(100dvh - 52px - var(--nav-height, 0px));
+      max-height: calc(100dvh - var(--header-height, 0px) - var(--nav-height, 0px));
     }
-    > footer {
+    > div {
       overflow-y: auto;
+      scrollbar-color: #c2c8cf #00000026;
       &::-webkit-scrollbar {
         background: #00000026;
         width: 10px;

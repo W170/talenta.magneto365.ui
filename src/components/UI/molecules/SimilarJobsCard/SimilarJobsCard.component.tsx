@@ -33,7 +33,7 @@ const SimilarJobsCard: React.FC<ISimilarJobsCard> = ({
         />
       )}
       <div>
-        <p className={`${styles[`${classMUI}-similar-jobs__title`]}`}>{title}</p>
+        <h2 className={`${styles[`${classMUI}-similar-jobs__title`]}`}>{title}</h2>
         <p className={`${styles[`${classMUI}-similar-jobs__info`]}`}>{formatInfo}</p>
       </div>
       <IconItem className={`${styles[`${classMUI}-similar-jobs__arrow`]}`} icon={ArrowRight2} alt="arow-right-icon" />
