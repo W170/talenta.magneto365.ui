@@ -1,43 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Button } from '@components/UI/atoms'
 import styles from './ScrollableTab.module.scss'
 import { IScrollableTab } from './ScrollableTab.interface'
+import useScrollableTab from './hooks/useScrollableTab.hook'
 import { ArrowLeft2, ArrowRight2 } from '@constants/icons.constants'
 
 const Component: React.FC<IScrollableTab> = ({ children, scrollAmount = 100, className }) => {
-  const containerRef = React.useRef<HTMLDivElement>(null)
-  const [showLeftArrow, setShowLeftArrow] = useState(false)
-  const [showRightArrow, setShowRightArrow] = useState(false)
-
-  const handleScrollByAmount = (amount: number) => containerRef.current?.scrollBy({ left: amount, behavior: 'smooth' })
-
-  const updateArrowsVisibility = () => {
-    const container = containerRef.current
-    if (container) {
-      const scrollLeft = container.scrollLeft
-      const scrollWidth = container.scrollWidth
-      const clientWidth = container.clientWidth
-
-      setShowLeftArrow(scrollLeft > 0)
-      setShowRightArrow(scrollLeft + clientWidth < scrollWidth)
-    }
-  }
-
-  useEffect(() => {
-    updateArrowsVisibility()
-    const container = containerRef.current
-    if (container) {
-      container.addEventListener('scroll', updateArrowsVisibility)
-      window.addEventListener('resize', updateArrowsVisibility)
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener('scroll', updateArrowsVisibility)
-        window.removeEventListener('resize', updateArrowsVisibility)
-      }
-    }
-  }, [])
+  const { containerRef, showLeftArrow, showRightArrow, handleScrollByAmount } = useScrollableTab()
 
   return (
     <div className={`${styles['magneto-ui-scrollable-tab']} ${className}`} role="tablist">
