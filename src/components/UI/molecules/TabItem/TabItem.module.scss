@@ -1,4 +1,4 @@
-@use '../../../../shared/stylesheets/variables.scss' as variables;
+@import '../../../../shared/stylesheets/tokens/';
 
 .magneto-ui-tab-item {
   height: auto;
@@ -6,19 +6,19 @@
   min-width: 70px;
   cursor: pointer;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: $weight-bold;
   background: #fff;
   padding: 10px 16px;
   border-radius: 4px;
-  border: 1px solid variables.$selected-color-gray;
-  color: variables.$colors-magneto-neutral-gray-900;
+  border: 1px solid $color-grey-200;
+  color: $color-grey-900;
 
   &[aria-selected='true'] {
-    background: variables.$selected-color-gray;
+    background: $color-grey-200;
   }
 
   &[aria-disabled='true'] {
     cursor: default;
-    color: variables.$colors-magneto-neutral-gray-400;
+    color: $color-grey-400;
   }
 }

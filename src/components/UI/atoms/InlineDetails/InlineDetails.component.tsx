@@ -7,7 +7,7 @@ export function InlineDetails({ details, className }: Readonly<IInlineDetails>) 
 
   return (
     <div className={className}>
-      <Typography.Text size="md" weight="normal" color="black">
+      <Typography.Text size="md" weight="normal" color="inherit">
         {formatedDetails}
       </Typography.Text>
     </div>
