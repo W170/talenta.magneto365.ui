@@ -4,7 +4,7 @@ import styles from './SimilarCard.module.scss'
 import { classNames } from '@shared/utils/common'
 import { SimilarCardLogo } from './children/SimilarCardLogo/SimilarCardLogo.component'
 import { SimilarCardIcon } from './children/SimlarCardIcon/SimilarCardIcon.component'
-import { TextCustom } from '@components/UI/atoms/Text'
+import { SimilarCardText } from './children/SimilarCardText/SimilarCardText.component'
 const cx = classNames.bind(styles)
 
 const Component: React.FC<ISimilarCard> = ({ children, title = 'jobLink', jobUrlSlug = '#', className }) => {
@@ -16,7 +16,7 @@ const Component: React.FC<ISimilarCard> = ({ children, title = 'jobLink', jobUrl
 }
 
 export const SimilarCard = Object.assign(Component, {
-  Text: TextCustom,
+  Text: SimilarCardText,
   Logo: SimilarCardLogo,
   Icon: SimilarCardIcon
 })

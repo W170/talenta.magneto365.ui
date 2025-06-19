@@ -41,7 +41,11 @@ export const JobSuggestedSimilarJobs: React.FC<IJobSuggestedDrawer.SimilarJobCar
           <React.Fragment key={index}>
             <SimilarCard className={cx(className)} jobUrlSlug={job.jobUrlSlug} title={job.title}>
               <Logo hideLogo={hideLogo} alt={job.title} src={job.companyLogo || NoLogo} />
-              <Text className={cx('job-suggested-similar-jobs__text')} customText={similarJobTextAdapter(job)} />
+              <Text
+                className={cx('job-suggested-similar-jobs__text')}
+                customText={similarJobTextAdapter(job)}
+                headingType="h2"
+              />
               <Icon />
             </SimilarCard>
             <Divider />

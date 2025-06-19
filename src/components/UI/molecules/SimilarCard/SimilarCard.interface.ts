@@ -1,5 +1,3 @@
-import { ICustomText } from '@components/UI/atoms/Text/Text.interface'
-
 /* eslint-disable @typescript-eslint/no-namespace */
 export interface ISimilarCard {
   /**
@@ -114,11 +112,29 @@ export namespace ISimilarCard {
     /**
      * If the text must show more than one line, use customText instead text
      * */
-    customText?: ICustomText[]
+    customText?: CustomText[]
     /**
      * this property sets custom styles
      */
     className?: string
+    /**
+     * This property allows you to set the tag for the first text.
+     */
+    headingType?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+  }
+  export interface CustomText {
+    /**
+     * This is the value to the custom text
+     * */
+    value: string | React.ReactNode
+    /**
+     * This is the custom font weight to text
+     * */
+    fontWeight: 'normal' | 'bold' | 'lighter'
+    /**
+     * This is the custom line break to text
+     * */
+    lineBreak?: boolean
   }
   export interface Icon {
     /**
