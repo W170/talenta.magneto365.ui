@@ -69,10 +69,15 @@ const useSelect2 = <T>({
     setSearchValue(event.target.value)
   }, [])
 
+  const normalizeString = (str: string) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+
   const list = useMemo(() => {
-    if (searchValue.length > 1 && !setTerm) {
-      return selectList.filter(({ name }) => name.toLowerCase().includes(searchValue.toLowerCase()))
+    const normalizedSearch = normalizeString(searchValue.toLowerCase())
+
+    if (normalizedSearch.length > 1 && !setTerm) {
+      return selectList.filter(({ name }) => normalizeString(name.toLowerCase()).includes(normalizedSearch))
     }
+
     return selectList
   }, [searchValue, selectList, setTerm])
 

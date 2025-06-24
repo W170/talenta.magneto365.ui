@@ -1,31 +1,13 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { Select2 } from './Select2.component'
-import { UserRoundedGray } from '../../../../constants/icons.constants'
-import { generateID } from '../../../../utils/generateID/generateID.util'
+import { SELECT2_PROPS } from '../../../../constants/stories/select2.constants'
 
 const meta: Meta<typeof Select2> = {
   title: 'Organism/Select2',
   component: Select2,
   args: {
-    className: 'className',
-    onChange: (value) => console.log(value),
-    placeholder: 'Probando',
-    isMultiple: false,
-    haveTags: true,
-    limitSelections: 3,
-    currentFields: [{ id: generateID(), name: 'Medellin' }],
-    icon: UserRoundedGray,
-    selectList: [
-      { id: generateID(), name: 'Medellin' },
-      { id: generateID(), name: 'Bogota' },
-      { id: generateID(), name: 'Cucuta' },
-      { id: generateID(), name: 'Cali' },
-      { id: generateID(), name: 'Pasto' },
-      { id: generateID(), name: 'Cartagena' },
-      { id: generateID(), name: 'Neiva' },
-      { id: generateID(), name: 'Barranquilla' }
-    ]
+    ...SELECT2_PROPS
   }
 }
 export default meta
