@@ -22,10 +22,29 @@
   &__text {
     color: v.$text-color-black;
     font-size: 16px;
-
     p,
     span:nth-child(1) {
       font-size: 18px;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      display: inline;
+      font-size: inherit;
+      font-weight: inherit;
+      margin: 0;
+    }
+    &--bold {
+      font-weight: bold;
+    }
+    &--lighter {
+      font-weight: lighter;
+    }
+    &--normal {
+      font-weight: normal;
     }
   }
 
