@@ -1,0 +1,11 @@
+@use '../../../../../../shared/stylesheets/tokens' as tokens;
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: tokens.$padding-lg;
+  border-radius: tokens.$padding-md;
+  gap: tokens.$gap-sm-2;
+  background-color: tokens.$color-grey-100;
+}

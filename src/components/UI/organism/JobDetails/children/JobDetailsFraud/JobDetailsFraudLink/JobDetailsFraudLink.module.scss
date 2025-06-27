@@ -1,0 +1,32 @@
+@use '../../../../../../../shared/stylesheets/tokens' as tokens;
+
+.fraud-link {
+  width: 100%;
+  border: none;
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: tokens.$text-md-2;
+  color: tokens.$color-grey-900;
+  font-weight: tokens.$weight-bold;
+  border-radius: tokens.$radius-3xl;
+  background-color: tokens.$color-grey-50;
+  padding: tokens.$padding-sm tokens.$padding-sm-2;
+
+  > strong {
+    display: flex;
+    align-items: center;
+    gap: tokens.$gap-sm;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: tokens.$screen-md) {
+    width: fit-content;
+    justify-content: space-between;
+  }
+
+  &:hover,
+  &:active {
+    color: tokens.$color-grey-900;
+  }
+}
