@@ -1,5 +1,6 @@
 import { ShareIcons } from '../../../../constants/vacancies.constants'
 import { IShareButton } from '../../atoms'
+import { TJobActionsVariant } from '../JobActions'
 export interface IShareLink {
   /**
    * The URL to navigate to when the list item is clicked.
@@ -35,4 +36,13 @@ export interface ISharePopover extends IShareButton {
    * (in the button component to be more specific).
    */
   btnProps?: JSX.IntrinsicElements['button']
+  /**
+   * Indicates whether the component is default or detailed.
+   */
+  variant: TJobActionsVariant
+  /**
+   * Optional text to be displayed on the save button.
+   * (Optional property)
+   */
+  buttonText?: string
 }

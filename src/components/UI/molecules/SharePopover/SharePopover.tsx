@@ -1,29 +1,37 @@
 import React, { useState } from 'react'
 import { IconItem, Popover, ShareButton } from '../../atoms'
 import style from './SharePopover.module.scss'
-import { Share } from '../../../../constants/icons.constants'
+import { Share, Share2 } from '../../../../constants/icons.constants'
 import { ShareIcons } from '../../../../constants/vacancies.constants'
 import { ISharePopover } from './SharePopover.interface'
 import { Tooltip } from '../Tooltip'
+import { classNames } from '@shared/utils/common'
+
+const cx = classNames.bind(style)
 
 const Component: React.FC<ISharePopover> = ({
   shareLinks = [],
   btnProps = {},
   classNameContent = '',
   classNameButton = '',
+  variant = 'default',
+  addHover,
+  buttonText,
   ...rest
 }) => {
   const [show, setShow] = useState(false)
 
+  const isDefaultVariant = variant === 'default'
+
   return (
     <Popover
-      className={[style['popover'], !show ? style['popover--hidden'] : ''].join(' ')}
+      className={cx('popover', { 'popover--hidden': !show })}
       positionX="right"
       positionY="bottom"
       show={show}
-      widthBase={45}
+      widthBase={isDefaultVariant ? 45 : 102}
       content={
-        <ul className={[style['content'], classNameContent].join(' ')}>
+        <ul className={cx('content', classNameContent)}>
           {shareLinks.map(({ title, href, ariaLabel, icon, name }, index) => (
             <li key={`${title}-${index}`}>
               <a
@@ -32,7 +40,7 @@ const Component: React.FC<ISharePopover> = ({
                 target="_blank"
                 rel="noreferrer"
                 aria-label={ariaLabel}
-                className={style['content__link']}
+                className={cx('content__link')}
                 onClick={() => setShow(false)}
               >
                 <IconItem size={40} icon={name ? ShareIcons[name].icon : icon} />
@@ -40,7 +48,7 @@ const Component: React.FC<ISharePopover> = ({
               </a>
             </li>
           ))}
-          <li className={style['content__share']}>
+          <li className={cx('content__share')}>
             <ShareButton
               {...rest}
               onCopySuccess={() => {
@@ -56,11 +64,12 @@ const Component: React.FC<ISharePopover> = ({
           {...btnProps}
           title=""
           aria-label={btnProps.title}
-          className={[style['popover__btn'], classNameButton].join(' ')}
+          className={cx('popover__btn', classNameButton, { 'detailed-variant': variant === 'detailed' })}
           onClick={() => setShow((show) => !show)}
           onBlur={() => setShow(false)}
         >
-          <IconItem size={20} icon={Share} />
+          <IconItem size={isDefaultVariant ? 20 : 16} icon={isDefaultVariant ? Share : Share2} hover={addHover} />
+          {isDefaultVariant ? null : <span className={cx('popover__btn-text')}>{buttonText}</span>}
         </button>
       </Tooltip>
     </Popover>

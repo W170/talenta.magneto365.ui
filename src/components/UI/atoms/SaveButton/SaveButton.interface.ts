@@ -1,3 +1,5 @@
+import { TJobActionsVariant } from '@components/UI/molecules'
+
 export interface ISaveButton {
   /**
    * Specifies whether the user is authenticated or not.
@@ -25,4 +27,8 @@ export interface ISaveButton {
    * The title or label associated with the button.
    */
   buttonTitle?: string
+  /**
+   * Indicates whether the component is default or detailed.
+   */
+  variant: TJobActionsVariant
 }

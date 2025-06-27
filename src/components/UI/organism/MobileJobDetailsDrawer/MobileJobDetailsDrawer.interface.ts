@@ -6,7 +6,9 @@ import {
   IJobFooterCard,
   IJobSkillsCard,
   ICityDetail,
-  IAlertJobStatus
+  IAlertJobStatus,
+  TJobActionsVariant,
+  IJobsActions
 } from '@components/UI/molecules'
 import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 import { IJobVideo } from '@components/UI/molecules/JobVideo'
@@ -14,6 +16,7 @@ import { ISimilarJobs } from '../SimilarJobs/SimilarJobs.interface'
 import { SwipeProps } from '../Swipe/Swipe.interface'
 import { IFraudCardJob } from './../../molecules/FraudCardJob/FraudCardJob.interface'
 import { ICanApply } from '../JobDetailsDrawer'
+import { IActionLinkCard } from '@components/UI/molecules/ActionLinkCard/ActionLinkCard.interface'
 
 export interface IMobileJobDetailsDrawer {
   /**
@@ -113,4 +116,17 @@ export interface IMobileJobDetailsDrawer {
    * Props for show alert when user can´t apply
    */
   canApply?: ICanApply
+  /**
+   * Props for show action link company
+   */
+  actionLinkCardProps?: IActionLinkCard
+  /**
+   * Indicates whether the component is default or detailed.
+   */
+
+  variant?: TJobActionsVariant
+  /**
+   * Props for the actions section associated with the job details.
+   */
+  jobActionsProps?: IJobsActions
 }

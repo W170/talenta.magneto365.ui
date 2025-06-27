@@ -8,6 +8,10 @@ import { jobVideo } from '@constants/stories/jobVideo.constants'
 import { shareLinks } from '../../../../constants/stories/vacancies.constants'
 import { AlertJobStatus } from '../../molecules/AlertJobStatus/AlertJobStatus.component'
 import { IAlertJobStatus } from '../../molecules/AlertJobStatus/AlertJobStatus.interface'
+import { actionLinkCard } from '../../../../constants/stories/seeCompanyCard.constant'
+import { Button } from '../../atoms'
+import { Export3, Flag, LinkedInSolidBlue, MagnetoIcon } from '../../../../constants/icons.constants'
+import { TJobActionsVariant } from '../../../../../dist'
 
 const jobCompanyLogo = {
   jobCompanyLogoProps: {
@@ -123,6 +127,71 @@ const meta: Meta<typeof MobileJobDetailsDrawer> = {
   args: {}
 }
 
+const jobApplyCard2 = {
+  offerApplyHeader: 'Requisitos para aplicar a la vacante:',
+  offerApplyElements: [
+    { offerApplyLabel: 'Experiencia:', offerApplyInfo: ' 1 año de experiencia' },
+    { offerApplyLabel: 'Nivel de estudios:', offerApplyInfo: ' Especialización / Maestría' },
+    { offerApplyLabel: 'Ciudad de residencia:', offerApplyInfo: ' Planadas' },
+    { offerApplyLabel: 'Salario:', offerApplyInfo: ` $2’100.000` }
+  ]
+}
+
+const jobActions2 = {
+  externalButtonChild: (
+    <>
+      <Button buttonText="Aplicar con Magneto" onClick={() => console.log} suffixIcon={MagnetoIcon} />
+      <Button buttonText="Aplicar con LinkedIn" onClick={() => console.log} suffixIcon={LinkedInSolidBlue} />
+    </>
+  ),
+  saveButtonProps: {
+    isAuthenticated: true,
+    isSaved: false,
+    onClick: () => {
+      //
+    },
+    addHover: true,
+    buttonTitle: 'Guardar',
+    buttonText: 'Guardar'
+  },
+  shareButtonProps: {
+    buttonTitle: 'Compartir',
+    buttonText: 'Compartir',
+    shareLinks,
+    onCopySuccess: () => console.log('Success'),
+    isJobActions2: true,
+    addHover: true
+  },
+  actionsAnchorIcons: [Export3, Flag],
+  actionsAnchorLinks: ['link1', 'link2'],
+  actionsAnchorTitle: ['Abrir esta oferta en otra pestaña', 'Reportar fraude'],
+  actionsAnchorText: ['Expandir', 'Reportar']
+}
+
+const jobFooterCard2 = {
+  offerCompanyLogo: CompanyLogo,
+  offerFooterHeader: 'Compartir en:',
+  offerFooterList: [
+    { href: '#', ariaLabel: 'facebook', title: 'Facebook' },
+    { href: '#', ariaLabel: 'whatsapp', title: 'Whatsapp' },
+    { href: '#', ariaLabel: 'linkedin', title: 'Linkedin' },
+    { href: '#', ariaLabel: 'x', title: 'X' },
+    { href: '#', ariaLabel: 'sms', title: 'Correo' }
+  ],
+  offerFooterTitle: ['Facebook', 'Whatsapp', 'Linkedin', 'X', 'Correo'],
+  shareButtonProps: {
+    buttonTitle: 'Copiar',
+    onCopySuccess: () => console.log('Success')
+  },
+  externalChild: (
+    <>
+      <Button buttonText="Aplicar con Magneto" onClick={() => console.log} suffixIcon={MagnetoIcon} />
+      <Button buttonText="Aplicar con LinkedIn" onClick={() => console.log} suffixIcon={LinkedInSolidBlue} />
+    </>
+  ),
+  variant: 'detailed' as TJobActionsVariant
+}
+
 export default meta
 
 type Story = StoryObj<typeof MobileJobDetailsDrawer>
@@ -141,5 +210,25 @@ export const Default: Story = {
     jobVideo: jobVideo,
     ...CitiesDetailDrawerProps,
     alertJobStatusProps: alertJobStatusProps
+  }
+}
+
+export const ApplyWithLinkedIn: Story = {
+  args: {
+    jobCompanyLogoProps: jobCompanyLogo,
+    jobDetailsHeaderText: 'Volver',
+    jobDetailsProps: jobDetails,
+    jobDetailCardProps: jobDetailCard,
+    jobSkillsCardProps: jobSkillsCard,
+    jobApplyCardProps: jobApplyCard2,
+    jobFooterCardProps: jobFooterCard2,
+    mobileJobDetailsBarProps: MobileJobDetailsActionsBar,
+    isOpen: true,
+    jobVideo: jobVideo,
+    ...CitiesDetailDrawerProps,
+    alertJobStatusProps: alertJobStatusProps,
+    variant: 'detailed',
+    actionLinkCardProps: actionLinkCard,
+    jobActionsProps: jobActions2
   }
 }

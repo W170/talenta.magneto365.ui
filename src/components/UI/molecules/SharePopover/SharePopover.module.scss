@@ -1,4 +1,5 @@
 @use '../../../../shared/stylesheets/variables.scss' as var;
+@use '../../../../shared/stylesheets/tokens' as *;
 
 .popover {
   > :first-child {
@@ -28,15 +29,22 @@
   &__btn {
     background: transparent;
     border: none;
-    border-radius: 50%;
-    padding: 12px 13px;
+    border-radius: $radius-full;
+    padding: 12px 11px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
     &:focus-visible {
       outline: none;
     }
     &:hover {
       background-color: #cfcfde;
       transition: all ease-in-out 0.3s;
+    }
+    &.detailed-variant {
+      color: var.$text-color-gray;
+      border-radius: $radius-sm;
     }
   }
 }

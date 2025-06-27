@@ -29,5 +29,16 @@ export interface IShareButton {
    */
   onCopyError?: () => void
 
+  /**
+   * Additional CSS classes to apply to the button.
+   * (Optional property)
+   */
   className?: string
+  /**
+   * The icon to be displayed on the button.
+   * Defaults to 'link' if not provided.
+   */
+  iconType: TIconVariant
 }
+
+type TIconVariant = 'link' | 'share'
