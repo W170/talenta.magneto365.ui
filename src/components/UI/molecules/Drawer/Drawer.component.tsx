@@ -19,6 +19,7 @@ const Component: React.FC<IDrawer> = ({
   children,
   onClose,
   blockBackgroundClose = false,
+  customContainer,
   backGroundClassName = ''
 }) => {
   const fullDrawer = isFull ? `full-drawer` : ''
@@ -58,7 +59,7 @@ const Component: React.FC<IDrawer> = ({
   return (
     <>
       {renderPortal && (
-        <DrawerPortal>
+        <DrawerPortal customContainer={customContainer}>
           <div className={`${style['magneto-ui-drawer']} ${style[fullDrawer]} ${className}`}>
             <aside className={`${style[showDrawer]}`} style={{ padding: paddingValue, ...widthValue }}>
               {!hideButton && (

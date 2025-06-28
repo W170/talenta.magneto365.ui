@@ -1,4 +1,4 @@
-type TPosition = 'top' | 'bottom' | 'left' | 'right'
+export type TPosition = 'top' | 'bottom' | 'left' | 'right'
 
 export interface ITooltipProps {
   /**

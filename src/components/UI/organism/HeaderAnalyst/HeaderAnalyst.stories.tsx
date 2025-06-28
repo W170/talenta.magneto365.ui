@@ -1,6 +1,9 @@
-import { HeaderAnalystProps } from '@constants/stories/analyst.constants'
+import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
+import { HeaderAnalystProps } from '@constants/stories/analyst.constants'
 import { HeaderAnalyst } from './HeaderAnalyst.component'
+import { Notification } from '@constants/icons.constants'
+import { Link } from '@components/UI/atoms'
 
 const meta: Meta<typeof HeaderAnalyst> = {
   title: 'Organism/Header Analyst',
@@ -9,7 +12,8 @@ const meta: Meta<typeof HeaderAnalyst> = {
     onMainMenuClick: () => {
       console.log('click')
     },
-    ...HeaderAnalystProps
+    ...HeaderAnalystProps,
+    notificationBell: <Link iconProps={{ icon: Notification, size: 20 }} />
   }
 }
 

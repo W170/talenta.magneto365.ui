@@ -1,9 +1,8 @@
 import React from 'react'
 import { Breadcrumbs, UserMenuWrapperAnalyst } from '@components/UI/molecules'
 import { logoPropsDark, MenuButtonAnalystProps } from '@constants/stories/common.constants'
-import { LogoComponent, MainButton, Link } from '@components/UI/atoms'
+import { LogoComponent, MainButton } from '@components/UI/atoms'
 import { IHeaderAnalyst } from './HeaderAnalyst.interface'
-import { Notification } from '@constants/icons.constants'
 import { useMediaQuery } from '@components/hooks'
 import { classNames } from '@shared/utils/common'
 import styles from './HeaderAnalyst.module.scss'
@@ -18,7 +17,7 @@ const Component: React.FC<IHeaderAnalyst> = ({
   logoProps = { fallbackImage: logoPropsDark.logo, ...logoPropsDark },
   onMainMenuClick,
   userMenuProps,
-  userNotificationProps
+  notificationBell
 }) => {
   const headerLogo = useMediaQuery(
     <a href={logoProps.href} rel={logoProps.rel} target={logoProps.target}>
@@ -48,7 +47,7 @@ const Component: React.FC<IHeaderAnalyst> = ({
           {legend && <span className={cx('magneto-ui-header-analyst__legend')}>{legend}</span>}
         </div>
         <div className={cx('magneto-ui-header-analyst__user-menu')}>
-          {userNotificationProps && <Link iconProps={{ icon: Notification, size: 20 }} {...userNotificationProps} />}
+          {notificationBell}
           <UserMenuWrapperAnalyst {...userMenuProps} handleModal={handleModal} />
         </div>
       </div>

@@ -56,6 +56,11 @@ export interface IDrawer {
    * this property sets custom styles into background drawer
    */
   backGroundClassName?: string
+  /**
+   * An optional custom container where the Drawer Portal will be rendered.
+   * If not provided, it will use the body.
+   */
+  customContainer?: IDrawerPortal['customContainer']
 }
 
 /**
@@ -67,4 +72,10 @@ export interface IDrawerPortal {
    * It can be a single JSX element, an array of JSX elements, or `false` to indicate no content.
    */
   children: false | JSX.Element | JSX.Element[]
+
+  /**
+   * An optional custom container where the Drawer Portal will be rendered.
+   * If not provided, it will use the body.
+   */
+  customContainer?: HTMLElement | ShadowRoot
 }

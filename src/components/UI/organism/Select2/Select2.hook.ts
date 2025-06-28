@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, ChangeEvent, useMemo } from 'react'
 import { ISelectField, ISelectHook, ISelectOptions } from './Select2.interface'
+import { normalizeString } from '@utils/string/normalizeString.util'
 
 const useSelect2 = <T>({
   setTerm,
@@ -70,9 +71,11 @@ const useSelect2 = <T>({
   }, [])
 
   const list = useMemo(() => {
-    if (searchValue.length > 1 && !setTerm) {
-      return selectList.filter(({ name }) => name.toLowerCase().includes(searchValue.toLowerCase()))
+    const normalizedSearch = normalizeString(searchValue.toLowerCase())
+    if (normalizedSearch.length > 1 && !setTerm) {
+      return selectList.filter(({ name }) => normalizeString(name.toLowerCase()).includes(normalizedSearch))
     }
+
     return selectList
   }, [searchValue, selectList, setTerm])
 

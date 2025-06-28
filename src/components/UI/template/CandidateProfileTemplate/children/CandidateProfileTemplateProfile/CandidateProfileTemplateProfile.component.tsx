@@ -27,7 +27,7 @@ const Component: React.FC<ICandidateProfileTemplateProfile> = ({ children, conta
       } as React.CSSProperties),
     [headerHeight, navHeight]
   )
-  
+
   const handleOnChangeOpen = useCallback(
     (localIsOpen: boolean) => {
       setIsProfileOpen(localIsOpen)
