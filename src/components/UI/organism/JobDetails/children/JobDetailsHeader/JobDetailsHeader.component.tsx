@@ -15,15 +15,17 @@ export const JobDetailsHeader: React.FC<IJobDetailsHeader> = ({
 }) => {
   return (
     <header className={cx('header', className)}>
-      <IconItem className="header__icon" size={100} icon={companyIcon} />
+      <IconItem className={cx('header__icon')} size={78} icon={companyIcon} />
       <section className={cx('header__info')}>
-        <Typography.Paragraph>{title}</Typography.Paragraph>
+        <Typography.Paragraph className={cx('header__title')}>{title}</Typography.Paragraph>
         {companyLink ? (
-          <Typography.Link title={company} href={companyLink}>
+          <Typography.Link className={cx('header__company')} title={company} href={companyLink}>
             {company}
           </Typography.Link>
         ) : (
-          <Typography.Title level={2}>{company}</Typography.Title>
+          <Typography.Title className={cx('header__company')} level={2}>
+            {company}
+          </Typography.Title>
         )}
       </section>
     </header>
