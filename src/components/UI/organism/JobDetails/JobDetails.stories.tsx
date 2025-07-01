@@ -1,6 +1,8 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { JobDetails } from './index'
+import { CompanyLogo } from '../../../../constants/stories'
+import { JobDetailsHeader } from './children/JobDetailsHeader'
 
 const meta: Meta<typeof JobDetails> = {
   title: 'Organism/JobDetails',
@@ -17,7 +19,9 @@ export const Default: Story = {}
 export const Custom: Story = {
   render() {
     return (
-      <JobDetails renderHeader={() => 'Main Header'}>
+      <JobDetails
+        renderHeader={() => <JobDetailsHeader title="Vacante de prueba" company="éxito" companyIcon={CompanyLogo} />}
+      >
         <JobDetails.Summary>Lista de opciones</JobDetails.Summary>
         Hola Mundo
         <JobDetails.Fraud renderTitle={() => '¡Ten cuidado con el fraude!'}>

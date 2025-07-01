@@ -18,7 +18,13 @@
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
     "paths": {
-      "@*": ["./src/*"]
+      "@*": ["./src/*"],
+      "@assets": ["./src/assets/*"],
+      "@components": ["./src/components/*"],
+      "@constants": ["./src/constants"],
+      "@shared": ["./src/shared"],
+      "@utils": ["./src/utils"],
+      "@tokens": ["./src/shared/stylesheets/tokens/_index.scss"]
     },
     "resolveJsonModule": true
   },

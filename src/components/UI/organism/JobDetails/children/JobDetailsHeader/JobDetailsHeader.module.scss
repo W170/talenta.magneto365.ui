@@ -1,0 +1,5 @@
+@use '@tokens' as tokens;
+
+.header {
+  background: tokens.$color-green-100;
+}
