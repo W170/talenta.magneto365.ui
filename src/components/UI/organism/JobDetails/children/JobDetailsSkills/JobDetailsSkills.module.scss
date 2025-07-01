@@ -1,0 +1,15 @@
+@use '@tokens' as tokens;
+
+.skills {
+  &__list {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    flex-direction: row;
+    align-self: stretch;
+    gap: tokens.$gap-md;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+}
