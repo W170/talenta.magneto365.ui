@@ -9,5 +9,14 @@
     width: 100%;
     background: tokens.$color-grey-50;
     z-index: 1;
+
+    @media screen and (max-width: tokens.$screen-sm) {
+      position: static;
+    }
+  }
+
+  &__separator {
+    border-top: tokens.$border-1 solid tokens.$color-grey-200;
+    width: 100%;
   }
 }

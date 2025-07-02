@@ -8,25 +8,18 @@ const cx = classNames.bind(styles)
 
 export const JobDetailsHeader: React.FC<IJobDetailsHeader> = ({
   title,
-  company,
-  companyLink,
   companyIcon,
-  className
+  className,
+  publishedDate,
+  renderBottom
 }) => {
   return (
     <header className={cx('header', className)}>
       <IconItem className={cx('header__icon')} size={78} icon={companyIcon} />
       <section className={cx('header__info')}>
+        <Typography.Paragraph>{publishedDate}</Typography.Paragraph>
         <Typography.Paragraph className={cx('header__title')}>{title}</Typography.Paragraph>
-        {companyLink ? (
-          <Typography.Link className={cx('header__company')} title={company} href={companyLink}>
-            {company}
-          </Typography.Link>
-        ) : (
-          <Typography.Title className={cx('header__company')} level={2}>
-            {company}
-          </Typography.Title>
-        )}
+        {renderBottom?.()}
       </section>
     </header>
   )

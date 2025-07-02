@@ -8,7 +8,10 @@ const cx = classNames.bind(styles)
 export const JobDetails: React.FC<IJobDetails> = ({ renderHeader, children, renderFooter, classNames }) => {
   return (
     <article className={cx('job')}>
-      <header className={cx('job__header', classNames?.header)}>{renderHeader()}</header>
+      <header className={cx('job__header', classNames?.header)}>
+        {renderHeader()}
+        <hr className={cx('job__separator')} />
+      </header>
       <section className={cx('job__body', classNames?.body)}>{children}</section>
       <footer className={cx('job__footer', classNames?.footer)}>{renderFooter?.()}</footer>
     </article>
