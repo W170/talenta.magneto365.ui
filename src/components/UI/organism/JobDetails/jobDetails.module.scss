@@ -1,6 +1,7 @@
 @use '@tokens' as tokens;
 
 .job {
+  max-width: 50rem;
   &__header {
     position: sticky;
     top: 0;

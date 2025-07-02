@@ -10,15 +10,18 @@ export const JobDetailsHeader: React.FC<IJobDetailsHeader> = ({
   title,
   companyIcon,
   className,
+  classNames = {},
   publishedDate,
   renderBottom
 }) => {
   return (
     <header className={cx('header', className)}>
-      <IconItem className={cx('header__icon')} size={78} icon={companyIcon} />
-      <section className={cx('header__info')}>
-        <Typography.Paragraph>{publishedDate}</Typography.Paragraph>
-        <Typography.Paragraph className={cx('header__title')}>{title}</Typography.Paragraph>
+      <IconItem className={cx('header__icon', classNames.icon)} size={78} icon={companyIcon} />
+      <section className={cx('header__info', classNames.info)}>
+        <Typography.Text className={cx('header__publish-date', classNames.publishDate)}>
+          {publishedDate}
+        </Typography.Text>
+        <Typography.Paragraph className={cx('header__title', classNames.title)}>{title}</Typography.Paragraph>
         {renderBottom?.()}
       </section>
     </header>

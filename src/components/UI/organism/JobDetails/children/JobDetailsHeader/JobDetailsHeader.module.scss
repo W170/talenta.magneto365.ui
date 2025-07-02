@@ -14,6 +14,11 @@
     justify-content: center;
   }
 
+  &__publish-date {
+    font-size: tokens.$text-md;
+    color: tokens.$color-grey-600;
+  }
+
   &__title {
     color: tokens.$color-blue-dark-400;
     font-size: tokens.$text-xl;

@@ -21,7 +21,13 @@ export const Custom: Story = {
   render() {
     return (
       <JobDetails
-        renderHeader={() => <JobDetailsHeader title="Vacante de prueba" company="éxito" companyIcon={CompanyLogo} />}
+        renderHeader={() => (
+          <JobDetailsHeader
+            title="Vacante de prueba"
+            publishedDate="Fecha de actualización"
+            companyIcon={CompanyLogo}
+          />
+        )}
       >
         <JobDetails.Summary>Lista de opciones</JobDetails.Summary>
         Hola Mundo
