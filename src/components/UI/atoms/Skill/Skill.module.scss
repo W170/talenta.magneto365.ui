@@ -1,70 +1,32 @@
-@use '../../../../shared/stylesheets/variables.scss' as v;
+@use '@tokens' as tokens;
 
-.magneto-ui-skill {
+.skill {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 33px;
-  min-width: 120px;
-  max-width: max-content;
-  padding: 3px 14px;
-  border-radius: 50px;
-  background: v.$disabled-color-gray;
+  gap: tokens.$gap-sm-2;
+  font-size: tokens.$text-md-2;
+  color: tokens.$color-grey-700;
+  border-radius: tokens.$radius-xl;
+  background: tokens.$color-grey-100;
+  padding: tokens.$padding-sm tokens.$padding-md;
 
-  &__wrapper {
-    position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      display: block;
-      width: calc(100% + 4px); /* Increase the width by 4 pixels to account for the padding */
-      height: 8px;
-      background-color: #959595;
-      bottom: 0;
-      border-radius: 4px;
-      left: -2px; /* Offset the bar by 2 pixels to align with the padding */
-    }
+  &__name {
+    word-break: break-word;
   }
 
-  p {
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    color: v.$text-color-black;
-    margin: 0px;
+  &__level {
+    display: flex;
+    word-break: break-word;
+    gap: tokens.$gap-sm;
   }
 
-  &__bar {
-    position: relative;
-    width: 0%;
-    height: 4px;
-    background: v.$color-green;
-    border-radius: 4px;
-    margin: 2px 0px;
-    transition: all ease-in-out 0.5s;
-  }
-
-  .one {
-    width: 25%;
-  }
-
-  .two {
-    width: 50%;
-  }
-
-  .three {
-    width: 75%;
-  }
-
-  .four {
-    width: 100%;
-  }
-
-  @media screen and (max-width: (v.$screen-lg)) {
-    p {
-      font-size: 12px;
+  &__circle {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: tokens.$color-grey-300;
+    &--filled {
+      background: tokens.$color-blue-dark-200;
     }
   }
 }
