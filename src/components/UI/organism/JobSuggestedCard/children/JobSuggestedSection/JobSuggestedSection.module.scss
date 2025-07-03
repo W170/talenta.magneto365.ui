@@ -1,0 +1,25 @@
+@import '../../../../../../shared/stylesheets/tokens';
+
+.section {
+  display: flex;
+  align-items: center;
+  gap: $gap-sm-2;
+
+  p {
+    margin: 0;
+    padding: 0;
+    line-height: 14px;
+  }
+}
+
+.start {
+  justify-content: flex-start;
+}
+
+.center {
+  justify-content: center;
+}
+
+.end {
+  justify-content: flex-end;
+}
