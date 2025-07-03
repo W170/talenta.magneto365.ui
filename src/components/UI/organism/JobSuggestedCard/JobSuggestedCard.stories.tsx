@@ -2,8 +2,11 @@ import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { JobSuggestedCard } from './JobSuggestedCard.component'
 import LogoIcon from '../../../../assets/noLogo.svg'
+import { IconItem } from '../../atoms/Icon'
+import { TypographyText } from '../../atoms/Typography/children/TypographyText/TypographyText.component'
+import { TypographyTitle } from '../../atoms/Typography/children/TypographyTitle/TypographyTitle.component'
 
-const { Text, Title, Section, Button, Logo } = JobSuggestedCard
+const { Section, Button } = JobSuggestedCard
 
 const meta: Meta<typeof JobSuggestedCard> = {
   title: 'Organism/Job Suggested Card',
@@ -12,13 +15,13 @@ const meta: Meta<typeof JobSuggestedCard> = {
     children: (
       <>
         <Section>
-          <Logo logo={LogoIcon} />
-          <Title>Job Title</Title>
+          <IconItem icon={LogoIcon} size={40} />
+          <TypographyTitle>Job Title</TypographyTitle>
         </Section>
         <Section>
-          <Text>Uno</Text>
-          <Text>Uno</Text>
-          <Text>Uno</Text>
+          <TypographyText>One</TypographyText>
+          <TypographyText>One</TypographyText>
+          <TypographyText>One</TypographyText>
         </Section>
         <Section aligned="center">
           <Button variant="secondary">Ver detalles</Button>
