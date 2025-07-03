@@ -4,7 +4,7 @@ export interface ISaveButton {
   /**
    * Specifies whether the user is authenticated or not.
    */
-  isAuthenticated: boolean
+  isAuthenticated?: boolean
   /**
    * Specifies whether the item is currently saved or not.
    */
@@ -30,5 +30,5 @@ export interface ISaveButton {
   /**
    * Indicates whether the component is default or detailed.
    */
-  variant: TJobActionsVariant
+  variant?: TJobActionsVariant
 }

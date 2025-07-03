@@ -2,9 +2,14 @@
 import React, { useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { JobDetails } from './index'
-import { CompanyLogo } from '../../../../constants/stories'
+import { CompanyLogo, shareLinks } from '../../../../constants/stories'
 import { JobDetailsHeader } from './children/JobDetailsHeader'
 import { Typography } from '../../atoms/Typography/Typography.component'
+import { JobDetailsActions } from './children/JobDetailsActions'
+import { Export3, Flag, MagnetoIcon } from '../../../../constants/icons.constants'
+import { Tooltip } from '../../molecules/Tooltip'
+import { Button, SaveButton } from '../../atoms'
+import { SharePopover } from '../../molecules/SharePopover'
 
 const meta: Meta<typeof JobDetails> = {
   title: 'Organism/JobDetails',
@@ -34,6 +39,42 @@ export const Custom: Story = {
               />
             )}
           >
+            <JobDetailsActions
+              actionsLinkList={[
+                { link: 'link1', icon: Export3, text: 'Expandir', title: 'Expandir' },
+                { link: 'link2', icon: Flag, text: 'Reportar', title: 'Reportar' }
+              ]}
+              externalButtonApply={
+                <>
+                  <Button buttonText="Aplicar con Magneto" onClick={() => console.log} suffixIcon={MagnetoIcon} />
+                </>
+              }
+            >
+              <>
+                <Tooltip title={'Guardar'} position="bottom">
+                  <SaveButton
+                    isSaved={false}
+                    onClick={() => {
+                      //
+                    }}
+                    addHover
+                    buttonTitle="Guardar"
+                    buttonText="Guardar"
+                    isAuthenticated
+                    variant={'detailed'}
+                  />
+                </Tooltip>
+                <SharePopover
+                  iconType="share"
+                  buttonTitle="Compartir"
+                  buttonText="Compartir"
+                  onCopySuccess={() => console.log('Success')}
+                  addHover
+                  shareLinks={shareLinks}
+                  variant="detailed"
+                />
+              </>
+            </JobDetailsActions>
             <JobDetails.Summary>Lista de opciones</JobDetails.Summary>
             Hola Mundo
             <JobDetails.Skills

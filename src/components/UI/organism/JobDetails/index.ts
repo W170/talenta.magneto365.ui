@@ -5,9 +5,11 @@ import { JobDetailsDrawer } from './children/JobDetailsDrawer'
 import { JobDetailsHeader } from './children/JobDetailsHeader'
 import { JobDetailsSkills } from './children/JobDetailsSkills'
 import { JobDetailsFraud } from './children/JobDetailsFraud'
+import { JobDetailsActions } from './children/JobDetailsActions'
 
 export const JobDetails = Object.assign(JobDetailsRaw, {
   Header: JobDetailsHeader,
+  Actions: JobDetailsActions,
   Summary: JobDetailsSummary,
   Skills: JobDetailsSkills,
   Fraud: Object.assign(JobDetailsFraud, {

@@ -7,9 +7,9 @@ import { IconItem } from '@components/UI/atoms'
 
 const cx = classNames.bind(styles)
 
-const Component: React.FC<IActionLinkCard> = ({ title, name, redirectUrl }) => {
+const Component: React.FC<IActionLinkCard> = ({ title, name, redirectUrl, className }) => {
   return (
-    <section className={cx('action-link-card')}>
+    <section className={cx('action-link-card', className)}>
       <a
         href={redirectUrl}
         className={cx('action-link-card__link')}

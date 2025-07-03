@@ -39,7 +39,7 @@ export interface ISharePopover extends IShareButton {
   /**
    * Indicates whether the component is default or detailed.
    */
-  variant: TJobActionsVariant
+  variant?: TJobActionsVariant
   /**
    * Optional text to be displayed on the save button.
    * (Optional property)

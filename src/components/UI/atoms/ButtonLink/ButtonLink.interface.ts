@@ -36,4 +36,8 @@ export interface IButtonLink {
    * Target when opening the link
    */
   target?: string
+  /**
+   * Title to show tooltip
+   */
+  title?: string
 }

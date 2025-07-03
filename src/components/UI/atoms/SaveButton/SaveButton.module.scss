@@ -5,7 +5,7 @@
   border: none;
   border-radius: 50%;
   background-color: transparent;
-  padding: 12px 11px;
+  padding: $padding-sm-2 $padding-md;
   cursor: pointer;
 
   &__mobile-text {
@@ -24,15 +24,18 @@
     }
   }
   &.detailed-variant {
-    border-radius: $radius-sm;
+    border-radius: $radius-3xl;
     p {
       color: v.$text-color-gray;
+    }
+    &:hover {
+      background-color: $color-grey-100;
     }
   }
 
   .button-content {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: $gap-sm;
   }
 }

@@ -12,7 +12,8 @@ const Component: React.FC<IButtonLink> = ({
   iconSize = 20,
   href,
   rel,
-  target
+  target,
+  title
 }) => {
   const handleClick = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -32,6 +33,7 @@ const Component: React.FC<IButtonLink> = ({
       href={href}
       rel={rel}
       target={target}
+      title={title}
     >
       {suffixIcon && (
         <IconItem size={iconSize} icon={suffixIcon} hover={true} className={styles['button-link__icon']} />

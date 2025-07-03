@@ -2,6 +2,9 @@
 
 .job {
   max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$gap-sm-2;
   &__header {
     position: sticky;
     top: 0;
@@ -19,5 +22,11 @@
   &__separator {
     border-top: tokens.$border-1 solid tokens.$color-grey-200;
     width: 100%;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: tokens.$gap-xl;
+    padding: tokens.$padding-xl tokens.$padding-xl tokens.$padding-min;
   }
 }

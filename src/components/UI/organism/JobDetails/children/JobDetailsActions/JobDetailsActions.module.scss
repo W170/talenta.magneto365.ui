@@ -1,0 +1,35 @@
+@use '@tokens' as *;
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: $gap-sm;
+  &__children-others {
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: $screen-md) {
+      flex-wrap: wrap;
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $gap-sm;
+    padding: $padding-sm-2 $padding-md;
+    text-decoration: none;
+    color: $color-grey-700;
+    font-size: $text-md-2;
+    border-radius: $radius-3xl;
+    &--rounded {
+      border-radius: 50%;
+    }
+    &:hover {
+      background-color: $color-grey-100;
+      color: $color-grey-800;
+      transition: all 0.2s ease-in-out;
+    }
+    @media screen and (max-width: $screen-md) {
+      font-size: $text-md;
+    }
+  }
+}

@@ -30,11 +30,11 @@
     background: transparent;
     border: none;
     border-radius: $radius-full;
-    padding: 12px 11px;
+    padding: $padding-sm-2 $padding-md;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: $gap-sm;
     &:focus-visible {
       outline: none;
     }
@@ -44,7 +44,12 @@
     }
     &.detailed-variant {
       color: var.$text-color-gray;
-      border-radius: $radius-sm;
+      border-radius: $radius-3xl;
+      &:hover {
+        background-color: $color-grey-100;
+        color: $color-grey-800;
+        transition: all 0.2s ease-in-out;
+      }
     }
   }
 }

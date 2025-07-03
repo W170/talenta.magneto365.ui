@@ -8,12 +8,12 @@ import { classNames } from '@shared/utils/common'
 const cx = classNames.bind(styles)
 
 const Component: React.FC<ISaveButton> = ({
-  isAuthenticated,
   isSaved,
   buttonText,
   buttonTitle,
   addHover,
   onClick,
+  isAuthenticated = false,
   variant = 'default'
 }) => {
   const isDefaultVariant = variant === 'default'
