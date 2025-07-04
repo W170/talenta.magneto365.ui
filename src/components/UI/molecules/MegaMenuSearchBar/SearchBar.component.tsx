@@ -5,6 +5,7 @@ import { IconItem } from '@components/UI/atoms'
 import { Input } from '../Input'
 import { useClickOutside } from '@components/hooks/useClickOutside'
 import { CurrentLocation } from '@constants/icons.constants'
+import { MegaMenuEmpty } from '@components/UI/molecules'
 
 const AVAILABLE_KEYS = ['Enter', 'ArrowDown', 'ArrowUp']
 
@@ -17,7 +18,8 @@ const SearchBar: React.FC<ISearchBar> = ({
   actionIcon,
   options,
   sectionTitle,
-  onSelectOption
+  onSelectOption,
+  noContent
 }) => {
   const [selectedOption, setSelectedOption] = useState(0)
   const [showOptions, setShowOptions] = useState(false)
@@ -99,6 +101,14 @@ const SearchBar: React.FC<ISearchBar> = ({
       {showOptions && (
         <div className={styles['mega-menu-search-bar__input-options']} ref={optionsRef}>
           {sectionTitle && renderSectionTitle}
+          {options.length == 0 && (
+            <MegaMenuEmpty
+              title={noContent?.title ?? ''}
+              subtitle={noContent?.subtitle ?? ''}
+              imageHeight={120}
+              customStyle={{ title: { fontSize: 16 }, subtitle: { fontSize: 14 }, content: { gap: 0 } }}
+            />
+          )}
           {options.length > 0 &&
             options.map(({ title, subtitle, url, field }: ISearchOptions, index: number) => (
               <div

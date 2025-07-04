@@ -317,7 +317,7 @@ export const SearchbarProps: IMegaMenuSearchBar = {
     termValue: null,
     onSearch: () => ({}),
     actionIcon: SearchIcon,
-    options: mockSearchBarOptions,
+    options: [],
     sectionTitle: {
       title: 'Mi ubicacion',
       onClick: () => ({}),

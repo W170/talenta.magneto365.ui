@@ -40,6 +40,13 @@ export interface ISearchBar {
    *
    */
   onSelectOption?: (option: ISearchOptions) => void
+  /**
+   *
+   */
+  noContent?: {
+    title: string
+    subtitle: string
+  }
 }
 
 export interface ISectionTitle {
