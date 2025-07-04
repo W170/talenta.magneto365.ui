@@ -34,11 +34,9 @@ export interface IShareButton {
    * (Optional property)
    */
   className?: string
-  /**
-   * The icon to be displayed on the button.
-   * Defaults to 'link' if not provided.
-   */
-  iconType: TIconVariant
-}
 
-type TIconVariant = 'link' | 'share'
+  /**
+   * icon to show
+   */
+  icon: string
+}

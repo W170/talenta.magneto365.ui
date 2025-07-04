@@ -30,8 +30,6 @@ const Component: React.FC<IJobFooterCard> = ({
 
   const isDetailedVariant = variant === 'detailed'
 
-  const iconType = isDetailedVariant ? 'share' : 'link'
-
   return (
     <div className={cx('magneto-ui-job-footer-card', className)}>
       <img
@@ -65,7 +63,7 @@ const Component: React.FC<IJobFooterCard> = ({
                   )
               )}
             <div className={cx('magneto-ui__share-button')}>
-              <ShareButton {...shareButtonProps} iconType={iconType} />
+              <ShareButton {...shareButtonProps} />
             </div>
           </div>
         </div>

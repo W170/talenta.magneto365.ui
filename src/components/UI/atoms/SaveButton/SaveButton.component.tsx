@@ -26,7 +26,7 @@ const Component: React.FC<ISaveButton> = ({
       aria-label={buttonTitle}
     >
       <div className={cx('button-content')}>
-        <IconItem size={isDefaultVariant ? 20 : 16} icon={isSaved ? ArchiveRemove : ArchiveAdd} hover={addHover} />
+        <IconItem size={isDefaultVariant ? 20 : 12} icon={isSaved ? ArchiveRemove : ArchiveAdd} hover={addHover} />
         {buttonText && !isDefaultVariant && <p className={cx('magneto-ui-save-button__mobile-text')}>{buttonText}</p>}
       </div>
     </button>

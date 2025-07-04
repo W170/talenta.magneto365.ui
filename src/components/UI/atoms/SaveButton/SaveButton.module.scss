@@ -21,6 +21,7 @@
     &:hover {
       background-color: v.$colors-magneto-neutral-gray-5;
       transition: all ease-in-out 0.3s;
+      transform: scale(1.001);
     }
   }
   &.detailed-variant {
@@ -35,7 +36,7 @@
 
   .button-content {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: $gap-sm;
   }
 }

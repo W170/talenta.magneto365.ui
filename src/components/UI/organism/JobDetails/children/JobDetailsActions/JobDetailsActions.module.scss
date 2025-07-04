@@ -7,13 +7,21 @@
   &__children-others {
     display: flex;
     align-items: center;
+    p,
+    span {
+      font-size: $text-lg;
+      font-family: Lato;
+    }
+    &--additional {
+      gap: $gap-sm;
+    }
     @media screen and (max-width: $screen-md) {
       flex-wrap: wrap;
     }
   }
   &__item {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: $gap-sm;
     padding: $padding-sm-2 $padding-md;
     text-decoration: none;
@@ -23,10 +31,12 @@
     &--rounded {
       border-radius: 50%;
     }
+
     &:hover {
       background-color: $color-grey-100;
       color: $color-grey-800;
       transition: all 0.2s ease-in-out;
+      transform: scale(1.001);
     }
     @media screen and (max-width: $screen-md) {
       font-size: $text-md;

@@ -11,29 +11,38 @@ const cx = classNames.bind(styles)
 export const JobDetailsActions: React.FC<IJobDetailsActions> = ({
   actionsLinkList,
   actionsRounded,
+  actionsLinkSize,
   externalButtonApply,
   className,
+  additionalAction,
   children
 }) => {
   const isMobile = useMediaQuery(true, { md: false })
   return (
     <section className={cx('actions', className)}>
       <section>{externalButtonApply}</section>
-      <section className={cx('actions__children-others')}>
+      <section
+        className={cx('actions__children-others', {
+          'actions__children-others--additional': additionalAction !== undefined
+        })}
+      >
         {children}
-        {actionsLinkList.map(({ link, text, icon, title }, i) => (
+        {actionsLinkList?.map(({ link, text, icon, title }, i) => (
           <Tooltip title={title} key={`action-${title}-${i}`} position="bottom" visible={isMobile}>
             <ButtonLink
               buttonText={text}
               href={link}
               target="_blank"
               rel="noreferrer"
-              className={cx('actions__item', { 'actions__item--rounded': actionsRounded })}
+              className={cx('actions__item', {
+                'actions__item--rounded': actionsRounded
+              })}
               suffixIcon={icon}
-              iconSize={14}
+              iconSize={actionsLinkSize}
             />
           </Tooltip>
         ))}
+        {additionalAction}
       </section>
     </section>
   )

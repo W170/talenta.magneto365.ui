@@ -25,11 +25,11 @@ const Component: React.FC<ISharePopover> = ({
 
   return (
     <Popover
-      className={cx('popover', { 'popover--hidden': !show })}
+      className={cx('popover', { 'popover--hidden': !show, 'popover--hover': addHover })}
       positionX="right"
       positionY="bottom"
       show={show}
-      widthBase={isDefaultVariant ? 45 : 102}
+      widthBase={isDefaultVariant ? 45 : 117}
       content={
         <ul className={cx('content', classNameContent)}>
           {shareLinks.map(({ title, href, ariaLabel, icon, name }, index) => (
@@ -43,7 +43,7 @@ const Component: React.FC<ISharePopover> = ({
                 className={cx('content__link')}
                 onClick={() => setShow(false)}
               >
-                <IconItem size={40} icon={name ? ShareIcons[name].icon : icon} />
+                <IconItem size={20} icon={name ? ShareIcons[name].icon : icon} />
                 <span>{title}</span>
               </a>
             </li>
@@ -68,7 +68,7 @@ const Component: React.FC<ISharePopover> = ({
           onClick={() => setShow((show) => !show)}
           onBlur={() => setShow(false)}
         >
-          <IconItem size={isDefaultVariant ? 20 : 16} icon={isDefaultVariant ? Share : Share2} hover={addHover} />
+          <IconItem size={isDefaultVariant ? 20 : 12} icon={isDefaultVariant ? Share : Share2} hover={addHover} />
           {isDefaultVariant ? null : <span className={cx('popover__btn-text')}>{buttonText}</span>}
         </button>
       </Tooltip>

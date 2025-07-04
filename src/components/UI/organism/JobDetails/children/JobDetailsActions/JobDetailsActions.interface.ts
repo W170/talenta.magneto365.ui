@@ -1,7 +1,9 @@
 export interface IJobDetailsActions {
-  actionsLinkList: IActionList[]
+  actionsLinkList?: IActionList[]
+  actionsLinkSize?: number
   actionsRounded?: boolean
   externalButtonApply?: React.ReactNode
+  additionalAction?: React.ReactNode
   className?: string
 }
 

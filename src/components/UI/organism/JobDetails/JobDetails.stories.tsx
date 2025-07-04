@@ -6,9 +6,19 @@ import { CompanyLogo, shareLinks } from '../../../../constants/stories'
 import { JobDetailsHeader } from './children/JobDetailsHeader'
 import { Typography } from '../../atoms/Typography/Typography.component'
 import { JobDetailsActions } from './children/JobDetailsActions'
-import { Export3, Flag, MagnetoIcon } from '../../../../constants/icons.constants'
+import {
+  Export3,
+  FacebookBlue,
+  Flag,
+  LinkedInBlue,
+  MagnetoIcon,
+  Share2Bold,
+  SMSBlue,
+  WhatsAppColor,
+  X
+} from '../../../../constants/icons.constants'
 import { Tooltip } from '../../molecules/Tooltip'
-import { Button, SaveButton } from '../../atoms'
+import { Button, SaveButton, ShareButton } from '../../atoms'
 import { SharePopover } from '../../molecules/SharePopover'
 
 const meta: Meta<typeof JobDetails> = {
@@ -44,6 +54,7 @@ export const Custom: Story = {
                 { link: 'link1', icon: Export3, text: 'Expandir', title: 'Expandir' },
                 { link: 'link2', icon: Flag, text: 'Reportar', title: 'Reportar' }
               ]}
+              actionsLinkSize={12}
               externalButtonApply={
                 <>
                   <Button buttonText="Aplicar con Magneto" onClick={() => console.log} suffixIcon={MagnetoIcon} />
@@ -65,13 +76,13 @@ export const Custom: Story = {
                   />
                 </Tooltip>
                 <SharePopover
-                  iconType="share"
                   buttonTitle="Compartir"
                   buttonText="Compartir"
                   onCopySuccess={() => console.log('Success')}
                   addHover
                   shareLinks={shareLinks}
                   variant="detailed"
+                  icon={Share2Bold}
                 />
               </>
             </JobDetailsActions>
@@ -90,6 +101,30 @@ export const Custom: Story = {
               revisa bien la vacante y si ves algo sospechoso repórtalo.
               <JobDetails.Fraud.Link>Reportar Fraude</JobDetails.Fraud.Link>
             </JobDetails.Fraud>
+            <JobDetailsActions
+              actionsLinkList={[
+                { link: 'link1', icon: FacebookBlue, title: 'Facebook' },
+                { link: 'link2', icon: WhatsAppColor, title: 'WhatsApp' },
+                { link: 'link3', icon: LinkedInBlue, title: 'LinkedIn' },
+                { link: 'link4', icon: X, title: 'X' },
+                { link: 'link4', icon: SMSBlue, title: 'SMS' }
+              ]}
+              additionalAction={
+                <Tooltip title={'Copiar enlace'} position="bottom">
+                  <ShareButton icon={Share2Bold} onCopySuccess={() => console.log('Success')} addHover />
+                </Tooltip>
+              }
+              externalButtonApply={
+                <>
+                  <Button buttonText="Aplicar con Magneto" onClick={() => console.log} suffixIcon={MagnetoIcon} />
+                </>
+              }
+              actionsLinkSize={20}
+            >
+              <>
+                <Typography.Paragraph>Compartir en: </Typography.Paragraph>
+              </>
+            </JobDetailsActions>
           </JobDetails>
         </JobDetails.Drawer>
       </>

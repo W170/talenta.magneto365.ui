@@ -1,5 +1,5 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
-
+@use '@tokens' as *;
 .magneto-ui-share-button {
   border: none;
   border-radius: 50%;
@@ -20,6 +20,9 @@
     display: flex;
     align-items: center;
     gap: 18px;
+  }
+  &:hover {
+    background-color: $color-grey-100;
   }
 }
 
