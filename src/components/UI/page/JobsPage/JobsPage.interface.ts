@@ -70,6 +70,14 @@ export interface IJobsPage {
    */
   createAccountCTAProps?: ICreateAccountCTA
 
+  /**
+   * This property sets the job details title
+   */
+  jobDetailsTitle?: string
+
+  /**
+   * This property sets the job details content
+   */
   jobDetailsContent: React.ReactNode
 }
 

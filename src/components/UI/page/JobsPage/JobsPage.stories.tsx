@@ -135,7 +135,8 @@ const meta: Meta<typeof JobsPage> = {
     device: 'desktop',
     emptyResultsProps,
     displayAlwaysFilter: true,
-    jobDetailsContent
+    jobDetailsContent,
+    jobDetailsTitle: 'Volver'
   },
   decorators: [
     (Story) => (

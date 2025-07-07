@@ -29,7 +29,8 @@ const JobsPage: React.FC<IJobsPage> = ({
   dynamicPaginationUrl,
   displayAlwaysFilter,
   createAccountCTAProps,
-  jobDetailsContent
+  jobDetailsContent,
+  jobDetailsTitle
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [showDetail, setShowDetail] = useState(device === 'desktop')
@@ -78,7 +79,7 @@ const JobsPage: React.FC<IJobsPage> = ({
     </JobDetailContainer>,
     {
       lg: (
-        <JobDetails.Drawer isMobile isOpen={showDetail && hasVacancies} onClose={onClose}>
+        <JobDetails.Drawer isMobile isOpen={showDetail && hasVacancies} onClose={onClose} title={jobDetailsTitle}>
           {jobDetailsContent}
         </JobDetails.Drawer>
       )
