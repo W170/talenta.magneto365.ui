@@ -27,6 +27,11 @@ export namespace IJobSuggestedCard {
      * this property update to position align the components
      */
     aligned?: 'start' | 'center' | 'end'
+
+    /**
+     * this property update to position align the components
+     */
+    direction?: 'column' | 'row-reverse' | 'column-reverse | row'
   }
   export interface Button extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     /**

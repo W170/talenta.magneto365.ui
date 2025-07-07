@@ -5,6 +5,9 @@ import { JobDetails } from './index'
 import { CompanyLogo, shareLinks } from '../../../../constants/stories'
 import { JobDetailsHeader } from './children/JobDetailsHeader'
 import { Typography } from '../../atoms/Typography/Typography.component'
+import { JobSuggestedCard } from '../JobSuggestedCard'
+import { IconItem } from '../../atoms/Icon'
+import Logo from '@assets/noLogo.svg'
 import { JobDetailsActions } from './children/JobDetailsActions'
 import {
   Export3,
@@ -42,11 +45,39 @@ export const Custom: Story = {
         <JobDetails.Drawer isOpen={isOpen} onClose={() => setIsOpen((op) => !op)}>
           <JobDetails
             renderHeader={() => (
-              <JobDetailsHeader
-                title="Vacante de prueba"
-                publishedDate="Fecha de actualización"
-                companyIcon={CompanyLogo}
-              />
+              <>
+                <JobDetails.JobsSuggested
+                  title="Vacantes similares a la que acabaste de aplicar"
+                  tag="NUEVO"
+                  behavior="showcase"
+                >
+                  <JobSuggestedCard>
+                    <JobSuggestedCard.Section>
+                      <IconItem icon={Logo} size={40} />
+                      <Typography.Text>Descripción de la vacante</Typography.Text>
+                    </JobSuggestedCard.Section>
+                    <JobSuggestedCard.Section>
+                      <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
+                      <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+                    </JobSuggestedCard.Section>
+                  </JobSuggestedCard>
+                  <JobSuggestedCard>
+                    <JobSuggestedCard.Section>
+                      <IconItem icon={Logo} size={40} />
+                      <Typography.Text>Descripción de la vacante</Typography.Text>
+                    </JobSuggestedCard.Section>
+                    <JobSuggestedCard.Section>
+                      <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
+                      <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+                    </JobSuggestedCard.Section>
+                  </JobSuggestedCard>
+                </JobDetails.JobsSuggested>
+                <JobDetailsHeader
+                  title="Vacante de prueba"
+                  publishedDate="Fecha de actualización"
+                  companyIcon={CompanyLogo}
+                />
+              </>
             )}
           >
             <JobDetailsActions
