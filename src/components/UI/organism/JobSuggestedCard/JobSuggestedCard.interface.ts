@@ -27,41 +27,12 @@ export namespace IJobSuggestedCard {
      * this property update to position align the components
      */
     aligned?: 'start' | 'center' | 'end'
-  }
 
-  export interface Title {
     /**
-     * this property sets custom styles
+     * this property update to position align the components
      */
-    className?: string
-    /**
-     * this property sets children elements
-     */
-    children?: React.ReactNode
+    direction?: 'column' | 'row-reverse' | 'column-reverse | row'
   }
-
-  export interface Logo {
-    /**
-     * this property sets custom styles
-     */
-    className?: string
-    /**
-     * this property added icon
-     */
-    logo: string
-  }
-
-  export interface Text {
-    /**
-     * this property sets custom styles
-     */
-    className?: string
-    /**
-     * this property sets children elements
-     */
-    children?: React.ReactNode
-  }
-
   export interface Button extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     /**
      * this property sets custom styles

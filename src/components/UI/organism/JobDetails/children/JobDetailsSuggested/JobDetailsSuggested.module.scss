@@ -1,0 +1,46 @@
+@import '../../../../../../shared/stylesheets/tokens';
+
+.suggested-jobs-container {
+  background-color: $color-grey-100;
+  padding: $padding-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $gap-lg;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-grey-800;
+    font-size: $text-lg;
+    font-weight: $weight-black;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-md-2;
+  }
+
+  &__tag {
+    display: flex;
+    background-color: $color-blue-light-400;
+    padding: $padding-sm-2;
+    height: 26px;
+    align-items: center;
+    gap: $gap-xs;
+    border-radius: $radius-xl;
+    font-size: $text-md;
+    color: $color-grey-50;
+    font-weight: $weight-black;
+  }
+}
+
+.tab {
+  &__container {
+    border-radius: $radius-2xl;
+  }
+  &__body {
+    flex-direction: row;
+  }
+}
