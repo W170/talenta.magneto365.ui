@@ -1,7 +1,6 @@
 import React, { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
 import FilterContainerMenu from '@components/UI/molecules/FilterContainerMenu/FilterContainerMenu.component'
-import { JobDetailContainer, JobCard, FrequentSearch, Pagination, CreateAccountCTA } from '@components/UI/molecules'
-import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
+import { JobCard, FrequentSearch, Pagination, CreateAccountCTA, JobDetailContainer } from '@components/UI/molecules'
 import { SortBar, Footer, SideFilter } from '@components/UI/template'
 import { useMediaQuery } from '@components/hooks'
 import { showDetailByWindow } from './utils'
@@ -11,10 +10,9 @@ import { classMUI } from '@constants/stories'
 import { EmptyResults } from '@components/UI/molecules/EmptyResults'
 import { JobCardSkeleton } from '@components/UI/molecules/JobCard/children'
 import { Paragraph } from '@components/UI/atoms'
+import { JobDetails } from '@components/UI/organism/JobDetails'
 
 const JobsPage: React.FC<IJobsPage> = ({
-  jobDetailsDrawerProps,
-  mobileJobDetailsDrawerProps,
   sortBarProps,
   sideFilterProps,
   frequentSearchProps,
@@ -30,12 +28,11 @@ const JobsPage: React.FC<IJobsPage> = ({
   customParagraph,
   dynamicPaginationUrl,
   displayAlwaysFilter,
-  createAccountCTAProps
+  createAccountCTAProps,
+  jobDetailsContent
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
-  const [loadVideo, setLoadVideo] = useState(false)
   const [showDetail, setShowDetail] = useState(device === 'desktop')
-  const [selectedJobId, setSelectedJobId] = useState<number | null>(null)
 
   const { fullUrl, fullJobsUrl } = dynamicPaginationUrl || {}
 
@@ -53,9 +50,7 @@ const JobsPage: React.FC<IJobsPage> = ({
 
   const handleJobCardClick = useCallback(
     (id: number | null) => {
-      setSelectedJobId(id)
       handleVacant(id)
-      setLoadVideo(false)
     },
     [handleVacant]
   )
@@ -79,29 +74,13 @@ const JobsPage: React.FC<IJobsPage> = ({
 
   const JobDetailsDrawerComponent = useMediaQuery(
     <JobDetailContainer onClose={onClose} isOpen={showDetail && hasVacancies}>
-      {jobDetailAction ? (
-        jobDetailAction
-      ) : (
-        <JobDetailsDrawer
-          {...jobDetailsDrawerProps}
-          isLoading={isLoading || !jobSelected}
-          selectedJobId={selectedJobId}
-          loadVideo={loadVideo}
-          setLoadVideo={setLoadVideo}
-        />
-      )}
+      {jobDetailAction ? jobDetailAction : jobDetailsContent}
     </JobDetailContainer>,
     {
       lg: (
-        <MobileJobDetailsDrawer
-          {...mobileJobDetailsDrawerProps}
-          onClose={onClose}
-          isOpen={showDetail}
-          jobDetailAction={jobDetailAction}
-          isLoading={isLoading || !jobSelected}
-          loadVideo={loadVideo}
-          setLoadVideo={setLoadVideo}
-        />
+        <JobDetails.Drawer isMobile isOpen={showDetail && hasVacancies} onClose={onClose}>
+          {jobDetailsContent}
+        </JobDetails.Drawer>
       )
     }
   )
