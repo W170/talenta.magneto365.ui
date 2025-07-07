@@ -33,7 +33,7 @@
     border-radius: tokens.$radius-sm;
     font-weight: tokens.$weight-normal;
     padding: 0 tokens.$padding-sm-2;
-    margin-left: calc(- (tokens.$padding-md-2 / 2));
+    margin-left: -calc((tokens.$padding-md-2 / 2));
 
     &:is(a):hover {
       background-color: tokens.$color-grey-100;
