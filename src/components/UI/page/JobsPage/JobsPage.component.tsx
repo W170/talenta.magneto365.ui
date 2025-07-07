@@ -1,6 +1,13 @@
 import React, { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
 import FilterContainerMenu from '@components/UI/molecules/FilterContainerMenu/FilterContainerMenu.component'
-import { JobCard, FrequentSearch, Pagination, CreateAccountCTA, JobDetailContainer } from '@components/UI/molecules'
+import {
+  JobCard,
+  FrequentSearch,
+  Pagination,
+  CreateAccountCTA,
+  JobDetailContainer,
+  MobileJobDetailsHeader
+} from '@components/UI/molecules'
 import { SortBar, Footer, SideFilter } from '@components/UI/template'
 import { useMediaQuery } from '@components/hooks'
 import { showDetailByWindow } from './utils'
@@ -30,7 +37,7 @@ const JobsPage: React.FC<IJobsPage> = ({
   displayAlwaysFilter,
   createAccountCTAProps,
   jobDetailsContent,
-  jobDetailsTitle
+  jobDetailsTitle = ''
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [showDetail, setShowDetail] = useState(device === 'desktop')
@@ -79,8 +86,11 @@ const JobsPage: React.FC<IJobsPage> = ({
     </JobDetailContainer>,
     {
       lg: (
-        <JobDetails.Drawer isMobile isOpen={showDetail && hasVacancies} onClose={onClose} title={jobDetailsTitle}>
-          {jobDetailsContent}
+        <JobDetails.Drawer isMobile isOpen={showDetail && hasVacancies} onClose={onClose}>
+          <>
+            <MobileJobDetailsHeader returnText={jobDetailsTitle} onClick={onClose} />
+            {jobDetailsContent}
+          </>
         </JobDetails.Drawer>
       )
     }
