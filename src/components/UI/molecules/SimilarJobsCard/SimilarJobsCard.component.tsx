@@ -26,10 +26,11 @@ const SimilarJobsCard: React.FC<ISimilarJobsCard> = ({
   return (
     <a title={title} className={`${styles[`${classMUI}-similar-jobs`]}`} href={jobUrlSlug}>
       {!hideLogo && (
-        <img
+        <IconItem
           className={`${styles[`${classMUI}-similar-jobs__img`]}`}
-          src={companyLogo ? companyLogo : NoLogo}
+          icon={companyLogo ? companyLogo : NoLogo}
           alt={`${companyName ? companyName : 'company'}-logo`.toLowerCase()}
+          size={56}
         />
       )}
       <div>

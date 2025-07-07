@@ -10,14 +10,14 @@ import dotEnv from 'dotenv'
 export const MAIN_PLUGINS = [
   peerDepsExternal(),
   alias({
+    resolve: ['.ts', '.scss', '.css', '.tsx'],
     entries: [
-      { find: /^@\/(.*)/, replacement: path.resolve(__dirname, 'src/$1') },
       { find: '@assets', replacement: path.resolve(__dirname, 'src/assets') },
       { find: '@components', replacement: path.resolve(__dirname, 'src/components') },
       { find: '@constants', replacement: path.resolve(__dirname, 'src/constants') },
       { find: '@shared', replacement: path.resolve(__dirname, 'src/shared') },
       { find: '@utils', replacement: path.resolve(__dirname, 'src/utils') },
-      { find: '@tokens', replacement: path.resolve(__dirname, 'src/shared/stylesheets/tokens/_index.scss') }
+      { find: '@tokens', replacement: path.resolve(__dirname, './src/shared/stylesheets/tokens/_index.scss') }
     ]
   }),
   resolve(),
