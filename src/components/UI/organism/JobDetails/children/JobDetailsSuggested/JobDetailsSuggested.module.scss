@@ -1,4 +1,4 @@
-@import '../../../../../../shared/stylesheets/tokens';
+@use '../../../../../../shared/stylesheets/tokens' as *;
 
 .suggested-jobs-container {
   background-color: $color-grey-100;
@@ -20,6 +20,8 @@
     display: flex;
     flex-direction: column;
     gap: $gap-md-2;
+    max-height: 400px;
+    overflow-y: auto;
   }
 
   &__tag {
@@ -42,5 +44,8 @@
   }
   &__body {
     flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: $padding-xl;
   }
 }

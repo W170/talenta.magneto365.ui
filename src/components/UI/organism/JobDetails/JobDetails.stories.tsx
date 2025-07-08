@@ -71,6 +71,36 @@ export const Custom: Story = {
                       <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
                     </JobSuggestedCard.Section>
                   </JobSuggestedCard>
+                  <JobSuggestedCard>
+                    <JobSuggestedCard.Section>
+                      <IconItem icon={Logo} size={40} />
+                      <Typography.Text>Descripción de la vacante</Typography.Text>
+                    </JobSuggestedCard.Section>
+                    <JobSuggestedCard.Section>
+                      <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
+                      <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+                    </JobSuggestedCard.Section>
+                  </JobSuggestedCard>
+                  <JobSuggestedCard>
+                    <JobSuggestedCard.Section>
+                      <IconItem icon={Logo} size={40} />
+                      <Typography.Text>Descripción de la vacante</Typography.Text>
+                    </JobSuggestedCard.Section>
+                    <JobSuggestedCard.Section>
+                      <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
+                      <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+                    </JobSuggestedCard.Section>
+                  </JobSuggestedCard>
+                  <JobSuggestedCard>
+                    <JobSuggestedCard.Section>
+                      <IconItem icon={Logo} size={40} />
+                      <Typography.Text>Descripción de la vacante</Typography.Text>
+                    </JobSuggestedCard.Section>
+                    <JobSuggestedCard.Section>
+                      <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
+                      <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+                    </JobSuggestedCard.Section>
+                  </JobSuggestedCard>
                 </JobDetails.JobsSuggested>
                 <JobDetailsHeader
                   title="Vacante de prueba"

@@ -1,4 +1,4 @@
-@import '../../../../../../shared/stylesheets/tokens';
+@use '../../../../../../shared/stylesheets/tokens' as *;
 
 .section {
   display: flex;
