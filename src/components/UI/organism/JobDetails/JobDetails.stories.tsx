@@ -146,7 +146,7 @@ export const Custom: Story = {
                 />
               </>
             </JobDetailsActions>
-            <JobDetails.Summary>Lista de opciones</JobDetails.Summary>
+            <JobDetails.Summary items={[{ icon: 'icono 1', id: 1, label: 'Label de prueba 1' }, { icon:'icono 2', id: 2, label: 'Label de prueba 2' }]} >Lista de opciones</JobDetails.Summary>
             Hola Mundo
             <JobDetails.Skills
               skills={[
