@@ -2,7 +2,6 @@ import React, { Fragment, useCallback, useMemo } from 'react'
 import {
   Drawer,
   JobCompanyHeader,
-  JobDetails,
   JobDetailCard,
   JobVideo,
   JobSkillsCard,
@@ -24,6 +23,7 @@ import { Swipe } from '../Swipe'
 import styles from './MobileJobDetailsDrawer.module.scss'
 import { ActionLinkCard } from '@components/UI/molecules/ActionLinkCard'
 import { classNames } from '@shared/utils/common'
+import { JobDetails } from '@components/UI/molecules/JobDetails'
 
 const cx = classNames.bind(styles)
 

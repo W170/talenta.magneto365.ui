@@ -2,17 +2,8 @@
 
 .header {
   display: flex;
-  gap: tokens.$gap-xl;
-  &__icon {
-    object-fit: contain;
-    border: tokens.$border-1 solid tokens.$color-grey-100;
-  }
-
-  &__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+  flex-direction: column;
+  justify-content: center;
 
   &__publish-date {
     font-size: tokens.$text-md;

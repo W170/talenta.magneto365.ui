@@ -7,7 +7,6 @@ import {
   JobSkillsCard,
   JobApplyCard,
   JobFooterCard,
-  JobDetails,
   FraudCardJob,
   AlertJobStatus,
   Alert
@@ -20,6 +19,7 @@ import { anchorIconList, iconDetailList, iconFooterList, altList, anchorIconList
 import { JobDetailsSkeleton } from './children'
 import { SimilarJobs } from '../SimilarJobs'
 import { ActionLinkCard } from '@components/UI/molecules/ActionLinkCard'
+import { JobDetails } from '@components/UI/molecules/JobDetails'
 
 const Component: React.FC<IJobDetailsDrawer> = ({
   jobCompanyLogoProps,

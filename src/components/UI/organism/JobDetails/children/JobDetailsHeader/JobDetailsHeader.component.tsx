@@ -1,6 +1,6 @@
 import React from 'react'
 import { classNames } from '@shared/utils/common'
-import { IconItem, Typography } from '@components/UI/atoms'
+import { Typography } from '@components/UI/atoms'
 import { IJobDetailsHeader } from './JobDetailsHeader.interface'
 import styles from './JobDetailsHeader.module.scss'
 
@@ -8,22 +8,16 @@ const cx = classNames.bind(styles)
 
 export const JobDetailsHeader: React.FC<IJobDetailsHeader> = ({
   title,
-  companyIcon,
   className,
   classNames = {},
   publishedDate,
-  renderBottom
+  children
 }) => {
   return (
     <header className={cx('header', className)}>
-      <IconItem className={cx('header__icon', classNames.icon)} size={78} icon={companyIcon} />
-      <section className={cx('header__info', classNames.info)}>
-        <Typography.Text className={cx('header__publish-date', classNames.publishDate)}>
-          {publishedDate}
-        </Typography.Text>
-        <Typography.Paragraph className={cx('header__title', classNames.title)}>{title}</Typography.Paragraph>
-        {renderBottom?.()}
-      </section>
+      <Typography.Text className={cx('header__publish-date', classNames.publishDate)}>{publishedDate}</Typography.Text>
+      <Typography.Paragraph className={cx('header__title', classNames.title)}>{title}</Typography.Paragraph>
+      <section className={classNames.info}>{children}</section>
     </header>
   )
 }

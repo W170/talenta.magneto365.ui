@@ -21,7 +21,7 @@ import {
   X
 } from '../../../../constants/icons.constants'
 import { Tooltip } from '../../molecules/Tooltip'
-import { Button, SaveButton, ShareButton } from '../../atoms'
+import { Button, JobCompanyLogo, SaveButton, ShareButton } from '../../atoms'
 import { SharePopover } from '../../molecules/SharePopover'
 
 const meta: Meta<typeof JobDetails> = {
@@ -102,11 +102,10 @@ export const Custom: Story = {
                     </JobSuggestedCard.Section>
                   </JobSuggestedCard>
                 </JobDetails.JobsSuggested>
-                <JobDetailsHeader
-                  title="Vacante de prueba"
-                  publishedDate="Fecha de actualización"
-                  companyIcon={CompanyLogo}
-                />
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <JobCompanyLogo offerCompanyLogo={CompanyLogo} alt="company" />
+                  <JobDetailsHeader title="Vacante de prueba" publishedDate="Fecha de actualización" />
+                </div>
               </>
             )}
           >
