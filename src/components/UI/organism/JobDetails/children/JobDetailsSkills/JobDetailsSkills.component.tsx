@@ -13,7 +13,7 @@ export const JobDetailsSkills: React.FC<IJobDetailsSkills> = ({ children, classN
       <ul className={cx('skills__list')}>
         {skills.map(({ name, score, id }) => (
           <li key={id}>
-            <Skill id={id} name={name} score={score} />
+            <Skill name={name} score={score} />
           </li>
         ))}
       </ul>
