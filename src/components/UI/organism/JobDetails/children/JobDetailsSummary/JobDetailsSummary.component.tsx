@@ -12,7 +12,7 @@ export const JobDetailsSummary: React.FC<IJobDetailsSummary> = ({ children, item
     {children}
     {items.map(({ id, icon, label }) => (
       <li className={cx('summary__item', classNames?.item)} key={id}>
-        {React.cloneElement(iconJobDetailSummaryMap[icon], { className: classNames?.icon })}
+        {React.cloneElement(iconJobDetailSummaryMap[icon], { className: cx('summary__icon', classNames?.icon) })}
         <Typography.Text className={cx('summary__label', classNames?.label)}>{label}</Typography.Text>
       </li>
     ))}
