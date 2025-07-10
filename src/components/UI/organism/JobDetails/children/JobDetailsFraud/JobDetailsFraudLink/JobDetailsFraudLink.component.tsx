@@ -7,8 +7,8 @@ import styles from './JobDetailsFraudLink.module.scss'
 
 const cx = classNames.bind(styles)
 
-export const JobDetailsFraudLink: React.FC<IJobDetailsFraudLink> = ({ children, className }) => (
-  <Typography.Link strong target="_blank" rel="" className={cx('fraud-link', className)}>
+export const JobDetailsFraudLink: React.FC<IJobDetailsFraudLink> = ({ children, className, ...rest }) => (
+  <Typography.Link strong target="_blank" rel="" className={cx('fraud-link', className)} {...rest}>
     <IconItem icon={WarningHex} size={16} alt="warning" />
     {children}
   </Typography.Link>
