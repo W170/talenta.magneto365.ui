@@ -98,6 +98,10 @@
       font-size: 14px;
       max-width: 60ch;
     }
+    @media screen and (max-width: v.$screen-xl) {
+      max-width: 40ch;
+      font-size: 14px;
+    }
     &--bold {
       font-weight: 700;
     }
@@ -106,6 +110,10 @@
       font-size: 16px;
       @media screen and (max-width: v.$screen-md) {
         max-width: 15ch;
+        font-size: 14px;
+      }
+      @media screen and (max-width: v.$screen-xl) {
+        max-width: 40ch;
         font-size: 14px;
       }
     }
@@ -149,7 +157,7 @@
     border-radius: 10px;
 
     &-img {
-      width: 67px;
+      min-width: 67px;
       height: 67px;
       background-color: white;
       object-fit: contain;
