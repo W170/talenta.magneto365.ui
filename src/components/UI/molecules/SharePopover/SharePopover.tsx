@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { IconItem, Popover, ShareButton } from '../../atoms'
 import style from './SharePopover.module.scss'
-import { Share, Share2 } from '../../../../constants/icons.constants'
 import { ShareIcons } from '../../../../constants/vacancies.constants'
 import { ISharePopover } from './SharePopover.interface'
 import { Tooltip } from '../Tooltip'
@@ -14,14 +13,13 @@ const Component: React.FC<ISharePopover> = ({
   btnProps = {},
   classNameContent = '',
   classNameButton = '',
-  variant = 'default',
   addHover,
   buttonText,
+  iconPopover,
+  iconPopoverSize = 20,
   ...rest
 }) => {
   const [show, setShow] = useState(false)
-
-  const isDefaultVariant = variant === 'default'
 
   return (
     <Popover
@@ -29,7 +27,7 @@ const Component: React.FC<ISharePopover> = ({
       positionX="right"
       positionY="bottom"
       show={show}
-      widthBase={isDefaultVariant ? 45 : 117}
+      widthBase={45}
       content={
         <ul className={cx('content', classNameContent)}>
           {shareLinks.map(({ title, href, ariaLabel, icon, name }, index) => (
@@ -43,7 +41,7 @@ const Component: React.FC<ISharePopover> = ({
                 className={cx('content__link')}
                 onClick={() => setShow(false)}
               >
-                <IconItem size={20} icon={name ? ShareIcons[name].icon : icon} />
+                <IconItem size={16} icon={name ? ShareIcons[name].icon : icon} />
                 <span>{title}</span>
               </a>
             </li>
@@ -64,12 +62,12 @@ const Component: React.FC<ISharePopover> = ({
           {...btnProps}
           title=""
           aria-label={btnProps.title}
-          className={cx('popover__btn', classNameButton, { 'detailed-variant': variant === 'detailed' })}
+          className={cx('popover__btn', classNameButton)}
           onClick={() => setShow((show) => !show)}
           onBlur={() => setShow(false)}
         >
-          <IconItem size={isDefaultVariant ? 20 : 12} icon={isDefaultVariant ? Share : Share2} hover={addHover} />
-          {isDefaultVariant ? null : <span className={cx('popover__btn-text')}>{buttonText}</span>}
+          <IconItem size={iconPopoverSize} icon={iconPopover} hover={addHover} />
+          <span className={cx('popover__btn-text')}>{buttonText}</span>
         </button>
       </Tooltip>
     </Popover>

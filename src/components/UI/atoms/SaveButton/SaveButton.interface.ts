@@ -1,5 +1,3 @@
-import { TJobActionsVariant } from '@components/UI/molecules'
-
 export interface ISaveButton {
   /**
    * Specifies whether the user is authenticated or not.
@@ -28,7 +26,7 @@ export interface ISaveButton {
    */
   buttonTitle?: string
   /**
-   * Indicates whether the component is default or detailed.
+   * Indicates the size of the icon in the button.
    */
-  variant?: TJobActionsVariant
+  iconSize?: number
 }

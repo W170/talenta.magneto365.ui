@@ -33,11 +33,11 @@
   &__btn {
     background: transparent;
     border: none;
-    border-radius: $radius-full;
+    border-radius: $radius-3xl;
     padding: $padding-sm-2 $padding-md;
     cursor: pointer;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: $gap-sm;
     &:focus-visible {
       outline: none;

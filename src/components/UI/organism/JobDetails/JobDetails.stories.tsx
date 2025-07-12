@@ -15,13 +15,15 @@ import {
   Flag,
   LinkedInBlue,
   MagnetoIcon,
-  Share2Bold,
+  Share,
+  Share2,
+  Link1,
   SMSBlue,
   WhatsAppColor,
   X
 } from '../../../../constants/icons.constants'
 import { Tooltip } from '../../molecules/Tooltip'
-import { Button, JobCompanyLogo, SaveButton, ShareButton } from '../../atoms'
+import { Button, ButtonLink, JobCompanyLogo, SaveButton, ShareButton } from '../../atoms'
 import { SharePopover } from '../../molecules/SharePopover'
 
 const meta: Meta<typeof JobDetails> = {
@@ -109,42 +111,51 @@ export const Custom: Story = {
               </>
             )}
           >
-            <JobDetailsActions
-              actionsLinkList={[
-                { link: 'link1', icon: Export3, text: 'Expandir', title: 'Expandir' },
-                { link: 'link2', icon: Flag, text: 'Reportar', title: 'Reportar' }
-              ]}
-              actionsLinkSize={12}
-              externalButtonApply={
-                <>
-                  <Button buttonText="Aplicar con Magneto" onClick={() => console.log} suffixIcon={MagnetoIcon} />
-                </>
-              }
-            >
-              <>
-                <Tooltip title={'Guardar'} position="bottom">
-                  <SaveButton
-                    isSaved={false}
-                    onClick={() => {
-                      //
-                    }}
-                    addHover
-                    buttonTitle="Guardar"
-                    buttonText="Guardar"
-                    isAuthenticated
-                    variant={'detailed'}
-                  />
-                </Tooltip>
-                <SharePopover
-                  buttonTitle="Compartir"
-                  buttonText="Compartir"
-                  onCopySuccess={() => console.log('Success')}
+            <JobDetailsActions>
+              <Button buttonText="Aplicar con Magneto" onClick={() => console.log} suffixIcon={MagnetoIcon} />
+              <Tooltip title={'Guardar'} position="bottom">
+                <SaveButton
+                  isSaved={false}
+                  onClick={() => {
+                    //
+                  }}
                   addHover
-                  shareLinks={shareLinks}
-                  variant="detailed"
-                  icon={Share2Bold}
+                  buttonTitle="Guardar"
+                  buttonText="Guardar"
+                  isAuthenticated
+                  iconSize={12}
                 />
-              </>
+              </Tooltip>
+              <SharePopover
+                buttonTitle="Compartir"
+                buttonText="Compartir"
+                onCopySuccess={() => console.log('Success')}
+                addHover
+                shareLinks={shareLinks}
+                iconPopover={Share2}
+                icon={Link1}
+                iconPopoverSize={12}
+              />
+              <Tooltip title="Expandir" position="bottom">
+                <ButtonLink
+                  buttonText={'Expandir'}
+                  href={'link1'}
+                  target="_blank"
+                  rel="noreferrer"
+                  suffixIcon={Export3}
+                  iconSize={12}
+                />
+              </Tooltip>
+              <Tooltip title="Reportar" position="bottom">
+                <ButtonLink
+                  buttonText={'Reportar'}
+                  href={'link2'}
+                  target="_blank"
+                  rel="noreferrer"
+                  suffixIcon={Flag}
+                  iconSize={12}
+                />
+              </Tooltip>
             </JobDetailsActions>
             <JobDetails.Summary
               items={[
@@ -168,28 +179,34 @@ export const Custom: Story = {
               revisa bien la vacante y si ves algo sospechoso repórtalo.
               <JobDetails.Fraud.Link>Reportar Fraude</JobDetails.Fraud.Link>
             </JobDetails.Fraud>
-            <JobDetailsActions
-              actionsLinkList={[
-                { link: 'link1', icon: FacebookBlue, title: 'Facebook' },
-                { link: 'link2', icon: WhatsAppColor, title: 'WhatsApp' },
-                { link: 'link3', icon: LinkedInBlue, title: 'LinkedIn' },
-                { link: 'link4', icon: X, title: 'X' },
-                { link: 'link4', icon: SMSBlue, title: 'SMS' }
-              ]}
-              additionalAction={
-                <Tooltip title={'Copiar enlace'} position="bottom">
-                  <ShareButton icon={Share2Bold} onCopySuccess={() => console.log('Success')} addHover />
-                </Tooltip>
-              }
-              externalButtonApply={
-                <>
-                  <Button buttonText="Aplicar con Magneto" onClick={() => console.log} suffixIcon={MagnetoIcon} />
-                </>
-              }
-              actionsLinkSize={20}
-            >
+            <JobDetailsActions>
               <>
+                <Button buttonText="Aplicar con Magneto" onClick={() => console.log} suffixIcon={MagnetoIcon} />
                 <Typography.Paragraph>Compartir en: </Typography.Paragraph>
+                <Tooltip title="Facebook" position="bottom">
+                  <ButtonLink href={'link1'} target="_blank" rel="noreferrer" suffixIcon={FacebookBlue} iconSize={20} />
+                </Tooltip>
+                <Tooltip title="WhatsApp" position="bottom">
+                  <ButtonLink
+                    href={'link2'}
+                    target="_blank"
+                    rel="noreferrer"
+                    suffixIcon={WhatsAppColor}
+                    iconSize={20}
+                  />
+                </Tooltip>
+                <Tooltip title="LinkedIn" position="bottom">
+                  <ButtonLink href={'link3'} target="_blank" rel="noreferrer" suffixIcon={LinkedInBlue} iconSize={20} />
+                </Tooltip>
+                <Tooltip title="X" position="bottom">
+                  <ButtonLink href={'link4'} target="_blank" rel="noreferrer" suffixIcon={X} iconSize={20} />
+                </Tooltip>
+                <Tooltip title="SMS" position="bottom">
+                  <ButtonLink href={'link5'} target="_blank" rel="noreferrer" suffixIcon={SMSBlue} iconSize={20} />
+                </Tooltip>
+                <Tooltip title={'Copiar enlace'} position="bottom">
+                  <ShareButton icon={Share} onCopySuccess={() => console.log('Success')} addHover />
+                </Tooltip>
               </>
             </JobDetailsActions>
           </JobDetails>

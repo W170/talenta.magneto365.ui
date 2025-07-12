@@ -9,9 +9,9 @@ const cx = classNames.bind(styles)
 
 console.log(styles)
 
-export const JobDetailsFraud: React.FC<IJobDetailsFraud> = ({ children, renderTitle }) => {
+export const JobDetailsFraud: React.FC<IJobDetailsFraud> = ({ children, renderTitle, className }) => {
   return (
-    <section role="alert" aria-live="assertive" className={cx('fraud')}>
+    <section role="alert" aria-live="assertive" className={cx('fraud', className)} data-testid="job-details-fraud">
       <header className={cx('fraud__header')}>
         <IconItem icon={Warning3D} alt="warning" />
         <Typography.Title level={2}>{renderTitle?.()}</Typography.Title>

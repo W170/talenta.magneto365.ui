@@ -15,66 +15,146 @@ import {
 } from '../../../../constants/stories'
 import { JobDetails } from '../../organism/JobDetails'
 import { JobDetailsHeader } from '../../organism/JobDetails/children/JobDetailsHeader'
-import { JobDetailsActions } from '../../organism/JobDetails/children/JobDetailsActions'
 import {
   Export3,
   FacebookBlue,
   Flag,
+  Link1,
   LinkedInBlue,
   MagnetoIcon,
-  Share2Bold,
+  Share,
+  Share2,
   SMSBlue,
   WhatsAppColor,
   X
 } from '../../../../constants/icons.constants'
-import { Button, SaveButton, ShareButton, Typography } from '../../atoms'
+import { Button, ButtonLink, IconItem, JobCompanyLogo, SaveButton, ShareButton, Typography } from '../../atoms'
 import { Tooltip } from '../../molecules/Tooltip'
 import { SharePopover } from '../../molecules/SharePopover'
+import { JobSuggestedCard } from '@components/UI/organism'
+import Logo from '@assets/noLogo.svg'
 
 const jobDetailsContent = (
   <JobDetails
     renderHeader={() => (
-      <JobDetailsHeader title="Vacante de prueba" publishedDate="Fecha de actualización" companyIcon={CompanyLogo} />
+      <>
+        <JobDetails.JobsSuggested
+          title="Vacantes similares a la que acabaste de aplicar"
+          tag="NUEVO"
+          behavior="showcase"
+        >
+          <JobSuggestedCard>
+            <JobSuggestedCard.Section>
+              <IconItem icon={Logo} size={40} />
+              <Typography.Text>Descripción de la vacante</Typography.Text>
+            </JobSuggestedCard.Section>
+            <JobSuggestedCard.Section>
+              <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
+              <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+            </JobSuggestedCard.Section>
+          </JobSuggestedCard>
+          <JobSuggestedCard>
+            <JobSuggestedCard.Section>
+              <IconItem icon={Logo} size={40} />
+              <Typography.Text>Descripción de la vacante</Typography.Text>
+            </JobSuggestedCard.Section>
+            <JobSuggestedCard.Section>
+              <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
+              <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+            </JobSuggestedCard.Section>
+          </JobSuggestedCard>
+          <JobSuggestedCard>
+            <JobSuggestedCard.Section>
+              <IconItem icon={Logo} size={40} />
+              <Typography.Text>Descripción de la vacante</Typography.Text>
+            </JobSuggestedCard.Section>
+            <JobSuggestedCard.Section>
+              <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
+              <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+            </JobSuggestedCard.Section>
+          </JobSuggestedCard>
+          <JobSuggestedCard>
+            <JobSuggestedCard.Section>
+              <IconItem icon={Logo} size={40} />
+              <Typography.Text>Descripción de la vacante</Typography.Text>
+            </JobSuggestedCard.Section>
+            <JobSuggestedCard.Section>
+              <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
+              <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+            </JobSuggestedCard.Section>
+          </JobSuggestedCard>
+          <JobSuggestedCard>
+            <JobSuggestedCard.Section>
+              <IconItem icon={Logo} size={40} />
+              <Typography.Text>Descripción de la vacante</Typography.Text>
+            </JobSuggestedCard.Section>
+            <JobSuggestedCard.Section>
+              <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
+              <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+            </JobSuggestedCard.Section>
+          </JobSuggestedCard>
+        </JobDetails.JobsSuggested>
+        <div style={{ display: 'flex', gap: '0.5rem' }}>
+          <JobCompanyLogo offerCompanyLogo={CompanyLogo} alt="company" />
+          <JobDetailsHeader title="Vacante de prueba" publishedDate="Fecha de actualización" />
+        </div>
+      </>
     )}
   >
-    <JobDetailsActions
-      actionsLinkList={[
-        { link: 'link1', icon: Export3, text: 'Expandir', title: 'Expandir' },
-        { link: 'link2', icon: Flag, text: 'Reportar', title: 'Reportar' }
-      ]}
-      actionsLinkSize={12}
-      externalButtonApply={
-        <>
-          <Button buttonText="Aplicar con Magneto" onClick={() => console.log} suffixIcon={MagnetoIcon} />
-        </>
-      }
-    >
-      <>
-        <Tooltip title={'Guardar'} position="bottom">
-          <SaveButton
-            isSaved={false}
-            onClick={() => {
-              //
-            }}
-            addHover
-            buttonTitle="Guardar"
-            buttonText="Guardar"
-            isAuthenticated
-            variant={'detailed'}
-          />
-        </Tooltip>
-        <SharePopover
-          buttonTitle="Compartir"
-          buttonText="Compartir"
-          onCopySuccess={() => console.log('Success')}
+    <JobDetails.Actions>
+      <Button buttonText="Aplicar con Magneto" onClick={() => console.log} suffixIcon={MagnetoIcon} />
+      <Tooltip title={'Guardar'} position="bottom">
+        <SaveButton
+          isSaved={false}
+          onClick={() => {
+            //
+          }}
           addHover
-          shareLinks={shareLinks}
-          variant="detailed"
-          icon={Share2Bold}
+          buttonTitle="Guardar"
+          buttonText="Guardar"
+          isAuthenticated
+          iconSize={12}
         />
-      </>
-    </JobDetailsActions>
-    <JobDetails.Summary>Lista de opciones</JobDetails.Summary>
+      </Tooltip>
+      <SharePopover
+        buttonTitle="Compartir"
+        buttonText="Compartir"
+        onCopySuccess={() => console.log('Success')}
+        addHover
+        shareLinks={shareLinks}
+        iconPopover={Share2}
+        icon={Link1}
+        iconPopoverSize={12}
+      />
+      <Tooltip title="Expandir" position="bottom">
+        <ButtonLink
+          buttonText={'Expandir'}
+          href={'link1'}
+          target="_blank"
+          rel="noreferrer"
+          suffixIcon={Export3}
+          iconSize={12}
+        />
+      </Tooltip>
+      <Tooltip title="Reportar" position="bottom">
+        <ButtonLink
+          buttonText={'Reportar'}
+          href={'link2'}
+          target="_blank"
+          rel="noreferrer"
+          suffixIcon={Flag}
+          iconSize={12}
+        />
+      </Tooltip>
+    </JobDetails.Actions>
+    <JobDetails.Summary
+      items={[
+        { icon: 'briefcase', id: 1, label: 'Label de prueba 1' },
+        { icon: 'location', id: 2, label: 'Label de prueba 2' }
+      ]}
+    >
+      Lista de opciones
+    </JobDetails.Summary>
     Hola Mundo
     <JobDetails.Skills
       skills={[
@@ -89,30 +169,30 @@ const jobDetailsContent = (
       bien la vacante y si ves algo sospechoso repórtalo.
       <JobDetails.Fraud.Link>Reportar Fraude</JobDetails.Fraud.Link>
     </JobDetails.Fraud>
-    <JobDetailsActions
-      actionsLinkList={[
-        { link: 'link1', icon: FacebookBlue, title: 'Facebook' },
-        { link: 'link2', icon: WhatsAppColor, title: 'WhatsApp' },
-        { link: 'link3', icon: LinkedInBlue, title: 'LinkedIn' },
-        { link: 'link4', icon: X, title: 'X' },
-        { link: 'link4', icon: SMSBlue, title: 'SMS' }
-      ]}
-      additionalAction={
-        <Tooltip title={'Copiar enlace'} position="bottom">
-          <ShareButton icon={Share2Bold} onCopySuccess={() => console.log('Success')} addHover />
-        </Tooltip>
-      }
-      externalButtonApply={
-        <>
-          <Button buttonText="Aplicar con Magneto" onClick={() => console.log} suffixIcon={MagnetoIcon} />
-        </>
-      }
-      actionsLinkSize={20}
-    >
+    <JobDetails.Actions>
       <>
+        <Button buttonText="Aplicar con Magneto" onClick={() => console.log} suffixIcon={MagnetoIcon} />
         <Typography.Paragraph>Compartir en: </Typography.Paragraph>
+        <Tooltip title="Facebook" position="bottom">
+          <ButtonLink href={'link1'} target="_blank" rel="noreferrer" suffixIcon={FacebookBlue} iconSize={20} />
+        </Tooltip>
+        <Tooltip title="WhatsApp" position="bottom">
+          <ButtonLink href={'link2'} target="_blank" rel="noreferrer" suffixIcon={WhatsAppColor} iconSize={20} />
+        </Tooltip>
+        <Tooltip title="LinkedIn" position="bottom">
+          <ButtonLink href={'link3'} target="_blank" rel="noreferrer" suffixIcon={LinkedInBlue} iconSize={20} />
+        </Tooltip>
+        <Tooltip title="X" position="bottom">
+          <ButtonLink href={'link4'} target="_blank" rel="noreferrer" suffixIcon={X} iconSize={20} />
+        </Tooltip>
+        <Tooltip title="SMS" position="bottom">
+          <ButtonLink href={'link5'} target="_blank" rel="noreferrer" suffixIcon={SMSBlue} iconSize={20} />
+        </Tooltip>
+        <Tooltip title={'Copiar enlace'} position="bottom">
+          <ShareButton icon={Share} onCopySuccess={() => console.log('Success')} addHover />
+        </Tooltip>
       </>
-    </JobDetailsActions>
+    </JobDetails.Actions>
   </JobDetails>
 )
 

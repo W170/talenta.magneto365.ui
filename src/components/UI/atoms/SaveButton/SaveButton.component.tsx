@@ -14,20 +14,18 @@ const Component: React.FC<ISaveButton> = ({
   addHover,
   onClick,
   isAuthenticated = false,
-  variant = 'default'
+  iconSize = 20
 }) => {
-  const isDefaultVariant = variant === 'default'
-
   return isAuthenticated ? (
     <button
-      className={cx('magneto-ui-save-button', { 'hover-effect': addHover, 'detailed-variant': variant === 'detailed' })}
+      className={cx('magneto-ui-save-button', { 'hover-effect': addHover })}
       type="button"
       onClick={onClick}
       aria-label={buttonTitle}
     >
       <div className={cx('button-content')}>
-        <IconItem size={isDefaultVariant ? 20 : 12} icon={isSaved ? ArchiveRemove : ArchiveAdd} hover={addHover} />
-        {buttonText && !isDefaultVariant && <p className={cx('magneto-ui-save-button__mobile-text')}>{buttonText}</p>}
+        <IconItem size={iconSize} icon={isSaved ? ArchiveRemove : ArchiveAdd} hover={addHover} />
+        {buttonText && <p className={cx('magneto-ui-save-button__mobile-text')}>{buttonText}</p>}
       </div>
     </button>
   ) : null
