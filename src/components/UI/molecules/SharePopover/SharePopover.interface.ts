@@ -1,3 +1,4 @@
+import { iconJobDetailsAction } from '@constants/jobDetails.constants'
 import { ShareIcons } from '../../../../constants/vacancies.constants'
 import { IShareButton } from '../../atoms'
 export interface IShareLink {
@@ -38,7 +39,7 @@ export interface ISharePopover {
   /**
    * Indicates whether the component is default or detailed.
    */
-  iconPopover?: string
+  iconPopover?: keyof typeof iconJobDetailsAction
   /**
    * Optional text to be displayed on the save button.
    * (Optional property)

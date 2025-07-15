@@ -1,3 +1,5 @@
+import { iconJobDetailsAction } from '@constants/jobDetails.constants'
+
 export interface IShareButton {
   /**
    * The title or label associated with the button.
@@ -38,5 +40,5 @@ export interface IShareButton {
   /**
    * icon to show
    */
-  icon: string
+  icon: keyof typeof iconJobDetailsAction
 }

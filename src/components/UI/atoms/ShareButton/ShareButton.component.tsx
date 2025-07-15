@@ -2,6 +2,7 @@ import React from 'react'
 import { IconItem } from '../Icon'
 import { IShareButton } from './ShareButton.interface'
 import styles from './ShareButton.module.scss'
+import { iconJobDetailsAction } from '@constants/jobDetails.constants'
 
 const Component: React.FC<IShareButton> = ({
   className = '',
@@ -26,7 +27,7 @@ const Component: React.FC<IShareButton> = ({
       title={buttonTitle}
     >
       <div className={styles['button-content']}>
-        <IconItem size={20} icon={icon} hover={addHover} />
+        <IconItem size={20} icon={icon && iconJobDetailsAction[icon]} hover={addHover} />
         {buttonText && <p className={styles['magneto-ui-share-button__mobile-text']}>{buttonText}</p>}
       </div>
     </button>
