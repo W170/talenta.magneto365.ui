@@ -1,6 +1,7 @@
 @use '../../../../../../shared/stylesheets/tokens' as tokens;
 
 .summary {
+  margin: 0;
   display: flex;
   list-style: none;
   flex-direction: column;

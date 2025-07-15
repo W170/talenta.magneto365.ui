@@ -17,23 +17,29 @@ const Button: React.FC<IJobDetailsAction.Button> = ({
   iconAlt,
   ...rest
 }) => (
-  <button className={cx('action', `action--${variant}`, { 'action--rounded': rounded })} {...rest}>
+  <button {...rest} className={cx('action', `action--${variant}`, { 'action--rounded': rounded }, rest.className)}>
     {icon && <IconItem icon={iconJobDetailsAction[icon]} size={iconSize ?? 18} alt={iconAlt ?? 'icon'} />}
     {children}
   </button>
 )
 
-const Link: React.FC<IJobDetailsAction.Link> = ({ children, icon, iconSize, iconAlt, ...rest }) => (
-  <a className={cx('action')} {...rest}>
+const Link: React.FC<IJobDetailsAction.Link> = ({ children, icon, iconSize, iconAlt, variant, rounded, ...rest }) => (
+  <a {...rest} className={cx('action', `action--${variant}`, { 'action--rounded': rounded })}>
     {icon && <IconItem icon={iconJobDetailsAction[icon]} size={iconSize ?? 18} alt={iconAlt ?? 'icon'} />}
     {children}
   </a>
 )
 
-const SharePopover: React.FC<IJobDetailsAction.SharePopover> = ({ icon, iconPopoverSize, ...rest }) => (
+const SharePopover: React.FC<IJobDetailsAction.SharePopover> = ({
+  icon,
+  iconPopoverSize,
+  variant,
+  rounded,
+  ...rest
+}) => (
   <SharePopoverMolecule
     {...rest}
-    classNameButton={cx('action')}
+    classNameButton={cx('action', `action--${variant}`, { 'action--rounded': rounded })}
     iconPopoverSize={iconPopoverSize ?? 18}
     iconPopover={icon && iconJobDetailsAction[icon]}
   />

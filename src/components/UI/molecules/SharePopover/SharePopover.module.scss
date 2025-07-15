@@ -2,6 +2,10 @@
 @use '../../../../shared/stylesheets/tokens' as *;
 
 .popover {
+  height: unset;
+  > div {
+    height: unset !important;
+  }
   > :first-child {
     overflow: visible !important;
     &::after {
