@@ -30,11 +30,11 @@ const Link: React.FC<IJobDetailsAction.Link> = ({ children, icon, iconSize, icon
   </a>
 )
 
-const SharePopover: React.FC<IJobDetailsAction.SharePopover> = ({ iconPopover, iconSize, ...rest }) => (
+const SharePopover: React.FC<IJobDetailsAction.SharePopover> = ({ iconPopover, iconPopoverSize, ...rest }) => (
   <SharePopoverMolecule
     {...rest}
     classNameButton={cx('action')}
-    iconPopoverSize={iconSize ?? 18}
+    iconPopoverSize={iconPopoverSize ?? 18}
     iconPopover={iconPopover && iconJobDetailsAction[iconPopover]}
   />
 )

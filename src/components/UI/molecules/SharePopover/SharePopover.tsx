@@ -3,7 +3,6 @@ import { IconItem, Popover, ShareButton } from '../../atoms'
 import style from './SharePopover.module.scss'
 import { ShareIcons } from '../../../../constants/vacancies.constants'
 import { ISharePopover } from './SharePopover.interface'
-import { Tooltip } from '../Tooltip'
 import { classNames } from '@shared/utils/common'
 
 const cx = classNames.bind(style)
@@ -56,19 +55,17 @@ const Component: React.FC<ISharePopover> = ({
         </ul>
       }
     >
-      <Tooltip title={btnProps.title || 'Compartir'} position="bottom" visible={!show}>
-        <button
-          {...btnProps}
-          title=""
-          aria-label={btnProps.title}
-          className={cx('popover__btn', classNameButton)}
-          onClick={() => setShow((show) => !show)}
-          onBlur={() => setShow(false)}
-        >
-          <IconItem size={iconPopoverSize} icon={iconPopover} />
-          <span className={cx('popover__btn-text')}>{buttonText}</span>
-        </button>
-      </Tooltip>
+      <button
+        {...btnProps}
+        title=""
+        aria-label={btnProps.title}
+        className={cx('popover__btn', classNameButton)}
+        onClick={() => setShow((show) => !show)}
+        onBlur={() => setShow(false)}
+      >
+        <IconItem size={iconPopoverSize} icon={iconPopover} />
+        <span className={cx('popover__btn-text')}>{buttonText}</span>
+      </button>
     </Popover>
   )
 }
