@@ -1,6 +1,22 @@
-import React from "react"
-import { IconItem } from "@components/UI/atoms"
-import { Briefcase, Calendar1, DollarCircle, Location, People, Tag } from '@constants/icons.constants';
+import React from 'react'
+import { IconItem } from '@components/UI/atoms'
+import {
+  ArchiveAdd,
+  ArchiveRemove,
+  Briefcase,
+  Calendar1,
+  DollarCircle,
+  Export3,
+  Flag,
+  LinkedInBlue,
+  Location,
+  People,
+  Share,
+  SMSBlue,
+  Tag,
+  WhatsAppColor,
+  X
+} from '@constants/icons.constants'
 
 export const iconJobDetailSummaryMap = {
   calendar: React.createElement(IconItem, { icon: Calendar1, size: 16, alt: 'Calendar1-icon' }),
@@ -8,5 +24,17 @@ export const iconJobDetailSummaryMap = {
   briefcase: React.createElement(IconItem, { icon: Briefcase, size: 16, alt: 'Briefcase-icon' }),
   'dollar-circle': React.createElement(IconItem, { icon: DollarCircle, size: 16, alt: 'DollarCircle-icon' }),
   location: React.createElement(IconItem, { icon: Location, size: 16, alt: 'Location-icon' }),
-  tag: React.createElement(IconItem, { icon: Tag, size: 16, alt: 'Tag-icon' }),
+  tag: React.createElement(IconItem, { icon: Tag, size: 16, alt: 'Tag-icon' })
+}
+
+export const iconJobDetailsAction = {
+  archiveAdd: ArchiveAdd,
+  archiveRemove: ArchiveRemove,
+  export3: Export3,
+  flag: Flag,
+  whatsAppColor: WhatsAppColor,
+  linkedInBlue: LinkedInBlue,
+  x: X,
+  smsBlue: SMSBlue,
+  share: Share
 }

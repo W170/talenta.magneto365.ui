@@ -23,7 +23,7 @@ export interface IShareLink {
   name?: keyof typeof ShareIcons
 }
 
-export interface ISharePopover extends IShareButton {
+export interface ISharePopover {
   shareLinks?: IShareLink[]
 
   classNameContent?: string
@@ -48,4 +48,6 @@ export interface ISharePopover extends IShareButton {
    * Indicates size iconPopover.
    */
   iconPopoverSize?: number
+
+  shareButtonProps: IShareButton
 }

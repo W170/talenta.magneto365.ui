@@ -13,17 +13,16 @@ const Component: React.FC<ISharePopover> = ({
   btnProps = {},
   classNameContent = '',
   classNameButton = '',
-  addHover,
   buttonText,
   iconPopover,
   iconPopoverSize = 20,
-  ...rest
+  shareButtonProps
 }) => {
   const [show, setShow] = useState(false)
 
   return (
     <Popover
-      className={cx('popover', { 'popover--hidden': !show, 'popover--hover': addHover })}
+      className={cx('popover', { 'popover--hidden': !show, 'popover--hover': shareButtonProps.addHover })}
       positionX="right"
       positionY="bottom"
       show={show}
@@ -48,9 +47,9 @@ const Component: React.FC<ISharePopover> = ({
           ))}
           <li className={cx('content__share')}>
             <ShareButton
-              {...rest}
+              {...shareButtonProps}
               onCopySuccess={() => {
-                rest.onCopySuccess()
+                shareButtonProps.onCopySuccess()
               }}
             />
           </li>
@@ -66,7 +65,7 @@ const Component: React.FC<ISharePopover> = ({
           onClick={() => setShow((show) => !show)}
           onBlur={() => setShow(false)}
         >
-          <IconItem size={iconPopoverSize} icon={iconPopover} hover={addHover} />
+          <IconItem size={iconPopoverSize} icon={iconPopover} />
           <span className={cx('popover__btn-text')}>{buttonText}</span>
         </button>
       </Tooltip>
