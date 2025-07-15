@@ -92,7 +92,7 @@ const jobDetailsContent = (
       </JobDetails.Action.Button>
       <JobDetails.Action.Link icon="whatsAppColor">enlace</JobDetails.Action.Link>
       <JobDetails.Action.SharePopover
-        iconPopover="export3"
+        icon="export3"
         buttonText="popover"
         shareButtonProps={{ onCopySuccess: () => '', icon: 'link1' }}
         shareLinks={shareLinks}
