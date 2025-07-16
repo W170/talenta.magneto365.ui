@@ -16,6 +16,7 @@ import {
   People,
   Share,
   Share2,
+  Share2Bold,
   SMSBlue,
   Tag,
   WhatsAppColor,
@@ -44,5 +45,6 @@ export const iconJobDetailsAction = {
   smsBlue: SMSBlue,
   share: Share,
   share2: Share2,
+  share2Bold: Share2Bold,
   magnetoIcon: MagnetoIcon
 }
