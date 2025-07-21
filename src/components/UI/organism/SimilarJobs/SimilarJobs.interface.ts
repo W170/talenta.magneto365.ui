@@ -5,17 +5,17 @@ export interface ISimilarJobs {
    * this is the title in the top
    * @deprecated is not used.
    */
-  sectionTitle: string
+  sectionTitle?: string
   /**
    * this is the link text
    * @deprecated is not used.
    */
-  moreJobsText: string
+  moreJobsText?: string
   /**
    * this is the link text
    * @deprecated is not used.
    */
-  moreJobsLink: string
+  moreJobsLink?: string
   /**
    * this property hide the image
    */

@@ -9,6 +9,13 @@ import { JobSuggestedCard } from '../JobSuggestedCard'
 import { IconItem } from '../../atoms/Icon'
 import Logo from '@assets/noLogo.svg'
 import { JobCompanyLogo } from '../../atoms'
+import { SimilarJobs } from '../SimilarJobs'
+import {
+  moreJobsText,
+  similarVacanciesCardsProps,
+  moreJobsLink,
+  hideLogo
+} from '@constants/stories/similarJobs.constants'
 
 const meta: Meta<typeof JobDetails> = {
   title: 'Organism/JobDetails',
@@ -44,6 +51,15 @@ export const Default: Story = {
               <JobDetails.Action.Link icon="export3">Expandir</JobDetails.Action.Link>
               <JobDetails.Action.Link icon="flag">Reportar</JobDetails.Action.Link>
             </section>
+          </div>
+        )}
+        renderFooter={() => (
+          <div>
+            <SimilarJobs.Title icon="all-jobs">Empleos similares</SimilarJobs.Title>
+            <SimilarJobs hideLogo={hideLogo} similarJobsCard={similarVacanciesCardsProps} />
+            <SimilarJobs.Link title={moreJobsText} href={moreJobsLink}>
+              {moreJobsText}
+            </SimilarJobs.Link>
           </div>
         )}
       >
