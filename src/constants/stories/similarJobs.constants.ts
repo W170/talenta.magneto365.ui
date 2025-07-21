@@ -15,7 +15,8 @@ export const similarVacanciesCardsProps: ISimilarJobsCard[] = [
     jobUrlSlug: '#',
     experience: '1 año de experiencia',
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPt4mvHEh4kyEkHx7bRVB1PXGPd_rvGZDmaA&usqp=CAU',
-    companyName: 'Exito'
+    companyName: 'Exito',
+    contractType: 'Indefinido'
   },
   {
     id: 2,
@@ -26,7 +27,8 @@ export const similarVacanciesCardsProps: ISimilarJobsCard[] = [
     jobUrlSlug: '#',
     experience: 'Sin experiencia',
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMoo9RUN_NnD4aWgDuHUeEGTUfJXpimlWA&usqp=CAU',
-    companyName: 'Exito'
+    companyName: 'Exito',
+    contractType: 'Fijo'
   },
   {
     id: 3,
@@ -37,7 +39,8 @@ export const similarVacanciesCardsProps: ISimilarJobsCard[] = [
     jobUrlSlug: '#',
     experience: '1 año de experiencia',
     companyLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KGGKFa3GNtqGOaHoMxCqhaIj1Xauu3n61Q&usqp=CAU',
-    companyName: 'Exito'
+    companyName: 'Exito',
+    contractType: 'Prestación de servicios'
   },
   {
     id: 4,

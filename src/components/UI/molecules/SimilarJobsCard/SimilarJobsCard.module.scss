@@ -8,33 +8,17 @@
   padding: t.$padding-xl 0;
   transition: all ease-in-out 0.3s;
   border-radius: 13px;
-
-  p {
-    font-size: 14px;
-    text-decoration: none;
-    color: t.$color-blue-dark-400;
-  }
-
-  /* @media (min-width: v.$screen-lg) {
-    &:hover {
-      background-color: #f4f4fa;
-    }
-
-    &:hover &__arrow {
-      right: 5px;
-    }
-  } */
+  text-decoration: none;
 
   &__title {
     margin: 0px;
-    font-weight: bold;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 1;
-    font-size: 14px;
-    // color: v.$text-color-black;
+    font-size: t.$text-lg;
+    color: t.$color-grey-800;
   }
 
   &__info {
@@ -44,6 +28,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
+    color: t.$color-grey-800;
+    font-size: t.$text-lg;
   }
 
   &__arrow {
@@ -53,5 +39,9 @@
     right: 10px;
     transition: right ease-in-out 0.3s;
     opacity: 0.4;
+  }
+
+  &__img {
+    object-fit: contain;
   }
 }

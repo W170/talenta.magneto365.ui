@@ -1,27 +1,22 @@
-import React, { useMemo } from 'react'
-import { ISimilarJobsCard } from './SimilarJobsCard.interface'
-import { ArrowRight2, NoLogo } from '@constants/icons.constants'
+import React from 'react'
 import { classMUI } from '@constants/stories'
-import { IconItem } from '@components/UI/atoms'
+import { NoLogo } from '@constants/icons.constants'
+import { IconItem, Typography } from '@components/UI/atoms'
+import { ISimilarJobsCard } from './SimilarJobsCard.interface'
 import styles from './SimilarJobsCard.module.scss'
 
 const SimilarJobsCard: React.FC<ISimilarJobsCard> = ({
   cities,
   companyLogo,
-  experience,
   jobUrlSlug,
   salary,
   title,
+  quotas,
   companyName,
+  contractType,
   hideLogo
 }) => {
-  const formatInfo = useMemo(() => {
-    const citiesFormat = cities ? `${cities[0]} ${cities?.length > 1 ? `(+${cities?.length - 1})` : ''}` : ''
-    const salaryFormat = salary ? ` | ${salary}` : ''
-    const experienceFormat = experience ? ` | ${experience}` : ''
-
-    return `${citiesFormat}${salaryFormat}${experienceFormat}`
-  }, [cities, salary, experience])
+  const [city = '', ...restCities] = cities
 
   return (
     <a title={title} className={`${styles[`${classMUI}-similar-jobs`]}`} href={jobUrlSlug}>
@@ -34,10 +29,17 @@ const SimilarJobsCard: React.FC<ISimilarJobsCard> = ({
         />
       )}
       <div>
-        <h2 className={`${styles[`${classMUI}-similar-jobs__title`]}`}>{title}</h2>
-        <p className={`${styles[`${classMUI}-similar-jobs__info`]}`}>{formatInfo}</p>
+        <Typography.Title level={2} strong className={`${styles[`${classMUI}-similar-jobs__title`]}`}>
+          {title}
+        </Typography.Title>
+        <Typography.Paragraph className={`${styles[`${classMUI}-similar-jobs__info`]}`}>
+          {[[companyName, contractType].filter(Boolean).join(' | '), quotas].filter(Boolean).join(', ')}
+        </Typography.Paragraph>
+        <Typography.Paragraph className={`${styles[`${classMUI}-similar-jobs__info`]}`}>{salary}</Typography.Paragraph>
+        <Typography.Paragraph className={`${styles[`${classMUI}-similar-jobs__info`]}`}>
+          {[city, restCities.length && `(+${restCities.length})`].filter(Boolean).join(' ')}
+        </Typography.Paragraph>
       </div>
-      <IconItem className={`${styles[`${classMUI}-similar-jobs__arrow`]}`} icon={ArrowRight2} alt="arow-right-icon" />
     </a>
   )
 }
