@@ -1,3 +1,4 @@
+import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { SimilarJobs } from '.'
 import {
@@ -25,9 +26,25 @@ export default meta
 
 type Story = StoryObj<typeof SimilarJobs>
 
-export const Default: Story = {}
+export const Default: Story = {
+  render: (props) => (
+    <article>
+      <SimilarJobs.Title icon="all-jobs">Empleos similares</SimilarJobs.Title>
+      <SimilarJobs {...props} />
+      <SimilarJobs.Link>Ver todos los empleos</SimilarJobs.Link>
+    </article>
+  )
+}
+
 export const HideLogo: Story = {
   args: {
     hideLogo: true
-  }
+  },
+  render: (props) => (
+    <article>
+      <SimilarJobs.Title icon="all-jobs">Empleos similares</SimilarJobs.Title>
+      <SimilarJobs {...props} />
+      <SimilarJobs.Link>Ver todos los empleos</SimilarJobs.Link>
+    </article>
+  )
 }
