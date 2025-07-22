@@ -23,7 +23,8 @@ const SortBar: React.FC<ISortBar> = ({
   setFilter,
   emptyVacant,
   infoMessageQuotas,
-  widthInfoMessage
+  widthInfoMessage,
+  horizontal = false
 }) => {
   const [showMenu, setShowMenu] = useState(false)
   const tooltip = useMediaQuery(
@@ -73,16 +74,18 @@ const SortBar: React.FC<ISortBar> = ({
     <Fragment>
       <div className={styles['magneto-ui-sort-menu']}>
         <div className={styles['magneto-ui-section-filter']}>
-          <MenuIcon
-            type="button"
-            text={textSortButton}
-            icon={Setting4}
-            onClick={setIsFiltersOpen as () => void}
-            size={17}
-            isActive={true}
-          />
+          {!horizontal && (
+            <MenuIcon
+              type="button"
+              text={textSortButton}
+              icon={Setting4}
+              onClick={setIsFiltersOpen as () => void}
+              size={17}
+              isActive={true}
+            />
+          )}
           {mainTitleByMediaQuery}
-          <p className={`${styles['magneto-ui-btn-text']} ${styles.hidden}`}>{filterSummary}</p>
+          <p className={`${styles['magneto-ui-btn-text']} ${horizontal ? '' : styles.hidden}`}>{filterSummary}</p>
           {infoMessageQuotas && tooltip}
         </div>
         {sortBarButtonAltRender}
