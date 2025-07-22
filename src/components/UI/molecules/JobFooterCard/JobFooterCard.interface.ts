@@ -1,4 +1,6 @@
 import { IShareButton } from '@components/UI/atoms'
+import { ReactNode } from 'react'
+import { TJobActionsVariant } from '../JobActions'
 export interface IFooterList {
   /**
    * The URL to navigate to when the list item is clicked. Can be null if there is no URL.
@@ -47,4 +49,22 @@ export interface IJobFooterCard {
    * This is the company name
    */
   companyName?: string
+  /**
+   * Content to be displayed as an external child element.
+   */
+  externalChild?: ReactNode | JSX.Element
+  /**
+   * Props for show apply button
+   */
+  isApplied?: boolean
+  /**
+   * Indicates whether the component is default or detailed.
+   */
+
+  variant?: TJobActionsVariant
+
+  /**
+   * This is the main class to footer card
+   */
+  className?: string
 }

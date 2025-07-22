@@ -8,7 +8,6 @@ const Component: React.FC<IPopover> = ({
   positionX,
   positionY,
   show,
-  widthBase,
   staticContent,
   className = ''
 }) => {
@@ -30,10 +29,7 @@ const Component: React.FC<IPopover> = ({
   }, [show])
 
   return (
-    <div
-      style={{ width: widthBase }}
-      className={[style['magneto-ui-popover-container'], staticContentClass, className].join(' ')}
-    >
+    <div className={[style['magneto-ui-popover-container'], staticContentClass, className].join(' ')}>
       <div className={`${style['magneto-ui-popover']} ${style[positionX]} ${style[positionY]} ${style[showMenu]}`}>
         {hideComponent && content}
       </div>

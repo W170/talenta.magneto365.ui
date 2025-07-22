@@ -1,0 +1,16 @@
+@use '../../../../shared/stylesheets/tokens' as *;
+
+.job-suggested-card {
+  background-color: $color-grey-200;
+  border-radius: $radius-md;
+  padding: $padding-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $gap-sm;
+  transition: all 0.2s;
+  max-width: 452px;
+
+  &:hover {
+    background-color: $color-grey-50;
+  }
+}

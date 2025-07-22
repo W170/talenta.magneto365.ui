@@ -1,3 +1,4 @@
+import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { SimilarJobs } from '.'
 import {
@@ -7,6 +8,7 @@ import {
   moreJobsLink,
   hideLogo
 } from '@constants/stories/similarJobs.constants'
+import { Typography } from '@components/UI/atoms'
 
 const meta: Meta<typeof SimilarJobs> = {
   title: 'Organism/Similar Jobs',
@@ -25,9 +27,25 @@ export default meta
 
 type Story = StoryObj<typeof SimilarJobs>
 
-export const Default: Story = {}
+export const Default: Story = {
+  render: (props) => (
+    <article>
+      <Typography.Paragraph strong>Empleos similares</Typography.Paragraph>
+      <SimilarJobs {...props} />
+      <SimilarJobs.Link>Ver todos los empleos</SimilarJobs.Link>
+    </article>
+  )
+}
+
 export const HideLogo: Story = {
   args: {
     hideLogo: true
-  }
+  },
+  render: (props) => (
+    <article>
+      <Typography.Paragraph strong>Empleos similares</Typography.Paragraph>
+      <SimilarJobs {...props} />
+      <SimilarJobs.Link>Ver todos los empleos</SimilarJobs.Link>
+    </article>
+  )
 }

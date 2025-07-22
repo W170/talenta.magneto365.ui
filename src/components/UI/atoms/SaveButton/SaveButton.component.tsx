@@ -3,18 +3,29 @@ import { IconItem } from '../Icon'
 import { ISaveButton } from './SaveButton.interface'
 import styles from './SaveButton.module.scss'
 import { ArchiveAdd, ArchiveRemove } from '@constants/icons.constants'
+import { classNames } from '@shared/utils/common'
 
-const Component: React.FC<ISaveButton> = ({ isAuthenticated, isSaved, buttonText, buttonTitle, addHover, onClick }) => {
+const cx = classNames.bind(styles)
+
+const Component: React.FC<ISaveButton> = ({
+  isSaved,
+  buttonText,
+  buttonTitle,
+  addHover,
+  onClick,
+  isAuthenticated = false,
+  iconSize = 20
+}) => {
   return isAuthenticated ? (
     <button
-      className={`${styles['magneto-ui-save-button']} ${addHover && styles['hover-effect']}`}
+      className={cx('magneto-ui-save-button', { 'hover-effect': addHover })}
       type="button"
       onClick={onClick}
       aria-label={buttonTitle}
     >
-      <div className={styles['button-content']}>
-        <IconItem size={20} icon={isSaved ? ArchiveRemove : ArchiveAdd} hover={addHover} />
-        {buttonText && <p className={styles['magneto-ui-save-button__mobile-text']}>{buttonText}</p>}
+      <div className={cx('button-content')}>
+        <IconItem size={iconSize} icon={isSaved ? ArchiveRemove : ArchiveAdd} hover={addHover} />
+        {buttonText && <p className={cx('magneto-ui-save-button__mobile-text')}>{buttonText}</p>}
       </div>
     </button>
   ) : null

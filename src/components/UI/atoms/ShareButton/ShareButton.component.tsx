@@ -1,8 +1,8 @@
 import React from 'react'
 import { IconItem } from '../Icon'
-import { Link1 } from '@constants/icons.constants'
 import { IShareButton } from './ShareButton.interface'
 import styles from './ShareButton.module.scss'
+import { iconJobDetailsAction } from '@constants/jobDetails.constants'
 
 const Component: React.FC<IShareButton> = ({
   className = '',
@@ -10,11 +10,12 @@ const Component: React.FC<IShareButton> = ({
   buttonText,
   detailUrl,
   addHover,
-  onCopySuccess
+  onCopySuccess,
+  icon
 }) => {
   const handleCopyClick = () => {
     if (detailUrl) {
-      navigator.clipboard.writeText(detailUrl).then(() => onCopySuccess())
+      navigator.clipboard.writeText(detailUrl).then(() => onCopySuccess?.())
     }
   }
 
@@ -26,7 +27,7 @@ const Component: React.FC<IShareButton> = ({
       title={buttonTitle}
     >
       <div className={styles['button-content']}>
-        <IconItem size={20} icon={Link1} hover={addHover} />
+        <IconItem size={20} icon={icon && iconJobDetailsAction[icon]} hover={addHover} />
         {buttonText && <p className={styles['magneto-ui-share-button__mobile-text']}>{buttonText}</p>}
       </div>
     </button>

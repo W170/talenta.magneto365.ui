@@ -1,10 +1,11 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../shared/stylesheets/tokens' as *;
 
 .magneto-ui-save-button {
   border: none;
-  border-radius: 50%;
+  border-radius: $radius-3xl;
   background-color: transparent;
-  padding: 12px 13px;
+  padding: $padding-sm-2 $padding-md;
   cursor: pointer;
 
   &__mobile-text {
@@ -16,16 +17,17 @@
     color: v.$text-color-black;
   }
 
+  &.hover-effect {
+    &:hover {
+      background-color: v.$colors-magneto-neutral-gray-5;
+      transition: all ease-in-out 0.3s;
+      transform: scale(1.001);
+    }
+  }
+
   .button-content {
     display: flex;
-    align-items: center;
-    gap: 18px;
-  }
-}
-
-.hover-effect {
-  &:hover {
-    background-color: v.$colors-magneto-neutral-gray-5;
-    transition: all ease-in-out 0.3s;
+    align-items: baseline;
+    gap: $gap-sm;
   }
 }

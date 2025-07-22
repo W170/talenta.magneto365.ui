@@ -1,14 +1,17 @@
 export interface ISkill {
+  className?: string
+
+  classNames?: {
+    name?: string
+    level?: string
+    circle?: string
+  }
   /**
-   * The unique identifier for the skill, can be a number or null.
+   * The name or description of the skill
    */
-  id: number | null
+  name: string
   /**
-   * The name or description of the skill, can be a string or null.
+   * The score or proficiency level of the skill.
    */
-  name: string | null
-  /**
-   * The score or proficiency level of the skill, can be a number or null.
-   */
-  score: number | null
+  score: number
 }

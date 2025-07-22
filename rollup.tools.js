@@ -1,3 +1,4 @@
+import fs from 'fs'
 import path from 'path'
 import stringHash from 'string-hash'
 import autoprefixer from 'autoprefixer'
@@ -40,7 +41,12 @@ export const CONFIG_POSTCSS_PLUGIN = (isSub, suffix = 'lib') => {
     exclude: !isSub ? ['*.css'] : [],
     extensions: ['.css'],
     minimize: true,
-    sourceMap: false
+    sourceMap: false,
+    use: {
+      sass: {
+        includePaths: [path.resolve(__dirname, './src/shared/stylesheets/tokens')]
+      }
+    }
   })
 }
 

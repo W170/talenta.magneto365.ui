@@ -15,7 +15,8 @@ import {
   X,
   WhatsAppColor,
   Location,
-  Tag
+  Tag,
+  Flag
 } from '@constants/icons.constants'
 
 export const vacancies: IVacancies[] = [
@@ -333,6 +334,7 @@ export const vacancies: IVacancies[] = [
 export const buttonIconsList = [ArchiveAdd, Share]
 
 export const anchorIconList = [Export3, Buildings2]
+export const anchorIconListJobsActions2 = [Export3, Flag]
 
 export const iconDetailList = [Calendar1, People, Briefcase, DollarCircle, Location, Tag]
 
