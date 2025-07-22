@@ -55,7 +55,7 @@ export const Default: Story = {
         )}
         renderFooter={() => (
           <div>
-            <SimilarJobs.Title icon="all-jobs">Empleos similares</SimilarJobs.Title>
+            <JobDetails.Subtitle icon="briefcase">Empleos similares</JobDetails.Subtitle>
             <SimilarJobs hideLogo={hideLogo} similarJobsCard={similarVacanciesCardsProps} />
             <SimilarJobs.Link title={moreJobsText} href={moreJobsLink}>
               {moreJobsText}

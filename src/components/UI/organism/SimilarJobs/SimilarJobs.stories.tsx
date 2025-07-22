@@ -8,6 +8,7 @@ import {
   moreJobsLink,
   hideLogo
 } from '@constants/stories/similarJobs.constants'
+import { Typography } from '@components/UI/atoms'
 
 const meta: Meta<typeof SimilarJobs> = {
   title: 'Organism/Similar Jobs',
@@ -29,7 +30,7 @@ type Story = StoryObj<typeof SimilarJobs>
 export const Default: Story = {
   render: (props) => (
     <article>
-      <SimilarJobs.Title icon="all-jobs">Empleos similares</SimilarJobs.Title>
+      <Typography.Paragraph strong>Empleos similares</Typography.Paragraph>
       <SimilarJobs {...props} />
       <SimilarJobs.Link>Ver todos los empleos</SimilarJobs.Link>
     </article>
@@ -42,7 +43,7 @@ export const HideLogo: Story = {
   },
   render: (props) => (
     <article>
-      <SimilarJobs.Title icon="all-jobs">Empleos similares</SimilarJobs.Title>
+      <Typography.Paragraph strong>Empleos similares</Typography.Paragraph>
       <SimilarJobs {...props} />
       <SimilarJobs.Link>Ver todos los empleos</SimilarJobs.Link>
     </article>

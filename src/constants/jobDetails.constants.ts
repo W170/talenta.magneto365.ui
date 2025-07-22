@@ -1,14 +1,17 @@
 import React from 'react'
 import { IconItem } from '@components/UI/atoms'
 import {
+  AllJobs,
   ArchiveAdd,
   ArchiveRemove,
   Briefcase,
+  Building5,
   Calendar1,
   DollarCircle,
   Export3,
   FacebookBlue,
   Flag,
+  Glass,
   Link1,
   LinkedInBlue,
   Location,
@@ -47,4 +50,12 @@ export const iconJobDetailsAction = {
   share2: Share2,
   share2Bold: Share2Bold,
   magnetoIcon: MagnetoIcon
+}
+
+export const iconJobDetailsSubTitle = {
+  allJobs: AllJobs,
+  glass: Glass,
+  tag: Tag,
+  building: Building5,
+  briefcase: Briefcase
 }

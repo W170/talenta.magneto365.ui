@@ -6,6 +6,7 @@ import { JobDetailsSkills } from './children/JobDetailsSkills'
 import { JobDetailsFraud } from './children/JobDetailsFraud'
 import { JobDetailsSuggested } from './children/JobDetailsSuggested'
 import { JobDetailsAction } from './children/JobDetailsAction/JobDetailsAction.component'
+import { JobDetailsSubTitle } from './children/JobDetailsSubTitle/JobDetailsSubTitle.component'
 
 export const JobDetails = Object.assign(JobDetailsRaw, {
   Header: JobDetailsHeader,
@@ -15,5 +16,6 @@ export const JobDetails = Object.assign(JobDetailsRaw, {
   Fraud: Object.assign(JobDetailsFraud, {
     Link: JobDetailsFraudLink
   }),
-  Action: JobDetailsAction
+  Action: JobDetailsAction,
+  Subtitle: JobDetailsSubTitle
 })
