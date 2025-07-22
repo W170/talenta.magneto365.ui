@@ -12,13 +12,5 @@
 
   &:hover {
     background-color: $color-grey-50;
-    div > button:first-child {
-      background-color: $color-grey-50;
-    }
-
-    div > button:last-child {
-      background-color: $color-blue-dark-300;
-      color: $color-grey-50;
-    }
   }
 }
