@@ -5,12 +5,12 @@ import styles from './jobDetails.module.scss'
 
 const cx = classNames.bind(styles)
 
-export const JobDetails: React.FC<IJobDetails> = ({ renderHeader, children, renderFooter, classNames }) => {
+export const JobDetails: React.FC<IJobDetails> = ({ renderHeader, children, renderFooter, classNames, className }) => {
   return (
-    <article className={cx('job')}>
+    <article className={cx('job', className)}>
       <header className={cx('job__header', classNames?.header)}>
         {renderHeader()}
-        <hr className={cx('job__separator')} />
+        <hr className={cx('job__separator', classNames?.separator)} />
       </header>
       <section className={cx('job__body', classNames?.body)}>{children}</section>
       <footer className={cx('job__footer', classNames?.footer)}>{renderFooter?.()}</footer>
