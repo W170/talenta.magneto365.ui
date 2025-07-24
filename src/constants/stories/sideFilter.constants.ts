@@ -533,7 +533,7 @@ export const sideFilterProps = {
   filters: storiesFilters as IFilter[],
   totalAppliedFilters: 3,
   filterSummary: '3169 empleos',
-  buttonText: 'Limpiar',
+  buttonText: 'Limpiar filtros',
   loading: false,
   isFiltersOpen: true,
   textBtnMain: 'Ver empleos',

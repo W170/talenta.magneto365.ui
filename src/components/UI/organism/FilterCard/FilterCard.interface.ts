@@ -29,4 +29,8 @@ export interface IFilterCard extends IFilter, ISearchRenderTypeProps {
    * key to know if a filter has changed
    */
   showFilters: boolean
+  /**
+   * To render horizontal filter
+   */
+  horizontal?: boolean
 }
