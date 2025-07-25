@@ -17,14 +17,11 @@
   }
 
   p {
-    display: flex;
-    flex-direction: column;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     color: v.$text-color-black;
-    margin: 0px;
   }
 
   @media screen and (max-width: (v.$screen-lg)) {

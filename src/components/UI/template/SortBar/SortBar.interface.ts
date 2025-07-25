@@ -61,4 +61,9 @@ export interface ISortBar {
   infoMessageQuotas?: string
 
   widthInfoMessage?: string
+
+  /**
+   *  To render conditional content in the sort bar
+   */
+  horizontal?: boolean
 }

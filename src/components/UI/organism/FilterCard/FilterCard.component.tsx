@@ -1,13 +1,14 @@
-import React, { ChangeEvent, FC, Fragment, useCallback, useEffect, useMemo, useState } from 'react'
+import React, { FC, Fragment, useMemo } from 'react'
 import { FilterSearchItem } from '@components/UI/molecules/FilterSearchItem'
-import { FilterMenuItem } from '@components/UI/molecules/FilterMenuItem'
 import { Switch } from '@components/UI/atoms/Switch'
-import { ERenderType } from '@constants/stories'
-import { IFilterValue } from '@components/UI/template'
+import { MobileDrawer } from '@components/UI/molecules/MobileDrawer'
 import { IFilterCard } from './FilterCard.interface'
 import styles from './FilterCard.module.scss'
 import { IconItem } from '@components/UI/atoms'
-import { ArrowDown2 } from '@constants/icons.constants'
+import { Add, ArrowDown2, SmallClose } from '@constants/icons.constants'
+import { getFieldIcon } from '@utils/icons/iconMapping.utils'
+import { useFilterCard } from '@components/hooks/filters/useFilterCard'
+import { useFilterRendering } from '@components/hooks/filters/useFilterRendering'
 
 export const FilterCard: FC<IFilterCard> = ({
   label,
@@ -19,60 +20,137 @@ export const FilterCard: FC<IFilterCard> = ({
   index,
   setCurrentOpenFilter,
   showFilters,
+  horizontal,
   ...props
 }) => {
-  const [options, setOptions] = useState<IFilterValue[]>(values)
-  const [showItems, setShowItems] = useState<boolean>(showFilters)
+  const { state, computed, positions, handlers } = useFilterCard({
+    values,
+    renderType,
+    setIsApplied,
+    index,
+    setCurrentOpenFilter,
+    showFilters,
+    horizontal,
+    field: props.field
+  })
 
-  const hasSearch = useMemo(() => renderType === ERenderType.multiSelect, [renderType])
-  const hasTotal = useMemo(() => !values.find((value) => value.isApplied), [values])
-  const appliedOption = useMemo(() => options.find(({ isApplied }) => isApplied), [options])
-  const hasntOptions = useMemo(() => options.every(({ total }) => total == 0 || total == undefined), [options])
-  const isInteractiveSection = useMemo(() => !hasntOptions && !appliedOption, [hasntOptions, appliedOption])
+  const { options, showItems, showMobileDrawer, showTooltip, buttonRef } = state
 
-  const handleSearch = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      event.preventDefault()
-      const searchedOptions = values.filter((opt) => opt.label.toLowerCase().includes(event.target.value.toLowerCase()))
-      setOptions(searchedOptions)
-    },
-    [values, setOptions]
+  const { isMobile, hasSearch, hasTotal, appliedOption, appliedValue, hasntOptions, isInteractiveSection } = computed
+
+  const { popoverPosition, tooltipPosition } = positions
+
+  const {
+    handleSearch,
+    handleShowItems,
+    handleCloseMobileDrawer,
+    handleOptionSelected,
+    handleRemove,
+    handleMouseEnter,
+    handleMouseLeave,
+    handleTouchStart,
+    handleTouchEnd
+  } = handlers
+
+  const { optionsToRender, horizontalOptionsToRender } = useFilterRendering({
+    options,
+    appliedOption,
+    hasntOptions,
+    hasTotal,
+    handleOptionSelected,
+    props: {
+      field: props.field,
+      multiple: props.multiple,
+      loading: props.loading,
+      type: props.type
+    }
+  })
+
+  // CSS variables for positioning (avoid inline styles)
+  const positionVars = useMemo(
+    () =>
+      ({
+        '--popover-top': `${popoverPosition.top}px`,
+        '--popover-left': `${popoverPosition.left}px`,
+        '--tooltip-top': `${tooltipPosition.top}px`,
+        '--tooltip-left': `${tooltipPosition.left}px`
+      } as React.CSSProperties),
+    [popoverPosition.top, popoverPosition.left, tooltipPosition.top, tooltipPosition.left]
   )
-
-  const handleShowItems = useCallback(() => {
-    if (!showItems) setCurrentOpenFilter(index)
-    else setCurrentOpenFilter(99)
-    setShowItems(!showItems)
-  }, [showItems, index, setCurrentOpenFilter])
-
-  const renderItem = useCallback(
-    (opt: IFilterValue, key = 0) => {
-      const optProps = { ...props, ...opt!, hasTotal, setIsApplied, type: props.type }
-
-      return <FilterMenuItem key={`${key}-${opt.label}`} {...optProps} />
-    },
-    [hasTotal, setIsApplied, props]
-  )
-
-  const optionsRendered = useMemo(() => {
-    if (appliedOption) return renderItem(appliedOption)
-    if (hasntOptions) return <Fragment />
-    return options.map(renderItem)
-  }, [options, appliedOption, renderItem, hasntOptions])
-
-  useEffect(() => {
-    if (appliedOption != undefined) setShowItems(true)
-  }, [appliedOption])
-
-  useEffect(() => {
-    setOptions(values)
-  }, [values])
-
-  useEffect(() => {
-    if (!appliedOption && !hasntOptions && showFilters != showItems) setShowItems(showFilters)
-  }, [showFilters, appliedOption, hasntOptions, showItems])
 
   if (!values.length) return <Fragment />
+
+  // Horizontal layout
+  if (horizontal) {
+    const icon = getFieldIcon(props.field, props.icon)
+
+    return (
+      <div className={styles['magneto-ui-filter-card-horizontal']} style={positionVars}>
+        <button
+          ref={buttonRef}
+          className={`${styles['magneto-ui-horizontal-filter-button']} ${appliedValue ? styles.applied : ''}`}
+          onClick={appliedValue ? undefined : handleShowItems}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <IconItem
+            icon={icon}
+            size={20}
+            className={!appliedValue ? styles['magneto-ui-horizontal-filter-button--grayscale'] : ''}
+          />
+          <span>{appliedValue ? appliedValue.label : label}</span>
+          {appliedValue ? (
+            <span onClick={handleRemove}>
+              <IconItem icon={SmallClose} size={17} />
+            </span>
+          ) : (
+            <IconItem icon={Add} size={19} />
+          )}
+        </button>
+
+        {showTooltip && (
+          <div className={styles['magneto-ui-filter-card-horizontal__tooltip']}>
+            {appliedValue ? appliedValue.label : label}
+          </div>
+        )}
+
+        {showItems && !isMobile && (
+          <div className={styles['magneto-ui-filter-card-horizontal__popover-wrapper']} data-popover-index={index}>
+            <div className={styles['magneto-ui-filter-card-horizontal__popover']}>
+              {hasSearch && (
+                <div className={styles['magneto-ui-filter-card__search']}>
+                  <FilterSearchItem
+                    loading={props.loading}
+                    placeholder={searchPlaceholder as string}
+                    handleSearch={handleSearch}
+                  />
+                </div>
+              )}
+              <div className={styles['magneto-ui-filter-card_options']}>{horizontalOptionsToRender}</div>
+            </div>
+          </div>
+        )}
+
+        <MobileDrawer isOpen={showMobileDrawer} onClose={handleCloseMobileDrawer}>
+          <div className={styles['magneto-ui-filter-card-horizontal__drawer-content']}>
+            <h3>{label}</h3>
+            {hasSearch && (
+              <div className={styles['magneto-ui-filter-card__search']}>
+                <FilterSearchItem
+                  loading={props.loading}
+                  placeholder={searchPlaceholder as string}
+                  handleSearch={handleSearch}
+                />
+              </div>
+            )}
+            <div className={styles['magneto-ui-filter-card_options']}>{horizontalOptionsToRender}</div>
+          </div>
+        </MobileDrawer>
+      </div>
+    )
+  }
 
   return (
     <article
@@ -103,7 +181,7 @@ export const FilterCard: FC<IFilterCard> = ({
         </div>
       )}
 
-      {showItems && <div className={styles['magneto-ui-filter-card_options']}>{optionsRendered}</div>}
+      {showItems && <div className={styles['magneto-ui-filter-card_options']}>{optionsToRender}</div>}
     </article>
   )
 }

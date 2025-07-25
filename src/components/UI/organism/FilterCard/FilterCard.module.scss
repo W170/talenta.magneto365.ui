@@ -95,3 +95,15 @@ $lines: 2;
   height: 270px;
   min-height: 270px;
 }
+
+.magneto-ui-filter-card-horizontal {
+  @include m.horizontal-filter-card;
+
+  &__popover {
+    @include m.horizontal-filter-popover;
+  }
+}
+
+.magneto-ui-horizontal-filter-button {
+  @include m.horizontal-filter-button;
+}
