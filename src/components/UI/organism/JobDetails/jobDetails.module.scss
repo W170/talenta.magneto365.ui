@@ -21,6 +21,7 @@
 
   &__separator {
     border-top: tokens.$border-1 solid tokens.$color-grey-200;
+    color: tokens.$color-grey-200;
     width: 100%;
     margin: 0;
   }
