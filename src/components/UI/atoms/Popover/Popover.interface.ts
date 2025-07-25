@@ -1,3 +1,5 @@
+import React from "react"
+
 type PositionY = 'top' | 'bottom'
 type PositionX = 'left' | 'center' | 'right'
 
@@ -32,4 +34,6 @@ export interface IPopover {
   staticContent?: boolean
 
   className?: string
+
+  style? : React.CSSProperties
 }

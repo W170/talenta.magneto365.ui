@@ -1,5 +1,5 @@
 import { ISortMenuItem } from '@components/UI/molecules'
-import { ArrowDown2, ArrowSwapVertical } from '@constants/icons.constants'
+import { ArrowDown2, SortIcon } from '@constants/icons.constants'
 
 export const menuSortButton = {
   icon: ArrowDown2,
@@ -8,7 +8,7 @@ export const menuSortButton = {
 }
 
 export const iconFilterOrder = {
-  icon: ArrowSwapVertical,
+  icon: SortIcon,
   hover: false,
   size: 20
 }
@@ -36,7 +36,7 @@ export const sortBarProps = {
   textSortButton: 'FILTROS',
   mainTitle: 'Ofertas de empleo en colombia',
   filterSummary: '280 cupos',
-  textOrderFilter: 'Fecha de publicación',
+  textOrderFilter: 'Salari',
   orderFields: optionsFilterOrderBy,
   orderByText: 'Organizar por',
   isFiltersOpen: true,

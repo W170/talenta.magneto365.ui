@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useEffect, useMemo } from 'react'
+import React, { FC, Fragment, useEffect, useMemo, useState } from 'react'
 import { ArrowLeft2 } from '@constants/icons.constants'
 import { defaultFilters } from '@constants/stories'
 import { FilterHeader } from '@components/UI/organism/FilterHeader'
@@ -24,6 +24,7 @@ const SideFilter: FC<ISideFilter> = ({
   getOptionsOnLoad,
   getOptionsOnSearch
 }) => {
+  const [currentOpenFilter, setCurrentOpenFilter] = useState<number>(99)
   const cardProps = useMemo(() => {
     return {
       setIsApplied,
@@ -47,9 +48,18 @@ const SideFilter: FC<ISideFilter> = ({
   const displayFilters = useMemo(() => {
     const renderFilters = filters.length ? filters : defaultFilters
     return renderFilters?.map((item, i) => {
-      return <CardByRenderType key={`${i}-${item.field}`} {...(item as unknown as IFilter)} {...cardProps} />
+      return (
+        <CardByRenderType
+          key={`${i}-${item.field}`}
+          {...(item as unknown as IFilter)}
+          index={i}
+          showFilters={currentOpenFilter === i}
+          setCurrentOpenFilter={setCurrentOpenFilter}
+          {...cardProps}
+        />
+      )
     })
-  }, [filters, cardProps])
+  }, [filters, cardProps, currentOpenFilter])
 
   const displayBtnMain = useMemo(() => {
     if (!totalAppliedFilters) return <Fragment />

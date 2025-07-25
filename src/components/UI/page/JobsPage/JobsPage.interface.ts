@@ -80,6 +80,10 @@ export interface IJobsPage {
    * This property sets the create account card data
    */
   createAccountCTAProps?: ICreateAccountCTA
+  /**
+   *  This property sets the job card type filter, which can be either 'row' or 'side'.
+   */
+  typeFilters?: 'row' | 'side'
 }
 
 export interface IVacancies extends IJobCard {

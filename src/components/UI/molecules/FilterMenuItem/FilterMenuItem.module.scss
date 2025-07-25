@@ -4,12 +4,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: v.$disabled-color-gray;
-  width: 230px;
-  max-width: 230px;
-  height: 26px;
-  max-height: 26px;
-  padding: 4px 6px 4px 10px;
+  background-color: white;
+  width: 100%;
+  padding: 4px 12px;
   border: none;
   border-radius: 50px;
   box-sizing: border-box;
@@ -17,32 +14,29 @@
   transition: all ease-in-out 0.3s;
   cursor: pointer;
 
+  &__counter {
+    color: #667688;
+  }
   @media (max-width: v.$screen-md) {
-    width: inherit;
     max-width: 100%;
   }
 
   & > span,
   & > output {
-    font-size: 0.875rem;
-    color: v.$filter-item-font-color;
+    font-size: 14px;
+    color: #47535f;
   }
 
   & > span {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  & > output {
-    background-color: v.$color-white;
-    padding: 1px 5px;
-    border-radius: 50px;
+    max-width: 250px;
   }
 }
 
 .selected {
-  background-color: v.$selected-color-item;
+  background-color: #f0f1f3;
 }
 
 .disabled {
@@ -62,7 +56,7 @@
 }
 
 .magneto-ui-filter-item:hover {
-  background-color: v.$disabled-color-gray2;
+  background-color: #f0f1f3;
 }
 
 .skeleton {

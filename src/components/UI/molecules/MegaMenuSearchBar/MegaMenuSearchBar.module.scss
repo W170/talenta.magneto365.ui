@@ -1,0 +1,123 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.mega-menu-search-bar {
+  display: flex;
+  flex-direction: row;
+  width: 640px;
+  border-radius: 8px;
+  align-items: center;
+
+  &__input {
+    border: none !important;
+    background-color: #f0f1f3 !important;
+    border-radius: 0px !important;
+    align-items: center !important;
+    &-title {
+      padding: 8px;
+
+      > a {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        display: flex;
+        text-decoration: none;
+        flex-direction: row;
+        gap: 10px;
+
+        > p {
+          margin: 0px;
+        }
+      }
+    }
+    &-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      position: relative;
+    }
+
+    &-options {
+      z-index: 3;
+      background-color: white;
+      border-radius: 0px 8px;
+      box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.12);
+      padding: 10px;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      gap: 5px;
+      max-height: 300px;
+      overflow-y: auto;
+      position: absolute;
+      top: calc(48px);
+    }
+
+    &-option {
+      width: 100%;
+      cursor: pointer;
+      background-color: white;
+      padding: 8px;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: #f0f1f3;
+      }
+
+      &--selected {
+        background-color: #f0f1f3;
+      }
+
+      &__title {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        color: #1f2329;
+      }
+
+      &__subtitle {
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 400;
+        color: #667688;
+      }
+
+      > a {
+        text-decoration: none;
+        > p {
+          margin: 0px;
+        }
+      }
+    }
+    &--left {
+      border-radius: 8px 0px 0px 8px !important;
+    }
+    &--rigth {
+      border-radius: 0px 8px 8px 0px !important;
+      border-left: 1px solid #c2c8cf !important;
+    }
+
+    button > img {
+      opacity: 1;
+    }
+    img {
+      opacity: 0.6;
+    }
+    // border: none;
+    // display: flex;
+    // flex-direction: row;
+    // gap: 5px;
+    // padding: 0px 10px;
+    // width: 340px;
+    // input {
+    //   border: none;
+    //   background-color: #f0f1f3;
+    //   width: 100%;
+    //   padding: 10px 0px;
+    // }
+
+    // input:focus {
+    //   outline: none;
+    //   box-shadow: none;
+    // }
+  }
+}

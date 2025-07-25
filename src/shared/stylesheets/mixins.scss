@@ -80,3 +80,117 @@
     border: 3px solid var(--scrollbarBG);
   }
 }
+
+@mixin horizontal-filter-card {
+  position: relative;
+
+  &__popover-wrapper {
+    position: fixed;
+    z-index: 9999;
+    top: var(--popover-top, 0);
+    left: var(--popover-left, 0);
+  }
+
+  &__tooltip {
+    position: fixed;
+    z-index: 10000;
+    top: var(--tooltip-top, 0);
+    left: var(--tooltip-left, 0);
+    background-color: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent #333 transparent;
+    }
+
+    @media (pointer: coarse) {
+      animation: fadeInOut 2.5s ease-in-out forwards;
+    }
+  }
+
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+@mixin horizontal-filter-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  background-color: #ffffff;
+  cursor: pointer;
+  white-space: nowrap;
+  justify-content: space-between;
+  max-width: 250px;
+  min-height: 40px;
+
+  &--grayscale {
+    filter: grayscale(100%);
+  }
+
+  &:hover {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  span {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@mixin horizontal-filter-popover {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 300px;
+  max-width: 400px;
+  padding: 1rem;
+  border: 1px solid transparent;
+  max-height: 350px;
+  overflow-y: auto;
+  margin-top: -5px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 20px;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+    z-index: 1;
+  }
+}

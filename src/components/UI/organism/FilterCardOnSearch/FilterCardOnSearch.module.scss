@@ -19,6 +19,11 @@
     width: inherit;
     max-width: 100%;
   }
+
+  &_options {
+    max-height: 150px;
+    overflow-y: auto;
+  }
 }
 
 .magneto-ui-filter-onSearch_header {
@@ -77,4 +82,16 @@
 
 .selected {
   background-color: v.$disabled-color-gray;
+}
+
+.magneto-ui-filter-card-horizontal {
+  @include m.horizontal-filter-card;
+
+  &__popover-search {
+    @include m.horizontal-filter-popover;
+  }
+}
+
+.magneto-ui-horizontal-filter-button {
+  @include m.horizontal-filter-button;
 }

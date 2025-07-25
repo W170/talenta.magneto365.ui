@@ -87,6 +87,7 @@ export interface IFilter {
   renderChild?: string
   child?: IFilter
   filtersApplied?: Array<string | number>
+  icon?: string
 }
 
 export interface IFieldsAlias {
