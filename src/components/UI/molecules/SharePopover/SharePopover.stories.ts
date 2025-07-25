@@ -6,8 +6,13 @@ const meta: Meta<typeof SharePopover> = {
   title: 'Molecules/SharePopover',
   component: SharePopover,
   args: {
-    buttonText: 'Compartir',
-    buttonTitle: 'Compartir',
+    shareButtonProps: {
+      buttonText: 'Compartir',
+      buttonTitle: 'Compartir',
+      icon: 'share2',
+      onCopySuccess: () => null
+    },
+    iconPopover: 'archiveAdd',
     shareLinks
   }
 }
