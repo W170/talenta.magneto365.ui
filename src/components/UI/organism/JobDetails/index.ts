@@ -8,6 +8,7 @@ import { JobDetailsSuggested } from './children/JobDetailsSuggested'
 import { JobDetailsDrawer } from '../JobDetailsDrawer'
 import { JobDetailsAction } from './children/JobDetailsAction'
 import { JobDetailsSubTitle } from './children/JobDetailsSubTitle'
+import { JobDetailsSkeleton } from '../JobDetailsDrawer/children'
 
 export const JobDetails = Object.assign(JobDetailsRaw, {
   Header: JobDetailsHeader,
@@ -19,5 +20,6 @@ export const JobDetails = Object.assign(JobDetailsRaw, {
   }),
   Action: JobDetailsAction,
   Subtitle: JobDetailsSubTitle,
-  Drawer: JobDetailsDrawer
+  Drawer: JobDetailsDrawer,
+  Skeleton: JobDetailsSkeleton
 })
