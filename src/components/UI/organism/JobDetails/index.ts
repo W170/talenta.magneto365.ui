@@ -1,3 +1,4 @@
+import { JobDetailsDrawerClose } from './children/JobDetailsDrawer/JobDetailsDrawerClose'
 import { JobDetailsFraudLink } from './children/JobDetailsFraud/JobDetailsFraudLink'
 import { JobDetails as JobDetailsRaw } from './JobDetails.component'
 import { JobDetailsSummary } from './children/JobDetailsSummary'
@@ -5,10 +6,10 @@ import { JobDetailsHeader } from './children/JobDetailsHeader'
 import { JobDetailsSkills } from './children/JobDetailsSkills'
 import { JobDetailsFraud } from './children/JobDetailsFraud'
 import { JobDetailsSuggested } from './children/JobDetailsSuggested'
-import { JobDetailsDrawer } from '../JobDetailsDrawer'
 import { JobDetailsAction } from './children/JobDetailsAction'
 import { JobDetailsSubTitle } from './children/JobDetailsSubTitle'
 import { JobDetailsSkeleton } from '../JobDetailsDrawer/children'
+import { JobDetailsDrawer } from './children/JobDetailsDrawer'
 
 export const JobDetails = Object.assign(JobDetailsRaw, {
   Header: JobDetailsHeader,
@@ -20,6 +21,8 @@ export const JobDetails = Object.assign(JobDetailsRaw, {
   }),
   Action: JobDetailsAction,
   Subtitle: JobDetailsSubTitle,
-  Drawer: JobDetailsDrawer,
+  Drawer: Object.assign(JobDetailsDrawer, {
+    Close: JobDetailsDrawerClose
+  }),
   Skeleton: JobDetailsSkeleton
 })
