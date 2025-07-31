@@ -1,13 +1,6 @@
 import React, { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
 import FilterContainerMenu from '@components/UI/molecules/FilterContainerMenu/FilterContainerMenu.component'
-import {
-  JobCard,
-  FrequentSearch,
-  Pagination,
-  CreateAccountCTA,
-  JobDetailContainer,
-  MobileJobDetailsHeader
-} from '@components/UI/molecules'
+import { JobCard, FrequentSearch, Pagination, CreateAccountCTA } from '@components/UI/molecules'
 import { SortBar, Footer, SideFilter } from '@components/UI/template'
 import { useMediaQuery } from '@components/hooks'
 import { showDetailByWindow } from './utils'
@@ -18,6 +11,7 @@ import { EmptyResults } from '@components/UI/molecules/EmptyResults'
 import { JobCardSkeleton } from '@components/UI/molecules/JobCard/children'
 import { Paragraph } from '@components/UI/atoms'
 import { JobDetails } from '@components/UI/organism/JobDetails'
+import { JobDetailsDrawerContext } from '@components/UI/organism/JobDetails/children/JobDetailsDrawer/JobDetailsDrawer.context'
 
 const JobsPage: React.FC<IJobsPage> = ({
   sortBarProps,
@@ -36,8 +30,7 @@ const JobsPage: React.FC<IJobsPage> = ({
   dynamicPaginationUrl,
   displayAlwaysFilter,
   createAccountCTAProps,
-  jobDetailsContent,
-  jobDetailsTitle = ''
+  jobDetailsContent
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [showDetail, setShowDetail] = useState(device === 'desktop')
@@ -81,16 +74,13 @@ const JobsPage: React.FC<IJobsPage> = ({
   }, [device, jobSelected, onClose, showDetail])
 
   const JobDetailsDrawerComponent = useMediaQuery(
-    <JobDetailContainer onClose={onClose} isOpen={showDetail && hasVacancies}>
+    <JobDetailsDrawerContext.Provider value={{ onClose }}>
       {jobDetailAction ? jobDetailAction : jobDetailsContent}
-    </JobDetailContainer>,
+    </JobDetailsDrawerContext.Provider>,
     {
       lg: (
         <JobDetails.Drawer isMobile isOpen={showDetail && hasVacancies} onClose={onClose}>
-          <>
-            <MobileJobDetailsHeader returnText={jobDetailsTitle} onClick={onClose} />
-            {jobDetailsContent}
-          </>
+          {jobDetailsContent}
         </JobDetails.Drawer>
       )
     }

@@ -80,6 +80,7 @@ const jobDetailsContent = (
           </JobSuggestedCard>
         </JobDetails.JobsSuggested>
         <div style={{ display: 'flex', gap: '0.5rem' }}>
+          <JobDetails.Drawer.Close />
           <JobCompanyLogo offerCompanyLogo={CompanyLogo} alt="company" />
           <JobDetailsHeader title="Vacante de prueba" publishedDate="Fecha de actualización" />
         </div>
