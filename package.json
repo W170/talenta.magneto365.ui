@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/W170/talenta.magneto365.ui.git"
   },
-  "version": "2.75.4",
+  "version": "2.75.5",
   "description": "Magneto365 UI common components",
   "scripts": {
     "generate:tokens": "node ./.scripts/generateTokens.js",
