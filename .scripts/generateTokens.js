@@ -15,6 +15,7 @@ class DesignToken {
     const tokenFiles = this.getTokenFiles()
     const scssIndex = []
     const typeDefinitions = []
+    const files = []
 
     // Makes directories to store generated files
     this.prepareOutputDirs()
@@ -38,6 +39,8 @@ class DesignToken {
       this.writeScssFile({ fileName, tokens: flattenTokensWithPrefix, scssVarsObj, utilities })
       // Register SCSS into a index SCSS file
       scssIndex.push(`@forward './_${fileName}.scss';`)
+      // Save each file data to generate utility classes
+      files.push({ fileName, tokens: flattenTokensWithPrefix, scssVarsObj, utilities })
 
       // Generate export type name. Example: MagnetoUIColor
       const pascalName = this.toPascalCase(`MagnetoUI-${fileName}`)
@@ -50,6 +53,8 @@ class DesignToken {
     this.writeGlobalTypes(typeDefinitions)
     // Generate a SCSS index file that exports all SCSS vars and utility classes
     this.writeScssIndex(scssIndex)
+    // Generate a SCSS file containing all utility classes
+    this.writeUtilityClasses(files)
 
     console.info('✅ Tokens generated')
   }
@@ -100,6 +105,36 @@ class DesignToken {
     fs.writeFileSync(indexPath, `${warning}${indexLines.join('\n')}\n`)
   }
 
+  // Write in a SCSS file all utility classes
+  writeUtilityClasses(files) {
+    const filepath = path.join(this.scssOutput, '_utilities.scss')
+    const utilityClassesLines = []
+    const imports = []
+
+    // Add imports
+    files.forEach(({ utilities }) => {
+      if (utilities.imports?.length) {
+        for (const { file, alias } of utilities.imports) {
+          if (imports.includes(file)) continue
+          utilityClassesLines.push(`@use '${file}' as ${alias};`)
+          if (!imports.includes(file)) imports.push(file)
+        }
+      }
+    })
+
+    utilityClassesLines.push('')
+
+    // Add utility classes
+    files.forEach(({ utilities, scssVarsObj, fileName }) => {
+      if (utilities.classes?.length) {
+        const utilityClasses = this.generateUtilityClasses(fileName, utilities, scssVarsObj)
+        utilityClassesLines.push(utilityClasses)
+      }
+    })
+
+    fs.writeFileSync(filepath, `${warning}${utilityClassesLines.join('\n')}`)
+  }
+
   // Write in a global types file
   writeGlobalTypes(typeDefs) {
     const contentD = `${warning}declare module 'magneto-ui' {\n\n${typeDefs.join('\n')}}\n`
@@ -135,6 +170,37 @@ class DesignToken {
     }, {})
   }
 
+  // Generates a string containing all utility classes
+  generateUtilityClasses(fileName, utilities, scssVarsObj) {
+    const lines = []
+
+    if (utilities.classes?.length) {
+      for (const { prefix, properties, conditions } of utilities.classes) {
+        for (const [classKey, varKey] of Object.entries(scssVarsObj)) {
+          const { excludeValues, removeFromClass } = conditions || {}
+
+          if (excludeValues?.some((e) => classKey.split('-').includes(e))) continue
+
+          const filteredClassKey = classKey
+            .split('-')
+            .filter((word) => !removeFromClass?.includes(word))
+            .join('-')
+          const className = `.${prefix}-${filteredClassKey}`
+          const declarations = properties
+            .map(
+              ({ property, fn }) =>
+                `  ${property}: ${fn ? fn.replace(/\((.*?)\)/, `(${fileName}.$${varKey})`) : `${fileName}.$${varKey}`};`
+            )
+            .join('\n')
+          lines.push(`${className} {\n${declarations}\n}`)
+        }
+        lines.push('')
+      }
+    }
+
+    return lines.join('\n')
+  }
+
   // Generates a SCSS file with vars and utility classes
   generateSCSS(tokens, scssVarsObj, utilities) {
     const lines = []
@@ -158,28 +224,6 @@ class DesignToken {
       .map(([key, varName]) => `  ${key}: $${varName}`)
       .join(',\n')
     lines.push(`${mapName}: (\n${mapEntries}\n);`, '')
-
-    // Utility classes
-    if (utilities.classes?.length) {
-      for (const { prefix, properties, conditions } of utilities.classes) {
-        for (const [classKey, varKey] of Object.entries(scssVarsObj)) {
-          const { excludeValues, removeFromClass } = conditions || {}
-
-          if (excludeValues?.some((e) => classKey.split('-').includes(e))) continue
-
-          const filteredClassKey = classKey
-            .split('-')
-            .filter((word) => !removeFromClass?.includes(word))
-            .join('-')
-          const className = `.${prefix}-${filteredClassKey}`
-          const declarations = properties
-            .map(({ property, fn }) => `  ${property}: ${fn ? fn.replace(/\((.*?)\)/, `($${varKey})`) : `$${varKey}`};`)
-            .join('\n')
-          lines.push(`${className} {\n${declarations}\n}`)
-        }
-        lines.push('')
-      }
-    }
 
     return `${warning}${lines.join('\n')}`
   }

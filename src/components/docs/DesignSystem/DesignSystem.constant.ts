@@ -77,3 +77,13 @@ export const resolveValue = (input: string): string => {
 
   return resolve(input)
 }
+
+export const convertRemToPx = (val: string) => {
+  const remMatch = val.match(/^([\d.]+)rem$/)
+  const [base] = scale.values.px.base.split('px')
+
+  if (remMatch) {
+    return `${parseFloat(remMatch[1]) * Number(base)}px`
+  }
+  return val
+}
