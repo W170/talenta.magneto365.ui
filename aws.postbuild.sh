@@ -42,10 +42,10 @@ upload_assets_to_cdn()
 
   if [ -z ${NEXT_VERSION} ]
   then
+    echo "Pushing assets into s3://$ASSETS_CDN_S3_BUCKET"
+  else
     echo "Pushing assets into s3://$ASSETS_CDN_S3_BUCKET/$NEXT_VERSION"
     export ASSETS_CDN_S3_BUCKET = $ASSETS_CDN_S3_BUCKET/$NEXT_VERSION
-  else
-    echo "Pushing assets into s3://$ASSETS_CDN_S3_BUCKET"
   fi
 
   aws s3 sync --delete dist/assets s3://${ASSETS_CDN_S3_BUCKET}
