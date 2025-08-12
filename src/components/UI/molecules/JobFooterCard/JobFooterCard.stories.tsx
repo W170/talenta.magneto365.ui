@@ -37,7 +37,8 @@ export const Default: Story = {
     iconList: [FacebookBlue, WhatsAppColor, LinkedInBlue, X, SMSBlue],
     shareButtonProps: {
       buttonTitle: 'Compartir vacante',
-      onCopySuccess: () => console.log('Success')
+      onCopySuccess: () => console.log('Success'),
+      icon: 'archiveAdd'
     }
   }
 }
@@ -56,7 +57,8 @@ export const WithExternalChild: Story = {
     iconList: [FacebookBlue, WhatsAppColor, LinkedInBlue, X, SMSBlue],
     shareButtonProps: {
       buttonTitle: 'Compartir vacante',
-      onCopySuccess: () => console.log('Success')
+      onCopySuccess: () => console.log('Success'),
+      icon: 'export3'
     },
     externalChild: (
       <>

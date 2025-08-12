@@ -30,9 +30,12 @@ export const Default: Story = {
       }
     },
     copyButtonProps: {
-      buttonTitle: 'share',
-      buttonText: 'Compartir',
-      onCopySuccess: () => console.log('Success'),
+      shareButtonProps: {
+        buttonTitle: 'share',
+        buttonText: 'Compartir',
+        onCopySuccess: () => console.log('Success'),
+        icon: 'archiveAdd'
+      },
       shareLinks
     },
     shareButtonProps: {

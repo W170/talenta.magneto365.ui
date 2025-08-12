@@ -16,9 +16,9 @@ export const Default: Story = {
   args: {
     offerSkillsLabel: 'Habilidades',
     offerSkills: [
-      { id: 1, name: 'Habilidades comerciales', score: 1 },
-      { id: 2, name: 'Capacidad de negociación', score: 2 },
-      { id: 3, name: 'Conocimiento de microfinanzas', score: 4 }
+      { name: 'Habilidades comerciales', score: 1 },
+      { name: 'Capacidad de negociación', score: 2 },
+      { name: 'Conocimiento de microfinanzas', score: 4 }
     ]
   }
 }

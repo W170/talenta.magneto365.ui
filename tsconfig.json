@@ -17,14 +17,15 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
+    "baseUrl": "./src",
     "paths": {
-      "@*": ["./src/*"],
-      "@assets": ["./src/assets/*"],
-      "@components": ["./src/components/*"],
-      "@constants": ["./src/constants"],
-      "@shared": ["./src/shared"],
-      "@utils": ["./src/utils"],
-      "@tokens": ["./src/shared/stylesheets/tokens/_index.scss"]
+      "@*": ["./*"],
+      "@assets": ["assets/*"],
+      "@components": ["components/*"],
+      "@constants": ["constants"],
+      "@shared": ["shared"],
+      "@utils": ["utils"],
+      "@tokens": ["shared/stylesheets/tokens/_index.scss"]
     },
     "resolveJsonModule": true
   },

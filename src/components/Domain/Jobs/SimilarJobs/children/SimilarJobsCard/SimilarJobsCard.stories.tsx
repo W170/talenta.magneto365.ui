@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { SimilarJobsCard } from './'
-import { similarVacanciesCardsProps } from '../../../../constants/stories/similarJobs.constants'
+import { similarVacanciesCardsProps } from '@constants/stories'
 
 const meta: Meta<typeof SimilarJobsCard> = {
   title: 'Molecules/Similar Jobs Card',
