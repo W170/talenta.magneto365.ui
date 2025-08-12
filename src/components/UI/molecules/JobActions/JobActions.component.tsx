@@ -84,11 +84,11 @@ const Component: React.FC<IJobsActions> = ({
       <div className={cx('actions-container', { 'job-detail-page': isJobDetailPage })}>
         {!isApplied && (
           <Tooltip title={saveButtonProps.buttonTitle || 'Guardar'} position="bottom" visible={isMobile}>
-            <SaveButton {...saveButtonProps} variant={variant} />
+            <SaveButton {...saveButtonProps} />
           </Tooltip>
         )}
 
-        <SharePopover {...shareButtonProps} variant={variant} />
+        <SharePopover {...shareButtonProps} />
 
         {filteredActionsLinkList?.map(({ url, title, icon, text }) => (
           <ActionItem key={`${url}-${title}`} url={url} title={title} icon={icon} text={text} />

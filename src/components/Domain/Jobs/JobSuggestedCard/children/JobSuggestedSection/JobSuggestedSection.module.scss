@@ -1,0 +1,41 @@
+@use '../../../../../../shared/stylesheets/tokens' as *;
+
+.section {
+  display: flex;
+  align-items: center;
+  gap: $gap-sm-2;
+
+  p {
+    margin: 0;
+    padding: 0;
+    line-height: 14px;
+  }
+}
+
+.start {
+  justify-content: flex-start;
+}
+
+.center {
+  justify-content: center;
+}
+
+.end {
+  justify-content: flex-end;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.column-reverse {
+  flex-direction: column-reverse;
+}

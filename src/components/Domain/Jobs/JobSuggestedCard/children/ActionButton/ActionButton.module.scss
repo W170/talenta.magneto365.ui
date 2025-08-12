@@ -1,0 +1,27 @@
+@use '../../../../../../shared/stylesheets/tokens' as *;
+
+.action-button {
+  border: none;
+  height: 30px;
+  padding: 13px $padding-2xl;
+  border-radius: $radius-3xl;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $gap-sm-2;
+  width: 50%;
+  cursor: pointer;
+  font-size: $text-md-2;
+  font-weight: $weight-bold;
+  transition: all 0.2s;
+}
+
+.primary {
+  background-color: $color-grey-50;
+  color: $color-grey-900;
+}
+
+.secondary {
+  background-color: $color-grey-200;
+  color: $color-grey-900;
+}

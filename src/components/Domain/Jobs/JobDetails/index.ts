@@ -8,7 +8,7 @@ import { JobDetailsFraud } from './children/JobDetailsFraud'
 import { JobDetailsSuggested } from './children/JobDetailsSuggested'
 import { JobDetailsAction } from './children/JobDetailsAction'
 import { JobDetailsSubTitle } from './children/JobDetailsSubTitle'
-import { JobDetailsSkeleton } from '../JobDetailsDrawer/children'
+import { JobDetailsSkeleton } from './children/JobDetailsSkeleton'
 import { JobDetailsDrawer } from './children/JobDetailsDrawer'
 
 export const JobDetails = Object.assign(JobDetailsRaw, {

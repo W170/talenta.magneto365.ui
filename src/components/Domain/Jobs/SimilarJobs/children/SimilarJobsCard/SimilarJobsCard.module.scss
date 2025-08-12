@@ -1,0 +1,47 @@
+@use '../../../../../../shared/stylesheets/tokens' as t;
+
+.magneto-ui-similar-jobs {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: t.$gap-xl;
+  padding: t.$padding-xl 0;
+  transition: all ease-in-out 0.3s;
+  border-radius: 13px;
+  text-decoration: none;
+
+  &__title {
+    margin: 0px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    font-size: t.$text-lg;
+    color: t.$color-grey-800;
+  }
+
+  &__info {
+    margin: 0px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    color: t.$color-grey-800;
+    font-size: t.$text-lg;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    transition: right ease-in-out 0.3s;
+    opacity: 0.4;
+  }
+
+  &__img {
+    object-fit: contain;
+  }
+}

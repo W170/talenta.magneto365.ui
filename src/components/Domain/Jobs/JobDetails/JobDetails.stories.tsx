@@ -1,21 +1,21 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-import { JobDetails } from './index'
-import { CompanyLogo, shareLinks } from '../../../../constants/stories'
-import { JobDetailsHeader } from './children/JobDetailsHeader'
-import { Typography } from '../../atoms/Typography/Typography.component'
-import { JobSuggestedCard } from '../JobSuggestedCard'
-import { IconItem } from '../../atoms/Icon'
 import Logo from '@assets/noLogo.svg'
-import { JobCompanyLogo } from '../../atoms'
-import { SimilarJobs } from '../SimilarJobs'
 import {
   moreJobsText,
   similarVacanciesCardsProps,
   moreJobsLink,
   hideLogo
 } from '@constants/stories/similarJobs.constants'
+import { IconItem } from '@components/UI/atoms/Icon'
+import { CompanyLogo, shareLinks } from '@constants/stories'
+import { Typography } from '@components/UI/atoms/Typography'
+import { JobDetailsHeader } from './children/JobDetailsHeader'
+import { JobSuggestedCard } from '../JobSuggestedCard'
+import { JobCompanyLogo } from '../JobCompanyLogo'
+import { SimilarJobs } from '../SimilarJobs'
+import { JobDetails } from './index'
 
 const meta: Meta<typeof JobDetails> = {
   title: 'Organism/JobDetails',

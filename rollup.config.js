@@ -2,43 +2,57 @@ import path from 'path'
 import dts from 'rollup-plugin-dts'
 import url from '@rollup/plugin-url'
 import typescript from '@rollup/plugin-typescript'
-import packageJson from './package.json'
+import { CONFIG_POSTCSS_PLUGIN } from './rollup.tools'
+import { getAllEntryPoints } from './rollup.input'
 import { MAIN_PLUGINS } from './rollup.plugins'
-import { CONFIG_POSTCSS_PLUGIN, GENERATE_MODULES } from './rollup.tools'
 
-export default ({ environment }) => {
-  if (environment) return GENERATE_MODULES(environment)
+const domainInputs = getAllEntryPoints('./src/components/Domain')
+
+const inputEntries = [...domainInputs, 'src/index.ts']
+
+export default () => {
+  // TODO: make css for entries.
+  // if (environment) return GENERATE_MODULES(environment)
   return [
     {
-      input: 'src/index.ts',
+      input: inputEntries,
       output: [
         {
-          file: packageJson.main,
-          format: 'cjs',
+          dir: path.join('dist', 'esm'),
+          format: 'esm',
+          preserveModules: true,
+          preserveModulesRoot: 'src',
           sourcemap: true
         },
         {
-          file: packageJson.module,
-          format: 'esm',
+          dir: path.join('dist', 'cjs'),
+          format: 'cjs',
+          preserveModules: true,
+          preserveModulesRoot: 'src',
           sourcemap: true
         }
       ],
-      external: ['antd', 'react', 'axios', 'react-dom'],
+      external: ['react', 'axios', 'react-dom'],
       plugins: [
         ...MAIN_PLUGINS,
         CONFIG_POSTCSS_PLUGIN(false),
-        typescript({ tsconfig: './tsconfig.json', declaration: true })
+        typescript({
+          tsconfig: './tsconfig.json',
+          declaration: false,
+          outDir: undefined,
+          declarationDir: undefined,
+          emitDeclarationOnly: false
+        })
       ]
     },
     {
-      input: 'dist/esm/types/index.d.ts',
-      output: [
-        {
-          file: 'dist/index.d.ts',
-          format: 'esm',
-          assetFileNames: 'assets/[name]-[hash][extname]'
-        }
-      ],
+      input: inputEntries,
+      output: {
+        dir: path.join('dist', 'types'),
+        format: 'esm',
+        preserveModules: true,
+        preserveModulesRoot: 'src'
+      },
       plugins: [
         dts(),
         url({

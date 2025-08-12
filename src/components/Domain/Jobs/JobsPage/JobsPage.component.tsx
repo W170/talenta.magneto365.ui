@@ -1,17 +1,17 @@
 import React, { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
 import FilterContainerMenu from '@components/UI/molecules/FilterContainerMenu/FilterContainerMenu.component'
 import { JobCard, FrequentSearch, Pagination, CreateAccountCTA } from '@components/UI/molecules'
+import { JobCardSkeleton } from '@components/UI/molecules/JobCard/children'
 import { SortBar, Footer, SideFilter } from '@components/UI/template'
+import { EmptyResults } from '@components/UI/molecules/EmptyResults'
 import { useMediaQuery } from '@components/hooks'
+import { Paragraph } from '@components/UI/atoms'
+import { classMUI } from '@constants/stories'
+import { JobDetails } from '../JobDetails'
 import { showDetailByWindow } from './utils'
 import { IJobsPage } from './JobsPage.interface'
+import { JobDetailsDrawerContext } from '../JobDetails/children/JobDetailsDrawer/JobDetailsDrawer.context'
 import style from './JobsPage.module.scss'
-import { classMUI } from '@constants/stories'
-import { EmptyResults } from '@components/UI/molecules/EmptyResults'
-import { JobCardSkeleton } from '@components/UI/molecules/JobCard/children'
-import { Paragraph } from '@components/UI/atoms'
-import { JobDetails } from '@components/UI/organism/JobDetails'
-import { JobDetailsDrawerContext } from '@components/UI/organism/JobDetails/children/JobDetailsDrawer/JobDetailsDrawer.context'
 
 const JobsPage: React.FC<IJobsPage> = ({
   sortBarProps,

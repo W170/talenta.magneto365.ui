@@ -1,23 +1,23 @@
-import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-import JobsPage from './JobsPage.component'
-import { CreateAccountCTAProps } from '../../../../constants/stories/createAccountCTA.constants'
+import { Meta, StoryObj } from '@storybook/react'
+import { IconItem, Typography } from '@components/UI/atoms'
+import { JobSuggestedCard } from '@components/UI/organism'
+import { ISideFilter } from '@components/UI/template'
+import Logo from '@assets/noLogo.svg'
 import { frequentSearch, footerProps, emptyVacant } from '../../../../constants/stories/jobsPage.constants'
-import { sortBarProps } from '../../../../constants/stories/sortBar.constants'
+import { CreateAccountCTAProps } from '../../../../constants/stories/createAccountCTA.constants'
 import { shareLinks, vacancies } from '../../../../constants/stories/vacancies.constants'
 import { sideFilterProps } from '../../../../constants/stories/sideFilter.constants'
-import { ISideFilter } from '../../template/SideFilter/SideFilter.interface'
+import { sortBarProps } from '../../../../constants/stories/sortBar.constants'
+import { JobCompanyLogo } from '../JobCompanyLogo'
+import { JobDetails } from '../JobDetails'
 import {
   CitiesLargeDetailDrawerProps,
   CompanyLogo,
   emptyResultsProps,
   paginationProps
 } from '../../../../constants/stories'
-import { JobDetails } from '../../organism/JobDetails'
-import { JobDetailsHeader } from '../../organism/JobDetails/children/JobDetailsHeader'
-import { IconItem, JobCompanyLogo, Typography } from '../../atoms'
-import { JobSuggestedCard } from '@components/UI/organism'
-import Logo from '@assets/noLogo.svg'
+import { JobsPage } from '.'
 
 const jobDetailsContent = (
   <JobDetails
@@ -82,7 +82,7 @@ const jobDetailsContent = (
         <div style={{ display: 'flex', gap: '0.5rem' }}>
           <JobDetails.Drawer.Close />
           <JobCompanyLogo offerCompanyLogo={CompanyLogo} alt="company" />
-          <JobDetailsHeader title="Vacante de prueba" publishedDate="Fecha de actualización" />
+          <JobDetails.Header title="Vacante de prueba" publishedDate="Fecha de actualización" />
         </div>
       </>
     )}
