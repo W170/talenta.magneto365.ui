@@ -7,7 +7,7 @@ export interface IButton {
   /**
    * Callback function to be executed when the save button is clicked.
    */
-  onClick: () => void
+  onClick?: () => void
   /**
    * Button classname
    */
@@ -33,4 +33,12 @@ export interface IButton {
    * Icon size
    */
   iconSize?: number
+  /**
+   * Button type
+   */
+  type?: 'button' | 'submit' | 'reset' | undefined
+  /**
+   * Disable the button
+   */
+  disabled?: boolean
 }

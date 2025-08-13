@@ -1,0 +1,38 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-form-container {
+  padding: 30px;
+
+  &-questions {
+    color: v.$color-blue-dark4;
+  }
+
+  &-controlpanel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: v.$color-blue-dark4;
+
+    &__steps {
+      display: flex;
+      align-items: center;
+
+      & p {
+        margin-left: 0.5em;
+      }
+    }
+
+    &__actionButton {
+      background-color: v.$color-blue-light4 !important;
+      padding: 15px 20px !important;
+      border-radius: 100px !important;
+      color: v.$color-blue-dark7;
+      font-weight: bold;
+      font-size: 25px;
+
+      &--disabled {
+        background-color: v.$disabled-color-gray3 !important;
+      }
+    }
+  }
+}
