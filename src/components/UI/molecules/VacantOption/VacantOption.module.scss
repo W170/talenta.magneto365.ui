@@ -57,11 +57,3 @@
     gap: 10px;
   }
 }
-
-.icon {
-  &--big {
-    img[data-name='icon'] {
-      transform: scale(2);
-    }
-  }
-}

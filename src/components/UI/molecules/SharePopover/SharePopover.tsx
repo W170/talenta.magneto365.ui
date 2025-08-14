@@ -35,7 +35,7 @@ const Component: React.FC<ISharePopover> = ({
                 className={style['content__link']}
                 onClick={() => setShow(false)}
               >
-                <IconItem size={40} icon={name ? ShareIcons[name].icon : icon} />
+                <IconItem size={20} icon={name ? ShareIcons[name].icon : icon} />
                 <span>{title}</span>
               </a>
             </li>
