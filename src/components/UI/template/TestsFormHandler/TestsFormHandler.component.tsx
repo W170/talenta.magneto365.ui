@@ -14,7 +14,8 @@ const TestFormHandler: React.FC<IFormHandler> = ({
   children,
   totalSteps = 1,
   currentStep,
-  onStepChange
+  onStepChange,
+  customButtonText
 }) => {
   return (
     <FormHandlerProvider>
@@ -26,6 +27,7 @@ const TestFormHandler: React.FC<IFormHandler> = ({
         totalSteps={totalSteps}
         currentStep={currentStep}
         onStepChange={onStepChange}
+        customButtonText={customButtonText}
       >
         {children}
       </FormHandlerInner>
@@ -41,9 +43,11 @@ const FormHandlerInner: React.FC<IFormHandler> = ({
   children,
   totalSteps = 1,
   currentStep,
-  onStepChange
+  onStepChange,
+  customButtonText
 }) => {
   const { answers, currentStepQuestions, setSubmitted } = useFormHandler()
+  const { previous, next, finish } = customButtonText
   const [internalStep, setInternalStep] = useState<number>(0)
   const step = currentStep !== undefined ? currentStep : internalStep
   const handleSubmit = (e: React.FormEvent) => {
@@ -83,7 +87,7 @@ const FormHandlerInner: React.FC<IFormHandler> = ({
                 className={`${styles['magneto-ui-form-container-controlpanel__actionButton']} ${
                   isDisabled ? styles['magneto-ui-form-container-controlpanel__actionButton--disabled'] : ''
                 }`}
-                buttonText="Anterior"
+                buttonText={previous}
                 onClick={handlePreviousStep}
                 disabled={isDisabled}
               />
@@ -101,7 +105,7 @@ const FormHandlerInner: React.FC<IFormHandler> = ({
             {multiStep && step < totalSteps - 1 && (
               <Button
                 className={styles['magneto-ui-form-container-controlpanel__actionButton']}
-                buttonText="Siguiente"
+                buttonText={next}
                 onClick={handleNextStep}
               />
             )}
@@ -111,7 +115,7 @@ const FormHandlerInner: React.FC<IFormHandler> = ({
                   isDisabled ? styles['magneto-ui-form-container-controlpanel__actionButton--disabled'] : ''
                 }`}
                 type="submit"
-                buttonText="Enviar"
+                buttonText={finish}
                 disabled={isDisabled}
               />
             )}

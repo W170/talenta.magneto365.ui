@@ -36,7 +36,7 @@ export interface IButton {
   /**
    * Button type
    */
-  type?: 'button' | 'submit' | 'reset' | undefined
+  type?: 'button' | 'submit' | 'reset'
   /**
    * Disable the button
    */

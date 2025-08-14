@@ -1,17 +1,17 @@
-@use '../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../shared/stylesheets/tokens' as t;
 
 .magneto-ui-form-container {
   padding: 30px;
 
   &-questions {
-    color: v.$color-blue-dark4;
+    color: t.$color-blue-dark-200;
   }
 
   &-controlpanel {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: v.$color-blue-dark4;
+    color: t.$color-blue-dark-200;
 
     &__steps {
       display: flex;
@@ -23,15 +23,15 @@
     }
 
     &__actionButton {
-      background-color: v.$color-blue-light4 !important;
+      background-color: t.$color-blue-light-200 !important;
       padding: 15px 20px !important;
       border-radius: 100px !important;
-      color: v.$color-blue-dark7;
+      color: t.$color-blue-dark-400;
       font-weight: bold;
       font-size: 25px;
 
       &--disabled {
-        background-color: v.$disabled-color-gray3 !important;
+        background-color: t.$color-grey-400 !important;
       }
     }
   }

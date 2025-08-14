@@ -1,10 +1,10 @@
-@use '../../../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../../../shared/stylesheets/tokens' as t;
 
 .formHandler__question {
   margin-bottom: 1.5em;
 
   &-required {
-    color: v.$alert-color-red;
+    color: t.$color-red-200;
   }
 }
 

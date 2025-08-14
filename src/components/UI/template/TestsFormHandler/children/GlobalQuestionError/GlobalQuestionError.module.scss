@@ -1,4 +1,4 @@
-@use '../../../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../../../shared/stylesheets/tokens' as t;
 
 .question__error {
   display: flex;
@@ -8,6 +8,6 @@
 
   &-text {
     margin-left: 1em;
-    color: v.$alert-color-red;
+    color: t.$color-red-200;
   }
 }

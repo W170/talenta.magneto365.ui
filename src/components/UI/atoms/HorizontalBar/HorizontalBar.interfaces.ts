@@ -1,12 +1,30 @@
+export interface IClassNames {
+  /**
+   * Custom styles for the bar
+   */
+  bar?: string
+  /**
+   * Custom styles for the fill container
+   */
+  container?: string
+  /**
+   * Custom styles for the text description
+   */
+  text?: string
+  /**
+   * Custom styles for the fill value within the bar
+   */
+  value?: string
+  /**
+   * Custom styles for the fill
+   */
+  fill?: string
+}
 export interface IHorizontalBarProps {
   /**
    * Sets the value to show within the bar
    */
   value: number
-  /**
-   * Sets the fill color of the bar
-   */
-  color: string
   /**
    * Sets the text of the bar
    */
@@ -16,7 +34,7 @@ export interface IHorizontalBarProps {
    */
   maxPercentage?: number
   /**
-   * Sets custom classname
+   * Sets custom classnames
    */
-  className?: string
+  classNames?: IClassNames
 }

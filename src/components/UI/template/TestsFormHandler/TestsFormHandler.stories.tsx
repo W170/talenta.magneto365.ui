@@ -86,6 +86,11 @@ export const Single: Story = {
     onSubmit: () => console.log('finished'),
     children: questions.map((question, index) => (
       <GlobalQuestion key={question.id} question={question} idx={index + 1} errorText="Esta pregunta es obligatoria" />
-    ))
+    )),
+    customButtonText: {
+      previous: 'Atras',
+      next: 'Siguiente',
+      finish: 'Finalizar'
+    }
   }
 }

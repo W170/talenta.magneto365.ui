@@ -1,5 +1,16 @@
+import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { HorizontalBar } from './HorizontalBar.component'
+
+// Define your custom classes
+const customStyles = `
+  .custom-fill {
+    background-color: #000;
+  }
+  .custom-value {
+    color: #fff;
+  }
+`
 
 const meta: Meta<typeof HorizontalBar> = {
   title: 'Atoms/Horizontal Bar',
@@ -7,9 +18,20 @@ const meta: Meta<typeof HorizontalBar> = {
   args: {
     value: 10,
     maxPercentage: 100,
-    color: '#000',
+    classNames: {
+      fill: 'custom-fill',
+      value: 'custom-value'
+    },
     text: 'Comercial, marketing y atención al cliente'
-  }
+  },
+  decorators: [
+    (Story) => (
+      <>
+        <style>{customStyles}</style>
+        <Story />
+      </>
+    )
+  ]
 }
 
 export default meta
