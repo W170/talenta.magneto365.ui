@@ -1,0 +1,38 @@
+@use '../../../../shared/stylesheets/tokens' as t;
+
+.magneto-ui-form-container {
+  padding: 30px;
+
+  &-questions {
+    color: t.$color-blue-dark-200;
+  }
+
+  &-controlpanel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: t.$color-blue-dark-200;
+
+    &__steps {
+      display: flex;
+      align-items: center;
+
+      & p {
+        margin-left: 0.5em;
+      }
+    }
+
+    &__actionButton {
+      background-color: t.$color-blue-light-200 !important;
+      padding: 15px 20px !important;
+      border-radius: 100px !important;
+      color: t.$color-blue-dark-400;
+      font-weight: bold;
+      font-size: 25px;
+
+      &--disabled {
+        background-color: t.$color-grey-400 !important;
+      }
+    }
+  }
+}
