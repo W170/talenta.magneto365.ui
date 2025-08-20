@@ -1,4 +1,6 @@
 import {
+  AdvertisementBold,
+  AdvertisementOutline,
   BookBlueBold,
   BookWhiteOutline,
   BriefcaseBlueBold,
@@ -67,5 +69,9 @@ export const navMenuAnalystIcons: { [key: string]: { normal: string; active: str
   plans: {
     normal: DollarCircleWhiteOutline,
     active: DollarCircleBlueBold
+  },
+  socialMediaRecruiting: {
+    normal: AdvertisementOutline,
+    active: AdvertisementBold
   }
 }

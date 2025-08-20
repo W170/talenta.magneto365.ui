@@ -87,7 +87,7 @@ const ShareLinksAction: React.FC<IShareLinksActions> = ({
           href={href}
           className={[styles['magneto-ui-actions__link'], styles['magneto-ui-actions__link--no-decorator']].join(' ')}
         >
-          <IconItem size={40} icon={name ? ShareIcons[name].icon : icon} />
+          <IconItem size={18} icon={name ? ShareIcons[name].icon : icon} />
           <span>{title}</span>
         </a>
       ))}
