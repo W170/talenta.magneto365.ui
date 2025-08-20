@@ -1,9 +1,9 @@
-import fs from 'fs'
-import path from 'path'
-import { getAllEntryPoints } from './rollup.input.js'
+const fs = require('fs')
+const path = require('path')
+const { getAllEntryPoints } = require('../rollup.input.js')
 
 const domainInputs = Object.fromEntries(
-  getAllEntryPoints('../src/components/Domain').map((file) => {
+  getAllEntryPoints('src/components/Domain').map((file) => {
     const name = path.relative('src', file).replace(/\.(tsx?|jsx?)$/, '')
     return [name, file]
   })
@@ -22,7 +22,7 @@ function updatePackageJsonExports(entries, moduleName) {
     pkg.exports[`./${key}`] = {
       import: `./dist/esm/${entry}.js`,
       require: `./dist/cjs/${entry}.js`,
-      types: `./dist/types/${entry}.d.ts`
+      types: `./dist/types/src/${entry}.d.ts`
     }
   })
 
