@@ -11,8 +11,6 @@ const domainInputs = getAllEntryPoints('./src/components/Domain')
 
 const allInputs = [...domainInputs, rootInput]
 
-console.log(domainInputs)
-
 export default () => {
   // TODO: make css for entries.
   // if (environment) return GENERATE_MODULES(environment)
