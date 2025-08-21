@@ -1,4 +1,4 @@
-import { ISimilarJobsCard } from '@components/UI/molecules/SimilarJobsCard/SimilarJobsCard.interface'
+import { ISimilarJobsCard } from './children/SimilarJobsCard'
 
 export interface ISimilarJobs {
   /**
