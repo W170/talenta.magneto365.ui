@@ -10,10 +10,12 @@ import { JobDetailsAction } from './children/JobDetailsAction'
 import { JobDetailsSubTitle } from './children/JobDetailsSubTitle'
 import { JobDetailsSkeleton } from './children/JobDetailsSkeleton'
 import { JobDetailsDrawer } from './children/JobDetailsDrawer'
+import { JobSuggestedCard } from './children/JobSuggestedCard'
 
 export const JobDetails = Object.assign(JobDetailsRaw, {
   Header: JobDetailsHeader,
   JobsSuggested: JobDetailsSuggested,
+  JobSuggestedCard: JobSuggestedCard,
   Summary: JobDetailsSummary,
   Skills: JobDetailsSkills,
   Fraud: Object.assign(JobDetailsFraud, {
