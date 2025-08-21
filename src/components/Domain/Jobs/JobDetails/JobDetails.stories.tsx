@@ -12,10 +12,11 @@ import { IconItem } from '@components/UI/atoms/Icon'
 import { CompanyLogo, shareLinks } from '@constants/stories'
 import { Typography } from '@components/UI/atoms/Typography'
 import { JobDetailsHeader } from './children/JobDetailsHeader'
-import { JobSuggestedCard } from '../JobSuggestedCard'
+import { JobSuggestedCard } from './children/JobSuggestedCard'
 import { JobCompanyLogo } from '../JobCompanyLogo'
 import { SimilarJobs } from '../SimilarJobs'
 import { JobDetails } from './index'
+import { JobDetailsAction } from './children/JobDetailsAction'
 
 const meta: Meta<typeof JobDetails> = {
   title: 'Organism/JobDetails',
@@ -121,6 +122,7 @@ export const Custom: Story = {
                 title="Vacantes similares a la que acabaste de aplicar"
                 tag="NUEVO"
                 behavior="showcase"
+                renderFooter={() => <></>}
               >
                 <JobSuggestedCard>
                   <JobSuggestedCard.Section>
@@ -128,8 +130,8 @@ export const Custom: Story = {
                     <Typography.Text>Descripción de la vacante</Typography.Text>
                   </JobSuggestedCard.Section>
                   <JobSuggestedCard.Section>
-                    <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
-                    <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+                    <JobDetailsAction.Button variant="ai-job-detail">Ver más</JobDetailsAction.Button>
+                    <JobDetailsAction.Button>Ver más</JobDetailsAction.Button>
                   </JobSuggestedCard.Section>
                 </JobSuggestedCard>
                 <JobSuggestedCard>
@@ -138,8 +140,8 @@ export const Custom: Story = {
                     <Typography.Text>Descripción de la vacante</Typography.Text>
                   </JobSuggestedCard.Section>
                   <JobSuggestedCard.Section>
-                    <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
-                    <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+                    <JobDetailsAction.Button variant="ai-job-detail">Ver más</JobDetailsAction.Button>
+                    <JobDetailsAction.Button>Ver más</JobDetailsAction.Button>
                   </JobSuggestedCard.Section>
                 </JobSuggestedCard>
                 <JobSuggestedCard>
@@ -148,8 +150,8 @@ export const Custom: Story = {
                     <Typography.Text>Descripción de la vacante</Typography.Text>
                   </JobSuggestedCard.Section>
                   <JobSuggestedCard.Section>
-                    <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
-                    <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+                    <JobDetailsAction.Button variant="ai-job-detail">Ver más</JobDetailsAction.Button>
+                    <JobDetailsAction.Button>Ver más</JobDetailsAction.Button>
                   </JobSuggestedCard.Section>
                 </JobSuggestedCard>
                 <JobSuggestedCard>
@@ -158,8 +160,8 @@ export const Custom: Story = {
                     <Typography.Text>Descripción de la vacante</Typography.Text>
                   </JobSuggestedCard.Section>
                   <JobSuggestedCard.Section>
-                    <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
-                    <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+                    <JobDetailsAction.Button variant="ai-job-detail">Ver más</JobDetailsAction.Button>
+                    <JobDetailsAction.Button>Ver más</JobDetailsAction.Button>
                   </JobSuggestedCard.Section>
                 </JobSuggestedCard>
                 <JobSuggestedCard>
@@ -168,8 +170,8 @@ export const Custom: Story = {
                     <Typography.Text>Descripción de la vacante</Typography.Text>
                   </JobSuggestedCard.Section>
                   <JobSuggestedCard.Section>
-                    <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
-                    <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+                    <JobDetailsAction.Button variant="ai-job-detail">Ver más</JobDetailsAction.Button>
+                    <JobDetailsAction.Button>Ver más</JobDetailsAction.Button>
                   </JobSuggestedCard.Section>
                 </JobSuggestedCard>
               </JobDetails.JobsSuggested>

@@ -8,7 +8,7 @@ export namespace IJobDetailsAction {
     iconSize?: number
     iconAlt?: string
     rounded?: boolean
-    variant?: 'transparent' | 'grey'
+    variant?: 'transparent' | 'grey' | 'ai-job-apply' | 'ai-job-detail'
   }
 
   export type Button = React.ComponentPropsWithoutRef<'button'> & Common
