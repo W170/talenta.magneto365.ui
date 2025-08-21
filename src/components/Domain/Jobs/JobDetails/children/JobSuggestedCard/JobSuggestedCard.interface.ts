@@ -33,14 +33,4 @@ export namespace IJobSuggestedCard {
      */
     direction?: 'column' | 'row-reverse' | 'column-reverse | row'
   }
-  export interface Button extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    /**
-     * this property sets custom styles
-     */
-    className?: string
-    /**
-     * this property sets custom style button
-     */
-    variant?: 'primary' | 'secondary'
-  }
 }
