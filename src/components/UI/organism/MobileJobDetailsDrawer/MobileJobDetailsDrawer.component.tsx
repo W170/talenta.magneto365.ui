@@ -18,12 +18,12 @@ import { MobileJobDetailsDrawerSkeleton } from './children/MobileJobDetailsDrawe
 
 import { IMobileJobDetailsDrawer } from './MobileJobDetailsDrawer.interface'
 import { anchorIconListJobsActions2, iconDetailList, iconFooterList } from '@constants/stories'
-import { SimilarJobs } from '../SimilarJobs'
 import { Swipe } from '../Swipe'
 import styles from './MobileJobDetailsDrawer.module.scss'
 import { ActionLinkCard } from '@components/UI/molecules/ActionLinkCard'
 import { classNames } from '@shared/utils/common'
 import { JobDetails } from '@components/UI/molecules/JobDetails'
+import { SimilarJobs } from '@components/Domain/Jobs/SimilarJobs'
 
 const cx = classNames.bind(styles)
 

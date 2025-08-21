@@ -12,11 +12,12 @@ import {
 } from '@components/UI/molecules'
 import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 import { IJobVideo } from '@components/UI/molecules/JobVideo'
-import { ISimilarJobs } from '../SimilarJobs/SimilarJobs.interface'
+
 import { SwipeProps } from '../Swipe/Swipe.interface'
 import { IFraudCardJob } from './../../molecules/FraudCardJob/FraudCardJob.interface'
 import { ICanApply } from '../JobDetailsDrawer'
 import { IActionLinkCard } from '@components/UI/molecules/ActionLinkCard/ActionLinkCard.interface'
+import { ISimilarJobs } from '@components/Domain/Jobs/SimilarJobs/SimilarJobs.interface'
 
 export interface IMobileJobDetailsDrawer {
   /**

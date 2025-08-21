@@ -17,9 +17,10 @@ import styles from './JobDetailsDrawer.module.scss'
 
 import { anchorIconList, iconDetailList, iconFooterList, altList, anchorIconListJobsActions2 } from '@constants/stories'
 import { JobDetailsSkeleton } from './children'
-import { SimilarJobs } from '../SimilarJobs'
+
 import { ActionLinkCard } from '@components/UI/molecules/ActionLinkCard'
 import { JobDetails } from '@components/UI/molecules/JobDetails'
+import { SimilarJobs } from '@components/Domain/Jobs/SimilarJobs'
 
 const Component: React.FC<IJobDetailsDrawer> = ({
   jobCompanyLogoProps,

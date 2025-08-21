@@ -6,11 +6,11 @@ import { IJobDetailCard } from '../../molecules/JobDetailCard'
 import { IJobCompanyHeader } from '@components/UI/molecules/JobCompanyHeader'
 import { IJobsActions, TJobActionsVariant } from '@components/UI/molecules/JobActions'
 import { ReactNode } from 'react'
-import { ISimilarJobs } from '../SimilarJobs/SimilarJobs.interface'
 import { IJobVideo } from '@components/UI/molecules/JobVideo'
 import { ICityDetail } from '../../molecules/CitiesDetailDrawer'
 import { IFraudCardJob } from '../../molecules/FraudCardJob/FraudCardJob.interface'
 import { IActionLinkCard } from '@components/UI/molecules/ActionLinkCard/ActionLinkCard.interface'
+import { ISimilarJobs } from '@components/Domain/Jobs/SimilarJobs/SimilarJobs.interface'
 
 export interface ICanApply {
   message: string

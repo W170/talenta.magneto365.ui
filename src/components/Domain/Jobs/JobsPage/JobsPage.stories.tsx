@@ -1,7 +1,6 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { IconItem, Typography } from '@components/UI/atoms'
-import { JobSuggestedCard } from '@components/UI/organism'
 import { ISideFilter } from '@components/UI/template'
 import Logo from '@assets/noLogo.svg'
 import { frequentSearch, footerProps, emptyVacant } from '../../../../constants/stories/jobsPage.constants'
@@ -18,6 +17,8 @@ import {
   paginationProps
 } from '../../../../constants/stories'
 import { JobsPage } from '.'
+import { JobSuggestedCard } from '../JobDetails/children/JobSuggestedCard'
+import { JobDetailsAction } from '../JobDetails/children/JobDetailsAction'
 
 const jobDetailsContent = (
   <JobDetails
@@ -27,6 +28,7 @@ const jobDetailsContent = (
           title="Vacantes similares a la que acabaste de aplicar"
           tag="NUEVO"
           behavior="showcase"
+          renderFooter={() => <></>}
         >
           <JobSuggestedCard>
             <JobSuggestedCard.Section>
@@ -34,8 +36,8 @@ const jobDetailsContent = (
               <Typography.Text>Descripción de la vacante</Typography.Text>
             </JobSuggestedCard.Section>
             <JobSuggestedCard.Section>
-              <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
-              <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+              <JobDetailsAction.Button variant="ai-job-detail">Ver más</JobDetailsAction.Button>
+              <JobDetailsAction.Button>Ver más</JobDetailsAction.Button>
             </JobSuggestedCard.Section>
           </JobSuggestedCard>
           <JobSuggestedCard>
@@ -44,8 +46,8 @@ const jobDetailsContent = (
               <Typography.Text>Descripción de la vacante</Typography.Text>
             </JobSuggestedCard.Section>
             <JobSuggestedCard.Section>
-              <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
-              <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+              <JobDetailsAction.Button variant="ai-job-detail">Ver más</JobDetailsAction.Button>
+              <JobDetailsAction.Button>Ver más</JobDetailsAction.Button>
             </JobSuggestedCard.Section>
           </JobSuggestedCard>
           <JobSuggestedCard>
@@ -54,8 +56,8 @@ const jobDetailsContent = (
               <Typography.Text>Descripción de la vacante</Typography.Text>
             </JobSuggestedCard.Section>
             <JobSuggestedCard.Section>
-              <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
-              <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+              <JobDetailsAction.Button variant="ai-job-detail">Ver más</JobDetailsAction.Button>
+              <JobDetailsAction.Button>Ver más</JobDetailsAction.Button>
             </JobSuggestedCard.Section>
           </JobSuggestedCard>
           <JobSuggestedCard>
@@ -64,8 +66,8 @@ const jobDetailsContent = (
               <Typography.Text>Descripción de la vacante</Typography.Text>
             </JobSuggestedCard.Section>
             <JobSuggestedCard.Section>
-              <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
-              <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+              <JobDetailsAction.Button variant="ai-job-detail">Ver más</JobDetailsAction.Button>
+              <JobDetailsAction.Button>Ver más</JobDetailsAction.Button>
             </JobSuggestedCard.Section>
           </JobSuggestedCard>
           <JobSuggestedCard>
@@ -74,8 +76,8 @@ const jobDetailsContent = (
               <Typography.Text>Descripción de la vacante</Typography.Text>
             </JobSuggestedCard.Section>
             <JobSuggestedCard.Section>
-              <JobSuggestedCard.Button variant="secondary">Ver más</JobSuggestedCard.Button>
-              <JobSuggestedCard.Button>Ver más</JobSuggestedCard.Button>
+              <JobDetailsAction.Button variant="ai-job-detail">Ver más</JobDetailsAction.Button>
+              <JobDetailsAction.Button>Ver más</JobDetailsAction.Button>
             </JobSuggestedCard.Section>
           </JobSuggestedCard>
         </JobDetails.JobsSuggested>
