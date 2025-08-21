@@ -13,7 +13,8 @@ export const JobDetailsSuggested: React.FC<IJobDetailsSuggested> = ({
   classNames,
   tag,
   children,
-  behavior = 'showcase'
+  behavior = 'showcase',
+  renderFooter
 }) => {
   return children ? (
     <section className={cx(`suggested-jobs-container`, { tab__container: behavior === 'tab' }, classNames?.container)}>
@@ -29,6 +30,7 @@ export const JobDetailsSuggested: React.FC<IJobDetailsSuggested> = ({
       <div className={cx('suggested-jobs-container__body', { tab__body: behavior === 'tab' }, classNames?.body)}>
         {children}
       </div>
+      <div className={cx('suggested-jobs-container__footer', classNames?.footer)}>{renderFooter()}</div>
     </section>
   ) : null
 }
