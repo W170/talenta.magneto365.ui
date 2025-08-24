@@ -40,14 +40,7 @@ upload_assets_to_cdn()
   export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
   export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
 
-  if [ -z ${NEXT_VERSION} ]
-  then
-    echo "Pushing assets into s3://$ASSETS_CDN_S3_BUCKET"
-  else
-    echo "Pushing assets into s3://$ASSETS_CDN_S3_BUCKET/$NEXT_VERSION"
-    export ASSETS_CDN_S3_BUCKET="$ASSETS_CDN_S3_BUCKET/$NEXT_VERSION"
-  fi
-
+  echo "Pushing assets into s3://$ASSETS_CDN_S3_BUCKET"
   aws s3 sync --delete dist/assets s3://${ASSETS_CDN_S3_BUCKET}
   echo "Propagating assets in CDN"
   aws cloudfront create-invalidation --distribution-id $ASSETS_CDN_CLOUDFRONT_ID --paths "/lib/assets/*" 1> /dev/null
