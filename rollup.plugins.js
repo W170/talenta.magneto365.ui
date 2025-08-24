@@ -15,7 +15,7 @@ export const MAIN_PLUGINS = [
     fileName: '[dirname][hash][extname]',
     sourceDir: path.join(__dirname, 'src/assets'),
     destDir: path.join('dist/assets', packageJson.version),
-    publicPath: dotEnv.config().parsed.ASSETS_CDN_URL,
+    publicPath: path.join(dotEnv.config().parsed.ASSETS_CDN_URL, packageJson.version, '/'),
     limit: 0,
     emitFiles: true
   }),
