@@ -1,5 +1,6 @@
 import {
   DollarCircleWhiteOutline,
+  DollarCircleBlueDarkOutline,
   CoinBlackOutline,
   ShoppingCartBlueOutline,
   AnimatedSpinnerBlack,
@@ -14,6 +15,7 @@ export const EXPANDABLE_INFO_ACTION_ICONS: { [key: string]: Record<string, strin
   },
   coin: {
     [EExpandableInfoActionVariant.DARK_BLUE]: DollarCircleWhiteOutline,
+    [EExpandableInfoActionVariant.LIGHT_BLUE]: DollarCircleBlueDarkOutline,
     [EExpandableInfoActionVariant.WHITE]: CoinBlackOutline
   },
   loading: {
