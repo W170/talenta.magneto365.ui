@@ -7,6 +7,8 @@ import path from 'path'
 import dotEnv from 'dotenv'
 import packageJson from './package.json'
 
+const { ASSETS_CDN_URL } = dotEnv.config().parsed
+
 export const MAIN_PLUGINS = [
   peerDepsExternal(),
   resolve(),
@@ -15,7 +17,7 @@ export const MAIN_PLUGINS = [
     fileName: '[dirname][hash][extname]',
     sourceDir: path.join(__dirname, 'src/assets'),
     destDir: path.join('dist/assets', packageJson.version),
-    publicPath: path.join(dotEnv.config().parsed.ASSETS_CDN_URL, packageJson.version, '/'),
+    publicPath: new URL(packageJson.version + '/', ASSETS_CDN_URL).toString(),
     limit: 0,
     emitFiles: true
   }),
