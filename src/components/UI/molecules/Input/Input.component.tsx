@@ -68,7 +68,8 @@ const Input: React.FC<IInput> = ({
               style={{
                 left: hideIcon ? '10px' : '40px',
                 top: haveValueOrFocus ? '30%' : '45%',
-                fontSize: haveValueOrFocus ? '12px' : '14px'
+                fontSize: haveValueOrFocus ? '12px' : '14px',
+                pointerEvents: 'none'
               }}
               className={styles[`${classMUI}-input--container__label`]}
             >
