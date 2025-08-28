@@ -11,7 +11,7 @@ $filter-font-color: #282835;
   padding: 10px;
   box-sizing: border-box;
   overflow: hidden;
-  border-bottom: 1px solid #F0F1F3;
+  border-bottom: 1px solid #f0f1f3;
 
   @media (max-width: v.$screen-md) {
     width: inherit;
@@ -29,7 +29,7 @@ $filter-font-color: #282835;
   & > p {
     font-size: 16px;
     font-weight: 700;
-    color: #292F37;
+    color: #292f37;
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
@@ -48,7 +48,7 @@ $filter-font-color: #282835;
   align-items: center;
   justify-content: flex-end;
   padding: 8px;
-  background-color: #F0F1F3;
+  background-color: #f0f1f3;
   border-radius: 6px;
 
   & > span {

@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 type PositionY = 'top' | 'bottom'
 type PositionX = 'left' | 'center' | 'right'
@@ -35,5 +35,5 @@ export interface IPopover {
 
   className?: string
 
-  style? : React.CSSProperties
+  style?: React.CSSProperties
 }
