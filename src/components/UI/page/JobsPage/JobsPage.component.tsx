@@ -1,6 +1,12 @@
 import React, { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
-import FilterContainerMenu from '@components/UI/molecules/FilterContainerMenu/FilterContainerMenu.component'
-import { JobDetailContainer, JobCard, FrequentSearch, Pagination, CreateAccountCTA } from '@components/UI/molecules'
+import {
+  JobDetailContainer,
+  JobCard,
+  FrequentSearch,
+  Pagination,
+  CreateAccountCTA,
+  FilterContainerMenu
+} from '@components/UI/molecules'
 import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
 import { SortBar, Footer, SideFilter } from '@components/UI/template'
 import { useMediaQuery } from '@components/hooks'
@@ -11,6 +17,7 @@ import { classMUI } from '@constants/stories'
 import { EmptyResults } from '@components/UI/molecules/EmptyResults'
 import { JobCardSkeleton } from '@components/UI/molecules/JobCard/children'
 import { Paragraph } from '@components/UI/atoms'
+import HorizontalFilter from '@components/UI/template/HorizontalFilter/HorizontalFilter.component'
 
 const JobsPage: React.FC<IJobsPage> = ({
   jobDetailsDrawerProps,
@@ -30,7 +37,8 @@ const JobsPage: React.FC<IJobsPage> = ({
   customParagraph,
   dynamicPaginationUrl,
   displayAlwaysFilter,
-  createAccountCTAProps
+  createAccountCTAProps,
+  typeFilters = 'row'
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [loadVideo, setLoadVideo] = useState(false)
@@ -132,37 +140,71 @@ const JobsPage: React.FC<IJobsPage> = ({
     ))
   }, [isLoading, emptyVacant, emptyResultsProps, vacantProps, jobSelected, fullJobsUrl, handleJobCardClick])
 
-  const sideFilterAltRender = useMemo(() => {
+  const filterAltRender = useMemo(() => {
     if (!displayAlwaysFilter && emptyVacant) return
 
-    return (
-      <div className={style[`${classMUI}-jobs-page--filter-row`]}>
-        <FilterContainerMenu>
-          <SideFilter {...sideFilterProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
-        </FilterContainerMenu>
-      </div>
-    )
-  }, [displayAlwaysFilter, sideFilterProps, isFiltersOpen, emptyVacant])
+    if (typeFilters === 'side') {
+      return (
+        <div className={style[`${classMUI}-jobs-page--filter-row`]}>
+          <FilterContainerMenu>
+            <SideFilter {...sideFilterProps} isFiltersOpen={isFiltersOpen} setIsFiltersOpen={setIsFiltersOpen} />
+          </FilterContainerMenu>
+        </div>
+      )
+    }
+    return <HorizontalFilter {...sideFilterProps} isFiltersOpen={isFiltersOpen} />
+  }, [displayAlwaysFilter, sideFilterProps, typeFilters, isFiltersOpen, emptyVacant])
 
   return (
     <Fragment>
-      <div id="magneto-ui-jobs-page" className={style[`${classMUI}-jobs-page`]}>
-        {sideFilterAltRender}
-        <div className={style[`${classMUI}-jobs-page--center-row`]}>
-          <SortBar
-            {...sortBarProps}
-            isFiltersOpen={isFiltersOpen}
-            setIsFiltersOpen={setIsFiltersOpen}
-            emptyVacant={emptyVacant}
-          />
-          {createAccountCTAProps && <CreateAccountCTA {...createAccountCTAProps} />}
-          {mainTitleByMediaQuery}
-          <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>{cardsAltRender}</div>
-          {customParagraph && <Paragraph paragraph={customParagraph} />}
-          <Pagination dynamicUrl={fullUrl} {...paginationProps} />
-          <FrequentSearch {...frequentSearchProps} />
-        </div>
-        <div className={style[`${classMUI}-jobs-page__jobs-detail`]}>{JobDetailsDrawerComponent}</div>
+      <div
+        id="magneto-ui-jobs-page"
+        className={`${style[`${classMUI}-jobs-page`]} ${
+          typeFilters === 'row' ? style[`${classMUI}-jobs-page--column`] : ''
+        }`}
+      >
+        {typeFilters === 'row' ? (
+          <Fragment>
+            {filterAltRender}
+            <div className={style[`${classMUI}-jobs-page--row-content`]}>
+              <div className={style[`${classMUI}-jobs-page--center-row`]}>
+                <SortBar
+                  {...sortBarProps}
+                  isFiltersOpen={isFiltersOpen}
+                  setIsFiltersOpen={setIsFiltersOpen}
+                  emptyVacant={emptyVacant}
+                  horizontal={typeFilters === 'row'}
+                />
+                {createAccountCTAProps && <CreateAccountCTA {...createAccountCTAProps} />}
+                {mainTitleByMediaQuery}
+                <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>{cardsAltRender}</div>
+                {customParagraph && <Paragraph paragraph={customParagraph} />}
+                <Pagination dynamicUrl={fullUrl} {...paginationProps} />
+                <FrequentSearch {...frequentSearchProps} />
+              </div>
+              <div className={style[`${classMUI}-jobs-page__jobs-detail`]}>{JobDetailsDrawerComponent}</div>
+            </div>
+          </Fragment>
+        ) : (
+          <Fragment>
+            {filterAltRender}
+            <div className={style[`${classMUI}-jobs-page--center-row`]}>
+              <SortBar
+                {...sortBarProps}
+                isFiltersOpen={isFiltersOpen}
+                setIsFiltersOpen={setIsFiltersOpen}
+                emptyVacant={emptyVacant}
+              />
+              {createAccountCTAProps && <CreateAccountCTA {...createAccountCTAProps} />}
+              {mainTitleByMediaQuery}
+              <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>{cardsAltRender}</div>
+              {customParagraph && <Paragraph paragraph={customParagraph} />}
+              <Pagination dynamicUrl={fullUrl} {...paginationProps} />
+              <FrequentSearch {...frequentSearchProps} />
+            </div>
+            <div className={style[`${classMUI}-jobs-page__jobs-detail`]}>{JobDetailsDrawerComponent}</div>
+          </Fragment>
+        )}
       </div>
       <Footer {...footerProps} />
     </Fragment>

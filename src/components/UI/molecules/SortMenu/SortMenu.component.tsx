@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useRef } from 'react'
 import { ListSortMenu } from '../ListSortMenu'
 import { IconItem, Popover } from '../../atoms'
 import { ISortMenu } from './SortMenu.interface'
@@ -14,6 +14,8 @@ const SortMenu: React.FC<ISortMenu> = ({
   loading,
   setClickOut = () => ({})
 }) => {
+  const buttonTextRef = useRef<HTMLParagraphElement>(null)
+
   const listMenuProps = useMemo(() => {
     return {
       orderFields,
@@ -23,13 +25,22 @@ const SortMenu: React.FC<ISortMenu> = ({
     }
   }, [orderFields, textOrderFilter, setFilter, setClickOut])
 
+  const getButtonWidth = () => {
+    if (buttonTextRef.current) {
+      const rect = buttonTextRef.current.getBoundingClientRect()
+      return rect.width + 42
+    }
+    return 180
+  }
+
   return (
     <Popover
-      widthBase={180}
+      widthBase={getButtonWidth()}
       show={clickOut}
       content={<ListSortMenu {...listMenuProps} />}
       positionX="left"
       positionY="bottom"
+      style={{ height: '75%' }}
     >
       <button
         className={`${style['magneto-ui-btn-menu']} ${loading && style.disabled}`}
@@ -37,7 +48,9 @@ const SortMenu: React.FC<ISortMenu> = ({
         onClick={() => setClickOut(!clickOut)}
         disabled={loading}
       >
-        <p className={style['magneto-ui-btn-text']}>{textOrderFilter}</p>
+        <p className={style['magneto-ui-btn-text']} ref={buttonTextRef}>
+          {textOrderFilter}
+        </p>
         <IconItem {...menuSortButton} isRotate={clickOut} />
       </button>
     </Popover>

@@ -1,6 +1,10 @@
 import { IBreadcrumb, IMainButton, IconProps } from '@components/UI/atoms'
-import { IHeaderTabs, IListMenuIcons, IMenuItems, IMobileSearchbar, ISearchbar } from '@components/UI/molecules'
+import { IHeaderTabs, IListMenuIcons, IMenuItems, ISearchbar } from '@components/UI/molecules'
 import { IBrands } from '@components/UI/molecules/BrandsContainer/BrandsContainer.interface'
+import {
+  IMegaMenuSearchBar,
+  ISearchOptions
+} from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.interface'
 import {
   Add,
   AllJobs,
@@ -10,6 +14,7 @@ import {
   Home2,
   MessageQuestion,
   ProfileAdd,
+  SearchIcon,
   SearchNormal1,
   SuggestedJobs,
   TaskSquare
@@ -279,15 +284,57 @@ export const CurriculumTabProps: IHeaderTabs = {
   addDivider: true
 }
 
-export const SearchbarProps: ISearchbar = {
-  placeholder: 'Busca empleos por cargo o profesion',
-  termValue: 'Mi Busqueda',
-  onSearch: () => {
-    // Add your search logic here
+const mockSearchBarOptions: ISearchOptions[] = [
+  { title: 'Diseñador Ux', subtitle: 'Ciudad', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux', subtitle: 'Ciudad', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux prue', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux pruess', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux prue', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux pruesadf', subtitle: 'Ciudad', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux prue', subtitle: 'Ciudad', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux prue', subtitle: 'Ciudad', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux', subtitle: 'Ciudad', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux', subtitle: 'Ciudad', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux prue', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux pruess', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux prue', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux pruesadf', subtitle: 'Ciudad', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux prue', subtitle: 'Ciudad', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux prue', subtitle: 'Ciudad', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux', subtitle: 'Ciudad', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux', subtitle: 'Ciudad', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux prue', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux pruess', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux prue', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux pruesadf', subtitle: 'Ciudad', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux prue', subtitle: 'Ciudad', url: 'https://prueba.com' },
+  { title: 'Diseñador Ux prue', subtitle: 'Ciudad', url: 'https://prueba.com' }
+]
+
+export const SearchbarProps: IMegaMenuSearchBar = {
+  location: {
+    placeholder: 'Busca empleos por ubicacion',
+    termValue: null,
+    onSearch: () => ({}),
+    actionIcon: SearchIcon,
+    options: [],
+    sectionTitle: {
+      title: 'Mi ubicacion',
+      onClick: () => ({}),
+      url: 'https://google.com'
+    }
+  },
+  occupation: {
+    placeholder: 'Busca empleos por cargo o profesion',
+    termValue: null,
+    onSearch: () => ({}),
+    options: mockSearchBarOptions
   }
 }
 
-export const MobileSearchbarProps: IMobileSearchbar = {
+export const MobileSearchbarProps: ISearchbar = {
+  termValue: '',
+  placeholder: 'Busca empleos por cargo o profesion',
   onSearch: () => {
     // Add your search logic here
   }

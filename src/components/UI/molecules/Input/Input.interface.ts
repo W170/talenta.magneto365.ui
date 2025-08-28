@@ -59,4 +59,8 @@ export interface IInput extends React.InputHTMLAttributes<HTMLInputElement> {
    * this property sets the max counter value
    */
   maxCounterValue?: number
+  /**
+   * Main Styles
+   */
+  mainClassName?: string
 }

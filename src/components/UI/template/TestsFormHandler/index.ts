@@ -1,0 +1,5 @@
+export * from './TestsFormHandler.interface'
+export * from './children/GlobalQuestion/GlobalQuestion.interface'
+export * from './TestsFormHandler.context'
+export { default as TestFormHandler } from './TestsFormHandler.component'
+export { default as GlobalQuestion } from './children/GlobalQuestion/GlobalQuestion.component'

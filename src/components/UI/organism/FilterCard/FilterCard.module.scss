@@ -10,12 +10,10 @@ $lines: 2;
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  background-color: v.$disabled-color-gray;
   width: 260px;
   max-width: 260px;
-  height: auto;
-  padding: 10px 0;
-  border-radius: 12px;
+  padding: 12px 0px 12px 10px;
+  border-bottom: 1px solid #f0f1f3;
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
@@ -26,19 +24,38 @@ $lines: 2;
     max-width: 100%;
     padding: 10px 20px;
   }
+
+  &__search {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 10px;
+  }
 }
 
 .magneto-ui-filter-card_header {
   display: flex;
-  width: 230px;
-  max-width: 230px;
-  padding-left: 4px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  padding: 4px 10px;
 
   @media (max-width: v.$screen-md) {
     width: inherit;
     max-width: 100%;
   }
-
+  &--arrow {
+    opacity: 0.5;
+  }
+  &.--open {
+    > p {
+      color: #292f37;
+    }
+    > .magneto-ui-filter-card_header--arrow {
+      transform: rotate(180deg);
+      opacity: 1;
+    }
+  }
   & > p {
     display: block;
     display: -webkit-box;
@@ -47,7 +64,7 @@ $lines: 2;
     -webkit-line-clamp: $lines;
     -webkit-box-orient: vertical;
     font-weight: 700;
-    color: v.$text-color-black;
+    color: #47535f;
     width: 100%;
     height: auto;
     max-height: $font-size * $line-height * $lines;
@@ -63,8 +80,8 @@ $lines: 2;
 }
 
 .magneto-ui-filter-card_options {
-  margin-top: 8px;
   overflow-y: scroll;
+  width: 100%;
   @include m.scroll-filter;
 
   @media (max-width: v.$screen-md) {
@@ -77,4 +94,16 @@ $lines: 2;
 .hasSearch {
   height: 270px;
   min-height: 270px;
+}
+
+.magneto-ui-filter-card-horizontal {
+  @include m.horizontal-filter-card;
+
+  &__popover {
+    @include m.horizontal-filter-popover;
+  }
+}
+
+.magneto-ui-horizontal-filter-button {
+  @include m.horizontal-filter-button;
 }

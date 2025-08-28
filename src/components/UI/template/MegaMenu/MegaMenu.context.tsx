@@ -15,7 +15,13 @@ const initialContext: IMegaMenuContext = {
   jobsProps: {
     tabs: []
   },
-  mainHeaderProps: {},
+  mainHeaderProps: {
+    mobileSearchBarProps: {
+      termValue: '',
+      onSearch: () => ({}),
+      placeholder: ''
+    }
+  },
   listMenuUserProps: {
     urlParam: '',
     menuItems: [],

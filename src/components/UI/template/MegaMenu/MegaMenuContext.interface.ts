@@ -3,6 +3,8 @@ import { ISearchbar } from '@components/UI/molecules'
 import { IPopoverRef } from '@components/UI/molecules/MegaMenuPopover/MegaMenuPopover.interface'
 import { IlistMenuUserProps } from '@components/UI/organism'
 import React, { ReactNode } from 'react'
+import { ISelectOptions } from '@components/UI/organism/Select2/Select2.interface'
+import { IMegaMenuSearchBar } from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.interface'
 
 export interface IMegaMenuLink {
   label: string
@@ -31,7 +33,9 @@ export interface IMegaMenuMainHeader {
     signUpText: string
     onClickSignUp: (event: Event) => Promise<void>
   }
-  searchBarProps?: ISearchbar
+  selectCountry?: ISelectOptions<unknown>
+  searchBarProps?: IMegaMenuSearchBar
+  mobileSearchBarProps: ISearchbar
   homeUrl?: string
   homeText?: string
 }

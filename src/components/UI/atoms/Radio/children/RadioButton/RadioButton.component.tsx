@@ -30,7 +30,7 @@ const Component: React.FC<IRadioButtonProps> = ({
       htmlFor={id}
     >
       {prefixIcon && <IconItem size={18} {...prefixIcon} />}
-      <input type="radio" disabled={disabled} id={id} checked={checked || defaultChecked} onChange={onChange} />
+      <input type="radio" disabled={disabled} id={id} checked={!!checked || !!defaultChecked} onChange={onChange} />
       {children && (
         <span className={CNM.get({ styles, cls: ['radio-button__children', childrenClassName] })}>{children}</span>
       )}

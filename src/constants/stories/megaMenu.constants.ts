@@ -22,7 +22,7 @@ import {
   TaskSquare
 } from '@constants/icons.constants'
 import { Book, BriefcaseBlue, BuildingBlue, CourthouseBlue, LocationBlue } from '@constants/megaMenu.constants'
-import { SearchbarProps } from './headers.constants'
+import { MobileSearchbarProps, SearchbarProps } from './headers.constants'
 import { NoData, Waiting } from '@constants/gifs.constants'
 
 export const staticMessages: { [key: string]: string } = {
@@ -60,6 +60,7 @@ export const megaMenuJobsImage = Array(36).fill(megaMenuJobImage)
 export const megaMenuMainHeader: IMegaMenuMainHeader = {
   homeUrl: 'http://localhost:6006/iframe.html?args=&id=template-megamenu--default&viewMode=story',
   searchBarProps: SearchbarProps,
+  mobileSearchBarProps: MobileSearchbarProps,
   loginProps: {
     signUpText: 'Crear cuenta',
     loginUrl: 'https://www.magneto365.com/es/',

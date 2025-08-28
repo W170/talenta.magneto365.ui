@@ -19,7 +19,7 @@ const Component: React.FC<IRadioDefaultProps> = ({
       className={CNM.get({ styles, cls: ['radio-default', disabled && 'radio-default--disabled', className] })}
       htmlFor={id}
     >
-      <input type="radio" id={id} disabled={disabled} checked={checked || defaultChecked} onChange={onChange} />
+      <input type="radio" id={id} disabled={disabled} checked={!!checked || !!defaultChecked} onChange={onChange} />
       <div
         className={CNM.get({
           styles,
