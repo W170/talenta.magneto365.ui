@@ -7,16 +7,45 @@ import { getAllEntryPoints } from './rollup.input'
 import { MAIN_PLUGINS } from './rollup.plugins'
 
 const rootInput = 'src/index.ts'
-const domainInputs = getAllEntryPoints('./src/components/Domain')
 
-const allInputs = [...domainInputs, rootInput]
+const domainComponents = getAllEntryPoints('./src/components/Domain')
+
+console.log(domainComponents)
 
 export default () => {
   // TODO: make css for entries.
   // if (environment) return GENERATE_MODULES(environment)
   return [
     {
-      input: allInputs,
+      input: rootInput,
+      output: [
+        {
+          dir: path.join('dist', 'esm'),
+          format: 'esm',
+          sourcemap: true
+        },
+        {
+          dir: path.join('dist', 'cjs'),
+          format: 'cjs',
+          sourcemap: true
+        }
+      ],
+      external: ['react', 'axios', 'react-dom'],
+      plugins: [
+        ...MAIN_PLUGINS,
+        CONFIG_POSTCSS_PLUGIN(false, 'css/magneto.ui.lib.min.css'),
+        typescript({
+          tsconfig: './tsconfig.json',
+          declaration: false,
+          outDir: undefined,
+          declarationDir: undefined,
+          emitDeclarationOnly: false
+        })
+      ]
+    },
+    // build domain components
+    ...domainComponents.map(({ name, input }) => ({
+      input,
       output: [
         {
           dir: path.join('dist', 'esm'),
@@ -36,7 +65,7 @@ export default () => {
       external: ['react', 'axios', 'react-dom'],
       plugins: [
         ...MAIN_PLUGINS,
-        CONFIG_POSTCSS_PLUGIN(false),
+        CONFIG_POSTCSS_PLUGIN(false, `css/magneto.ui.${name}.min.css`),
         typescript({
           tsconfig: './tsconfig.json',
           declaration: false,
@@ -45,9 +74,10 @@ export default () => {
           emitDeclarationOnly: false
         })
       ]
-    },
+    })),
+    // types
     {
-      input: 'src/index.ts',
+      input: rootInput,
       output: {
         dir: path.join('dist', 'types')
       },
@@ -61,7 +91,7 @@ export default () => {
       external: [/\.(css|less|scss)$/]
     },
     {
-      input: domainInputs,
+      input: domainComponents.map(({ input }) => input),
       output: {
         dir: path.join('dist', 'types')
       },

@@ -16,7 +16,7 @@ export const NORMALIZE_CSS_SUFFIX = (suffix) => {
   return lowerCamelSuffix.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)
 }
 
-export const CONFIG_POSTCSS_PLUGIN = (isSub, suffix = 'lib') => {
+export const CONFIG_POSTCSS_PLUGIN = (isSub, extract) => {
   return postcss({
     plugins: [autoprefixer],
     autoModules: false,
@@ -37,7 +37,7 @@ export const CONFIG_POSTCSS_PLUGIN = (isSub, suffix = 'lib') => {
         return `mg_${base}_${name}_${mappedHash || hash}`.replace(/_{2,}/g, '_')
       }
     },
-    extract: `css/magneto.ui.${suffix}.min.css`,
+    extract,
     exclude: !isSub ? ['*.css'] : [],
     extensions: ['.css'],
     minimize: true,
@@ -49,6 +49,22 @@ export const CONFIG_POSTCSS_PLUGIN = (isSub, suffix = 'lib') => {
     }
   })
 }
+
+export const GENERATE_CSS_MODULES = ({ name }) =>
+  postcss({
+    plugins: [autoprefixer],
+    extract: `css/${name}.min.css`,
+    extensions: ['css', 'scss'],
+    modules: true,
+    autoModules: true,
+    minimize: true,
+    sourceMap: false,
+    use: {
+      sass: {
+        includePaths: [path.resolve(__dirname, './src/shared/stylesheets/tokens')]
+      }
+    }
+  })
 
 export const GENERATE_MODULE_PLUGINS = (folderName, map) => [
   ...MAIN_PLUGINS,

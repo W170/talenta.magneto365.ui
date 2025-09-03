@@ -3,10 +3,12 @@ const path = require('path')
 const { getAllEntryPoints } = require('../rollup.input.js')
 
 const domainInputs = Object.fromEntries(
-  getAllEntryPoints('src/components/Domain').map((file) => {
-    const name = path.relative('src', file).replace(/\.(tsx?|jsx?)$/, '')
-    return [name, file]
-  })
+  getAllEntryPoints('src/components/Domain')
+    .map(({ input }) => input)
+    .map((file) => {
+      const name = path.relative('src', file).replace(/\.(tsx?|jsx?)$/, '')
+      return [name, file]
+    })
 )
 
 function updatePackageJsonExports(entries, moduleName) {
@@ -14,10 +16,11 @@ function updatePackageJsonExports(entries, moduleName) {
   const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'))
 
   pkg.exports = pkg.exports || {}
+  console.log('my entry', Object.keys(entries))
   Object.keys(entries).forEach((entry) => {
     const [, key] = entry.match(
       // take entry name from moduleName until component name omitting the index file.
-      new RegExp(`(${moduleName}.+\\/\\w+)\\/index$`)
+      new RegExp(`(${moduleName}.+)\\/index$`)
     )
     pkg.exports[`./${key}`] = {
       import: `./dist/esm/${entry}.js`,

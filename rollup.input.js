@@ -1,6 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 
+const getNameComponent = (file) => file.match(/\/([^\/]+)\/index\.ts$/)[1]
+
 /**
  * lookup for every entry in the directory recursive.
  * @param {directory name} dir
@@ -15,7 +17,7 @@ export function getAllEntryPoints(dir) {
     if (fs.statSync(fullPath).isDirectory() && !hasIndex) {
       entries.push(...getAllEntryPoints(fullPath))
     } else if (file === 'index.ts' || file === 'index.tsx') {
-      entries.push(fullPath)
+      entries.push({ input: fullPath, name: getNameComponent(fullPath) })
     }
   }
   return entries

@@ -104,30 +104,10 @@
       "types": "./dist/types/index.d.ts"
     },
     "./dist/*.css": "./dist/*.css",
-    "./Domain/Jobs/JobCompanyLogo": {
-      "import": "./dist/esm/components/Domain/Jobs/JobCompanyLogo/index.js",
-      "require": "./dist/cjs/components/Domain/Jobs/JobCompanyLogo/index.js",
-      "types": "./dist/types/src/components/Domain/Jobs/JobCompanyLogo/index.d.ts"
-    },
-    "./Domain/Jobs/JobDetails": {
-      "import": "./dist/esm/components/Domain/Jobs/JobDetails/index.js",
-      "require": "./dist/cjs/components/Domain/Jobs/JobDetails/index.js",
-      "types": "./dist/types/src/components/Domain/Jobs/JobDetails/index.d.ts"
-    },
-    "./Domain/Jobs/JobSuggestedCard": {
-      "import": "./dist/esm/components/Domain/Jobs/JobSuggestedCard/index.js",
-      "require": "./dist/cjs/components/Domain/Jobs/JobSuggestedCard/index.js",
-      "types": "./dist/types/src/components/Domain/Jobs/JobSuggestedCard/index.d.ts"
-    },
-    "./Domain/Jobs/JobsPage": {
-      "import": "./dist/esm/components/Domain/Jobs/JobsPage/index.js",
-      "require": "./dist/cjs/components/Domain/Jobs/JobsPage/index.js",
-      "types": "./dist/types/src/components/Domain/Jobs/JobsPage/index.d.ts"
-    },
-    "./Domain/Jobs/SimilarJobs": {
-      "import": "./dist/esm/components/Domain/Jobs/SimilarJobs/index.js",
-      "require": "./dist/cjs/components/Domain/Jobs/SimilarJobs/index.js",
-      "types": "./dist/types/src/components/Domain/Jobs/SimilarJobs/index.d.ts"
+    "./Domain/Jobs": {
+      "import": "./dist/esm/components/Domain/Jobs/index.js",
+      "require": "./dist/cjs/components/Domain/Jobs/index.js",
+      "types": "./dist/types/src/components/Domain/Jobs/index.d.ts"
     }
   }
 }
