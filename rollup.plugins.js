@@ -6,6 +6,9 @@ import copy from 'rollup-plugin-copy'
 import url from '@rollup/plugin-url'
 import path from 'path'
 import dotEnv from 'dotenv'
+import packageJson from './package.json'
+
+const { ASSETS_CDN_URL } = dotEnv.config().parsed
 
 export const MAIN_PLUGINS = [
   peerDepsExternal(),
@@ -25,8 +28,8 @@ export const MAIN_PLUGINS = [
   url({
     fileName: '[dirname][hash][extname]',
     sourceDir: path.join(__dirname, 'src/assets'),
-    destDir: 'dist/assets',
-    publicPath: dotEnv.config().parsed.ASSETS_CDN_URL,
+    destDir: path.join('dist/assets', packageJson.version),
+    publicPath: new URL(packageJson.version + '/', ASSETS_CDN_URL).toString(),
     limit: 0,
     emitFiles: true
   }),

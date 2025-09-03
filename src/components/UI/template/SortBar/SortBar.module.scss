@@ -67,11 +67,15 @@
 }
 
 .magneto-ui-btn-menu {
-  width: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
+  background-color: #f0f1f3;
+  height: 100%;
+  border-radius: 8px 0px 0px 8px;
+  @media screen and (max-width: v.$screen-md) {
+    border-radius: 8px;
+  }
   border: none;
   cursor: pointer;
 }
@@ -79,11 +83,15 @@
 .magneto-ui-section-menu {
   display: flex;
   align-items: center;
+  height: 75%;
 }
 
 .magneto-ui-btn-order {
-  background-color: transparent;
+  background-color: #f0f1f3;
   border: none;
+  height: 100%;
+  border-radius: 0px 8px 8px 0px;
+  border-left: 1px solid #fff;
   cursor: pointer;
 }
 

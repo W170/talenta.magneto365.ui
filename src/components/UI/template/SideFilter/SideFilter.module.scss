@@ -76,8 +76,6 @@
 .magneto-iu-side-filter_content {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 15px 15px 120px 15px;
   @media (max-width: v.$screen-md) {
     width: 100%;
   }

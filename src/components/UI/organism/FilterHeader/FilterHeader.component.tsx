@@ -1,6 +1,6 @@
 import React, { FC, useMemo } from 'react'
-import { Broom } from '@constants/icons.constants'
-import { MainButton } from '@components/UI/atoms'
+import { Broom, FilterIcon } from '@constants/icons.constants'
+import { IconItem, MainButton } from '@components/UI/atoms'
 import { Switch } from '@components/UI/atoms/Switch'
 import { IFilterHeader } from './FilterHeader.interface'
 import styles from './FilterHeader.modules.scss'
@@ -42,7 +42,10 @@ export const FilterHeader: FC<IFilterHeader> = ({
   return (
     <article className={styles['magneto-ui-filter-header']}>
       <div className={styles['magneto-ui-filter-header_title']}>
-        <p>{title}</p>
+        <p>
+          <IconItem icon={FilterIcon} size={16} />
+          {title}
+        </p>
         {displayBtnClear}
       </div>
       {switchText && (
