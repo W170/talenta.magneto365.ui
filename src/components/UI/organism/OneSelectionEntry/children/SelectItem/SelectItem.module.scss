@@ -11,7 +11,7 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all ease-in-out 0.3s;
-  @media screen and(min-width: v.$screen-md) {
+  @media screen and (min-width: v.$screen-md) {
     &:hover {
       background-color: v.$disabled-color-gray;
     }

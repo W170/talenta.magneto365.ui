@@ -105,9 +105,9 @@
     },
     "./dist/*.css": "./dist/*.css",
     "./Domain/Jobs": {
-      "import": "./dist/esm/components/Domain/Jobs/index.js",
-      "require": "./dist/cjs/components/Domain/Jobs/index.js",
-      "types": "./dist/types/src/components/Domain/Jobs/index.d.ts"
+      "import": "./dist/esm/src/components/Domain/Jobs/index.js",
+      "require": "./dist/cjs/src/components/Domain/Jobs/index.js",
+      "types": "./dist/types/components/Domain/Jobs/index.d.ts"
     }
   }
 }

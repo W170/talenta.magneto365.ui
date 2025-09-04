@@ -10,7 +10,7 @@ const rootInput = 'src/index.ts'
 
 const domainComponents = getAllEntryPoints('./src/components/Domain')
 
-console.log(domainComponents)
+const getComponentName = (file) => file.match(/([^/]+)(?=\/index\.ts$)/)[1]
 
 export default () => {
   // TODO: make css for entries.
@@ -44,28 +44,26 @@ export default () => {
       ]
     },
     // build domain components
-    ...domainComponents.map(({ name, input }) => ({
+    ...domainComponents.map((input) => ({
       input,
       output: [
         {
           dir: path.join('dist', 'esm'),
           format: 'esm',
           preserveModules: true,
-          preserveModulesRoot: 'src',
           sourcemap: true
         },
         {
           dir: path.join('dist', 'cjs'),
           format: 'cjs',
           preserveModules: true,
-          preserveModulesRoot: 'src',
           sourcemap: true
         }
       ],
       external: ['react', 'axios', 'react-dom'],
       plugins: [
         ...MAIN_PLUGINS,
-        CONFIG_POSTCSS_PLUGIN(false, `css/magneto.ui.${name}.min.css`),
+        CONFIG_POSTCSS_PLUGIN(false, `css/magneto.ui.${getComponentName(input)}.min.css`),
         typescript({
           tsconfig: './tsconfig.json',
           declaration: false,
@@ -91,11 +89,18 @@ export default () => {
       external: [/\.(css|less|scss)$/]
     },
     {
-      input: domainComponents.map(({ input }) => input),
+      input: domainComponents,
       output: {
-        dir: path.join('dist', 'types')
+        dir: path.join('dist', 'types'),
+        preserveModules: true
       },
-      plugins: [dts()]
+      plugins: [
+        dts(),
+        url({
+          fileName: '[dirname][hash][extname]',
+          sourceDir: path.join(__dirname, 'src/assets')
+        })
+      ]
     }
   ]
 }
