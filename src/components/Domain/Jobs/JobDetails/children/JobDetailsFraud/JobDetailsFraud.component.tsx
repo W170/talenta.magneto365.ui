@@ -7,8 +7,6 @@ import styles from './JobDetailsFraud.module.scss'
 
 const cx = classNames.bind(styles)
 
-console.log(styles)
-
 export const JobDetailsFraud: React.FC<IJobDetailsFraud> = ({ children, renderTitle, className }) => {
   return (
     <section role="alert" aria-live="assertive" className={cx('fraud', className)} data-testid="job-details-fraud">

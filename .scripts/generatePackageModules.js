@@ -20,8 +20,8 @@ function updatePackageJsonExports(entries, moduleName) {
       new RegExp(`(${moduleName}.+)\\/index$`)
     )
     pkg.exports[`./${key}`] = {
-      import: `./dist/esm/src/${entry}.js`,
-      require: `./dist/cjs/src/${entry}.js`,
+      import: `./dist/esm/${entry}.js`,
+      require: `./dist/cjs/${entry}.js`,
       types: `./dist/types/${entry}.d.ts`
     }
   })

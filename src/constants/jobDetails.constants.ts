@@ -7,6 +7,7 @@ import {
   Briefcase,
   Building5,
   Calendar1,
+  Disabled,
   DollarCircle,
   Export3,
   FacebookBlue,
@@ -32,7 +33,8 @@ export const iconJobDetailSummaryMap = {
   briefcase: React.createElement(IconItem, { icon: Briefcase, size: 16, alt: 'Briefcase-icon' }),
   'dollar-circle': React.createElement(IconItem, { icon: DollarCircle, size: 16, alt: 'DollarCircle-icon' }),
   location: React.createElement(IconItem, { icon: Location, size: 16, alt: 'Location-icon' }),
-  tag: React.createElement(IconItem, { icon: Tag, size: 16, alt: 'Tag-icon' })
+  tag: React.createElement(IconItem, { icon: Tag, size: 16, alt: 'Tag-icon' }),
+  disabled: React.createElement(IconItem, { icon: Disabled, size: 16, alt: 'disabled' })
 }
 
 export const iconJobDetailsAction = {

@@ -10,30 +10,32 @@ const rootInput = 'src/index.ts'
 
 const domainComponents = getAllEntryPoints('./src/components/Domain')
 
-const getComponentName = (file) => file.match(/([^/]+)(?=\/index\.ts$)/)[1]
-
 export default () => {
   // TODO: make css for entries.
   // if (environment) return GENERATE_MODULES(environment)
   return [
     {
-      input: rootInput,
+      input: [rootInput, ...domainComponents],
       output: [
         {
           dir: path.join('dist', 'esm'),
           format: 'esm',
+          preserveModulesRoot: 'src',
+          preserveModules: true,
           sourcemap: true
         },
         {
           dir: path.join('dist', 'cjs'),
           format: 'cjs',
+          preserveModulesRoot: 'src',
+          preserveModules: true,
           sourcemap: true
         }
       ],
       external: ['react', 'axios', 'react-dom'],
       plugins: [
         ...MAIN_PLUGINS,
-        CONFIG_POSTCSS_PLUGIN(false, 'css/magneto.ui.lib.min.css'),
+        CONFIG_POSTCSS_PLUGIN(false, `css/magneto.ui.lib.min.css`),
         typescript({
           tsconfig: './tsconfig.json',
           declaration: false,
@@ -43,36 +45,6 @@ export default () => {
         })
       ]
     },
-    // build domain components
-    ...domainComponents.map((input) => ({
-      input,
-      output: [
-        {
-          dir: path.join('dist', 'esm'),
-          format: 'esm',
-          preserveModules: true,
-          sourcemap: true
-        },
-        {
-          dir: path.join('dist', 'cjs'),
-          format: 'cjs',
-          preserveModules: true,
-          sourcemap: true
-        }
-      ],
-      external: ['react', 'axios', 'react-dom'],
-      plugins: [
-        ...MAIN_PLUGINS,
-        CONFIG_POSTCSS_PLUGIN(false, `css/magneto.ui.${getComponentName(input)}.min.css`),
-        typescript({
-          tsconfig: './tsconfig.json',
-          declaration: false,
-          outDir: undefined,
-          declarationDir: undefined,
-          emitDeclarationOnly: false
-        })
-      ]
-    })),
     // types
     {
       input: rootInput,
