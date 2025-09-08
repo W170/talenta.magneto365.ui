@@ -102,3 +102,12 @@ export const GENERATE_MODULES = (environment) => {
     }
   ]
 }
+
+export const getFolderNameBeforeIndex = (filePath) => {
+  const parts = filePath.split(path.sep)
+  const last = parts[parts.length - 1]
+  if (last.startsWith('index')) {
+    return parts[parts.length - 2].toLowerCase()
+  }
+  return path.parse(filePath).name.toLowerCase()
+}

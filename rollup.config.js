@@ -2,7 +2,7 @@ import path from 'path'
 import dts from 'rollup-plugin-dts'
 import url from '@rollup/plugin-url'
 import typescript from '@rollup/plugin-typescript'
-import { CONFIG_POSTCSS_PLUGIN } from './rollup.tools'
+import { CONFIG_POSTCSS_PLUGIN, getFolderNameBeforeIndex } from './rollup.tools'
 import { getAllEntryPoints } from './rollup.input'
 import { MAIN_PLUGINS } from './rollup.plugins'
 
@@ -15,7 +15,7 @@ export default () => {
   // if (environment) return GENERATE_MODULES(environment)
   return [
     {
-      input: [rootInput, ...domainComponents],
+      input: rootInput,
       output: [
         {
           dir: path.join('dist', 'esm'),
@@ -45,6 +45,37 @@ export default () => {
         })
       ]
     },
+    ...domainComponents.map((input) => ({
+      input: input,
+      output: [
+        {
+          dir: path.join('dist', 'esm'),
+          format: 'esm',
+          preserveModulesRoot: 'src',
+          preserveModules: true,
+          sourcemap: true
+        },
+        {
+          dir: path.join('dist', 'cjs'),
+          format: 'cjs',
+          preserveModulesRoot: 'src',
+          preserveModules: true,
+          sourcemap: true
+        }
+      ],
+      external: ['react', 'axios', 'react-dom'],
+      plugins: [
+        ...MAIN_PLUGINS,
+        CONFIG_POSTCSS_PLUGIN(false, `css/magneto.ui.${getFolderNameBeforeIndex(input)}.min.css`),
+        typescript({
+          tsconfig: './tsconfig.json',
+          declaration: false,
+          outDir: undefined,
+          declarationDir: undefined,
+          emitDeclarationOnly: false
+        })
+      ]
+    })),
     // types
     {
       input: [rootInput, ...domainComponents],
