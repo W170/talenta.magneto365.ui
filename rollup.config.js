@@ -14,37 +14,6 @@ export default () => {
   // TODO: make css for entries.
   // if (environment) return GENERATE_MODULES(environment)
   return [
-    {
-      input: rootInput,
-      output: [
-        {
-          dir: path.join('dist', 'esm'),
-          format: 'esm',
-          preserveModulesRoot: 'src',
-          preserveModules: true,
-          sourcemap: true
-        },
-        {
-          dir: path.join('dist', 'cjs'),
-          format: 'cjs',
-          preserveModulesRoot: 'src',
-          preserveModules: true,
-          sourcemap: true
-        }
-      ],
-      external: ['react', 'axios', 'react-dom'],
-      plugins: [
-        ...MAIN_PLUGINS,
-        CONFIG_POSTCSS_PLUGIN(false, `css/magneto.ui.lib.min.css`),
-        typescript({
-          tsconfig: './tsconfig.json',
-          declaration: false,
-          outDir: undefined,
-          declarationDir: undefined,
-          emitDeclarationOnly: false
-        })
-      ]
-    },
     ...domainComponents.map((input) => ({
       input: input,
       output: [
@@ -76,6 +45,37 @@ export default () => {
         })
       ]
     })),
+    {
+      input: rootInput,
+      output: [
+        {
+          dir: path.join('dist', 'esm'),
+          format: 'esm',
+          preserveModulesRoot: 'src',
+          preserveModules: true,
+          sourcemap: true
+        },
+        {
+          dir: path.join('dist', 'cjs'),
+          format: 'cjs',
+          preserveModulesRoot: 'src',
+          preserveModules: true,
+          sourcemap: true
+        }
+      ],
+      external: ['react', 'axios', 'react-dom'],
+      plugins: [
+        ...MAIN_PLUGINS,
+        CONFIG_POSTCSS_PLUGIN(false, `css/magneto.ui.lib.min.css`),
+        typescript({
+          tsconfig: './tsconfig.json',
+          declaration: false,
+          outDir: undefined,
+          declarationDir: undefined,
+          emitDeclarationOnly: false
+        })
+      ]
+    },
     // types
     {
       input: [rootInput, ...domainComponents],
