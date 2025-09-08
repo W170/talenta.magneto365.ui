@@ -9,13 +9,13 @@
   "scripts": {
     "generate:tokens": "node ./.scripts/generateTokens.js",
     "generate:modules": "node ./.scripts/generatePackageModules.js",
-    "css:deduplicate": "node ./.scripts/deduplicateCss.js",
+    "generate:css": "node ./.scripts/generateSeparateCssFiles.js",
     "lint": "eslint ./src --ext .js,.ts,.jsx,.tsx",
     "prepare": "husky install && chmod +x .husky/pre-commit .husky/pre-push .husky/commit-msg",
     "prettier": "prettier --write ./**/*.{js,ts,jsx,tsx}  --list-different",
     "prebuild": "yarn generate:tokens",
-    "postbuild": "yarn css:deduplicate",
     "build": "rollup -c rollup.config.js --configPlugin typescript",
+    "postbuild": "yarn generate:css",
     "test": "jest",
     "storybook": "yarn generate:tokens && storybook dev -p 6006",
     "build-storybook": "yarn generate:tokens && storybook build"
