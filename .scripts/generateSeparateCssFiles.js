@@ -2,9 +2,9 @@ const fs = require('fs')
 const path = require('path')
 const postcss = require('postcss')
 
-const distCss = path.resolve('dist/esm/css/magneto.ui.lib.min.css')
+const distCss = path.resolve('dist/cjs/css/magneto.ui.lib.min.css')
 const cssContent = fs.readFileSync(distCss, 'utf-8')
-const scssJsJobsDir = path.resolve('dist/esm/components/Domain/Jobs')
+const scssJsJobsDir = path.resolve('dist/cjs/components/Domain/Jobs')
 
 function getAllScssJsFiles(dir) {
   let files = []
@@ -35,7 +35,7 @@ function extractDomainCss(scssJsDir, name) {
 
   scssJsFiles.forEach((file) => {
     const stylesModule = require(file)
-    const styles = stylesModule.styles || stylesModule.default || {}
+    const styles = stylesModule || {}
 
     const classNames = Object.values(styles)
 
