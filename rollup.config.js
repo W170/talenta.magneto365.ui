@@ -47,7 +47,17 @@ export default () => {
     },
     // types
     {
-      input: [rootInput, ...domainComponents],
+      input: domainComponents,
+      output: {
+        preserveModules: true,
+        preserveModulesRoot: 'components',
+        dir: path.join('dist', 'types')
+      },
+      plugins: [dts()],
+      external: [/\.(css|less|scss)$/]
+    },
+    {
+      input: rootInput,
       output: {
         preserveModules: true,
         preserveModulesRoot: 'src',

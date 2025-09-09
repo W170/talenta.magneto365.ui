@@ -103,7 +103,7 @@
     ".": {
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js",
-      "types": "./dist/types/src/index.d.ts"
+      "types": "./dist/types/index.d.ts"
     },
     "./dist/*.css": "./dist/*.css",
     "./Domain/Jobs": {
