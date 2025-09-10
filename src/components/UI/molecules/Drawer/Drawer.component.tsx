@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { IconItem } from '../../atoms'
-import { DrawerPortal } from './DrawerPortal'
 import { IDrawer } from './Drawer.interface'
 import style from './drawer.module.scss'
 import { Add } from '../../../../constants/icons.constants'
+import { Portal } from '@components/UI/atoms/Portal'
 
 const DEFAULT_PADDING = 20
 
@@ -59,24 +59,26 @@ const Component: React.FC<IDrawer> = ({
   return (
     <>
       {renderPortal && (
-        <DrawerPortal customContainer={customContainer}>
-          <div className={`${style['magneto-ui-drawer']} ${style[fullDrawer]} ${className}`}>
-            <aside className={`${style[showDrawer]}`} style={{ padding: paddingValue, ...widthValue }}>
-              {!hideButton && (
-                <button className={style['magneto-ui-close-button']} onClick={onClose}>
-                  <IconItem icon={Add} hover={false} />
-                </button>
+        <Portal container={customContainer as HTMLElement}>
+          <div className="magneto-ui-drawer">
+            <div className={`${style['magneto-ui-drawer']} ${style[fullDrawer]} ${className}`}>
+              <aside className={`${style[showDrawer]}`} style={{ padding: paddingValue, ...widthValue }}>
+                {!hideButton && (
+                  <button className={style['magneto-ui-close-button']} onClick={onClose}>
+                    <IconItem icon={Add} hover={false} />
+                  </button>
+                )}
+                {children}
+              </aside>
+              {isOpen && (
+                <span
+                  className={`${style[backgroundEffect]} ${backGroundClassName}`}
+                  onClick={blockBackgroundClose ? () => null : onClose}
+                />
               )}
-              {children}
-            </aside>
-            {isOpen && (
-              <span
-                className={`${style[backgroundEffect]} ${backGroundClassName}`}
-                onClick={blockBackgroundClose ? () => null : onClose}
-              />
-            )}
+            </div>
           </div>
-        </DrawerPortal>
+        </Portal>
       )}
     </>
   )

@@ -25,7 +25,6 @@ const meta: Meta<typeof Modal> = {
     },
     title: 'Formularios de solicitud',
     description: 'Formularios de solicitud de vacantes existentes:',
-    customMaxHeight: '200px',
     children: (
       <>
         <OneSelectionEntry {...selectProps} />

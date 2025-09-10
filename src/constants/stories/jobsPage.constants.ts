@@ -6,7 +6,7 @@ import { CitiesDetailDrawerProps, CitiesLargeDetailDrawerProps } from './citiesD
 import { moreJobsLink, moreJobsText, sectionTitle, similarVacanciesCardsProps } from './similarJobs.constants'
 import { jobVideo } from './jobVideo.constants'
 import { listMenuText, MagnetoResolutionProps, RightsReservedProps, searchList } from './footer.constants'
-import { IVacancies } from '@components/UI/page'
+import { IVacancies } from '@components/Domain/Jobs/JobsPage'
 
 export const jobDetailsDrawer = {
   fraudLink: 'https://www.google.com',

@@ -1,3 +1,5 @@
+import { iconJobDetailsAction } from '@constants/jobDetails.constants'
+
 export interface IShareButton {
   /**
    * The title or label associated with the button.
@@ -29,5 +31,14 @@ export interface IShareButton {
    */
   onCopyError?: () => void
 
+  /**
+   * Additional CSS classes to apply to the button.
+   * (Optional property)
+   */
   className?: string
+
+  /**
+   * icon to show
+   */
+  icon: keyof typeof iconJobDetailsAction
 }

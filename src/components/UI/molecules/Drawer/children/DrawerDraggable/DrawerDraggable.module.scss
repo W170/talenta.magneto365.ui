@@ -1,0 +1,44 @@
+.drawer {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+
+  &--hide {
+    display: none;
+  }
+
+  &__mask {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 300ms ease;
+    height: 100dvh;
+    width: 100%;
+    &--open {
+      opacity: 1;
+    }
+    &--closing {
+      opacity: 0;
+    }
+  }
+
+  &__content {
+    position: fixed;
+    background: white;
+    transition: transform 300ms ease;
+
+    &--bottom {
+      bottom: 0;
+      transform: translateY(100%);
+    }
+
+    &--open#{&}--bottom {
+      transform: translateY(0);
+    }
+
+    &--closing#{&}--bottom {
+      transform: translateY(100%);
+    }
+  }
+}

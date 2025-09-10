@@ -2,7 +2,7 @@ export interface ISaveButton {
   /**
    * Specifies whether the user is authenticated or not.
    */
-  isAuthenticated: boolean
+  isAuthenticated?: boolean
   /**
    * Specifies whether the item is currently saved or not.
    */
@@ -25,4 +25,8 @@ export interface ISaveButton {
    * The title or label associated with the button.
    */
   buttonTitle?: string
+  /**
+   * Indicates the size of the icon in the button.
+   */
+  iconSize?: number
 }

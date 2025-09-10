@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-namespace */
+import { IJobCompanyLogo } from '@components/Domain/Jobs/JobCompanyLogo'
+import { IJobHeader } from '@components/UI/atoms'
 import { ICustomText } from '@components/UI/atoms/Text/Text.interface'
 import { ISimilarCardData } from '@components/UI/molecules/SimilarCard'
-import { IJobCompanyLogo, IJobHeader } from '@components/UI/atoms'
+
 export interface IJobSuggestedDrawer {
   /**
    * Management the loading status jobs ui

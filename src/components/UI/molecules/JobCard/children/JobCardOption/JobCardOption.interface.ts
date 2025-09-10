@@ -1,4 +1,4 @@
-import { TVacantOption } from '@components/UI/page'
+import { TVacantOption } from '@components/Domain/Jobs/JobsPage'
 
 export interface IJobCardOption {
   clickOut?: boolean

@@ -7,7 +7,6 @@ import {
   JobSkillsCard,
   JobApplyCard,
   JobFooterCard,
-  JobDetails,
   FraudCardJob,
   AlertJobStatus,
   Alert
@@ -16,9 +15,12 @@ import {
 import { IJobDetailsDrawer } from './JobDetailsDrawer.interface'
 import styles from './JobDetailsDrawer.module.scss'
 
-import { anchorIconList, iconDetailList, iconFooterList, altList } from '@constants/stories'
+import { anchorIconList, iconDetailList, iconFooterList, altList, anchorIconListJobsActions2 } from '@constants/stories'
 import { JobDetailsSkeleton } from './children'
-import { SimilarJobs } from '../SimilarJobs'
+
+import { ActionLinkCard } from '@components/UI/molecules/ActionLinkCard'
+import { JobDetails } from '@components/UI/molecules/JobDetails'
+import { SimilarJobs } from '@components/Domain/Jobs/SimilarJobs'
 
 const Component: React.FC<IJobDetailsDrawer> = ({
   jobCompanyLogoProps,
@@ -42,9 +44,13 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   fraudCardJobProps,
   alertJobStatusProps,
   isApplied,
-  canApply
+  canApply,
+  variant,
+  isJobDetailPage,
+  actionLinkCardProps
 }) => {
   const jobDetailsRef = useRef<HTMLDivElement | null>(null)
+  const isDetailVariant = variant === 'detailed'
 
   useEffect(() => {
     if (jobDetailsRef.current) {
@@ -68,7 +74,13 @@ const Component: React.FC<IJobDetailsDrawer> = ({
             {isApplied ? (
               <AlertJobStatus {...alertJobStatusProps} />
             ) : (
-              <JobActions actionsAnchorIcons={anchorIconList} {...jobActionsProps} />
+              <JobActions
+                actionsAnchorIcons={isDetailVariant ? anchorIconListJobsActions2 : anchorIconList}
+                {...jobActionsProps}
+                isApplied={isApplied}
+                isJobDetailPage={isJobDetailPage}
+                variant={variant}
+              />
             )}
           </div>
           <div className={styles['JobBodyCardWrapper']} ref={jobDetailsRef}>
@@ -85,9 +97,10 @@ const Component: React.FC<IJobDetailsDrawer> = ({
             {jobVideo && <JobVideo {...jobVideo} loadVideo={loadVideo} setLoadVideo={setLoadVideo} />}
             <JobDetailCard {...jobDetailCardProps} />
             <JobSkillsCard {...jobSkillsCardProps} />
+            {actionLinkCardProps && <ActionLinkCard {...actionLinkCardProps} />}
             {fraudCardJobProps && <FraudCardJob {...fraudCardJobProps} />}
             <JobApplyCard {...jobApplyCardProps} />
-            <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} />
+            <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} variant={variant} />
             {similarJobsProps ? <SimilarJobs {...similarJobsProps} /> : null}
           </div>
         </section>

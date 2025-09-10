@@ -1,58 +1,20 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
+import { classNames } from '@shared/utils/common'
 import { ISkill } from './Skill.interface'
 import styles from './Skill.module.scss'
+import { Typography } from '../Typography'
 
-const Component: React.FC<ISkill> = ({ name, score }) => {
-  const [animationApplied, setAnimationApplied] = useState(false)
-  const skillRef = useRef<HTMLDivElement>(null)
+const cx = classNames.bind(styles)
 
-  useEffect(() => {
-    const skillElement = skillRef.current
-
-    if (!skillElement) return
-
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 1
-    }
-
-    const observerCallback: IntersectionObserverCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setAnimationApplied(true)
-        } else {
-          setAnimationApplied(false)
-        }
-      })
-    }
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions)
-    observer.observe(skillElement)
-
-    return () => {
-      observer.unobserve(skillElement)
-    }
-  }, [])
-
-  const scoreToLevel: { [key: number]: string } = {
-    1: 'one',
-    2: 'two',
-    3: 'three',
-    4: 'four'
-  }
-
-  const levelClass = scoreToLevel[score || 0] || ''
-
-  const fillAnimation = animationApplied ? styles[levelClass] : ''
-
+const Component: React.FC<ISkill> = ({ name, score, className, classNames = {} }) => {
   return (
-    <div ref={skillRef} className={styles['magneto-ui-skill']}>
-      <div className={styles['magneto-ui-skill__wrapper']}>
-        <p>{name}</p>
-        <div
-          className={`${styles['magneto-ui-skill__bar']} ${fillAnimation || styles['magneto-ui-skill--no-animation']}`}
-        ></div>
+    <div className={cx('skill', className)}>
+      <Typography.Text className={cx('skill__name', classNames.name)}>{name}</Typography.Text>
+      <div className={cx('skill__level', classNames.level)}>
+        <div className={cx('skill__circle', classNames.circle, { 'skill__circle--filled': score >= 1 })}></div>
+        <div className={cx('skill__circle', classNames.circle, { 'skill__circle--filled': score >= 2 })}></div>
+        <div className={cx('skill__circle', classNames.circle, { 'skill__circle--filled': score >= 3 })}></div>
+        <div className={cx('skill__circle', classNames.circle, { 'skill__circle--filled': score >= 4 })}></div>
       </div>
     </div>
   )

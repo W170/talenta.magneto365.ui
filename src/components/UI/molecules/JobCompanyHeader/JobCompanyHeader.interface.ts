@@ -1,4 +1,5 @@
-import { IJobCompanyLogo, IJobHeader } from '@components/UI/atoms'
+import { IJobCompanyLogo } from '@components/Domain/Jobs/JobCompanyLogo'
+import { IJobHeader } from '@components/UI/atoms'
 import { IJobsActions } from '@components/UI/molecules/JobActions'
 
 export interface IJobCompanyHeader {

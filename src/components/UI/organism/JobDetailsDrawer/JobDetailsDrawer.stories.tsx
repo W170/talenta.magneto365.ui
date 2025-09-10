@@ -1,10 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
 import { JobDetailsDrawer } from './JobDetailsDrawer.component'
-
+import React from 'react'
 import { CompanyLogo } from '../../../../constants/stories'
 import { MainButton } from '../../atoms/MainButton/MainButton.component'
-import { Buildings2, Export3 } from '../../../../constants/icons.constants'
+import { Buildings2, Export3, Flag, LinkedInSolidBlue, MagnetoIcon } from '../../../../constants/icons.constants'
 import { IJobCompanyHeader } from '../../molecules/JobCompanyHeader'
 import { jobVideo } from '../../../../constants/stories/jobVideo.constants'
 import { ICityDetail } from '../../molecules/CitiesDetailDrawer'
@@ -12,6 +11,9 @@ import { shareLinks } from '../../../../constants/stories/vacancies.constants'
 import { fraudCardJob } from '../../../../constants/stories/fraudCardJob.constant'
 import { IAlertJobStatus } from '../../molecules/AlertJobStatus/AlertJobStatus.interface'
 import { AlertJobStatus } from '../../molecules/AlertJobStatus/AlertJobStatus.component'
+import { Button } from '../../atoms'
+import { actionLinkCard } from '../../../../constants/stories/seeCompanyCard.constant'
+import { TJobActionsVariant } from '../../molecules/JobActions'
 const jobActions = {
   externalButtonChild: <MainButton buttonText="Aplicar" />,
   saveButtonProps: {
@@ -34,6 +36,38 @@ const jobActions = {
   ctionsAnchorLinks: ['link1', 'link2'],
   actionsAnchorTitle: ['Abrir esta oferta en otra pestaña', 'Ver empresa']
 }
+
+const jobActions2 = {
+  externalButtonChild: (
+    <>
+      <Button buttonText="Aplicar con Magneto" onClick={() => console.log} suffixIcon={MagnetoIcon} />
+      <Button buttonText="Aplicar con LinkedIn" onClick={() => console.log} suffixIcon={LinkedInSolidBlue} />
+    </>
+  ),
+  saveButtonProps: {
+    isAuthenticated: true,
+    isSaved: false,
+    onClick: () => {
+      //
+    },
+    addHover: true,
+    buttonTitle: 'Guardar',
+    buttonText: 'Guardar'
+  },
+  shareButtonProps: {
+    buttonTitle: 'Compartir',
+    buttonText: 'Compartir',
+    shareLinks,
+    onCopySuccess: () => console.log('Success'),
+    isJobActions2: true,
+    addHover: true
+  },
+  actionsAnchorIcons: [Export3, Flag],
+  actionsAnchorLinks: ['link1', 'link2'],
+  actionsAnchorTitle: ['Abrir esta oferta en otra pestaña', 'Reportar fraude'],
+  actionsAnchorText: ['Expandir', 'Reportar']
+}
+
 const jobCompanyLogo: IJobCompanyHeader = {
   jobCompanyLogoProps: {
     offerCompanyLogo: CompanyLogo as unknown as JSX.Element,
@@ -106,7 +140,42 @@ const jobFooterCard = {
   shareButtonProps: {
     buttonTitle: 'Copiar',
     onCopySuccess: () => console.log('Success')
-  }
+  },
+  variant: 'default' as TJobActionsVariant
+}
+
+const jobFooterCard2 = {
+  offerCompanyLogo: CompanyLogo,
+  offerFooterHeader: 'Compartir vacante en:',
+  offerFooterList: [
+    { href: '#', ariaLabel: 'facebook', title: 'Facebook' },
+    { href: '#', ariaLabel: 'whatsapp', title: 'Whatsapp' },
+    { href: '#', ariaLabel: 'linkedin', title: 'Linkedin' },
+    { href: '#', ariaLabel: 'x', title: 'X' },
+    { href: '#', ariaLabel: 'sms', title: 'Correo' }
+  ],
+  offerFooterTitle: ['Facebook', 'Whatsapp', 'Linkedin', 'X', 'Correo'],
+  shareButtonProps: {
+    buttonTitle: 'Copiar',
+    onCopySuccess: () => console.log('Success')
+  },
+  externalChild: (
+    <>
+      <Button buttonText="Aplicar con Magneto" onClick={() => console.log} suffixIcon={MagnetoIcon} />
+      <Button buttonText="Aplicar con LinkedIn" onClick={() => console.log} suffixIcon={LinkedInSolidBlue} />
+    </>
+  ),
+  variant: 'detailed' as TJobActionsVariant
+}
+
+const jobApplyCard2 = {
+  offerApplyHeader: 'Requisitos para aplicar a la vacante:',
+  offerApplyElements: [
+    { offerApplyLabel: 'Experiencia:', offerApplyInfo: ' 1 año de experiencia' },
+    { offerApplyLabel: 'Nivel de estudios:', offerApplyInfo: ' Especialización / Maestría' },
+    { offerApplyLabel: 'Ciudad de residencia:', offerApplyInfo: ' Planadas' },
+    { offerApplyLabel: 'Salario:', offerApplyInfo: ` $2’100.000` }
+  ]
 }
 
 const { Container, Text, Icon } = AlertJobStatus
@@ -171,5 +240,24 @@ export const CitiesRemote: Story = {
     cities: cities,
     isRemote: true,
     textRemote: 'Remoto/hibrido en:'
+  }
+}
+
+export const JobsActions2: Story = {
+  args: {
+    jobCompanyLogoProps: jobCompanyLogo,
+    jobActionsProps: jobActions2,
+    jobDetailsProps: jobDetails,
+    jobDetailCardProps: jobDetailCard,
+    jobSkillsCardProps: jobSkillsCard,
+    jobApplyCardProps: jobApplyCard2,
+    jobFooterCardProps: jobFooterCard2,
+    jobVideo: jobVideo,
+    cities: cities,
+    fraudCardJobProps: fraudCardJob,
+    alertJobStatusProps: alertJobStatusProps,
+    isJobDetailPage: false,
+    actionLinkCardProps: actionLinkCard,
+    variant: 'detailed' as TJobActionsVariant
   }
 }

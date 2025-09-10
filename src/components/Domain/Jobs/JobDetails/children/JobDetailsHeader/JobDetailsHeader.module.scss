@@ -1,0 +1,33 @@
+@use '../../../../../../shared/stylesheets/tokens' as tokens;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__publish-date {
+    font-size: tokens.$text-md;
+    color: tokens.$color-grey-600;
+  }
+
+  &__title {
+    color: tokens.$color-blue-dark-400;
+    font-size: tokens.$text-xl;
+    font-weight: tokens.$weight-bold;
+  }
+
+  &__company {
+    width: fit-content;
+    text-decoration: none;
+    font-size: tokens.$text-md;
+    color: tokens.$color-grey-600;
+    border-radius: tokens.$radius-sm;
+    font-weight: tokens.$weight-normal;
+    padding: 0 tokens.$padding-sm-2;
+    margin-left: -calc((tokens.$padding-md-2 / 2));
+
+    &:is(a):hover {
+      background-color: tokens.$color-grey-100;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
-
+@use '../../../../shared/stylesheets/tokens' as *;
 .magneto-ui-share-button {
   border: none;
   border-radius: 50%;

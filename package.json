@@ -8,12 +8,14 @@
   "description": "Magneto365 UI common components",
   "scripts": {
     "generate:tokens": "node ./.scripts/generateTokens.js",
+    "generate:modules": "node ./.scripts/generatePackageModules.js",
+    "generate:css": "node ./.scripts/generateSeparateCssFiles.js",
     "lint": "eslint ./src --ext .js,.ts,.jsx,.tsx",
     "prepare": "husky install && chmod +x .husky/pre-commit .husky/pre-push .husky/commit-msg",
     "prettier": "prettier --write ./**/*.{js,ts,jsx,tsx}  --list-different",
-    "build": "yarn generate:tokens && rollup -c rollup.config.js --configPlugin typescript",
-    "rollup": "yarn generate:tokens && bash rollup.builder.sh",
-    "postrollup": "bash aws.postbuild.sh",
+    "prebuild": "yarn generate:tokens",
+    "build": "rollup -c rollup.config.js --configPlugin typescript",
+    "postbuild": "yarn generate:css",
     "test": "jest",
     "storybook": "yarn generate:tokens && storybook dev -p 6006",
     "build-storybook": "yarn generate:tokens && storybook build"
@@ -30,6 +32,7 @@
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@mdx-js/react": "^2.1.5",
+    "@rollup/plugin-alias": "^5.1.1",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@rollup/plugin-typescript": "^8.3.0",
@@ -95,5 +98,18 @@
   "dependencies": {},
   "peerDependencies": {
     "react-dom": "17.0.2"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./dist/*.css": "./dist/*.css",
+    "./Domain/Jobs": {
+      "import": "./dist/esm/components/Domain/Jobs/index.js",
+      "require": "./dist/cjs/components/Domain/Jobs/index.js",
+      "types": "./dist/types/components/Domain/Jobs/index.d.ts"
+    }
   }
 }

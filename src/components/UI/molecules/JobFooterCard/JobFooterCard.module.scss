@@ -23,50 +23,99 @@
     margin: 0px;
   }
 
+  &__wrapper {
+    background-color: v.$color-gray-background;
+    padding: 12px 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &--apply-buttons {
+      display: flex;
+      gap: 10px;
+      button {
+        height: 32px;
+        width: 188px;
+        min-width: 188px;
+        border-radius: 30px;
+      }
+      > :nth-child(1) {
+        border: none;
+        background-color: v.$selected-color-gray;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        justify-content: center;
+        align-items: center;
+        p {
+          color: v.$text-color-black-2;
+          white-space: nowrap;
+        }
+      }
+      > :nth-child(2) {
+        border: 1px solid v.$color-blue-2;
+        align-items: center;
+        justify-content: center;
+        p {
+          color: v.$color-blue-2;
+          white-space: nowrap;
+          font-weight: 700;
+        }
+      }
+
+      @media screen and (max-width: (v.$screen-sm)) {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+    }
+    p {
+      color: v.$color-blue-dark5;
+    }
+  }
+
   &__icons {
     display: flex;
     flex-direction: row;
     align-items: center;
     align-self: stretch;
     gap: 21px;
-  }
+    &--wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
 
-  &__wrapper {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
+      > a {
+        background-color: v.$disabled-color-gray2;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        transition: all ease-in-out 0.3s;
+        &:hover {
+          background-color: v.$colors-magneto-neutral-gray-5;
+        }
 
-    > a {
-      background-color: v.$disabled-color-gray2;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      transition: all ease-in-out 0.3s;
-      display: grid;
-      place-items: center;
-      &:hover {
-        background-color: v.$colors-magneto-neutral-gray-5;
+        > img {
+          width: auto;
+        }
       }
 
-      > img {
-        width: auto;
-      }
-    }
+      > button {
+        width: 36px;
+        height: 36px;
+        background-color: v.$disabled-color-gray2;
+        padding: 0px;
+        border: none;
+        border-radius: 50%;
+        transition: all ease-in-out 0.3s;
+        &:hover {
+          background-color: v.$colors-magneto-neutral-gray-5;
+        }
 
-    > button {
-      width: 36px;
-      height: 36px;
-      background-color: v.$disabled-color-gray2;
-      padding: 0px;
-      border: none;
-      border-radius: 50%;
-      transition: all ease-in-out 0.3s;
-      &:hover {
-        background-color: v.$colors-magneto-neutral-gray-5;
-      }
-
-      > img {
-        width: auto;
+        > img {
+          width: auto;
+        }
       }
     }
   }

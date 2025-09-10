@@ -17,10 +17,17 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
+    "baseUrl": "./src",
     "paths": {
-      "@*": ["./src/*"]
+      "@*": ["./*"],
+      "@assets": ["assets/*"],
+      "@components": ["components/*"],
+      "@constants": ["constants"],
+      "@shared": ["shared"],
+      "@utils": ["utils"],
+      "@tokens": ["shared/stylesheets/tokens/_index.scss"]
     },
     "resolveJsonModule": true
   },
-  "exclude": ["./src/**/*.stories.tsx"]
+  "exclude": [""]
 }

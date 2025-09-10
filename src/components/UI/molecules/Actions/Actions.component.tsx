@@ -77,7 +77,7 @@ const ShareLinksAction: React.FC<IShareLinksActions> = ({
 }) => {
   return (
     <div className={styles['magneto-ui-actions']}>
-      <ShareButton className={styles['magneto-ui-actions__share']} {...shareProps} />
+      <ShareButton className={styles['magneto-ui-actions__share']} {...shareProps.shareButtonProps} />
       {shareLinks.map(({ title, ariaLabel, href, icon, name }, index) => (
         <a
           key={`${title}-${index}`}

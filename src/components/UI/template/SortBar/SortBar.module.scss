@@ -24,7 +24,7 @@
   button {
     display: none;
     padding: 20px 10px;
-    @media screen and(max-width: v.$screen-md) {
+    @media screen and (max-width: v.$screen-md) {
       display: flex;
     }
   }
@@ -39,7 +39,7 @@
   margin: 0 0 0 10px;
   word-break: break-word;
   box-sizing: border-box;
-  @media screen and(max-width: v.$screen-lg) {
+  @media screen and (max-width: v.$screen-lg) {
     display: none;
   }
 }

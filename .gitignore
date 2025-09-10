@@ -112,3 +112,4 @@ storybook-static/
 src/@types/tokens.d.ts
 src/shared/stylesheets/tokens/
 src/shared/tokens/index.ts
+.zed

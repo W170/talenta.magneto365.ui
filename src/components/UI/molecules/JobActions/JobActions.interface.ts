@@ -18,6 +18,12 @@ export interface IJobsActions {
   actionsAnchorTitle: string[]
 
   /**
+   * An array of string texts associated with each action anchor link.
+   * Used only when variant is 'detailed'.
+   */
+  actionsAnchorText?: string[]
+
+  /**
    * Content to be displayed as an external button.
    */
   externalButtonChild: ReactNode
@@ -34,4 +40,26 @@ export interface IJobsActions {
    * it's true it will not display save button
    */
   isApplied?: boolean
+
+  /**
+   * Indicates whether the component is default or detailed.
+   */
+  variant?: TJobActionsVariant
+  /**
+   * Indicates whether the component is being used on a job detail offer page.
+   * (Optional property)
+   */
+  isJobDetailPage?: boolean
+  /**
+   * this is the main class to the actions
+   * (optional)
+   */
+  className?: string
+  /**
+   * this is the main class to the external actions
+   * (optional)
+   */
+  externalChildClass?: string
 }
+
+export type TJobActionsVariant = 'default' | 'detailed'
