@@ -42,7 +42,7 @@ const SharePopover: React.FC<IJobDetailsAction.SharePopover> = ({
     classNameButton={cx('action', `action--${variant}`, { 'action--rounded': rounded }, rest.classNameButton)}
     iconPopoverSize={iconPopoverSize ?? 18}
     iconPopover={icon && iconJobDetailsAction[icon]}
-    classNameContent={rest.classNameContent}
+    classNameContent={cx(rest.classNameContent)}
   />
 )
 
