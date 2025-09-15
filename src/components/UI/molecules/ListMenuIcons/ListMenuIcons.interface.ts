@@ -10,6 +10,7 @@ export interface IListMenuIcons {
   haveGif?: boolean
   profileImage?: IAvatar
   isAuthenticated?: boolean
+  showAllItems?: boolean
 }
 
 export interface IMenuItems {

@@ -1,9 +1,10 @@
+import { IMegaMenuSearchBar } from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.interface'
 import { IBreadcrumb, ILinkProps, IMainButton } from '../../atoms'
 import { IMobileSearchbar, ISearchbar } from '../../molecules'
 import { IBrandMenu } from '../BrandMenu/BrandMenu.interface'
 
 export interface ILogoutJobsHeader {
-  searchbar: ISearchbar
+  searchbar: ISearchbar | IMegaMenuSearchBar
   mobileSearchbar: IMobileSearchbar
   signInLink: ILinkProps
   signUpButton: IMainButton

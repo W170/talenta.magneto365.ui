@@ -13,4 +13,5 @@ export interface ILoginJobsTemplate {
   homeUrl: string
   listMenuProps: IListMenuItems
   ListIcon?: IListIcon[]
+  onlyMenuUser?: boolean
 }

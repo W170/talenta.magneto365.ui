@@ -1,3 +1,4 @@
+import { IMegaMenuSearchBar } from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.interface'
 import { IAvatar, IBreadcrumb } from '../../atoms'
 import { IHeaderTabs, IListMenuIcons, IMobileSearchbar, ISearchbar } from '../../molecules'
 import { IBrandMenu } from '../BrandMenu/BrandMenu.interface'
@@ -5,7 +6,7 @@ import { IBrandMenu } from '../BrandMenu/BrandMenu.interface'
 export interface ILoginJobsHeader {
   profileImage: IAvatar
   listMenuUserProps: IListMenuIcons
-  searchbar: ISearchbar
+  searchbar: ISearchbar | IMegaMenuSearchBar
   mobileSearchbar: IMobileSearchbar
   jobsTabsProps: IHeaderTabs
   processTabsProps: IHeaderTabs

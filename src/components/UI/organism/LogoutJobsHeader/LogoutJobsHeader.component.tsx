@@ -18,6 +18,8 @@ import {
 } from '@constants/stories'
 import { BrandMenu } from '../BrandMenu'
 import { SearchButton } from '@components/UI/molecules/SearchButton'
+import { IMegaMenuSearchBar } from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.interface'
+import MegaMenuSearchBar from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.component'
 
 const Muiclass = 'magneto-ui'
 
@@ -46,6 +48,10 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
     setShowSearchBar(!showSearchBar)
   }
 
+  const isLoginHeaderSearch = (searchbar: any): searchbar is IMegaMenuSearchBar => {
+    return typeof searchbar.occupation === 'object' && searchbar.occupation !== null
+  }
+
   const LogoutHeaderMobileSearchbar = useMediaQuery(null, {
     md: (
       <MobileSearchbar
@@ -60,11 +66,23 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
   const LogoutHeaderMenuButton = useMediaQuery(<MainButton {...MenuButtonProps} onClick={onMenuClick} />)
 
   const LogoutHeaderMobileSearchbarButton = useMediaQuery(null, {
-    md: <SearchButton searchValue={searchbar.termValue} onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
+    md: isLoginHeaderSearch(searchbar) ? (
+      <SearchButton
+        searchValue={searchbar.occupation.termValue}
+        onClick={toggleSearchBar}
+        {...MobileSearchbarButtonProps}
+      />
+    ) : (
+      <SearchButton searchValue={searchbar.termValue} onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
+    )
   })
 
   const LogoutHeaderSearchbar = useMediaQuery(
-    <Searchbar {...searchbar} searchButtonProps={searchPropsButton} removeButtonProps={removePropsButton} />,
+    isLoginHeaderSearch(searchbar) ? (
+      <MegaMenuSearchBar {...searchbar} />
+    ) : (
+      <Searchbar {...searchbar} searchButtonProps={searchPropsButton} removeButtonProps={removePropsButton} />
+    ),
     {
       md: null
     }
