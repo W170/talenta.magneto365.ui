@@ -8,12 +8,12 @@ import { LoginHeader } from '../../organism/LoginHeader'
 import style from './loginTemplate.module.scss'
 import { ListIcon, logoPropsLogin } from '@constants/stories'
 
-const Component: React.FC<ILoginTemplate> = ({ listMenuProps, homeUrl, ...props }) => {
+const Component: React.FC<ILoginTemplate> = ({ listMenuProps, homeUrl, onlyMenuUser = false, ...props }) => {
   const [toggleDrawer, setToggleDrawer] = useState(false)
 
   return (
     <div className={style['magneto-ui-drawer-menu']}>
-      <LoginHeader homeUrl={homeUrl} {...props} onClick={() => setToggleDrawer(true)} />
+      <LoginHeader homeUrl={homeUrl} onlyMenuUser={onlyMenuUser} {...props} onClick={() => setToggleDrawer(true)} />
       <Drawer isOpen={toggleDrawer} onClose={() => setToggleDrawer(false)}>
         <a href={homeUrl}>
           <LogoComponent {...logoPropsLogin} />

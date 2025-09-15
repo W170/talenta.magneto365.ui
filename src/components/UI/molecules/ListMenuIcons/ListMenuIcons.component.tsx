@@ -9,10 +9,19 @@ import { LogoutIcon } from '../../../../constants/icons.constants'
 import { getIcon } from '@utils/icons/getIcons.util'
 import { megaMenuUserLoggedIcons } from '@constants/stories'
 
-const Component: React.FC<IListMenuIcons> = ({ menuItems1440, haveGif, urlParam, menuItems, logout }) => {
+const Component: React.FC<IListMenuIcons> = ({
+  menuItems1440,
+  haveGif,
+  urlParam,
+  menuItems,
+  logout,
+  showAllItems = false
+}) => {
   const { logoutText, onClick } = logout
 
-  const userMenu = useMediaQuery(menuItems1440 && !haveGif ? menuItems1440 : menuItems, { xl: menuItems })
+  const userMenuData = menuItems1440 && !haveGif ? menuItems1440 : menuItems
+  const userMenuResult = useMediaQuery(userMenuData, { xl: menuItems })
+  const userMenu = showAllItems ? menuItems : userMenuResult
 
   return (
     <div className={style['mangeto-ui-list-menu-icons']}>

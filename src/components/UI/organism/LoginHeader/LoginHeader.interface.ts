@@ -1,5 +1,6 @@
+import { IMegaMenuSearchBar } from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.interface'
 import { IAvatar, IBreadcrumb } from '../../atoms'
-import { IHeaderTabs, ISearchbar } from '../../molecules'
+import { IHeaderTabs } from '../../molecules'
 import { ILogout, IMenuItems, ISettings } from '../../molecules/ListMenuIcons/ListMenuIcons.interface'
 import { IMobileSearchbar } from '../../molecules/MobileSearchbar/MobileSearchbar.interface'
 
@@ -11,10 +12,11 @@ export interface ILoginHeader {
   jobsTabsProps: IHeaderTabs
   processTabsProps: IHeaderTabs
   curriculumTabProps: IHeaderTabs
-  searchbar: ISearchbar
+  searchbar: IMegaMenuSearchBar
   MobileSearchbarProps: IMobileSearchbar
   homeUrl: string
   breadcrumbProps: IBreadcrumb
+  onlyMenuUser?: boolean
 }
 
 export interface IlistMenuUserProps {
@@ -25,4 +27,5 @@ export interface IlistMenuUserProps {
   settings: ISettings
   profileImage?: IAvatar
   isAuthenticated?: boolean
+  showAllItems?: boolean
 }

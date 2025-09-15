@@ -1,27 +1,14 @@
 import React, { useState } from 'react'
-import { Avatar, LogoComponent, MainButton } from '../../atoms'
-import {
-  Breadcrumbs,
-  HeaderTabs,
-  MobileDrawer,
-  MobileSearchbar,
-  Searchbar,
-  ListMenuIcons,
-  UserMenu
-} from '../../molecules'
-import { ILoginHeader } from './LoginHeader.interface'
 import { useMediaQuery } from '../../../hooks'
+import { Avatar, LogoComponent, MainButton } from '../../atoms'
+import { Breadcrumbs, HeaderTabs, ListMenuIcons, MobileDrawer, MobileSearchbar, UserMenu } from '../../molecules'
+import { ILoginHeader } from './LoginHeader.interface'
 
 import styles from './LoginHeader.modules.scss'
 
-import {
-  logoProps,
-  MenuButtonProps,
-  MobileSearchbarButtonProps,
-  searchPropsButton,
-  removePropsButton
-} from '@constants/stories'
+import MegaMenuSearchBar from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.component'
 import { SearchButton } from '@components/UI/molecules/SearchButton'
+import { logoProps, MenuButtonProps, MobileSearchbarButtonProps } from '@constants/stories'
 
 const Component: React.FC<ILoginHeader> = ({
   onClick,
@@ -33,7 +20,8 @@ const Component: React.FC<ILoginHeader> = ({
   curriculumTabProps,
   searchbar,
   MobileSearchbarProps,
-  homeUrl
+  homeUrl,
+  onlyMenuUser
 }) => {
   const [showSearchBar, setShowSearchBar] = useState(false)
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
@@ -60,15 +48,18 @@ const Component: React.FC<ILoginHeader> = ({
   })
 
   const loginHeaderMobileSearchbarButton = useMediaQuery(null, {
-    md: <SearchButton searchValue={searchbar.termValue} onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
+    md: (
+      <SearchButton
+        searchValue={searchbar.occupation.termValue}
+        onClick={toggleSearchBar}
+        {...MobileSearchbarButtonProps}
+      />
+    )
   })
 
-  const loginHeaderSearchbar = useMediaQuery(
-    <Searchbar searchButtonProps={searchPropsButton} removeButtonProps={removePropsButton} {...searchbar} />,
-    {
-      md: null
-    }
-  )
+  const loginHeaderSearchbar = useMediaQuery(<MegaMenuSearchBar {...searchbar} />, {
+    md: null
+  })
 
   const loginHeaderOptionTabs = useMediaQuery(
     <>
@@ -82,8 +73,7 @@ const Component: React.FC<ILoginHeader> = ({
   )
 
   const loginHeaderPopover = useMediaQuery(
-    <UserMenu listMenuUserProps={listMenuUserProps} profileImage={profileImage} />,
-
+    <UserMenu listMenuUserProps={{ ...listMenuUserProps, showAllItems: onlyMenuUser }} profileImage={profileImage} />,
     {
       md: <Avatar {...profileImage} onClick={() => setToggleMobileDrawer(true)} />
     }
@@ -105,7 +95,7 @@ const Component: React.FC<ILoginHeader> = ({
         </div>
         <div className={styles['magneto-ui-searchbar-section']}>{loginHeaderSearchbar}</div>
         <div className={styles['magneto-ui-user-section']}>
-          {loginHeaderOptionTabs}
+          {!onlyMenuUser && loginHeaderOptionTabs}
           {loginHeaderPopover}
         </div>
       </div>

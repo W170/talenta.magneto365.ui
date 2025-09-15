@@ -1,6 +1,7 @@
 export interface IMegaMenuSearchBar {
   location: ISearchBar
   occupation: ISearchBar
+  className?: string
 }
 
 export interface ISearchBar {
