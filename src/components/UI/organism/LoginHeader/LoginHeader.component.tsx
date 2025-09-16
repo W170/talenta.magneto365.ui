@@ -1,14 +1,29 @@
 import React, { useState } from 'react'
 import { useMediaQuery } from '../../../hooks'
 import { Avatar, LogoComponent, MainButton } from '../../atoms'
-import { Breadcrumbs, HeaderTabs, ListMenuIcons, MobileDrawer, MobileSearchbar, UserMenu } from '../../molecules'
+import {
+  Breadcrumbs,
+  HeaderTabs,
+  ListMenuIcons,
+  MobileDrawer,
+  MobileSearchbar,
+  Searchbar,
+  UserMenu
+} from '../../molecules'
 import { ILoginHeader } from './LoginHeader.interface'
 
 import styles from './LoginHeader.modules.scss'
 
 import MegaMenuSearchBar from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.component'
 import { SearchButton } from '@components/UI/molecules/SearchButton'
-import { logoProps, MenuButtonProps, MobileSearchbarButtonProps } from '@constants/stories'
+import {
+  logoProps,
+  MenuButtonProps,
+  MobileSearchbarButtonProps,
+  removePropsButton,
+  searchPropsButton
+} from '@constants/stories'
+import { IMegaMenuSearchBar } from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.interface'
 
 const Component: React.FC<ILoginHeader> = ({
   onClick,
@@ -29,6 +44,9 @@ const Component: React.FC<ILoginHeader> = ({
   const toggleSearchBar = () => {
     setShowSearchBar(!showSearchBar)
   }
+  const isLoginHeaderSearch = (searchbar: any): searchbar is IMegaMenuSearchBar => {
+    return typeof searchbar.occupation === 'object' && searchbar.occupation !== null
+  }
 
   const loginHeaderMobileSearchbar = useMediaQuery(null, {
     md: (
@@ -48,18 +66,27 @@ const Component: React.FC<ILoginHeader> = ({
   })
 
   const loginHeaderMobileSearchbarButton = useMediaQuery(null, {
-    md: (
+    md: isLoginHeaderSearch(searchbar) ? (
       <SearchButton
         searchValue={searchbar.occupation.termValue}
         onClick={toggleSearchBar}
         {...MobileSearchbarButtonProps}
       />
+    ) : (
+      <SearchButton searchValue={searchbar.termValue} onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
     )
   })
 
-  const loginHeaderSearchbar = useMediaQuery(<MegaMenuSearchBar {...searchbar} />, {
-    md: null
-  })
+  const loginHeaderSearchbar = useMediaQuery(
+    isLoginHeaderSearch(searchbar) ? (
+      <MegaMenuSearchBar {...searchbar} />
+    ) : (
+      <Searchbar {...searchbar} searchButtonProps={searchPropsButton} removeButtonProps={removePropsButton} />
+    ),
+    {
+      md: null
+    }
+  )
 
   const loginHeaderOptionTabs = useMediaQuery(
     <>
