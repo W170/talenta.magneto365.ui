@@ -11,4 +11,8 @@ export interface ICategoryGrid<T> {
    * Number of columns to render
    * */
   columnsNumber?: number
+  /**
+   * Disable padding and make the grid full width
+   * */
+  fullWidth?: boolean
 }
