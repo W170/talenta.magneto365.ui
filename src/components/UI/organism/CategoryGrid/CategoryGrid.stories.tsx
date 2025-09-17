@@ -10,7 +10,8 @@ const meta: Meta<typeof CategoryGrid> = {
   args: {
     elements: categoriesData,
     render: CategoryMenuCard,
-    columnsNumber: 2
+    columnsNumber: 2,
+    fullWidth: false
   }
 }
 
