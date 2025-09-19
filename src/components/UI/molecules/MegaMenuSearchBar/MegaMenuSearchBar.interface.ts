@@ -48,6 +48,7 @@ export interface ISearchBar {
     title: string
     subtitle: string
   }
+  recentSearch?: IRecentSearch
 }
 
 export interface ISectionTitle {
@@ -62,4 +63,11 @@ export interface ISearchOptions {
   subtitle?: string
   url: string
   field?: string
+}
+
+export interface IRecentSearch {
+  recentSearchesTitle: string
+  recentSearches: ISearchOptions[]
+  mostSearchedTitle: string
+  mostSearched: ISearchOptions[]
 }

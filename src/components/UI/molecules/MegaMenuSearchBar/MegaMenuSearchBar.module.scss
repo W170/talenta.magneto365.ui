@@ -50,6 +50,21 @@
       overflow-y: auto;
       position: absolute;
       top: calc(48px);
+      &--recent {
+        h4 {
+          margin: 4px 0px 4px 0px;
+          border-bottom: 1px solid #c2c8cf63;
+          padding-bottom: 4px;
+          font-weight: bold;
+        }
+        div {
+          padding: 8px 0;
+          p {
+            padding: 0 4px;
+            margin: 0px;
+          }
+        }
+      }
     }
 
     &-option {

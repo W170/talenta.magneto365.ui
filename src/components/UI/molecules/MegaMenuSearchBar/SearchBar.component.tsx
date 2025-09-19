@@ -19,7 +19,8 @@ const SearchBar: React.FC<ISearchBar> = ({
   options,
   sectionTitle,
   onSelectOption,
-  noContent
+  noContent,
+  recentSearch
 }) => {
   const [selectedOption, setSelectedOption] = useState(0)
   const [showOptions, setShowOptions] = useState(false)
@@ -100,16 +101,9 @@ const SearchBar: React.FC<ISearchBar> = ({
       />
       {showOptions && (
         <div className={styles['mega-menu-search-bar__input-options']} ref={optionsRef}>
-          {sectionTitle && renderSectionTitle}
-          {options.length == 0 && (
-            <MegaMenuEmpty
-              title={noContent?.title ?? ''}
-              subtitle={noContent?.subtitle ?? ''}
-              imageHeight={120}
-              customStyle={{ title: { fontSize: 16 }, subtitle: { fontSize: 14 }, content: { gap: 0 } }}
-            />
-          )}
+          {sectionTitle && renderSectionTitle && !recentSearch}
           {options.length > 0 &&
+            (!recentSearch || termValue?.length > 0) &&
             options.map(({ title, subtitle, url, field }: ISearchOptions, index: number) => (
               <div
                 className={`${styles['mega-menu-search-bar__input-option']} ${
@@ -124,6 +118,42 @@ const SearchBar: React.FC<ISearchBar> = ({
                 </a>
               </div>
             ))}
+          {options.length === 0 && !recentSearch && (
+            <MegaMenuEmpty
+              title={noContent?.title ?? ''}
+              subtitle={noContent?.subtitle ?? ''}
+              imageHeight={120}
+              customStyle={{ title: { fontSize: 16 }, subtitle: { fontSize: 14 }, content: { gap: 0 } }}
+            />
+          )}
+          {recentSearch && termValue?.length === 0 && (
+            <div className={styles['mega-menu-search-bar__input-options--recent']}>
+              <h4>{recentSearch.recentSearchesTitle}</h4>
+              {recentSearch.recentSearches.map((option, index) => (
+                <div
+                  className={`${styles['mega-menu-search-bar__input-option']}`}
+                  onClick={onPressOption(option)}
+                  key={index}
+                >
+                  <a href={option.url} ref={linkRef}>
+                    <p className={styles['mega-menu-search-bar__input-option__title']}>{option.title}</p>
+                  </a>
+                </div>
+              ))}
+              <h4>{recentSearch.mostSearchedTitle}</h4>
+              {recentSearch.mostSearched.map((option, index) => (
+                <div
+                  className={`${styles['mega-menu-search-bar__input-option']}`}
+                  onClick={onPressOption(option)}
+                  key={index}
+                >
+                  <a href={option.url} ref={linkRef}>
+                    <p className={styles['mega-menu-search-bar__input-option__title']}>{option.title}</p>
+                  </a>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </div>
