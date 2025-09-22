@@ -13,12 +13,4 @@ export interface ICategoryMenuList {
    * Onclick callback
    * */
   onClick?: () => void
-  /**
-   * See all text
-   * */
-  seeAllText: string
-  /**
-   * Url to redirect
-   * */
-  href: string
 }

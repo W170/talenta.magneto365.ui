@@ -1,4 +1,5 @@
 import { StoryObj, Meta } from '@storybook/react'
+import type { FC } from 'react'
 import CategoryGrid from './CategoryGrid.component'
 import { categoriesData, vacantPositionsSearchList } from '@constants/stories'
 import { CategoryMenuCard } from '../../organism/CategoryMenuCard'
@@ -9,7 +10,7 @@ const meta: Meta<typeof CategoryGrid> = {
   component: CategoryGrid,
   args: {
     elements: categoriesData,
-    render: CategoryMenuCard,
+    render: CategoryMenuCard as FC<any>,
     columnsNumber: 2
   }
 }
@@ -24,7 +25,7 @@ export const CustomComponentList: Story = {
   name: 'ButtonLink',
   args: {
     elements: vacantPositionsSearchList,
-    render: ButtonLink,
+    render: ButtonLink as FC<any>,
     columnsNumber: 3
   }
 }
