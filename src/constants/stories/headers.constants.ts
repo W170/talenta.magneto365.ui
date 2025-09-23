@@ -311,6 +311,13 @@ const mockSearchBarOptions: ISearchOptions[] = [
   { title: 'Diseñador Ux prue', subtitle: 'Ciudad', url: 'https://prueba.com' }
 ]
 
+const mockSearchBarRecent: ISearchOptions[] = [
+  { title: 'Diseñador Ux', url: 'https://prueba.com' },
+  { title: 'Desarrollador Frontend', url: 'https://prueba.com' },
+  { title: 'Desarrollador Backend', url: 'https://prueba.com' },
+  { title: 'Diseñador UI', url: 'https://prueba.com' }
+]
+
 export const SearchbarProps: IMegaMenuSearchBar = {
   location: {
     placeholder: 'Busca empleos por ubicacion',
@@ -326,9 +333,15 @@ export const SearchbarProps: IMegaMenuSearchBar = {
   },
   occupation: {
     placeholder: 'Busca empleos por cargo o profesion',
-    termValue: null,
+    termValue: '',
     onSearch: () => ({}),
-    options: mockSearchBarOptions
+    options: mockSearchBarOptions,
+    recentSearch: {
+      mostSearchedTitle: 'Lo mas buscado',
+      mostSearched: mockSearchBarRecent,
+      recentSearchesTitle: 'Busquedas recientes',
+      recentSearches: mockSearchBarRecent
+    }
   }
 }
 
