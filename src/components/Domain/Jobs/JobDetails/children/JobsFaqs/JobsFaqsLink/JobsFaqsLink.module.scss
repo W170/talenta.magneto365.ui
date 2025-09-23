@@ -1,5 +1,23 @@
 @use '../../../../../../../shared/stylesheets/variables.scss' as v;
 
+.magneto-ui-faqs--link {
+  background: transparent;
+  padding: 12px 4px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  color: #47535f;
+  font-size: 16px;
+  text-decoration: none;
+  align-items: center;
+  border-radius: 8px;
+  width: 100%;
+
+  &:hover {
+    background-color: v.$color-white;
+  }
+}
+
 .magneto-ui-faqs--buttonLink {
   background: v.$color-white;
   padding: 8px 16px;

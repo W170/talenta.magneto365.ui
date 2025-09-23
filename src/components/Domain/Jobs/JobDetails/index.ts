@@ -13,7 +13,6 @@ import { JobDetailsDrawer } from './children/JobDetailsDrawer'
 import { JobSuggestedCard } from './children/JobSuggestedCard'
 import { JobsFaqs } from './children/JobsFaqs'
 import { JobsFaqsLink } from './children/JobsFaqs/JobsFaqsLink'
-import { JobsFaqsQuestion } from './children/JobsFaqs/JobsFaqsQuestion'
 
 export const JobDetails = Object.assign(JobDetailsRaw, {
   Header: JobDetailsHeader,
@@ -21,7 +20,6 @@ export const JobDetails = Object.assign(JobDetailsRaw, {
   JobSuggestedCard: JobSuggestedCard,
   Summary: JobDetailsSummary,
   Faqs: Object.assign(JobsFaqs, {
-    Question: JobsFaqsQuestion,
     Link: JobsFaqsLink
   }),
   Skills: JobDetailsSkills,

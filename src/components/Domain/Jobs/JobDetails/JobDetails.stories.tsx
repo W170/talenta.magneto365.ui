@@ -63,11 +63,11 @@ export const Default: Story = {
               {moreJobsText}
             </SimilarJobs.Link>
             <JobDetails.Faqs title="Preguntas frecuentes sobre @Cargo" roundEdges={false}>
-              <JobDetails.Faqs.Question question="Pregunta 1 sobre @cargo" href="#" />
-              <JobDetails.Faqs.Question question="Pregunta 2 sobre @cargo" href="#" />
-              <JobDetails.Faqs.Question question="Pregunta 3 sobre @cargo" href="#" />
-              <JobDetails.Faqs.Question question="Pregunta 4 sobre @cargo" href="#" />
-              <JobDetails.Faqs.Link text="Ver todas las preguntas frecuentes" href="#" />
+              <JobDetails.Faqs.Link text="Pregunta 1 sobre @cargo" href="#" />
+              <JobDetails.Faqs.Link text="Pregunta 2 sobre @cargo" href="#" />
+              <JobDetails.Faqs.Link text="Pregunta 3 sobre @cargo" href="#" />
+              <JobDetails.Faqs.Link text="Pregunta 4 sobre @cargo" href="#" />
+              <JobDetails.Faqs.Link text="Ver todas las preguntas frecuentes" href="#" isButtonLink />
             </JobDetails.Faqs>
           </div>
         )}
