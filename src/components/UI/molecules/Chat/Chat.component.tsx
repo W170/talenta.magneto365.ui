@@ -1,8 +1,10 @@
 import React, { useImperativeHandle, useReducer } from 'react'
 import { chatReducer } from './Chat.reducer'
 import type { IChat } from './Chat.interface'
+import LoadingDots from './children/LoadingDots/LoadingDots.component'
+import { Message } from './children/Message/Message.component'
 
-export const Chat = React.forwardRef<IChat.Methods, IChat>(({ initialMessages = [], children, ...rest }, ref) => {
+const Component = React.forwardRef<IChat.Methods, IChat>(({ initialMessages = [], children, ...rest }, ref) => {
   const [state, dispatch] = useReducer(chatReducer, { messages: initialMessages })
 
   useImperativeHandle(
@@ -17,4 +19,9 @@ export const Chat = React.forwardRef<IChat.Methods, IChat>(({ initialMessages = 
   return <div {...rest}>{children?.({ messages: state.messages })}</div>
 })
 
-Chat.displayName = 'Chat'
+Component.displayName = 'Chat'
+
+export const Chat = Object.assign(Component, {
+  LoadingDots: LoadingDots,
+  Message: Message
+})
