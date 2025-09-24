@@ -8,16 +8,7 @@ import { withClickOut } from '@components/hoc'
 import { getIcon } from '@utils/icons/getIcons.util'
 import { programaticIcons } from '@constants/stories'
 
-const CategoryMenuCard: React.FC<ICategoryMenuCard> = ({
-  name,
-  icon,
-  onClick,
-  clickOut,
-  setClickOut = () => ({}),
-  list,
-  href,
-  seeAllText
-}) => {
+const CategoryMenuCard: React.FC<ICategoryMenuCard> = ({ name, icon, clickOut, setClickOut = () => ({}), list }) => {
   const downArrow = (
     <div
       className={`${styles[`magneto-ui-category-menu-container-card__arrow`]}
@@ -47,7 +38,7 @@ const CategoryMenuCard: React.FC<ICategoryMenuCard> = ({
         </div>
         {downArrow}
       </div>
-      <CategoryMenuList list={list} seeAllText={seeAllText} onClick={onClick} isOpen={clickOut} href={href} />
+      <CategoryMenuList list={list} isOpen={clickOut} />
     </div>
   )
 }
