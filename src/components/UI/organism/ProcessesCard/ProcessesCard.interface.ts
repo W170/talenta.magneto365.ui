@@ -26,12 +26,24 @@ export interface IProcessesCard extends React.ButtonHTMLAttributes<HTMLButtonEle
   isSelected?: boolean
 }
 
+export type TIconComponent = {
+  /**
+   * this property sets color icon
+   */
+  fill?: string
+}
+
 export namespace IProcessesCard {
   export type ISection = ICommonProcessesCardPros
   export type ITitle = ICommonProcessesCardPros & { status?: IStatusJob }
   export type ICardStatus = ICommonProcessesCardPros & { status: IStatusJob; isSelected?: boolean }
   export type IText = ICommonProcessesCardPros & { status?: IStatusJob; strong?: boolean }
   export type IBrand = ICommonProcessesCardImg
-  export type IArrow = ICommonProcessesCardImg
-  export type IStatusIcon = ICommonProcessesCardImg & { status: IStatusJob }
+  export interface IArrow extends React.HTMLAttributes<HTMLSpanElement> {
+    color?: string
+  }
+  export interface IStatusIcon extends React.HTMLAttributes<HTMLSpanElement> {
+    status: IStatusJob
+    color?: string
+  }
 }
