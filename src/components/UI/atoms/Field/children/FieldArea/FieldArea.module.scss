@@ -1,0 +1,54 @@
+@use '../../../../../../shared/stylesheets/tokens' as *;
+
+.magneto-ui-field-area {
+  margin: 0;
+  padding: 0;
+  border: none;
+  flex: 1;
+  font-weight: $weight-normal;
+  font-size: $text-md-2;
+  color: $color-grey-900;
+  &:focus-visible,
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    font-weight: $weight-normal;
+    font-size: $text-md-2;
+    color: $color-grey-500;
+  }
+}
+
+.magneto-ui-field-area-wrapper {
+  background-color: $color-grey-50;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: calc(2px / $scale-px-base) * 1rem;
+  min-height: $scale-rem-5xl;
+  border-radius: $radius-sm;
+  padding: $padding-sm;
+  border: solid 1px $color-grey-200;
+  cursor: text;
+  transition: all ease-in-out 0.3s;
+  + [data-slot='field-list'] {
+    display: none;
+  }
+  &--error {
+    border-color: $color-red-200;
+  }
+  &--disabled {
+    color: $color-grey-400;
+    background-color: $color-grey-100;
+    cursor: not-allowed;
+    > .magneto-ui-field-area {
+      cursor: not-allowed;
+    }
+  }
+  &--readonly {
+    cursor: not-allowed;
+    > .magneto-ui-field-area {
+      cursor: not-allowed;
+    }
+  }
+}

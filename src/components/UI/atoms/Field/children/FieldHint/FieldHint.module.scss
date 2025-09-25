@@ -1,0 +1,16 @@
+@use '../../../../../../shared/stylesheets/tokens' as *;
+
+.magneto-ui-field-hint {
+  &--hint {
+    color: $color-grey-800;
+  }
+  &--warning {
+    color: $color-yellow-300;
+  }
+  &--error {
+    color: $color-red-200;
+  }
+  &--success {
+    color: $color-green-500;
+  }
+}

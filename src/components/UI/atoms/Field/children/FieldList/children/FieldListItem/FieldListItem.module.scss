@@ -1,0 +1,20 @@
+@use '../../../../../../../../shared/stylesheets/tokens' as *;
+
+.magneto-ui-field-list-item {
+  border-radius: $radius-sm;
+  padding: $padding-sm $padding-lg;
+  min-height: calc(36px / $scale-px-base) * 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: $gap-sm-2;
+  color: $color-grey-700;
+  cursor: default;
+  transition: all ease-in-out 0.3s;
+  &:hover {
+    background-color: $color-grey-100;
+  }
+  &--selected {
+    background-color: $color-grey-100;
+  }
+}

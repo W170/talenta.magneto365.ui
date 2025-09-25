@@ -1,0 +1,6 @@
+@use '../../../../shared/stylesheets/tokens' as *;
+
+.magneto-ui-field {
+  display: flex;
+  flex-direction: column;
+}

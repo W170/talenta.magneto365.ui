@@ -1,0 +1,76 @@
+@use '../../../../../../shared/stylesheets/tokens' as *;
+
+.magneto-ui-field-input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  flex: 1;
+  font-weight: $weight-normal;
+  font-size: $text-md-2;
+  color: $color-grey-900;
+  &:focus-visible,
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    font-weight: $weight-normal;
+    font-size: $text-md-2;
+    color: $color-grey-500;
+  }
+  &--mobile {
+    cursor: default;
+  }
+}
+
+.magneto-ui-field-input-wrapper {
+  background-color: $color-grey-50;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: calc(2px / $scale-px-base) * 1rem;
+  min-height: $scale-rem-5xl;
+  border-radius: $radius-sm;
+  padding: $padding-sm;
+  border: solid 1px $color-grey-200;
+  cursor: text;
+  transition: all ease-in-out 0.3s;
+  &:has(+ [data-slot='field-list'][data-state='visible']) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  /* &:focus-within {
+    border-color: $color-blue-light-200;
+    border-width: 1px !important;
+  } */
+  &--mobile {
+    cursor: default;
+  }
+  &--error {
+    border-color: $color-red-200;
+    border-width: 1px !important;
+  }
+  &--button {
+    cursor: pointer;
+    > .magneto-ui-field-input {
+      background-color: transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+  &--disabled {
+    color: $color-grey-400;
+    background-color: $color-grey-100;
+    cursor: not-allowed;
+    > .magneto-ui-field-input {
+      cursor: not-allowed;
+    }
+  }
+  &--readonly {
+    cursor: not-allowed;
+    > .magneto-ui-field-input {
+      cursor: not-allowed;
+    }
+  }
+}
