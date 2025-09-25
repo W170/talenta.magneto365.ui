@@ -33,6 +33,13 @@
       gap: 2px;
     }
   }
+
+  &--drawer {
+    > aside {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
 }
 
 .magneto-ui-jobs-page--title {
