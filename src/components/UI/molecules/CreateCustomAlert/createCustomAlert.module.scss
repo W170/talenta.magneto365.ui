@@ -1,61 +1,38 @@
-@use '../../../../shared/stylesheets/variables.scss' as *;
+@import '../../../../shared/stylesheets/tokens/';
 
 .create-custom-alert {
   position: relative;
-  background-color: #e0f3fb;
-  min-height: 71px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  padding: 0 15px;
   cursor: pointer;
-  gap: 10px;
+  gap: $gap-sm-2;
   border: none;
-  border-top: solid 1px #e2e2e2;
-  width: 100%;
-  transition: background-color ease-in-out 0.3s;
-  @media screen and (min-width: $screen-md) {
-    &:hover {
-      background-color: #c2e4f3;
-    }
-  }
+  border-top: solid $border-1 $color-grey-150;
+  width: $scale-full;
   &__loader {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: $scale-full;
+  }
+  &__button {
     width: 100%;
-  }
-  &__icon {
-    height: 46px;
-    display: none;
-    @media screen and (min-width: $screen-xxs) {
-      display: block;
+    min-height: 4.375rem;
+    background-color: $color-blue-light-100;
+    padding: $padding-min $padding-lg;
+    > img:first-child {
+      width: 43px !important;
+      height: 43px !important;
     }
-  }
-  &__summary {
-    text-align: left;
-    > h4 {
-      margin: 0;
-      font-size: 16px;
-      color: #001b38;
-      font-weight: 700;
+    p {
+      margin-right: $margin-auto;
+      color: $color-grey-700;
+      font-weight: $weight-black;
     }
-    > p {
-      margin: 0;
-      font-size: 14px;
-      color: #1a324c;
-    }
-  }
-  &__arrow {
-    height: 18px;
-    width: auto;
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-    display: none;
-    @media screen and (min-width: $screen-md) {
-      display: block;
+    &:hover {
+      background-color: $color-blue-light-600;
+      transition: background-color ease-in-out 0.3s;
     }
   }
 }
