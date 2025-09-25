@@ -76,6 +76,7 @@ const SearchBar: React.FC<ISearchBar> = ({
       if (!onSelectOption) return
       event.stopPropagation()
       event.preventDefault()
+      setShowOptions(false)
       onSelectOption(option)
     },
     [onSelectOption]
