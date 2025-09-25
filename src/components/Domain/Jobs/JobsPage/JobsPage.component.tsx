@@ -80,7 +80,12 @@ const JobsPage: React.FC<IJobsPage> = ({
     </JobDetailsDrawerContext.Provider>,
     {
       lg: (
-        <JobDetails.Drawer isMobile isOpen={showDetail && hasVacancies} onClose={onClose}>
+        <JobDetails.Drawer
+          className={style[`${classMUI}-jobs-page--drawer`]}
+          isMobile
+          isOpen={showDetail && hasVacancies}
+          onClose={onClose}
+        >
           {jobDetailsContent}
         </JobDetails.Drawer>
       )
