@@ -7,6 +7,7 @@ import { IFooter } from '@components/UI/template/Footer/Footer.interface'
 import { DeviceType } from '@components/context/context.interface'
 import { IEmptyResults } from '@components/UI/molecules/EmptyResults/EmptyResults.interface'
 import { ICreateAccountCTA } from '@components/UI/molecules/CreateAccountCTA/CreateAccountCTA.interface'
+import { ICreateCustomAlert } from '@components/UI/molecules/CreateCustomAlert/CreateCustomAlert.interface'
 
 export interface IJobsPage {
   /**
@@ -84,6 +85,10 @@ export interface IJobsPage {
    *  This property sets the job card type filter, which can be either 'row' or 'side'.
    */
   typeFilters?: 'row' | 'side'
+  /**
+   * This property sets the create account card data
+   */
+  createCustomAlertProps?: ICreateCustomAlert
 }
 
 export interface IVacancies extends IJobCard {
