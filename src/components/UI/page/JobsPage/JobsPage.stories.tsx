@@ -13,13 +13,19 @@ import { sortBarProps } from '../../../../constants/stories/sortBar.constants'
 import { vacancies } from '../../../../constants/stories/vacancies.constants'
 import { sideFilterProps } from '../../../../constants/stories/sideFilter.constants'
 import { ISideFilter } from '../../template/SideFilter/SideFilter.interface'
-import { CitiesLargeDetailDrawerProps, emptyResultsProps, paginationProps } from '../../../../constants/stories'
+import {
+  CitiesLargeDetailDrawerProps,
+  CreateCustomAlertProps,
+  emptyResultsProps,
+  paginationProps
+} from '../../../../constants/stories'
 
 const meta: Meta<typeof JobsPage> = {
   title: 'Pages/Jobs Page',
   component: JobsPage,
   args: {
     createAccountCTAProps: CreateAccountCTAProps,
+    createCustomAlertProps: CreateCustomAlertProps,
     sortBarProps,
     vacantProps: vacancies,
     jobDetailsDrawerProps: jobDetailsDrawer,

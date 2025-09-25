@@ -18,6 +18,7 @@ import { EmptyResults } from '@components/UI/molecules/EmptyResults'
 import { JobCardSkeleton } from '@components/UI/molecules/JobCard/children'
 import { Paragraph } from '@components/UI/atoms'
 import HorizontalFilter from '@components/UI/template/HorizontalFilter/HorizontalFilter.component'
+import { CreateCustomAlert } from '@components/UI/molecules/CreateCustomAlert/CreateCustomAlert.component'
 
 const JobsPage: React.FC<IJobsPage> = ({
   jobDetailsDrawerProps,
@@ -38,7 +39,8 @@ const JobsPage: React.FC<IJobsPage> = ({
   dynamicPaginationUrl,
   displayAlwaysFilter,
   createAccountCTAProps,
-  typeFilters = 'row'
+  typeFilters = 'row',
+  createCustomAlertProps
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [loadVideo, setLoadVideo] = useState(false)
@@ -177,6 +179,7 @@ const JobsPage: React.FC<IJobsPage> = ({
                 />
                 {createAccountCTAProps && <CreateAccountCTA {...createAccountCTAProps} />}
                 {mainTitleByMediaQuery}
+                {createCustomAlertProps && <CreateCustomAlert {...createCustomAlertProps} />}
                 <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>{cardsAltRender}</div>
                 {customParagraph && <Paragraph paragraph={customParagraph} />}
                 <Pagination dynamicUrl={fullUrl} {...paginationProps} />
@@ -197,6 +200,7 @@ const JobsPage: React.FC<IJobsPage> = ({
               />
               {createAccountCTAProps && <CreateAccountCTA {...createAccountCTAProps} />}
               {mainTitleByMediaQuery}
+              {createCustomAlertProps && <CreateCustomAlert {...createCustomAlertProps} />}
               <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>{cardsAltRender}</div>
               {customParagraph && <Paragraph paragraph={customParagraph} />}
               <Pagination dynamicUrl={fullUrl} {...paginationProps} />
