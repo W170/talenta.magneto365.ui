@@ -5,31 +5,38 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  cursor: pointer;
   gap: $gap-sm-2;
   border: none;
   border-top: solid $border-1 $color-grey-150;
   width: $scale-full;
+
   &__loader {
     display: flex;
     justify-content: center;
     align-items: center;
     width: $scale-full;
+    min-height: 4.375rem;
+    background-color: $color-blue-light-100;
   }
+
   &__button {
     width: 100%;
     min-height: 4.375rem;
     background-color: $color-blue-light-100;
     padding: $padding-min $padding-lg;
+    cursor: pointer;
+
     > img:first-child {
       width: 43px !important;
       height: 43px !important;
     }
+
     p {
       margin-right: $margin-auto;
       color: $color-grey-700;
       font-weight: $weight-black;
     }
+
     &:hover {
       background-color: $color-blue-light-600;
       transition: background-color ease-in-out 0.3s;

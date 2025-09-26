@@ -19,13 +19,14 @@ import {
   emptyResultsProps,
   paginationProps
 } from '../../../../constants/stories'
+import { CreateCustomAlert } from '../../molecules/CreateCustomAlert/CreateCustomAlert.component'
 
 const meta: Meta<typeof JobsPage> = {
   title: 'Pages/Jobs Page',
   component: JobsPage,
   args: {
     createAccountCTAProps: CreateAccountCTAProps,
-    createCustomAlertProps: CreateCustomAlertProps,
+    renderCustomAlert: () => <CreateCustomAlert {...CreateCustomAlertProps} />,
     sortBarProps,
     vacantProps: vacancies,
     jobDetailsDrawerProps: jobDetailsDrawer,

@@ -7,7 +7,6 @@ import { IFooter } from '@components/UI/template/Footer/Footer.interface'
 import { DeviceType } from '@components/context/context.interface'
 import { IEmptyResults } from '@components/UI/molecules/EmptyResults/EmptyResults.interface'
 import { ICreateAccountCTA } from '@components/UI/molecules/CreateAccountCTA/CreateAccountCTA.interface'
-import { ICreateCustomAlert } from '@components/UI/molecules/CreateCustomAlert/CreateCustomAlert.interface'
 
 export interface IJobsPage {
   /**
@@ -86,9 +85,9 @@ export interface IJobsPage {
    */
   typeFilters?: 'row' | 'side'
   /**
-   * This property sets the create account card data
+   * This property sets create custom alert component
    */
-  createCustomAlertProps?: ICreateCustomAlert
+  renderCustomAlert?: () => React.ReactNode
 }
 
 export interface IVacancies extends IJobCard {
