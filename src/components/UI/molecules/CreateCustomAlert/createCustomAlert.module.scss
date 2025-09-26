@@ -8,6 +8,7 @@
   gap: $gap-sm-2;
   border: none;
   border-top: solid $border-1 $color-grey-150;
+  background-color: $color-blue-light-100;
   width: $scale-full;
 
   &__loader {
