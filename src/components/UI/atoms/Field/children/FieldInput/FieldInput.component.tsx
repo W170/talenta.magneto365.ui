@@ -10,6 +10,7 @@ const cx = classNames.bind(styles)
 
 const BaseComponent = (
   {
+    align = 'left',
     className,
     disabled,
     error,
@@ -28,8 +29,10 @@ const BaseComponent = (
   }: IFieldInput,
   ref: React.ForwardedRef<HTMLInputElement>
 ) => {
+  const prefixRef = useRef<HTMLSpanElement | null>(null)
+  const suffixRef = useRef<HTMLSpanElement | null>(null)
   const inputRef = useRef<HTMLInputElement | null>(null)
-  const { hasList, setIsFocused } = useFieldContext()
+  const { hasList, setIsFocused, isFocused } = useFieldContext()
   const { handleOnFocus } = useFieldFocus<HTMLInputElement>({
     disabled,
     readOnly,
@@ -42,22 +45,30 @@ const BaseComponent = (
   const handleLocalOnFocus = useCallback(
     (evt: React.FocusEvent<HTMLInputElement>) => {
       if (isMobile && !preserveFocus && hasList) evt.target.blur()
-
+      if (hasList) handleOnFocus(evt)
       controlledOnFocus?.(evt)
-      handleOnFocus(evt)
     },
     [controlledOnFocus, hasList, handleOnFocus, isMobile, preserveFocus]
   )
 
   const handleOnWrapperMouseDown = useCallback(
     (evt: React.MouseEvent) => {
-      if (disabled || readOnly) return
+      if (
+        disabled ||
+        readOnly ||
+        prefixRef.current?.contains(evt.target as Node) ||
+        suffixRef.current?.contains(evt.target as Node)
+      )
+        return
+
+      if (hasList) {
+        setIsFocused(true)
+      }
 
       evt.preventDefault()
-      setIsFocused(true)
       inputRef.current?.focus()
     },
-    [disabled, readOnly, setIsFocused]
+    [disabled, hasList, readOnly, setIsFocused]
   )
 
   if (type && !Object.values(FieldInputTypeEnum).includes(type as FieldInputTypeEnum)) return null
@@ -80,10 +91,24 @@ const BaseComponent = (
         wrapper?.className
       )}
     >
-      {prefix}
+      {prefix && (
+        <span ref={prefixRef}>
+          {typeof prefix === 'function' ? prefix({ opened: hasList === true && isFocused }) : prefix}
+        </span>
+      )}
       <input
         {...props}
-        className={cx('magneto-ui-field-input', isMobile ? 'magneto-ui-field-input-wrapper--mobile' : '', className)}
+        className={cx(
+          'magneto-ui-field-input',
+          isMobile ? 'magneto-ui-field-input-wrapper--mobile' : '',
+          align ? `magneto-ui-field-input--${align}` : '',
+          type === FieldInputTypeEnum.BUTTON
+            ? !value
+              ? 'magneto-ui-field-input--button-placeholder'
+              : 'magneto-ui-field-input--button-value'
+            : '',
+          className
+        )}
         disabled={disabled}
         onFocus={handleLocalOnFocus}
         placeholder={placeholder}
@@ -92,7 +117,11 @@ const BaseComponent = (
         type={type}
         value={type === FieldInputTypeEnum.BUTTON ? (!value ? placeholder : value) : value}
       />
-      {suffix}
+      {suffix && (
+        <span ref={suffixRef}>
+          {typeof suffix === 'function' ? suffix({ opened: hasList === true && isFocused }) : suffix}
+        </span>
+      )}
     </span>
   )
 }
