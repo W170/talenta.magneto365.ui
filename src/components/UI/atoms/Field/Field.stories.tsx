@@ -38,23 +38,22 @@ export const Label: LabelStory = {
 
 type PrefixAndSuffix = StoryObj<typeof Field.Input>
 
-export const Icon: PrefixAndSuffix = {
-  storyName: 'Prefix and suffix',
+export const PrefixAndSuffix: PrefixAndSuffix = {
+  name: 'Prefix and suffix',
   render: () => (
     <Field>
-      <Field.Wrapper>
-        <Field.Label htmlFor="name-icon">
-          <Typography.Text weight="normal" size="md-2" color="grey-800">
-            Name
-          </Typography.Text>
-        </Field.Label>
-        <Field.Input
-          id="name-icon"
-          placeholder="Write something"
-          prefix={<IconItem icon={Add} />}
-          suffix={<button>Search</button>}
-        />
-      </Field.Wrapper>
+      <Field.Label htmlFor="name-icon">
+        <Typography.Text weight="normal" size="md-2" color="grey-800">
+          Name
+        </Typography.Text>
+      </Field.Label>
+      <Field.Input
+        id="name-icon"
+        type="text"
+        placeholder="Write something"
+        prefix={<IconItem icon={Add} />}
+        suffix={<button onClick={() => console.log('search')}>Search</button>}
+      />
     </Field>
   )
 }
@@ -89,7 +88,7 @@ export const Hint: HintStory = {
 type ListWithSingleSelection = StoryObj<typeof Field.List>
 
 export const ListSingle: ListWithSingleSelection = {
-  storyName: 'List with single selection',
+  name: 'List with single selection',
   render: () => (
     <Field>
       <Field.Label htmlFor="name-list-single">
@@ -97,7 +96,7 @@ export const ListSingle: ListWithSingleSelection = {
           Name
         </Typography.Text>
       </Field.Label>
-      <Field.Wrapper>
+      <Field.List.Wrapper>
         <Field.Input id="name-list-single" placeholder="Write something" />
         <Field.List defaultValue={{ id: 2, name: 'Pedro' }} onChange={(value) => console.log(value)}>
           {({ isMobile }) => (
@@ -121,7 +120,7 @@ export const ListSingle: ListWithSingleSelection = {
             </React.Fragment>
           )}
         </Field.List>
-      </Field.Wrapper>
+      </Field.List.Wrapper>
     </Field>
   )
 }
@@ -129,7 +128,7 @@ export const ListSingle: ListWithSingleSelection = {
 type ListWithMultipleSelectionStory = StoryObj<typeof Field.List>
 
 export const ListMultiple: ListWithMultipleSelectionStory = {
-  storyName: 'List with multiple selection',
+  name: 'List with multiple selection',
   render: () => (
     <Field>
       <Field.Label htmlFor="name-list-multiple">
@@ -137,8 +136,19 @@ export const ListMultiple: ListWithMultipleSelectionStory = {
           Name
         </Typography.Text>
       </Field.Label>
-      <Field.Wrapper>
-        <Field.Input id="name-list-multiple" placeholder="Write something" />
+      <Field.List.Wrapper>
+        <Field.Input
+          id="name-list-multiple"
+          placeholder="Write something"
+          suffix={({ opened }) => (
+            <button
+              style={{ transition: 'all .5s ease-in-out', transform: opened ? 'rotate(180deg)' : 'rotate(0deg)' }}
+              onClick={() => console.log('search')}
+            >
+              Search
+            </button>
+          )}
+        />
         <Field.List defaultValue={[{ id: 2, name: 'Pedro' }]} multiple onChange={(values) => console.log(values)}>
           {({ isMobile }) => (
             <React.Fragment>
@@ -161,7 +171,7 @@ export const ListMultiple: ListWithMultipleSelectionStory = {
             </React.Fragment>
           )}
         </Field.List>
-      </Field.Wrapper>
+      </Field.List.Wrapper>
     </Field>
   )
 }
@@ -198,7 +208,7 @@ const ButtonComponent = () => {
           Name
         </Typography.Text>
       </Field.Label>
-      <Field.Wrapper>
+      <Field.List.Wrapper>
         <Field.Input id="name-trigger" placeholder="Write something" value={data.name} type="button" />
         <Field.List onChange={setData}>
           <Field.List.Item value={{ id: 1, name: 'Juan' }}>
@@ -216,8 +226,88 @@ const ButtonComponent = () => {
               You must write something
             </Typography.Text>
           </Field.List.Item>
+          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
+            <Typography.Text weight="normal" size="lg">
+              You must write something
+            </Typography.Text>
+          </Field.List.Item>
+          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
+            <Typography.Text weight="normal" size="lg">
+              You must write something
+            </Typography.Text>
+          </Field.List.Item>
+          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
+            <Typography.Text weight="normal" size="lg">
+              You must write something
+            </Typography.Text>
+          </Field.List.Item>
+          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
+            <Typography.Text weight="normal" size="lg">
+              You must write something
+            </Typography.Text>
+          </Field.List.Item>
+          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
+            <Typography.Text weight="normal" size="lg">
+              You must write something
+            </Typography.Text>
+          </Field.List.Item>
+          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
+            <Typography.Text weight="normal" size="lg">
+              You must write something
+            </Typography.Text>
+          </Field.List.Item>
+          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
+            <Typography.Text weight="normal" size="lg">
+              You must write something
+            </Typography.Text>
+          </Field.List.Item>
+          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
+            <Typography.Text weight="normal" size="lg">
+              You must write something
+            </Typography.Text>
+          </Field.List.Item>
+          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
+            <Typography.Text weight="normal" size="lg">
+              You must write something
+            </Typography.Text>
+          </Field.List.Item>
+          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
+            <Typography.Text weight="normal" size="lg">
+              You must write something
+            </Typography.Text>
+          </Field.List.Item>
+          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
+            <Typography.Text weight="normal" size="lg">
+              You must write something
+            </Typography.Text>
+          </Field.List.Item>
+          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
+            <Typography.Text weight="normal" size="lg">
+              You must write something
+            </Typography.Text>
+          </Field.List.Item>
+          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
+            <Typography.Text weight="normal" size="lg">
+              You must write something
+            </Typography.Text>
+          </Field.List.Item>
+          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
+            <Typography.Text weight="normal" size="lg">
+              You must write something
+            </Typography.Text>
+          </Field.List.Item>
+          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
+            <Typography.Text weight="normal" size="lg">
+              You must write something
+            </Typography.Text>
+          </Field.List.Item>
+          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
+            <Typography.Text weight="normal" size="lg">
+              You must write something
+            </Typography.Text>
+          </Field.List.Item>
         </Field.List>
-      </Field.Wrapper>
+      </Field.List.Wrapper>
     </Field>
   )
 }
@@ -237,7 +327,7 @@ export const Group: GroupStory = {
             Country code
           </Typography.Text>
         </Field.Label>
-        <Field.Wrapper>
+        <Field.List.Wrapper>
           <Field.Input error type="button" value="palabra texto" id="country-code" placeholder="Write something" />
           <Field.List>
             <Field.List.Item value={{ id: 1, name: 'Juan' }}>
@@ -256,7 +346,7 @@ export const Group: GroupStory = {
               </Typography.Text>
             </Field.List.Item>
           </Field.List>
-        </Field.Wrapper>
+        </Field.List.Wrapper>
       </Field>
 
       <Field>
@@ -265,7 +355,7 @@ export const Group: GroupStory = {
             Prefix
           </Typography.Text>
         </Field.Label>
-        <Field.Wrapper nonRelative>
+        <Field.List.Wrapper nonRelative>
           <Field.Input id="prefix-phone-number" placeholder="Write your prefix phone number" type="text" />
           <Field.List defaultValue={[{ id: 2, name: 'Pedro' }]} multiple onChange={(values) => console.log(values)}>
             {({ isMobile }) => (
@@ -289,7 +379,7 @@ export const Group: GroupStory = {
               </React.Fragment>
             )}
           </Field.List>
-        </Field.Wrapper>
+        </Field.List.Wrapper>
       </Field>
 
       <Field>
@@ -298,9 +388,7 @@ export const Group: GroupStory = {
             Phone number
           </Typography.Text>
         </Field.Label>
-        <Field.Wrapper>
-          <Field.Input id="phone-number" placeholder="Write your phone number" type="number" />
-        </Field.Wrapper>
+        <Field.Input id="phone-number" placeholder="Write your phone number" type="number" />
       </Field>
     </Field.Group>
   )
