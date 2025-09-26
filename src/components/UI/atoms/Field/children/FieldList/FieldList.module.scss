@@ -3,6 +3,8 @@
 .magneto-ui-field-list {
   margin: 0;
   padding: $padding-sm;
+  max-height: calc(228px / $scale-px-base) * 1rem;
+  overflow-y: auto;
   list-style: none;
   width: $scale-full;
   display: flex;
@@ -10,6 +12,30 @@
   gap: $gap-sm-2;
   background-color: $color-grey-50;
   transition: all ease-in-out 0.3s;
+  &::-webkit-scrollbar {
+    background: $color-grey-100;
+    width: 10px;
+    &-thumb {
+      background: transparent;
+      border: none;
+      border-color: transparent;
+      border-radius: 20px;
+      background: $color-grey-300;
+    }
+    &-button {
+      &:vertical {
+        &:start:decrement {
+          background: transparent var(--custom-scrollbar-thumb-up-background) no-repeat center center;
+          min-height: 16px;
+        }
+
+        &:end:increment {
+          background: transparent var(--custom-scrollbar-thumb-down-background) no-repeat center center;
+          min-height: 16px;
+        }
+      }
+    }
+  }
   &--desktop {
     position: absolute;
     z-index: 20;

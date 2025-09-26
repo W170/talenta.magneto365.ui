@@ -1,12 +1,18 @@
-import React, { useEffect, forwardRef, useState, useCallback } from 'react'
+import React, { useEffect, forwardRef, useState, useCallback, useMemo } from 'react'
+import { MiniArrowGrayDown, MiniArrowGrayUp } from '@constants/icons.constants'
+import { Item, Responsive, Wrapper } from './children'
 import { useFieldContext } from '../../Field.context'
 import { IFieldList } from './FieldList.interface'
 import { classNames } from '@shared/utils/common'
 import { ListContext } from './FieldList.context'
-import { Item, Responsive } from './children'
 import styles from './FieldList.module.scss'
 
 const cx = classNames.bind(styles)
+
+const containerStyle = {
+  '--custom-scrollbar-thumb-down-background': `url(${MiniArrowGrayDown})`,
+  '--custom-scrollbar-thumb-up-background': `url(${MiniArrowGrayUp})`
+}
 
 function BaseComponent(
   {
@@ -17,14 +23,17 @@ function BaseComponent(
     isMobile: _,
     multiple,
     onChange,
+    style,
     ...props
-  }: IFieldList,
+  }: IFieldList<unknown>,
   ref: React.ForwardedRef<HTMLUListElement>
 ) {
   void _
 
   const [selected, setSelected] = useState<unknown[] | unknown | undefined>(defaultValue)
   const { breakpoint, hasList, isFocused, isMobile, setBreakpoint, setHasList, setIsFocused } = useFieldContext()
+
+  const styles = useMemo(() => ({ ...containerStyle, ...style }), [style])
 
   const toggleValue = useCallback(
     (value) => {
@@ -66,6 +75,7 @@ function BaseComponent(
           data-lib="magneto-ui"
           data-slot="field-list"
           data-state={isFocused ? 'visible' : 'hidden'}
+          style={styles as React.CSSProperties}
           className={cx(
             'magneto-ui-field-list',
             !isMobile ? 'magneto-ui-field-list--desktop' : '',
@@ -80,10 +90,10 @@ function BaseComponent(
   )
 }
 
-/* const Component = forwardRef(BaseComponent)(
-  props: IFieldList & { ref?: React.ForwardedRef<HTMLUListElement> }
-) => ReturnType<typeof BaseComponent> */
+const Component = forwardRef(BaseComponent) as <T>(
+  props: IFieldList<T> & { ref?: React.ForwardedRef<HTMLUListElement> }
+) => ReturnType<typeof BaseComponent>
 
-const Component = forwardRef<HTMLUListElement, IFieldList>(BaseComponent)
+// const Component = forwardRef<HTMLUListElement, IFieldList>(BaseComponent)
 
-export const FieldList = Object.assign(Component, { Item })
+export const FieldList = Object.assign(Component, { Item, Wrapper })

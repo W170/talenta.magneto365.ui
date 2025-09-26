@@ -11,19 +11,19 @@ export interface IFieldListBaseProps extends Omit<React.HTMLAttributes<HTMLUList
   isMobile?: boolean
 }
 
-export interface IFieldListMultiple extends IFieldListBaseProps {
-  defaultValue?: unknown[]
+export interface IFieldListMultiple<T> extends IFieldListBaseProps {
+  defaultValue?: T[]
   multiple: true
-  onChange?: (value?: unknown[]) => void
+  onChange?: (value?: T[]) => void
 }
 
-export interface IFieldListSingle extends IFieldListBaseProps {
-  defaultValue?: unknown
+export interface IFieldListSingle<T> extends IFieldListBaseProps {
+  defaultValue?: T
   multiple?: false
-  onChange?: (value: unknown) => void
+  onChange?: (value: T) => void
 }
 
-export type IFieldList = IFieldListMultiple | IFieldListSingle
+export type IFieldList<T> = IFieldListMultiple<T> | IFieldListSingle<T>
 
 export interface IFieldListContext {
   selected?: unknown[] | unknown
