@@ -31,3 +31,28 @@ export namespace IChat {
     content: React.ReactNode
   }
 }
+
+export type TPossibleAnswer = {
+  id: number
+  label: string
+}
+
+export type TSendCloseQuestion = {
+  type: string
+  id: number
+  answer: number[]
+}
+
+export type TCloseAnswers = {
+  buttonContinueText: string
+  possibleAnswers: TPossibleAnswer[]
+  idQuestion: number
+  answersSelected: number[]
+  type: 'multiple' | 'unique'
+  className?: {
+    answers?: string
+    option: string
+  }
+  onChange: (answers: TSendCloseQuestion) => void
+  onCloseAnswers: () => void
+}

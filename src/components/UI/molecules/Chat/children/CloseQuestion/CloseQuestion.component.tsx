@@ -2,56 +2,52 @@ import { Radio } from '@components/UI/atoms'
 import React from 'react'
 import styles from './CloseQuestion.module.scss'
 import { classNames } from '@shared/utils/common'
+import { TCloseAnswers } from '../../Chat.interface'
 
 const cx = classNames.bind(styles)
-
-type TPossibleAnswer = {
-  id: number
-  label: string
-}
-
-type TCloseAnswers = {
-  possibleAnswers: TPossibleAnswer[]
-  answersSelected: string[]
-  type: 'multiple' | 'unique'
-  questionStatus: 'edit' | 'send'
-  className?: {
-    answers?: string
-    option: string
-  }
-  onChange: (questionStatus: 'edit' | 'send', answers: string[]) => void
-}
 
 const CloseQuestion: React.FC<TCloseAnswers> = ({
   possibleAnswers,
   className,
   answersSelected,
+  idQuestion,
   type,
+  buttonContinueText,
   onChange,
-  questionStatus
+  onCloseAnswers
 }) => {
   const multipleAnswers = (idAnswer: number) => {
-    console.log(idAnswer)
+    if (answersSelected.includes(idAnswer)) return
+    if (answersSelected.length === 0) {
+      return onChange({ id: idQuestion, type, answer: [idAnswer] })
+    }
+
+    const isSelected = answersSelected.includes(idAnswer)
+
+    return onChange({
+      id: idQuestion,
+      type,
+      answer: isSelected ? answersSelected?.filter((id) => id !== idAnswer) : [...answersSelected, idAnswer]
+    })
   }
 
   const uniqueAnswers = (idAnswer: number) => {
-    onChange('send', [idAnswer.toString()])
+    onChange({ answer: [idAnswer], id: idQuestion, type })
+    onCloseAnswers()
   }
 
   const handleOnChange = (idAnswer: number) => {
     type === 'unique' ? uniqueAnswers(idAnswer) : multipleAnswers(idAnswer)
   }
 
-  if (questionStatus !== 'edit') return null
-
   return (
-    <div>
+    <div className={cx('answers-container')}>
       <div className={cx('answers', className?.answers)}>
         {possibleAnswers.map((pa) => (
           <Radio
             className={cx(
               'answers__option',
-              { 'answers__option--selected': answersSelected?.includes(pa.id.toString()) },
+              { 'answers__option--selected': answersSelected?.includes(pa.id) },
               className?.option
             )}
             type="button"
@@ -63,7 +59,15 @@ const CloseQuestion: React.FC<TCloseAnswers> = ({
           </Radio>
         ))}
       </div>
-      <button className={cx('multiple-question__continue-button')}>Enviar</button>
+      <button
+        className={cx('continue-button')}
+        disabled={answersSelected.length === 0}
+        onClick={() => {
+          onCloseAnswers()
+        }}
+      >
+        {buttonContinueText}
+      </button>
     </div>
   )
 }

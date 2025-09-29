@@ -12,11 +12,10 @@ type Story = StoryObj<typeof CloseQuestion>
 export const Default: Story = {
   args: {
     type: 'multiple',
-    answersSelected: ['1', '2'],
-    onChange(questionStatus, answers) {
-      console.log(answers, questionStatus)
+    answersSelected: [1, 2],
+    onChange(answers) {
+      console.log(answers)
     },
-    questionStatus: 'edit',
     possibleAnswers: [
       { id: 1, label: 'Adobe Photoshop' },
       { id: 2, label: 'Figma' },
