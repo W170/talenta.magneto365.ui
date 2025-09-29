@@ -32,6 +32,6 @@ export namespace IProcessesCard {
   export type ICardStatus = ICommonProcessesCardPros & { status: IStatusJob; isSelected?: boolean }
   export type IText = ICommonProcessesCardPros & { status?: IStatusJob; strong?: boolean }
   export type IBrand = ICommonProcessesCardImg
-  export type IArrow = ICommonProcessesCardImg
+  export type IArrow = ICommonProcessesCardImg & { status?: IStatusJob }
   export type IStatusIcon = ICommonProcessesCardImg & { status: IStatusJob }
 }
