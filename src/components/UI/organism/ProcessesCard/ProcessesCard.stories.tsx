@@ -32,10 +32,10 @@ const meta: Meta<typeof ProcessesCard> = {
         </Section>
 
         <Status isSelected={isSelected ? isSelected && status !== 'Hired' : false} status="Pending">
-          <IconStatus status="Pending" color=" #CD8A04" />
+          <IconStatus status="Pending" />
           <Text>Pendiente</Text>
         </Status>
-        <Arrow color=" #CD8A04" />
+        <Arrow status="Pending" />
       </>
     )
   }
@@ -67,10 +67,10 @@ export const Discarded: Story = {
         </Section>
 
         <Status isSelected={isSelected ? isSelected && status !== 'Hired' : false} status="Discarded">
-          <IconStatus status="Discarded" color="#E10000" />
+          <IconStatus status="Discarded" />
           <Text strong={false}>Descartado</Text>
         </Status>
-        <Arrow color="#E10000" />
+        <Arrow status="Discarded" />
       </>
     )
   }
@@ -98,10 +98,10 @@ export const HiredSelected: Story = {
         </Section>
 
         <Status isSelected={isSelected ? isSelected && status !== 'Hired' : false} status={status}>
-          <IconStatus status={status} color="#098C3B" />
+          <IconStatus status={status} />
           <Text strong={status === 'Hired'}>Contratado</Text>
         </Status>
-        <Arrow color="#098C3B" />
+        <Arrow status={status} />
       </>
     )
   }

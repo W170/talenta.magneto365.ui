@@ -29,6 +29,27 @@
   }
 }
 
+.processes-color-icon {
+  &--Sent {
+    filter: invert(44%) sepia(74%) saturate(1882%) hue-rotate(163deg) brightness(96%) contrast(102%);
+  }
+  &--Hired {
+    filter: invert(47%) sepia(72%) saturate(734%) hue-rotate(110deg) brightness(91%) contrast(90%);
+  }
+  &--Pending {
+    filter: invert(48%) sepia(91%) saturate(1872%) hue-rotate(7deg) brightness(94%) contrast(97%);
+  }
+  &--Validation {
+    filter: invert(39%) sepia(98%) saturate(7490%) hue-rotate(261deg) brightness(94%) contrast(104%);
+  }
+  &--Finalists {
+    filter: invert(66%) sepia(25%) saturate(1133%) hue-rotate(127deg) brightness(92%) contrast(97%);
+  }
+  &--Discarded {
+    filter: invert(16%) sepia(98%) saturate(6727%) hue-rotate(356deg) brightness(99%) contrast(113%);
+  }
+}
+
 .processes-card {
   width: 100%;
   height: auto;
