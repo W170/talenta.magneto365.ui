@@ -101,7 +101,7 @@ const SearchBar: React.FC<ISearchBar> = ({
       />
       {showOptions && (
         <div className={styles['mega-menu-search-bar__input-options']} ref={optionsRef}>
-          {sectionTitle && renderSectionTitle && !recentSearch}
+          {sectionTitle && !recentSearch && renderSectionTitle}
           {options.length > 0 &&
             (!recentSearch || termValue?.length > 0) &&
             options.map(({ title, subtitle, url, field }: ISearchOptions, index: number) => (
