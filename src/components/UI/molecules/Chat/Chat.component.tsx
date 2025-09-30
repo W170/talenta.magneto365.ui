@@ -11,7 +11,8 @@ const Component = React.forwardRef<IChat.Methods, IChat>(({ initialMessages = []
     ref,
     () => ({
       pushMessage: (message: IChat.Message) => dispatch({ type: 'PUSH_MESSAGE', payload: message }),
-      updateMessage: (message: IChat.Message) => dispatch({ type: 'UPDATE_MESSAGE', payload: message })
+      updateMessage: (message: IChat.Message) => dispatch({ type: 'UPDATE_MESSAGE', payload: message }),
+      snapshot: () => state.messages,
     }),
     []
   )
@@ -21,6 +22,10 @@ const Component = React.forwardRef<IChat.Methods, IChat>(({ initialMessages = []
 
 Component.displayName = 'Chat'
 
+/**
+ * This is a Chat Component API that allows you to create a chat interface with messages.
+ * It uses a reducer to manage the state of messages and provides methods to push and update messages.
+ */
 export const Chat = Object.assign(Component, {
   LoadingDots: LoadingDots,
   Message: Message

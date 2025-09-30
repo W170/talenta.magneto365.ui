@@ -1,1 +1,5 @@
-export type ILoadingDots = React.HTMLAttributes<HTMLDivElement>
+export interface ILoadingDots extends React.HTMLAttributes<HTMLDivElement> {
+    classNames?: {
+        dot?: string
+    }
+}

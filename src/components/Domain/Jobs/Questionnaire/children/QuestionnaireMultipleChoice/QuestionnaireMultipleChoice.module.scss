@@ -1,0 +1,55 @@
+@use '../../../../../../shared/stylesheets/tokens' as *;
+
+.answers-container {
+  display: flex;
+  flex-direction: column;
+
+  .answers {
+    width: 70%;
+    margin-bottom: $margin-md;
+    align-self: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    gap: $gap-md;
+
+    .answers__option {
+      min-width: 80px;
+      width: auto;
+      background-color: $color-grey-50;
+      border: solid 1px $color-grey-200;
+      border-radius: $radius-xl;
+      padding: $padding-md $padding-sm $padding-md;
+      display: flex;
+      height: 34px;
+      justify-content: center;
+
+      &--selected {
+        background-color: $color-purple-50;
+        border-color: $color-purple-200;
+      }
+    }
+  }
+
+  .continue-button {
+    align-self: flex-end;
+    border-radius: $radius-3xl;
+    height: 30px;
+    background-color: $color-green-200;
+    color: $color-blue-dark-400;
+    width: min-content;
+    display: inline-block;
+    border: none;
+    padding: $padding-sm $padding-lg;
+    font-weight: bold;
+    font-size: $text-lg;
+    &:hover {
+      cursor: pointer;
+    }
+    &:disabled {
+      background-color: $color-grey-200;
+      color: $color-grey-400;
+      cursor: auto;
+    }
+  }
+}

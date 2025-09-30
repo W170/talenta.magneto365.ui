@@ -1,13 +1,16 @@
 import React from 'react'
-import styles from './LoadingDots.module.scss'
 import { ILoadingDots } from './LoadingDots.interface'
+import { classNames } from '@shared/utils/common'
+import styles from './LoadingDots.module.scss'
 
-const LoadingDots: React.FC<ILoadingDots> = ({ ...props }) => {
+const cx = classNames.bind(styles)
+
+const LoadingDots: React.FC<ILoadingDots> = ({ className, classNames,...props }) => {
   return (
-    <div className={styles.dots} {...props}>
-      <span></span>
-      <span></span>
-      <span></span>
+    <div className={cx(styles.dots, className)} {...props}>
+      <span className={classNames?.dot}></span>
+      <span className={classNames?.dot}></span>
+      <span className={classNames?.dot}></span>
     </div>
   )
 }

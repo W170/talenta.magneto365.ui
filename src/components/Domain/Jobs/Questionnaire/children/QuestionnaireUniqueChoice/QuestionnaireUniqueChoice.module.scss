@@ -28,25 +28,4 @@
       }
     }
   }
-
-  .continue-button {
-    align-self: flex-end;
-    border-radius: $radius-3xl;
-    height: 30px;
-    background-color: $color-green-200;
-    color: $color-blue-dark-400;
-    width: min-content;
-    display: inline-block;
-    border: none;
-    padding: $padding-sm $padding-lg;
-    font-weight: bold;
-    &:hover {
-      cursor: pointer;
-    }
-    &:disabled {
-      background-color: $color-grey-200;
-      color: $color-grey-400;
-      cursor: auto;
-    }
-  }
 }

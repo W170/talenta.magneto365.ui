@@ -9,6 +9,7 @@ export namespace IChat {
   export interface Methods {
     pushMessage: (message: IChat.Message) => void
     updateMessage: (message: IChat.Message) => void
+    snapshot: () => IChat.Message[]
   }
 
   export interface ReducerState {
@@ -27,32 +28,7 @@ export namespace IChat {
   export interface Message {
     id: string | number
     sender: string
-    type: string
+    type: string | number
     content: React.ReactNode
   }
-}
-
-export type TPossibleAnswer = {
-  id: number
-  label: string
-}
-
-export type TSendCloseQuestion = {
-  type: string
-  id: number
-  answer: number[]
-}
-
-export type TCloseAnswers = {
-  buttonContinueText: string
-  possibleAnswers: TPossibleAnswer[]
-  idQuestion: number
-  answersSelected: number[]
-  type: 'multiple' | 'unique'
-  className?: {
-    answers?: string
-    option: string
-  }
-  onChange: (answers: TSendCloseQuestion) => void
-  onCloseAnswers: () => void
 }
