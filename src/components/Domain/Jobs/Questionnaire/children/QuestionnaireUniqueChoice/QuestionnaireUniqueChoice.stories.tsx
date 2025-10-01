@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { StoryObj, Meta } from '@storybook/react'
-import QuestionnaireUniqueChoice from './QuestionnaireUniqueChoice.component'
-import { EQuestionType, TSendQuestion } from '../../Questionnaire.interface'
+import { QuestionnaireUniqueChoice } from './QuestionnaireUniqueChoice.component'
+import { EQuestionType, IQuestionWithAnswer } from '../../Questionnaire.interface'
 
 const meta: Meta<typeof QuestionnaireUniqueChoice> = {
   title: 'Domain/Jobs/Questionnaire/QuestionnaireUniqueChoice',
@@ -26,17 +26,15 @@ export const Default: Story = {
           { id: 6, label: 'QuantUX' },
           { id: 7, label: 'UXPin' }
         ]
-      }
+      },
+      mode: 'readonly',
     },
   },
   render: (args) => {
     const [question, setQuestion] = useState(args.questionWithAnswer);
 
-    const handleChange = (answer: TSendQuestion) => {
-      setQuestion({
-        ...question,
-        answer
-      });
+    const handleChange = (answer: IQuestionWithAnswer) => {
+      setQuestion(answer);
     }
 
     return <QuestionnaireUniqueChoice {...args} onChange={handleChange} questionWithAnswer={question}/>

@@ -2,17 +2,17 @@ import { useCallback, useRef, useState } from "react";
 import { IChat } from "@components/UI/molecules/Chat";
 import { IQuestion, IQuestionWithAnswer, TSendQuestion } from "../Questionnaire.interface";
 
-const initilizeQuestions = (questions: IQuestion[]): IQuestionWithAnswer[] => questions.map(q => ({ question: q }))
+const initilizeQuestions = (questions: IQuestion[]): IQuestionWithAnswer[] => questions.map(q => ({ question: q, mode: 'readonly' }))
 
 export const useQuestionnaire = (questionsParam: IQuestion[]) => {
     const [questions] = useState(() => initilizeQuestions(questionsParam))
-    const [currentIndex, setCurrentIndex] = useState(0)
+    const currentIndex = useRef(0)
     const ref = useRef<IChat.Methods>(null)
 
     const handleNext = useCallback(() => {
         try {
-            const question = questions[currentIndex] ?? null
-            setCurrentIndex(prev => prev + 1)
+            const question = questions[currentIndex.current] ?? null
+            currentIndex.current += 1
             
             if (question) {
                 ref.current?.pushMessage({
@@ -27,24 +27,39 @@ export const useQuestionnaire = (questionsParam: IQuestion[]) => {
         } catch {
             return null
         }
-    }, [])
+    }, [questions])
 
-    const handleSaveAnswer = useCallback((answer: TSendQuestion) => {
-        const questionState = ref.current?.snapshot().find(msg => msg.id === answer.id)?.content as IQuestionWithAnswer || undefined
+    const handleSaveAnswer = useCallback((data: IQuestionWithAnswer) => {
+        const { question } = data
+
+        const questions = ref.current?.snapshot().map(msg => msg.content as IQuestionWithAnswer) || []
+
+        const questionState = questions.find(q => q.question.id === question.id)
         if (!questionState) return
-        
+
+        const mode = data.mode ?? questionState.mode
+        const answer: TSendQuestion | undefined = data.answer ?? questionState.answer
+
         ref.current?.updateMessage({
             id: questionState.question.id,
             type: 'text',
             sender: 'magneto',
-            content: { ...questionState, answer },
+            content: { ...questionState, answer, mode },
         })
-    }, [])
+
+        const { [questions.length - 1]: lastQuesiton } = questions
+
+        if  (lastQuesiton.question.id === question.id) {
+            handleNext()    
+        }
+    }, [handleNext])
 
     return {
         next: handleNext,
         saveAnswer: handleSaveAnswer,
-        reset: () => setCurrentIndex(0),
+        reset: () => {
+            currentIndex.current = 0
+        },
         chat: ref,
     }
 }

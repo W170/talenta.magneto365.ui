@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { StoryObj, Meta } from '@storybook/react'
-import { EQuestionType, TSendQuestion } from '../../Questionnaire.interface'
+import { EQuestionType, IQuestionWithAnswer } from '../../Questionnaire.interface'
 import { QuestionnaireMultipleChoice } from './QuestionnaireMultipleChoice.component'
 
 const meta: Meta<typeof QuestionnaireMultipleChoice> = {
@@ -26,7 +26,8 @@ export const Default: Story = {
           { id: 6, label: 'QuantUX' },
           { id: 7, label: 'UXPin' }
         ]
-      }
+      },
+      mode: 'readonly',
     },
     renderSubmitButton: ({ disabled, className }) => (
       <button type="submit" className={className} disabled={disabled}>
@@ -37,11 +38,8 @@ export const Default: Story = {
   render: (args) => {
     const [question, setQuestion] = useState(args.questionWithAnswer);
 
-    const handleChange = (answer: TSendQuestion) => {
-      setQuestion({
-        ...question,
-        answer
-      });
+    const handleChange = (answer: IQuestionWithAnswer) => {
+      setQuestion(answer);
     }
 
     return <QuestionnaireMultipleChoice {...args} onChange={handleChange} questionWithAnswer={question}/>

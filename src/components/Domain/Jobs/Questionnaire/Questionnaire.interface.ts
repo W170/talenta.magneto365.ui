@@ -37,6 +37,7 @@ export type TSendQuestion = TSendCloseQuestion | TSendOpenQuestion
 export interface IQuestionWithAnswer {
   question: IQuestion
   answer?: TSendQuestion
+  mode: 'editing' | 'readonly'
 }
 
 
@@ -48,5 +49,5 @@ export interface IQuestionnaire {
 
 export interface IQuestionnaireAnswer {
   questionWithAnswer: IQuestionWithAnswer;
-  onChange: (answer: TSendQuestion) => void;
+  onChange: (answer: IQuestionWithAnswer) => void;
 }

@@ -7,7 +7,7 @@ import styles from './QuestionnaireUniqueChoice.module.scss'
 
 const cx = classNames.bind(styles)
 
-const QuestionnaireUniqueChoice: React.FC<IQuestionnaireUniqueChoice> = ({ questionWithAnswer, onChange, classNames, className }) => {
+export const QuestionnaireUniqueChoice: React.FC<IQuestionnaireUniqueChoice> = ({ questionWithAnswer, onChange, classNames, className }) => {
   const { question, answer } = questionWithAnswer;
   
   if (question.answerType !== EQuestionType.unique) return null;
@@ -18,9 +18,13 @@ const QuestionnaireUniqueChoice: React.FC<IQuestionnaireUniqueChoice> = ({ quest
 
   const handleChange = (id: number, label: string) => {
     onChange({
-      type: EQuestionType.unique,
-      id: question.id,
-      answer: [{ id, label }]
+      question,
+      mode: 'readonly',
+      answer: {
+        type: EQuestionType.unique,
+        id: question.id,
+        answer: [{ id, label }]
+      }
     });
   };
 
@@ -50,6 +54,3 @@ const QuestionnaireUniqueChoice: React.FC<IQuestionnaireUniqueChoice> = ({ quest
     </div>
   );
 };
-
-
-export default QuestionnaireUniqueChoice

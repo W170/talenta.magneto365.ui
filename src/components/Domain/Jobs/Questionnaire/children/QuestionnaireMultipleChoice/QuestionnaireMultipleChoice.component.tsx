@@ -41,7 +41,11 @@ export const QuestionnaireMultipleChoice: React.FC<IQuestionnaireMultipleChoice>
       id: question.id,
       answer: currentAnswers,
     };
-    onChange(newAnswer);
+    onChange({
+      question,
+      answer: newAnswer,
+      mode: 'readonly',
+    });
   };
 
   return (

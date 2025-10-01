@@ -5,7 +5,7 @@ import { TMessage } from './Message.interface'
 
 const cx = classNames.bind(styles)
 
-const Component: React.FC<TMessage> = ({ children, to, classNames, className, ...rest }) => {
+const Component: React.FC<TMessage> = ({ children, to, classNames, className, renderLeft, renderRight, ...rest }) => {
   return (
     <article
       className={cx('bubble-container', className, {
@@ -14,7 +14,9 @@ const Component: React.FC<TMessage> = ({ children, to, classNames, className, ..
       })}
       {...rest}
     >
+      {renderLeft?.()}
       <span className={cx('bubble-message', classNames?.content)}>{children}</span>
+      {renderRight?.()}
     </article>
   )
 }

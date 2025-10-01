@@ -14,7 +14,7 @@ const Component = React.forwardRef<IChat.Methods, IChat>(({ initialMessages = []
       updateMessage: (message: IChat.Message) => dispatch({ type: 'UPDATE_MESSAGE', payload: message }),
       snapshot: () => state.messages,
     }),
-    []
+    [state.messages]
   )
 
   return <div {...rest}>{children?.({ messages: state.messages })}</div>
@@ -27,6 +27,6 @@ Component.displayName = 'Chat'
  * It uses a reducer to manage the state of messages and provides methods to push and update messages.
  */
 export const Chat = Object.assign(Component, {
-  LoadingDots: LoadingDots,
-  Message: Message
+  LoadingDots,
+  Message,
 })
