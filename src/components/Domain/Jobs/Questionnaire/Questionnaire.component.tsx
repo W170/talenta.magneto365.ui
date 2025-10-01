@@ -1,17 +1,23 @@
-import React, { useEffect, useRef } from 'react'
-import { Chat  } from '@components/UI/molecules/Chat'
-import { IQuestionnaire } from './Questionnaire.interface'
-import { QuestionnaireQuestion } from './children/QuestionnaireQuestion'
-import { useQuestionnaire } from './hooks/useQuestionnaire'
+import React, { forwardRef } from 'react'
+import { classNames } from '@shared/utils/common'
+import { Chat, IChat } from '@components/UI/molecules/Chat'
+import { IQuestionnaire, IQuestionnaireMessage, IQuestionWithAnswer } from './Questionnaire.interface'
+import styles from './Questionnaire.module.scss'
 
-export const Questionnaire: React.FC<IQuestionnaire> = ({ questions: questionsParam }) => {
-  const { next, chat } = useQuestionnaire(questionsParam)
+const cx = classNames.bind(styles)
 
-  useEffect(() => {
-    next()
-  }, [next])
+export const Questionnaire = forwardRef<IChat.Methods, IQuestionnaire>(({ children, className }, chat) => {
 
   return (
-    <Chat ref={chat}>{({ messages }) => messages.map((msg) => <QuestionnaireQuestion key={msg.id} />)}</Chat>
+    <Chat className={cx('questionnaire', className)} ref={chat}>
+      {({ messages }) => (
+        <>
+          <div className={cx('questionnaire__mask', { 'questionnaire__mask--hidden': messages.every((msg) => (msg.content as IQuestionWithAnswer).mode === 'readonly') })}></div>
+          {children?.(messages as IQuestionnaireMessage[])}
+        </>
+    )}
+    </Chat>
   )
-}
+})
+
+Questionnaire.displayName = 'Questionnaire'

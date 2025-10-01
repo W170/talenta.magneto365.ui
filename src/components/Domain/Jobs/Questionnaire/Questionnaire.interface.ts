@@ -1,3 +1,5 @@
+import { IChat } from "@components/UI/molecules/Chat"
+
 export enum EQuestionType {
   unique,
   multiple,
@@ -43,8 +45,13 @@ export interface IQuestionWithAnswer {
 
 // Components props
 
+export interface IQuestionnaireMessage extends IChat.Message {
+  content: IQuestionWithAnswer;
+}
+
 export interface IQuestionnaire {
-  questions: IQuestion[]
+  className?: string
+  children?: (messages: IQuestionnaireMessage[]) => React.ReactNode
 }
 
 export interface IQuestionnaireAnswer {
