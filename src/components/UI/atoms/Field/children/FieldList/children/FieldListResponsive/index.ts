@@ -1,0 +1,1 @@
+export { FieldListResponsive as Responsive } from './FieldListResponsive.component'

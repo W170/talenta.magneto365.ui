@@ -1,0 +1,10 @@
+@use '../../../../../../../../shared/stylesheets/tokens' as *;
+
+.magneto-ui-field-list-responsive {
+  > div {
+    padding: 0 !important;
+    > * {
+      padding: 0 !important;
+    }
+  }
+}
