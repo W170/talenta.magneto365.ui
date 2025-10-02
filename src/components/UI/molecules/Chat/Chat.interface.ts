@@ -9,6 +9,7 @@ export namespace IChat {
   export interface Methods {
     pushMessage: (message: IChat.Message) => void
     updateMessage: (message: IChat.Message) => void
+    clear: () => void
     snapshot: () => IChat.Message[]
   }
 
@@ -16,10 +17,14 @@ export namespace IChat {
     messages: IChat.Message[]
   }
 
-  export type ReducerActions = {
-    type: 'PUSH_MESSAGE' | 'UPDATE_MESSAGE'
-    payload: IChat.Message
-  }
+  export type ReducerActions =
+    | {
+        type: 'PUSH_MESSAGE' | 'UPDATE_MESSAGE'
+        payload: IChat.Message
+      }
+    | {
+        type: 'CLEAR_MESSAGES'
+      }
 
   export interface ChildrenPayload {
     messages: IChat.Message[]

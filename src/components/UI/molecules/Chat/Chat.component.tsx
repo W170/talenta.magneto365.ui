@@ -12,7 +12,8 @@ const Component = React.forwardRef<IChat.Methods, IChat>(({ initialMessages = []
     () => ({
       pushMessage: (message: IChat.Message) => dispatch({ type: 'PUSH_MESSAGE', payload: message }),
       updateMessage: (message: IChat.Message) => dispatch({ type: 'UPDATE_MESSAGE', payload: message }),
-      snapshot: () => state.messages,
+      clear: () => dispatch({ type: 'CLEAR_MESSAGES' }),
+      snapshot: () => state.messages
     }),
     [state.messages]
   )
@@ -28,5 +29,5 @@ Component.displayName = 'Chat'
  */
 export const Chat = Object.assign(Component, {
   LoadingDots,
-  Message,
+  Message
 })

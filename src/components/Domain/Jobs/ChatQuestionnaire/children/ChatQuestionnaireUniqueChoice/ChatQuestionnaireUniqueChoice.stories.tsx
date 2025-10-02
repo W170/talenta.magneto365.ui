@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from 'react'
 import { StoryObj, Meta } from '@storybook/react'
 import { ChatQuestionnaireUniqueChoice } from './ChatQuestionnaireUniqueChoice.component'
@@ -27,16 +28,16 @@ export const Default: Story = {
           { id: 7, label: 'UXPin' }
         ]
       },
-      mode: 'readonly',
-    },
+      mode: 'readonly'
+    }
   },
   render: (args) => {
-    const [question, setQuestion] = useState(args.questionWithAnswer);
+    const [question, setQuestion] = useState(args.questionWithAnswer)
 
     const handleChange = (answer: IQuestionWithAnswer) => {
-      setQuestion(answer);
+      setQuestion(answer)
     }
 
-    return <ChatQuestionnaireUniqueChoice {...args} onChange={handleChange} questionWithAnswer={question}/>
+    return <ChatQuestionnaireUniqueChoice {...args} onChange={handleChange} questionWithAnswer={question} />
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from 'react'
 import { StoryObj, Meta } from '@storybook/react'
 import { EQuestionType, IQuestionWithAnswer } from '../../ChatQuestionnaire.interface'
@@ -27,7 +28,7 @@ export const Default: Story = {
           { id: 7, label: 'UXPin' }
         ]
       },
-      mode: 'readonly',
+      mode: 'readonly'
     },
     renderSubmitButton: ({ disabled, className }) => (
       <button type="submit" className={className} disabled={disabled}>
@@ -36,12 +37,12 @@ export const Default: Story = {
     )
   },
   render: (args) => {
-    const [question, setQuestion] = useState(args.questionWithAnswer);
+    const [question, setQuestion] = useState(args.questionWithAnswer)
 
     const handleChange = (answer: IQuestionWithAnswer) => {
-      setQuestion(answer);
+      setQuestion(answer)
     }
 
-    return <ChatQuestionnaireMultipleChoice {...args} onChange={handleChange} questionWithAnswer={question}/>
+    return <ChatQuestionnaireMultipleChoice {...args} onChange={handleChange} questionWithAnswer={question} />
   }
 }

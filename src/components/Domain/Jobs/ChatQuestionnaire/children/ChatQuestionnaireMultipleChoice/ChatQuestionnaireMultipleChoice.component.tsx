@@ -1,62 +1,67 @@
-import React, { useState } from 'react';
-import { Checkbox } from '@components/UI/atoms';
-import { classNames } from '@shared/utils/common';
-import { EQuestionType, IPossibleAnswer, TSendCloseQuestion } from '../../ChatQuestionnaire.interface';
-import { IQuestionnaireMultipleChoice } from './QuestionnaireMultipleChoice.interface';
-import styles from './ChatQuestionnaireMultipleChoice.module.scss';
+import React, { useState } from 'react'
+import { Checkbox } from '@components/UI/atoms'
+import { classNames } from '@shared/utils/common'
+import { EQuestionType, IPossibleAnswer, TSendCloseQuestion } from '../../ChatQuestionnaire.interface'
+import { IQuestionnaireMultipleChoice } from './QuestionnaireMultipleChoice.interface'
+import styles from './ChatQuestionnaireMultipleChoice.module.scss'
 
-const cx = classNames.bind(styles);
+const cx = classNames.bind(styles)
 
-export const ChatQuestionnaireMultipleChoice: React.FC<IQuestionnaireMultipleChoice> = ({ questionWithAnswer, onChange, renderSubmitButton }) => {
-  const { question, answer } = questionWithAnswer;
+export const ChatQuestionnaireMultipleChoice: React.FC<IQuestionnaireMultipleChoice> = ({
+  questionWithAnswer,
+  onChange,
+  renderSubmitButton
+}) => {
+  const { question, answer } = questionWithAnswer
 
-  if (question.answerType !== EQuestionType.multiple) return null;
-  if (answer && answer.type !== EQuestionType.multiple) return null;
+  const [selectedAnswerIds, setSelectedAnswerIds] = useState<number[]>(() => {
+    if (answer && answer.type !== EQuestionType.multiple) return []
+    return answer?.answer.map((a) => a.id) ?? []
+  })
 
-  const [selectedAnswerIds, setSelectedAnswerIds] = useState<number[]>(() => answer?.answer.map(a => a.id) ?? []);
+  if (question.answerType !== EQuestionType.multiple) return null
+  if (answer && answer.type !== EQuestionType.multiple) return null
 
   const handleCheckboxChange = (id: number) => {
-    setSelectedAnswerIds(prevIds => {
+    setSelectedAnswerIds((prevIds) => {
       if (prevIds.includes(id)) {
-        return prevIds.filter(checkedId => checkedId !== id);
+        return prevIds.filter((checkedId) => checkedId !== id)
       } else {
-        return [...prevIds, id];
+        return [...prevIds, id]
       }
-    });
-  };
+    })
+  }
 
-
-  const isDisabled = selectedAnswerIds.length === 0;
+  const isDisabled = selectedAnswerIds.length === 0
 
   const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    if (isDisabled) return;
+    event.preventDefault()
+    if (isDisabled) return
 
     const currentAnswers: IPossibleAnswer[] = selectedAnswerIds
-      .map(id => question.possibleAnswers.find(pa => pa.id === id))
-      .filter((a): a is IPossibleAnswer => a !== undefined);
+      .map((id) => question.possibleAnswers.find((pa) => pa.id === id))
+      .filter((a): a is IPossibleAnswer => a !== undefined)
 
     const newAnswer: TSendCloseQuestion = {
       type: EQuestionType.multiple,
       id: question.id,
-      answer: currentAnswers,
-    };
+      answer: currentAnswers
+    }
     onChange({
       question,
       answer: newAnswer,
-      mode: 'readonly',
-    });
-  };
+      mode: 'readonly'
+    })
+  }
 
   return (
-    <form className={cx("answers-container")} onSubmit={handleSubmit}>
+    <form className={cx('answers-container')} onSubmit={handleSubmit}>
       <div className={cx('answers')}>
         {question.possibleAnswers.map((possibleAnswer) => (
           <Checkbox
-            className={cx(
-              'answers__option',
-              { 'answers__option--selected': selectedAnswerIds.includes(possibleAnswer.id) },
-            )}
+            className={cx('answers__option', {
+              'answers__option--selected': selectedAnswerIds.includes(possibleAnswer.id)
+            })}
             key={possibleAnswer.id}
             name={`question-${question.id}`}
             id={`multiple-${possibleAnswer.id}`}
@@ -70,5 +75,5 @@ export const ChatQuestionnaireMultipleChoice: React.FC<IQuestionnaireMultipleCho
       </div>
       {renderSubmitButton({ disabled: isDisabled, className: cx('continue-button') })}
     </form>
-  );
-};
+  )
+}
