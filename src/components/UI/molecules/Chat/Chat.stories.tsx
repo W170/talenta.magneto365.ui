@@ -1,4 +1,4 @@
-import React, { ComponentType } from 'react';
+import React, { ComponentType, useEffect } from 'react';
 import { Chat } from './Chat.component'
 import { StoryObj, Meta } from '@storybook/react'
 import { isRef } from '@utils/react';
@@ -24,11 +24,13 @@ export const Message: Story = {
       {msg.content}
     </Chat.Message>))
   },
-  play: async ({ args, }) => {
-    if (isRef(args.ref)) {
+  render: (args) => {
+    useEffect(() => {
+      if (!isRef(args.ref)) return 
       args.ref.current?.pushMessage({ id: '1', content: 'Hello World', sender: 'bot', type: 'text' })
       args.ref.current?.pushMessage({ id: '2', content: 'Hi!', sender: 'user', type: 'text' })
-    }
+    }, [])
+    return <Chat {...args} />
   }
 }
 
