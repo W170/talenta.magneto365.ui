@@ -1,0 +1,40 @@
+@use '../../../../../../shared/stylesheets/tokens' as t;
+
+.button {
+  display: flex;
+  gap: t.$gap-sm-2;
+  align-items: center;
+  border-radius: t.$radius-3xl;
+  padding: t.$padding-md t.$padding-md-2;
+  border: none;
+
+  &--grey {
+    background-color: t.$color-grey-100;
+    color: t.$color-grey-900;
+
+    &:hover {
+      background-color: t.$color-grey-200;
+    }
+  }
+
+  &--blue {
+    background-color: t.$color-blue-dark-300;
+    color: t.$color-grey-50;
+    &:hover {
+      background-color: t.$color-blue-dark-500;
+    }
+  }
+
+  &--green {
+    background-color: t.$color-green-200;
+    color: t.$color-blue-dark-400;
+    &:hover {
+      background-color: t.$color-green-300;
+    }
+  }
+
+  &:disabled {
+    background-color: t.$color-grey-200;
+    opacity: 0.65;
+  }
+}
