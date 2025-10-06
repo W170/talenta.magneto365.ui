@@ -36,6 +36,7 @@ export { default as BuildingSlashBlackOutline } from '../assets/buildingSlashDar
 export { default as BuildingWhite } from '../assets/buildingWhite.svg'
 export { default as Buildings2 } from '../assets/Buildings2.svg'
 export { default as Calendar1 } from '../assets/Calendar1.svg'
+export { default as Check } from '../assets/Check.svg'
 export { default as Checked } from '../assets/Checked.svg'
 export { default as Checked2 } from '../assets/Checked2.svg'
 export { default as ClipboardClose } from '../assets/ClipboardClose.svg'
