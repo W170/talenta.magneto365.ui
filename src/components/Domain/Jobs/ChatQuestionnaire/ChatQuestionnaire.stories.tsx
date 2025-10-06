@@ -1,13 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { StoryObj, Meta } from '@storybook/react'
-import { ChatQuestionnaire } from './ChatQuestionnaire.component'
 import { EQuestionType, IQuestion } from './ChatQuestionnaire.interface'
-import { useChatQuestionnaire } from './hooks/useChatQuestionnaire'
-import { ChatQuestionnaireQuestion } from './children/ChatQuestionnaireQuestion'
-import { ChatQuestionnaireMessageCandidate } from './children/ChatQuestionnaireMessageCandidate'
-import { ChatQuestionnaireUniqueChoice } from './children/ChatQuestionnaireUniqueChoice'
-import { ChatQuestionnaireMultipleChoice } from './children/ChatQuestionnaireMultipleChoice'
+import { ChatQuestionnaire } from '.'
 
 const meta: Meta<typeof ChatQuestionnaire> = {
   title: 'Domain/Jobs/ChatQuestionnaire',
@@ -57,13 +52,45 @@ const questions: IQuestion[] = [
       { id: 3, label: '3-5 years' },
       { id: 4, label: 'More than 5 years' }
     ]
+  },
+  {
+    id: 4,
+    titleQuestion: 'What specific fields has more experience for this role?',
+    caption: undefined,
+    answerType: EQuestionType.openShort,
+    possibleAnswers: []
+  },
+  {
+    id: 5,
+    titleQuestion: 'Tell us about your experience in UI/UX',
+    caption: undefined,
+    answerType: EQuestionType.openLong,
+    possibleAnswers: []
   }
 ]
+
+const WrapperOpenQuestion = (props: { maxLength: number, value?: string, onChange: (answer: string) => void }) => {
+  const [value, setValue] = useState<string>();
+
+  return (
+    <ChatQuestionnaire.Answer.Open
+      value={value}
+      onChange={({ target }) => setValue(target.value)}
+      defaultValue={props.value} maxLength={props.maxLength}
+      renderRight={({ classNameBtnSend, icon }) =>
+        <button
+          className={classNameBtnSend}
+          type='button'
+          onClick={() => props.onChange(value ?? props.value ?? '')}>
+          {icon}
+        </button>} />
+  )
+}
 
 export const Default: Story = {
   args: {},
   render: (args) => {
-    const { next, saveAnswer, chat } = useChatQuestionnaire(questions)
+    const { next, saveAnswer, chat } = ChatQuestionnaire.useChat(questions)
 
     useEffect(() => {
       next()
@@ -73,20 +100,42 @@ export const Default: Story = {
       <ChatQuestionnaire {...args} ref={chat}>
         {(messages) =>
           messages.map(({ content, id }) => (
-            <ChatQuestionnaireQuestion key={id} questionWithAnswer={content}>
-              <ChatQuestionnaireMessageCandidate questionWithAnswer={content} onChange={saveAnswer}>
+            <ChatQuestionnaire.Question waitFor={2000} key={id} questionWithAnswer={content}>
+              <ChatQuestionnaire.MessageCandidate questionWithAnswer={content} onChange={saveAnswer}>
                 {content.question.answerType === EQuestionType.unique && (
-                  <ChatQuestionnaireUniqueChoice questionWithAnswer={content} onChange={saveAnswer} />
+                  <ChatQuestionnaire.Answer.UniqueChoice questionWithAnswer={content} onChange={saveAnswer} />
                 )}
                 {content.question.answerType === EQuestionType.multiple && (
-                  <ChatQuestionnaireMultipleChoice
+                  <ChatQuestionnaire.Answer.MultipleChoice
                     questionWithAnswer={content}
                     onChange={saveAnswer}
                     renderSubmitButton={(args) => <button {...args}>Guardar</button>}
                   />
                 )}
-              </ChatQuestionnaireMessageCandidate>
-            </ChatQuestionnaireQuestion>
+                {content.question.answerType === EQuestionType.openShort && (
+                  <WrapperOpenQuestion 
+                    maxLength={120}
+                    value={content.answer?.type === EQuestionType.openShort ? content.answer?.openAnswer : ''}
+                    onChange={(openAnswer) => 
+                      saveAnswer({ 
+                        mode: 'readonly',
+                        question: content.question,
+                        answer: { id: content.question.id, type: EQuestionType.openShort, openAnswer } })} 
+                  />
+                )}
+                {content.question.answerType === EQuestionType.openLong && (
+                  <WrapperOpenQuestion 
+                    maxLength={2500}
+                    value={content.answer?.type === EQuestionType.openLong ? content.answer?.openAnswer : ''}
+                    onChange={(openAnswer) => 
+                      saveAnswer({ 
+                        mode: 'readonly',
+                        question: content.question,
+                        answer: { id: content.question.id, type: EQuestionType.openLong, openAnswer } })} 
+                  />
+                )}
+              </ChatQuestionnaire.MessageCandidate>
+            </ChatQuestionnaire.Question>
           ))
         }
       </ChatQuestionnaire>
