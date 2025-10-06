@@ -1,0 +1,47 @@
+@use '../../../../../../shared/stylesheets/tokens' as t;
+
+.short {
+
+    &__field {
+        display: flex;
+        gap: t.$gap-sm-2;
+        padding: t.$padding-sm;
+        border-radius: t.$radius-sm;
+        background-color: t.$color-purple-50;
+    }
+
+    &__input {
+        flex: 1;
+        padding-top: t.$padding-xs;
+        border: none;
+        resize: none;
+        background-color: transparent;
+        text-wrap: wrap;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__button {
+        display: flex;
+        gap: t.$gap-sm-2;
+        align-items: center;
+        border-radius: t.$radius-sm;
+        justify-content: center;
+        border: none;
+        align-self: flex-start;
+        padding: t.$padding-xs t.$padding-md;
+        background-color: t.$color-blue-dark-300;
+        color: t.$color-grey-50;
+        height: 40px;
+        width: 40px;
+        &:hover {
+            background-color: t.$color-blue-dark-500;
+        }
+    }
+
+    &__icon {
+        filter: invert(100%);
+    }
+}
