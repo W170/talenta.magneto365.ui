@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { Checkbox } from '@components/UI/atoms'
 import { classNames } from '@shared/utils/common'
 import { EQuestionType, IPossibleAnswer, TSendCloseQuestion } from '../../ChatQuestionnaire.interface'
-import { IQuestionnaireMultipleChoice } from './QuestionnaireMultipleChoice.interface'
+import { IChatQuestionnaireMultipleChoice } from './ChatQuestionnaireMultipleChoice.interface'
 import styles from './ChatQuestionnaireMultipleChoice.module.scss'
 
 const cx = classNames.bind(styles)
 
-export const ChatQuestionnaireMultipleChoice: React.FC<IQuestionnaireMultipleChoice> = ({
+export const ChatQuestionnaireMultipleChoice: React.FC<IChatQuestionnaireMultipleChoice> = ({
   questionWithAnswer,
   onChange,
   renderSubmitButton
