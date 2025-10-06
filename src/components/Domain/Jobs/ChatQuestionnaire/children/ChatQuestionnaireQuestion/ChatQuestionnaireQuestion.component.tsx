@@ -12,7 +12,7 @@ const cx = classNames.bind(styles)
  * A Question is a Special Chat message, it includes message question and answer.
  * @returns
  */
-export const ChatQuestionnaireQuestion: React.FC<IChatQuestionnaireQuestion> = ({ children, questionWithAnswer, className }) => {
+export const ChatQuestionnaireQuestion: React.FC<IChatQuestionnaireQuestion> = ({ children, questionWithAnswer, className, waitFor }) => {
   const [showCandidateMessage, setShowCandidateMessage] = useState(false)
   const { question, mode } = questionWithAnswer
 
@@ -21,7 +21,7 @@ export const ChatQuestionnaireQuestion: React.FC<IChatQuestionnaireQuestion> = (
 
   return (
     <div className={cx('question', { 'question--editing': mode === 'editing' }, className)}>
-      <ChatQuestionnaireMessageLazy onLoad={() => setShowCandidateMessage(true)}>
+      <ChatQuestionnaireMessageLazy waitFor={waitFor} onLoad={() => setShowCandidateMessage(true)}>
         <Chat.Message className={cx('question__bot')} to='left' role="bot">
           <Typography.Text>{question.titleQuestion}</Typography.Text>
           <Typography.Text>{question.caption}</Typography.Text>
