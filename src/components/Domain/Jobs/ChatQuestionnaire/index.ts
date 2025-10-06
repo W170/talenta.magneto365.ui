@@ -1,9 +1,10 @@
-import { ChatQuestionnaire as RawChatQuestionnaire } from './ChatQuestionnaire.component'
+import { ChatQuestionnaireOpen } from './children/ChatQuestionnaireOpen/ChatQuestionnaireOpen.component'
 import { ChatQuestionnaireMessageCandidate } from './children/ChatQuestionnaireMessageCandidate'
 import { ChatQuestionnaireMultipleChoice } from './children/ChatQuestionnaireMultipleChoice'
-import { ChatQuestionnaireOpen } from './children/ChatQuestionnaireOpen/ChatQuestionnaireOpen.component'
-import { ChatQuestionnaireQuestion } from './children/ChatQuestionnaireQuestion'
+import { ChatQuestionnaire as RawChatQuestionnaire } from './ChatQuestionnaire.component'
 import { ChatQuestionnaireUniqueChoice } from './children/ChatQuestionnaireUniqueChoice'
+import { ChatQuestionnaireQuestion } from './children/ChatQuestionnaireQuestion'
+import { ChatQuestionnaireButton } from './children/ChatQuestionnaireButton'
 import { useChatQuestionnaire } from './hooks/useChatQuestionnaire'
 export type {
   IChatQuestionnaire,
@@ -26,5 +27,6 @@ export const ChatQuestionnaire = Object.assign(RawChatQuestionnaire, {
     MultipleChoice: ChatQuestionnaireMultipleChoice,
     Open: ChatQuestionnaireOpen
   },
-  useChat: useChatQuestionnaire
+  useChat: useChatQuestionnaire,
+  Button: ChatQuestionnaireButton
 })
