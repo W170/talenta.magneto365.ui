@@ -21,7 +21,7 @@ export const ChatQuestionnaireUniqueChoice: React.FC<IChatQuestionnaireUniqueCho
 
   const { possibleAnswers } = question
 
-  const handleChange = (id: number, label: string) => {
+  const handleChange = (id: number, titleAnswer: string) => {
     onChange({
       question,
       questionnaireId,
@@ -29,7 +29,7 @@ export const ChatQuestionnaireUniqueChoice: React.FC<IChatQuestionnaireUniqueCho
       answer: {
         type: EQuestionType.unique,
         id: question.id,
-        answer: [{ id, label }]
+        answer: [{ id, titleAnswer }]
       }
     })
   }

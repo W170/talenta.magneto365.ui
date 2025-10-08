@@ -26,8 +26,8 @@ export const ChatQuestionnaireQuestion: React.FC<IChatQuestionnaireQuestion> = (
     ref.current?.focus()
     ref.current?.scrollIntoView({
       behavior: 'smooth',
-      block: 'end',
-      inline: 'end'
+      block: 'nearest',
+      inline: 'nearest'
     })
   }, [])
 

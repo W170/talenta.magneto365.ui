@@ -10,7 +10,7 @@ const cx = classNames.bind(styles)
 
 const getAnswerLabel = (answer: TSendQuestion) => {
   if (EQuestionType.unique === answer.type || EQuestionType.multiple === answer.type)
-    return answer.answer.map(({ label }) => label).join(', ')
+    return answer.answer.map(({ titleAnswer }) => titleAnswer).join(', ')
 
   if (EQuestionType.openLong === answer.type || EQuestionType.openShort === answer.type) return answer.openAnswer
 
@@ -29,8 +29,8 @@ export const ChatQuestionnaireMessageCandidate: React.FC<React.PropsWithChildren
     ref.current?.focus()
     ref.current?.scrollIntoView({
       behavior: 'smooth',
-      block: 'end',
-      inline: 'end'
+      block: 'nearest',
+      inline: 'nearest'
     })
   }, [])
 

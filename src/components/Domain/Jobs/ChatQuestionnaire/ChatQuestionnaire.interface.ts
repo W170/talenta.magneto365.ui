@@ -34,7 +34,7 @@ export type TSendOpenQuestion = {
 export type TSendCloseQuestion = {
   type: EQuestionType.multiple | EQuestionType.unique
   id: number
-  answer: { id: number; label: string }[]
+  answer: { id: number; titleAnswer: string }[]
 }
 
 export type TSendQuestion = TSendCloseQuestion | TSendOpenQuestion
