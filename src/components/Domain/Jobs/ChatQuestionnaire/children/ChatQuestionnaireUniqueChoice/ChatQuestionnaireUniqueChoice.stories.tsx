@@ -20,12 +20,12 @@ export const Default: Story = {
         titleQuestion: 'Which design tools do you use?',
         answerType: EQuestionType.unique,
         possibleAnswers: [
-          { id: 1, label: 'Adobe Photoshop' },
-          { id: 2, label: 'Figma' },
-          { id: 3, label: 'Sketch' },
-          { id: 4, label: 'InVision' },
-          { id: 6, label: 'QuantUX' },
-          { id: 7, label: 'UXPin' }
+          { id: 1, titleAnswer: 'Adobe Photoshop' },
+          { id: 2, titleAnswer: 'Figma' },
+          { id: 3, titleAnswer: 'Sketch' },
+          { id: 4, titleAnswer: 'InVision' },
+          { id: 6, titleAnswer: 'QuantUX' },
+          { id: 7, titleAnswer: 'UXPin' }
         ]
       },
       mode: 'readonly'

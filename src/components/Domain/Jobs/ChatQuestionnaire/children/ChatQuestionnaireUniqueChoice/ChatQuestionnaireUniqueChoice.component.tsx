@@ -7,50 +7,53 @@ import styles from './ChatQuestionnaireUniqueChoice.module.scss'
 
 const cx = classNames.bind(styles)
 
-export const ChatQuestionnaireUniqueChoice: React.FC<IChatQuestionnaireUniqueChoice> = ({ questionWithAnswer, onChange, classNames, className }) => {
-  const { question, answer } = questionWithAnswer;
-  
-  if (question.answerType !== EQuestionType.unique) return null;
+export const ChatQuestionnaireUniqueChoice: React.FC<IChatQuestionnaireUniqueChoice> = ({
+  questionWithAnswer,
+  onChange,
+  classNames,
+  className
+}) => {
+  const { question, answer, questionnaireId } = questionWithAnswer
 
-  if (answer && answer.type !== EQuestionType.unique) return null;
-  
+  if (question.answerType !== EQuestionType.unique) return null
+
+  if (answer && answer.type !== EQuestionType.unique) return null
+
   const { possibleAnswers } = question
 
-  const handleChange = (id: number, label: string) => {
+  const handleChange = (id: number, titleAnswer: string) => {
     onChange({
       question,
+      questionnaireId,
       mode: 'readonly',
       answer: {
         type: EQuestionType.unique,
         id: question.id,
-        answer: [{ id, label }]
+        answer: [{ id, titleAnswer }]
       }
-    });
-  };
-
+    })
+  }
 
   return (
     <div className={cx('answers-container', className)}>
       <div className={cx('answers', classNames?.answers)}>
-      {possibleAnswers.map((possibleAnswer) => (
+        {possibleAnswers.map((possibleAnswer) => (
           <Radio
             className={cx(
               'answers__option',
-              { 'answers__option--selected': answer?.answer.some(a => a.id === possibleAnswer.id) },
+              { 'answers__option--selected': answer?.answer.some((a) => a.id === possibleAnswer.id) },
               classNames?.option
             )}
-
-            checked={answer?.answer.some(a => a.id === possibleAnswer.id)}
-
+            checked={answer?.answer.some((a) => a.id === possibleAnswer.id)}
             type="button"
             key={possibleAnswer.id}
             id={possibleAnswer.id.toString()}
-            onChange={() => handleChange(possibleAnswer.id, possibleAnswer.label)}
+            onChange={() => handleChange(possibleAnswer.id, possibleAnswer.titleAnswer)}
           >
-            {possibleAnswer.label}
+            {possibleAnswer.titleAnswer}
           </Radio>
         ))}
       </div>
     </div>
-  );
-};
+  )
+}

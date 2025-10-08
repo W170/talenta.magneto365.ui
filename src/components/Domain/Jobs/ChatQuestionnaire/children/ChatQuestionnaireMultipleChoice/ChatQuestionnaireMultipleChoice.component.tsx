@@ -10,9 +10,10 @@ const cx = classNames.bind(styles)
 export const ChatQuestionnaireMultipleChoice: React.FC<IChatQuestionnaireMultipleChoice> = ({
   questionWithAnswer,
   onChange,
-  renderSubmitButton
+  renderSubmitButton,
+  className
 }) => {
-  const { question, answer } = questionWithAnswer
+  const { question, answer, questionnaireId } = questionWithAnswer
 
   const [selectedAnswerIds, setSelectedAnswerIds] = useState<number[]>(() => {
     if (answer && answer.type !== EQuestionType.multiple) return []
@@ -49,13 +50,14 @@ export const ChatQuestionnaireMultipleChoice: React.FC<IChatQuestionnaireMultipl
     }
     onChange({
       question,
+      questionnaireId,
       answer: newAnswer,
       mode: 'readonly'
     })
   }
 
   return (
-    <form className={cx('answers-container')} onSubmit={handleSubmit}>
+    <form className={cx('answers-container', className)} onSubmit={handleSubmit}>
       <div className={cx('answers')}>
         {question.possibleAnswers.map((possibleAnswer) => (
           <Checkbox
@@ -69,7 +71,7 @@ export const ChatQuestionnaireMultipleChoice: React.FC<IChatQuestionnaireMultipl
             onChange={() => handleCheckboxChange(possibleAnswer.id)}
             renderCheck={() => null}
           >
-            {possibleAnswer.label}
+            {possibleAnswer.titleAnswer}
           </Checkbox>
         ))}
       </div>
