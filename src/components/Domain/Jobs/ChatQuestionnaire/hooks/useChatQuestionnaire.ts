@@ -1,22 +1,22 @@
 import { useCallback, useRef, useState } from 'react'
 import { IChat } from '@components/UI/molecules/Chat'
-import { IQuestion, IQuestionWithAnswer, TSendQuestion } from '../ChatQuestionnaire.interface'
+import { IQuestionWithAnswer, TQuestionnaires, TSendQuestion, TSendQuestionnaire } from '../ChatQuestionnaire.interface'
 
-const initilizeQuestions = (questions: IQuestion[]): IQuestionWithAnswer[] =>
-  questions.map((q) => ({ question: q, mode: 'readonly' }))
+const initilizeQuestions = (questionnaires: TQuestionnaires[]): IQuestionWithAnswer[] =>
+  questionnaires.flatMap((questionnaire) =>
+    questionnaire.questions.map<IQuestionWithAnswer>((question) => ({
+      questionnaireId: questionnaire.id,
+      question,
+      answer: undefined,
+      mode: 'readonly'
+    }))
+  )
 
-export const useChatQuestionnaire = (questionsParam: IQuestion[]) => {
-  const [questions] = useState(() => initilizeQuestions(questionsParam))
+export const useChatQuestionnaire = (questionsParam: TQuestionnaires[]) => {
+  const [questions, setQuestions] = useState(() => initilizeQuestions(questionsParam))
   const currentIndex = useRef(0)
-  const [isCompleted, setIsCompleted] = useState(() => questions.length > 0)
+  const [isCompleted, setIsCompleted] = useState(() => questions.length === 0)
   const ref = useRef<IChat.Methods>(null)
-
-  const checkIsCompleted = useCallback(() => {
-    if (!(currentIndex.current >= questions.length)) return false
-
-    const questionsWithAnswers = ref.current?.snapshot().map((msg) => msg.content as IQuestionWithAnswer) || []
-    return questionsWithAnswers.every((q) => Boolean(q.answer))
-  }, [questions])
 
   const handleNext = useCallback(() => {
     try {
@@ -25,7 +25,7 @@ export const useChatQuestionnaire = (questionsParam: IQuestion[]) => {
 
       if (question) {
         ref.current?.pushMessage({
-          id: question.question.id,
+          id: `${question.questionnaireId}-${question.question.id}`,
           type: question.question.answerType,
           sender: 'magneto',
           content: question
@@ -40,42 +40,66 @@ export const useChatQuestionnaire = (questionsParam: IQuestion[]) => {
 
   const handleSaveAnswer = useCallback(
     (data: IQuestionWithAnswer) => {
-      const { question } = data
+      const { question, questionnaireId } = data
 
-      const questions = ref.current?.snapshot().map((msg) => msg.content as IQuestionWithAnswer) || []
+      const questionsRef = ref.current?.snapshot().map((msg) => msg.content as IQuestionWithAnswer) || []
 
-      const questionState = questions.find((q) => q.question.id === question.id)
+      const questionState = questionsRef.find(
+        (q) => q.question.id === question.id && q.questionnaireId === questionnaireId
+      )
       if (!questionState) return
 
       const mode = data.mode ?? questionState.mode
       const answer: TSendQuestion | undefined = data.answer ?? questionState.answer
 
       ref.current?.updateMessage({
-        id: questionState.question.id,
+        id: `${questionState.questionnaireId}-${questionState.question.id}`,
         type: 'text',
         sender: 'magneto',
         content: { ...questionState, answer, mode }
       })
 
-      setIsCompleted(checkIsCompleted())
-
-      const { [questions.length - 1]: lastQuesiton } = questions
+      const { [questionsRef.length - 1]: lastQuesiton } = questionsRef
 
       if (lastQuesiton.question.id === question.id) {
         handleNext()
       }
+      setIsCompleted(questionsRef.length === questions.length && mode === 'readonly')
     },
-    [handleNext, checkIsCompleted]
+    [handleNext, questions]
   )
 
-  const handleGetAnswers = useCallback(() => {
-    const questionsWithAnswers = ref.current?.snapshot().map((msg) => msg.content as IQuestionWithAnswer) || []
-    return questionsWithAnswers.map(({ question, answer }) => ({ question, answer }))
+  const handleGetAnswers = useCallback((): TSendQuestionnaire[] => {
+    return (
+      ref.current
+        ?.snapshot()
+        .map((msg) => msg.content as IQuestionWithAnswer)
+        .reduce((acc, curr) => {
+          const { answer, questionnaireId } = curr
+          if (!answer) return acc
+          const index = acc.findIndex((item) => item.id === questionnaireId)
+          if (index === -1) {
+            acc.push({ id: questionnaireId, questions: [answer] })
+          } else {
+            acc[index].questions.push(answer)
+          }
+          return acc
+        }, [] as TSendQuestionnaire[]) || []
+    )
   }, [])
 
-  const handleReset = useCallback(() => {
+  const handleReset = useCallback((questionnaire?: TQuestionnaires[]) => {
     currentIndex.current = 0
     ref.current?.clear()
+    setQuestions((questions) => {
+      if (questionnaire) {
+        const newQuestions = initilizeQuestions(questionnaire)
+        setIsCompleted(newQuestions.length === 0)
+        return newQuestions
+      }
+      setIsCompleted(questions.length === 0)
+      return questions
+    })
   }, [])
 
   return {

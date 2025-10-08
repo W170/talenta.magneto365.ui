@@ -12,7 +12,7 @@ export const ChatQuestionnaireMultipleChoice: React.FC<IChatQuestionnaireMultipl
   onChange,
   renderSubmitButton
 }) => {
-  const { question, answer } = questionWithAnswer
+  const { question, answer, questionnaireId } = questionWithAnswer
 
   const [selectedAnswerIds, setSelectedAnswerIds] = useState<number[]>(() => {
     if (answer && answer.type !== EQuestionType.multiple) return []
@@ -49,6 +49,7 @@ export const ChatQuestionnaireMultipleChoice: React.FC<IChatQuestionnaireMultipl
     }
     onChange({
       question,
+      questionnaireId,
       answer: newAnswer,
       mode: 'readonly'
     })

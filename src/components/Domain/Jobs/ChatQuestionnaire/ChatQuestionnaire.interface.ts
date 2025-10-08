@@ -1,4 +1,4 @@
-import { IChat } from "@components/UI/molecules/Chat"
+import { IChat } from '@components/UI/molecules/Chat'
 
 export enum EQuestionType {
   unique,
@@ -20,6 +20,11 @@ export type IQuestion = {
   possibleAnswers: IPossibleAnswer[]
 }
 
+export type TQuestionnaires = {
+  id: number
+  questions: IQuestion[]
+}
+
 export type TSendOpenQuestion = {
   type: EQuestionType.openShort | EQuestionType.openLong
   id: number
@@ -34,19 +39,25 @@ export type TSendCloseQuestion = {
 
 export type TSendQuestion = TSendCloseQuestion | TSendOpenQuestion
 
-
-
 export interface IQuestionWithAnswer {
+  questionnaireId: number
   question: IQuestion
   answer?: TSendQuestion
   mode: 'editing' | 'readonly'
 }
 
+export type TSendQuestionnaire = {
+  id: number
+  questions: TSendQuestion[]
+}
 
 // Components props
 
 export interface IQuestionnaireMessage extends IChat.Message {
-  content: IQuestionWithAnswer;
+  id: string
+  sender: string
+  type: EQuestionType
+  content: IQuestionWithAnswer
 }
 
 export interface IChatQuestionnaire {
@@ -55,7 +66,7 @@ export interface IChatQuestionnaire {
 }
 
 export interface IQuestionnaireAnswer {
-  className?: string;
-  questionWithAnswer: IQuestionWithAnswer;
-  onChange: (answer: IQuestionWithAnswer) => void;
+  className?: string
+  questionWithAnswer: IQuestionWithAnswer
+  onChange: (answer: IQuestionWithAnswer) => void
 }
