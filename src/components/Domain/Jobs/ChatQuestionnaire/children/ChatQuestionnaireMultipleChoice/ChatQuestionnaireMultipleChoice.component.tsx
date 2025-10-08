@@ -70,7 +70,7 @@ export const ChatQuestionnaireMultipleChoice: React.FC<IChatQuestionnaireMultipl
             onChange={() => handleCheckboxChange(possibleAnswer.id)}
             renderCheck={() => null}
           >
-            {possibleAnswer.label}
+            {possibleAnswer.titleAnswer}
           </Checkbox>
         ))}
       </div>

@@ -9,7 +9,7 @@ export enum EQuestionType {
 
 export interface IPossibleAnswer {
   id: number
-  label: string
+  titleAnswer: string
 }
 
 export type IQuestion = {

@@ -48,9 +48,9 @@ export const ChatQuestionnaireUniqueChoice: React.FC<IChatQuestionnaireUniqueCho
             type="button"
             key={possibleAnswer.id}
             id={possibleAnswer.id.toString()}
-            onChange={() => handleChange(possibleAnswer.id, possibleAnswer.label)}
+            onChange={() => handleChange(possibleAnswer.id, possibleAnswer.titleAnswer)}
           >
-            {possibleAnswer.label}
+            {possibleAnswer.titleAnswer}
           </Radio>
         ))}
       </div>

@@ -22,12 +22,12 @@ const questions: TQuestionnaires[] = [
         caption: 'Select all that apply',
         answerType: EQuestionType.multiple,
         possibleAnswers: [
-          { id: 1, label: 'Adobe Photoshop' },
-          { id: 2, label: 'Figma' },
-          { id: 3, label: 'Sketch' },
-          { id: 4, label: 'InVision' },
-          { id: 6, label: 'QuantUX' },
-          { id: 7, label: 'UXPin' }
+          { id: 1, titleAnswer: 'Adobe Photoshop' },
+          { id: 2, titleAnswer: 'Figma' },
+          { id: 3, titleAnswer: 'Sketch' },
+          { id: 4, titleAnswer: 'InVision' },
+          { id: 6, titleAnswer: 'QuantUX' },
+          { id: 7, titleAnswer: 'UXPin' }
         ]
       },
       {
@@ -36,12 +36,12 @@ const questions: TQuestionnaires[] = [
         caption: 'Select one',
         answerType: EQuestionType.unique,
         possibleAnswers: [
-          { id: 1, label: 'Adobe Photoshop' },
-          { id: 2, label: 'Figma' },
-          { id: 3, label: 'Sketch' },
-          { id: 4, label: 'InVision' },
-          { id: 6, label: 'QuantUX' },
-          { id: 7, label: 'UXPin' }
+          { id: 1, titleAnswer: 'Adobe Photoshop' },
+          { id: 2, titleAnswer: 'Figma' },
+          { id: 3, titleAnswer: 'Sketch' },
+          { id: 4, titleAnswer: 'InVision' },
+          { id: 6, titleAnswer: 'QuantUX' },
+          { id: 7, titleAnswer: 'UXPin' }
         ]
       },
       {
@@ -50,10 +50,10 @@ const questions: TQuestionnaires[] = [
         caption: 'Select one',
         answerType: EQuestionType.unique,
         possibleAnswers: [
-          { id: 1, label: 'Less than 1 year' },
-          { id: 2, label: '1-3 years' },
-          { id: 3, label: '3-5 years' },
-          { id: 4, label: 'More than 5 years' }
+          { id: 1, titleAnswer: 'Less than 1 year' },
+          { id: 2, titleAnswer: '1-3 years' },
+          { id: 3, titleAnswer: '3-5 years' },
+          { id: 4, titleAnswer: 'More than 5 years' }
         ]
       },
       {
@@ -88,15 +88,15 @@ const questions: TQuestionnaires[] = [
         titleQuestion: 'Fields that are you interested in',
         caption: 'Select the fields you are interested in this role',
         possibleAnswers: [
-          { id: 1, label: 'Frontend' },
-          { id: 2, label: 'Backend' },
-          { id: 3, label: 'Fullstack' },
-          { id: 4, label: 'Mobile' },
-          { id: 5, label: 'Data Science' },
-          { id: 6, label: 'DevOps' },
-          { id: 7, label: 'Cloud' },
-          { id: 8, label: 'Security' },
-          { id: 9, label: 'Other' }
+          { id: 1, titleAnswer: 'Frontend' },
+          { id: 2, titleAnswer: 'Backend' },
+          { id: 3, titleAnswer: 'Fullstack' },
+          { id: 4, titleAnswer: 'Mobile' },
+          { id: 5, titleAnswer: 'Data Science' },
+          { id: 6, titleAnswer: 'DevOps' },
+          { id: 7, titleAnswer: 'Cloud' },
+          { id: 8, titleAnswer: 'Security' },
+          { id: 9, titleAnswer: 'Other' }
         ]
       }
     ]
