@@ -16,7 +16,9 @@ export type {
   IQuestion,
   IQuestionnaireAnswer,
   IQuestionnaireMessage,
-  TSendOpenQuestion
+  TSendOpenQuestion,
+  TQuestionnaires,
+  TSendQuestionnaire
 } from './ChatQuestionnaire.interface'
 
 export const ChatQuestionnaire = Object.assign(RawChatQuestionnaire, {
