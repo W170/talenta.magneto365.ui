@@ -7,6 +7,7 @@ import { classNames } from '@shared/utils/common'
 import style from './JobCardDesktop.module.scss'
 import { useWithElement } from '@components/hooks/useWithElement'
 import { altDynamicText } from '@constants/img.constants'
+import JobCardLabelStatus from '../JobCard/children/JobCardLabelStatus/JobCardLabelStatus.component'
 
 const cx = classNames.bind(style)
 
@@ -21,6 +22,7 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   jobOpen,
   cities = [],
   salary,
+  wasSeen,
   companyName,
   title,
   formatPublishDate,
@@ -30,7 +32,8 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   urgent,
   jobSlug,
   dynamicUrl,
-  renderRight
+  renderRight,
+  labelStatus
 }) => {
   const optionsRef = useRef<HTMLElement>(null)
 
@@ -41,6 +44,9 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
 
     return safeCities.length > 5 ? safeCities.slice(0, 5).join(', ') : safeCities.join(', ')
   }, [cities])
+  const seenModifier = useMemo(() => {
+    return wasSeen ? `${classMUI}-card-jobs__text--is-seen` : ''
+  }, [wasSeen])
 
   return (
     <div className={cx(`${classMUI}-card-jobs__container`, jobOpen && `${classMUI}-card-jobs--job-open`)}>
@@ -72,6 +78,7 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
           <h2
             className={cx(
               `${classMUI}-card-jobs__text`,
+              `${seenModifier}`,
               `${classMUI}-card-jobs__text--big`,
               `${classMUI}-card-jobs__text--bold`
             )}
@@ -87,12 +94,15 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
               {title}
             </a>
           </h2>
-          <h3 className={cx(`${classMUI}-card-jobs__text`)}>{getJobSubtitle(companyName, contractType)}</h3>
-          <p className={cx(`${classMUI}-card-jobs__text`)}>{salary}</p>
-          <p className={cx(`${classMUI}-card-jobs__text`)}>{citiesformatted}</p>
+          <h3 className={cx(`${classMUI}-card-jobs__text`, `${seenModifier}`)}>
+            {getJobSubtitle(companyName, contractType)}
+          </h3>
+          <p className={cx(`${classMUI}-card-jobs__text`, `${seenModifier}`)}>{salary}</p>
+          <p className={cx(`${classMUI}-card-jobs__text`, `${seenModifier}`)}>{citiesformatted}</p>
+          {labelStatus && <JobCardLabelStatus {...labelStatus} />}
         </div>
       </article>
-      <div style={{ width: width || 300 }} className={cx(`${classMUI}-card-jobs__render-right`)}>
+      {/* <div style={{ width: width || 300 }} className={cx(`${classMUI}-card-jobs__render-right`)}>
         <div className={cx(`${classMUI}-card-jobs__white-space`)} onClick={() => showDetail?.()}>
           {urgent ? (
             <span className={cx(`${classMUI}-card-jobs__urgent`, `${classMUI}-card-jobs__text--small`)}>
@@ -104,7 +114,7 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
         <button className={cx(`${classMUI}-card-jobs__button`)} onClick={() => showDetail?.()}>
           <IconItem icon={ArrowLeft2} size={16} className={cx(`${classMUI}-card-jobs__arrow`)} />
         </button>
-      </div>
+      </div> */}
     </div>
   )
 }

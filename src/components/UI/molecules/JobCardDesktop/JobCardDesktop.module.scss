@@ -85,7 +85,7 @@
 
   &__text {
     font-size: 14px;
-    color: #47535f;
+    color: #292f37;
     font-weight: 400;
     margin: 0;
     overflow: hidden;
@@ -122,6 +122,9 @@
       @media screen and (max-width: v.$screen-md) {
         font-size: 10px;
       }
+    }
+    &--is-seen {
+      color: #667688;
     }
   }
 
