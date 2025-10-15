@@ -32,7 +32,7 @@ const BaseComponent = (
   const prefixRef = useRef<HTMLSpanElement | null>(null)
   const suffixRef = useRef<HTMLSpanElement | null>(null)
   const inputRef = useRef<HTMLInputElement | null>(null)
-  const { hasList, setIsFocused, isFocused } = useFieldContext()
+  const { hasList, setIsFocused, isFocused, id } = useFieldContext()
   const { handleOnFocus } = useFieldFocus<HTMLInputElement>({
     disabled,
     readOnly,
@@ -98,6 +98,7 @@ const BaseComponent = (
       )}
       <input
         {...props}
+        aria-describedby={`${id}-hint`}
         className={cx(
           'magneto-ui-field-input',
           isMobile ? 'magneto-ui-field-input-wrapper--mobile' : '',

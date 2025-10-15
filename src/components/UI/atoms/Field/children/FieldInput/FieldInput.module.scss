@@ -1,6 +1,7 @@
 @use '../../../../../../shared/stylesheets/tokens' as *;
 
 .magneto-ui-field-input {
+  // margin: $margin-sm;
   margin: 0;
   padding: 0;
   border: none;
@@ -57,6 +58,10 @@
   &:has(+ [data-slot='field-list'][data-state='visible']) {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+  }
+  &:has(.magneto-ui-field-input:invalid) {
+    border-color: $color-red-200;
+    border-width: 1px !important;
   }
   /* &:focus-within {
     border-color: $color-blue-light-200;

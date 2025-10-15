@@ -7,26 +7,26 @@ import styles from './FieldListItem.module.scss'
 const cx = classNames.bind(styles)
 
 function BaseComponent<T>(
-  { children, className, value, ...props }: IFieldListItem<T>,
+  { children, className, value: controlledValue, ...props }: IFieldListItem<T>,
   ref: React.ForwardedRef<HTMLLIElement>
 ) {
-  const { selected, toggleValue } = useFieldListContext()
+  const { value, toggleValue } = useFieldListContext()
 
   const isSelected = useMemo(() => {
-    if (!value) return false
+    if (!controlledValue) return false
 
-    if (Array.isArray(selected)) {
-      return selected.some((v) => JSON.stringify(v) === JSON.stringify(value))
+    if (Array.isArray(value)) {
+      return value.some((v) => JSON.stringify(v) === JSON.stringify(controlledValue))
     }
 
-    return JSON.stringify(selected) === JSON.stringify(value)
-  }, [selected, value])
+    return JSON.stringify(controlledValue) === JSON.stringify(value)
+  }, [controlledValue, value])
 
   return (
     <li
       {...props}
       className={cx('magneto-ui-field-list-item', isSelected ? 'magneto-ui-field-list-item--selected' : '', className)}
-      onClick={() => toggleValue(value)}
+      onClick={() => toggleValue(controlledValue)}
       data-lib="magneto-ui"
       data-slot="field-list-item"
       ref={ref}
