@@ -18,15 +18,10 @@ const Modal: React.FC<IModal> = ({
   useEffect(() => {
     const { body } = document
     if (!body) return
+    body.style.overflowY = isOpen ? 'hidden' : 'auto'
     return () => {
       body.style.overflowY = 'auto'
     }
-  }, [])
-
-  useEffect(() => {
-    const { body } = document
-    if (!body) return
-    body.style.overflowY = isOpen ? 'hidden' : 'auto'
   }, [isOpen])
 
   if (!isOpen) return null
