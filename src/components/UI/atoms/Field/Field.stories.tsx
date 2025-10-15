@@ -199,7 +199,7 @@ type UserType = {
 }
 
 const ButtonComponent = () => {
-  const [data, setData] = useState<UserType>({ id: undefined, name: undefined })
+  const [data, setData] = useState<UserType>({ id: 2, name: 'Pedro' })
 
   return (
     <Field>
@@ -210,7 +210,7 @@ const ButtonComponent = () => {
       </Field.Label>
       <Field.List.Wrapper>
         <Field.Input id="name-trigger" placeholder="Write something" value={data.name} type="button" />
-        <Field.List onChange={setData}>
+        <Field.List value={data} onChange={setData}>
           <Field.List.Item value={{ id: 1, name: 'Juan' }}>
             <Typography.Text weight="normal" size="lg">
               You must write something
@@ -312,7 +312,7 @@ const ButtonComponent = () => {
   )
 }
 
-export const Trigger: ButtonStory = {
+export const Button: ButtonStory = {
   render: () => <ButtonComponent />
 }
 

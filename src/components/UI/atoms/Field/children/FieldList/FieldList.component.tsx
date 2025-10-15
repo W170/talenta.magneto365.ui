@@ -20,40 +20,41 @@ function BaseComponent(
     children,
     className,
     defaultValue,
-    isMobile: _,
     multiple,
     onChange,
     style,
+    value: controlledValue,
     ...props
   }: IFieldList<unknown>,
   ref: React.ForwardedRef<HTMLUListElement>
 ) {
-  void _
-
   const [selected, setSelected] = useState<unknown[] | unknown | undefined>(defaultValue)
-  const { breakpoint, hasList, isFocused, isMobile, setBreakpoint, setHasList, setIsFocused } = useFieldContext()
+  const { breakpoint, hasList, isDesktop, isFocused, isMobile, setBreakpoint, setHasList, setIsFocused } =
+    useFieldContext()
 
   const styles = useMemo(() => ({ ...containerStyle, ...style }), [style])
+
+  const isControlled = useMemo(() => controlledValue !== undefined, [controlledValue])
+
+  const value = useMemo(() => (isControlled ? controlledValue : selected), [isControlled, controlledValue, selected])
 
   const toggleValue = useCallback(
     (value) => {
       if (!value) return
 
       if (multiple) {
-        setSelected((prev: unknown) => {
-          const prevArr = (prev as unknown[]) ?? []
-          const exists = prevArr.some((v) => JSON.stringify(v) === JSON.stringify(value))
-          const next = exists ? prevArr.filter((v) => JSON.stringify(v) !== JSON.stringify(value)) : [...prevArr, value]
-          onChange?.(next)
-          return next
-        })
+        const prevArr = ((isControlled ? controlledValue : selected) as unknown[]) ?? []
+        const exists = prevArr.some((v) => JSON.stringify(v) === JSON.stringify(value))
+        const next = exists ? prevArr.filter((v) => JSON.stringify(v) !== JSON.stringify(value)) : [...prevArr, value]
+        onChange?.(next)
+        if (!isControlled) setSelected(next)
       } else {
         setIsFocused(false)
-        setSelected(value)
         onChange?.(value)
+        if (!isControlled) setSelected(value)
       }
     },
-    [multiple, onChange, setIsFocused]
+    [controlledValue, isControlled, multiple, onChange, selected, setIsFocused]
   )
 
   useEffect(() => {
@@ -67,7 +68,7 @@ function BaseComponent(
   }, [hasList, setHasList])
 
   return (
-    <ListContext.Provider value={{ selected, toggleValue }}>
+    <ListContext.Provider value={{ value, toggleValue }}>
       <Responsive>
         <ul
           {...props}
@@ -83,7 +84,7 @@ function BaseComponent(
             className
           )}
         >
-          {typeof children === 'function' ? children({ isMobile }) : children}
+          {typeof children === 'function' ? children({ isDesktop, isMobile }) : children}
         </ul>
       </Responsive>
     </ListContext.Provider>

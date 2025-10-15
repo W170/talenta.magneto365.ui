@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useState, useCallback, useRef } from 'react'
-import { IFieldContext, IFieldProvider } from './Field.interface'
+import React, { createContext, useContext, useState, useCallback, useRef, useMemo } from 'react'
+import { IFieldContext, IFieldProvider, TFieldScreenSizes } from './Field.interface'
 import { useMediaQuery } from '@components/hooks'
 import { classNames } from '@shared/utils/common'
 import styles from './Field.module.scss'
@@ -9,14 +9,16 @@ const cx = classNames.bind(styles)
 const FieldContext = createContext<IFieldContext | null>(null)
 
 export const FieldProvider = ({ children, className, fieldRef, ...props }: IFieldProvider) => {
+  const [breakpoint, setBreakpoint] = useState<TFieldScreenSizes | null>(null)
   const [hasError, setHasError] = useState<boolean | undefined>(undefined)
-  const [breakpoint, setBreakpoint] = useState<string | null>(null)
   const [isFocused, setIsFocused] = useState<boolean>(false)
   const [hasList, setHasList] = useState<boolean>(false)
   const wrapperRef = useRef<HTMLDivElement>(null)
   const [id, setId] = useState<string>('')
 
   const isMobile = useMediaQuery(false, { [breakpoint || 'sm']: true })
+
+  const isDesktop = useMemo(() => !isMobile, [isMobile])
 
   const onFocus = useCallback(() => {
     setIsFocused(true)
@@ -42,6 +44,7 @@ export const FieldProvider = ({ children, className, fieldRef, ...props }: IFiel
         hasError,
         hasList,
         id,
+        isDesktop,
         isFocused,
         isMobile,
         wrapperRef,
