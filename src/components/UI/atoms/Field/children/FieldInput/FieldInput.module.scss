@@ -1,9 +1,9 @@
 @use '../../../../../../shared/stylesheets/tokens' as *;
 
 .magneto-ui-field-input {
-  // margin: $margin-sm;
   margin: 0;
-  padding: 0;
+  min-height: $scale-rem-5xl;
+  padding-block: $padding-sm;
   border: none;
   flex: 1;
   font-weight: $weight-normal;
@@ -51,7 +51,7 @@
   gap: calc(2px / $scale-px-base) * 1rem;
   min-height: $scale-rem-5xl;
   border-radius: $radius-sm;
-  padding: $padding-sm;
+  padding-inline: $padding-sm;
   border: solid 1px $color-grey-200;
   cursor: text;
   transition: all ease-in-out 0.3s;
@@ -97,4 +97,13 @@
       cursor: not-allowed;
     }
   }
+}
+
+.magneto-ui-field-input-prefix,
+.magneto-ui-field-input-suffix {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: $gap-md;
 }
