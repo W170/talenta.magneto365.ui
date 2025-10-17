@@ -1,4 +1,5 @@
 import { TVacantOption } from '@components/Domain/Jobs/JobsPage'
+import { IJobCardLabelStatus } from './children/JobCardLabelStatus/JobCardLabelStatus.interface'
 
 export interface IJobCard {
   id: number | null
@@ -86,4 +87,8 @@ export interface IJobCard {
    * This property show back action in mobile job card options.
    */
   backText?: string
+  /**
+   * This property loads the vacancy status tags
+   */
+  labelStatus?: IJobCardLabelStatus
 }
