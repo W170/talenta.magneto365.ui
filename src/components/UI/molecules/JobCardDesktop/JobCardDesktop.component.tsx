@@ -1,11 +1,9 @@
 import React, { useMemo, useRef } from 'react'
 import { classMUI } from '@constants/stories'
-import { IconItem } from '../../atoms'
-import { ArrowLeft2, NoLogo, Urgent } from '../../../../constants/icons.constants'
+import { NoLogo } from '../../../../constants/icons.constants'
 import { ICardJobDesktop } from './JobCardDesktop.interface'
 import { classNames } from '@shared/utils/common'
 import style from './JobCardDesktop.module.scss'
-import { useWithElement } from '@components/hooks/useWithElement'
 import { altDynamicText } from '@constants/img.constants'
 import JobCardLabelStatus from '../JobCard/children/JobCardLabelStatus/JobCardLabelStatus.component'
 
@@ -32,12 +30,9 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   urgent,
   jobSlug,
   dynamicUrl,
-  renderRight,
   labelStatus
 }) => {
   const optionsRef = useRef<HTMLElement>(null)
-
-  const width = useWithElement(optionsRef)
 
   const citiesformatted = useMemo(() => {
     const safeCities = Array.isArray(cities) ? cities : []
