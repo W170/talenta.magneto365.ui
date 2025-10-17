@@ -1,4 +1,5 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
+@use 'src/shared/stylesheets/tokens' as *;
 
 .magneto-ui-card-jobs {
   display: flex;
@@ -12,12 +13,12 @@
   container-type: inline-size;
 
   &--urgent {
-    border-left: solid 6px #faad14;
+    border-left: solid 6px $color-yellow-300;
   }
 
   &__container:hover,
   &--job-open {
-    background-color: #e0e4e7;
+    background-color: $color-grey-200;
     cursor: pointer;
   }
 
@@ -85,7 +86,7 @@
 
   &__text {
     font-size: 14px;
-    color: #292f37;
+    color: $color-grey-800;
     font-weight: 400;
     margin: 0;
     overflow: hidden;
@@ -124,7 +125,7 @@
       }
     }
     &--is-seen {
-      color: #667688;
+      color: $color-grey-600;
     }
   }
 
@@ -155,7 +156,7 @@
 
   &__brand {
     overflow: hidden;
-    background-color: rgb(255, 255, 255);
+    background-color: $color-grey-50;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,7 +165,7 @@
     &-img {
       min-width: 67px;
       height: 67px;
-      background-color: white;
+      background-color: $color-grey-50;
       object-fit: contain;
       padding: 5px;
     }

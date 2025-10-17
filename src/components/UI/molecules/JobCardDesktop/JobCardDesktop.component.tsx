@@ -102,19 +102,6 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
           {labelStatus && <JobCardLabelStatus {...labelStatus} />}
         </div>
       </article>
-      {/* <div style={{ width: width || 300 }} className={cx(`${classMUI}-card-jobs__render-right`)}>
-        <div className={cx(`${classMUI}-card-jobs__white-space`)} onClick={() => showDetail?.()}>
-          {urgent ? (
-            <span className={cx(`${classMUI}-card-jobs__urgent`, `${classMUI}-card-jobs__text--small`)}>
-              <IconItem className={cx(`${classMUI}-card-jobs__urgent-icon`)} icon={Urgent} size={14} /> {urgent}
-            </span>
-          ) : null}
-        </div>
-        {renderRight ? renderRight() : null}
-        <button className={cx(`${classMUI}-card-jobs__button`)} onClick={() => showDetail?.()}>
-          <IconItem icon={ArrowLeft2} size={16} className={cx(`${classMUI}-card-jobs__arrow`)} />
-        </button>
-      </div> */}
     </div>
   )
 }
