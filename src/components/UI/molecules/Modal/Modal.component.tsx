@@ -19,6 +19,9 @@ const Modal: React.FC<IModal> = ({
     const { body } = document
     if (!body) return
     body.style.overflowY = isOpen ? 'hidden' : 'auto'
+    return () => {
+      body.style.overflowY = 'auto'
+    }
   }, [isOpen])
 
   if (!isOpen) return null
