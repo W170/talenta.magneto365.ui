@@ -53,6 +53,10 @@ const BaseComponent = (
 
   const handleOnWrapperMouseDown = useCallback(
     (evt: React.MouseEvent) => {
+      if (inputRef.current?.contains(evt.target as Node)) {
+        return
+      }
+
       if (
         disabled ||
         readOnly ||
@@ -92,7 +96,7 @@ const BaseComponent = (
       )}
     >
       {prefix && (
-        <span ref={prefixRef}>
+        <span ref={prefixRef} className={cx('magneto-ui-field-input-prefix')}>
           {typeof prefix === 'function' ? prefix({ opened: hasList === true && isFocused }) : prefix}
         </span>
       )}
@@ -119,7 +123,7 @@ const BaseComponent = (
         value={type === FieldInputTypeEnum.BUTTON ? (!value ? placeholder : value) : value}
       />
       {suffix && (
-        <span ref={suffixRef}>
+        <span ref={suffixRef} className={cx('magneto-ui-field-input-suffix')}>
           {typeof suffix === 'function' ? suffix({ opened: hasList === true && isFocused }) : suffix}
         </span>
       )}
