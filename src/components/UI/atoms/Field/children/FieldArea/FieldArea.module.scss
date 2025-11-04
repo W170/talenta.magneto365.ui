@@ -8,6 +8,8 @@
   font-weight: $weight-normal;
   font-size: $text-md-2;
   color: $color-grey-900;
+  resize: vertical;
+  field-sizing: content;
   &:focus-visible,
   &:focus {
     outline: none;
@@ -16,6 +18,17 @@
     font-weight: $weight-normal;
     font-size: $text-md-2;
     color: $color-grey-500;
+  }
+  &::-webkit-scrollbar {
+    width: 10px;
+    &-thumb {
+      cursor: default;
+      background: transparent;
+      border: none;
+      border-color: transparent;
+      border-radius: 20px;
+      background: $color-grey-400;
+    }
   }
 }
 

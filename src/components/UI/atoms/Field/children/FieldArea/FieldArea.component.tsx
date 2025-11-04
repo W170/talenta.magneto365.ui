@@ -17,6 +17,10 @@ const BaseComponent = (
 
   const handleOnWrapperMouseDown = useCallback(
     (evt: React.MouseEvent) => {
+      if (areaRef.current?.contains(evt.target as Node)) {
+        return
+      }
+
       if (disabled || readOnly) return
 
       evt.preventDefault()
