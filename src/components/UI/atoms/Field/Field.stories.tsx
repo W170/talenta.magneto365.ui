@@ -76,33 +76,6 @@ export const PrefixAndSuffix: PrefixAndSuffix = {
   )
 }
 
-type HintStory = StoryObj<typeof Field.Hint>
-
-export const Hint: HintStory = {
-  render: () => (
-    <Field>
-      <Field.Label htmlFor="name-hint">
-        <Typography.Text weight="normal" size="md-2" color="grey-800">
-          Name
-        </Typography.Text>
-      </Field.Label>
-      <Field.Input error placeholder="Write something" autoComplete="off" />
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Field.Hint type="error">
-          <Typography.Text weight="normal" size="md-2">
-            You must write something
-          </Typography.Text>
-        </Field.Hint>
-        <Field.Hint type="hint">
-          <Typography.Text weight="normal" size="md">
-            10 / 20
-          </Typography.Text>
-        </Field.Hint>
-      </div>
-    </Field>
-  )
-}
-
 type ListWithSingleSelection = StoryObj<typeof Field.List>
 
 const ListSingleComponent = () => {
@@ -231,13 +204,11 @@ const SearchComponent = () => {
     <Field>
       <Typography.Paragraph size="md-2" color="grey-800" weight="bold" style={{ marginBottom: '10px' }}>
         {`Selected users: `}
-        <Field.Hint type="hint">
-          {selectedUsers?.map((user, index) => (
-            <Typography.Text key={user.id} weight="normal" size="md-2">
-              {`${user.name} ${selectedUsers.length > 1 && index !== selectedUsers.length - 1 ? '- ' : ''}`}
-            </Typography.Text>
-          ))}
-        </Field.Hint>
+        {selectedUsers?.map((user, index) => (
+          <Typography.Text key={user.id} weight="normal" size="md-2">
+            {`${user.name} ${selectedUsers.length > 1 && index !== selectedUsers.length - 1 ? '- ' : ''}`}
+          </Typography.Text>
+        ))}
       </Typography.Paragraph>
       <Field.Label htmlFor="name-trigger">
         <Typography.Text weight="normal" size="md-2" color="grey-800">
