@@ -97,7 +97,9 @@ const BaseComponent = (
     >
       {prefix && (
         <span ref={prefixRef} className={cx('magneto-ui-field-input-prefix')}>
-          {typeof prefix === 'function' ? prefix({ opened: hasList === true && isFocused }) : prefix}
+          {typeof prefix === 'function'
+            ? prefix({ inputRef, prefixRef, opened: hasList === true && isFocused })
+            : prefix}
         </span>
       )}
       <input
@@ -124,7 +126,9 @@ const BaseComponent = (
       />
       {suffix && (
         <span ref={suffixRef} className={cx('magneto-ui-field-input-suffix')}>
-          {typeof suffix === 'function' ? suffix({ opened: hasList === true && isFocused }) : suffix}
+          {typeof suffix === 'function'
+            ? suffix({ inputRef, suffixRef, opened: hasList === true && isFocused })
+            : suffix}
         </span>
       )}
     </span>
