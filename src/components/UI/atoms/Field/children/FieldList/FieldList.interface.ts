@@ -2,13 +2,15 @@ import { TFieldScreenSizes } from '../../Field.interface'
 
 export type OmitedFieldListProps = 'onChange' | 'defaultValue'
 
-export type FieldListChildren = React.ReactNode | ((ctx: { isDesktop: boolean; isMobile: boolean }) => React.ReactNode)
+export type FieldListChildren =
+  | React.ReactElement
+  | ((ctx: { isDesktop: boolean; isMobile: boolean }) => React.ReactElement)
 
 export type FieldListDirection = 'up' | 'down'
 
 export type FieldListValue = { id: string | number }
 
-export interface IFieldListBaseProps extends Omit<React.HTMLAttributes<HTMLUListElement>, OmitedFieldListProps> {
+export interface IFieldListBaseProps extends Omit<React.HTMLAttributes<HTMLDivElement>, OmitedFieldListProps> {
   children: FieldListChildren
   direction?: FieldListDirection
   breakpoint?: TFieldScreenSizes | null

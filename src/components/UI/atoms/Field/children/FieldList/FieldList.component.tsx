@@ -1,18 +1,14 @@
-import React, { useEffect, forwardRef, useState, useCallback, useMemo } from 'react'
-import { MiniArrowGrayDown, MiniArrowGrayUp } from '@constants/icons.constants'
+import React, { useEffect, forwardRef } from 'react'
 import { IFieldList, FieldListValue } from './FieldList.interface'
-import { Item, Responsive, Wrapper } from './children'
+import { Item, Responsive, Wrapper, Body } from './children'
 import { useFieldContext } from '../../Field.context'
 import { classNames } from '@shared/utils/common'
 import { ListContext } from './FieldList.context'
+import { useFieldList } from './FieldList.hooks'
+import { renderChildren } from '@utils/react'
 import styles from './FieldList.module.scss'
 
 const cx = classNames.bind(styles)
-
-const containerStyle = {
-  '--custom-scrollbar-thumb-down-background': `url(${MiniArrowGrayDown})`,
-  '--custom-scrollbar-thumb-up-background': `url(${MiniArrowGrayUp})`
-}
 
 function BaseComponent<T extends FieldListValue>(
   {
@@ -22,58 +18,18 @@ function BaseComponent<T extends FieldListValue>(
     defaultValue,
     multiple,
     onChange,
-    style,
     value: controlledValue,
     ...props
   }: IFieldList<T>,
-  ref: React.ForwardedRef<HTMLUListElement>
+  ref: React.ForwardedRef<HTMLDivElement>
 ) {
-  const [selected, setSelected] = useState<T[] | T | undefined>(defaultValue)
-  const { breakpoint, hasList, isDesktop, isFocused, isMobile, setBreakpoint, setHasList, setIsFocused } =
-    useFieldContext()
-
-  const styles = useMemo(() => ({ ...containerStyle, ...style }), [style])
-
-  const isControlled = useMemo(() => controlledValue !== undefined, [controlledValue])
-
-  const value = useMemo(() => (isControlled ? controlledValue : selected), [isControlled, controlledValue, selected])
-
-  const handleMultipleChange = useCallback(
-    (newValue: T[]) => {
-      if (!onChange) return
-      const multipleOnChange = onChange as (value?: T[]) => void
-      multipleOnChange(newValue)
-    },
-    [onChange]
-  )
-
-  const handleSingleChange = useCallback(
-    (newValue: T) => {
-      if (!onChange) return
-      const singleOnChange = onChange as (value: T) => void
-      singleOnChange(newValue)
-    },
-    [onChange]
-  )
-
-  const toggleValue = useCallback(
-    (value?: FieldListValue) => {
-      if (!value) return
-
-      if (multiple) {
-        const prevArr = ((isControlled ? controlledValue : selected) as T[]) ?? []
-        const exists = prevArr.some((v) => v.id === value.id)
-        const next = exists ? prevArr.filter((v) => v.id !== (value as T).id) : [...prevArr, value as T]
-        handleMultipleChange(next)
-        if (!isControlled) setSelected(next)
-      } else {
-        setIsFocused(false)
-        handleSingleChange(value as T)
-        if (!isControlled) setSelected(value as T)
-      }
-    },
-    [controlledValue, isControlled, multiple, handleMultipleChange, handleSingleChange, selected, setIsFocused]
-  )
+  const { breakpoint, hasList, isDesktop, isFocused, isMobile, setBreakpoint, setHasList } = useFieldContext()
+  const { value, toggleValue } = useFieldList({
+    defaultValue,
+    multiple,
+    onChange,
+    value: controlledValue
+  })
 
   useEffect(() => {
     if (!breakpoint && controlledBreakpoint) {
@@ -86,15 +42,14 @@ function BaseComponent<T extends FieldListValue>(
   }, [hasList, setHasList])
 
   return (
-    <ListContext.Provider value={{ toggleValue: toggleValue as (value?: FieldListValue) => void, value }}>
+    <ListContext.Provider value={{ toggleValue, value }}>
       <Responsive>
-        <ul
+        <div
           {...props}
           ref={ref}
           data-lib="magneto-ui"
           data-slot="field-list"
           data-state={isFocused ? 'visible' : 'hidden'}
-          style={styles as React.CSSProperties}
           className={cx(
             'magneto-ui-field-list',
             !isMobile ? 'magneto-ui-field-list--desktop' : '',
@@ -102,15 +57,15 @@ function BaseComponent<T extends FieldListValue>(
             className
           )}
         >
-          {typeof children === 'function' ? children({ isDesktop, isMobile }) : children}
-        </ul>
+          {renderChildren(children, { isDesktop, isMobile })}
+        </div>
       </Responsive>
     </ListContext.Provider>
   )
 }
 
 const Component = forwardRef(BaseComponent) as <T extends FieldListValue = FieldListValue>(
-  props: IFieldList<T> & { ref?: React.Ref<HTMLUListElement> }
+  props: IFieldList<T> & { ref?: React.Ref<HTMLDivElement> }
 ) => React.ReactElement | null
 
-export const FieldList = Object.assign(Component, { Item, Wrapper })
+export const FieldList = Object.assign(Component, { Item, Wrapper, Body })
