@@ -63,6 +63,13 @@
     border-color: $color-red-200;
     border-width: 1px !important;
   }
+  &--list-opened {
+    &:not(.magneto-ui-field-input-wrapper--error) {
+      border-color: transparent;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
   /* &:focus-within {
     border-color: $color-blue-light-200;
     border-width: 1px !important;
@@ -73,6 +80,11 @@
   &--error {
     border-color: $color-red-200;
     border-width: 1px !important;
+    &.magneto-ui-field-input-wrapper--list-opened {
+      border-bottom-color: transparent;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
   }
   &--button {
     cursor: pointer;

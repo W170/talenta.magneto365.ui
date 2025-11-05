@@ -92,6 +92,7 @@ const BaseComponent = (
         error ? 'magneto-ui-field-input-wrapper--error' : '',
         size ? `magneto-ui-field-input-wrapper--${size}` : '',
         type ? `magneto-ui-field-input-wrapper--${type}` : '',
+        hasList && isFocused ? 'magneto-ui-field-input-wrapper--list-opened' : '',
         wrapper?.className
       )}
     >

@@ -60,6 +60,8 @@ export const FieldProvider = ({ children, className, fieldRef, ...props }: IFiel
       <div
         {...props}
         className={cx('magneto-ui-field', className)}
+        data-lib="magneto-ui"
+        data-slot="field"
         data-error={hasError}
         data-focused={isFocused}
         ref={fieldRef}
