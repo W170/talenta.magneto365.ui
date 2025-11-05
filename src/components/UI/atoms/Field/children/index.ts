@@ -1,5 +1,4 @@
 export * from './FieldArea'
-export * from './FieldGroup'
 export * from './FieldInput'
 export * from './FieldLabel'
 export * from './FieldList'
