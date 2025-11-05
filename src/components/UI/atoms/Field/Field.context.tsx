@@ -14,7 +14,6 @@ export const FieldProvider = ({ children, className, fieldRef, ...props }: IFiel
   const [isFocused, setIsFocused] = useState<boolean>(false)
   const [hasList, setHasList] = useState<boolean>(false)
   const wrapperRef = useRef<HTMLDivElement>(null)
-  const [id, setId] = useState<string>('')
 
   const isMobile = useMediaQuery(false, { [breakpoint || 'sm']: true })
 
@@ -43,7 +42,6 @@ export const FieldProvider = ({ children, className, fieldRef, ...props }: IFiel
         breakpoint,
         hasError,
         hasList,
-        id,
         isDesktop,
         isFocused,
         isMobile,
@@ -53,7 +51,6 @@ export const FieldProvider = ({ children, className, fieldRef, ...props }: IFiel
         setBreakpoint,
         setHasError,
         setHasList,
-        setId,
         setIsFocused
       }}
     >

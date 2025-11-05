@@ -1,5 +1,6 @@
 import React, { forwardRef, useCallback, useRef } from 'react'
 import { IFieldInput, FieldInputTypeEnum } from './FieldInput.interface'
+import { useFieldListContext } from '../FieldList/FieldList.context'
 import { useFieldError, useFieldFocus } from '../../Field.hooks'
 import { useFieldContext } from '../../Field.context'
 import { combineRefs } from '../../Field.constant'
@@ -14,7 +15,6 @@ const BaseComponent = (
     className,
     disabled,
     error,
-    isMobile,
     onFocus: controlledOnFocus,
     placeholder,
     prefix,
@@ -32,7 +32,11 @@ const BaseComponent = (
   const prefixRef = useRef<HTMLSpanElement | null>(null)
   const suffixRef = useRef<HTMLSpanElement | null>(null)
   const inputRef = useRef<HTMLInputElement | null>(null)
-  const { hasList, setIsFocused, isFocused, id } = useFieldContext()
+
+  const { hasList, setIsFocused, isFocused, isMobile } = useFieldContext()
+
+  const listContext = useFieldListContext()
+
   const { handleOnFocus } = useFieldFocus<HTMLInputElement>({
     disabled,
     readOnly,
@@ -88,11 +92,13 @@ const BaseComponent = (
         'magneto-ui-field-input-wrapper',
         disabled ? 'magneto-ui-field-input-wrapper--disabled' : '',
         readOnly ? 'magneto-ui-field-input-wrapper--readonly' : '',
-        isMobile ? 'magneto-ui-field-input-wrapper--mobile' : '',
         error ? 'magneto-ui-field-input-wrapper--error' : '',
         size ? `magneto-ui-field-input-wrapper--${size}` : '',
         type ? `magneto-ui-field-input-wrapper--${type}` : '',
-        hasList && isFocused ? 'magneto-ui-field-input-wrapper--list-opened' : '',
+        isMobile && !listContext?.isInsideList ? 'magneto-ui-field-input-wrapper--mobile' : '',
+        !listContext?.isInsideList && hasList && isFocused && !isMobile
+          ? 'magneto-ui-field-input-wrapper--list-opened'
+          : '',
         wrapper?.className
       )}
     >
@@ -105,10 +111,9 @@ const BaseComponent = (
       )}
       <input
         {...props}
-        aria-describedby={`${id}-hint`}
         className={cx(
           'magneto-ui-field-input',
-          isMobile ? 'magneto-ui-field-input-wrapper--mobile' : '',
+          isMobile && !listContext?.isInsideList ? 'magneto-ui-field-input-wrapper--mobile' : '',
           align ? `magneto-ui-field-input--${align}` : '',
           type === FieldInputTypeEnum.BUTTON
             ? !value

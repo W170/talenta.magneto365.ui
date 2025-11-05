@@ -34,6 +34,7 @@ export interface IFieldListSingle<T extends FieldListValue> extends IFieldListBa
 export type IFieldList<T extends FieldListValue> = IFieldListMultiple<T> | IFieldListSingle<T>
 
 export interface IFieldListContext<T extends FieldListValue = FieldListValue> {
+  isInsideList: boolean
   toggleValue: (value?: T) => void
   value?: T[] | T
 }

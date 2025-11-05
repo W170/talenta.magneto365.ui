@@ -17,7 +17,6 @@ export type FieldInputTypes = `${FieldInputTypeEnum}`
 
 export interface IFieldInputBase extends Omit<React.InputHTMLAttributes<HTMLInputElement>, OmittedFieldInputProps> {
   error?: boolean
-  isMobile?: never
   prefix?:
     | React.ReactNode
     | ((args: {

@@ -73,11 +73,10 @@ function BaseComponent<T extends FieldListValue>(
     const resizeObserver = new ResizeObserver(updateShadow)
     if (listRef.current) resizeObserver.observe(listRef.current)
 
-    const fieldGroup = listRef.current?.closest('[data-slot="field-group"]')
-    const field = listRef.current?.closest('.magneto-ui-field')
-    const targetElement = fieldGroup || field?.querySelector('[data-slot="field-input"]')
+    // const fieldGroup = listRef.current?.closest('[data-slot="field-group"]')
+    const field = listRef.current?.closest('.magneto-ui-field')?.querySelector('[data-slot="field-input"]')
 
-    if (targetElement) resizeObserver.observe(targetElement as Element)
+    if (field) resizeObserver.observe(field as Element)
 
     window.addEventListener('scroll', updateShadow, true)
     window.addEventListener('resize', updateShadow)
@@ -87,10 +86,10 @@ function BaseComponent<T extends FieldListValue>(
       window.removeEventListener('scroll', updateShadow, true)
       window.removeEventListener('resize', updateShadow)
     }
-  }, [hasError, isFocused])
+  }, [hasError, isFocused, isMobile])
 
   return (
-    <ListContext.Provider value={{ toggleValue, value }}>
+    <ListContext.Provider value={{ isInsideList: true, toggleValue, value }}>
       <Responsive>
         <div
           {...props}
