@@ -3,7 +3,7 @@
 .magneto-ui-field-input {
   margin: 0;
   padding: $padding-sm 0;
-  min-height: $scale-rem-5xl;
+  min-height: calc($scale-rem-5xl - 2px);
   border: none;
   flex: 1;
   font-weight: $weight-normal;
@@ -49,12 +49,16 @@
   flex-direction: row;
   align-items: center;
   gap: $gap-sm;
-  min-height: $scale-rem-5xl;
+  min-height: calc($scale-rem-5xl - 2px);
   border-radius: $radius-sm;
   padding-inline: $padding-lg;
   border: solid 1px $color-grey-200;
   cursor: text;
   transition: all ease-in-out 0.3s;
+  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
   &:has(+ [data-slot='field-list'][data-state='visible']) {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
