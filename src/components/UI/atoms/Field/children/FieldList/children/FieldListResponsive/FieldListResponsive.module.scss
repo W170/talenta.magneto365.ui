@@ -1,7 +1,19 @@
 @use '../../../../../../../../shared/stylesheets/tokens' as *;
 
 .magneto-ui-field-list-responsive {
+  max-height: calc(100vh - 60px);
+  height: calc(100vh - 60px) !important;
+  display: flex;
+  flex-direction: column;
+  @supports (max-height: calc(100dvh - 60px)) {
+    max-height: calc(100dvh - 60px);
+  }
+  @supports (height: calc(100dvh - 60px)) {
+    height: calc(100dvh - 60px) !important;
+  }
   > div {
+    display: flex;
+    max-height: unset !important;
     padding: 0 !important;
     > * {
       padding: 0 !important;

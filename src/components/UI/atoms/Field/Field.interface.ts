@@ -14,7 +14,6 @@ export interface IFieldContext {
   breakpoint: TFieldScreenSizes | null
   hasError?: boolean
   hasList: boolean
-  id: string
   isDesktop: boolean
   isFocused: boolean
   isMobile: boolean
@@ -24,7 +23,6 @@ export interface IFieldContext {
   setBreakpoint: React.Dispatch<React.SetStateAction<TFieldScreenSizes | null>>
   setHasError: React.Dispatch<React.SetStateAction<boolean | undefined>>
   setHasList: React.Dispatch<React.SetStateAction<boolean>>
-  setId: React.Dispatch<React.SetStateAction<string>>
   setIsFocused: React.Dispatch<React.SetStateAction<boolean>>
 }
 

@@ -8,7 +8,7 @@ import styles from './FieldArea.module.scss'
 const cx = classNames.bind(styles)
 
 const BaseComponent = (
-  { className, disabled, error, readOnly, wrapper, ...props }: IFieldArea,
+  { className, disabled, error, readOnly, wrapper, textareaClassName, ...props }: IFieldArea,
   ref: React.ForwardedRef<HTMLTextAreaElement>
 ) => {
   const areaRef = useRef<HTMLTextAreaElement | null>(null)
@@ -17,10 +17,22 @@ const BaseComponent = (
 
   const handleOnWrapperMouseDown = useCallback(
     (evt: React.MouseEvent) => {
+      if (areaRef.current?.contains(evt.target as Node)) {
+        return
+      }
+
       if (disabled || readOnly) return
 
       evt.preventDefault()
-      areaRef.current?.focus()
+
+      const area = areaRef.current
+
+      area?.focus()
+
+      if (area && typeof area.value === 'string') {
+        const len = area.value.length
+        area.setSelectionRange(len, len)
+      }
     },
     [disabled, readOnly]
   )
@@ -29,20 +41,22 @@ const BaseComponent = (
     <span
       {...wrapper}
       onMouseDown={handleOnWrapperMouseDown}
-      data-error={error}
       data-lib="magneto-ui"
       data-slot="field-area"
+      data-disabled={!!disabled}
+      data-readonly={!!readOnly}
+      data-error={!!error}
       className={cx(
         'magneto-ui-field-area-wrapper',
         disabled ? 'magneto-ui-field-area-wrapper--disabled' : '',
         readOnly ? 'magneto-ui-field-area-wrapper--readonly' : '',
         error ? 'magneto-ui-field-area-wrapper--error' : '',
-        wrapper?.className
+        className
       )}
     >
       <textarea
         {...props}
-        className={cx('magneto-ui-field-area', className)}
+        className={cx('magneto-ui-field-area', textareaClassName)}
         disabled={disabled}
         readOnly={readOnly}
         ref={(node) => combineRefs(node, areaRef, ref)}

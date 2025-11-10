@@ -17,15 +17,29 @@ export type FieldInputTypes = `${FieldInputTypeEnum}`
 
 export interface IFieldInputBase extends Omit<React.InputHTMLAttributes<HTMLInputElement>, OmittedFieldInputProps> {
   error?: boolean
-  isMobile?: never
-  prefix?: React.ReactNode | ((args: { opened: boolean }) => React.ReactNode)
+  prefix?:
+    | React.ReactNode
+    | ((args: {
+        inputRef: React.RefObject<HTMLInputElement>
+        prefixRef: React.RefObject<HTMLSpanElement>
+        opened: boolean
+      }) => React.ReactNode)
   /**
    * If for example the dev wants to keep de focus on a mobile environment by clicking it.
    */
   preserveFocus?: boolean
   size?: 'small' | 'medium'
-  suffix?: React.ReactNode | ((args: { opened: boolean }) => React.ReactNode)
-  wrapper?: React.HTMLAttributes<HTMLSpanElement>
+  suffix?:
+    | React.ReactNode
+    | ((args: {
+        inputRef: React.RefObject<HTMLInputElement>
+        suffixRef: React.RefObject<HTMLSpanElement>
+        opened: boolean
+      }) => React.ReactNode)
+  wrapper?: Omit<React.HTMLAttributes<HTMLSpanElement>, 'className'>
+  inputClassName?: string
+  prefixClassName?: string
+  suffixClassName?: string
 }
 
 export interface IFieldInputButton extends IFieldInputBase {

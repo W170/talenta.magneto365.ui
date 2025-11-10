@@ -3,11 +3,14 @@
 .magneto-ui-field-area {
   margin: 0;
   padding: 0;
+  min-height: $scale-rem-4xl;
   border: none;
   flex: 1;
   font-weight: $weight-normal;
   font-size: $text-md-2;
   color: $color-grey-900;
+  resize: vertical;
+  field-sizing: content;
   &:focus-visible,
   &:focus {
     outline: none;
@@ -17,6 +20,17 @@
     font-size: $text-md-2;
     color: $color-grey-500;
   }
+  &::-webkit-scrollbar {
+    width: 10px;
+    &-thumb {
+      cursor: default;
+      background: transparent;
+      border: none;
+      border-color: transparent;
+      border-radius: 20px;
+      background: $color-grey-400;
+    }
+  }
 }
 
 .magneto-ui-field-area-wrapper {
@@ -25,7 +39,7 @@
   display: flex;
   flex-direction: row;
   gap: calc(2px / $scale-px-base) * 1rem;
-  min-height: $scale-rem-5xl;
+  min-height: calc($scale-rem-5xl - 2px);
   border-radius: $radius-sm;
   padding: $padding-sm;
   border: solid 1px $color-grey-200;

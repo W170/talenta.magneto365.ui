@@ -1,12 +1,14 @@
 import { createContext, useContext } from 'react'
 import { IFieldListContext } from './FieldList.interface'
 
-export const ListContext = createContext<IFieldListContext | null>(null)
+const initialValue: IFieldListContext = {
+  isInsideList: false,
+  toggleValue: () => undefined,
+  value: undefined
+}
+
+export const ListContext = createContext<IFieldListContext>(initialValue)
 
 export const useFieldListContext = () => {
-  const context = useContext(ListContext)
-  if (!context) {
-    throw new Error('useFieldListContext must be used within Field.List')
-  }
-  return context
+  return useContext(ListContext)
 }
