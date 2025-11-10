@@ -15,13 +15,16 @@ const BaseComponent = (
     className,
     disabled,
     error,
+    inputClassName,
     onFocus: controlledOnFocus,
     placeholder,
     prefix,
+    prefixClassName,
     preserveFocus,
     readOnly,
     size,
     suffix,
+    suffixClassName,
     type,
     value,
     wrapper,
@@ -74,7 +77,15 @@ const BaseComponent = (
       }
 
       evt.preventDefault()
-      inputRef.current?.focus()
+
+      const input = inputRef.current
+
+      input?.focus()
+
+      if (input && typeof input.value === 'string') {
+        const len = input.value.length
+        input.setSelectionRange(len, len)
+      }
     },
     [disabled, hasList, readOnly, setIsFocused]
   )
@@ -85,9 +96,13 @@ const BaseComponent = (
     <span
       {...wrapper}
       onMouseDown={handleOnWrapperMouseDown}
-      data-error={error}
       data-lib="magneto-ui"
       data-slot="field-input"
+      data-disabled={!!disabled}
+      data-readonly={!!readOnly}
+      data-error={!!error}
+      data-size={size}
+      data-type={type}
       className={cx(
         'magneto-ui-field-input-wrapper',
         disabled ? 'magneto-ui-field-input-wrapper--disabled' : '',
@@ -99,11 +114,11 @@ const BaseComponent = (
         !listContext?.isInsideList && hasList && isFocused && !isMobile
           ? 'magneto-ui-field-input-wrapper--list-opened'
           : '',
-        wrapper?.className
+        className
       )}
     >
       {prefix && (
-        <span ref={prefixRef} className={cx('magneto-ui-field-input-prefix')}>
+        <span ref={prefixRef} className={cx('magneto-ui-field-input-prefix', prefixClassName)}>
           {typeof prefix === 'function'
             ? prefix({ inputRef, prefixRef, opened: hasList === true && isFocused })
             : prefix}
@@ -120,7 +135,7 @@ const BaseComponent = (
               ? 'magneto-ui-field-input--button-placeholder'
               : 'magneto-ui-field-input--button-value'
             : '',
-          className
+          inputClassName
         )}
         disabled={disabled}
         onFocus={handleLocalOnFocus}
@@ -131,7 +146,7 @@ const BaseComponent = (
         value={type === FieldInputTypeEnum.BUTTON ? (!value ? placeholder : value) : value}
       />
       {suffix && (
-        <span ref={suffixRef} className={cx('magneto-ui-field-input-suffix')}>
+        <span ref={suffixRef} className={cx('magneto-ui-field-input-suffix', suffixClassName)}>
           {typeof suffix === 'function'
             ? suffix({ inputRef, suffixRef, opened: hasList === true && isFocused })
             : suffix}

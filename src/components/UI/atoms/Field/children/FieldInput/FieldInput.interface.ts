@@ -36,7 +36,10 @@ export interface IFieldInputBase extends Omit<React.InputHTMLAttributes<HTMLInpu
         suffixRef: React.RefObject<HTMLSpanElement>
         opened: boolean
       }) => React.ReactNode)
-  wrapper?: React.HTMLAttributes<HTMLSpanElement>
+  wrapper?: Omit<React.HTMLAttributes<HTMLSpanElement>, 'className'>
+  inputClassName?: string
+  prefixClassName?: string
+  suffixClassName?: string
 }
 
 export interface IFieldInputButton extends IFieldInputBase {
