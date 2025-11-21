@@ -116,4 +116,17 @@ export interface IJobDetailsDrawer {
    * Props for show action link company
    */
   actionLinkCardProps?: IActionLinkCard
+
+  /**
+   * Faqs for job detail drawer
+   */
+  faqs: {
+    title: string
+    questions: IJobFaqs[]
+  } | null
+}
+
+export interface IJobFaqs {
+  href: string
+  question: string
 }

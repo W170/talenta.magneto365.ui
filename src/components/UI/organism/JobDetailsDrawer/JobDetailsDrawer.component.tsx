@@ -21,6 +21,8 @@ import { JobDetailsSkeleton } from './children'
 import { ActionLinkCard } from '@components/UI/molecules/ActionLinkCard'
 import { JobDetails } from '@components/UI/molecules/JobDetails'
 import { SimilarJobs } from '@components/Domain/Jobs/SimilarJobs'
+import { JobsFaqs } from '@components/Domain/Jobs/JobDetails/children/JobsFaqs'
+import { JobsFaqsLink } from '@components/Domain/Jobs/JobDetails/children/JobsFaqs/JobsFaqsLink'
 
 const Component: React.FC<IJobDetailsDrawer> = ({
   jobCompanyLogoProps,
@@ -47,7 +49,8 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   canApply,
   variant,
   isJobDetailPage,
-  actionLinkCardProps
+  actionLinkCardProps,
+  faqs
 }) => {
   const jobDetailsRef = useRef<HTMLDivElement | null>(null)
   const isDetailVariant = variant === 'detailed'
@@ -93,6 +96,13 @@ const Component: React.FC<IJobDetailsDrawer> = ({
                 isRemote={isRemote}
                 textRemote={textRemote}
               />
+            )}
+            {faqs && (
+              <JobsFaqs title={faqs.title} roundEdges={true}>
+                {faqs.questions.map(({ question, href }, index) => (
+                  <JobsFaqsLink key={index} text={question} href={href} />
+                ))}
+              </JobsFaqs>
             )}
             {jobVideo && <JobVideo {...jobVideo} loadVideo={loadVideo} setLoadVideo={setLoadVideo} />}
             <JobDetailCard {...jobDetailCardProps} />

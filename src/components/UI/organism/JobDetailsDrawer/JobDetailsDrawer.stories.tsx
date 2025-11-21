@@ -222,6 +222,14 @@ export const Default: Story = {
     jobFooterCardProps: jobFooterCard,
     jobVideo: jobVideo,
     cities: cities,
+    faqs: {
+      title: 'Preguntas Frecuentes',
+      questions: [
+        { href: '#', question: 'prueba de pregunta 1' },
+        { href: '#', question: 'prueba de pregunta 2' },
+        { href: '#', question: 'prueba de pregunta 3' }
+      ]
+    },
     fraudCardJobProps: fraudCardJob,
     alertJobStatusProps: alertJobStatusProps
   }
