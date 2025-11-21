@@ -97,6 +97,12 @@ const Component: React.FC<IJobDetailsDrawer> = ({
                 textRemote={textRemote}
               />
             )}
+            {jobVideo && <JobVideo {...jobVideo} loadVideo={loadVideo} setLoadVideo={setLoadVideo} />}
+            <JobDetailCard {...jobDetailCardProps} />
+            <JobSkillsCard {...jobSkillsCardProps} />
+            {actionLinkCardProps && <ActionLinkCard {...actionLinkCardProps} />}
+            {fraudCardJobProps && <FraudCardJob {...fraudCardJobProps} />}
+            <JobApplyCard {...jobApplyCardProps} />
             {faqs && (
               <JobsFaqs title={faqs.title} roundEdges={true}>
                 {faqs.questions.map(({ question, href }, index) => (
@@ -104,12 +110,6 @@ const Component: React.FC<IJobDetailsDrawer> = ({
                 ))}
               </JobsFaqs>
             )}
-            {jobVideo && <JobVideo {...jobVideo} loadVideo={loadVideo} setLoadVideo={setLoadVideo} />}
-            <JobDetailCard {...jobDetailCardProps} />
-            <JobSkillsCard {...jobSkillsCardProps} />
-            {actionLinkCardProps && <ActionLinkCard {...actionLinkCardProps} />}
-            {fraudCardJobProps && <FraudCardJob {...fraudCardJobProps} />}
-            <JobApplyCard {...jobApplyCardProps} />
             <JobFooterCard iconList={iconFooterList} {...jobFooterCardProps} variant={variant} />
             {similarJobsProps ? <SimilarJobs {...similarJobsProps} /> : null}
           </div>
