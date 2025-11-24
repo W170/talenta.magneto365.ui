@@ -103,7 +103,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
             {actionLinkCardProps && <ActionLinkCard {...actionLinkCardProps} />}
             {fraudCardJobProps && <FraudCardJob {...fraudCardJobProps} />}
             <JobApplyCard {...jobApplyCardProps} />
-            {faqs && (
+            {faqs && faqs.title && (
               <JobsFaqs title={faqs.title} roundEdges={true}>
                 {faqs.questions.map(({ question, href }, index) => (
                   <JobsFaqsLink key={index} text={question} href={href} />
