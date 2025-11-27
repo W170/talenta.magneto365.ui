@@ -6,6 +6,7 @@ import styles from './JobActions.module.scss'
 import { SharePopover } from '../SharePopover'
 import { Tooltip } from '../Tooltip'
 import { classNames } from '@shared/utils/common'
+import { Share } from '@constants/icons.constants'
 
 const cx = classNames.bind(styles)
 
@@ -88,7 +89,7 @@ const Component: React.FC<IJobsActions> = ({
           </Tooltip>
         )}
 
-        <SharePopover {...shareButtonProps} />
+        <SharePopover {...shareButtonProps} iconPopover={Share} buttonText={""}/>
 
         {filteredActionsLinkList?.map(({ url, title, icon, text }) => (
           <ActionItem key={`${url}-${title}`} url={url} title={title} icon={icon} text={text} />
