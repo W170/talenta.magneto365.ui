@@ -31,6 +31,7 @@
       "600": "#098c3b"
     },
     "grey": {
+      "40": "#f4f4fa",
       "50": "#ffffff",
       "100": "#f0f1f3",
       "200": "#e0e4e7",
@@ -57,7 +58,8 @@
     "purple": {
       "50": "#f0e8ff",
       "200": "#d3b7ff"
-    }
+    },
+    "skeleton": "#eeeff4"
   },
   "utilities": {
     "imports": [
