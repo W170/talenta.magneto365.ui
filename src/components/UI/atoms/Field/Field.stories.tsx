@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Typography } from '../Typography'
 import { Field } from './Field.component'
 import { IconItem } from '../Icon'
-import { Add } from '../../../../constants/icons.constants'
+import { Add, ArrowLeft2, SearchIcon, Trash } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof Field> = {
   title: 'Atoms/Field',
@@ -16,6 +16,23 @@ const meta: Meta<typeof Field> = {
 }
 
 export default meta
+
+type UserType = {
+  id: string | number
+  name: string | undefined
+}
+
+const USER_LIST: UserType[] = [
+  { id: 1, name: 'Juan' },
+  { id: 2, name: 'Pedro' },
+  { id: 3, name: 'Maria' },
+  { id: 4, name: 'Jose' },
+  { id: 5, name: 'Luis' },
+  { id: 6, name: 'Ana' },
+  { id: 7, name: 'Francisco' },
+  { id: 8, name: 'John' },
+  { id: 9, name: 'Melissa ' }
+]
 
 type Story = StoryObj<typeof Field>
 
@@ -31,7 +48,7 @@ export const Label: LabelStory = {
           Name
         </Typography.Text>
       </Field.Label>
-      <Field.Input id="name" placeholder="Name placeholder" />
+      <Field.Input id="name" placeholder="Name placeholder" autoComplete="off" />
     </Field>
   )
 }
@@ -50,6 +67,7 @@ export const PrefixAndSuffix: PrefixAndSuffix = {
       <Field.Input
         id="name-icon"
         type="text"
+        autoComplete="off"
         placeholder="Write something"
         prefix={<IconItem icon={Add} />}
         suffix={<button onClick={() => console.log('search')}>Search</button>}
@@ -58,38 +76,12 @@ export const PrefixAndSuffix: PrefixAndSuffix = {
   )
 }
 
-type HintStory = StoryObj<typeof Field.Hint>
-
-export const Hint: HintStory = {
-  render: () => (
-    <Field>
-      <Field.Label htmlFor="name-hint">
-        <Typography.Text weight="normal" size="md-2" color="grey-800">
-          Name
-        </Typography.Text>
-      </Field.Label>
-      <Field.Input error placeholder="Write something" />
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Field.Hint type="error">
-          <Typography.Text weight="normal" size="md-2">
-            You must write something
-          </Typography.Text>
-        </Field.Hint>
-        <Field.Hint type="hint">
-          <Typography.Text weight="normal" size="md">
-            10 / 20
-          </Typography.Text>
-        </Field.Hint>
-      </div>
-    </Field>
-  )
-}
-
 type ListWithSingleSelection = StoryObj<typeof Field.List>
 
-export const ListSingle: ListWithSingleSelection = {
-  name: 'List with single selection',
-  render: () => (
+const ListSingleComponent = () => {
+  const [value, setValue] = useState<UserType>()
+
+  return (
     <Field>
       <Field.Label htmlFor="name-list-single">
         <Typography.Text weight="normal" size="md-2" color="grey-800">
@@ -97,83 +89,81 @@ export const ListSingle: ListWithSingleSelection = {
         </Typography.Text>
       </Field.Label>
       <Field.List.Wrapper>
-        <Field.Input id="name-list-single" placeholder="Write something" />
-        <Field.List defaultValue={{ id: 2, name: 'Pedro' }} onChange={(value) => console.log(value)}>
-          {({ isMobile }) => (
-            <React.Fragment>
-              {isMobile && <Field.Input autoFocus id="name-list-single-mobile" placeholder="Write something" />}
-              <Field.List.Item value={{ id: 1, name: 'Juan' }}>
-                <Typography.Text weight="normal" size="lg">
-                  You must write something
-                </Typography.Text>
-              </Field.List.Item>
-              <Field.List.Item value={{ id: 2, name: 'Pedro' }}>
-                <Typography.Text weight="normal" size="lg">
-                  You must write something
-                </Typography.Text>
-              </Field.List.Item>
-              <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-                <Typography.Text weight="normal" size="lg">
-                  You must write something
-                </Typography.Text>
-              </Field.List.Item>
-            </React.Fragment>
+        <Field.Input
+          type="button"
+          id="name-list-single"
+          placeholder="Select an user"
+          value={value?.name}
+          suffix={({ opened }) => (
+            <div style={{ transition: 'all 0.2s ease-in-out', transform: opened ? 'rotate(90deg)' : 'rotate(-90deg)' }}>
+              <IconItem size={16} icon={ArrowLeft2} />
+            </div>
           )}
+        />
+        <Field.List value={value} onChange={setValue}>
+          <Field.List.Body>
+            {USER_LIST.map((user) => (
+              <Field.List.Item key={user.id} value={user}>
+                <Typography.Text weight="normal" size="lg">
+                  {user.name}
+                </Typography.Text>
+              </Field.List.Item>
+            ))}
+          </Field.List.Body>
         </Field.List>
       </Field.List.Wrapper>
     </Field>
   )
 }
 
+export const ListSingle: ListWithSingleSelection = {
+  name: 'List with single selection',
+  render: () => <ListSingleComponent />
+}
+
 type ListWithMultipleSelectionStory = StoryObj<typeof Field.List>
 
-export const ListMultiple: ListWithMultipleSelectionStory = {
-  name: 'List with multiple selection',
-  render: () => (
+const ListMultipleComponent = () => {
+  const [value, setValue] = useState<UserType[] | undefined>([])
+
+  return (
     <Field>
-      <Field.Label htmlFor="name-list-multiple">
+      <Field.Label htmlFor="name-list-single">
         <Typography.Text weight="normal" size="md-2" color="grey-800">
           Name
         </Typography.Text>
       </Field.Label>
       <Field.List.Wrapper>
         <Field.Input
-          id="name-list-multiple"
-          placeholder="Write something"
+          type="button"
+          id="name-list-single"
+          placeholder="Select an user"
+          value={value?.map((item) => item.name).join(', ')}
           suffix={({ opened }) => (
-            <button
-              style={{ transition: 'all .5s ease-in-out', transform: opened ? 'rotate(180deg)' : 'rotate(0deg)' }}
-              onClick={() => console.log('search')}
-            >
-              Search
-            </button>
+            <div style={{ transition: 'all 0.2s ease-in-out', transform: opened ? 'rotate(90deg)' : 'rotate(-90deg)' }}>
+              <IconItem size={16} icon={ArrowLeft2} />
+            </div>
           )}
         />
-        <Field.List defaultValue={[{ id: 2, name: 'Pedro' }]} multiple onChange={(values) => console.log(values)}>
-          {({ isMobile }) => (
-            <React.Fragment>
-              {isMobile && <Field.Input autoFocus id="name-list-multiple-mobile" placeholder="Write something" />}
-              <Field.List.Item value={{ id: 1, name: 'Juan' }}>
+        <Field.List multiple value={value} onChange={setValue}>
+          <Field.List.Body>
+            {USER_LIST.map((user) => (
+              <Field.List.Item key={user.id} value={user}>
                 <Typography.Text weight="normal" size="lg">
-                  You must write something
+                  {user.name}
                 </Typography.Text>
               </Field.List.Item>
-              <Field.List.Item value={{ id: 2, name: 'Pedro' }}>
-                <Typography.Text weight="normal" size="lg">
-                  You must write something
-                </Typography.Text>
-              </Field.List.Item>
-              <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-                <Typography.Text weight="normal" size="lg">
-                  You must write something
-                </Typography.Text>
-              </Field.List.Item>
-            </React.Fragment>
-          )}
+            ))}
+          </Field.List.Body>
         </Field.List>
       </Field.List.Wrapper>
     </Field>
   )
+}
+
+export const ListMultiple: ListWithMultipleSelectionStory = {
+  name: 'List with multiple selection',
+  render: () => <ListMultipleComponent />
 }
 
 type AreaStory = StoryObj<typeof Field.Area>
@@ -186,210 +176,133 @@ export const Area: AreaStory = {
           Name
         </Typography.Text>
       </Field.Label>
-      <Field.Area id="name-area" placeholder="Write something" />
+      <Field.Area id="name-area" placeholder="Write something" autoComplete="off" />
     </Field>
   )
 }
 
-type ButtonStory = StoryObj<typeof Field.Input>
+type SearchStory = StoryObj<typeof Field.Input>
 
-type UserType = {
-  id: number | undefined
-  name: string | undefined
-}
+const SearchComponent = () => {
+  const [filteredUsers, setFilteredUsers] = useState<UserType[] | undefined>(USER_LIST)
+  const [selectedUsers, setSelectedUsers] = useState<UserType[] | undefined>()
+  const [value, setValue] = useState('')
 
-const ButtonComponent = () => {
-  const [data, setData] = useState<UserType>({ id: 2, name: 'Pedro' })
+  const handleOnSearchUsers = (term: string) => {
+    setValue(term)
+
+    if (!term) {
+      setFilteredUsers(USER_LIST)
+      return
+    }
+
+    const filtered = USER_LIST.filter((user) => user.name?.toLowerCase().includes(term.toLowerCase()))
+    setFilteredUsers(filtered)
+  }
 
   return (
     <Field>
+      <Typography.Paragraph size="md-2" color="grey-800" weight="bold" style={{ marginBottom: '10px' }}>
+        {`Selected users: `}
+        {selectedUsers?.map((user, index) => (
+          <Typography.Text key={user.id} weight="normal" size="md-2">
+            {`${user.name} ${selectedUsers.length > 1 && index !== selectedUsers.length - 1 ? '- ' : ''}`}
+          </Typography.Text>
+        ))}
+      </Typography.Paragraph>
       <Field.Label htmlFor="name-trigger">
         <Typography.Text weight="normal" size="md-2" color="grey-800">
           Name
         </Typography.Text>
       </Field.Label>
       <Field.List.Wrapper>
-        <Field.Input id="name-trigger" placeholder="Write something" value={data.name} type="button" />
-        <Field.List value={data} onChange={setData}>
-          <Field.List.Item value={{ id: 1, name: 'Juan' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 2, name: 'Pedro' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
-          <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-            <Typography.Text weight="normal" size="lg">
-              You must write something
-            </Typography.Text>
-          </Field.List.Item>
+        <Field.Input
+          id="name-trigger"
+          placeholder="Write something"
+          value={value}
+          onChange={(e) => handleOnSearchUsers(e.target.value)}
+          onFocus={(e) => e.target.select()}
+          autoComplete="off"
+          suffix={({ inputRef }) => (
+            <React.Fragment>
+              {value && (
+                <button
+                  onClick={() => handleOnSearchUsers('')}
+                  style={{
+                    border: 'none',
+                    background: 'none',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <IconItem size={16} icon={Trash} />
+                </button>
+              )}
+              <button
+                onClick={() => inputRef?.current?.focus()}
+                style={{
+                  border: 'none',
+                  background: 'none',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center'
+                }}
+              >
+                <IconItem size={16} icon={SearchIcon} />
+              </button>
+            </React.Fragment>
+          )}
+        />
+        <Field.List multiple value={selectedUsers} onChange={setSelectedUsers}>
+          {({ isMobile }) => (
+            <React.Fragment>
+              {isMobile && (
+                <Field.Input
+                  id="name-trigger"
+                  placeholder="Write something"
+                  value={value}
+                  onChange={(e) => handleOnSearchUsers(e.target.value)}
+                  onFocus={(e) => e.target.select()}
+                  autoComplete="off"
+                  autoFocus
+                  suffix={
+                    value && (
+                      <button
+                        onClick={() => handleOnSearchUsers('')}
+                        style={{
+                          border: 'none',
+                          background: 'none',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          cursor: 'pointer'
+                        }}
+                      >
+                        <IconItem size={16} icon={Trash} />
+                      </button>
+                    )
+                  }
+                />
+              )}
+              <Field.List.Body>
+                {filteredUsers?.map((user) => (
+                  <Field.List.Item key={user.id} value={user}>
+                    <Typography.Text weight="normal" size="lg">
+                      {user.name}
+                    </Typography.Text>
+                  </Field.List.Item>
+                ))}
+              </Field.List.Body>
+            </React.Fragment>
+          )}
         </Field.List>
       </Field.List.Wrapper>
     </Field>
   )
 }
 
-export const Button: ButtonStory = {
-  render: () => <ButtonComponent />
-}
-
-type GroupStory = StoryObj<typeof Field.Group>
-
-export const Group: GroupStory = {
-  render: () => (
-    <Field.Group>
-      <Field>
-        <Field.Label htmlFor="country-code">
-          <Typography.Text weight="normal" size="md-2" color="grey-800">
-            Country code
-          </Typography.Text>
-        </Field.Label>
-        <Field.List.Wrapper>
-          <Field.Input error type="button" value="palabra texto" id="country-code" placeholder="Write something" />
-          <Field.List>
-            <Field.List.Item value={{ id: 1, name: 'Juan' }}>
-              <Typography.Text weight="normal" size="lg">
-                Colombia
-              </Typography.Text>
-            </Field.List.Item>
-            <Field.List.Item value={{ id: 2, name: 'Pedro' }}>
-              <Typography.Text weight="normal" size="lg">
-                Mexico
-              </Typography.Text>
-            </Field.List.Item>
-            <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-              <Typography.Text weight="normal" size="lg">
-                Panamá
-              </Typography.Text>
-            </Field.List.Item>
-          </Field.List>
-        </Field.List.Wrapper>
-      </Field>
-
-      <Field>
-        <Field.Label htmlFor="prefix-phone-number">
-          <Typography.Text weight="normal" size="md-2" color="grey-800">
-            Prefix
-          </Typography.Text>
-        </Field.Label>
-        <Field.List.Wrapper nonRelative>
-          <Field.Input id="prefix-phone-number" placeholder="Write your prefix phone number" type="text" />
-          <Field.List defaultValue={[{ id: 2, name: 'Pedro' }]} multiple onChange={(values) => console.log(values)}>
-            {({ isMobile }) => (
-              <React.Fragment>
-                {isMobile && <Field.Input id="name-list-mobile" placeholder="Write something" />}
-                <Field.List.Item value={{ id: 1, name: 'Juan' }}>
-                  <Typography.Text weight="normal" size="lg">
-                    You must write something
-                  </Typography.Text>
-                </Field.List.Item>
-                <Field.List.Item value={{ id: 2, name: 'Pedro' }}>
-                  <Typography.Text weight="normal" size="lg">
-                    You must write something
-                  </Typography.Text>
-                </Field.List.Item>
-                <Field.List.Item value={{ id: 3, name: 'Maria' }}>
-                  <Typography.Text weight="normal" size="lg">
-                    You must write something
-                  </Typography.Text>
-                </Field.List.Item>
-              </React.Fragment>
-            )}
-          </Field.List>
-        </Field.List.Wrapper>
-      </Field>
-
-      <Field>
-        <Field.Label htmlFor="phone-number">
-          <Typography.Text weight="normal" size="md-2" color="grey-800">
-            Phone number
-          </Typography.Text>
-        </Field.Label>
-        <Field.Input id="phone-number" placeholder="Write your phone number" type="number" />
-      </Field>
-    </Field.Group>
-  )
+export const Search: SearchStory = {
+  render: () => <SearchComponent />
 }

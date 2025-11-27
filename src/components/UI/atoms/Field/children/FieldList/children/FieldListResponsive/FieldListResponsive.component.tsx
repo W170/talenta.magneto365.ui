@@ -16,7 +16,8 @@ const BaseComponent: React.FC = ({ children }) => {
       isMobile && {
         isOpen: isFocused,
         onClose: () => setIsFocused(false),
-        className: cx('magneto-ui-field-list-responsive')
+        className: cx('magneto-ui-field-list-responsive'),
+        modalClassName: cx('magneto-ui-field-list-responsive')
       },
     [isFocused, isMobile, setIsFocused]
   )

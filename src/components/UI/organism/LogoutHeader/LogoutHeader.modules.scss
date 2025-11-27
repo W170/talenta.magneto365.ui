@@ -65,8 +65,8 @@
 
     .magneto-ui-right-section {
       display: inherit;
-      gap: 10px;
-      @media (min-width: v.$screen-md) {
+      gap: 5px;
+      @media (min-width: v.$screen-xs) {
         gap: 18px;
       }
     }

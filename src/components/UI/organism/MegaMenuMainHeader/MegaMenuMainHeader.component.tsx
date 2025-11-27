@@ -29,6 +29,7 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
   const toggleSearchBar = () => {
     setShowSearchBar(!showSearchBar)
   }
+  const isMobileButton = useMediaQuery(false, { md: true })
 
   const renderLogo = useMediaQuery(<LogoComponent {...logoProps} />, {
     sm: <LogoComponent {...logoProps} isoView />
@@ -81,6 +82,7 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
       text={loginProps?.loginText || ''}
       iconProps={{ ...SignInIcon, size: 15 }}
       linkStyles={{ ...SignInStyles, buttonColor: '#FFFFFF' }}
+      isMobile={isMobileButton}
     />
   )
 
@@ -91,6 +93,7 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
       onClick={loginProps?.onClickSignUp || undefined}
       buttonSize={'medium'}
       iconProps={{ ...SignUpButtonStyle.iconProps, size: 15 }}
+      isMobile={isMobileButton}
     />
   )
 
