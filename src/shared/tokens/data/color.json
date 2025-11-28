@@ -57,8 +57,7 @@
     "purple": {
       "50": "#f0e8ff",
       "200": "#d3b7ff"
-    },
-    "skeleton": "#eeeff4"
+    }
   },
   "utilities": {
     "imports": [
