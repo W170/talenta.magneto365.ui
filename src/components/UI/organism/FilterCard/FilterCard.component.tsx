@@ -62,7 +62,8 @@ export const FilterCard: FC<IFilterCard> = ({
       field: props.field,
       multiple: props.multiple,
       loading: props.loading,
-      type: props.type
+      type: props.type,
+      dataType: props.dataType
     }
   })
 
