@@ -1,0 +1,16 @@
+@use '../../../../shared/stylesheets/tokens' as *;
+
+.magneto-ui-record {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 3.2rem;
+}
+
+.magneto-ui-title-custom {
+  background-color: #e0f3fb;
+}
+
+.magneto-ui-title-custom-delete {
+  background-color: #fff5f5;
+}
