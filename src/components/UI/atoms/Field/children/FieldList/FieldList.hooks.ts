@@ -8,7 +8,7 @@ export function useFieldList<T extends FieldListValue>({
   onChange,
   value: controlledValue
 }: Omit<IFieldList<T>, 'children'>) {
-  const [selected, setSelected] = useState<T[] | T | undefined>(defaultValue)
+  const [selected, setSelected] = useState<T[] | T | undefined | null>(defaultValue)
   const { setIsFocused } = useFieldContext()
 
   const isControlled = useMemo(() => controlledValue !== undefined, [controlledValue])
@@ -25,9 +25,9 @@ export function useFieldList<T extends FieldListValue>({
   )
 
   const handleSingleChange = useCallback(
-    (newValue: T) => {
+    (newValue?: T | null) => {
       if (!onChange) return
-      const singleOnChange = onChange as (value: T) => void
+      const singleOnChange = onChange as (value?: T | null) => void
       singleOnChange(newValue)
     },
     [onChange]
@@ -44,9 +44,10 @@ export function useFieldList<T extends FieldListValue>({
         handleMultipleChange(next)
         if (!isControlled) setSelected(next)
       } else {
+        const finalValue = (controlledValue as T)?.id === value.id ? undefined : (value as T)
         setIsFocused(false)
-        handleSingleChange(value as T)
-        if (!isControlled) setSelected(value as T)
+        handleSingleChange(finalValue)
+        if (!isControlled) setSelected(finalValue)
       }
     },
     [controlledValue, isControlled, multiple, handleMultipleChange, handleSingleChange, selected, setIsFocused]

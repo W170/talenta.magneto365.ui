@@ -48,35 +48,26 @@ function BaseComponent<T extends FieldListValue>(
   useEffect(() => {
     if (!isFocused || hasError || !shadowRef.current || !listRef.current) return
 
+    const listNode = listRef.current
+    const shadow = shadowRef.current
+
     const updateShadow = () => {
-      const list = listRef.current
-      const shadow = shadowRef.current
-
-      const fieldInput = list
-        ?.closest('[data-lib="magneto-ui"][data-slot="field"]')
+      const fieldInput = listNode
+        .closest('[data-lib="magneto-ui"][data-slot="field"]')
         ?.querySelector('[data-slot="field-input"]')
-      // const fieldGroup = list?.closest('[data-slot="field-group"]')
 
-      if (!list || !shadow || !fieldInput) return
+      if (!fieldInput) return
 
-      // const groupRect = fieldGroup?.getBoundingClientRect()
       const inputRect = fieldInput.getBoundingClientRect()
-      const listRect = list.getBoundingClientRect()
 
-      // shadow.style.width = `${groupRect?.width || inputRect?.width}px`
       shadow.style.width = `${inputRect.width}px`
-      shadow.style.height = `${inputRect.height + listRect.height}px`
+      shadow.style.height = `calc(100% + ${inputRect.height}px)`
     }
 
     updateShadow()
 
     const resizeObserver = new ResizeObserver(updateShadow)
-    if (listRef.current) resizeObserver.observe(listRef.current)
-
-    // const fieldGroup = listRef.current?.closest('[data-slot="field-group"]')
-    const field = listRef.current?.closest('.magneto-ui-field')?.querySelector('[data-slot="field-input"]')
-
-    if (field) resizeObserver.observe(field as Element)
+    resizeObserver.observe(listNode)
 
     window.addEventListener('scroll', updateShadow, true)
     window.addEventListener('resize', updateShadow)
@@ -109,7 +100,7 @@ function BaseComponent<T extends FieldListValue>(
             ref={shadowRef}
             className={cx(
               'magneto-ui-field-list-shadow',
-              isFocused ? 'magneto-ui-field-list-shadow--visible' : 'magneto-ui-field-list-shadow--hidden'
+              isFocused && !hasError ? 'magneto-ui-field-list-shadow--visible' : 'magneto-ui-field-list-shadow--hidden'
             )}
           />
           {renderChildren(children, { isDesktop, isMobile })}
