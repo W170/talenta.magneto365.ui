@@ -49,6 +49,14 @@ export interface ISearchBar {
     subtitle: string
   }
   recentSearch?: IRecentSearch
+  /**
+   * Disable dropdown suggestions
+   */
+  disableOptions?: boolean
+  /**
+   * Callback executed when user presses Enter
+   */
+  onSubmit?: (termValue: string) => void
 }
 
 export interface ISectionTitle {
