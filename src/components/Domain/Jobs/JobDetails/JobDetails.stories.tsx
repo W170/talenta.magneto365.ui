@@ -19,7 +19,7 @@ import { JobDetails } from './index'
 import { JobDetailsAction } from './children/JobDetailsAction'
 
 const meta: Meta<typeof JobDetails> = {
-  title: 'Organism/JobDetails',
+  title: 'Domain/Jobs/JobDetails',
   component: JobDetails,
   parameters: {
     layout: 'fullscreen'
