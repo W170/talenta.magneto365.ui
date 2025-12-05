@@ -6,7 +6,6 @@ export const useFieldError = (error?: boolean) => {
   const { hasError, setHasError } = useFieldContext()
 
   useEffect(() => {
-    if (error === undefined || error === hasError) return
     setHasError(error)
   }, [error, hasError, setHasError])
 }
