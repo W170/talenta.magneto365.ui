@@ -20,7 +20,9 @@ const SearchBar: React.FC<ISearchBar> = ({
   sectionTitle,
   onSelectOption,
   noContent,
-  recentSearch
+  recentSearch,
+  disableOptions = false,
+  onSubmit
 }) => {
   const [selectedOption, setSelectedOption] = useState(0)
   const [showOptions, setShowOptions] = useState(false)
@@ -49,9 +51,21 @@ const SearchBar: React.FC<ISearchBar> = ({
     [onSearch]
   )
 
+  const closeOptions = useCallback(() => {
+    setShowOptions(false)
+  }, [])
+
   const onPressKey = useCallback(
-    ({ key }: React.KeyboardEvent<HTMLInputElement>) => {
-      if (!AVAILABLE_KEYS.includes(key) || !optionsRef.current) return
+    (event: React.KeyboardEvent<HTMLInputElement>) => {
+      const { key } = event
+      if (key === 'Enter' && onSubmit) {
+        event.preventDefault()
+        onSubmit(String(termValue ?? ''))
+        closeOptions()
+        return
+      }
+
+      if (!AVAILABLE_KEYS.includes(key) || !optionsRef.current || disableOptions) return
       setSelectedOption((current) => {
         if (key == 'ArrowDown' && current < options.length - 1) {
           optionsRef.current!.scrollTop += 38
@@ -66,28 +80,39 @@ const SearchBar: React.FC<ISearchBar> = ({
 
       if (key == 'Enter' && linkRef.current) return linkRef.current.click()
     },
-    [options.length]
+    [closeOptions, disableOptions, onSubmit, options.length, termValue]
   )
 
-  const handleShowOptions = useCallback((show) => () => setShowOptions(show), [])
+  const handleShowOptions = useCallback(
+    (show: boolean) => () => {
+      if (disableOptions) return
+      setShowOptions(show)
+    },
+    [disableOptions]
+  )
 
   const onPressOption = useCallback(
     (option: ISearchOptions) => (event: React.MouseEvent<HTMLDivElement>) => {
       if (!onSelectOption) return
       event.stopPropagation()
       event.preventDefault()
-      setShowOptions(false)
+      closeOptions()
       onSelectOption(option)
     },
-    [onSelectOption]
+    [closeOptions, onSelectOption]
   )
 
-  useClickOutside(contentRef, handleShowOptions(false))
+  const handleClickOutside = useCallback(() => {
+    if (disableOptions) return
+    closeOptions()
+  }, [closeOptions, disableOptions])
+
+  useClickOutside(contentRef, handleClickOutside)
 
   return (
     <div
       className={`${styles['mega-menu-search-bar__input-content']}`}
-      onClick={handleShowOptions(true)}
+      onClick={disableOptions ? undefined : handleShowOptions(true)}
       ref={contentRef}
     >
       <Input
@@ -100,7 +125,7 @@ const SearchBar: React.FC<ISearchBar> = ({
         actionIcon={actionIcon}
         onKeyDown={onPressKey}
       />
-      {showOptions && (
+      {!disableOptions && showOptions && (
         <div className={styles['mega-menu-search-bar__input-options']} ref={optionsRef}>
           {sectionTitle && !recentSearch && renderSectionTitle}
           {options.length > 0 &&
