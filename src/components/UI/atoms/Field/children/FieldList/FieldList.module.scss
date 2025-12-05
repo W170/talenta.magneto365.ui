@@ -13,7 +13,7 @@
   &--desktop {
     max-height: calc(228px / $scale-px-base) * 1rem;
     position: absolute;
-    z-index: 20;
+    z-index: 1;
     top: $scale-full;
     left: 0;
     border-bottom-left-radius: $radius-sm;
