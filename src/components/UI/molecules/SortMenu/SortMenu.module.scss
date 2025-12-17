@@ -1,7 +1,6 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 
 .magneto-ui-btn-menu {
-  padding: 6px;
   display: flex;
   width: max-content;
   align-items: center;
@@ -25,4 +24,8 @@
 
 .disabled {
   cursor: not-allowed;
+}
+
+.magneto-ui-sort-menu-container {
+  height: 100%;
 }
