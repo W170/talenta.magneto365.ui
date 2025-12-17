@@ -56,4 +56,4 @@ const SortMenu: React.FC<ISortMenu> = ({
     </Popover>
   )
 }
-export default withClickOut(SortMenu, style['magneto-ui-sort-menu-container'])
+export default withClickOut(SortMenu, { className: style['magneto-ui-sort-menu-container'] })
