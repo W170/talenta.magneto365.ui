@@ -1,9 +1,7 @@
 import { IMegaMenuSideCards, MegaMenuSideCards } from '@components/UI/molecules'
 import React, { useCallback, useState } from 'react'
 import styles from './withSideCards.module.scss'
-import { MegaMenuDrawerItem } from '@components/UI/molecules/MegaMenuDrawerItem/MegaMenuDrawerItem.component'
-
-const { Drawer } = MegaMenuDrawerItem
+import { MegaMenuDrawerItem } from '@components/UI/molecules'
 
 const MobileSideCardsDrawer = <T,>({
   WrappedComponent,
@@ -38,7 +36,7 @@ const MobileSideCardsDrawer = <T,>({
   return (
     <div className={styles['mega-menu-side-container']}>
       <MegaMenuSideCards {...sideProps} onSelectCard={onSelectSideCard} />
-      <Drawer
+      <MegaMenuDrawerItem.Drawer
         isOpen={showDrawer}
         toggleDrawer={toogleDrawer}
         content={
