@@ -3,7 +3,7 @@ import { IMegaMenuDrawerItem } from './MegaMenuDrawerItem.interface'
 import style from './MegaMenuDrawerItem.module.scss'
 import { IconItem } from '../../atoms/Icon'
 import { ArrowLeft2, ArrowRight2 } from '../../../../constants/icons.constants'
-import { Drawer } from '..'
+import { Drawer } from '../Drawer'
 
 const Component: React.FC<IMegaMenuDrawerItem> = ({ url = '#', text = '', isActive, icon, content, onClickOption }) => {
   const [openDrawer, setOpenDrawer] = useState(false)
