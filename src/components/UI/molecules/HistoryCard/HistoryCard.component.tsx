@@ -19,18 +19,27 @@ const Component: React.FC<IHistoryCard> = ({ type, headerData, details, classNam
         ))}
       </div>
       <div className={cx('magneto-ui-history-card__body')}>
-        {details.map((detail, index) => (
-          <div key={index} className={cx('magneto-ui-history-card__detail-item')}>
-            <p className={cx('magneto-ui-history-card__label')}>{detail.label}</p>
-            <div
-              className={cx('magneto-ui-history-card__detail-value', {
-                'magneto-ui-history-card__detail-value--strikethrough': detail.isStrikethrough
-              })}
-            >
-              {detail.value}
+        {details.map((detail, index) => {
+          if (Array.isArray(detail)) {
+            return (
+              <React.Fragment key={index}>
+                {detail.map((subDetail, subIndex) => (
+                  <div key={`${index}-${subIndex}`} className={cx('magneto-ui-history-card__detail-item')}>
+                    <p className={cx('magneto-ui-history-card__label')}>{subDetail.label}</p>
+                    <div className={cx('magneto-ui-history-card__detail-value')}>{subDetail.value}</div>
+                  </div>
+                ))}
+                {index < details.length - 1 && <div className={cx('magneto-ui-history-card__divider')} />}
+              </React.Fragment>
+            )
+          }
+          return (
+            <div key={index} className={cx('magneto-ui-history-card__detail-item')}>
+              <p className={cx('magneto-ui-history-card__label')}>{detail.label}</p>
+              <div className={cx('magneto-ui-history-card__detail-value')}>{detail.value}</div>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
     </div>
   )

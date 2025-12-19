@@ -3,7 +3,6 @@ import React from 'react'
 export interface IHistoryCardDetail {
   label: string
   value: React.ReactNode
-  isStrikethrough?: boolean
 }
 
 export interface IHistoryCardHeader {
@@ -14,6 +13,6 @@ export interface IHistoryCardHeader {
 export interface IHistoryCard {
   type: 'edited' | 'deleted'
   headerData: IHistoryCardHeader[]
-  details: IHistoryCardDetail[]
+  details: (IHistoryCardDetail | IHistoryCardDetail[])[]
   className?: string
 }

@@ -48,6 +48,7 @@
     font-weight: 500;
     margin: 0;
     font-size: 14px;
+    overflow: auto;
   }
 
   &__body {
@@ -71,10 +72,15 @@
     color: t.$color-grey-900;
     margin: 0;
     line-height: 1.5;
+    overflow: auto;
+  }
 
-    &--strikethrough {
-      text-decoration: line-through;
-      color: t.$color-grey-900;
-    }
+  &__divider {
+    grid-column: 1 / -1;
+    height: 1px;
+    background-color: t.$color-grey-50;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 2px;
   }
 }
