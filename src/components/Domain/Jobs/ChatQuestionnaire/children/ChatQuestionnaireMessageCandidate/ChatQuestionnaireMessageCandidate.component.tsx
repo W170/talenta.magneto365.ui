@@ -38,6 +38,7 @@ export const ChatQuestionnaireMessageCandidate: React.FC<React.PropsWithChildren
 
   return (
     <Chat.Message
+      classNames={{ content: cx('message') }}
       renderLeft={() => (
         <div className={cx('edit-button-container')}>
           <button
