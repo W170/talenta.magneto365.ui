@@ -1,6 +1,6 @@
 import React from 'react'
-import { IDateRecord } from './dateRecord.interface'
-import styles from './dateRecord.module.scss'
+import { IDateRecord } from './DateRecord.interface'
+import styles from './DateRecord.module.scss'
 import { classNames } from '@shared/utils/common'
 
 const cx = classNames.bind(styles)

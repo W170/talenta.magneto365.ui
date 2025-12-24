@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
-import { IHeaderRecord } from './headerRecord.interface'
+import { IHeaderRecord } from './HeaderRecord.interface'
 import { classNames } from '@shared/utils/common'
-import styles from './headerRecord.module.scss'
+import styles from './HeaderRecord.module.scss'
 
 const cx = classNames.bind(styles)
 
@@ -18,4 +18,4 @@ const Component = forwardRef<HTMLDivElement, IHeaderRecord>(BaseComponent)
 /**
  * Organism UI of Record. It includes .
  */
-export const Header = Object.assign(Component, {})
+export const HeadeRecord = Object.assign(Component, {})

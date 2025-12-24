@@ -12,7 +12,7 @@ const Component: React.FC<IHistoryCard> = ({ type, headerData, details, classNam
     <div className={cardClass}>
       <div className={cx('magneto-ui-history-card__header')}>
         {headerData.map((item, index) => (
-          <div key={index} className={cx('magneto-ui-history-card__header-item')}>
+          <div key={`${index}-${item.label}`} className={cx('magneto-ui-history-card__header-item')}>
             <p className={cx('magneto-ui-history-card__label')}>{item.label}</p>
             <p className={cx('magneto-ui-history-card__value')}>{item.value}</p>
           </div>
@@ -22,7 +22,7 @@ const Component: React.FC<IHistoryCard> = ({ type, headerData, details, classNam
         {details.map((detail, index) => {
           if (Array.isArray(detail)) {
             return (
-              <React.Fragment key={index}>
+              <React.Fragment key={`group-${index}-${detail[0]?.label}`}>
                 {detail.map((subDetail, subIndex) => (
                   <div key={`${index}-${subIndex}`} className={cx('magneto-ui-history-card__detail-item')}>
                     <p className={cx('magneto-ui-history-card__label')}>{subDetail.label}</p>
@@ -34,7 +34,7 @@ const Component: React.FC<IHistoryCard> = ({ type, headerData, details, classNam
             )
           }
           return (
-            <div key={index} className={cx('magneto-ui-history-card__detail-item')}>
+            <div key={`${index}-${detail.label}`} className={cx('magneto-ui-history-card__detail-item')}>
               <p className={cx('magneto-ui-history-card__label')}>{detail.label}</p>
               <div className={cx('magneto-ui-history-card__detail-value')}>{detail.value}</div>
             </div>

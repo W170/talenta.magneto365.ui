@@ -1,12 +1,12 @@
 import React, { forwardRef, Fragment } from 'react'
-import { Ititle } from './title.interface'
+import { ITitleRecord } from './TitleRecord.interface'
 import { classNames } from '@shared/utils/common'
 import { IconItem } from '@components/UI/atoms'
-import styles from './title.module.scss'
+import styles from './TitleRecord.module.scss'
 
 const cx = classNames.bind(styles)
 
-const BaseComponent = ({ className, title, children, icon }: Ititle, ref: React.ForwardedRef<HTMLDivElement>) => {
+const BaseComponent = ({ className, title, children, icon }: ITitleRecord, ref: React.ForwardedRef<HTMLDivElement>) => {
   return (
     <Fragment>
       {children ? (
@@ -21,9 +21,9 @@ const BaseComponent = ({ className, title, children, icon }: Ititle, ref: React.
   )
 }
 
-const Component = forwardRef<HTMLDivElement, Ititle>(BaseComponent)
+const Component = forwardRef<HTMLDivElement, ITitleRecord>(BaseComponent)
 
 /**
  * Atom UI of field. It includes .
  */
-export const Title = Object.assign(Component, {})
+export const TitleRecord = Object.assign(Component, {})
