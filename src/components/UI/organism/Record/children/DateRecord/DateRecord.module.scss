@@ -1,4 +1,4 @@
-@use '../../../../shared/stylesheets/tokens' as t;
+@use '../../../../../../shared/stylesheets/tokens/_index' as t;
 .magneto-ui-DateRecord {
   color: t.$color-grey-500;
   display: flex;
