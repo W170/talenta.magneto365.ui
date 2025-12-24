@@ -4,9 +4,9 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 12px;
-  gap: 8px;
-  border-radius: 8px;
+  padding: t.$padding-md;
+  gap: t.$gap-sm;
+  border-radius: t.$radius-sm;
   overflow: hidden;
   background-color: t.$color-grey-100;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
@@ -22,9 +22,9 @@
   &__header {
     display: grid;
     grid-template-columns: 250px 1fr;
-    gap: 8px;
-    padding: 8px;
-    border-radius: 8px;
+    gap: t.$gap-sm;
+    padding: t.$padding-sm;
+    border-radius: t.$radius-sm;
     background-color: t.$color-grey-60;
     align-items: center;
 
@@ -52,10 +52,10 @@
   }
 
   &__body {
-    padding: 0px 8px;
+    padding: 0px t.$padding-sm;
     display: grid;
     grid-template-columns: 250px 1fr;
-    gap: 16px 8px; // Row gap 16px, Column gap 8px
+    gap: t.$gap-lg t.$gap-sm; // Row gap 16px, Column gap 8px
     align-items: start;
 
     @media screen and (max-width: t.$screen-md) {
@@ -80,7 +80,7 @@
     height: 1px;
     background-color: t.$color-grey-50;
     width: 100%;
-    margin-top: 10px;
+    margin-top: t.$margin-sm-2;
     margin-bottom: 2px;
   }
 }

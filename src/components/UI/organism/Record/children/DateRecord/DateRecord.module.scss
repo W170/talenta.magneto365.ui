@@ -1,5 +1,6 @@
+@use '../../../../shared/stylesheets/tokens' as t;
 .magneto-ui-DateRecord {
-  color: #8591a0;
+  color: t.$color-grey-500;
   display: flex;
   align-items: center;
   font-size: 14px;
