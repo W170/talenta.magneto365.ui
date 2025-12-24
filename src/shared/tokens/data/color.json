@@ -32,7 +32,6 @@
     },
     "grey": {
       "50": "#ffffff",
-      "60": "#E0E4E7",
       "100": "#f0f1f3",
       "200": "#e0e4e7",
       "300": "#c2c8cf",
@@ -71,38 +70,22 @@
       {
         "name": "stroke",
         "prefix": "stroke",
-        "properties": [
-          {
-            "property": "stroke"
-          }
-        ]
+        "properties": [{ "property": "stroke" }]
       },
       {
         "name": "fill",
         "prefix": "fill",
-        "properties": [
-          {
-            "property": "fill"
-          }
-        ]
+        "properties": [{ "property": "fill" }]
       },
       {
         "name": "background",
         "prefix": "bg",
-        "properties": [
-          {
-            "property": "background-color"
-          }
-        ]
+        "properties": [{ "property": "background-color" }]
       },
       {
         "name": "color",
         "prefix": "color",
-        "properties": [
-          {
-            "property": "color"
-          }
-        ]
+        "properties": [{ "property": "color" }]
       }
     ]
   },
