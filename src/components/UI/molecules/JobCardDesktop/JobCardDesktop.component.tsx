@@ -53,6 +53,10 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
                 className={cx(`${classMUI}-card-jobs__brand-img`)}
                 alt={companyName ? `${altDynamicText.workAt} ${companyName}` : 'company-name'}
                 src={companyLogo ? companyLogo : NoLogo}
+                onError={(e) => {
+                  e.currentTarget.onerror = null
+                  e.currentTarget.src = NoLogo
+                }}
                 loading="lazy"
                 width={'67px'}
                 height={'67px'}
