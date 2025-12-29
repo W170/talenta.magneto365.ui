@@ -165,8 +165,10 @@
     &-img {
       min-width: 67px;
       height: 67px;
+      width: 67px;
       background-color: $color-grey-50;
       object-fit: contain;
+      display: block;
       padding: 5px;
     }
   }
