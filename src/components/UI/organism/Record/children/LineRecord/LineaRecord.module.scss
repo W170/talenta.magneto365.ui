@@ -1,0 +1,12 @@
+@use '../../../../../../shared/stylesheets/tokens/_index' as t;
+.magneto-ui-line-record {
+  display: flex;
+  min-height: 3rem;
+  border: 1px solid t.$color-grey-200;
+  border-radius: t.$radius-md-2;
+  margin: 2.5rem 5px 5px 15px;
+  position: absolute;
+  left: -10px;
+  width: 2px;
+  height: 100%;
+}
