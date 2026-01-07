@@ -34,7 +34,8 @@
       opacity: 0;
       top: 0;
     }
-    &--info {
+    &--info,
+    &--loading {
       background-color: v.$alert-color-blueBackground;
       border-left-color: v.$alert-color-blue;
     }

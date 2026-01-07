@@ -63,3 +63,11 @@ export const Error: Story = {
     duration: 1500
   }
 }
+
+export const Loading: Story = {
+  args: {
+    text: 'Loading message.',
+    type: 'loading',
+    duration: null
+  }
+}

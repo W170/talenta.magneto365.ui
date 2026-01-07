@@ -12,7 +12,7 @@ export interface IMessageProps {
   /**
    * This is the optional duration in milliseconds
    * */
-  duration?: number
+  duration?: number | null
   /**
    * Optional props for the icon
    */
@@ -35,4 +35,4 @@ export interface IMessageProps {
   visible?: boolean
 }
 
-export type TMessageType = 'info' | 'success' | 'warning' | 'error'
+export type TMessageType = 'info' | 'success' | 'warning' | 'error' | 'loading'
