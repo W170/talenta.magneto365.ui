@@ -53,8 +53,6 @@ export const Component: React.FC<IMessageProps> = ({
     if (!localVisible) return
     if (duration === null) return
 
-    console.log('Message will hide in', duration, 'ms')
-
     hideTimeoutRef.current = setTimeout(() => {
       setToggleAnimation(false)
     }, duration)
