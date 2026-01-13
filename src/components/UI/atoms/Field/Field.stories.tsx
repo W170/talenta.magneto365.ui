@@ -70,7 +70,11 @@ export const PrefixAndSuffix: PrefixAndSuffix = {
         autoComplete="off"
         placeholder="Write something"
         prefix={<IconItem icon={Add} />}
-        suffix={<button onClick={() => console.log('search')}>Search</button>}
+        suffix={
+          <button onMouseDown={(evt) => evt.preventDefault()} onClick={() => console.log('search')}>
+            Search
+          </button>
+        }
       />
     </Field>
   )
