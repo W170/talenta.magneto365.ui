@@ -60,17 +60,13 @@ const BaseComponent = (
 
   const handleOnWrapperMouseDown = useCallback(
     (evt: React.MouseEvent) => {
+      if (evt.defaultPrevented) return
+
       if (inputRef.current?.contains(evt.target as Node)) {
         return
       }
 
-      if (
-        disabled ||
-        readOnly ||
-        prefixRef.current?.contains(evt.target as Node) ||
-        suffixRef.current?.contains(evt.target as Node)
-      )
-        return
+      if (disabled || readOnly) return
 
       if (hasList) {
         setIsFocused(true)
@@ -82,12 +78,12 @@ const BaseComponent = (
 
       input?.focus()
 
-      if (input && typeof input.value === 'string') {
+      if (input && typeof input.value === 'string' && type !== FieldInputTypeEnum.BUTTON) {
         const len = input.value.length
         input.setSelectionRange(len, len)
       }
     },
-    [disabled, hasList, readOnly, setIsFocused]
+    [disabled, hasList, readOnly, setIsFocused, type]
   )
 
   if (type && !Object.values(FieldInputTypeEnum).includes(type as FieldInputTypeEnum)) return null
