@@ -35,7 +35,7 @@ export interface IPaginationProps extends ICreatePaginationProps {
    */
   nextTitle?: string
   /**
-   *  This is the flag when the filters promise is pending
+   *  Enable b2b styles
    */
   stylesB2b?: boolean
 }
@@ -89,7 +89,7 @@ export interface IBtnPaginationProps {
    */
   dynamicPaginationUrl?: string
   /**
-   *  This is the flag when the filters promise is pending
+   *  Enable b2b styles
    */
   stylesB2b?: boolean
 }
