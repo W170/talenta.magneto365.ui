@@ -8,7 +8,7 @@ import {
   logoProps,
   CreateAccountButton,
   LoginButton,
-  ListIcon,
+  ListMegaMenu,
   megaMenuJobsIcons,
   mobileSocialIcons
 } from '@constants/stories'
@@ -18,13 +18,17 @@ import { useMegaMenu, useMegaMenuJobs, useMegaMenuMain } from '@components/UI/te
 import { MegaMenuDrawerItem } from '@components/UI/molecules/MegaMenuDrawerItem'
 import { ButtonLink } from '@components/UI/atoms/ButtonLink'
 
-const Component: React.FC<IMegaMenuDrawer> = ({ isOpen = false, onClose }) => {
+const Component: React.FC<IMegaMenuDrawer> = ({ isOpen = false, onClose, socialHeaderVariantProps }) => {
   const [currentPage, setCurrentPage] = useState('')
   const { homeUrl, homeText, loginProps } = useMegaMenuMain()
   const { tabs, allJobsAction, onChangeTab } = useMegaMenuJobs()
   const {
     socialHeaderProps: { blog, helpOptions }
   } = useMegaMenu()
+
+  const isCandidate = socialHeaderVariantProps?.variant === 'candidate'
+  const tabsPrefix = socialHeaderVariantProps?.tabsPrefix
+  const promo = socialHeaderVariantProps?.promo
 
   const handleClose = () => {
     if (onClose) {
@@ -118,10 +122,36 @@ const Component: React.FC<IMegaMenuDrawer> = ({ isOpen = false, onClose }) => {
       customPadding={0}
       isFull
       hideButton
-      className={style['mega-menu-drawer']}
+      className={`${style['mega-menu-drawer']} ${isCandidate ? style['mega-menu-drawer--candidate'] : ''}`}
     >
-      <div className={style['mega-menu-drawer__close']}>{closeButton}</div>
-      <MegaMenuTabs className={style['mega-menu-drawer__tabs']} showArrows={false} />
+      <div
+        className={`${style['mega-menu-drawer__header']} ${
+          isCandidate ? style['mega-menu-drawer__header--candidate'] : ''
+        }`}
+      >
+        <div
+          className={`${style['mega-menu-drawer__header-top']} ${
+            isCandidate ? style['mega-menu-drawer__header-top--candidate'] : ''
+          }`}
+        >
+          {isCandidate && tabsPrefix && <span className={style['mega-menu-drawer__tabs-prefix']}>{tabsPrefix}</span>}
+          <div
+            className={`${style['mega-menu-drawer__close']} ${
+              isCandidate ? style['mega-menu-drawer__close--candidate'] : ''
+            }`}
+          >
+            {closeButton}
+          </div>
+        </div>
+        <div className={style['mega-menu-drawer__tabs-container']}>
+          <MegaMenuTabs
+            className={`${style['mega-menu-drawer__tabs']} ${
+              isCandidate ? style['mega-menu-drawer__tabs--candidate'] : ''
+            }`}
+            showArrows={false}
+          />
+        </div>
+      </div>
       <div className={style['mega-menu-drawer__content']}>
         <LogoComponent {...logoProps} />
 
@@ -144,7 +174,22 @@ const Component: React.FC<IMegaMenuDrawer> = ({ isOpen = false, onClose }) => {
 
         <div className={style['mega-menu-drawer__actions']}>{signUpActions}</div>
       </div>
-      <ListIconLink listIcon={ListIcon} size={34} spacing={20} className={style['mega-menu-drawer__links']} />
+      {isCandidate && promo && (
+        <div className={style['mega-menu-drawer__promo']}>
+          <span>{promo.content}</span>
+          <a href={promo.linkUrl} className={style['mega-menu-drawer__promo-link']}>
+            {promo.linkText}
+          </a>
+        </div>
+      )}
+      <ListIconLink
+        listIcon={ListMegaMenu}
+        size={34}
+        spacing={20}
+        className={`${style['mega-menu-drawer__links']} ${
+          isCandidate ? style['mega-menu-drawer__links--candidate'] : ''
+        }`}
+      />
     </Drawer>
   )
 }
