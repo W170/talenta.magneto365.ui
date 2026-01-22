@@ -6,7 +6,7 @@ import styles from './MegaMenu.module.scss'
 import { IMegaMenu } from './MegaMenu.interface'
 import { MegaMenuDrawer } from '@components/UI/organism/MegaMenuDrawer'
 
-const Component: React.FC<IMegaMenuContext & IMegaMenu> = ({ ...props }) => {
+const Component: React.FC<IMegaMenuContext & IMegaMenu> = ({ socialHeaderVariantProps, ...props }) => {
   const [showDrawer, setShowDrawer] = useState(false)
 
   const toogleDrawer = useCallback(() => {
@@ -18,7 +18,11 @@ const Component: React.FC<IMegaMenuContext & IMegaMenu> = ({ ...props }) => {
       <header className={styles['mega-menu']}>
         <div className={styles['mega-menu__main-header']}>
           <MegaMenuMainHeader toggleDrawerMenu={toogleDrawer} />
-          <MegaMenuDrawer isOpen={showDrawer} onClose={toogleDrawer} />
+          <MegaMenuDrawer
+            isOpen={showDrawer}
+            onClose={toogleDrawer}
+            socialHeaderVariantProps={socialHeaderVariantProps}
+          />
         </div>
       </header>
     </MegaMenuProvider>
