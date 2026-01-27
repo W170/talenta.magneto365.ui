@@ -75,13 +75,13 @@ export const megaMenuMainHeader: IMegaMenuMainHeader = {
     },
     placeholder: 'Selecciona tu pais',
     selectList: [
-      { id: 1, name: 'Colombia', img: 'CO' },
-      { id: 2, name: 'Mexico', img: 'MX' },
-      { id: 3, name: 'Argentina', img: 'AR' },
-      { id: 4, name: 'Chile', img: 'CL' },
-      { id: 5, name: 'Peru', img: 'PE' }
+      { id: 1, name: 'Colombia', img: 'https://flagcdn.com/w40/co.png' },
+      { id: 2, name: 'Mexico', img: 'https://flagcdn.com/w40/mx.png' },
+      { id: 3, name: 'Argentina', img: 'https://flagcdn.com/w40/ar.png' },
+      { id: 4, name: 'Chile', img: 'https://flagcdn.com/w40/cl.png' },
+      { id: 5, name: 'Peru', img: 'https://flagcdn.com/w40/pe.png' }
     ],
-    currentFields: [{ id: 1, name: 'Colombia', img: 'CO' }]
+    currentFields: [{ id: 1, name: 'Colombia', img: 'https://flagcdn.com/w40/co.png' }]
   }
 }
 
