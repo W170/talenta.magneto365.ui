@@ -68,6 +68,20 @@ export const megaMenuMainHeader: IMegaMenuMainHeader = {
       console.log('prueba')
     },
     loginText: 'Iniciar sesion'
+  },
+  selectCountry: {
+    onChange: (cvalue) => {
+      console.log('country changed to: ', cvalue)
+    },
+    placeholder: 'Selecciona tu pais',
+    selectList: [
+      { id: 1, name: 'Colombia', img: 'CO' },
+      { id: 2, name: 'Mexico', img: 'MX' },
+      { id: 3, name: 'Argentina', img: 'AR' },
+      { id: 4, name: 'Chile', img: 'CL' },
+      { id: 5, name: 'Peru', img: 'PE' }
+    ],
+    currentFields: [{ id: 1, name: 'Colombia', img: 'CO' }]
   }
 }
 

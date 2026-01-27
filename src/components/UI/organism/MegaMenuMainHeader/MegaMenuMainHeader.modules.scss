@@ -15,6 +15,10 @@
     gap: 5px;
     padding: 15px 12px;
   }
+  &__country {
+    min-width: 190px;
+    flex: 0 1 220px;
+  }
 
   &__main {
     display: flex;
