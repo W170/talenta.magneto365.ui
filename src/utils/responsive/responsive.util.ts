@@ -22,7 +22,7 @@ export class ResponsiveManagement {
   }
 
   private update(eventDispatcher: EventDispatcher): void {
-    const newType = this.getType(window.innerWidth)
+    const newType = this.getType(window.visualViewport?.width ?? window.innerWidth)
     if (newType === this.dim.type) return
     this.dim = {
       size: screenSize[newType],
