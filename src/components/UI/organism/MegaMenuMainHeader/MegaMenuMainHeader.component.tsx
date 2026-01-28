@@ -112,10 +112,10 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
         <a href={homeUrl}>{renderLogo}</a>
         {selectCountry && (
           <Select2
-            className={styles['mega-menu-main-header__country']}
             haveTags={false}
             isMultiple={false}
             {...selectCountry}
+            className={`${styles['mega-menu-main-header__country']} ${selectCountry.className || ''}`}
           />
         )}
         <div className={styles['mega-menu-main-header__search']}>{renderSearchBar}</div>
