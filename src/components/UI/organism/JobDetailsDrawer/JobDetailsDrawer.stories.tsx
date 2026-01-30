@@ -201,6 +201,14 @@ const alertJobStatusProps: IAlertJobStatus = {
   type: 'normal'
 }
 
+const completionAlertProps = {
+  text: 'Tu perfil está completo en',
+  boldText: '85%',
+  link: 'https://ejemplo.com/completar-perfil',
+  textLink: 'Completar perfil',
+  closable: true
+}
+
 const meta: Meta<typeof JobDetailsDrawer> = {
   title: 'Organism/Job Details Drawer',
   component: JobDetailsDrawer,
@@ -223,7 +231,8 @@ export const Default: Story = {
     jobVideo: jobVideo,
     cities: cities,
     fraudCardJobProps: fraudCardJob,
-    alertJobStatusProps: alertJobStatusProps
+    alertJobStatusProps: alertJobStatusProps,
+    completionAlertProps: completionAlertProps
   }
 }
 
@@ -239,7 +248,8 @@ export const CitiesRemote: Story = {
     jobVideo: jobVideo,
     cities: cities,
     isRemote: true,
-    textRemote: 'Remoto/hibrido en:'
+    textRemote: 'Remoto/hibrido en:',
+    completionAlertProps: completionAlertProps
   }
 }
 
@@ -258,6 +268,7 @@ export const JobsActions2: Story = {
     alertJobStatusProps: alertJobStatusProps,
     isJobDetailPage: false,
     actionLinkCardProps: actionLinkCard,
-    variant: 'detailed' as TJobActionsVariant
+    variant: 'detailed' as TJobActionsVariant,
+    completionAlertProps: completionAlertProps
   }
 }
