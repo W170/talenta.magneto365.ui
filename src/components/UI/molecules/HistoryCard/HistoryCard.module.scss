@@ -11,6 +11,10 @@
   background-color: t.$color-grey-100;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 
+  &--created {
+    border-left: 4px solid t.$color-blue-light-400;
+  }
+
   &--edited {
     border-left: 4px solid t.$color-blue-light-400;
   }
