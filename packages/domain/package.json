@@ -1,0 +1,47 @@
+{
+  "name": "@magneto365-ui/domain",
+  "version": "3.0.0",
+  "description": "Domain-specific and use-case components",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./jobs": {
+      "import": "./dist/esm/jobs/index.js",
+      "require": "./dist/cjs/jobs/index.js",
+      "types": "./dist/types/jobs/index.d.ts"
+    },
+    "./jobs/styles.css": "./dist/jobs/styles.css",
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "echo 'Build will be configured in later phases'",
+    "test": "jest --passWithNoTests",
+    "lint": "eslint ./src --ext .ts,.tsx",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@magneto365-ui/primitives": "workspace:*",
+    "@magneto365-ui/inputs": "workspace:*",
+    "@magneto365-ui/feedback": "workspace:*",
+    "@magneto365-ui/navigation": "workspace:*",
+    "@magneto365-ui/data-display": "workspace:*",
+    "@magneto365-ui/overlays": "workspace:*",
+    "@magneto365-ui/shared": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

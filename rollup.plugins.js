@@ -5,10 +5,17 @@ import alias from '@rollup/plugin-alias'
 import copy from 'rollup-plugin-copy'
 import url from '@rollup/plugin-url'
 import path from 'path'
+import { fileURLToPath } from 'url'
+import { createRequire } from 'module'
 import dotEnv from 'dotenv'
-import packageJson from './package.json'
 
-const { ASSETS_CDN_URL } = dotEnv.config().parsed
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const require = createRequire(import.meta.url)
+const packageJson = require('./package.json')
+
+const envConfig = dotEnv.config()
+const { ASSETS_CDN_URL = 'https://cdn.example.com/' } = envConfig.parsed || {}
 
 export const MAIN_PLUGINS = [
   peerDepsExternal(),

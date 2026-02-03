@@ -1,12 +1,15 @@
 import fs from 'fs'
 import path from 'path'
+import { createRequire } from 'module'
 import stringHash from 'string-hash'
 import autoprefixer from 'autoprefixer'
 import postcss from 'rollup-plugin-postcss'
 import typescript from '@rollup/plugin-typescript'
 import generatePackageJson from 'rollup-plugin-generate-package-json'
-import packageJson from './package.json'
-import { MAIN_PLUGINS } from './rollup.plugins'
+import { MAIN_PLUGINS } from './rollup.plugins.js'
+
+const require = createRequire(import.meta.url)
+const packageJson = require('./package.json')
 
 const cssMapModules = new Map()
 

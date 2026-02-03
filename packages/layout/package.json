@@ -1,0 +1,24 @@
+{
+  "name": "@magneto365-ui/layout",
+  "version": "3.0.0",
+  "description": "Layout primitives (reserved for future use)",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "echo 'Build will be configured in later phases'",
+    "test": "jest --passWithNoTests",
+    "lint": "eslint ./src --ext .ts,.tsx",
+    "clean": "rm -rf dist .turbo"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
