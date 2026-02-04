@@ -22,6 +22,9 @@ export type {
 // Hooks
 export { useMediaQuery, useClickOutside, useWithElement } from './hooks'
 
+// HOCs
+export { withClickOut } from './hoc'
+
 // Re-export utilities from shared package for convenience
 export {
   classNames,
