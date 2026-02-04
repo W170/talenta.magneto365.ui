@@ -1,0 +1,11 @@
+.magneto-ui-play-button {
+  svg {
+    position: absolute;
+    top: calc(50%);
+    left: calc(50%);
+    transform: translate(-50%, -50%);
+    height: 58px;
+    width: 58px;
+    color: #fff;
+  }
+}

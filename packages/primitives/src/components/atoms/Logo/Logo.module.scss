@@ -1,0 +1,14 @@
+.magneto-ui-logo {
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: 110px;
+}
+
+.magneto-ui-isologo {
+  height: auto;
+  width: 25px;
+  @media (min-width: 768px) {
+    width: 30px;
+  }
+}
