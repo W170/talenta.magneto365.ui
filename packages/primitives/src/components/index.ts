@@ -1,11 +1,16 @@
-export { Image, LogoComponent, DotsLoader, FlatLoader, IconItem, Avatar, BarLoader, Loading } from './atoms'
-export type {
-  IImage,
-  ILogoComponent,
-  IDotsLoader,
-  IFlatLoader,
-  IconProps,
-  IAvatar,
-  IBardLoader,
-  ILoading
-} from './atoms'
+export { Image } from './Image'
+export type { IImage } from './Image'
+export { LogoComponent } from './Logo'
+export type { ILogoComponent } from './Logo'
+export { DotsLoader } from './DotsLoader'
+export type { IDotsLoader } from './DotsLoader'
+export { FlatLoader } from './FlatLoader'
+export type { IFlatLoader } from './FlatLoader'
+export { IconItem } from './Icon'
+export type { IconProps } from './Icon'
+export { Avatar } from './Avatar'
+export type { IAvatar } from './Avatar'
+export { BarLoader } from './BarLoader'
+export type { IBardLoader } from './BarLoader'
+export { Loading } from './Loading'
+export type { ILoading } from './Loading'
