@@ -328,12 +328,22 @@ importers:
 
   packages/primitives:
     dependencies:
+      '@magneto365-ui/shared':
+        specifier: workspace:*
+        version: link:../shared
       react:
         specifier: ^17.0.2
         version: 17.0.2
       react-dom:
         specifier: ^17.0.2
         version: 17.0.2(react@17.0.2)
+    devDependencies:
+      '@types/react':
+        specifier: ^17.0.2
+        version: 17.0.90
+      '@types/react-dom':
+        specifier: ^17.0.2
+        version: 17.0.26(@types/react@17.0.90)
 
   packages/shared:
     dependencies:
@@ -343,6 +353,13 @@ importers:
       react-dom:
         specifier: ^17.0.2
         version: 17.0.2(react@17.0.2)
+    devDependencies:
+      '@types/react':
+        specifier: ^17.0.2
+        version: 17.0.90
+      '@types/react-dom':
+        specifier: ^17.0.2
+        version: 17.0.26(@types/react@17.0.90)
 
 packages:
   '@aw-web-design/x-default-browser@1.4.126':
