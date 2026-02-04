@@ -35,7 +35,11 @@ export {
   Avatar,
   BarLoader,
   Loading,
-  Portal
+  Portal,
+  Badge,
+  Divider,
+  Tag,
+  Button
 } from './components'
 export type {
   IImage,
@@ -46,7 +50,12 @@ export type {
   IAvatar,
   IBardLoader,
   ILoading,
-  IPortal
+  IPortal,
+  IBadge,
+  IDivider,
+  DIRECTIONS,
+  ITag,
+  IButton
 } from './components'
 
 // Re-export utilities from shared package for convenience
