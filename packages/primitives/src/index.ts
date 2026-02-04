@@ -19,6 +19,9 @@ export type {
   IContainerContextProvider
 } from './context'
 
+// Hooks
+export { useMediaQuery, useClickOutside, useWithElement } from './hooks'
+
 // Re-export utilities from shared package for convenience
 export {
   classNames,
