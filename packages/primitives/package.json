@@ -9,7 +9,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "echo 'Build will be configured when components are migrated'",
+    "build": "rollup -c rollup.config.js",
+    "dev": "rollup -c rollup.config.js --watch",
     "test": "jest --passWithNoTests",
     "lint": "eslint ./src --ext .ts,.tsx",
     "clean": "rm -rf dist .turbo"
@@ -22,8 +23,28 @@
     "@magneto365-ui/shared": "workspace:*"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@rollup/plugin-url": "^8.0.1",
     "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.2"
+    "@types/react-dom": "^17.0.2",
+    "autoprefixer": "10.4.0",
+    "rollup": "^2.60.0",
+    "rollup-plugin-dts": "^4.0.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "sass": "^1.43.5",
+    "string-hash": "^1.1.3",
+    "typescript": "^4.4.4"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./styles.css": "./dist/esm/styles.css"
   },
   "publishConfig": {
     "access": "public"
