@@ -26,8 +26,17 @@ export { useMediaQuery, useClickOutside, useWithElement } from './hooks'
 export { withClickOut } from './hoc'
 
 // Components
-export { Image, LogoComponent, DotsLoader, FlatLoader } from './components'
-export type { IImage, ILogoComponent, IDotsLoader, IFlatLoader } from './components'
+export { Image, LogoComponent, DotsLoader, FlatLoader, IconItem, Avatar, BarLoader, Loading } from './components'
+export type {
+  IImage,
+  ILogoComponent,
+  IDotsLoader,
+  IFlatLoader,
+  IconProps,
+  IAvatar,
+  IBardLoader,
+  ILoading
+} from './components'
 
 // Re-export utilities from shared package for convenience
 export {
