@@ -7,7 +7,7 @@
     padding: 20px;
     left: 0;
     position: fixed;
-    width: 100vw;
+    width: 100%;
     height: auto;
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
     z-index: 9999;
@@ -37,15 +37,8 @@
     }
     .magneto-ui-container {
       @include m.scroll-shadows;
-      height: min-content;
+      height: calc(92dvh - 40px);
       padding: 0 10px;
-      max-height: 300px;
-      @media (min-width: v.$screen-xxs) {
-        max-height: 550px;
-      }
-      @media (min-width: v.$screen-md) {
-        max-height: 650px;
-      }
       &::-webkit-scrollbar {
         width: 5px;
         border-radius: 15px;
