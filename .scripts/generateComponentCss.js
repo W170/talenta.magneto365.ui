@@ -138,7 +138,12 @@ function injectCssImport(distDir, componentName, format) {
 
     if (fs.existsSync(nestedPath)) {
       // Move the nested index.js to the correct location
-      const content = fs.readFileSync(nestedPath, 'utf-8')
+      let content = fs.readFileSync(nestedPath, 'utf-8')
+
+      // Fix relative import paths when moving from nested to parent directory
+      // Change ../../ComponentName.* to ./ComponentName.*
+      content = content.replace(/from\s+['"]\.\.\/\.\.\//g, "from './")
+
       fs.writeFileSync(indexPath, content, 'utf-8')
 
       // Clean up nested structure
