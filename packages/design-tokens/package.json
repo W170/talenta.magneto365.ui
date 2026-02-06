@@ -1,0 +1,37 @@
+{
+  "name": "@magneto365-ui/design-tokens",
+  "version": "0.1.0",
+  "description": "Design tokens for Magneto365 UI Library - auto-generated from JSON sources",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./scss": "./src/scss/_index.scss",
+    "./scss/*": "./src/scss/*.scss"
+  },
+  "scripts": {
+    "generate": "node scripts/generateTokens.js",
+    "build": "pnpm generate && rollup -c rollup.config.js --configPlugin typescript",
+    "clean": "rm -rf dist src/index.ts src/scss"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
+    "rollup": "^4.9.6",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  },
+  "files": [
+    "dist",
+    "src/scss",
+    "data",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

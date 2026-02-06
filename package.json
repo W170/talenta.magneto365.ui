@@ -14,6 +14,8 @@
     "lint": "turbo run lint",
     "generate:tokens": "node ./.scripts/generateTokens.js",
     "generate:css": "node ./.scripts/generateCssFiles.js",
+    "tokens:generate": "pnpm --filter @magneto365-ui/design-tokens generate",
+    "tokens:build": "pnpm --filter @magneto365-ui/design-tokens build",
     "dev": "turbo run dev --parallel",
     "clean": "turbo run clean && rm -rf node_modules",
     "changeset": "changeset",

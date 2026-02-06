@@ -1,0 +1,13 @@
+{
+  "values": {
+    "normal": "400",
+    "bold": "700",
+    "black": "900"
+  },
+  "docs": {
+    "description": "Weight SCSS vars for consistent font weights.",
+    "example": "```scss\n.title {\n  font-size: $weight-normal;\n}\n```",
+    "category": "typography",
+    "tags": "text, typography, font, size, weight, line-height"
+  }
+}
