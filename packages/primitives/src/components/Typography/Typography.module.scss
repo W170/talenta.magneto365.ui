@@ -1,0 +1,121 @@
+@use '../../../../design-tokens/src/scss' as tokens;
+
+.magneto-ui-typography {
+  font-style: inherit;
+  font-size: var(--size, 1rem);
+  font-weight: var(--weight, inherit);
+  line-height: calc(var(--size, inherit) + 4px);
+  color: inherit;
+  margin: 0;
+  padding: 0;
+
+  // Dynamic size classes from design tokens
+  @each $size, $value in tokens.$text-map {
+    &--size-#{$size} {
+      font-size: $value;
+      line-height: calc($value + 4px);
+    }
+  }
+
+  // Dynamic color classes from design tokens
+  @each $color, $value in tokens.$color-map {
+    &--color-#{'' + $color} {
+      color: $value;
+      > * {
+        color: $value;
+      }
+      &:hover {
+        color: $value;
+        > * {
+          color: $value;
+        }
+      }
+    }
+  }
+
+  // Weight classes
+  &--weight {
+    &-thin {
+      font-weight: 100;
+    }
+    &-extra-light {
+      font-weight: 200;
+    }
+    &-light {
+      font-weight: 300;
+    }
+    &-normal {
+      font-weight: 400;
+    }
+    &-medium {
+      font-weight: 500;
+    }
+    &-semi-bold {
+      font-weight: 600;
+    }
+    &-bold {
+      font-weight: 700;
+    }
+    &-extra-bold {
+      font-weight: 800;
+    }
+    &-black {
+      font-weight: 900;
+    }
+  }
+
+  // Style modifiers
+  &--code {
+    margin: 0 3px;
+    padding-inline: 6px;
+    padding-block: 3px 2px;
+    background: rgba(150, 150, 150, 0.1);
+    border: 1px solid rgba(100, 100, 100, 0.2);
+    border-radius: 3px;
+  }
+
+  &--delete {
+    text-decoration: line-through;
+  }
+
+  &--italic {
+    font-style: italic;
+  }
+
+  &--keyboard {
+    margin: 0 3px;
+    padding-inline: 6px;
+    padding-block: 3px 2px;
+    background: rgba(150, 150, 150, 0.06);
+    border: 1px solid rgba(100, 100, 100, 0.2);
+    border-bottom-width: 2px;
+    border-radius: 3px;
+  }
+
+  &--mark {
+    background: #faad14;
+  }
+
+  &--strong {
+    font-weight: bold;
+  }
+
+  &--underline {
+    text-decoration: underline;
+  }
+
+  // Ellipsis variants
+  &--ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &--ellipsis-multiline {
+    display: -webkit-box;
+    line-clamp: var(--ellipsis-lines);
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--ellipsis-lines);
+    overflow: hidden;
+  }
+}

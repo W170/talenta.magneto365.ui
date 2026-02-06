@@ -18,9 +18,11 @@ export default {
   plugins: [
     typescript({
       tsconfig: './tsconfig.json',
-      declaration: true,
-      declarationDir: './dist/types',
-      rootDir: './src'
+      compilerOptions: {
+        declaration: true,
+        declarationDir: './dist/types',
+        rootDir: './src'
+      }
     })
   ],
   external: []

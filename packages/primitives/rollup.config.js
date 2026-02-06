@@ -85,7 +85,11 @@ export default () => {
           sourceMap: false,
           use: {
             sass: {
-              includePaths: [path.resolve(__dirname, 'src')]
+              includePaths: [
+                path.resolve(__dirname, 'src'),
+                path.resolve(__dirname, '../design-tokens/src'),
+                path.resolve(__dirname, '../../node_modules')
+              ]
             }
           }
         })

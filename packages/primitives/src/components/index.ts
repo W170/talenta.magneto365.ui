@@ -24,3 +24,14 @@ export { Tag } from './Tag'
 export type { ITag } from './Tag'
 export { Button } from './Button'
 export type { IButton } from './Button'
+export { Typography } from './Typography'
+export type {
+  ITypographyBase,
+  ITypographyEllipsis,
+  ETypographyFontWeight,
+  TTypographyFontWeight,
+  ITypographyTitle,
+  ITypographyText,
+  TTypographyParagraph,
+  ITypographyLink
+} from './Typography'
