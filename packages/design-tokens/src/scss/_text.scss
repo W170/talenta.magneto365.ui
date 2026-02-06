@@ -1,0 +1,22 @@
+// Auto-generated DO NOT EDIT
+@use '_scale.scss' as scale;
+
+$text-sm-2: scale.$scale-rem-sm-2;
+$text-md: scale.$scale-rem-md;
+$text-md-2: scale.$scale-rem-md-2;
+$text-lg: scale.$scale-rem-lg;
+$text-xl: scale.$scale-rem-xl;
+$text-2xl: scale.$scale-rem-2xl;
+$text-3xl: scale.$scale-rem-3xl;
+$text-4xl: scale.$scale-rem-4xl;
+
+$text-map: (
+  sm-2: $text-sm-2,
+  md: $text-md,
+  md-2: $text-md-2,
+  lg: $text-lg,
+  xl: $text-xl,
+  2xl: $text-2xl,
+  3xl: $text-3xl,
+  4xl: $text-4xl
+);

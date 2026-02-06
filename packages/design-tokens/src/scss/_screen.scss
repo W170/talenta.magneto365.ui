@@ -1,0 +1,22 @@
+// Auto-generated DO NOT EDIT
+@use '_scale.scss' as scale;
+
+$screen-xxs: scale.$scale-rem-container-xxs;
+$screen-xs: scale.$scale-rem-container-xs;
+$screen-sm: scale.$scale-rem-container-sm;
+$screen-md: scale.$scale-rem-container-md;
+$screen-lg: scale.$scale-rem-container-lg;
+$screen-xl: scale.$scale-rem-container-xl;
+$screen-2xl: scale.$scale-rem-container-2xl;
+$screen-3xl: scale.$scale-rem-container-3xl;
+
+$screen-map: (
+  xxs: $screen-xxs,
+  xs: $screen-xs,
+  sm: $screen-sm,
+  md: $screen-md,
+  lg: $screen-lg,
+  xl: $screen-xl,
+  2xl: $screen-2xl,
+  3xl: $screen-3xl
+);

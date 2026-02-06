@@ -1,0 +1,954 @@
+// Auto-generated DO NOT EDIT
+@use '_scale.scss' as scale;
+@use '_color.scss' as color;
+@use '_opacity.scss' as opacity;
+
+.stroke-transparent {
+  stroke: color.$color-transparent;
+}
+.stroke-inherit {
+  stroke: color.$color-inherit;
+}
+.stroke-current {
+  stroke: color.$color-current;
+}
+.stroke-blue-dark-50 {
+  stroke: color.$color-blue-dark-50;
+}
+.stroke-blue-dark-100 {
+  stroke: color.$color-blue-dark-100;
+}
+.stroke-blue-dark-200 {
+  stroke: color.$color-blue-dark-200;
+}
+.stroke-blue-dark-300 {
+  stroke: color.$color-blue-dark-300;
+}
+.stroke-blue-dark-400 {
+  stroke: color.$color-blue-dark-400;
+}
+.stroke-blue-dark-500 {
+  stroke: color.$color-blue-dark-500;
+}
+.stroke-blue-light-50 {
+  stroke: color.$color-blue-light-50;
+}
+.stroke-blue-light-100 {
+  stroke: color.$color-blue-light-100;
+}
+.stroke-blue-light-200 {
+  stroke: color.$color-blue-light-200;
+}
+.stroke-blue-light-300 {
+  stroke: color.$color-blue-light-300;
+}
+.stroke-blue-light-400 {
+  stroke: color.$color-blue-light-400;
+}
+.stroke-blue-light-500 {
+  stroke: color.$color-blue-light-500;
+}
+.stroke-green-50 {
+  stroke: color.$color-green-50;
+}
+.stroke-green-100 {
+  stroke: color.$color-green-100;
+}
+.stroke-green-200 {
+  stroke: color.$color-green-200;
+}
+.stroke-green-300 {
+  stroke: color.$color-green-300;
+}
+.stroke-green-400 {
+  stroke: color.$color-green-400;
+}
+.stroke-green-500 {
+  stroke: color.$color-green-500;
+}
+.stroke-green-600 {
+  stroke: color.$color-green-600;
+}
+.stroke-grey-50 {
+  stroke: color.$color-grey-50;
+}
+.stroke-grey-100 {
+  stroke: color.$color-grey-100;
+}
+.stroke-grey-200 {
+  stroke: color.$color-grey-200;
+}
+.stroke-grey-300 {
+  stroke: color.$color-grey-300;
+}
+.stroke-grey-400 {
+  stroke: color.$color-grey-400;
+}
+.stroke-grey-500 {
+  stroke: color.$color-grey-500;
+}
+.stroke-grey-600 {
+  stroke: color.$color-grey-600;
+}
+.stroke-grey-700 {
+  stroke: color.$color-grey-700;
+}
+.stroke-grey-800 {
+  stroke: color.$color-grey-800;
+}
+.stroke-grey-900 {
+  stroke: color.$color-grey-900;
+}
+.stroke-red-50 {
+  stroke: color.$color-red-50;
+}
+.stroke-red-100 {
+  stroke: color.$color-red-100;
+}
+.stroke-red-200 {
+  stroke: color.$color-red-200;
+}
+.stroke-red-300 {
+  stroke: color.$color-red-300;
+}
+.stroke-yellow-50 {
+  stroke: color.$color-yellow-50;
+}
+.stroke-yellow-100 {
+  stroke: color.$color-yellow-100;
+}
+.stroke-yellow-200 {
+  stroke: color.$color-yellow-200;
+}
+.stroke-yellow-300 {
+  stroke: color.$color-yellow-300;
+}
+.stroke-purple-50 {
+  stroke: color.$color-purple-50;
+}
+.stroke-purple-200 {
+  stroke: color.$color-purple-200;
+}
+
+.fill-transparent {
+  fill: color.$color-transparent;
+}
+.fill-inherit {
+  fill: color.$color-inherit;
+}
+.fill-current {
+  fill: color.$color-current;
+}
+.fill-blue-dark-50 {
+  fill: color.$color-blue-dark-50;
+}
+.fill-blue-dark-100 {
+  fill: color.$color-blue-dark-100;
+}
+.fill-blue-dark-200 {
+  fill: color.$color-blue-dark-200;
+}
+.fill-blue-dark-300 {
+  fill: color.$color-blue-dark-300;
+}
+.fill-blue-dark-400 {
+  fill: color.$color-blue-dark-400;
+}
+.fill-blue-dark-500 {
+  fill: color.$color-blue-dark-500;
+}
+.fill-blue-light-50 {
+  fill: color.$color-blue-light-50;
+}
+.fill-blue-light-100 {
+  fill: color.$color-blue-light-100;
+}
+.fill-blue-light-200 {
+  fill: color.$color-blue-light-200;
+}
+.fill-blue-light-300 {
+  fill: color.$color-blue-light-300;
+}
+.fill-blue-light-400 {
+  fill: color.$color-blue-light-400;
+}
+.fill-blue-light-500 {
+  fill: color.$color-blue-light-500;
+}
+.fill-green-50 {
+  fill: color.$color-green-50;
+}
+.fill-green-100 {
+  fill: color.$color-green-100;
+}
+.fill-green-200 {
+  fill: color.$color-green-200;
+}
+.fill-green-300 {
+  fill: color.$color-green-300;
+}
+.fill-green-400 {
+  fill: color.$color-green-400;
+}
+.fill-green-500 {
+  fill: color.$color-green-500;
+}
+.fill-green-600 {
+  fill: color.$color-green-600;
+}
+.fill-grey-50 {
+  fill: color.$color-grey-50;
+}
+.fill-grey-100 {
+  fill: color.$color-grey-100;
+}
+.fill-grey-200 {
+  fill: color.$color-grey-200;
+}
+.fill-grey-300 {
+  fill: color.$color-grey-300;
+}
+.fill-grey-400 {
+  fill: color.$color-grey-400;
+}
+.fill-grey-500 {
+  fill: color.$color-grey-500;
+}
+.fill-grey-600 {
+  fill: color.$color-grey-600;
+}
+.fill-grey-700 {
+  fill: color.$color-grey-700;
+}
+.fill-grey-800 {
+  fill: color.$color-grey-800;
+}
+.fill-grey-900 {
+  fill: color.$color-grey-900;
+}
+.fill-red-50 {
+  fill: color.$color-red-50;
+}
+.fill-red-100 {
+  fill: color.$color-red-100;
+}
+.fill-red-200 {
+  fill: color.$color-red-200;
+}
+.fill-red-300 {
+  fill: color.$color-red-300;
+}
+.fill-yellow-50 {
+  fill: color.$color-yellow-50;
+}
+.fill-yellow-100 {
+  fill: color.$color-yellow-100;
+}
+.fill-yellow-200 {
+  fill: color.$color-yellow-200;
+}
+.fill-yellow-300 {
+  fill: color.$color-yellow-300;
+}
+.fill-purple-50 {
+  fill: color.$color-purple-50;
+}
+.fill-purple-200 {
+  fill: color.$color-purple-200;
+}
+
+.bg-transparent {
+  background-color: color.$color-transparent;
+}
+.bg-inherit {
+  background-color: color.$color-inherit;
+}
+.bg-current {
+  background-color: color.$color-current;
+}
+.bg-blue-dark-50 {
+  background-color: color.$color-blue-dark-50;
+}
+.bg-blue-dark-100 {
+  background-color: color.$color-blue-dark-100;
+}
+.bg-blue-dark-200 {
+  background-color: color.$color-blue-dark-200;
+}
+.bg-blue-dark-300 {
+  background-color: color.$color-blue-dark-300;
+}
+.bg-blue-dark-400 {
+  background-color: color.$color-blue-dark-400;
+}
+.bg-blue-dark-500 {
+  background-color: color.$color-blue-dark-500;
+}
+.bg-blue-light-50 {
+  background-color: color.$color-blue-light-50;
+}
+.bg-blue-light-100 {
+  background-color: color.$color-blue-light-100;
+}
+.bg-blue-light-200 {
+  background-color: color.$color-blue-light-200;
+}
+.bg-blue-light-300 {
+  background-color: color.$color-blue-light-300;
+}
+.bg-blue-light-400 {
+  background-color: color.$color-blue-light-400;
+}
+.bg-blue-light-500 {
+  background-color: color.$color-blue-light-500;
+}
+.bg-green-50 {
+  background-color: color.$color-green-50;
+}
+.bg-green-100 {
+  background-color: color.$color-green-100;
+}
+.bg-green-200 {
+  background-color: color.$color-green-200;
+}
+.bg-green-300 {
+  background-color: color.$color-green-300;
+}
+.bg-green-400 {
+  background-color: color.$color-green-400;
+}
+.bg-green-500 {
+  background-color: color.$color-green-500;
+}
+.bg-green-600 {
+  background-color: color.$color-green-600;
+}
+.bg-grey-50 {
+  background-color: color.$color-grey-50;
+}
+.bg-grey-100 {
+  background-color: color.$color-grey-100;
+}
+.bg-grey-200 {
+  background-color: color.$color-grey-200;
+}
+.bg-grey-300 {
+  background-color: color.$color-grey-300;
+}
+.bg-grey-400 {
+  background-color: color.$color-grey-400;
+}
+.bg-grey-500 {
+  background-color: color.$color-grey-500;
+}
+.bg-grey-600 {
+  background-color: color.$color-grey-600;
+}
+.bg-grey-700 {
+  background-color: color.$color-grey-700;
+}
+.bg-grey-800 {
+  background-color: color.$color-grey-800;
+}
+.bg-grey-900 {
+  background-color: color.$color-grey-900;
+}
+.bg-red-50 {
+  background-color: color.$color-red-50;
+}
+.bg-red-100 {
+  background-color: color.$color-red-100;
+}
+.bg-red-200 {
+  background-color: color.$color-red-200;
+}
+.bg-red-300 {
+  background-color: color.$color-red-300;
+}
+.bg-yellow-50 {
+  background-color: color.$color-yellow-50;
+}
+.bg-yellow-100 {
+  background-color: color.$color-yellow-100;
+}
+.bg-yellow-200 {
+  background-color: color.$color-yellow-200;
+}
+.bg-yellow-300 {
+  background-color: color.$color-yellow-300;
+}
+.bg-purple-50 {
+  background-color: color.$color-purple-50;
+}
+.bg-purple-200 {
+  background-color: color.$color-purple-200;
+}
+
+.color-transparent {
+  color: color.$color-transparent;
+}
+.color-inherit {
+  color: color.$color-inherit;
+}
+.color-current {
+  color: color.$color-current;
+}
+.color-blue-dark-50 {
+  color: color.$color-blue-dark-50;
+}
+.color-blue-dark-100 {
+  color: color.$color-blue-dark-100;
+}
+.color-blue-dark-200 {
+  color: color.$color-blue-dark-200;
+}
+.color-blue-dark-300 {
+  color: color.$color-blue-dark-300;
+}
+.color-blue-dark-400 {
+  color: color.$color-blue-dark-400;
+}
+.color-blue-dark-500 {
+  color: color.$color-blue-dark-500;
+}
+.color-blue-light-50 {
+  color: color.$color-blue-light-50;
+}
+.color-blue-light-100 {
+  color: color.$color-blue-light-100;
+}
+.color-blue-light-200 {
+  color: color.$color-blue-light-200;
+}
+.color-blue-light-300 {
+  color: color.$color-blue-light-300;
+}
+.color-blue-light-400 {
+  color: color.$color-blue-light-400;
+}
+.color-blue-light-500 {
+  color: color.$color-blue-light-500;
+}
+.color-green-50 {
+  color: color.$color-green-50;
+}
+.color-green-100 {
+  color: color.$color-green-100;
+}
+.color-green-200 {
+  color: color.$color-green-200;
+}
+.color-green-300 {
+  color: color.$color-green-300;
+}
+.color-green-400 {
+  color: color.$color-green-400;
+}
+.color-green-500 {
+  color: color.$color-green-500;
+}
+.color-green-600 {
+  color: color.$color-green-600;
+}
+.color-grey-50 {
+  color: color.$color-grey-50;
+}
+.color-grey-100 {
+  color: color.$color-grey-100;
+}
+.color-grey-200 {
+  color: color.$color-grey-200;
+}
+.color-grey-300 {
+  color: color.$color-grey-300;
+}
+.color-grey-400 {
+  color: color.$color-grey-400;
+}
+.color-grey-500 {
+  color: color.$color-grey-500;
+}
+.color-grey-600 {
+  color: color.$color-grey-600;
+}
+.color-grey-700 {
+  color: color.$color-grey-700;
+}
+.color-grey-800 {
+  color: color.$color-grey-800;
+}
+.color-grey-900 {
+  color: color.$color-grey-900;
+}
+.color-red-50 {
+  color: color.$color-red-50;
+}
+.color-red-100 {
+  color: color.$color-red-100;
+}
+.color-red-200 {
+  color: color.$color-red-200;
+}
+.color-red-300 {
+  color: color.$color-red-300;
+}
+.color-yellow-50 {
+  color: color.$color-yellow-50;
+}
+.color-yellow-100 {
+  color: color.$color-yellow-100;
+}
+.color-yellow-200 {
+  color: color.$color-yellow-200;
+}
+.color-yellow-300 {
+  color: color.$color-yellow-300;
+}
+.color-purple-50 {
+  color: color.$color-purple-50;
+}
+.color-purple-200 {
+  color: color.$color-purple-200;
+}
+
+.w-inherit {
+  width: scale.$scale-inherit;
+}
+.w-none {
+  width: scale.$scale-none;
+}
+.w-auto {
+  width: scale.$scale-auto;
+}
+.w-full {
+  width: scale.$scale-full;
+}
+.w-min {
+  width: scale.$scale-min;
+}
+.w-xxs {
+  width: scale.$scale-rem-xxs;
+}
+.w-xs {
+  width: scale.$scale-rem-xs;
+}
+.w-sm {
+  width: scale.$scale-rem-sm;
+}
+.w-sm-2 {
+  width: scale.$scale-rem-sm-2;
+}
+.w-md {
+  width: scale.$scale-rem-md;
+}
+.w-md-2 {
+  width: scale.$scale-rem-md-2;
+}
+.w-lg {
+  width: scale.$scale-rem-lg;
+}
+.w-xl {
+  width: scale.$scale-rem-xl;
+}
+.w-2xl {
+  width: scale.$scale-rem-2xl;
+}
+.w-3xl {
+  width: scale.$scale-rem-3xl;
+}
+.w-4xl {
+  width: scale.$scale-rem-4xl;
+}
+.w-5xl {
+  width: scale.$scale-rem-5xl;
+}
+.w-container-xxs {
+  width: scale.$scale-rem-container-xxs;
+}
+.w-container-xs {
+  width: scale.$scale-rem-container-xs;
+}
+.w-container-sm {
+  width: scale.$scale-rem-container-sm;
+}
+.w-container-md {
+  width: scale.$scale-rem-container-md;
+}
+.w-container-lg {
+  width: scale.$scale-rem-container-lg;
+}
+.w-container-xl {
+  width: scale.$scale-rem-container-xl;
+}
+.w-container-2xl {
+  width: scale.$scale-rem-container-2xl;
+}
+.w-container-3xl {
+  width: scale.$scale-rem-container-3xl;
+}
+
+.min-w-inherit {
+  min-width: scale.$scale-inherit;
+}
+.min-w-none {
+  min-width: scale.$scale-none;
+}
+.min-w-auto {
+  min-width: scale.$scale-auto;
+}
+.min-w-full {
+  min-width: scale.$scale-full;
+}
+.min-w-min {
+  min-width: scale.$scale-min;
+}
+.min-w-xxs {
+  min-width: scale.$scale-rem-xxs;
+}
+.min-w-xs {
+  min-width: scale.$scale-rem-xs;
+}
+.min-w-sm {
+  min-width: scale.$scale-rem-sm;
+}
+.min-w-sm-2 {
+  min-width: scale.$scale-rem-sm-2;
+}
+.min-w-md {
+  min-width: scale.$scale-rem-md;
+}
+.min-w-md-2 {
+  min-width: scale.$scale-rem-md-2;
+}
+.min-w-lg {
+  min-width: scale.$scale-rem-lg;
+}
+.min-w-xl {
+  min-width: scale.$scale-rem-xl;
+}
+.min-w-2xl {
+  min-width: scale.$scale-rem-2xl;
+}
+.min-w-3xl {
+  min-width: scale.$scale-rem-3xl;
+}
+.min-w-4xl {
+  min-width: scale.$scale-rem-4xl;
+}
+.min-w-5xl {
+  min-width: scale.$scale-rem-5xl;
+}
+.min-w-container-xxs {
+  min-width: scale.$scale-rem-container-xxs;
+}
+.min-w-container-xs {
+  min-width: scale.$scale-rem-container-xs;
+}
+.min-w-container-sm {
+  min-width: scale.$scale-rem-container-sm;
+}
+.min-w-container-md {
+  min-width: scale.$scale-rem-container-md;
+}
+.min-w-container-lg {
+  min-width: scale.$scale-rem-container-lg;
+}
+.min-w-container-xl {
+  min-width: scale.$scale-rem-container-xl;
+}
+.min-w-container-2xl {
+  min-width: scale.$scale-rem-container-2xl;
+}
+.min-w-container-3xl {
+  min-width: scale.$scale-rem-container-3xl;
+}
+
+.h-inherit {
+  height: scale.$scale-inherit;
+}
+.h-none {
+  height: scale.$scale-none;
+}
+.h-auto {
+  height: scale.$scale-auto;
+}
+.h-full {
+  height: scale.$scale-full;
+}
+.h-min {
+  height: scale.$scale-min;
+}
+.h-xxs {
+  height: scale.$scale-rem-xxs;
+}
+.h-xs {
+  height: scale.$scale-rem-xs;
+}
+.h-sm {
+  height: scale.$scale-rem-sm;
+}
+.h-sm-2 {
+  height: scale.$scale-rem-sm-2;
+}
+.h-md {
+  height: scale.$scale-rem-md;
+}
+.h-md-2 {
+  height: scale.$scale-rem-md-2;
+}
+.h-lg {
+  height: scale.$scale-rem-lg;
+}
+.h-xl {
+  height: scale.$scale-rem-xl;
+}
+.h-2xl {
+  height: scale.$scale-rem-2xl;
+}
+.h-3xl {
+  height: scale.$scale-rem-3xl;
+}
+.h-4xl {
+  height: scale.$scale-rem-4xl;
+}
+.h-5xl {
+  height: scale.$scale-rem-5xl;
+}
+.h-container-xxs {
+  height: scale.$scale-rem-container-xxs;
+}
+.h-container-xs {
+  height: scale.$scale-rem-container-xs;
+}
+.h-container-sm {
+  height: scale.$scale-rem-container-sm;
+}
+.h-container-md {
+  height: scale.$scale-rem-container-md;
+}
+.h-container-lg {
+  height: scale.$scale-rem-container-lg;
+}
+.h-container-xl {
+  height: scale.$scale-rem-container-xl;
+}
+.h-container-2xl {
+  height: scale.$scale-rem-container-2xl;
+}
+.h-container-3xl {
+  height: scale.$scale-rem-container-3xl;
+}
+
+.min-h-inherit {
+  min-height: scale.$scale-inherit;
+}
+.min-h-none {
+  min-height: scale.$scale-none;
+}
+.min-h-auto {
+  min-height: scale.$scale-auto;
+}
+.min-h-full {
+  min-height: scale.$scale-full;
+}
+.min-h-min {
+  min-height: scale.$scale-min;
+}
+.min-h-xxs {
+  min-height: scale.$scale-rem-xxs;
+}
+.min-h-xs {
+  min-height: scale.$scale-rem-xs;
+}
+.min-h-sm {
+  min-height: scale.$scale-rem-sm;
+}
+.min-h-sm-2 {
+  min-height: scale.$scale-rem-sm-2;
+}
+.min-h-md {
+  min-height: scale.$scale-rem-md;
+}
+.min-h-md-2 {
+  min-height: scale.$scale-rem-md-2;
+}
+.min-h-lg {
+  min-height: scale.$scale-rem-lg;
+}
+.min-h-xl {
+  min-height: scale.$scale-rem-xl;
+}
+.min-h-2xl {
+  min-height: scale.$scale-rem-2xl;
+}
+.min-h-3xl {
+  min-height: scale.$scale-rem-3xl;
+}
+.min-h-4xl {
+  min-height: scale.$scale-rem-4xl;
+}
+.min-h-5xl {
+  min-height: scale.$scale-rem-5xl;
+}
+.min-h-container-xxs {
+  min-height: scale.$scale-rem-container-xxs;
+}
+.min-h-container-xs {
+  min-height: scale.$scale-rem-container-xs;
+}
+.min-h-container-sm {
+  min-height: scale.$scale-rem-container-sm;
+}
+.min-h-container-md {
+  min-height: scale.$scale-rem-container-md;
+}
+.min-h-container-lg {
+  min-height: scale.$scale-rem-container-lg;
+}
+.min-h-container-xl {
+  min-height: scale.$scale-rem-container-xl;
+}
+.min-h-container-2xl {
+  min-height: scale.$scale-rem-container-2xl;
+}
+.min-h-container-3xl {
+  min-height: scale.$scale-rem-container-3xl;
+}
+
+.sq-inherit {
+  width: scale.$scale-inherit;
+  height: scale.$scale-inherit;
+}
+.sq-none {
+  width: scale.$scale-none;
+  height: scale.$scale-none;
+}
+.sq-auto {
+  width: scale.$scale-auto;
+  height: scale.$scale-auto;
+}
+.sq-full {
+  width: scale.$scale-full;
+  height: scale.$scale-full;
+}
+.sq-min {
+  width: scale.$scale-min;
+  height: scale.$scale-min;
+}
+.sq-xxs {
+  width: scale.$scale-rem-xxs;
+  height: scale.$scale-rem-xxs;
+}
+.sq-xs {
+  width: scale.$scale-rem-xs;
+  height: scale.$scale-rem-xs;
+}
+.sq-sm {
+  width: scale.$scale-rem-sm;
+  height: scale.$scale-rem-sm;
+}
+.sq-sm-2 {
+  width: scale.$scale-rem-sm-2;
+  height: scale.$scale-rem-sm-2;
+}
+.sq-md {
+  width: scale.$scale-rem-md;
+  height: scale.$scale-rem-md;
+}
+.sq-md-2 {
+  width: scale.$scale-rem-md-2;
+  height: scale.$scale-rem-md-2;
+}
+.sq-lg {
+  width: scale.$scale-rem-lg;
+  height: scale.$scale-rem-lg;
+}
+.sq-xl {
+  width: scale.$scale-rem-xl;
+  height: scale.$scale-rem-xl;
+}
+.sq-2xl {
+  width: scale.$scale-rem-2xl;
+  height: scale.$scale-rem-2xl;
+}
+.sq-3xl {
+  width: scale.$scale-rem-3xl;
+  height: scale.$scale-rem-3xl;
+}
+.sq-4xl {
+  width: scale.$scale-rem-4xl;
+  height: scale.$scale-rem-4xl;
+}
+.sq-5xl {
+  width: scale.$scale-rem-5xl;
+  height: scale.$scale-rem-5xl;
+}
+
+.min-sq-inherit {
+  min-width: scale.$scale-inherit;
+  min-height: scale.$scale-inherit;
+}
+.min-sq-none {
+  min-width: scale.$scale-none;
+  min-height: scale.$scale-none;
+}
+.min-sq-auto {
+  min-width: scale.$scale-auto;
+  min-height: scale.$scale-auto;
+}
+.min-sq-full {
+  min-width: scale.$scale-full;
+  min-height: scale.$scale-full;
+}
+.min-sq-min {
+  min-width: scale.$scale-min;
+  min-height: scale.$scale-min;
+}
+.min-sq-xxs {
+  min-width: scale.$scale-rem-xxs;
+  min-height: scale.$scale-rem-xxs;
+}
+.min-sq-xs {
+  min-width: scale.$scale-rem-xs;
+  min-height: scale.$scale-rem-xs;
+}
+.min-sq-sm {
+  min-width: scale.$scale-rem-sm;
+  min-height: scale.$scale-rem-sm;
+}
+.min-sq-sm-2 {
+  min-width: scale.$scale-rem-sm-2;
+  min-height: scale.$scale-rem-sm-2;
+}
+.min-sq-md {
+  min-width: scale.$scale-rem-md;
+  min-height: scale.$scale-rem-md;
+}
+.min-sq-md-2 {
+  min-width: scale.$scale-rem-md-2;
+  min-height: scale.$scale-rem-md-2;
+}
+.min-sq-lg {
+  min-width: scale.$scale-rem-lg;
+  min-height: scale.$scale-rem-lg;
+}
+.min-sq-xl {
+  min-width: scale.$scale-rem-xl;
+  min-height: scale.$scale-rem-xl;
+}
+.min-sq-2xl {
+  min-width: scale.$scale-rem-2xl;
+  min-height: scale.$scale-rem-2xl;
+}
+.min-sq-3xl {
+  min-width: scale.$scale-rem-3xl;
+  min-height: scale.$scale-rem-3xl;
+}
+.min-sq-4xl {
+  min-width: scale.$scale-rem-4xl;
+  min-height: scale.$scale-rem-4xl;
+}
+.min-sq-5xl {
+  min-width: scale.$scale-rem-5xl;
+  min-height: scale.$scale-rem-5xl;
+}
