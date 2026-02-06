@@ -25,39 +25,6 @@ export { useMediaQuery, useClickOutside, useWithElement } from './hooks'
 // HOCs
 export { withClickOut } from './hoc'
 
-// Components
-export {
-  Image,
-  LogoComponent,
-  DotsLoader,
-  FlatLoader,
-  IconItem,
-  Avatar,
-  BarLoader,
-  Loading,
-  Portal,
-  Badge,
-  Divider,
-  Tag,
-  Button
-} from './components'
-export type {
-  IImage,
-  ILogoComponent,
-  IDotsLoader,
-  IFlatLoader,
-  IconProps,
-  IAvatar,
-  IBardLoader,
-  ILoading,
-  IPortal,
-  IBadge,
-  IDivider,
-  DIRECTIONS,
-  ITag,
-  IButton
-} from './components'
-
 // Re-export utilities from shared package for convenience
 export {
   classNames,
@@ -70,3 +37,9 @@ export {
   isServer
 } from '@magneto365-ui/shared'
 export type { Dimension, DimType, EventType } from '@magneto365-ui/shared'
+
+// NOTE: Components must be imported via subpath exports:
+// import { LogoComponent } from '@magneto365-ui/primitives/Logo'
+// import { Button } from '@magneto365-ui/primitives/Button'
+// import { Typography } from '@magneto365-ui/primitives/Typography'
+// See README.md for full list of available components

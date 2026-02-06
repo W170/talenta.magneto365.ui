@@ -9,7 +9,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c rollup.config.js",
+    "build": "pnpm clean && pnpm build:rollup && pnpm build:css",
+    "build:rollup": "rollup -c rollup.config.js",
+    "build:css": "node ../../.scripts/generateComponentCss.js primitives",
     "dev": "rollup -c rollup.config.js --watch",
     "test": "jest --passWithNoTests",
     "lint": "eslint ./src --ext .ts,.tsx",
@@ -20,8 +22,8 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@magneto365-ui/shared": "workspace:*",
-    "@magneto365-ui/design-tokens": "workspace:*"
+    "@magneto365-ui/design-tokens": "workspace:*",
+    "@magneto365-ui/shared": "workspace:*"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
@@ -31,6 +33,7 @@
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.2",
     "autoprefixer": "10.4.0",
+    "glob": "^13.0.1",
     "rollup": "^2.60.0",
     "rollup-plugin-dts": "^4.0.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -40,13 +43,109 @@
     "typescript": "^4.4.4"
   },
   "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js",
-      "types": "./dist/types/index.d.ts"
+    "./package.json": "./package.json",
+    "./Image": {
+      "import": "./dist/esm/components/Image/index.js",
+      "require": "./dist/cjs/components/Image/index.js",
+      "types": "./dist/types/components/Image/index.d.ts"
     },
-    "./styles.css": "./dist/esm/styles.css"
+    "./css/Image.min.css": "./dist/css/Image.min.css",
+    "./Logo": {
+      "import": "./dist/esm/components/Logo/index.js",
+      "require": "./dist/cjs/components/Logo/index.js",
+      "types": "./dist/types/components/Logo/index.d.ts"
+    },
+    "./css/Logo.min.css": "./dist/css/Logo.min.css",
+    "./DotsLoader": {
+      "import": "./dist/esm/components/DotsLoader/index.js",
+      "require": "./dist/cjs/components/DotsLoader/index.js",
+      "types": "./dist/types/components/DotsLoader/index.d.ts"
+    },
+    "./css/DotsLoader.min.css": "./dist/css/DotsLoader.min.css",
+    "./FlatLoader": {
+      "import": "./dist/esm/components/FlatLoader/index.js",
+      "require": "./dist/cjs/components/FlatLoader/index.js",
+      "types": "./dist/types/components/FlatLoader/index.d.ts"
+    },
+    "./css/FlatLoader.min.css": "./dist/css/FlatLoader.min.css",
+    "./Icon": {
+      "import": "./dist/esm/components/Icon/index.js",
+      "require": "./dist/cjs/components/Icon/index.js",
+      "types": "./dist/types/components/Icon/index.d.ts"
+    },
+    "./css/Icon.min.css": "./dist/css/Icon.min.css",
+    "./Avatar": {
+      "import": "./dist/esm/components/Avatar/index.js",
+      "require": "./dist/cjs/components/Avatar/index.js",
+      "types": "./dist/types/components/Avatar/index.d.ts"
+    },
+    "./css/Avatar.min.css": "./dist/css/Avatar.min.css",
+    "./BarLoader": {
+      "import": "./dist/esm/components/BarLoader/index.js",
+      "require": "./dist/cjs/components/BarLoader/index.js",
+      "types": "./dist/types/components/BarLoader/index.d.ts"
+    },
+    "./css/BarLoader.min.css": "./dist/css/BarLoader.min.css",
+    "./Loading": {
+      "import": "./dist/esm/components/Loading/index.js",
+      "require": "./dist/cjs/components/Loading/index.js",
+      "types": "./dist/types/components/Loading/index.d.ts"
+    },
+    "./css/Loading.min.css": "./dist/css/Loading.min.css",
+    "./Portal": {
+      "import": "./dist/esm/components/Portal/index.js",
+      "require": "./dist/cjs/components/Portal/index.js",
+      "types": "./dist/types/components/Portal/index.d.ts"
+    },
+    "./css/Portal.min.css": "./dist/css/Portal.min.css",
+    "./Badge": {
+      "import": "./dist/esm/components/Badge/index.js",
+      "require": "./dist/cjs/components/Badge/index.js",
+      "types": "./dist/types/components/Badge/index.d.ts"
+    },
+    "./css/Badge.min.css": "./dist/css/Badge.min.css",
+    "./Divider": {
+      "import": "./dist/esm/components/Divider/index.js",
+      "require": "./dist/cjs/components/Divider/index.js",
+      "types": "./dist/types/components/Divider/index.d.ts"
+    },
+    "./css/Divider.min.css": "./dist/css/Divider.min.css",
+    "./Tag": {
+      "import": "./dist/esm/components/Tag/index.js",
+      "require": "./dist/cjs/components/Tag/index.js",
+      "types": "./dist/types/components/Tag/index.d.ts"
+    },
+    "./css/Tag.min.css": "./dist/css/Tag.min.css",
+    "./Button": {
+      "import": "./dist/esm/components/Button/index.js",
+      "require": "./dist/cjs/components/Button/index.js",
+      "types": "./dist/types/components/Button/index.d.ts"
+    },
+    "./css/Button.min.css": "./dist/css/Button.min.css",
+    "./Typography": {
+      "import": "./dist/esm/components/Typography/index.js",
+      "require": "./dist/cjs/components/Typography/index.js",
+      "types": "./dist/types/components/Typography/index.d.ts"
+    },
+    "./css/Typography.min.css": "./dist/css/Typography.min.css"
   },
+  "sideEffects": [
+    "dist/esm/components/Image/index.js",
+    "dist/esm/components/Logo/index.js",
+    "dist/esm/components/DotsLoader/index.js",
+    "dist/esm/components/FlatLoader/index.js",
+    "dist/esm/components/Icon/index.js",
+    "dist/esm/components/Avatar/index.js",
+    "dist/esm/components/BarLoader/index.js",
+    "dist/esm/components/Loading/index.js",
+    "dist/esm/components/Portal/index.js",
+    "dist/esm/components/Badge/index.js",
+    "dist/esm/components/Divider/index.js",
+    "dist/esm/components/Tag/index.js",
+    "dist/esm/components/Button/index.js",
+    "dist/esm/components/Typography/index.js",
+    "dist/css/*.css"
+  ],
   "publishConfig": {
     "access": "public"
   }

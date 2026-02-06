@@ -1,5 +1,6 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { glob } from 'glob'
 import dts from 'rollup-plugin-dts'
 import url from '@rollup/plugin-url'
 import typescript from '@rollup/plugin-typescript'
@@ -15,6 +16,22 @@ const __dirname = path.dirname(__filename)
 
 const rootInput = 'src/index.ts'
 
+// Get all component entry points
+const componentEntries = Object.fromEntries(
+  glob.sync('src/components/*/index.ts').map((file) => [
+    // Extract component name from path: src/components/Logo/index.ts -> Logo
+    path.basename(path.dirname(file)),
+    // Full path to entry file
+    file
+  ])
+)
+
+// Combine main entry + component entries
+const allEntries = {
+  index: rootInput,
+  ...Object.fromEntries(Object.entries(componentEntries).map(([name, file]) => [`components/${name}/index`, file]))
+}
+
 // CSS module scoped name generation
 const cssMapModules = new Map()
 
@@ -22,7 +39,7 @@ export default () => {
   return [
     // Main bundle (ESM + CJS)
     {
-      input: rootInput,
+      input: allEntries,
       output: [
         {
           dir: path.join('dist', 'esm'),
@@ -81,7 +98,7 @@ export default () => {
           },
           extract: 'styles.css',
           extensions: ['.css', '.scss'],
-          minimize: true,
+          minimize: false, // Don't minimize yet, our script will do it
           sourceMap: false,
           use: {
             sass: {
@@ -97,7 +114,7 @@ export default () => {
     },
     // Type definitions
     {
-      input: rootInput,
+      input: allEntries,
       output: {
         preserveModules: true,
         preserveModulesRoot: 'src',

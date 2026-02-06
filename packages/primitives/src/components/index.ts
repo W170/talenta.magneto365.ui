@@ -1,37 +1,15 @@
-export { Image } from './Image'
-export type { IImage } from './Image'
-export { LogoComponent } from './Logo'
-export type { ILogoComponent } from './Logo'
-export { DotsLoader } from './DotsLoader'
-export type { IDotsLoader } from './DotsLoader'
-export { FlatLoader } from './FlatLoader'
-export type { IFlatLoader } from './FlatLoader'
-export { IconItem } from './Icon'
-export type { IconProps } from './Icon'
-export { Avatar } from './Avatar'
-export type { IAvatar } from './Avatar'
-export { BarLoader } from './BarLoader'
-export type { IBardLoader } from './BarLoader'
-export { Loading } from './Loading'
-export type { ILoading } from './Loading'
-export { Portal } from './Portal'
-export type { IPortal } from './Portal'
-export { Badge } from './Badge'
-export type { IBadge } from './Badge'
-export { Divider } from './Divider'
-export type { IDivider, DIRECTIONS } from './Divider'
-export { Tag } from './Tag'
-export type { ITag } from './Tag'
-export { Button } from './Button'
-export type { IButton } from './Button'
-export { Typography } from './Typography'
-export type {
-  ITypographyBase,
-  ITypographyEllipsis,
-  ETypographyFontWeight,
-  TTypographyFontWeight,
-  ITypographyTitle,
-  ITypographyText,
-  TTypographyParagraph,
-  ITypographyLink
-} from './Typography'
+// This file previously exported all components for barrel imports.
+// As of v3, components must be imported via subpath exports:
+//
+// import { LogoComponent } from '@magneto365-ui/primitives/Logo'
+// import { Button } from '@magneto365-ui/primitives/Button'
+// import { Typography } from '@magneto365-ui/primitives/Typography'
+//
+// Available components:
+// - Image, Logo, DotsLoader, FlatLoader, Icon, Avatar
+// - BarLoader, Loading, Portal, Badge, Divider, Tag
+// - Button, Typography
+//
+// See packages/primitives/README.md for migration guide.
+
+// No component exports from this file

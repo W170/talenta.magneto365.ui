@@ -68,6 +68,7 @@
     "babel-loader": "^8.2.3",
     "babel-plugin-import": "^1.13.3",
     "css-loader": "^6.5.1",
+    "cssnano": "^7.1.2",
     "dotenv": "^16.1.4",
     "eslint": "^8.4.1",
     "eslint-plugin-react": "^7.27.1",
@@ -104,7 +105,6 @@
   ],
   "types": "dist/types/index.d.ts",
   "typings": "dist/types/index.d.ts",
-  "dependencies": {},
   "peerDependencies": {
     "react-dom": "17.0.2"
   },
