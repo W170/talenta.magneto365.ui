@@ -24,6 +24,19 @@
     }
   }
 
+  .CompletionAlertWrapper {
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-width: 0;
+  }
+
   .JobBodyCardWrapper {
     overflow-y: auto;
 

@@ -11,6 +11,7 @@ import { ICityDetail } from '../../molecules/CitiesDetailDrawer'
 import { IFraudCardJob } from '../../molecules/FraudCardJob/FraudCardJob.interface'
 import { IActionLinkCard } from '@components/UI/molecules/ActionLinkCard/ActionLinkCard.interface'
 import { ISimilarJobs } from '@components/Domain/Jobs/SimilarJobs/SimilarJobs.interface'
+import { ICompletionAlert } from '@components/UI/molecules/CompletionAlert/CompletionAlert.interface'
 
 export interface ICanApply {
   message: string
@@ -116,4 +117,14 @@ export interface IJobDetailsDrawer {
    * Props for show action link company
    */
   actionLinkCardProps?: IActionLinkCard
+
+  /**
+   * Indicates the candidate level for the job details drawer.
+   */
+  candidateLevel?: number
+
+  /**
+   * Props for the completion alert component.
+   */
+  completionAlertProps?: ICompletionAlert
 }
