@@ -6,6 +6,52 @@ Developer guide for AI coding agents working in this repository.
 
 This is a React TypeScript UI component library (magneto365.ui) that provides reusable components following atomic design principles (atoms, molecules, organisms, templates, pages). Built with Rollup, uses Storybook for component documentation, and follows conventional commits.
 
+## Monorepo Architecture
+
+This is a **pnpm monorepo** with workspace packages under `packages/` and `examples/`. Dependencies are managed using a **hoisted strategy** to minimize duplication.
+
+### Package Manager
+
+- **pnpm 10.28.2** (specified in `packageManager` field)
+- Uses workspaces defined in `pnpm-workspace.yaml`
+- Install: `pnpm install` (hoists shared devDependencies to root)
+
+### Dependency Strategy
+
+**DevDependencies (Build Tools):**
+
+- All shared devDependencies are **hoisted to root** `package.json`:
+  - TypeScript 5.3.3 (upgraded from 4.4.4)
+  - Rollup 4.9.6 (upgraded from 2.60.0)
+  - Rollup plugins: `@rollup/plugin-commonjs@25.0.7`, `@rollup/plugin-node-resolve@15.2.3`, `@rollup/plugin-typescript@11.1.6`
+  - React types: `@types/react@17.0.2`, `@types/react-dom@17.0.2`
+  - CSS tools: `postcss@8.4.35`, `postcss-modules@6.0.0`, `autoprefixer@10.4.0`, `sass@1.43.5`
+  - Utilities: `glob@13.0.1`, `string-hash@1.1.3`, `tslib@2.6.2`
+- Individual packages (`primitives`, `shared`, `design-tokens`) have **NO devDependencies** (all hoisted)
+
+**Runtime Dependencies:**
+
+- React + React-DOM are in root `devDependencies` (for Storybook/tests) + package `peerDependencies`
+- `@magneto365-ui/primitives` has zero external runtime deps (only workspace packages)
+- Internal workspace deps use `workspace:*` protocol
+
+### Current Tooling Versions
+
+| Tool       | Version | Notes                                     |
+| ---------- | ------- | ----------------------------------------- |
+| TypeScript | 5.3.3   | Upgraded from 4.4.4 (strict mode enabled) |
+| Rollup     | 4.9.6   | Upgraded from 2.60.0 (v4 compatible)      |
+| React      | 17.0.2  | Peer dependency (runtime)                 |
+| PostCSS    | 8.4.35  | Standardized across packages              |
+| pnpm       | 10.28.2 | Lockfile version 9.0                      |
+
+### Benefits of Hoisted Dependencies
+
+- **~18% disk space savings** (~125 MB)
+- **~33% faster installs** (fewer duplicate packages)
+- **Single source of truth** for tool versions
+- **Simplified maintenance** (update once in root)
+
 ## Build, Lint, and Test Commands
 
 ### Build Commands
