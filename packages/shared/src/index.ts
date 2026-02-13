@@ -1,5 +1,5 @@
 // Utilities
-export { classNames, CNM, isRef, renderChildren } from './utils'
+export { classNames, CNM, isRef, renderChildren, toCSSVariables } from './utils'
 
 // Event Dispatcher
 export { EventDispatcher } from './utils/eventDispatcher'

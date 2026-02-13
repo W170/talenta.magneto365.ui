@@ -130,7 +130,25 @@
       "require": "./dist/cjs/components/Typography/index.js",
       "types": "./dist/types/components/Typography/index.d.ts"
     },
-    "./css/Typography.min.css": "./dist/css/Typography.min.css"
+    "./css/Typography.min.css": "./dist/css/Typography.min.css",
+    "./Link": {
+      "import": "./dist/esm/components/Link/index.js",
+      "require": "./dist/cjs/components/Link/index.js",
+      "types": "./dist/types/components/Link/index.d.ts"
+    },
+    "./css/Link.min.css": "./dist/css/Link.min.css",
+    "./Alert": {
+      "import": "./dist/esm/components/Alert/index.js",
+      "require": "./dist/cjs/components/Alert/index.js",
+      "types": "./dist/types/components/Alert/index.d.ts"
+    },
+    "./css/Alert.min.css": "./dist/css/Alert.min.css",
+    "./Tooltip": {
+      "import": "./dist/esm/components/Tooltip/index.js",
+      "require": "./dist/cjs/components/Tooltip/index.js",
+      "types": "./dist/types/components/Tooltip/index.d.ts"
+    },
+    "./css/Tooltip.min.css": "./dist/css/Tooltip.min.css"
   },
   "sideEffects": [
     "dist/esm/components/Image/index.js",
@@ -147,6 +165,9 @@
     "dist/esm/components/Tag/index.js",
     "dist/esm/components/Button/index.js",
     "dist/esm/components/Typography/index.js",
+    "dist/esm/components/Link/index.js",
+    "dist/esm/components/Alert/index.js",
+    "dist/esm/components/Tooltip/index.js",
     "dist/css/*.css"
   ],
   "publishConfig": {

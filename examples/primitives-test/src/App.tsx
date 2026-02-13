@@ -4,6 +4,9 @@ import { Button } from '@magneto365-ui/primitives/Button'
 import { Badge } from '@magneto365-ui/primitives/Badge'
 import { Typography } from '@magneto365-ui/primitives/Typography'
 import { Avatar } from '@magneto365-ui/primitives/Avatar'
+import { Link } from '@magneto365-ui/primitives/Link'
+import { Alert } from '@magneto365-ui/primitives/Alert'
+import { Tooltip } from '@magneto365-ui/primitives/Tooltip'
 
 function App() {
   const [showComponents, setShowComponents] = useState({
@@ -11,7 +14,10 @@ function App() {
     button: false,
     badge: false,
     typography: false,
-    avatar: false
+    avatar: false,
+    link: false,
+    alert: false,
+    tooltip: false
   })
 
   const toggleComponent = (component: keyof typeof showComponents) => {
@@ -41,6 +47,9 @@ function App() {
           Toggle Typography {showComponents.typography ? '✓' : ''}
         </button>
         <button onClick={() => toggleComponent('avatar')}>Toggle Avatar {showComponents.avatar ? '✓' : ''}</button>
+        <button onClick={() => toggleComponent('link')}>Toggle Link {showComponents.link ? '✓' : ''}</button>
+        <button onClick={() => toggleComponent('alert')}>Toggle Alert {showComponents.alert ? '✓' : ''}</button>
+        <button onClick={() => toggleComponent('tooltip')}>Toggle Tooltip {showComponents.tooltip ? '✓' : ''}</button>
       </div>
 
       <div
@@ -90,6 +99,38 @@ function App() {
             <Avatar src="https://via.placeholder.com/100" alt="User Avatar" size="large" />
           </div>
         )}
+
+        {showComponents.link && (
+          <div>
+            <h3>Link Component</h3>
+            <Link type="link" href="#" text="This is a link" />
+            <br />
+            <Link
+              type="button"
+              href="#"
+              text="Button Link"
+              linkStyles={{ textColor: '#14141C', buttonColor: '#f0f0f0' }}
+            />
+          </div>
+        )}
+
+        {showComponents.alert && (
+          <div>
+            <h3>Alert Component</h3>
+            <Alert type="success" text="This is a success alert!" border />
+            <br />
+            <Alert type="error" text="This is an error alert!" border />
+          </div>
+        )}
+
+        {showComponents.tooltip && (
+          <div>
+            <h3>Tooltip Component</h3>
+            <Tooltip title="This is a tooltip!" position="top">
+              <button style={{ padding: '10px 20px' }}>Hover me</button>
+            </Tooltip>
+          </div>
+        )}
       </div>
 
       <div style={{ marginTop: '2rem', padding: '1rem', background: '#f5f5f5', borderRadius: '8px' }}>
@@ -100,6 +141,9 @@ function App() {
           <li>Badge.min.css - {showComponents.badge ? '✓ Should be loaded' : '✗ Should NOT be loaded'}</li>
           <li>Typography.min.css - {showComponents.typography ? '✓ Should be loaded' : '✗ Should NOT be loaded'}</li>
           <li>Avatar.min.css - {showComponents.avatar ? '✓ Should be loaded' : '✗ Should NOT be loaded'}</li>
+          <li>Link.min.css - {showComponents.link ? '✓ Should be loaded' : '✗ Should NOT be loaded'}</li>
+          <li>Alert.min.css - {showComponents.alert ? '✓ Should be loaded' : '✗ Should NOT be loaded'}</li>
+          <li>Tooltip.min.css - {showComponents.tooltip ? '✓ Should be loaded' : '✗ Should NOT be loaded'}</li>
         </ul>
         <p>
           <strong>Note:</strong> All toggled components' CSS will be loaded in the bundle at build time. This test shows
