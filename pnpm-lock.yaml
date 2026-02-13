@@ -386,9 +386,6 @@ importers:
       '@magneto365-ui/shared':
         specifier: workspace:*
         version: link:../shared
-      classnames:
-        specifier: ^2.5.1
-        version: 2.5.1
       react:
         specifier: ^17.0.2
         version: 17.0.2
@@ -4326,10 +4323,6 @@ packages:
   cjs-module-lexer@1.4.3:
     resolution:
       { integrity: sha512-9z8TZaGM1pfswYeXrUpzPrkx8UnWYdhJclsiYMm6x/w5+nN+8Tf/LnAgfLGQCm59qAOxU8WwHEq2vNwF6i4j+Q== }
-
-  classnames@2.5.1:
-    resolution:
-      { integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow== }
 
   clean-css@5.3.3:
     resolution:
@@ -13930,8 +13923,6 @@ snapshots:
       consola: 3.4.2
 
   cjs-module-lexer@1.4.3: {}
-
-  classnames@2.5.1: {}
 
   clean-css@5.3.3:
     dependencies:

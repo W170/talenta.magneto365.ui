@@ -23,8 +23,7 @@
   },
   "dependencies": {
     "@magneto365-ui/design-tokens": "workspace:*",
-    "@magneto365-ui/shared": "workspace:*",
-    "classnames": "^2.5.1"
+    "@magneto365-ui/shared": "workspace:*"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
@@ -148,7 +147,25 @@
       "require": "./dist/cjs/components/Tooltip/index.js",
       "types": "./dist/types/components/Tooltip/index.d.ts"
     },
-    "./css/Tooltip.min.css": "./dist/css/Tooltip.min.css"
+    "./css/Tooltip.min.css": "./dist/css/Tooltip.min.css",
+    "./Checkbox": {
+      "import": "./dist/esm/components/Checkbox/index.js",
+      "require": "./dist/cjs/components/Checkbox/index.js",
+      "types": "./dist/types/components/Checkbox/index.d.ts"
+    },
+    "./css/Checkbox.min.css": "./dist/css/Checkbox.min.css",
+    "./Radio": {
+      "import": "./dist/esm/components/Radio/index.js",
+      "require": "./dist/cjs/components/Radio/index.js",
+      "types": "./dist/types/components/Radio/index.d.ts"
+    },
+    "./css/Radio.min.css": "./dist/css/Radio.min.css",
+    "./Switch": {
+      "import": "./dist/esm/components/Switch/index.js",
+      "require": "./dist/cjs/components/Switch/index.js",
+      "types": "./dist/types/components/Switch/index.d.ts"
+    },
+    "./css/Switch.min.css": "./dist/css/Switch.min.css"
   },
   "sideEffects": [
     "dist/esm/components/Image/index.js",
@@ -168,6 +185,9 @@
     "dist/esm/components/Link/index.js",
     "dist/esm/components/Alert/index.js",
     "dist/esm/components/Tooltip/index.js",
+    "dist/esm/components/Checkbox/index.js",
+    "dist/esm/components/Radio/index.js",
+    "dist/esm/components/Switch/index.js",
     "dist/css/*.css"
   ],
   "publishConfig": {

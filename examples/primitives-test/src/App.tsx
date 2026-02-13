@@ -7,6 +7,9 @@ import { Avatar } from '@magneto365-ui/primitives/Avatar'
 import { Link } from '@magneto365-ui/primitives/Link'
 import { Alert } from '@magneto365-ui/primitives/Alert'
 import { Tooltip } from '@magneto365-ui/primitives/Tooltip'
+import { Checkbox } from '@magneto365-ui/primitives/Checkbox'
+import { Radio } from '@magneto365-ui/primitives/Radio'
+import { Switch } from '@magneto365-ui/primitives/Switch'
 
 function App() {
   const [showComponents, setShowComponents] = useState({
@@ -17,7 +20,10 @@ function App() {
     avatar: false,
     link: false,
     alert: false,
-    tooltip: false
+    tooltip: false,
+    checkbox: false,
+    radio: false,
+    switch: false
   })
 
   const toggleComponent = (component: keyof typeof showComponents) => {
@@ -50,6 +56,11 @@ function App() {
         <button onClick={() => toggleComponent('link')}>Toggle Link {showComponents.link ? '✓' : ''}</button>
         <button onClick={() => toggleComponent('alert')}>Toggle Alert {showComponents.alert ? '✓' : ''}</button>
         <button onClick={() => toggleComponent('tooltip')}>Toggle Tooltip {showComponents.tooltip ? '✓' : ''}</button>
+        <button onClick={() => toggleComponent('checkbox')}>
+          Toggle Checkbox {showComponents.checkbox ? '✓' : ''}
+        </button>
+        <button onClick={() => toggleComponent('radio')}>Toggle Radio {showComponents.radio ? '✓' : ''}</button>
+        <button onClick={() => toggleComponent('switch')}>Toggle Switch {showComponents.switch ? '✓' : ''}</button>
       </div>
 
       <div
@@ -131,6 +142,65 @@ function App() {
             </Tooltip>
           </div>
         )}
+
+        {showComponents.checkbox && (
+          <div>
+            <h3>Checkbox Component</h3>
+            <Checkbox id="checkbox1" checked={false} onChange={(checked: boolean) => console.log('Checkbox:', checked)}>
+              <span>Standard checkbox</span>
+            </Checkbox>
+            <br />
+            <Checkbox
+              id="checkbox2"
+              checked={true}
+              onChange={(checked: boolean) => console.log('Checkbox:', checked)}
+              type="background"
+            >
+              <span>Background checkbox (checked)</span>
+            </Checkbox>
+          </div>
+        )}
+
+        {showComponents.radio && (
+          <div>
+            <h3>Radio Component</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <Radio type="radio" id="radio1" onChange={(e: any) => console.log('Radio:', e.target.value)}>
+                Option 1
+              </Radio>
+              <Radio type="radio" id="radio2" checked onChange={(e: any) => console.log('Radio:', e.target.value)}>
+                Option 2 (checked)
+              </Radio>
+            </div>
+            <br />
+            <h4>Button Style Radio:</h4>
+            <div style={{ display: 'flex', gap: '10px' }}>
+              <Radio type="button" id="radio3" onChange={(e: any) => console.log('Radio:', e.target.value)}>
+                Button 1
+              </Radio>
+              <Radio type="button" id="radio4" checked onChange={(e: any) => console.log('Radio:', e.target.value)}>
+                Button 2 (checked)
+              </Radio>
+            </div>
+          </div>
+        )}
+
+        {showComponents.switch && (
+          <div>
+            <h3>Switch Component</h3>
+            <Switch
+              isActive={false}
+              setIsActive={(state: boolean) => console.log('Switch:', state)}
+              title="Enable notifications"
+            />
+            <br />
+            <Switch
+              isActive={true}
+              setIsActive={(state: boolean) => console.log('Switch:', state)}
+              title="Dark mode (active)"
+            />
+          </div>
+        )}
       </div>
 
       <div style={{ marginTop: '2rem', padding: '1rem', background: '#f5f5f5', borderRadius: '8px' }}>
@@ -144,6 +214,9 @@ function App() {
           <li>Link.min.css - {showComponents.link ? '✓ Should be loaded' : '✗ Should NOT be loaded'}</li>
           <li>Alert.min.css - {showComponents.alert ? '✓ Should be loaded' : '✗ Should NOT be loaded'}</li>
           <li>Tooltip.min.css - {showComponents.tooltip ? '✓ Should be loaded' : '✗ Should NOT be loaded'}</li>
+          <li>Checkbox.min.css - {showComponents.checkbox ? '✓ Should be loaded' : '✗ Should NOT be loaded'}</li>
+          <li>Radio.min.css - {showComponents.radio ? '✓ Should be loaded' : '✗ Should NOT be loaded'}</li>
+          <li>Switch.min.css - {showComponents.switch ? '✓ Should be loaded' : '✗ Should NOT be loaded'}</li>
         </ul>
         <p>
           <strong>Note:</strong> All toggled components' CSS will be loaded in the bundle at build time. This test shows

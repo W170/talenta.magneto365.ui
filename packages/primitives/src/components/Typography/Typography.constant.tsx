@@ -1,5 +1,5 @@
 import { createElement } from 'react'
-import classNames from 'classnames/bind'
+import { classNames } from '@magneto365-ui/shared'
 import { ITypographyBase } from './Typography.interface'
 import styles from './Typography.module.scss'
 
