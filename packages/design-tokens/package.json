@@ -19,12 +19,6 @@
     "build": "pnpm generate && rollup -c rollup.config.js --configPlugin typescript",
     "clean": "rm -rf dist src/index.ts src/scss"
   },
-  "devDependencies": {
-    "@rollup/plugin-typescript": "^11.1.6",
-    "rollup": "^4.9.6",
-    "tslib": "^2.6.2",
-    "typescript": "^5.3.3"
-  },
   "files": [
     "dist",
     "src/scss",

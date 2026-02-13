@@ -21,7 +21,8 @@ export default {
       compilerOptions: {
         declaration: true,
         declarationDir: './dist/types',
-        rootDir: './src'
+        rootDir: './src',
+        sourceMap: true
       }
     })
   ],
