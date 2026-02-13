@@ -7,7 +7,9 @@ import typescript from '@rollup/plugin-typescript'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
-import postcss from 'rollup-plugin-postcss'
+import sass from 'rollup-plugin-sass'
+import postcss from 'postcss'
+import postcssModules from 'postcss-modules'
 import autoprefixer from 'autoprefixer'
 import stringHash from 'string-hash'
 
@@ -76,37 +78,86 @@ export default () => {
           declarationDir: undefined,
           emitDeclarationOnly: false
         }),
-        postcss({
-          plugins: [autoprefixer],
-          autoModules: false,
-          onlyModules: false,
-          modules: {
-            generateScopedName: (name, filename, css) => {
-              if (filename.includes('global')) {
-                return name
-              }
-              const hash = stringHash(css).toString(36).substring(0, 5)
-              const mappedHash = cssMapModules.get(name)
-              if (mappedHash === null) {
-                cssMapModules.set(name, hash)
-              }
-              const { base } = path.parse(
-                filename.replace(/\.modules?\.scss/g, '').replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`)
-              )
-              return `mg_${base}_${name}_${mappedHash || hash}`.replace(/_{2,}/g, '_')
-            }
+        sass({
+          // 🎯 Use modern Sass API (eliminates deprecation warnings)
+          api: 'modern',
+
+          // Sass compiler options
+          options: {
+            // loadPaths replaces includePaths in modern API
+            loadPaths: [
+              path.resolve(__dirname, 'src'),
+              path.resolve(__dirname, '../design-tokens/src'),
+              path.resolve(__dirname, '../../node_modules')
+            ],
+            // Don't compress CSS yet (generateComponentCss.js will minify)
+            style: 'expanded'
           },
-          extract: 'styles.css',
-          extensions: ['.css', '.scss'],
-          minimize: false, // Don't minimize yet, our script will do it
-          sourceMap: false,
-          use: {
-            sass: {
-              includePaths: [
-                path.resolve(__dirname, 'src'),
-                path.resolve(__dirname, '../design-tokens/src'),
-                path.resolve(__dirname, '../../node_modules')
-              ]
+
+          // Extract all CSS to single file (same as before)
+          output: path.join('dist', 'esm', 'styles.css'),
+
+          // 🔧 Processor: Transform CSS Modules using postcss-modules
+          processor: async (css, id) => {
+            console.log(`[sass-processor] Processing: ${id}`)
+
+            // Object to capture CSS module class mappings
+            let cssModulesJSON = {}
+
+            try {
+              // Process CSS with postcss-modules to generate scoped class names
+              const result = await postcss([
+                postcssModules({
+                  // Generate scoped class name: mg_component_className_hash
+                  generateScopedName: (name, filename, css) => {
+                    // Skip scoping for global styles
+                    if (filename.includes('global')) {
+                      return name
+                    }
+
+                    // Generate consistent hash from CSS content
+                    const hash = stringHash(css).toString(36).substring(0, 5)
+
+                    // Check for cached hash (maintains consistency across builds)
+                    const mappedHash = cssMapModules.get(name)
+                    if (mappedHash === null) {
+                      cssMapModules.set(name, hash)
+                    }
+
+                    // Extract base filename: Avatar.module.scss → avatar
+                    const { base } = path.parse(
+                      filename
+                        .replace(/\.modules?\.scss/g, '')
+                        .replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`)
+                    )
+
+                    // Return scoped class: mg_avatar_avatarComponent_fx01y
+                    return `mg_${base}_${name}_${mappedHash || hash}`.replace(/_{2,}/g, '_')
+                  },
+
+                  // Callback to capture the generated class name mappings
+                  getJSON: (cssFilename, json) => {
+                    cssModulesJSON = json
+                  }
+                }),
+                autoprefixer()
+              ]).process(css, { from: id })
+
+              console.log(
+                `[sass-processor] Generated ${Object.keys(cssModulesJSON).length} class mappings for ${path.basename(
+                  id
+                )}`
+              )
+
+              // Return object with CSS and module mappings
+              // rollup-plugin-sass will use 'cssModules' property to create .module.scss.js files
+              return {
+                css: result.css,
+                cssModules: cssModulesJSON
+              }
+            } catch (error) {
+              console.error(`[sass-processor] Error processing ${id}:`, error)
+              throw error
             }
           }
         })
