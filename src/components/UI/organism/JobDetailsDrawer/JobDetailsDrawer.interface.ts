@@ -8,10 +8,10 @@ import { IJobsActions, TJobActionsVariant } from '@components/UI/molecules/JobAc
 import { ReactNode } from 'react'
 import { IJobVideo } from '@components/UI/molecules/JobVideo'
 import { ICityDetail } from '../../molecules/CitiesDetailDrawer'
+import { IAlert } from '../../molecules/Alert/Alert.interface'
 import { IFraudCardJob } from '../../molecules/FraudCardJob/FraudCardJob.interface'
 import { IActionLinkCard } from '@components/UI/molecules/ActionLinkCard/ActionLinkCard.interface'
 import { ISimilarJobs } from '@components/Domain/Jobs/SimilarJobs/SimilarJobs.interface'
-import { ICompletionAlert } from '@components/UI/molecules/CompletionAlert/CompletionAlert.interface'
 
 export interface ICanApply {
   message: string
@@ -124,7 +124,7 @@ export interface IJobDetailsDrawer {
   candidateLevel?: number
 
   /**
-   * Props for the completion alert component.
+   * Props for the alert component.
    */
-  completionAlertProps?: ICompletionAlert
+  alert?: IAlert
 }

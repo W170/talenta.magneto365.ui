@@ -11,8 +11,7 @@ import {
   FraudCardJob,
   AlertJobStatus,
   Alert,
-  JobActions,
-  CompletionAlert
+  JobActions
 } from '@components/UI/molecules'
 import { MobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 import { MobileJobDetailsDrawerSkeleton } from './children/MobileJobDetailsDrawerSkeleton.component'
@@ -57,7 +56,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   variant = 'default',
   actionLinkCardProps,
   jobActionsProps,
-  completionAlertProps
+  alert
 }) => {
   const isDetailedVariant = variant === 'detailed'
   const handleClose = useCallback(() => {
@@ -89,9 +88,9 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
             externalChildClass={cx('external-buttons')}
           />
         )}
-        {completionAlertProps && (
+        {alert && (
           <div className={styles['CompletionAlertWrapper']}>
-            <CompletionAlert {...completionAlertProps} />
+            <Alert {...alert} />
           </div>
         )}
         {jobDetailsProps && (
@@ -139,7 +138,7 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
     actionLinkCardProps,
     jobActionsProps,
     variant,
-    completionAlertProps
+    alert
   ])
 
   const content = useMemo(

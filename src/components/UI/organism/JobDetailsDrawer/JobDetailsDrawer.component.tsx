@@ -9,8 +9,7 @@ import {
   JobFooterCard,
   FraudCardJob,
   AlertJobStatus,
-  Alert,
-  CompletionAlert
+  Alert
 } from '@components/UI/molecules'
 
 import { IJobDetailsDrawer } from './JobDetailsDrawer.interface'
@@ -49,7 +48,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   variant,
   isJobDetailPage,
   actionLinkCardProps,
-  completionAlertProps
+  alert
 }) => {
   const jobDetailsRef = useRef<HTMLDivElement | null>(null)
   const isDetailVariant = variant === 'detailed'
@@ -68,9 +67,9 @@ const Component: React.FC<IJobDetailsDrawer> = ({
         jobDetailAction
       ) : (
         <section className={styles.JobDetailsDrawerComponent}>
-          {completionAlertProps && (
+          {alert && (
             <div className={styles['CompletionAlertWrapper']}>
-              <CompletionAlert {...completionAlertProps} />
+              <Alert {...alert} />
             </div>
           )}
           <div className={styles['JobHeaderCardWrapper']}>

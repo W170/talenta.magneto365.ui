@@ -8,7 +8,8 @@ import {
   ICityDetail,
   IAlertJobStatus,
   TJobActionsVariant,
-  IJobsActions
+  IJobsActions,
+  IAlert
 } from '@components/UI/molecules'
 import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 import { IJobVideo } from '@components/UI/molecules/JobVideo'
@@ -18,7 +19,6 @@ import { IFraudCardJob } from './../../molecules/FraudCardJob/FraudCardJob.inter
 import { ICanApply } from '../JobDetailsDrawer'
 import { IActionLinkCard } from '@components/UI/molecules/ActionLinkCard/ActionLinkCard.interface'
 import { ISimilarJobs } from '@components/Domain/Jobs/SimilarJobs/SimilarJobs.interface'
-import { ICompletionAlert } from '@components/UI/molecules/CompletionAlert/CompletionAlert.interface'
 
 export interface IMobileJobDetailsDrawer {
   /**
@@ -133,7 +133,7 @@ export interface IMobileJobDetailsDrawer {
   jobActionsProps?: IJobsActions
 
   /**
-   * Props for the completion alert component.
+   * Props for the alert component.
    */
-  completionAlertProps?: ICompletionAlert
+  alert?: IAlert
 }
