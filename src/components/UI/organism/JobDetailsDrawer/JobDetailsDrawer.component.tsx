@@ -47,7 +47,8 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   canApply,
   variant,
   isJobDetailPage,
-  actionLinkCardProps
+  actionLinkCardProps,
+  alert
 }) => {
   const jobDetailsRef = useRef<HTMLDivElement | null>(null)
   const isDetailVariant = variant === 'detailed'
@@ -66,6 +67,11 @@ const Component: React.FC<IJobDetailsDrawer> = ({
         jobDetailAction
       ) : (
         <section className={styles.JobDetailsDrawerComponent}>
+          {alert && (
+            <div className={styles['CompletionAlertWrapper']}>
+              <Alert {...alert} />
+            </div>
+          )}
           <div className={styles['JobHeaderCardWrapper']}>
             <JobCompanyHeader {...jobCompanyLogoProps} isApplied={isApplied} jobActionsProps={jobActionsProps} />
             {canApply?.isApplicable === false && (

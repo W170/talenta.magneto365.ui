@@ -55,7 +55,8 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
   canApply,
   variant = 'default',
   actionLinkCardProps,
-  jobActionsProps
+  jobActionsProps,
+  alert
 }) => {
   const isDetailedVariant = variant === 'detailed'
   const handleClose = useCallback(() => {
@@ -72,7 +73,6 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
     ) : (
       <Fragment>
         <MobileJobDetailsHeader returnText={jobDetailsHeaderText} onClick={handleClose} />
-
         <JobCompanyHeader {...jobCompanyLogoProps} />
         {canApply?.isApplicable === false && (
           <Alert type="info" text={canApply?.message} className={cx('job-locked-alert')} />
@@ -87,6 +87,11 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
             className={cx('job-actions-card')}
             externalChildClass={cx('external-buttons')}
           />
+        )}
+        {alert && (
+          <div className={styles['CompletionAlertWrapper']}>
+            <Alert {...alert} />
+          </div>
         )}
         {jobDetailsProps && (
           <JobDetails
@@ -132,7 +137,8 @@ const Component: React.FC<IMobileJobDetailsDrawer> = ({
     similarJobsProps,
     actionLinkCardProps,
     jobActionsProps,
-    variant
+    variant,
+    alert
   ])
 
   const content = useMemo(
