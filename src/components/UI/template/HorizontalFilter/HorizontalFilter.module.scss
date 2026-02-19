@@ -1,4 +1,6 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../shared/stylesheets/mixins.scss' as m;
+@use '../../../../shared/stylesheets/tokens' as t;
 
 .magneto-ui-horizontal-filter {
   width: 100%;
@@ -104,5 +106,17 @@
       padding-right: 0.75rem;
       gap: 0.75rem;
     }
+  }
+}
+
+.btn-next {
+  border-radius: t.$radius-full;
+  background: white;
+  padding: t.$padding-md;
+  border: none;
+
+  &:hover {
+    background: t.$color-grey-50;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
   }
 }

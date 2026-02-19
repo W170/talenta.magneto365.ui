@@ -3,7 +3,8 @@ import { IHorizontalFilter } from './HorizontalFilter.interface'
 import { CardByRenderType } from '../SideFilter/factory'
 import styles from './HorizontalFilter.module.scss'
 import { IconItem } from '@components/UI/atoms'
-import { Broom } from '@constants/icons.constants'
+import { ArrowRight2, Broom } from '@constants/icons.constants'
+import { useWithElement } from '@components/hooks/useWithElement'
 
 const HorizontalFilter: FC<IHorizontalFilter> = ({
   title,
@@ -22,6 +23,26 @@ const HorizontalFilter: FC<IHorizontalFilter> = ({
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [isDragging, setIsDragging] = useState(false)
   const [dragStart, setDragStart] = useState({ x: 0, scrollLeft: 0 })
+  const [isOverflown, setIsOverflown] = useState(false)
+
+  const width = useWithElement(scrollContainerRef)
+
+  useEffect(() => {
+    const el = scrollContainerRef.current
+    if (!el) return
+
+    const updateOverflow = () => {
+      const tolerance = 2
+      setIsOverflown(el.scrollLeft + el.clientWidth < el.scrollWidth - tolerance)
+    }
+
+    updateOverflow()
+    el.addEventListener('scroll', updateOverflow)
+
+    return () => {
+      el.removeEventListener('scroll', updateOverflow)
+    }
+  }, [width, filters])
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current
@@ -110,6 +131,26 @@ const HorizontalFilter: FC<IHorizontalFilter> = ({
     }
   }
 
+  const handleScrollRight = () => {
+    const el = scrollContainerRef.current
+    if (!el) return
+
+    const containerRect = el.getBoundingClientRect()
+    const children = Array.from(el.children) as HTMLElement[]
+
+    const nextHiddenChild = children.find((child) => {
+      const childRect = child.getBoundingClientRect()
+      return childRect.right > containerRect.right + 1
+    })
+
+    if (nextHiddenChild) {
+      // Alinea el siguiente item al inicio para evitar cortes
+      el.scrollTo({ left: nextHiddenChild.offsetLeft, behavior: 'smooth' })
+    } else {
+      el.scrollTo({ left: el.scrollWidth, behavior: 'smooth' })
+    }
+  }
+
   return (
     <div className={styles['magneto-ui-horizontal-filter']}>
       <div className={styles['magneto-ui-horizontal-filter__header']}>
@@ -132,6 +173,13 @@ const HorizontalFilter: FC<IHorizontalFilter> = ({
         <div ref={scrollContainerRef} className={styles['magneto-ui-horizontal-filter__scroll-container']}>
           {displayFilters}
         </div>
+      </div>
+      <div onClick={handleScrollRight}>
+        {isOverflown && (
+          <button className={styles['btn-next']} type="button">
+            <IconItem icon={ArrowRight2} size={18} />
+          </button>
+        )}
       </div>
     </div>
   )
