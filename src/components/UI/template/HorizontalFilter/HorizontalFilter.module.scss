@@ -114,9 +114,22 @@
   background: white;
   padding: t.$padding-md;
   border: none;
+  position: relative;
 
   &:hover {
     background: t.$color-grey-50;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.btn-next-container {
+  position: relative;
+  &::before {
+    content: '';
+    left: -30%;
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to right, transparent, #f0f1f3);
   }
 }

@@ -173,13 +173,13 @@ const HorizontalFilter: FC<IHorizontalFilter> = ({
         <div ref={scrollContainerRef} className={styles['magneto-ui-horizontal-filter__scroll-container']}>
           {displayFilters}
         </div>
-      </div>
-      <div onClick={handleScrollRight}>
-        {isOverflown && (
-          <button className={styles['btn-next']} type="button">
-            <IconItem icon={ArrowRight2} size={18} />
-          </button>
-        )}
+        <div className={styles['btn-next-container']}>
+          {isOverflown && (
+            <button onClick={handleScrollRight} className={styles['btn-next']} type="button">
+              <IconItem icon={ArrowRight2} size={18} />
+            </button>
+          )}
+        </div>
       </div>
     </div>
   )
