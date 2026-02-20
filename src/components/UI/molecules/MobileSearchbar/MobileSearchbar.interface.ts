@@ -1,3 +1,5 @@
+import { ISearchOptions } from '../MegaMenuSearchBar/MegaMenuSearchBar.interface'
+
 export interface IMobileSearchbar {
   /**
    * Handler for the input value
@@ -24,4 +26,16 @@ export interface IMobileSearchbar {
    * placeholder
    */
   placeholder?: string
+  /**
+   * List of suggested options rendered as links
+   */
+  options?: ISearchOptions[]
+  /**
+   * Callback triggered when an option is selected
+   */
+  onSelectOption?: (option: ISearchOptions) => void
+  /**
+   * Callback executed when user submits search
+   */
+  onSubmit?: (termValue: string) => void
 }
