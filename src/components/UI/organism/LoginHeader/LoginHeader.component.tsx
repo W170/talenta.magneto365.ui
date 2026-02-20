@@ -1,29 +1,20 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState, useCallback } from 'react'
 import { useMediaQuery } from '../../../hooks'
 import { Avatar, LogoComponent, MainButton } from '../../atoms'
-import {
-  Breadcrumbs,
-  HeaderTabs,
-  ListMenuIcons,
-  MobileDrawer,
-  MobileSearchbar,
-  Searchbar,
-  UserMenu
-} from '../../molecules'
+import { Breadcrumbs, HeaderTabs, ListMenuIcons, MobileDrawer, MobileSearchbar, UserMenu } from '../../molecules'
 import { ILoginHeader } from './LoginHeader.interface'
 
 import styles from './LoginHeader.modules.scss'
 
 import MegaMenuSearchBar from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.component'
 import { SearchButton } from '@components/UI/molecules/SearchButton'
-import {
-  logoProps,
-  MenuButtonProps,
-  MobileSearchbarButtonProps,
-  removePropsButton,
-  searchPropsButton
-} from '@constants/stories'
-import { IMegaMenuSearchBar } from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.interface'
+import { logoProps, MenuButtonProps, MobileSearchbarButtonProps } from '@constants/stories'
+import { IMegaMenuSearchBar, ISearchBar } from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.interface'
+import SearchBar from '@components/UI/molecules/MegaMenuSearchBar/SearchBar.component'
+
+const isMegaSearchbar = (searchbar: ISearchBar | IMegaMenuSearchBar): searchbar is IMegaMenuSearchBar => {
+  return 'occupation' in searchbar
+}
 
 const Component: React.FC<ILoginHeader> = ({
   onClick,
@@ -41,17 +32,33 @@ const Component: React.FC<ILoginHeader> = ({
   const [showSearchBar, setShowSearchBar] = useState(false)
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
 
-  const toggleSearchBar = () => {
-    setShowSearchBar(!showSearchBar)
-  }
-  const isLoginHeaderSearch = (searchbar: any): searchbar is IMegaMenuSearchBar => {
-    return typeof searchbar.occupation === 'object' && searchbar.occupation !== null
-  }
+  const isMega = isMegaSearchbar(searchbar)
+  const source = isMega ? searchbar.occupation : searchbar
+  const searchValue = source.termValue
+
+  const toggleSearchBar = useCallback(() => {
+    setShowSearchBar((prev) => !prev)
+    setToggleMobileDrawer(false)
+  }, [])
+
+  const mobileSearchbarValues = useMemo(() => {
+    const { termValue, placeholder, onSearch, options, onSelectOption, onSubmit } = source
+
+    return {
+      ...MobileSearchbarProps,
+      termValue,
+      placeholder,
+      onSearch,
+      options,
+      onSelectOption,
+      onSubmit
+    }
+  }, [source, MobileSearchbarProps])
 
   const loginHeaderMobileSearchbar = useMediaQuery(null, {
     md: (
       <MobileSearchbar
-        {...MobileSearchbarProps}
+        {...mobileSearchbarValues}
         onClick={() => setShowSearchBar(false)}
         showMobileSearchbar={showSearchBar}
         focusSearchInput={showSearchBar}
@@ -66,26 +73,12 @@ const Component: React.FC<ILoginHeader> = ({
   })
 
   const loginHeaderMobileSearchbarButton = useMediaQuery(null, {
-    md: isLoginHeaderSearch(searchbar) ? (
-      <SearchButton
-        searchValue={searchbar.occupation.termValue}
-        onClick={toggleSearchBar}
-        {...MobileSearchbarButtonProps}
-      />
-    ) : (
-      <SearchButton searchValue={searchbar.termValue} onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
-    )
+    md: <SearchButton searchValue={searchValue} onClick={toggleSearchBar} {...MobileSearchbarButtonProps} />
   })
 
   const loginHeaderSearchbar = useMediaQuery(
-    isLoginHeaderSearch(searchbar) ? (
-      <MegaMenuSearchBar {...searchbar} />
-    ) : (
-      <Searchbar {...searchbar} searchButtonProps={searchPropsButton} removeButtonProps={removePropsButton} />
-    ),
-    {
-      md: null
-    }
+    isMega ? <MegaMenuSearchBar {...searchbar} /> : <SearchBar {...searchbar} />,
+    { md: null }
   )
 
   const loginHeaderOptionTabs = useMediaQuery(
@@ -94,16 +87,12 @@ const Component: React.FC<ILoginHeader> = ({
       <HeaderTabs {...processTabsProps} />
       <HeaderTabs {...curriculumTabProps} />
     </>,
-    {
-      xl: null
-    }
+    { xl: null }
   )
 
   const loginHeaderPopover = useMediaQuery(
     <UserMenu listMenuUserProps={{ ...listMenuUserProps, showAllItems: onlyMenuUser }} profileImage={profileImage} />,
-    {
-      md: <Avatar {...profileImage} onClick={() => setToggleMobileDrawer(true)} />
-    }
+    { md: <Avatar {...profileImage} onClick={() => setToggleMobileDrawer(true)} /> }
   )
 
   const loginHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbProps={breadcrumbProps} homeUrl={homeUrl} />, {
@@ -113,7 +102,7 @@ const Component: React.FC<ILoginHeader> = ({
   return (
     <header className={styles.LoginHeaderComponent}>
       {loginHeaderMobileSearchbar}
-      <div className={styles['magneto-ui-first-row']}></div>
+      <div className={styles['magneto-ui-first-row']} />
       <div className={styles['magneto-ui-second-row']}>
         <div className={styles['magneto-ui-left-section']}>
           {loginHeaderMenuButton}
