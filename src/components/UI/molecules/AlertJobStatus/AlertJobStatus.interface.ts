@@ -73,4 +73,4 @@ export namespace IAlertJobStatus {
   }
 }
 export type EAlertJobStatusType = 'warning' | 'normal'
-export type EAlertJobStatusIcon = 'success' | 'warning'
+export type EAlertJobStatusIcon = 'success' | 'warning' | 'error'

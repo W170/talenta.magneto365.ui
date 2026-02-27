@@ -2,13 +2,14 @@ import React, { useMemo } from 'react'
 import styles from './AlertJobStatusIcon.module.scss'
 import { IAlertJobStatus } from '../../AlertJobStatus.interface'
 import { classNames } from '@shared/utils/common'
-import { Checked2, Warning3D } from '@constants/icons.constants'
+import { Checked2, Error3D, Warning3D } from '@constants/icons.constants'
 
 const cx = classNames.bind(styles)
 
 const alertIcons = {
   success: Checked2,
-  warning: Warning3D
+  warning: Warning3D,
+  error: Error3D
 }
 
 export const AlertJobStatusIcon: React.FC<IAlertJobStatus.Icon> = ({
