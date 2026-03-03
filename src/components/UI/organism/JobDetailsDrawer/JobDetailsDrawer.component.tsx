@@ -60,6 +60,7 @@ const Component: React.FC<IJobDetailsDrawer> = ({
   }, [selectedJobId])
 
   if (isLoading) return <JobDetailsSkeleton />
+  console.log('alert', alert)
 
   return (
     <Fragment>
