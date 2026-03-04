@@ -12,7 +12,9 @@ export interface IJobCard {
    */
   isActive?: boolean
   /**
-   * this property can change style in the texts when the job is open
+   * @deprecated This property was used to hide the company image, but the image
+   * has been removed from the component entirely. This prop no longer has any effect
+   * and will be removed in a future version. Safe to remove from your codebase.
    */
   isCompanyPage?: boolean
   /**
@@ -40,7 +42,9 @@ export interface IJobCard {
    */
   formatPublishDate?: string | null
   /**
-   * company image
+   * @deprecated The company image has been removed from the component entirely.
+   * This prop no longer has any effect and will be removed in a future version.
+   * Safe to remove from your codebase.
    */
   companyLogo?: string | null
   /**
