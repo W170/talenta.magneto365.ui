@@ -22,6 +22,7 @@
   &--desktop#{&}--up {
     top: auto;
     bottom: $scale-full;
+    padding-top: $padding-md;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-top-left-radius: $radius-sm;
