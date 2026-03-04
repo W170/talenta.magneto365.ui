@@ -129,7 +129,6 @@ const JobsPage: React.FC<IJobsPage> = ({
 
     return vacantProps.map(({ id, ...props }) => (
       <JobCard
-        isCompanyPage={true}
         isLoading={isLoading}
         isActive={id === jobSelected?.id}
         id={id}

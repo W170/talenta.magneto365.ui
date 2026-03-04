@@ -1,10 +1,8 @@
 import React, { useMemo, useRef } from 'react'
 import { classMUI } from '@constants/stories'
-import { NoLogo } from '../../../../constants/icons.constants'
 import { ICardJobDesktop } from './JobCardDesktop.interface'
 import { classNames } from '@shared/utils/common'
 import style from './JobCardDesktop.module.scss'
-import { altDynamicText } from '@constants/img.constants'
 import JobCardLabelStatus from '../JobCard/children/JobCardLabelStatus/JobCardLabelStatus.component'
 
 const cx = classNames.bind(style)
@@ -16,7 +14,6 @@ const getJobSubtitle = (companyName?: string | null, ...args: Array<string | nul
 }
 
 const JobCardDesktop: React.FC<ICardJobDesktop> = ({
-  isCompanyPage = false,
   jobOpen,
   cities = [],
   salary,
@@ -24,7 +21,6 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   companyName,
   title,
   formatPublishDate,
-  companyLogo,
   contractType,
   showDetail,
   urgent,
@@ -46,25 +42,6 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
   return (
     <div className={cx(`${classMUI}-card-jobs__container`, jobOpen && `${classMUI}-card-jobs--job-open`)}>
       <article onClick={showDetail} className={cx(`${classMUI}-card-jobs`, urgent && `${classMUI}-card-jobs--urgent`)}>
-        {!isCompanyPage && (
-          <div className={cx(`${classMUI}-card-jobs__brand`)}>
-            <div>
-              <img
-                className={cx(`${classMUI}-card-jobs__brand-img`)}
-                alt={companyName ? `${altDynamicText.workAt} ${companyName}` : 'company-name'}
-                src={companyLogo ? companyLogo : NoLogo}
-                onError={(e) => {
-                  e.currentTarget.onerror = null
-                  e.currentTarget.src = NoLogo
-                }}
-                loading="lazy"
-                width={'67px'}
-                height={'67px'}
-              />
-            </div>
-          </div>
-        )}
-
         <div className={cx(`${classMUI}-card-jobs__data`)}>
           <section className={cx(`${classMUI}-card-jobs__header`)}>
             <span className={cx(`${classMUI}-card-jobs__text`, `${classMUI}-card-jobs__published`)}>
