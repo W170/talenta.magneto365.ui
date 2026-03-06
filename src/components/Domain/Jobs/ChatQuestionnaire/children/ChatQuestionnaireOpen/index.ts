@@ -1,1 +1,0 @@
-export { ChatQuestionnaireOpen as ChatQuestionnaireShort } from './ChatQuestionnaireOpen.component'

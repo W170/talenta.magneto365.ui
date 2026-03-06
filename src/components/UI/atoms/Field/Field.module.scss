@@ -1,7 +1,0 @@
-@use '../../../../shared/stylesheets/tokens' as *;
-
-.magneto-ui-field {
-  display: flex;
-  flex-direction: column;
-  gap: calc(2px / $scale-px-base) * 1rem;
-}

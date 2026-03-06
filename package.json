@@ -25,7 +25,7 @@
     "prettier": "prettier --write ./**/*.{js,ts,jsx,tsx}  --list-different",
     "storybook": "pnpm generate:tokens && storybook dev -p 6006",
     "build-storybook": "pnpm generate:tokens && storybook build",
-    "build:legacy": "rollup -c rollup.config.js --configPlugin typescript"
+    "build:legacy": "pnpm --filter magneto365.ui build"
   },
   "author": "Wilmer H Muñoz Gomez",
   "license": "UNLICENSED",
@@ -101,28 +101,5 @@
     "tslib": "^2.6.2",
     "turbo": "^2.8.2",
     "typescript": "^5.3.3"
-  },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "files": [
-    "dist"
-  ],
-  "types": "dist/types/index.d.ts",
-  "typings": "dist/types/index.d.ts",
-  "peerDependencies": {
-    "react-dom": "17.0.2"
-  },
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js",
-      "types": "./dist/types/index.d.ts"
-    },
-    "./dist/*.css": "./dist/*.css",
-    "./Domain/Jobs": {
-      "import": "./dist/esm/components/Domain/Jobs/index.js",
-      "require": "./dist/cjs/components/Domain/Jobs/index.js",
-      "types": "./dist/types/components/Domain/Jobs/index.d.ts"
-    }
   }
 }

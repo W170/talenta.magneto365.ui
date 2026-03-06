@@ -1,0 +1,27 @@
+@use 'scss/_index.scss' as tokens;
+
+.magneto-ui-field-list-body {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$gap-sm-2;
+  &--desktop {
+    padding-inline: tokens.$padding-sm;
+    padding-bottom: tokens.$padding-sm;
+  }
+  &::-webkit-scrollbar {
+    width: 10px;
+    &-thumb {
+      cursor: default;
+      background: transparent;
+      border: none;
+      border-color: transparent;
+      border-radius: 20px;
+      background: tokens.$color-grey-400;
+    }
+  }
+}

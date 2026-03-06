@@ -17,7 +17,7 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
-    "baseUrl": "./src",
+    "baseUrl": "./packages/legacy/src",
     "paths": {
       "@*": ["./*"],
       "@assets": ["assets/*"],
@@ -29,5 +29,6 @@
     },
     "resolveJsonModule": true
   },
-  "exclude": [""]
+  "include": ["packages/legacy/src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

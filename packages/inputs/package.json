@@ -9,12 +9,17 @@
     "dist"
   ],
   "scripts": {
-    "build": "echo 'Build will be configured in later phases'",
+    "build": "pnpm clean && pnpm build:rollup && pnpm build:css",
+    "build:rollup": "rollup -c rollup.config.js",
+    "build:css": "node ../../.scripts/generateComponentCss.js inputs",
+    "dev": "rollup -c rollup.config.js --watch",
     "test": "jest --passWithNoTests",
     "lint": "eslint ./src --ext .ts,.tsx",
     "clean": "rm -rf dist .turbo"
   },
   "dependencies": {
+    "@magneto365-ui/design-tokens": "workspace:*",
+    "@magneto365-ui/shared": "workspace:*",
     "@magneto365-ui/primitives": "workspace:*"
   },
   "peerDependencies": {

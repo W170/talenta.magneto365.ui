@@ -1,5 +1,0 @@
-export * from './CandidateProfileTemplateHeader'
-export * from './CandidateProfileTemplateMainNav'
-export * from './CandidateProfileTemplateNav'
-export * from './CandidateProfileTemplateProfile'
-export * from './CandidateProfileTemplateScreen'

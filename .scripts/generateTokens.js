@@ -3,11 +3,11 @@ const path = require('path')
 const warning = '// Auto-generated DO NOT EDIT\n'
 
 class DesignToken {
-  tokensDir = path.resolve(__dirname, '../src/shared/tokens/data')
-  scssOutput = path.resolve(__dirname, '../src/shared/stylesheets/tokens')
-  typesDir = path.resolve(__dirname, '../src/@types')
+  tokensDir = path.resolve(__dirname, '../packages/legacy/src/shared/tokens/data')
+  scssOutput = path.resolve(__dirname, '../packages/legacy/src/shared/stylesheets/tokens')
+  typesDir = path.resolve(__dirname, '../packages/legacy/src/@types')
   typesDOutput = path.join(this.typesDir, 'tokens.d.ts')
-  typesOutput = path.join(__dirname, '../src/shared/tokens/index.ts')
+  typesOutput = path.join(__dirname, '../packages/legacy/src/shared/tokens/index.ts')
 
   // Main function
   run() {

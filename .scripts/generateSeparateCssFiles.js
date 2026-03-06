@@ -2,9 +2,29 @@ const fs = require('fs')
 const path = require('path')
 const postcss = require('postcss')
 
-const distCss = path.resolve('dist/cjs/css/magneto.ui.lib.min.css')
+// Accept package name as CLI argument. When provided, operate on
+// packages/{packageName}/dist; otherwise default to repository root dist.
+const packageName = process.argv[2]
+const basePath = packageName ? path.resolve(__dirname, '..', 'packages', packageName) : path.resolve(__dirname, '..')
+
+const distCss = path.resolve(basePath, 'dist/cjs/css/magneto.ui.lib.min.css')
+
+// Validate that the CSS file exists and exit gracefully if not.
+if (!fs.existsSync(distCss)) {
+  console.error(`Error: CSS file not found at ${distCss}`)
+  console.error('Please ensure the build has completed successfully before running this script.')
+  process.exit(0)
+}
+
 const cssContent = fs.readFileSync(distCss, 'utf-8')
-const scssJsJobsDir = path.resolve('dist/cjs/components/Domain/Jobs')
+const scssJsJobsDir = path.resolve(basePath, 'dist/cjs/components/Domain/Jobs')
+
+// If the Jobs directory doesn't exist, nothing to extract — exit.
+if (!fs.existsSync(scssJsJobsDir)) {
+  console.error(`Error: Jobs directory not found at ${scssJsJobsDir}`)
+  console.error('Skipping CSS extraction - no Jobs domain files found.')
+  process.exit(0)
+}
 
 function getAllScssJsFiles(dir) {
   let files = []
@@ -20,8 +40,8 @@ function getAllScssJsFiles(dir) {
 }
 
 function overrideMainCss(root) {
-  const cssCjs = path.resolve('dist/cjs/css/magneto.ui.lib.min.css')
-  const cssEsm = path.resolve('dist/esm/css/magneto.ui.lib.min.css')
+  const cssCjs = path.resolve(basePath, 'dist/cjs/css/magneto.ui.lib.min.css')
+  const cssEsm = path.resolve(basePath, 'dist/esm/css/magneto.ui.lib.min.css')
 
   fs.writeFileSync(cssCjs, root.toString(), 'utf-8')
   fs.writeFileSync(cssEsm, root.toString(), 'utf-8')
@@ -47,7 +67,7 @@ function extractDomainCss(scssJsDir, name) {
     })
   })
 
-  const domainCssFile = path.resolve(`dist/css/magneto.ui.${name}.min.css`)
+  const domainCssFile = path.resolve(basePath, `dist/css/magneto.ui.${name}.min.css`)
   const domainCssDir = path.dirname(domainCssFile)
 
   if (!fs.existsSync(domainCssDir)) {
@@ -58,7 +78,7 @@ function extractDomainCss(scssJsDir, name) {
 
   overrideMainCss(root)
 
-  console.log(`Extraídas ${extractedRules.length} reglas de ${distCss} a ${domainCssFile}`)
+  console.log(`Extracted ${extractedRules.length} rules from ${distCss} to ${domainCssFile}`)
 }
 
 extractDomainCss(scssJsJobsDir, 'Jobs')

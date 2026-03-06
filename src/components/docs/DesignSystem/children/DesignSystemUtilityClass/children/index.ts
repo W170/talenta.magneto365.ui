@@ -1,1 +1,0 @@
-export { DesignSystemUtilityClassRenderer } from './DesignSystemUtilityClassRenderer'

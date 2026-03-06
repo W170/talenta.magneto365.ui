@@ -1,0 +1,68 @@
+@use 'scss/_index.scss' as tokens;
+
+.magneto-ui-field-area {
+  margin: 0;
+  padding: 0;
+  min-height: tokens.$scale-rem-4xl;
+  border: none;
+  flex: 1;
+  font-weight: tokens.$weight-normal;
+  font-size: tokens.$text-md-2;
+  color: tokens.$color-grey-900;
+  resize: vertical;
+  field-sizing: content;
+  &:focus-visible,
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    font-weight: tokens.$weight-normal;
+    font-size: tokens.$text-md-2;
+    color: tokens.$color-grey-500;
+  }
+  &::-webkit-scrollbar {
+    width: 10px;
+    &-thumb {
+      cursor: default;
+      background: transparent;
+      border: none;
+      border-color: transparent;
+      border-radius: 20px;
+      background: tokens.$color-grey-400;
+    }
+  }
+}
+
+.magneto-ui-field-area-wrapper {
+  background-color: tokens.$color-grey-50;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: calc(2px / tokens.$scale-px-base) * 1rem;
+  min-height: calc(tokens.$scale-rem-5xl - 2px);
+  border-radius: tokens.$radius-sm;
+  padding: tokens.$padding-sm;
+  border: solid 1px tokens.$color-grey-200;
+  cursor: text;
+  transition: all ease-in-out 0.3s;
+  + [data-slot='field-list'] {
+    display: none;
+  }
+  &--error {
+    border-color: tokens.$color-red-200;
+  }
+  &--disabled {
+    color: tokens.$color-grey-400;
+    background-color: tokens.$color-grey-100;
+    cursor: not-allowed;
+    > .magneto-ui-field-area {
+      cursor: not-allowed;
+    }
+  }
+  &--readonly {
+    cursor: not-allowed;
+    > .magneto-ui-field-area {
+      cursor: not-allowed;
+    }
+  }
+}

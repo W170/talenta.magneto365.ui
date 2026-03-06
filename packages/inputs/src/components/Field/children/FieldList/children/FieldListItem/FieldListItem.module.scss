@@ -1,0 +1,20 @@
+@use 'scss/_index.scss' as tokens;
+
+.magneto-ui-field-list-item {
+  border-radius: tokens.$radius-sm;
+  padding: tokens.$padding-sm tokens.$padding-lg;
+  min-height: calc(36px / tokens.$scale-px-base) * 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: tokens.$gap-sm-2;
+  color: tokens.$color-grey-700;
+  cursor: default;
+  transition: all ease-in-out 0.3s;
+  &:hover {
+    background-color: tokens.$color-grey-100;
+  }
+  &--selected {
+    background-color: tokens.$color-grey-100;
+  }
+}

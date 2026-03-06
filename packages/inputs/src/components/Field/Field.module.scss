@@ -1,0 +1,7 @@
+@use 'scss/_index.scss' as tokens;
+
+.magneto-ui-field {
+  display: flex;
+  flex-direction: column;
+  gap: calc(2px / tokens.$scale-px-base) * 1rem;
+}

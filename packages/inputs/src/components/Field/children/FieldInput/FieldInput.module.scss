@@ -1,0 +1,125 @@
+@use 'scss/_index.scss' as tokens;
+
+.magneto-ui-field-input {
+  margin: 0;
+  padding: tokens.$padding-sm 0;
+  min-height: calc(tokens.$scale-rem-5xl - 2px);
+  border: none;
+  flex: 1;
+  font-weight: tokens.$weight-normal;
+  font-size: tokens.$text-md-2;
+  color: tokens.$color-grey-900;
+  &:focus-visible,
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    font-weight: tokens.$weight-normal;
+    font-size: tokens.$text-md-2;
+    color: tokens.$color-grey-500;
+  }
+  &--mobile {
+    cursor: default;
+  }
+  &--button {
+    font-weight: tokens.$weight-normal;
+    font-size: tokens.$text-lg;
+    &-placeholder {
+      color: tokens.$color-grey-500;
+    }
+    &-value {
+      color: tokens.$color-grey-900;
+    }
+  }
+  &--left {
+    text-align: left;
+  }
+  &--center {
+    text-align: center;
+  }
+  &--right {
+    text-align: right;
+  }
+}
+
+.magneto-ui-field-input-wrapper {
+  background-color: tokens.$color-grey-50;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: tokens.$gap-sm;
+  min-height: calc(tokens.$scale-rem-5xl - 2px);
+  border-radius: tokens.$radius-sm;
+  padding-inline: tokens.$padding-lg;
+  border: solid 1px tokens.$color-grey-200;
+  cursor: text;
+  transition: all ease-in-out 0.3s;
+  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
+  &:has(+ [data-slot='field-list'][data-state='visible']) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &:has(.magneto-ui-field-input:invalid) {
+    border-color: tokens.$color-red-200;
+    border-width: 1px !important;
+  }
+  &--list-opened {
+    &:not(.magneto-ui-field-input-wrapper--error) {
+      border-color: transparent;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  /* &:focus-within {
+    border-color: tokens.$color-blue-light-200;
+    border-width: 1px !important;
+  } */
+  &--mobile {
+    cursor: default;
+  }
+  &--error {
+    border-color: tokens.$color-red-200;
+    border-width: 1px !important;
+    &.magneto-ui-field-input-wrapper--list-opened {
+      border-bottom-color: transparent;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  &--button {
+    cursor: pointer;
+    > .magneto-ui-field-input {
+      background-color: transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+  &--disabled {
+    color: tokens.$color-grey-400;
+    background-color: tokens.$color-grey-100;
+    cursor: not-allowed;
+    > .magneto-ui-field-input {
+      cursor: not-allowed;
+    }
+  }
+  &--readonly {
+    cursor: not-allowed;
+    > .magneto-ui-field-input {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.magneto-ui-field-input-prefix,
+.magneto-ui-field-input-suffix {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: tokens.$gap-sm;
+}
