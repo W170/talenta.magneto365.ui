@@ -2,7 +2,7 @@ export interface ICreateAccountCTA {
   /**
    * this property sets a fn on click
    */
-  ctaClick: () => void
+  onHandlerCreateAccount: () => void
   /**
    * this property sets the first text
    */
@@ -18,7 +18,7 @@ export interface ICreateAccountCTA {
   /**
    * optional click handler for the secondary action (newsletter)
    */
-  newsletterClick?: () => void
+  onHandlerNewsletter?: () => void
   /**
    * text for primary button (create account)
    */

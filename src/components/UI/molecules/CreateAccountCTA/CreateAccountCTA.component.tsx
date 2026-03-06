@@ -5,8 +5,8 @@ import { DotsLoader, Typography, MainButton } from '@components/UI/atoms'
 import styles from './CreateAccountCTA.module.scss'
 
 const Component: React.FC<ICreateAccountCTA> = ({
-  ctaClick,
-  newsletterClick,
+  onHandlerCreateAccount,
+  onHandlerNewsletter,
   description,
   title,
   isLoading,
@@ -37,7 +37,7 @@ const Component: React.FC<ICreateAccountCTA> = ({
             <MainButton
               buttonSize="full"
               buttonStyles={{ buttonColor: '#9EE4B8', textColor: '#292F37', spacing: '10px' }}
-              onClick={ctaClick}
+              onClick={onHandlerCreateAccount}
               buttonText={primaryText}
               iconProps={{ icon: ProfileAdd, size: 20 }}
               className={styles['btn--primary']}
@@ -46,7 +46,7 @@ const Component: React.FC<ICreateAccountCTA> = ({
             <MainButton
               buttonSize="full"
               buttonStyles={{ buttonColor: '#FFFFFF', textColor: '#292F37', spacing: '10px' }}
-              onClick={newsletterClick}
+              onClick={onHandlerNewsletter}
               buttonText={secondaryText}
               iconProps={{ icon: SmsStar, size: 20 }}
               className={styles['btn--secondary']}
