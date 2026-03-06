@@ -1,0 +1,9 @@
+@import '../../../../../shared/stylesheets/tokens';
+
+.magneto-ui-design-system-opacity {
+  @each $key, $value in $opacity-map {
+    &__example-#{$key} {
+      opacity: $value;
+    }
+  }
+}

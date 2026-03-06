@@ -1,0 +1,16 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+@mixin addDivider {
+  border-right: 1px solid v.$color-tertiary-gray;
+  margin-right: 8px;
+  padding-right: 8px;
+}
+
+.HeaderTabsComponent {
+  display: flex;
+  gap: 10px;
+
+  &[data-add-divider='true'] {
+    @include addDivider;
+  }
+}

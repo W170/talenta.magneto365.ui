@@ -1,0 +1,30 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-suggestedJobs-page {
+  overflow-y: auto !important;
+  justify-content: center;
+  height: calc(100vh - 89px);
+  display: flex;
+
+  &__jobs-detail {
+    position: sticky;
+    top: 0;
+  }
+
+  &--center-row {
+    width: 100%;
+
+    @media (max-width: v.$screen-md) {
+      width: auto;
+    }
+
+    &__jobs-result {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 10px 20px 10px;
+      gap: 2px;
+    }
+  }
+}

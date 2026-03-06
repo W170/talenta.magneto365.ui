@@ -1,0 +1,38 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-swipe {
+  &__modal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    &--title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: Lato;
+    }
+    &--action {
+      margin-top: 25px;
+      padding: 16px 25px !important;
+    }
+  }
+  &__image {
+    height: 130;
+    &--title {
+      font-size: 13px;
+      font-family: Lato;
+      font-weight: 700;
+    }
+
+    &--content {
+      padding: 10px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: fit-content;
+      background-color: #f4f4fa;
+    }
+  }
+}

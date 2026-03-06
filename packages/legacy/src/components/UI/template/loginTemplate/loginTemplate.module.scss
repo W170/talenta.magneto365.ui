@@ -1,0 +1,21 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-drawer-menu {
+  display: flex;
+}
+
+.menu-container {
+  @media (min-width: v.$screen-md) {
+    margin-top: 40px;
+  }
+}
+
+.actionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  @media (min-width: v.$screen-md) {
+    gap: 25px;
+    margin-top: 40px;
+  }
+}

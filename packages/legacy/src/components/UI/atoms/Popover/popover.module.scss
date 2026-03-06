@@ -1,0 +1,59 @@
+.magneto-ui-popover-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  .magneto-ui-popover {
+    width: auto;
+    background-color: white;
+    height: auto;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.106);
+    overflow: hidden;
+    border-radius: 12px;
+    position: absolute;
+    z-index: 12;
+    transition: all 0.2s ease-in-out;
+  }
+  .magneto-ui-popover-children {
+    display: inline;
+    height: 100%;
+  }
+}
+
+.left {
+  right: 0%;
+}
+
+.right {
+  left: 0%;
+}
+
+.center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.top {
+  bottom: 100%;
+}
+
+.bottom {
+  top: 100%;
+}
+
+.show {
+  opacity: 1;
+  margin-top: 0px;
+}
+
+.static-content {
+  position: static;
+  .magneto-ui-popover {
+    border-radius: 0 0 15px 15px;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  margin-top: -10px;
+}

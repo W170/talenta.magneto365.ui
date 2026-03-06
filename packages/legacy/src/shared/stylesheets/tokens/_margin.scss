@@ -1,0 +1,36 @@
+// Auto-generated DO NOT EDIT
+@use '_scale.scss' as scale;
+
+$margin-inherit: scale.$scale-inherit;
+$margin-none: scale.$scale-none;
+$margin-auto: scale.$scale-auto;
+$margin-min: scale.$scale-min;
+$margin-xs: scale.$scale-rem-xs;
+$margin-sm: scale.$scale-rem-sm;
+$margin-sm-2: scale.$scale-rem-sm-2;
+$margin-md: scale.$scale-rem-md;
+$margin-md-2: scale.$scale-rem-md-2;
+$margin-lg: scale.$scale-rem-lg;
+$margin-xl: scale.$scale-rem-xl;
+$margin-2xl: scale.$scale-rem-2xl;
+$margin-3xl: scale.$scale-rem-3xl;
+$margin-4xl: scale.$scale-rem-4xl;
+$margin-full: scale.$scale-full;
+
+$margin-map: (
+  inherit: $margin-inherit,
+  none: $margin-none,
+  auto: $margin-auto,
+  min: $margin-min,
+  xs: $margin-xs,
+  sm: $margin-sm,
+  sm-2: $margin-sm-2,
+  md: $margin-md,
+  md-2: $margin-md-2,
+  lg: $margin-lg,
+  xl: $margin-xl,
+  2xl: $margin-2xl,
+  3xl: $margin-3xl,
+  4xl: $margin-4xl,
+  full: $margin-full
+);

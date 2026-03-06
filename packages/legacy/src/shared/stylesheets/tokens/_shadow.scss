@@ -1,0 +1,18 @@
+// Auto-generated DO NOT EDIT
+@use '_color.scss' as color;
+@use '_opacity.scss' as opacity;
+@use '_scale.scss' as scale;
+
+$shadow-10: scale.$scale-min scale.$scale-min 10px rgba(color.$color-grey-600, opacity.$opacity-10);
+$shadow-20: scale.$scale-min scale.$scale-min scale.$scale-rem-md rgba(color.$color-grey-600, opacity.$opacity-12);
+$shadow-30: scale.$scale-min scale.$scale-min scale.$scale-rem-md rgba(color.$color-grey-600, opacity.$opacity-30);
+$shadow-inherit: scale.$scale-inherit;
+$shadow-none: scale.$scale-none;
+
+$shadow-map: (
+  10: $shadow-10,
+  20: $shadow-20,
+  30: $shadow-30,
+  inherit: $shadow-inherit,
+  none: $shadow-none
+);

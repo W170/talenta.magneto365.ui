@@ -1,0 +1,11 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.title-summary {
+  font-size: 20px;
+  color: #0a0c0e;
+  font-weight: 700;
+
+  @media (max-width: v.$screen-sm) {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,30 @@
+@use '../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-brand-button {
+  display: flex;
+  align-items: center;
+  &__company-logo {
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    &--img {
+      max-width: 80px;
+      max-height: 40px;
+      object-fit: contain;
+      @media (min-width: v.$screen-md) {
+        max-width: 115px;
+      }
+    }
+  }
+
+  &__icon {
+    transition: all ease-in-out 0.3s;
+  }
+}
+
+.rotate {
+  transform: rotate(180deg);
+}

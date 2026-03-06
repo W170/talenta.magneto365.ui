@@ -1,0 +1,19 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+
+  <rect x="4" y="8" width="56" height="40" rx="4" fill="#66C1EA"/>
+
+  <circle cx="10" cy="14" r="2" fill="white"/>
+  <circle cx="18" cy="14" r="2" fill="white"/>
+  <circle cx="26" cy="14" r="2" fill="white"/>
+
+  <rect x="14" y="24" width="16" height="12" rx="2" fill="white"/>
+  <text x="22" y="33" font-size="8" text-anchor="middle" font-family="Arial" fill="#66C1EA" font-weight="bold">AD</text>
+
+  <line x1="34" y1="26" x2="50" y2="26" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="34" y1="30" x2="50" y2="30" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="34" y1="34" x2="44" y2="34" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+
+
+  <line x1="14" y1="42" x2="30" y2="42" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="22" cy="42" r="2.5" fill="white"/>
+</svg>

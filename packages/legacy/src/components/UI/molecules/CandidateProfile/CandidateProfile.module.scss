@@ -1,0 +1,9 @@
+.magneto-ui-candidate-profile {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: #001b38;
+  color: white;
+  text-align: left;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}

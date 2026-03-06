@@ -1,0 +1,92 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+$filter-font-color: #282835;
+
+.magneto-ui-filter-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4px;
+  width: 260px;
+  max-width: 260px;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-bottom: 1px solid #f0f1f3;
+
+  @media (max-width: v.$screen-md) {
+    width: inherit;
+    max-width: 100%;
+  }
+}
+
+.magneto-ui-filter-header_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  & > p {
+    font-size: 16px;
+    font-weight: 700;
+    color: #292f37;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.magneto-ui-filter-header_clean {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8px;
+  background-color: #f0f1f3;
+  border-radius: 6px;
+
+  & > span {
+    font-size: 13px;
+    color: $filter-font-color;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.magneto-ui-filter-header_btn {
+  padding: 0px !important;
+  padding-right: 2px !important;
+
+  p {
+    font-weight: unset !important;
+    margin-left: 4px !important;
+  }
+}
+
+.magneto-ui-filter-header_switch {
+  p {
+    font-size: 12px;
+    letter-spacing: -0.3px;
+  }
+}
+
+.magneto-ui-filter-header_summary {
+  display: none;
+
+  @media (max-width: v.$screen-md) {
+    display: block;
+    font-size: 13px;
+    color: $filter-font-color;
+  }
+}
+
+.disabled {
+  opacity: 0.4;
+}

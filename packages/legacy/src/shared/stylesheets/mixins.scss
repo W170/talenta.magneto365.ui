@@ -1,0 +1,196 @@
+@use '../../shared/stylesheets/variables.scss' as v;
+
+@mixin scroll-height($visible) {
+  $size: 4px;
+  &::-webkit-scrollbar {
+    background: transparent;
+    width: $size;
+    height: $size;
+    &-thumb {
+      background: transparent;
+      border: none transparent;
+      border-radius: 4px;
+      @if $visible {
+        background: #d3d3d3;
+      }
+      &:hover {
+        background: #d3d3d3;
+      }
+    }
+  }
+}
+
+@mixin scroll-filter {
+  $size: 14px;
+  $background: #cfcfde;
+  &::-webkit-scrollbar {
+    width: $size;
+    position: relative;
+    &-thumb {
+      background: $background;
+      border: solid v.$disabled-color-gray 3px;
+      border-radius: 20px;
+    }
+  }
+}
+
+@mixin scroll-thin {
+  $size: 7px;
+  $background: #cfcfde;
+  $border-color: #f4f4fa;
+
+  &::-webkit-scrollbar {
+    width: $size;
+    position: relative;
+    &-thumb {
+      background: $background;
+      border: solid $border-color 1px;
+      border-radius: 10px;
+    }
+  }
+}
+
+@mixin scroll-shadows {
+  background: linear-gradient(white 30%, rgba(255, 255, 255, 0)) center top,
+    linear-gradient(rgba(255, 255, 255, 0), white 70%) center bottom,
+    radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)) center top,
+    radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)) center bottom;
+
+  overflow-y: auto;
+  background-repeat: no-repeat;
+  background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+  background-attachment: local, local, scroll, scroll;
+  list-style: none;
+  padding-right: 0.5rem;
+  --scrollbarBG: transparent;
+  --thumbBG: #90a4ae;
+
+  > * {
+    padding: 0.2rem;
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+  }
+}
+
+@mixin horizontal-filter-card {
+  position: relative;
+
+  &__popover-wrapper {
+    position: fixed;
+    z-index: 9999;
+    top: var(--popover-top, 0);
+    left: var(--popover-left, 0);
+  }
+
+  &__tooltip {
+    position: fixed;
+    z-index: 10000;
+    top: var(--tooltip-top, 0);
+    left: var(--tooltip-left, 0);
+    background-color: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent #333 transparent;
+    }
+
+    @media (pointer: coarse) {
+      animation: fadeInOut 2.5s ease-in-out forwards;
+    }
+  }
+
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+@mixin horizontal-filter-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  background-color: #ffffff;
+  cursor: pointer;
+  white-space: nowrap;
+  justify-content: space-between;
+  max-width: 250px;
+  min-height: 40px;
+
+  &--grayscale {
+    filter: grayscale(100%);
+  }
+
+  &:hover {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  span {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@mixin horizontal-filter-popover {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 300px;
+  max-width: 400px;
+  padding: 1rem;
+  border: 1px solid transparent;
+  max-height: 350px;
+  overflow-y: auto;
+  margin-top: -5px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 20px;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+    z-index: 1;
+  }
+}

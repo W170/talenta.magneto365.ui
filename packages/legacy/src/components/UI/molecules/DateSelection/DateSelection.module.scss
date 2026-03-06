@@ -1,0 +1,67 @@
+.magneto-ui--date-selection {
+  > aside {
+    > div {
+      overflow: unset !important;
+    }
+  }
+  &__header {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0 0 0;
+
+    h2 {
+      color: #0a0c0e;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }
+
+  &__options {
+    margin: 8px 0;
+    max-height: 10.3rem;
+  }
+
+  &__btn--wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px 0;
+    gap: 10px;
+    border-top: 1px solid #e3e7e9;
+  }
+
+  &__cancel-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 165px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    background: #f0f1f3;
+
+    color: #1f2329;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__apply-btn {
+    width: 165px;
+    gap: 10px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    background: #f0f1f3;
+
+    color: #001b38;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}

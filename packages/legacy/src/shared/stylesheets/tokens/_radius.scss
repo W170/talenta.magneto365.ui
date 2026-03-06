@@ -1,0 +1,32 @@
+// Auto-generated DO NOT EDIT
+@use '_scale.scss' as scale;
+
+$radius-inherit: scale.$scale-inherit;
+$radius-min: scale.$scale-min;
+$radius-xs: scale.$scale-rem-xs;
+$radius-sm: scale.$scale-rem-sm;
+$radius-sm-2: scale.$scale-rem-sm-2;
+$radius-md: scale.$scale-rem-md;
+$radius-md-2: scale.$scale-rem-md-2;
+$radius-lg: scale.$scale-rem-lg;
+$radius-xl: scale.$scale-rem-xl;
+$radius-2xl: scale.$scale-rem-2xl;
+$radius-3xl: scale.$scale-rem-3xl;
+$radius-4xl: scale.$scale-rem-4xl;
+$radius-full: scale.$scale-full;
+
+$radius-map: (
+  inherit: $radius-inherit,
+  min: $radius-min,
+  xs: $radius-xs,
+  sm: $radius-sm,
+  sm-2: $radius-sm-2,
+  md: $radius-md,
+  md-2: $radius-md-2,
+  lg: $radius-lg,
+  xl: $radius-xl,
+  2xl: $radius-2xl,
+  3xl: $radius-3xl,
+  4xl: $radius-4xl,
+  full: $radius-full
+);

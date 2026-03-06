@@ -1,0 +1,26 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.alphabet-filter {
+  display: flex;
+  flex-direction: row;
+  background-color: #f0f1f3;
+  padding: 12px;
+  gap: 8px;
+  width: auto;
+  align-items: center;
+  border-radius: 8px;
+
+  &__title {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0px;
+    white-space: nowrap;
+    color: #0a0c0e;
+  }
+
+  @media screen and (max-width: v.$screen-md) {
+    flex-direction: column;
+    align-items: start;
+    font-weight: 500;
+  }
+}

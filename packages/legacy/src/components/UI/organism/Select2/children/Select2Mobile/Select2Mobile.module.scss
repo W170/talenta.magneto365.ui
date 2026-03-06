@@ -1,0 +1,15 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-select2-desktop {
+  > * {
+    box-sizing: border-box;
+  }
+  > aside {
+    padding: 30px 20px;
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}

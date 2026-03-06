@@ -1,0 +1,8 @@
+@use '../../../../../../../../shared/stylesheets/tokens' as *;
+
+.magneto-ui-field-list-wrapper {
+  position: relative;
+  &--non-relative {
+    position: static;
+  }
+}

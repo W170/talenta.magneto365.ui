@@ -1,0 +1,39 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-mega-menu-tab {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: max-content;
+  padding: 6px;
+  border-radius: 6px 6px 0px 0px;
+  gap: 5px;
+  background-color: v.$color-gray-background;
+
+  &__icon {
+    color: v.$color-gray-background;
+  }
+
+  &__selected {
+    background-color: v.$color-white;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    text-decoration: none;
+
+    &-selected {
+      > p {
+        font-weight: 900 !important;
+        color: #0a0c0e !important;
+      }
+    }
+    > p {
+      font-weight: 400;
+      color: #667688;
+      font-size: 13px;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.mega-menu-empty {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  height: 100%;
+  padding: 30px 30px 0px 30px;
+  max-width: 500px;
+
+  &__title {
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    margin: 0px;
+  }
+  &__subtitle {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0px;
+  }
+  &__image {
+    margin-top: 10px;
+    width: fit-content;
+  }
+}

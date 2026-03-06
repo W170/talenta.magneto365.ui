@@ -1,0 +1,16 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-logo {
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: 110px;
+}
+
+.magneto-ui-isologo {
+  height: auto;
+  width: 25px;
+  @media (min-width: v.$screen-md) {
+    width: 30px;
+  }
+}

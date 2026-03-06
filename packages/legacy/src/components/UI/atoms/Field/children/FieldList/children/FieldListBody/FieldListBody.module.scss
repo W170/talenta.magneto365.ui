@@ -1,0 +1,27 @@
+@use '../../../../../../../../shared/stylesheets/tokens' as *;
+
+.magneto-ui-field-list-body {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $gap-sm-2;
+  &--desktop {
+    padding-inline: $padding-sm;
+    padding-bottom: $padding-sm;
+  }
+  &::-webkit-scrollbar {
+    width: 10px;
+    &-thumb {
+      cursor: default;
+      background: transparent;
+      border: none;
+      border-color: transparent;
+      border-radius: 20px;
+      background: $color-grey-400;
+    }
+  }
+}

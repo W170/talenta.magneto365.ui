@@ -1,0 +1,58 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+@mixin tabTitle {
+  .headerTabComponent__text {
+    color: v.$text-color-disable;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+@mixin tabOption {
+  transition: background-color ease-in-out 0.3s;
+  &:hover {
+    background-color: v.$disabled-color-gray2;
+  }
+  .headerTabComponent__text {
+    color: v.$text-color-black;
+  }
+}
+
+@mixin activeTabOption {
+  background-color: v.$disabled-color-gray2;
+}
+
+.headerTabComponent {
+  display: inline-flex;
+  align-items: center;
+  height: 1.75rem;
+  padding: 5px 10px;
+  border-radius: 6px;
+  position: relative;
+  &__count {
+    top: -5px;
+    right: -7px;
+    position: absolute;
+  }
+
+  &__text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    margin: 0;
+  }
+
+  &[data-tab-type='tabTitle'] {
+    @include tabTitle;
+  }
+
+  &[data-tab-type='tabOption'] {
+    @include tabOption;
+    &[data-is-active='true'] {
+      @include activeTabOption;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.magneto-ui-candidate-profile-toggler {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #1a324c;
+  gap: 10px;
+  transition: transform 0.3s ease;
+  border: none;
+  cursor: pointer;
+  &--open {
+    transform: rotate(180deg);
+  }
+  > img {
+    width: 12px;
+    height: 6px;
+  }
+}

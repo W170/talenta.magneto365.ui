@@ -1,0 +1,32 @@
+// Auto-generated DO NOT EDIT
+@use '_scale.scss' as scale;
+
+$padding-inherit: scale.$scale-inherit;
+$padding-min: scale.$scale-min;
+$padding-xs: scale.$scale-rem-xs;
+$padding-sm: scale.$scale-rem-sm;
+$padding-sm-2: scale.$scale-rem-sm-2;
+$padding-md: scale.$scale-rem-md;
+$padding-md-2: scale.$scale-rem-md-2;
+$padding-lg: scale.$scale-rem-lg;
+$padding-xl: scale.$scale-rem-xl;
+$padding-2xl: scale.$scale-rem-2xl;
+$padding-3xl: scale.$scale-rem-3xl;
+$padding-4xl: scale.$scale-rem-4xl;
+$padding-full: scale.$scale-full;
+
+$padding-map: (
+  inherit: $padding-inherit,
+  min: $padding-min,
+  xs: $padding-xs,
+  sm: $padding-sm,
+  sm-2: $padding-sm-2,
+  md: $padding-md,
+  md-2: $padding-md-2,
+  lg: $padding-lg,
+  xl: $padding-xl,
+  2xl: $padding-2xl,
+  3xl: $padding-3xl,
+  4xl: $padding-4xl,
+  full: $padding-full
+);

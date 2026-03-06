@@ -1,0 +1,32 @@
+// Auto-generated DO NOT EDIT
+@use '_scale.scss' as scale;
+
+$gap-inherit: scale.$scale-inherit;
+$gap-min: scale.$scale-min;
+$gap-xs: scale.$scale-rem-xs;
+$gap-sm: scale.$scale-rem-sm;
+$gap-sm-2: scale.$scale-rem-sm-2;
+$gap-md: scale.$scale-rem-md;
+$gap-md-2: scale.$scale-rem-md-2;
+$gap-lg: scale.$scale-rem-lg;
+$gap-xl: scale.$scale-rem-xl;
+$gap-2xl: scale.$scale-rem-2xl;
+$gap-3xl: scale.$scale-rem-3xl;
+$gap-4xl: scale.$scale-rem-4xl;
+$gap-full: scale.$scale-full;
+
+$gap-map: (
+  inherit: $gap-inherit,
+  min: $gap-min,
+  xs: $gap-xs,
+  sm: $gap-sm,
+  sm-2: $gap-sm-2,
+  md: $gap-md,
+  md-2: $gap-md-2,
+  lg: $gap-lg,
+  xl: $gap-xl,
+  2xl: $gap-2xl,
+  3xl: $gap-3xl,
+  4xl: $gap-4xl,
+  full: $gap-full
+);

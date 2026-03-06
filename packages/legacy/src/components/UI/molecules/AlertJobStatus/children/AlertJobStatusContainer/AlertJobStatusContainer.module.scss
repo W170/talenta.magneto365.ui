@@ -1,0 +1,8 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as *;
+
+.alert-job__content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}

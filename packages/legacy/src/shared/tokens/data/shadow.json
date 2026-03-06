@@ -1,0 +1,31 @@
+{
+  "values": {
+    "inherit": "scale.$scale-inherit",
+    "none": "scale.$scale-none",
+    "10": "scale.$scale-min scale.$scale-min 10px rgba(color.$color-grey-600, opacity.$opacity-10)",
+    "20": "scale.$scale-min scale.$scale-min scale.$scale-rem-md rgba(color.$color-grey-600, opacity.$opacity-12)",
+    "30": "scale.$scale-min scale.$scale-min scale.$scale-rem-md rgba(color.$color-grey-600, opacity.$opacity-30)"
+  },
+  "utilities": {
+    "imports": [
+      {
+        "file": "_color.scss",
+        "alias": "color"
+      },
+      {
+        "file": "_opacity.scss",
+        "alias": "opacity"
+      },
+      {
+        "file": "_scale.scss",
+        "alias": "scale"
+      }
+    ]
+  },
+  "docs": {
+    "description": "Shadow SCSS vars for consistent elevation and depth effects in components.",
+    "example": "```scss\n.card {\n  box-shadow: $shadow-10;\n}\n```",
+    "category": "visual",
+    "tags": "shadow, elevation, depth, box-shadow"
+  }
+}

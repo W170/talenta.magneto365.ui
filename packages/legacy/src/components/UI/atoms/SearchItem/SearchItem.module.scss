@@ -1,0 +1,41 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui--search-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 14px;
+  max-width: max-content;
+  border-radius: 30px;
+  background-color: v.$disabled-color-gray;
+  cursor: pointer;
+
+  transition: all ease-in-out 0.3s;
+
+  @media (min-width: v.$screen-md) {
+    &:hover {
+      background-color: v.$colors-magneto-neutral-gray-5;
+    }
+  }
+
+  img {
+    margin-left: 0;
+    transition: all ease-in-out 0.3s;
+  }
+
+  &:hover img {
+    @media (min-width: v.$screen-md) {
+      transform: translateX(5px);
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: v.$text-color-black;
+    margin: 0px;
+  }
+}

@@ -1,0 +1,28 @@
+@use '../../../../../../shared/stylesheets/tokens' as tokens;
+
+.summary {
+  margin: 0;
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  justify-content: center;
+  padding: tokens.$padding-lg;
+  border-radius: tokens.$padding-md;
+  gap: tokens.$gap-sm-2;
+  background-color: tokens.$color-grey-100;
+
+  &__item {
+    display: flex;
+    gap: tokens.$gap-sm;
+    align-items: center;
+  }
+
+  &__label {
+    color: tokens.$color-grey-800;
+    font-size: tokens.$text-md;
+  }
+
+  &__icon {
+    align-self: flex-start;
+  }
+}

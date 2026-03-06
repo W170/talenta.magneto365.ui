@@ -1,0 +1,26 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+.magneto-ui-drop-down-button {
+  cursor: pointer;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #e9e9f6;
+  border-radius: 12px;
+  padding: 19px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #14141c;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: all ease-in-out 0.3s;
+  &:hover {
+    border: solid 1px v.$color-primary-green;
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}

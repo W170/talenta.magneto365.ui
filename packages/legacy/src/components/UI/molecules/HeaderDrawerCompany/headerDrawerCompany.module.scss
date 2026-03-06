@@ -1,0 +1,12 @@
+.header-drawer-company {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  img:nth-child(3) {
+    height: 20px;
+    width: 25px;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+}

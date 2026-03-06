@@ -1,0 +1,27 @@
+@use '../../../../../../shared/stylesheets/tokens' as *;
+
+.magneto-ui-job-card-label-status {
+  display: flex;
+  margin-top: $margin-xs;
+  flex-direction: row;
+  align-items: center;
+  gap: $gap-xs;
+  padding: $padding-xs $padding-sm;
+  border-radius: $radius-md;
+  width: fit-content;
+
+  &--mobile {
+    display: block;
+  }
+  &--applied {
+    background-color: $color-green-100;
+  }
+
+  &--pending {
+    background-color: $color-grey-100;
+  }
+
+  &--required {
+    background-color: $color-yellow-50;
+  }
+}

@@ -1,0 +1,58 @@
+@use '../../../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-user-menu-analyst-option {
+  &__object {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    > div:last-child {
+      margin-left: auto;
+    }
+    > span,
+    > a,
+    > button {
+      flex: 1;
+    }
+  }
+  &__dropdown-title {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14.4px;
+    color: #1f2329;
+  }
+  &__dropdown {
+    > div {
+      color: v.$text-color-black;
+      border-radius: 10px;
+      background-color: #e3e7e9;
+      > div:first-child {
+        height: fit-content;
+        padding: 8px 10px;
+        gap: 18px;
+      }
+    }
+  }
+  &__dropdown-list {
+    color: v.$text-color-black;
+    padding-top: 0;
+    > a,
+    > button,
+    > span {
+      height: fit-content;
+      padding: 5px;
+      gap: 10px;
+      min-height: 40px;
+    }
+  }
+  &__empty-text {
+    padding-inline: 8px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15.6px;
+    color: v.$color-blue-dark5;
+  }
+  &__arrow {
+    transform: rotate(-90deg);
+  }
+}

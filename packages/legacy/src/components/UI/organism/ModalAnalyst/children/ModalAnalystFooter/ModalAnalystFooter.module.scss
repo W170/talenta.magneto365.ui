@@ -1,0 +1,164 @@
+@use '../../../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-modal-analyst-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 5px;
+  @media screen and (min-width: v.$screen-md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  &--top-divider {
+    @media screen and (min-width: v.$screen-md) {
+      padding-top: 20px;
+      border-top: 1px solid #e3e7e9;
+    }
+  }
+  &__button {
+    width: 100%;
+    border-radius: 30px;
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    @media screen and (min-width: v.$screen-md) {
+      width: fit-content;
+    }
+    &:focus {
+      &:focus {
+        outline-offset: -3px;
+        outline-style: solid;
+        outline-width: 3px;
+      }
+    }
+    &--loading {
+      cursor: default;
+    }
+    &--green {
+      background-color: #9ee4b8;
+      color: #001b38;
+      &:hover {
+        background-color: #6dd695;
+        color: #001b38;
+      }
+      &:disabled {
+        background-color: #e0e4e7;
+        color: #8591a0;
+      }
+      &:focus {
+        background-color: #9ee4b8;
+        color: #001b38;
+        outline-color: #cef1dc;
+      }
+    }
+    &--blue {
+      background-color: #1a324c;
+      color: #ffffff;
+      &:hover {
+        background-color: #00162d;
+        color: #ffffff;
+      }
+      &:disabled {
+        background-color: #e0e4e7;
+        color: #8591a0;
+      }
+      &:focus {
+        background-color: #1a324c;
+        color: #ffffff;
+        outline-color: #667688;
+      }
+    }
+    &--white {
+      background-color: #ffffff;
+      color: #0a0c0e;
+      &:hover {
+        background-color: #f0f1f3;
+        color: #0a0c0e;
+      }
+      &:disabled {
+        background-color: #e0e4e7;
+        color: #8591a0;
+      }
+      &:focus {
+        background-color: #ffffff;
+        color: #0a0c0e;
+        outline-color: #e0e4e7;
+      }
+    }
+    &--gray {
+      background-color: #f0f1f3;
+      color: #0a0c0e;
+      &:hover {
+        background-color: #e0e4e7;
+        color: #0a0c0e;
+      }
+      &:disabled {
+        background-color: #e0e4e7;
+        color: #8591a0;
+      }
+      &:focus {
+        background-color: #f0f1f3;
+        color: #0a0c0e;
+        outline-color: #e0e4e7;
+      }
+    }
+    &--red {
+      background-color: #e10000;
+      color: #ffffff;
+      &:hover {
+        background-color: #8b0000;
+        color: #ffffff;
+      }
+      &:disabled {
+        background-color: #e0e4e7;
+        color: #8591a0;
+      }
+      &:focus {
+        background-color: #e10000;
+        color: #ffffff;
+        outline-color: #febfbf;
+      }
+    }
+  }
+  &__prefix-icon-container {
+    position: relative;
+    display: none;
+    &--active {
+      display: inline-block;
+    }
+    &--margin-right {
+      margin-right: 10px;
+    }
+  }
+  &__prefix-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    &--active {
+      opacity: 1;
+      visibility: visible;
+    }
+    &--empty-icon {
+      position: relative;
+      left: unset;
+    }
+  }
+  &__prefix-icon {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+    &--inactive {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

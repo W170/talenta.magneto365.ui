@@ -1,0 +1,31 @@
+.popover {
+  &--open {
+    > div:first-child {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        transform: rotate(45deg);
+        background: white;
+        border-radius: 5px;
+        right: 10px;
+        top: -8px;
+        z-index: -1;
+      }
+    }
+  }
+  > div:first-child {
+    overflow: visible;
+    background: white;
+    z-index: 1;
+    padding: 10px;
+  }
+}
+
+.button {
+  border: none;
+  border: none;
+  background: transparent;
+}

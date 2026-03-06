@@ -1,0 +1,8 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.BreadcrumbsComponent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}

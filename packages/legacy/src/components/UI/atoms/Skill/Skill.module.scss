@@ -1,0 +1,32 @@
+@use '../../../../shared/stylesheets/tokens' as tokens;
+
+.skill {
+  display: flex;
+  align-items: center;
+  gap: tokens.$gap-sm-2;
+  font-size: tokens.$text-md-2;
+  color: tokens.$color-grey-700;
+  border-radius: tokens.$radius-xl;
+  background: tokens.$color-grey-100;
+  padding: tokens.$padding-sm tokens.$padding-md;
+
+  &__name {
+    word-break: break-word;
+  }
+
+  &__level {
+    display: flex;
+    word-break: break-word;
+    gap: tokens.$gap-sm;
+  }
+
+  &__circle {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: tokens.$color-grey-300;
+    &--filled {
+      background: tokens.$color-blue-dark-200;
+    }
+  }
+}

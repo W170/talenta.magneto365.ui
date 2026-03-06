@@ -1,0 +1,43 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-chart-bars {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__chart {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: end;
+    flex-wrap: wrap;
+  }
+
+  &__minmax {
+    display: flex;
+    justify-content: space-between;
+
+    > p {
+      margin: 0px;
+      font-family: Lato;
+      font-size: clamp(14px, 1.5vw, 16px);
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
+
+  &__mean {
+    display: flex;
+    justify-content: center;
+
+    > p {
+      margin: 0px;
+      margin-top: 8px;
+      font-family: Lato;
+      font-size: clamp(14px, 2vw, 22px);
+      font-style: normal;
+      font-weight: 700;
+    }
+  }
+}

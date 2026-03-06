@@ -1,0 +1,110 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../shared/stylesheets/mixins.scss' as m;
+
+$font-size: 14px;
+$line-height: 1;
+$lines: 2;
+
+.magneto-ui-filter-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 260px;
+  max-width: 260px;
+  padding: 12px 5px 12px 10px;
+  border-bottom: 1px solid #f0f1f3;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+
+  @media (max-width: v.$screen-md) {
+    align-items: flex-start;
+    width: inherit;
+    max-width: 100%;
+    padding: 10px 20px;
+  }
+
+  &__search {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 10px;
+  }
+}
+
+.magneto-ui-filter-card_header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  padding: 4px 10px;
+
+  @media (max-width: v.$screen-md) {
+    width: inherit;
+    max-width: 100%;
+  }
+  &--arrow {
+    opacity: 0.5;
+  }
+  &.--open {
+    > p {
+      color: #292f37;
+    }
+    > .magneto-ui-filter-card_header--arrow {
+      transform: rotate(180deg);
+      opacity: 1;
+    }
+  }
+  & > p {
+    display: block;
+    display: -webkit-box;
+    font-size: $font-size;
+    line-height: $line-height;
+    -webkit-line-clamp: $lines;
+    line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    font-weight: 700;
+    color: #47535f;
+    width: 100%;
+    height: auto;
+    max-height: $font-size * $line-height * $lines;
+    max-width: 100%;
+    margin: 0;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.magneto-ui-filter-card_options {
+  overflow-y: scroll;
+  width: 100%;
+  @include m.scroll-filter;
+
+  @media (max-width: v.$screen-md) {
+    align-items: flex-start;
+    width: inherit;
+    max-width: 100%;
+  }
+}
+
+.hasSearch {
+  height: 270px;
+  min-height: 270px;
+}
+
+.magneto-ui-filter-card-horizontal {
+  @include m.horizontal-filter-card;
+
+  &__popover {
+    @include m.horizontal-filter-popover;
+  }
+}
+
+.magneto-ui-horizontal-filter-button {
+  @include m.horizontal-filter-button;
+}

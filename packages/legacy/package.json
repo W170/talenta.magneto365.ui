@@ -11,13 +11,19 @@
       "require": "./dist/cjs/index.js",
       "types": "./dist/types/index.d.ts"
     },
+    "./Domain/Jobs": {
+      "import": "./dist/esm/components/Domain/Jobs/index.js",
+      "require": "./dist/cjs/components/Domain/Jobs/index.js",
+      "types": "./dist/types/components/Domain/Jobs/index.d.ts"
+    },
     "./dist/*.css": "./dist/*.css"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "echo 'Build will be configured in later phases'",
+    "build": "rollup -c rollup.config.js --configPlugin typescript",
+    "postbuild": "node ../../.scripts/generateSeparateCssFiles.js legacy",
     "test": "jest --passWithNoTests",
     "lint": "eslint ./src --ext .ts,.tsx",
     "clean": "rm -rf dist .turbo"

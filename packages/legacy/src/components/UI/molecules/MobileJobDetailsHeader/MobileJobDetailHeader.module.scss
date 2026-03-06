@@ -1,0 +1,21 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-mobile-job-details-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 16px;
+
+  button {
+    height: 25px;
+    width: 25px;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+  }
+
+  p {
+    margin: 0px;
+  }
+}

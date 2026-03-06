@@ -1,0 +1,55 @@
+.notification {
+  position: fixed;
+  background-color: #fff;
+  color: #333;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0rem 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &.top-left {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  &.top-right {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  &.bottom-left {
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  &.bottom-right {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__message {
+    flex: 1;
+  }
+
+  &__close-btn {
+    background: none;
+    border: none;
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    align-self: flex-start;
+    padding: 0 0 0 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+}

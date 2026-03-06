@@ -1,0 +1,39 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-logout-jobs-template {
+  &--brands {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+  }
+
+  &--company-logo {
+    max-width: 80px;
+    max-height: 40px;
+    object-fit: contain;
+    @media (min-width: v.$screen-md) {
+      max-width: 115px;
+    }
+  }
+
+  &--jobs-menu {
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+
+  &--btn-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  &--social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    gap: 25px;
+    margin-top: 40px;
+  }
+}

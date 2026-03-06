@@ -1,0 +1,7 @@
+@use '../../../../../../shared/stylesheets/tokens' as tokens;
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: tokens.$gap-md;
+}

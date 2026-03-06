@@ -1,0 +1,10 @@
+@use '../../../../shared/stylesheets/tokens' as t;
+
+.magneto-ui-similar-jobs-section {
+  width: 100%;
+  height: auto;
+  padding: t.$padding-sm t.$padding-sm-2;
+  > a {
+    border-bottom: solid t.$border-1 t.$color-grey-100;
+  }
+}

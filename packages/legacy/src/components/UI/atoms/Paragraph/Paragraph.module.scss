@@ -1,0 +1,10 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.content {
+  font-size: 16px;
+  font-family: Lato;
+  max-width: v.$screen-hd;
+  padding: 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}

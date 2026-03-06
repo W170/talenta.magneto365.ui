@@ -1,0 +1,9 @@
+@import '../../../../../shared/stylesheets/tokens';
+
+.magneto-ui-design-system-color {
+  @each $key, $value in $color-map {
+    &__example-#{$key} {
+      background-color: $value;
+    }
+  }
+}

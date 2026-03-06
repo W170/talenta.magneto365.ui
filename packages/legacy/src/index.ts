@@ -1,4 +1,9 @@
-// Legacy package - Re-exports all packages for backward compatibility
-// This will be populated in Phase 10
-
-export {}
+export { ContextAppProvider as MagnetoUIProvider } from './components/context/context.component'
+export * from './components/hooks'
+export * from './components/UI/atoms'
+export * from './components/UI/molecules'
+export * from './components/UI/organism'
+export * from './components/UI/page'
+export * from './components/UI/template'
+export * from './components/hoc'
+export * from './shared/tokens'

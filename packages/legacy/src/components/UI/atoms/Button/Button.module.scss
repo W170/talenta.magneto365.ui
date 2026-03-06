@@ -1,0 +1,30 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.magneto-ui-button {
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__mobile-text {
+    margin: 0px;
+    font-size: 14px;
+    font-style: normal;
+    line-height: normal;
+  }
+
+  &__icon {
+    color: #1a324c;
+  }
+}
+
+.hover-effect {
+  &:hover {
+    background-color: v.$colors-magneto-neutral-gray-5;
+    transition: all ease-in-out 0.3s;
+  }
+}
