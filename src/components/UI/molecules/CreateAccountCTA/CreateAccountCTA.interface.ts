@@ -15,4 +15,16 @@ export interface ICreateAccountCTA {
    * this property sets the loader
    */
   isLoading?: boolean
+  /**
+   * optional click handler for the secondary action (newsletter)
+   */
+  newsletterClick?: () => void
+  /**
+   * text for primary button (create account)
+   */
+  primaryText?: string
+  /**
+   * text for secondary button (newsletter)
+   */
+  secondaryText?: string
 }
