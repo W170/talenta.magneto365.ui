@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { MainButton } from '../../atoms'
 import { IMobileSearchbar } from './MobileSearchbar.interface'
-import styles from './MobileSearchbar.modules.scss'
+import styles from './MobileSearchbar.module.scss'
 
 import { closeSearchMobileProps, searchMobileProps } from '@constants/stories'
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { IconItem } from '../Icon'
 import { IAvatar } from './Avatar.interface'
-import styles from './Avatar.modules.scss'
+import styles from './Avatar.module.scss'
 import { User } from '../../../../constants/icons.constants'
 
 const Component: React.FC<IAvatar> = ({ userImage, fallbackImage, onClick }) => {

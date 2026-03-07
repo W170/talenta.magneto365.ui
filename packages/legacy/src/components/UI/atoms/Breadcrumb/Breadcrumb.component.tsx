@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { IBreadcrumb } from './Breadcrumb.interface'
-import styles from './Breadcrumb.modules.scss'
+import styles from './Breadcrumb.module.scss'
 
 const Component: React.FC<IBreadcrumb> = ({
   breadcrumbText,

@@ -2,7 +2,7 @@ import React from 'react'
 import { IconItem } from '../Icon'
 import { ILoading } from './Loading.interface'
 
-import styles from './Loading.modules.scss'
+import styles from './Loading.module.scss'
 
 const Component: React.FC<ILoading> = ({ loadingIcon }) => {
   return (

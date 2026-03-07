@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { IJobDetailCard } from './JobDetailCard.interface'
-import styles from './JobDetailCard.modules.scss'
+import styles from './JobDetailCard.module.scss'
 
 const Component: React.FC<IJobDetailCard> = ({ offerDescription }) => {
   return (

@@ -1,7 +1,7 @@
 import { MegaMenuTabs } from '@components/UI/molecules/MegaMenuSocialTabs'
 import React, { useCallback, useMemo, useState } from 'react'
 import { ListMegaMenu, megaMenuHelpIcons } from '@constants/stories'
-import styles from './MegaMenuSocialHeader.modules.scss'
+import styles from './MegaMenuSocialHeader.module.scss'
 import { ListIconLink } from '../../molecules'
 import { IconItem, Popover } from '@components/UI/atoms'
 import { useMegaMenuSocialHeader } from '@components/UI/template/MegaMenu/MegaMenu.context'

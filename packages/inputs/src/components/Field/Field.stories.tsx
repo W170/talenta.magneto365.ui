@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-import { Typography } from '../Typography'
+import { Typography } from '@magneto365-ui/primitives/Typography'
 import { Field } from './Field.component'
-import { IconItem } from '../Icon'
-import { Add, ArrowLeft2, SearchIcon, Trash } from '../../../../constants/icons.constants'
+import { IconItem } from '@magneto365-ui/primitives/Icon'
+import { Add, ArrowLeft2, SearchIcon, Trash } from 'magneto365.ui'
 
 const meta: Meta<typeof Field> = {
   title: 'Atoms/Field',

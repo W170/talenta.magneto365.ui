@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { MainButton } from '../../atoms'
 import { ISearchbar } from './Searchbar.interface'
-import styles from './Searchbar.modules.scss'
+import styles from './Searchbar.module.scss'
 
 const Component: React.FC<ISearchbar> = ({
   placeholder,

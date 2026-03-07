@@ -1,6 +1,6 @@
 import React from 'react'
 import { IHeaderTab } from './HeaderTab.interface'
-import styles from './HeaderTab.modules.scss'
+import styles from './HeaderTab.module.scss'
 import { Badge } from '../Badge'
 
 const Component: React.FC<IHeaderTab> = ({ tabType, tabText, url, isActive, count = 0 }) => {

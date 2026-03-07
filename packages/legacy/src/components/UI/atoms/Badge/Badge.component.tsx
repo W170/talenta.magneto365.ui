@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Badge.modules.scss'
+import styles from './Badge.module.scss'
 import { IBadge } from './Badge.interface'
 
 const Component: React.FC<IBadge> = ({ number = undefined, className }) => {

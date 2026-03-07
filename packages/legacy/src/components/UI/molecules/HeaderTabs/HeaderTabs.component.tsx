@@ -1,7 +1,7 @@
 import React from 'react'
 import { HeaderTab } from '../../atoms'
 import { IHeaderTabs } from './HeaderTabs.interface'
-import styles from './HeaderTabs.modules.scss'
+import styles from './HeaderTabs.module.scss'
 
 const Component: React.FC<IHeaderTabs> = ({ headerTabList = [], urlParam = '', addDivider }) => {
   return (

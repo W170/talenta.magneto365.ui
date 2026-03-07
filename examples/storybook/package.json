@@ -1,0 +1,46 @@
+{
+  "name": "@magneto365-ui/storybook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Component documentation for Magneto365 UI library",
+  "scripts": {
+    "dev": "pnpm run tokens && storybook dev -p 6006",
+    "build": "pnpm run tokens && storybook build",
+    "tokens": "cd ../.. && pnpm generate:tokens",
+    "clean": "rm -rf storybook-static .turbo node_modules"
+  },
+  "dependencies": {
+    "@magneto365-ui/data-display": "workspace:*",
+    "@magneto365-ui/design-tokens": "workspace:*",
+    "@magneto365-ui/domain": "workspace:*",
+    "@magneto365-ui/feedback": "workspace:*",
+    "@magneto365-ui/inputs": "workspace:*",
+    "@magneto365-ui/layout": "workspace:*",
+    "magneto365.ui": "workspace:*",
+    "@magneto365-ui/navigation": "workspace:*",
+    "@magneto365-ui/overlays": "workspace:*",
+    "@magneto365-ui/primitives": "workspace:*",
+    "@magneto365-ui/shared": "workspace:*",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@mdx-js/react": "^2.1.5",
+    "@storybook/addon-actions": "^7.6.21",
+    "@storybook/addon-essentials": "^7.6.21",
+    "@storybook/addon-interactions": "^7.6.21",
+    "@storybook/addon-links": "^7.6.21",
+    "@storybook/addon-mdx-gfm": "^7.6.21",
+    "@storybook/mdx2-csf": "^1.0.0",
+    "@storybook/react": "^7.6.21",
+    "@storybook/react-vite": "^7.6.21",
+    "@storybook/testing-library": "^0.1.0",
+    "autoprefixer": "10.4.0",
+    "eslint-plugin-storybook": "^0.6.11",
+    "postcss": "^8.4.35",
+    "sass": "^1.43.5",
+    "storybook": "^7.6.21",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.0"
+  }
+}

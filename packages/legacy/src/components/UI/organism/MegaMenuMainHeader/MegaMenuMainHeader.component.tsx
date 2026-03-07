@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Avatar, Link, LogoComponent, MainButton } from '@components/UI/atoms'
 import { ListMenuIcons, MegaMenuJobsTabs, MegaMenuPopover, MobileDrawer, UserMenu } from '@components/UI/molecules'
-import styles from './MegaMenuMainHeader.modules.scss'
+import styles from './MegaMenuMainHeader.module.scss'
 import {
   SignInIcon,
   SignInStyles,

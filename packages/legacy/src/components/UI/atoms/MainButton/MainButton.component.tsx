@@ -2,7 +2,7 @@ import React, { CSSProperties, useMemo } from 'react'
 import { IconItem } from '../Icon'
 import { Loading } from '../Loading'
 import { IMainButton } from './MainButton.interface'
-import styles from './MainButton.modules.scss'
+import styles from './MainButton.module.scss'
 import { toCSSVariables } from '../../../../shared/utils/Function'
 import { LoadingProps } from '@constants/stories'
 

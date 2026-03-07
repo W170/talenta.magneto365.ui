@@ -1,6 +1,6 @@
 import React, { CSSProperties, useMemo } from 'react'
 import { ITabButton } from './TabButton.interface'
-import styles from './TabButton.modules.scss'
+import styles from './TabButton.module.scss'
 import { Link } from '../../atoms'
 import { toCSSVariables } from '../../../../shared/utils/Function'
 

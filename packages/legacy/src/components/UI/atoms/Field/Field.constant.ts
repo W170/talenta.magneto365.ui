@@ -5,7 +5,8 @@ export function combineRefs<T>(node: T, ...refs: (React.Ref<T> | undefined)[]) {
     if (typeof ref === 'function') {
       ref(node)
     } else {
-      ;(ref as React.MutableRefObject<T | null>).current = node
+      const mutableRef = ref as React.MutableRefObject<T | null>
+      mutableRef.current = node
     }
   }
 }

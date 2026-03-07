@@ -1,6 +1,6 @@
 import React, { useMemo, CSSProperties } from 'react'
 import { ILinkProps } from './Link.interface'
-import styles from './Link.modules.scss'
+import styles from './Link.module.scss'
 import { IconItem } from '../Icon'
 import { toCSSVariables } from '../../../../shared/utils/Function'
 

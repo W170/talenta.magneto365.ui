@@ -3,7 +3,7 @@ import { Link, LogoComponent, MainButton, SearchItem } from '../../atoms'
 import { Breadcrumbs, MobileSearchbar, Tab, TabButton, Searchbar } from '../../molecules'
 
 import { ILogoutHeader } from './LogoutHeader.interface'
-import styles from './LogoutHeader.modules.scss'
+import styles from './LogoutHeader.module.scss'
 import { useMediaQuery } from '../../../hooks'
 
 import {

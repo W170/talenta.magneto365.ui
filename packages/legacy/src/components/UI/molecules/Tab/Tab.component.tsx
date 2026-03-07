@@ -1,6 +1,6 @@
 import React from 'react'
 import { ITab } from './Tab.interface'
-import styles from './Tab.modules.scss'
+import styles from './Tab.module.scss'
 
 const Component: React.FC<ITab> = ({ children }) => {
   return <div className={styles.TabComponent}>{children}</div>

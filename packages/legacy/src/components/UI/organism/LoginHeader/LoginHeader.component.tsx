@@ -12,7 +12,7 @@ import {
 } from '../../molecules'
 import { ILoginHeader } from './LoginHeader.interface'
 
-import styles from './LoginHeader.modules.scss'
+import styles from './LoginHeader.module.scss'
 
 import MegaMenuSearchBar from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.component'
 import { SearchButton } from '@components/UI/molecules/SearchButton'

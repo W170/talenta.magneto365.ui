@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import MegaMenuDrawerItem from './MegaMenuDrawerItem.component'
+import { MegaMenuDrawerItem } from './MegaMenuDrawerItem.component'
 import { ArrowDown2 } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof MegaMenuDrawerItem> = {

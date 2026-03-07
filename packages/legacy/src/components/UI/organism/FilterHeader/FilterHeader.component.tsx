@@ -3,7 +3,7 @@ import { Broom, FilterIcon } from '@constants/icons.constants'
 import { IconItem, MainButton } from '@components/UI/atoms'
 import { Switch } from '@components/UI/atoms/Switch'
 import { IFilterHeader } from './FilterHeader.interface'
-import styles from './FilterHeader.modules.scss'
+import styles from './FilterHeader.module.scss'
 
 export const FilterHeader: FC<IFilterHeader> = ({
   title,

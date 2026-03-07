@@ -1,7 +1,7 @@
 import React from 'react'
 import { Breadcrumb, IconItem } from '../../atoms'
 import { IBreadcrumbs } from './Breadcrumbs.interface'
-import styles from './Breadcrumbs.modules.scss'
+import styles from './Breadcrumbs.module.scss'
 import { iconPropsBreadCrumb } from '@constants/stories'
 
 const Component: React.FC<IBreadcrumbs> = ({ homeUrl, breadcrumbProps, iconProps = iconPropsBreadCrumb }) => {
