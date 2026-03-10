@@ -6,9 +6,7 @@ import { classNames } from '@shared/utils/common'
 const cx = classNames.bind(styles)
 
 const DateComponent = ({ className, date }: IDateRecord) => {
-  if (!date) {
-    return null
-  }
+  if (!date) return null
 
   const fecha = new Date(date)
 
@@ -18,8 +16,7 @@ const DateComponent = ({ className, date }: IDateRecord) => {
     year: 'numeric',
     hour: '2-digit',
     minute: '2-digit',
-    hour12: true,
-    timeZone: 'UTC'
+    hour12: true
   }).format(fecha)
 
   return <div className={cx('magneto-ui-DateRecord', className)}>{formateada}</div>
