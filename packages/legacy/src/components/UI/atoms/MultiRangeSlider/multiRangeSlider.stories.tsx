@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { MultiRangeSlider } from './multiRangeSlider.component'
 
 const meta: Meta<typeof MultiRangeSlider> = {
-  title: 'Atoms/Multi Range Slider',
+  title: 'Legacy/Atoms/Multi Range Slider',
   component: MultiRangeSlider,
   args: {
     min: 0,

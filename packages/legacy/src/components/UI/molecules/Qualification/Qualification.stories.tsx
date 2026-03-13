@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Qualification } from './Qualification.component'
 
 const meta: Meta<typeof Qualification> = {
-  title: 'Molecules/Qualification',
+  title: 'Legacy/Molecules/Qualification',
   component: Qualification,
   args: {
     rating: 3

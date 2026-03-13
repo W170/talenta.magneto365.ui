@@ -2,7 +2,7 @@ import { MobileSearchbar } from './MobileSearchbar.component'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof MobileSearchbar> = {
-  title: 'Molecules/Mobile Searchbar',
+  title: 'Legacy/Molecules/Mobile Searchbar',
   component: MobileSearchbar,
   args: {}
 }

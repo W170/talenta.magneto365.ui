@@ -3,7 +3,7 @@ import { ActionLinkCard } from './ActionLinkCard.component'
 import { actionLinkCard } from '../../../../constants/stories/seeCompanyCard.constant'
 
 const meta: Meta<typeof ActionLinkCard> = {
-  title: 'Molecules/Action Link Card',
+  title: 'Legacy/Molecules/Action Link Card',
   component: ActionLinkCard,
   args: {
     ...actionLinkCard

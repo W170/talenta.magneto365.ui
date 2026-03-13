@@ -2,7 +2,7 @@ import { StoryObj, Meta } from '@storybook/react'
 import { JobHeader } from './JobHeader.component'
 
 const meta: Meta<typeof JobHeader> = {
-  title: 'Atoms/Job Header',
+  title: 'Legacy/Atoms/Job Header',
   component: JobHeader,
   args: {}
 }

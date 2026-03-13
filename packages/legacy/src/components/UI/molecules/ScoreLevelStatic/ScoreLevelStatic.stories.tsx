@@ -3,7 +3,7 @@ import { ScoreLevelStatic } from './ScoreLevelStatic.component'
 import { scoreProps } from '../../../../constants/stories/scoreLevel.constants'
 
 const meta: Meta<typeof ScoreLevelStatic> = {
-  title: 'Molecules/Score Level Static',
+  title: 'Legacy/Molecules/Score Level Static',
   component: ScoreLevelStatic,
   args: {
     color: 'red',

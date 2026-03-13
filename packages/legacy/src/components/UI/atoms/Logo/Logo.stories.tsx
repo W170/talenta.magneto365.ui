@@ -3,7 +3,7 @@ import { LogoComponent } from './Logo.component'
 import { LogoMagneto, IsoLogoMagneto } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof LogoComponent> = {
-  title: 'Atoms/Logo',
+  title: 'Legacy/Atoms/Logo',
   component: LogoComponent,
   tags: ['autodocs'],
   args: { alt: 'Logo Magneto', isoType: IsoLogoMagneto, logo: LogoMagneto, isoView: false },

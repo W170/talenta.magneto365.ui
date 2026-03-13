@@ -15,7 +15,7 @@ const baseArgs = {
 }
 
 const meta: Meta<typeof Drawer> = {
-  title: 'Molecules/Drawer',
+  title: 'Legacy/Molecules/Drawer',
   component: Drawer,
   tags: ['autodocs'],
   args: baseArgs,

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Switch } from './Switch.component'
 
 const meta: Meta<typeof Switch> = {
-  title: 'Atoms/Switch',
+  title: 'Legacy/Atoms/Switch',
   component: Switch,
   args: {
     isActive: true,

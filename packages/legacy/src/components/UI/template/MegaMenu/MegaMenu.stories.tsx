@@ -38,7 +38,7 @@ const jobsTabs = megaMenuJobs.tabs.map((job: IMegaMenuJobsTabs, key) => {
 })
 
 const meta: Meta<typeof MegaMenu> = {
-  title: 'Template/MegaMenu',
+  title: 'Legacy/Template/MegaMenu',
   component: MegaMenu,
   tags: ['autodocs'],
   args: {

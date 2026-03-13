@@ -1,0 +1,14 @@
+# Exclude primitives-test from Turbo's default build pipeline
+# This is a development/QA tool for testing CSS loading and bundle optimization
+#
+# To run primitives-test:
+# - pnpm example:primitives (dev server)
+# - pnpm example:primitives:build (production build)
+# - pnpm example:primitives:analyze (bundle analysis)
+# - pnpm --filter primitives-test dev
+#
+# This file ensures primitives-test is never included in:
+# - pnpm build (only builds packages/*)
+# - pnpm test (only tests packages/*)
+# - pnpm lint (only lints packages/*)
+*

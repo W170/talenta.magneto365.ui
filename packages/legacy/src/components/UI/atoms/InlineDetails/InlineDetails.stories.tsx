@@ -3,7 +3,7 @@ import InlineDetails from './InlineDetails.component'
 import { inlineDetailsProps } from '../../../../constants/stories/InlineDetails.contants'
 
 const meta: Meta<typeof InlineDetails> = {
-  title: 'Atoms/Inline Details',
+  title: 'Legacy/Atoms/Inline Details',
   component: InlineDetails,
   args: {}
 }

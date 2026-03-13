@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { MagnetoSocialMedia } from './'
 
 const meta: Meta<typeof MagnetoSocialMedia> = {
-  title: 'Organism/Magneto Social Media',
+  title: 'Legacy/Organism/Magneto Social Media',
   component: MagnetoSocialMedia,
   args: {
     followText: 'Siguenos'

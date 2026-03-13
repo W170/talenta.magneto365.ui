@@ -202,7 +202,7 @@ const alertJobStatusProps: IAlertJobStatus = {
 }
 
 const meta: Meta<typeof JobDetailsDrawer> = {
-  title: 'Organism/Job Details Drawer',
+  title: 'Legacy/Organism/Job Details Drawer',
   component: JobDetailsDrawer,
   args: {}
 }

@@ -6,7 +6,7 @@ import { Buildings2, Export3 } from '@constants/icons.constants'
 import { shareLinks } from '../../../../constants/stories/vacancies.constants'
 
 const meta: Meta<typeof Actions> = {
-  title: 'Molecules/Actions',
+  title: 'Legacy/Molecules/Actions',
   component: Actions,
   args: {}
 }

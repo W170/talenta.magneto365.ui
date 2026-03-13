@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { SearchItem } from './SearchItem.component'
 
 const meta: Meta<typeof SearchItem> = {
-  title: 'Atoms/Search Item',
+  title: 'Legacy/Atoms/Search Item',
   component: SearchItem,
   args: {}
 }

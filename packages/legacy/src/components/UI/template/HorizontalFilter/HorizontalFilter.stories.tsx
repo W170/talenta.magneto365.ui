@@ -4,7 +4,7 @@ import HorizontalFilter from './HorizontalFilter.component'
 import { sideFilterProps } from '@constants/stories'
 
 const meta: Meta<typeof HorizontalFilter> = {
-  title: 'Template/Horizontal Filter',
+  title: 'Legacy/Template/Horizontal Filter',
   component: HorizontalFilter,
   args: sideFilterProps,
   decorators: [

@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { ModalResponsive } from './ModalResponsive.component'
 
 const meta: Meta<typeof ModalResponsive> = {
-  title: 'Molecules/Modal Responsive',
+  title: 'Legacy/Molecules/Modal Responsive',
   component: ModalResponsive,
   args: {
     open: true,

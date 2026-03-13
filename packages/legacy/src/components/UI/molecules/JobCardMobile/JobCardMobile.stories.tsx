@@ -3,7 +3,7 @@ import { JobCardMobile } from '.'
 import { vacancies } from '@constants/stories'
 
 const meta: Meta<typeof JobCardMobile> = {
-  title: 'Molecules/Job Card Mobile',
+  title: 'Legacy/Molecules/Job Card Mobile',
   component: JobCardMobile,
   tags: ['autodocs'],
   args: {

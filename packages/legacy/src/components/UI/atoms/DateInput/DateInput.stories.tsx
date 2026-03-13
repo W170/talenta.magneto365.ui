@@ -4,7 +4,7 @@ import { DateInput } from './DateInput'
 import { withControlField } from '../../../../shared/utils/storybook/withControlField.hoc'
 
 const meta: Meta<typeof DateInput> = {
-  title: 'Atoms/Date Input',
+  title: 'Legacy/Atoms/Date Input',
   component: DateInput,
   args: {}
 }

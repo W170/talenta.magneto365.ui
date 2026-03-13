@@ -18,7 +18,7 @@ import {
 } from './children'
 
 const meta: Meta<typeof DesignSystem> = {
-  title: 'Design System',
+  title: 'Legacy/Design System',
   parameters: {
     docs: {
       page: null,

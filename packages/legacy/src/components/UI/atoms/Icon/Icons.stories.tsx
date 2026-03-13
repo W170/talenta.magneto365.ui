@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Youtube } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof IconItem> = {
-  title: 'Atoms/Icon',
+  title: 'Legacy/Atoms/Icon',
   component: IconItem,
   tags: ['autodocs'],
   args: {

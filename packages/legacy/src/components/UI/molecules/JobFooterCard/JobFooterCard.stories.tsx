@@ -14,7 +14,7 @@ import { CompanyLogo } from '@constants/stories'
 import { Button } from '../../atoms'
 
 const meta: Meta<typeof JobFooterCard> = {
-  title: 'Molecules/Job Footer Card',
+  title: 'Legacy/Molecules/Job Footer Card',
   component: JobFooterCard,
   args: {}
 }

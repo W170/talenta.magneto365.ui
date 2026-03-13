@@ -3,7 +3,7 @@ import { FraudCardJob } from './FraudCardJob.component'
 import { fraudCardJob } from '../../../../constants/stories/fraudCardJob.constant'
 
 const meta: Meta<typeof FraudCardJob> = {
-  title: 'Molecules/Fraud Card Job',
+  title: 'Legacy/Molecules/Fraud Card Job',
   component: FraudCardJob,
   args: {
     ...fraudCardJob

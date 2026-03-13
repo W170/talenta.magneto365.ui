@@ -3,7 +3,7 @@ import { ListMenuText } from './'
 import { listMenuText } from '@constants/stories'
 
 const meta: Meta<typeof ListMenuText> = {
-  title: 'Molecules/List Menu Text',
+  title: 'Legacy/Molecules/List Menu Text',
   component: ListMenuText,
   args: {
     title: listMenuText.legalMenu.title,

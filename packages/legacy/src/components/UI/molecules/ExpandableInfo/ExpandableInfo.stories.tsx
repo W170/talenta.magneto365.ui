@@ -9,7 +9,7 @@ import {
 } from '@constants/stories'
 
 const meta: Meta<typeof ExpandableInfo> = {
-  title: 'Molecules/Expandable Info',
+  title: 'Legacy/Molecules/Expandable Info',
   component: ExpandableInfo,
   args: { ...expandableInfoProps },
   decorators: [

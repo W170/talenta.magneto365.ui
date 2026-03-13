@@ -3,7 +3,7 @@ import { SearchButton } from './SearchButton.component'
 import { MobileSearchbarButtonProps } from '../../../../constants/stories/headers.constants'
 
 const meta: Meta<typeof SearchButton> = {
-  title: 'Molecules/SearButton',
+  title: 'Legacy/Molecules/SearButton',
   component: SearchButton,
   args: {
     ...MobileSearchbarButtonProps

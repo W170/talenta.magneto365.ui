@@ -3,7 +3,7 @@ import { MobileDrawerMenu } from './MobileDrawerMenu.component'
 import { listMenuUserProps } from '@constants/stories'
 
 const meta: Meta<typeof MobileDrawerMenu> = {
-  title: 'Organism/Mobile Drawer',
+  title: 'Legacy/Organism/Mobile Drawer',
   component: MobileDrawerMenu,
   tags: ['autodocs'],
   args: {

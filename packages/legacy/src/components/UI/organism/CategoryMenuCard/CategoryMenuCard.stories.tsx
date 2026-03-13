@@ -4,7 +4,7 @@ import CategoryMenuCard from './CategoryMenuCard.component'
 import { generateID } from '../../../../utils/generateID/generateID.util'
 
 const meta: Meta<typeof CategoryMenuCard> = {
-  title: 'Organism/Category Menu Card',
+  title: 'Legacy/Organism/Category Menu Card',
   component: CategoryMenuCard,
   args: {
     name: 'Categoria 1',

@@ -4,7 +4,7 @@ import { MainButton } from '@components/UI/atoms'
 import { JobApplyCard } from './JobApplyCard.component'
 
 const meta: Meta<typeof JobApplyCard> = {
-  title: 'Molecules/Job Apply Card',
+  title: 'Legacy/Molecules/Job Apply Card',
   component: JobApplyCard,
   args: {}
 }

@@ -4,7 +4,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { ratingBadge } from '@constants/stories'
 
 const meta: Meta<typeof RatingBadge> = {
-  title: 'Atoms/Rating Badge',
+  title: 'Legacy/Atoms/Rating Badge',
   component: RatingBadge,
   args: {
     ...ratingBadge

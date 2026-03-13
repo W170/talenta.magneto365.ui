@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { ToggleButton } from './ToggleButton.component'
 
 const meta: Meta<typeof ToggleButton> = {
-  title: 'Atoms/Toggle Button',
+  title: 'Legacy/Atoms/Toggle Button',
   component: ToggleButton,
   tags: ['autodocs'],
   args: {

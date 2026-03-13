@@ -4,7 +4,7 @@ import { FloatingLabel } from './FloatingLabel.component'
 import { Input } from '@components/UI/molecules'
 
 const meta: Meta<typeof FloatingLabel> = {
-  title: 'Atoms/ FloatingLabel',
+  title: 'Legacy/Atoms/ FloatingLabel',
   component: FloatingLabel,
   args: {
     label: 'Escribe tu fecha de nacimiento',

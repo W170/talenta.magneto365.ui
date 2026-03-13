@@ -26,7 +26,7 @@ const MobileDrawerSample = () => {
 }
 
 const meta: Meta<typeof MobileDrawer> = {
-  title: 'Molecules/Mobile Drawer',
+  title: 'Legacy/Molecules/Mobile Drawer',
   component: MobileDrawerSample,
   tags: ['autodocs'],
   args: {}

@@ -6,7 +6,7 @@ import { customText, simpleCustomText } from '@constants/stories/alertJob.consta
 const { Container, Text, Button, Icon } = AlertJobStatus
 
 const meta: Meta<typeof AlertJobStatus> = {
-  title: 'Molecules/Alert Job Status',
+  title: 'Legacy/Molecules/Alert Job Status',
   component: AlertJobStatus,
   args: {
     children: (

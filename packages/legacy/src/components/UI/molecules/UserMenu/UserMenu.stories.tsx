@@ -3,7 +3,7 @@ import { AvatarProps, listMenuUserProps } from '@constants/stories'
 import { UserMenu } from './UserMenu.component'
 
 const meta: Meta<typeof UserMenu> = {
-  title: 'Molecules/User Menu',
+  title: 'Legacy/Molecules/User Menu',
   component: UserMenu,
   args: {
     profileImage: AvatarProps,

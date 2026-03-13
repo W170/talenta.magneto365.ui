@@ -5,10 +5,15 @@ const workspaceRoot = path.resolve(__dirname, '../../..')
 
 module.exports = {
   stories: [
-    // Legacy stories - all included for now,
+    // Centralized stories for new packages (PRIMARY LOCATION)
+    '../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+
+    // Legacy stories - all included for now (co-located)
     '../../../packages/legacy/src/**/*.stories.mdx',
     '../../../packages/legacy/src/**/*.stories.@(js|jsx|ts|tsx)',
-    // New package stories
+
+    // New package stories (DEPRECATED - stories should be in centralized location above)
+    // Kept for backward compatibility during migration
     '../../../packages/primitives/src/**/*.stories.@(js|jsx|ts|tsx)',
     // TODO: Fix broken imports in inputs package stories, then uncomment
     // '../../../packages/inputs/src/**/*.stories.@(js|jsx|ts|tsx)',
@@ -17,8 +22,7 @@ module.exports = {
     '../../../packages/overlays/src/**/*.stories.@(js|jsx|ts|tsx)',
     '../../../packages/data-display/src/**/*.stories.@(js|jsx|ts|tsx)',
     '../../../packages/layout/src/**/*.stories.@(js|jsx|ts|tsx)',
-    '../../../packages/domain/src/**/*.stories.@(js|jsx|ts|tsx)',
-    '../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)'
+    '../../../packages/domain/src/**/*.stories.@(js|jsx|ts|tsx)'
   ],
 
   addons: [

@@ -75,7 +75,7 @@ export const CandidateProfileStory: React.FC = ({ ...props }) => (
 )
 
 const meta: Meta<typeof CandidateProfile> = {
-  title: 'Molecules/Candidate Profile',
+  title: 'Legacy/Molecules/Candidate Profile',
   component: CandidateProfile,
   render: () => <CandidateProfileStory />
 }

@@ -45,7 +45,7 @@ const rightTabStyle: ITabButton = {
 }
 
 const meta: Meta<typeof HeaderDrawerTabs> = {
-  title: 'Molecules/Header Drawer Tabs',
+  title: 'Legacy/Molecules/Header Drawer Tabs',
   component: HeaderDrawerTabs,
   args: {
     leftTabLink: leftTabLink,

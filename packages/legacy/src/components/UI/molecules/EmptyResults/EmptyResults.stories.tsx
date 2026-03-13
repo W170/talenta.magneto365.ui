@@ -3,7 +3,7 @@ import { EmptyResults } from '.'
 import { emptyResultsProps } from '../../../../constants/stories/emptyResults.constants'
 
 const meta: Meta<typeof EmptyResults> = {
-  title: 'Molecules/EmptyResults',
+  title: 'Legacy/Molecules/EmptyResults',
   component: EmptyResults,
   tags: ['autodocs'],
   args: {

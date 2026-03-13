@@ -3,7 +3,7 @@ import { ToggleButtonList } from './ToggleButtonList.component'
 import { toggleButtonList } from '../../../../constants/stories/toggleButton.constants'
 
 const meta: Meta<typeof ToggleButtonList> = {
-  title: 'Molecules/Toogle Button List',
+  title: 'Legacy/Molecules/Toogle Button List',
   component: ToggleButtonList,
   args: {
     list: toggleButtonList,

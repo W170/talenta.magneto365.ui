@@ -3,7 +3,7 @@ import { MenuCollapse } from './'
 import { listMenuText } from '@constants/stories'
 
 const meta: Meta<typeof MenuCollapse> = {
-  title: 'Molecules/Menu Colpase',
+  title: 'Legacy/Molecules/Menu Colpase',
   component: MenuCollapse,
   args: {
     listMenu: listMenuText

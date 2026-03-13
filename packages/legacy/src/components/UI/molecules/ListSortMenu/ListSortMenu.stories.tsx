@@ -3,7 +3,7 @@ import ListSortMenu from './ListSortMenu.component'
 import { optionsFilterOrderBy } from '@constants/stories'
 
 const meta: Meta<typeof ListSortMenu> = {
-  title: 'Molecules/List Sort Menu',
+  title: 'Legacy/Molecules/List Sort Menu',
   component: ListSortMenu,
   args: {
     orderFields: optionsFilterOrderBy,

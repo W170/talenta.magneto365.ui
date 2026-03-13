@@ -3,7 +3,7 @@ import { listOptionsDemo } from '@constants/stories/multipleSelection.constants'
 import { MultipleSelectionEntry } from '.'
 
 const meta: Meta<typeof MultipleSelectionEntry> = {
-  title: 'Organism/Multiple Selection Entry',
+  title: 'Legacy/Organism/Multiple Selection Entry',
   component: MultipleSelectionEntry,
   args: {
     dropDownTitle: 'Selecciona hasta 3 sectores laborales',

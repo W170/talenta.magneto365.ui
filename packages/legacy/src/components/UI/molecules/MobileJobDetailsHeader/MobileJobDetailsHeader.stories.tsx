@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { MobileJobDetailsHeader } from './MobileJobDetailsHeader.component'
 
 const meta: Meta<typeof MobileJobDetailsHeader> = {
-  title: 'Molecules/Mobile Job Details Header',
+  title: 'Legacy/Molecules/Mobile Job Details Header',
   component: MobileJobDetailsHeader,
   args: {}
 }

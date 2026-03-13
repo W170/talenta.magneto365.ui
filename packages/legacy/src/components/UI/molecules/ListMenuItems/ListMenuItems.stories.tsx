@@ -5,7 +5,7 @@ import { MenuList } from '@constants/stories'
 const urlParams = 'empleos-por-empresas'
 
 const meta: Meta<typeof ListMenuItems> = {
-  title: 'Molecules/List Menu Items',
+  title: 'Legacy/Molecules/List Menu Items',
   component: ListMenuItems,
   args: { menuList: MenuList, urlParam: urlParams },
   argTypes: {

@@ -3,7 +3,7 @@ import { Tag } from '.'
 import { ArrowLeft2 } from '@constants/icons.constants'
 
 const meta: Meta<typeof Tag> = {
-  title: 'Atoms/Tag',
+  title: 'Legacy/Atoms/Tag',
   component: Tag,
   args: {
     text: 'Tag Componet',

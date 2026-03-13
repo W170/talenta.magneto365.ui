@@ -55,7 +55,7 @@ const listMenuProps: IListMenuItems = {
 }
 
 const meta: Meta<typeof LoginJobsTemplate> = {
-  title: 'Template/Login Jobs',
+  title: 'Legacy/Template/Login Jobs',
   component: LoginJobsTemplate,
   tags: ['autodocs'],
   args: {

@@ -3,7 +3,7 @@ import { SharePopover } from './SharePopover'
 import { shareLinks } from '../../../../constants/stories/vacancies.constants'
 
 const meta: Meta<typeof SharePopover> = {
-  title: 'Molecules/SharePopover',
+  title: 'Legacy/Molecules/SharePopover',
   component: SharePopover,
   args: {
     shareButtonProps: {

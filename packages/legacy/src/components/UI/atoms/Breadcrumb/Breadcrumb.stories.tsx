@@ -2,7 +2,7 @@ import { Breadcrumb } from './Breadcrumb.component'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Breadcrumb> = {
-  title: 'Atoms/Breadcrumb',
+  title: 'Legacy/Atoms/Breadcrumb',
   component: Breadcrumb,
   args: {
     breadcrumbText: '/perfil/empleos/sugeridos',

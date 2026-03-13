@@ -5,7 +5,7 @@ import { Logout, MenuItems, Settings } from '@constants/stories'
 const urlParams = 'guardados'
 
 const meta: Meta<typeof ListMenuIcons> = {
-  title: 'Molecules/List Menu Icons',
+  title: 'Legacy/Molecules/List Menu Icons',
   component: ListMenuIcons,
   tags: ['autodocs'],
   args: {

@@ -73,7 +73,7 @@ const questions: IQuestion[] = [
 ]
 
 const meta: Meta<typeof TestFormHandler> = {
-  title: 'Template/Test Form Handler',
+  title: 'Legacy/Template/Test Form Handler',
   component: TestFormHandler,
   args: {}
 }

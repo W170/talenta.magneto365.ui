@@ -37,7 +37,7 @@ const Demo = () => {
  * This hook allows to observe the html element width using react ref.
  */
 const meta: Meta<typeof Demo> = {
-  title: 'Hooks/useWithElement',
+  title: 'Legacy/Hooks/useWithElement',
   component: Demo
 }
 

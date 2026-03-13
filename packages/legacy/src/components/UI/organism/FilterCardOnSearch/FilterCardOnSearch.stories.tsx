@@ -9,7 +9,7 @@ import {
 import { FilterCardOnSearch } from './FilterCardOnSearch.component'
 
 const meta: Meta<typeof FilterCardOnSearch> = {
-  title: 'Organism/Filter Card On Search',
+  title: 'Legacy/Organism/Filter Card On Search',
   component: FilterCardOnSearch,
   args: {
     label: 'Sector Laboral',

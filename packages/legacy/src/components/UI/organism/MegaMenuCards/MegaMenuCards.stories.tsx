@@ -3,7 +3,7 @@ import MegaMenuCards from './MegaMenuCards.component'
 import { megaMenuCards, megaMenuJobsIcon } from '@constants/stories'
 
 const meta: Meta<typeof MegaMenuCards> = {
-  title: 'Organism/Mega Menu cards',
+  title: 'Legacy/Organism/Mega Menu cards',
   component: MegaMenuCards,
   args: megaMenuCards
 }

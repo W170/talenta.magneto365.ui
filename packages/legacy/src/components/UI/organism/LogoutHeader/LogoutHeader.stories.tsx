@@ -42,7 +42,7 @@ const SignUpProps = {
 }
 
 const meta: Meta<typeof LogoutHeader> = {
-  title: 'Organism/Logout Header',
+  title: 'Legacy/Organism/Logout Header',
   component: LogoutHeader,
   args: {
     leftTabButton: leftLinkProps,

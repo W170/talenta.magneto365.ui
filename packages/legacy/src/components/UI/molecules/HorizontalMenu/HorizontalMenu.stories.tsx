@@ -17,7 +17,7 @@ const HorizontalMenuPropsOptions = {
 }
 
 const meta: Meta<typeof HorizontalMenu> = {
-  title: 'Molecules/Horizontal menu',
+  title: 'Legacy/Molecules/Horizontal menu',
   component: HorizontalMenu,
   args: {
     options: HorizontalMenuPropsOptions.options

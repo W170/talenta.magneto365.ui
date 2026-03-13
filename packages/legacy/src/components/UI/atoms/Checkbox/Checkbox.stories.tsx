@@ -4,7 +4,7 @@ import { Checkbox } from './Checkbox.component'
 import { withControlField } from '../../../../shared/utils/storybook/withControlField.hoc'
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'Atoms/Checkbox',
+  title: 'Legacy/Atoms/Checkbox',
   component: Checkbox,
   args: {
     children: 'Example'

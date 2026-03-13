@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Skill } from './Skill.component'
 
 const meta: Meta<typeof Skill> = {
-  title: 'Atoms/ Skill',
+  title: 'Legacy/Atoms/ Skill',
   component: Skill,
   args: {}
 }

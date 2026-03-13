@@ -4,7 +4,7 @@ import { ScrollableTab } from './ScrollableTab.component'
 import { TabItem } from '../TabItem'
 
 const meta: Meta<typeof ScrollableTab> = {
-  title: 'Molecules/ScrollableTab',
+  title: 'Legacy/Molecules/ScrollableTab',
   component: ScrollableTab,
   args: {}
 }

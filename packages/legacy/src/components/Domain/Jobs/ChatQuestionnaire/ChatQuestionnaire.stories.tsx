@@ -5,7 +5,7 @@ import { EQuestionType, TQuestionnaires } from './ChatQuestionnaire.interface'
 import { ChatQuestionnaire } from '.'
 
 const meta: Meta<typeof ChatQuestionnaire> = {
-  title: 'Domain/Jobs/ChatQuestionnaire',
+  title: 'Legacy/Domain/Jobs/ChatQuestionnaire',
   component: ChatQuestionnaire
 }
 export default meta

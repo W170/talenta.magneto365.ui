@@ -4,7 +4,7 @@ import type { StoryObj, Meta } from '@storybook/react'
 import { ChatQuestionnaireOpen } from './ChatQuestionnaireOpen.component'
 
 const meta: Meta<typeof ChatQuestionnaireOpen> = {
-  title: 'Domain/Jobs/ChatQuestionnaire/ChatQuestionnaireOpen',
+  title: 'Legacy/Domain/Jobs/ChatQuestionnaire/ChatQuestionnaireOpen',
   component: ChatQuestionnaireOpen
 }
 

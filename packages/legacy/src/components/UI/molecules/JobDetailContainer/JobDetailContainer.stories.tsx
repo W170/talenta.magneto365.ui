@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { JobDetailContainer } from './'
 
 const meta: Meta<typeof JobDetailContainer> = {
-  title: 'Molecules/Job Detail Container',
+  title: 'Legacy/Molecules/Job Detail Container',
   component: JobDetailContainer,
   tags: ['autodocs'],
   args: {},

@@ -7,7 +7,7 @@ const baseArgs = {
   title: 'saludos'
 }
 const meta: Meta<typeof PortalTooltip> = {
-  title: 'Molecules/Portal Tooltip',
+  title: 'Legacy/Molecules/Portal Tooltip',
   component: PortalTooltip,
   args: baseArgs
 }

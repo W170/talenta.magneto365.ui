@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { FilterHeader } from './FilterHeader.component'
 
 const meta: Meta<typeof FilterHeader> = {
-  title: 'Organism/Filter Header',
+  title: 'Legacy/Organism/Filter Header',
   component: FilterHeader,
   args: {
     title: 'Filtrar empleos',

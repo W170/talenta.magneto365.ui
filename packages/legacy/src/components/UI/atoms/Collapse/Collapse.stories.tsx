@@ -5,7 +5,7 @@ import { Collapse } from './Collapse.component'
 import { Typography, IconItem } from '../index'
 
 const meta: Meta<typeof Collapse> = {
-  title: 'Atoms/Collapse',
+  title: 'Legacy/Atoms/Collapse',
   component: Collapse,
   render: () => (
     <Collapse

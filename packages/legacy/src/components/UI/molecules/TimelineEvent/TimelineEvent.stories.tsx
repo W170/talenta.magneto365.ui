@@ -3,7 +3,7 @@ import { StoryObj, Meta } from '@storybook/react'
 import { TimelineEvent } from './TimelineEvent.component'
 
 const meta: Meta<typeof TimelineEvent> = {
-  title: 'Molecules/TimelineEvent',
+  title: 'Legacy/Molecules/TimelineEvent',
   component: TimelineEvent
 }
 

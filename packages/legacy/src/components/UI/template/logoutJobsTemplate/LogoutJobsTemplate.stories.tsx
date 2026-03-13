@@ -48,7 +48,7 @@ const listMenuProps: IListMenuItems = {
 }
 
 const meta: Meta<typeof LogoutJobsTemplate> = {
-  title: 'Template/Logout Jobs',
+  title: 'Legacy/Template/Logout Jobs',
   component: LogoutJobsTemplate,
   tags: ['autodocs'],
   args: {

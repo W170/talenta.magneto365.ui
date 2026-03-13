@@ -6,7 +6,7 @@ import { Notification } from '@constants/icons.constants'
 import { Link } from '@components/UI/atoms'
 
 const meta: Meta<typeof HeaderAnalyst> = {
-  title: 'Organism/Header Analyst',
+  title: 'Legacy/Organism/Header Analyst',
   component: HeaderAnalyst,
   args: {
     onMainMenuClick: () => {

@@ -14,7 +14,7 @@ const CustomSelect = (props: Omit<ISelect<string>, 'value' | 'options'>) => {
 }
 
 const meta: Meta<React.FC<ISelect<string>>> = {
-  title: 'Organism/Select',
+  title: 'Legacy/Organism/Select',
   component: Select,
   args: {
     options: [],

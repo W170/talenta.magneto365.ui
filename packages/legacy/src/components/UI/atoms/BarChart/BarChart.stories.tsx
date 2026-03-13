@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { BarChart } from './BarChart.component'
 
 const meta: Meta<typeof BarChart> = {
-  title: 'Atoms/Bar chart',
+  title: 'Legacy/Atoms/Bar chart',
   component: BarChart,
   tags: ['autodocs'],
   args: {

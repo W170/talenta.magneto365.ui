@@ -8,6 +8,23 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/
     }
+  },
+  options: {
+    storySort: {
+      order: [
+        'Welcome',
+        'Primitives',
+        'Inputs',
+        'Feedback',
+        'Navigation',
+        'Overlays',
+        'Data Display',
+        'Layout',
+        'Domain',
+        'Legacy',
+        '*'
+      ]
+    }
   }
 }
 

@@ -3,7 +3,7 @@ import { BrandsMenuPopover } from './'
 import { brands, ourBrandsText } from '@constants/stories'
 
 const meta: Meta<typeof BrandsMenuPopover> = {
-  title: 'Molecules/Brands Menu Popover',
+  title: 'Legacy/Molecules/Brands Menu Popover',
   component: BrandsMenuPopover,
   args: {
     brandsProps: {

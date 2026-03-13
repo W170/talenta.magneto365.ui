@@ -3,7 +3,7 @@ import { ISetIsApplied } from '@components/UI/template'
 import { FilterMenuRangeItem } from './FilterMenuRangeItem.component'
 
 const meta: Meta<typeof FilterMenuRangeItem> = {
-  title: 'Molecules/Filters Menu Range Item',
+  title: 'Legacy/Molecules/Filters Menu Range Item',
   component: FilterMenuRangeItem,
   args: {
     id: 1,

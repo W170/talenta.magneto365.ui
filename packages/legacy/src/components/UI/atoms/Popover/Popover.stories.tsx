@@ -4,7 +4,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Popover } from './Popover.component'
 
 const meta: Meta<typeof Popover> = {
-  title: 'Atoms/Popover',
+  title: 'Legacy/Atoms/Popover',
   component: Popover,
   tags: ['autodocs'],
   args: {

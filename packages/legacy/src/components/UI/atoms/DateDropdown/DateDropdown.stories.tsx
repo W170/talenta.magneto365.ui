@@ -4,7 +4,7 @@ import { DateDropdown } from '@components/UI/atoms'
 import { years } from '@constants/stories/DatePicker.constants'
 
 const meta: Meta<typeof DateDropdown> = {
-  title: 'Atoms/Date Dropdown',
+  title: 'Legacy/Atoms/Date Dropdown',
   component: DateDropdown,
   args: {
     placeholderLabel: 'Año',

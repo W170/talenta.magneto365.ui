@@ -4,7 +4,7 @@ import { AlertsPanel } from './AlertsPanel.component'
 import { alerts } from '@constants/stories/alertsPanel.constants'
 const { Item, List } = AlertsPanel
 const meta: Meta<typeof AlertsPanel> = {
-  title: 'Organism/Alert Panel',
+  title: 'Legacy/Organism/Alert Panel',
   component: AlertsPanel,
   args: {
     title: 'Tus alertas de empleo:',

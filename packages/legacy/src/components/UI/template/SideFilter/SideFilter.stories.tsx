@@ -4,7 +4,7 @@ import SideFilter from './SideFilter.component'
 import { sideFilterProps } from '@constants/stories'
 
 const meta: Meta<typeof SideFilter> = {
-  title: 'Template/Side Filter',
+  title: 'Legacy/Template/Side Filter',
   component: SideFilter,
   args: sideFilterProps,
   decorators: [

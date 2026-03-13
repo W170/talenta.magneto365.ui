@@ -3,7 +3,7 @@ import { RightsReservedText } from './'
 import { RightsReservedProps } from '@constants/stories'
 
 const meta: Meta<typeof RightsReservedText> = {
-  title: 'Molecules/Rights Reserved Text',
+  title: 'Legacy/Molecules/Rights Reserved Text',
   component: RightsReservedText,
   args: {
     ...RightsReservedProps

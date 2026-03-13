@@ -85,7 +85,7 @@ export const CandidateNavStory = ({ ...props }) => {
 }
 
 const meta: Meta<typeof CandidateNav> = {
-  title: 'Molecules/Candidate Nav',
+  title: 'Legacy/Molecules/Candidate Nav',
   render: () => <CandidateNavStory />
 }
 

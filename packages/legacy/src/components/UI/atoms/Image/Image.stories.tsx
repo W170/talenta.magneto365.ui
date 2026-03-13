@@ -3,7 +3,7 @@ import Image from './Image.component'
 import { imageProps } from '@constants/stories/Image.constants'
 
 const meta: Meta<typeof Image> = {
-  title: 'Atoms/Image',
+  title: 'Legacy/Atoms/Image',
   component: Image,
   args: {}
 }

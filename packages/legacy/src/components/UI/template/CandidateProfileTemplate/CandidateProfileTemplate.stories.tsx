@@ -7,7 +7,7 @@ import { LinkDark, ArrowLeft2 } from '../../../../constants/icons.constants'
 import { IconItem, Typography } from '../../atoms'
 
 const meta: Meta<typeof CandidateProfileTemplate> = {
-  title: 'Template/Candidate Profile',
+  title: 'Legacy/Template/Candidate Profile',
   component: CandidateProfileTemplate
 }
 

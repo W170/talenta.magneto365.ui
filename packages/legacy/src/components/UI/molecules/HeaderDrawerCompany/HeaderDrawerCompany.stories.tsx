@@ -3,7 +3,7 @@ import { HeaderDrawerCompany } from './HeaderDrawerCompany.components'
 import { LogoCompany, flag, logoProps } from '@constants/stories'
 
 const meta: Meta<typeof HeaderDrawerCompany> = {
-  title: 'Molecules/Header Drawer Company',
+  title: 'Legacy/Molecules/Header Drawer Company',
   component: HeaderDrawerCompany,
   args: {
     logoProps: logoProps,

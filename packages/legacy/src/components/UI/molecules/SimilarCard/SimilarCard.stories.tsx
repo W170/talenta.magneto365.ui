@@ -7,7 +7,7 @@ import { customTextCardType, similarCardData } from '@constants/stories/similarC
 const { Icon, Logo, Text } = SimilarCard
 
 const meta: Meta<typeof SimilarCard> = {
-  title: 'Molecules/Similar Card',
+  title: 'Legacy/Molecules/Similar Card',
   component: SimilarCard,
   args: {
     jobUrlSlug: similarCardData.jobUrlSlug,

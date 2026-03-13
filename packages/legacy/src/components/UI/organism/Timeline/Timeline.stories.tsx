@@ -4,7 +4,7 @@ import { Timeline } from './Timeline.component'
 import { timeLineSteps } from '../../../../constants/stories/timeLine.constants'
 
 const meta: Meta<typeof Timeline> = {
-  title: 'Organism/Timeline',
+  title: 'Legacy/Organism/Timeline',
   component: Timeline
 }
 

@@ -6,7 +6,7 @@ import { Notification } from '@constants/icons.constants'
 import { Link } from '@components/UI/atoms'
 
 const meta: Meta<typeof AnalystTemplate> = {
-  title: 'Template/Analyst Template',
+  title: 'Legacy/Template/Analyst Template',
   component: AnalystTemplate,
   args: {
     ...AnalystTemplateProps,

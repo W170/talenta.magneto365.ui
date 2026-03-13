@@ -3,7 +3,7 @@ import { UserMenuButtonAnalystProps } from '@constants/stories'
 import { UserMenuButtonAnalyst } from './UserMenuButtonAnalyst.component'
 
 const meta: Meta<typeof UserMenuButtonAnalyst> = {
-  title: 'Atoms/User Menu Button Analyst',
+  title: 'Legacy/Atoms/User Menu Button Analyst',
   component: UserMenuButtonAnalyst,
   args: { ...UserMenuButtonAnalystProps }
 }

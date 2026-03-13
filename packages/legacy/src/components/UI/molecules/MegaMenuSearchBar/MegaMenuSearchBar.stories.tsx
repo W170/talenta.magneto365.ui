@@ -3,7 +3,7 @@ import MegaMenuSearchBar from './MegaMenuSearchBar.component'
 import { SearchbarProps } from '@constants/stories'
 
 const meta: Meta<typeof MegaMenuSearchBar> = {
-  title: 'Molecules/Mega Menu Search Bar',
+  title: 'Legacy/Molecules/Mega Menu Search Bar',
   component: MegaMenuSearchBar,
   args: SearchbarProps
 }

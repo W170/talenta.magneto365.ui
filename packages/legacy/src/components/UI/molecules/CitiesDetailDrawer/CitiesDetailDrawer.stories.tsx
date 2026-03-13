@@ -7,7 +7,7 @@ import {
 } from '@constants/stories'
 
 const meta: Meta<typeof CitiesDetailDrawer> = {
-  title: 'Molecules/Cities Detail Drawer',
+  title: 'Legacy/Molecules/Cities Detail Drawer',
   component: CitiesDetailDrawer,
   args: {}
 }

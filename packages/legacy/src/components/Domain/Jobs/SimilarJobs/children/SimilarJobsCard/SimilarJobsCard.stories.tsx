@@ -3,7 +3,7 @@ import { SimilarJobsCard } from './'
 import { similarVacanciesCardsProps } from '@constants/stories'
 
 const meta: Meta<typeof SimilarJobsCard> = {
-  title: 'Molecules/Similar Jobs Card',
+  title: 'Legacy/Molecules/Similar Jobs Card',
   component: SimilarJobsCard,
   args: {
     ...similarVacanciesCardsProps[0]

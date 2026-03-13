@@ -5,7 +5,7 @@ import { StoryObj, Meta } from '@storybook/react'
 import { isRef } from '@utils/react'
 
 const meta: Meta<typeof Chat> = {
-  title: 'Molecules/Chat',
+  title: 'Legacy/Molecules/Chat',
   component: Chat,
   parameters: {
     docs: {

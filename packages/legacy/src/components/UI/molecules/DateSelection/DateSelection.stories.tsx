@@ -4,7 +4,7 @@ import { DateSelection } from './DateSelection.component'
 import { storyMonths, storyYears } from '../../../../constants/stories/DatePicker.constants'
 
 const meta: Meta<typeof DateSelection> = {
-  title: 'Molecules/Date Selection',
+  title: 'Legacy/Molecules/Date Selection',
   component: DateSelection,
   args: {
     isOpen: true,

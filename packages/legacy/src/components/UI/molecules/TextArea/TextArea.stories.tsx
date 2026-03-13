@@ -3,7 +3,7 @@ import { ChangeEvent } from 'react'
 import { TextArea } from '.'
 
 const meta: Meta<typeof TextArea> = {
-  title: 'Molecules/TextArea',
+  title: 'Legacy/Molecules/TextArea',
   component: TextArea,
   tags: ['autodocs'],
   args: {

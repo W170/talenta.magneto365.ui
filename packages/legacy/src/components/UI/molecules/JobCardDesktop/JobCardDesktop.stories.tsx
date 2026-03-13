@@ -3,7 +3,7 @@ import { JobCardDesktop } from '.'
 import { vacancies } from '@constants/stories'
 
 const meta: Meta<typeof JobCardDesktop> = {
-  title: 'Molecules/Job Card Desktop',
+  title: 'Legacy/Molecules/Job Card Desktop',
   component: JobCardDesktop,
   tags: ['autodocs'],
   parameters: {

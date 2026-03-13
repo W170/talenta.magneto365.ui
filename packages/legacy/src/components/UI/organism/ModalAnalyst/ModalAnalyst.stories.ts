@@ -3,7 +3,7 @@ import { ModalAnalystProps } from '@constants/stories/analyst.constants'
 import { ModalAnalyst } from './ModalAnalyst.component'
 
 const meta: Meta<typeof ModalAnalyst> = {
-  title: 'Organism/Modal Analyst',
+  title: 'Legacy/Organism/Modal Analyst',
   component: ModalAnalyst,
   args: { ...ModalAnalystProps }
 }

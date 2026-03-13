@@ -3,7 +3,7 @@ import JobVideo from './JobVideo.component'
 import { jobVideo } from '@constants/stories/jobVideo.constants'
 
 const meta: Meta<typeof JobVideo> = {
-  title: 'Molecules/Job Video',
+  title: 'Legacy/Molecules/Job Video',
   component: JobVideo,
   args: {}
 }

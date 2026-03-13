@@ -3,7 +3,7 @@ import { StoryObj, Meta } from '@storybook/react'
 import { Tooltip } from './'
 
 const meta: Meta<typeof Tooltip> = {
-  title: 'Molecules/Tooltip',
+  title: 'Legacy/Molecules/Tooltip',
   component: Tooltip,
   args: {
     children: <p>Holi</p>,

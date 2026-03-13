@@ -3,7 +3,7 @@ import { Searchbar } from './Searchbar.component'
 import { removePropsButton, searchPropsButton } from '@constants/stories'
 
 const meta: Meta<typeof Searchbar> = {
-  title: 'Molecules/Searchbar',
+  title: 'Legacy/Molecules/Searchbar',
   component: Searchbar,
   args: {
     placeholder: 'Busca empleos por cargo o profesion',

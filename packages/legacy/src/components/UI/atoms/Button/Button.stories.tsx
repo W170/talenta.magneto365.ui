@@ -3,7 +3,7 @@ import { Link1 } from '@constants/icons.constants'
 import { Button } from './Button.component'
 
 const meta: Meta<typeof Button> = {
-  title: 'Atoms/ Button',
+  title: 'Legacy/Atoms/ Button',
   component: Button,
   args: {}
 }

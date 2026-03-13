@@ -4,7 +4,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { MenuDropdown } from './MenuDropdown.component'
 
 const meta: Meta<typeof MenuDropdown> = {
-  title: 'Atoms/Menu Dropdown',
+  title: 'Legacy/Atoms/Menu Dropdown',
   component: MenuDropdown,
   args: {
     ...MenuDropdownProps,

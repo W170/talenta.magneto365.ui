@@ -5,7 +5,7 @@ import { ChatQuestionnaireUniqueChoice } from './ChatQuestionnaireUniqueChoice.c
 import { EQuestionType, IQuestionWithAnswer } from '../../ChatQuestionnaire.interface'
 
 const meta: Meta<typeof ChatQuestionnaireUniqueChoice> = {
-  title: 'Domain/Jobs/ChatQuestionnaire/ChatQuestionnaireUniqueChoice',
+  title: 'Legacy/Domain/Jobs/ChatQuestionnaire/ChatQuestionnaireUniqueChoice',
   component: ChatQuestionnaireUniqueChoice
 }
 export default meta

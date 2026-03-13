@@ -6,7 +6,7 @@ import { CategoryMenuCard } from '../../organism/CategoryMenuCard'
 import { ButtonLink } from '../../atoms/ButtonLink'
 
 const meta: Meta<typeof CategoryGrid> = {
-  title: 'Organism/Category Grid',
+  title: 'Legacy/Organism/Category Grid',
   component: CategoryGrid,
   args: {
     elements: categoriesData,

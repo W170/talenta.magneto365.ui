@@ -14,7 +14,7 @@ const tabButton = {
 }
 
 const meta: Meta<typeof TabButton> = {
-  title: 'Molecules/Tab Button',
+  title: 'Legacy/Molecules/Tab Button',
   component: TabButton,
   args: {}
 }

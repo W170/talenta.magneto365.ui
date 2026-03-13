@@ -10,7 +10,7 @@ const { Container, Text, Icon } = AlertJobStatus
 const { Header, Alert, SimilarJobs } = JobSuggestedDrawer
 
 const meta: Meta<typeof JobSuggestedDrawer> = {
-  title: 'Organism/Job Suggested Drawer',
+  title: 'Legacy/Organism/Job Suggested Drawer',
   component: JobSuggestedDrawer,
   args: {
     isLoading: false,

@@ -31,7 +31,7 @@ export const TimeLine = () => {
 }
 
 const meta: Meta<typeof Record> = {
-  title: 'organism/Record',
+  title: 'Legacy/organism/Record',
   component: TimeLine
 }
 

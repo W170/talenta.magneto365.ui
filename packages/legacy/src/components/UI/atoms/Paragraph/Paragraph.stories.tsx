@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Paragraph } from './Paragraph.component'
 
 const meta: Meta<typeof Paragraph> = {
-  title: 'Atoms/Paragraph',
+  title: 'Legacy/Atoms/Paragraph',
   component: Paragraph,
   args: {
     paragraph:

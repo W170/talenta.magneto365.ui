@@ -5,7 +5,7 @@ import { EQuestionType, IQuestionWithAnswer } from '../../ChatQuestionnaire.inte
 import { ChatQuestionnaireMultipleChoice } from './ChatQuestionnaireMultipleChoice.component'
 
 const meta: Meta<typeof ChatQuestionnaireMultipleChoice> = {
-  title: 'Domain/Jobs/ChatQuestionnaire/ChatQuestionnaireMultipleChoice',
+  title: 'Legacy/Domain/Jobs/ChatQuestionnaire/ChatQuestionnaireMultipleChoice',
   component: ChatQuestionnaireMultipleChoice
 }
 export default meta

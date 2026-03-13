@@ -19,7 +19,7 @@ const MessageSample: React.FC<IMessageProps> = (props) => {
 }
 
 const meta: Meta<typeof MessageSample> = {
-  title: 'Molecules/Message',
+  title: 'Legacy/Molecules/Message',
   component: MessageSample,
   args: {
     text: 'Info.',

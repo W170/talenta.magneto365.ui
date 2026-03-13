@@ -5,7 +5,7 @@ import { categoriesData, vacantPositionsData } from '@constants/stories'
 import { CategoryMenuCard } from '../../organism/CategoryMenuCard'
 
 const meta: Meta<typeof VacantPositions> = {
-  title: 'Template/VacantPositions',
+  title: 'Legacy/Template/VacantPositions',
   component: VacantPositions,
   args: vacantPositionsData
 }

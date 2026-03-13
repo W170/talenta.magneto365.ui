@@ -3,7 +3,7 @@ import { CreateAccountCTA } from './CreateAccountCTA.component'
 import { CreateAccountCTAProps } from '../../../../constants/stories/createAccountCTA.constants'
 
 const meta: Meta<typeof CreateAccountCTA> = {
-  title: 'Molecules/Create Account CTA',
+  title: 'Legacy/Molecules/Create Account CTA',
   component: CreateAccountCTA,
   args: { ...CreateAccountCTAProps }
 }

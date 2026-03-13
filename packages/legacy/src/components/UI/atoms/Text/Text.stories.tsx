@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { TextCustom } from './Text.component'
 
 const meta: Meta<typeof TextCustom> = {
-  title: 'Atoms/TextCustom',
+  title: 'Legacy/Atoms/TextCustom',
   component: TextCustom
 }
 

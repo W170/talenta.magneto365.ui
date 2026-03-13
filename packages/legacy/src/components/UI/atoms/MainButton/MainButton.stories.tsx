@@ -3,7 +3,7 @@ import { MainButton } from './MainButton.component'
 import { ProfileAdd } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof MainButton> = {
-  title: 'Atoms/Main Button',
+  title: 'Legacy/Atoms/Main Button',
   component: MainButton,
   args: {}
 }

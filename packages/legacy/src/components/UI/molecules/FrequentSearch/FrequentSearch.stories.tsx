@@ -3,7 +3,7 @@ import { FrequentSearch } from './FrequentSearch.component'
 import { searchList } from '@constants/stories'
 
 const meta: Meta<typeof FrequentSearch> = {
-  title: 'Molecules/Frequent Search',
+  title: 'Legacy/Molecules/Frequent Search',
   component: FrequentSearch,
   args: {
     searchHeading: 'Empleos mas frecuentes',

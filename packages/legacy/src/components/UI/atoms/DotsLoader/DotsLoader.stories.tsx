@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { DotsLoader } from './DotsLoader.component'
 
 const meta: Meta<typeof DotsLoader> = {
-  title: 'Atoms/Dots Loader',
+  title: 'Legacy/Atoms/Dots Loader',
   component: DotsLoader
 }
 

@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { SaveButton } from './SaveButton.component'
 
 const meta: Meta<typeof SaveButton> = {
-  title: 'Atoms/ Save Button',
+  title: 'Legacy/Atoms/ Save Button',
   component: SaveButton,
   args: {}
 }

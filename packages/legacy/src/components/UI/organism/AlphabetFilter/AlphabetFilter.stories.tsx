@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import AlphabetFilter from './AlphabetFilter.component'
 
 const meta: Meta<typeof AlphabetFilter> = {
-  title: 'Organism/Alphabet filter',
+  title: 'Legacy/Organism/Alphabet filter',
   component: AlphabetFilter,
   args: {
     title: 'Filtrar por letra inicial:',

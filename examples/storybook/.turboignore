@@ -1,0 +1,14 @@
+# Exclude Storybook from Turbo's default build pipeline
+# Storybook is a development/documentation tool and should only be built explicitly
+#
+# To run Storybook:
+# - pnpm storybook (dev server)
+# - pnpm storybook:build (production build)
+# - pnpm --filter @magneto365-ui/storybook dev
+# - pnpm --filter @magneto365-ui/storybook build
+#
+# This file ensures Storybook is never included in:
+# - pnpm build (only builds packages/*)
+# - pnpm test (only tests packages/*)
+# - pnpm lint (only lints packages/*)
+*

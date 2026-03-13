@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Toggle } from './Toggle.component'
 
 const meta: Meta<typeof Toggle.Switch> = {
-  title: 'Atoms/Toggle',
+  title: 'Legacy/Atoms/Toggle',
   component: Toggle.Switch
 }
 

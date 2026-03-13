@@ -13,7 +13,7 @@ import {
 } from '@constants/stories'
 
 const meta: Meta<typeof LoginTemplate> = {
-  title: 'Template/Login',
+  title: 'Legacy/Template/Login',
   component: LoginTemplate,
   tags: ['autodocs'],
   args: {

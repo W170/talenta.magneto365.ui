@@ -3,7 +3,7 @@ import { Footer } from './'
 import { MagnetoResolutionProps, RightsReservedProps, listMenuText } from '@constants/stories'
 
 const meta: Meta<typeof Footer> = {
-  title: 'Template/Footer',
+  title: 'Legacy/Template/Footer',
   component: Footer,
   tags: ['autodocs'],
   args: {

@@ -3,7 +3,7 @@ import { CompanyCard } from './CompanyCard.component'
 import { companyCardData, companyCardDataWithDescription } from '@constants/stories'
 
 const meta: Meta<typeof CompanyCard> = {
-  title: 'Molecules/Company Card',
+  title: 'Legacy/Molecules/Company Card',
   component: CompanyCard,
   args: companyCardData
 }

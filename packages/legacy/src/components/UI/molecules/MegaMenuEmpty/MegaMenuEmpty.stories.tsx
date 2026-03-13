@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import MegaMenuEmpty from './MegaMenuEmpty.component'
 
 const meta: Meta<typeof MegaMenuEmpty> = {
-  title: 'Molecules/Mega Menu Empty',
+  title: 'Legacy/Molecules/Mega Menu Empty',
   component: MegaMenuEmpty,
   tags: ['autodocs'],
   args: {

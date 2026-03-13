@@ -10,7 +10,7 @@ const { Header, Body, Button, Footer, Title, Icon } = AlertJobModal
 const CheckboxWithControllerField = withControlField(Checkbox)
 
 const meta: Meta<typeof AlertJobModal> = {
-  title: 'Molecules/Alert Job Modal',
+  title: 'Legacy/Molecules/Alert Job Modal',
   component: AlertJobModal,
   args: {
     open: false,

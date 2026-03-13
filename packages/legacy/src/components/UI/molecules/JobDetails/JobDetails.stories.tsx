@@ -5,7 +5,7 @@ import { CitiesDetailDrawerProps } from '@constants/stories'
 import { JobDetails } from './JobDetails.component'
 
 const meta: Meta<typeof JobDetails> = {
-  title: 'Molecules/Job Details',
+  title: 'Legacy/Molecules/Job Details',
   component: JobDetails,
   args: {}
 }

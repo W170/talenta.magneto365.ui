@@ -3,7 +3,7 @@ import { listOptions } from '@constants/stories/inputSelect.constants'
 import { OneSelectionEntry } from '.'
 
 const meta: Meta<typeof OneSelectionEntry> = {
-  title: 'Organism/One Selection Entry',
+  title: 'Legacy/Organism/One Selection Entry',
   component: OneSelectionEntry,
   args: {
     dropDownTitle: 'Tipo de identificacion',

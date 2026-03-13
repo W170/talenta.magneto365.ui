@@ -10,7 +10,7 @@ const status: IStatusJob = 'Hired'
 const isSelected = true
 
 const meta: Meta<typeof ProcessesCard> = {
-  title: 'Organism/Processes Card',
+  title: 'Legacy/Organism/Processes Card',
   component: ProcessesCard,
   args: {
     children: (

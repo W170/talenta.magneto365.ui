@@ -3,7 +3,7 @@ import { FooterMenuLinks } from './'
 import { listMenuText } from '@constants/stories'
 
 const meta: Meta<typeof FooterMenuLinks> = {
-  title: 'Organism/Footer Menu Links',
+  title: 'Legacy/Organism/Footer Menu Links',
   component: FooterMenuLinks,
   args: {
     ...listMenuText

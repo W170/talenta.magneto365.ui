@@ -3,7 +3,7 @@ import { MagnetoResolution } from './'
 import { MagnetoResolutionProps } from '@constants/stories'
 
 const meta: Meta<typeof MagnetoResolution> = {
-  title: 'Molecules/Magneto Resolution',
+  title: 'Legacy/Molecules/Magneto Resolution',
   component: MagnetoResolution,
   args: {
     ...MagnetoResolutionProps

@@ -3,7 +3,7 @@ import MobileSortMenu from './MobileSortMenu.component'
 import { optionsFilterOrderBy } from '@constants/stories'
 
 const meta: Meta<typeof MobileSortMenu> = {
-  title: 'Organism/Mobile Sort Menu',
+  title: 'Legacy/Organism/Mobile Sort Menu',
   component: MobileSortMenu,
   tags: ['autodocs'],
   args: {

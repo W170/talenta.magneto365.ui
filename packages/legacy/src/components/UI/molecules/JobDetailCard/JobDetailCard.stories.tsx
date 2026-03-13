@@ -3,7 +3,7 @@ import { StoryObj, Meta } from '@storybook/react'
 import { JobDetailCard } from './JobDetailCard.component'
 
 const meta: Meta<typeof JobDetailCard> = {
-  title: 'Molecules/Job Detail Card',
+  title: 'Legacy/Molecules/Job Detail Card',
   component: JobDetailCard,
   args: {}
 }

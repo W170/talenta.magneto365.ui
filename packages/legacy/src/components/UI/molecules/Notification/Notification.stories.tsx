@@ -3,7 +3,7 @@ import Notification from './Notification.component'
 import { notification } from '../../../../constants/stories'
 
 const meta: Meta<typeof Notification> = {
-  title: 'Molecules/Notification',
+  title: 'Legacy/Molecules/Notification',
   component: Notification,
   args: {
     message: notification.message,

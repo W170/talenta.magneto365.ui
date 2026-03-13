@@ -16,7 +16,7 @@ const selectProps = {
 }
 
 const meta: Meta<typeof Modal> = {
-  title: 'Molecules/Modal',
+  title: 'Legacy/Molecules/Modal',
   component: Modal,
   args: {
     isOpen: true,

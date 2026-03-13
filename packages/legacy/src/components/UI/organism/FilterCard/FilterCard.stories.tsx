@@ -4,7 +4,7 @@ import { FilterCard } from './FilterCard.component'
 import { ISetIsApplied } from '@components/UI/template'
 
 const meta: Meta<typeof FilterCard> = {
-  title: 'Organism/Filter Card',
+  title: 'Legacy/Organism/Filter Card',
   component: FilterCard,
   args: {
     label: 'Sector Laboral',

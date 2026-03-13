@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { InputPlus } from './InputPlus.component'
 
 const meta: Meta<typeof InputPlus> = {
-  title: 'Molecules/InputPlus',
+  title: 'Legacy/Molecules/InputPlus',
   component: InputPlus,
   tags: ['autodocs'],
   args: {

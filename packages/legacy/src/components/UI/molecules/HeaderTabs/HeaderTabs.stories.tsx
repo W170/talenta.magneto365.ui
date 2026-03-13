@@ -41,7 +41,7 @@ const headerTabsPropsWithActiveTab: HeaderTabItem[] = [
 ]
 
 const meta: Meta<typeof HeaderTabs> = {
-  title: 'Molecules/Header Tabs',
+  title: 'Legacy/Molecules/Header Tabs',
   component: HeaderTabs,
   args: {}
 }

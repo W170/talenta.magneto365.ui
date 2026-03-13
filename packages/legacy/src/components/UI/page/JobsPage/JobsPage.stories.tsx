@@ -16,7 +16,7 @@ import { ISideFilter } from '../../template/SideFilter/SideFilter.interface'
 import { CitiesLargeDetailDrawerProps, emptyResultsProps, paginationProps } from '../../../../constants/stories'
 
 const meta: Meta<typeof JobsPage> = {
-  title: 'Pages/Jobs Page',
+  title: 'Legacy/Pages/Jobs Page',
   component: JobsPage,
   args: {
     createAccountCTAProps: CreateAccountCTAProps,

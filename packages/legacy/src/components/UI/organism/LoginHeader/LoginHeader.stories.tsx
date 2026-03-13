@@ -12,7 +12,7 @@ import {
 } from '@constants/stories'
 
 const meta: Meta<typeof LoginHeader> = {
-  title: 'Organism/Login Header',
+  title: 'Legacy/Organism/Login Header',
   component: LoginHeader,
   args: {
     listMenuUserProps,

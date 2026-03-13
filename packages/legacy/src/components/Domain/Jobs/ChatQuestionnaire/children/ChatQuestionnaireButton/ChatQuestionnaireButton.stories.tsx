@@ -2,7 +2,7 @@ import { StoryObj, Meta } from '@storybook/react'
 import { ChatQuestionnaireButton } from './ChatQuestionnaireButton.component'
 
 const meta: Meta<typeof ChatQuestionnaireButton> = {
-  title: 'Domain/Jobs/ChatQuestionnaire/ChatQuestionnaireButton',
+  title: 'Legacy/Domain/Jobs/ChatQuestionnaire/ChatQuestionnaireButton',
   component: ChatQuestionnaireButton,
   argTypes: {
     variant: {

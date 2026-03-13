@@ -3,7 +3,7 @@ import { JobCompanyHeader } from './JobCompanyHeader.component'
 import { CompanyLogo } from '@constants/stories'
 
 const meta: Meta<typeof JobCompanyHeader> = {
-  title: 'Molecules/Job Company Header',
+  title: 'Legacy/Molecules/Job Company Header',
   component: JobCompanyHeader,
   args: {}
 }

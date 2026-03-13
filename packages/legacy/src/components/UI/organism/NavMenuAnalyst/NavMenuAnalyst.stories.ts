@@ -3,7 +3,7 @@ import { NavMenuAnalystProps } from '@constants/stories/analyst.constants'
 import { NavMenuAnalyst } from './NavMenuAnalyst.component'
 
 const meta: Meta<typeof NavMenuAnalyst> = {
-  title: 'Organism/Nav Menu Analyst',
+  title: 'Legacy/Organism/Nav Menu Analyst',
   component: NavMenuAnalyst,
   args: {
     isFullWidth: false,

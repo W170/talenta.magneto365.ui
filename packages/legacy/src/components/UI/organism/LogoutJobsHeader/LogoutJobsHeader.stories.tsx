@@ -11,7 +11,7 @@ import {
 } from '@constants/stories'
 
 const meta: Meta<typeof LogoutJobsHeader> = {
-  title: 'Organism/Logout Jobs Header',
+  title: 'Legacy/Organism/Logout Jobs Header',
   component: LogoutJobsHeader,
   args: {
     allJobsText: 'Todos los empleos',

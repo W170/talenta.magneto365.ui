@@ -13,7 +13,7 @@ const customStyles = `
 `
 
 const meta: Meta<typeof HorizontalBar> = {
-  title: 'Atoms/Horizontal Bar',
+  title: 'Legacy/Atoms/Horizontal Bar',
   component: HorizontalBar,
   args: {
     value: 10,

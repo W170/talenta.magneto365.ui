@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { FlatLoader } from './FlatLoader.component'
 
 const meta: Meta<typeof FlatLoader> = {
-  title: 'Atoms/Flat Loader',
+  title: 'Legacy/Atoms/Flat Loader',
   component: FlatLoader,
   tags: ['autodocs'],
   args: {

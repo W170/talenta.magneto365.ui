@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { NewFeature } from './NewFeature.component'
 
 const meta: Meta<typeof NewFeature> = {
-  title: 'Atoms/New Feature',
+  title: 'Legacy/Atoms/New Feature',
   component: NewFeature,
   args: {
     feature: 'test',

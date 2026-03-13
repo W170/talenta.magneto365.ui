@@ -4,7 +4,7 @@ import SortBar from './SortBar.component'
 import { sortBarProps } from '@constants/stories'
 
 const meta: Meta<typeof SortBar> = {
-  title: 'Template/Sort Bar',
+  title: 'Legacy/Template/Sort Bar',
   component: SortBar,
   tags: ['autodocs'],
   args: sortBarProps,

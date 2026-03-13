@@ -27,7 +27,7 @@ const Demo: React.FC<DemoProps> = ({ hd, lg, md, sm, xl, xs, xxl, defaultText })
  * change the resolution of the current window to see the behavior.
  */
 const meta: Meta<typeof Demo> = {
-  title: 'Hooks/useMediaQuery',
+  title: 'Legacy/Hooks/useMediaQuery',
   component: withContextAppProvider(Demo),
   args: {
     defaultText: 'Default Content'

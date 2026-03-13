@@ -3,7 +3,7 @@ import { DateOptions } from '@components/UI/atoms/DateOptions/DateOptions'
 import { storyMonths, storyYears } from '@constants/stories/DatePicker.constants'
 
 const meta: Meta<typeof DateOptions> = {
-  title: 'Atoms/Date Options',
+  title: 'Legacy/Atoms/Date Options',
   component: DateOptions,
   args: {
     optionsList: storyMonths

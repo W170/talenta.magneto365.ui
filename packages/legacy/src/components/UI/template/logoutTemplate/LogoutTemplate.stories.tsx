@@ -93,7 +93,7 @@ const headerDrawerMenuProps: IDrawerOrganism = {
 }
 
 const meta: Meta<typeof LogoutTemplate> = {
-  title: 'Template/Logout',
+  title: 'Legacy/Template/Logout',
   component: LogoutTemplate,
   tags: ['autodocs'],
   args: {

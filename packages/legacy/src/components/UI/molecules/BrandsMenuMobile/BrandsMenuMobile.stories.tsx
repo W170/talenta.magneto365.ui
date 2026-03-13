@@ -3,7 +3,7 @@ import BrandsMenuMobile from './BrandsMenuMobile.component'
 import { brands, ourBrandsText } from '@constants/stories'
 
 const meta: Meta<typeof BrandsMenuMobile> = {
-  title: 'Molecules/Brands Menu Mobile',
+  title: 'Legacy/Molecules/Brands Menu Mobile',
   component: BrandsMenuMobile,
   args: {
     brandsProps: {

@@ -178,7 +178,7 @@ const mobileJobDetailsDrawer = {
 }
 
 const meta: Meta<typeof SuggestedJobsPage> = {
-  title: 'Pages/Suggested Jobs Page',
+  title: 'Legacy/Pages/Suggested Jobs Page',
   component: SuggestedJobsPage,
   tags: ['autodocs'],
   args: {

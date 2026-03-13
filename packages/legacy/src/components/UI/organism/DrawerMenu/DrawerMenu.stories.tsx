@@ -23,7 +23,7 @@ const LogIn = () => {
 }
 
 const meta: Meta<typeof DrawerMenu> = {
-  title: 'Organism/Drawer Menu',
+  title: 'Legacy/Organism/Drawer Menu',
   component: DrawerMenu,
   tags: ['autodocs'],
   args: {

@@ -6,7 +6,7 @@ const { Subtitle, Title, Check, Content, Submit, Highlight, Text, UlList } = Use
 const handleCheck = (value: boolean) => console.log(value)
 
 const meta: Meta<typeof UserTerms> = {
-  title: 'Organism/User Terms',
+  title: 'Legacy/Organism/User Terms',
   component: UserTerms,
   args: {
     isOpen: true,

@@ -3,7 +3,7 @@ import { Pagination } from './Pagination.component'
 import { paginationProps } from '@constants/stories'
 
 const meta: Meta<typeof Pagination> = {
-  title: 'Molecules/ Pagination',
+  title: 'Legacy/Molecules/ Pagination',
   component: Pagination,
   args: paginationProps
 }

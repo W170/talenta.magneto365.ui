@@ -122,7 +122,7 @@ const MobileJobDetailsActionsBar = {
 }
 
 const meta: Meta<typeof MobileJobDetailsDrawer> = {
-  title: 'Organism/Mobile Job Details Drawer',
+  title: 'Legacy/Organism/Mobile Job Details Drawer',
   component: MobileJobDetailsDrawer,
   args: {}
 }

@@ -4,7 +4,7 @@ import { ChangeEvent } from 'react'
 import { EyeSlash } from '@constants/icons.constants'
 
 const meta: Meta<typeof Input> = {
-  title: 'Molecules/Input',
+  title: 'Legacy/Molecules/Input',
   component: Input,
   tags: ['autodocs'],
   args: {

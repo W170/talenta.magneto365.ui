@@ -6,7 +6,7 @@ import { IconItem } from '../Icon'
 import { Add, ArrowLeft2, SearchIcon, Trash } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof Field> = {
-  title: 'Atoms/Field',
+  title: 'Legacy/Atoms/Field',
   component: Field,
   render: () => (
     <Field>

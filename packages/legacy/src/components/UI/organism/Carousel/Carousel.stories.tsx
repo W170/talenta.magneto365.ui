@@ -5,7 +5,7 @@ import React from 'react'
 import { Carousel } from './Carousel.component'
 const { Header, Items } = Carousel
 const meta: Meta<typeof Carousel> = {
-  title: 'Organism/Carousel',
+  title: 'Legacy/Organism/Carousel',
   component: Carousel
 }
 

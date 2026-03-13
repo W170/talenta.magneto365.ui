@@ -9,7 +9,7 @@ import Arrow from '../../../../assets/ArrowRightWhite.svg'
 const { Section, Title, SubTitle, Button, Text } = ApplicationSummary
 
 const meta: Meta<typeof ApplicationSummary> = {
-  title: 'Organism/Application Summary',
+  title: 'Legacy/Organism/Application Summary',
   component: ApplicationSummary,
   args: {
     open: true,

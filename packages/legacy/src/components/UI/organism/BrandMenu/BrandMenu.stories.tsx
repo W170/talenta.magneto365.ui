@@ -4,7 +4,7 @@ import BrandMenu from './BrandMenu.component'
 import { brands, ourBrandsText } from '@constants/stories'
 
 const meta: Meta<typeof BrandMenu> = {
-  title: 'Organism/Brand Menu',
+  title: 'Legacy/Organism/Brand Menu',
   component: BrandMenu,
   args: {
     brandsProps: {

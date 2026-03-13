@@ -5,7 +5,7 @@ import { MobileJobDetailsActionsBar } from './MobileJobDetailsActionsBar.compone
 import { shareLinks } from '../../../../constants/stories/vacancies.constants'
 
 const meta: Meta<typeof MobileJobDetailsActionsBar> = {
-  title: 'Organism/Mobile Job Details Actions Bar',
+  title: 'Legacy/Organism/Mobile Job Details Actions Bar',
   component: MobileJobDetailsActionsBar,
   args: {}
 }

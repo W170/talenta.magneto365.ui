@@ -9,7 +9,7 @@ const icon: IconProps = {
 }
 
 const meta: Meta<typeof Loading> = {
-  title: 'Atoms/Loading',
+  title: 'Legacy/Atoms/Loading',
   component: Loading,
   args: {
     loadingIcon: icon

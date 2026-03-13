@@ -5,7 +5,7 @@ import { InputFile } from './InputFile.component'
 import { IconItem, Typography } from '../index'
 
 const meta: Meta<typeof InputFile> = {
-  title: 'Atoms/Input File',
+  title: 'Legacy/Atoms/Input File',
   component: InputFile,
   render: () => (
     <InputFile onChange={(evt) => console.log('Archivo seleccionado:', evt.target.files)} multiple>

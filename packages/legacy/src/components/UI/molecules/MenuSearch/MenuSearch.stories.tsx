@@ -7,7 +7,7 @@ import { FilterSearchItem } from '../FilterSearchItem'
 import { ISetIsApplied } from '@components/UI/template'
 
 const meta: Meta<typeof MenuSearch> = {
-  title: 'Molecules/Menu Search',
+  title: 'Legacy/Molecules/Menu Search',
   component: MenuSearch,
   args: {
     children: (

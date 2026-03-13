@@ -3,7 +3,7 @@ import { DatePicker } from './DatePicker.component'
 import { months } from '../../../../constants/stories/DatePicker.constants'
 
 const meta: Meta<typeof DatePicker> = {
-  title: 'Molecules/Date Picker',
+  title: 'Legacy/Molecules/Date Picker',
   component: DatePicker,
   args: {}
 }

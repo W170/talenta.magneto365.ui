@@ -84,7 +84,7 @@ const TabButton2Props2: ITabButton = {
 }
 
 const meta: Meta<typeof Tab> = {
-  title: 'Molecules/Tab',
+  title: 'Legacy/Molecules/Tab',
   component: Tab,
   args: {}
 }

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { ComparativeCounter } from './ComparativeCounter.component'
 
 const meta: Meta<typeof ComparativeCounter> = {
-  title: 'Atoms/Comparative Counter',
+  title: 'Legacy/Atoms/Comparative Counter',
   component: ComparativeCounter,
   args: {
     max: 125,

@@ -3,7 +3,7 @@ import { BrandsContainer } from './'
 import { brands, ourBrandsText } from '@constants/stories'
 
 const meta: Meta<typeof BrandsContainer> = {
-  title: 'Molecules/Brands Container',
+  title: 'Legacy/Molecules/Brands Container',
   component: BrandsContainer,
   args: {
     brands,

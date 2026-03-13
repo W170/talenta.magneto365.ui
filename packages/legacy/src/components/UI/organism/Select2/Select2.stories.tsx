@@ -4,7 +4,7 @@ import { Select2 } from './Select2.component'
 import { SELECT2_PROPS } from '../../../../constants/stories/select2.constants'
 
 const meta: Meta<typeof Select2> = {
-  title: 'Organism/Select2',
+  title: 'Legacy/Organism/Select2',
   component: Select2,
   args: {
     ...SELECT2_PROPS

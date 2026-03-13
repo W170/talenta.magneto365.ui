@@ -3,7 +3,7 @@ import { StoryObj, Meta } from '@storybook/react'
 import { ListIcon } from '@constants/stories'
 
 const meta: Meta<typeof ListIconLink> = {
-  title: 'Molecules/List Icon Link',
+  title: 'Legacy/Molecules/List Icon Link',
   component: ListIconLink,
   args: {
     listIcon: ListIcon,

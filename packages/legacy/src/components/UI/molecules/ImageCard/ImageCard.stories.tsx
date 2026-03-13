@@ -3,7 +3,7 @@ import { ImageCard } from './ImageCard.component'
 import { imageCardData } from '@constants/stories'
 
 const meta: Meta<typeof ImageCard> = {
-  title: 'Molecules/Image Card',
+  title: 'Legacy/Molecules/Image Card',
   component: ImageCard,
   args: imageCardData
 }

@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { HistoryCard } from './HistoryCard.component'
 
 export default {
-  title: 'Molecules/HistoryCard',
+  title: 'Legacy/Molecules/HistoryCard',
   component: HistoryCard,
   argTypes: {
     type: {

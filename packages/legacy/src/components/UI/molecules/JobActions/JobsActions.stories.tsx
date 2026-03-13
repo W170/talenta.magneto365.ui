@@ -5,7 +5,7 @@ import { JobActions } from './JobActions.component'
 import { Buildings2, Export3 } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof JobActions> = {
-  title: 'Molecules/Job Actions',
+  title: 'Legacy/Molecules/Job Actions',
   component: JobActions,
   args: {}
 }

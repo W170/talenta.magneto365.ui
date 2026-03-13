@@ -4,7 +4,7 @@ import { UserMenuAnalystProps } from '@constants/stories/analyst.constants'
 import { UserMenuWrapperAnalyst } from './UserMenuWrapperAnalyst.component'
 
 const meta: Meta<typeof UserMenuWrapperAnalyst> = {
-  title: 'Molecules/User Menu Wrapper Analyst',
+  title: 'Legacy/Molecules/User Menu Wrapper Analyst',
   component: UserMenuWrapperAnalyst,
   args: { ...UserMenuAnalystProps },
   decorators: [

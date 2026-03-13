@@ -3,7 +3,7 @@ import { MenuIcon } from './MenuIcon.component'
 import { ArchiveTick, Youtube } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof MenuIcon> = {
-  title: 'Molecules/Menu Icon',
+  title: 'Legacy/Molecules/Menu Icon',
   component: MenuIcon,
   tags: ['autodocs'],
   args: {
