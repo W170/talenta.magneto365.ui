@@ -127,17 +127,23 @@ const JobsPage: React.FC<IJobsPage> = ({
       return <EmptyResults {...emptyResultsProps} />
     }
 
-    return vacantProps.map(({ id, ...props }) => (
-      <JobCard
-        isLoading={isLoading}
-        isActive={id === jobSelected?.id}
-        id={id}
-        showDetail={() => handleJobCardClick(id)}
-        dynamicUrl={fullJobsUrl}
-        key={`${id}-JobsPage`}
-        {...props}
-      />
-    ))
+    return vacantProps.map((vacant) => {
+      if (typeof vacant === 'function') return vacant()
+
+      const { id, ...props } = vacant
+
+      return (
+        <JobCard
+          isLoading={isLoading}
+          isActive={id === jobSelected?.id}
+          id={id}
+          showDetail={() => handleJobCardClick(id)}
+          dynamicUrl={fullJobsUrl}
+          key={`${id}-JobsPage`}
+          {...props}
+        />
+      )
+    })
   }, [isLoading, emptyVacant, emptyResultsProps, vacantProps, jobSelected, fullJobsUrl, handleJobCardClick])
 
   const filterAltRender = useMemo(() => {
