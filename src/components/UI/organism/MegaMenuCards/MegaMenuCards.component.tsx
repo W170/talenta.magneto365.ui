@@ -14,7 +14,8 @@ const MegaMenuCards: React.FC<IMegaMenuCards> = ({
   actionTitle,
   className,
   filterProps,
-  maxCards = 39
+  maxCards = 39,
+  renderRight
 }) => {
   const renderTitle = useMediaQuery(
     title && (
@@ -50,14 +51,17 @@ const MegaMenuCards: React.FC<IMegaMenuCards> = ({
     <nav className={className}>
       {renderTitle}
       {filterProps && <AlphabetFilter className={style[`mega-menu-cards__filter`]} {...filterProps} />}
-      <ul className={`${style[`mega-menu-cards`]}`}>
-        {jobs &&
-          jobs.slice(0, maxCards).map((job, key) => (
-            <li key={key}>
-              <MegaMenuCard {...job} />
-            </li>
-          ))}
-      </ul>
+      <section className={`${style['mega-menu-cards__container']}`}>
+        <ul className={`${style[`mega-menu-cards`]}`}>
+          {jobs &&
+            jobs.slice(0, maxCards).map((job, key) => (
+              <li key={key}>
+                <MegaMenuCard {...job} />
+              </li>
+            ))}
+        </ul>
+        {renderRight?.()}
+      </section>
       {action && (
         <ButtonLink
           buttonText={action.label}

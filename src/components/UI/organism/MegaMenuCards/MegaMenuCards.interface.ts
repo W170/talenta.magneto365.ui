@@ -10,4 +10,5 @@ export interface IMegaMenuCards {
   actionTitle?: IMegaMenuLink
   className?: string
   maxCards?: number
+  renderRight?: () => React.ReactNode
 }
