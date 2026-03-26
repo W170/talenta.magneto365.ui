@@ -16,8 +16,9 @@ export interface IJobsPage {
   /**
    * An array of job card props to display multiple job listings.
    * Each job card contains information about a single job listing.
+   * It is also allow renderProps to display custom content.
    */
-  vacantProps: IVacancies[]
+  vacantProps: (IVacancies | (() => React.ReactNode))[]
   /**
    *
    */
