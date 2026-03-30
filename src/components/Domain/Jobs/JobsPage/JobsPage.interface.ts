@@ -84,6 +84,8 @@ export interface IJobsPage {
    *  This property sets the job card type filter, which can be either 'row' or 'side'.
    */
   typeFilters?: 'row' | 'side'
+
+  renderBelowPagination?: () => React.ReactNode
 }
 
 export interface IVacancies extends IJobCard {

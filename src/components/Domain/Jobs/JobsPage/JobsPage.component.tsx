@@ -31,7 +31,8 @@ const JobsPage: React.FC<IJobsPage> = ({
   displayAlwaysFilter,
   createAccountCTAProps,
   jobDetailsContent,
-  typeFilters = 'row'
+  typeFilters = 'row',
+  renderBelowPagination,
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [showDetail, setShowDetail] = useState(device === 'desktop')
@@ -164,6 +165,7 @@ const JobsPage: React.FC<IJobsPage> = ({
                 <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>{cardsAltRender}</div>
                 {customParagraph && <Paragraph paragraph={customParagraph} />}
                 <Pagination dynamicUrl={fullUrl} {...paginationProps} />
+                {renderBelowPagination?.()}
                 <FrequentSearch {...frequentSearchProps} />
               </div>
               <div className={style[`${classMUI}-jobs-page__jobs-detail`]}>{JobDetailsDrawerComponent}</div>
@@ -184,6 +186,7 @@ const JobsPage: React.FC<IJobsPage> = ({
               <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>{cardsAltRender}</div>
               {customParagraph && <Paragraph paragraph={customParagraph} />}
               <Pagination dynamicUrl={fullUrl} {...paginationProps} />
+              {renderBelowPagination?.()}
               <FrequentSearch {...frequentSearchProps} />
             </div>
             <div className={style[`${classMUI}-jobs-page__jobs-detail`]}>{JobDetailsDrawerComponent}</div>
