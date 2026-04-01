@@ -12,5 +12,5 @@ export interface IMenuUser {
   /**
    * Optional render prop displayed at the top of the popover content.
    */
-  renderHeader?: () => React.ReactNode | null
+  renderHeader?: () => React.ReactNode
 }

@@ -16,5 +16,5 @@ export interface ILoginTemplate {
   homeUrl: string
   breadcrumbProps: IBreadcrumb
   onlyMenuUser?: boolean
-  renderHeaderUserMenu?: () => React.ReactNode | null
+  renderHeaderUserMenu?: () => React.ReactNode
 }
