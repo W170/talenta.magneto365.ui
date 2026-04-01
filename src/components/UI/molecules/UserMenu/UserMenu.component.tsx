@@ -8,13 +8,19 @@ export const Component: React.FC<IMenuUser> = ({
   listMenuUserProps,
   profileImage,
   clickOut = false,
-  setClickOut = () => ({})
+  setClickOut = () => ({}),
+  renderHeader
 }) => {
   return (
     <Popover
       widthBase={40}
       show={clickOut}
-      content={<ListMenuIcons {...listMenuUserProps} />}
+      content={
+        <>
+          {renderHeader && renderHeader()}
+          <ListMenuIcons {...listMenuUserProps} />
+        </>
+      }
       positionX="left"
       positionY="bottom"
     >

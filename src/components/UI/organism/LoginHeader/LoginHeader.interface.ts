@@ -17,6 +17,7 @@ export interface ILoginHeader {
   homeUrl: string
   breadcrumbProps: IBreadcrumb
   onlyMenuUser?: boolean
+  renderHeaderUserMenu?: () => React.ReactNode
 }
 
 export interface IlistMenuUserProps {

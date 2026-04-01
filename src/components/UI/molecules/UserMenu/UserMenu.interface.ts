@@ -9,4 +9,8 @@ export interface IMenuUser {
   listMenuUserProps: IlistMenuUserProps
   clickOut?: boolean
   setClickOut?: React.Dispatch<React.SetStateAction<boolean>>
+  /**
+   * Optional render prop displayed at the top of the popover content.
+   */
+  renderHeader?: () => React.ReactNode
 }
