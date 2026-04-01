@@ -27,7 +27,8 @@ const Component: React.FC<ILoginHeader> = ({
   searchbar,
   MobileSearchbarProps,
   homeUrl,
-  onlyMenuUser
+  onlyMenuUser,
+  renderHeaderUserMenu
 }) => {
   const [showSearchBar, setShowSearchBar] = useState(false)
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
@@ -91,7 +92,11 @@ const Component: React.FC<ILoginHeader> = ({
   )
 
   const loginHeaderPopover = useMediaQuery(
-    <UserMenu listMenuUserProps={{ ...listMenuUserProps, showAllItems: onlyMenuUser }} profileImage={profileImage} />,
+    <UserMenu
+      listMenuUserProps={{ ...listMenuUserProps, showAllItems: onlyMenuUser }}
+      profileImage={profileImage}
+      renderHeader={renderHeaderUserMenu}
+    />,
     { md: <Avatar {...profileImage} onClick={() => setToggleMobileDrawer(true)} /> }
   )
 
@@ -117,6 +122,7 @@ const Component: React.FC<ILoginHeader> = ({
       </div>
       <div className={styles['magneto-ui-third-row']}>{loginHeaderBreadcrumbs}</div>
       <MobileDrawer isOpen={toggleMobileDrawer} onClose={() => setToggleMobileDrawer(false)}>
+        {renderHeaderUserMenu && renderHeaderUserMenu()}
         <ListMenuIcons {...listMenuUserProps} />
       </MobileDrawer>
     </header>
