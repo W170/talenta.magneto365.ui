@@ -1,0 +1,56 @@
+@use '../../../../shared/stylesheets/tokens' as t;
+
+.account-select {
+  display: flex;
+  background-color: t.$color-grey-100;
+  flex-direction: column;
+  padding: t.$padding-sm;
+  margin: t.$margin-sm;
+  gap: t.$gap-sm-2;
+  border-radius: t.$radius-md;
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: t.$gap-sm-2;
+
+    &__name {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+  }
+
+  .collapse {
+    background-color: t.$color-grey-200;
+    padding: t.$padding-sm;
+    border-radius: t.$radius-sm;
+
+    &__header {
+      justify-content: space-between;
+      button {
+        padding: t.$padding-min;
+        font-family: inherit;
+      }
+    }
+
+    &__body {
+      margin-top: t.$margin-md;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        padding: t.$padding-min;
+        cursor: pointer;
+        font-family: inherit;
+      }
+    }
+  }
+}
