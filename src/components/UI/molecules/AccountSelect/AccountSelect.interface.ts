@@ -42,7 +42,6 @@ export interface IAccountSelect {
   }
   /**
    * Callback to handle account selection.
-   * @param email - The email of the selected account.
    */
   onSelectAccount: (account: account) => void
 }
