@@ -1,7 +1,7 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { accountSelectDefaultProps } from '@constants/stories/accountSelect.constants'
-import AccountSelect from './AccountSelect.component'
+import { AccountSelect } from './AccountSelect.component'
 
 const meta: Meta<typeof AccountSelect> = {
   title: 'Molecules/Account Select',
