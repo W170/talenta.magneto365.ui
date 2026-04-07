@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Avatar, Link, LogoComponent, MainButton } from '@components/UI/atoms'
+import { Avatar, Field, IconItem, Link, LogoComponent, MainButton, Typography } from '@components/UI/atoms'
 import { ListMenuIcons, MegaMenuJobsTabs, MegaMenuPopover, MobileDrawer, UserMenu } from '@components/UI/molecules'
 import styles from './MegaMenuMainHeader.modules.scss'
 import {
@@ -17,6 +17,7 @@ import { MobileSearchbar } from '../../molecules'
 import { IMegaMenuMainHeader } from './MegaMenuMainHeader.interface'
 import { Select2 } from '../Select2'
 import MegaMenuSearchBar from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.component'
+import { ArrowDown2 } from '@constants/icons.constants'
 
 const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
   const [showSearchBar, setShowSearchBar] = useState(false)
@@ -97,6 +98,67 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
     />
   )
 
+  const selectedCountry = selectCountry?.currentFields?.[0] ?? selectCountry?.selectList?.[0]
+
+  const renderCountrySelector = useMediaQuery(
+    <Select2
+      haveTags={false}
+      isMultiple={false}
+      {...(selectCountry as NonNullable<typeof selectCountry>)}
+      className={`${styles['mega-menu-main-header__country']} ${selectCountry?.className || ''}`}
+    />,
+    {
+      md: (
+        <Field className={styles['mega-menu-main-header__country-field']}>
+          <Field.List.Wrapper>
+            <Field.Input
+              type="button"
+              value={''}
+              prefix={
+                selectedCountry?.img ? (
+                  <img
+                    src={selectedCountry.img}
+                    alt={selectedCountry.name}
+                    className={styles['mega-menu-main-header__country-flag']}
+                  />
+                ) : undefined
+              }
+              suffix={({ opened }) => (
+                <div
+                  className={`${styles['mega-menu-main-header__country-arrow']} ${
+                    opened ? styles['mega-menu-main-header__country-arrow--opened'] : ''
+                  }`}
+                >
+                  <IconItem size={16} icon={ArrowDown2} />
+                </div>
+              )}
+            />
+            <Field.List value={selectedCountry} onChange={(country) => selectCountry?.onChange([country])}>
+              <Field.List.Body>
+                {selectCountry?.selectList?.map((country) => (
+                  <Field.List.Item
+                    key={country.id}
+                    value={country}
+                    className={styles['mega-menu-main-header__country-option']}
+                  >
+                    {country.img && (
+                      <img
+                        src={country.img}
+                        alt={country.name}
+                        className={styles['mega-menu-main-header__country-flag']}
+                      />
+                    )}
+                    <Typography.Text>{country.name}</Typography.Text>
+                  </Field.List.Item>
+                ))}
+              </Field.List.Body>
+            </Field.List>
+          </Field.List.Wrapper>
+        </Field>
+      )
+    }
+  )
+
   const loginHeaderPopover = useMediaQuery(
     <UserMenu listMenuUserProps={listMenuUserProps} profileImage={profileImage} />,
     {
@@ -110,14 +172,7 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
         {LogoutHeaderMobileSearchbar}
         {LogoutHeaderMenuButton}
         <a href={homeUrl}>{renderLogo}</a>
-        {selectCountry && (
-          <Select2
-            haveTags={false}
-            isMultiple={false}
-            {...selectCountry}
-            className={`${styles['mega-menu-main-header__country']} ${selectCountry.className || ''}`}
-          />
-        )}
+        {selectCountry && renderCountrySelector}
         <div className={styles['mega-menu-main-header__search']}>{renderSearchBar}</div>
       </div>
       <div className={styles['mega-menu-main-header__login']}>
