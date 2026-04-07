@@ -16,7 +16,6 @@ const Component: React.FC<IMegaMenuCountrySelector> = ({ selectCountry }) => {
         <Field.List.Wrapper>
           <Field.Input
             type="button"
-            value={''}
             prefix={
               selectedCountry?.img ? (
                 <img
