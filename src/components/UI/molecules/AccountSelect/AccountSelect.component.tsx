@@ -5,7 +5,7 @@ import { ArrowDown3, Repeat } from '@constants/icons.constants'
 import { Tooltip } from '../Tooltip'
 import { IAccountSelect } from './AccountSelect.interface'
 
-const AccountSelect = ({ profileImage, user, emails, labels, onSelectAccount }: IAccountSelect) => {
+const Component = ({ profileImage, user, emails, labels, onSelectAccount }: IAccountSelect) => {
   const [accountsOpen, setAccountsOpen] = useState(false)
 
   return (
@@ -57,4 +57,4 @@ const AccountSelect = ({ profileImage, user, emails, labels, onSelectAccount }: 
   )
 }
 
-export default AccountSelect
+export const AccountSelect = Component
