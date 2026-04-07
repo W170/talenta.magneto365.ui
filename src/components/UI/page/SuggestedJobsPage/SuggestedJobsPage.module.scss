@@ -6,6 +6,10 @@
   height: calc(100vh - 89px);
   display: flex;
 
+  @media (max-width: v.$screen-lg) {
+    display: block;
+  }
+
   &__jobs-detail {
     position: sticky;
     top: 0;
