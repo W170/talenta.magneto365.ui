@@ -1,0 +1,35 @@
+@use '../../../../shared/stylesheets/variables.scss' as v;
+
+.mega-menu-country-selector {
+  &__select {
+    min-width: 190px;
+    flex: 0 1 220px;
+  }
+
+  &__field {
+    min-width: 60px;
+  }
+
+  &__flag {
+    display: block;
+    width: 24px;
+    height: 16px;
+    object-fit: cover;
+    border-radius: 2px;
+  }
+
+  &__option {
+    display: flex;
+    justify-content: center;
+    padding: 6px 8px;
+  }
+
+  &__arrow {
+    transition: all 0.2s ease-in-out;
+    transform: rotate(0deg);
+
+    &--opened {
+      transform: rotate(180deg);
+    }
+  }
+}
