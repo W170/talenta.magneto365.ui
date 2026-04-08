@@ -44,7 +44,7 @@ const Component = ({ profileImage, user, emails, labels, onSelectAccount }: IAcc
                   </Typography.Text>
                 </Tooltip>
                 {!account.isCurrent && (
-                  <Tooltip title={labels.tooltips.changeAccount}>
+                  <Tooltip title={labels.tooltips.changeAccount} position="left">
                     <IconItem icon={Repeat} size={16} />
                   </Tooltip>
                 )}
