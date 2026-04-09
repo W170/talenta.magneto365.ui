@@ -18,7 +18,7 @@ import { IMegaMenuMainHeader } from './MegaMenuMainHeader.interface'
 import { Select2 } from '../Select2'
 import MegaMenuSearchBar from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.component'
 
-const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
+const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu, renderHeaderUserMenu }) => {
   const [showSearchBar, setShowSearchBar] = useState(false)
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
   const { homeUrl, searchBarProps, loginProps, selectCountry, mobileSearchBarProps } = useMegaMenuMain()
@@ -98,7 +98,7 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
   )
 
   const loginHeaderPopover = useMediaQuery(
-    <UserMenu listMenuUserProps={listMenuUserProps} profileImage={profileImage} />,
+    <UserMenu listMenuUserProps={listMenuUserProps} profileImage={profileImage} renderHeader={renderHeaderUserMenu} />,
     {
       md: <Avatar {...profileImage} onClick={() => setToggleMobileDrawer(true)} />
     }
