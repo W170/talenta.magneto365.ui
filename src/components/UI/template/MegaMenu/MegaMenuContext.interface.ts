@@ -1,5 +1,5 @@
 import { IMegaMenuTab } from '@components/UI/atoms/MegaMenuTab/MegaMenuTab.interface'
-import { ISearchbar } from '@components/UI/molecules'
+import { IMobileSearchbar } from '@components/UI/molecules'
 import { IPopoverRef } from '@components/UI/molecules/MegaMenuPopover/MegaMenuPopover.interface'
 import { IlistMenuUserProps } from '@components/UI/organism'
 import React, { ReactNode } from 'react'
@@ -35,7 +35,7 @@ export interface IMegaMenuMainHeader {
   }
   selectCountry?: ISelectOptions<unknown>
   searchBarProps?: IMegaMenuSearchBar
-  mobileSearchBarProps: ISearchbar
+  mobileSearchBarProps: IMobileSearchbar
   homeUrl?: string
   homeText?: string
 }

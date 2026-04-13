@@ -16,7 +16,8 @@ const Component: React.FC<IMobileSearchbar> = ({
   placeholder,
   options = [],
   onSelectOption,
-  onSubmit
+  onSubmit,
+  renderMobileSearch,
 }) => {
   const [searchValue, setSearchValue] = useState(termValue ? String(termValue) : '')
   const [showOptions, setShowOptions] = useState(false)
@@ -98,6 +99,10 @@ const Component: React.FC<IMobileSearchbar> = ({
       setShowOptions(true)
     }
   }, [safeOptions.length, searchValue])
+
+  if (renderMobileSearch) { 
+    return <>{renderMobileSearch({ onClose: onClick, open: showMobileSearchbar ?? false })}</>
+  }
 
   return (
     <div className={styles.MobileSearchbarComponent} data-show-mobile-searchbar={showMobileSearchbar} ref={contentRef}>

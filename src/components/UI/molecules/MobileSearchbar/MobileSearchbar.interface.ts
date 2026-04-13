@@ -38,4 +38,6 @@ export interface IMobileSearchbar {
    * Callback executed when user submits search
    */
   onSubmit?: (termValue: string) => void
+ 
+  renderMobileSearch?: (params: { onClose?: VoidFunction, open: boolean }) => React.ReactNode
 }

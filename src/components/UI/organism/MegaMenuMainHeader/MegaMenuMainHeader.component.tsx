@@ -38,7 +38,7 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu, renderHead
   const LogoutHeaderMobileSearchbar = useMediaQuery(null, {
     md: (
       <>
-        {searchBarProps && (
+        {mobileSearchBarProps && (
           <MobileSearchbar
             {...mobileSearchBarProps}
             termValue={mobileSearchBarProps?.termValue}
