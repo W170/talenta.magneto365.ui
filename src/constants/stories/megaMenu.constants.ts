@@ -24,6 +24,7 @@ import {
 import { Book, BriefcaseBlue, BuildingBlue, CourthouseBlue, LocationBlue } from '@constants/megaMenu.constants'
 import { MobileSearchbarProps, SearchbarProps } from './headers.constants'
 import { NoData, Waiting } from '@constants/gifs.constants'
+import { UserSwitch } from '../icons.constants'
 
 export const staticMessages: { [key: string]: string } = {
   noData: NoData,
@@ -136,6 +137,7 @@ export const megaMenuUserLoggedIcons = {
   resume: DocumentText,
   settings: Setting2,
   help: MessageQuestion,
+  userSwitch: UserSwitch,
   alerts: Bell
 }
 export const mobileSocialIcons = [Book, HeadsetBlackOutline, QuestionCircle]
