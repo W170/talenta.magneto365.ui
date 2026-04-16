@@ -4,15 +4,18 @@ import styles from './AccountSelect.module.scss'
 import { ArrowDown3, Repeat } from '@constants/icons.constants'
 import { Tooltip } from '../Tooltip'
 import { IAccountSelect } from './AccountSelect.interface'
+import { classNames } from '@shared/utils/common'
 
-const Component = ({ profileImage, user, emails, labels, onSelectAccount }: IAccountSelect) => {
+const cx = classNames.bind(styles)
+
+const Component = ({ profileImage, user, emails, labels, onSelectAccount, className }: IAccountSelect) => {
   const [accountsOpen, setAccountsOpen] = useState(false)
 
   return (
-    <div className={styles['account-select']}>
-      <div className={styles['user-info']}>
+    <div className={cx('account-select', className)}>
+      <div className={cx('user-info')}>
         <Avatar {...profileImage} />
-        <div className={styles['user-info__name']}>
+        <div className={cx('user-info__name')}>
           <Typography.Text color="grey-800" size={'md-2'} strong>
             {user.name}
           </Typography.Text>
@@ -22,8 +25,8 @@ const Component = ({ profileImage, user, emails, labels, onSelectAccount }: IAcc
         </div>
       </div>
       {emails.length > 0 && (
-        <Collapse className={styles['collapse']} open={accountsOpen} onChangeOpen={setAccountsOpen}>
-          <Collapse.Header className={styles['collapse__header']}>
+        <Collapse className={cx('collapse')} open={accountsOpen} onChangeOpen={setAccountsOpen}>
+          <Collapse.Header className={cx('collapse__header')}>
             <Typography.Text color="grey-800" size={'md-2'} strong={accountsOpen}>
               {labels.sectionTitle}
             </Typography.Text>
@@ -31,7 +34,7 @@ const Component = ({ profileImage, user, emails, labels, onSelectAccount }: IAcc
               <IconItem icon={ArrowDown3} size={16} />
             </Collapse.Toggler>
           </Collapse.Header>
-          <Collapse.Body className={styles['collapse__body']}>
+          <Collapse.Body className={cx('collapse__body')}>
             {emails.map((account) => (
               <button key={account.id} onClick={() => onSelectAccount(account)}>
                 <Tooltip title={labels.tooltips.currentAccount} visible={account.isCurrent}>
