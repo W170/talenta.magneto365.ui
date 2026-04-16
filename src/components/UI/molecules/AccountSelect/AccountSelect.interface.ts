@@ -44,4 +44,6 @@ export interface IAccountSelect {
    * Callback to handle account selection.
    */
   onSelectAccount: (account: account) => void
+
+  className?: string
 }
