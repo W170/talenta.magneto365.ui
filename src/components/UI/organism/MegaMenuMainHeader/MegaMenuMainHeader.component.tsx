@@ -131,7 +131,10 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu, renderHead
         )}
       </div>
       <MobileDrawer isOpen={toggleMobileDrawer} onClose={() => setToggleMobileDrawer(false)}>
-        <ListMenuIcons {...listMenuUserProps} />
+        <>
+          {renderHeaderUserMenu && renderHeaderUserMenu()}
+          <ListMenuIcons {...listMenuUserProps} />
+        </>
       </MobileDrawer>
     </div>
   )
