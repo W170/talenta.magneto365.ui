@@ -9,8 +9,12 @@ const Component: React.FC<IAd> = ({ size, style, className, ...props }) => {
   const sizeStyles = size ? sizeMap[size] : {}
 
   useEffect(() => {
-    const adsbygoogle = (window as unknown as Record<string, unknown>).adsbygoogle || []
-    ;(adsbygoogle as unknown[]).push({})
+    try {
+      const adsbygoogle = (window as unknown as Record<string, unknown>).adsbygoogle || []
+      ;(adsbygoogle as unknown[]).push({})
+    } catch {
+      return
+    }
   }, [])
 
   return <ins className={`adsbygoogle ${className ?? ''}`} style={{ ...sizeStyles, ...style }} {...props} />
