@@ -1,8 +1,11 @@
 .magneto-ui-job-company-logo {
   display: flex;
+  align-items: center;
   img {
-    width: 100px;
-    height: 100px;
+    border-radius: 8px;
+    border: 1px solid #f0f1f3;
+    width: 58px;
+    height: 58px;
     object-fit: contain;
   }
 }
