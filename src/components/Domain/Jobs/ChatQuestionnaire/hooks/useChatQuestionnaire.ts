@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState } from 'react'
 import { IChat } from '@components/UI/molecules/Chat'
-import { IQuestionWithAnswer, TQuestionnaires, TSendQuestion, TSendQuestionnaire } from '../ChatQuestionnaire.interface'
+import { IQuestionWithAnswer, TQuestionnaires, TSendQuestion, TSendQuestionnaire, EQuestionType } from '../ChatQuestionnaire.interface'
 
 const initilizeQuestions = (questionnaires: TQuestionnaires[]): IQuestionWithAnswer[] =>
   questionnaires.flatMap((questionnaire) =>
@@ -12,10 +12,34 @@ const initilizeQuestions = (questionnaires: TQuestionnaires[]): IQuestionWithAns
     }))
   )
 
+const hasValidAnswer = (questionWithAnswer: IQuestionWithAnswer): boolean => {
+  const { answer } = questionWithAnswer
+  if (!answer) return false
+
+  switch (answer.type) {
+    case EQuestionType.openShort:
+    case EQuestionType.openLong:
+      return answer.openAnswer.trim().length > 0
+    case EQuestionType.unique:
+    case EQuestionType.multiple:
+      return answer.answer.length > 0
+    default:
+      return false
+  }
+}
+
+const isQuestionnaireCompleted = (
+  chatQuestions: IQuestionWithAnswer[],
+  totalQuestions: number
+): boolean =>
+  totalQuestions === 0 ||
+  (chatQuestions.length === totalQuestions &&
+    chatQuestions.every((q) => q.mode === 'readonly' && hasValidAnswer(q)))
+
 export const useChatQuestionnaire = (questionsParam: TQuestionnaires[]) => {
   const [questions, setQuestions] = useState(() => initilizeQuestions(questionsParam))
   const currentIndex = useRef(0)
-  const [isCompleted, setIsCompleted] = useState(() => questions.length === 0)
+  const [isCompleted, setIsCompleted] = useState(() => isQuestionnaireCompleted([], questions.length))
   const ref = useRef<IChat.Methods>(null)
 
   const handleNext = useCallback(() => {
@@ -52,19 +76,29 @@ export const useChatQuestionnaire = (questionsParam: TQuestionnaires[]) => {
       const mode = data.mode ?? questionState.mode
       const answer: TSendQuestion | undefined = data.answer ?? questionState.answer
 
+      const updatedContent: IQuestionWithAnswer = { ...questionState, answer, mode }
+
       ref.current?.updateMessage({
         id: `${questionState.questionnaireId}-${questionState.question.id}`,
         type: 'text',
         sender: 'magneto',
-        content: { ...questionState, answer, mode }
+        content: updatedContent
       })
 
-      const { [questionsRef.length - 1]: lastQuesiton } = questionsRef
+      let chatQuestions = questionsRef.map((q) =>
+        q.question.id === question.id && q.questionnaireId === questionnaireId ? updatedContent : q
+      )
 
-      if (lastQuesiton.question.id === question.id) {
-        handleNext()
+      const { [chatQuestions.length - 1]: lastQuesiton } = chatQuestions
+
+      if (lastQuesiton?.question.id === question.id) {
+        const nextQuestion = handleNext()
+        if (nextQuestion) {
+          chatQuestions = [...chatQuestions, nextQuestion]
+        }
       }
-      setIsCompleted(questionsRef.length === questions.length && mode === 'readonly')
+
+      setIsCompleted(isQuestionnaireCompleted(chatQuestions, questions.length))
     },
     [handleNext, questions]
   )
@@ -94,10 +128,10 @@ export const useChatQuestionnaire = (questionsParam: TQuestionnaires[]) => {
     setQuestions((questions) => {
       if (questionnaire) {
         const newQuestions = initilizeQuestions(questionnaire)
-        setIsCompleted(newQuestions.length === 0)
+        setIsCompleted(isQuestionnaireCompleted([], newQuestions.length))
         return newQuestions
       }
-      setIsCompleted(questions.length === 0)
+      setIsCompleted(isQuestionnaireCompleted([], questions.length))
       return questions
     })
   }, [])
