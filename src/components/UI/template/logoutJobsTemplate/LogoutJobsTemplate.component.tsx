@@ -21,7 +21,7 @@ const LogoutJobsTemplate: React.FC<ILogoutJobsTemplate> = ({
     signUpButton
   } = logoutJobsHeaderProps
   const { type, href, text } = signInLink
-  const { buttonText, loadingState, onClick } = signUpButton
+  const { buttonText, loadingState, onClick, buttonStyles } = signUpButton
   const [toggleDrawer, setToggleDrawer] = useState(false)
 
   return (
@@ -50,6 +50,7 @@ const LogoutJobsTemplate: React.FC<ILogoutJobsTemplate> = ({
             buttonSize="full"
             {...SignUpButtonStyle}
             buttonText={buttonText}
+            buttonStyles={buttonStyles ?? SignUpButtonStyle.buttonStyles}
             onClick={onClick}
             loadingState={loadingState}
           />

@@ -153,7 +153,12 @@ export const SignInProps = {
 export const SignUpProps = {
   buttonType: 'button' as const,
   buttonText: 'Crear Cuenta',
-  buttonSize: 'medium' as const
+  buttonSize: 'medium' as const,
+  buttonStyles: {
+    buttonColor: '#9EE4B8',
+    textColor: '#001B38',
+    spacing: '10px'
+  }
 }
 
 export const CreateAccountButton: IMainButton = {

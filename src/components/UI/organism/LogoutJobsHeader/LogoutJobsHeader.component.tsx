@@ -37,7 +37,7 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
   allJobsLink
 }) => {
   const { type, href, text } = signInLink
-  const { buttonText, loadingState, onClick } = signUpButton
+  const { buttonText, loadingState, onClick, buttonStyles } = signUpButton
   const { companySlug, companyLogo, companyUrl, brandsProps } = brandMenuProps
   const [showSearchBar, setShowSearchBar] = useState(false)
   const isMobileButton = useMediaQuery(false, {
@@ -104,6 +104,7 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
       buttonSize="full"
       {...SignUpButtonStyle}
       buttonText={buttonText}
+      buttonStyles={buttonStyles ?? SignUpButtonStyle.buttonStyles}
       onClick={onClick}
       loadingState={loadingState}
       isMobile={isMobileButton}
