@@ -24,6 +24,7 @@ const Component: React.FC<IDrawerOrganism> = ({
   const {
     buttonText: buttonTextSignUp,
     buttonStyles: buttonStylesSignUp,
+    iconProps: iconPropsSignUp,
     onClick: onSignUpClick,
     loadingState
   } = createAccountButton
@@ -53,6 +54,7 @@ const Component: React.FC<IDrawerOrganism> = ({
             {...CreateAccountButton}
             buttonText={buttonTextSignUp}
             buttonStyles={buttonStylesSignUp ?? CreateAccountButton.buttonStyles}
+            iconProps={{ ...CreateAccountButton.iconProps, ...iconPropsSignUp }}
             onClick={onSignUpClick}
             loadingState={loadingState}
           />

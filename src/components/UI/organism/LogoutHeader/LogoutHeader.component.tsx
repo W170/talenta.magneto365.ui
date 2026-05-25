@@ -37,7 +37,7 @@ const Component: React.FC<ILogoutHeader> = ({
   hasMobileSearchBarButton = false
 }) => {
   const { type, href, text } = signInLink
-  const { buttonText, loadingState, onClick, buttonStyles } = signUpButton
+  const { buttonText, loadingState, onClick, buttonStyles, iconProps } = signUpButton
   const [showSearchBar, setShowSearchBar] = useState(false)
   const iconSize = useMediaQuery(25, {
     sm: 16
@@ -121,7 +121,7 @@ const Component: React.FC<ILogoutHeader> = ({
       {...SignUpButtonStyle}
       buttonText={buttonText}
       buttonStyles={buttonStyles ?? SignUpButtonStyle.buttonStyles}
-      iconProps={{ ...SignUpButtonStyle.iconProps, size: iconSize }}
+      iconProps={{ ...SignUpButtonStyle.iconProps, ...iconProps, size: iconSize }}
       onClick={onClick}
       loadingState={loadingState}
       isMobile={isMobileButton}

@@ -92,7 +92,7 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu, renderHead
       buttonText={loginProps?.signUpText || ''}
       onClick={loginProps?.onClickSignUp || undefined}
       buttonSize={'medium'}
-      iconProps={{ ...SignUpButtonStyle.iconProps, size: 15 }}
+      iconProps={{ ...SignUpButtonStyle.iconProps, ...loginProps?.signUpIconProps, size: 15 }}
       isMobile={isMobileButton}
     />
   )

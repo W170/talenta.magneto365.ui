@@ -98,6 +98,7 @@ const Component: React.FC<IMegaMenuDrawer> = ({ isOpen = false, onClose, socialH
           buttonSize="full"
           {...CreateAccountButton}
           buttonText={loginProps?.signUpText || ''}
+          iconProps={{ ...CreateAccountButton.iconProps, ...loginProps?.signUpIconProps }}
           onClick={loginProps?.onClickSignUp || undefined}
         />
 
@@ -112,7 +113,13 @@ const Component: React.FC<IMegaMenuDrawer> = ({ isOpen = false, onClose, socialH
         />
       </>
     ),
-    [loginProps?.loginText, loginProps?.loginUrl, loginProps?.onClickSignUp, loginProps?.signUpText]
+    [
+      loginProps?.loginText,
+      loginProps?.loginUrl,
+      loginProps?.onClickSignUp,
+      loginProps?.signUpIconProps,
+      loginProps?.signUpText
+    ]
   )
 
   return (
