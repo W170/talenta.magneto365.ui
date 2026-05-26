@@ -5,6 +5,7 @@ import { IlistMenuUserProps } from '@components/UI/organism'
 import React, { ReactNode } from 'react'
 import { ISelectOptions } from '@components/UI/organism/Select2/Select2.interface'
 import { IMegaMenuSearchBar } from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.interface'
+import { IconProps } from '@components/UI/atoms'
 
 export interface IMegaMenuLink {
   label: string
@@ -31,6 +32,7 @@ export interface IMegaMenuMainHeader {
     loginText: string
     loginUrl: string
     signUpText: string
+    signUpIconProps?: IconProps
     onClickSignUp: (event: Event) => Promise<void>
   }
   selectCountry?: ISelectOptions<unknown>
