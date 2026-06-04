@@ -1,5 +1,5 @@
 import React, { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
-import { JobCard, FrequentSearch, Pagination, CreateAccountCTA, FilterContainerMenu } from '@components/UI/molecules'
+import { JobCard, FrequentSearch, Pagination, FilterContainerMenu } from '@components/UI/molecules'
 import { SortBar, Footer, SideFilter } from '@components/UI/template'
 import { EmptyResults } from '@components/UI/molecules/EmptyResults'
 import { useMediaQuery } from '@components/hooks'
@@ -29,7 +29,6 @@ const JobsPage: React.FC<IJobsPage> = ({
   customParagraph,
   dynamicPaginationUrl,
   displayAlwaysFilter,
-  createAccountCTAProps,
   jobDetailsContent,
   typeFilters = 'row',
   renderBelowPagination,
@@ -160,7 +159,6 @@ const JobsPage: React.FC<IJobsPage> = ({
                   emptyVacant={emptyVacant}
                   horizontal={typeFilters === 'row'}
                 />
-                {createAccountCTAProps && <CreateAccountCTA {...createAccountCTAProps} />}
                 {mainTitleByMediaQuery}
                 <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>{cardsAltRender}</div>
                 {customParagraph && <Paragraph paragraph={customParagraph} />}
@@ -181,7 +179,6 @@ const JobsPage: React.FC<IJobsPage> = ({
                 setIsFiltersOpen={setIsFiltersOpen}
                 emptyVacant={emptyVacant}
               />
-              {createAccountCTAProps && <CreateAccountCTA {...createAccountCTAProps} />}
               {mainTitleByMediaQuery}
               <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>{cardsAltRender}</div>
               {customParagraph && <Paragraph paragraph={customParagraph} />}
