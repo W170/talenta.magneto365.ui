@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import JobsPage from './JobsPage.component'
-import { CreateAccountCTAProps } from '../../../../constants/stories/createAccountCTA.constants'
 import {
   frequentSearch,
   jobDetailsDrawer,
@@ -19,7 +18,6 @@ const meta: Meta<typeof JobsPage> = {
   title: 'Pages/Jobs Page',
   component: JobsPage,
   args: {
-    createAccountCTAProps: CreateAccountCTAProps,
     sortBarProps,
     vacantProps: vacancies,
     jobDetailsDrawerProps: jobDetailsDrawer,

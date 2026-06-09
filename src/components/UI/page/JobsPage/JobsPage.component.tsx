@@ -4,7 +4,6 @@ import {
   JobCard,
   FrequentSearch,
   Pagination,
-  CreateAccountCTA,
   FilterContainerMenu
 } from '@components/UI/molecules'
 import { JobDetailsDrawer, MobileJobDetailsDrawer } from '@components/UI/organism'
@@ -37,7 +36,6 @@ const JobsPage: React.FC<IJobsPage> = ({
   customParagraph,
   dynamicPaginationUrl,
   displayAlwaysFilter,
-  createAccountCTAProps,
   typeFilters = 'row'
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
@@ -181,7 +179,6 @@ const JobsPage: React.FC<IJobsPage> = ({
                   emptyVacant={emptyVacant}
                   horizontal={typeFilters === 'row'}
                 />
-                {createAccountCTAProps && <CreateAccountCTA {...createAccountCTAProps} />}
                 {mainTitleByMediaQuery}
                 <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>{cardsAltRender}</div>
                 {customParagraph && <Paragraph paragraph={customParagraph} />}
@@ -201,7 +198,6 @@ const JobsPage: React.FC<IJobsPage> = ({
                 setIsFiltersOpen={setIsFiltersOpen}
                 emptyVacant={emptyVacant}
               />
-              {createAccountCTAProps && <CreateAccountCTA {...createAccountCTAProps} />}
               {mainTitleByMediaQuery}
               <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>{cardsAltRender}</div>
               {customParagraph && <Paragraph paragraph={customParagraph} />}
