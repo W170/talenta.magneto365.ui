@@ -109,7 +109,8 @@
   }
 }
 
-.btn-next {
+.btn-next,
+.btn-prev {
   border-radius: t.$radius-full;
   background: white;
   padding: t.$padding-md;
@@ -131,5 +132,18 @@
     height: 100%;
     position: absolute;
     background: linear-gradient(to right, transparent, #f0f1f3);
+  }
+}
+
+.btn-prev-container {
+  position: relative;
+  &::before {
+    content: '';
+    right: -30%;
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    background: linear-gradient(to left, transparent, #f0f1f3);
   }
 }

@@ -3,8 +3,8 @@ import { IHorizontalFilter } from './HorizontalFilter.interface'
 import { CardByRenderType } from '../SideFilter/factory'
 import styles from './HorizontalFilter.module.scss'
 import { IconItem } from '@components/UI/atoms'
-import { ArrowRight2, Broom } from '@constants/icons.constants'
-import { useWithElement } from '@components/hooks/useWithElement'
+import { ArrowLeft2, ArrowRight2, Broom } from '@constants/icons.constants'
+import { useElementOverflow } from '@components/hooks/useElementOverflow'
 
 const HorizontalFilter: FC<IHorizontalFilter> = ({
   title,
@@ -23,26 +23,8 @@ const HorizontalFilter: FC<IHorizontalFilter> = ({
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [isDragging, setIsDragging] = useState(false)
   const [dragStart, setDragStart] = useState({ x: 0, scrollLeft: 0 })
-  const [isOverflown, setIsOverflown] = useState(false)
-
-  const width = useWithElement(scrollContainerRef)
-
-  useEffect(() => {
-    const el = scrollContainerRef.current
-    if (!el) return
-
-    const updateOverflow = () => {
-      const tolerance = 2
-      setIsOverflown(el.scrollLeft + el.clientWidth < el.scrollWidth - tolerance)
-    }
-
-    updateOverflow()
-    el.addEventListener('scroll', updateOverflow)
-
-    return () => {
-      el.removeEventListener('scroll', updateOverflow)
-    }
-  }, [width, filters])
+  const isOverflownRight = useElementOverflow(scrollContainerRef, 'right', [filters])
+  const isOverflownLeft = useElementOverflow(scrollContainerRef, 'left', [filters])
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current
@@ -131,6 +113,25 @@ const HorizontalFilter: FC<IHorizontalFilter> = ({
     }
   }
 
+  const handleScrollLeft = () => {
+    const el = scrollContainerRef.current
+    if (!el) return
+
+    const children = Array.from(el.children) as HTMLElement[]
+
+    const prevHiddenChild = [...children].reverse().find((child) => {
+      return child.offsetLeft < el.scrollLeft
+    })
+
+    console.log('prevHiddenChild', prevHiddenChild)
+
+    if (prevHiddenChild) {
+      el.scrollTo({ left: prevHiddenChild.offsetLeft - prevHiddenChild.offsetWidth, behavior: 'smooth' })
+    } else {
+      el.scrollTo({ left: 0, behavior: 'smooth' })
+    }
+  }
+
   const handleScrollRight = () => {
     const el = scrollContainerRef.current
     if (!el) return
@@ -170,11 +171,18 @@ const HorizontalFilter: FC<IHorizontalFilter> = ({
       </div>
 
       <div className={styles['magneto-ui-horizontal-filter__filters-container']}>
+        <div className={styles['btn-prev-container']}>
+          {isOverflownLeft && (
+            <button onClick={handleScrollLeft} className={styles['btn-prev']} type="button">
+              <IconItem icon={ArrowLeft2} size={18} />
+            </button>
+          )}
+        </div>
         <div ref={scrollContainerRef} className={styles['magneto-ui-horizontal-filter__scroll-container']}>
           {displayFilters}
         </div>
         <div className={styles['btn-next-container']}>
-          {isOverflown && (
+          {isOverflownRight && (
             <button onClick={handleScrollRight} className={styles['btn-next']} type="button">
               <IconItem icon={ArrowRight2} size={18} />
             </button>
