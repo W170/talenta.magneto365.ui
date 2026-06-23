@@ -80,6 +80,11 @@ export interface IJobsPage {
   typeFilters?: 'row' | 'side'
 
   renderBelowPagination?: () => React.ReactNode
+
+  /**
+   * This property sets the custom content to be rendered before the jobs result.
+   * */
+  renderBeforeJobsResult?: () => React.ReactNode
 }
 
 export interface IVacancies extends IJobCard {

@@ -31,7 +31,8 @@ const JobsPage: React.FC<IJobsPage> = ({
   displayAlwaysFilter,
   jobDetailsContent,
   typeFilters = 'row',
-  renderBelowPagination,
+  renderBeforeJobsResult,
+  renderBelowPagination
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [showDetail, setShowDetail] = useState(device === 'desktop')
@@ -160,6 +161,7 @@ const JobsPage: React.FC<IJobsPage> = ({
                   horizontal={typeFilters === 'row'}
                 />
                 {mainTitleByMediaQuery}
+                {renderBeforeJobsResult?.()}
                 <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>{cardsAltRender}</div>
                 {customParagraph && <Paragraph paragraph={customParagraph} />}
                 <Pagination dynamicUrl={fullUrl} {...paginationProps} />
