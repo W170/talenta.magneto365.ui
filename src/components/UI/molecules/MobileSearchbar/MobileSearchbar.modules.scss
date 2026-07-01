@@ -59,10 +59,6 @@
     &:not(:placeholder-shown) {
       color: #020202;
     }
-
-    &:focus-visible {
-      outline: none;
-    }
   }
 
   .magneto-ui-search-button {
