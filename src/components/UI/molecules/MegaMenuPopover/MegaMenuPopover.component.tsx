@@ -49,7 +49,7 @@ const MegaMenuPopover: React.FC<IMegaMenuPopover> = ({ children, popoverRef }) =
           showContent ? styles[`${popoverClassName}__dropdown--open`] : ''
         }`}
       >
-        <div className={styles[`${popoverClassName}__shadow`]} onClick={handleShowContent(false)} />
+        <div className={styles[`${popoverClassName}__shadow`]} onClick={handleShowContent(false)} tabIndex={0} />
         <div
           className={styles[`${popoverClassName}__content`]}
           onClick={(event: React.MouseEvent<HTMLElement, MouseEvent>) => {

@@ -103,7 +103,7 @@ export const FilterCard: FC<IFilterCard> = ({
           />
           <span>{appliedValue ? appliedValue.label : label}</span>
           {appliedValue ? (
-            <span onClick={handleRemove}>
+            <span onClick={handleRemove} tabIndex={0}>
               <IconItem icon={SmallClose} size={17} />
             </span>
           ) : (
@@ -162,6 +162,7 @@ export const FilterCard: FC<IFilterCard> = ({
       <div
         className={`${styles[`magneto-ui-filter-card_header`]} ${styles[showItems ? '--open' : '']}`}
         onClick={isInteractiveSection ? handleShowItems : undefined}
+        tabIndex={isInteractiveSection ? 0 : undefined}
       >
         <p>{label}</p>
         {switchText && (

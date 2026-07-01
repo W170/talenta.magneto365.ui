@@ -40,7 +40,7 @@ const SearchBar: React.FC<ISearchBar> = ({
     if (!sectionTitle || termValue) return null
     const { title, url, onClick } = sectionTitle
     return (
-      <div className={styles['mega-menu-search-bar__input-title']} key={'main title'} onClick={onClick}>
+      <div className={styles['mega-menu-search-bar__input-title']} key={'main title'} onClick={onClick} tabIndex={0}>
         <a href={url}>
           <IconItem icon={CurrentLocation} size={16} />
           <p className={styles['mega-menu-search-bar__input-option__title']}>{title}</p>

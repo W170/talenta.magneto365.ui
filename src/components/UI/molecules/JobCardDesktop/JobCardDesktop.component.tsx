@@ -41,7 +41,11 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
 
   return (
     <div className={cx(`${classMUI}-card-jobs__container`, jobOpen && `${classMUI}-card-jobs--job-open`)}>
-      <article onClick={showDetail} className={cx(`${classMUI}-card-jobs`, urgent && `${classMUI}-card-jobs--urgent`)}>
+      <article
+        onClick={showDetail}
+        tabIndex={0}
+        className={cx(`${classMUI}-card-jobs`, urgent && `${classMUI}-card-jobs--urgent`)}
+      >
         <div className={cx(`${classMUI}-card-jobs__data`)}>
           <section className={cx(`${classMUI}-card-jobs__header`)}>
             <span className={cx(`${classMUI}-card-jobs__text`, `${classMUI}-card-jobs__published`)}>

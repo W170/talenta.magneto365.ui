@@ -53,6 +53,7 @@ const Component = <T,>({
           'select-input--disabled': disabled
         })}
         onClick={() => (disabled ? null : onClick())}
+        tabIndex={disabled ? -1 : 0}
         data-name="select-input"
         data-selected={selected.length > 0}
         data-is-open={open}

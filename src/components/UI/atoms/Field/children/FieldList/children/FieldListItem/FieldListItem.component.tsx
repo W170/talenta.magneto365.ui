@@ -28,6 +28,7 @@ function BaseComponent<T extends FieldListValue>(
       {...props}
       className={cx('magneto-ui-field-list-item', isSelected ? 'magneto-ui-field-list-item--selected' : '', className)}
       onClick={() => toggleValue(controlledValue)}
+      tabIndex={0}
       data-lib="magneto-ui"
       data-slot="field-list-item"
       ref={ref}
