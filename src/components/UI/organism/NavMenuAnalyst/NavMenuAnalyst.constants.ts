@@ -21,6 +21,8 @@ import {
   SettingWhiteOutline,
   TaskBlueBold,
   TaskWhiteOutline,
+  TreeSquareDot,
+  TreeSquareDotBold,
   UserSearchBlueBold,
   UserSearchWhiteOutline
 } from '@constants/icons.constants'
@@ -73,5 +75,9 @@ export const navMenuAnalystIcons: { [key: string]: { normal: string; active: str
   socialMediaRecruiting: {
     normal: AdvertisementOutline,
     active: AdvertisementBold
+  },
+  organizationalDesign: {
+    normal: TreeSquareDot,
+    active: TreeSquareDotBold
   }
 }
