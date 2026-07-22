@@ -22,7 +22,9 @@ import {
   TaskBlueBold,
   TaskWhiteOutline,
   UserSearchBlueBold,
-  UserSearchWhiteOutline
+  UserSearchWhiteOutline,
+  MagnetoAnalitycsWhiteOutline,
+  MagnetoAnalitycsBlueBold
 } from '@constants/icons.constants'
 
 export const navMenuAnalystIcons: { [key: string]: { normal: string; active: string } } = {
@@ -73,5 +75,9 @@ export const navMenuAnalystIcons: { [key: string]: { normal: string; active: str
   socialMediaRecruiting: {
     normal: AdvertisementOutline,
     active: AdvertisementBold
+  },
+  magnetoAnalitycs: {
+    normal: MagnetoAnalitycsWhiteOutline,
+    active: MagnetoAnalitycsBlueBold
   }
 }
