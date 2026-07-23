@@ -23,7 +23,7 @@ const CategoryMenuCard: React.FC<ICategoryMenuCard> = ({ name, icon, clickOut, s
   }
 
   return (
-    <div className={styles['magneto-ui-category-menu-container']} onClick={handleToggle}>
+    <div className={styles['magneto-ui-category-menu-container']} onClick={handleToggle} tabIndex={0}>
       <div
         className={`${styles[`magneto-ui-category-menu-container-card`]} 
         ${clickOut ? styles[`magneto-ui-category-menu-container-card--is-open`] : ''}`}

@@ -55,9 +55,6 @@
   &__button {
     border: none;
     background: transparent;
-    &:focus-visible {
-      outline: none;
-    }
   }
 
   &__white-space {

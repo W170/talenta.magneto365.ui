@@ -24,7 +24,9 @@ import {
   TreeSquareDot,
   TreeSquareDotBold,
   UserSearchBlueBold,
-  UserSearchWhiteOutline
+  UserSearchWhiteOutline,
+  MagnetoAnalitycsWhiteOutline,
+  MagnetoAnalitycsBlueBold
 } from '@constants/icons.constants'
 
 export const navMenuAnalystIcons: { [key: string]: { normal: string; active: string } } = {
@@ -79,5 +81,9 @@ export const navMenuAnalystIcons: { [key: string]: { normal: string; active: str
   organizationalDesign: {
     normal: TreeSquareDot,
     active: TreeSquareDotBold
+  },
+  magnetoAnalitycs: {
+    normal: MagnetoAnalitycsWhiteOutline,
+    active: MagnetoAnalitycsBlueBold
   }
 }

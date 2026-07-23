@@ -60,6 +60,7 @@ const Component: React.FC<IMobileDrawer> = ({
               <span
                 className={cx('background-drawer', backgroundClassName)}
                 onClick={blockBackgroundClose ? () => null : onClose}
+                tabIndex={0}
               />
             )}
           </div>

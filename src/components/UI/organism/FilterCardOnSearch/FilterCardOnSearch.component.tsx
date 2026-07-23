@@ -375,7 +375,7 @@ export const FilterCardOnSearch: FC<IFilterCardOnSearch> = ({
         />
         <span>{appliedValue || label}</span>
         {appliedValue ? (
-          <span onClick={(e) => handleRemove(e, appliedOptions[0])}>
+          <span onClick={(e) => handleRemove(e, appliedOptions[0])} tabIndex={0}>
             <IconItem icon={SmallClose} size={17} />
           </span>
         ) : (

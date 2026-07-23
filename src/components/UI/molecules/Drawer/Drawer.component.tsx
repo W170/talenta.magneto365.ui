@@ -74,6 +74,7 @@ const Component: React.FC<IDrawer> = ({
                 <span
                   className={`${style[backgroundEffect]} ${backGroundClassName}`}
                   onClick={blockBackgroundClose ? () => null : onClose}
+                  tabIndex={0}
                 />
               )}
             </div>

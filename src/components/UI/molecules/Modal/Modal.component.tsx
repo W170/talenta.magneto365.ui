@@ -44,6 +44,7 @@ const Modal: React.FC<IModal> = ({
       <span
         className={`${styles[`${classMUI}-background-modal`]} ${backgroundClassName}`}
         onClick={blockBackgroundClose ? () => null : onClose}
+        tabIndex={0}
       />
     </ModalPortal>
   )
