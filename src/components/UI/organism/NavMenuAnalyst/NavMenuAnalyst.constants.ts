@@ -21,6 +21,8 @@ import {
   SettingWhiteOutline,
   TaskBlueBold,
   TaskWhiteOutline,
+  TreeSquareDot,
+  TreeSquareDotBold,
   UserSearchBlueBold,
   UserSearchWhiteOutline,
   MagnetoAnalitycsWhiteOutline,
@@ -75,6 +77,10 @@ export const navMenuAnalystIcons: { [key: string]: { normal: string; active: str
   socialMediaRecruiting: {
     normal: AdvertisementOutline,
     active: AdvertisementBold
+  },
+  organizationalDesign: {
+    normal: TreeSquareDot,
+    active: TreeSquareDotBold
   },
   magnetoAnalitycs: {
     normal: MagnetoAnalitycsWhiteOutline,
