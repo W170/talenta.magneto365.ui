@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { IconItem } from '../../atoms'
 import { DrawerPortal } from '../Drawer/DrawerPortal'
+import { useFocusTrap } from '@components/hooks/useFocusTrap'
 import { IMobileDrawer } from './MobileDrawer.interface'
 import style from './mobileDrawer.module.scss'
 import { Add } from '../../../../constants/icons.constants'
@@ -14,11 +15,24 @@ const Component: React.FC<IMobileDrawer> = ({
   children,
   className = '',
   blockBackgroundClose = false,
-  backgroundClassName = ''
+  backgroundClassName = '',
+  disableFocusTrap = false,
+  ariaLabel,
+  initialFocusRef,
+  returnFocusRef
 }) => {
   const [showContent, setShowContent] = useState<boolean>(false)
   const [renderPortal, setRenderPortal] = useState<boolean>(isOpen)
   const showMenu = showContent ? 'show' : 'hidden'
+  const containerRef = useRef<HTMLElement>(null)
+
+  useFocusTrap({
+    active: isOpen && !disableFocusTrap,
+    containerRef,
+    onEscape: blockBackgroundClose ? undefined : onClose,
+    initialFocusRef,
+    returnFocusRef
+  })
 
   useEffect(() => {
     let timer: NodeJS.Timeout | null = null
@@ -45,7 +59,14 @@ const Component: React.FC<IMobileDrawer> = ({
       {renderPortal && (
         <DrawerPortal>
           <div className={cx('magneto-ui-mobile-drawer')}>
-            <aside className={cx(showMenu, className)}>
+            <aside
+              ref={containerRef}
+              className={cx(showMenu, className)}
+              role="dialog"
+              aria-modal="true"
+              aria-label={ariaLabel}
+              tabIndex={-1}
+            >
               <button
                 data-name="close-drawer"
                 title="close-modal"
@@ -58,9 +79,9 @@ const Component: React.FC<IMobileDrawer> = ({
             </aside>
             {isOpen && (
               <span
+                aria-hidden="true"
                 className={cx('background-drawer', backgroundClassName)}
                 onClick={blockBackgroundClose ? () => null : onClose}
-                tabIndex={0}
               />
             )}
           </div>

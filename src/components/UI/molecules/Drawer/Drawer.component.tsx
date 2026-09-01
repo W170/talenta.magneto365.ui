@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { IconItem } from '../../atoms'
+import { useFocusTrap } from '@components/hooks/useFocusTrap'
 import { IDrawer } from './Drawer.interface'
 import style from './drawer.module.scss'
 import { Add } from '../../../../constants/icons.constants'
@@ -20,7 +21,11 @@ const Component: React.FC<IDrawer> = ({
   onClose,
   blockBackgroundClose = false,
   customContainer,
-  backGroundClassName = ''
+  backGroundClassName = '',
+  disableFocusTrap = false,
+  ariaLabel,
+  initialFocusRef,
+  returnFocusRef
 }) => {
   const fullDrawer = isFull ? `full-drawer` : ''
   const paddingValue = customPadding !== undefined ? `${customPadding}px` : `${DEFAULT_PADDING}px`
@@ -29,6 +34,15 @@ const Component: React.FC<IDrawer> = ({
   const [showContent, setShowContent] = useState<boolean>(false)
   const [renderPortal, setRenderPortal] = useState<boolean>(isOpen)
   const showDrawer = showContent ? `show-${direction}` : `hidden-${direction}`
+  const containerRef = useRef<HTMLElement>(null)
+
+  useFocusTrap({
+    active: isOpen && !disableFocusTrap,
+    containerRef,
+    onEscape: blockBackgroundClose ? undefined : onClose,
+    initialFocusRef,
+    returnFocusRef
+  })
 
   useEffect(() => {
     const { body } = document
@@ -62,7 +76,15 @@ const Component: React.FC<IDrawer> = ({
         <Portal container={customContainer as HTMLElement}>
           <div className="magneto-ui-drawer">
             <div className={`${style['magneto-ui-drawer']} ${style[fullDrawer]} ${className}`}>
-              <aside className={`${style[showDrawer]}`} style={{ padding: paddingValue, ...widthValue }}>
+              <aside
+                ref={containerRef}
+                className={`${style[showDrawer]}`}
+                style={{ padding: paddingValue, ...widthValue }}
+                role="dialog"
+                aria-modal="true"
+                aria-label={ariaLabel}
+                tabIndex={-1}
+              >
                 {!hideButton && (
                   <button className={style['magneto-ui-close-button']} onClick={onClose}>
                     <IconItem icon={Add} hover={false} />
@@ -72,9 +94,9 @@ const Component: React.FC<IDrawer> = ({
               </aside>
               {isOpen && (
                 <span
+                  aria-hidden="true"
                   className={`${style[backgroundEffect]} ${backGroundClassName}`}
                   onClick={blockBackgroundClose ? () => null : onClose}
-                  tabIndex={0}
                 />
               )}
             </div>

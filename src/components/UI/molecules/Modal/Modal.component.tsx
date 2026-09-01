@@ -1,9 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { classMUI } from '@constants/stories'
+import { useFocusTrap } from '@components/hooks/useFocusTrap'
 import styles from './Modal.module.scss'
 import { IModal, IModalDescription, IModalTitle } from './Modal.interface'
 import { Close } from '@constants/icons.constants'
 import { ModalPortal } from './ModalPortal.component'
+
+let modalTitleId = 0
 
 const Modal: React.FC<IModal> = ({
   onClose,
@@ -13,8 +16,15 @@ const Modal: React.FC<IModal> = ({
   description,
   className = '',
   blockBackgroundClose = false,
-  backgroundClassName = ''
+  backgroundClassName = '',
+  disableFocusTrap = false,
+  ariaLabel,
+  initialFocusRef,
+  returnFocusRef
 }) => {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const titleIdRef = useRef(`${classMUI}-modal__title-${(modalTitleId += 1)}`)
+
   useEffect(() => {
     const { body } = document
     if (!body) return
@@ -24,12 +34,32 @@ const Modal: React.FC<IModal> = ({
     }
   }, [isOpen])
 
+  useFocusTrap({
+    active: isOpen && !disableFocusTrap,
+    containerRef,
+    onEscape: blockBackgroundClose ? undefined : onClose,
+    initialFocusRef,
+    returnFocusRef
+  })
+
   if (!isOpen) return null
 
   return (
     <ModalPortal>
-      <div className={`${styles[`${classMUI}-modal`]} ${className}`}>
-        {title ? <h2 className={`${styles[`${classMUI}-modal__title`]}`}>{title}</h2> : null}
+      <div
+        ref={containerRef}
+        className={`${styles[`${classMUI}-modal`]} ${className}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label={title ? undefined : ariaLabel}
+        aria-labelledby={title ? titleIdRef.current : undefined}
+        tabIndex={-1}
+      >
+        {title ? (
+          <h2 id={titleIdRef.current} className={`${styles[`${classMUI}-modal__title`]}`}>
+            {title}
+          </h2>
+        ) : null}
         {description ? <p className={`${styles[`${classMUI}-modal__description`]}`}>{description}</p> : null}
         {children}
         <button
@@ -42,9 +72,9 @@ const Modal: React.FC<IModal> = ({
         </button>
       </div>
       <span
+        aria-hidden="true"
         className={`${styles[`${classMUI}-background-modal`]} ${backgroundClassName}`}
         onClick={blockBackgroundClose ? () => null : onClose}
-        tabIndex={0}
       />
     </ModalPortal>
   )
