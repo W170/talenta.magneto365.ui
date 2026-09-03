@@ -6,8 +6,7 @@ import { Input } from '../Input'
 import { useClickOutside } from '@components/hooks/useClickOutside'
 import { CurrentLocation } from '@constants/icons.constants'
 import { MegaMenuEmpty } from '@components/UI/molecules'
-
-const AVAILABLE_KEYS = ['Enter', 'ArrowDown', 'ArrowUp', 'Escape']
+import { generateID } from '@utils/generateID/generateID.util'
 
 const SearchBar: React.FC<ISearchBar> = ({
   icon,
@@ -31,6 +30,15 @@ const SearchBar: React.FC<ISearchBar> = ({
   const contentRef = useRef<HTMLDivElement>(null)
   const safeOptions = useMemo<ISearchOptions[]>(() => (Array.isArray(options) ? options : []), [options])
 
+  const listboxIdRef = useRef<string>('')
+  if (!listboxIdRef.current) listboxIdRef.current = `mega-menu-search-listbox-${generateID()}`
+  const listboxId = listboxIdRef.current
+
+  const optionsVisible =
+    !disableOptions && showOptions && safeOptions.length > 0 && (!recentSearch || (termValue?.length ?? 0) > 0)
+  const activeOptionId =
+    optionsVisible && selectedOption < safeOptions.length ? `${listboxId}-option-${selectedOption}` : undefined
+
   useEffect(() => {
     setSelectedOption(0)
     optionLinksRef.current = []
@@ -40,8 +48,8 @@ const SearchBar: React.FC<ISearchBar> = ({
     if (!sectionTitle || termValue) return null
     const { title, url, onClick } = sectionTitle
     return (
-      <div className={styles['mega-menu-search-bar__input-title']} key={'main title'} onClick={onClick} tabIndex={0}>
-        <a href={url}>
+      <div className={styles['mega-menu-search-bar__input-title']} key={'main title'} onClick={onClick}>
+        <a href={url} tabIndex={-1}>
           <IconItem icon={CurrentLocation} size={16} />
           <p className={styles['mega-menu-search-bar__input-option__title']}>{title}</p>
         </a>
@@ -90,6 +98,11 @@ const SearchBar: React.FC<ISearchBar> = ({
         return
       }
 
+      if (key === 'Tab') {
+        closeOptions()
+        return
+      }
+
       if (key === 'Enter') {
         if (!disableOptions && showOptions) {
           const option = safeOptions[selectedOption]
@@ -111,8 +124,17 @@ const SearchBar: React.FC<ISearchBar> = ({
         return
       }
 
-      if (!AVAILABLE_KEYS.includes(key) || disableOptions || !showOptions) return
+      if (disableOptions || (key !== 'ArrowDown' && key !== 'ArrowUp')) return
 
+      if (!showOptions) {
+        if (key === 'ArrowDown' && safeOptions.length > 0) {
+          event.preventDefault()
+          setShowOptions(true)
+        }
+        return
+      }
+
+      event.preventDefault()
       setSelectedOption((current) => {
         if (key === 'ArrowDown' && current < safeOptions.length - 1) return current + 1
         if (key === 'ArrowUp' && current > 0) return current - 1
@@ -136,10 +158,20 @@ const SearchBar: React.FC<ISearchBar> = ({
     if (!disableOptions) closeOptions()
   }, [closeOptions, disableOptions])
 
+  const handleBlur = useCallback(
+    (event: React.FocusEvent<HTMLDivElement>) => {
+      if (disableOptions) return
+      if (!contentRef.current?.contains(event.relatedTarget as Node | null)) {
+        closeOptions()
+      }
+    },
+    [closeOptions, disableOptions]
+  )
+
   useClickOutside(contentRef, handleClickOutside)
 
   return (
-    <div className={styles['mega-menu-search-bar__input-content']} ref={contentRef}>
+    <div className={styles['mega-menu-search-bar__input-content']} ref={contentRef} onBlur={handleBlur}>
       <Input
         mainClassName={`${styles['mega-menu-search-bar__input']} ${className ?? ''}`}
         value={termValue}
@@ -150,10 +182,15 @@ const SearchBar: React.FC<ISearchBar> = ({
         actionIcon={actionIcon}
         onKeyDown={onPressKey}
         onFocus={() => !disableOptions && setShowOptions(true)}
+        role="combobox"
+        aria-expanded={showOptions}
+        aria-controls={listboxId}
+        aria-autocomplete="list"
+        aria-activedescendant={activeOptionId}
       />
 
       {!disableOptions && showOptions && (
-        <div className={styles['mega-menu-search-bar__input-options']} ref={optionsRef}>
+        <div className={styles['mega-menu-search-bar__input-options']} ref={optionsRef} id={listboxId} role="listbox">
           {sectionTitle && !recentSearch && renderSectionTitle}
 
           {safeOptions.length > 0 &&
@@ -164,9 +201,13 @@ const SearchBar: React.FC<ISearchBar> = ({
                   selectedOption === index ? styles['mega-menu-search-bar__input-option--selected'] : ''
                 }`}
                 key={`${title}-${index}`}
+                id={`${listboxId}-option-${index}`}
+                role="option"
+                aria-selected={selectedOption === index}
               >
                 <a
                   href={url}
+                  tabIndex={-1}
                   onClick={onPressOption({ title, subtitle, url, field })}
                   ref={(el) => (optionLinksRef.current[index] = el)}
                 >
@@ -191,7 +232,7 @@ const SearchBar: React.FC<ISearchBar> = ({
 
               {recentSearch.recentSearches.map((option, index) => (
                 <div className={styles['mega-menu-search-bar__input-option']} key={`recent-${index}`}>
-                  <a href={option.url} onClick={onPressOption(option)}>
+                  <a href={option.url} tabIndex={-1} onClick={onPressOption(option)}>
                     <p className={styles['mega-menu-search-bar__input-option__title']}>{option.title}</p>
                   </a>
                 </div>
@@ -199,7 +240,7 @@ const SearchBar: React.FC<ISearchBar> = ({
               <h4>{recentSearch.mostSearchedTitle}</h4>
               {recentSearch.mostSearched.map((option, index) => (
                 <div className={styles['mega-menu-search-bar__input-option']} key={`most-${index}`}>
-                  <a href={option.url} onClick={onPressOption(option)}>
+                  <a href={option.url} tabIndex={-1} onClick={onPressOption(option)}>
                     <p className={styles['mega-menu-search-bar__input-option__title']}>{option.title}</p>
                   </a>
                 </div>
