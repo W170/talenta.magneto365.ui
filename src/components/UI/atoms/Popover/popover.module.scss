@@ -44,6 +44,7 @@
 .show {
   opacity: 1;
   margin-top: 0px;
+  pointer-events: auto;
 }
 
 .static-content {
@@ -56,4 +57,5 @@
 .hidden {
   opacity: 0;
   margin-top: -10px;
+  pointer-events: none;
 }
