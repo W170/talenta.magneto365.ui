@@ -1,4 +1,5 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../shared/stylesheets/tokens' as t;
 
 .avatarComponent {
   position: relative;
@@ -8,7 +9,7 @@
   z-index: 12;
 
   &:focus-visible {
-    outline: 2px solid v.$color-blue-dark3;
+    outline: 2px solid t.$color-blue-dark-300;
     outline-offset: 2px;
   }
 

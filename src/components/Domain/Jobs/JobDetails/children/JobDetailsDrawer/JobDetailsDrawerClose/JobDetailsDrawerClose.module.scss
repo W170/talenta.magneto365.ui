@@ -1,4 +1,4 @@
-@use '../../../../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../../../../shared/stylesheets/tokens' as t;
 
 .drawer-button {
   all: unset;
@@ -8,7 +8,7 @@
   align-items: center;
 
   &:focus-visible {
-    outline: 2px solid v.$color-blue-dark3;
+    outline: 2px solid t.$color-blue-dark-300;
     outline-offset: 2px;
   }
 }

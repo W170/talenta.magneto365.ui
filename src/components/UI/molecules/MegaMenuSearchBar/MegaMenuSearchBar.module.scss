@@ -1,4 +1,4 @@
-@use '../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../shared/stylesheets/tokens' as t;
 
 .mega-menu-search-bar {
   display: flex;
@@ -80,7 +80,7 @@
 
       &--selected {
         background-color: #e2e6ea;
-        box-shadow: inset 0 0 0 2px v.$color-blue-dark3;
+        box-shadow: inset 0 0 0 2px t.$color-blue-dark-300;
       }
 
       &__title {
