@@ -54,6 +54,7 @@ export const BtnPagination: FC<IBtnPaginationProps> = ({
           className={styles[`${mgClass}_anchor`]}
           href={`${dynamicPaginationUrl}?${pageQueryParam}${value}`}
           onClick={(e) => e.preventDefault()}
+          tabIndex={-1}
         >
           <Button />
         </a>

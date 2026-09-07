@@ -14,7 +14,9 @@ const Component: React.FC<IMenuIcon> = ({
   isActive,
   className = '',
   rel,
-  target
+  target,
+  role,
+  tabIndex
 }) => {
   const menuActive = isActive ? style['isActive'] : ''
 
@@ -27,6 +29,8 @@ const Component: React.FC<IMenuIcon> = ({
           title={text}
           rel={rel}
           target={target}
+          role={role}
+          tabIndex={tabIndex}
         >
           {icon && <IconItem size={iconSize} hover={false} icon={icon} {...iconProps} />}
           <p className={style['magneto-ui-menu-icon__menu-text']}>{text}</p>
@@ -36,6 +40,8 @@ const Component: React.FC<IMenuIcon> = ({
           onClick={onClick}
           className={`${style['magneto-ui-menu-icon']} ${menuActive} ${className}`}
           title={text}
+          role={role}
+          tabIndex={tabIndex}
         >
           {icon && <IconItem size={iconSize} hover={false} icon={icon} {...iconProps} />}
           <p className={style['magneto-ui-menu-icon__menu-text']}>{text}</p>

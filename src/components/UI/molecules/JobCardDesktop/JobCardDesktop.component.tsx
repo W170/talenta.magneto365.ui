@@ -30,6 +30,12 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
 }) => {
   const optionsRef = useRef<HTMLElement>(null)
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+    if (!showDetail || (event.key !== 'Enter' && event.key !== ' ')) return
+    event.preventDefault()
+    showDetail()
+  }
+
   const citiesformatted = useMemo(() => {
     const safeCities = Array.isArray(cities) ? cities : []
 
@@ -43,7 +49,10 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
     <div className={cx(`${classMUI}-card-jobs__container`, jobOpen && `${classMUI}-card-jobs--job-open`)}>
       <article
         onClick={showDetail}
+        onKeyDown={handleKeyDown}
         tabIndex={0}
+        role="button"
+        aria-label={typeof title === 'string' ? title : undefined}
         className={cx(`${classMUI}-card-jobs`, urgent && `${classMUI}-card-jobs--urgent`)}
       >
         <div className={cx(`${classMUI}-card-jobs__data`)}>
@@ -68,6 +77,7 @@ const JobCardDesktop: React.FC<ICardJobDesktop> = ({
               title={title as string}
               target="_blank"
               rel="noreferrer"
+              tabIndex={-1}
               onClick={(e) => e.preventDefault()}
               className={cx(`${classMUI}-card-jobs__a`)}
             >

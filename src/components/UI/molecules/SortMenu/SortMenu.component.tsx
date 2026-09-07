@@ -4,11 +4,13 @@ import { IconItem, Popover } from '../../atoms'
 import { ISortMenu } from './SortMenu.interface'
 import withClickOut from '../../../hoc/withClickOut'
 import { menuSortButton } from '@constants/stories'
+import useSortMenuNavigation from './hooks/useSortMenuNavigation.hook'
 import style from './SortMenu.module.scss'
 
 const SortMenu: React.FC<ISortMenu> = ({
   orderFields,
   textOrderFilter,
+  orderByText,
   setFilter,
   clickOut = false,
   loading,
@@ -16,14 +18,32 @@ const SortMenu: React.FC<ISortMenu> = ({
 }) => {
   const buttonTextRef = useRef<HTMLParagraphElement>(null)
 
+  const { menuId, triggerRef, listRef, onTriggerClick, onTriggerKeyDown, onMenuKeyDown, returnFocusToTrigger } =
+    useSortMenuNavigation({ isOpen: clickOut, setIsOpen: setClickOut })
+
   const listMenuProps = useMemo(() => {
     return {
       orderFields,
       setFilter,
       setShowPopover: setClickOut,
-      textOrderFilter
+      textOrderFilter,
+      menuId,
+      menuLabel: orderByText,
+      menuRef: listRef,
+      onMenuKeyDown,
+      onSelect: returnFocusToTrigger
     }
-  }, [orderFields, textOrderFilter, setFilter, setClickOut])
+  }, [
+    orderFields,
+    textOrderFilter,
+    orderByText,
+    setFilter,
+    setClickOut,
+    menuId,
+    listRef,
+    onMenuKeyDown,
+    returnFocusToTrigger
+  ])
 
   const getButtonWidth = () => {
     if (buttonTextRef.current) {
@@ -43,9 +63,14 @@ const SortMenu: React.FC<ISortMenu> = ({
       style={{ height: '75%' }}
     >
       <button
+        ref={triggerRef}
         className={`${style['magneto-ui-btn-menu']} ${loading && style.disabled}`}
         title={textOrderFilter}
-        onClick={() => setClickOut(!clickOut)}
+        aria-haspopup="menu"
+        aria-expanded={clickOut}
+        aria-controls={menuId}
+        onClick={onTriggerClick}
+        onKeyDown={onTriggerKeyDown}
         disabled={loading}
       >
         <p className={style['magneto-ui-btn-text']} ref={buttonTextRef}>
