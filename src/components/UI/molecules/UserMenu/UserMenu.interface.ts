@@ -14,3 +14,15 @@ export interface IMenuUser {
    */
   renderHeader?: () => React.ReactNode
 }
+
+export interface IUseUserMenuNavigationParams {
+  isOpen: boolean
+  setIsOpen: (value: boolean) => void
+}
+
+export interface IUseUserMenuNavigationReturn {
+  menuId: string
+  triggerRef: React.RefObject<HTMLDivElement>
+  menuRef: React.RefObject<HTMLDivElement>
+  onMenuKeyDown: (event: React.KeyboardEvent<HTMLDivElement>) => void
+}
