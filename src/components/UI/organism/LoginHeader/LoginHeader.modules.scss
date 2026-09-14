@@ -1,4 +1,5 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../shared/stylesheets/tokens' as t;
 
 .LoginHeaderComponent {
   position: relative;
@@ -33,6 +34,16 @@
 
       button {
         padding: 0px;
+      }
+
+      .magneto-ui-logo-link {
+        display: inherit;
+        border-radius: 6px;
+
+        &:focus-visible {
+          outline: 2px solid t.$color-blue-dark-300;
+          outline-offset: 2px;
+        }
       }
     }
 
