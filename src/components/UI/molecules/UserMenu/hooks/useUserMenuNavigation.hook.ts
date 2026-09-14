@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { generateID } from '@utils/generateID/generateID.util'
 import { IUseUserMenuNavigationParams, IUseUserMenuNavigationReturn } from '../UserMenu.interface'
 
@@ -9,8 +9,10 @@ const useUserMenuNavigation = ({ isOpen, setIsOpen }: IUseUserMenuNavigationPara
   const triggerRef = useRef<HTMLDivElement>(null)
   const menuRef = useRef<HTMLDivElement>(null)
 
-  const menuIdRef = useRef<string>('')
-  if (!menuIdRef.current) menuIdRef.current = `magneto-user-menu-${generateID()}`
+  const [menuId, setMenuId] = useState('')
+  useEffect(() => {
+    setMenuId(`magneto-user-menu-${generateID()}`)
+  }, [])
 
   const getItems = useCallback(
     () => Array.from(menuRef.current?.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR) ?? []),
@@ -90,7 +92,7 @@ const useUserMenuNavigation = ({ isOpen, setIsOpen }: IUseUserMenuNavigationPara
     [getItems, focusItemAt, closeMenu]
   )
 
-  return { menuId: menuIdRef.current, triggerRef, menuRef, onMenuKeyDown }
+  return { menuId, triggerRef, menuRef, onMenuKeyDown }
 }
 
 export default useUserMenuNavigation
