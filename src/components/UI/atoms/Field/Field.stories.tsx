@@ -149,7 +149,7 @@ const ListMultipleComponent = () => {
             </div>
           )}
         />
-        <Field.List multiple value={value} onChange={setValue}>
+        <Field.List max={3} multiple value={value} onChange={setValue}>
           <Field.List.Body>
             {USER_LIST.map((user) => (
               <Field.List.Item key={user.id} value={user}>

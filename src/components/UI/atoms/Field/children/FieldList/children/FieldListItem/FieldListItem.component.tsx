@@ -11,7 +11,7 @@ function BaseComponent<T extends FieldListValue>(
   { children, className, value: controlledValue, ...props }: IFieldListItem<T>,
   ref: React.ForwardedRef<HTMLLIElement>
 ) {
-  const { toggleValue, value } = useFieldListContext()
+  const { isMaxReached, toggleValue, value } = useFieldListContext()
 
   const isSelected = useMemo(() => {
     if (!controlledValue) return false
@@ -23,11 +23,19 @@ function BaseComponent<T extends FieldListValue>(
     return controlledValue.id === value?.id
   }, [controlledValue, value])
 
+  const isDisabled = Boolean(isMaxReached && !isSelected)
+
   return (
     <li
       {...props}
-      className={cx('magneto-ui-field-list-item', isSelected ? 'magneto-ui-field-list-item--selected' : '', className)}
+      className={cx(
+        'magneto-ui-field-list-item',
+        isSelected ? 'magneto-ui-field-list-item--selected' : '',
+        isDisabled ? 'magneto-ui-field-list-item--disabled' : '',
+        className
+      )}
       onClick={() => toggleValue(controlledValue)}
+      aria-disabled={isDisabled || undefined}
       data-lib="magneto-ui"
       data-slot="field-list-item"
       ref={ref}
