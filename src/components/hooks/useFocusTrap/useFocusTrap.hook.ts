@@ -48,12 +48,37 @@ const getFocusable = (container: HTMLElement): HTMLElement[] =>
     (element) => !isHidden(element, container)
   )
 
-const getPortalHost = (node: HTMLElement | null): HTMLElement | null => {
-  let current: HTMLElement | null = node
-  while (current && current.parentElement && current.parentElement !== document.body) {
-    current = current.parentElement
+const getActiveElement = (): Element | null => {
+  let active = document.activeElement
+  while (active?.shadowRoot?.activeElement) {
+    active = active.shadowRoot.activeElement
   }
-  return current && current.parentElement === document.body ? current : null
+  return active
+}
+
+const getParentAcrossShadow = (node: Element): Element | null => {
+  if (node.parentElement) return node.parentElement
+  const root = node.getRootNode()
+  return root instanceof ShadowRoot ? root.host : null
+}
+
+const containsAcrossShadow = (container: Element, node: Node): boolean => {
+  let current: Node | null = node
+  while (current) {
+    if (current === container) return true
+    current = current instanceof Element ? getParentAcrossShadow(current) : current.parentNode
+  }
+  return false
+}
+
+const getPortalHost = (node: HTMLElement | null): Element | null => {
+  let current: Element | null = node
+  while (current) {
+    const parent = getParentAcrossShadow(current)
+    if (parent === document.body) return current
+    current = parent
+  }
+  return null
 }
 
 const releaseGuards = (): void => {
@@ -103,7 +128,7 @@ export const useFocusTrap = ({
     const id = Symbol('focus-trap')
     trapStack.push({ id, containerRef })
 
-    previouslyFocusedRef.current = document.activeElement as HTMLElement | null
+    previouslyFocusedRef.current = getActiveElement() as HTMLElement | null
     applyGuards()
 
     const focusInitial = (): void => {
@@ -140,7 +165,7 @@ export const useFocusTrap = ({
 
       const first = focusable[0]
       const last = focusable[focusable.length - 1]
-      const activeElement = document.activeElement
+      const activeElement = getActiveElement()
 
       if (!event.shiftKey && activeElement === last) {
         event.preventDefault()
@@ -148,7 +173,7 @@ export const useFocusTrap = ({
       } else if (event.shiftKey && (activeElement === first || activeElement === container)) {
         event.preventDefault()
         last.focus()
-      } else if (activeElement && !container.contains(activeElement)) {
+      } else if (activeElement && !containsAcrossShadow(container, activeElement)) {
         event.preventDefault()
         const fallback = event.shiftKey ? last : first
         fallback.focus()
@@ -161,8 +186,8 @@ export const useFocusTrap = ({
       const container = containerRef.current
       if (!container) return
 
-      const target = event.target as Node | null
-      if (target && !container.contains(target)) {
+      const target = (event.composedPath()[0] ?? event.target) as Node | null
+      if (target && !containsAcrossShadow(container, target)) {
         const fallback = getFocusable(container)[0] || container
         fallback.focus()
       }
@@ -184,8 +209,7 @@ export const useFocusTrap = ({
 
       const previouslyFocused = previouslyFocusedRef.current
       const returnTarget =
-        optionsRef.current.returnFocusRef?.current ||
-        (previouslyFocused && document.contains(previouslyFocused) ? previouslyFocused : null)
+        optionsRef.current.returnFocusRef?.current || (previouslyFocused?.isConnected ? previouslyFocused : null)
       returnTarget?.focus?.()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
