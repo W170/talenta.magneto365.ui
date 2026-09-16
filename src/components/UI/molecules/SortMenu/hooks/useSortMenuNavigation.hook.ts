@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { generateID } from '@utils/generateID/generateID.util'
 
 type OpenIntent = 'first' | 'last' | null
@@ -26,8 +26,10 @@ const useSortMenuNavigation = ({ isOpen, setIsOpen }: IUseSortMenuNavigationPara
   const listRef = useRef<HTMLDivElement>(null)
   const openIntentRef = useRef<OpenIntent>(null)
 
-  const menuIdRef = useRef<string>('')
-  if (!menuIdRef.current) menuIdRef.current = `magneto-sort-menu-${generateID()}`
+  const [menuId, setMenuId] = useState('')
+  useEffect(() => {
+    setMenuId(`magneto-sort-menu-${generateID()}`)
+  }, [])
 
   const getItems = useCallback(
     () => Array.from(listRef.current?.querySelectorAll<HTMLButtonElement>(MENU_ITEM_SELECTOR) ?? []),
@@ -157,7 +159,7 @@ const useSortMenuNavigation = ({ isOpen, setIsOpen }: IUseSortMenuNavigationPara
   )
 
   return {
-    menuId: menuIdRef.current,
+    menuId,
     triggerRef,
     listRef,
     onTriggerClick,

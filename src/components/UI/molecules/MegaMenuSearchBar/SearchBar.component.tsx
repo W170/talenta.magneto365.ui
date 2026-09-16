@@ -30,9 +30,10 @@ const SearchBar: React.FC<ISearchBar> = ({
   const contentRef = useRef<HTMLDivElement>(null)
   const safeOptions = useMemo<ISearchOptions[]>(() => (Array.isArray(options) ? options : []), [options])
 
-  const listboxIdRef = useRef<string>('')
-  if (!listboxIdRef.current) listboxIdRef.current = `mega-menu-search-listbox-${generateID()}`
-  const listboxId = listboxIdRef.current
+  const [listboxId, setListboxId] = useState('')
+  useEffect(() => {
+    setListboxId(`mega-menu-search-listbox-${generateID()}`)
+  }, [])
 
   const optionsVisible =
     !disableOptions && showOptions && safeOptions.length > 0 && (!recentSearch || (termValue?.length ?? 0) > 0)

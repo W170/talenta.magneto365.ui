@@ -111,7 +111,9 @@ const Component: React.FC<ILoginHeader> = ({
       <div className={styles['magneto-ui-second-row']}>
         <div className={styles['magneto-ui-left-section']}>
           {loginHeaderMenuButton}
-          <a href={homeUrl}>{loginHeaderLogo}</a>
+          <a className={styles['magneto-ui-logo-link']} href={homeUrl}>
+            {loginHeaderLogo}
+          </a>
           {loginHeaderMobileSearchbarButton}
         </div>
         <div className={styles['magneto-ui-searchbar-section']}>{loginHeaderSearchbar}</div>
