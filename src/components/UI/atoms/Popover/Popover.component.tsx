@@ -30,7 +30,10 @@ const Component: React.FC<IPopover> = ({
 
   return (
     <div className={[style['magneto-ui-popover-container'], staticContentClass, className].join(' ')}>
-      <div className={`${style['magneto-ui-popover']} ${style[positionX]} ${style[positionY]} ${style[showMenu]}`}>
+      <div
+        className={`${style['magneto-ui-popover']} ${style[positionX]} ${style[positionY]} ${style[showMenu]}`}
+        aria-hidden={!show || undefined}
+      >
         {hideComponent && content}
       </div>
 

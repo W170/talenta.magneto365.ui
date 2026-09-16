@@ -122,6 +122,7 @@ export interface IFilterValue {
   total?: number
   operator?: number
   type?: null | string
+  dataType?: string
   from?: number | null | string
   to?: number | null | string
 }

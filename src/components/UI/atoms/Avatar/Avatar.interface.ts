@@ -1,4 +1,6 @@
-export interface IAvatar {
+import type { AriaAttributes } from 'react'
+
+export interface IAvatar extends AriaAttributes {
   /**
    * Sets the user image
    */

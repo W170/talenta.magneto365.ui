@@ -16,9 +16,6 @@ $font-size: 18px;
     font-size: $font-size;
     padding: 0;
     &:hover,
-    &:focus-visible {
-      outline: none;
-    }
     &::placeholder {
       color: #a3a3b5;
     }

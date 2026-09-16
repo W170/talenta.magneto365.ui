@@ -38,7 +38,13 @@ const SortBar: React.FC<ISortBar> = ({
   )
 
   const sortMenu = useMediaQuery(
-    <SortMenu orderFields={orderFields} textOrderFilter={textOrderFilter} setFilter={setFilter} loading={loading} />,
+    <SortMenu
+      orderFields={orderFields}
+      textOrderFilter={textOrderFilter}
+      orderByText={orderByText}
+      setFilter={setFilter}
+      loading={loading}
+    />,
 
     {
       md: (

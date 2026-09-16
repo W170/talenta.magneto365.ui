@@ -75,7 +75,13 @@ const SideFilter: FC<ISideFilter> = ({
 
   const displayBackground = useMemo(() => {
     if (!isFiltersOpen) return <Fragment />
-    return <span className={styles['magneto-iu-side-filter_background']} onClick={() => setIsFiltersOpen(false)} />
+    return (
+      <span
+        className={styles['magneto-iu-side-filter_background']}
+        onClick={() => setIsFiltersOpen(false)}
+        tabIndex={0}
+      />
+    )
   }, [isFiltersOpen, setIsFiltersOpen])
 
   useEffect(() => {

@@ -19,7 +19,7 @@ import { JobDetails } from './index'
 import { JobDetailsAction } from './children/JobDetailsAction'
 
 const meta: Meta<typeof JobDetails> = {
-  title: 'Organism/JobDetails',
+  title: 'Domain/Jobs/JobDetails',
   component: JobDetails,
   parameters: {
     layout: 'fullscreen'
@@ -62,6 +62,13 @@ export const Default: Story = {
             <SimilarJobs.Link title={moreJobsText} href={moreJobsLink}>
               {moreJobsText}
             </SimilarJobs.Link>
+            <JobDetails.Faqs title="Preguntas frecuentes sobre @Cargo" roundEdges={false}>
+              <JobDetails.Faqs.Link text="Pregunta 1 sobre @cargo" href="#" />
+              <JobDetails.Faqs.Link text="Pregunta 2 sobre @cargo" href="#" />
+              <JobDetails.Faqs.Link text="Pregunta 3 sobre @cargo" href="#" />
+              <JobDetails.Faqs.Link text="Pregunta 4 sobre @cargo" href="#" />
+              <JobDetails.Faqs.Link text="Ver todas las preguntas frecuentes" href="#" isButtonLink />
+            </JobDetails.Faqs>
           </div>
         )}
       >

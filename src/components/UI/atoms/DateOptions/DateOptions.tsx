@@ -20,6 +20,7 @@ const Component: React.FC<IDateOption> = ({ optionsList, selected, handleOnClick
             key={optionValue}
             value={optionValue}
             onClick={() => handleOptionClick(optionValue)}
+            tabIndex={0}
           >
             {optionLabel}
           </li>

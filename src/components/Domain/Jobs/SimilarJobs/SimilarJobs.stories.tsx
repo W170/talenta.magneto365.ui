@@ -11,7 +11,7 @@ import {
 import { Typography } from '@components/UI/atoms'
 
 const meta: Meta<typeof SimilarJobs> = {
-  title: 'Organism/Similar Jobs',
+  title: 'Domain/Jobs/Similar Jobs',
   component: SimilarJobs,
   tags: ['autodocs'],
   args: {

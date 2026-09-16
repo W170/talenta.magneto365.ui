@@ -1,5 +1,5 @@
-import { IFilterCard } from '@components/UI/organism/FilterCard/FilterCard.interface'
-import { ISearchRenderTypeProps } from '@components/UI/template'
+import { IFilterCard } from '../FilterCard/FilterCard.interface'
+import { ISearchRenderTypeProps } from '../../template/SideFilter/SideFilter.interface'
 
 export interface IFilterCardOnSearch extends IFilterCard, ISearchRenderTypeProps {
   /**

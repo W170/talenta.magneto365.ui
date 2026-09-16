@@ -8,6 +8,7 @@ import { IJobsActions, TJobActionsVariant } from '@components/UI/molecules/JobAc
 import { ReactNode } from 'react'
 import { IJobVideo } from '@components/UI/molecules/JobVideo'
 import { ICityDetail } from '../../molecules/CitiesDetailDrawer'
+import { IAlert } from '../../molecules/Alert/Alert.interface'
 import { IFraudCardJob } from '../../molecules/FraudCardJob/FraudCardJob.interface'
 import { IActionLinkCard } from '@components/UI/molecules/ActionLinkCard/ActionLinkCard.interface'
 import { ISimilarJobs } from '@components/Domain/Jobs/SimilarJobs/SimilarJobs.interface'
@@ -116,4 +117,14 @@ export interface IJobDetailsDrawer {
    * Props for show action link company
    */
   actionLinkCardProps?: IActionLinkCard
+
+  /**
+   * Indicates the candidate level for the job details drawer.
+   */
+  candidateLevel?: number
+
+  /**
+   * Props for the alert component.
+   */
+  alert?: IAlert
 }

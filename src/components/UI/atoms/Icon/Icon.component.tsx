@@ -11,6 +11,7 @@ const Component: React.FC<IconProps> = ({
   icon,
   hover = false,
   size,
+  filter,
   className,
   alt,
   isRotate
@@ -24,7 +25,10 @@ const Component: React.FC<IconProps> = ({
   const iconSrc = useMemo(() => (!imageError ? icon ?? undefined : fallbackIcon), [fallbackIcon, imageError, icon])
 
   const isHover = hover ? cx('magneto-ui-hover') : ''
-  const customStyle = size ? { width: size + 'px', height: size + 'px' } : {}
+  const customStyle = {
+    ...(size ? { width: size + 'px', height: size + 'px' } : {}),
+    ...(filter ? { filter } : {})
+  }
 
   if (!iconSrc && !showDefaultFallback) return null
 

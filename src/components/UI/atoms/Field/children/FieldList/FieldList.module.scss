@@ -19,6 +19,15 @@
     border-bottom-left-radius: $radius-sm;
     border-bottom-right-radius: $radius-sm;
   }
+  &--desktop#{&}--up {
+    top: auto;
+    bottom: $scale-full;
+    padding-top: $padding-md;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: $radius-sm;
+    border-top-right-radius: $radius-sm;
+  }
   &--error {
     border-left: solid 1px $color-red-200;
     border-right: solid 1px $color-red-200;
@@ -47,6 +56,10 @@
   border: none;
   border-radius: $radius-sm;
   transition: opacity ease-in-out 0.3s;
+  &--up {
+    bottom: auto;
+    top: 0;
+  }
   &--hidden {
     opacity: 0;
     visibility: hidden;

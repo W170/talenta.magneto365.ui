@@ -23,6 +23,10 @@ export interface ISortMenu {
    */
   textOrderFilter: string
   /**
+   * Accessible label for the options list (e.g. "Ordenar por")
+   */
+  orderByText?: string
+  /**
    * This function change the filter with the selected option
    */
   setFilter: (menuItem: { key: string }) => void

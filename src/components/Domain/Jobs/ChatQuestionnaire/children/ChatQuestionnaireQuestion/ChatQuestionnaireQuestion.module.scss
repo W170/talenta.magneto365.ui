@@ -1,0 +1,13 @@
+@use '../../../../../../shared/stylesheets/tokens' as t;
+
+.question {
+    position: relative;
+    margin-bottom: t.$margin-2xl;
+    &--editing {
+        z-index: 1;
+    }
+
+    &__bot {
+        margin-bottom: t.$margin-2xl;
+    }
+}

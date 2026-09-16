@@ -25,6 +25,7 @@ const JobCardMobile: React.FC<ICardJobMobile> = ({
   return (
     <article
       onClick={showDetail}
+      tabIndex={0}
       className={`${style[`${classMUI}-card-mobile-jobs`]} ${workSeen ? style[workSeen] : ''} ${
         jobOpen ? style[jobOpen] : ''
       }`}

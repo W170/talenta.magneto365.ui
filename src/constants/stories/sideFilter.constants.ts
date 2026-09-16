@@ -361,6 +361,16 @@ export const storiesFilters = [
         to: '2023-08-08T23:59:59',
         total: 592,
         isApplied: false
+      },
+      {
+        operator: 1,
+        type: 'custom',
+        from: 0,
+        to: 0,
+        id: 'BK-06',
+        label: '',
+        total: 243,
+        isApplied: false
       }
     ],
     searchPlaceholder: 'Buscar fecha de publicación'
@@ -424,6 +434,7 @@ export const storiesFilters = [
         isApplied: false
       }
     ],
+
     searchPlaceholder: 'Buscar tipo de contrato'
   },
   {
@@ -525,6 +536,130 @@ export const storiesFilters = [
       }
     ],
     searchPlaceholder: 'Buscar tipo de vacante'
+  },
+  {
+    label: 'Fecha de creación',
+    field: 'createdAt',
+    type: 'RANGE',
+    dataType: 'date',
+    multiple: false,
+    renderType: 'SELECTION_LIST',
+    repository: {
+      type: 'customFactory',
+      defaultFilter: {},
+      defaultOrder: {},
+      defaultOperator: 1,
+      source: '3ce57a04-c815-4944-909a-4e3990df832c',
+      fieldsAlias: {},
+      values: [
+        {
+          id: 'BK-01',
+          label: 'Hoy',
+          operator: 1,
+          from: '2025-11-27',
+          to: '2025-11-27T23:59:59'
+        },
+        {
+          id: 'BK-02',
+          label: 'Últimos 3 días',
+          operator: 1,
+          from: '2025-11-24',
+          to: '2025-11-27T23:59:59'
+        },
+        {
+          id: 'BK-03',
+          label: 'Última semana',
+          operator: 1,
+          from: '2025-11-19',
+          to: '2025-11-27T23:59:59'
+        },
+        {
+          id: 'BK-04',
+          label: 'Últimos 15 días',
+          operator: 1,
+          from: '2025-11-12',
+          to: '2025-11-27T23:59:59'
+        },
+        {
+          id: 'BK-05',
+          label: 'Último mes',
+          operator: 1,
+          from: '2025-10-27',
+          to: '2025-11-27T23:59:59'
+        },
+        {
+          operator: 1,
+          from: 0,
+          type: 'custom',
+          to: null,
+          id: '',
+          label: 'null'
+        }
+      ]
+    },
+    values: [
+      {
+        id: 'BK-01',
+        label: 'Hoy',
+        operator: 1,
+        from: '2025-11-27',
+        to: '2025-11-27T23:59:59',
+        isApplied: false,
+        hiddenCount: true,
+        total: 1
+      },
+      {
+        id: 'BK-02',
+        label: 'Últimos 3 días',
+        operator: 1,
+        from: '2025-11-24',
+        to: '2025-11-27T23:59:59',
+        isApplied: false,
+        hiddenCount: true,
+        total: 1
+      },
+      {
+        id: 'BK-03',
+        label: 'Última semana',
+        operator: 1,
+        from: '2025-11-19',
+        to: '2025-11-27T23:59:59',
+        isApplied: false,
+        hiddenCount: true,
+        total: 1
+      },
+      {
+        id: 'BK-04',
+        label: 'Últimos 15 días',
+        operator: 1,
+        from: '2025-11-12',
+        to: '2025-11-27T23:59:59',
+        isApplied: false,
+        hiddenCount: true,
+        total: 1
+      },
+      {
+        id: 'BK-05',
+        label: 'Último mes',
+        operator: 1,
+        from: '2025-10-27',
+        to: '2025-11-27T23:59:59',
+        isApplied: false,
+        hiddenCount: true,
+        total: 1
+      },
+      {
+        operator: 1,
+        from: 0,
+        type: 'custom',
+        to: null,
+        id: '',
+        label: 'null',
+        isApplied: false,
+        hiddenCount: true,
+        total: 1
+      }
+    ]
   }
 ]
 

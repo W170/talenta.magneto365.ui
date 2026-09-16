@@ -1,0 +1,100 @@
+@use '../../../../shared/stylesheets/tokens' as v;
+@use '../../../../shared/stylesheets/variables' as var;
+
+.range-filter {
+  display: flex;
+  align-items: center;
+  background: var.$disabled-color-gray;
+  border-radius: v.$radius-xs;
+  padding: v.$padding-sm v.$padding-sm v.$padding-md v.$padding-sm;
+  gap: v.$scale-px-sm;
+  margin-bottom: v.$margin-sm-2;
+  width: 100%;
+
+  &__input {
+    border-radius: v.$radius-sm;
+    border: v.$border-1 solid v.$color-grey-200;
+    background: v.$color-grey-50;
+    padding: 0 v.$padding-xs;
+    font-size: v.$text-md;
+    outline: none;
+    max-height: v.$scale-px-4xl;
+    min-height: v.$scale-px-4xl;
+    min-width: calc(70px / v.$scale-px-base) * 1rem;
+    max-width: calc(120px / v.$scale-px-base) * 1rem;
+    transition: border 0.2s;
+    box-shadow: v.$shadow-10;
+    color: v.$color-grey-900;
+    &--error {
+      border-color: v.$color-red-200;
+    }
+  }
+
+  &__separator {
+    margin: 0 v.$margin-xs;
+    color: v.$color-grey-500;
+    font-size: v.$text-md-2;
+  }
+
+  &__button {
+    width: v.$scale-px-3xl;
+    height: v.$scale-px-3xl;
+    border-radius: v.$radius-xs;
+    background: v.$color-blue-dark-400;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: v.$margin-xs;
+    cursor: pointer;
+    transition: background 0.2s, border 0.2s;
+    color: v.$color-grey-50;
+
+    svg {
+      display: block;
+      color: v.$color-grey-50;
+    }
+  }
+}
+
+.skeleton {
+  display: inline-block;
+  width: v.$scale-px-container-xxs;
+  height: v.$scale-px-lg;
+  background-color: #eeeff4;
+  border: none;
+  border-radius: v.$radius-md;
+  margin: v.$margin-xs 0 0 v.$margin-sm;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: v.$screen-md) {
+    width: v.$scale-inherit;
+    max-width: 90%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: v.$scale-px-lg;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+      90deg,
+      rgba(v.$color-grey-50, 0) 0,
+      rgba(v.$color-grey-50, v.$opacity-20) 20%,
+      rgba(v.$color-grey-50, v.$opacity-50) 60%,
+      rgba(v.$color-grey-50, 0)
+    );
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}

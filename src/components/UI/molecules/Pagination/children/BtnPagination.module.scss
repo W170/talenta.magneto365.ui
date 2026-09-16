@@ -23,32 +23,49 @@
   user-select: none;
   touch-action: manipulation;
   cursor: pointer;
-
-  &:hover {
-    background: v.$pagination-hover-btn;
-  }
 }
 
 .magneto-ui-btn-pagination_with__icon {
-  background-color: v.$pagination-background-btn;
   margin: 3px 0;
 
   img {
     width: 20px;
     min-width: 20px;
   }
+}
 
-  &:hover {
-    background-color: rgba(19, 34, 58, 0.1);
+.magneto-ui-btn-pagination_with__icon,
+.magneto-ui-btn-pagination_btn {
+  &_b2c {
+    background-color: v.$pagination-background-btn;
+    &:hover {
+      background-color: rgba(19, 34, 58, 0.1);
+    }
+  }
+
+  &_b2b {
+    background-color: v.$color-gray-background;
+    &:hover {
+      background-color: v.$color-blue-dark7;
+    }
   }
 }
 
 .magneto-ui-btn-pagination_active {
-  background-color: v.$pagination-btn-active;
   color: v.$color-white;
 
-  &:hover {
+  &_b2c {
     background-color: v.$pagination-btn-active;
+    &:hover {
+      background-color: v.$pagination-btn-active;
+    }
+  }
+
+  &_b2b {
+    background-color: v.$color-blue-dark2;
+    &:hover {
+      background-color: v.$color-blue-dark2;
+    }
   }
 }
 

@@ -26,10 +26,16 @@ export const IsActive: Story = {
   }
 }
 
+export const IsApplied: Story = {
+  args: {
+    labelStatus: { status: 'required', text: 'You have already applied for this vacancy' },
+    wasSeen: false
+  }
+}
+
 export const WasSeen: Story = {
   args: {
-    // not used for now.
-    //workSeen: 'was-seen'
+    wasSeen: true
   }
 }
 

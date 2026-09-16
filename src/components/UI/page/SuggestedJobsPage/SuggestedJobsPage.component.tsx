@@ -97,7 +97,7 @@ const Component: React.FC<ISuggestedJobsPage> = ({
       )}
     </JobDetailContainer>,
     {
-      lg: (
+      md: (
         <MobileJobDetailsDrawer
           {...mobileJobDetailsDrawerProps}
           onClose={onClose}

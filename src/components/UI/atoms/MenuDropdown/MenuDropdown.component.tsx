@@ -34,7 +34,7 @@ const Component: React.FC<IMenuDropdownProps> = ({
   }, [])
 
   return (
-    <div className={CNM.get({ styles, cls: ['menu-dropdown', className] })} onClick={toggleOptions}>
+    <div className={CNM.get({ styles, cls: ['menu-dropdown', className] })} onClick={toggleOptions} tabIndex={0}>
       <div className={CNM.get({ styles, cls: ['menu-dropdown__content'] })}>
         <div className={CNM.get({ styles, cls: ['menu-dropdown__container'] })}>
           {prefixIcon && <IconItem size={18} {...prefixIcon} />}

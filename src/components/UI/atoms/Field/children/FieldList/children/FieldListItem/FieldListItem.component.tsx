@@ -35,6 +35,7 @@ function BaseComponent<T extends FieldListValue>(
         className
       )}
       onClick={() => toggleValue(controlledValue)}
+      tabIndex={0}
       data-lib="magneto-ui"
       data-slot="field-list-item"
       ref={ref}

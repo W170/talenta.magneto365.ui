@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/W170/talenta.magneto365.ui.git"
   },
-  "version": "2.77.1",
+  "version": "2.94.9",
   "description": "Magneto365 UI common components",
   "scripts": {
     "generate:tokens": "node ./.scripts/generateTokens.js",
@@ -93,8 +93,8 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts",
-  "typings": "dist/index.d.ts",
+  "types": "dist/types/index.d.ts",
+  "typings": "dist/types/index.d.ts",
   "dependencies": {},
   "peerDependencies": {
     "react-dom": "17.0.2"

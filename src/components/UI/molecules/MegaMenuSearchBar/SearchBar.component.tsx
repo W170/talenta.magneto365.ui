@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ISearchBar, ISearchOptions } from './MegaMenuSearchBar.interface'
 import styles from './MegaMenuSearchBar.module.scss'
 import { IconItem } from '@components/UI/atoms'
@@ -6,8 +6,7 @@ import { Input } from '../Input'
 import { useClickOutside } from '@components/hooks/useClickOutside'
 import { CurrentLocation } from '@constants/icons.constants'
 import { MegaMenuEmpty } from '@components/UI/molecules'
-
-const AVAILABLE_KEYS = ['Enter', 'ArrowDown', 'ArrowUp']
+import { generateID } from '@utils/generateID/generateID.util'
 
 const SearchBar: React.FC<ISearchBar> = ({
   icon,
@@ -16,23 +15,42 @@ const SearchBar: React.FC<ISearchBar> = ({
   placeholder,
   termValue,
   actionIcon,
-  options,
+  options = [],
   sectionTitle,
   onSelectOption,
-  noContent
+  noContent,
+  recentSearch,
+  disableOptions = false,
+  onSubmit
 }) => {
   const [selectedOption, setSelectedOption] = useState(0)
   const [showOptions, setShowOptions] = useState(false)
-  const linkRef = useRef<HTMLAnchorElement>(null)
+  const optionLinksRef = useRef<(HTMLAnchorElement | null)[]>([])
   const optionsRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
+  const safeOptions = useMemo<ISearchOptions[]>(() => (Array.isArray(options) ? options : []), [options])
+
+  const [listboxId, setListboxId] = useState('')
+  useEffect(() => {
+    setListboxId(`mega-menu-search-listbox-${generateID()}`)
+  }, [])
+
+  const optionsVisible =
+    !disableOptions && showOptions && safeOptions.length > 0 && (!recentSearch || (termValue?.length ?? 0) > 0)
+  const activeOptionId =
+    optionsVisible && selectedOption < safeOptions.length ? `${listboxId}-option-${selectedOption}` : undefined
+
+  useEffect(() => {
+    setSelectedOption(0)
+    optionLinksRef.current = []
+  }, [safeOptions, termValue])
 
   const renderSectionTitle = useMemo(() => {
-    if (!sectionTitle || termValue) return
-    const { title, url, onClick } = sectionTitle!
+    if (!sectionTitle || termValue) return null
+    const { title, url, onClick } = sectionTitle
     return (
       <div className={styles['mega-menu-search-bar__input-title']} key={'main title'} onClick={onClick}>
-        <a href={url}>
+        <a href={url} tabIndex={-1}>
           <IconItem icon={CurrentLocation} size={16} />
           <p className={styles['mega-menu-search-bar__input-option__title']}>{title}</p>
         </a>
@@ -42,54 +60,121 @@ const SearchBar: React.FC<ISearchBar> = ({
 
   const onSearchValues = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      const term = event.target.value
-      onSearch(term)
+      const value = event.target.value
+      onSearch(value)
+      if (!disableOptions && String(value ?? '').trim().length >= 2) {
+        setShowOptions(true)
+      }
     },
-    [onSearch]
+    [disableOptions, onSearch]
   )
+
+  const closeOptions = useCallback(() => {
+    setShowOptions(false)
+  }, [])
+
+  const blurInput = useCallback(() => {
+    requestAnimationFrame(() => {
+      contentRef.current?.querySelector<HTMLInputElement>('input')?.blur()
+    })
+  }, [])
+
+  useEffect(() => {
+    if (!showOptions) return
+    const container = optionsRef.current
+    const selectedEl = optionLinksRef.current[selectedOption]
+    if (!container || !selectedEl) return
+    const containerRect = container.getBoundingClientRect()
+    const elRect = selectedEl.getBoundingClientRect()
+    const isOutOfView = elRect.top < containerRect.top || elRect.bottom > containerRect.bottom
+    if (isOutOfView) selectedEl.scrollIntoView({ block: 'nearest' })
+  }, [selectedOption, showOptions])
 
   const onPressKey = useCallback(
-    ({ key }: React.KeyboardEvent<HTMLInputElement>) => {
-      if (!AVAILABLE_KEYS.includes(key) || !optionsRef.current) return
+    (event: React.KeyboardEvent<HTMLInputElement>) => {
+      const { key } = event
+
+      if (key === 'Escape') {
+        closeOptions()
+        return
+      }
+
+      if (key === 'Tab') {
+        closeOptions()
+        return
+      }
+
+      if (key === 'Enter') {
+        if (!disableOptions && showOptions) {
+          const option = safeOptions[selectedOption]
+          if (option) {
+            event.preventDefault()
+            closeOptions()
+            blurInput()
+            onSelectOption?.(option)
+            return
+          }
+        }
+
+        if (onSubmit) {
+          event.preventDefault()
+          closeOptions()
+          blurInput()
+          onSubmit(event.currentTarget.value)
+        }
+        return
+      }
+
+      if (disableOptions || (key !== 'ArrowDown' && key !== 'ArrowUp')) return
+
+      if (!showOptions) {
+        if (key === 'ArrowDown' && safeOptions.length > 0) {
+          event.preventDefault()
+          setShowOptions(true)
+        }
+        return
+      }
+
+      event.preventDefault()
       setSelectedOption((current) => {
-        if (key == 'ArrowDown' && current < options.length - 1) {
-          optionsRef.current!.scrollTop += 38
-          return current + 1
-        }
-        if (key == 'ArrowUp' && current > 0) {
-          optionsRef.current!.scrollTop -= 38
-          return current - 1
-        }
+        if (key === 'ArrowDown' && current < safeOptions.length - 1) return current + 1
+        if (key === 'ArrowUp' && current > 0) return current - 1
         return current
       })
-
-      if (key == 'Enter' && linkRef.current) return linkRef.current.click()
     },
-    [options.length]
+    [blurInput, closeOptions, disableOptions, onSelectOption, onSubmit, safeOptions, selectedOption, showOptions]
   )
-
-  const handleShowOptions = useCallback((show) => () => setShowOptions(show), [])
 
   const onPressOption = useCallback(
-    (option: ISearchOptions) => (event: React.MouseEvent<HTMLDivElement>) => {
-      if (!onSelectOption) return
-      event.stopPropagation()
+    (option: ISearchOptions) => (event: React.MouseEvent<HTMLAnchorElement>) => {
       event.preventDefault()
-      onSelectOption(option)
+      closeOptions()
+      blurInput()
+      onSelectOption?.(option)
     },
-    [onSelectOption]
+    [blurInput, closeOptions, onSelectOption]
   )
 
-  useClickOutside(contentRef, handleShowOptions(false))
+  const handleClickOutside = useCallback(() => {
+    if (!disableOptions) closeOptions()
+  }, [closeOptions, disableOptions])
+
+  const handleBlur = useCallback(
+    (event: React.FocusEvent<HTMLDivElement>) => {
+      if (disableOptions) return
+      if (!contentRef.current?.contains(event.relatedTarget as Node | null)) {
+        closeOptions()
+      }
+    },
+    [closeOptions, disableOptions]
+  )
+
+  useClickOutside(contentRef, handleClickOutside)
 
   return (
-    <div
-      className={`${styles['mega-menu-search-bar__input-content']}`}
-      onClick={handleShowOptions(true)}
-      ref={contentRef}
-    >
+    <div className={styles['mega-menu-search-bar__input-content']} ref={contentRef} onBlur={handleBlur}>
       <Input
-        mainClassName={`${styles['mega-menu-search-bar__input']} ${className ? className : ''}`}
+        mainClassName={`${styles['mega-menu-search-bar__input']} ${className ?? ''}`}
         value={termValue}
         onChange={onSearchValues}
         customIcon={icon}
@@ -97,11 +182,43 @@ const SearchBar: React.FC<ISearchBar> = ({
         placeholder={placeholder}
         actionIcon={actionIcon}
         onKeyDown={onPressKey}
+        onFocus={() => !disableOptions && setShowOptions(true)}
+        role="combobox"
+        aria-expanded={showOptions}
+        aria-controls={listboxId}
+        aria-autocomplete="list"
+        aria-activedescendant={activeOptionId}
       />
-      {showOptions && (
-        <div className={styles['mega-menu-search-bar__input-options']} ref={optionsRef}>
-          {sectionTitle && renderSectionTitle}
-          {options.length == 0 && (
+
+      {!disableOptions && showOptions && (
+        <div className={styles['mega-menu-search-bar__input-options']} ref={optionsRef} id={listboxId} role="listbox">
+          {sectionTitle && !recentSearch && renderSectionTitle}
+
+          {safeOptions.length > 0 &&
+            (!recentSearch || termValue?.length > 0) &&
+            safeOptions.map(({ title, subtitle, url, field }, index) => (
+              <div
+                className={`${styles['mega-menu-search-bar__input-option']} ${
+                  selectedOption === index ? styles['mega-menu-search-bar__input-option--selected'] : ''
+                }`}
+                key={`${title}-${index}`}
+                id={`${listboxId}-option-${index}`}
+                role="option"
+                aria-selected={selectedOption === index}
+              >
+                <a
+                  href={url}
+                  tabIndex={-1}
+                  onClick={onPressOption({ title, subtitle, url, field })}
+                  ref={(el) => (optionLinksRef.current[index] = el)}
+                >
+                  <p className={styles['mega-menu-search-bar__input-option__title']}>{title}</p>
+                  {subtitle && <p className={styles['mega-menu-search-bar__input-option__subtitle']}>{subtitle}</p>}
+                </a>
+              </div>
+            ))}
+
+          {safeOptions.length === 0 && !recentSearch && (
             <MegaMenuEmpty
               title={noContent?.title ?? ''}
               subtitle={noContent?.subtitle ?? ''}
@@ -109,21 +226,28 @@ const SearchBar: React.FC<ISearchBar> = ({
               customStyle={{ title: { fontSize: 16 }, subtitle: { fontSize: 14 }, content: { gap: 0 } }}
             />
           )}
-          {options.length > 0 &&
-            options.map(({ title, subtitle, url, field }: ISearchOptions, index: number) => (
-              <div
-                className={`${styles['mega-menu-search-bar__input-option']} ${
-                  selectedOption == index ? styles['mega-menu-search-bar__input-option--selected'] : ''
-                }`}
-                onClick={onPressOption({ title, subtitle, url, field })}
-                key={index}
-              >
-                <a href={url} ref={linkRef}>
-                  <p className={styles['mega-menu-search-bar__input-option__title']}>{title}</p>
-                  <p className={styles['mega-menu-search-bar__input-option__subtitle']}>{subtitle}</p>
-                </a>
-              </div>
-            ))}
+
+          {recentSearch && termValue?.length === 0 && (
+            <div className={styles['mega-menu-search-bar__input-options--recent']}>
+              <h4>{recentSearch.recentSearchesTitle}</h4>
+
+              {recentSearch.recentSearches.map((option, index) => (
+                <div className={styles['mega-menu-search-bar__input-option']} key={`recent-${index}`}>
+                  <a href={option.url} tabIndex={-1} onClick={onPressOption(option)}>
+                    <p className={styles['mega-menu-search-bar__input-option__title']}>{option.title}</p>
+                  </a>
+                </div>
+              ))}
+              <h4>{recentSearch.mostSearchedTitle}</h4>
+              {recentSearch.mostSearched.map((option, index) => (
+                <div className={styles['mega-menu-search-bar__input-option']} key={`most-${index}`}>
+                  <a href={option.url} tabIndex={-1} onClick={onPressOption(option)}>
+                    <p className={styles['mega-menu-search-bar__input-option__title']}>{option.title}</p>
+                  </a>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </div>

@@ -72,6 +72,11 @@ input:checked + .magneto-ui-slider {
   background-color: v.$color-primary-green;
 }
 
+input:focus-visible + .magneto-ui-slider {
+  outline: 2px solid v.$color-blue-dark3;
+  outline-offset: 2px;
+}
+
 input:checked + .magneto-ui-slider:before {
   -webkit-transform: translateX($translateX);
   -ms-transform: translateX($translateX);

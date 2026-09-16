@@ -1,4 +1,5 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../shared/stylesheets/tokens' as t;
 
 .avatarComponent {
   position: relative;
@@ -6,6 +7,11 @@
   flex-direction: column;
   cursor: pointer;
   z-index: 12;
+
+  &:focus-visible {
+    outline: 2px solid t.$color-blue-dark-300;
+    outline-offset: 2px;
+  }
 
   img {
     width: 2.5rem;

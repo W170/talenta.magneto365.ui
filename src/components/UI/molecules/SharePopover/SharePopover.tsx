@@ -21,7 +21,7 @@ const Component: React.FC<ISharePopover> = ({
 
   return (
     <Popover
-      className={cx('popover', { 'popover--hidden': !show, 'popover--hover': shareButtonProps.addHover })}
+      className={cx('popover', { 'popover--hidden': !show, 'popover--hover': shareButtonProps?.addHover })}
       positionX="right"
       positionY="bottom"
       show={show}

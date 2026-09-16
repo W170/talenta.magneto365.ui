@@ -5,15 +5,13 @@ import { JobCardOption } from './children/JobCardOption'
 import { JobCardDesktop } from '../JobCardDesktop'
 import { IJobCard } from './JobCard.interface'
 
-const JobCard: React.FC<IJobCard> = ({ wasSeen = false, isActive = false, ...props }) => {
-  const { workSeen, jobOpen } = useMemo(() => {
-    const workSeen = wasSeen ? 'was-seen' : ''
+const JobCard: React.FC<IJobCard> = ({ isActive = false, ...props }) => {
+  const { jobOpen } = useMemo(() => {
     const jobOpen = isActive ? 'is-active' : ''
-    return { workSeen, jobOpen }
-  }, [wasSeen, isActive])
+    return { jobOpen }
+  }, [isActive])
 
   const cardProps = {
-    workSeen,
     jobOpen,
     ...props
   }

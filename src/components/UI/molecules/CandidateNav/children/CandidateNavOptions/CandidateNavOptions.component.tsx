@@ -59,7 +59,11 @@ const Component: React.FC<TCandidateNavOptions> = ({ children, className, ...pro
             'magneto-ui-candidate-nav-options__content--visible': showOptions
           })}
         >
-          <div className={cs('magneto-ui-candidate-nav-options__closable-area')} onClick={() => onChangeOpen(false)}>
+          <div
+            className={cs('magneto-ui-candidate-nav-options__closable-area')}
+            onClick={() => onChangeOpen(false)}
+            tabIndex={0}
+          >
             <button className={cs('magneto-ui-candidate-nav-options__line')} />
           </div>
           <ul {...props} ref={listRef} className={cs('magneto-ui-candidate-nav-options__list', className)}>

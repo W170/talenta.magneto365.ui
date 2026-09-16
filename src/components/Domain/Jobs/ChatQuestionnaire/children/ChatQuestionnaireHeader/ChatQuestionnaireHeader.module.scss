@@ -1,0 +1,21 @@
+@use '../../../../../../shared/stylesheets/tokens' as t;
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: t.$color-grey-100;
+    padding: t.$padding-xl t.$padding-md;
+    gap: t.$gap-md;
+}
+
+
+.clean-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}

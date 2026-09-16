@@ -21,7 +21,13 @@ const Component: React.FC<IDrawerOrganism> = ({
   isOpen = false,
   onClose
 }) => {
-  const { buttonText: buttonTextSignUp, onClick: onSignUpClick, loadingState } = createAccountButton
+  const {
+    buttonText: buttonTextSignUp,
+    buttonStyles: buttonStylesSignUp,
+    iconProps: iconPropsSignUp,
+    onClick: onSignUpClick,
+    loadingState
+  } = createAccountButton
   const { buttonText: buttonTextLogin, onClick: onLogInClick } = loginButton
 
   const handleClose = () => {
@@ -47,6 +53,8 @@ const Component: React.FC<IDrawerOrganism> = ({
             buttonSize="full"
             {...CreateAccountButton}
             buttonText={buttonTextSignUp}
+            buttonStyles={buttonStylesSignUp ?? CreateAccountButton.buttonStyles}
+            iconProps={{ ...CreateAccountButton.iconProps, ...iconPropsSignUp }}
             onClick={onSignUpClick}
             loadingState={loadingState}
           />

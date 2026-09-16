@@ -7,7 +7,7 @@ import { iconPropsBreadCrumb } from '@constants/stories'
 const Component: React.FC<IBreadcrumbs> = ({ homeUrl, breadcrumbProps, iconProps = iconPropsBreadCrumb }) => {
   return (
     <div className={styles.BreadcrumbsComponent}>
-      <a href={homeUrl}>
+      <a className={styles['magneto-ui-breadcrumbs-home-link']} href={homeUrl}>
         <IconItem {...iconProps} />
       </a>
       {breadcrumbProps && <Breadcrumb {...breadcrumbProps} />}
