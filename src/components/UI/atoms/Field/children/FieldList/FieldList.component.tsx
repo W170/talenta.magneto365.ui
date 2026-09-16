@@ -18,6 +18,7 @@ function BaseComponent<T extends FieldListValue>(
     className,
     defaultValue,
     direction = 'down',
+    max,
     multiple,
     onChange,
     value: controlledValue,
@@ -28,6 +29,7 @@ function BaseComponent<T extends FieldListValue>(
   const { breakpoint, hasError, hasList, isDesktop, isFocused, isMobile, setBreakpoint, setHasList } = useFieldContext()
   const { value, toggleValue } = useFieldList({
     defaultValue,
+    max,
     multiple,
     onChange,
     value: controlledValue
@@ -81,7 +83,14 @@ function BaseComponent<T extends FieldListValue>(
   }, [hasError, isFocused, isMobile])
 
   return (
-    <ListContext.Provider value={{ isInsideList: true, toggleValue, value }}>
+    <ListContext.Provider
+      value={{
+        isInsideList: true,
+        isMaxReached: Boolean(multiple && max !== undefined && Array.isArray(value) && value.length >= max),
+        toggleValue,
+        value
+      }}
+    >
       <Responsive>
         <div
           {...props}

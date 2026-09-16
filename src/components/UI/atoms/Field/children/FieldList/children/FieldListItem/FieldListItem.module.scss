@@ -17,4 +17,8 @@
   &--selected {
     background-color: $color-grey-100;
   }
+  &--disabled {
+    opacity: $opacity-50;
+    pointer-events: none;
+  }
 }

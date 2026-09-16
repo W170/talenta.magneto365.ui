@@ -4,6 +4,7 @@ import { useFieldContext } from '../../Field.context'
 
 export function useFieldList<T extends FieldListValue>({
   defaultValue,
+  max,
   multiple,
   onChange,
   value: controlledValue
@@ -40,6 +41,9 @@ export function useFieldList<T extends FieldListValue>({
       if (multiple) {
         const prevArr = ((isControlled ? controlledValue : selected) as T[]) ?? []
         const exists = prevArr.some((v) => v.id === value.id)
+
+        if (!exists && max !== undefined && prevArr.length >= max) return
+
         const next = exists ? prevArr.filter((v) => v.id !== (value as T).id) : [...prevArr, value as T]
         handleMultipleChange(next)
         if (!isControlled) setSelected(next)
@@ -50,7 +54,7 @@ export function useFieldList<T extends FieldListValue>({
         if (!isControlled) setSelected(finalValue)
       }
     },
-    [controlledValue, isControlled, multiple, handleMultipleChange, handleSingleChange, selected, setIsFocused]
+    [controlledValue, isControlled, max, multiple, handleMultipleChange, handleSingleChange, selected, setIsFocused]
   )
 
   return { toggleValue, value }

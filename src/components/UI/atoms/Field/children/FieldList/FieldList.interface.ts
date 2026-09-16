@@ -19,6 +19,7 @@ export interface IFieldListBaseProps extends Omit<React.HTMLAttributes<HTMLDivEl
 
 export interface IFieldListMultiple<T extends FieldListValue> extends IFieldListBaseProps {
   defaultValue?: T[]
+  max?: number
   multiple: true
   onChange?: (value?: T[]) => void
   value?: T[]
@@ -26,6 +27,7 @@ export interface IFieldListMultiple<T extends FieldListValue> extends IFieldList
 
 export interface IFieldListSingle<T extends FieldListValue> extends IFieldListBaseProps {
   defaultValue?: T
+  max?: never
   multiple?: false
   onChange?: (value: T) => void
   value?: T
@@ -35,6 +37,7 @@ export type IFieldList<T extends FieldListValue> = IFieldListMultiple<T> | IFiel
 
 export interface IFieldListContext<T extends FieldListValue = FieldListValue> {
   isInsideList: boolean
+  isMaxReached?: boolean
   toggleValue: (value?: T) => void
   value?: T[] | T | null
 }
