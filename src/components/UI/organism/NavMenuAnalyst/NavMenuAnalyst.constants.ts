@@ -28,7 +28,9 @@ import {
   MagnetoAnalitycsWhiteOutline,
   MagnetoAnalitycsBlueBold,
   BotBlueBold,
-  BotWhite
+  BotWhite,
+  StoreWhiteOutline,
+  StoreBlueOutline
 } from '@constants/icons.constants'
 
 export const navMenuAnalystIcons: { [key: string]: { normal: string; active: string } } = {
@@ -91,5 +93,9 @@ export const navMenuAnalystIcons: { [key: string]: { normal: string; active: str
   agents: {
     normal: BotWhite,
     active: BotBlueBold
+  },
+  marketplace: {
+    normal: StoreWhiteOutline,
+    active: StoreBlueOutline
   }
 }
