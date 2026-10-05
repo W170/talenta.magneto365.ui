@@ -1,4 +1,4 @@
-type Icon = 'calendar' | 'people' | 'briefcase' | 'dollar-circle' | 'location' | 'tag'
+type Icon = 'calendar' | 'people' | 'briefcase' | 'dollar-circle' | 'location' | 'tag' | 'disabled'
 
 interface Item {
   id: number | string
