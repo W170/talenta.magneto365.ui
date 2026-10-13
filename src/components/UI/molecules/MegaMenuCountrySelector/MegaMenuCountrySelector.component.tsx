@@ -7,7 +7,7 @@ import { IMegaMenuCountrySelector } from './MegaMenuCountrySelector.interface'
 import styles from './MegaMenuCountrySelector.module.scss'
 
 const Component: React.FC<IMegaMenuCountrySelector> = ({ selectCountry }) => {
-  const isMobile = useMediaQuery(false, { xs: true, sm: true, md: true })
+  const isMobile = useMediaQuery(false, { xs: true, sm: true, md: true, lg: true, xl: true })
   const selectedCountry = selectCountry.currentFields?.[0] ?? selectCountry.selectList?.[0]
 
   if (isMobile) {
