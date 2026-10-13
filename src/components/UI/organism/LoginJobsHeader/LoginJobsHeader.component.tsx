@@ -56,7 +56,7 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
     <UserMenu listMenuUserProps={listMenuUserProps} profileImage={profileImage} />,
 
     {
-      md: <Avatar {...profileImage} onClick={() => setToggleMobileDrawer(true)} />
+      xl: <Avatar {...profileImage} onClick={() => setToggleMobileDrawer(true)} />
     }
   )
 
@@ -85,7 +85,7 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
   const LoginHeaderMenuButton = useMediaQuery(<MainButton {...MenuButtonProps} onClick={onMenuClick} />)
 
   const LogoutHeaderMobileSearchbarButton = useMediaQuery(null, {
-    md: isLoginHeaderSearch(searchbar) ? (
+    xl: isLoginHeaderSearch(searchbar) ? (
       <SearchButton
         searchValue={searchbar.occupation.termValue}
         onClick={toggleSearchBar}
@@ -103,13 +103,13 @@ const LoginJobsHeader: React.FC<ILoginJobsHeader> = ({
       <Searchbar {...searchbar} searchButtonProps={searchPropsButton} removeButtonProps={removePropsButton} />
     ),
     {
-      md: null
+      xl: null
     }
   )
 
   // Breadcrumbs Component
   const LogoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbProps={breadcrumbProps} homeUrl={homeUrl} />, {
-    md: null
+    lg: null
   })
 
   return (

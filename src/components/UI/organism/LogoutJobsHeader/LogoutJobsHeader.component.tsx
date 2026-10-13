@@ -41,7 +41,7 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
   const { companySlug, companyLogo, companyUrl, brandsProps } = brandMenuProps
   const [showSearchBar, setShowSearchBar] = useState(false)
   const isMobileButton = useMediaQuery(false, {
-    md: true
+    lg: true
   })
 
   const toggleSearchBar = () => {
@@ -53,7 +53,7 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
   }
 
   const LogoutHeaderMobileSearchbar = useMediaQuery(null, {
-    md: (
+    xl: (
       <MobileSearchbar
         {...mobileSearchbar}
         onClick={() => setShowSearchBar(false)}
@@ -66,7 +66,7 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
   const LogoutHeaderMenuButton = useMediaQuery(<MainButton {...MenuButtonProps} onClick={onMenuClick} />)
 
   const LogoutHeaderMobileSearchbarButton = useMediaQuery(null, {
-    md: isLoginHeaderSearch(searchbar) ? (
+    xl: isLoginHeaderSearch(searchbar) ? (
       <SearchButton
         searchValue={searchbar.occupation.termValue}
         onClick={toggleSearchBar}
@@ -84,7 +84,7 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
       <Searchbar {...searchbar} searchButtonProps={searchPropsButton} removeButtonProps={removePropsButton} />
     ),
     {
-      md: null
+      xl: null
     }
   )
 
@@ -113,7 +113,7 @@ const LogoutJobsHeader: React.FC<ILogoutJobsHeader> = ({
   )
 
   const LogoutHeaderBreadcrumbs = useMediaQuery(<Breadcrumbs breadcrumbProps={breadcrumbProps} homeUrl={homeUrl} />, {
-    md: null
+    lg: null
   })
 
   return (

@@ -2,8 +2,10 @@
 
 .mega-menu-search-bar {
   display: flex;
+  flex: 1 1 auto;
   flex-direction: row;
-  width: 640px;
+  min-width: 0;
+  max-width: 640px;
   border-radius: 8px;
   align-items: center;
 
@@ -32,6 +34,7 @@
     &-content {
       display: flex;
       flex: 1;
+      min-width: 0;
       flex-direction: column;
       position: relative;
     }
