@@ -1,17 +1,27 @@
-import React from 'react'
-import { EventDispatcherContextProvider } from './EventDispatcherContext.component'
-import { ResponsiveContextProvider } from './ResponsiveContext.component'
-import { ContainerContextProvider } from './container/container.context'
-import { IContextAppProvider } from './context.interface'
+import React, { createContext, useMemo } from 'react'
+import { isClient } from '@constants/env.constants'
+import { IContextApp, IContextAppProvider } from './context.interface'
 
-export const ContextAppProvider: React.FC<IContextAppProvider> = ({ children, device, container }) => {
-  return (
-    <EventDispatcherContextProvider>
-      <ContainerContextProvider container={container}>
-        <ResponsiveContextProvider device={device}>{children}</ResponsiveContextProvider>
-      </ContainerContextProvider>
-    </EventDispatcherContextProvider>
-  )
+export const ContextApp = createContext<IContextApp>({
+  container: isClient ? window.document.body : null,
+  device: null
+})
+
+export const ContextAppProvider: React.FC<IContextAppProvider> = ({ children, device = null, container = null }) => {
+  const value = useMemo<IContextApp>(() => {
+    let element = container
+
+    if (!element && isClient) {
+      element = document.body
+    }
+
+    return {
+      container: element,
+      device
+    }
+  }, [container, device])
+
+  return <ContextApp.Provider value={value}>{children}</ContextApp.Provider>
 }
 
 export const withContextAppProvider = <T,>(Component: React.FC<T>): React.FC<T> => {

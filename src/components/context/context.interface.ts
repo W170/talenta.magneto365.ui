@@ -6,6 +6,7 @@ export interface IContextAppProvider {
 
 export type DeviceType = 'mobile' | 'desktop'
 
-export interface IResponsiveContext {
-  device?: DeviceType
+export interface IContextApp {
+  container: HTMLElement | ShadowRoot | null
+  device: DeviceType | null
 }
