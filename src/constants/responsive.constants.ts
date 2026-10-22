@@ -1,4 +1,4 @@
-import { DimType } from '../utils/eventDispatcher'
+export type DimType = 'xxs' | 'xs' | 'sm' | 'md' | 'hd' | 'lg' | 'xl' | 'xxl'
 
 export const screenSize: Record<DimType, number> = {
   xxs: 375,

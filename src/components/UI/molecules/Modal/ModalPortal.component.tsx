@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
 import { isServer } from '@constants/env.constants'
-import { ContainerContext } from '@components/context/container/container.context'
+import { ContextApp } from '@components/context/context.component'
 import { IModalPortal } from './Modal.interface'
 
 export const ModalPortal: React.FC<IModalPortal> = ({ children }) => {
-  const { container } = useContext(ContainerContext)
+  const { container } = useContext(ContextApp)
   const portalNode = useRef<Element | null>(null)
   const [mounted, setMounted] = useState(false)
 

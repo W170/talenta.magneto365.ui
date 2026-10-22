@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
 import { isServer } from '@constants/env.constants'
-import { ContainerContext } from '@components/context/container/container.context'
+import { ContextApp } from '@components/context/context.component'
 import { IDrawerPortal } from './Drawer.interface'
 
 export const DrawerPortal: React.FC<IDrawerPortal> = ({ children, customContainer }) => {
   const portalNode = useRef<Element | null>(null)
-  const { container } = useContext(ContainerContext)
+  const { container } = useContext(ContextApp)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {

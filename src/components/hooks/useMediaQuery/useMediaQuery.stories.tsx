@@ -1,7 +1,7 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { useMediaQuery } from '.'
-import { DimType } from '../../../utils/eventDispatcher'
+import { DimType } from '../../../constants/responsive.constants'
 import { withContextAppProvider } from '../../context/context.component'
 
 interface DemoProps extends Record<DimType, string> {

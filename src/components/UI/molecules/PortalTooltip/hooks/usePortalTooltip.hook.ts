@@ -1,9 +1,9 @@
 import { useContext, useEffect, useRef, useState } from 'react'
-import { ContainerContext } from '@components/context/container/container.context'
+import { ContextApp } from '@components/context/context.component'
 
 const usePortalTooltip = (visible: boolean, enterDelay?: number, leaveDelay?: number) => {
   const [open, setOpen] = useState(false)
-  const { container } = useContext(ContainerContext)
+  const { container } = useContext(ContextApp)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const tooltipContainer = container || document.body
 
