@@ -47,6 +47,7 @@ const VacantOption: React.FC<IVacantOption> = ({ option, onClick }) => {
         target="_blank"
         rel="noopener noreferrer"
         className={cx('option', 'option--link', option.className)}
+        onClick={onClick}
       >
         {option.icon ? <IconItem size={18} icon={icon} /> : null} {option.label}
       </a>
