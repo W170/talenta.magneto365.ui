@@ -28,7 +28,15 @@ const JobCardOption: React.FC<IJobCardOption> = ({ clickOut = false, setClickOut
     <Popover
       className={cx('popover', { 'popover--open': clickOut })}
       content={
-        <div onBlur={toggle} ref={ref}>
+        <div
+          ref={ref}
+          onMouseDown={(event) => event.preventDefault()}
+          onBlur={(event) => {
+            const next = event.relatedTarget
+            if (next instanceof Node && event.currentTarget.contains(next)) return
+            setClickOut(false)
+          }}
+        >
           {menu.map((option) => (
             <VacantOption key={option.label} onClick={toggle} option={option} />
           ))}

@@ -27,7 +27,7 @@ const Component: React.FC<ISharePopover> = ({
       show={show}
       widthBase={45}
       content={
-        <ul className={cx('content', classNameContent)}>
+        <ul className={cx('content', classNameContent)} onMouseDown={(event) => event.preventDefault()}>
           {shareLinks.map(({ title, href, ariaLabel, icon, name }, index) => (
             <li key={`${title}-${index}`}>
               <a
@@ -49,6 +49,7 @@ const Component: React.FC<ISharePopover> = ({
               {...shareButtonProps}
               onCopySuccess={() => {
                 shareButtonProps.onCopySuccess()
+                setShow(false)
               }}
             />
           </li>
