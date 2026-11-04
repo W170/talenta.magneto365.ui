@@ -16,7 +16,7 @@ const JobCardSkeleton: React.FC<IJobCardSkeleton> = ({ numCard, goToBottom = fal
   return (
     <>
       {skeletonNum.map((ele, i) => (
-        <div key={ele + i} className={`${style[`${classMUI}-job-card-skeleton`]}`}>
+        <div key={ele + i} className={`${style[`${classMUI}-job-card-skeleton`]}`} aria-hidden="true">
           <div className={`${style[`${classMUI}-job-card-skeleton__row1`]} ${style.skeleton}`} />
           <div className={`${style[`${classMUI}-job-card-skeleton__container`]}`}>
             <div className={`${style[`${classMUI}-job-card-skeleton__container--row2`]} ${style.skeleton}`} />
