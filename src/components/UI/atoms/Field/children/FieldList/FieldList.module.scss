@@ -38,7 +38,7 @@
       }
     }
   }
-  &--desktop#{&}--up {
+  &--desktop#{&}--up:not([popover='manual']) {
     top: auto;
     bottom: $scale-full;
     padding-top: $padding-md;

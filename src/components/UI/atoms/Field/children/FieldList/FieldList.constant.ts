@@ -1,4 +1,4 @@
-import { PopoverElement } from './FieldList.interface'
+import { FieldListDirection, PopoverElement } from './FieldList.interface'
 
 const PLACED_STYLE = ['top', 'right', 'bottom', 'left', 'width']
 
@@ -15,18 +15,19 @@ const listAnchor = (listNode: HTMLElement) => {
   return field?.querySelector('[data-slot="field-input"]') ?? listNode.closest('[data-slot="field-list-wrapper"]')
 }
 
-export const placeListSide = (listNode: HTMLElement) => {
+export const placeListSide = (listNode: HTMLElement, direction?: FieldListDirection) => {
   const anchor = listAnchor(listNode)
   if (!anchor) return
 
   const anchorRect = anchor.getBoundingClientRect()
   listNode.style.width = `${anchorRect.width}px`
+  listNode.style.bottom = 'auto'
 
   const needed = listNode.getBoundingClientRect().height
   if (!needed) return
 
   const spaceBelow = window.innerHeight - anchorRect.bottom
-  const openUp = spaceBelow < needed && anchorRect.top > spaceBelow
+  const openUp = direction ? direction === 'up' : spaceBelow < needed && anchorRect.top > spaceBelow
 
   listNode.style.top = `${openUp ? anchorRect.top - needed : anchorRect.bottom}px`
   listNode.style.left = `${anchorRect.left}px`

@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useLayoutEffect, useRef } from 'react'
-import { IFieldListContext } from './FieldList.interface'
+import { FieldListDirection, IFieldListContext } from './FieldList.interface'
 import {
   clearListPlacement,
   isCoveredByOverlay,
@@ -24,7 +24,7 @@ export const useFieldListContext = () => {
 
 const LIST_FADE_MS = 300
 
-export const useFieldListLayer = () => {
+export const useFieldListLayer = (direction?: FieldListDirection) => {
   const listRef = useRef<HTMLDivElement>(null)
   const hideTimerRef = useRef(0)
   const { isFocused, isMobile, setIsFocused } = useFieldContext()
@@ -50,17 +50,17 @@ export const useFieldListLayer = () => {
       }, LIST_FADE_MS)
     }
 
-    if (listNode.matches(':popover-open')) placeListSide(listNode)
+    if (listNode.matches(':popover-open')) placeListSide(listNode, direction)
 
     return () => window.clearTimeout(hideTimerRef.current)
-  }, [isFocused, isMobile])
+  }, [direction, isFocused, isMobile])
 
   useEffect(() => {
     const listNode = listRef.current
     if (!listNode || !isFocused || isMobile) return
 
-    return watchListLayout(listNode, () => placeListSide(listNode))
-  }, [isFocused, isMobile])
+    return watchListLayout(listNode, () => placeListSide(listNode, direction))
+  }, [direction, isFocused, isMobile])
 
   useEffect(() => {
     const listNode = listRef.current

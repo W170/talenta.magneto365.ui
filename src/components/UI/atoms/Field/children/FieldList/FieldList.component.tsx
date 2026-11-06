@@ -18,7 +18,7 @@ function BaseComponent<T extends FieldListValue>(
     children,
     className,
     defaultValue,
-    direction = 'down',
+    direction,
     max,
     multiple,
     onChange,
@@ -36,7 +36,7 @@ function BaseComponent<T extends FieldListValue>(
     value: controlledValue
   })
 
-  const listRef = useFieldListLayer()
+  const listRef = useFieldListLayer(direction)
   const shadowRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
