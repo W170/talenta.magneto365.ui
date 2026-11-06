@@ -8,7 +8,8 @@ import {
   ICityDetail,
   IAlertJobStatus,
   TJobActionsVariant,
-  IJobsActions
+  IJobsActions,
+  IAlert
 } from '@components/UI/molecules'
 import { IMobileJobDetailsActionsBar } from '../MobileJobDetailsActionsBar'
 import { IJobVideo } from '@components/UI/molecules/JobVideo'
@@ -130,4 +131,9 @@ export interface IMobileJobDetailsDrawer {
    * Props for the actions section associated with the job details.
    */
   jobActionsProps?: IJobsActions
+
+  /**
+   * Props for the alert component.
+   */
+  alert?: IAlert
 }

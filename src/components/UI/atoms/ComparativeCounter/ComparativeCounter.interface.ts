@@ -13,4 +13,6 @@ export interface IComparativeCounter {
    * this property changes the text align
    */
   position?: TComparativeCounterPosition
+  
+  className?: string
 }

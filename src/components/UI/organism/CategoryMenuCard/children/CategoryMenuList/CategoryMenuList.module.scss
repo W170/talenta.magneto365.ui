@@ -1,6 +1,7 @@
 @use '../../../../../../shared/stylesheets/variables.scss' as v;
 
 .magneto-ui-category-menu-list {
+  overflow-y: scroll;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -16,6 +17,7 @@
   transform: translateY(-5px);
   visibility: hidden;
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+  max-height: 180px;
 
   &--is-open {
     opacity: 1;

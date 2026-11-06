@@ -29,7 +29,7 @@ const JobVideo: React.FC<IJobVideo> = ({
   return loadVideo || uploadVideo ? (
     <VideoComponent vjsOptions={vjsOptions} key={`lazyVideo_${jobId}`} className={styles[videoClassName]} />
   ) : (
-    <div className={styles['magneto-ui-job-video']} onClick={handleLoadVideo}>
+    <div className={styles['magneto-ui-job-video']} onClick={handleLoadVideo} tabIndex={0}>
       <Image {...imageProps} />
     </div>
   )

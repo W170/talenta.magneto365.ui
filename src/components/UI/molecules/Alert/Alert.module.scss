@@ -9,6 +9,10 @@
   p {
     margin: 0;
   }
+
+  &--expanded {
+    align-items: flex-start;
+  }
 }
 .magneto-ui-warning {
   background-color: v.$alert-color-yellowBackground;
@@ -35,9 +39,24 @@
   }
 }
 
+.magneto-ui-info-expanded {
+  background-color: v.$alert-color-blueBackground;
+  &--with-border {
+    border: 1px solid v.$alert-color-blue;
+  }
+}
+
+.magneto-ui-alert-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .magneto-ui-close-action {
   background: none;
   border: none;
+  flex-shrink: 0;
   > img {
     width: 10px;
   }

@@ -7,13 +7,18 @@ import { Breadcrumbs } from '@components/UI/molecules'
 import styles from './MegaMenu.module.scss'
 import { IMegaMenu } from './MegaMenu.interface'
 
-const Component: React.FC<IMegaMenuContext & IMegaMenu> = ({ breadcrumbsProps, ...props }) => {
+const Component: React.FC<IMegaMenuContext & IMegaMenu> = ({
+  breadcrumbsProps,
+  socialHeaderVariantProps,
+  renderHeaderUserMenu,
+  ...props
+}) => {
   return (
     <MegaMenuProvider {...props}>
       <header className={styles['mega-menu']}>
-        <MegaMenuSocialHeader />
+        <MegaMenuSocialHeader {...socialHeaderVariantProps} />
         <div className={styles['mega-menu__main-header']}>
-          <MegaMenuMainHeader />
+          <MegaMenuMainHeader renderHeaderUserMenu={renderHeaderUserMenu} />
         </div>
         <div className={styles['mega-menu__breadcrumb']}>
           {breadcrumbsProps && <Breadcrumbs {...breadcrumbsProps} />}

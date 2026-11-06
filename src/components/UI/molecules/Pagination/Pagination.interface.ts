@@ -34,6 +34,10 @@ export interface IPaginationProps extends ICreatePaginationProps {
    * This is the text that will be displayed in the attribute title of the last button
    */
   nextTitle?: string
+  /**
+   *  Enable b2b styles
+   */
+  stylesB2b?: boolean
 }
 
 export interface ICreatePaginationResult {
@@ -84,4 +88,8 @@ export interface IBtnPaginationProps {
    * This is the dynamic url that google robots will use to navigate with simple anchors
    */
   dynamicPaginationUrl?: string
+  /**
+   *  Enable b2b styles
+   */
+  stylesB2b?: boolean
 }

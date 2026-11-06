@@ -5,6 +5,7 @@ import {
   CloseCircleRedBold
 } from '@constants/icons.constants'
 import { IMessageProps } from '../Message.interface'
+import { SpinnerBarsGray } from '@constants/gifs.constants'
 
 export const initialState: IMessageProps = {
   text: '',
@@ -16,7 +17,8 @@ export const iconByType = {
   info: InfoCircleBlueBold,
   success: TickCircleGreenBold,
   warning: WarningYellowBold,
-  error: CloseCircleRedBold
+  error: CloseCircleRedBold,
+  loading: SpinnerBarsGray
 }
 
 export const transitionDuration = 300

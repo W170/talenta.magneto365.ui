@@ -1,0 +1,8 @@
+@use '../../../../../../shared/stylesheets/tokens/_index' as t;
+.magneto-ui-DateRecord {
+  color: t.$color-grey-500;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  width: 200px;
+}

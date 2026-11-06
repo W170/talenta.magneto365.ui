@@ -28,9 +28,6 @@
     -moz-appearance: none;
     appearance: none;
 
-    &:focus-visible {
-      outline: none;
-    }
     &:disabled {
       color: #a3a3b5;
       background: #e9e9f6;

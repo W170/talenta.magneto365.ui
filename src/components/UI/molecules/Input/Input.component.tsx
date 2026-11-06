@@ -86,8 +86,14 @@ const Input: React.FC<IInput> = ({
               name={name}
               value={value}
               onChange={handleChange}
-              onFocus={() => setOnFocus(true)}
-              onBlur={() => setOnFocus(false)}
+              onFocus={(e) => {
+                props?.onFocus?.(e)
+                setOnFocus(true)
+              }}
+              onBlur={(e) => {
+                props?.onBlur?.(e)  
+                setOnFocus(false)
+              }}
               id={name}
               autoComplete="off"
             />

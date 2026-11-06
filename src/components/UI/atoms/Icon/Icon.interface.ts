@@ -24,6 +24,10 @@ export interface IconProps {
    */
   color?: string
   /**
+   * Applies a CSS filter to the img element
+   */
+  filter?: string
+  /**
    * Ypu can add you custom className here
    */
   className?: string

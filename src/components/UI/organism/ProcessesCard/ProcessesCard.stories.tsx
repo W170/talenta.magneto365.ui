@@ -21,6 +21,7 @@ const meta: Meta<typeof ProcessesCard> = {
             src="https://play-lh.googleusercontent.com/QRRGW2tMZ4-FNw0XWk6WWiXHaQCGxuwM-92HrBhlA4WOd_AGmjVmQkiHyAqQjW2yByc"
           />
           <div>
+            <Text>16 / 02 / 2024</Text>
             <Title status="Pending">AUXILIAR TRANSPORE ASISTENCIAL CEM</Title>
             <Text status="Pending">Coomeva</Text>
             <Text status="Pending">
@@ -31,15 +32,10 @@ const meta: Meta<typeof ProcessesCard> = {
         </Section>
 
         <Status isSelected={isSelected ? isSelected && status !== 'Hired' : false} status="Pending">
-          <Text>16 / 02 / 2024</Text>
-          <div>
-            <Text>
-              <IconStatus status="Pending" />
-              Pendiente
-            </Text>
-          </div>
+          <IconStatus status="Pending" />
+          <Text>Pendiente</Text>
         </Status>
-        <Arrow />
+        <Arrow status="Pending" />
       </>
     )
   }
@@ -60,6 +56,7 @@ export const Discarded: Story = {
             src="https://play-lh.googleusercontent.com/QRRGW2tMZ4-FNw0XWk6WWiXHaQCGxuwM-92HrBhlA4WOd_AGmjVmQkiHyAqQjW2yByc"
           />
           <div>
+            <Text>16 / 02 / 2024</Text>
             <Title status="Discarded">AUXILIAR TRANSPORE ASISTENCIAL CEM</Title>
             <Text status="Discarded">Coomeva</Text>
             <Text status="Discarded">
@@ -70,15 +67,10 @@ export const Discarded: Story = {
         </Section>
 
         <Status isSelected={isSelected ? isSelected && status !== 'Hired' : false} status="Discarded">
-          <Text>16 / 02 / 2024</Text>
-          <div>
-            <Text strong={false}>
-              <IconStatus status="Discarded" />
-              Descartado
-            </Text>
-          </div>
+          <IconStatus status="Discarded" />
+          <Text strong={false}>Descartado</Text>
         </Status>
-        <Arrow />
+        <Arrow status="Discarded" />
       </>
     )
   }
@@ -95,6 +87,7 @@ export const HiredSelected: Story = {
             src="https://play-lh.googleusercontent.com/QRRGW2tMZ4-FNw0XWk6WWiXHaQCGxuwM-92HrBhlA4WOd_AGmjVmQkiHyAqQjW2yByc"
           />
           <div>
+            <Text>16 / 02 / 2024</Text>
             <Title status={status}>AUXILIAR TRANSPORE ASISTENCIAL CEM</Title>
             <Text status={status}>Coomeva</Text>
             <Text status={status}>
@@ -105,15 +98,10 @@ export const HiredSelected: Story = {
         </Section>
 
         <Status isSelected={isSelected ? isSelected && status !== 'Hired' : false} status={status}>
-          <Text>16 / 02 / 2024</Text>
-          <div>
-            <Text strong={status === 'Hired'}>
-              <IconStatus status={status} />
-              Contratado
-            </Text>
-          </div>
+          <IconStatus status={status} />
+          <Text strong={status === 'Hired'}>Contratado</Text>
         </Status>
-        <Arrow />
+        <Arrow status={status} />
       </>
     )
   }

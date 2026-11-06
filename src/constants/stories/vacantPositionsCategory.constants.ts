@@ -29,10 +29,11 @@ export const categoriesData: ICategoryMenuCard[] = [
     list: [
       { id: generateID(), name: 'Desarrollador de Software', href: 'https://www.magneto365.com/es' },
       { id: generateID(), name: 'Analista de Datos', href: 'https://www.magneto365.com/es' },
-      { id: generateID(), name: 'Administrador de Redes', href: 'https://www.magneto365.com/es' }
-    ],
-    href: 'https://www.magneto365.com/es',
-    seeAllText: 'Ver mas empleos'
+      { id: generateID(), name: 'Administrador de Redes', href: 'https://www.magneto365.com/es' },
+      { id: generateID(), name: 'Administrador de cosas', href: 'https://www.magneto365.com/es' },
+      { id: generateID(), name: 'Administrador de mainframes', href: 'https://www.magneto365.com/es' },
+      { id: generateID(), name: 'Administrador de iphones', href: 'https://www.magneto365.com/es' }
+    ]
   },
   {
     name: 'Tecnología y sistemas',
@@ -41,9 +42,7 @@ export const categoriesData: ICategoryMenuCard[] = [
       { id: generateID(), name: 'Desarrollador de Software', href: 'https://www.magneto365.com/es' },
       { id: generateID(), name: 'Analista de Datos', href: 'https://www.magneto365.com/es' },
       { id: generateID(), name: 'Administrador de Redes', href: 'https://www.magneto365.com/es' }
-    ],
-    href: 'https://www.magneto365.com/es',
-    seeAllText: 'Ver mas empleos'
+    ]
   },
   {
     name: 'Tecnología y sistemas',
@@ -52,9 +51,7 @@ export const categoriesData: ICategoryMenuCard[] = [
       { id: generateID(), name: 'Desarrollador de Software', href: 'https://www.magneto365.com/es' },
       { id: generateID(), name: 'Analista de Datos', href: 'https://www.magneto365.com/es' },
       { id: generateID(), name: 'Administrador de Redes', href: 'https://www.magneto365.com/es' }
-    ],
-    href: 'https://www.magneto365.com/es',
-    seeAllText: 'Ver mas empleos'
+    ]
   },
   {
     name: 'Tecnología y sistemas',
@@ -63,9 +60,7 @@ export const categoriesData: ICategoryMenuCard[] = [
       { id: generateID(), name: 'Desarrollador de Software', href: 'https://www.magneto365.com/es' },
       { id: generateID(), name: 'Analista de Datos', href: 'https://www.magneto365.com/es' },
       { id: generateID(), name: 'Administrador de Redes', href: 'https://www.magneto365.com/es' }
-    ],
-    href: 'https://www.magneto365.com/es',
-    seeAllText: 'Ver mas empleos'
+    ]
   },
   {
     name: 'Tecnología y sistemas',
@@ -74,9 +69,7 @@ export const categoriesData: ICategoryMenuCard[] = [
       { id: generateID(), name: 'Desarrollador de Software', href: 'https://www.magneto365.com/es' },
       { id: generateID(), name: 'Analista de Datos', href: 'https://www.magneto365.com/es' },
       { id: generateID(), name: 'Administrador de Redes', href: 'https://www.magneto365.com/es' }
-    ],
-    href: 'https://www.magneto365.com/es',
-    seeAllText: 'Ver mas empleos'
+    ]
   }
 ]
 

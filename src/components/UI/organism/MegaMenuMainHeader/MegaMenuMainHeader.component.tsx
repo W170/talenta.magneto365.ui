@@ -15,10 +15,10 @@ import { SearchButton } from '@components/UI/molecules/SearchButton/SearchButton
 import { useMediaQuery } from '@components/hooks'
 import { MobileSearchbar } from '../../molecules'
 import { IMegaMenuMainHeader } from './MegaMenuMainHeader.interface'
-import { Select2 } from '../Select2'
 import MegaMenuSearchBar from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.component'
+import { MegaMenuCountrySelector } from '@components/UI/molecules/MegaMenuCountrySelector'
 
-const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
+const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu, renderHeaderUserMenu }) => {
   const [showSearchBar, setShowSearchBar] = useState(false)
   const [toggleMobileDrawer, setToggleMobileDrawer] = useState(false)
   const { homeUrl, searchBarProps, loginProps, selectCountry, mobileSearchBarProps } = useMegaMenuMain()
@@ -29,6 +29,7 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
   const toggleSearchBar = () => {
     setShowSearchBar(!showSearchBar)
   }
+  const isMobileButton = useMediaQuery(false, { md: true })
 
   const renderLogo = useMediaQuery(<LogoComponent {...logoProps} />, {
     sm: <LogoComponent {...logoProps} isoView />
@@ -37,7 +38,7 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
   const LogoutHeaderMobileSearchbar = useMediaQuery(null, {
     md: (
       <>
-        {searchBarProps && (
+        {mobileSearchBarProps && (
           <MobileSearchbar
             {...mobileSearchBarProps}
             termValue={mobileSearchBarProps?.termValue}
@@ -81,6 +82,7 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
       text={loginProps?.loginText || ''}
       iconProps={{ ...SignInIcon, size: 15 }}
       linkStyles={{ ...SignInStyles, buttonColor: '#FFFFFF' }}
+      isMobile={isMobileButton}
     />
   )
 
@@ -90,12 +92,13 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
       buttonText={loginProps?.signUpText || ''}
       onClick={loginProps?.onClickSignUp || undefined}
       buttonSize={'medium'}
-      iconProps={{ ...SignUpButtonStyle.iconProps, size: 15 }}
+      iconProps={{ ...SignUpButtonStyle.iconProps, ...loginProps?.signUpIconProps, size: 15 }}
+      isMobile={isMobileButton}
     />
   )
 
   const loginHeaderPopover = useMediaQuery(
-    <UserMenu listMenuUserProps={listMenuUserProps} profileImage={profileImage} />,
+    <UserMenu listMenuUserProps={listMenuUserProps} profileImage={profileImage} renderHeader={renderHeaderUserMenu} />,
     {
       md: <Avatar {...profileImage} onClick={() => setToggleMobileDrawer(true)} />
     }
@@ -107,7 +110,7 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
         {LogoutHeaderMobileSearchbar}
         {LogoutHeaderMenuButton}
         <a href={homeUrl}>{renderLogo}</a>
-        {selectCountry && <Select2 haveTags={false} isMultiple={false} {...selectCountry} />}
+        {selectCountry && <MegaMenuCountrySelector selectCountry={selectCountry} />}
         <div className={styles['mega-menu-main-header__search']}>{renderSearchBar}</div>
       </div>
       <div className={styles['mega-menu-main-header__login']}>
@@ -121,7 +124,10 @@ const Component: React.FC<IMegaMenuMainHeader> = ({ toggleDrawerMenu }) => {
         )}
       </div>
       <MobileDrawer isOpen={toggleMobileDrawer} onClose={() => setToggleMobileDrawer(false)}>
-        <ListMenuIcons {...listMenuUserProps} />
+        <>
+          {renderHeaderUserMenu && renderHeaderUserMenu()}
+          <ListMenuIcons {...listMenuUserProps} />
+        </>
       </MobileDrawer>
     </div>
   )

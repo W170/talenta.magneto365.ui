@@ -35,4 +35,4 @@ export interface IAlert {
   extraButton?: React.ReactChild
 }
 
-export type EAlertType = 'success' | 'warning' | 'info' | 'error'
+export type EAlertType = 'success' | 'warning' | 'info' | 'info-expanded' | 'error'

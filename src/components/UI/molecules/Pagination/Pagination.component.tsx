@@ -21,8 +21,10 @@ export const Pagination: FC<ComposedProps> = ({
   prevTitle,
   nextTitle,
   numberOfButtons = 3,
-  dynamicUrl
+  dynamicUrl,
+  stylesB2b
 }) => {
+  const mgClass = 'magneto-ui-pagination'
   const handleClick = useCallback(
     (page: number) => {
       if (page === current) return
@@ -43,9 +45,15 @@ export const Pagination: FC<ComposedProps> = ({
   if (total <= pageSize) return <Fragment />
 
   return (
-    <div className={styles['magneto-ui-pagination']}>
+    <div className={`${styles[mgClass]} ${styles[`${stylesB2b ? `${mgClass}_b2b` : `${mgClass}_b2c`}`]}`}>
       {first !== current && (
-        <BtnPagination loading={loading} text={prevTitle} icon={ArrowLeft2} onClick={() => handleClick(current - 1)} />
+        <BtnPagination
+          loading={loading}
+          text={prevTitle}
+          icon={ArrowLeft2}
+          onClick={() => handleClick(current - 1)}
+          stylesB2b={stylesB2b}
+        />
       )}
       <ul>
         {!buttons.includes(first) && (
@@ -56,8 +64,9 @@ export const Pagination: FC<ComposedProps> = ({
               current={current}
               onClick={() => handleClick(first)}
               dynamicPaginationUrl={dynamicUrl}
+              stylesB2b={stylesB2b}
             />
-            <IconItem icon={Ellipsis} className={styles['magneto-ui-pagination_ellipsis']} />
+            <IconItem icon={Ellipsis} className={styles[`${mgClass}_ellipsis`]} />
           </li>
         )}
         {buttons.map((page, index) => (
@@ -68,24 +77,32 @@ export const Pagination: FC<ComposedProps> = ({
               current={current}
               onClick={() => handleClick(page)}
               dynamicPaginationUrl={dynamicUrl}
+              stylesB2b={stylesB2b}
             />
           </li>
         ))}
         {!buttons.includes(last) && (
           <li>
-            <IconItem icon={Ellipsis} className={styles['magneto-ui-pagination_ellipsis']} />
+            <IconItem icon={Ellipsis} className={styles[`${mgClass}_ellipsis`]} />
             <BtnPagination
               loading={loading}
               value={last}
               current={current}
               onClick={() => handleClick(last)}
               dynamicPaginationUrl={dynamicUrl}
+              stylesB2b={stylesB2b}
             />
           </li>
         )}
       </ul>
       {last !== current && (
-        <BtnPagination loading={loading} text={nextTitle} icon={ArrowRight2} onClick={() => handleClick(current + 1)} />
+        <BtnPagination
+          loading={loading}
+          text={nextTitle}
+          icon={ArrowRight2}
+          onClick={() => handleClick(current + 1)}
+          stylesB2b={stylesB2b}
+        />
       )}
     </div>
   )

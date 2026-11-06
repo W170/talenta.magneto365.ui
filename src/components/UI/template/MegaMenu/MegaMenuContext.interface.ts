@@ -1,10 +1,11 @@
 import { IMegaMenuTab } from '@components/UI/atoms/MegaMenuTab/MegaMenuTab.interface'
-import { ISearchbar } from '@components/UI/molecules'
+import { IMobileSearchbar } from '@components/UI/molecules'
 import { IPopoverRef } from '@components/UI/molecules/MegaMenuPopover/MegaMenuPopover.interface'
 import { IlistMenuUserProps } from '@components/UI/organism'
 import React, { ReactNode } from 'react'
 import { ISelectOptions } from '@components/UI/organism/Select2/Select2.interface'
 import { IMegaMenuSearchBar } from '@components/UI/molecules/MegaMenuSearchBar/MegaMenuSearchBar.interface'
+import { IconProps } from '@components/UI/atoms'
 
 export interface IMegaMenuLink {
   label: string
@@ -31,11 +32,12 @@ export interface IMegaMenuMainHeader {
     loginText: string
     loginUrl: string
     signUpText: string
+    signUpIconProps?: IconProps
     onClickSignUp: (event: Event) => Promise<void>
   }
   selectCountry?: ISelectOptions<unknown>
   searchBarProps?: IMegaMenuSearchBar
-  mobileSearchBarProps: ISearchbar
+  mobileSearchBarProps: IMobileSearchbar
   homeUrl?: string
   homeText?: string
 }

@@ -142,6 +142,7 @@ const Component: React.FC<IDateInput> = ({
         onClick={() => {
           inputsRef.current[0]?.focus()
         }}
+        tabIndex={0}
       ></div>
       {internalValues.map((value, index) => (
         <React.Fragment key={index}>
@@ -175,6 +176,7 @@ const Component: React.FC<IDateInput> = ({
         onClick={() => {
           inputsRef.current[inputsRef.current.length - 1]?.focus()
         }}
+        tabIndex={0}
       ></div>
     </div>
   )

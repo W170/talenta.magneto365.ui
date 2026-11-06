@@ -21,8 +21,14 @@ import {
   SettingWhiteOutline,
   TaskBlueBold,
   TaskWhiteOutline,
+  TreeSquareDot,
+  TreeSquareDotBold,
   UserSearchBlueBold,
-  UserSearchWhiteOutline
+  UserSearchWhiteOutline,
+  MagnetoAnalitycsWhiteOutline,
+  MagnetoAnalitycsBlueBold,
+  BotBlueBold,
+  BotWhite
 } from '@constants/icons.constants'
 
 export const navMenuAnalystIcons: { [key: string]: { normal: string; active: string } } = {
@@ -73,5 +79,17 @@ export const navMenuAnalystIcons: { [key: string]: { normal: string; active: str
   socialMediaRecruiting: {
     normal: AdvertisementOutline,
     active: AdvertisementBold
+  },
+  organizationalDesign: {
+    normal: TreeSquareDot,
+    active: TreeSquareDotBold
+  },
+  magnetoAnalitycs: {
+    normal: MagnetoAnalitycsWhiteOutline,
+    active: MagnetoAnalitycsBlueBold
+  },
+  agents: {
+    normal: BotWhite,
+    active: BotBlueBold
   }
 }

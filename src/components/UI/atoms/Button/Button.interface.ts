@@ -1,4 +1,4 @@
-export interface IButton {
+export interface IButton extends Omit<React.ComponentPropsWithoutRef<'button'>, 'onClick' | 'title'> {
   /**
    * Optional text to be displayed on the save button.
    * (Optional property)

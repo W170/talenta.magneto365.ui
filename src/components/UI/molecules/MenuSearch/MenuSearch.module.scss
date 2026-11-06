@@ -1,7 +1,7 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
 
 .magneto-ui-menu-search {
-  height: 30px;
+  min-height: 30px;
   @media (max-width: v.$screen-md) {
     width: inherit;
     max-width: 100%;

@@ -36,7 +36,13 @@ const Component: React.FC<TInputFile> = ({ children, className, onChange, ...pro
   }
 
   return (
-    <div className={cx(className)} onClick={handleFileClick} onDrop={handleFileDrop} onDragOver={handleDragOver}>
+    <div
+      className={cx(className)}
+      onClick={handleFileClick}
+      onDrop={handleFileDrop}
+      onDragOver={handleDragOver}
+      tabIndex={0}
+    >
       {children}
       <input
         className={cx('magneto-ui-input-file')}

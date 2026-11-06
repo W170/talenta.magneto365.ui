@@ -1,7 +1,10 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { ContainerContext } from '@components/context/container/container.context'
 
-const withClickOut = <T,>(WrappedComponent: React.FC<T>): React.FC<T> => {
+const withClickOut = <T,>(
+  WrappedComponent: React.FC<T>,
+  containerProps: React.HTMLAttributes<HTMLDivElement> = {}
+): React.FC<T> => {
   const Component: React.FC<T> = (props) => {
     const { container } = useContext(ContainerContext)
     const [clickOut, setClickOut] = useState(false)
@@ -27,7 +30,7 @@ const withClickOut = <T,>(WrappedComponent: React.FC<T>): React.FC<T> => {
     }, [handleClick, container])
 
     return (
-      <div ref={ref}>
+      <div ref={ref} {...containerProps}>
         <WrappedComponent clickOut={clickOut} setClickOut={setClickOut} {...props} />
       </div>
     )

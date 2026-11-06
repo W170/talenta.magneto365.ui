@@ -23,14 +23,6 @@ export interface ICategoryMenuCard {
    * This is the item list to render
    * */
   list: ICategoryField[]
-  /**
-   * Url to redirect
-   * */
-  href: string
-  /**
-   * See more button text
-   * */
-  seeAllText: string
 }
 
 export interface ICategoryField {

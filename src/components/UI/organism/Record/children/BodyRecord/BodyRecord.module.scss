@@ -1,0 +1,15 @@
+@use '../../../../../../shared/stylesheets/tokens/_index' as t;
+.magneto-ui-record {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 100px;
+  min-height: 50px;
+  height: auto;
+
+  &_children {
+    flex: 1;
+    margin-left: t.$margin-sm-2;
+    padding: t.$margin-4xl t.$margin-sm-2 0 t.$margin-xl;
+  }
+}

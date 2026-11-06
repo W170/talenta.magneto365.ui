@@ -1,5 +1,5 @@
 import React, { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
-import { JobCard, FrequentSearch, Pagination, CreateAccountCTA, FilterContainerMenu } from '@components/UI/molecules'
+import { JobCard, FrequentSearch, Pagination, FilterContainerMenu } from '@components/UI/molecules'
 import { SortBar, Footer, SideFilter } from '@components/UI/template'
 import { EmptyResults } from '@components/UI/molecules/EmptyResults'
 import { useMediaQuery } from '@components/hooks'
@@ -29,9 +29,10 @@ const JobsPage: React.FC<IJobsPage> = ({
   customParagraph,
   dynamicPaginationUrl,
   displayAlwaysFilter,
-  createAccountCTAProps,
   jobDetailsContent,
-  typeFilters = 'row'
+  typeFilters = 'row',
+  renderBeforeJobsResult,
+  renderBelowPagination
 }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const [showDetail, setShowDetail] = useState(device === 'desktop')
@@ -80,7 +81,12 @@ const JobsPage: React.FC<IJobsPage> = ({
     </JobDetailsDrawerContext.Provider>,
     {
       lg: (
-        <JobDetails.Drawer isMobile isOpen={showDetail && hasVacancies} onClose={onClose}>
+        <JobDetails.Drawer
+          className={style[`${classMUI}-jobs-page--drawer`]}
+          isMobile
+          isOpen={showDetail && hasVacancies}
+          onClose={onClose}
+        >
           {jobDetailsContent}
         </JobDetails.Drawer>
       )
@@ -100,17 +106,23 @@ const JobsPage: React.FC<IJobsPage> = ({
       return <EmptyResults {...emptyResultsProps} />
     }
 
-    return vacantProps.map(({ id, ...props }) => (
-      <JobCard
-        isLoading={isLoading}
-        isActive={id === jobSelected?.id}
-        id={id}
-        showDetail={() => handleJobCardClick(id)}
-        dynamicUrl={fullJobsUrl}
-        key={`${id}-JobsPage`}
-        {...props}
-      />
-    ))
+    return vacantProps.map((vacant) => {
+      if (typeof vacant === 'function') return vacant()
+
+      const { id, ...props } = vacant
+
+      return (
+        <JobCard
+          isLoading={isLoading}
+          isActive={id === jobSelected?.id}
+          id={id}
+          showDetail={() => handleJobCardClick(id)}
+          dynamicUrl={fullJobsUrl}
+          key={`${id}-JobsPage`}
+          {...props}
+        />
+      )
+    })
   }, [isLoading, emptyVacant, emptyResultsProps, vacantProps, jobSelected, fullJobsUrl, handleJobCardClick])
 
   const filterAltRender = useMemo(() => {
@@ -148,11 +160,12 @@ const JobsPage: React.FC<IJobsPage> = ({
                   emptyVacant={emptyVacant}
                   horizontal={typeFilters === 'row'}
                 />
-                {createAccountCTAProps && <CreateAccountCTA {...createAccountCTAProps} />}
                 {mainTitleByMediaQuery}
+                {renderBeforeJobsResult?.()}
                 <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>{cardsAltRender}</div>
                 {customParagraph && <Paragraph paragraph={customParagraph} />}
                 <Pagination dynamicUrl={fullUrl} {...paginationProps} />
+                {renderBelowPagination?.()}
                 <FrequentSearch {...frequentSearchProps} />
               </div>
               <div className={style[`${classMUI}-jobs-page__jobs-detail`]}>{JobDetailsDrawerComponent}</div>
@@ -168,11 +181,11 @@ const JobsPage: React.FC<IJobsPage> = ({
                 setIsFiltersOpen={setIsFiltersOpen}
                 emptyVacant={emptyVacant}
               />
-              {createAccountCTAProps && <CreateAccountCTA {...createAccountCTAProps} />}
               {mainTitleByMediaQuery}
               <div className={style[`${classMUI}-jobs-page--center-row__jobs-result`]}>{cardsAltRender}</div>
               {customParagraph && <Paragraph paragraph={customParagraph} />}
               <Pagination dynamicUrl={fullUrl} {...paginationProps} />
+              {renderBelowPagination?.()}
               <FrequentSearch {...frequentSearchProps} />
             </div>
             <div className={style[`${classMUI}-jobs-page__jobs-detail`]}>{JobDetailsDrawerComponent}</div>

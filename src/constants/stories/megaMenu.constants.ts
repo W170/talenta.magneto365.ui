@@ -24,6 +24,7 @@ import {
 import { Book, BriefcaseBlue, BuildingBlue, CourthouseBlue, LocationBlue } from '@constants/megaMenu.constants'
 import { MobileSearchbarProps, SearchbarProps } from './headers.constants'
 import { NoData, Waiting } from '@constants/gifs.constants'
+import { UserSwitch } from '../icons.constants'
 
 export const staticMessages: { [key: string]: string } = {
   noData: NoData,
@@ -68,6 +69,20 @@ export const megaMenuMainHeader: IMegaMenuMainHeader = {
       console.log('prueba')
     },
     loginText: 'Iniciar sesion'
+  },
+  selectCountry: {
+    onChange: (cvalue) => {
+      console.log('country changed to: ', cvalue)
+    },
+    placeholder: 'Selecciona tu pais',
+    selectList: [
+      { id: 1, name: 'Colombia', img: 'https://flagcdn.com/w40/co.png' },
+      { id: 2, name: 'Mexico', img: 'https://flagcdn.com/w40/mx.png' },
+      { id: 3, name: 'Argentina', img: 'https://flagcdn.com/w40/ar.png' },
+      { id: 4, name: 'Chile', img: 'https://flagcdn.com/w40/cl.png' },
+      { id: 5, name: 'Peru', img: 'https://flagcdn.com/w40/pe.png' }
+    ],
+    currentFields: [{ id: 1, name: 'Colombia', img: 'https://flagcdn.com/w40/co.png' }]
   }
 }
 
@@ -122,6 +137,7 @@ export const megaMenuUserLoggedIcons = {
   resume: DocumentText,
   settings: Setting2,
   help: MessageQuestion,
+  userSwitch: UserSwitch,
   alerts: Bell
 }
 export const mobileSocialIcons = [Book, HeadsetBlackOutline, QuestionCircle]

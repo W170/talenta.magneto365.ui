@@ -1,6 +1,7 @@
 import React, { useCallback, useMemo } from 'react'
 import { IFilterValue, ISetIsApplied } from '@components/UI/template'
 import { FilterMenuItem } from '@components/UI/molecules/FilterMenuItem'
+import { FilterMenuRangeItem } from '@components/UI/molecules/FilterMenuRangeItem/FilterMenuRangeItem.component'
 
 type UseFilterRenderingProps = {
   /**
@@ -49,13 +50,16 @@ export const useFilterRendering = ({
 }: UseFilterRenderingProps) => {
   const renderItem = useCallback(
     (opt: IFilterValue, key = 0) => {
-      return React.createElement(FilterMenuItem, {
+      const FilterItem = opt.type === 'custom' && props.type === 'RANGE' ? FilterMenuRangeItem : FilterMenuItem
+
+      return React.createElement(FilterItem, {
         key: `${key}-${opt.label}`,
         ...opt,
         field: props.field,
         multiple: props.multiple,
         loading: props.loading,
         type: props.type,
+        dataType: (props.dataType || opt.dataType) as string,
         hasTotal,
         setIsApplied: (filter: ISetIsApplied) => handleOptionSelected(filter)
       })

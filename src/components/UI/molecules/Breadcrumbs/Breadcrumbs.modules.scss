@@ -1,8 +1,19 @@
 @use '../../../../shared/stylesheets/variables.scss' as v;
+@use '../../../../shared/stylesheets/tokens' as t;
 
 .BreadcrumbsComponent {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 5px;
+
+  .magneto-ui-breadcrumbs-home-link {
+    display: inline-flex;
+    border-radius: 6px;
+
+    &:focus-visible {
+      outline: 2px solid t.$color-blue-dark-300;
+      outline-offset: 2px;
+    }
+  }
 }

@@ -13,7 +13,8 @@ const Component: React.FC<IButton> = ({
   className,
   iconSize = 20,
   type = 'button',
-  disabled = false
+  disabled = false,
+  ...props
 }) => {
   return (
     <button
@@ -22,6 +23,7 @@ const Component: React.FC<IButton> = ({
       onClick={onClick}
       title={buttonTitle}
       disabled={disabled}
+      {...props}
     >
       {typeof suffixIcon === 'string' ? (
         <IconItem size={iconSize} icon={suffixIcon} hover={addHover} className={styles['magneto-ui-button__icon']} />

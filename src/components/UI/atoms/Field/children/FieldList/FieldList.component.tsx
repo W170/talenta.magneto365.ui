@@ -18,6 +18,7 @@ function BaseComponent<T extends FieldListValue>(
     children,
     className,
     defaultValue,
+    direction = 'down',
     max,
     multiple,
     onChange,
@@ -84,6 +85,7 @@ function BaseComponent<T extends FieldListValue>(
           className={cx(
             'magneto-ui-field-list',
             !isMobile ? 'magneto-ui-field-list--desktop' : '',
+            direction === 'up' && !isMobile ? 'magneto-ui-field-list--up' : undefined,
             isFocused ? 'magneto-ui-field-list--visible' : 'magneto-ui-field-list--hidden',
             hasError ? 'magneto-ui-field-list--error' : '',
             className
@@ -93,6 +95,7 @@ function BaseComponent<T extends FieldListValue>(
             ref={shadowRef}
             className={cx(
               'magneto-ui-field-list-shadow',
+              direction === 'up' ? 'magneto-ui-field-list-shadow--up' : undefined,
               isFocused && !hasError ? 'magneto-ui-field-list-shadow--visible' : 'magneto-ui-field-list-shadow--hidden'
             )}
           />

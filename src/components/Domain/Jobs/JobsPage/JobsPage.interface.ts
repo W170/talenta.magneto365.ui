@@ -5,7 +5,6 @@ import { ISideFilter } from '@components/UI/template'
 import { IFooter } from '@components/UI/template/Footer/Footer.interface'
 import { DeviceType } from '@components/context/context.interface'
 import { IEmptyResults } from '@components/UI/molecules/EmptyResults/EmptyResults.interface'
-import { ICreateAccountCTA } from '@components/UI/molecules/CreateAccountCTA/CreateAccountCTA.interface'
 
 export interface IJobsPage {
   /**
@@ -16,8 +15,9 @@ export interface IJobsPage {
   /**
    * An array of job card props to display multiple job listings.
    * Each job card contains information about a single job listing.
+   * It is also allow renderProps to display custom content.
    */
-  vacantProps: IVacancies[]
+  vacantProps: (IVacancies | (() => React.ReactNode))[]
   /**
    *
    */
@@ -66,11 +66,6 @@ export interface IJobsPage {
    */
   displayAlwaysFilter?: boolean
   /**
-   * This property sets the create account card data
-   */
-  createAccountCTAProps?: ICreateAccountCTA
-
-  /**
    * This property sets the job details title
    */
   jobDetailsTitle?: string
@@ -83,6 +78,13 @@ export interface IJobsPage {
    *  This property sets the job card type filter, which can be either 'row' or 'side'.
    */
   typeFilters?: 'row' | 'side'
+
+  renderBelowPagination?: () => React.ReactNode
+
+  /**
+   * This property sets the custom content to be rendered before the jobs result.
+   * */
+  renderBeforeJobsResult?: () => React.ReactNode
 }
 
 export interface IVacancies extends IJobCard {

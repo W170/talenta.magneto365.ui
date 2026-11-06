@@ -4,16 +4,16 @@
 .magneto-ui-filter-onSearch {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 4px;
   background-color: v.$disabled-color-gray;
   width: 260px;
   max-width: 260px;
   height: auto;
-  padding: 10px 0 5px 0;
+  padding: 10px;
   border-radius: 12px;
   box-sizing: border-box;
   position: relative;
+  margin-top: 10px;
 
   @media (max-width: v.$screen-md) {
     width: inherit;

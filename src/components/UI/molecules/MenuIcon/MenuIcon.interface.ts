@@ -55,4 +55,12 @@ export interface IMenuIcon {
    * Target when opening the link
    */
   target?: string
+  /**
+   * ARIA role for the rendered element (e.g. "menuitem" when used inside a menu)
+   */
+  role?: string
+  /**
+   * tabIndex for the rendered element, used for roving focus inside menus
+   */
+  tabIndex?: number
 }
