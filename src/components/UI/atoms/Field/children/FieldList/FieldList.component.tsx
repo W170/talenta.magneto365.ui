@@ -4,7 +4,8 @@ import { Item, Responsive, Wrapper, Body } from './children'
 import { useFieldContext } from '../../Field.context'
 import { combineRefs } from '../../Field.constant'
 import { classNames } from '@shared/utils/common'
-import { ListContext } from './FieldList.context'
+import { ListContext, useFieldListLayer } from './FieldList.context'
+import { watchListLayout } from './FieldList.constant'
 import { useFieldList } from './FieldList.hooks'
 import { renderChildren } from '@utils/react'
 import styles from './FieldList.module.scss'
@@ -34,7 +35,7 @@ function BaseComponent<T extends FieldListValue>(
     value: controlledValue
   })
 
-  const listRef = useRef<HTMLDivElement>(null)
+  const listRef = useFieldListLayer()
   const shadowRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -48,38 +49,21 @@ function BaseComponent<T extends FieldListValue>(
   }, [hasList, setHasList])
 
   useEffect(() => {
-    if (!isFocused || hasError || !shadowRef.current || !listRef.current) return
-
     const listNode = listRef.current
     const shadow = shadowRef.current
+    if (!isFocused || hasError || !listNode || !shadow) return
 
-    const updateShadow = () => {
+    return watchListLayout(listNode, () => {
       const fieldInput = listNode
         .closest('[data-lib="magneto-ui"][data-slot="field"]')
         ?.querySelector('[data-slot="field-input"]')
-
       if (!fieldInput) return
 
-      const inputRect = fieldInput.getBoundingClientRect()
-
-      shadow.style.width = `${inputRect.width}px`
-      shadow.style.height = `calc(100% + ${inputRect.height}px)`
-    }
-
-    updateShadow()
-
-    const resizeObserver = new ResizeObserver(updateShadow)
-    resizeObserver.observe(listNode)
-
-    window.addEventListener('scroll', updateShadow, true)
-    window.addEventListener('resize', updateShadow)
-
-    return () => {
-      resizeObserver.disconnect()
-      window.removeEventListener('scroll', updateShadow, true)
-      window.removeEventListener('resize', updateShadow)
-    }
-  }, [hasError, isFocused, isMobile])
+      const { width, height } = fieldInput.getBoundingClientRect()
+      shadow.style.width = `${width}px`
+      shadow.style.height = `calc(100% + ${height}px)`
+    })
+  }, [hasError, isFocused, isMobile, listRef])
 
   return (
     <ListContext.Provider

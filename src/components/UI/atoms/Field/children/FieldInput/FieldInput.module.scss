@@ -63,6 +63,12 @@
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
+  &:has(+ [data-slot='field-list'][data-state='visible'][data-side='up']) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: $radius-sm;
+    border-bottom-right-radius: $radius-sm;
+  }
   &:has(.magneto-ui-field-input:invalid) {
     border-color: $color-red-200;
     border-width: 1px !important;
@@ -88,6 +94,10 @@
       border-bottom-color: transparent;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
+    }
+    &:has(+ [data-slot='field-list'][data-state='visible'][data-side='up']) {
+      border-top-color: transparent;
+      border-bottom-color: $color-red-200;
     }
   }
   &--button {
