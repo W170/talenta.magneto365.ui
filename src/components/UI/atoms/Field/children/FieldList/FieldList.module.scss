@@ -16,10 +16,29 @@
     z-index: 1;
     top: $scale-full;
     left: 0;
+    border: none;
     border-bottom-left-radius: $radius-sm;
     border-bottom-right-radius: $radius-sm;
+    &[popover='manual'] {
+      position: fixed;
+      inset: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+    &[data-side='up'] {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-top-left-radius: $radius-sm;
+      border-top-right-radius: $radius-sm;
+      .magneto-ui-field-list-shadow {
+        top: 0;
+        bottom: auto;
+      }
+    }
   }
-  &--desktop#{&}--up {
+  &--desktop#{&}--up:not([popover='manual']) {
     top: auto;
     bottom: $scale-full;
     padding-top: $padding-md;
@@ -33,6 +52,10 @@
     border-right: solid 1px $color-red-200;
     border-bottom: solid 1px $color-red-200;
     box-shadow: none;
+    &[data-side='up'] {
+      border-bottom: none;
+      border-top: solid 1px $color-red-200;
+    }
   }
   &--hidden {
     opacity: 0;

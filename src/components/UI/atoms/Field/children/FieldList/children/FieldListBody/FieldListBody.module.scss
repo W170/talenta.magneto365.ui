@@ -12,6 +12,10 @@
   &--desktop {
     padding-inline: $padding-sm;
     padding-bottom: $padding-sm;
+    [data-slot='field-list'][data-side='up'] & {
+      padding-top: $padding-sm;
+      padding-bottom: 0;
+    }
   }
   &::-webkit-scrollbar {
     width: 10px;
