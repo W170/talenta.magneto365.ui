@@ -25,16 +25,52 @@
       height: auto;
       margin: 0;
       overflow: visible;
-      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    }
-    &[data-side='up'] {
+      position-anchor: --field-list;
+      position-visibility: always;
+      top: #{'anchor(bottom)'};
+      left: #{'anchor(left)'};
+      width: #{'anchor-size()'};
+      position-try-fallbacks: flip-block;
+      container-type: anchored;
+      anchor-name: --field-list-panel;
+      background-color: transparent;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      border-top-left-radius: $radius-sm;
-      border-top-right-radius: $radius-sm;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, display 0.3s, overlay 0.3s;
+      transition-behavior: allow-discrete;
       .magneto-ui-field-list-shadow {
-        top: 0;
-        bottom: auto;
+        position: fixed;
+        height: auto;
+        right: auto;
+        left: #{'anchor(--field-list left)'};
+        width: #{'anchor-size(--field-list)'};
+      }
+      .magneto-ui-field-list-join {
+        display: block;
+      }
+      &[data-state='hidden'] {
+        display: none;
+      }
+      &[data-state='visible'] {
+        @starting-style {
+          opacity: 0;
+        }
+      }
+      &[data-direction='down'] {
+        position-try-fallbacks: none;
+      }
+      &[data-direction='up'] {
+        top: auto;
+        bottom: #{'anchor(top)'};
+        position-try-fallbacks: none;
+        .magneto-ui-field-list-shadow {
+          top: #{'anchor(--field-list-panel top)'};
+          bottom: #{'anchor(--field-list bottom)'};
+        }
+        .magneto-ui-field-list-join {
+          top: #{'anchor(--field-list top)'};
+          bottom: auto;
+        }
       }
     }
   }
@@ -48,13 +84,12 @@
     border-top-right-radius: $radius-sm;
   }
   &--error {
-    border-left: solid 1px $color-red-200;
-    border-right: solid 1px $color-red-200;
-    border-bottom: solid 1px $color-red-200;
+    --field-list-line: #{$color-red-200};
     box-shadow: none;
-    &[data-side='up'] {
-      border-bottom: none;
-      border-top: solid 1px $color-red-200;
+    &:not(&--desktop) {
+      border-left: solid 1px $color-red-200;
+      border-right: solid 1px $color-red-200;
+      border-bottom: solid 1px $color-red-200;
     }
   }
   &--hidden {
@@ -71,6 +106,8 @@
 
 .magneto-ui-field-list-shadow {
   position: absolute;
+  width: $scale-full;
+  height: $scale-full;
   pointer-events: none;
   box-shadow: 0px 0px 12px 0px rgba($color-grey-600, $opacity-12);
   bottom: 0;
@@ -90,5 +127,37 @@
   &--visible {
     opacity: 1;
     visibility: visible;
+  }
+}
+
+.magneto-ui-field-list-join {
+  display: none;
+  position: fixed;
+  left: #{'anchor(--field-list left)'};
+  width: #{'anchor-size(--field-list)'};
+  height: $radius-sm;
+  box-sizing: border-box;
+  pointer-events: none;
+  background-color: $color-grey-50;
+}
+
+@container #{'anchored(fallback: none)'} {
+  .magneto-ui-field-list-shadow {
+    top: #{'anchor(--field-list top)'};
+    bottom: #{'anchor(--field-list-panel bottom)'};
+  }
+  .magneto-ui-field-list-join {
+    bottom: #{'anchor(--field-list bottom)'};
+  }
+}
+
+@container #{'anchored(fallback: flip-block)'} {
+  .magneto-ui-field-list-shadow {
+    top: #{'anchor(--field-list-panel top)'};
+    bottom: #{'anchor(--field-list bottom)'};
+  }
+  .magneto-ui-field-list-join {
+    top: #{'anchor(--field-list top)'};
+    bottom: auto;
   }
 }

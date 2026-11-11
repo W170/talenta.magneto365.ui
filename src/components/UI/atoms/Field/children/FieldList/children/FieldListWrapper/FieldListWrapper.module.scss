@@ -2,6 +2,10 @@
 
 .magneto-ui-field-list-wrapper {
   position: relative;
+  anchor-scope: --field-list;
+  [data-slot='field-input'] {
+    anchor-name: --field-list;
+  }
   &--non-relative {
     position: static;
   }
