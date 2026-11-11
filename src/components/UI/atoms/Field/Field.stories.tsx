@@ -3,6 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Typography } from '../Typography'
 import { Field } from './Field.component'
 import { IconItem } from '../Icon'
+import { ModalResponsive } from '../../molecules/ModalResponsive'
 import { Add, ArrowLeft2, SearchIcon, Trash } from '../../../../constants/icons.constants'
 
 const meta: Meta<typeof Field> = {
@@ -190,6 +191,7 @@ type SearchStory = StoryObj<typeof Field.Input>
 const SearchComponent = () => {
   const [filteredUsers, setFilteredUsers] = useState<UserType[] | undefined>(USER_LIST)
   const [selectedUsers, setSelectedUsers] = useState<UserType[] | undefined>()
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const [value, setValue] = useState('')
 
   const handleOnSearchUsers = (term: string) => {
@@ -205,105 +207,151 @@ const SearchComponent = () => {
   }
 
   return (
-    <Field>
-      <Typography.Paragraph size="md-2" color="grey-800" weight="bold" style={{ marginBottom: '10px' }}>
-        {`Selected users: `}
-        {selectedUsers?.map((user, index) => (
-          <Typography.Text key={user.id} weight="normal" size="md-2">
-            {`${user.name} ${selectedUsers.length > 1 && index !== selectedUsers.length - 1 ? '- ' : ''}`}
+    <>
+      <div
+        style={{
+          height: '200px',
+          backgroundColor: 'coral',
+          padding: '10px',
+          borderRadius: '10px',
+          overflow: 'hidden',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between'
+        }}
+      >
+        <button
+          type="button"
+          onMouseDown={(event) => event.preventDefault()}
+          onClick={() => setIsModalOpen(true)}
+          style={{ width: 'fit-content' }}
+        >
+          Open modal
+        </button>
+        <Field>
+          <Typography.Paragraph size="md-2" color="grey-800" weight="bold" style={{ marginBottom: '10px' }}>
+            {`Selected users: `}
+            {selectedUsers?.map((user, index) => (
+              <Typography.Text key={user.id} weight="normal" size="md-2">
+                {`${user.name} ${selectedUsers.length > 1 && index !== selectedUsers.length - 1 ? '- ' : ''}`}
+              </Typography.Text>
+            ))}
+          </Typography.Paragraph>
+          <Field.Label htmlFor="name-trigger">
+            <Typography.Text weight="normal" size="md-2" color="grey-800">
+              Name
+            </Typography.Text>
+          </Field.Label>
+          <Field.List.Wrapper>
+            <Field.Input
+              id="name-trigger"
+              placeholder="Write something"
+              value={value}
+              onChange={(e) => handleOnSearchUsers(e.target.value)}
+              onFocus={(e) => e.target.select()}
+              autoComplete="off"
+              suffix={({ inputRef }) => (
+                <React.Fragment>
+                  {value && (
+                    <button
+                      onClick={() => handleOnSearchUsers('')}
+                      style={{
+                        border: 'none',
+                        background: 'none',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      <IconItem size={16} icon={Trash} />
+                    </button>
+                  )}
+                  <button
+                    onClick={() => inputRef?.current?.focus()}
+                    style={{
+                      border: 'none',
+                      background: 'none',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center'
+                    }}
+                  >
+                    <IconItem size={16} icon={SearchIcon} />
+                  </button>
+                </React.Fragment>
+              )}
+            />
+            <Field.List multiple value={selectedUsers} onChange={setSelectedUsers}>
+              {({ isMobile }) => (
+                <React.Fragment>
+                  {isMobile && (
+                    <Field.Input
+                      id="name-trigger"
+                      placeholder="Write something"
+                      value={value}
+                      onChange={(e) => handleOnSearchUsers(e.target.value)}
+                      onFocus={(e) => e.target.select()}
+                      autoComplete="off"
+                      autoFocus
+                      suffix={
+                        value && (
+                          <button
+                            onClick={() => handleOnSearchUsers('')}
+                            style={{
+                              border: 'none',
+                              background: 'none',
+                              display: 'flex',
+                              justifyContent: 'center',
+                              alignItems: 'center',
+                              cursor: 'pointer'
+                            }}
+                          >
+                            <IconItem size={16} icon={Trash} />
+                          </button>
+                        )
+                      }
+                    />
+                  )}
+                  <Field.List.Body>
+                    {filteredUsers?.map((user) => (
+                      <Field.List.Item key={user.id} value={user}>
+                        <Typography.Text weight="normal" size="lg">
+                          {user.name}
+                        </Typography.Text>
+                      </Field.List.Item>
+                    ))}
+                  </Field.List.Body>
+                </React.Fragment>
+              )}
+            </Field.List>
+          </Field.List.Wrapper>
+        </Field>
+      </div>
+      <ModalResponsive open={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <Typography.Text weight="normal" size="lg">
+            Modal content
           </Typography.Text>
-        ))}
-      </Typography.Paragraph>
-      <Field.Label htmlFor="name-trigger">
-        <Typography.Text weight="normal" size="md-2" color="grey-800">
-          Name
-        </Typography.Text>
-      </Field.Label>
-      <Field.List.Wrapper>
-        <Field.Input
-          id="name-trigger"
-          placeholder="Write something"
-          value={value}
-          onChange={(e) => handleOnSearchUsers(e.target.value)}
-          onFocus={(e) => e.target.select()}
-          autoComplete="off"
-          suffix={({ inputRef }) => (
-            <React.Fragment>
-              {value && (
-                <button
-                  onClick={() => handleOnSearchUsers('')}
-                  style={{
-                    border: 'none',
-                    background: 'none',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    cursor: 'pointer'
-                  }}
-                >
-                  <IconItem size={16} icon={Trash} />
-                </button>
-              )}
-              <button
-                onClick={() => inputRef?.current?.focus()}
-                style={{
-                  border: 'none',
-                  background: 'none',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center'
-                }}
-              >
-                <IconItem size={16} icon={SearchIcon} />
-              </button>
-            </React.Fragment>
-          )}
-        />
-        <Field.List multiple value={selectedUsers} onChange={setSelectedUsers}>
-          {({ isMobile }) => (
-            <React.Fragment>
-              {isMobile && (
-                <Field.Input
-                  id="name-trigger"
-                  placeholder="Write something"
-                  value={value}
-                  onChange={(e) => handleOnSearchUsers(e.target.value)}
-                  onFocus={(e) => e.target.select()}
-                  autoComplete="off"
-                  autoFocus
-                  suffix={
-                    value && (
-                      <button
-                        onClick={() => handleOnSearchUsers('')}
-                        style={{
-                          border: 'none',
-                          background: 'none',
-                          display: 'flex',
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                          cursor: 'pointer'
-                        }}
-                      >
-                        <IconItem size={16} icon={Trash} />
-                      </button>
-                    )
-                  }
-                />
-              )}
-              <Field.List.Body>
-                {filteredUsers?.map((user) => (
-                  <Field.List.Item key={user.id} value={user}>
-                    <Typography.Text weight="normal" size="lg">
-                      {user.name}
-                    </Typography.Text>
-                  </Field.List.Item>
-                ))}
-              </Field.List.Body>
-            </React.Fragment>
-          )}
-        </Field.List>
-      </Field.List.Wrapper>
-    </Field>
+          <Field>
+            <Field.List.Wrapper>
+              <Field.Input placeholder="Select inside modal" autoComplete="off" />
+              <Field.List>
+                <Field.List.Body>
+                  {USER_LIST.map((user) => (
+                    <Field.List.Item key={user.id} value={user}>
+                      <Typography.Text weight="normal" size="lg">
+                        {user.name}
+                      </Typography.Text>
+                    </Field.List.Item>
+                  ))}
+                </Field.List.Body>
+              </Field.List>
+            </Field.List.Wrapper>
+          </Field>
+        </div>
+      </ModalResponsive>
+    </>
   )
 }
 
