@@ -13,10 +13,12 @@ const Component: React.FC<IMegaMenuContext & IMegaMenu> = ({
   renderHeaderUserMenu,
   ...props
 }) => {
+  const isAuthenticated = props.listMenuUserProps?.isAuthenticated
+
   return (
     <MegaMenuProvider {...props}>
       <header className={styles['mega-menu']}>
-        <MegaMenuSocialHeader {...socialHeaderVariantProps} />
+        {!isAuthenticated && <MegaMenuSocialHeader {...socialHeaderVariantProps} />}
         <div className={styles['mega-menu__main-header']}>
           <MegaMenuMainHeader renderHeaderUserMenu={renderHeaderUserMenu} />
         </div>
