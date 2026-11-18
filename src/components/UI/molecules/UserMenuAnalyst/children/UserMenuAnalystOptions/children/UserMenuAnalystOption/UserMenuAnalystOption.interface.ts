@@ -39,7 +39,9 @@ export interface IUserMenuAnalystOption extends IUserMenuAnalystOptionBase {
   /**
    * Prefix array data to display aditional options
    */
-  prefix?: (IUserMenuAnalystOptionBase & { data?: string | ((option: IUserMenuAnalystOption) => void) })[]
+  prefix?: (IUserMenuAnalystOptionBase & {
+    data?: string | ((option: IUserMenuAnalystOption) => void | Promise<void>)
+  })[]
   /**
    * Section subtitle
    */
@@ -47,14 +49,16 @@ export interface IUserMenuAnalystOption extends IUserMenuAnalystOptionBase {
   /**
    * Suffix array data to display aditional options
    */
-  suffix?: (IUserMenuAnalystOptionBase & { data?: string | ((option: IUserMenuAnalystOption) => void) })[]
+  suffix?: (IUserMenuAnalystOptionBase & {
+    data?: string | ((option: IUserMenuAnalystOption) => void | Promise<void>)
+  })[]
 }
 
 export interface IUserMenuAnalystOptionBase {
   /**
    * Data for the option, can be a string or an array of INavMenuAnalystSection
    */
-  data?: string | IUserMenuAnalystSection[] | ((option: IUserMenuAnalystOption) => void)
+  data?: string | IUserMenuAnalystSection[] | ((option: IUserMenuAnalystOption) => void | Promise<void>)
   /**
    * Icon index type
    */

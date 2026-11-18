@@ -95,7 +95,7 @@ export interface IUserMenuAnalystAction {
   /**
    * Action link
    */
-  data: string | (() => void)
+  data: string | (() => void | Promise<void>)
   /**
    * Action icon
    */
