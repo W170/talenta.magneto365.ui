@@ -1,5 +1,16 @@
 @use '../../../../../../../../shared/stylesheets/tokens' as *;
 
+@mixin field-list-up-body {
+  padding-top: $padding-sm;
+  padding-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: $radius-sm;
+  border-top-right-radius: $radius-sm;
+  border-bottom: none;
+  border-top: 1px solid var(--field-list-line);
+}
+
 .magneto-ui-field-list-body {
   margin: 0;
   padding: 0;
@@ -12,6 +23,18 @@
   &--desktop {
     padding-inline: $padding-sm;
     padding-bottom: $padding-sm;
+    background-color: $color-grey-50;
+    border-bottom-left-radius: $radius-sm;
+    border-bottom-right-radius: $radius-sm;
+    border-left: 1px solid var(--field-list-line);
+    border-right: 1px solid var(--field-list-line);
+    border-bottom: 1px solid var(--field-list-line);
+    @container #{'anchored(fallback: flip-block)'} {
+      @include field-list-up-body;
+    }
+    [data-slot='field-list'][data-direction='up'] & {
+      @include field-list-up-body;
+    }
   }
   &::-webkit-scrollbar {
     width: 10px;

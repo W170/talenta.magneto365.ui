@@ -1,6 +1,7 @@
-import React, { forwardRef, useCallback } from 'react'
+import React, { forwardRef, useCallback, useEffect, useRef } from 'react'
 import { IFieldListWrapper } from './FieldListWrapper.interface'
 import { useFieldContext } from '../../../../Field.context'
+import { combineRefs } from '../../../../Field.constant'
 import styles from './FieldListWrapper.module.scss'
 import { classNames } from '@shared/utils/common'
 
@@ -10,7 +11,23 @@ const BaseComponent = (
   { children, className, nonRelative, onBlur: controlledOnBlur, tabIndex, ...props }: IFieldListWrapper,
   ref: React.ForwardedRef<HTMLDivElement>
 ) => {
-  const { isMobile, wrapperRef, onBlur } = useFieldContext()
+  const { isFocused, isMobile, wrapperRef, onBlur, setIsFocused } = useFieldContext()
+  const nodeRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    if (!isFocused || isMobile) return
+
+    const closeOnOutsideMouseDown = (event: MouseEvent) => {
+      const field = nodeRef.current?.closest('[data-slot="field"]')
+      if (event.target instanceof Node && field?.contains(event.target)) return
+
+      setIsFocused(false)
+    }
+
+    document.addEventListener('mousedown', closeOnOutsideMouseDown, true)
+
+    return () => document.removeEventListener('mousedown', closeOnOutsideMouseDown, true)
+  }, [isFocused, isMobile, setIsFocused])
 
   const handleOnBlur = useCallback(
     (evt: React.FocusEvent<HTMLInputElement>) => {
@@ -33,7 +50,7 @@ const BaseComponent = (
       data-lib="magneto-ui"
       data-slot="field-list-wrapper"
       data-state={nonRelative ? 'non-relative' : 'relative'}
-      ref={ref || wrapperRef} /* TODO: Combine refs */
+      ref={(node) => combineRefs(node, nodeRef, ref || wrapperRef)}
     >
       {React.Children.map(children, (child) => (typeof child === 'function' ? child({ isMobile }) : child))}
     </div>
