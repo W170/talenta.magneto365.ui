@@ -31,7 +31,13 @@ export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
   action: {
     title: 'Volver a Comfama',
     // data: '/comfama',
-    data: () => console.log('Comfama'),
+    data: () =>
+      new Promise<void>((resolve) => {
+        setTimeout(() => {
+          console.log('Comfama')
+          resolve()
+        }, 3000)
+      }),
     icon: 'redo',
     rel: 'noopener noreferrer',
     target: '_blank',
@@ -57,7 +63,13 @@ export const UserMenuAnalystProps: IUserMenuWrapperAnalystProps = {
                     {
                       title: 'Gestionar',
                       icon: 'manage',
-                      data: (option: unknown) => console.log(option)
+                      data: (option: unknown) =>
+                        new Promise<void>((resolve) => {
+                          setTimeout(() => {
+                            console.log(option)
+                            resolve()
+                          }, 3000)
+                        })
                     }
                   ]
                 },

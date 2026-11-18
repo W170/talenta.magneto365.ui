@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useRef, useState } from 'react'
 import { IconItem } from '@components/UI/atoms'
 import {
   IUserMenuAnalystOptionActionProps,
@@ -6,7 +6,7 @@ import {
 } from './UserMenuAnalystOptionActions.interface'
 import { Tooltip } from '@components/UI/molecules'
 import { userMenuAnalystIcons } from '@components/UI/molecules/UserMenuAnalyst/UserMenuAnalyst.constants'
-import { IUserMenuAnalystOption } from '../../UserMenuAnalystOption.interface'
+import { AnimatedSpinnerBlack } from '@constants/icons.constants'
 
 const Component: React.FC<IUserMenuAnalystOptionActionsProps> = ({
   actions,
@@ -46,16 +46,41 @@ const Action: React.FC<IUserMenuAnalystOptionActionProps> = ({
   getUrl,
   option
 }) => {
-  const handleOnClick = useCallback(() => {
+  const [isLoading, setIsLoading] = useState(false)
+  const isLoadingRef = useRef(false)
+
+  const handleOnClick = useCallback(async () => {
+    if (isLoadingRef.current) return
     if (action.modal && handleModal && handleMenuOpen) {
       handleMenuOpen(false)
       return handleModal(action.modal.name, true, action.modal.data)
     }
-    return action.data && (action.data as (option: IUserMenuAnalystOption) => void)(option)
+    if (typeof action.data !== 'function') return
+
+    const result = action.data(option)
+    const pending =
+      typeof result === 'object' && result !== null && typeof (result as Promise<void>).then === 'function'
+    if (!pending) return
+
+    isLoadingRef.current = true
+    setIsLoading(true)
+    try {
+      await result
+    } finally {
+      isLoadingRef.current = false
+      setIsLoading(false)
+    }
   }, [action, handleModal, handleMenuOpen, option])
 
   return typeof action.data === 'function' || action.modal ? (
-    <button onClick={handleOnClick}>{children}</button>
+    <button
+      type="button"
+      onClick={handleOnClick}
+      aria-busy={isLoading}
+      style={isLoading ? { opacity: 1, visibility: 'visible', pointerEvents: 'none' } : undefined}
+    >
+      {isLoading ? <IconItem showDefaultFallback={false} size={16} icon={AnimatedSpinnerBlack} /> : children}
+    </button>
   ) : (
     <a href={getUrl(action)} rel={action.rel || 'noreferrer'} target={action.target || '_self'}>
       {children}

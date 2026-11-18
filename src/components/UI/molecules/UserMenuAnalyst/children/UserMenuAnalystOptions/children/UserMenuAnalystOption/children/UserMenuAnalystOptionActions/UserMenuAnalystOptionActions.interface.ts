@@ -4,7 +4,9 @@ export interface IUserMenuAnalystOptionActionsProps {
   /**
    * Array of actions
    */
-  actions: (IUserMenuAnalystOptionBase & { data?: string | ((option: IUserMenuAnalystOption) => void) })[]
+  actions: (IUserMenuAnalystOptionBase & {
+    data?: string | ((option: IUserMenuAnalystOption) => void | Promise<void>)
+  })[]
   /**
    * Function to handle modal visibility from analyst template
    */
@@ -27,7 +29,9 @@ export interface IUserMenuAnalystOptionActionProps {
   /**
    * Selected action
    */
-  action: IUserMenuAnalystOptionBase & { data?: string | ((option: IUserMenuAnalystOption) => void) }
+  action: IUserMenuAnalystOptionBase & {
+    data?: string | ((option: IUserMenuAnalystOption) => void | Promise<void>)
+  }
   /**
    * Function to handle modal visibility from analyst template
    */

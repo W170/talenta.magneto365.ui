@@ -1,9 +1,9 @@
-import React, { useMemo } from 'react'
+import React, { useCallback, useMemo, useRef, useState } from 'react'
 import { Avatar, IconItem, Link } from '@components/UI/atoms'
 import { IUserMenuAnalystProps } from './UserMenuAnalyst.interface'
 import { userMenuAnalystIcons } from './UserMenuAnalyst.constants'
 import { UserMenuAnalystOptions } from './children'
-import { UserRoundedGray } from '@constants/icons.constants'
+import { AnimatedSpinnerBlue, UserRoundedGray } from '@constants/icons.constants'
 import CNM from '@utils/classNameManager/classNameManager.util'
 import styles from './UserMenuAnalyst.module.scss'
 
@@ -18,6 +18,26 @@ const Component: React.FC<IUserMenuAnalystProps> = ({
   queryString = {}
 }) => {
   const avatar = useMemo(() => user.avatar || UserRoundedGray, [user])
+  const [isActionLoading, setIsActionLoading] = useState(false)
+  const isActionLoadingRef = useRef(false)
+
+  const handleActionClick = useCallback(async () => {
+    if (!action || typeof action.data !== 'function' || isActionLoadingRef.current) return
+
+    const result = action.data()
+    const pending =
+      typeof result === 'object' && result !== null && typeof (result as Promise<void>).then === 'function'
+    if (!pending) return
+
+    isActionLoadingRef.current = true
+    setIsActionLoading(true)
+    try {
+      await result
+    } finally {
+      isActionLoadingRef.current = false
+      setIsActionLoading(false)
+    }
+  }, [action])
 
   const actionUrl = useMemo(() => {
     if (action && action.data && !Array.isArray(action.data) && typeof action.data === 'string') {
@@ -48,13 +68,19 @@ const Component: React.FC<IUserMenuAnalystProps> = ({
                   showDefaultFallback={false}
                   size={14}
                   icon={
-                    action.icon && userMenuAnalystIcons[action.icon] ? userMenuAnalystIcons[action.icon] : action.icon
+                    isActionLoading
+                      ? AnimatedSpinnerBlue
+                      : action.icon && userMenuAnalystIcons[action.icon]
+                      ? userMenuAnalystIcons[action.icon]
+                      : action.icon
                   }
                 />
                 {typeof action.data === 'string' ? (
                   <Link text={action.title} href={actionUrl} rel={action.rel} target={action.target} />
                 ) : (
-                  <button onClick={action.data}>{action.title}</button>
+                  <button type="button" onClick={handleActionClick} aria-busy={isActionLoading}>
+                    {action.title}
+                  </button>
                 )}
               </span>
             ) : (
