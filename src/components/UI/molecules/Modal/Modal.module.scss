@@ -3,9 +3,12 @@
 
 .magneto-ui-modal {
   background-color: white;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  // Center without `transform`: a transformed ancestor breaks CSS anchor
+  // positioning (Field list popover) in Firefox.
+  inset: 0;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
   position: fixed;
   min-width: 90%;
   min-height: 300px;
