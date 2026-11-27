@@ -41,3 +41,8 @@ export interface IFieldListContext<T extends FieldListValue = FieldListValue> {
   toggleValue: (value?: T) => void
   value?: T[] | T | null
 }
+
+export type PopoverElement = HTMLDivElement & {
+  showPopover: () => void
+  hidePopover: () => void
+}

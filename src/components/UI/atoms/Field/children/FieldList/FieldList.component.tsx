@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, forwardRef } from 'react'
+import React, { useEffect, forwardRef } from 'react'
 import { IFieldList, FieldListValue } from './FieldList.interface'
 import { Item, Responsive, Wrapper, Body } from './children'
 import { useFieldContext } from '../../Field.context'
 import { combineRefs } from '../../Field.constant'
 import { classNames } from '@shared/utils/common'
-import { ListContext } from './FieldList.context'
+import { ListContext, useFieldListLayer } from './FieldList.context'
 import { useFieldList } from './FieldList.hooks'
 import { renderChildren } from '@utils/react'
 import styles from './FieldList.module.scss'
@@ -17,7 +17,7 @@ function BaseComponent<T extends FieldListValue>(
     children,
     className,
     defaultValue,
-    direction = 'down',
+    direction,
     max,
     multiple,
     onChange,
@@ -35,8 +35,7 @@ function BaseComponent<T extends FieldListValue>(
     value: controlledValue
   })
 
-  const listRef = useRef<HTMLDivElement>(null)
-  const shadowRef = useRef<HTMLDivElement>(null)
+  const listRef = useFieldListLayer()
 
   useEffect(() => {
     if (!breakpoint && controlledBreakpoint) {
@@ -47,40 +46,6 @@ function BaseComponent<T extends FieldListValue>(
   useEffect(() => {
     if (!hasList) setHasList(true)
   }, [hasList, setHasList])
-
-  useEffect(() => {
-    if (!isFocused || hasError || !shadowRef.current || !listRef.current) return
-
-    const listNode = listRef.current
-    const shadow = shadowRef.current
-
-    const updateShadow = () => {
-      const fieldInput = listNode
-        .closest('[data-lib="magneto-ui"][data-slot="field"]')
-        ?.querySelector('[data-slot="field-input"]')
-
-      if (!fieldInput) return
-
-      const inputRect = fieldInput.getBoundingClientRect()
-
-      shadow.style.width = `${inputRect.width}px`
-      shadow.style.height = `calc(100% + ${inputRect.height}px)`
-    }
-
-    updateShadow()
-
-    const resizeObserver = new ResizeObserver(updateShadow)
-    resizeObserver.observe(listNode)
-
-    window.addEventListener('scroll', updateShadow, true)
-    window.addEventListener('resize', updateShadow)
-
-    return () => {
-      resizeObserver.disconnect()
-      window.removeEventListener('scroll', updateShadow, true)
-      window.removeEventListener('resize', updateShadow)
-    }
-  }, [hasError, isFocused, isMobile])
 
   return (
     <ListContext.Provider
@@ -97,6 +62,7 @@ function BaseComponent<T extends FieldListValue>(
           ref={(node) => combineRefs(node, listRef, ref)}
           data-lib="magneto-ui"
           data-slot="field-list"
+          data-direction={direction}
           data-state={isFocused ? 'visible' : 'hidden'}
           className={cx(
             'magneto-ui-field-list',
@@ -108,13 +74,13 @@ function BaseComponent<T extends FieldListValue>(
           )}
         >
           <div
-            ref={shadowRef}
             className={cx(
               'magneto-ui-field-list-shadow',
               direction === 'up' ? 'magneto-ui-field-list-shadow--up' : undefined,
               isFocused && !hasError ? 'magneto-ui-field-list-shadow--visible' : 'magneto-ui-field-list-shadow--hidden'
             )}
           />
+          <span className={cx('magneto-ui-field-list-join')} aria-hidden />
           {renderChildren(children, { isDesktop, isMobile })}
         </div>
       </Responsive>
